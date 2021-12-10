@@ -7,11 +7,11 @@
   <TypeSignature Language="C++ CLI" Value="public ref class BinaryPrimitives abstract sealed" />
   <AssemblyInfo>
     <AssemblyName>System.Memory</AssemblyName>
-    <AssemblyVersion>4.0.1.0</AssemblyVersion>
     <AssemblyVersion>4.1.0.0</AssemblyVersion>
     <AssemblyVersion>4.2.0.0</AssemblyVersion>
     <AssemblyVersion>4.2.1.0</AssemblyVersion>
     <AssemblyVersion>5.0.0.0</AssemblyVersion>
+    <AssemblyVersion>6.0.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
@@ -19,6 +19,7 @@
   </AssemblyInfo>
   <TypeForwardingChain>
     <TypeForwarding From="netstandard" FromVersion="2.1.0.0" To="System.Memory" ToVersion="5.0.0.0" FrameworkAlternate="net-5.0" />
+    <TypeForwarding From="netstandard" FromVersion="2.1.0.0" To="System.Memory" ToVersion="6.0.0.0" FrameworkAlternate="net-6.0" />
   </TypeForwardingChain>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -48,6 +49,7 @@ Use these helpers when you need to read specific endianness.
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -56,7 +58,7 @@ Use these helpers when you need to read specific endianness.
         <ReturnType>System.Double</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="source" Type="System.ReadOnlySpan&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-5.0" />
+        <Parameter Name="source" Type="System.ReadOnlySpan&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-5.0;net-6.0" />
       </Parameters>
       <Docs>
         <param name="source">The read-only span to read.</param>
@@ -86,6 +88,7 @@ Reads exactly 8 bytes from the beginning of the span.
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -94,7 +97,7 @@ Reads exactly 8 bytes from the beginning of the span.
         <ReturnType>System.Double</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="source" Type="System.ReadOnlySpan&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-5.0" />
+        <Parameter Name="source" Type="System.ReadOnlySpan&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-5.0;net-6.0" />
       </Parameters>
       <Docs>
         <param name="source">The read-only span to read.</param>
@@ -113,6 +116,82 @@ Reads exactly 8 bytes from the beginning of the span.
           <paramref name="source" /> is too small to contain a <see cref="T:System.Double" />.</exception>
       </Docs>
     </Member>
+    <Member MemberName="ReadHalfBigEndian">
+      <MemberSignature Language="C#" Value="public static Half ReadHalfBigEndian (ReadOnlySpan&lt;byte&gt; source);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Half ReadHalfBigEndian(valuetype System.ReadOnlySpan`1&lt;unsigned int8&gt; source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Buffers.Binary.BinaryPrimitives.ReadHalfBigEndian(System.ReadOnlySpan{System.Byte})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ReadHalfBigEndian (source As ReadOnlySpan(Of Byte)) As Half" />
+      <MemberSignature Language="F#" Value="static member ReadHalfBigEndian : ReadOnlySpan&lt;byte&gt; -&gt; Half" Usage="System.Buffers.Binary.BinaryPrimitives.ReadHalfBigEndian source" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static Half ReadHalfBigEndian(ReadOnlySpan&lt;System::Byte&gt; source);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Memory</AssemblyName>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Half</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.ReadOnlySpan&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-6.0" />
+      </Parameters>
+      <Docs>
+        <param name="source">The read-only span to read.</param>
+        <summary>Reads a <see cref="T:System.Half" /> from the beginning of a read-only span of bytes, as big endian.</summary>
+        <returns>The big endian value.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks
+
+Reads exactly 2 bytes from the beginning of the span.
+
+          ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="source" /> is too small to contain a <see cref="T:System.Half" />.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadHalfLittleEndian">
+      <MemberSignature Language="C#" Value="public static Half ReadHalfLittleEndian (ReadOnlySpan&lt;byte&gt; source);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Half ReadHalfLittleEndian(valuetype System.ReadOnlySpan`1&lt;unsigned int8&gt; source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Buffers.Binary.BinaryPrimitives.ReadHalfLittleEndian(System.ReadOnlySpan{System.Byte})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ReadHalfLittleEndian (source As ReadOnlySpan(Of Byte)) As Half" />
+      <MemberSignature Language="F#" Value="static member ReadHalfLittleEndian : ReadOnlySpan&lt;byte&gt; -&gt; Half" Usage="System.Buffers.Binary.BinaryPrimitives.ReadHalfLittleEndian source" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static Half ReadHalfLittleEndian(ReadOnlySpan&lt;System::Byte&gt; source);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Memory</AssemblyName>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Half</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.ReadOnlySpan&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-6.0" />
+      </Parameters>
+      <Docs>
+        <param name="source">The read-only span to read.</param>
+        <summary>Reads a <see cref="T:System.Half" /> from the beginning of a read-only span of bytes, as little endian.</summary>
+        <returns>The little endian value.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks
+
+Reads exactly 2 bytes from the beginning of the span.
+
+          ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="source" /> is too small to contain a <see cref="T:System.Half" />.</exception>
+      </Docs>
+    </Member>
     <Member MemberName="ReadInt16BigEndian">
       <MemberSignature Language="C#" Value="public static short ReadInt16BigEndian (ReadOnlySpan&lt;byte&gt; source);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig int16 ReadInt16BigEndian(valuetype System.ReadOnlySpan`1&lt;unsigned int8&gt; source) cil managed" />
@@ -123,11 +202,11 @@ Reads exactly 8 bytes from the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -166,11 +245,11 @@ Reads exactly 2 bytes from the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -209,11 +288,11 @@ Reads exactly 2 bytes from the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -252,11 +331,11 @@ Reads exactly 4 bytes from the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -295,11 +374,11 @@ Reads exactly 4 bytes from the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -338,11 +417,11 @@ Reads exactly 8 bytes from the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -382,6 +461,7 @@ Reads exactly 8 bytes from the beginning of the span.
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -390,7 +470,7 @@ Reads exactly 8 bytes from the beginning of the span.
         <ReturnType>System.Single</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="source" Type="System.ReadOnlySpan&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-5.0" />
+        <Parameter Name="source" Type="System.ReadOnlySpan&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-5.0;net-6.0" />
       </Parameters>
       <Docs>
         <param name="source">The read-only span to read.</param>
@@ -420,6 +500,7 @@ Reads exactly 4 bytes from the beginning of the span.
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -428,7 +509,7 @@ Reads exactly 4 bytes from the beginning of the span.
         <ReturnType>System.Single</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="source" Type="System.ReadOnlySpan&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-5.0" />
+        <Parameter Name="source" Type="System.ReadOnlySpan&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-5.0;net-6.0" />
       </Parameters>
       <Docs>
         <param name="source">The read-only span to read.</param>
@@ -457,11 +538,11 @@ Reads exactly 4 bytes from the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -506,11 +587,11 @@ Reads exactly 2 bytes from the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -555,11 +636,11 @@ Reads exactly 2 bytes from the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -604,11 +685,11 @@ Reads exactly 4 bytes from the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -653,11 +734,11 @@ Reads exactly 4 bytes from the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -702,11 +783,11 @@ Reads exactly 8 bytes from the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -751,11 +832,11 @@ Reads exactly 8 bytes from the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -792,11 +873,11 @@ This method effectively does nothing and was added only for consistency.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -825,11 +906,11 @@ This method effectively does nothing and was added only for consistency.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -858,11 +939,11 @@ This method effectively does nothing and was added only for consistency.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -891,11 +972,11 @@ This method effectively does nothing and was added only for consistency.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -938,11 +1019,11 @@ This method effectively does nothing and was added only for consistency.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -977,11 +1058,11 @@ This method effectively does nothing and was added only for consistency.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -1016,11 +1097,11 @@ This method effectively does nothing and was added only for consistency.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -1056,6 +1137,7 @@ This method effectively does nothing and was added only for consistency.
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -1064,8 +1146,8 @@ This method effectively does nothing and was added only for consistency.
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="source" Type="System.ReadOnlySpan&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-5.0" />
-        <Parameter Name="value" Type="System.Double" RefType="out" Index="1" FrameworkAlternate="net-5.0" />
+        <Parameter Name="source" Type="System.ReadOnlySpan&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-5.0;net-6.0" />
+        <Parameter Name="value" Type="System.Double" RefType="out" Index="1" FrameworkAlternate="net-5.0;net-6.0" />
       </Parameters>
       <Docs>
         <param name="source">The read-only span of bytes to read.</param>
@@ -1095,6 +1177,7 @@ Reads exactly 8 bytes from the beginning of the span.
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -1103,8 +1186,8 @@ Reads exactly 8 bytes from the beginning of the span.
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="source" Type="System.ReadOnlySpan&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-5.0" />
-        <Parameter Name="value" Type="System.Double" RefType="out" Index="1" FrameworkAlternate="net-5.0" />
+        <Parameter Name="source" Type="System.ReadOnlySpan&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-5.0;net-6.0" />
+        <Parameter Name="value" Type="System.Double" RefType="out" Index="1" FrameworkAlternate="net-5.0;net-6.0" />
       </Parameters>
       <Docs>
         <param name="source">The read-only span of bytes to read.</param>
@@ -1123,6 +1206,84 @@ Reads exactly 8 bytes from the beginning of the span.
         </remarks>
       </Docs>
     </Member>
+    <Member MemberName="TryReadHalfBigEndian">
+      <MemberSignature Language="C#" Value="public static bool TryReadHalfBigEndian (ReadOnlySpan&lt;byte&gt; source, out Half value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryReadHalfBigEndian(valuetype System.ReadOnlySpan`1&lt;unsigned int8&gt; source, [out] valuetype System.Half&amp; value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Buffers.Binary.BinaryPrimitives.TryReadHalfBigEndian(System.ReadOnlySpan{System.Byte},System.Half@)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function TryReadHalfBigEndian (source As ReadOnlySpan(Of Byte), ByRef value As Half) As Boolean" />
+      <MemberSignature Language="F#" Value="static member TryReadHalfBigEndian : ReadOnlySpan&lt;byte&gt; * Half -&gt; bool" Usage="System.Buffers.Binary.BinaryPrimitives.TryReadHalfBigEndian (source, value)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool TryReadHalfBigEndian(ReadOnlySpan&lt;System::Byte&gt; source, [Runtime::InteropServices::Out] Half % value);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Memory</AssemblyName>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.ReadOnlySpan&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-6.0" />
+        <Parameter Name="value" Type="System.Half" RefType="out" Index="1" FrameworkAlternate="net-6.0" />
+      </Parameters>
+      <Docs>
+        <param name="source">The read-only span of bytes to read.</param>
+        <param name="value">When this method returns, the value read out of the read-only span of bytes, as big endian.</param>
+        <summary>Reads a <see cref="T:System.Half" /> from the beginning of a read-only span of bytes, as big endian.</summary>
+        <returns>
+          <see langword="true" /> if the span is large enough to contain a <see cref="T:System.Half" />; otherwise, <see langword="false" />.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks
+
+Reads exactly 2 bytes from the beginning of the span.
+
+          ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryReadHalfLittleEndian">
+      <MemberSignature Language="C#" Value="public static bool TryReadHalfLittleEndian (ReadOnlySpan&lt;byte&gt; source, out Half value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryReadHalfLittleEndian(valuetype System.ReadOnlySpan`1&lt;unsigned int8&gt; source, [out] valuetype System.Half&amp; value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Buffers.Binary.BinaryPrimitives.TryReadHalfLittleEndian(System.ReadOnlySpan{System.Byte},System.Half@)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function TryReadHalfLittleEndian (source As ReadOnlySpan(Of Byte), ByRef value As Half) As Boolean" />
+      <MemberSignature Language="F#" Value="static member TryReadHalfLittleEndian : ReadOnlySpan&lt;byte&gt; * Half -&gt; bool" Usage="System.Buffers.Binary.BinaryPrimitives.TryReadHalfLittleEndian (source, value)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool TryReadHalfLittleEndian(ReadOnlySpan&lt;System::Byte&gt; source, [Runtime::InteropServices::Out] Half % value);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Memory</AssemblyName>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.ReadOnlySpan&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-6.0" />
+        <Parameter Name="value" Type="System.Half" RefType="out" Index="1" FrameworkAlternate="net-6.0" />
+      </Parameters>
+      <Docs>
+        <param name="source">The read-only span of bytes to read.</param>
+        <param name="value">When this method returns, the value read out of the read-only span of bytes, as little endian.</param>
+        <summary>Reads a <see cref="T:System.Half" /> from the beginning of a read-only span of bytes, as little endian.</summary>
+        <returns>
+          <see langword="true" /> if the span is large enough to contain a <see cref="T:System.Half" />; otherwise, <see langword="false" />.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks
+
+Reads exactly 2 bytes from the beginning of the span.
+
+          ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
     <Member MemberName="TryReadInt16BigEndian">
       <MemberSignature Language="C#" Value="public static bool TryReadInt16BigEndian (ReadOnlySpan&lt;byte&gt; source, out short value);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryReadInt16BigEndian(valuetype System.ReadOnlySpan`1&lt;unsigned int8&gt; source, [out] int16&amp; value) cil managed" />
@@ -1133,11 +1294,11 @@ Reads exactly 8 bytes from the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -1177,11 +1338,11 @@ Reads exactly 2 bytes from the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -1221,11 +1382,11 @@ Reads exactly 2 bytes from the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -1265,11 +1426,11 @@ Reads exactly 4 bytes from the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -1309,11 +1470,11 @@ Reads exactly 4 bytes from the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -1353,11 +1514,11 @@ Reads exactly 8 bytes from the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -1398,6 +1559,7 @@ Reads exactly 8 bytes from the beginning of the span.
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -1406,8 +1568,8 @@ Reads exactly 8 bytes from the beginning of the span.
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="source" Type="System.ReadOnlySpan&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-5.0" />
-        <Parameter Name="value" Type="System.Single" RefType="out" Index="1" FrameworkAlternate="net-5.0" />
+        <Parameter Name="source" Type="System.ReadOnlySpan&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-5.0;net-6.0" />
+        <Parameter Name="value" Type="System.Single" RefType="out" Index="1" FrameworkAlternate="net-5.0;net-6.0" />
       </Parameters>
       <Docs>
         <param name="source">The read-only span of bytes to read.</param>
@@ -1437,6 +1599,7 @@ Reads exactly 4 bytes from the beginning of the span.
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -1445,8 +1608,8 @@ Reads exactly 4 bytes from the beginning of the span.
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="source" Type="System.ReadOnlySpan&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-5.0" />
-        <Parameter Name="value" Type="System.Single" RefType="out" Index="1" FrameworkAlternate="net-5.0" />
+        <Parameter Name="source" Type="System.ReadOnlySpan&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-5.0;net-6.0" />
+        <Parameter Name="value" Type="System.Single" RefType="out" Index="1" FrameworkAlternate="net-5.0;net-6.0" />
       </Parameters>
       <Docs>
         <param name="source">The read-only span of bytes to read.</param>
@@ -1475,11 +1638,11 @@ Reads exactly 4 bytes from the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -1525,11 +1688,11 @@ Reads exactly 2 bytes from the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -1575,11 +1738,11 @@ Reads exactly 2 bytes from the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -1625,11 +1788,11 @@ Reads exactly 4 bytes from the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -1675,11 +1838,11 @@ Reads exactly 4 bytes from the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -1725,11 +1888,11 @@ Reads exactly 8 bytes from the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -1776,6 +1939,7 @@ Reads exactly 8 bytes from the beginning of the span.
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -1784,8 +1948,8 @@ Reads exactly 8 bytes from the beginning of the span.
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="destination" Type="System.Span&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-5.0" />
-        <Parameter Name="value" Type="System.Double" Index="1" FrameworkAlternate="net-5.0" />
+        <Parameter Name="destination" Type="System.Span&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-5.0;net-6.0" />
+        <Parameter Name="value" Type="System.Double" Index="1" FrameworkAlternate="net-5.0;net-6.0" />
       </Parameters>
       <Docs>
         <param name="destination">The span of bytes where the value is to be written, as big endian.</param>
@@ -1815,6 +1979,7 @@ Writes exactly 8 bytes to the beginning of the span.
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -1823,8 +1988,8 @@ Writes exactly 8 bytes to the beginning of the span.
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="destination" Type="System.Span&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-5.0" />
-        <Parameter Name="value" Type="System.Double" Index="1" FrameworkAlternate="net-5.0" />
+        <Parameter Name="destination" Type="System.Span&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-5.0;net-6.0" />
+        <Parameter Name="value" Type="System.Double" Index="1" FrameworkAlternate="net-5.0;net-6.0" />
       </Parameters>
       <Docs>
         <param name="destination">The span of bytes where the value is to be written, as little endian.</param>
@@ -1843,6 +2008,84 @@ Writes exactly 8 bytes to the beginning of the span.
         </remarks>
       </Docs>
     </Member>
+    <Member MemberName="TryWriteHalfBigEndian">
+      <MemberSignature Language="C#" Value="public static bool TryWriteHalfBigEndian (Span&lt;byte&gt; destination, Half value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryWriteHalfBigEndian(valuetype System.Span`1&lt;unsigned int8&gt; destination, valuetype System.Half value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Buffers.Binary.BinaryPrimitives.TryWriteHalfBigEndian(System.Span{System.Byte},System.Half)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function TryWriteHalfBigEndian (destination As Span(Of Byte), value As Half) As Boolean" />
+      <MemberSignature Language="F#" Value="static member TryWriteHalfBigEndian : Span&lt;byte&gt; * Half -&gt; bool" Usage="System.Buffers.Binary.BinaryPrimitives.TryWriteHalfBigEndian (destination, value)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool TryWriteHalfBigEndian(Span&lt;System::Byte&gt; destination, Half value);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Memory</AssemblyName>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="destination" Type="System.Span&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-6.0" />
+        <Parameter Name="value" Type="System.Half" Index="1" FrameworkAlternate="net-6.0" />
+      </Parameters>
+      <Docs>
+        <param name="destination">The span of bytes where the value is to be written, as big endian.</param>
+        <param name="value">The value to write into the span of bytes.</param>
+        <summary>Writes a <see cref="T:System.Half" /> into a span of bytes, as big endian.</summary>
+        <returns>
+          <see langword="true" /> if the span is large enough to contain a <see cref="T:System.Half" />; otherwise, <see langword="false" />.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks
+
+Writes exactly 2 bytes to the beginning of the span.
+
+          ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryWriteHalfLittleEndian">
+      <MemberSignature Language="C#" Value="public static bool TryWriteHalfLittleEndian (Span&lt;byte&gt; destination, Half value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryWriteHalfLittleEndian(valuetype System.Span`1&lt;unsigned int8&gt; destination, valuetype System.Half value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Buffers.Binary.BinaryPrimitives.TryWriteHalfLittleEndian(System.Span{System.Byte},System.Half)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function TryWriteHalfLittleEndian (destination As Span(Of Byte), value As Half) As Boolean" />
+      <MemberSignature Language="F#" Value="static member TryWriteHalfLittleEndian : Span&lt;byte&gt; * Half -&gt; bool" Usage="System.Buffers.Binary.BinaryPrimitives.TryWriteHalfLittleEndian (destination, value)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool TryWriteHalfLittleEndian(Span&lt;System::Byte&gt; destination, Half value);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Memory</AssemblyName>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="destination" Type="System.Span&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-6.0" />
+        <Parameter Name="value" Type="System.Half" Index="1" FrameworkAlternate="net-6.0" />
+      </Parameters>
+      <Docs>
+        <param name="destination">The span of bytes where the value is to be written, as little endian.</param>
+        <param name="value">The value to write into the span of bytes.</param>
+        <summary>Writes a <see cref="T:System.Half" /> into a span of bytes, as little endian.</summary>
+        <returns>
+          <see langword="true" /> if the span is large enough to contain a <see cref="T:System.Half" />; otherwise, <see langword="false" />.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks
+
+Writes exactly 2 bytes to the beginning of the span.
+
+          ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
     <Member MemberName="TryWriteInt16BigEndian">
       <MemberSignature Language="C#" Value="public static bool TryWriteInt16BigEndian (Span&lt;byte&gt; destination, short value);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryWriteInt16BigEndian(valuetype System.Span`1&lt;unsigned int8&gt; destination, int16 value) cil managed" />
@@ -1853,11 +2096,11 @@ Writes exactly 8 bytes to the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -1897,11 +2140,11 @@ Writes exactly 2 bytes to the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -1941,11 +2184,11 @@ Writes exactly 2 bytes to the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -1985,11 +2228,11 @@ Writes exactly 4 bytes to the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -2029,11 +2272,11 @@ Writes exactly 4 bytes to the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -2073,11 +2316,11 @@ Writes exactly 8 bytes to the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -2118,6 +2361,7 @@ Writes exactly 8 bytes to the beginning of the span.
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -2126,8 +2370,8 @@ Writes exactly 8 bytes to the beginning of the span.
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="destination" Type="System.Span&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-5.0" />
-        <Parameter Name="value" Type="System.Single" Index="1" FrameworkAlternate="net-5.0" />
+        <Parameter Name="destination" Type="System.Span&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-5.0;net-6.0" />
+        <Parameter Name="value" Type="System.Single" Index="1" FrameworkAlternate="net-5.0;net-6.0" />
       </Parameters>
       <Docs>
         <param name="destination">The span of bytes where the value is to be written, as big endian.</param>
@@ -2157,6 +2401,7 @@ Writes exactly 4 bytes to the beginning of the span.
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -2165,8 +2410,8 @@ Writes exactly 4 bytes to the beginning of the span.
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="destination" Type="System.Span&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-5.0" />
-        <Parameter Name="value" Type="System.Single" Index="1" FrameworkAlternate="net-5.0" />
+        <Parameter Name="destination" Type="System.Span&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-5.0;net-6.0" />
+        <Parameter Name="value" Type="System.Single" Index="1" FrameworkAlternate="net-5.0;net-6.0" />
       </Parameters>
       <Docs>
         <param name="destination">The span of bytes where the value is to be written, as little endian.</param>
@@ -2195,11 +2440,11 @@ Writes exactly 4 bytes to the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -2245,11 +2490,11 @@ Writes exactly 2 bytes to the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -2295,11 +2540,11 @@ Writes exactly 2 bytes to the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -2345,11 +2590,11 @@ Writes exactly 4 bytes to the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -2395,11 +2640,11 @@ Writes exactly 4 bytes to the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -2445,11 +2690,11 @@ Writes exactly 8 bytes to the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -2496,6 +2741,7 @@ Writes exactly 8 bytes to the beginning of the span.
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -2504,8 +2750,8 @@ Writes exactly 8 bytes to the beginning of the span.
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="destination" Type="System.Span&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-5.0" />
-        <Parameter Name="value" Type="System.Double" Index="1" FrameworkAlternate="net-5.0" />
+        <Parameter Name="destination" Type="System.Span&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-5.0;net-6.0" />
+        <Parameter Name="value" Type="System.Double" Index="1" FrameworkAlternate="net-5.0;net-6.0" />
       </Parameters>
       <Docs>
         <param name="destination">The span of bytes where the value is to be written, as big endian.</param>
@@ -2535,6 +2781,7 @@ Writes exactly 8 bytes to the beginning of the span.
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -2543,8 +2790,8 @@ Writes exactly 8 bytes to the beginning of the span.
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="destination" Type="System.Span&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-5.0" />
-        <Parameter Name="value" Type="System.Double" Index="1" FrameworkAlternate="net-5.0" />
+        <Parameter Name="destination" Type="System.Span&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-5.0;net-6.0" />
+        <Parameter Name="value" Type="System.Double" Index="1" FrameworkAlternate="net-5.0;net-6.0" />
       </Parameters>
       <Docs>
         <param name="destination">The span of bytes where the value is to be written, as little endian.</param>
@@ -2563,6 +2810,84 @@ Writes exactly 8 bytes to the beginning of the span.
           <paramref name="destination" /> is too small to contain a <see cref="T:System.Double" />.</exception>
       </Docs>
     </Member>
+    <Member MemberName="WriteHalfBigEndian">
+      <MemberSignature Language="C#" Value="public static void WriteHalfBigEndian (Span&lt;byte&gt; destination, Half value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void WriteHalfBigEndian(valuetype System.Span`1&lt;unsigned int8&gt; destination, valuetype System.Half value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Buffers.Binary.BinaryPrimitives.WriteHalfBigEndian(System.Span{System.Byte},System.Half)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub WriteHalfBigEndian (destination As Span(Of Byte), value As Half)" />
+      <MemberSignature Language="F#" Value="static member WriteHalfBigEndian : Span&lt;byte&gt; * Half -&gt; unit" Usage="System.Buffers.Binary.BinaryPrimitives.WriteHalfBigEndian (destination, value)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void WriteHalfBigEndian(Span&lt;System::Byte&gt; destination, Half value);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Memory</AssemblyName>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="destination" Type="System.Span&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-6.0" />
+        <Parameter Name="value" Type="System.Half" Index="1" FrameworkAlternate="net-6.0" />
+      </Parameters>
+      <Docs>
+        <param name="destination">The span of bytes where the value is to be written, as big endian.</param>
+        <param name="value">The value to write into the span of bytes.</param>
+        <summary>Writes a <see cref="T:System.Half" /> into a span of bytes, as big endian.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks
+
+Writes exactly 2 bytes to the beginning of the span.
+
+          ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="destination" /> is too small to contain a <see cref="T:System.Half" />.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteHalfLittleEndian">
+      <MemberSignature Language="C#" Value="public static void WriteHalfLittleEndian (Span&lt;byte&gt; destination, Half value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void WriteHalfLittleEndian(valuetype System.Span`1&lt;unsigned int8&gt; destination, valuetype System.Half value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Buffers.Binary.BinaryPrimitives.WriteHalfLittleEndian(System.Span{System.Byte},System.Half)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub WriteHalfLittleEndian (destination As Span(Of Byte), value As Half)" />
+      <MemberSignature Language="F#" Value="static member WriteHalfLittleEndian : Span&lt;byte&gt; * Half -&gt; unit" Usage="System.Buffers.Binary.BinaryPrimitives.WriteHalfLittleEndian (destination, value)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void WriteHalfLittleEndian(Span&lt;System::Byte&gt; destination, Half value);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Memory</AssemblyName>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="destination" Type="System.Span&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-6.0" />
+        <Parameter Name="value" Type="System.Half" Index="1" FrameworkAlternate="net-6.0" />
+      </Parameters>
+      <Docs>
+        <param name="destination">The span of bytes where the value is to be written, as little endian.</param>
+        <param name="value">The value to write into the span of bytes.</param>
+        <summary>Writes a <see cref="T:System.Half" /> into a span of bytes, as little endian.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks
+
+Writes exactly 2 bytes to the beginning of the span.
+
+          ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="destination" /> is too small to contain a <see cref="T:System.Half" />.</exception>
+      </Docs>
+    </Member>
     <Member MemberName="WriteInt16BigEndian">
       <MemberSignature Language="C#" Value="public static void WriteInt16BigEndian (Span&lt;byte&gt; destination, short value);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void WriteInt16BigEndian(valuetype System.Span`1&lt;unsigned int8&gt; destination, int16 value) cil managed" />
@@ -2573,11 +2898,11 @@ Writes exactly 8 bytes to the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -2617,11 +2942,11 @@ Writes exactly 2 bytes to the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -2661,11 +2986,11 @@ Writes exactly 2 bytes to the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -2705,11 +3030,11 @@ Writes exactly 4 bytes to the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -2749,11 +3074,11 @@ Writes exactly 4 bytes to the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -2793,11 +3118,11 @@ Writes exactly 8 bytes to the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -2838,6 +3163,7 @@ Writes exactly 8 bytes to the beginning of the span.
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -2846,8 +3172,8 @@ Writes exactly 8 bytes to the beginning of the span.
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="destination" Type="System.Span&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-5.0" />
-        <Parameter Name="value" Type="System.Single" Index="1" FrameworkAlternate="net-5.0" />
+        <Parameter Name="destination" Type="System.Span&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-5.0;net-6.0" />
+        <Parameter Name="value" Type="System.Single" Index="1" FrameworkAlternate="net-5.0;net-6.0" />
       </Parameters>
       <Docs>
         <param name="destination">The span of bytes where the value is to be written, as big endian.</param>
@@ -2877,6 +3203,7 @@ Writes exactly 4 bytes to the beginning of the span.
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -2885,8 +3212,8 @@ Writes exactly 4 bytes to the beginning of the span.
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="destination" Type="System.Span&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-5.0" />
-        <Parameter Name="value" Type="System.Single" Index="1" FrameworkAlternate="net-5.0" />
+        <Parameter Name="destination" Type="System.Span&lt;System.Byte&gt;" Index="0" FrameworkAlternate="net-5.0;net-6.0" />
+        <Parameter Name="value" Type="System.Single" Index="1" FrameworkAlternate="net-5.0;net-6.0" />
       </Parameters>
       <Docs>
         <param name="destination">The span of bytes where the value is to be written, as little endian.</param>
@@ -2915,11 +3242,11 @@ Writes exactly 4 bytes to the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -2965,11 +3292,11 @@ Writes exactly 2 bytes to the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -3015,11 +3342,11 @@ Writes exactly 2 bytes to the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -3065,11 +3392,11 @@ Writes exactly 4 bytes to the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -3115,11 +3442,11 @@ Writes exactly 4 bytes to the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -3165,11 +3492,11 @@ Writes exactly 8 bytes to the beginning of the span.
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Memory</AssemblyName>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <AssemblyVersion>4.2.1.0</AssemblyVersion>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
+        <AssemblyVersion>6.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>

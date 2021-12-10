@@ -42,7 +42,10 @@
             Base class used for tasks that spawn an executable. This class implements the ToolPath property which can be used to
             override the default path.
             </summary>
-    <remarks>To be added.</remarks>
+    <remarks>
+            INTERNAL WARNING: DO NOT USE the Log property in this class! Log points to resources in the task assembly itself, and 
+            we want to use resources from Utilities. Use LogPrivate (for private Utilities resources) and LogShared (for shared MSBuild resources)
+            </remarks>
   </Docs>
   <Members>
     <MemberGroup MemberName=".ctor">
@@ -648,8 +651,8 @@ abstract class CustomToolTask : ToolTask
 ## Examples  
  The following example creates a <xref:Microsoft.Build.Utilities.ToolTask> that runs [Ilasm.exe (IL Assembler)](/dotnet/framework/tools/ilasm-exe-il-assembler). The <xref:Microsoft.Build.Utilities.CommandLineBuilder>, <xref:Microsoft.Build.Utilities.ToolLocationHelper>, and <xref:Microsoft.Build.Utilities.TaskLoggingHelper> classes are used to generate the information needed to run the task.  
   
- [!code-csharp[msbuild_ToolTask#1](~/samples/snippets/csharp/VS_Snippets_Misc/msbuild_ToolTask/CS/ILAsm.cs#1)]
- [!code-vb[msbuild_ToolTask#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/msbuild_ToolTask/VB/ILAsm.vb#1)]  
+ :::code language="csharp" source="~/samples/snippets/csharp/VS_Snippets_Misc/msbuild_ToolTask/CS/ILAsm.cs" id="Snippet1":::
+ :::code language="vb" source="~/samples/snippets/visualbasic/VS_Snippets_Misc/msbuild_ToolTask/VB/ILAsm.vb" id="Snippet1":::  
   
  ]]></format>
         </remarks>
@@ -700,8 +703,8 @@ abstract class CustomToolTask : ToolTask
 ## Examples  
  The following example creates a <xref:Microsoft.Build.Utilities.ToolTask> that runs [Ilasm.exe (IL Assembler)](/dotnet/framework/tools/ilasm-exe-il-assembler). The <xref:Microsoft.Build.Utilities.CommandLineBuilder>, <xref:Microsoft.Build.Utilities.ToolLocationHelper>, and <xref:Microsoft.Build.Utilities.TaskLoggingHelper> classes are used to generate the information needed to run the task.  
   
- [!code-csharp[msbuild_ToolTask#1](~/samples/snippets/csharp/VS_Snippets_Misc/msbuild_ToolTask/CS/ILAsm.cs#1)]
- [!code-vb[msbuild_ToolTask#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/msbuild_ToolTask/VB/ILAsm.vb#1)]  
+ :::code language="csharp" source="~/samples/snippets/csharp/VS_Snippets_Misc/msbuild_ToolTask/CS/ILAsm.cs" id="Snippet1":::
+ :::code language="vb" source="~/samples/snippets/visualbasic/VS_Snippets_Misc/msbuild_ToolTask/VB/ILAsm.vb" id="Snippet1":::  
   
  ]]></format>
         </remarks>
@@ -1788,8 +1791,8 @@ abstract class CustomToolTask : ToolTask
 ## Examples  
  The following example creates a <xref:Microsoft.Build.Utilities.ToolTask> that runs [Ilasm.exe (IL Assembler)](/dotnet/framework/tools/ilasm-exe-il-assembler). The <xref:Microsoft.Build.Utilities.CommandLineBuilder>, <xref:Microsoft.Build.Utilities.ToolLocationHelper>, and <xref:Microsoft.Build.Utilities.TaskLoggingHelper> classes are used to generate the information needed to run the task.  
   
- [!code-csharp[msbuild_ToolTask#1](~/samples/snippets/csharp/VS_Snippets_Misc/msbuild_ToolTask/CS/ILAsm.cs#1)]
- [!code-vb[msbuild_ToolTask#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/msbuild_ToolTask/VB/ILAsm.vb#1)]  
+ :::code language="csharp" source="~/samples/snippets/csharp/VS_Snippets_Misc/msbuild_ToolTask/CS/ILAsm.cs" id="Snippet1":::
+ :::code language="vb" source="~/samples/snippets/visualbasic/VS_Snippets_Misc/msbuild_ToolTask/VB/ILAsm.vb" id="Snippet1":::  
   
  ]]></format>
         </remarks>
@@ -1876,6 +1879,32 @@ abstract class CustomToolTask : ToolTask
             </summary>
         <value>
           <see langword="true" /> if the tool task will create a batch file for the command-line and execute that using the command-processor; <see langword="false" /> if the tool task will execute the command directly.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseUtf8Encoding">
+      <MemberSignature Language="C#" Value="public string UseUtf8Encoding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UseUtf8Encoding" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Utilities.ToolTask.UseUtf8Encoding" />
+      <MemberSignature Language="VB.NET" Value="Public Property UseUtf8Encoding As String" />
+      <MemberSignature Language="F#" Value="member this.UseUtf8Encoding : string with get, set" Usage="Microsoft.Build.Utilities.ToolTask.UseUtf8Encoding" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ UseUtf8Encoding { System::String ^ get(); void set(System::String ^ value); };" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.Core</AssemblyName>
+        <AssemblyVersion>15.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Whether or not to use UTF8 encoding for the cmd file and console window.
+            Values: Always, Never, Detect
+            If set to Detect, the current code page will be used unless it cannot represent 
+            the Command string. In that case, UTF-8 is used.
+            </summary>
+        <value>To be added.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
