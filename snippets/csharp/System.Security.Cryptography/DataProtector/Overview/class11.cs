@@ -54,7 +54,6 @@ namespace System.Security.Cryptography
         // Public constructor
         // The Demand for DataProtectionPermission is in the constructor because we Assert this permission
         // in the ProviderProtect/ProviderUnprotect methods.
-        [DataProtectionPermission(SecurityAction.Demand, Unrestricted = true)]
         [SecuritySafeCritical]
         public MemoryProtector(string appName, string primaryPurpose, params string[] specificPurpose)
             : base(appName, primaryPurpose, specificPurpose)

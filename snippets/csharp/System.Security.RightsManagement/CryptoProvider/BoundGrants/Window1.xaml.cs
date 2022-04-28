@@ -536,7 +536,6 @@ namespace SdkSample
         ///   Returns the email address of the current user log-in.</summary>
         /// <returns>
         ///   The email address of the current user.</returns>
-        [SecurityPermissionAttribute(SecurityAction.Demand, Flags = SecurityPermissionFlag.UnmanagedCode)]
         static internal string GetDefaultWindowsUserName()
         {
             // Get the identity of the currently logged in user.

@@ -8,7 +8,6 @@ using System.Collections;
 using System.Net;
 using System.Reflection;
 using System.Security;
-using System.Security.Permissions;
 using System.Security.Policy;
 using System.Security.Principal;
 using System.Threading;
@@ -19,7 +18,6 @@ using System.Runtime.Hosting;
 namespace MyNamespace
 {
     [Serializable()]
-    [SecurityPermissionAttribute(SecurityAction.Demand, Flags = SecurityPermissionFlag.Infrastructure)]
     public class MySecurityManager : HostSecurityManager
     {
         public MySecurityManager()
@@ -63,8 +61,6 @@ namespace MyNamespace
         //</Snippet6>
 
         //<Snippet3>
-        [SecurityPermissionAttribute(SecurityAction.Demand, Execution = true)]
-        [SecurityPermissionAttribute(SecurityAction.Assert, Unrestricted = true)]
         public override ApplicationTrust DetermineApplicationTrust(Evidence applicationEvidence, Evidence activatorEvidence, TrustManagerContext context)
         {
             if (applicationEvidence == null)

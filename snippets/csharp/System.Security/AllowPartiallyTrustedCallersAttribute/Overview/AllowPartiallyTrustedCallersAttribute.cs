@@ -56,8 +56,7 @@ namespace UserControl
 		private System.ComponentModel.Container components = null;
 
               // Demand the zone requirement for the calling application.
-              [ZoneIdentityPermission(SecurityAction.Demand, Zone = SecurityZone.Intranet)]
-		public UserControl1()
+              public UserControl1()
 		{
 			// This call is required by the Windows.Forms Form Designer.
 			InitializeComponent();
