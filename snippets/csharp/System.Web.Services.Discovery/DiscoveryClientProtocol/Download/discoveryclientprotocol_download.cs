@@ -21,7 +21,6 @@ class DiscoveryClientProtocol_Download
       Run();
    }
 
-   [PermissionSetAttribute(SecurityAction.Demand, Name="FullTrust")]
    static void Run()
    {
 // <Snippet1>

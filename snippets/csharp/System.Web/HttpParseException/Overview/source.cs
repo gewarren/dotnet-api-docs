@@ -35,7 +35,6 @@ namespace Samples.AspNet.CS
     // Define a custom HtmlSelectBuilder.
     public class MyHtmlSelectBuilderWithparseException : HtmlSelectBuilder
     {
-        [AspNetHostingPermission(SecurityAction.Demand, Level = AspNetHostingPermissionLevel.Minimal)]
         public override Type GetChildControlType(string tagName, IDictionary attribs)
         {
             // Distinguish between two possible types of child controls.

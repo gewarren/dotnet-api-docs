@@ -23,7 +23,6 @@ class DiscoveryDocumentReference_Document_ResolveAll
       Run();
    }
 
-   [PermissionSetAttribute(SecurityAction.Demand, Name="FullTrust")]
    static void Run()
    {
       try

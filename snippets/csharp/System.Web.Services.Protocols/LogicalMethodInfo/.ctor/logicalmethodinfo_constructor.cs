@@ -39,7 +39,6 @@ public class MyService
 
 class LogicalMethodInfo_Constructor
 {
-   [PermissionSetAttribute(SecurityAction.Demand, Name="FullTrust")]
    static void Run()
    {
       Type myType = typeof(MyService);

@@ -1,9 +1,4 @@
-﻿
-using System.Security.Permissions;
-
-[assembly: SecurityPermission(
-   SecurityAction.RequestMinimum, Execution = true)]
-//<snippet1>
+﻿//<snippet1>
 namespace KnownTypeAttributeExample
 {
     using System;

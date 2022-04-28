@@ -12,7 +12,6 @@ public class Import {
         Run();
     }
 
-    [PermissionSetAttribute(SecurityAction.Demand, Name = "Full Trust")]
     public static void Run()
     {
     // Get a WSDL file describing a service.

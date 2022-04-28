@@ -1,5 +1,4 @@
 ﻿//
-using System.Security.Permissions;
 using System;
 using System.ServiceModel;
 using System.ServiceModel.Description;
@@ -7,11 +6,8 @@ using System.IO;
 using System.IdentityModel.Claims;
 //
 
-[assembly: SecurityPermission(
-   SecurityAction.RequestMinimum, Execution = true)]
 namespace Samples
 {
-
     public class Calculator
     {
         //

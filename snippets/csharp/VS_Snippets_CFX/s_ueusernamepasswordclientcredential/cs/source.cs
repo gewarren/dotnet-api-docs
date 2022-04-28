@@ -2,15 +2,11 @@
 using System.ServiceModel;
 using System.Text;
 using System.IO;
-using System.Security.Permissions;
 
-[assembly: SecurityPermission(
-   SecurityAction.RequestMinimum, Execution = true)]
 namespace Stuff
 {
     public sealed class Test
     {
-
         private Test(){}
 
         public static void Main()

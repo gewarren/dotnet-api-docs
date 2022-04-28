@@ -21,7 +21,6 @@ class DiscoveryClientDocumentCollectionSample
       Run();
    }
 
-   [PermissionSetAttribute(SecurityAction.Demand, Name="FullTrust")]
    static void Run()
    {
       DiscoveryClientProtocol myDiscoveryClientProtocol =

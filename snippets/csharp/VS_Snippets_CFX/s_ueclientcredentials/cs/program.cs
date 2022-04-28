@@ -3,9 +3,6 @@
 // References:
 //   System.ServiceModel
 //
-// History:
-//   06-21-2006 a-arhu created
-//
 /*
     //Example
     //The following code shows how you can use this property to configure the X.509 certificate.
@@ -43,11 +40,9 @@ using System.Collections.ObjectModel;
 using System.Security.Cryptography.X509Certificates;
 using System.ServiceModel;
 using System.Runtime.Serialization;
-using System.Security.Permissions;
 using System.Security.Principal;
 //</snippet0>
-[assembly: SecurityPermission(
-   SecurityAction.RequestMinimum, Execution = true)]
+
 namespace Microsoft.Security.Samples
 {    internal class Service
     {

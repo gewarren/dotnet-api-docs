@@ -2,7 +2,6 @@
 using System;
 using System.CodeDom;
 using System.CodeDom.Compiler;
-using System.Security.Permissions;
 using System.Web.Services;
 using System.Web.Services.Description;
 using System.Web.Services.Discovery;
@@ -11,8 +10,6 @@ using System.Xml.Serialization;
 
 class Test
 {
-
-    [SecurityPermissionAttribute(SecurityAction.Demand, Unrestricted=true)]
     static void Run(){
 
    // Get a WSDL file describing a service.

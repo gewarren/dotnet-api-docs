@@ -21,7 +21,6 @@ class DiscoverySoapBindingClass
       Run();
    }
 
-   [PermissionSetAttribute(SecurityAction.Demand, Name="FullTrust")]
    static void Run()
    {
         try

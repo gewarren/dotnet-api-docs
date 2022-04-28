@@ -13,7 +13,6 @@
 */
 
 using System;
-using System.Security.Permissions;
 using System.Web.Services.Description;
 using System.CodeDom;
 
@@ -27,7 +26,6 @@ public class ServiceDescriptionImportWarnings_Enum
       DisplayWarning("ServiceDescriptionImportWarnings_OptionalExtensionsIgnored.wsdl");
    }
 
-   [SecurityPermissionAttribute(SecurityAction.Demand, Unrestricted=true)]
    public static void DisplayWarning(string myWSDLFileName)
    {
 // <Snippet1>

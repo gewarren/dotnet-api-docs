@@ -126,7 +126,6 @@ public class YMLExtension : SoapExtension {
 }
 // The YMLReflector class is part of the YML SDFE, as it is
 // called during the service description generation process.
-[PermissionSet(SecurityAction.Demand, Name="FullTrust")]
 public class YMLReflector : SoapExtensionReflector
 {
     public override void ReflectMethod()
@@ -151,7 +150,6 @@ public class YMLReflector : SoapExtensionReflector
 // communicates with. The class checks whether the service description
 // contains the XML that this SDFE adds to a service description. If it
 // exists, then the YMLExtension is applied to the method in the proxy class.
-[PermissionSet(SecurityAction.Demand, Name="FullTrust")]
 public class YMLImporter : SoapExtensionImporter
 {
     public override void ImportMethod(

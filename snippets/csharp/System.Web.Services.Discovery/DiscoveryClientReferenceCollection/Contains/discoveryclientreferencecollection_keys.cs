@@ -22,7 +22,6 @@ class DiscoveryClientReferenceCollection_Keys
       Run();
    }
 
-   [PermissionSetAttribute(SecurityAction.Demand, Name="FullTrust")]
    static void Run()
    {
 // <Snippet1>
