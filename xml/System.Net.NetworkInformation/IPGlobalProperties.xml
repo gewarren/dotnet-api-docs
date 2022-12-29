@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Type Name="IPGlobalProperties" FullName="System.Net.NetworkInformation.IPGlobalProperties">
   <TypeSignature Language="C#" Value="public abstract class IPGlobalProperties" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit IPGlobalProperties extends System.Object" />
@@ -1190,18 +1191,18 @@
       <Docs>
         <summary>Retrieves the stable unicast IP address table on the local computer as an asynchronous operation.</summary>
         <returns>The task object representing the asynchronous operation.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
  In order to support outbound connections or to accept incoming connections on a Teredo interface, applications need to ensure that the Teredo interface is up and ready for use. This is because Teredo can go into a dormant state when not used for some period of time.  
   
- The <xref:System.Net.NetworkInformation.IPGlobalProperties.GetUnicastAddressesAsync%2A> method will allow an application to retrieve the list of stable unicast IP addresses as asynchronous operation. The <xref:System.Net.IPAddress.IsIPv6Teredo%2A?displayProperty=nameWithType> property can be used to determine if an IP address is an IPv6 Teredo address with the prefix of 2001::/32.  
+ The &lt;xref:System.Net.NetworkInformation.IPGlobalProperties.GetUnicastAddressesAsync%2A&gt; method will allow an application to retrieve the list of stable unicast IP addresses as asynchronous operation. The &lt;xref:System.Net.IPAddress.IsIPv6Teredo%2A?displayProperty=nameWithType&gt; property can be used to determine if an IP address is an IPv6 Teredo address with the prefix of 2001::/32.  
   
- The <xref:System.Net.NetworkInformation.IPGlobalProperties.GetUnicastAddresses%2A> method also returns non-Teredo addresses and provides a more convenient way to obtain the unicast IP addresses for a system than enumerating all the <xref:System.Net.NetworkInformation.NetworkInterface?displayProperty=nameWithType> objects on a local computer and querying the associated IP addresses.  
+ The &lt;xref:System.Net.NetworkInformation.IPGlobalProperties.GetUnicastAddresses%2A&gt; method also returns non-Teredo addresses and provides a more convenient way to obtain the unicast IP addresses for a system than enumerating all the &lt;xref:System.Net.NetworkInformation.NetworkInterface?displayProperty=nameWithType&gt; objects on a local computer and querying the associated IP addresses.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Net.NetworkInformation.IPGlobalProperties.GetUnicastAddresses>.</remarks>
         <exception cref="T:System.Net.NetworkInformation.NetworkInformationException">The call to the native <see langword="GetAdaptersAddresses" /> function failed.</exception>
         <exception cref="T:System.Security.SecurityException">The caller does not have necessary <see cref="F:System.Net.NetworkInformation.NetworkInformationAccess.Read" /> permission.</exception>
         <exception cref="T:System.ComponentModel.Win32Exception">The call to the native <see langword="NotifyStableUnicastIpAddressTable" /> function failed.</exception>

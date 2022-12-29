@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Type Name="TextReader" FullName="System.IO.TextReader">
   <TypeSignature Language="C#" Value="public abstract class TextReader : IDisposable" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit TextReader extends System.Object implements class System.IDisposable" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netstandard-1.0;netstandard-1.1;netstandard-1.2;netstandard-1.3;netstandard-1.4;netstandard-1.5;netstandard-1.6" />
@@ -729,7 +730,7 @@
         <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None" />.</param>
         <summary>Asynchronously reads the characters from the current stream into a memory block.</summary>
         <returns>A value task that represents the asynchronous read operation. The value of the type parameter contains the number of characters that have been read, or 0 if at the end of the stream and no data was read. The number will be less than or equal to the <paramref name="buffer" /> length, depending on whether the data is available within the stream.</returns>
-        <remarks>To be added.</remarks>
+        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.IO.TextReader.Read(System.Memory{System.Char},System.Threading.CancellationToken)>.</remarks>
       </Docs>
     </Member>
     <Member MemberName="ReadAsync">
@@ -788,16 +789,16 @@
         <param name="count">The maximum number of characters to read. If the end of the text is reached before the specified number of characters is read into the buffer, the current method returns.</param>
         <summary>Reads a specified maximum number of characters from the current text reader asynchronously and writes the data to a buffer, beginning at the specified index.</summary>
         <returns>A task that represents the asynchronous read operation. The value of the <paramref name="TResult" /> parameter contains the total number of bytes read into the buffer. The result value can be less than the number of bytes requested if the number of bytes currently available is less than the requested number, or it can be 0 (zero) if the end of the text has been reached.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
  The task completes after either the number of characters specified by the `count` parameter are read or the end of the file is reached.  
   
- The <xref:System.IO.TextReader> class is an abstract class. Therefore, you do not instantiate it in your code. For an example of using the <xref:System.IO.TextReader.ReadAsync%2A> method, see the <xref:System.IO.StreamReader.ReadAsync%2A?displayProperty=nameWithType> method.  
+ The &lt;xref:System.IO.TextReader&gt; class is an abstract class. Therefore, you do not instantiate it in your code. For an example of using the &lt;xref:System.IO.TextReader.ReadAsync%2A&gt; method, see the &lt;xref:System.IO.StreamReader.ReadAsync%2A?displayProperty=nameWithType&gt; method.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.IO.TextReader.Read(System.Char[],System.Int32,System.Int32)>.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="buffer" /> is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">
@@ -974,7 +975,7 @@
         <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None" />.</param>
         <summary>Asynchronously reads the characters from the current stream and writes the data to a buffer.</summary>
         <returns>A value task that represents the asynchronous read operation. The value of the type parameter contains the total number of characters read into the buffer. The result value can be less than the number of characters requested if the number of characters currently available is less than the requested number, or it can be 0 (zero) if the end of the stream has been reached.</returns>
-        <remarks>To be added.</remarks>
+        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.IO.TextReader.ReadBlock(System.Memory{System.Char},System.Threading.CancellationToken)>.</remarks>
       </Docs>
     </Member>
     <Member MemberName="ReadBlockAsync">
@@ -1033,14 +1034,14 @@
         <param name="count">The maximum number of characters to read. If the end of the text is reached before the specified number of characters is read into the buffer, the current method returns.</param>
         <summary>Reads a specified maximum number of characters from the current text reader asynchronously and writes the data to a buffer, beginning at the specified index.</summary>
         <returns>A task that represents the asynchronous read operation. The value of the <paramref name="TResult" /> parameter contains the total number of bytes read into the buffer. The result value can be less than the number of bytes requested if the number of bytes currently available is less than the requested number, or it can be 0 (zero) if the end of the text has been reached.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
  The task does not complete until either the number of characters specified by the `count` parameter are read, or the end of the text has been reached.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.IO.TextReader.ReadBlock(System.Char[],System.Int32,System.Int32)>.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="buffer" /> is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">
@@ -1176,16 +1177,16 @@
       <Docs>
         <summary>Reads a line of characters asynchronously and returns the data as a string.</summary>
         <returns>A task that represents the asynchronous read operation. The value of the <paramref name="TResult" /> parameter contains the next line from the text reader, or is <see langword="null" /> if all of the characters have been read.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- The <xref:System.IO.TextReader> class is an abstract class. Therefore, you do not instantiate it in your code. For an example of using the <xref:System.IO.TextReader.ReadLineAsync%2A> method, see the <xref:System.IO.StreamReader.ReadLineAsync%2A?displayProperty=nameWithType> method.  
+ The &lt;xref:System.IO.TextReader&gt; class is an abstract class. Therefore, you do not instantiate it in your code. For an example of using the &lt;xref:System.IO.TextReader.ReadLineAsync%2A&gt; method, see the &lt;xref:System.IO.StreamReader.ReadLineAsync%2A?displayProperty=nameWithType&gt; method.  
   
- If the current <xref:System.IO.TextReader> represents the standard input stream returned by the <xref:System.Console.In%2A?displayProperty=nameWithType> property, the <xref:System.IO.TextReader.ReadLineAsync%2A> method executes synchronously rather than asynchronously.  
+ If the current &lt;xref:System.IO.TextReader&gt; represents the standard input stream returned by the &lt;xref:System.Console.In%2A?displayProperty=nameWithType&gt; property, the &lt;xref:System.IO.TextReader.ReadLineAsync%2A&gt; method executes synchronously rather than asynchronously.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.IO.TextReader.ReadLine>.</remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">The number of characters in the next line is larger than <see cref="F:System.Int32.MaxValue">Int32.MaxValue</see>.</exception>
         <exception cref="T:System.ObjectDisposedException">The text reader has been disposed.</exception>
         <exception cref="T:System.InvalidOperationException">The reader is currently in use by a previous read operation.</exception>
@@ -1231,20 +1232,20 @@
         <summary>Reads a line of characters asynchronously and returns the data as a string.</summary>
         <returns>A value task that represents the asynchronous read operation. The value of the <c>TResult</c> parameter contains the next line from the text reader, or is <see langword="null" /> if all of the characters have been read.</returns>
         <remarks>
-          <format type="text/markdown"><![CDATA[
 
 ## Remarks
 
-The <xref:System.IO.TextReader> class is an abstract class. Therefore, you do not instantiate it in
-            your code. For an example of using the <xref:System.IO.TextReader.ReadLineAsync(System.Threading.CancellationToken)> method, see the
-            <xref:System.IO.StreamReader.ReadLineAsync(System.Threading.CancellationToken)> method.
+The &lt;xref:System.IO.TextReader&gt; class is an abstract class. Therefore, you do not instantiate it in
+            your code. For an example of using the &lt;xref:System.IO.TextReader.ReadLineAsync(System.Threading.CancellationToken)&gt; method, see the
+            &lt;xref:System.IO.StreamReader.ReadLineAsync(System.Threading.CancellationToken)&gt; method.
 
-If the current <xref:System.IO.TextReader> represents the standard input stream returned by
-            the `Console.In` property, the <xref:System.IO.TextReader.ReadLineAsync(System.Threading.CancellationToken)> method
+If the current &lt;xref:System.IO.TextReader&gt; represents the standard input stream returned by
+            the `Console.In` property, the &lt;xref:System.IO.TextReader.ReadLineAsync(System.Threading.CancellationToken)&gt; method
             executes synchronously rather than asynchronously.
 
-          ]]></format>
-        </remarks>
+          
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.IO.TextReader.ReadLine(System.Threading.CancellationToken)>.</remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">The number of characters in the next line is larger than <see cref="F:System.Int32.MaxValue">Int32.MaxValue</see>.</exception>
         <exception cref="T:System.ObjectDisposedException">The text reader has been disposed.</exception>
         <exception cref="T:System.InvalidOperationException">The reader is currently in use by a previous read operation.</exception>
@@ -1371,14 +1372,14 @@ If the current <xref:System.IO.TextReader> represents the standard input stream 
       <Docs>
         <summary>Reads all characters from the current position to the end of the text reader asynchronously and returns them as one string.</summary>
         <returns>A task that represents the asynchronous read operation. The value of the <paramref name="TResult" /> parameter contains a string with the characters from the current position to the end of the text reader.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- The <xref:System.IO.TextReader> class is an abstract class. Therefore, you do not instantiate it in your code. For an example of using the <xref:System.IO.TextReader.ReadToEndAsync%2A> method, see the <xref:System.IO.StreamReader.ReadToEndAsync%2A?displayProperty=nameWithType> method.  
+ The &lt;xref:System.IO.TextReader&gt; class is an abstract class. Therefore, you do not instantiate it in your code. For an example of using the &lt;xref:System.IO.TextReader.ReadToEndAsync%2A&gt; method, see the &lt;xref:System.IO.StreamReader.ReadToEndAsync%2A?displayProperty=nameWithType&gt; method.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.IO.TextReader.ReadToEnd>.</remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">The number of characters is larger than <see cref="F:System.Int32.MaxValue">Int32.MaxValue</see>.</exception>
         <exception cref="T:System.ObjectDisposedException">The text reader has been disposed.</exception>
         <exception cref="T:System.InvalidOperationException">The reader is currently in use by a previous read operation.</exception>
@@ -1424,16 +1425,16 @@ If the current <xref:System.IO.TextReader> represents the standard input stream 
         <summary>Reads all characters from the current position to the end of the text reader asynchronously and returns them as one string.</summary>
         <returns>A task that represents the asynchronous read operation. The value of the <c>TResult</c> parameter contains a string with the characters from the current position to the end of the text reader.</returns>
         <remarks>
-          <format type="text/markdown"><![CDATA[
 
 ## Remarks
 
-The <xref:System.IO.TextReader> class is an abstract class. Therefore, you do not instantiate it in
-            your code. For an example of using the <xref:System.IO.TextReader.ReadToEndAsync(System.Threading.CancellationToken)> method, see the
-            <xref:System.IO.StreamReader.ReadToEndAsync(System.Threading.CancellationToken)> method.
+The &lt;xref:System.IO.TextReader&gt; class is an abstract class. Therefore, you do not instantiate it in
+            your code. For an example of using the &lt;xref:System.IO.TextReader.ReadToEndAsync(System.Threading.CancellationToken)&gt; method, see the
+            &lt;xref:System.IO.StreamReader.ReadToEndAsync(System.Threading.CancellationToken)&gt; method.
 
-          ]]></format>
-        </remarks>
+          
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.IO.TextReader.ReadToEnd(System.Threading.CancellationToken)>.</remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">The number of characters is larger than <see cref="F:System.Int32.MaxValue">Int32.MaxValue</see>.</exception>
         <exception cref="T:System.ObjectDisposedException">The text reader has been disposed.</exception>
         <exception cref="T:System.InvalidOperationException">The reader is currently in use by a previous read operation.</exception>

@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Type Name="DynamicDocumentPaginator" FullName="System.Windows.Documents.DynamicDocumentPaginator">
   <TypeSignature Language="C#" Value="public abstract class DynamicDocumentPaginator : System.Windows.Documents.DocumentPaginator" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DynamicDocumentPaginator extends System.Windows.Documents.DocumentPaginator" />
@@ -179,16 +180,16 @@
       <Docs>
         <param name="contentPosition">The content position whose page number is needed.</param>
         <summary>Asynchronously, returns (through the This method raises the <see cref="E:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberCompleted" /> event) the zero-based page number of the specified <see cref="T:System.Windows.Documents.ContentPosition" />.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- The only way to cancel the asynchronous operation of this method is to cancel all asynchronous operations. Contrast this with the other overload of this method: <xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberAsync%28System.Windows.Documents.ContentPosition%2CSystem.Object%29>.  
+ The only way to cancel the asynchronous operation of this method is to cancel all asynchronous operations. Contrast this with the other overload of this method: &lt;xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberAsync%28System.Windows.Documents.ContentPosition%2CSystem.Object%29&gt;.  
   
- This method raises the <xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberCompleted> event. The page number is passed to the event as one of the event arguments. See <xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberAsync%28System.Windows.Documents.ContentPosition%2CSystem.Object%29> for how to use this method to get the page number.  
+ This method raises the &lt;xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberCompleted&gt; event. The page number is passed to the event as one of the event arguments. See &lt;xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberAsync%28System.Windows.Documents.ContentPosition%2CSystem.Object%29&gt; for how to use this method to get the page number.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumber(System.Windows.Documents.ContentPosition)>.</remarks>
       </Docs>
     </Member>
     <Member MemberName="GetPageNumberAsync">
@@ -218,30 +219,30 @@
         <param name="contentPosition">The content position element to return the page number of.</param>
         <param name="userState">A unique identifier for the asynchronous task.</param>
         <summary>Asynchronously, returns (through the This method raises the <see cref="E:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberCompleted" /> event) the zero-based page number of the specified <see cref="T:System.Windows.Documents.ContentPosition" />.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
  This overload of the method makes it possible to cancel this asynchronous operation without cancelling all asynchronous operations.  
   
- This method raises the <xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberCompleted> event.  
+ This method raises the &lt;xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberCompleted&gt; event.  
   
  The following steps illustrate how to retrieve the page number of a given `contentPosition` asynchronously.  
   
-1.  Create a <xref:System.Windows.Documents.GetPageNumberCompletedEventHandler> delegate and add it to be notified of <xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberCompleted> events.  
+1.  Create a &lt;xref:System.Windows.Documents.GetPageNumberCompletedEventHandler&gt; delegate and add it to be notified of &lt;xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberCompleted&gt; events.  
   
-2.  Call <xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberAsync%28System.Windows.Documents.ContentPosition%2CSystem.Object%29> specifying the `contentPosition` desired and a unique `userState` object that will be used to identify the asynchronous task.  
+2.  Call &lt;xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberAsync%28System.Windows.Documents.ContentPosition%2CSystem.Object%29&gt; specifying the `contentPosition` desired and a unique `userState` object that will be used to identify the asynchronous task.  
   
-3.  When the event occurs and the delegate is called, compare the event's <xref:System.Windows.Documents.GetPageNumberCompletedEventArgs>.<xref:System.ComponentModel.AsyncCompletedEventArgs.UserState%2A> property with the original <xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberAsync%2A> `userState` parameter.  
+3.  When the event occurs and the delegate is called, compare the event's &lt;xref:System.Windows.Documents.GetPageNumberCompletedEventArgs&gt;.&lt;xref:System.ComponentModel.AsyncCompletedEventArgs.UserState%2A&gt; property with the original &lt;xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberAsync%2A&gt; `userState` parameter.  
   
-4.  When the <xref:System.Windows.Documents.GetPageNumberCompletedEventArgs>.<xref:System.ComponentModel.AsyncCompletedEventArgs.UserState%2A> property matches the original <xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberAsync%28System.Windows.Documents.ContentPosition%2CSystem.Object%29> `userState`, the operation is complete and the page number is ready.  (The <xref:System.Windows.Documents.GetPageNumberCompletedEventArgs>.<xref:System.Windows.Documents.GetPageNumberCompletedEventArgs.ContentPosition%2A> property will also match the original <xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberAsync%28System.Windows.Documents.ContentPosition%2CSystem.Object%29> `contentPosition` parameter.)  
+4.  When the &lt;xref:System.Windows.Documents.GetPageNumberCompletedEventArgs&gt;.&lt;xref:System.ComponentModel.AsyncCompletedEventArgs.UserState%2A&gt; property matches the original &lt;xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberAsync%28System.Windows.Documents.ContentPosition%2CSystem.Object%29&gt; `userState`, the operation is complete and the page number is ready.  (The &lt;xref:System.Windows.Documents.GetPageNumberCompletedEventArgs&gt;.&lt;xref:System.Windows.Documents.GetPageNumberCompletedEventArgs.ContentPosition%2A&gt; property will also match the original &lt;xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberAsync%28System.Windows.Documents.ContentPosition%2CSystem.Object%29&gt; `contentPosition` parameter.)  
   
-5.  The <xref:System.Windows.Documents.GetPageNumberCompletedEventArgs>.<xref:System.Windows.Documents.GetPageNumberCompletedEventArgs.PageNumber%2A> property contains the zero-based page number of the specified `contentPosition`.  
+5.  The &lt;xref:System.Windows.Documents.GetPageNumberCompletedEventArgs&gt;.&lt;xref:System.Windows.Documents.GetPageNumberCompletedEventArgs.PageNumber%2A&gt; property contains the zero-based page number of the specified `contentPosition`.  
   
- <xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumber%2A> provides similar functionality as <xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberAsync%2A>, but for synchronous operation.  
+ &lt;xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumber%2A&gt; provides similar functionality as &lt;xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberAsync%2A&gt;, but for synchronous operation.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumber(System.Windows.Documents.ContentPosition,System.Object)>.</remarks>
       </Docs>
     </Member>
     <Member MemberName="GetPageNumberCompleted">

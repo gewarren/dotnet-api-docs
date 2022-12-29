@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Type Name="HttpMessageHandler" FullName="System.Net.Http.HttpMessageHandler">
   <TypeSignature Language="C#" Value="public abstract class HttpMessageHandler : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit HttpMessageHandler extends System.Object implements class System.IDisposable" />
@@ -255,16 +256,16 @@ When the `disposing` parameter is `true`, this method releases all resources hel
         <param name="cancellationToken">The cancellation token to cancel operation.</param>
         <summary>Send an HTTP request as an asynchronous operation.</summary>
         <returns>The task object representing the asynchronous operation.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- This operation will not block. The returned <xref:System.Threading.Tasks.Task%601> object will complete once the entire response including content is read.  
+ This operation will not block. The returned &lt;xref:System.Threading.Tasks.Task%601&gt; object will complete once the entire response including content is read.  
   
- The <xref:System.Net.Http.HttpMessageHandler.SendAsync%2A> method is used primarily by the system. This method is called by the system when one of the  <xref:System.Net.Http.HttpClient.SendAsync%2A?displayProperty=nameWithType> methods is called. Most apps will never call this method.  
+ The &lt;xref:System.Net.Http.HttpMessageHandler.SendAsync%2A&gt; method is used primarily by the system. This method is called by the system when one of the  &lt;xref:System.Net.Http.HttpClient.SendAsync%2A?displayProperty=nameWithType&gt; methods is called. Most apps will never call this method.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Net.Http.HttpMessageHandler.Send(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)>.</remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="request" /> was <see langword="null" />.</exception>
       </Docs>
     </Member>

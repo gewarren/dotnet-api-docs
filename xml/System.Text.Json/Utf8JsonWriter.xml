@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Type Name="Utf8JsonWriter" FullName="System.Text.Json.Utf8JsonWriter">
   <TypeSignature Language="C#" Value="public sealed class Utf8JsonWriter : IAsyncDisposable, IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Utf8JsonWriter extends System.Object implements class System.IAsyncDisposable, class System.IDisposable" />
@@ -259,18 +260,18 @@ The <xref:System.Text.Json.Utf8JsonWriter> instance cannot be reused after dispo
         <summary>Asynchronously commits any leftover JSON text that has not yet been flushed and releases all resources used by the current instance.</summary>
         <returns>A task representing the asynchronous dispose operation.</returns>
         <remarks>
-          <format><![CDATA[
 
 ## Remarks
 
-In the case of IBufferWriter, this advances the underlying <xref:System.Buffers.IBufferWriter`1> based on what has been written so far.
+In the case of IBufferWriter, this advances the underlying &lt;xref:System.Buffers.IBufferWriter`1&gt; based on what has been written so far.
           
 In the case of Stream, this writes the data to the stream and flushes it.
 
-The <xref:System.Text.Json.Utf8JsonWriter> instance cannot be reused after disposing.
+The &lt;xref:System.Text.Json.Utf8JsonWriter&gt; instance cannot be reused after disposing.
 
-          ]]></format>
-        </remarks>
+          
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Text.Json.Utf8JsonWriter.Dispose>.</remarks>
       </Docs>
     </Member>
     <Member MemberName="Flush">
@@ -335,16 +336,16 @@ In the case of <xref:System.IO.Stream>, this writes the data to the stream and f
         <summary>Asynchronously commits the JSON text written so far, which makes it visible to the output destination.</summary>
         <returns>A task representing the asynchronous flush operation.</returns>
         <remarks>
-          <format><![CDATA[
 
 ## Remarks
 
-In the case of IBufferWriter, this advances the underlying <xref:System.Buffers.IBufferWriter`1> based on what has been written so far.
+In the case of IBufferWriter, this advances the underlying &lt;xref:System.Buffers.IBufferWriter`1&gt; based on what has been written so far.
 
-In the case of <xref:System.IO.Stream>, this writes the data to the stream and flushes it asynchronously, while monitoring cancellation requests.
+In the case of &lt;xref:System.IO.Stream&gt;, this writes the data to the stream and flushes it asynchronously, while monitoring cancellation requests.
 
-          ]]></format>
-        </remarks>
+          
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Text.Json.Utf8JsonWriter.Flush(System.Threading.CancellationToken)>.</remarks>
         <exception cref="T:System.ObjectDisposedException">This instance has been disposed.</exception>
       </Docs>
     </Member>

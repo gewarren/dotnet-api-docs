@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Type Name="TarFile" FullName="System.Formats.Tar.TarFile">
   <TypeSignature Language="C#" Value="public static class TarFile" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit TarFile extends System.Object" />
@@ -120,7 +121,7 @@
         <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None" />.</param>
         <summary>Asynchronously creates a tar stream that contains all the filesystem entries from the specified directory.</summary>
         <returns>A task that represents the asynchronous creation operation.</returns>
-        <remarks>To be added.</remarks>
+        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Formats.Tar.TarFile.CreateFromDirectory(System.String,System.IO.Stream,System.Boolean,System.Threading.CancellationToken)>.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="sourceDirectoryName" /> or <paramref name="destination" /> is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">
@@ -161,7 +162,7 @@
         <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None" />.</param>
         <summary>Asynchronously creates a tar archive from the contents of the specified directory, and outputs them into the specified path. Can optionally include the base directory as the prefix for the entry names.</summary>
         <returns>A task that represents the asynchronous creation operation.</returns>
-        <remarks>To be added.</remarks>
+        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Formats.Tar.TarFile.CreateFromDirectory(System.String,System.String,System.Boolean,System.Threading.CancellationToken)>.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="sourceDirectoryName" /> or <paramref name="destinationFileName" /> is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">
@@ -289,10 +290,9 @@ Extracting one of the tar entries would have resulted in a file outside the spec
         <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None" />.</param>
         <summary>Asynchronously extracts the contents of a stream that represents a tar archive into the specified directory.</summary>
         <returns>A task that represents the asynchronous extraction operation.</returns>
-        <remarks>
-          <para>Files of type <see cref="F:System.Formats.Tar.TarEntryType.BlockDevice" />, <see cref="F:System.Formats.Tar.TarEntryType.CharacterDevice" />, or <see cref="F:System.Formats.Tar.TarEntryType.Fifo" /> can only be extracted in Unix platforms.</para>
-          <para>Elevation is required to extract a <see cref="F:System.Formats.Tar.TarEntryType.BlockDevice" /> or <see cref="F:System.Formats.Tar.TarEntryType.CharacterDevice" /> to disk.</para>
-        </remarks>
+        <remarks>Files of type , , or  can only be extracted in Unix platforms.Elevation is required to extract a  or  to disk.
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Formats.Tar.TarFile.ExtractToDirectory(System.IO.Stream,System.String,System.Boolean,System.Threading.CancellationToken)>.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="source" /> or <paramref name="destinationDirectoryName" /> is <see langword="null" />.</exception>
         <exception cref="T:System.IO.DirectoryNotFoundException">The <paramref name="destinationDirectoryName" /> directory path is not found.</exception>
@@ -338,10 +338,9 @@ Extracting one of the tar entries would have resulted in a file outside the spec
         <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None" />.</param>
         <summary>Asynchronously extracts the contents of a tar file into the specified directory.</summary>
         <returns>A task that represents the asynchronous extraction operation.</returns>
-        <remarks>
-          <para>Files of type <see cref="F:System.Formats.Tar.TarEntryType.BlockDevice" />, <see cref="F:System.Formats.Tar.TarEntryType.CharacterDevice" />, or <see cref="F:System.Formats.Tar.TarEntryType.Fifo" /> can only be extracted in Unix platforms.</para>
-          <para>Elevation is required to extract a <see cref="F:System.Formats.Tar.TarEntryType.BlockDevice" /> or <see cref="F:System.Formats.Tar.TarEntryType.CharacterDevice" /> to disk.</para>
-        </remarks>
+        <remarks>Files of type , , or  can only be extracted in Unix platforms.Elevation is required to extract a  or  to disk.
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Formats.Tar.TarFile.ExtractToDirectory(System.String,System.String,System.Boolean,System.Threading.CancellationToken)>.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="sourceFileName" /> or <paramref name="destinationDirectoryName" /> is <see langword="null" />.</exception>
         <exception cref="T:System.IO.DirectoryNotFoundException">The <paramref name="destinationDirectoryName" /> directory path is not found.</exception>

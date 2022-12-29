@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Type Name="SslStream" FullName="System.Net.Security.SslStream">
   <TypeSignature Language="C#" Value="public class SslStream : System.Net.Security.AuthenticatedStream" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SslStream extends System.Net.Security.AuthenticatedStream" FrameworkAlternate="net-5.0;net-6.0;net-7.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netcore-3.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netframework-4.8.1;netstandard-2.0;netstandard-2.1" />
@@ -818,18 +819,18 @@
         <param name="targetHost">The name of the server that shares this <see cref="T:System.Net.Security.SslStream" />.</param>
         <summary>Called by clients to authenticate the server and optionally the client in a client-server connection as an asynchronous operation.</summary>
         <returns>The task object representing the asynchronous operation.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
  [!INCLUDE[sslprotocols-none](~/includes/sslprotocols-none-md.md)] No client certificates are used in the authentication. The certificate revocation list is not checked during authentication. The value specified for `targetHost` must match the name on the server's certificate.  
   
- When authentication succeeds, you must check the <xref:System.Net.Security.SslStream.IsEncrypted%2A> and <xref:System.Net.Security.SslStream.IsSigned%2A> properties to determine what security services are used by the <xref:System.Net.Security.SslStream>. Check the <xref:System.Net.Security.SslStream.IsMutuallyAuthenticated%2A> property to determine whether mutual authentication occurred.  
+ When authentication succeeds, you must check the &lt;xref:System.Net.Security.SslStream.IsEncrypted%2A&gt; and &lt;xref:System.Net.Security.SslStream.IsSigned%2A&gt; properties to determine what security services are used by the &lt;xref:System.Net.Security.SslStream&gt;. Check the &lt;xref:System.Net.Security.SslStream.IsMutuallyAuthenticated%2A&gt; property to determine whether mutual authentication occurred.  
   
- If the authentication fails, you receive a <xref:System.Security.Authentication.AuthenticationException>, and this <xref:System.Net.Security.SslStream> is no longer useable. You should close this object and remove all references to it so that it can be collected by the garbage collector.  
+ If the authentication fails, you receive a &lt;xref:System.Security.Authentication.AuthenticationException&gt;, and this &lt;xref:System.Net.Security.SslStream&gt; is no longer useable. You should close this object and remove all references to it so that it can be collected by the garbage collector.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Net.Security.SslStream.AuthenticateAsClient(System.String)>.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="targetHost" /> is <see langword="null" />.</exception>
         <exception cref="T:System.Security.Authentication.AuthenticationException">The authentication failed and left this object in an unusable state.</exception>
@@ -879,17 +880,17 @@
         <param name="cancellationToken">The token to monitor for cancellation requests.</param>
         <summary>Called by clients to authenticate the server and optionally the client in a client-server connection as an asynchronous operation. The authentication process uses information specified in the <paramref name="sslClientAuthenticationOptions" /> property bag.</summary>
         <returns>The task object representing the asynchronous operation.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
 
- When authentication succeeds, you must check the <xref:System.Net.Security.SslStream.IsEncrypted%2A> and <xref:System.Net.Security.SslStream.IsSigned%2A> properties to determine what security services are used by the <xref:System.Net.Security.SslStream>. Check the <xref:System.Net.Security.SslStream.IsMutuallyAuthenticated%2A> property to determine whether mutual authentication occurred.  
+ When authentication succeeds, you must check the &lt;xref:System.Net.Security.SslStream.IsEncrypted%2A&gt; and &lt;xref:System.Net.Security.SslStream.IsSigned%2A&gt; properties to determine what security services are used by the &lt;xref:System.Net.Security.SslStream&gt;. Check the &lt;xref:System.Net.Security.SslStream.IsMutuallyAuthenticated%2A&gt; property to determine whether mutual authentication occurred.  
   
- If the authentication fails, you receive a <xref:System.Security.Authentication.AuthenticationException>, and this <xref:System.Net.Security.SslStream> is no longer useable. You should close this object and remove all references to it so that it can be collected by the garbage collector.  
+ If the authentication fails, you receive a &lt;xref:System.Security.Authentication.AuthenticationException&gt;, and this &lt;xref:System.Net.Security.SslStream&gt; is no longer useable. You should close this object and remove all references to it so that it can be collected by the garbage collector.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Net.Security.SslStream.AuthenticateAsClient(System.Net.Security.SslClientAuthenticationOptions,System.Threading.CancellationToken)>.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="sslClientAuthenticationOptions" /> is <see langword="null" />.</exception>
         <exception cref="T:System.Security.Authentication.AuthenticationException">The authentication failed and left this object in an unusable state.</exception>
@@ -945,21 +946,21 @@
         <param name="checkCertificateRevocation">A <see cref="T:System.Boolean" /> value that specifies whether the certificate revocation list is checked during authentication.</param>
         <summary>Called by clients to authenticate the server and optionally the client in a client-server connection as an asynchronous operation. The authentication process uses the specified certificate collection and the system default SSL protocol.</summary>
         <returns>The task object representing the asynchronous operation.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
  [!INCLUDE[sslprotocols-none](~/includes/sslprotocols-none-md.md)]
  
- When authentication succeeds, you must check the <xref:System.Net.Security.SslStream.IsEncrypted%2A> and <xref:System.Net.Security.SslStream.IsSigned%2A> properties to determine what security services are used by the <xref:System.Net.Security.SslStream>. Check the <xref:System.Net.Security.SslStream.IsMutuallyAuthenticated%2A> property to determine whether mutual authentication occurred.  
+ When authentication succeeds, you must check the &lt;xref:System.Net.Security.SslStream.IsEncrypted%2A&gt; and &lt;xref:System.Net.Security.SslStream.IsSigned%2A&gt; properties to determine what security services are used by the &lt;xref:System.Net.Security.SslStream&gt;. Check the &lt;xref:System.Net.Security.SslStream.IsMutuallyAuthenticated%2A&gt; property to determine whether mutual authentication occurred.  
   
- If the authentication fails, you receive a <xref:System.Security.Authentication.AuthenticationException>, and this <xref:System.Net.Security.SslStream> is no longer useable. You should close this object and remove all references to it so that it can be collected by the garbage collector.  
+ If the authentication fails, you receive a &lt;xref:System.Security.Authentication.AuthenticationException&gt;, and this &lt;xref:System.Net.Security.SslStream&gt; is no longer useable. You should close this object and remove all references to it so that it can be collected by the garbage collector.  
   
-> [!NOTE]
->  Client certificates are not supported in the SSL version 2 protocol.  
+&gt; [!NOTE]
+&gt;  Client certificates are not supported in the SSL version 2 protocol.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Net.Security.SslStream.AuthenticateAsClient(System.String,System.Security.Cryptography.X509Certificates.X509CertificateCollection,System.Boolean)>.</remarks>
         <exception cref="T:System.Security.Authentication.AuthenticationException">The authentication failed and left this object in an unusable state.</exception>
         <exception cref="T:System.InvalidOperationException">Authentication has already occurred.  
   
@@ -1018,21 +1019,21 @@
         <param name="checkCertificateRevocation">A <see cref="T:System.Boolean" /> value that specifies whether the certificate revocation list is checked during authentication.</param>
         <summary>Called by clients to authenticate the server and optionally the client in a client-server connection as an asynchronous operation. The authentication process uses the specified certificate collection and SSL protocol.</summary>
         <returns>The task object representing the asynchronous operation.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
  [!INCLUDE[sslprotocols-none](~/includes/sslprotocols-none-md.md)]
  
- When authentication succeeds, you must check the <xref:System.Net.Security.SslStream.IsEncrypted%2A> and <xref:System.Net.Security.SslStream.IsSigned%2A> properties to determine what security services are used by the <xref:System.Net.Security.SslStream>. Check the <xref:System.Net.Security.SslStream.IsMutuallyAuthenticated%2A> property to determine whether mutual authentication occurred.  
+ When authentication succeeds, you must check the &lt;xref:System.Net.Security.SslStream.IsEncrypted%2A&gt; and &lt;xref:System.Net.Security.SslStream.IsSigned%2A&gt; properties to determine what security services are used by the &lt;xref:System.Net.Security.SslStream&gt;. Check the &lt;xref:System.Net.Security.SslStream.IsMutuallyAuthenticated%2A&gt; property to determine whether mutual authentication occurred.  
   
- If the authentication fails, you receive a <xref:System.Security.Authentication.AuthenticationException>, and this <xref:System.Net.Security.SslStream> is no longer useable. You should close this object and remove all references to it so that it can be collected by the garbage collector.  
+ If the authentication fails, you receive a &lt;xref:System.Security.Authentication.AuthenticationException&gt;, and this &lt;xref:System.Net.Security.SslStream&gt; is no longer useable. You should close this object and remove all references to it so that it can be collected by the garbage collector.  
   
-> [!NOTE]
->  Client certificates are not supported in the SSL version 2 protocol.  
+&gt; [!NOTE]
+&gt;  Client certificates are not supported in the SSL version 2 protocol.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Net.Security.SslStream.AuthenticateAsClient(System.String,System.Security.Cryptography.X509Certificates.X509CertificateCollection,System.Security.Authentication.SslProtocols,System.Boolean)>.</remarks>
         <exception cref="T:System.Security.Authentication.AuthenticationException">The authentication failed and left this object in an unusable state.</exception>
         <exception cref="T:System.InvalidOperationException">Authentication has already occurred.  
   
@@ -1368,18 +1369,18 @@
         <param name="serverCertificate">The certificate used to authenticate the server.</param>
         <summary>Called by servers to authenticate the server and optionally the client in a client-server connection using the specified certificate as an asynchronous operation.</summary>
         <returns>The task object representing the asynchronous operation.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
  [!INCLUDE[sslprotocols-none](~/includes/sslprotocols-none-md.md)]
  
- This method authenticates using <xref:System.Security.Authentication.SslProtocols.Default>. The certificate revocation list is not checked during authentication. The client is not required to provide a certificate for authentication.  
+ This method authenticates using &lt;xref:System.Security.Authentication.SslProtocols.Default&gt;. The certificate revocation list is not checked during authentication. The client is not required to provide a certificate for authentication.  
   
- If the authentication fails, you receive a <xref:System.Security.Authentication.AuthenticationException>, and this <xref:System.Net.Security.SslStream> is no longer useable. You should close this object and remove all references to it so that it can be collected by the garbage collector.  
+ If the authentication fails, you receive a &lt;xref:System.Security.Authentication.AuthenticationException&gt;, and this &lt;xref:System.Net.Security.SslStream&gt; is no longer useable. You should close this object and remove all references to it so that it can be collected by the garbage collector.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Net.Security.SslStream.AuthenticateAsServer(System.Security.Cryptography.X509Certificates.X509Certificate)>.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="serverCertificate" /> is <see langword="null" />.</exception>
         <exception cref="T:System.Security.Authentication.AuthenticationException">The authentication failed and left this object in an unusable state.</exception>
@@ -1430,15 +1431,15 @@
         <param name="cancellationToken">The token to monitor for cancellation requests.</param>
         <summary>Called by servers to authenticate the server and optionally the client in a client-server connection as an asynchronous operation. The authentication process uses information specified in the <paramref name="sslClientAuthenticationOptions" /> property bag.</summary>
         <returns>The task object representing the asynchronous operation.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
  
- If the authentication fails, you receive a <xref:System.Security.Authentication.AuthenticationException>, and this <xref:System.Net.Security.SslStream> is no longer useable. You should close this object and remove all references to it so that it can be collected by the garbage collector.  
+ If the authentication fails, you receive a &lt;xref:System.Security.Authentication.AuthenticationException&gt;, and this &lt;xref:System.Net.Security.SslStream&gt; is no longer useable. You should close this object and remove all references to it so that it can be collected by the garbage collector.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Net.Security.SslStream.AuthenticateAsServer(System.Net.Security.SslServerAuthenticationOptions,System.Threading.CancellationToken)>.</remarks>
         <exception cref="T:System.ArgumentNullException">
           Either <see cref="P:System.Net.Security.SslServerAuthenticationOptions.ServerCertificateSelectionCallback" /> or <see cref="P:System.Net.Security.SslServerAuthenticationOptions.ServerCertificate" /> or <see cref="P:System.Net.Security.SslServerAuthenticationOptions.ServerCertificateContext" /> is <see langword="null" /> and <see cref="T:System.Net.Security.LocalCertificateSelectionCallback" /> is not set in the <see langword="SslStream" /> constructor.</exception>
         <exception cref="T:System.ArgumentNullException">
@@ -1486,15 +1487,15 @@
         <param name="cancellationToken">The token to monitor for cancellation requests.</param>
         <summary>Called by servers to authenticate the server and optionally the client in a client-server connection as an asynchronous operation. The authentication process uses information returned by <paramref name="optionsCallback" />.</summary>
         <returns>The task object representing the asynchronous operation.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
  
- If the authentication fails, you receive a <xref:System.Security.Authentication.AuthenticationException>, and this <xref:System.Net.Security.SslStream> is no longer useable. You should close this object and remove all references to it so that it can be collected by the garbage collector.  
+ If the authentication fails, you receive a &lt;xref:System.Security.Authentication.AuthenticationException&gt;, and this &lt;xref:System.Net.Security.SslStream&gt; is no longer useable. You should close this object and remove all references to it so that it can be collected by the garbage collector.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Net.Security.SslStream.AuthenticateAsServer(System.Net.Security.ServerOptionsSelectionCallback,System.Object,System.Threading.CancellationToken)>.</remarks>
         <exception cref="T:System.ArgumentNullException">
           Either <see cref="P:System.Net.Security.SslServerAuthenticationOptions.ServerCertificateSelectionCallback" /> or <see cref="P:System.Net.Security.SslServerAuthenticationOptions.ServerCertificate" /> or <see cref="P:System.Net.Security.SslServerAuthenticationOptions.ServerCertificateContext" /> is <see langword="null" /> and <see cref="T:System.Net.Security.LocalCertificateSelectionCallback" /> is not set in the <see langword="SslStream" /> constructor.</exception>
         <exception cref="T:System.Security.Authentication.AuthenticationException">The authentication failed and left this object in an unusable state.</exception>
@@ -1549,16 +1550,16 @@
         <param name="checkCertificateRevocation">A <see cref="T:System.Boolean" /> value that specifies whether the certificate revocation list is checked during authentication.</param>
         <summary>Called by servers to authenticate the server and optionally the client in a client-server connection using the specified certificates, requirements and security protocol as an asynchronous operation.</summary>
         <returns>The task object representing the asynchronous operation.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
  [!INCLUDE[sslprotocols-none](~/includes/sslprotocols-none-md.md)]
  
- If the authentication fails, you receive a <xref:System.Security.Authentication.AuthenticationException>, and this <xref:System.Net.Security.SslStream> is no longer useable. You should close this object and remove all references to it so that it can be collected by the garbage collector.  
+ If the authentication fails, you receive a &lt;xref:System.Security.Authentication.AuthenticationException&gt;, and this &lt;xref:System.Net.Security.SslStream&gt; is no longer useable. You should close this object and remove all references to it so that it can be collected by the garbage collector.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Net.Security.SslStream.AuthenticateAsServer(System.Security.Cryptography.X509Certificates.X509Certificate,System.Boolean,System.Boolean)>.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="serverCertificate" /> is <see langword="null" />.</exception>
         <exception cref="T:System.Security.Authentication.AuthenticationException">The authentication failed and left this object in an unusable state.</exception>
@@ -1618,16 +1619,16 @@
         <param name="checkCertificateRevocation">A <see cref="T:System.Boolean" /> value that specifies whether the certificate revocation list is checked during authentication.</param>
         <summary>Called by servers to authenticate the server and optionally the client in a client-server connection using the specified certificates, requirements and security protocol as an asynchronous operation.</summary>
         <returns>The task object representing the asynchronous operation.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
  [!INCLUDE[sslprotocols-none](~/includes/sslprotocols-none-md.md)]
  
- If the authentication fails, you receive a <xref:System.Security.Authentication.AuthenticationException>, and this <xref:System.Net.Security.SslStream> is no longer useable. You should close this object and remove all references to it so that it can be collected by the garbage collector.  
+ If the authentication fails, you receive a &lt;xref:System.Security.Authentication.AuthenticationException&gt;, and this &lt;xref:System.Net.Security.SslStream&gt; is no longer useable. You should close this object and remove all references to it so that it can be collected by the garbage collector.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Net.Security.SslStream.AuthenticateAsServer(System.Security.Cryptography.X509Certificates.X509Certificate,System.Boolean,System.Security.Authentication.SslProtocols,System.Boolean)>.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="serverCertificate" /> is <see langword="null" />.</exception>
         <exception cref="T:System.Security.Authentication.AuthenticationException">The authentication failed and left this object in an unusable state.</exception>
@@ -2830,18 +2831,18 @@
       <Docs>
         <summary>Asynchronously releases the unmanaged and managed resources used by the <see cref="T:System.Net.Security.SslStream" />.</summary>
         <returns>A task that represents the asynchronous dispose operation.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
  This method enables you to perform a resource-intensive dispose operation without blocking the main thread. 
 
- This method also disposes the inner stream when <xref:System.Net.Security.AuthenticatedStream.LeaveInnerStreamOpen> is `false`; otherwise, the inner stream is just flushed.
+ This method also disposes the inner stream when &lt;xref:System.Net.Security.AuthenticatedStream.LeaveInnerStreamOpen&gt; is `false`; otherwise, the inner stream is just flushed.
  
- Calling `DisposeAsync` allows the resources used by the <xref:System.Net.Security.SslStream> to be reallocated for other purposes. For more information, see [Cleaning Up Unmanaged Resources](/dotnet/standard/garbage-collection/unmanaged).
+ Calling `DisposeAsync` allows the resources used by the &lt;xref:System.Net.Security.SslStream&gt; to be reallocated for other purposes. For more information, see [Cleaning Up Unmanaged Resources](/dotnet/standard/garbage-collection/unmanaged).
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Net.Security.SslStream.Dispose>.</remarks>
       </Docs>
     </Member>
     <Member MemberName="EndAuthenticateAsClient">
@@ -3218,14 +3219,14 @@ Authentication has not occurred.</exception>
         <param name="cancellationToken">The token to monitor for cancellation requests.</param>
         <summary>Asynchronously writes any buffered data to the underlying device.</summary>
         <returns>A task that represents the asynchronous flush operation.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- This method invokes <xref:System.IO.Stream.FlushAsync%2A> on the underlying stream.
+ This method invokes &lt;xref:System.IO.Stream.FlushAsync%2A&gt; on the underlying stream.
 
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Net.Security.SslStream.Flush(System.Threading.CancellationToken)>.</remarks>
       </Docs>
     </Member>
     <Member MemberName="HashAlgorithm">
@@ -3858,7 +3859,9 @@ Authentication has not occurred.</exception>
         <param name="cancellationToken">The token to monitor for cancellation requests.</param>
         <summary>Negotiates the client certificate on the authenticated connection.</summary>
         <returns>The task object representing the asynchronous operation.</returns>
-        <remarks>You can negotiate the client certificate once authentication is successfully processed via one of the <c>AuthenticateAs...</c> methods.</remarks>
+        <remarks>You can negotiate the client certificate once authentication is successfully processed via one of the AuthenticateAs... methods.
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Net.Security.SslStream.NegotiateClientCertificate(System.Threading.CancellationToken)>.</remarks>
       </Docs>
     </Member>
     <Member MemberName="NegotiatedApplicationProtocol">
@@ -4096,8 +4099,7 @@ This property gets the cipher suite that is going to be used in the communicatio
         <param name="cancellationToken">The token to monitor for cancellation requests.</param>
         <summary>Asynchronously reads data from this stream and stores it in the specified memory range.</summary>
         <returns>A task that represents the asynchronous read operation. The value of its <see cref="P:System.Threading.Tasks.ValueTask`1.Result" /> property contains the total number of bytes read into <paramref name="buffer" />. When there is no more data to be read, returns 0.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
  This method reads as much data as is available into the `buffer`. 
@@ -4106,8 +4108,9 @@ This property gets the cipher suite that is going to be used in the communicatio
   
  You cannot call this method until you have successfully authenticated.
 
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Net.Security.SslStream.Read(System.Memory{System.Byte},System.Threading.CancellationToken)>.</remarks>
         <exception cref="T:System.InvalidOperationException">Authentication has not occurred.</exception>
         <exception cref="T:System.IO.IOException">The read operation failed. Check the inner exception, if it is present, to determine the cause of the failure.</exception>
         <exception cref="T:System.NotSupportedException">There is already a read operation in progress.</exception>
@@ -4150,8 +4153,7 @@ This property gets the cipher suite that is going to be used in the communicatio
         <param name="cancellationToken">The token to monitor for cancellation requests.</param>
         <summary>Asynchronously reads data from this stream and stores it in the specified range of a byte array.</summary>
         <returns>A task that represents the asynchronous read operation. The value of its <see cref="P:System.Threading.Tasks.Task`1.Result" /> property contains the total number of bytes read into <paramref name="buffer" />. When there is no more data to be read, returns 0.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
  The method reads a maximum of `count` bytes from the stream and stores them in `buffer` beginning at `offset`. 
@@ -4160,8 +4162,9 @@ This property gets the cipher suite that is going to be used in the communicatio
   
  You cannot call this method until you have successfully authenticated.
 
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Net.Security.SslStream.Read(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)>.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="buffer" /> is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">
@@ -4463,7 +4466,7 @@ If the property is accessed, the remote certificate will not be disposed when th
       <Docs>
         <summary>Shuts down this SslStream.</summary>
         <returns>The task object representing the asynchronous operation.</returns>
-        <remarks>To be added.</remarks>
+        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Net.Security.SslStream.Shutdown>.</remarks>
       </Docs>
     </Member>
     <Member MemberName="SslProtocol">
@@ -4769,16 +4772,16 @@ If the property is accessed, the remote certificate will not be disposed when th
         <param name="cancellationToken">The token to monitor for cancellation requests.</param>
         <summary>Asynchronously writes data to the underlying stream from a read-only byte memory range.</summary>
         <returns>A task that represents the asynchronous write operation.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
 You cannot call this method until you have successfully authenticated. 
 
-The <xref:System.Net.Security.SslStream> class does not support multiple simultaneous write operations.
+The &lt;xref:System.Net.Security.SslStream&gt; class does not support multiple simultaneous write operations.
 
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Net.Security.SslStream.Write(System.ReadOnlyMemory{System.Byte},System.Threading.CancellationToken)>.</remarks>
         <exception cref="T:System.InvalidOperationException">Authentication has not occurred.</exception>
         <exception cref="T:System.IO.IOException">The write operation failed.</exception>
         <exception cref="T:System.NotSupportedException">There is already a write operation in progress.</exception>
@@ -4821,16 +4824,16 @@ The <xref:System.Net.Security.SslStream> class does not support multiple simulta
         <param name="cancellationToken">The token to monitor for cancellation requests.</param>
         <summary>Asynchronously writes data to the underlying stream from the specified range of a byte array.</summary>
         <returns>A task that represents the asynchronous write operation.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
 You cannot call this method until you have successfully authenticated. 
 
-The <xref:System.Net.Security.SslStream> class does not support multiple simultaneous write operations.
+The &lt;xref:System.Net.Security.SslStream&gt; class does not support multiple simultaneous write operations.
 
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Net.Security.SslStream.Write(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)>.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="buffer" /> is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">

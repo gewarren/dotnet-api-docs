@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Type Name="DbConnection" FullName="System.Data.Common.DbConnection">
   <TypeSignature Language="C#" Value="public abstract class DbConnection : IDisposable" FrameworkAlternate="dotnet-uwp-10.0" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DbConnection extends System.Object implements class System.IDisposable" FrameworkAlternate="dotnet-uwp-10.0" />
@@ -201,16 +202,16 @@
         <param name="cancellationToken">A token to cancel the asynchronous operation.</param>
         <summary>Asynchronously starts a database transaction.</summary>
         <returns>A task whose <see cref="P:System.Threading.Tasks.Task`1.Result" /> property is an object representing the new transaction.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
  The default implementation of this asynchronous method delegates to its synchronous counterpart and returns a completed `Task`, potentially blocking the calling thread.
  
  Data providers that support [asynchronous programming](/dotnet/framework/data/adonet/asynchronous-programming) should override the default implementation using asynchronous I/O operations.
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Data.Common.DbConnection.BeginDbTransaction(System.Data.IsolationLevel,System.Threading.CancellationToken)>.</remarks>
       </Docs>
     </Member>
     <MemberGroup MemberName="BeginTransaction">
@@ -358,8 +359,7 @@
         <param name="cancellationToken">An optional token to cancel the asynchronous operation. The default value is <see cref="P:System.Threading.CancellationToken.None" />.</param>
         <summary>Asynchronously begins a database transaction.</summary>
         <returns>A task whose <see cref="P:System.Threading.Tasks.Task`1.Result" /> property is an object representing the new transaction.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
  If you do not specify an isolation level, the default isolation level for the specific type of connection is used.
@@ -368,8 +368,9 @@
  
  Data providers that support [asynchronous programming](/dotnet/framework/data/adonet/asynchronous-programming) should override the default implementation using asynchronous I/O operations.
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Data.Common.DbConnection.BeginTransaction(System.Threading.CancellationToken)>.</remarks>
       </Docs>
     </Member>
     <Member MemberName="BeginTransactionAsync">
@@ -406,16 +407,16 @@
         <param name="cancellationToken">An optional token to cancel the asynchronous operation. The default value is <see cref="P:System.Threading.CancellationToken.None" />.</param>
         <summary>Asynchronously begins a database transaction.</summary>
         <returns>A task whose <see cref="P:System.Threading.Tasks.Task`1.Result" /> property is an object representing the new transaction.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
  The default implementation of this asynchronous method delegates to its synchronous counterpart and returns a completed `Task`, potentially blocking the calling thread.
  
  Data providers that support [asynchronous programming](/dotnet/framework/data/adonet/asynchronous-programming) should override the default implementation using asynchronous I/O operations.
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Data.Common.DbConnection.BeginTransaction(System.Data.IsolationLevel,System.Threading.CancellationToken)>.</remarks>
       </Docs>
     </Member>
     <Member MemberName="CanCreateBatch">
@@ -540,8 +541,7 @@ This property returns `false` by default; providers that implement <xref:System.
         <param name="cancellationToken">An optional token to cancel the asynchronous operation. The default value is <see cref="P:System.Threading.CancellationToken.None" />.</param>
         <summary>Asynchronously changes the current database for an open connection.</summary>
         <returns>A task representing the asynchronous operation.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
  The value supplied in the `databaseName` parameter must be a valid database name for the current instance.  
@@ -550,8 +550,9 @@ This property returns `false` by default; providers that implement <xref:System.
  
  Data providers that support [asynchronous programming](/dotnet/framework/data/adonet/asynchronous-programming) should override the default implementation using asynchronous I/O operations.
 
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Data.Common.DbConnection.ChangeDatabase(System.String,System.Threading.CancellationToken)>.</remarks>
       </Docs>
     </Member>
     <Member MemberName="Close">
@@ -643,25 +644,25 @@ This property returns `false` by default; providers that implement <xref:System.
       <Docs>
         <summary>Asynchronously closes the connection to the database.</summary>
         <returns>A <see cref="T:System.Threading.Tasks.Task" /> representing the asynchronous operation.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
  The default implementation of this asynchronous method delegates to its synchronous counterpart and returns a completed `Task`, potentially blocking the calling thread.
  
  Data providers that support [asynchronous programming](/dotnet/framework/data/adonet/asynchronous-programming) should override the default implementation using asynchronous I/O operations.
   
- The <xref:System.Data.Common.DbConnection.Close%2A> and <xref:System.Data.Common.DbConnection.CloseAsync%2A> methods roll back any pending transactions. They then release the connection to the connection pool, or close the connection if connection pooling is disabled.  
+ The &lt;xref:System.Data.Common.DbConnection.Close%2A&gt; and &lt;xref:System.Data.Common.DbConnection.CloseAsync%2A&gt; methods roll back any pending transactions. They then release the connection to the connection pool, or close the connection if connection pooling is disabled.  
   
- An application can call <xref:System.Data.Common.DbConnection.Close%2A> or <xref:System.Data.Common.DbConnection.CloseAsync%2A> more than one time. No exception is generated.  
+ An application can call &lt;xref:System.Data.Common.DbConnection.Close%2A&gt; or &lt;xref:System.Data.Common.DbConnection.CloseAsync%2A&gt; more than one time. No exception is generated.  
   
- If the <xref:System.Data.Common.DbConnection> goes out of scope, it is not closed. Therefore, you must explicitly close the connection by calling `Close` or `Dispose`, which are functionally equivalent. If the connection pooling value `Pooling` is set to `true` or `yes`, this also releases the physical connection.  
+ If the &lt;xref:System.Data.Common.DbConnection&gt; goes out of scope, it is not closed. Therefore, you must explicitly close the connection by calling `Close` or `Dispose`, which are functionally equivalent. If the connection pooling value `Pooling` is set to `true` or `yes`, this also releases the physical connection.  
   
-> [!CAUTION]
->  Do not close or dispose a `DbConnection`, a `DbDataReader`, or any other managed object in the `Finalize` method of your class. In a finalizer, you should only release unmanaged resources that your class owns directly. If your class does not own any unmanaged resources, do not include a `Finalize` method in your class definition. For more information, see [Garbage Collection](/dotnet/standard/garbage-collection/).  
+&gt; [!CAUTION]
+&gt;  Do not close or dispose a `DbConnection`, a `DbDataReader`, or any other managed object in the `Finalize` method of your class. In a finalizer, you should only release unmanaged resources that your class owns directly. If your class does not own any unmanaged resources, do not include a `Finalize` method in your class definition. For more information, see [Garbage Collection](/dotnet/standard/garbage-collection/).  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Data.Common.DbConnection.Close>.</remarks>
       </Docs>
     </Member>
     <Member MemberName="ConnectionString">
@@ -1146,16 +1147,16 @@ This property returns `false` by default; providers that implement <xref:System.
       <Docs>
         <summary>Asynchronously diposes the connection object.</summary>
         <returns>A <see cref="T:System.Threading.Tasks.ValueTask" /> representing the asynchronous operation.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
  The default implementation of this asynchronous method delegates to its synchronous counterpart and returns a completed `ValueTask`, potentially blocking the calling thread.
  
  Data providers that support [asynchronous programming](/dotnet/framework/data/adonet/asynchronous-programming) should override the default implementation using asynchronous I/O operations.
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Data.Common.DbConnection.Dispose>.</remarks>
       </Docs>
     </Member>
     <Member MemberName="EnlistTransaction">
@@ -1417,7 +1418,7 @@ This property returns `false` by default; providers that implement <xref:System.
             The default implementation will return a cancelled task if passed an already cancelled <paramref name="cancellationToken" />.
             Exceptions thrown by <see cref="M:System.Data.Common.DbConnection.GetSchema" /> will be communicated via the returned Task Exception property.</summary>
         <returns>A task representing the asynchronous operation.</returns>
-        <remarks>To be added.</remarks>
+        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Data.Common.DbConnection.GetSchema(System.Threading.CancellationToken)>.</remarks>
       </Docs>
     </Member>
     <Member MemberName="GetSchemaAsync">
@@ -1453,7 +1454,7 @@ This property returns `false` by default; providers that implement <xref:System.
             The default implementation will return a cancelled task if passed an already cancelled <paramref name="cancellationToken" />.
             Exceptions thrown by <see cref="M:System.Data.Common.DbConnection.GetSchema(System.String)" /> will be communicated via the returned Task Exception property.</summary>
         <returns>A task representing the asynchronous operation.</returns>
-        <remarks>To be added.</remarks>
+        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Data.Common.DbConnection.GetSchema(System.String,System.Threading.CancellationToken)>.</remarks>
       </Docs>
     </Member>
     <Member MemberName="GetSchemaAsync">
@@ -1491,7 +1492,7 @@ This property returns `false` by default; providers that implement <xref:System.
             The default implementation will return a cancelled task if passed an already cancelled <paramref name="cancellationToken" />.
             Exceptions thrown by <see cref="M:System.Data.Common.DbConnection.GetSchema(System.String,System.String[])" /> will be communicated via the returned Task Exception property.</summary>
         <returns>A task representing the asynchronous operation.</returns>
-        <remarks>To be added.</remarks>
+        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Data.Common.DbConnection.GetSchema(System.String,System.String[],System.Threading.CancellationToken)>.</remarks>
       </Docs>
     </Member>
     <Member MemberName="OnStateChange">
@@ -1652,18 +1653,18 @@ This property returns `false` by default; providers that implement <xref:System.
       <Docs>
         <summary>An asynchronous version of <see cref="M:System.Data.Common.DbConnection.Open" />, which opens a database connection with the settings specified by the <see cref="P:System.Data.Common.DbConnection.ConnectionString" />. This method invokes the virtual method <see cref="M:System.Data.Common.DbConnection.OpenAsync(System.Threading.CancellationToken)" /> with CancellationToken.None.</summary>
         <returns>A task representing the asynchronous operation.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- After calling <xref:System.Data.Common.DbConnection.OpenAsync%2A>, <xref:System.Data.Common.DbConnection.State%2A> must return <xref:System.Data.ConnectionState.Connecting> until the returned <xref:System.Threading.Tasks.Task> is completed. Then, if the connection was successful, <xref:System.Data.Common.DbConnection.State%2A> must return <xref:System.Data.ConnectionState.Open>. If the connection fails, <xref:System.Data.Common.DbConnection.State%2A> must return <xref:System.Data.ConnectionState.Closed>.  
+ After calling &lt;xref:System.Data.Common.DbConnection.OpenAsync%2A&gt;, &lt;xref:System.Data.Common.DbConnection.State%2A&gt; must return &lt;xref:System.Data.ConnectionState.Connecting&gt; until the returned &lt;xref:System.Threading.Tasks.Task&gt; is completed. Then, if the connection was successful, &lt;xref:System.Data.Common.DbConnection.State%2A&gt; must return &lt;xref:System.Data.ConnectionState.Open&gt;. If the connection fails, &lt;xref:System.Data.Common.DbConnection.State%2A&gt; must return &lt;xref:System.Data.ConnectionState.Closed&gt;.  
   
- A call to <xref:System.Data.Common.DbConnection.Close%2A> will attempt to cancel or close the corresponding <xref:System.Data.Common.DbConnection.OpenAsync%2A> call.  
+ A call to &lt;xref:System.Data.Common.DbConnection.Close%2A&gt; will attempt to cancel or close the corresponding &lt;xref:System.Data.Common.DbConnection.OpenAsync%2A&gt; call.  
   
  For more information about asynchronous programming in the .NET Framework Data Provider for SQL Server, see [Asynchronous Programming](/dotnet/framework/data/adonet/asynchronous-programming).  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Data.Common.DbConnection.Open>.</remarks>
         <related type="Article" href="/dotnet/framework/data/adonet/ado-net-overview">ADO.NET Overview</related>
       </Docs>
     </Member>
@@ -1710,18 +1711,18 @@ This property returns `false` by default; providers that implement <xref:System.
   
  Do not invoke other methods and properties of the <see langword="DbConnection" /> object until the returned Task is complete.</summary>
         <returns>A task representing the asynchronous operation.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- After calling <xref:System.Data.Common.DbConnection.OpenAsync%2A>, <xref:System.Data.Common.DbConnection.State%2A> must return <xref:System.Data.ConnectionState.Connecting> until the returned <xref:System.Threading.Tasks.Task> is completed. Then, if the connection was successful, <xref:System.Data.Common.DbConnection.State%2A> must return <xref:System.Data.ConnectionState.Open>. If the connection fails, <xref:System.Data.Common.DbConnection.State%2A> must return <xref:System.Data.ConnectionState.Closed>.  
+ After calling &lt;xref:System.Data.Common.DbConnection.OpenAsync%2A&gt;, &lt;xref:System.Data.Common.DbConnection.State%2A&gt; must return &lt;xref:System.Data.ConnectionState.Connecting&gt; until the returned &lt;xref:System.Threading.Tasks.Task&gt; is completed. Then, if the connection was successful, &lt;xref:System.Data.Common.DbConnection.State%2A&gt; must return &lt;xref:System.Data.ConnectionState.Open&gt;. If the connection fails, &lt;xref:System.Data.Common.DbConnection.State%2A&gt; must return &lt;xref:System.Data.ConnectionState.Closed&gt;.  
   
- A call to <xref:System.Data.Common.DbConnection.Close%2A> will attempt to cancel or close the corresponding <xref:System.Data.Common.DbConnection.OpenAsync%2A> call.  
+ A call to &lt;xref:System.Data.Common.DbConnection.Close%2A&gt; will attempt to cancel or close the corresponding &lt;xref:System.Data.Common.DbConnection.OpenAsync%2A&gt; call.  
   
  For more information about asynchronous programming in the .NET Framework Data Provider for SQL Server, see [Asynchronous Programming](/dotnet/framework/data/adonet/asynchronous-programming).  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Data.Common.DbConnection.Open(System.Threading.CancellationToken)>.</remarks>
         <related type="Article" href="/dotnet/framework/data/adonet/ado-net-overview">ADO.NET Overview</related>
       </Docs>
     </Member>

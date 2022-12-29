@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Type Name="AuthenticatedStream" FullName="System.Net.Security.AuthenticatedStream">
   <TypeSignature Language="C#" Value="public abstract class AuthenticatedStream : System.IO.Stream" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit AuthenticatedStream extends System.IO.Stream" />
@@ -202,18 +203,18 @@ The following example demonstrates displaying the properties of an authenticated
       <Docs>
         <summary>Asynchronously releases the unmanaged and managed resources used by the <see cref="T:System.Net.Security.AuthenticatedStream" />.</summary>
         <returns>A task that represents the asynchronous dispose operation.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
  This method allows performing resource-intensive dispose operations without blocking the main thread.
 
- This method also disposes the inner stream when <xref:System.Net.Security.AuthenticatedStream.LeaveInnerStreamOpen> is `false`; otherwise, the inner stream is just flushed.
+ This method also disposes the inner stream when &lt;xref:System.Net.Security.AuthenticatedStream.LeaveInnerStreamOpen&gt; is `false`; otherwise, the inner stream is just flushed.
  
- Calling `DisposeAsync` allows the resources used by the <xref:System.Net.Security.AuthenticatedStream> to be reallocated for other purposes. For more information, see [Cleaning Up Unmanaged Resources](/dotnet/standard/garbage-collection/unmanaged).
+ Calling `DisposeAsync` allows the resources used by the &lt;xref:System.Net.Security.AuthenticatedStream&gt; to be reallocated for other purposes. For more information, see [Cleaning Up Unmanaged Resources](/dotnet/standard/garbage-collection/unmanaged).
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Net.Security.AuthenticatedStream.Dispose>.</remarks>
       </Docs>
     </Member>
     <Member MemberName="InnerStream">

@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Type Name="SqlConnection" FullName="System.Data.SqlClient.SqlConnection">
   <TypeSignature Language="C#" Value="public sealed class SqlConnection : System.Data.Common.DbConnection, ICloneable" FrameworkAlternate="dotnet-plat-ext-2.1;dotnet-plat-ext-2.2;dotnet-plat-ext-3.0;dotnet-plat-ext-3.1;dotnet-plat-ext-5.0;dotnet-plat-ext-6.0;dotnet-plat-ext-7.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netframework-4.8.1" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SqlConnection extends System.Data.Common.DbConnection implements class System.ICloneable" FrameworkAlternate="dotnet-plat-ext-2.1;dotnet-plat-ext-2.2;dotnet-plat-ext-3.0;dotnet-plat-ext-3.1;dotnet-plat-ext-5.0;dotnet-plat-ext-6.0;dotnet-plat-ext-7.0;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
@@ -2613,17 +2614,17 @@ class Program {
         <summary>An asynchronous version of <see cref="M:System.Data.SqlClient.SqlConnection.Open" />, which opens a database connection with the property settings specified by the <see cref="P:System.Data.SqlClient.SqlConnection.ConnectionString" />. The cancellation token can be used to request that the operation be abandoned before the connection timeout elapses.  Exceptions will be propagated via the returned Task. If the connection timeout time elapses without successfully connecting, the returned Task will be marked as faulted with an Exception. The implementation returns a Task without blocking the calling thread for both pooled and non-pooled connections.</summary>
         <returns>A task representing the asynchronous operation.</returns>
         <remarks>
-          <format type="text/markdown"><![CDATA[
 
 ## Remarks
- After calling <xref:System.Data.SqlClient.SqlConnection.OpenAsync%2A>, <xref:System.Data.SqlClient.SqlConnection.State%2A> must return <xref:System.Data.ConnectionState.Connecting> until the returned <xref:System.Threading.Tasks.Task> is completed. Then, if the connection was successful, <xref:System.Data.SqlClient.SqlConnection.State%2A> must return <xref:System.Data.ConnectionState.Open>. If the connection fails, <xref:System.Data.SqlClient.SqlConnection.State%2A> must return <xref:System.Data.ConnectionState.Closed>.
+ After calling &lt;xref:System.Data.SqlClient.SqlConnection.OpenAsync%2A&gt;, &lt;xref:System.Data.SqlClient.SqlConnection.State%2A&gt; must return &lt;xref:System.Data.ConnectionState.Connecting&gt; until the returned &lt;xref:System.Threading.Tasks.Task&gt; is completed. Then, if the connection was successful, &lt;xref:System.Data.SqlClient.SqlConnection.State%2A&gt; must return &lt;xref:System.Data.ConnectionState.Open&gt;. If the connection fails, &lt;xref:System.Data.SqlClient.SqlConnection.State%2A&gt; must return &lt;xref:System.Data.ConnectionState.Closed&gt;.
 
- A call to <xref:System.Data.SqlClient.SqlConnection.Close%2A> will attempt to cancel or close the corresponding <xref:System.Data.SqlClient.SqlConnection.OpenAsync%2A> call.
+ A call to &lt;xref:System.Data.SqlClient.SqlConnection.Close%2A&gt; will attempt to cancel or close the corresponding &lt;xref:System.Data.SqlClient.SqlConnection.OpenAsync%2A&gt; call.
 
  For more information about asynchronous programming in the .NET Framework Data Provider for SQL Server, see [Asynchronous Programming](/dotnet/framework/data/adonet/asynchronous-programming).
 
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Data.SqlClient.SqlConnection.Open(System.Threading.CancellationToken)>.</remarks>
         <exception cref="T:System.InvalidOperationException">Calling <see cref="M:System.Data.SqlClient.SqlConnection.OpenAsync(System.Threading.CancellationToken)" /> more than once for the same instance before task completion.
 
  <see langword="Context Connection=true" /> is specified in the connection string.

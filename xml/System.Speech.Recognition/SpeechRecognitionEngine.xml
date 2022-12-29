@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Type Name="SpeechRecognitionEngine" FullName="System.Speech.Recognition.SpeechRecognitionEngine">
   <TypeSignature Language="C#" Value="public class SpeechRecognitionEngine : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SpeechRecognitionEngine extends System.Object implements class System.IDisposable" />
@@ -1632,13 +1633,12 @@ namespace Sre_EmulateRecognize
       <Docs>
         <param name="inputText">The input for the recognition operation.</param>
         <summary>Emulates input of a phrase to the speech recognizer, using text in place of audio for asynchronous speech recognition.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- The speech recognizer raises the <xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechDetected>, <xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechHypothesized>, <xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognitionRejected>, and <xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognized> events as if the recognition operation is not emulated. When the recognizer completes the asynchronous recognition operation, it raises the <xref:System.Speech.Recognition.SpeechRecognitionEngine.EmulateRecognizeCompleted> event.  
+ The speech recognizer raises the &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechDetected&gt;, &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechHypothesized&gt;, &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognitionRejected&gt;, and &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognized&gt; events as if the recognition operation is not emulated. When the recognizer completes the asynchronous recognition operation, it raises the &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.EmulateRecognizeCompleted&gt; event.  
   
- The recognizers that ship with Vista and Windows 7 ignore case and character width when applying grammar rules to the input phrase. For more information about this type of comparison, see the <xref:System.Globalization.CompareOptions> enumeration values <xref:System.Globalization.CompareOptions.OrdinalIgnoreCase> and <xref:System.Globalization.CompareOptions.IgnoreWidth>. The recognizers also ignore new lines and extra white space and treat punctuation as literal input.  
+ The recognizers that ship with Vista and Windows 7 ignore case and character width when applying grammar rules to the input phrase. For more information about this type of comparison, see the &lt;xref:System.Globalization.CompareOptions&gt; enumeration values &lt;xref:System.Globalization.CompareOptions.OrdinalIgnoreCase&gt; and &lt;xref:System.Globalization.CompareOptions.IgnoreWidth&gt;. The recognizers also ignore new lines and extra white space and treat punctuation as literal input.  
   
    
   
@@ -1668,7 +1668,7 @@ TestRecognizeAsync("Mister")...
  SpeechHypothesized event raised.  
   Grammar = Smith; Text = mister  
  SpeechRecognitionRejected event raised.  
-  Grammar = <not available>; Text =  
+  Grammar = &lt;not available&gt;; Text =  
  EmulateRecognizeCompleted event raised.  
   No recognition result available.  
  Done.  
@@ -1712,19 +1712,19 @@ namespace SreEmulateRecognizeAsync
         // Add event handlers for the events raised by the  
         // EmulateRecognizeAsync method.  
         recognizer.SpeechDetected +=  
-          new EventHandler<SpeechDetectedEventArgs>(  
+          new EventHandler&lt;SpeechDetectedEventArgs&gt;(  
             SpeechDetectedHandler);  
         recognizer.SpeechHypothesized +=  
-          new EventHandler<SpeechHypothesizedEventArgs>(  
+          new EventHandler&lt;SpeechHypothesizedEventArgs&gt;(  
             SpeechHypothesizedHandler);  
         recognizer.SpeechRecognitionRejected +=  
-          new EventHandler<SpeechRecognitionRejectedEventArgs>(  
+          new EventHandler&lt;SpeechRecognitionRejectedEventArgs&gt;(  
             SpeechRecognitionRejectedHandler);  
         recognizer.SpeechRecognized +=  
-          new EventHandler<SpeechRecognizedEventArgs>(  
+          new EventHandler&lt;SpeechRecognizedEventArgs&gt;(  
             SpeechRecognizedHandler);  
         recognizer.EmulateRecognizeCompleted +=  
-          new EventHandler<EmulateRecognizeCompletedEventArgs>(  
+          new EventHandler&lt;EmulateRecognizeCompletedEventArgs&gt;(  
             EmulateRecognizeCompletedHandler);  
   
         // Start four asynchronous emulated recognition operations.  
@@ -1784,7 +1784,7 @@ namespace SreEmulateRecognizeAsync
       if (e.Result != null)  
       {  
         Console.WriteLine("  Grammar = {0}; Text = {1}",  
-          e.Result.Grammar.Name ?? "<none>", e.Result.Text);  
+          e.Result.Grammar.Name ?? "&lt;none&gt;", e.Result.Text);  
       }  
       else  
       {  
@@ -1802,11 +1802,11 @@ namespace SreEmulateRecognizeAsync
         string grammarName;  
         if (e.Result.Grammar != null)  
         {  
-          grammarName = e.Result.Grammar.Name ?? "<none>";  
+          grammarName = e.Result.Grammar.Name ?? "&lt;none&gt;";  
         }  
         else  
         {  
-          grammarName = "<not available>";  
+          grammarName = "&lt;not available&gt;";  
         }  
         Console.WriteLine("  Grammar = {0}; Text = {1}",  
           grammarName, e.Result.Text);  
@@ -1824,7 +1824,7 @@ namespace SreEmulateRecognizeAsync
       if (e.Result != null)  
       {  
         Console.WriteLine("  Grammar = {0}; Text = {1}",  
-          e.Result.Grammar.Name ?? "<none>", e.Result.Text );  
+          e.Result.Grammar.Name ?? "&lt;none&gt;", e.Result.Text );  
       }  
       else  
       {  
@@ -1849,7 +1849,7 @@ namespace SreEmulateRecognizeAsync
       else if (e.Result != null)  
       {  
         Console.WriteLine("  Grammar = {0}; Text = {1}",  
-          e.Result.Grammar.Name ?? "<none>", e.Result.Text);  
+          e.Result.Grammar.Name ?? "&lt;none&gt;", e.Result.Text);  
       }  
       else  
       {  
@@ -1863,8 +1863,9 @@ namespace SreEmulateRecognizeAsync
   
 ```  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Speech.Recognition.SpeechRecognitionEngine.EmulateRecognize(System.String)>.</remarks>
         <exception cref="T:System.InvalidOperationException">The recognizer has no speech recognition grammars loaded, or the recognizer has an asynchronous recognition operation that is not yet complete.</exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="inputText" /> is <see langword="null" />.</exception>
@@ -1903,16 +1904,16 @@ namespace SreEmulateRecognizeAsync
         <param name="wordUnits">An array of word units that contains the input for the recognition operation.</param>
         <param name="compareOptions">A bitwise combination of the enumeration values that describe the type of comparison to use for the emulated recognition operation.</param>
         <summary>Emulates input of specific words to the speech recognizer, using an array of <see cref="T:System.Speech.Recognition.RecognizedWordUnit" /> objects in place of audio for asynchronous speech recognition, and specifies how the recognizer handles Unicode comparison between the words and the loaded speech recognition grammars.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- The speech recognizer raises the <xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechDetected>, <xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechHypothesized>, <xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognitionRejected>, and <xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognized> events as if the recognition operation is not emulated. When the recognizer completes the asynchronous recognition operation, it raises the <xref:System.Speech.Recognition.SpeechRecognitionEngine.EmulateRecognizeCompleted> event.  
+ The speech recognizer raises the &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechDetected&gt;, &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechHypothesized&gt;, &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognitionRejected&gt;, and &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognized&gt; events as if the recognition operation is not emulated. When the recognizer completes the asynchronous recognition operation, it raises the &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.EmulateRecognizeCompleted&gt; event.  
   
- The recognizer uses `compareOptions` when it applies grammar rules to the input phrase. The recognizers that ship with Vista and Windows 7 ignore case if the <xref:System.Globalization.CompareOptions.OrdinalIgnoreCase> or <xref:System.Globalization.CompareOptions.IgnoreCase> value is present. The recognizers always ignore the character width and never ignore the Kana type. The recognizers also ignore new lines and extra white space and treat punctuation as literal input. For more information about character width and Kana type, see the <xref:System.Globalization.CompareOptions> enumeration.  
+ The recognizer uses `compareOptions` when it applies grammar rules to the input phrase. The recognizers that ship with Vista and Windows 7 ignore case if the &lt;xref:System.Globalization.CompareOptions.OrdinalIgnoreCase&gt; or &lt;xref:System.Globalization.CompareOptions.IgnoreCase&gt; value is present. The recognizers always ignore the character width and never ignore the Kana type. The recognizers also ignore new lines and extra white space and treat punctuation as literal input. For more information about character width and Kana type, see the &lt;xref:System.Globalization.CompareOptions&gt; enumeration.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Speech.Recognition.SpeechRecognitionEngine.EmulateRecognize(System.Speech.Recognition.RecognizedWordUnit[],System.Globalization.CompareOptions)>.</remarks>
         <exception cref="T:System.InvalidOperationException">The recognizer has no speech recognition grammars loaded, or the recognizer has an asynchronous recognition operation that is not yet complete.</exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="wordUnits" /> is <see langword="null" />.</exception>
@@ -1953,16 +1954,16 @@ namespace SreEmulateRecognizeAsync
         <param name="inputText">The input phrase for the recognition operation.</param>
         <param name="compareOptions">A bitwise combination of the enumeration values that describe the type of comparison to use for the emulated recognition operation.</param>
         <summary>Emulates input of a phrase to the speech recognizer, using text in place of audio for asynchronous speech recognition, and specifies how the recognizer handles Unicode comparison between the phrase and the loaded speech recognition grammars.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- The speech recognizer raises the <xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechDetected>, <xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechHypothesized>, <xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognitionRejected>, and <xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognized> events as if the recognition operation is not emulated. When the recognizer completes the asynchronous recognition operation, it raises the <xref:System.Speech.Recognition.SpeechRecognitionEngine.EmulateRecognizeCompleted> event.  
+ The speech recognizer raises the &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechDetected&gt;, &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechHypothesized&gt;, &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognitionRejected&gt;, and &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognized&gt; events as if the recognition operation is not emulated. When the recognizer completes the asynchronous recognition operation, it raises the &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.EmulateRecognizeCompleted&gt; event.  
   
- The recognizer uses `compareOptions` when it applies grammar rules to the input phrase. The recognizers that ship with Vista and Windows 7 ignore case if the <xref:System.Globalization.CompareOptions.OrdinalIgnoreCase> or <xref:System.Globalization.CompareOptions.IgnoreCase> value is present. The recognizers always ignore the character width and never ignore the Kana type. The recognizers also ignore new lines and extra white space and treat punctuation as literal input. For more information about character width and Kana type, see the <xref:System.Globalization.CompareOptions> enumeration.  
+ The recognizer uses `compareOptions` when it applies grammar rules to the input phrase. The recognizers that ship with Vista and Windows 7 ignore case if the &lt;xref:System.Globalization.CompareOptions.OrdinalIgnoreCase&gt; or &lt;xref:System.Globalization.CompareOptions.IgnoreCase&gt; value is present. The recognizers always ignore the character width and never ignore the Kana type. The recognizers also ignore new lines and extra white space and treat punctuation as literal input. For more information about character width and Kana type, see the &lt;xref:System.Globalization.CompareOptions&gt; enumeration.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Speech.Recognition.SpeechRecognitionEngine.EmulateRecognize(System.String,System.Globalization.CompareOptions)>.</remarks>
         <exception cref="T:System.InvalidOperationException">The recognizer has no speech recognition grammars loaded, or the recognizer has an asynchronous recognition operation that is not yet complete.</exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="inputText" /> is <see langword="null" />.</exception>
@@ -2652,20 +2653,20 @@ namespace SpeechRecognitionApp
       <Docs>
         <param name="grammar">The speech recognition grammar to load.</param>
         <summary>Asynchronously loads a speech recognition grammar.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- When the recognizer completes loading a <xref:System.Speech.Recognition.Grammar> object, it raises a <xref:System.Speech.Recognition.SpeechRecognitionEngine.LoadGrammarCompleted> event. The recognizer throws an exception if the <xref:System.Speech.Recognition.Grammar> object is already loaded, is being asynchronously loaded, or has failed to load into any recognizer. You cannot load the same <xref:System.Speech.Recognition.Grammar> object into multiple instances of <xref:System.Speech.Recognition.SpeechRecognitionEngine>. Instead, create a new <xref:System.Speech.Recognition.Grammar> object for each <xref:System.Speech.Recognition.SpeechRecognitionEngine> instance.  
+ When the recognizer completes loading a &lt;xref:System.Speech.Recognition.Grammar&gt; object, it raises a &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.LoadGrammarCompleted&gt; event. The recognizer throws an exception if the &lt;xref:System.Speech.Recognition.Grammar&gt; object is already loaded, is being asynchronously loaded, or has failed to load into any recognizer. You cannot load the same &lt;xref:System.Speech.Recognition.Grammar&gt; object into multiple instances of &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine&gt;. Instead, create a new &lt;xref:System.Speech.Recognition.Grammar&gt; object for each &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine&gt; instance.  
   
- If the recognizer is running, applications must use <xref:System.Speech.Recognition.SpeechRecognitionEngine.RequestRecognizerUpdate%2A> to pause the speech recognition engine before loading, unloading,  enabling, or disabling a grammar.  
+ If the recognizer is running, applications must use &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.RequestRecognizerUpdate%2A&gt; to pause the speech recognition engine before loading, unloading,  enabling, or disabling a grammar.  
   
- When you load a grammar, it is enabled by default. To disable a loaded grammar, use the <xref:System.Speech.Recognition.Grammar.Enabled%2A> property.  
+ When you load a grammar, it is enabled by default. To disable a loaded grammar, use the &lt;xref:System.Speech.Recognition.Grammar.Enabled%2A&gt; property.  
   
- To load a speech recognition grammar synchronously, use the <xref:System.Speech.Recognition.SpeechRecognitionEngine.LoadGrammar%2A> method.  
+ To load a speech recognition grammar synchronously, use the &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.LoadGrammar%2A&gt; method.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Speech.Recognition.SpeechRecognitionEngine.LoadGrammar(System.Speech.Recognition.Grammar)>.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="Grammar" /> is <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">
@@ -3294,30 +3295,29 @@ namespace SynchronousRecognition
       <Parameters />
       <Docs>
         <summary>Performs a single, asynchronous speech recognition operation.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
  This method performs a single, asynchronous recognition operation. The recognizer performs the operation against its loaded and enabled speech recognition grammars.  
   
  During a call to this method, the recognizer can raise the following events:  
   
--   <xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechDetected>.  Raised when the recognizer detects input that it can identify as speech.  
+-   &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechDetected&gt;.  Raised when the recognizer detects input that it can identify as speech.  
   
--   <xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechHypothesized>.  Raised when input creates an ambiguous match with one of the active grammars.  
+-   &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechHypothesized&gt;.  Raised when input creates an ambiguous match with one of the active grammars.  
   
--   <xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognitionRejected> or <xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognized>. Raised when the recognizer finalizes a recognition operation.  
+-   &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognitionRejected&gt; or &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognized&gt;. Raised when the recognizer finalizes a recognition operation.  
   
--   <xref:System.Speech.Recognition.SpeechRecognitionEngine.RecognizeCompleted>. Raised when a <xref:System.Speech.Recognition.SpeechRecognitionEngine.RecognizeAsync%2A> operation finishes.  
+-   &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.RecognizeCompleted&gt;. Raised when a &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.RecognizeAsync%2A&gt; operation finishes.  
   
- To retrieve the result of an asynchronous recognition operation, attach an event handler to the recognizer's <xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognized> event. The recognizer raises this event whenever it successfully completes a synchronous or asynchronous recognition operation. If recognition was not successful, the <xref:System.Speech.Recognition.RecognizeCompletedEventArgs.Result%2A> property on <xref:System.Speech.Recognition.RecognizeCompletedEventArgs> object, which you can access in the handler for the <xref:System.Speech.Recognition.SpeechRecognitionEngine.RecognizeCompleted> event, will be `null`.  
+ To retrieve the result of an asynchronous recognition operation, attach an event handler to the recognizer's &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognized&gt; event. The recognizer raises this event whenever it successfully completes a synchronous or asynchronous recognition operation. If recognition was not successful, the &lt;xref:System.Speech.Recognition.RecognizeCompletedEventArgs.Result%2A&gt; property on &lt;xref:System.Speech.Recognition.RecognizeCompletedEventArgs&gt; object, which you can access in the handler for the &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.RecognizeCompleted&gt; event, will be `null`.  
   
- To perform synchronous recognition, use one of the <xref:System.Speech.Recognition.SpeechRecognitionEngine.Recognize%2A> methods.  
+ To perform synchronous recognition, use one of the &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.Recognize%2A&gt; methods.  
   
    
   
 ## Examples  
- The following example shows part of a console application that demonstrates basic asynchronous speech recognition. The example creates a <xref:System.Speech.Recognition.DictationGrammar>, loads it into an in-process speech recognizer, and performs one asynchronous recognition operation. Event handlers are included to demonstrate the events that the recognizer raises during the operation.  
+ The following example shows part of a console application that demonstrates basic asynchronous speech recognition. The example creates a &lt;xref:System.Speech.Recognition.DictationGrammar&gt;, loads it into an in-process speech recognizer, and performs one asynchronous recognition operation. Event handlers are included to demonstrate the events that the recognizer raises during the operation.  
   
 ```csharp  
 using System;  
@@ -3355,19 +3355,19 @@ namespace AsynchronousRecognition
   
         // Attach event handlers.  
         recognizer.SpeechDetected +=  
-          new EventHandler<SpeechDetectedEventArgs>(  
+          new EventHandler&lt;SpeechDetectedEventArgs&gt;(  
             SpeechDetectedHandler);  
         recognizer.SpeechHypothesized +=  
-          new EventHandler<SpeechHypothesizedEventArgs>(  
+          new EventHandler&lt;SpeechHypothesizedEventArgs&gt;(  
             SpeechHypothesizedHandler);  
         recognizer.SpeechRecognitionRejected +=  
-          new EventHandler<SpeechRecognitionRejectedEventArgs>(  
+          new EventHandler&lt;SpeechRecognitionRejectedEventArgs&gt;(  
             SpeechRecognitionRejectedHandler);  
         recognizer.SpeechRecognized +=  
-          new EventHandler<SpeechRecognizedEventArgs>(  
+          new EventHandler&lt;SpeechRecognizedEventArgs&gt;(  
             SpeechRecognizedHandler);  
         recognizer.RecognizeCompleted +=  
-          new EventHandler<RecognizeCompletedEventArgs>(  
+          new EventHandler&lt;RecognizeCompletedEventArgs&gt;(  
             RecognizeCompletedHandler);  
   
         // Assign input to the recognizer and start an asynchronous  
@@ -3404,8 +3404,8 @@ namespace AsynchronousRecognition
     {  
       Console.WriteLine(" In SpeechHypothesizedHandler:");  
   
-      string grammarName = "<not available>";  
-      string resultText = "<not available>";  
+      string grammarName = "&lt;not available&gt;";  
+      string resultText = "&lt;not available&gt;";  
       if (e.Result != null)  
       {  
         if (e.Result.Grammar != null)  
@@ -3425,8 +3425,8 @@ namespace AsynchronousRecognition
     {  
       Console.WriteLine(" In SpeechRecognitionRejectedHandler:");  
   
-      string grammarName = "<not available>";  
-      string resultText = "<not available>";  
+      string grammarName = "&lt;not available&gt;";  
+      string resultText = "&lt;not available&gt;";  
       if (e.Result != null)  
       {  
         if (e.Result.Grammar != null)  
@@ -3446,8 +3446,8 @@ namespace AsynchronousRecognition
     {  
       Console.WriteLine(" In SpeechRecognizedHandler.");  
   
-      string grammarName = "<not available>";  
-      string resultText = "<not available>";  
+      string grammarName = "&lt;not available&gt;";  
+      string resultText = "&lt;not available&gt;";  
       if (e.Result != null)  
       {  
         if (e.Result.Grammar != null)  
@@ -3505,8 +3505,9 @@ namespace AsynchronousRecognition
   
 ```  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Speech.Recognition.SpeechRecognitionEngine.Recognize>.</remarks>
         <altmember cref="P:System.Speech.Recognition.SpeechRecognitionEngine.BabbleTimeout" />
         <altmember cref="P:System.Speech.Recognition.SpeechRecognitionEngine.InitialSilenceTimeout" />
         <altmember cref="P:System.Speech.Recognition.SpeechRecognitionEngine.EndSilenceTimeout" />
@@ -3542,36 +3543,35 @@ namespace AsynchronousRecognition
       <Docs>
         <param name="mode">Indicates whether to perform one or multiple recognition operations.</param>
         <summary>Performs one or more asynchronous speech recognition operations.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- If `mode` is <xref:System.Speech.Recognition.RecognizeMode.Multiple>, the recognizer continues performing asynchronous recognition operations until the <xref:System.Speech.Recognition.SpeechRecognitionEngine.RecognizeAsyncCancel%2A> or <xref:System.Speech.Recognition.SpeechRecognitionEngine.RecognizeAsyncStop%2A> method is called.  
+ If `mode` is &lt;xref:System.Speech.Recognition.RecognizeMode.Multiple&gt;, the recognizer continues performing asynchronous recognition operations until the &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.RecognizeAsyncCancel%2A&gt; or &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.RecognizeAsyncStop%2A&gt; method is called.  
   
  During a call to this method, the recognizer can raise the following events:  
   
--   <xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechDetected>.  Raised when the recognizer detects input that it can identify as speech.  
+-   &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechDetected&gt;.  Raised when the recognizer detects input that it can identify as speech.  
   
--   <xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechHypothesized>.  Raised when input creates an ambiguous match with one of the active grammars.  
+-   &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechHypothesized&gt;.  Raised when input creates an ambiguous match with one of the active grammars.  
   
--   <xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognitionRejected> or <xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognized>. Raised when the recognizer finalizes a recognition operation.  
+-   &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognitionRejected&gt; or &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognized&gt;. Raised when the recognizer finalizes a recognition operation.  
   
--   <xref:System.Speech.Recognition.SpeechRecognitionEngine.RecognizeCompleted>. Raised when a <xref:System.Speech.Recognition.SpeechRecognitionEngine.RecognizeAsync%2A> operation finishes.  
+-   &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.RecognizeCompleted&gt;. Raised when a &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.RecognizeAsync%2A&gt; operation finishes.  
   
- To retrieve the result of an asynchronous recognition operation, attach an event handler to the recognizer's <xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognized> event. The recognizer raises this event whenever it successfully completes a synchronous or asynchronous recognition operation. If recognition was not successful, the <xref:System.Speech.Recognition.RecognizeCompletedEventArgs.Result%2A> property on <xref:System.Speech.Recognition.RecognizeCompletedEventArgs> object, which you can access in the handler for the <xref:System.Speech.Recognition.SpeechRecognitionEngine.RecognizeCompleted> event, will be `null`.  
+ To retrieve the result of an asynchronous recognition operation, attach an event handler to the recognizer's &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognized&gt; event. The recognizer raises this event whenever it successfully completes a synchronous or asynchronous recognition operation. If recognition was not successful, the &lt;xref:System.Speech.Recognition.RecognizeCompletedEventArgs.Result%2A&gt; property on &lt;xref:System.Speech.Recognition.RecognizeCompletedEventArgs&gt; object, which you can access in the handler for the &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.RecognizeCompleted&gt; event, will be `null`.  
   
  An asynchronous recognition operation can fail for the following reasons:  
   
--   Speech is not detected before the timeout intervals expire for the <xref:System.Speech.Recognition.SpeechRecognitionEngine.BabbleTimeout%2A> or <xref:System.Speech.Recognition.SpeechRecognitionEngine.InitialSilenceTimeout%2A> properties.  
+-   Speech is not detected before the timeout intervals expire for the &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.BabbleTimeout%2A&gt; or &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.InitialSilenceTimeout%2A&gt; properties.  
   
--   The recognition engine detects speech but finds no matches in any of its loaded and enabled <xref:System.Speech.Recognition.Grammar> objects.  
+-   The recognition engine detects speech but finds no matches in any of its loaded and enabled &lt;xref:System.Speech.Recognition.Grammar&gt; objects.  
   
- To perform synchronous recognition, use one of the <xref:System.Speech.Recognition.SpeechRecognitionEngine.Recognize%2A> methods.  
+ To perform synchronous recognition, use one of the &lt;xref:System.Speech.Recognition.SpeechRecognitionEngine.Recognize%2A&gt; methods.  
   
    
   
 ## Examples  
- The following example shows part of a console application that demonstrates basic asynchronous speech recognition. The example creates a <xref:System.Speech.Recognition.DictationGrammar>, loads it into an in-process speech recognizer, and performs multiple asynchronous recognition operations. The asynchronous operations are cancelled after 30 seconds. Event handlers are included to demonstrate the events that the recognizer raises during the operation.  
+ The following example shows part of a console application that demonstrates basic asynchronous speech recognition. The example creates a &lt;xref:System.Speech.Recognition.DictationGrammar&gt;, loads it into an in-process speech recognizer, and performs multiple asynchronous recognition operations. The asynchronous operations are cancelled after 30 seconds. Event handlers are included to demonstrate the events that the recognizer raises during the operation.  
   
 ```csharp  
 using System;  
@@ -3608,19 +3608,19 @@ namespace AsynchronousRecognition
   
         // Attach event handlers.  
         recognizer.SpeechDetected +=  
-          new EventHandler<SpeechDetectedEventArgs>(  
+          new EventHandler&lt;SpeechDetectedEventArgs&gt;(  
             SpeechDetectedHandler);  
         recognizer.SpeechHypothesized +=  
-          new EventHandler<SpeechHypothesizedEventArgs>(  
+          new EventHandler&lt;SpeechHypothesizedEventArgs&gt;(  
             SpeechHypothesizedHandler);  
         recognizer.SpeechRecognitionRejected +=  
-          new EventHandler<SpeechRecognitionRejectedEventArgs>(  
+          new EventHandler&lt;SpeechRecognitionRejectedEventArgs&gt;(  
             SpeechRecognitionRejectedHandler);  
         recognizer.SpeechRecognized +=  
-          new EventHandler<SpeechRecognizedEventArgs>(  
+          new EventHandler&lt;SpeechRecognizedEventArgs&gt;(  
             SpeechRecognizedHandler);  
         recognizer.RecognizeCompleted +=  
-          new EventHandler<RecognizeCompletedEventArgs>(  
+          new EventHandler&lt;RecognizeCompletedEventArgs&gt;(  
             RecognizeCompletedHandler);  
   
         // Assign input to the recognizer and start asynchronous  
@@ -3661,8 +3661,8 @@ namespace AsynchronousRecognition
     {  
       Console.WriteLine(" In SpeechHypothesizedHandler:");  
   
-      string grammarName = "<not available>";  
-      string resultText = "<not available>";  
+      string grammarName = "&lt;not available&gt;";  
+      string resultText = "&lt;not available&gt;";  
       if (e.Result != null)  
       {  
         if (e.Result.Grammar != null)  
@@ -3682,8 +3682,8 @@ namespace AsynchronousRecognition
     {  
       Console.WriteLine(" In SpeechRecognitionRejectedHandler:");  
   
-      string grammarName = "<not available>";  
-      string resultText = "<not available>";  
+      string grammarName = "&lt;not available&gt;";  
+      string resultText = "&lt;not available&gt;";  
       if (e.Result != null)  
       {  
         if (e.Result.Grammar != null)  
@@ -3703,8 +3703,8 @@ namespace AsynchronousRecognition
     {  
       Console.WriteLine(" In SpeechRecognizedHandler.");  
   
-      string grammarName = "<not available>";  
-      string resultText = "<not available>";  
+      string grammarName = "&lt;not available&gt;";  
+      string resultText = "&lt;not available&gt;";  
       if (e.Result != null)  
       {  
         if (e.Result.Grammar != null)  
@@ -3762,8 +3762,9 @@ namespace AsynchronousRecognition
   
 ```  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Speech.Recognition.SpeechRecognitionEngine.Recognize(System.Speech.Recognition.RecognizeMode)>.</remarks>
         <altmember cref="P:System.Speech.Recognition.SpeechRecognitionEngine.BabbleTimeout" />
         <altmember cref="P:System.Speech.Recognition.SpeechRecognitionEngine.InitialSilenceTimeout" />
         <altmember cref="P:System.Speech.Recognition.SpeechRecognitionEngine.EndSilenceTimeout" />

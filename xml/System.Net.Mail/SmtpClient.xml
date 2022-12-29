@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Type Name="SmtpClient" FullName="System.Net.Mail.SmtpClient">
   <TypeSignature Language="C#" Value="public class SmtpClient : IDisposable" FrameworkAlternate="net-5.0;net-6.0;net-7.0;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netcore-3.1;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netframework-4.8.1;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SmtpClient extends System.Object implements class System.IDisposable" FrameworkAlternate="net-5.0;net-6.0;net-7.0;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netcore-3.1;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netframework-4.8.1;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
@@ -1291,30 +1292,29 @@ The classes shown in the following table are used to construct email messages th
         <param name="message">A <see cref="T:System.Net.Mail.MailMessage" /> that contains the message to send.</param>
         <param name="userToken">A user-defined object that is passed to the method invoked when the asynchronous operation completes.</param>
         <summary>Sends the specified email message to an SMTP server for delivery. This method does not block the calling thread and allows the caller to pass an object to the method that is invoked when the operation completes.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- To receive notification when the email has been sent or the operation has been canceled, add an event handler to the <xref:System.Net.Mail.SmtpClient.SendCompleted> event. You can cancel a <xref:System.Net.Mail.SmtpClient.SendAsync%2A> operation by calling the <xref:System.Net.Mail.SmtpClient.SendAsyncCancel%2A> method.  
+ To receive notification when the email has been sent or the operation has been canceled, add an event handler to the &lt;xref:System.Net.Mail.SmtpClient.SendCompleted&gt; event. You can cancel a &lt;xref:System.Net.Mail.SmtpClient.SendAsync%2A&gt; operation by calling the &lt;xref:System.Net.Mail.SmtpClient.SendAsyncCancel%2A&gt; method.  
   
- After calling <xref:System.Net.Mail.SmtpClient.SendAsync%2A>, you must wait for the email transmission to complete before attempting to send another email message using <xref:System.Net.Mail.SmtpClient.Send%2A> or <xref:System.Net.Mail.SmtpClient.SendAsync%2A>.  
+ After calling &lt;xref:System.Net.Mail.SmtpClient.SendAsync%2A&gt;, you must wait for the email transmission to complete before attempting to send another email message using &lt;xref:System.Net.Mail.SmtpClient.Send%2A&gt; or &lt;xref:System.Net.Mail.SmtpClient.SendAsync%2A&gt;.  
   
- Before calling this method, the <xref:System.Net.Mail.SmtpClient.Host%2A> and <xref:System.Net.Mail.SmtpClient.Port%2A> must be set through the configuration files by setting the relevant properties, or by passing this information into the <xref:System.Net.Mail.SmtpClient.%23ctor%28System.String%2CSystem.Int32%29> constructor.  
+ Before calling this method, the &lt;xref:System.Net.Mail.SmtpClient.Host%2A&gt; and &lt;xref:System.Net.Mail.SmtpClient.Port%2A&gt; must be set through the configuration files by setting the relevant properties, or by passing this information into the &lt;xref:System.Net.Mail.SmtpClient.%23ctor%28System.String%2CSystem.Int32%29&gt; constructor.  
   
- If the SMTP host requires credentials, you must set them before calling this method. To specify credentials, use the <xref:System.Net.Mail.SmtpClient.UseDefaultCredentials%2A> or <xref:System.Net.Mail.SmtpClient.Credentials%2A> properties.  
+ If the SMTP host requires credentials, you must set them before calling this method. To specify credentials, use the &lt;xref:System.Net.Mail.SmtpClient.UseDefaultCredentials%2A&gt; or &lt;xref:System.Net.Mail.SmtpClient.Credentials%2A&gt; properties.  
   
- If you receive an <xref:System.Net.Mail.SmtpException> exception, check the <xref:System.Net.Mail.SmtpException.StatusCode%2A> property to find the reason the operation failed. The <xref:System.Net.Mail.SmtpException> can also contain an inner exception that indicates the reason the operation failed.  
+ If you receive an &lt;xref:System.Net.Mail.SmtpException&gt; exception, check the &lt;xref:System.Net.Mail.SmtpException.StatusCode%2A&gt; property to find the reason the operation failed. The &lt;xref:System.Net.Mail.SmtpException&gt; can also contain an inner exception that indicates the reason the operation failed.  
   
- When sending email using <xref:System.Net.Mail.SmtpClient.SendAsync%2A> to multiple recipients, if the SMTP server accepts some recipients as valid and rejects others, a <xref:System.Net.Mail.SmtpException> is thrown with a <xref:System.NullReferenceException> for the inner exception. If this occurs, <xref:System.Net.Mail.SmtpClient.SendAsync%2A> fails to send email to any of the recipients.  
+ When sending email using &lt;xref:System.Net.Mail.SmtpClient.SendAsync%2A&gt; to multiple recipients, if the SMTP server accepts some recipients as valid and rejects others, a &lt;xref:System.Net.Mail.SmtpException&gt; is thrown with a &lt;xref:System.NullReferenceException&gt; for the inner exception. If this occurs, &lt;xref:System.Net.Mail.SmtpClient.SendAsync%2A&gt; fails to send email to any of the recipients.  
   
- Your application can detect a server certificate validation error by examining the <xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A> property passed into the <xref:System.Net.Mail.SendCompletedEventHandler> delegate.  
+ Your application can detect a server certificate validation error by examining the &lt;xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A&gt; property passed into the &lt;xref:System.Net.Mail.SendCompletedEventHandler&gt; delegate.  
   
- The <xref:System.Net.Mail.SmtpClient.Timeout%2A> property does not have any effect on a <xref:System.Net.Mail.SmtpClient.SendAsync%2A> call.  
+ The &lt;xref:System.Net.Mail.SmtpClient.Timeout%2A&gt; property does not have any effect on a &lt;xref:System.Net.Mail.SmtpClient.SendAsync%2A&gt; call.  
   
- To send mail and block while it is transmitted to the SMTP server, use one of the <xref:System.Net.Mail.SmtpClient.Send%2A> methods.  
+ To send mail and block while it is transmitted to the SMTP server, use one of the &lt;xref:System.Net.Mail.SmtpClient.Send%2A&gt; methods.  
   
-> [!NOTE]
->  If the <xref:System.Net.Mail.SmtpClient.EnableSsl%2A> property is set to `true`, and the SMTP mail server does not advertise STARTTLS in the response to the EHLO command, then a call to the <xref:System.Net.Mail.SmtpClient.Send%2A> or <xref:System.Net.Mail.SmtpClient.SendAsync%2A> methods will throw an <xref:System.Net.Mail.SmtpException>.  
+&gt; [!NOTE]
+&gt;  If the &lt;xref:System.Net.Mail.SmtpClient.EnableSsl%2A&gt; property is set to `true`, and the SMTP mail server does not advertise STARTTLS in the response to the EHLO command, then a call to the &lt;xref:System.Net.Mail.SmtpClient.Send%2A&gt; or &lt;xref:System.Net.Mail.SmtpClient.SendAsync%2A&gt; methods will throw an &lt;xref:System.Net.Mail.SmtpException&gt;.  
   
    
   
@@ -1325,8 +1325,9 @@ The classes shown in the following table are used to construct email messages th
  :::code language="csharp" source="~/snippets/csharp/System.Net.Mail/MailAddress/.ctor/mailasync.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_Remoting/NclMailASync/vb/mailasync.vb" id="Snippet1":::  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Net.Mail.SmtpClient.Send(System.Net.Mail.MailMessage,System.Object)>.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="message" /> is <see langword="null" />.  
   
@@ -1429,33 +1430,33 @@ The classes shown in the following table are used to construct email messages th
         <param name="body">A <see cref="T:System.String" /> that contains the message body.</param>
         <param name="userToken">A user-defined object that is passed to the method invoked when the asynchronous operation completes.</param>
         <summary>Sends an email message to an SMTP server for delivery. The message sender, recipients, subject, and message body are specified using <see cref="T:System.String" /> objects. This method does not block the calling thread and allows the caller to pass an object to the method that is invoked when the operation completes.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- To receive notification when the email has been sent or the operation has been canceled, add an event handler to the <xref:System.Net.Mail.SmtpClient.SendCompleted> event. You can cancel a <xref:System.Net.Mail.SmtpClient.SendAsync%2A> operation by calling the <xref:System.Net.Mail.SmtpClient.SendAsyncCancel%2A> method.  
+ To receive notification when the email has been sent or the operation has been canceled, add an event handler to the &lt;xref:System.Net.Mail.SmtpClient.SendCompleted&gt; event. You can cancel a &lt;xref:System.Net.Mail.SmtpClient.SendAsync%2A&gt; operation by calling the &lt;xref:System.Net.Mail.SmtpClient.SendAsyncCancel%2A&gt; method.  
   
- After calling <xref:System.Net.Mail.SmtpClient.SendAsync%2A>, you must wait for the email transmission to complete before attempting to send another email message using <xref:System.Net.Mail.SmtpClient.Send%2A> or <xref:System.Net.Mail.SmtpClient.SendAsync%2A>.  
+ After calling &lt;xref:System.Net.Mail.SmtpClient.SendAsync%2A&gt;, you must wait for the email transmission to complete before attempting to send another email message using &lt;xref:System.Net.Mail.SmtpClient.Send%2A&gt; or &lt;xref:System.Net.Mail.SmtpClient.SendAsync%2A&gt;.  
   
- Before calling this method, the <xref:System.Net.Mail.SmtpClient.Host%2A> and <xref:System.Net.Mail.SmtpClient.Port%2A> properties must be set either through the configuration files or by setting the properties or passing this information into the <xref:System.Net.Mail.SmtpClient.%23ctor%28System.String%2CSystem.Int32%29> constructor.  
+ Before calling this method, the &lt;xref:System.Net.Mail.SmtpClient.Host%2A&gt; and &lt;xref:System.Net.Mail.SmtpClient.Port%2A&gt; properties must be set either through the configuration files or by setting the properties or passing this information into the &lt;xref:System.Net.Mail.SmtpClient.%23ctor%28System.String%2CSystem.Int32%29&gt; constructor.  
   
- If the SMTP host requires credentials, you must set them before calling this method. To specify credentials, use the <xref:System.Net.Mail.SmtpClient.UseDefaultCredentials%2A> or <xref:System.Net.Mail.SmtpClient.Credentials%2A> property.  
+ If the SMTP host requires credentials, you must set them before calling this method. To specify credentials, use the &lt;xref:System.Net.Mail.SmtpClient.UseDefaultCredentials%2A&gt; or &lt;xref:System.Net.Mail.SmtpClient.Credentials%2A&gt; property.  
   
- If you receive an <xref:System.Net.Mail.SmtpException> exception, check the <xref:System.Net.Mail.SmtpException.StatusCode%2A> property to find the reason the operation failed. The <xref:System.Net.Mail.SmtpException> can also contain an inner exception that indicates the reason the operation failed.  
+ If you receive an &lt;xref:System.Net.Mail.SmtpException&gt; exception, check the &lt;xref:System.Net.Mail.SmtpException.StatusCode%2A&gt; property to find the reason the operation failed. The &lt;xref:System.Net.Mail.SmtpException&gt; can also contain an inner exception that indicates the reason the operation failed.  
   
- When sending email using <xref:System.Net.Mail.SmtpClient.SendAsync%2A> to multiple recipients, if the SMTP server accepts some recipients as valid and rejects others, a <xref:System.Net.Mail.SmtpException> is thrown with a <xref:System.NullReferenceException> for the inner exception. If this occurs, <xref:System.Net.Mail.SmtpClient.SendAsync%2A> fails to send email to any of the recipients.  
+ When sending email using &lt;xref:System.Net.Mail.SmtpClient.SendAsync%2A&gt; to multiple recipients, if the SMTP server accepts some recipients as valid and rejects others, a &lt;xref:System.Net.Mail.SmtpException&gt; is thrown with a &lt;xref:System.NullReferenceException&gt; for the inner exception. If this occurs, &lt;xref:System.Net.Mail.SmtpClient.SendAsync%2A&gt; fails to send email to any of the recipients.  
   
- Your application can detect a server certificate validation error by examining the <xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A> property passed into the <xref:System.Net.Mail.SendCompletedEventHandler> delegate.  
+ Your application can detect a server certificate validation error by examining the &lt;xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A&gt; property passed into the &lt;xref:System.Net.Mail.SendCompletedEventHandler&gt; delegate.  
   
- The <xref:System.Net.Mail.SmtpClient.Timeout%2A> property does not have any effect on a <xref:System.Net.Mail.SmtpClient.SendAsync%2A> call.  
+ The &lt;xref:System.Net.Mail.SmtpClient.Timeout%2A&gt; property does not have any effect on a &lt;xref:System.Net.Mail.SmtpClient.SendAsync%2A&gt; call.  
   
- To send mail and block while it is transmitted to the SMTP server, use one of the <xref:System.Net.Mail.SmtpClient.Send%2A> methods.  
+ To send mail and block while it is transmitted to the SMTP server, use one of the &lt;xref:System.Net.Mail.SmtpClient.Send%2A&gt; methods.  
   
-> [!NOTE]
->  If the <xref:System.Net.Mail.SmtpClient.EnableSsl%2A> property is set to `true`, and the SMTP mail server does not advertise STARTTLS in the response to the EHLO command, then a call to the <xref:System.Net.Mail.SmtpClient.Send%2A> or <xref:System.Net.Mail.SmtpClient.SendAsync%2A> methods will throw an <xref:System.Net.Mail.SmtpException>.  
+&gt; [!NOTE]
+&gt;  If the &lt;xref:System.Net.Mail.SmtpClient.EnableSsl%2A&gt; property is set to `true`, and the SMTP mail server does not advertise STARTTLS in the response to the EHLO command, then a call to the &lt;xref:System.Net.Mail.SmtpClient.Send%2A&gt; or &lt;xref:System.Net.Mail.SmtpClient.SendAsync%2A&gt; methods will throw an &lt;xref:System.Net.Mail.SmtpException&gt;.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Net.Mail.SmtpClient.Send(System.String,System.String,System.String,System.String,System.Object)>.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="from" /> is <see langword="null" />.  
   
@@ -1664,14 +1665,14 @@ The classes shown in the following table are used to construct email messages th
         <param name="message">A <see cref="T:System.Net.Mail.MailMessage" /> that contains the message to send.</param>
         <summary>Sends the specified message to an SMTP server for delivery as an asynchronous operation.</summary>
         <returns>The task object representing the asynchronous operation.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- This operation will not block. The returned <xref:System.Threading.Tasks.Task> object will complete once the message has been sent.
+ This operation will not block. The returned &lt;xref:System.Threading.Tasks.Task&gt; object will complete once the message has been sent.
 
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Net.Mail.SmtpClient.SendMail(System.Net.Mail.MailMessage)>.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="message" /> is <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">This <see cref="T:System.Net.Mail.SmtpClient" /> has another send operation already in progress.  
@@ -1746,14 +1747,14 @@ The classes shown in the following table are used to construct email messages th
         <param name="cancellationToken">The cancellation token to cancel the operation.</param>
         <summary>Sends the specified message to an SMTP server for delivery as an asynchronous operation.</summary>
         <returns>The task object representing the asynchronous operation.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- This operation will not block. The returned <xref:System.Threading.Tasks.Task> object will complete once the message has been sent.  
+ This operation will not block. The returned &lt;xref:System.Threading.Tasks.Task&gt; object will complete once the message has been sent.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Net.Mail.SmtpClient.SendMail(System.Net.Mail.MailMessage,System.Threading.CancellationToken)>.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="message" /> is <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">This <see cref="T:System.Net.Mail.SmtpClient" /> has another send operation already in progress.  
@@ -1847,14 +1848,14 @@ The classes shown in the following table are used to construct email messages th
         <param name="body">A <see cref="T:System.String" /> that contains the message body.</param>
         <summary>Sends the specified message to an SMTP server for delivery as an asynchronous operation. The message sender, recipients, subject, and message body are specified using <see cref="T:System.String" /> objects.</summary>
         <returns>The task object representing the asynchronous operation.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- This operation will not block. The returned <xref:System.Threading.Tasks.Task> object will complete once the message has been sent.  
+ This operation will not block. The returned &lt;xref:System.Threading.Tasks.Task&gt; object will complete once the message has been sent.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Net.Mail.SmtpClient.SendMail(System.String,System.String,System.String,System.String)>.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="from" /> is <see langword="null" />.  
   
@@ -1945,14 +1946,14 @@ The classes shown in the following table are used to construct email messages th
         <param name="cancellationToken">The cancellation token to cancel the operation.</param>
         <summary>Sends the specified message to an SMTP server for delivery as an asynchronous operation, using the specified sender, recipients, subject, and body strings.</summary>
         <returns>The task object representing the asynchronous operation.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- This operation will not block. The returned <xref:System.Threading.Tasks.Task> object will complete once the message has been sent.  
+ This operation will not block. The returned &lt;xref:System.Threading.Tasks.Task&gt; object will complete once the message has been sent.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Net.Mail.SmtpClient.SendMail(System.String,System.String,System.String,System.String,System.Threading.CancellationToken)>.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="from" /> is <see langword="null" />.  
   

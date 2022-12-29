@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Type Name="BufferedStream" FullName="System.IO.BufferedStream">
   <TypeSignature Language="C#" Value="public sealed class BufferedStream : System.IO.Stream" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit BufferedStream extends System.IO.Stream" />
@@ -797,19 +798,19 @@ bufStream->Close();
         <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None" />.</param>
         <summary>Asynchronously reads the bytes from the current buffered stream and writes them to another stream, using a specified buffer size and cancellation token.</summary>
         <returns>A task that represents the asynchronous copy operation.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
 
 ## Remarks
 
 The `CopyToAsync` method enables you to perform resource-intensive I/O operations without blocking the main thread. This performance consideration is particularly important in a Windows 8.x Store app or desktop app where a time-consuming stream operation can block the UI thread and make your app appear as if it is not working. The async methods are used in conjunction with the `async` and `await` keywords in Visual Basic and C#.  
 
-If the operation is canceled before it completes, the returned task contains the <xref:System.Threading.Tasks.TaskStatus.Canceled> value for the <xref:System.Threading.Tasks.Task.Status%2A> property.  
+If the operation is canceled before it completes, the returned task contains the &lt;xref:System.Threading.Tasks.TaskStatus.Canceled&gt; value for the &lt;xref:System.Threading.Tasks.Task.Status%2A&gt; property.  
 
 Copying begins at the current position in the current stream.
 
-          ]]></format>
-        </remarks>
+          
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.IO.BufferedStream.CopyTo(System.IO.Stream,System.Int32,System.Threading.CancellationToken)>.</remarks>
       </Docs>
     </Member>
     <Member MemberName="Dispose">
@@ -906,7 +907,6 @@ This method is called by the public <xref:System.ComponentModel.Component.Dispos
         <summary>Asynchronously releases the unmanaged resources used by the buffered stream.</summary>
         <returns>A task that represents the asynchronous dispose operation.</returns>
         <remarks>
-          <format type="text/markdown"><![CDATA[
 
 ## Remarks
 
@@ -914,10 +914,11 @@ The `DisposeAsync` method enables you to perform a resource-intensive dispose op
 
 This method disposes the stream by writing any changes to the backing store and closing the stream to release resources.
 
-Calling `DisposeAsync` allows the resources used by the <xref:System.IO.BufferedStream> to be reallocated for other purposes. For more information, see [Cleaning Up Unmanaged Resources](/dotnet/standard/garbage-collection/unmanaged).
+Calling `DisposeAsync` allows the resources used by the &lt;xref:System.IO.BufferedStream&gt; to be reallocated for other purposes. For more information, see [Cleaning Up Unmanaged Resources](/dotnet/standard/garbage-collection/unmanaged).
 
-          ]]></format>
-        </remarks>
+          
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.IO.BufferedStream.Dispose>.</remarks>
       </Docs>
     </Member>
     <Member MemberName="EndRead">
@@ -1151,7 +1152,7 @@ Calling `DisposeAsync` allows the resources used by the <xref:System.IO.Buffered
         <param name="cancellationToken">The token to monitor for cancellation requests.</param>
         <summary>Asynchronously clears all buffers for this stream, causes any buffered data to be written to the underlying device, and monitors cancellation requests.</summary>
         <returns>A task that represents the asynchronous flush operation.</returns>
-        <remarks>To be added.</remarks>
+        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.IO.BufferedStream.Flush(System.Threading.CancellationToken)>.</remarks>
         <exception cref="T:System.ObjectDisposedException">The stream has been disposed.</exception>
       </Docs>
     </Member>
@@ -1457,19 +1458,19 @@ Use <xref:System.IO.BinaryReader> for reading primitive data types.
         <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None" />.</param>
         <summary>Asynchronously reads a sequence of bytes from the current buffered stream and advances the position within the buffered stream by the number of bytes read.</summary>
         <returns>A task that represents the asynchronous read operation. The value of its <see cref="P:System.Threading.Tasks.ValueTask`1.Result" /> property contains the total number of bytes read into the buffer. The result value can be less than the number of bytes allocated in the buffer if that many bytes are not currently available, or it can be 0 (zero) if the end of the stream has been reached.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
 
 ## Remarks
 
 The `ReadAsync` method enables you to perform resource-intensive I/O operations without blocking the main thread. This performance consideration is particularly important in a Windows 8.x Store app or desktop app where a time-consuming stream operation can block the UI thread and make your app appear as if it is not working. The async methods are used in conjunction with the `async` and `await` keywords in Visual Basic and C#.
 
-Use the <xref:System.IO.BufferedStream.CanRead%2A> property to determine whether the current instance supports reading.
+Use the &lt;xref:System.IO.BufferedStream.CanRead%2A&gt; property to determine whether the current instance supports reading.
 
-If the operation is canceled before it completes, the returned task contains the <xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType> value for the <xref:System.Threading.Tasks.Task.Status> property.
+If the operation is canceled before it completes, the returned task contains the &lt;xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType&gt; value for the &lt;xref:System.Threading.Tasks.Task.Status&gt; property.
 
-            ]]></format>
-        </remarks>
+            
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.IO.BufferedStream.Read(System.Memory{System.Byte},System.Threading.CancellationToken)>.</remarks>
       </Docs>
     </Member>
     <Member MemberName="ReadAsync">
@@ -1522,14 +1523,14 @@ If the operation is canceled before it completes, the returned task contains the
         <param name="cancellationToken">The token to monitor for cancellation requests.</param>
         <summary>Asynchronously reads a sequence of bytes from the current stream, advances the position within the stream by the number of bytes read, and monitors cancellation requests.</summary>
         <returns>A task that represents the asynchronous read operation. The value of the <paramref name="TResult" /> parameter contains the total number of bytes read into the buffer. The result value can be less than the number of bytes requested if the number of bytes currently available is less than the requested number, or it can be 0 (zero) if the end of the stream has been reached.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- You can create a cancellation token by creating an instance of the <xref:System.Threading.CancellationTokenSource> class and passing the <xref:System.Threading.CancellationTokenSource.Token%2A> property as the `cancellationToken` parameter.  
+ You can create a cancellation token by creating an instance of the &lt;xref:System.Threading.CancellationTokenSource&gt; class and passing the &lt;xref:System.Threading.CancellationTokenSource.Token%2A&gt; property as the `cancellationToken` parameter.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.IO.BufferedStream.Read(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)>.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="buffer" /> is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">
@@ -1948,18 +1949,18 @@ If the write operation is successful, the position within the buffered stream ad
         <summary>Asynchronously writes a sequence of bytes to the current buffered stream, advances the current position within this buffered stream by the number of bytes written, and monitors cancellation requests.</summary>
         <returns>A task that represents the asynchronous write operation.</returns>
         <remarks>
-          <format type="text/markdown"><![CDATA[
 
 ## Remarks
 
 The `WriteAsync` method enables you to perform resource-intensive I/O operations without blocking the main thread. This performance consideration is particularly important in a Windows 8.x Store app or desktop app where a time-consuming stream operation can block the UI thread and make your app appear as if it is not working. The async methods are used in conjunction with the `async` and `await` keywords in Visual Basic and C#.
 
-Use the <xref:System.IO.BufferedStream.CanWrite%2A> property to determine whether the current instance supports writing.
+Use the &lt;xref:System.IO.BufferedStream.CanWrite%2A&gt; property to determine whether the current instance supports writing.
 
-If the operation is canceled before it completes, the returned task contains the <xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType> value for the <xref:System.Threading.Tasks.Task.Status%2A?displayProperty=nameWithType> property.
+If the operation is canceled before it completes, the returned task contains the &lt;xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType&gt; value for the &lt;xref:System.Threading.Tasks.Task.Status%2A?displayProperty=nameWithType&gt; property.
 
-            ]]></format>
-        </remarks>
+            
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.IO.BufferedStream.Write(System.ReadOnlyMemory{System.Byte},System.Threading.CancellationToken)>.</remarks>
       </Docs>
     </Member>
     <Member MemberName="WriteAsync">
@@ -2012,14 +2013,14 @@ If the operation is canceled before it completes, the returned task contains the
         <param name="cancellationToken">The token to monitor for cancellation requests.</param>
         <summary>Asynchronously writes a sequence of bytes to the current stream, advances the current position within this stream by the number of bytes written, and monitors cancellation requests.</summary>
         <returns>A task that represents the asynchronous write operation.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- You can create a cancellation token by creating an instance of the <xref:System.Threading.CancellationTokenSource> class and passing the <xref:System.Threading.CancellationTokenSource.Token%2A> property as the `cancellationToken` parameter.  
+ You can create a cancellation token by creating an instance of the &lt;xref:System.Threading.CancellationTokenSource&gt; class and passing the &lt;xref:System.Threading.CancellationTokenSource.Token%2A&gt; property as the `cancellationToken` parameter.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.IO.BufferedStream.Write(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)>.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="buffer" /> is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">
