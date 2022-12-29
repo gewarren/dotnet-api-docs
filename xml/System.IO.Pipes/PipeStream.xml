@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Type Name="PipeStream" FullName="System.IO.Pipes.PipeStream">
   <TypeSignature Language="C#" Value="public abstract class PipeStream : System.IO.Stream" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit PipeStream extends System.IO.Stream" FrameworkAlternate="net-5.0;net-6.0;net-7.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netcore-3.1;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
@@ -878,7 +879,7 @@ When the disposing parameter is `true`, this method releases all resources held 
         <param name="cancellationToken">The token to monitor for cancellation requests.</param>
         <summary>Asynchronously clears the buffer for the current stream and causes any buffered data to be written to the underlying device.</summary>
         <returns>A task that represent the asynchronous flush operation.</returns>
-        <remarks>To be added.</remarks>
+        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.IO.Pipes.PipeStream.Flush&gt;.</remarks>
       </Docs>
     </Member>
     <Member MemberName="GetAccessControl">
@@ -1583,19 +1584,19 @@ The pipe handle has not been set. (Did your <see cref="T:System.IO.Pipes.PipeStr
         <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None" />.</param>
         <summary>Asynchronously reads a sequence of bytes from the current stream, writes them to a byte memory range, advances the position within the stream by the number of bytes read, and monitors cancellation requests.</summary>
         <returns>A task that represents the asynchronous read operation. The value of its <see cref="P:System.Threading.Tasks.ValueTask`1.Result" /> property contains the total number of bytes read into the buffer. The result value can be less than the number of bytes allocated in the buffer if that many bytes are not currently available, or it can be 0 (zero) if the end of the stream has been reached.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
 
 ## Remarks
 
-The <xref:System.IO.Pipes.PipeStream.ReadAsync%2A> method enables you to perform resource-intensive I/O operations without blocking the main thread. This performance consideration is particularly important in applications where a time-consuming stream operation can block the UI thread and make your app appear as if it is not working. The async methods are used in conjunction with the `async` and `await` keywords in Visual Basic and C#.  
+The &lt;xref:System.IO.Pipes.PipeStream.ReadAsync%2A&gt; method enables you to perform resource-intensive I/O operations without blocking the main thread. This performance consideration is particularly important in applications where a time-consuming stream operation can block the UI thread and make your app appear as if it is not working. The async methods are used in conjunction with the `async` and `await` keywords in Visual Basic and C#.  
 
-Use the <xref:System.IO.Pipes.PipeStream.CanRead%2A> property to determine whether the current instance supports reading.  
+Use the &lt;xref:System.IO.Pipes.PipeStream.CanRead%2A&gt; property to determine whether the current instance supports reading.  
 
-If the operation is canceled before it completes, the returned task contains the <xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType> value for the <xref:System.Threading.Tasks.Task.Status> property.  
+If the operation is canceled before it completes, the returned task contains the &lt;xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType&gt; value for the &lt;xref:System.Threading.Tasks.Task.Status&gt; property.  
 
-          ]]></format>
-        </remarks>
+          
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.IO.Pipes.PipeStream.Read&gt;.</remarks>
         <exception cref="T:System.NotSupportedException">The stream does not support reading.</exception>
         <exception cref="T:System.ObjectDisposedException">Cannot access a closed pipe.</exception>
         <exception cref="T:System.InvalidOperationException">The pipe hasn't been connected yet.
@@ -1648,19 +1649,19 @@ The pipe handle has not been set. (Did your <see cref="T:System.IO.Pipes.PipeStr
         <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None" />.</param>
         <summary>Asynchronously reads a sequence of bytes from the current stream to a byte array starting at a specified position for a specified number of bytes, advances the position within the stream by the number of bytes read, and monitors cancellation requests.</summary>
         <returns>A task that represents the asynchronous read operation. The value of its <see cref="P:System.Threading.Tasks.Task`1.Result" /> property contains the total number of bytes read into the buffer. The result value can be less than the number of bytes requested if the number of bytes currently available is less than the requested number, or it can be 0 (zero) if the end of the stream has been reached.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
 
 ## Remarks
 
-The <xref:System.IO.Pipes.PipeStream.ReadAsync%2A> method enables you to perform resource-intensive I/O operations without blocking the main thread. This performance consideration is particularly important in applications where a time-consuming stream operation can block the UI thread and make your app appear as if it is not working. The async methods are used in conjunction with the `async` and `await` keywords in Visual Basic and C#.
+The &lt;xref:System.IO.Pipes.PipeStream.ReadAsync%2A&gt; method enables you to perform resource-intensive I/O operations without blocking the main thread. This performance consideration is particularly important in applications where a time-consuming stream operation can block the UI thread and make your app appear as if it is not working. The async methods are used in conjunction with the `async` and `await` keywords in Visual Basic and C#.
 
-Use the <xref:System.IO.Pipes.PipeStream.CanRead%2A> property to determine whether the current instance supports reading.
+Use the &lt;xref:System.IO.Pipes.PipeStream.CanRead%2A&gt; property to determine whether the current instance supports reading.
 
-If the operation is canceled before it completes, the returned task contains the <xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType> value for the <xref:System.Threading.Tasks.Task.Status%2A> property.
+If the operation is canceled before it completes, the returned task contains the &lt;xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType&gt; value for the &lt;xref:System.Threading.Tasks.Task.Status%2A&gt; property.
 
-          ]]></format>
-        </remarks>
+          
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.IO.Pipes.PipeStream.Read&gt;.</remarks>
         <exception cref="T:System.NotSupportedException">The stream does not support reading.</exception>
         <exception cref="T:System.ObjectDisposedException">Cannot access a closed pipe.</exception>
         <exception cref="T:System.InvalidOperationException">The pipe hasn't been connected yet.
@@ -2267,19 +2268,19 @@ The pipe handle has not been set. (Did your <see cref="T:System.IO.Pipes.PipeStr
         <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None" />.</param>
         <summary>Asynchronously writes a sequence of bytes to the current stream, advances the current position within this stream by the number of bytes written, and monitors cancellation requests.</summary>
         <returns>A task that represents the asynchronous write operation.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
 
 ## Remarks
 
-The <xref:System.IO.Pipes.PipeStream.WriteAsync%2A> method enables you to perform resource-intensive I/O operations without blocking the main thread. This performance consideration is particularly important in applications where a time-consuming stream operation can block the UI thread and make your app appear as if it is not working. The async methods are used in conjunction with the `async` and `await` keywords in Visual Basic and C#.
+The &lt;xref:System.IO.Pipes.PipeStream.WriteAsync%2A&gt; method enables you to perform resource-intensive I/O operations without blocking the main thread. This performance consideration is particularly important in applications where a time-consuming stream operation can block the UI thread and make your app appear as if it is not working. The async methods are used in conjunction with the `async` and `await` keywords in Visual Basic and C#.
 
-Use the <xref:System.IO.Pipes.PipeStream.CanWrite%2A> property to determine whether the current instance supports writing.
+Use the &lt;xref:System.IO.Pipes.PipeStream.CanWrite%2A&gt; property to determine whether the current instance supports writing.
 
-If the operation is canceled before it completes, the returned task contains the <xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithtype> value for the <xref:System.Threading.Tasks.Task.Status%2A> property.
+If the operation is canceled before it completes, the returned task contains the &lt;xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithtype&gt; value for the &lt;xref:System.Threading.Tasks.Task.Status%2A&gt; property.
 
-          ]]></format>
-        </remarks>
+          
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.IO.Pipes.PipeStream.Write&gt;.</remarks>
         <exception cref="T:System.NotSupportedException">Stream does not support writing.</exception>
         <exception cref="T:System.ObjectDisposedException">Cannot access a closed pipe.</exception>
         <exception cref="T:System.IO.IOException">The pipe is broken.</exception>
@@ -2333,19 +2334,19 @@ The pipe handle has not been set. (Did your <see cref="T:System.IO.Pipes.PipeStr
         <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None" />.</param>
         <summary>Asynchronously writes a specified number of bytes from a byte array starting at a specified position, advances the current position within this stream by the number of bytes written, and monitors cancellation requests.</summary>
         <returns>A task that represents the asynchronous write operation.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
 
-The <xref:System.IO.Pipes.PipeStream.WriteAsync%2A> method enables you to perform resource-intensive I/O operations without blocking the main thread. This performance consideration is particularly important in applications where a time-consuming stream operation can block the UI thread and make your app appear as if it is not working. The async methods are used in conjunction with the `async` and `await` keywords in Visual Basic and C#.
+The &lt;xref:System.IO.Pipes.PipeStream.WriteAsync%2A&gt; method enables you to perform resource-intensive I/O operations without blocking the main thread. This performance consideration is particularly important in applications where a time-consuming stream operation can block the UI thread and make your app appear as if it is not working. The async methods are used in conjunction with the `async` and `await` keywords in Visual Basic and C#.
 
-Use the <xref:System.IO.Pipes.PipeStream.CanWrite%2A> property to determine whether the current instance supports writing.
+Use the &lt;xref:System.IO.Pipes.PipeStream.CanWrite%2A&gt; property to determine whether the current instance supports writing.
 
-If the operation is canceled before it completes, the returned task contains the <xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType> value for the <xref:System.Threading.Tasks.Task.Status%2A> property.
+If the operation is canceled before it completes, the returned task contains the &lt;xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType&gt; value for the &lt;xref:System.Threading.Tasks.Task.Status%2A&gt; property.
 
-          ]]></format>
-        </remarks>
+          
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.IO.Pipes.PipeStream.Write&gt;.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="buffer" /> is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">The <paramref name="offset" /> is negative.

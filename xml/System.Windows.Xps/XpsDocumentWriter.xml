@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Type Name="XpsDocumentWriter" FullName="System.Windows.Xps.XpsDocumentWriter">
   <TypeSignature Language="C#" Value="public class XpsDocumentWriter : System.Windows.Documents.Serialization.SerializerWriter" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XpsDocumentWriter extends System.Windows.Documents.Serialization.SerializerWriter" />
@@ -65,7 +66,7 @@
       <Parameters />
       <Docs>
         <summary>Cancels the current <see cref="Overload:System.Windows.Xps.XpsDocumentWriter.WriteAsync" /> operation.</summary>
-        <remarks>To be added.</remarks>
+        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Windows.Xps.XpsDocumentWriter.Cancel&gt;.</remarks>
         <exception cref="T:System.Windows.Xps.XpsWriterException">No asynchronous write operation is in progress.</exception>
       </Docs>
     </Member>
@@ -892,18 +893,18 @@ By design, this `Write` method does not raise the <xref:System.Windows.Xps.XpsDo
       <Docs>
         <param name="documentPath">The path of the source document.</param>
         <summary>Writes asynchronously a specified XPS document to the target <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> or <see cref="T:System.Printing.PrintQueue" />.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- Although the <xref:System.Windows.Xps.Packaging.XpsDocument> class has a singular name, an <xref:System.Windows.Xps.Packaging.XpsDocument> can be one <xref:System.Windows.Documents.FixedDocument> or a set of multiple documents. This method adds the <xref:System.Windows.Documents.FixedDocument> elements in the source to the set of <xref:System.Windows.Documents.FixedDocument> elements in the target <xref:System.Windows.Xps.Packaging.XpsDocument> or <xref:System.Printing.PrintQueue>.  
+ Although the &lt;xref:System.Windows.Xps.Packaging.XpsDocument&gt; class has a singular name, an &lt;xref:System.Windows.Xps.Packaging.XpsDocument&gt; can be one &lt;xref:System.Windows.Documents.FixedDocument&gt; or a set of multiple documents. This method adds the &lt;xref:System.Windows.Documents.FixedDocument&gt; elements in the source to the set of &lt;xref:System.Windows.Documents.FixedDocument&gt; elements in the target &lt;xref:System.Windows.Xps.Packaging.XpsDocument&gt; or &lt;xref:System.Printing.PrintQueue&gt;.  
   
- This <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A> method reserializes the specified XPS document, which removes all content from the <xref:System.IO.Packaging.Package> that's not required to be preserved by the [XML Paper Specification](https://www.ecma-international.org/publications-and-standards/standards/ecma-388/). The reserialization also removes all extensions from the <xref:System.Windows.Documents.FixedPage> markup, including any extended XPS content.  
+ This &lt;xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A&gt; method reserializes the specified XPS document, which removes all content from the &lt;xref:System.IO.Packaging.Package&gt; that's not required to be preserved by the [XML Paper Specification](https://www.ecma-international.org/publications-and-standards/standards/ecma-388/). The reserialization also removes all extensions from the &lt;xref:System.Windows.Documents.FixedPage&gt; markup, including any extended XPS content.  
   
- By design, this <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A> method does not call the <xref:System.Windows.Xps.XpsDocumentWriter.WritingPrintTicketRequired> event.  
+ By design, this &lt;xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A&gt; method does not call the &lt;xref:System.Windows.Xps.XpsDocumentWriter.WritingPrintTicketRequired&gt; event.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Windows.Xps.XpsDocumentWriter.Write&gt;.</remarks>
       </Docs>
     </Member>
     <Member MemberName="WriteAsync">
@@ -937,8 +938,7 @@ By design, this `Write` method does not raise the <xref:System.Windows.Xps.XpsDo
       <Docs>
         <param name="documentPaginator">An object that contains a pointer to unpaginated source material and also contains methods for paginating the material.</param>
         <summary>Writes asynchronously paginated content from a specified <see cref="T:System.Windows.Documents.DocumentPaginator" /> to the target <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> or <see cref="T:System.Printing.PrintQueue" />.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Examples  
  The following example shows how to use this method to write to an XPS document.  
@@ -946,8 +946,9 @@ By design, this `Write` method does not raise the <xref:System.Windows.Xps.XpsDo
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Documents/DocumentPaginator/PageSize/XpsSaveHelper.cs" id="Snippetwriteasynctoxpswithdocumentpaginator":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_Wpf/XpsSave/visualbasic/xpssavehelper.vb" id="Snippetwriteasynctoxpswithdocumentpaginator":::  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Windows.Xps.XpsDocumentWriter.Write&gt;.</remarks>
       </Docs>
     </Member>
     <Member MemberName="WriteAsync">
@@ -981,11 +982,10 @@ By design, this `Write` method does not raise the <xref:System.Windows.Xps.XpsDo
       <Docs>
         <param name="fixedDocument">The document that is written.</param>
         <summary>Writes asynchronously a specified <see cref="T:System.Windows.Documents.FixedDocument" /> to the target <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> or <see cref="T:System.Printing.PrintQueue" />.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- Although the <xref:System.Windows.Xps.Packaging.XpsDocument> class has a singular name, an <xref:System.Windows.Xps.Packaging.XpsDocument> can be one <xref:System.Windows.Documents.FixedDocument> or a set of multiple documents. This method adds a <xref:System.Windows.Documents.FixedDocument> to the set.  
+ Although the &lt;xref:System.Windows.Xps.Packaging.XpsDocument&gt; class has a singular name, an &lt;xref:System.Windows.Xps.Packaging.XpsDocument&gt; can be one &lt;xref:System.Windows.Documents.FixedDocument&gt; or a set of multiple documents. This method adds a &lt;xref:System.Windows.Documents.FixedDocument&gt; to the set.  
   
    
   
@@ -995,8 +995,9 @@ By design, this `Write` method does not raise the <xref:System.Windows.Xps.XpsDo
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Documents/DocumentPaginator/PageSize/XpsSaveHelper.cs" id="Snippetwriteasynctoxpswithfixeddocument":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_Wpf/XpsSave/visualbasic/xpssavehelper.vb" id="Snippetwriteasynctoxpswithfixeddocument":::  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Windows.Xps.XpsDocumentWriter.Write&gt;.</remarks>
       </Docs>
     </Member>
     <Member MemberName="WriteAsync">
@@ -1030,11 +1031,10 @@ By design, this `Write` method does not raise the <xref:System.Windows.Xps.XpsDo
       <Docs>
         <param name="fixedDocumentSequence">The set of documents that is written.</param>
         <summary>Writes asynchronously a specified <see cref="T:System.Windows.Documents.FixedDocumentSequence" /> to the target <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> or <see cref="T:System.Printing.PrintQueue" />.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- Although the <xref:System.Windows.Xps.Packaging.XpsDocument> class has a singular name, an <xref:System.Windows.Xps.Packaging.XpsDocument> can be one <xref:System.Windows.Documents.FixedDocument> or a set of multiple documents. This method adds a <xref:System.Windows.Documents.FixedDocument> or a set of <xref:System.Windows.Documents.FixedDocument> elements to the existing set.  
+ Although the &lt;xref:System.Windows.Xps.Packaging.XpsDocument&gt; class has a singular name, an &lt;xref:System.Windows.Xps.Packaging.XpsDocument&gt; can be one &lt;xref:System.Windows.Documents.FixedDocument&gt; or a set of multiple documents. This method adds a &lt;xref:System.Windows.Documents.FixedDocument&gt; or a set of &lt;xref:System.Windows.Documents.FixedDocument&gt; elements to the existing set.  
   
    
   
@@ -1044,8 +1044,9 @@ By design, this `Write` method does not raise the <xref:System.Windows.Xps.XpsDo
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Documents/DocumentPaginator/PageSize/XpsSaveHelper.cs" id="Snippetwriteasynctoxpswithfixeddocumentsequence":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_Wpf/XpsSave/visualbasic/xpssavehelper.vb" id="Snippetwriteasynctoxpswithfixeddocumentsequence":::  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Windows.Xps.XpsDocumentWriter.Write&gt;.</remarks>
       </Docs>
     </Member>
     <Member MemberName="WriteAsync">
@@ -1079,7 +1080,7 @@ By design, this `Write` method does not raise the <xref:System.Windows.Xps.XpsDo
       <Docs>
         <param name="fixedPage">The page that is written.</param>
         <summary>Writes asynchronously a specified <see cref="T:System.Windows.Documents.FixedPage" /> to the target <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> or <see cref="T:System.Printing.PrintQueue" />.</summary>
-        <remarks>To be added.</remarks>
+        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Windows.Xps.XpsDocumentWriter.Write&gt;.</remarks>
       </Docs>
     </Member>
     <Member MemberName="WriteAsync">
@@ -1113,22 +1114,22 @@ By design, this `Write` method does not raise the <xref:System.Windows.Xps.XpsDo
       <Docs>
         <param name="visual">The <see cref="T:System.Windows.Media.Visual" /> that is written.</param>
         <summary>Writes asynchronously a specified <see cref="T:System.Windows.Media.Visual" /> to the target <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> or <see cref="T:System.Printing.PrintQueue" />.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- To batch write a <xref:System.Windows.Media.Visual>, use <xref:System.Windows.Xps.VisualsToXpsDocument>.  
+ To batch write a &lt;xref:System.Windows.Media.Visual&gt;, use &lt;xref:System.Windows.Xps.VisualsToXpsDocument&gt;.  
   
    
   
 ## Examples  
- The following example shows how to use this method to write a <xref:System.Windows.Media.Visual> to an XPS document.  
+ The following example shows how to use this method to write a &lt;xref:System.Windows.Media.Visual&gt; to an XPS document.  
   
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Documents/DocumentPaginator/PageSize/XpsSaveHelper.cs" id="Snippetwriteasynctoxpswithvisual":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_Wpf/XpsSave/visualbasic/xpssavehelper.vb" id="Snippetwriteasynctoxpswithvisual":::  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Windows.Xps.XpsDocumentWriter.Write&gt;.</remarks>
       </Docs>
     </Member>
     <Member MemberName="WriteAsync">
@@ -1164,22 +1165,22 @@ By design, this `Write` method does not raise the <xref:System.Windows.Xps.XpsDo
         <param name="documentPath">The path of the source document.</param>
         <param name="notificationLevel">An indication of whether notification is enabled.</param>
         <summary>Writes asynchronously a specified XPS document with notification option to the target <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> or <see cref="T:System.Printing.PrintQueue" />.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- When `notificationLevel` is disabled, the <xref:System.Windows.Xps.XpsDocumentWriter> copies the serialized XPS document to the target <xref:System.Windows.Xps.Packaging.XpsDocument> or <xref:System.Printing.PrintQueue> that created the <xref:System.Windows.Xps.XpsDocumentWriter>. When `notificationLevel` is enabled, the <xref:System.Windows.Xps.XpsDocumentWriter> first deserializes the document, next reserializes it, and then writes it to the target with progress notifications as each page is output.  
+ When `notificationLevel` is disabled, the &lt;xref:System.Windows.Xps.XpsDocumentWriter&gt; copies the serialized XPS document to the target &lt;xref:System.Windows.Xps.Packaging.XpsDocument&gt; or &lt;xref:System.Printing.PrintQueue&gt; that created the &lt;xref:System.Windows.Xps.XpsDocumentWriter&gt;. When `notificationLevel` is enabled, the &lt;xref:System.Windows.Xps.XpsDocumentWriter&gt; first deserializes the document, next reserializes it, and then writes it to the target with progress notifications as each page is output.  
   
- Although the <xref:System.Windows.Xps.Packaging.XpsDocument> class has a singular name, an <xref:System.Windows.Xps.Packaging.XpsDocument> can be one <xref:System.Windows.Documents.FixedDocument> or a set of multiple documents. This method adds the <xref:System.Windows.Documents.FixedDocument> elements in the source to the sequence of <xref:System.Windows.Documents.FixedDocument> elements in the target <xref:System.Windows.Xps.Packaging.XpsDocument> or <xref:System.Printing.PrintQueue>.  
+ Although the &lt;xref:System.Windows.Xps.Packaging.XpsDocument&gt; class has a singular name, an &lt;xref:System.Windows.Xps.Packaging.XpsDocument&gt; can be one &lt;xref:System.Windows.Documents.FixedDocument&gt; or a set of multiple documents. This method adds the &lt;xref:System.Windows.Documents.FixedDocument&gt; elements in the source to the sequence of &lt;xref:System.Windows.Documents.FixedDocument&gt; elements in the target &lt;xref:System.Windows.Xps.Packaging.XpsDocument&gt; or &lt;xref:System.Printing.PrintQueue&gt;.  
   
- If `notificationLevel` is specified as <xref:System.Windows.Xps.XpsDocumentNotificationLevel.ReceiveNotificationEnabled>, notifications are produced only when the document is serialized, not printed.  To receive notifications, the document must be reserialized.  When a document is reserialized, all content from the <xref:System.IO.Packaging.Package> that's not required to be preserved by the [XML Paper Specification](https://www.ecma-international.org/publications-and-standards/standards/ecma-388/) is removed. The reserialization also removes all extensions from the <xref:System.Windows.Documents.FixedPage> markup, including any extended XPS content.  
+ If `notificationLevel` is specified as &lt;xref:System.Windows.Xps.XpsDocumentNotificationLevel.ReceiveNotificationEnabled&gt;, notifications are produced only when the document is serialized, not printed.  To receive notifications, the document must be reserialized.  When a document is reserialized, all content from the &lt;xref:System.IO.Packaging.Package&gt; that's not required to be preserved by the [XML Paper Specification](https://www.ecma-international.org/publications-and-standards/standards/ecma-388/) is removed. The reserialization also removes all extensions from the &lt;xref:System.Windows.Documents.FixedPage&gt; markup, including any extended XPS content.  
   
- If `notificationLevel` is specified as <xref:System.Windows.Xps.XpsDocumentNotificationLevel.ReceiveNotificationDisabled> the document will not be reserialized and any extended content will be preserved, even when printed.  
+ If `notificationLevel` is specified as &lt;xref:System.Windows.Xps.XpsDocumentNotificationLevel.ReceiveNotificationDisabled&gt; the document will not be reserialized and any extended content will be preserved, even when printed.  
   
- By design this <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A> method does not call the <xref:System.Windows.Xps.XpsDocumentWriter.WritingPrintTicketRequired> event.  
+ By design this &lt;xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A&gt; method does not call the &lt;xref:System.Windows.Xps.XpsDocumentWriter.WritingPrintTicketRequired&gt; event.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Windows.Xps.XpsDocumentWriter.Write&gt;.</remarks>
       </Docs>
     </Member>
     <Member MemberName="WriteAsync">
@@ -1215,7 +1216,7 @@ By design, this `Write` method does not raise the <xref:System.Windows.Xps.XpsDo
         <param name="documentPaginator">An object that contains a pointer to unpaginated source material; also contains methods for paginating the material.</param>
         <param name="userSuppliedState">A user-specified object to identify and associate with the asynchronous operation.</param>
         <summary>Writes asynchronously paginated content from a specified <see cref="T:System.Windows.Documents.DocumentPaginator" /> to the target <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> or <see cref="T:System.Printing.PrintQueue" />.</summary>
-        <remarks>To be added.</remarks>
+        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Windows.Xps.XpsDocumentWriter.Write&gt;.</remarks>
       </Docs>
     </Member>
     <Member MemberName="WriteAsync">
@@ -1251,14 +1252,14 @@ By design, this `Write` method does not raise the <xref:System.Windows.Xps.XpsDo
         <param name="documentPaginator">An object that contains a pointer to unpaginated source material and also contains methods for paginating the material.</param>
         <param name="printTicket">A <see cref="T:System.Printing.PrintTicket" /> that represents the default printing preferences for the material.</param>
         <summary>Writes asynchronously paginated content from a specified <see cref="T:System.Windows.Documents.DocumentPaginator" /> together with a <see cref="T:System.Printing.PrintTicket" /> to the target <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> or <see cref="T:System.Printing.PrintQueue" />.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- This method does not validate or modify the specified `printTicket` for a particular <xref:System.Printing.PrintQueue>. If necessary, use the <xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A> method to create a <xref:System.Printing.PrintTicket> that is specific to the <xref:System.Printing.PrintQueue> and is valid for a specified printer.  
+ This method does not validate or modify the specified `printTicket` for a particular &lt;xref:System.Printing.PrintQueue&gt;. If necessary, use the &lt;xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A&gt; method to create a &lt;xref:System.Printing.PrintTicket&gt; that is specific to the &lt;xref:System.Printing.PrintQueue&gt; and is valid for a specified printer.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Windows.Xps.XpsDocumentWriter.Write&gt;.</remarks>
       </Docs>
     </Member>
     <Member MemberName="WriteAsync">
@@ -1294,14 +1295,14 @@ By design, this `Write` method does not raise the <xref:System.Windows.Xps.XpsDo
         <param name="fixedDocument">The document that is written.</param>
         <param name="userSuppliedState">A user-specified object to identify and associate with the asynchronous operation.</param>
         <summary>Writes asynchronously a specified <see cref="T:System.Windows.Documents.FixedDocument" /> to the target <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> or <see cref="T:System.Printing.PrintQueue" />.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- Although the <xref:System.Windows.Xps.Packaging.XpsDocument> class has a singular name, an <xref:System.Windows.Xps.Packaging.XpsDocument> can be one <xref:System.Windows.Documents.FixedDocument> or a set of multiple documents. This method adds a <xref:System.Windows.Documents.FixedDocument> to the set.  
+ Although the &lt;xref:System.Windows.Xps.Packaging.XpsDocument&gt; class has a singular name, an &lt;xref:System.Windows.Xps.Packaging.XpsDocument&gt; can be one &lt;xref:System.Windows.Documents.FixedDocument&gt; or a set of multiple documents. This method adds a &lt;xref:System.Windows.Documents.FixedDocument&gt; to the set.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Windows.Xps.XpsDocumentWriter.Write&gt;.</remarks>
       </Docs>
     </Member>
     <Member MemberName="WriteAsync">
@@ -1337,16 +1338,16 @@ By design, this `Write` method does not raise the <xref:System.Windows.Xps.XpsDo
         <param name="fixedDocument">The document that is written.</param>
         <param name="printTicket">A <see cref="T:System.Printing.PrintTicket" /> that represents the default printing preferences for the document.</param>
         <summary>Writes asynchronously a specified <see cref="T:System.Windows.Documents.FixedDocument" /> together with a <see cref="T:System.Printing.PrintTicket" /> to the target <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> or <see cref="T:System.Printing.PrintQueue" />.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- Although the <xref:System.Windows.Xps.Packaging.XpsDocument> class has a singular name, an <xref:System.Windows.Xps.Packaging.XpsDocument> can be one <xref:System.Windows.Documents.FixedDocument> or a set of multiple documents. This method adds a <xref:System.Windows.Documents.FixedDocument> to the set.  
+ Although the &lt;xref:System.Windows.Xps.Packaging.XpsDocument&gt; class has a singular name, an &lt;xref:System.Windows.Xps.Packaging.XpsDocument&gt; can be one &lt;xref:System.Windows.Documents.FixedDocument&gt; or a set of multiple documents. This method adds a &lt;xref:System.Windows.Documents.FixedDocument&gt; to the set.  
   
- This method does not validate or modify the specified `printTicket` for a particular <xref:System.Printing.PrintQueue>. If necessary, use the <xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A> method to create a <xref:System.Printing.PrintTicket> that is specific to the <xref:System.Printing.PrintQueue> and is valid for a specified printer.  
+ This method does not validate or modify the specified `printTicket` for a particular &lt;xref:System.Printing.PrintQueue&gt;. If necessary, use the &lt;xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A&gt; method to create a &lt;xref:System.Printing.PrintTicket&gt; that is specific to the &lt;xref:System.Printing.PrintQueue&gt; and is valid for a specified printer.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Windows.Xps.XpsDocumentWriter.Write&gt;.</remarks>
       </Docs>
     </Member>
     <Member MemberName="WriteAsync">
@@ -1382,14 +1383,14 @@ By design, this `Write` method does not raise the <xref:System.Windows.Xps.XpsDo
         <param name="fixedDocumentSequence">The set of documents that are written.</param>
         <param name="userSuppliedState">A user-specified object to identify and associate with the asynchronous operation.</param>
         <summary>Writes asynchronously a specified <see cref="T:System.Windows.Documents.FixedDocumentSequence" /> to the target <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> or <see cref="T:System.Printing.PrintQueue" />.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- Although the <xref:System.Windows.Xps.Packaging.XpsDocument> class has a singular name, an <xref:System.Windows.Xps.Packaging.XpsDocument> can be one <xref:System.Windows.Documents.FixedDocument> or a set of multiple documents. This method adds a <xref:System.Windows.Documents.FixedDocument> or a set of <xref:System.Windows.Documents.FixedDocument> elements to the existing set.  
+ Although the &lt;xref:System.Windows.Xps.Packaging.XpsDocument&gt; class has a singular name, an &lt;xref:System.Windows.Xps.Packaging.XpsDocument&gt; can be one &lt;xref:System.Windows.Documents.FixedDocument&gt; or a set of multiple documents. This method adds a &lt;xref:System.Windows.Documents.FixedDocument&gt; or a set of &lt;xref:System.Windows.Documents.FixedDocument&gt; elements to the existing set.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Windows.Xps.XpsDocumentWriter.Write&gt;.</remarks>
       </Docs>
     </Member>
     <Member MemberName="WriteAsync">
@@ -1425,16 +1426,16 @@ By design, this `Write` method does not raise the <xref:System.Windows.Xps.XpsDo
         <param name="fixedDocumentSequence">The set of documents that are written.</param>
         <param name="printTicket">A <see cref="T:System.Printing.PrintTicket" /> that represents the default printing preferences for the set of documents.</param>
         <summary>Writes asynchronously a specified <see cref="T:System.Windows.Documents.FixedDocumentSequence" /> together with a <see cref="T:System.Printing.PrintTicket" /> to the target <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> or <see cref="T:System.Printing.PrintQueue" />.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- Although the <xref:System.Windows.Xps.Packaging.XpsDocument> class has a singular name, an <xref:System.Windows.Xps.Packaging.XpsDocument> can be one <xref:System.Windows.Documents.FixedDocument> or a set of multiple documents. This method adds a <xref:System.Windows.Documents.FixedDocument> or a set of <xref:System.Windows.Documents.FixedDocument> elements to the existing set.  
+ Although the &lt;xref:System.Windows.Xps.Packaging.XpsDocument&gt; class has a singular name, an &lt;xref:System.Windows.Xps.Packaging.XpsDocument&gt; can be one &lt;xref:System.Windows.Documents.FixedDocument&gt; or a set of multiple documents. This method adds a &lt;xref:System.Windows.Documents.FixedDocument&gt; or a set of &lt;xref:System.Windows.Documents.FixedDocument&gt; elements to the existing set.  
   
- This method does not validate or modify the specified `printTicket` for a particular <xref:System.Printing.PrintQueue>. If necessary, use the <xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A> method to create a <xref:System.Printing.PrintTicket> that is specific to the <xref:System.Printing.PrintQueue> and is valid for a specified printer.  
+ This method does not validate or modify the specified `printTicket` for a particular &lt;xref:System.Printing.PrintQueue&gt;. If necessary, use the &lt;xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A&gt; method to create a &lt;xref:System.Printing.PrintTicket&gt; that is specific to the &lt;xref:System.Printing.PrintQueue&gt; and is valid for a specified printer.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Windows.Xps.XpsDocumentWriter.Write&gt;.</remarks>
       </Docs>
     </Member>
     <Member MemberName="WriteAsync">
@@ -1470,7 +1471,7 @@ By design, this `Write` method does not raise the <xref:System.Windows.Xps.XpsDo
         <param name="fixedPage">The page that is written.</param>
         <param name="userSuppliedState">A user-specified object to identify and associate with the asynchronous operation.</param>
         <summary>Writes asynchronously a specified <see cref="T:System.Windows.Documents.FixedPage" /> to the target <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> or <see cref="T:System.Printing.PrintQueue" />.</summary>
-        <remarks>To be added.</remarks>
+        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Windows.Xps.XpsDocumentWriter.Write&gt;.</remarks>
       </Docs>
     </Member>
     <Member MemberName="WriteAsync">
@@ -1506,14 +1507,14 @@ By design, this `Write` method does not raise the <xref:System.Windows.Xps.XpsDo
         <param name="fixedPage">The page that is written.</param>
         <param name="printTicket">A <see cref="T:System.Printing.PrintTicket" /> that represents the default printing preferences for the page.</param>
         <summary>Writes asynchronously a specified <see cref="T:System.Windows.Documents.FixedPage" /> together with a <see cref="T:System.Printing.PrintTicket" /> to the target <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> or <see cref="T:System.Printing.PrintQueue" />.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- This method does not validate or modify the specified `printTicket` for a particular <xref:System.Printing.PrintQueue>. If necessary, use the <xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A> method to create a <xref:System.Printing.PrintTicket> that is specific to the <xref:System.Printing.PrintQueue> and is valid for a specified printer.  
+ This method does not validate or modify the specified `printTicket` for a particular &lt;xref:System.Printing.PrintQueue&gt;. If necessary, use the &lt;xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A&gt; method to create a &lt;xref:System.Printing.PrintTicket&gt; that is specific to the &lt;xref:System.Printing.PrintQueue&gt; and is valid for a specified printer.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Windows.Xps.XpsDocumentWriter.Write&gt;.</remarks>
       </Docs>
     </Member>
     <Member MemberName="WriteAsync">
@@ -1549,14 +1550,14 @@ By design, this `Write` method does not raise the <xref:System.Windows.Xps.XpsDo
         <param name="visual">The <see cref="T:System.Windows.Media.Visual" /> that is written.</param>
         <param name="userSuppliedState">A user-specified object to identify and associate with the asynchronous operation.</param>
         <summary>Writes asynchronously a specified <see cref="T:System.Windows.Media.Visual" /> to the target <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> or <see cref="T:System.Printing.PrintQueue" />.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- To batch write a <xref:System.Windows.Media.Visual>, use <xref:System.Windows.Xps.VisualsToXpsDocument>.  
+ To batch write a &lt;xref:System.Windows.Media.Visual&gt;, use &lt;xref:System.Windows.Xps.VisualsToXpsDocument&gt;.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Windows.Xps.XpsDocumentWriter.Write&gt;.</remarks>
       </Docs>
     </Member>
     <Member MemberName="WriteAsync">
@@ -1592,16 +1593,16 @@ By design, this `Write` method does not raise the <xref:System.Windows.Xps.XpsDo
         <param name="visual">The <see cref="T:System.Windows.Media.Visual" /> that is written.</param>
         <param name="printTicket">A <see cref="T:System.Printing.PrintTicket" /> that represents the default printing preferences for the document.</param>
         <summary>Writes asynchronously a specified <see cref="T:System.Windows.Media.Visual" /> together with a <see cref="T:System.Printing.PrintTicket" /> to the target <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> or <see cref="T:System.Printing.PrintQueue" />.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- To batch write a <xref:System.Windows.Media.Visual>, use <xref:System.Windows.Xps.VisualsToXpsDocument>.  
+ To batch write a &lt;xref:System.Windows.Media.Visual&gt;, use &lt;xref:System.Windows.Xps.VisualsToXpsDocument&gt;.  
   
- This method does not validate or modify the specified `printTicket` for a particular <xref:System.Printing.PrintQueue>. If necessary, use the <xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A> method to create a <xref:System.Printing.PrintTicket> that is specific to the <xref:System.Printing.PrintQueue> and is valid for a specified printer.  
+ This method does not validate or modify the specified `printTicket` for a particular &lt;xref:System.Printing.PrintQueue&gt;. If necessary, use the &lt;xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A&gt; method to create a &lt;xref:System.Printing.PrintTicket&gt; that is specific to the &lt;xref:System.Printing.PrintQueue&gt; and is valid for a specified printer.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Windows.Xps.XpsDocumentWriter.Write&gt;.</remarks>
       </Docs>
     </Member>
     <Member MemberName="WriteAsync">
@@ -1639,14 +1640,14 @@ By design, this `Write` method does not raise the <xref:System.Windows.Xps.XpsDo
         <param name="printTicket">A <see cref="T:System.Printing.PrintTicket" /> that represents the default printing preferences for the material.</param>
         <param name="userSuppliedState">A user-specified object to identify and associate with the asynchronous operation.</param>
         <summary>Writes asynchronously paginated content from a specified <see cref="T:System.Windows.Documents.DocumentPaginator" /> together with a <see cref="T:System.Printing.PrintTicket" /> to the target <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> or <see cref="T:System.Printing.PrintQueue" />.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- This method does not validate or modify the specified `printTicket` for a particular <xref:System.Printing.PrintQueue>. If necessary, use the <xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A> method to create a <xref:System.Printing.PrintTicket> that is specific to the <xref:System.Printing.PrintQueue> and is valid for a specified printer.  
+ This method does not validate or modify the specified `printTicket` for a particular &lt;xref:System.Printing.PrintQueue&gt;. If necessary, use the &lt;xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A&gt; method to create a &lt;xref:System.Printing.PrintTicket&gt; that is specific to the &lt;xref:System.Printing.PrintQueue&gt; and is valid for a specified printer.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Windows.Xps.XpsDocumentWriter.Write&gt;.</remarks>
       </Docs>
     </Member>
     <Member MemberName="WriteAsync">
@@ -1684,16 +1685,16 @@ By design, this `Write` method does not raise the <xref:System.Windows.Xps.XpsDo
         <param name="printTicket">A <see cref="T:System.Printing.PrintTicket" /> that represents the default printing preferences for the document.</param>
         <param name="userSuppliedState">A user-specified object to identify and associate with the asynchronous operation.</param>
         <summary>Writes asynchronously a specified <see cref="T:System.Windows.Documents.FixedDocument" /> together with a <see cref="T:System.Printing.PrintTicket" /> to the target <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> or <see cref="T:System.Printing.PrintQueue" />.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- Although the <xref:System.Windows.Xps.Packaging.XpsDocument> class has a singular name, an <xref:System.Windows.Xps.Packaging.XpsDocument> can be one <xref:System.Windows.Documents.FixedDocument> or a set of multiple documents. This method adds a <xref:System.Windows.Documents.FixedDocument> to the set.  
+ Although the &lt;xref:System.Windows.Xps.Packaging.XpsDocument&gt; class has a singular name, an &lt;xref:System.Windows.Xps.Packaging.XpsDocument&gt; can be one &lt;xref:System.Windows.Documents.FixedDocument&gt; or a set of multiple documents. This method adds a &lt;xref:System.Windows.Documents.FixedDocument&gt; to the set.  
   
- This method does not validate or modify the specified `printTicket` for a particular <xref:System.Printing.PrintQueue>. If necessary, use the <xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A> method to create a <xref:System.Printing.PrintTicket> that is specific to the <xref:System.Printing.PrintQueue> and is valid for a specified printer.  
+ This method does not validate or modify the specified `printTicket` for a particular &lt;xref:System.Printing.PrintQueue&gt;. If necessary, use the &lt;xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A&gt; method to create a &lt;xref:System.Printing.PrintTicket&gt; that is specific to the &lt;xref:System.Printing.PrintQueue&gt; and is valid for a specified printer.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Windows.Xps.XpsDocumentWriter.Write&gt;.</remarks>
       </Docs>
     </Member>
     <Member MemberName="WriteAsync">
@@ -1731,18 +1732,18 @@ By design, this `Write` method does not raise the <xref:System.Windows.Xps.XpsDo
         <param name="printTicket">A <see cref="T:System.Printing.PrintTicket" /> that represents the default printing preferences for the set of documents.</param>
         <param name="userSuppliedState">A user-specified object to identify and associate with the asynchronous operation.</param>
         <summary>Writes asynchronously a specified <see cref="T:System.Windows.Documents.FixedDocumentSequence" /> together with a <see cref="T:System.Printing.PrintTicket" /> to the target <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> or <see cref="T:System.Printing.PrintQueue" />.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A> writes a set of documents asynchronously to the <xref:System.Windows.Xps.Packaging.XpsDocument> or <xref:System.Printing.PrintQueue> that created the <xref:System.Windows.Xps.XpsDocumentWriter>. The data that is written includes a <xref:System.Printing.PrintTicket> and additional information that the caller wants to pass to an event handler.  
+ &lt;xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A&gt; writes a set of documents asynchronously to the &lt;xref:System.Windows.Xps.Packaging.XpsDocument&gt; or &lt;xref:System.Printing.PrintQueue&gt; that created the &lt;xref:System.Windows.Xps.XpsDocumentWriter&gt;. The data that is written includes a &lt;xref:System.Printing.PrintTicket&gt; and additional information that the caller wants to pass to an event handler.  
   
- Although the <xref:System.Windows.Xps.Packaging.XpsDocument> class has a singular name, an <xref:System.Windows.Xps.Packaging.XpsDocument> can be one <xref:System.Windows.Documents.FixedDocument> or a set of multiple documents. This method adds a <xref:System.Windows.Documents.FixedDocument> or a set of <xref:System.Windows.Documents.FixedDocument> elements to the existing sequence.  
+ Although the &lt;xref:System.Windows.Xps.Packaging.XpsDocument&gt; class has a singular name, an &lt;xref:System.Windows.Xps.Packaging.XpsDocument&gt; can be one &lt;xref:System.Windows.Documents.FixedDocument&gt; or a set of multiple documents. This method adds a &lt;xref:System.Windows.Documents.FixedDocument&gt; or a set of &lt;xref:System.Windows.Documents.FixedDocument&gt; elements to the existing sequence.  
   
- This method does not validate or modify the specified `printTicket` for a particular <xref:System.Printing.PrintQueue>. If necessary, use the <xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A> method to create a <xref:System.Printing.PrintTicket> that is specific to the <xref:System.Printing.PrintQueue> and is valid for a specified printer.  
+ This method does not validate or modify the specified `printTicket` for a particular &lt;xref:System.Printing.PrintQueue&gt;. If necessary, use the &lt;xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A&gt; method to create a &lt;xref:System.Printing.PrintTicket&gt; that is specific to the &lt;xref:System.Printing.PrintQueue&gt; and is valid for a specified printer.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Windows.Xps.XpsDocumentWriter.Write&gt;.</remarks>
       </Docs>
     </Member>
     <Member MemberName="WriteAsync">
@@ -1780,14 +1781,14 @@ By design, this `Write` method does not raise the <xref:System.Windows.Xps.XpsDo
         <param name="printTicket">A <see cref="T:System.Printing.PrintTicket" /> that represents the default printing preferences for the page.</param>
         <param name="userSuppliedState">A user-specified object to identify and associate with the asynchronous operation.</param>
         <summary>Writes asynchronously a specified <see cref="T:System.Windows.Documents.FixedPage" /> together with a <see cref="T:System.Printing.PrintTicket" /> to the target <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> or <see cref="T:System.Printing.PrintQueue" />.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- This method does not validate or modify the specified `printTicket` for a particular <xref:System.Printing.PrintQueue>. If necessary, use the <xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A> method to create a <xref:System.Printing.PrintTicket> that is specific to the <xref:System.Printing.PrintQueue> and is valid for a specified printer.  
+ This method does not validate or modify the specified `printTicket` for a particular &lt;xref:System.Printing.PrintQueue&gt;. If necessary, use the &lt;xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A&gt; method to create a &lt;xref:System.Printing.PrintTicket&gt; that is specific to the &lt;xref:System.Printing.PrintQueue&gt; and is valid for a specified printer.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Windows.Xps.XpsDocumentWriter.Write&gt;.</remarks>
       </Docs>
     </Member>
     <Member MemberName="WriteAsync">
@@ -1825,16 +1826,16 @@ By design, this `Write` method does not raise the <xref:System.Windows.Xps.XpsDo
         <param name="printTicket">A <see cref="T:System.Printing.PrintTicket" /> that represents the default printing preferences for the document.</param>
         <param name="userSuppliedState">A user-specified object to identify and associate with the asynchronous operation.</param>
         <summary>Writes asynchronously a specified <see cref="T:System.Windows.Media.Visual" /> together with a <see cref="T:System.Printing.PrintTicket" /> to the target <see cref="T:System.Windows.Xps.Packaging.XpsDocument" /> or <see cref="T:System.Printing.PrintQueue" />.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- For writing multiple <xref:System.Windows.Media.Visual> elements, use <xref:System.Windows.Xps.VisualsToXpsDocument>.  
+ For writing multiple &lt;xref:System.Windows.Media.Visual&gt; elements, use &lt;xref:System.Windows.Xps.VisualsToXpsDocument&gt;.  
   
- This method does not validate or modify the specified `printTicket` for a particular <xref:System.Printing.PrintQueue>. If necessary, use the <xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A> method to create a <xref:System.Printing.PrintTicket> that is specific to the <xref:System.Printing.PrintQueue> and is valid for a specified printer.  
+ This method does not validate or modify the specified `printTicket` for a particular &lt;xref:System.Printing.PrintQueue&gt;. If necessary, use the &lt;xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A&gt; method to create a &lt;xref:System.Printing.PrintTicket&gt; that is specific to the &lt;xref:System.Printing.PrintQueue&gt; and is valid for a specified printer.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Windows.Xps.XpsDocumentWriter.Write&gt;.</remarks>
       </Docs>
     </Member>
     <Member MemberName="WritingCancelled">

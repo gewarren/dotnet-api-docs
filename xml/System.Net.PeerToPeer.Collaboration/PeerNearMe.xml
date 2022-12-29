@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Type Name="PeerNearMe" FullName="System.Net.PeerToPeer.Collaboration.PeerNearMe">
   <TypeSignature Language="C#" Value="public class PeerNearMe : System.Net.PeerToPeer.Collaboration.Peer, IEquatable&lt;System.Net.PeerToPeer.Collaboration.PeerNearMe&gt;, System.Runtime.Serialization.ISerializable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable PeerNearMe extends System.Net.PeerToPeer.Collaboration.Peer implements class System.IEquatable`1&lt;class System.Net.PeerToPeer.Collaboration.PeerNearMe&gt;, class System.Runtime.Serialization.ISerializable" />
@@ -552,7 +553,7 @@
       <Docs>
         <param name="userToken">User-defined object passed to the callback of the asynchronous operation for identification. This required parameter must be unique across all asynchronous invitation operations still in-progress.</param>
         <summary>Receives an invitation response from a peer regarding joining a peer collaboration application.</summary>
-        <remarks>To be added.</remarks>
+        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.PeerToPeer.Collaboration.PeerNearMe.Invite&gt;.</remarks>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplication" /> object has been disposed.</exception>
         <exception cref="T:System.ArgumentException">The <paramref name="userToken" /> argument specifies <see langword="null" />.</exception>
         <exception cref="T:System.Net.PeerToPeer.PeerToPeerException">This <see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplication" /> object does not specify a valid <see cref="T:System.Guid" />.</exception>
@@ -592,7 +593,7 @@
         <param name="invitationData">A user defined data blob to associate with the invitation.  Size is limited to 16K.</param>
         <param name="userToken">User-defined object passed to the callback of the asynchronous operation for identification. This required parameter must be unique across all asynchronous invitation operations still in-progress.</param>
         <summary>Receives an invitation response from a peer regarding an invitation to a peer collaboration application.</summary>
-        <remarks>To be added.</remarks>
+        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.PeerToPeer.Collaboration.PeerNearMe.Invite&gt;.</remarks>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplication" /> object has been disposed.</exception>
         <exception cref="T:System.ArgumentNullException">The <paramref name="applicationToInvite" /> argument specifies <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">The <paramref name="userToken" /> argument specifies <see langword="null" />.</exception>
@@ -768,18 +769,18 @@
       <Docs>
         <param name="userToken">User-specified state object that is passed to the delegate when this method completes the operation.</param>
         <summary>Initiates a network operation to retrieve the application, object and presence data specific to a <see cref="T:System.Net.PeerToPeer.Collaboration.PeerNearMe" /> instance.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- The data retrieved is stored in a cache accessed by the <xref:System.Net.PeerToPeer.Collaboration.PeerContact.GetApplications%2A> and <xref:System.Net.PeerToPeer.Collaboration.PeerContact.GetObjects%2A> methods as well as the <xref:System.Net.PeerToPeer.Collaboration.PeerPresenceInfo.PresenceStatus%2A> property.  The <xref:System.Net.PeerToPeer.Collaboration.PeerNearMe.InternalRefreshData%2A> method only needs to be used if the caller is not subscribed to the specified <xref:System.Net.PeerToPeer.Collaboration.Peer>, <xref:System.Net.PeerToPeer.Collaboration.PeerNearMe>, or <xref:System.Net.PeerToPeer.Collaboration.PeerContact>.  
+ The data retrieved is stored in a cache accessed by the &lt;xref:System.Net.PeerToPeer.Collaboration.PeerContact.GetApplications%2A&gt; and &lt;xref:System.Net.PeerToPeer.Collaboration.PeerContact.GetObjects%2A&gt; methods as well as the &lt;xref:System.Net.PeerToPeer.Collaboration.PeerPresenceInfo.PresenceStatus%2A&gt; property.  The &lt;xref:System.Net.PeerToPeer.Collaboration.PeerNearMe.InternalRefreshData%2A&gt; method only needs to be used if the caller is not subscribed to the specified &lt;xref:System.Net.PeerToPeer.Collaboration.Peer&gt;, &lt;xref:System.Net.PeerToPeer.Collaboration.PeerNearMe&gt;, or &lt;xref:System.Net.PeerToPeer.Collaboration.PeerContact&gt;.  
   
  This method blocks additional calls until the network operation is complete and cache has been updated.  
   
- The caller is not required to sign in with the <xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration.SignIn%2A> method or via a user interface in to complete this operation successfully.  
+ The caller is not required to sign in with the &lt;xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration.SignIn%2A&gt; method or via a user interface in to complete this operation successfully.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.PeerToPeer.Collaboration.PeerNearMe.RefreshData&gt;.</remarks>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.PeerToPeer.Collaboration.PeerNearMe" /> object has been disposed.</exception>
         <exception cref="T:System.ArgumentNullException">The <paramref name="userToken" /> argument specifies <see langword="null" />.</exception>
         <exception cref="T:System.Net.PeerToPeer.PeerToPeerException">The prior <see cref="M:System.Net.PeerToPeer.Collaboration.PeerNearMe.RefreshDataAsync(System.Object)" /> call has not yet completed.</exception>

@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Type Name="NetworkStream" FullName="System.Net.Sockets.NetworkStream">
   <TypeSignature Language="C#" Value="public class NetworkStream : System.IO.Stream" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NetworkStream extends System.IO.Stream" FrameworkAlternate="net-5.0;net-6.0;net-7.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netcore-3.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netframework-4.8.1;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
@@ -1266,14 +1267,14 @@ The Close method frees both unmanaged and managed resources associated with the 
         <param name="cancellationToken">A cancellation token used to propagate notification that this  operation should be canceled.</param>
         <summary>Flushes data from the stream as an asynchronous operation.</summary>
         <returns>The task object representing the asynchronous operation.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- This operation will not block. The returned <xref:System.Threading.Tasks.Task> object will complete after data has been flushed from the stream for the <xref:System.Net.Sockets.NetworkStream> instance.  
+ This operation will not block. The returned &lt;xref:System.Threading.Tasks.Task&gt; object will complete after data has been flushed from the stream for the &lt;xref:System.Net.Sockets.NetworkStream&gt; instance.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.NetworkStream.Flush&gt;.</remarks>
       </Docs>
     </Member>
     <Member MemberName="Length">
@@ -1611,20 +1612,20 @@ There is a failure reading from the network.</exception>
         <param name="cancellationToken">The token to monitor for cancellation requests.</param>
         <summary>Reads data from the <see cref="T:System.Net.Sockets.NetworkStream" /> and stores it in a byte memory range as an asynchronous operation.</summary>
         <returns>A <see cref="T:System.Threading.Tasks.ValueTask`1" /> that represents the asynchronous read operation. The value of its <see cref="P:System.Threading.Tasks.ValueTask`1.Result" /> property contains the total number of bytes read into <paramref name="buffer" />.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
 This method reads as much data as is available into `buffer` and returns the number of bytes successfully read.
 
-> [!NOTE]
->  Check to see if the <xref:System.Net.Sockets.NetworkStream> is readable by calling the <xref:System.Net.Sockets.NetworkStream.CanRead> property. If you attempt to read from a <xref:System.Net.Sockets.NetworkStream> that is not readable, you will get an <xref:System.InvalidOperationException>.  
+&gt; [!NOTE]
+&gt;  Check to see if the &lt;xref:System.Net.Sockets.NetworkStream&gt; is readable by calling the &lt;xref:System.Net.Sockets.NetworkStream.CanRead&gt; property. If you attempt to read from a &lt;xref:System.Net.Sockets.NetworkStream&gt; that is not readable, you will get an &lt;xref:System.InvalidOperationException&gt;.  
   
-> [!NOTE]
->  If you receive an <xref:System.IO.IOException>, check the <xref:System.Exception.InnerException> property to determine if it was caused by a <xref:System.Net.Sockets.SocketException>. If so, use the <xref:System.Net.Sockets.SocketException.ErrorCode> property to obtain the specific error code and refer to the [Windows Sockets version 2 API error code](/windows/desktop/winsock/windows-sockets-error-codes-2) documentation for a detailed description of the error.  
+&gt; [!NOTE]
+&gt;  If you receive an &lt;xref:System.IO.IOException&gt;, check the &lt;xref:System.Exception.InnerException&gt; property to determine if it was caused by a &lt;xref:System.Net.Sockets.SocketException&gt;. If so, use the &lt;xref:System.Net.Sockets.SocketException.ErrorCode&gt; property to obtain the specific error code and refer to the [Windows Sockets version 2 API error code](/windows/desktop/winsock/windows-sockets-error-codes-2) documentation for a detailed description of the error.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.NetworkStream.Read&gt;.</remarks>
         <exception cref="T:System.InvalidOperationException">The <see cref="T:System.Net.Sockets.NetworkStream" /> does not support reading.</exception>
         <exception cref="T:System.IO.IOException">An error occurred when accessing the socket.
 
@@ -1679,20 +1680,20 @@ There is a failure reading from the network.</exception>
         <param name="count">The number of bytes to read from the <see cref="T:System.Net.Sockets.NetworkStream" />.</param>
         <summary>Reads data from the <see cref="T:System.Net.Sockets.NetworkStream" /> and stores it to a specified range of a byte array as an asynchronous operation.</summary>
         <returns>A task that represents the asynchronous read operation. The value of its <see cref="P:System.Threading.Tasks.Task`1.Result" /> property contains the total number of bytes read into <paramref name="buffer" />.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
  This method reads data into `buffer` and returns the number of bytes successfully read. The `ReadAsync` operation reads as much data as is available, up to the number of bytes specified by the `size` parameter.
 
-> [!NOTE]
->  Check to see if the <xref:System.Net.Sockets.NetworkStream> is readable by calling the <xref:System.Net.Sockets.NetworkStream.CanRead> property. If you attempt to read from a <xref:System.Net.Sockets.NetworkStream> that is not readable, you will get an <xref:System.InvalidOperationException>.  
+&gt; [!NOTE]
+&gt;  Check to see if the &lt;xref:System.Net.Sockets.NetworkStream&gt; is readable by calling the &lt;xref:System.Net.Sockets.NetworkStream.CanRead&gt; property. If you attempt to read from a &lt;xref:System.Net.Sockets.NetworkStream&gt; that is not readable, you will get an &lt;xref:System.InvalidOperationException&gt;.  
   
-> [!NOTE]
->  If you receive an <xref:System.IO.IOException>, check the <xref:System.Exception.InnerException> property to determine if it was caused by a <xref:System.Net.Sockets.SocketException>. If so, use the <xref:System.Net.Sockets.SocketException.ErrorCode> property to obtain the specific error code and refer to the [Windows Sockets version 2 API error code](/windows/desktop/winsock/windows-sockets-error-codes-2) documentation for a detailed description of the error.  
+&gt; [!NOTE]
+&gt;  If you receive an &lt;xref:System.IO.IOException&gt;, check the &lt;xref:System.Exception.InnerException&gt; property to determine if it was caused by a &lt;xref:System.Net.Sockets.SocketException&gt;. If so, use the &lt;xref:System.Net.Sockets.SocketException.ErrorCode&gt; property to obtain the specific error code and refer to the [Windows Sockets version 2 API error code](/windows/desktop/winsock/windows-sockets-error-codes-2) documentation for a detailed description of the error.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.NetworkStream.Read&gt;.</remarks>
         <exception cref="T:System.InvalidOperationException">The <see cref="T:System.Net.Sockets.NetworkStream" /> does not support reading.</exception>
         <exception cref="T:System.IO.IOException">An error occurred when accessing the socket.
 
@@ -2252,18 +2253,18 @@ There was a failure while writing to the network.</exception>
         <summary>Writes data to the <see cref="T:System.Net.Sockets.NetworkStream" /> from a read-only memory byte memory range as an asynchronous operation.</summary>
         <returns>A task that represents the asynchronous write operation.</returns>
         <remarks>
-          <format type="text/markdown"><![CDATA[
 ## Remarks 
 This method sends all bytes in `buffer` to the network.
 
-> [!NOTE]
-> Check to see if the <xref:System.Net.Sockets.NetworkStream> is writable by calling the <xref:System.Net.Sockets.NetworkStream.CanWrite> property. If you attempt to write to a <xref:System.Net.Sockets.NetworkStream> that is not writable, you will get an <xref:System.InvalidOperationException>.
+&gt; [!NOTE]
+&gt; Check to see if the &lt;xref:System.Net.Sockets.NetworkStream&gt; is writable by calling the &lt;xref:System.Net.Sockets.NetworkStream.CanWrite&gt; property. If you attempt to write to a &lt;xref:System.Net.Sockets.NetworkStream&gt; that is not writable, you will get an &lt;xref:System.InvalidOperationException&gt;.
 
-> [!NOTE]
-> If you receive an <xref:System.IO.IOException>, check the <xref:System.Exception.InnerException> property to determine if it was caused by a <xref:System.Net.Sockets.SocketException>. If so, use the <xref:System.Net.Sockets.SocketException.ErrorCode> property to obtain the specific error code and refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
+&gt; [!NOTE]
+&gt; If you receive an &lt;xref:System.IO.IOException&gt;, check the &lt;xref:System.Exception.InnerException&gt; property to determine if it was caused by a &lt;xref:System.Net.Sockets.SocketException&gt;. If so, use the &lt;xref:System.Net.Sockets.SocketException.ErrorCode&gt; property to obtain the specific error code and refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
 
-]]></format>
-        </remarks>
+
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.NetworkStream.Write&gt;.</remarks>
         <exception cref="T:System.InvalidOperationException">The <see cref="T:System.Net.Sockets.NetworkStream" /> does not support writing.</exception>
         <exception cref="T:System.IO.IOException">An error occurred when accessing the socket.
 
@@ -2319,18 +2320,18 @@ There was a failure while writing to the network.</exception>
         <summary>Writes data to the <see cref="T:System.Net.Sockets.NetworkStream" /> from the specified range of a byte array as an asynchronous operation.</summary>
         <returns>A task that represents the asynchronous write operation.</returns>
         <remarks>
-          <format type="text/markdown"><![CDATA[
 ## Remarks 
 This method starts at the specified `offset` and sends `size` bytes from the contents of `buffer` to the network.
 
-> [!NOTE]
-> Check to see if the <xref:System.Net.Sockets.NetworkStream> is writable by calling the <xref:System.Net.Sockets.NetworkStream.CanWrite> property. If you attempt to write to a <xref:System.Net.Sockets.NetworkStream> that is not writable, you will get an <xref:System.InvalidOperationException>.
+&gt; [!NOTE]
+&gt; Check to see if the &lt;xref:System.Net.Sockets.NetworkStream&gt; is writable by calling the &lt;xref:System.Net.Sockets.NetworkStream.CanWrite&gt; property. If you attempt to write to a &lt;xref:System.Net.Sockets.NetworkStream&gt; that is not writable, you will get an &lt;xref:System.InvalidOperationException&gt;.
 
-> [!NOTE]
-> If you receive an <xref:System.IO.IOException>, check the <xref:System.Exception.InnerException> property to determine if it was caused by a <xref:System.Net.Sockets.SocketException>. If so, use the <xref:System.Net.Sockets.SocketException.ErrorCode> property to obtain the specific error code and refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
+&gt; [!NOTE]
+&gt; If you receive an &lt;xref:System.IO.IOException&gt;, check the &lt;xref:System.Exception.InnerException&gt; property to determine if it was caused by a &lt;xref:System.Net.Sockets.SocketException&gt;. If so, use the &lt;xref:System.Net.Sockets.SocketException.ErrorCode&gt; property to obtain the specific error code and refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
 
-]]></format>
-        </remarks>
+
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.NetworkStream.Write&gt;.</remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="buffer" /> parameter is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">The <paramref name="offset" /> parameter is less than 0.  
   

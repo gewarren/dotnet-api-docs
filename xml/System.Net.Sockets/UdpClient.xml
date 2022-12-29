@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Type Name="UdpClient" FullName="System.Net.Sockets.UdpClient">
   <TypeSignature Language="C#" Value="public class UdpClient : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UdpClient extends System.Object implements class System.IDisposable" />
@@ -2357,21 +2358,21 @@
       <Docs>
         <summary>Returns a UDP datagram asynchronously that was sent by a remote host.</summary>
         <returns>The task object representing the asynchronous operation.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- This operation will not block. The returned <xref:System.Threading.Tasks.Task%601>> object will complete after the UDP packet has been received.  
+ This operation will not block. The returned &lt;xref:System.Threading.Tasks.Task%601&gt;&gt; object will complete after the UDP packet has been received.  
   
- If you specify a default remote host in the <xref:System.Net.Sockets.UdpClient.Connect%2A> method, this method will accept datagrams from that host only. All other datagrams will be discarded.  
+ If you specify a default remote host in the &lt;xref:System.Net.Sockets.UdpClient.Connect%2A&gt; method, this method will accept datagrams from that host only. All other datagrams will be discarded.  
   
- If you receive a <xref:System.Net.Sockets.SocketException>, use <xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType> to obtain the specific error code. Once you have obtained this code, you can refer to the [Windows Sockets version 2 API error code](/windows/desktop/winsock/windows-sockets-error-codes-2) documentation for a detailed description of the error.  
+ If you receive a &lt;xref:System.Net.Sockets.SocketException&gt;, use &lt;xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType&gt; to obtain the specific error code. Once you have obtained this code, you can refer to the [Windows Sockets version 2 API error code](/windows/desktop/winsock/windows-sockets-error-codes-2) documentation for a detailed description of the error.  
   
-> [!WARNING]
->  If you intend to receive multicasted datagrams, do not call the <xref:System.Net.Sockets.UdpClient.Connect%2A> method prior to calling this method. The <xref:System.Net.Sockets.UdpClient> you use to receive datagrams must be created using the multicast port number.  
+&gt; [!WARNING]
+&gt;  If you intend to receive multicasted datagrams, do not call the &lt;xref:System.Net.Sockets.UdpClient.Connect%2A&gt; method prior to calling this method. The &lt;xref:System.Net.Sockets.UdpClient&gt; you use to receive datagrams must be created using the multicast port number.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.UdpClient.Receive&gt;.</remarks>
         <exception cref="T:System.ObjectDisposedException">The underlying <see cref="T:System.Net.Sockets.Socket" /> has been closed.</exception>
         <exception cref="T:System.Net.Sockets.SocketException">An error occurred when accessing the socket.</exception>
       </Docs>
@@ -2402,7 +2403,7 @@
         <param name="cancellationToken">The token to monitor for cancellation requests.</param>
         <summary>Returns a UDP datagram asynchronously that was sent by a remote host.</summary>
         <returns>A <see cref="T:System.Threading.Tasks.ValueTask`1" /> representing the asynchronous operation.</returns>
-        <remarks>To be added.</remarks>
+        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.UdpClient.Receive&gt;.</remarks>
         <exception cref="T:System.ObjectDisposedException">The underlying <see cref="T:System.Net.Sockets.Socket" /> has been closed.</exception>
         <exception cref="T:System.Net.Sockets.SocketException">An error occurred when accessing the socket.</exception>
       </Docs>
@@ -2795,16 +2796,16 @@
         <param name="bytes">The number of bytes in the datagram.</param>
         <summary>Sends a UDP datagram asynchronously to a remote host.</summary>
         <returns>Returns <see cref="T:System.Threading.Tasks.Task`1" />.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- This overload sends datagrams to the remote host established in the <xref:System.Net.Sockets.UdpClient.Connect%2A> method. If you do not call <xref:System.Net.Sockets.UdpClient.Connect%2A> before calling this overload, the method will throw a <xref:System.Net.Sockets.SocketException>. If you receive a <xref:System.Net.Sockets.SocketException>, use <xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType> to obtain the specific error code. Once you have obtained this code, you can refer to the [Windows Sockets version 2 API error code](/windows/desktop/winsock/windows-sockets-error-codes-2) documentation for a detailed description of the error.  
+ This overload sends datagrams to the remote host established in the &lt;xref:System.Net.Sockets.UdpClient.Connect%2A&gt; method. If you do not call &lt;xref:System.Net.Sockets.UdpClient.Connect%2A&gt; before calling this overload, the method will throw a &lt;xref:System.Net.Sockets.SocketException&gt;. If you receive a &lt;xref:System.Net.Sockets.SocketException&gt;, use &lt;xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType&gt; to obtain the specific error code. Once you have obtained this code, you can refer to the [Windows Sockets version 2 API error code](/windows/desktop/winsock/windows-sockets-error-codes-2) documentation for a detailed description of the error.  
   
- If you want to send datagrams to a different remote host, you must call the <xref:System.Net.Sockets.UdpClient.Connect%2A> method and specify the desired remote host. Use either of the other <xref:System.Net.Sockets.UdpClient.SendAsync%2A> method overloads to send datagrams to a broadcast address.  
+ If you want to send datagrams to a different remote host, you must call the &lt;xref:System.Net.Sockets.UdpClient.Connect%2A&gt; method and specify the desired remote host. Use either of the other &lt;xref:System.Net.Sockets.UdpClient.SendAsync%2A&gt; method overloads to send datagrams to a broadcast address.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.UdpClient.Send&gt;.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="dgram" /> is <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">The <see cref="T:System.Net.Sockets.UdpClient" /> has already established a default remote host.</exception>
@@ -2839,7 +2840,7 @@
         <param name="cancellationToken">The token to monitor for cancellation requests. The default value is None.</param>
         <summary>Sends a UDP datagram asynchronously to a remote host.</summary>
         <returns>A <see cref="T:System.Threading.Tasks.ValueTask`1" /> that represents the asynchronous send operation. The value of its Result property contains the number of bytes sent.</returns>
-        <remarks>To be added.</remarks>
+        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.UdpClient.Send&gt;.</remarks>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.UdpClient" /> is closed.</exception>
         <exception cref="T:System.Net.Sockets.SocketException">An error occurred when accessing the socket.</exception>
       </Docs>
@@ -2887,19 +2888,19 @@
         <param name="endPoint">An <see cref="T:System.Net.IPEndPoint" /> that represents the host and port to which to send the datagram.</param>
         <summary>Sends a UDP datagram asynchronously to a remote host.</summary>
         <returns>Returns <see cref="T:System.Threading.Tasks.Task`1" />.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- This method sends datagrams to the specified endpoint. Before calling this overload, you must first create an <xref:System.Net.IPEndPoint> using the IP address and port number of the remote host to which your datagrams will be delivered. You can send datagrams to the default broadcast address, 255.255.255.255, by specifying <xref:System.Net.Sockets.SocketOptionName.Broadcast?displayProperty=nameWithType> for the <xref:System.Net.IPAddress.Address%2A> property of the <xref:System.Net.IPEndPoint>. After you have created this <xref:System.Net.IPEndPoint>, pass it to this method as the `endPoint` parameter.  
+ This method sends datagrams to the specified endpoint. Before calling this overload, you must first create an &lt;xref:System.Net.IPEndPoint&gt; using the IP address and port number of the remote host to which your datagrams will be delivered. You can send datagrams to the default broadcast address, 255.255.255.255, by specifying &lt;xref:System.Net.Sockets.SocketOptionName.Broadcast?displayProperty=nameWithType&gt; for the &lt;xref:System.Net.IPAddress.Address%2A&gt; property of the &lt;xref:System.Net.IPEndPoint&gt;. After you have created this &lt;xref:System.Net.IPEndPoint&gt;, pass it to this method as the `endPoint` parameter.  
   
- If you want to send datagrams to any other broadcast address, use the <xref:System.Net.Sockets.UdpClient.Client%2A> method to obtain the underlying <xref:System.Net.Sockets.Socket>, and set the socket option to <xref:System.Net.Sockets.SocketOptionName.Broadcast?displayProperty=nameWithType>. You can also revert to using the <xref:System.Net.Sockets.Socket> class.  
+ If you want to send datagrams to any other broadcast address, use the &lt;xref:System.Net.Sockets.UdpClient.Client%2A&gt; method to obtain the underlying &lt;xref:System.Net.Sockets.Socket&gt;, and set the socket option to &lt;xref:System.Net.Sockets.SocketOptionName.Broadcast?displayProperty=nameWithType&gt;. You can also revert to using the &lt;xref:System.Net.Sockets.Socket&gt; class.  
   
-> [!WARNING]
->  Do not provide an `endPoint` parameter to this method if you have already established a remote host with the <xref:System.Net.Sockets.UdpClient.Connect%2A> method. If you do, this method will throw a <xref:System.Net.Sockets.SocketException>. If you receive a <xref:System.Net.Sockets.SocketException>, use <xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType> to obtain the specific error code. Once you have obtained this code, you can refer to the [Windows Sockets version 2 API error code](/windows/desktop/winsock/windows-sockets-error-codes-2) documentation for a detailed description of the error.  
+&gt; [!WARNING]
+&gt;  Do not provide an `endPoint` parameter to this method if you have already established a remote host with the &lt;xref:System.Net.Sockets.UdpClient.Connect%2A&gt; method. If you do, this method will throw a &lt;xref:System.Net.Sockets.SocketException&gt;. If you receive a &lt;xref:System.Net.Sockets.SocketException&gt;, use &lt;xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType&gt; to obtain the specific error code. Once you have obtained this code, you can refer to the [Windows Sockets version 2 API error code](/windows/desktop/winsock/windows-sockets-error-codes-2) documentation for a detailed description of the error.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.UdpClient.Send&gt;.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="dgram" /> is <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">
@@ -2938,7 +2939,7 @@
         <param name="cancellationToken">The token to monitor for cancellation requests. The default value is None.</param>
         <summary>Sends a UDP datagram asynchronously to a remote host.</summary>
         <returns>A <see cref="T:System.Threading.Tasks.ValueTask`1" /> that represents the asynchronous send operation. The value of its Result property contains the number of bytes sent.</returns>
-        <remarks>To be added.</remarks>
+        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.UdpClient.Send&gt;.</remarks>
         <exception cref="T:System.InvalidOperationException">
           <see cref="T:System.Net.Sockets.UdpClient" /> has already established a default remote host and <paramref name="endPoint" /> is not <see langword="null" />.</exception>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.UdpClient" /> is closed.</exception>
@@ -2990,19 +2991,19 @@
         <param name="port">The remote port number with which you intend to communicate.</param>
         <summary>Sends a UDP datagram asynchronously to a remote host.</summary>
         <returns>Returns <see cref="T:System.Threading.Tasks.Task`1" />.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
  This method sends datagrams to the values specified by the `hostname` and `port` parameters. You can send datagrams to the default broadcast address by specifying "255.255.255.255" for the `hostname` parameter value.  
   
- If you want to send datagrams to any other broadcast address, use the <xref:System.Net.Sockets.UdpClient.Client%2A> method to obtain the underlying <xref:System.Net.Sockets.Socket>, and set the socket option to <xref:System.Net.Sockets.SocketOptionName.Broadcast?displayProperty=nameWithType>. You can also revert to using the <xref:System.Net.Sockets.Socket> class.  
+ If you want to send datagrams to any other broadcast address, use the &lt;xref:System.Net.Sockets.UdpClient.Client%2A&gt; method to obtain the underlying &lt;xref:System.Net.Sockets.Socket&gt;, and set the socket option to &lt;xref:System.Net.Sockets.SocketOptionName.Broadcast?displayProperty=nameWithType&gt;. You can also revert to using the &lt;xref:System.Net.Sockets.Socket&gt; class.  
   
-> [!WARNING]
->  Do not provide a host name or port number to this method if you have already established a remote host with the <xref:System.Net.Sockets.UdpClient.Connect%2A> method. If you do, this method will throw a <xref:System.Net.Sockets.SocketException>. If you receive a <xref:System.Net.Sockets.SocketException>, use <xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType> to obtain the specific error code. Once you have obtained this code, you can refer to the [Windows Sockets version 2 API error code](/windows/desktop/winsock/windows-sockets-error-codes-2) documentation for a detailed description of the error.  
+&gt; [!WARNING]
+&gt;  Do not provide a host name or port number to this method if you have already established a remote host with the &lt;xref:System.Net.Sockets.UdpClient.Connect%2A&gt; method. If you do, this method will throw a &lt;xref:System.Net.Sockets.SocketException&gt;. If you receive a &lt;xref:System.Net.Sockets.SocketException&gt;, use &lt;xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType&gt; to obtain the specific error code. Once you have obtained this code, you can refer to the [Windows Sockets version 2 API error code](/windows/desktop/winsock/windows-sockets-error-codes-2) documentation for a detailed description of the error.  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.UdpClient.Send&gt;.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="dgram" /> is <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">The <see cref="T:System.Net.Sockets.UdpClient" /> has already established a default remote host.</exception>
@@ -3041,7 +3042,7 @@
         <param name="cancellationToken">The token to monitor for cancellation requests. The default value is None.</param>
         <summary>Sends a UDP datagram asynchronously to a remote host.</summary>
         <returns>A <see cref="T:System.Threading.Tasks.ValueTask`1" /> that represents the asynchronous send operation. The value of its Result property contains the number of bytes sent.</returns>
-        <remarks>To be added.</remarks>
+        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.UdpClient.Send&gt;.</remarks>
         <exception cref="T:System.InvalidOperationException">The <see cref="T:System.Net.Sockets.UdpClient" /> has already established a default remote host.</exception>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.UdpClient" /> is closed.</exception>
         <exception cref="T:System.Net.Sockets.SocketException">An error occurred when accessing the socket.</exception>

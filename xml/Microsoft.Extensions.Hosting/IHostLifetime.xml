@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Type Name="IHostLifetime" FullName="Microsoft.Extensions.Hosting.IHostLifetime">
   <TypeSignature Language="C#" Value="public interface IHostLifetime" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IHostLifetime" />
@@ -49,7 +50,7 @@
         <param name="cancellationToken">Used to indicate when stop should no longer be graceful.</param>
         <summary>Called from <see cref="M:Microsoft.Extensions.Hosting.IHost.StopAsync(System.Threading.CancellationToken)" /> to indicate that the host is stopping and it's time to shut down.</summary>
         <returns>A <see cref="T:System.Threading.Tasks.Task" />.</returns>
-        <remarks>To be added.</remarks>
+        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:Microsoft.Extensions.Hosting.IHostLifetime.Stop&gt;.</remarks>
       </Docs>
     </Member>
     <Member MemberName="WaitForStartAsync">
@@ -81,7 +82,7 @@
         <summary>Called at the start of <see cref="M:Microsoft.Extensions.Hosting.IHost.StartAsync(System.Threading.CancellationToken)" /> which will wait until it's complete before
             continuing. This can be used to delay startup until signaled by an external event.</summary>
         <returns>A <see cref="T:System.Threading.Tasks.Task" />.</returns>
-        <remarks>To be added.</remarks>
+        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:Microsoft.Extensions.Hosting.IHostLifetime.WaitForStart&gt;.</remarks>
       </Docs>
     </Member>
   </Members>

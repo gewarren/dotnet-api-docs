@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Type Name="DbBatch" FullName="System.Data.Common.DbBatch">
   <TypeSignature Language="C#" Value="public abstract class DbBatch : IAsyncDisposable, IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DbBatch extends System.Object implements class System.IAsyncDisposable, class System.IDisposable" />
@@ -285,15 +286,15 @@ The precise semantics of batch execution vary across ADO.NET providers, especial
       <Docs>
         <summary>Asynchronously diposes the batch object.</summary>
         <returns>A <see cref="T:System.Threading.Tasks.ValueTask" /> representing the asynchronous operation.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
  The default implementation of this asynchronous method delegates to its synchronous counterpart and returns a completed `ValueTask`, potentially blocking the calling thread.
  
  Data providers that support [asynchronous programming](/dotnet/framework/data/adonet/asynchronous-programming) should override the default implementation using asynchronous I/O operations.
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Data.Common.DbBatch.Dispose&gt;.</remarks>
       </Docs>
     </Member>
     <Member MemberName="ExecuteDbDataReader">
@@ -360,14 +361,14 @@ The precise semantics of batch execution vary across ADO.NET providers, especial
   
  This method accepts a cancellation token that can be used to request the operation to be cancelled early. Implementations may ignore this request.</summary>
         <returns>A task representing the asynchronous operation.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
  For more information about asynchronous programming, see [Asynchronous Programming](/dotnet/framework/data/adonet/asynchronous-programming).  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Data.Common.DbBatch.ExecuteDbDataReader&gt;.</remarks>
       </Docs>
     </Member>
     <Member MemberName="ExecuteNonQuery">
@@ -430,14 +431,14 @@ The precise semantics of batch execution vary across ADO.NET providers, especial
   
  Do not invoke other methods and properties of the <see langword="DbCommand" /> object until the returned Task is complete.</summary>
         <returns>A task representing the asynchronous operation.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
  For more information about asynchronous programming, see [Asynchronous Programming](/dotnet/framework/data/adonet/asynchronous-programming).  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Data.Common.DbBatch.ExecuteNonQuery&gt;.</remarks>
         <exception cref="T:System.Data.Common.DbException">An error occurred while executing the batch.</exception>
         <related type="Article" href="/dotnet/framework/data/adonet/ado-net-overview">ADO.NET Overview</related>
       </Docs>
@@ -496,14 +497,14 @@ The precise semantics of batch execution vary across ADO.NET providers, especial
         <param name="cancellationToken">To be added.</param>
         <summary>An asynchronous version of <see cref="Overload:System.Data.Common.DbBatch.ExecuteReader" />, which executes the batch against its connection, returning a <see cref="T:System.Data.Common.DbDataReader" /> which can be used to access the results.</summary>
         <returns>A task representing the asynchronous operation.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- Managed provider implementers must call <xref:System.Data.Common.DbBatch.ExecuteDbDataReaderAsync%2A> in <xref:System.Data.Common.DbBatch.ExecuteReaderAsync%2A>. For more information about asynchronous programming, see [Asynchronous Programming](/dotnet/framework/data/adonet/asynchronous-programming).  
+ Managed provider implementers must call &lt;xref:System.Data.Common.DbBatch.ExecuteDbDataReaderAsync%2A&gt; in &lt;xref:System.Data.Common.DbBatch.ExecuteReaderAsync%2A&gt;. For more information about asynchronous programming, see [Asynchronous Programming](/dotnet/framework/data/adonet/asynchronous-programming).  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Data.Common.DbBatch.ExecuteReader&gt;.</remarks>
         <exception cref="T:System.Data.Common.DbException">An error occurred while executing the batch.</exception>
         <exception cref="T:System.ArgumentException">The <see cref="T:System.Data.CommandBehavior" /> value is invalid.</exception>
       </Docs>
@@ -532,14 +533,14 @@ The precise semantics of batch execution vary across ADO.NET providers, especial
         <param name="cancellationToken">A token to cancel the asynchronous operation.</param>
         <summary>An asynchronous version of <see cref="Overload:System.Data.Common.DbBatch.ExecuteReader" />, which executes the batch against its connection, returning a <see cref="T:System.Data.Common.DbDataReader" /> which can be used to access the results.</summary>
         <returns>A task representing the asynchronous operation.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
+        <remarks>  
   
 ## Remarks  
- Managed provider implementers must call <xref:System.Data.Common.DbBatch.ExecuteDbDataReaderAsync%2A> in <xref:System.Data.Common.DbBatch.ExecuteReaderAsync%2A>. For more information about asynchronous programming, see [Asynchronous Programming](/dotnet/framework/data/adonet/asynchronous-programming).  
+ Managed provider implementers must call &lt;xref:System.Data.Common.DbBatch.ExecuteDbDataReaderAsync%2A&gt; in &lt;xref:System.Data.Common.DbBatch.ExecuteReaderAsync%2A&gt;. For more information about asynchronous programming, see [Asynchronous Programming](/dotnet/framework/data/adonet/asynchronous-programming).  
   
- ]]></format>
-        </remarks>
+ 
+
+This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Data.Common.DbBatch.ExecuteReader&gt;.</remarks>
         <exception cref="T:System.Data.Common.DbException">An error occurred while executing the batch.</exception>
         <exception cref="T:System.ArgumentException">The <see cref="T:System.Data.CommandBehavior" /> value is invalid.</exception>
       </Docs>
@@ -590,7 +591,7 @@ The precise semantics of batch execution vary across ADO.NET providers, especial
         <param name="cancellationToken">A token to cancel the asynchronous operation.</param>
         <summary>An asynchronous version of <see cref="M:System.Data.Common.DbBatch.ExecuteScalar" />, which executes the batch and returns the first column of the first row in the first returned result set. All other columns, rows and result sets are ignored.</summary>
         <returns>The first column of the first row in the first result set.</returns>
-        <remarks>To be added.</remarks>
+        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Data.Common.DbBatch.ExecuteScalar&gt;.</remarks>
         <exception cref="T:System.Data.Common.DbException">An error occurred while executing the batch.</exception>
       </Docs>
     </Member>
@@ -638,7 +639,7 @@ The precise semantics of batch execution vary across ADO.NET providers, especial
         <param name="cancellationToken">An optional token to cancel the asynchronous operation. The default value is <see cref="P:System.Threading.CancellationToken.None" />.</param>
         <summary>Asynchronously creates a prepared (or compiled) version of the batch, or of each of its commands, on the data source.</summary>
         <returns>A <see cref="T:System.Threading.Tasks.Task" /> representing the asynchronous operation.</returns>
-        <remarks>To be added.</remarks>
+        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Data.Common.DbBatch.Prepare&gt;.</remarks>
       </Docs>
     </Member>
     <Member MemberName="Timeout">
