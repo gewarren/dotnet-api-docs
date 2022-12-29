@@ -1,4 +1,3 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <Type Name="Socket" FullName="System.Net.Sockets.Socket">
   <TypeSignature Language="C#" Value="public class Socket : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Socket extends System.Object implements class System.IDisposable" FrameworkAlternate="dotnet-uwp-10.0;net-5.0;net-6.0;net-7.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netcore-3.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netframework-4.8.1;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1" />
@@ -454,7 +453,7 @@ This method populates the <xref:System.Net.Sockets.Socket> instance with data ga
       <Docs>
         <summary>Accepts an incoming connection.</summary>
         <returns>An asynchronous task that completes with the accepted Socket.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.Accept&gt;.</remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.InvalidOperationException">An invalid operation was requested. This exception occurs if the accepting <see cref="T:System.Net.Sockets.Socket" /> is not listening for connections or the accepted socket is bound.
 
  You must call the <see cref="M:System.Net.Sockets.Socket.Bind(System.Net.EndPoint)" /> and <see cref="M:System.Net.Sockets.Socket.Listen(System.Int32)" /> method before calling the <see cref="M:System.Net.Sockets.Socket.AcceptAsync(System.Net.Sockets.SocketAsyncEventArgs)" /> method.
@@ -496,7 +495,7 @@ This method populates the <xref:System.Net.Sockets.Socket> instance with data ga
         <param name="acceptSocket">The socket to use for accepting the connection.</param>
         <summary>Accepts an incoming connection.</summary>
         <returns>An asynchronous task that completes with the accepted Socket.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.Accept&gt;.</remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.InvalidOperationException">An invalid operation was requested. This exception occurs if the accepting <see cref="T:System.Net.Sockets.Socket" /> is not listening for connections or the accepted socket is bound.
 
  You must call the <see cref="M:System.Net.Sockets.Socket.Bind(System.Net.EndPoint)" /> and <see cref="M:System.Net.Sockets.Socket.Listen(System.Int32)" /> method before calling the <see cref="M:System.Net.Sockets.Socket.AcceptAsync(System.Net.Sockets.SocketAsyncEventArgs)" /> method.
@@ -553,31 +552,31 @@ This method populates the <xref:System.Net.Sockets.Socket> instance with data ga
 
  <see langword="false" /> if the I/O operation completed synchronously. The <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> event on the <paramref name="e" /> parameter will not be raised and the <paramref name="e" /> object passed as a parameter may be examined immediately after the method call returns to retrieve the result of the operation.</returns>
         <remarks>
+          <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Connection-oriented protocols can use the &lt;xref:System.Net.Sockets.Socket.AcceptAsync%2A&gt; method to asynchronously process incoming connection attempts. Accepting connections asynchronously gives you the ability to send and receive data within a separate execution thread. Before calling the &lt;xref:System.Net.Sockets.Socket.AcceptAsync%2A&gt; method, you must call the &lt;xref:System.Net.Sockets.Socket.Listen%2A&gt; method to listen for and queue incoming connection requests.
+ Connection-oriented protocols can use the <xref:System.Net.Sockets.Socket.AcceptAsync%2A> method to asynchronously process incoming connection attempts. Accepting connections asynchronously gives you the ability to send and receive data within a separate execution thread. Before calling the <xref:System.Net.Sockets.Socket.AcceptAsync%2A> method, you must call the <xref:System.Net.Sockets.Socket.Listen%2A> method to listen for and queue incoming connection requests.
 
- To be notified of completion, you must create a callback method that implements the EventHandler\&lt;SocketAsyncEventArgs&gt; delegate and hook it to the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Completed?displayProperty=nameWithType&gt; event.
+ To be notified of completion, you must create a callback method that implements the EventHandler\<SocketAsyncEventArgs> delegate and hook it to the <xref:System.Net.Sockets.SocketAsyncEventArgs.Completed?displayProperty=nameWithType> event.
 
- The following properties and events on the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs?displayProperty=nameWithType&gt; object are required:
+ The following properties and events on the <xref:System.Net.Sockets.SocketAsyncEventArgs?displayProperty=nameWithType> object are required:
 
--   &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Completed?displayProperty=nameWithType&gt;
+-   <xref:System.Net.Sockets.SocketAsyncEventArgs.Completed?displayProperty=nameWithType>
 
- The caller can optionally specify an existing &lt;xref:System.Net.Sockets.Socket&gt; to use for the incoming connection by specifying the &lt;xref:System.Net.Sockets.Socket&gt; to use with the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.AcceptSocket%2A?displayProperty=nameWithType&gt; property.
+ The caller can optionally specify an existing <xref:System.Net.Sockets.Socket> to use for the incoming connection by specifying the <xref:System.Net.Sockets.Socket> to use with the <xref:System.Net.Sockets.SocketAsyncEventArgs.AcceptSocket%2A?displayProperty=nameWithType> property.
 
- If the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.AcceptSocket%2A?displayProperty=nameWithType&gt; property is null, a new &lt;xref:System.Net.Sockets.Socket&gt; is constructed with the same &lt;xref:System.Net.Sockets.Socket.AddressFamily%2A&gt;, &lt;xref:System.Net.Sockets.Socket.SocketType%2A&gt;, and &lt;xref:System.Net.Sockets.Socket.ProtocolType%2A&gt; as the current &lt;xref:System.Net.Sockets.Socket&gt; and set as the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.AcceptSocket%2A?displayProperty=nameWithType&gt; property.
+ If the <xref:System.Net.Sockets.SocketAsyncEventArgs.AcceptSocket%2A?displayProperty=nameWithType> property is null, a new <xref:System.Net.Sockets.Socket> is constructed with the same <xref:System.Net.Sockets.Socket.AddressFamily%2A>, <xref:System.Net.Sockets.Socket.SocketType%2A>, and <xref:System.Net.Sockets.Socket.ProtocolType%2A> as the current <xref:System.Net.Sockets.Socket> and set as the <xref:System.Net.Sockets.SocketAsyncEventArgs.AcceptSocket%2A?displayProperty=nameWithType> property.
 
- The caller may set the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.UserToken%2A?displayProperty=nameWithType&gt; property to any user state object desired before calling the &lt;xref:System.Net.Sockets.Socket.AcceptAsync%2A&gt; method, so that the information will be retrievable in the callback method. If the callback needs more information than a single object, a small class can be created to hold the other required state information as members.
+ The caller may set the <xref:System.Net.Sockets.SocketAsyncEventArgs.UserToken%2A?displayProperty=nameWithType> property to any user state object desired before calling the <xref:System.Net.Sockets.Socket.AcceptAsync%2A> method, so that the information will be retrievable in the callback method. If the callback needs more information than a single object, a small class can be created to hold the other required state information as members.
 
- Optionally, a buffer may be provided in which to receive the initial block of data on the socket after the &lt;xref:System.Net.Sockets.Socket.ConnectAsync%2A&gt; method succeeds. In this case, the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Buffer%2A?displayProperty=nameWithType&gt; property needs to be set to the buffer containing the data to receive and the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Count%2A?displayProperty=nameWithType&gt; property needs to be set to the maximum number of bytes of data to receive in the buffer. These properties can be set using the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.SetBuffer%2A?displayProperty=nameWithType&gt; method. Part of the buffer passed in will be consumed internally for use by the underlying Winsock AcceptEx call. This means that the amount of data returned will always be less than the value of the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Count%2A?displayProperty=nameWithType&gt; property on the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs?displayProperty=nameWithType&gt; instance provided. The amount of the buffer used internally varies based on the address family of the socket. The minimum buffer size required is 288 bytes. If a larger buffer size is specified, then the &lt;xref:System.Net.Sockets.Socket&gt; will expect some extra data other than the address data received by the Winsock AcceptEx call and will wait until this extra data is received. If a timeout occurs, the connection is reset. So if extra data is expected of  a specific amount, then the buffer size should be set to the minimum buffer size plus this amount.
+ Optionally, a buffer may be provided in which to receive the initial block of data on the socket after the <xref:System.Net.Sockets.Socket.ConnectAsync%2A> method succeeds. In this case, the <xref:System.Net.Sockets.SocketAsyncEventArgs.Buffer%2A?displayProperty=nameWithType> property needs to be set to the buffer containing the data to receive and the <xref:System.Net.Sockets.SocketAsyncEventArgs.Count%2A?displayProperty=nameWithType> property needs to be set to the maximum number of bytes of data to receive in the buffer. These properties can be set using the <xref:System.Net.Sockets.SocketAsyncEventArgs.SetBuffer%2A?displayProperty=nameWithType> method. Part of the buffer passed in will be consumed internally for use by the underlying Winsock AcceptEx call. This means that the amount of data returned will always be less than the value of the <xref:System.Net.Sockets.SocketAsyncEventArgs.Count%2A?displayProperty=nameWithType> property on the <xref:System.Net.Sockets.SocketAsyncEventArgs?displayProperty=nameWithType> instance provided. The amount of the buffer used internally varies based on the address family of the socket. The minimum buffer size required is 288 bytes. If a larger buffer size is specified, then the <xref:System.Net.Sockets.Socket> will expect some extra data other than the address data received by the Winsock AcceptEx call and will wait until this extra data is received. If a timeout occurs, the connection is reset. So if extra data is expected of  a specific amount, then the buffer size should be set to the minimum buffer size plus this amount.
 
- The completion callback method should examine the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.SocketError%2A?displayProperty=nameWithType&gt; property to determine if the &lt;xref:System.Net.Sockets.Socket.AcceptAsync%2A&gt; operation was successful.
+ The completion callback method should examine the <xref:System.Net.Sockets.SocketAsyncEventArgs.SocketError%2A?displayProperty=nameWithType> property to determine if the <xref:System.Net.Sockets.Socket.AcceptAsync%2A> operation was successful.
 
- The &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Completed?displayProperty=nameWithType&gt; event can occur in some cases when no connection has been accepted and cause the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.SocketError%2A?displayProperty=nameWithType&gt; property to be set to &lt;xref:System.Net.Sockets.SocketError.ConnectionReset&gt;. This can occur as a result of port scanning using a half-open SYN type scan (a SYN -&gt; SYN-ACK -&gt; RST sequence). Applications using the &lt;xref:System.Net.Sockets.Socket.AcceptAsync%2A&gt; method should be prepared to handle this condition.
+ The <xref:System.Net.Sockets.SocketAsyncEventArgs.Completed?displayProperty=nameWithType> event can occur in some cases when no connection has been accepted and cause the <xref:System.Net.Sockets.SocketAsyncEventArgs.SocketError%2A?displayProperty=nameWithType> property to be set to <xref:System.Net.Sockets.SocketError.ConnectionReset>. This can occur as a result of port scanning using a half-open SYN type scan (a SYN -> SYN-ACK -> RST sequence). Applications using the <xref:System.Net.Sockets.Socket.AcceptAsync%2A> method should be prepared to handle this condition.
 
- 
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.Accept&gt;.</remarks>
+ ]]></format>
+        </remarks>
         <exception cref="T:System.ArgumentException">An argument is not valid. This exception occurs if the buffer provided is not large enough. The buffer must be at least 2 * (sizeof(SOCKADDR_STORAGE + 16) bytes.
 
  This exception also occurs if multiple buffers are specified, the <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.BufferList" /> property is not null.</exception>
@@ -629,7 +628,7 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="cancellationToken">A cancellation token that can be used to cancel the asynchronous operation.</param>
         <summary>Accepts an incoming connection.</summary>
         <returns>An asynchronous task that completes with the accepted Socket.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.Accept&gt;.</remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.InvalidOperationException">An invalid operation was requested. This exception occurs if the accepting <see cref="T:System.Net.Sockets.Socket" /> is not listening for connections or the accepted socket is bound.
 
  You must call the <see cref="M:System.Net.Sockets.Socket.Bind(System.Net.EndPoint)" /> and <see cref="M:System.Net.Sockets.Socket.Listen(System.Int32)" /> method before calling the <see cref="M:System.Net.Sockets.Socket.AcceptAsync(System.Net.Sockets.SocketAsyncEventArgs)" /> method.
@@ -673,7 +672,7 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="cancellationToken">A cancellation token that can be used to cancel the asynchronous operation.</param>
         <summary>Accepts an incoming connection.</summary>
         <returns>An asynchronous task that completes with the accepted Socket.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.Accept&gt;.</remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.InvalidOperationException">An invalid operation was requested. This exception occurs if the accepting <see cref="T:System.Net.Sockets.Socket" /> is not listening for connections or the accepted socket is bound.
 
  You must call the <see cref="M:System.Net.Sockets.Socket.Bind(System.Net.EndPoint)" /> and <see cref="M:System.Net.Sockets.Socket.Listen(System.Int32)" /> method before calling the <see cref="M:System.Net.Sockets.Socket.AcceptAsync(System.Net.Sockets.SocketAsyncEventArgs)" /> method.
@@ -3352,13 +3351,13 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="e">The <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> object used to request the connection to the remote host by calling one of the <see cref="M:System.Net.Sockets.Socket.ConnectAsync(System.Net.Sockets.SocketType,System.Net.Sockets.ProtocolType,System.Net.Sockets.SocketAsyncEventArgs)" /> methods.</param>
         <summary>Cancels an asynchronous request for a remote host connection.</summary>
         <remarks>
+          <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The &lt;xref:System.Net.Sockets.Socket.CancelConnectAsync%2A&gt; method cancels an asynchronous request for a remote host connection.
+ The <xref:System.Net.Sockets.Socket.CancelConnectAsync%2A> method cancels an asynchronous request for a remote host connection.
 
- 
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.CancelConnect&gt;.</remarks>
+ ]]></format>
+        </remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="e" /> parameter cannot be null and the <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint" /> cannot be null.</exception>
         <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.Socket" /> has been closed.</exception>
@@ -3898,7 +3897,7 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="remoteEP">The endpoint to connect to.</param>
         <summary>Establishes a connection to a remote host.</summary>
         <returns>An asynchronous task that completes when the connection is established.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.Connect&gt;.</remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="remoteEP" /> parameter cannot be null.</exception>
         <exception cref="T:System.InvalidOperationException">The <see cref="T:System.Net.Sockets.Socket" /> is listening.</exception>
         <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>
@@ -3954,40 +3953,40 @@ This method stores all the exceptions that its synchronous counterpart can throw
 
  <see langword="false" /> if the I/O operation completed synchronously. In this case, The <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> event on the <paramref name="e" /> parameter will not be raised and the <paramref name="e" /> object passed as a parameter may be examined immediately after the method call returns to retrieve the result of the operation.</returns>
         <remarks>
+          <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If you are using a connection-oriented protocol, the &lt;xref:System.Net.Sockets.Socket.ConnectAsync%2A&gt; method starts an asynchronous request for a connection to the remote host. If you are using a connectionless protocol, &lt;xref:System.Net.Sockets.Socket.ConnectAsync%2A&gt; establishes a default remote host.
+ If you are using a connection-oriented protocol, the <xref:System.Net.Sockets.Socket.ConnectAsync%2A> method starts an asynchronous request for a connection to the remote host. If you are using a connectionless protocol, <xref:System.Net.Sockets.Socket.ConnectAsync%2A> establishes a default remote host.
 
- To be notified of completion, you must create a callback method that implements the EventHandler\&lt;SocketAsyncEventArgs&gt; delegate and attach the callback to the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Completed?displayProperty=nameWithType&gt; event.
+ To be notified of completion, you must create a callback method that implements the EventHandler\<SocketAsyncEventArgs> delegate and attach the callback to the <xref:System.Net.Sockets.SocketAsyncEventArgs.Completed?displayProperty=nameWithType> event.
 
- The caller must set the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint%2A?displayProperty=nameWithType&gt; property to the &lt;xref:System.Net.IPEndPoint&gt; of the remote host to connect to.
+ The caller must set the <xref:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint%2A?displayProperty=nameWithType> property to the <xref:System.Net.IPEndPoint> of the remote host to connect to.
 
- The caller may set the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.UserToken%2A?displayProperty=nameWithType&gt; property to any user state object desired before calling the &lt;xref:System.Net.Sockets.Socket.ConnectAsync%2A&gt; method, so that the information will be retrievable in the callback method. If the callback needs more information than a single object, a small class can be created to hold the other required state information as members.
+ The caller may set the <xref:System.Net.Sockets.SocketAsyncEventArgs.UserToken%2A?displayProperty=nameWithType> property to any user state object desired before calling the <xref:System.Net.Sockets.Socket.ConnectAsync%2A> method, so that the information will be retrievable in the callback method. If the callback needs more information than a single object, a small class can be created to hold the other required state information as members.
 
- If you are using a connectionless protocol such as UDP, you do not have to call &lt;xref:System.Net.Sockets.Socket.ConnectAsync%2A&gt; before sending and receiving data. You can use &lt;xref:System.Net.Sockets.Socket.SendToAsync%2A&gt; and &lt;xref:System.Net.Sockets.Socket.ReceiveFromAsync%2A&gt; to communicate with a remote host. If you do call &lt;xref:System.Net.Sockets.Socket.ConnectAsync%2A&gt;, any datagrams that arrive from an address other than the specified default will be discarded. If you want to change the default remote host, call the &lt;xref:System.Net.Sockets.Socket.ConnectAsync%2A&gt; method again with the desired endpoint.
+ If you are using a connectionless protocol such as UDP, you do not have to call <xref:System.Net.Sockets.Socket.ConnectAsync%2A> before sending and receiving data. You can use <xref:System.Net.Sockets.Socket.SendToAsync%2A> and <xref:System.Net.Sockets.Socket.ReceiveFromAsync%2A> to communicate with a remote host. If you do call <xref:System.Net.Sockets.Socket.ConnectAsync%2A>, any datagrams that arrive from an address other than the specified default will be discarded. If you want to change the default remote host, call the <xref:System.Net.Sockets.Socket.ConnectAsync%2A> method again with the desired endpoint.
 
- If you wish to set the default remote host to a broadcast address, you must first call &lt;xref:System.Net.Sockets.Socket.SetSocketOption%2A&gt; and set Broadcast to `true`. If this is not done, the &lt;xref:System.Net.Sockets.Socket.ConnectAsync%2A&gt; method will throw a &lt;xref:System.Net.Sockets.SocketException&gt;.
+ If you wish to set the default remote host to a broadcast address, you must first call <xref:System.Net.Sockets.Socket.SetSocketOption%2A> and set Broadcast to `true`. If this is not done, the <xref:System.Net.Sockets.Socket.ConnectAsync%2A> method will throw a <xref:System.Net.Sockets.SocketException>.
 
- The following properties and events on the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs?displayProperty=nameWithType&gt; object are required:
+ The following properties and events on the <xref:System.Net.Sockets.SocketAsyncEventArgs?displayProperty=nameWithType> object are required:
 
--   &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Completed?displayProperty=nameWithType&gt;
+-   <xref:System.Net.Sockets.SocketAsyncEventArgs.Completed?displayProperty=nameWithType>
 
--   &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint%2A?displayProperty=nameWithType&gt;
+-   <xref:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint%2A?displayProperty=nameWithType>
 
- Optionally, a buffer may be provided which will atomically be sent on the socket after the &lt;xref:System.Net.Sockets.Socket.ConnectAsync%2A&gt; method succeeds. In this case, the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Buffer%2A?displayProperty=nameWithType&gt; property needs to be set to the buffer containing the data to send and the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Count%2A?displayProperty=nameWithType&gt; property needs to be set to the number of bytes of data to send from the buffer. Once a connection is established, this buffer of data is sent.
+ Optionally, a buffer may be provided which will atomically be sent on the socket after the <xref:System.Net.Sockets.Socket.ConnectAsync%2A> method succeeds. In this case, the <xref:System.Net.Sockets.SocketAsyncEventArgs.Buffer%2A?displayProperty=nameWithType> property needs to be set to the buffer containing the data to send and the <xref:System.Net.Sockets.SocketAsyncEventArgs.Count%2A?displayProperty=nameWithType> property needs to be set to the number of bytes of data to send from the buffer. Once a connection is established, this buffer of data is sent.
 
- If you are using a connection-oriented protocol and do not call &lt;xref:System.Net.Sockets.Socket.Bind%2A&gt; before calling &lt;xref:System.Net.Sockets.Socket.ConnectAsync%2A&gt;, the underlying service provider will assign the most appropriate local network address and port number.
+ If you are using a connection-oriented protocol and do not call <xref:System.Net.Sockets.Socket.Bind%2A> before calling <xref:System.Net.Sockets.Socket.ConnectAsync%2A>, the underlying service provider will assign the most appropriate local network address and port number.
 
- If you are using a connectionless protocol, the service provider will not assign a local network IP address and port number until you call the &lt;xref:System.Net.Sockets.Socket.SendAsync%2A&gt; or &lt;xref:System.Net.Sockets.Socket.ReceiveAsync%2A&gt; methods.
+ If you are using a connectionless protocol, the service provider will not assign a local network IP address and port number until you call the <xref:System.Net.Sockets.Socket.SendAsync%2A> or <xref:System.Net.Sockets.Socket.ReceiveAsync%2A> methods.
 
- The &lt;xref:System.Net.Sockets.Socket.ConnectAsync%2A&gt; method throws &lt;xref:System.NotSupportedException&gt; if the address family of the &lt;xref:System.Net.Sockets.Socket&gt; and the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint%2A?displayProperty=nameWithType&gt; are not the same address family.
+ The <xref:System.Net.Sockets.Socket.ConnectAsync%2A> method throws <xref:System.NotSupportedException> if the address family of the <xref:System.Net.Sockets.Socket> and the <xref:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint%2A?displayProperty=nameWithType> are not the same address family.
 
-&gt; [!NOTE]
-&gt;  If you receive a &lt;xref:System.Net.Sockets.SocketException&gt; when calling this method, use the &lt;xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType&gt; property to obtain the specific error code. After you have obtained this code, refer to the [Windows Sockets version 2 API error code](/windows/desktop/winsock/windows-sockets-error-codes-2) documentation for a detailed description of the error.
+> [!NOTE]
+>  If you receive a <xref:System.Net.Sockets.SocketException> when calling this method, use the <xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType> property to obtain the specific error code. After you have obtained this code, refer to the [Windows Sockets version 2 API error code](/windows/desktop/winsock/windows-sockets-error-codes-2) documentation for a detailed description of the error.
 
- 
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.Connect&gt;.</remarks>
+ ]]></format>
+        </remarks>
         <exception cref="T:System.ArgumentException">An argument is not valid. This exception occurs if multiple buffers are specified, the <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.BufferList" /> property is not null.</exception>
         <exception cref="T:System.ArgumentNullException">The <paramref name="e" /> parameter cannot be null and the <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint" /> cannot be null.</exception>
         <exception cref="T:System.InvalidOperationException">The <see cref="T:System.Net.Sockets.Socket" /> is listening or a socket operation was already in progress using the <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> object specified in the <paramref name="e" /> parameter.</exception>
@@ -4037,7 +4036,7 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="cancellationToken">A cancellation token that can be used to cancel the asynchronous operation.</param>
         <summary>Establishes a connection to a remote host.</summary>
         <returns>An asynchronous task that completes when the connection is established.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.Connect&gt;.</remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="remoteEP" /> parameter cannot be null.</exception>
         <exception cref="T:System.InvalidOperationException">The <see cref="T:System.Net.Sockets.Socket" /> is listening.</exception>
         <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>
@@ -4080,7 +4079,7 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="port">The port on the remote host to connect to.</param>
         <summary>Establishes a connection to a remote host.</summary>
         <returns>An asynchronous task that completes when the connection is established.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.Connect&gt;.</remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="address" /> parameter cannot be null.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">
           <paramref name="port" /> is less than <see cref="F:System.Net.IPEndPoint.MinPort" />.  
@@ -4129,7 +4128,7 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="port">The port on the remote host to connect to.</param>
         <summary>Establishes a connection to a remote host.</summary>
         <returns>An asynchronous task that completes when the connection is established.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.Connect&gt;.</remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="addresses" /> parameter cannot be null.</exception>
         <exception cref="T:System.ArgumentException">The <paramref name="addresses" /> parameter cannot be empty array.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">
@@ -4179,7 +4178,7 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="port">The port on the remote host to connect to.</param>
         <summary>Establishes a connection to a remote host.</summary>
         <returns>An asynchronous task that completes when the connection is established.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.Connect&gt;.</remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="host" /> parameter cannot be null.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">
           <paramref name="port" /> is less than <see cref="F:System.Net.IPEndPoint.MinPort" />.  
@@ -4230,7 +4229,7 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="cancellationToken">A cancellation token that can be used to cancel the asynchronous operation.</param>
         <summary>Establishes a connection to a remote host.</summary>
         <returns>An asynchronous task that completes when the connection is established.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.Connect&gt;.</remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="address" /> parameter cannot be null.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">
           <paramref name="port" /> is less than <see cref="F:System.Net.IPEndPoint.MinPort" />.  
@@ -4280,7 +4279,7 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="cancellationToken">A cancellation token that can be used to cancel the asynchronous operation.</param>
         <summary>Establishes a connection to a remote host.</summary>
         <returns>An asynchronous task that completes when the connection is established.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.Connect&gt;.</remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="addresses" /> parameter cannot be null.</exception>
         <exception cref="T:System.ArgumentException">The <paramref name="addresses" /> parameter cannot be empty array.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">
@@ -4346,40 +4345,40 @@ This method stores all the exceptions that its synchronous counterpart can throw
 
  <see langword="false" /> if the I/O operation completed synchronously. In this case, The <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> event on the <paramref name="e" /> parameter will not be raised and the <paramref name="e" /> object passed as a parameter may be examined immediately after the method call returns to retrieve the result of the operation.</returns>
         <remarks>
+          <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If you are using a connection-oriented protocol, the M:System.Net.Sockets.Socket.ConnectAsync(System.Net.Sockets.SocketType,System.Net.Sockets.ProtocolType,System.Net.Sockets.SocketAsyncEventArgs) method starts an asynchronous request for a connection to the remote host. If you are using a connectionless protocol, &lt;xref:System.Net.Sockets.Socket.ConnectAsync%2A&gt; establishes a default remote host specified by the `socketType` and `protocolType` parameters.
+ If you are using a connection-oriented protocol, the M:System.Net.Sockets.Socket.ConnectAsync(System.Net.Sockets.SocketType,System.Net.Sockets.ProtocolType,System.Net.Sockets.SocketAsyncEventArgs) method starts an asynchronous request for a connection to the remote host. If you are using a connectionless protocol, <xref:System.Net.Sockets.Socket.ConnectAsync%2A> establishes a default remote host specified by the `socketType` and `protocolType` parameters.
 
- To be notified of completion, you must create a callback method that implements the EventHandler\&lt;SocketAsyncEventArgs&gt; delegate and attach the callback to the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Completed?displayProperty=nameWithType&gt; event.
+ To be notified of completion, you must create a callback method that implements the EventHandler\<SocketAsyncEventArgs> delegate and attach the callback to the <xref:System.Net.Sockets.SocketAsyncEventArgs.Completed?displayProperty=nameWithType> event.
 
- The caller must set the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint%2A?displayProperty=nameWithType&gt; property to the &lt;xref:System.Net.IPEndPoint&gt; of the remote host to connect to.
+ The caller must set the <xref:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint%2A?displayProperty=nameWithType> property to the <xref:System.Net.IPEndPoint> of the remote host to connect to.
 
- The caller may set the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.UserToken%2A?displayProperty=nameWithType&gt; property to any user state object desired before calling the &lt;xref:System.Net.Sockets.Socket.ConnectAsync%2A&gt; method, so that the information will be retrievable in the callback method. If the callback needs more information than a single object, a small class can be created to hold the other required state information as members.
+ The caller may set the <xref:System.Net.Sockets.SocketAsyncEventArgs.UserToken%2A?displayProperty=nameWithType> property to any user state object desired before calling the <xref:System.Net.Sockets.Socket.ConnectAsync%2A> method, so that the information will be retrievable in the callback method. If the callback needs more information than a single object, a small class can be created to hold the other required state information as members.
 
- If you are using a connectionless protocol such as UDP, you do not have to call &lt;xref:System.Net.Sockets.Socket.ConnectAsync%2A&gt; before sending and receiving data. You can use &lt;xref:System.Net.Sockets.Socket.SendToAsync%2A&gt; and &lt;xref:System.Net.Sockets.Socket.ReceiveFromAsync%2A&gt; to communicate with a remote host. If you do call &lt;xref:System.Net.Sockets.Socket.ConnectAsync%2A&gt;, any datagrams that arrive from an address other than the specified default will be discarded. If you want to change the default remote host, call the &lt;xref:System.Net.Sockets.Socket.ConnectAsync%2A&gt; method again with the desired endpoint.
+ If you are using a connectionless protocol such as UDP, you do not have to call <xref:System.Net.Sockets.Socket.ConnectAsync%2A> before sending and receiving data. You can use <xref:System.Net.Sockets.Socket.SendToAsync%2A> and <xref:System.Net.Sockets.Socket.ReceiveFromAsync%2A> to communicate with a remote host. If you do call <xref:System.Net.Sockets.Socket.ConnectAsync%2A>, any datagrams that arrive from an address other than the specified default will be discarded. If you want to change the default remote host, call the <xref:System.Net.Sockets.Socket.ConnectAsync%2A> method again with the desired endpoint.
 
- If you wish to set the default remote host to a broadcast address, you must first call &lt;xref:System.Net.Sockets.Socket.SetSocketOption%2A&gt; and set Broadcast to `true`. If this is not done, the &lt;xref:System.Net.Sockets.Socket.ConnectAsync%2A&gt; method will throw a &lt;xref:System.Net.Sockets.SocketException&gt;.
+ If you wish to set the default remote host to a broadcast address, you must first call <xref:System.Net.Sockets.Socket.SetSocketOption%2A> and set Broadcast to `true`. If this is not done, the <xref:System.Net.Sockets.Socket.ConnectAsync%2A> method will throw a <xref:System.Net.Sockets.SocketException>.
 
- The following properties and events on the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs?displayProperty=nameWithType&gt; object are required:
+ The following properties and events on the <xref:System.Net.Sockets.SocketAsyncEventArgs?displayProperty=nameWithType> object are required:
 
--   &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Completed?displayProperty=nameWithType&gt;
+-   <xref:System.Net.Sockets.SocketAsyncEventArgs.Completed?displayProperty=nameWithType>
 
--   &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint%2A?displayProperty=nameWithType&gt;
+-   <xref:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint%2A?displayProperty=nameWithType>
 
- Optionally, a buffer may be provided which will atomically be sent on the socket after the &lt;xref:System.Net.Sockets.Socket.ConnectAsync%2A&gt; method succeeds. In this case, the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Buffer%2A?displayProperty=nameWithType&gt; property needs to be set to the buffer containing the data to send and the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Count%2A?displayProperty=nameWithType&gt; property needs to be set to the number of bytes of data to send from the buffer. Once a connection is established, this buffer of data is sent.
+ Optionally, a buffer may be provided which will atomically be sent on the socket after the <xref:System.Net.Sockets.Socket.ConnectAsync%2A> method succeeds. In this case, the <xref:System.Net.Sockets.SocketAsyncEventArgs.Buffer%2A?displayProperty=nameWithType> property needs to be set to the buffer containing the data to send and the <xref:System.Net.Sockets.SocketAsyncEventArgs.Count%2A?displayProperty=nameWithType> property needs to be set to the number of bytes of data to send from the buffer. Once a connection is established, this buffer of data is sent.
 
- If you are using a connection-oriented protocol and do not call &lt;xref:System.Net.Sockets.Socket.Bind%2A&gt; before calling &lt;xref:System.Net.Sockets.Socket.ConnectAsync%2A&gt;, the underlying service provider will assign the most appropriate local network address and port number.
+ If you are using a connection-oriented protocol and do not call <xref:System.Net.Sockets.Socket.Bind%2A> before calling <xref:System.Net.Sockets.Socket.ConnectAsync%2A>, the underlying service provider will assign the most appropriate local network address and port number.
 
- If you are using a connectionless protocol, the service provider will not assign a local network IP address and port number until you call the &lt;xref:System.Net.Sockets.Socket.SendAsync%2A&gt; or &lt;xref:System.Net.Sockets.Socket.ReceiveAsync%2A&gt; methods.
+ If you are using a connectionless protocol, the service provider will not assign a local network IP address and port number until you call the <xref:System.Net.Sockets.Socket.SendAsync%2A> or <xref:System.Net.Sockets.Socket.ReceiveAsync%2A> methods.
 
- The &lt;xref:System.Net.Sockets.Socket.ConnectAsync%2A&gt; method throws &lt;xref:System.NotSupportedException&gt; if the address family of the &lt;xref:System.Net.Sockets.Socket&gt; and the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint%2A?displayProperty=nameWithType&gt; are not the same address family.
+ The <xref:System.Net.Sockets.Socket.ConnectAsync%2A> method throws <xref:System.NotSupportedException> if the address family of the <xref:System.Net.Sockets.Socket> and the <xref:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint%2A?displayProperty=nameWithType> are not the same address family.
 
-&gt; [!NOTE]
-&gt;  If you receive a &lt;xref:System.Net.Sockets.SocketException&gt; when calling this method, use the &lt;xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType&gt; property to obtain the specific error code. After you have obtained this code, refer to the [Windows Sockets version 2 API error code](/windows/desktop/winsock/windows-sockets-error-codes-2) documentation for a detailed description of the error.
+> [!NOTE]
+>  If you receive a <xref:System.Net.Sockets.SocketException> when calling this method, use the <xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType> property to obtain the specific error code. After you have obtained this code, refer to the [Windows Sockets version 2 API error code](/windows/desktop/winsock/windows-sockets-error-codes-2) documentation for a detailed description of the error.
 
- 
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.Connect&gt;.</remarks>
+ ]]></format>
+        </remarks>
         <exception cref="T:System.ArgumentException">An argument is not valid. This exception occurs if multiple buffers are specified, the <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.BufferList" /> property is not null.</exception>
         <exception cref="T:System.ArgumentNullException">The <paramref name="e" /> parameter cannot be null and the <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint" /> cannot be null.</exception>
         <exception cref="T:System.InvalidOperationException">The <see cref="T:System.Net.Sockets.Socket" /> is listening or a socket operation was already in progress using the <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> object specified in the <paramref name="e" /> parameter.</exception>
@@ -4425,7 +4424,7 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="cancellationToken">A cancellation token that can be used to cancel the asynchronous operation.</param>
         <summary>Establishes a connection to a remote host.</summary>
         <returns>An asynchronous task that completes when the connection is established.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.Connect&gt;.</remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="host" /> parameter cannot be null.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">
           <paramref name="port" /> is less than <see cref="F:System.Net.IPEndPoint.MinPort" />.  
@@ -4620,13 +4619,13 @@ This method stores all the exceptions that its synchronous counterpart can throw
 
  <see langword="false" /> if the I/O operation completed synchronously. In this case, The <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> event on the <paramref name="e" /> parameter will not be raised and the <paramref name="e" /> object passed as a parameter may be examined immediately after the method call returns to retrieve the result of the operation.</returns>
         <remarks>
+          <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When using a connection-oriented protocol, calling the &lt;xref:System.Net.Sockets.Socket.DisconnectAsync%2A&gt; method requests a disconnect from a remote endpoint. If you set &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.DisconnectReuseSocket%2A?displayProperty=nameWithType&gt; to `true` in the `e` parameter, the socket can be reused.
+ When using a connection-oriented protocol, calling the <xref:System.Net.Sockets.Socket.DisconnectAsync%2A> method requests a disconnect from a remote endpoint. If you set <xref:System.Net.Sockets.SocketAsyncEventArgs.DisconnectReuseSocket%2A?displayProperty=nameWithType> to `true` in the `e` parameter, the socket can be reused.
 
- 
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.Disconnect&gt;.</remarks>
+ ]]></format>
+        </remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="e" /> parameter cannot be null.</exception>
         <exception cref="T:System.InvalidOperationException">A socket operation was already in progress using the <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> object specified in the <paramref name="e" /> parameter.</exception>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.Socket" /> has been closed.</exception>
@@ -4669,7 +4668,7 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="cancellationToken">A cancellation token that can be used to cancel the asynchronous operation.</param>
         <summary>Disconnects a connected socket from the remote host.</summary>
         <returns>An asynchronous task that completes when the socket is disconnected.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.Disconnect&gt;.</remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.Socket" /> object has been closed.</exception>
         <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>
       </Docs>
@@ -8697,7 +8696,7 @@ If you're using a connectionless <xref:System.Net.Sockets.Socket>, <xref:System.
         <param name="buffer">The buffer for the received data.</param>
         <summary>Receives data from a connected socket.</summary>
         <returns>An asynchronous task that completes with the number of bytes received.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.Receive&gt;.</remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.Socket" /> has been closed.</exception>
         <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>
       </Docs>
@@ -8733,7 +8732,7 @@ If you're using a connectionless <xref:System.Net.Sockets.Socket>, <xref:System.
         <param name="buffers">A list of buffers for the received data.</param>
         <summary>Receives data from a connected socket.</summary>
         <returns>An asynchronous task that completes with the number of bytes received.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.Receive&gt;.</remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="buffers" /> parameter was null.</exception>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.Socket" /> has been closed.</exception>
         <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>
@@ -8786,35 +8785,35 @@ If you're using a connectionless <xref:System.Net.Sockets.Socket>, <xref:System.
 
  <see langword="false" /> if the I/O operation completed synchronously. In this case, The <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> event on the <paramref name="e" /> parameter will not be raised and the <paramref name="e" /> object passed as a parameter may be examined immediately after the method call returns to retrieve the result of the operation.</returns>
         <remarks>
+          <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The &lt;xref:System.Net.Sockets.Socket.ReceiveAsync%2A&gt; method is used on connected sockets or bound connectionless sockets and is used to read incoming data. The socket's local address must be known.
+ The <xref:System.Net.Sockets.Socket.ReceiveAsync%2A> method is used on connected sockets or bound connectionless sockets and is used to read incoming data. The socket's local address must be known.
 
  For bound connectionless sockets, this function restricts the addresses from which received messages are accepted. The function only returns messages from the remote address specified in the connection. Messages from other addresses are silently discarded.
 
- The &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.SocketFlags%2A?displayProperty=nameWithType&gt; property on the `e` parameter provides the Window Sockets service provider with additional information about the read request. For more information about how to use this parameter, see &lt;xref:System.Net.Sockets.SocketFlags?displayProperty=nameWithType&gt;.
+ The <xref:System.Net.Sockets.SocketAsyncEventArgs.SocketFlags%2A?displayProperty=nameWithType> property on the `e` parameter provides the Window Sockets service provider with additional information about the read request. For more information about how to use this parameter, see <xref:System.Net.Sockets.SocketFlags?displayProperty=nameWithType>.
 
- The following properties and events on the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs?displayProperty=nameWithType&gt; object are required to successfully call this method:
+ The following properties and events on the <xref:System.Net.Sockets.SocketAsyncEventArgs?displayProperty=nameWithType> object are required to successfully call this method:
 
--   &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Buffer%2A?displayProperty=nameWithType&gt; or &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.BufferList%2A?displayProperty=nameWithType&gt;
+-   <xref:System.Net.Sockets.SocketAsyncEventArgs.Buffer%2A?displayProperty=nameWithType> or <xref:System.Net.Sockets.SocketAsyncEventArgs.BufferList%2A?displayProperty=nameWithType>
 
--   &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Count%2A?displayProperty=nameWithType&gt; if &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Buffer%2A?displayProperty=nameWithType&gt; is set
+-   <xref:System.Net.Sockets.SocketAsyncEventArgs.Count%2A?displayProperty=nameWithType> if <xref:System.Net.Sockets.SocketAsyncEventArgs.Buffer%2A?displayProperty=nameWithType> is set
 
--   &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Offset%2A?displayProperty=nameWithType&gt; if &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Buffer%2A?displayProperty=nameWithType&gt; is set
+-   <xref:System.Net.Sockets.SocketAsyncEventArgs.Offset%2A?displayProperty=nameWithType> if <xref:System.Net.Sockets.SocketAsyncEventArgs.Buffer%2A?displayProperty=nameWithType> is set
 
--   &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Completed?displayProperty=nameWithType&gt;
+-   <xref:System.Net.Sockets.SocketAsyncEventArgs.Completed?displayProperty=nameWithType>
 
- The caller may set the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.UserToken%2A?displayProperty=nameWithType&gt; property to any user state object desired before calling the &lt;xref:System.Net.Sockets.Socket.ReceiveAsync%2A&gt; method, so that the information will be retrievable in the callback method. If the callback needs more information than a single object, a small class can be created to hold the other required state information as members.
+ The caller may set the <xref:System.Net.Sockets.SocketAsyncEventArgs.UserToken%2A?displayProperty=nameWithType> property to any user state object desired before calling the <xref:System.Net.Sockets.Socket.ReceiveAsync%2A> method, so that the information will be retrievable in the callback method. If the callback needs more information than a single object, a small class can be created to hold the other required state information as members.
 
  For byte stream-style sockets, incoming data is placed into the buffer until the buffer is filled, the connection is closed, or the internally buffered data is exhausted.
 
  For message-oriented sockets, an incoming message is placed into the buffer up to the total size of the buffer associated with the `e` parameter. If the message is larger than the buffer, the buffer is filled with the first part of the message.
 
- For connection-oriented sockets, the &lt;xref:System.Net.Sockets.Socket.ReceiveAsync%2A&gt; method can indicate the graceful termination of the virtual circuit in one of two ways that depend on whether the socket is byte stream or message oriented. For byte streams, zero bytes having been read indicates graceful closure and that no more bytes will ever be read. For message-oriented sockets, where a zero byte message is often allowable, a &lt;xref:System.Net.Sockets.SocketException&gt; with the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.SocketError%2A?displayProperty=nameWithType&gt; set to the native Winsock WSAEDISCON error code (10101) is used to indicate graceful closure. In any case, a &lt;xref:System.Net.Sockets.SocketException&gt; with the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.SocketError%2A?displayProperty=nameWithType&gt; set to the native Winsock WSAECONNRESET error code (10054) indicates an abortive close has occurred.
+ For connection-oriented sockets, the <xref:System.Net.Sockets.Socket.ReceiveAsync%2A> method can indicate the graceful termination of the virtual circuit in one of two ways that depend on whether the socket is byte stream or message oriented. For byte streams, zero bytes having been read indicates graceful closure and that no more bytes will ever be read. For message-oriented sockets, where a zero byte message is often allowable, a <xref:System.Net.Sockets.SocketException> with the <xref:System.Net.Sockets.SocketAsyncEventArgs.SocketError%2A?displayProperty=nameWithType> set to the native Winsock WSAEDISCON error code (10101) is used to indicate graceful closure. In any case, a <xref:System.Net.Sockets.SocketException> with the <xref:System.Net.Sockets.SocketAsyncEventArgs.SocketError%2A?displayProperty=nameWithType> set to the native Winsock WSAECONNRESET error code (10054) indicates an abortive close has occurred.
 
- 
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.Receive&gt;.</remarks>
+ ]]></format>
+        </remarks>
         <exception cref="T:System.ArgumentException">An argument was invalid. The <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" /> or <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.BufferList" /> properties on the <paramref name="e" /> parameter must reference valid buffers. One or the other of these properties may be set, but not both at the same time.</exception>
         <exception cref="T:System.InvalidOperationException">A socket operation was already in progress using the <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> object specified in the <paramref name="e" /> parameter.</exception>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.Socket" /> has been closed.</exception>
@@ -8862,7 +8861,7 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="socketFlags">A bitwise combination of SocketFlags values that will be used when receiving the data.</param>
         <summary>Receives data from a connected socket.</summary>
         <returns>An asynchronous task that completes with the number of bytes received.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.Receive&gt;.</remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.Socket" /> has been closed.</exception>
         <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>
       </Docs>
@@ -8901,7 +8900,7 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="socketFlags">A bitwise combination of SocketFlags values that will be used when receiving the data.</param>
         <summary>Receives data from a connected socket.</summary>
         <returns>An asynchronous task that completes with the number of bytes received.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.Receive&gt;.</remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="buffers" /> parameter was null.</exception>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.Socket" /> has been closed.</exception>
         <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>
@@ -8939,7 +8938,7 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="cancellationToken">A cancellation token that can be used to cancel the asynchronous operation.</param>
         <summary>Receives data from a connected socket.</summary>
         <returns>An asynchronous task that completes with the number of bytes received.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.Receive&gt;.</remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.Socket" /> has been closed.</exception>
         <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>
       </Docs>
@@ -8979,7 +8978,7 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="cancellationToken">A cancellation token that can be used to cancel the asynchronous operation.</param>
         <summary>Receives data from a connected socket.</summary>
         <returns>An asynchronous task that completes with the number of bytes received.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.Receive&gt;.</remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.Socket" /> has been closed.</exception>
         <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>
       </Docs>
@@ -9635,35 +9634,35 @@ This method stores all the exceptions that its synchronous counterpart can throw
 
  <see langword="false" /> if the I/O operation completed synchronously. In this case, The <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> event on the <paramref name="e" /> parameter will not be raised and the <paramref name="e" /> object passed as a parameter may be examined immediately after the method call returns to retrieve the result of the operation.</returns>
         <remarks>
+          <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The &lt;xref:System.Net.Sockets.Socket.ReceiveFromAsync%2A&gt; method is used primarily to receive data on a connectionless socket. The socket's local address must be known.
+ The <xref:System.Net.Sockets.Socket.ReceiveFromAsync%2A> method is used primarily to receive data on a connectionless socket. The socket's local address must be known.
 
- The caller must set the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint%2A?displayProperty=nameWithType&gt; property to an &lt;xref:System.Net.EndPoint&gt; of the same type as the endpoint of the remote host. The property will be updated on successful receive to the actual remote endpoint.
+ The caller must set the <xref:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint%2A?displayProperty=nameWithType> property to an <xref:System.Net.EndPoint> of the same type as the endpoint of the remote host. The property will be updated on successful receive to the actual remote endpoint.
 
- The &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.SocketFlags%2A?displayProperty=nameWithType&gt; property on the `e` parameter provides the Window Sockets service provider with additional information about the read request. For more information about how to use this parameter, see &lt;xref:System.Net.Sockets.SocketFlags?displayProperty=nameWithType&gt;.
+ The <xref:System.Net.Sockets.SocketAsyncEventArgs.SocketFlags%2A?displayProperty=nameWithType> property on the `e` parameter provides the Window Sockets service provider with additional information about the read request. For more information about how to use this parameter, see <xref:System.Net.Sockets.SocketFlags?displayProperty=nameWithType>.
 
- The following properties and events on the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs?displayProperty=nameWithType&gt; object are required to successfully call this method:
+ The following properties and events on the <xref:System.Net.Sockets.SocketAsyncEventArgs?displayProperty=nameWithType> object are required to successfully call this method:
 
--   &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Buffer%2A?displayProperty=nameWithType&gt;
+-   <xref:System.Net.Sockets.SocketAsyncEventArgs.Buffer%2A?displayProperty=nameWithType>
 
--   &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Count%2A?displayProperty=nameWithType&gt;
+-   <xref:System.Net.Sockets.SocketAsyncEventArgs.Count%2A?displayProperty=nameWithType>
 
--   &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Offset%2A?displayProperty=nameWithType&gt;
+-   <xref:System.Net.Sockets.SocketAsyncEventArgs.Offset%2A?displayProperty=nameWithType>
 
--   &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint%2A?displayProperty=nameWithType&gt;
+-   <xref:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint%2A?displayProperty=nameWithType>
 
--   &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Completed?displayProperty=nameWithType&gt;
+-   <xref:System.Net.Sockets.SocketAsyncEventArgs.Completed?displayProperty=nameWithType>
 
- The caller may set the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.UserToken%2A?displayProperty=nameWithType&gt; property to any user state object desired before calling the &lt;xref:System.Net.Sockets.Socket.ReceiveFromAsync%2A&gt; method, so that the information will be retrievable in the callback method. If the callback needs more information than a single object, a small class can be created to hold the other required state information as members.
+ The caller may set the <xref:System.Net.Sockets.SocketAsyncEventArgs.UserToken%2A?displayProperty=nameWithType> property to any user state object desired before calling the <xref:System.Net.Sockets.Socket.ReceiveFromAsync%2A> method, so that the information will be retrievable in the callback method. If the callback needs more information than a single object, a small class can be created to hold the other required state information as members.
 
- For message-oriented sockets, an incoming message is placed into the buffer up to the total size of the buffer. The &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Count%2A?displayProperty=nameWithType&gt; and &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Offset%2A?displayProperty=nameWithType&gt; properties determine where in the buffer the data is placed and the amount of data.
+ For message-oriented sockets, an incoming message is placed into the buffer up to the total size of the buffer. The <xref:System.Net.Sockets.SocketAsyncEventArgs.Count%2A?displayProperty=nameWithType> and <xref:System.Net.Sockets.SocketAsyncEventArgs.Offset%2A?displayProperty=nameWithType> properties determine where in the buffer the data is placed and the amount of data.
 
- For byte stream-style sockets, incoming data is placed into the buffer until the buffer is filled, the connection is closed, or the internally buffered data is exhausted. The &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Count%2A?displayProperty=nameWithType&gt; and &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Offset%2A?displayProperty=nameWithType&gt; properties determine where in the buffer the data is placed and the amount of data.
+ For byte stream-style sockets, incoming data is placed into the buffer until the buffer is filled, the connection is closed, or the internally buffered data is exhausted. The <xref:System.Net.Sockets.SocketAsyncEventArgs.Count%2A?displayProperty=nameWithType> and <xref:System.Net.Sockets.SocketAsyncEventArgs.Offset%2A?displayProperty=nameWithType> properties determine where in the buffer the data is placed and the amount of data.
 
- 
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.ReceiveFrom&gt;.</remarks>
+ ]]></format>
+        </remarks>
         <exception cref="T:System.ArgumentNullException">The <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint" /> cannot be null.</exception>
         <exception cref="T:System.InvalidOperationException">A socket operation was already in progress using the <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> object specified in the <paramref name="e" /> parameter.</exception>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.Socket" /> has been closed.</exception>
@@ -9710,7 +9709,7 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="remoteEndPoint">An endpoint of the same type as the endpoint of the remote host.</param>
         <summary>Receives data and returns the endpoint of the sending host.</summary>
         <returns>An asynchronous task that completes with a <see cref="T:System.Net.Sockets.SocketReceiveFromResult" /> containing the number of bytes received and the endpoint of the sending host.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.ReceiveFrom&gt;.</remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="remoteEndPoint" /> is <see langword="null" />.</exception>
         <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>
@@ -9754,7 +9753,7 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="remoteEndPoint">An endpoint of the same type as the endpoint of the remote host.</param>
         <summary>Receives data and returns the endpoint of the sending host.</summary>
         <returns>An asynchronous task that completes with a <see cref="T:System.Net.Sockets.SocketReceiveFromResult" /> containing the number of bytes received and the endpoint of the sending host.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.ReceiveFrom&gt;.</remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="remoteEndPoint" /> is <see langword="null" />.</exception>
         <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>
@@ -9796,7 +9795,7 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="cancellationToken">A cancellation token that can be used to signal the asynchronous operation should be canceled.</param>
         <summary>Receives data and returns the endpoint of the sending host.</summary>
         <returns>An asynchronous task that completes with a <see cref="T:System.Net.Sockets.SocketReceiveFromResult" /> containing the number of bytes received and the endpoint of the sending host.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.ReceiveFrom&gt;.</remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="remoteEndPoint" /> is <see langword="null" />.</exception>
         <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>
@@ -9841,7 +9840,7 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="cancellationToken">A cancellation token that can be used to signal the asynchronous operation should be canceled.</param>
         <summary>Receives data and returns the endpoint of the sending host.</summary>
         <returns>An asynchronous task that completes with a <see cref="T:System.Net.Sockets.SocketReceiveFromResult" /> containing the number of bytes received and the endpoint of the sending host.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.ReceiveFrom&gt;.</remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="remoteEndPoint" /> is <see langword="null" />.</exception>
         <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>
@@ -10071,37 +10070,37 @@ You must call the Bind method before performing this operation.</exception>
 
  <see langword="false" /> if the I/O operation completed synchronously. In this case, The <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> event on the <paramref name="e" /> parameter will not be raised and the <paramref name="e" /> object passed as a parameter may be examined immediately after the method call returns to retrieve the result of the operation.</returns>
         <remarks>
+          <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The &lt;xref:System.Net.Sockets.Socket.ReceiveMessageFromAsync%2A&gt; method is used primarily to receive message data on a connectionless socket. The socket's local address must be known. This method can only be used with datagram and raw sockets. The socket must be initialized with the socket type set to &lt;xref:System.Net.Sockets.SocketType.Dgram&gt; or &lt;xref:System.Net.Sockets.SocketType.Raw&gt; before calling this method. This can be done when the socket is constructed using &lt;xref:System.Net.Sockets.Socket.%23ctor%2A&gt;.
+ The <xref:System.Net.Sockets.Socket.ReceiveMessageFromAsync%2A> method is used primarily to receive message data on a connectionless socket. The socket's local address must be known. This method can only be used with datagram and raw sockets. The socket must be initialized with the socket type set to <xref:System.Net.Sockets.SocketType.Dgram> or <xref:System.Net.Sockets.SocketType.Raw> before calling this method. This can be done when the socket is constructed using <xref:System.Net.Sockets.Socket.%23ctor%2A>.
 
- The caller must set the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint%2A?displayProperty=nameWithType&gt; property to an &lt;xref:System.Net.EndPoint&gt; of the same type as the endpoint of the remote host. The property will be updated on successful receive to the actual remote endpoint.
+ The caller must set the <xref:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint%2A?displayProperty=nameWithType> property to an <xref:System.Net.EndPoint> of the same type as the endpoint of the remote host. The property will be updated on successful receive to the actual remote endpoint.
 
- The following properties and events on the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs?displayProperty=nameWithType&gt; object are required to successfully call this method:
+ The following properties and events on the <xref:System.Net.Sockets.SocketAsyncEventArgs?displayProperty=nameWithType> object are required to successfully call this method:
 
--   &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Buffer%2A?displayProperty=nameWithType&gt;
+-   <xref:System.Net.Sockets.SocketAsyncEventArgs.Buffer%2A?displayProperty=nameWithType>
 
--   &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Count%2A?displayProperty=nameWithType&gt;
+-   <xref:System.Net.Sockets.SocketAsyncEventArgs.Count%2A?displayProperty=nameWithType>
 
--   &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Offset%2A?displayProperty=nameWithType&gt;
+-   <xref:System.Net.Sockets.SocketAsyncEventArgs.Offset%2A?displayProperty=nameWithType>
 
--   &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint%2A?displayProperty=nameWithType&gt;
+-   <xref:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint%2A?displayProperty=nameWithType>
 
--   &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Completed?displayProperty=nameWithType&gt;
+-   <xref:System.Net.Sockets.SocketAsyncEventArgs.Completed?displayProperty=nameWithType>
 
- The caller may set the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.UserToken%2A?displayProperty=nameWithType&gt; property to any user state object desired before calling the &lt;xref:System.Net.Sockets.Socket.ReceiveMessageFromAsync%2A&gt; method, so that the information will be retrievable in the callback method. If the callback needs more information than a single object, a small class can be created to hold the other required state information as members.
+ The caller may set the <xref:System.Net.Sockets.SocketAsyncEventArgs.UserToken%2A?displayProperty=nameWithType> property to any user state object desired before calling the <xref:System.Net.Sockets.Socket.ReceiveMessageFromAsync%2A> method, so that the information will be retrievable in the callback method. If the callback needs more information than a single object, a small class can be created to hold the other required state information as members.
 
- For message-oriented sockets, an incoming message is placed into the buffer up to the total size of the buffer. The &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Count%2A?displayProperty=nameWithType&gt; and &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Offset%2A?displayProperty=nameWithType&gt; properties determine where in the buffer the data is placed and the amount of data.
+ For message-oriented sockets, an incoming message is placed into the buffer up to the total size of the buffer. The <xref:System.Net.Sockets.SocketAsyncEventArgs.Count%2A?displayProperty=nameWithType> and <xref:System.Net.Sockets.SocketAsyncEventArgs.Offset%2A?displayProperty=nameWithType> properties determine where in the buffer the data is placed and the amount of data.
 
- The &lt;xref:System.Net.Sockets.Socket.ReceiveMessageFromAsync%2A&gt; method automatically sets the &lt;xref:System.Net.Sockets.SocketOptionName.PacketInformation&gt; socket option to `true` the first time it is called for a given &lt;xref:System.Net.Sockets.Socket&gt;. However, the &lt;xref:System.Net.Sockets.IPPacketInformation&gt; object will only be valid for packets which arrive at the local computer after the socket option has been set. If a socket is sent packets between when the socket is bound to a local endpoint (explicitly by the &lt;xref:System.Net.Sockets.Socket.Bind%2A&gt; method or implicitly by one of the &lt;xref:System.Net.Sockets.Socket.Connect%2A&gt;, &lt;xref:System.Net.Sockets.Socket.ConnectAsync%2A&gt;, &lt;xref:System.Net.Sockets.Socket.SendTo%2A&gt;, or &lt;xref:System.Net.Sockets.Socket.SendToAsync%2A&gt; methods) and the first call to the &lt;xref:System.Net.Sockets.Socket.ReceiveMessageFromAsync%2A&gt; method, calls to &lt;xref:System.Net.Sockets.Socket.ReceiveMessageFromAsync%2A&gt; method will result in invalid &lt;xref:System.Net.Sockets.IPPacketInformation&gt; objects for these packets.
+ The <xref:System.Net.Sockets.Socket.ReceiveMessageFromAsync%2A> method automatically sets the <xref:System.Net.Sockets.SocketOptionName.PacketInformation> socket option to `true` the first time it is called for a given <xref:System.Net.Sockets.Socket>. However, the <xref:System.Net.Sockets.IPPacketInformation> object will only be valid for packets which arrive at the local computer after the socket option has been set. If a socket is sent packets between when the socket is bound to a local endpoint (explicitly by the <xref:System.Net.Sockets.Socket.Bind%2A> method or implicitly by one of the <xref:System.Net.Sockets.Socket.Connect%2A>, <xref:System.Net.Sockets.Socket.ConnectAsync%2A>, <xref:System.Net.Sockets.Socket.SendTo%2A>, or <xref:System.Net.Sockets.Socket.SendToAsync%2A> methods) and the first call to the <xref:System.Net.Sockets.Socket.ReceiveMessageFromAsync%2A> method, calls to <xref:System.Net.Sockets.Socket.ReceiveMessageFromAsync%2A> method will result in invalid <xref:System.Net.Sockets.IPPacketInformation> objects for these packets.
 
- To ensure that all &lt;xref:System.Net.Sockets.IPPacketInformation&gt; objects are valid, an application should set the &lt;xref:System.Net.Sockets.SocketOptionName.PacketInformation&gt; socket option to`true` before it is bound to a local endpoint using the &lt;xref:System.Net.Sockets.Socket.SetSocketOption%28System.Net.Sockets.SocketOptionLevel%2CSystem.Net.Sockets.SocketOptionName%2CSystem.Boolean%29&gt; method.
+ To ensure that all <xref:System.Net.Sockets.IPPacketInformation> objects are valid, an application should set the <xref:System.Net.Sockets.SocketOptionName.PacketInformation> socket option to`true` before it is bound to a local endpoint using the <xref:System.Net.Sockets.Socket.SetSocketOption%28System.Net.Sockets.SocketOptionLevel%2CSystem.Net.Sockets.SocketOptionName%2CSystem.Boolean%29> method.
 
- An application can examine the resulting &lt;xref:System.Net.Sockets.IPPacketInformation&gt; objects if it needs to know if the datagram was sent using a unicast, multicast, or broadcast address.
+ An application can examine the resulting <xref:System.Net.Sockets.IPPacketInformation> objects if it needs to know if the datagram was sent using a unicast, multicast, or broadcast address.
 
- 
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.ReceiveMessageFrom&gt;.</remarks>
+ ]]></format>
+        </remarks>
         <exception cref="T:System.ArgumentNullException">The <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint" /> cannot be null.</exception>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.Socket" /> has been closed.</exception>
         <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>
@@ -10147,7 +10146,7 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="remoteEndPoint">An endpoint of the same type as the endpoint of the remote host.</param>
         <summary>Receives data and returns additional information about the sender of the message.</summary>
         <returns>An asynchronous task that completes with a <see cref="T:System.Net.Sockets.SocketReceiveMessageFromResult" /> containing the number of bytes received and additional information about the sending host.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.ReceiveMessageFrom&gt;.</remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.Socket" /> object has been closed.</exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="remoteEndPoint" /> is <see langword="null" />.</exception>
@@ -10190,7 +10189,7 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="remoteEndPoint">An endpoint of the same type as the endpoint of the remote host.</param>
         <summary>Receives data and returns additional information about the sender of the message.</summary>
         <returns>An asynchronous task that completes with a <see cref="T:System.Net.Sockets.SocketReceiveMessageFromResult" /> containing the number of bytes received and additional information about the sending host.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.ReceiveMessageFrom&gt;.</remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.Socket" /> object has been closed.</exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="remoteEndPoint" /> is <see langword="null" />.</exception>
@@ -10231,7 +10230,7 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="cancellationToken">A cancellation token that can be used to signal the asynchronous operation should be canceled.</param>
         <summary>Receives data and returns additional information about the sender of the message.</summary>
         <returns>An asynchronous task that completes with a <see cref="T:System.Net.Sockets.SocketReceiveMessageFromResult" /> containing the number of bytes received and additional information about the sending host.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.ReceiveMessageFrom&gt;.</remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.Socket" /> object has been closed.</exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="remoteEndPoint" /> is <see langword="null" />.</exception>
@@ -10275,7 +10274,7 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="cancellationToken">A cancellation token that can be used to signal the asynchronous operation should be canceled.</param>
         <summary>Receives data and returns additional information about the sender of the message.</summary>
         <returns>An asynchronous task that completes with a <see cref="T:System.Net.Sockets.SocketReceiveMessageFromResult" /> containing the number of bytes received and additional information about the sending host.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.ReceiveMessageFrom&gt;.</remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.Socket" /> object has been closed.</exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="remoteEndPoint" /> is <see langword="null" />.</exception>
@@ -11581,7 +11580,7 @@ This member outputs trace information when you enable network tracing in your ap
         <param name="buffer">The buffer for the data to send.</param>
         <summary>Sends data on a connected socket.</summary>
         <returns>An asynchronous task that completes with the number of bytes sent.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.Send&gt;.</remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.Socket" /> has been closed.</exception>
       </Docs>
@@ -11617,7 +11616,7 @@ This member outputs trace information when you enable network tracing in your ap
         <param name="buffers">A list of buffers for the data to send.</param>
         <summary>Sends data on a connected socket.</summary>
         <returns>An asynchronous task that completes with the number of bytes sent.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.Send&gt;.</remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="buffers" /> is <see langword="null" />.</exception>
         <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>
@@ -11671,35 +11670,35 @@ This member outputs trace information when you enable network tracing in your ap
 
  <see langword="false" /> if the I/O operation completed synchronously. In this case, The <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> event on the <paramref name="e" /> parameter will not be raised and the <paramref name="e" /> object passed as a parameter may be examined immediately after the method call returns to retrieve the result of the operation.</returns>
         <remarks>
+          <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The &lt;xref:System.Net.Sockets.Socket.SendAsync%2A&gt; method is used to write outgoing data from one or more buffers on a connection-oriented socket. This method can also be used, however, on connectionless sockets that have specified a remote host on a connect operation.
+ The <xref:System.Net.Sockets.Socket.SendAsync%2A> method is used to write outgoing data from one or more buffers on a connection-oriented socket. This method can also be used, however, on connectionless sockets that have specified a remote host on a connect operation.
 
- The &lt;xref:System.Net.Sockets.Socket.SendAsync%2A&gt; method starts an asynchronous send operation to the remote host established in the &lt;xref:System.Net.Sockets.Socket.Accept%2A&gt;, &lt;xref:System.Net.Sockets.Socket.AcceptAsync%2A&gt;, &lt;xref:System.Net.Sockets.Socket.BeginAccept%2A&gt;, &lt;xref:System.Net.Sockets.Socket.BeginConnect%2A&gt;, &lt;xref:System.Net.Sockets.Socket.Connect%2A&gt;, or &lt;xref:System.Net.Sockets.Socket.ConnectAsync%2A&gt; method.
+ The <xref:System.Net.Sockets.Socket.SendAsync%2A> method starts an asynchronous send operation to the remote host established in the <xref:System.Net.Sockets.Socket.Accept%2A>, <xref:System.Net.Sockets.Socket.AcceptAsync%2A>, <xref:System.Net.Sockets.Socket.BeginAccept%2A>, <xref:System.Net.Sockets.Socket.BeginConnect%2A>, <xref:System.Net.Sockets.Socket.Connect%2A>, or <xref:System.Net.Sockets.Socket.ConnectAsync%2A> method.
 
- The following properties and events on the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs?displayProperty=nameWithType&gt; object are required to successfully call this method:
+ The following properties and events on the <xref:System.Net.Sockets.SocketAsyncEventArgs?displayProperty=nameWithType> object are required to successfully call this method:
 
--   &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Buffer%2A?displayProperty=nameWithType&gt; or &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.BufferList%2A?displayProperty=nameWithType&gt;
+-   <xref:System.Net.Sockets.SocketAsyncEventArgs.Buffer%2A?displayProperty=nameWithType> or <xref:System.Net.Sockets.SocketAsyncEventArgs.BufferList%2A?displayProperty=nameWithType>
 
--   &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Count%2A?displayProperty=nameWithType&gt; if &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Buffer%2A?displayProperty=nameWithType&gt; is set
+-   <xref:System.Net.Sockets.SocketAsyncEventArgs.Count%2A?displayProperty=nameWithType> if <xref:System.Net.Sockets.SocketAsyncEventArgs.Buffer%2A?displayProperty=nameWithType> is set
 
--   &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Offset%2A?displayProperty=nameWithType&gt; if &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Buffer%2A?displayProperty=nameWithType&gt; is set
+-   <xref:System.Net.Sockets.SocketAsyncEventArgs.Offset%2A?displayProperty=nameWithType> if <xref:System.Net.Sockets.SocketAsyncEventArgs.Buffer%2A?displayProperty=nameWithType> is set
 
--   &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Completed?displayProperty=nameWithType&gt;
+-   <xref:System.Net.Sockets.SocketAsyncEventArgs.Completed?displayProperty=nameWithType>
 
- The caller may set the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.UserToken%2A?displayProperty=nameWithType&gt; property to any user state object desired before calling the &lt;xref:System.Net.Sockets.Socket.SendAsync%2A&gt; method, so that the information will be retrievable in the callback method. If the callback needs more information than a single object, a small class can be created to hold the other required state information as members.
+ The caller may set the <xref:System.Net.Sockets.SocketAsyncEventArgs.UserToken%2A?displayProperty=nameWithType> property to any user state object desired before calling the <xref:System.Net.Sockets.Socket.SendAsync%2A> method, so that the information will be retrievable in the callback method. If the callback needs more information than a single object, a small class can be created to hold the other required state information as members.
 
- The &lt;xref:System.Net.Sockets.Socket.SendAsync%2A&gt; method will throw an exception if you do not first call &lt;xref:System.Net.Sockets.Socket.Accept%2A&gt;, &lt;xref:System.Net.Sockets.Socket.AcceptAsync%2A&gt;, &lt;xref:System.Net.Sockets.Socket.BeginAccept%2A&gt;&lt;xref:System.Net.Sockets.Socket.BeginConnect%2A&gt;, &lt;xref:System.Net.Sockets.Socket.Connect%2A&gt;, or &lt;xref:System.Net.Sockets.Socket.ConnectAsync%2A&gt;.
+ The <xref:System.Net.Sockets.Socket.SendAsync%2A> method will throw an exception if you do not first call <xref:System.Net.Sockets.Socket.Accept%2A>, <xref:System.Net.Sockets.Socket.AcceptAsync%2A>, <xref:System.Net.Sockets.Socket.BeginAccept%2A><xref:System.Net.Sockets.Socket.BeginConnect%2A>, <xref:System.Net.Sockets.Socket.Connect%2A>, or <xref:System.Net.Sockets.Socket.ConnectAsync%2A>.
 
- Calling the &lt;xref:System.Net.Sockets.Socket.SendAsync%2A&gt; method gives you the ability to send data within a separate execution thread.
+ Calling the <xref:System.Net.Sockets.Socket.SendAsync%2A> method gives you the ability to send data within a separate execution thread.
 
- For message-oriented sockets, do not exceed the maximum message size of the underlying Windows sockets service provider. If the data is too long to pass atomically through the underlying service provider, no data is transmitted and the &lt;xref:System.Net.Sockets.Socket.SendAsync%2A&gt; method throws a &lt;xref:System.Net.Sockets.SocketException&gt; with the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.SocketError%2A?displayProperty=nameWithType&gt; set to the native Winsock WSAEMSGSIZE error code (10040).
+ For message-oriented sockets, do not exceed the maximum message size of the underlying Windows sockets service provider. If the data is too long to pass atomically through the underlying service provider, no data is transmitted and the <xref:System.Net.Sockets.Socket.SendAsync%2A> method throws a <xref:System.Net.Sockets.SocketException> with the <xref:System.Net.Sockets.SocketAsyncEventArgs.SocketError%2A?displayProperty=nameWithType> set to the native Winsock WSAEMSGSIZE error code (10040).
 
- Note that the successful completion of the &lt;xref:System.Net.Sockets.Socket.SendAsync%2A&gt; method does not indicate that the data was successfully delivered.
+ Note that the successful completion of the <xref:System.Net.Sockets.Socket.SendAsync%2A> method does not indicate that the data was successfully delivered.
 
- 
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.Send&gt;.</remarks>
+ ]]></format>
+        </remarks>
         <exception cref="T:System.ArgumentException">The <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" /> or <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.BufferList" /> properties on the <paramref name="e" /> parameter must reference valid buffers. One or the other of these properties may be set, but not both at the same time.</exception>
         <exception cref="T:System.InvalidOperationException">A socket operation was already in progress using the <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> object specified in the <paramref name="e" /> parameter.</exception>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.Socket" /> has been closed.</exception>
@@ -11747,7 +11746,7 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="socketFlags">A bitwise combination of SocketFlags values that will be used when sending the data.</param>
         <summary>Sends data on a connected socket.</summary>
         <returns>An asynchronous task that completes with the number of bytes sent.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.Send&gt;.</remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.Socket" /> has been closed.</exception>
       </Docs>
@@ -11786,7 +11785,7 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="socketFlags">A bitwise combination of SocketFlags values that will be used when sending the data.</param>
         <summary>Sends data on a connected socket.</summary>
         <returns>An asynchronous task that completes with the number of bytes sent.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.Send&gt;.</remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="buffers" /> is <see langword="null" />.</exception>
         <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>
@@ -11825,7 +11824,7 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="cancellationToken">A cancellation token that can be used to cancel the asynchronous operation.</param>
         <summary>Sends data on a connected socket.</summary>
         <returns>An asynchronous task that completes with the number of bytes sent.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.Send&gt;.</remarks>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="SendAsync">
@@ -11863,7 +11862,7 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="cancellationToken">A cancellation token that can be used to cancel the asynchronous operation.</param>
         <summary>Sends data on a connected socket.</summary>
         <returns>An asynchronous task that completes with the number of bytes sent.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.Send&gt;.</remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.Socket" /> has been closed.</exception>
       </Docs>
@@ -12182,7 +12181,7 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="cancellationToken">A cancellation token that can be used to cancel the asynchronous operation.</param>
         <summary>Sends the file <paramref name="fileName" /> to a connected <see cref="T:System.Net.Sockets.Socket" /> object.</summary>
         <returns>A value task that represents the asynchronous send file operation.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.SendFile&gt;.</remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.Socket" /> object has been closed.</exception>
         <exception cref="T:System.NotSupportedException">The <see cref="T:System.Net.Sockets.Socket" /> object is not connected to a remote host.</exception>
         <exception cref="T:System.IO.FileNotFoundException">The file <paramref name="fileName" /> was not found.</exception>
@@ -12228,7 +12227,7 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="cancellationToken">A cancellation token that can be used to cancel the asynchronous operation.</param>
         <summary>Sends the file <paramref name="fileName" /> and buffers of data to a connected <see cref="T:System.Net.Sockets.Socket" /> object using the specified <see cref="T:System.Net.Sockets.TransmitFileOptions" /> value.</summary>
         <returns>A value task that represents the asynchronous send file operation.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.SendFile&gt;.</remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.Socket" /> object has been closed.</exception>
         <exception cref="T:System.NotSupportedException">The <see cref="T:System.Net.Sockets.Socket" /> object is not connected to a remote host.</exception>
         <exception cref="T:System.IO.FileNotFoundException">The file <paramref name="fileName" /> was not found.</exception>
@@ -12287,37 +12286,37 @@ This method stores all the exceptions that its synchronous counterpart can throw
 
  <see langword="false" /> if the I/O operation completed synchronously. In this case, The <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> event on the <paramref name="e" /> parameter will not be raised and the <paramref name="e" /> object passed as a parameter may be examined immediately after the method call returns to retrieve the result of the operation.</returns>
         <remarks>
+          <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The &lt;xref:System.Net.Sockets.Socket.SendPacketsAsync%2A&gt; method is used to send a collection of files or in memory data buffers to remote host. The &lt;xref:System.Net.Sockets.Socket&gt; must already be connected to the remote host.
+ The <xref:System.Net.Sockets.Socket.SendPacketsAsync%2A> method is used to send a collection of files or in memory data buffers to remote host. The <xref:System.Net.Sockets.Socket> must already be connected to the remote host.
 
- If a &lt;xref:System.Net.Sockets.SendPacketsElement?displayProperty=nameWithType&gt; references a file in the working directory, it may be identified with just the name of the file; otherwise, the full path and name of the file must be specified. Wildcards and UNC share names are supported. If the file is not found, &lt;xref:System.IO.FileNotFoundException&gt; is thrown.
+ If a <xref:System.Net.Sockets.SendPacketsElement?displayProperty=nameWithType> references a file in the working directory, it may be identified with just the name of the file; otherwise, the full path and name of the file must be specified. Wildcards and UNC share names are supported. If the file is not found, <xref:System.IO.FileNotFoundException> is thrown.
 
- To be notified of completion, you must create a callback method that implements the EventHandler\&lt;SocketAsyncEventArgs&gt; delegate and attach the callback to the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Completed?displayProperty=nameWithType&gt; event.
+ To be notified of completion, you must create a callback method that implements the EventHandler\<SocketAsyncEventArgs> delegate and attach the callback to the <xref:System.Net.Sockets.SocketAsyncEventArgs.Completed?displayProperty=nameWithType> event.
 
- The &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.SendPacketsFlags%2A?displayProperty=nameWithType&gt; property on the `e` parameter provides the Window Sockets service provider with additional information about the file transfer. For more information about how to use this parameter, see &lt;xref:System.Net.Sockets.TransmitFileOptions&gt;.
+ The <xref:System.Net.Sockets.SocketAsyncEventArgs.SendPacketsFlags%2A?displayProperty=nameWithType> property on the `e` parameter provides the Window Sockets service provider with additional information about the file transfer. For more information about how to use this parameter, see <xref:System.Net.Sockets.TransmitFileOptions>.
 
- The following properties and events on the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs?displayProperty=nameWithType&gt; object are required to successfully call this method:
+ The following properties and events on the <xref:System.Net.Sockets.SocketAsyncEventArgs?displayProperty=nameWithType> object are required to successfully call this method:
 
--   &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.SendPacketsElements%2A?displayProperty=nameWithType&gt;
+-   <xref:System.Net.Sockets.SocketAsyncEventArgs.SendPacketsElements%2A?displayProperty=nameWithType>
 
--   &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Completed?displayProperty=nameWithType&gt;
+-   <xref:System.Net.Sockets.SocketAsyncEventArgs.Completed?displayProperty=nameWithType>
 
- The caller may set the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.UserToken%2A?displayProperty=nameWithType&gt; property to any user state object desired before calling the &lt;xref:System.Net.Sockets.Socket.SendPacketsAsync%2A&gt; method, so that the information will be retrievable in the callback method. If the callback needs more information than a single object, a small class can be created to hold the other required state information as members.
+ The caller may set the <xref:System.Net.Sockets.SocketAsyncEventArgs.UserToken%2A?displayProperty=nameWithType> property to any user state object desired before calling the <xref:System.Net.Sockets.Socket.SendPacketsAsync%2A> method, so that the information will be retrievable in the callback method. If the callback needs more information than a single object, a small class can be created to hold the other required state information as members.
 
  This method uses the TransmitPackets function found in the Windows Sockets 2 API. For more information about the TransmitPackets function and its flags, see the [Windows Sockets](/windows/desktop/WinSock/) documentation.
 
- Although intended for connection-oriented protocols, the &lt;xref:System.Net.Sockets.Socket.SendPacketsAsync%2A&gt; method also works for connectionless protocols, provided that you first call the &lt;xref:System.Net.Sockets.Socket.BeginConnect%2A&gt;, &lt;xref:System.Net.Sockets.Socket.Connect%2A&gt;, or &lt;xref:System.Net.Sockets.Socket.ConnectAsync%2A&gt; method to establish a default remote host. With connectionless protocols, you must also be sure that the size of your file does not exceed the maximum packet size of the underlying service provider. If it does, the datagram is not sent and &lt;xref:System.Net.Sockets.Socket.SendPacketsAsync%2A&gt; throws a &lt;xref:System.Net.Sockets.SocketException&gt; exception.
+ Although intended for connection-oriented protocols, the <xref:System.Net.Sockets.Socket.SendPacketsAsync%2A> method also works for connectionless protocols, provided that you first call the <xref:System.Net.Sockets.Socket.BeginConnect%2A>, <xref:System.Net.Sockets.Socket.Connect%2A>, or <xref:System.Net.Sockets.Socket.ConnectAsync%2A> method to establish a default remote host. With connectionless protocols, you must also be sure that the size of your file does not exceed the maximum packet size of the underlying service provider. If it does, the datagram is not sent and <xref:System.Net.Sockets.Socket.SendPacketsAsync%2A> throws a <xref:System.Net.Sockets.SocketException> exception.
 
- The &lt;xref:System.Net.Sockets.Socket.SendPacketsAsync%2A&gt; method is optimized according to the operating system on which it is used. On Windows server editions, the &lt;xref:System.Net.Sockets.Socket.SendPacketsAsync%2A&gt; method is optimized for high performance.
+ The <xref:System.Net.Sockets.Socket.SendPacketsAsync%2A> method is optimized according to the operating system on which it is used. On Windows server editions, the <xref:System.Net.Sockets.Socket.SendPacketsAsync%2A> method is optimized for high performance.
 
- On Windows client editions, the &lt;xref:System.Net.Sockets.Socket.SendPacketsAsync%2A&gt; method is optimized for minimum memory and resource utilization.
+ On Windows client editions, the <xref:System.Net.Sockets.Socket.SendPacketsAsync%2A> method is optimized for minimum memory and resource utilization.
 
- Use of the &lt;xref:System.Net.Sockets.TransmitFileOptions.UseKernelApc?displayProperty=nameWithType&gt; flag in the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.SendPacketsFlags%2A?displayProperty=nameWithType&gt; property on the `e` parameter can deliver significant performance benefits. If the thread initiating the &lt;xref:System.Net.Sockets.Socket.SendPacketsAsync%2A&gt; method call is being used for heavy computations, it is possible, though unlikely, that APCs could be prevented from launching. Note that there is a difference between kernel and user-mode APCs. Kernel APCs launch when a thread is in a wait state. User-mode APCs launch when a thread is in an alertable wait state
+ Use of the <xref:System.Net.Sockets.TransmitFileOptions.UseKernelApc?displayProperty=nameWithType> flag in the <xref:System.Net.Sockets.SocketAsyncEventArgs.SendPacketsFlags%2A?displayProperty=nameWithType> property on the `e` parameter can deliver significant performance benefits. If the thread initiating the <xref:System.Net.Sockets.Socket.SendPacketsAsync%2A> method call is being used for heavy computations, it is possible, though unlikely, that APCs could be prevented from launching. Note that there is a difference between kernel and user-mode APCs. Kernel APCs launch when a thread is in a wait state. User-mode APCs launch when a thread is in an alertable wait state
 
- 
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.SendPackets&gt;.</remarks>
+ ]]></format>
+        </remarks>
         <exception cref="T:System.IO.FileNotFoundException">The file specified in the <see cref="P:System.Net.Sockets.SendPacketsElement.FilePath" /> property was not found.</exception>
         <exception cref="T:System.InvalidOperationException">A socket operation was already in progress using the <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> object specified in the <paramref name="e" /> parameter.</exception>
         <exception cref="T:System.NotSupportedException">The <see cref="T:System.Net.Sockets.Socket" /> is not connected to a remote host.</exception>
@@ -12927,39 +12926,39 @@ This method stores all the exceptions that its synchronous counterpart can throw
 
  <see langword="false" /> if the I/O operation completed synchronously. In this case, The <see cref="E:System.Net.Sockets.SocketAsyncEventArgs.Completed" /> event on the <paramref name="e" /> parameter will not be raised and the <paramref name="e" /> object passed as a parameter may be examined immediately after the method call returns to retrieve the result of the operation.</returns>
         <remarks>
+          <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The &lt;xref:System.Net.Sockets.Socket.SendToAsync%2A&gt; method starts an asynchronous send operation to the remote host specified in the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint%2A?displayProperty=nameWithType&gt; property of the `e` parameter. Calling the &lt;xref:System.Net.Sockets.Socket.SendToAsync%2A&gt; method gives you the ability to send data within a separate execution thread. Although this method is intended for connectionless protocols, &lt;xref:System.Net.Sockets.Socket.SendToAsync%2A&gt; works with both connectionless and connection-oriented protocols.
+ The <xref:System.Net.Sockets.Socket.SendToAsync%2A> method starts an asynchronous send operation to the remote host specified in the <xref:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint%2A?displayProperty=nameWithType> property of the `e` parameter. Calling the <xref:System.Net.Sockets.Socket.SendToAsync%2A> method gives you the ability to send data within a separate execution thread. Although this method is intended for connectionless protocols, <xref:System.Net.Sockets.Socket.SendToAsync%2A> works with both connectionless and connection-oriented protocols.
 
- To be notified of completion, you must create a callback method that implements the EventHandler\&lt;SocketAsyncEventArgs&gt; delegate and attach the callback to the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Completed?displayProperty=nameWithType&gt; event.
+ To be notified of completion, you must create a callback method that implements the EventHandler\<SocketAsyncEventArgs> delegate and attach the callback to the <xref:System.Net.Sockets.SocketAsyncEventArgs.Completed?displayProperty=nameWithType> event.
 
- The following properties and events on the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs?displayProperty=nameWithType&gt; object are required to successfully call this method:
+ The following properties and events on the <xref:System.Net.Sockets.SocketAsyncEventArgs?displayProperty=nameWithType> object are required to successfully call this method:
 
--   &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Buffer%2A?displayProperty=nameWithType&gt;
+-   <xref:System.Net.Sockets.SocketAsyncEventArgs.Buffer%2A?displayProperty=nameWithType>
 
--   &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Count%2A?displayProperty=nameWithType&gt;
+-   <xref:System.Net.Sockets.SocketAsyncEventArgs.Count%2A?displayProperty=nameWithType>
 
--   &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Offset%2A?displayProperty=nameWithType&gt;
+-   <xref:System.Net.Sockets.SocketAsyncEventArgs.Offset%2A?displayProperty=nameWithType>
 
--   &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint%2A?displayProperty=nameWithType&gt;
+-   <xref:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint%2A?displayProperty=nameWithType>
 
--   &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Completed?displayProperty=nameWithType&gt;
+-   <xref:System.Net.Sockets.SocketAsyncEventArgs.Completed?displayProperty=nameWithType>
 
- The caller may set the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.UserToken%2A?displayProperty=nameWithType&gt; property to any user state object desired before calling the &lt;xref:System.Net.Sockets.Socket.SendToAsync%2A&gt; method, so that the information will be retrievable in the callback method. If the callback needs more information than a single object, a small class can be created to hold the other required state information as members.
+ The caller may set the <xref:System.Net.Sockets.SocketAsyncEventArgs.UserToken%2A?displayProperty=nameWithType> property to any user state object desired before calling the <xref:System.Net.Sockets.Socket.SendToAsync%2A> method, so that the information will be retrievable in the callback method. If the callback needs more information than a single object, a small class can be created to hold the other required state information as members.
 
- If you are using a connection-oriented protocol, you must first call the &lt;xref:System.Net.Sockets.Socket.Accept%2A&gt;, &lt;xref:System.Net.Sockets.Socket.AcceptAsync%2A&gt;, &lt;xref:System.Net.Sockets.Socket.BeginAccept%2A&gt;, &lt;xref:System.Net.Sockets.Socket.BeginConnect%2A&gt;, &lt;xref:System.Net.Sockets.Socket.Connect%2A&gt;, or &lt;xref:System.Net.Sockets.Socket.ConnectAsync%2A&gt; method. Otherwise &lt;xref:System.Net.Sockets.Socket.SendToAsync%2A&gt; will throw a &lt;xref:System.Net.Sockets.SocketException&gt;. When using a connection-oriented protocol, the &lt;xref:System.Net.Sockets.Socket.SendToAsync%2A&gt; method will ignore the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint%2A?displayProperty=nameWithType&gt; property and send data to the &lt;xref:System.Net.EndPoint?displayProperty=nameWithType&gt; established in the &lt;xref:System.Net.Sockets.Socket.Accept%2A&gt;, &lt;xref:System.Net.Sockets.Socket.AcceptAsync%2A&gt;, &lt;xref:System.Net.Sockets.Socket.BeginAccept%2A&gt;, &lt;xref:System.Net.Sockets.Socket.BeginConnect%2A&gt;, &lt;xref:System.Net.Sockets.Socket.Connect%2A&gt;, or &lt;xref:System.Net.Sockets.Socket.ConnectAsync%2A&gt; method.
+ If you are using a connection-oriented protocol, you must first call the <xref:System.Net.Sockets.Socket.Accept%2A>, <xref:System.Net.Sockets.Socket.AcceptAsync%2A>, <xref:System.Net.Sockets.Socket.BeginAccept%2A>, <xref:System.Net.Sockets.Socket.BeginConnect%2A>, <xref:System.Net.Sockets.Socket.Connect%2A>, or <xref:System.Net.Sockets.Socket.ConnectAsync%2A> method. Otherwise <xref:System.Net.Sockets.Socket.SendToAsync%2A> will throw a <xref:System.Net.Sockets.SocketException>. When using a connection-oriented protocol, the <xref:System.Net.Sockets.Socket.SendToAsync%2A> method will ignore the <xref:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint%2A?displayProperty=nameWithType> property and send data to the <xref:System.Net.EndPoint?displayProperty=nameWithType> established in the <xref:System.Net.Sockets.Socket.Accept%2A>, <xref:System.Net.Sockets.Socket.AcceptAsync%2A>, <xref:System.Net.Sockets.Socket.BeginAccept%2A>, <xref:System.Net.Sockets.Socket.BeginConnect%2A>, <xref:System.Net.Sockets.Socket.Connect%2A>, or <xref:System.Net.Sockets.Socket.ConnectAsync%2A> method.
 
- If you are using a connectionless protocol, you do not need to establish a default remote host with the &lt;xref:System.Net.Sockets.Socket.BeginConnect%2A&gt;, &lt;xref:System.Net.Sockets.Socket.Connect%2A&gt;, or &lt;xref:System.Net.Sockets.Socket.ConnectAsync%2A&gt; method prior to calling &lt;xref:System.Net.Sockets.Socket.SendToAsync%2A&gt;. You only need to do this if you intend to call the &lt;xref:System.Net.Sockets.Socket.BeginSend%2A&gt; or &lt;xref:System.Net.Sockets.Socket.SendAsync%2A&gt; methods. If you do call the &lt;xref:System.Net.Sockets.Socket.BeginConnect%2A&gt;, &lt;xref:System.Net.Sockets.Socket.Connect%2A&gt;, or &lt;xref:System.Net.Sockets.Socket.ConnectAsync%2A&gt; method prior to calling &lt;xref:System.Net.Sockets.Socket.SendToAsync%2A&gt;, the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint%2A?displayProperty=nameWithType&gt; property will override the specified default remote host for that send operation only. You are also not required to call the &lt;xref:System.Net.Sockets.Socket.Bind%2A&gt; method. In this case, the underlying service provider will assign the most appropriate local network IP address and port number. Use a port number of zero if you want the underlying service provider to select a free port. If you need to identify the assigned local network IP address and port number, you can use the &lt;xref:System.Net.Sockets.Socket.LocalEndPoint%2A&gt; property after the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.Completed?displayProperty=nameWithType&gt; event is signaled and the associated delegates are called.
+ If you are using a connectionless protocol, you do not need to establish a default remote host with the <xref:System.Net.Sockets.Socket.BeginConnect%2A>, <xref:System.Net.Sockets.Socket.Connect%2A>, or <xref:System.Net.Sockets.Socket.ConnectAsync%2A> method prior to calling <xref:System.Net.Sockets.Socket.SendToAsync%2A>. You only need to do this if you intend to call the <xref:System.Net.Sockets.Socket.BeginSend%2A> or <xref:System.Net.Sockets.Socket.SendAsync%2A> methods. If you do call the <xref:System.Net.Sockets.Socket.BeginConnect%2A>, <xref:System.Net.Sockets.Socket.Connect%2A>, or <xref:System.Net.Sockets.Socket.ConnectAsync%2A> method prior to calling <xref:System.Net.Sockets.Socket.SendToAsync%2A>, the <xref:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint%2A?displayProperty=nameWithType> property will override the specified default remote host for that send operation only. You are also not required to call the <xref:System.Net.Sockets.Socket.Bind%2A> method. In this case, the underlying service provider will assign the most appropriate local network IP address and port number. Use a port number of zero if you want the underlying service provider to select a free port. If you need to identify the assigned local network IP address and port number, you can use the <xref:System.Net.Sockets.Socket.LocalEndPoint%2A> property after the <xref:System.Net.Sockets.SocketAsyncEventArgs.Completed?displayProperty=nameWithType> event is signaled and the associated delegates are called.
 
- If you want to send data to a broadcast address, you must first call the &lt;xref:System.Net.Sockets.Socket.SetSocketOption%2A&gt; method and set the socket option for &lt;xref:System.Net.Sockets.SocketOptionName.Broadcast?displayProperty=nameWithType&gt; to true. You must also be sure that the size of your buffer does not exceed the maximum packet size of the underlying service provider. If it does, the datagram will not be sent and &lt;xref:System.Net.Sockets.Socket.SendToAsync%2A&gt; will throw a &lt;xref:System.Net.Sockets.SocketException&gt;.
+ If you want to send data to a broadcast address, you must first call the <xref:System.Net.Sockets.Socket.SetSocketOption%2A> method and set the socket option for <xref:System.Net.Sockets.SocketOptionName.Broadcast?displayProperty=nameWithType> to true. You must also be sure that the size of your buffer does not exceed the maximum packet size of the underlying service provider. If it does, the datagram will not be sent and <xref:System.Net.Sockets.Socket.SendToAsync%2A> will throw a <xref:System.Net.Sockets.SocketException>.
 
- If you specify the DontRoute flag in the &lt;xref:System.Net.Sockets.SocketAsyncEventArgs.SocketFlags%2A?displayProperty=nameWithType&gt; property, the data you are sending will not be routed.
+ If you specify the DontRoute flag in the <xref:System.Net.Sockets.SocketAsyncEventArgs.SocketFlags%2A?displayProperty=nameWithType> property, the data you are sending will not be routed.
 
- For message-oriented sockets, care must be taken not to exceed the maximum message size of the underlying transport. If the size of the buffer exceeds the maximum packet size of the underlying service provider, the datagram is not sent and &lt;xref:System.Net.Sockets.Socket.SendToAsync%2A&gt; will throw a &lt;xref:System.Net.Sockets.SocketException&gt;. The successful completion of a &lt;xref:System.Net.Sockets.Socket.SendToAsync%2A&gt; method does not indicate that the data was successfully delivered.
+ For message-oriented sockets, care must be taken not to exceed the maximum message size of the underlying transport. If the size of the buffer exceeds the maximum packet size of the underlying service provider, the datagram is not sent and <xref:System.Net.Sockets.Socket.SendToAsync%2A> will throw a <xref:System.Net.Sockets.SocketException>. The successful completion of a <xref:System.Net.Sockets.Socket.SendToAsync%2A> method does not indicate that the data was successfully delivered.
 
- 
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.SendTo&gt;.</remarks>
+ ]]></format>
+        </remarks>
         <exception cref="T:System.ArgumentNullException">The <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint" /> cannot be null.</exception>
         <exception cref="T:System.InvalidOperationException">A socket operation was already in progress using the <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> object specified in the <paramref name="e" /> parameter.</exception>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.Socket" /> has been closed.</exception>
@@ -13006,7 +13005,7 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="remoteEP">The remote host to which to send the data.</param>
         <summary>Sends data to the specified remote host.</summary>
         <returns>An asynchronous task that completes with the number of bytes sent.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.SendTo&gt;.</remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="remoteEP" /> is <see langword="null" />.</exception>
         <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>
@@ -13049,7 +13048,7 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="remoteEP">The remote host to which to send the data.</param>
         <summary>Sends data to the specified remote host.</summary>
         <returns>An asynchronous task that completes with the number of bytes sent.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.SendTo&gt;.</remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="remoteEP" /> is <see langword="null" />.</exception>
         <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>
@@ -13090,7 +13089,7 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="cancellationToken">A cancellation token that can be used to cancel the asynchronous operation.</param>
         <summary>Sends data to the specified remote host.</summary>
         <returns>An asynchronous task that completes with the number of bytes sent.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.SendTo&gt;.</remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="remoteEP" /> is <see langword="null" />.</exception>
         <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>
@@ -13134,7 +13133,7 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="cancellationToken">A cancellation token that can be used to cancel the asynchronous operation.</param>
         <summary>Sends data to the specified remote host.</summary>
         <returns>An asynchronous task that completes with the number of bytes sent.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Net.Sockets.Socket.SendTo&gt;.</remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="remoteEP" /> is <see langword="null" />.</exception>
         <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>

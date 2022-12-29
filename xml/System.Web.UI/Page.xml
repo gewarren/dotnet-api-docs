@@ -1,4 +1,3 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <Type Name="Page" FullName="System.Web.UI.Page">
   <TypeSignature Language="C#" Value="public class Page : System.Web.UI.TemplateControl, System.Web.IHttpHandler" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi Page extends System.Web.UI.TemplateControl implements class System.Web.IHttpHandler" />
@@ -210,32 +209,32 @@
         <param name="endHandler">The delegate for the <see cref="T:System.Web.EndEventHandler" /> method.</param>
         <summary>Registers beginning and ending event handler delegates that do not require state information for an asynchronous page.</summary>
         <remarks>
+          <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use the &lt;xref:System.Web.UI.Page.AddOnPreRenderCompleteAsync%2A&gt; method to add handlers to an asynchronous Web page.
+ Use the <xref:System.Web.UI.Page.AddOnPreRenderCompleteAsync%2A> method to add handlers to an asynchronous Web page.
 
- You can register multiple asynchronous handlers; however, only one handler runs at a time. If you want to process multiple asynchronous methods simultaneously, you should use a single &lt;xref:System.Web.BeginEventHandler&gt; method and launch multiple asynchronous operations from that handler.
+ You can register multiple asynchronous handlers; however, only one handler runs at a time. If you want to process multiple asynchronous methods simultaneously, you should use a single <xref:System.Web.BeginEventHandler> method and launch multiple asynchronous operations from that handler.
 
- The asynchronous handlers are called between the &lt;xref:System.Web.UI.Control.PreRender&gt; and &lt;xref:System.Web.UI.Page.PreRenderComplete&gt; events.
+ The asynchronous handlers are called between the <xref:System.Web.UI.Control.PreRender> and <xref:System.Web.UI.Page.PreRenderComplete> events.
 
- First, all &lt;xref:System.Web.UI.Page&gt; events (through the &lt;xref:System.Web.UI.Control.PreRender&gt; event) are run, and then each registered &lt;xref:System.Web.BeginEventHandler&gt; method is called. When the handler completes, the corresponding &lt;xref:System.Web.EndEventHandler&gt; method is called. If there are multiple asynchronous handlers, the next handler is called.
+ First, all <xref:System.Web.UI.Page> events (through the <xref:System.Web.UI.Control.PreRender> event) are run, and then each registered <xref:System.Web.BeginEventHandler> method is called. When the handler completes, the corresponding <xref:System.Web.EndEventHandler> method is called. If there are multiple asynchronous handlers, the next handler is called.
 
- After the registered asynchronous event handlers have been called, the rest of the page events are called, beginning with the &lt;xref:System.Web.UI.Page.PreRenderComplete&gt; event.
+ After the registered asynchronous event handlers have been called, the rest of the page events are called, beginning with the <xref:System.Web.UI.Page.PreRenderComplete> event.
 
 
 
 ## Examples
- The following code example uses an asynchronous request to display the HTML source code of the local Web server's default page in a &lt;xref:System.Web.UI.WebControls.TextBox&gt; control.
+ The following code example uses an asynchronous request to display the HTML source code of the local Web server's default page in a <xref:System.Web.UI.WebControls.TextBox> control.
 
-&gt; [!IMPORTANT]
-&gt;  This example has a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](https://docs.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
+> [!IMPORTANT]
+>  This example has a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](https://docs.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
 
  [!code-aspx-csharp[PageAddOnPreRenderCompleteAsync#1](~/snippets/csharp/VS_Snippets_WebNet/PageAddOnPreRenderCompleteAsync/CS/pageaddonprerendercompleteasynccs.aspx#1)]
  [!code-aspx-vb[PageAddOnPreRenderCompleteAsync#1](~/snippets/visualbasic/VS_Snippets_WebNet/PageAddOnPreRenderCompleteAsync/VB/pageaddonprerendercompleteasyncvb.aspx#1)]
 
- 
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Web.UI.Page.AddOnPreRenderComplete&gt;.</remarks>
+ ]]></format>
+        </remarks>
         <exception cref="T:System.InvalidOperationException">The <see langword="&lt;async&gt;" /> page directive is not set to <see langword="true" />.
 
 -or-
@@ -274,32 +273,32 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="state">An object containing state information for the event handlers.</param>
         <summary>Registers beginning and ending  event handler delegates for an asynchronous page.</summary>
         <remarks>
+          <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use the &lt;xref:System.Web.UI.Page.AddOnPreRenderCompleteAsync%2A&gt; method to add handlers that require state information to an asynchronous Web page. The object passed in the `state` parameter can be any object that your application requires to transfer information between event handler delegates specified in the `beginHandler` and the `endHandler` parameters.
+ Use the <xref:System.Web.UI.Page.AddOnPreRenderCompleteAsync%2A> method to add handlers that require state information to an asynchronous Web page. The object passed in the `state` parameter can be any object that your application requires to transfer information between event handler delegates specified in the `beginHandler` and the `endHandler` parameters.
 
- You can register multiple asynchronous handlers; however, only one handler runs at a time. If you want to process multiple asynchronous methods simultaneously, you should use a single &lt;xref:System.Web.BeginEventHandler&gt; method and launch multiple asynchronous operations from that handler.
+ You can register multiple asynchronous handlers; however, only one handler runs at a time. If you want to process multiple asynchronous methods simultaneously, you should use a single <xref:System.Web.BeginEventHandler> method and launch multiple asynchronous operations from that handler.
 
- The asynchronous handlers are called between the &lt;xref:System.Web.UI.Control.PreRender&gt; and &lt;xref:System.Web.UI.Page.PreRenderComplete&gt; events.
+ The asynchronous handlers are called between the <xref:System.Web.UI.Control.PreRender> and <xref:System.Web.UI.Page.PreRenderComplete> events.
 
- First, all &lt;xref:System.Web.UI.Page&gt; events (through the &lt;xref:System.Web.UI.Control.PreRender&gt; event) are run, and then each registered &lt;xref:System.Web.BeginEventHandler&gt; method is called. When the handler completes, the corresponding &lt;xref:System.Web.EndEventHandler&gt; method is called. If there are multiple asynchronous handlers, the next handler is called.
+ First, all <xref:System.Web.UI.Page> events (through the <xref:System.Web.UI.Control.PreRender> event) are run, and then each registered <xref:System.Web.BeginEventHandler> method is called. When the handler completes, the corresponding <xref:System.Web.EndEventHandler> method is called. If there are multiple asynchronous handlers, the next handler is called.
 
- After the registered asynchronous event handlers have been called, the rest of the page events are called, beginning with the &lt;xref:System.Web.UI.Page.PreRenderComplete&gt; event.
+ After the registered asynchronous event handlers have been called, the rest of the page events are called, beginning with the <xref:System.Web.UI.Page.PreRenderComplete> event.
 
 
 
 ## Examples
- The following code example uses an asynchronous request to display the HTML source code of the local Web server's default page in a &lt;xref:System.Web.UI.WebControls.TextBox&gt; control.
+ The following code example uses an asynchronous request to display the HTML source code of the local Web server's default page in a <xref:System.Web.UI.WebControls.TextBox> control.
 
-&gt; [!IMPORTANT]
-&gt;  This example has a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](https://docs.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
+> [!IMPORTANT]
+>  This example has a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](https://docs.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
 
  [!code-aspx-csharp[PageAddOnPreRenderCompleteAsync#1](~/snippets/csharp/VS_Snippets_WebNet/PageAddOnPreRenderCompleteAsync/CS/pageaddonprerendercompleteasynccs.aspx#1)]
  [!code-aspx-vb[PageAddOnPreRenderCompleteAsync#1](~/snippets/visualbasic/VS_Snippets_WebNet/PageAddOnPreRenderCompleteAsync/VB/pageaddonprerendercompleteasyncvb.aspx#1)]
 
- 
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Web.UI.Page.AddOnPreRenderComplete&gt;.</remarks>
+ ]]></format>
+        </remarks>
         <exception cref="T:System.InvalidOperationException">The <see langword="&lt;async&gt;" /> page directive is not set to <see langword="true" />.
 
 -or-

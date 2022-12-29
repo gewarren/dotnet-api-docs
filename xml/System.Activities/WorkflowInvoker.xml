@@ -1,4 +1,3 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <Type Name="WorkflowInvoker" FullName="System.Activities.WorkflowInvoker">
   <TypeSignature Language="C#" Value="public sealed class WorkflowInvoker" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WorkflowInvoker extends System.Object" />
@@ -304,12 +303,13 @@
       <Docs>
         <param name="userState">The token for the workflow to cancel.</param>
         <summary>Attempts to cancel the workflow that was invoked with the specified <paramref name="userState" />.</summary>
-        <remarks>  
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Only a workflow invoked by one of the &lt;xref:System.Activities.WorkflowInvoker.InvokeAsync%2A&gt; overloads that takes a `userState` parameter can be canceled.  
+ Only a workflow invoked by one of the <xref:System.Activities.WorkflowInvoker.InvokeAsync%2A> overloads that takes a `userState` parameter can be canceled.  
   
- If the cancellation succeeds, the &lt;xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A&gt; property of the &lt;xref:System.Activities.InvokeCompletedEventArgs&gt; passed to the &lt;xref:System.Activities.WorkflowInvoker.InvokeCompleted&gt; handler is set to `true`; otherwise, it is set to `false`.  
+ If the cancellation succeeds, the <xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A> property of the <xref:System.Activities.InvokeCompletedEventArgs> passed to the <xref:System.Activities.WorkflowInvoker.InvokeCompleted> handler is set to `true`; otherwise, it is set to `false`.  
   
    
   
@@ -320,9 +320,8 @@
   
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_CFX/cfx_workflowinvokerexample/cs/program.cs" id="Snippet34":::  
   
- 
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Activities.WorkflowInvoker.Cancel&gt;.</remarks>
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="EndInvoke">
@@ -1049,25 +1048,25 @@ The following example invokes a workflow consisting of a single `Add` activity t
       <Parameters />
       <Docs>
         <summary>Invokes a workflow asynchronously.</summary>
-        <remarks>  
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- To be notified when the workflow is complete, handle &lt;xref:System.Activities.WorkflowInvoker.InvokeCompleted&gt;. To configure a time-out interval in which the workflow must complete, use one of the &lt;xref:System.Activities.WorkflowInvoker.InvokeAsync%2A&gt; overloads that take a &lt;xref:System.TimeSpan&gt;.  
+ To be notified when the workflow is complete, handle <xref:System.Activities.WorkflowInvoker.InvokeCompleted>. To configure a time-out interval in which the workflow must complete, use one of the <xref:System.Activities.WorkflowInvoker.InvokeAsync%2A> overloads that take a <xref:System.TimeSpan>.  
   
  This method invokes a workflow asynchronously using the event-based asynchronous design pattern. For more information, see [Event-based Asynchronous Pattern Overview](https://go.microsoft.com/fwlink/?LinkId=141765).  
   
    
   
 ## Examples  
- The following example invokes a workflow consisting of a `LongRunningDiceRoll` activity. The `LongRunningDiceRoll` activity has two output arguments that represent the results of the dice roll operation. When the workflow completes these are retrieved in the &lt;xref:System.Activities.WorkflowInvoker.InvokeCompleted&gt; handler.  
+ The following example invokes a workflow consisting of a `LongRunningDiceRoll` activity. The `LongRunningDiceRoll` activity has two output arguments that represent the results of the dice roll operation. When the workflow completes these are retrieved in the <xref:System.Activities.WorkflowInvoker.InvokeCompleted> handler.  
   
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_CFX/cfx_workflowinvokerexample/cs/program.cs" id="Snippet131":::  
   
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_CFX/cfx_workflowinvokerexample/cs/program.cs" id="Snippet33":::  
   
- 
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Activities.WorkflowInvoker.Invoke&gt;.</remarks>
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="InvokeAsync">
@@ -1097,25 +1096,25 @@ This method stores all the exceptions that its synchronous counterpart can throw
       <Docs>
         <param name="inputs">The dictionary of input parameters to the workflow, keyed by argument name.</param>
         <summary>Invokes a workflow asynchronously using the specified <see cref="T:System.Collections.Generic.IDictionary`2" /> of input parameters.</summary>
-        <remarks>  
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- To be notified when the workflow is complete, handle &lt;xref:System.Activities.WorkflowInvoker.InvokeCompleted&gt;. To configure a time-out interval in which the workflow must complete, use one of the &lt;xref:System.Activities.WorkflowInvoker.InvokeAsync%2A&gt; overloads that take a &lt;xref:System.TimeSpan&gt;.  
+ To be notified when the workflow is complete, handle <xref:System.Activities.WorkflowInvoker.InvokeCompleted>. To configure a time-out interval in which the workflow must complete, use one of the <xref:System.Activities.WorkflowInvoker.InvokeAsync%2A> overloads that take a <xref:System.TimeSpan>.  
   
  This method invokes a workflow asynchronously using the event-based asynchronous design pattern. For more information, see [Event-based Asynchronous Pattern Overview](https://go.microsoft.com/fwlink/?LinkId=141765).  
   
    
   
 ## Examples  
- The following example invokes a workflow consisting of a `LongRunningDiceRoll` activity. The `LongRunningDiceRoll` activity has two output arguments that represent the results of the dice roll operation. When the workflow completes these are retrieved in the &lt;xref:System.Activities.WorkflowInvoker.InvokeCompleted&gt; handler.  
+ The following example invokes a workflow consisting of a `LongRunningDiceRoll` activity. The `LongRunningDiceRoll` activity has two output arguments that represent the results of the dice roll operation. When the workflow completes these are retrieved in the <xref:System.Activities.WorkflowInvoker.InvokeCompleted> handler.  
   
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_CFX/cfx_workflowinvokerexample/cs/program.cs" id="Snippet131":::  
   
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_CFX/cfx_workflowinvokerexample/cs/program.cs" id="Snippet33":::  
   
- 
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Activities.WorkflowInvoker.Invoke&gt;.</remarks>
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="InvokeAsync">
@@ -1139,27 +1138,27 @@ This method stores all the exceptions that its synchronous counterpart can throw
       <Docs>
         <param name="userState">A user-provided object used to distinguish this particular asynchronous invoke operation from other current asynchronous invoke operations.</param>
         <summary>Invokes a workflow asynchronously using the specified unique identifier.</summary>
-        <remarks>  
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The `userState` parameter must be unique across all currently running &lt;xref:System.Activities.WorkflowInvoker.InvokeAsync%2A&gt; operations for the current activity. If the `userState` parameter is not unique, an &lt;xref:System.ArgumentException&gt; is thrown. `userState` is used to identify the workflow in &lt;xref:System.Activities.WorkflowInvoker.InvokeCompleted&gt;, and to cancel the workflow using &lt;xref:System.Activities.WorkflowInvoker.CancelAsync%2A&gt;.  
+ The `userState` parameter must be unique across all currently running <xref:System.Activities.WorkflowInvoker.InvokeAsync%2A> operations for the current activity. If the `userState` parameter is not unique, an <xref:System.ArgumentException> is thrown. `userState` is used to identify the workflow in <xref:System.Activities.WorkflowInvoker.InvokeCompleted>, and to cancel the workflow using <xref:System.Activities.WorkflowInvoker.CancelAsync%2A>.  
   
- To be notified when the workflow is complete, handle &lt;xref:System.Activities.WorkflowInvoker.InvokeCompleted&gt;. To configure a time-out interval in which the workflow must complete, use one of the &lt;xref:System.Activities.WorkflowInvoker.InvokeAsync%2A&gt; overloads that take a &lt;xref:System.TimeSpan&gt;.  
+ To be notified when the workflow is complete, handle <xref:System.Activities.WorkflowInvoker.InvokeCompleted>. To configure a time-out interval in which the workflow must complete, use one of the <xref:System.Activities.WorkflowInvoker.InvokeAsync%2A> overloads that take a <xref:System.TimeSpan>.  
   
  This method invokes a workflow asynchronously using the event-based asynchronous design pattern. For more information, see [Event-based Asynchronous Pattern Overview](https://go.microsoft.com/fwlink/?LinkId=141765).  
   
    
   
 ## Examples  
- The following example invokes a workflow consisting of a `LongRunningDiceRoll` activity. The `LongRunningDiceRoll` activity has two output arguments that represent the results of the dice roll operation. When the workflow completes these are retrieved in the &lt;xref:System.Activities.WorkflowInvoker.InvokeCompleted&gt; handler.  
+ The following example invokes a workflow consisting of a `LongRunningDiceRoll` activity. The `LongRunningDiceRoll` activity has two output arguments that represent the results of the dice roll operation. When the workflow completes these are retrieved in the <xref:System.Activities.WorkflowInvoker.InvokeCompleted> handler.  
   
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_CFX/cfx_workflowinvokerexample/cs/program.cs" id="Snippet131":::  
   
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_CFX/cfx_workflowinvokerexample/cs/program.cs" id="Snippet33":::  
   
- 
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Activities.WorkflowInvoker.Invoke&gt;.</remarks>
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="InvokeAsync">
@@ -1189,28 +1188,28 @@ This method stores all the exceptions that its synchronous counterpart can throw
       <Docs>
         <param name="timeout">The interval in which the workflow must complete before it is aborted and a <see cref="T:System.TimeoutException" /> is thrown.</param>
         <summary>Invokes a workflow asynchronously with the specified time-out interval.</summary>
-        <remarks>  
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- To be notified when the workflow is complete, handle &lt;xref:System.Activities.WorkflowInvoker.InvokeCompleted&gt;. If the workflow does not complete within the specified time-out interval the workflow is aborted and a &lt;xref:System.TimeoutException&gt; is thrown.  
+ To be notified when the workflow is complete, handle <xref:System.Activities.WorkflowInvoker.InvokeCompleted>. If the workflow does not complete within the specified time-out interval the workflow is aborted and a <xref:System.TimeoutException> is thrown.  
   
-&gt; [!NOTE]
-&gt;  The &lt;xref:System.TimeoutException&gt; is only thrown if the time-out interval elapses and the workflow becomes idle during execution. A workflow that takes longer than the specified time-out interval to complete completes successfully if the workflow does not become idle.  
+> [!NOTE]
+>  The <xref:System.TimeoutException> is only thrown if the time-out interval elapses and the workflow becomes idle during execution. A workflow that takes longer than the specified time-out interval to complete completes successfully if the workflow does not become idle.  
   
  This method invokes a workflow asynchronously using the event-based asynchronous design pattern. For more information, see [Event-based Asynchronous Pattern Overview](https://go.microsoft.com/fwlink/?LinkId=141765).  
   
    
   
 ## Examples  
- The following example invokes a workflow consisting of a `LongRunningDiceRoll` activity. The `LongRunningDiceRoll` activity has two output arguments that represent the results of the dice roll operation. When the workflow completes these are retrieved in the &lt;xref:System.Activities.WorkflowInvoker.InvokeCompleted&gt; handler.  
+ The following example invokes a workflow consisting of a `LongRunningDiceRoll` activity. The `LongRunningDiceRoll` activity has two output arguments that represent the results of the dice roll operation. When the workflow completes these are retrieved in the <xref:System.Activities.WorkflowInvoker.InvokeCompleted> handler.  
   
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_CFX/cfx_workflowinvokerexample/cs/program.cs" id="Snippet131":::  
   
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_CFX/cfx_workflowinvokerexample/cs/program.cs" id="Snippet33":::  
   
- 
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Activities.WorkflowInvoker.Invoke&gt;.</remarks>
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="InvokeAsync">
@@ -1236,27 +1235,27 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="inputs">The dictionary of input parameters to the workflow, keyed by argument name.</param>
         <param name="userState">A user-provided object used to distinguish this particular asynchronous invoke operation from other current asynchronous invoke operations.</param>
         <summary>Invokes a workflow asynchronously using the specified <see cref="T:System.Collections.Generic.IDictionary`2" /> of input parameters and a unique identifier.</summary>
-        <remarks>  
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The `userState` parameter must be unique across all currently running &lt;xref:System.Activities.WorkflowInvoker.InvokeAsync%2A&gt; operations for the current activity. If `userState` is not unique, an &lt;xref:System.ArgumentException&gt; is thrown. `userState` is used to identify the workflow in &lt;xref:System.Activities.WorkflowInvoker.InvokeCompleted&gt;, and to cancel the workflow using &lt;xref:System.Activities.WorkflowInvoker.CancelAsync%2A&gt;.  
+ The `userState` parameter must be unique across all currently running <xref:System.Activities.WorkflowInvoker.InvokeAsync%2A> operations for the current activity. If `userState` is not unique, an <xref:System.ArgumentException> is thrown. `userState` is used to identify the workflow in <xref:System.Activities.WorkflowInvoker.InvokeCompleted>, and to cancel the workflow using <xref:System.Activities.WorkflowInvoker.CancelAsync%2A>.  
   
- To be notified when the workflow is complete, handle &lt;xref:System.Activities.WorkflowInvoker.InvokeCompleted&gt;. To configure a time-out interval in which the workflow must complete, use one of the &lt;xref:System.Activities.WorkflowInvoker.InvokeAsync%2A&gt; overloads that take a &lt;xref:System.TimeSpan&gt;.  
+ To be notified when the workflow is complete, handle <xref:System.Activities.WorkflowInvoker.InvokeCompleted>. To configure a time-out interval in which the workflow must complete, use one of the <xref:System.Activities.WorkflowInvoker.InvokeAsync%2A> overloads that take a <xref:System.TimeSpan>.  
   
  This method invokes a workflow asynchronously using the event-based asynchronous design pattern. For more information, see [Event-based Asynchronous Pattern Overview](https://go.microsoft.com/fwlink/?LinkId=141765).  
   
    
   
 ## Examples  
- The following example invokes a workflow consisting of a `LongRunningDiceRoll` activity. The `LongRunningDiceRoll` activity has two output arguments that represent the results of the dice roll operation. When the workflow completes these are retrieved in the &lt;xref:System.Activities.WorkflowInvoker.InvokeCompleted&gt; handler.  
+ The following example invokes a workflow consisting of a `LongRunningDiceRoll` activity. The `LongRunningDiceRoll` activity has two output arguments that represent the results of the dice roll operation. When the workflow completes these are retrieved in the <xref:System.Activities.WorkflowInvoker.InvokeCompleted> handler.  
   
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_CFX/cfx_workflowinvokerexample/cs/program.cs" id="Snippet131":::  
   
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_CFX/cfx_workflowinvokerexample/cs/program.cs" id="Snippet33":::  
   
- 
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Activities.WorkflowInvoker.Invoke&gt;.</remarks>
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="InvokeAsync">
@@ -1288,28 +1287,28 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="inputs">The dictionary of input parameters to the workflow, keyed by argument name.</param>
         <param name="timeout">The interval in which the workflow must complete before it is aborted and a <see cref="T:System.TimeoutException" /> is thrown.</param>
         <summary>Invokes a workflow asynchronously with the specified <see cref="T:System.Collections.Generic.IDictionary`2" /> of input parameters and the specified time-out interval.</summary>
-        <remarks>  
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- To be notified when the workflow is complete, handle &lt;xref:System.Activities.WorkflowInvoker.InvokeCompleted&gt;. If the workflow does not complete within the specified time-out interval the workflow is aborted and a &lt;xref:System.TimeoutException&gt; is thrown.  
+ To be notified when the workflow is complete, handle <xref:System.Activities.WorkflowInvoker.InvokeCompleted>. If the workflow does not complete within the specified time-out interval the workflow is aborted and a <xref:System.TimeoutException> is thrown.  
   
-&gt; [!NOTE]
-&gt;  The &lt;xref:System.TimeoutException&gt; is only thrown if the time-out interval elapses and the workflow becomes idle during execution. A workflow that takes longer than the specified time-out interval to complete completes successfully if the workflow does not become idle.  
+> [!NOTE]
+>  The <xref:System.TimeoutException> is only thrown if the time-out interval elapses and the workflow becomes idle during execution. A workflow that takes longer than the specified time-out interval to complete completes successfully if the workflow does not become idle.  
   
  This method invokes a workflow asynchronously using the event-based asynchronous design pattern. For more information, see [Event-based Asynchronous Pattern Overview](https://go.microsoft.com/fwlink/?LinkId=141765).  
   
    
   
 ## Examples  
- The following example invokes a workflow consisting of a `LongRunningDiceRoll` activity. The `LongRunningDiceRoll` activity has two output arguments that represent the results of the dice roll operation. When the workflow completes these are retrieved in the &lt;xref:System.Activities.WorkflowInvoker.InvokeCompleted&gt; handler.  
+ The following example invokes a workflow consisting of a `LongRunningDiceRoll` activity. The `LongRunningDiceRoll` activity has two output arguments that represent the results of the dice roll operation. When the workflow completes these are retrieved in the <xref:System.Activities.WorkflowInvoker.InvokeCompleted> handler.  
   
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_CFX/cfx_workflowinvokerexample/cs/program.cs" id="Snippet131":::  
   
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_CFX/cfx_workflowinvokerexample/cs/program.cs" id="Snippet33":::  
   
- 
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Activities.WorkflowInvoker.Invoke&gt;.</remarks>
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="InvokeAsync">
@@ -1335,30 +1334,30 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="timeout">The interval in which the workflow must complete before it is aborted and a <see cref="T:System.TimeoutException" /> is thrown.</param>
         <param name="userState">A user-provided object used to distinguish this particular asynchronous invoke operation from other current asynchronous invoke operations.</param>
         <summary>Invokes a workflow asynchronously with the specified time-out interval and a unique identifier.</summary>
-        <remarks>  
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The `userState` parameter must be unique across all currently running &lt;xref:System.Activities.WorkflowInvoker.InvokeAsync%2A&gt; operations for the current activity. If `userState` is not unique, an &lt;xref:System.ArgumentException&gt; is thrown. `userState` is used to identify the workflow in &lt;xref:System.Activities.WorkflowInvoker.InvokeCompleted&gt;, and to cancel the workflow using &lt;xref:System.Activities.WorkflowInvoker.CancelAsync%2A&gt;.  
+ The `userState` parameter must be unique across all currently running <xref:System.Activities.WorkflowInvoker.InvokeAsync%2A> operations for the current activity. If `userState` is not unique, an <xref:System.ArgumentException> is thrown. `userState` is used to identify the workflow in <xref:System.Activities.WorkflowInvoker.InvokeCompleted>, and to cancel the workflow using <xref:System.Activities.WorkflowInvoker.CancelAsync%2A>.  
   
- To be notified when the workflow is complete, handle &lt;xref:System.Activities.WorkflowInvoker.InvokeCompleted&gt;. If the workflow does not complete within the specified time-out interval the workflow is aborted and a &lt;xref:System.TimeoutException&gt; is thrown.  
+ To be notified when the workflow is complete, handle <xref:System.Activities.WorkflowInvoker.InvokeCompleted>. If the workflow does not complete within the specified time-out interval the workflow is aborted and a <xref:System.TimeoutException> is thrown.  
   
-&gt; [!NOTE]
-&gt;  The &lt;xref:System.TimeoutException&gt; is only thrown if the time-out interval elapses and the workflow becomes idle during execution. A workflow that takes longer than the specified time-out interval to complete completes successfully if the workflow does not become idle.  
+> [!NOTE]
+>  The <xref:System.TimeoutException> is only thrown if the time-out interval elapses and the workflow becomes idle during execution. A workflow that takes longer than the specified time-out interval to complete completes successfully if the workflow does not become idle.  
   
  This method invokes a workflow asynchronously using the event-based asynchronous design pattern. For more information, see [Event-based Asynchronous Pattern Overview](https://go.microsoft.com/fwlink/?LinkId=141765).  
   
    
   
 ## Examples  
- The following example invokes a workflow consisting of a `LongRunningDiceRoll` activity. The `LongRunningDiceRoll` activity has two output arguments that represent the results of the dice roll operation. When the workflow completes these are retrieved in the &lt;xref:System.Activities.WorkflowInvoker.InvokeCompleted&gt; handler.  
+ The following example invokes a workflow consisting of a `LongRunningDiceRoll` activity. The `LongRunningDiceRoll` activity has two output arguments that represent the results of the dice roll operation. When the workflow completes these are retrieved in the <xref:System.Activities.WorkflowInvoker.InvokeCompleted> handler.  
   
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_CFX/cfx_workflowinvokerexample/cs/program.cs" id="Snippet131":::  
   
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_CFX/cfx_workflowinvokerexample/cs/program.cs" id="Snippet33":::  
   
- 
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Activities.WorkflowInvoker.Invoke&gt;.</remarks>
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="InvokeAsync">
@@ -1386,30 +1385,30 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="timeout">The interval in which the workflow must complete before it is aborted and a <see cref="T:System.TimeoutException" /> is thrown.</param>
         <param name="userState">A user-provided object used to distinguish this particular asynchronous invoke operation from other current asynchronous invoke operations.</param>
         <summary>Invokes a workflow asynchronously with the specified <see cref="T:System.Collections.Generic.IDictionary`2" /> of input parameters, the specified time-out interval, and a unique identifier.</summary>
-        <remarks>  
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The `userState` parameter must be unique across all currently running &lt;xref:System.Activities.WorkflowInvoker.InvokeAsync%2A&gt; operations for the current activity. If `userState` is not unique, an &lt;xref:System.ArgumentException&gt; is thrown. `userState` is used to identify the workflow in &lt;xref:System.Activities.WorkflowInvoker.InvokeCompleted&gt;, and to cancel the workflow using &lt;xref:System.Activities.WorkflowInvoker.CancelAsync%2A&gt;.  
+ The `userState` parameter must be unique across all currently running <xref:System.Activities.WorkflowInvoker.InvokeAsync%2A> operations for the current activity. If `userState` is not unique, an <xref:System.ArgumentException> is thrown. `userState` is used to identify the workflow in <xref:System.Activities.WorkflowInvoker.InvokeCompleted>, and to cancel the workflow using <xref:System.Activities.WorkflowInvoker.CancelAsync%2A>.  
   
- To be notified when the workflow is complete, handle &lt;xref:System.Activities.WorkflowInvoker.InvokeCompleted&gt;. If the workflow does not complete within the specified time-out interval the workflow is aborted and a &lt;xref:System.TimeoutException&gt; is thrown.  
+ To be notified when the workflow is complete, handle <xref:System.Activities.WorkflowInvoker.InvokeCompleted>. If the workflow does not complete within the specified time-out interval the workflow is aborted and a <xref:System.TimeoutException> is thrown.  
   
-&gt; [!NOTE]
-&gt;  The &lt;xref:System.TimeoutException&gt; is only thrown if the time-out interval elapses and the workflow becomes idle during execution. A workflow that takes longer than the specified time-out interval to complete completes successfully if the workflow does not become idle.  
+> [!NOTE]
+>  The <xref:System.TimeoutException> is only thrown if the time-out interval elapses and the workflow becomes idle during execution. A workflow that takes longer than the specified time-out interval to complete completes successfully if the workflow does not become idle.  
   
  This method invokes a workflow asynchronously using the event-based asynchronous design pattern. For more information, see [Event-based Asynchronous Pattern Overview](https://go.microsoft.com/fwlink/?LinkId=141765).  
   
    
   
 ## Examples  
- The following example invokes a workflow consisting of a `LongRunningDiceRoll` activity. The `LongRunningDiceRoll` activity has two output arguments that represent the results of the dice roll operation. When the workflow completes these are retrieved in the &lt;xref:System.Activities.WorkflowInvoker.InvokeCompleted&gt; handler.  
+ The following example invokes a workflow consisting of a `LongRunningDiceRoll` activity. The `LongRunningDiceRoll` activity has two output arguments that represent the results of the dice roll operation. When the workflow completes these are retrieved in the <xref:System.Activities.WorkflowInvoker.InvokeCompleted> handler.  
   
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_CFX/cfx_workflowinvokerexample/cs/program.cs" id="Snippet131":::  
   
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_CFX/cfx_workflowinvokerexample/cs/program.cs" id="Snippet33":::  
   
- 
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.Activities.WorkflowInvoker.Invoke&gt;.</remarks>
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="InvokeCompleted">

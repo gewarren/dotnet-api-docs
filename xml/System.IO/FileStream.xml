@@ -1,4 +1,3 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <Type Name="FileStream" FullName="System.IO.FileStream">
   <TypeSignature Language="C#" Value="public class FileStream : System.IO.Stream" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FileStream extends System.IO.Stream" FrameworkAlternate="dotnet-uwp-10.0;net-5.0;net-6.0;net-7.0;netcore-1.0;netcore-1.1;netcore-2.0;netcore-2.1;netcore-2.2;netcore-3.0;netcore-3.1;netframework-1.1;netframework-2.0;netframework-3.0;netframework-3.5;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netframework-4.8.1;netstandard-1.3;netstandard-1.4;netstandard-1.6;netstandard-2.0;netstandard-2.1;xamarinandroid-7.1;xamarinios-10.8;xamarinmac-3.0" />
@@ -2186,20 +2185,20 @@ See <xref:System.IO.Stream.Close?displayProperty=nameWithType> for more informat
         <summary>Asynchronously reads the bytes from the current file stream and writes them to another stream, using a specified buffer size and cancellation token.</summary>
         <returns>A task that represents the asynchronous copy operation.</returns>
         <remarks>
+          <format type="text/markdown"><![CDATA[
 
 ## Remarks
 
 The `CopyToAsync` method enables you to perform resource-intensive I/O operations without blocking the main thread. This performance consideration is particularly important in a Windows 8.x Store app or desktop app where a time-consuming stream operation can block the UI thread and make your app appear as if it is not working. The async methods are used in conjunction with the `async` and `await` keywords in Visual Basic and C#.
 
-If the operation is canceled before it completes, the returned task contains the &lt;xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType&gt; value for the &lt;xref:System.Threading.Tasks.Task.Status?displayProperty=nameWithType&gt; property.
+If the operation is canceled before it completes, the returned task contains the <xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType> value for the <xref:System.Threading.Tasks.Task.Status?displayProperty=nameWithType> property.
 
 Copying begins at the current position in the current file stream.
 
-For an example of copying between two streams, see the &lt;xref:System.IO.Stream.CopyToAsync%28System.IO.Stream%29&gt; overload.
+For an example of copying between two streams, see the <xref:System.IO.Stream.CopyToAsync%28System.IO.Stream%29> overload.
 
-          
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.IO.FileStream.CopyTo&gt;.</remarks>
+          ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="Dispose">
@@ -2311,7 +2310,8 @@ This method stores all the exceptions that its synchronous counterpart can throw
       <Docs>
         <summary>Asynchronously releases the unmanaged resources used by the <see cref="T:System.IO.FileStream" />.</summary>
         <returns>A task that represents the asynchronous dispose operation.</returns>
-        <remarks>  
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
 
 ## Remarks
 
@@ -2319,11 +2319,10 @@ The `DisposeAsync` method lets you perform a resource-intensive dispose operatio
 
 This method disposes the stream by writing any changes to the backing store and closing the stream to release resources.
 
-Calling `DisposeAsync` allows the resources used by the &lt;xref:System.IO.FileStream&gt; to be reallocated for other purposes. For more information, see [Cleaning Up Unmanaged Resources](/dotnet/standard/garbage-collection/unmanaged).
+Calling `DisposeAsync` allows the resources used by the <xref:System.IO.FileStream> to be reallocated for other purposes. For more information, see [Cleaning Up Unmanaged Resources](/dotnet/standard/garbage-collection/unmanaged).
 
-          
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.IO.FileStream.Dispose&gt;.</remarks>
+          ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="EndRead">
@@ -2751,14 +2750,14 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="cancellationToken">The token to monitor for cancellation requests.</param>
         <summary>Asynchronously clears all buffers for this stream, causes any buffered data to be written to the underlying device, and monitors cancellation requests.</summary>
         <returns>A task that represents the asynchronous flush operation.</returns>
-        <remarks>  
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- If the operation is canceled before it completes, the returned task contains the &lt;xref:System.Threading.Tasks.TaskStatus.Canceled&gt; value for the &lt;xref:System.Threading.Tasks.Task.Status%2A&gt; property. If the handle to the file is disposed, the returned task contains the &lt;xref:System.ObjectDisposedException&gt; exception in the &lt;xref:System.Threading.Tasks.Task.Exception%2A&gt; property.  
+ If the operation is canceled before it completes, the returned task contains the <xref:System.Threading.Tasks.TaskStatus.Canceled> value for the <xref:System.Threading.Tasks.Task.Status%2A> property. If the handle to the file is disposed, the returned task contains the <xref:System.ObjectDisposedException> exception in the <xref:System.Threading.Tasks.Task.Exception%2A> property.  
   
- 
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.IO.FileStream.Flush&gt;.</remarks>
+ ]]></format>
+        </remarks>
         <exception cref="T:System.ObjectDisposedException">The stream has been disposed.</exception>
         <related type="Article" href="/dotnet/standard/threading/cancellation-in-managed-threads">Cancellation</related>
       </Docs>
@@ -3470,14 +3469,15 @@ Use <xref:System.IO.BinaryReader> for reading primitive data types.
         <summary>Asynchronously reads a sequence of bytes from the current file stream and writes them to a memory region, advances the position within the file stream by the number of bytes read, and monitors cancellation requests.</summary>
         <returns>A task that represents the asynchronous read operation and wraps the total number of bytes read into the buffer. The result value can be less than the number of bytes requested if the number of bytes currently available is less than the requested number, or it can be 0 (zero) if the end of the stream has been reached.</returns>
         <remarks>
+          <format type="text/markdown"><![CDATA[
 
 ## Remarks
 
 The `ReadAsync` method enables you to perform resource-intensive file operations without blocking the main thread. This performance consideration is particularly important in a Windows 8.x Store app or desktop app where a time-consuming stream operation can block the UI thread and make your app appear as if it is not working. The async methods are used in conjunction with the `async` and `await` keywords in Visual Basic and C#.
 
-Use the &lt;xref:System.IO.FileStream.CanRead%2A&gt; property to determine whether the current instance supports reading.
+Use the <xref:System.IO.FileStream.CanRead%2A> property to determine whether the current instance supports reading.
 
-If the operation is canceled before it completes, the returned task contains the &lt;xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType&gt; value for the &lt;xref:System.Threading.Tasks.Task.Status?displayProperty=nameWithtype&gt; property. If the handle to the file is disposed, the returned task contains the &lt;xref:System.ObjectDisposedException&gt; exception in the &lt;xref:System.Threading.Tasks.Task.Exception?displayProperty=nameWithType&gt; property.
+If the operation is canceled before it completes, the returned task contains the <xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType> value for the <xref:System.Threading.Tasks.Task.Status?displayProperty=nameWithtype> property. If the handle to the file is disposed, the returned task contains the <xref:System.ObjectDisposedException> exception in the <xref:System.Threading.Tasks.Task.Exception?displayProperty=nameWithType> property.
 
 ## Examples
 
@@ -3486,9 +3486,8 @@ The following example shows how to read from a file asynchronously.
 :::code language="csharp" source="~/snippets/csharp/System.IO/FileStream/Overview/example4.cs" id="Snippet4":::
 :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_CLR/Asynchronous_File_IO_async/vb/example4.vb" id="Snippet4":::  
 
-          
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.IO.FileStream.Read&gt;.</remarks>
+          ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="ReadAsync">
@@ -3550,14 +3549,15 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <summary>Asynchronously reads a sequence of bytes from the current file stream and writes them to a byte array beginning at a specified offset, advances the position within the file stream by the number of bytes read, and monitors cancellation requests.</summary>
         <returns>A task that represents the asynchronous read operation and wraps the total number of bytes read into the buffer. The result value can be less than the number of bytes requested if the number of bytes currently available is less than the requested number, or it can be 0 (zero) if the end of the stream has been reached.</returns>
         <remarks>
+          <format type="text/markdown"><![CDATA[
 
 ## Remarks
 
 The `ReadAsync` method enables you to perform resource-intensive file operations without blocking the main thread. This performance consideration is particularly important in a Windows 8.x Store app or desktop app where a time-consuming stream operation can block the UI thread and make your app appear as if it is not working. The async methods are used in conjunction with the `async` and `await` keywords in Visual Basic and C#.
 
-Use the &lt;xref:System.IO.FileStream.CanRead%2A&gt; property to determine whether the current instance supports reading.
+Use the <xref:System.IO.FileStream.CanRead%2A> property to determine whether the current instance supports reading.
 
-If the operation is canceled before it completes, the returned task contains the &lt;xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType&gt; value for the &lt;xref:System.Threading.Tasks.Task.Status?displayProperty=nameWithType&gt; property. If the handle to the file is disposed, the returned task contains the &lt;xref:System.ObjectDisposedException&gt; exception in the &lt;xref:System.Threading.Tasks.Task.Exception?displayProperty=nameWithType&gt; property.
+If the operation is canceled before it completes, the returned task contains the <xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType> value for the <xref:System.Threading.Tasks.Task.Status?displayProperty=nameWithType> property. If the handle to the file is disposed, the returned task contains the <xref:System.ObjectDisposedException> exception in the <xref:System.Threading.Tasks.Task.Exception?displayProperty=nameWithType> property.
 
 ## Examples
 
@@ -3566,9 +3566,8 @@ The following example shows how to read from a file asynchronously.
 :::code language="csharp" source="~/snippets/csharp/System.IO/FileStream/Overview/example4.cs" id="Snippet4":::
 :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_CLR/Asynchronous_File_IO_async/vb/example4.vb" id="Snippet4":::
 
-          
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.IO.FileStream.Read&gt;.</remarks>
+          ]]></format>
+        </remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="buffer" /> is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">
@@ -4217,18 +4216,18 @@ If the write operation is successful, the position within the file stream advanc
         <summary>Asynchronously writes a sequence of bytes from a memory region to the current file stream, advances the current position within this file stream by the number of bytes written, and monitors cancellation requests.</summary>
         <returns>A task that represents the asynchronous write operation.</returns>
         <remarks>
+          <format type="text/markdown"><![CDATA[
 
 ## Remarks
 
 The `WriteAsync` method lets you perform resource-intensive I/O operations without blocking the main thread. This performance consideration is particularly important in a Windows 8.x Store app or desktop app where a time-consuming stream operation can block the UI thread and make your app appear as if it is not working. The async methods are used in conjunction with the `async` and `await` keywords in Visual Basic and C#.
 
-Use the &lt;xref:System.IO.FileStream.CanWrite%2A&gt; property to determine whether the current instance supports writing.
+Use the <xref:System.IO.FileStream.CanWrite%2A> property to determine whether the current instance supports writing.
 
-If the operation is canceled before it completes, the returned task contains the &lt;xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType&gt; value for the &lt;xref:System.Threading.Tasks.Task.Status?displayProperty=nameWithType&gt; property.
+If the operation is canceled before it completes, the returned task contains the <xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType> value for the <xref:System.Threading.Tasks.Task.Status?displayProperty=nameWithType> property.
 
-          
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.IO.FileStream.Write&gt;.</remarks>
+          ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="WriteAsync">
@@ -4289,14 +4288,15 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="cancellationToken">The token to monitor for cancellation requests.</param>
         <summary>Asynchronously writes a sequence of bytes to the current stream, advances the current position within this stream by the number of bytes written, and monitors cancellation requests.</summary>
         <returns>A task that represents the asynchronous write operation.</returns>
-        <remarks>  
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The &lt;xref:System.IO.FileStream.WriteAsync%2A&gt; method enables you to perform resource-intensive file operations without blocking the main thread. This performance consideration is particularly important in a Windows 8.x Store app or desktop app where a time-consuming stream operation can block the UI thread and make your app appear as if it is not working. The async methods are used in conjunction with the `async` and `await` keywords in Visual Basic and C#.  
+ The <xref:System.IO.FileStream.WriteAsync%2A> method enables you to perform resource-intensive file operations without blocking the main thread. This performance consideration is particularly important in a Windows 8.x Store app or desktop app where a time-consuming stream operation can block the UI thread and make your app appear as if it is not working. The async methods are used in conjunction with the `async` and `await` keywords in Visual Basic and C#.  
   
- Use the &lt;xref:System.IO.FileStream.CanWrite%2A&gt; property to determine whether the current instance supports writing.  
+ Use the <xref:System.IO.FileStream.CanWrite%2A> property to determine whether the current instance supports writing.  
   
- If the operation is canceled before it completes, the returned task contains the &lt;xref:System.Threading.Tasks.TaskStatus.Canceled&gt; value for the &lt;xref:System.Threading.Tasks.Task.Status%2A&gt; property. If the handle to the file is disposed, the returned task contains the &lt;xref:System.ObjectDisposedException&gt; exception in the &lt;xref:System.Threading.Tasks.Task.Exception%2A&gt; property.  
+ If the operation is canceled before it completes, the returned task contains the <xref:System.Threading.Tasks.TaskStatus.Canceled> value for the <xref:System.Threading.Tasks.Task.Status%2A> property. If the handle to the file is disposed, the returned task contains the <xref:System.ObjectDisposedException> exception in the <xref:System.Threading.Tasks.Task.Exception%2A> property.  
   
    
   
@@ -4306,9 +4306,8 @@ This method stores all the exceptions that its synchronous counterpart can throw
  :::code language="csharp" source="~/snippets/csharp/System.IO/FileStream/Overview/example3.cs" id="Snippet3":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_CLR/Asynchronous_File_IO_async/vb/example3.vb" id="Snippet3":::  
   
- 
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.IO.FileStream.Write&gt;.</remarks>
+ ]]></format>
+        </remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="buffer" /> is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">

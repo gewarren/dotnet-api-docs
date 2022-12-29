@@ -1,4 +1,3 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <Type Name="BackgroundWorker" FullName="System.ComponentModel.BackgroundWorker">
   <TypeSignature Language="C#" Value="public class BackgroundWorker : IDisposable" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BackgroundWorker extends System.Object implements class System.IDisposable" FrameworkAlternate="dotnet-uwp-10.0;netcore-1.0;netcore-1.1" />
@@ -180,28 +179,28 @@
       <Parameters />
       <Docs>
         <summary>Requests cancellation of a pending background operation.</summary>
-        <remarks>  
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- &lt;xref:System.ComponentModel.BackgroundWorker.CancelAsync%2A&gt; submits a request to terminate the pending background operation and sets the &lt;xref:System.ComponentModel.BackgroundWorker.CancellationPending%2A&gt; property to `true`.  
+ <xref:System.ComponentModel.BackgroundWorker.CancelAsync%2A> submits a request to terminate the pending background operation and sets the <xref:System.ComponentModel.BackgroundWorker.CancellationPending%2A> property to `true`.  
   
- When you call &lt;xref:System.ComponentModel.BackgroundWorker.CancelAsync%2A&gt;, your worker method has an opportunity to stop its execution and exit. The worker code should periodically check the &lt;xref:System.ComponentModel.BackgroundWorker.CancellationPending%2A&gt; property to see if it has been set to `true`.  
+ When you call <xref:System.ComponentModel.BackgroundWorker.CancelAsync%2A>, your worker method has an opportunity to stop its execution and exit. The worker code should periodically check the <xref:System.ComponentModel.BackgroundWorker.CancellationPending%2A> property to see if it has been set to `true`.  
   
-&gt; [!CAUTION]
-&gt;  Be aware that your code in the &lt;xref:System.ComponentModel.BackgroundWorker.DoWork&gt; event handler may finish its work as a cancellation request is being made, and your polling loop may miss &lt;xref:System.ComponentModel.BackgroundWorker.CancellationPending%2A&gt; being set to `true`. In this case, the &lt;xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A&gt; flag of &lt;xref:System.ComponentModel.RunWorkerCompletedEventArgs?displayProperty=nameWithType&gt; in your &lt;xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted&gt; event handler will not be set to `true`, even though a cancellation request was made. This situation is called a *race condition* and is a common concern in multithreaded programming. For more information about multithreading design issues, see [Managed Threading Best Practices](/dotnet/standard/threading/managed-threading-best-practices).  
+> [!CAUTION]
+>  Be aware that your code in the <xref:System.ComponentModel.BackgroundWorker.DoWork> event handler may finish its work as a cancellation request is being made, and your polling loop may miss <xref:System.ComponentModel.BackgroundWorker.CancellationPending%2A> being set to `true`. In this case, the <xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A> flag of <xref:System.ComponentModel.RunWorkerCompletedEventArgs?displayProperty=nameWithType> in your <xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted> event handler will not be set to `true`, even though a cancellation request was made. This situation is called a *race condition* and is a common concern in multithreaded programming. For more information about multithreading design issues, see [Managed Threading Best Practices](/dotnet/standard/threading/managed-threading-best-practices).  
   
    
   
 ## Examples  
- The following code example demonstrates the use of the &lt;xref:System.ComponentModel.BackgroundWorker.CancelAsync%2A&gt; method to cancel an asynchronous ("background") operation. This code example is part of a larger example provided for the &lt;xref:System.ComponentModel.BackgroundWorker&gt; class.  
+ The following code example demonstrates the use of the <xref:System.ComponentModel.BackgroundWorker.CancelAsync%2A> method to cancel an asynchronous ("background") operation. This code example is part of a larger example provided for the <xref:System.ComponentModel.BackgroundWorker> class.  
   
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker/CPP/fibonacciform.cpp" id="Snippet4":::
  :::code language="csharp" source="~/snippets/csharp/System.ComponentModel/BackgroundWorker/Overview/fibonacciform.cs" id="Snippet4":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker/VB/fibonacciform.vb" id="Snippet4":::  
   
- 
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.ComponentModel.BackgroundWorker.Cancel&gt;.</remarks>
+ ]]></format>
+        </remarks>
         <exception cref="T:System.InvalidOperationException">
           <see cref="P:System.ComponentModel.BackgroundWorker.WorkerSupportsCancellation" /> is <see langword="false" />.</exception>
         <related type="Article" href="/dotnet/framework/winforms/controls/how-to-run-an-operation-in-the-background">How to: Run an Operation in the Background</related>
@@ -895,24 +894,24 @@ This method stores all the exceptions that its synchronous counterpart can throw
       <Parameters />
       <Docs>
         <summary>Starts execution of a background operation.</summary>
-        <remarks>  
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The &lt;xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A&gt; method submits a request to start the operation running asynchronously. When the request is serviced, the &lt;xref:System.ComponentModel.BackgroundWorker.DoWork&gt; event is raised, which in turn starts execution of your background operation.  
+ The <xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A> method submits a request to start the operation running asynchronously. When the request is serviced, the <xref:System.ComponentModel.BackgroundWorker.DoWork> event is raised, which in turn starts execution of your background operation.  
   
- If the background operation is already running, calling &lt;xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A&gt; again will raise an &lt;xref:System.InvalidOperationException&gt;.  
+ If the background operation is already running, calling <xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A> again will raise an <xref:System.InvalidOperationException>.  
   
    
   
 ## Examples  
- The following code example demonstrates the use of the &lt;xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A&gt; method to start an asynchronous operation. It is part of a larger example described in [How to: Download a File in the Background](/dotnet/framework/winforms/controls/how-to-download-a-file-in-the-background).  
+ The following code example demonstrates the use of the <xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A> method to start an asynchronous operation. It is part of a larger example described in [How to: Download a File in the Background](/dotnet/framework/winforms/controls/how-to-download-a-file-in-the-background).  
   
  :::code language="csharp" source="~/snippets/csharp/System.ComponentModel/BackgroundWorker/IsBusy/Form1.cs" id="Snippet2":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker.IsBusy/VB/Form1.vb" id="Snippet2":::  
   
- 
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.ComponentModel.BackgroundWorker.RunWorker&gt;.</remarks>
+ ]]></format>
+        </remarks>
         <exception cref="T:System.InvalidOperationException">
           <see cref="P:System.ComponentModel.BackgroundWorker.IsBusy" /> is <see langword="true" />.</exception>
         <altmember cref="E:System.ComponentModel.BackgroundWorker.DoWork" />
@@ -960,27 +959,27 @@ This method stores all the exceptions that its synchronous counterpart can throw
       <Docs>
         <param name="argument">A parameter for use by the background operation to be executed in the <see cref="E:System.ComponentModel.BackgroundWorker.DoWork" /> event handler.</param>
         <summary>Starts execution of a background operation.</summary>
-        <remarks>  
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The &lt;xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A&gt; method submits a request to start the operation running asynchronously. When the request is serviced, the &lt;xref:System.ComponentModel.BackgroundWorker.DoWork&gt; event is raised, which in turn starts execution of your background operation.  
+ The <xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A> method submits a request to start the operation running asynchronously. When the request is serviced, the <xref:System.ComponentModel.BackgroundWorker.DoWork> event is raised, which in turn starts execution of your background operation.  
   
- If your operation requires a parameter, you can provide it as the `argument` parameter to &lt;xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A&gt;.  
+ If your operation requires a parameter, you can provide it as the `argument` parameter to <xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A>.  
   
- If the background operation is already running, calling &lt;xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A&gt; again will raise an &lt;xref:System.InvalidOperationException&gt;.  
+ If the background operation is already running, calling <xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A> again will raise an <xref:System.InvalidOperationException>.  
   
    
   
 ## Examples  
- The following code example demonstrates the use of the &lt;xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A&gt; method to start an asynchronous operation. This code example is part of a larger example provided for the &lt;xref:System.ComponentModel.BackgroundWorker&gt; class.  
+ The following code example demonstrates the use of the <xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A> method to start an asynchronous operation. This code example is part of a larger example provided for the <xref:System.ComponentModel.BackgroundWorker> class.  
   
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker/CPP/fibonacciform.cpp" id="Snippet3":::
  :::code language="csharp" source="~/snippets/csharp/System.ComponentModel/BackgroundWorker/Overview/fibonacciform.cs" id="Snippet3":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker/VB/fibonacciform.vb" id="Snippet3":::  
   
- 
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored, it will be thrown when you await this method or the task it returns. To see which exceptions this method stores, see the exceptions thrown by &lt;xref:System.ComponentModel.BackgroundWorker.RunWorker&gt;.</remarks>
+ ]]></format>
+        </remarks>
         <exception cref="T:System.InvalidOperationException">
           <see cref="P:System.ComponentModel.BackgroundWorker.IsBusy" /> is <see langword="true" />.</exception>
         <altmember cref="E:System.ComponentModel.BackgroundWorker.DoWork" />
