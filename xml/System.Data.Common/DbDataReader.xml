@@ -1,4 +1,3 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <Type Name="DbDataReader" FullName="System.Data.Common.DbDataReader">
   <TypeSignature Language="C#" Value="public abstract class DbDataReader : IDisposable, System.Collections.IEnumerable" FrameworkAlternate="dotnet-uwp-10.0" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DbDataReader extends System.Object implements class System.Collections.IEnumerable, class System.IDisposable" FrameworkAlternate="dotnet-uwp-10.0" />
@@ -196,16 +195,16 @@
       <Docs>
         <summary>Asynchronously closes the <see cref="T:System.Data.Common.DbDataReader" /> object.</summary>
         <returns>A task representing the asynchronous operation.</returns>
-        <remarks>  
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
  The default implementation of this asynchronous method delegates to its synchronous counterpart and returns a completed `Task`, potentially blocking the calling thread.
  
  Data providers that support [asynchronous programming](/dotnet/framework/data/adonet/asynchronous-programming) should override the default implementation using asynchronous I/O operations.
    
- 
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Data.Common.DbDataReader.Close>.</remarks>
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="Depth">
@@ -414,23 +413,23 @@ This method stores all the exceptions that its synchronous counterpart can throw
       <Docs>
         <summary>Asynchronously releases all resources used by the current instance of the <see cref="T:System.Data.Common.DbDataReader" /> class.</summary>
         <returns>A <see cref="T:System.Threading.Tasks.ValueTask" /> representing the asynchronous operation.</returns>
-        <remarks>  
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Call `Dispose` or `DisposeAsync` when you've finished using the &lt;xref:System.Data.Common.DbDataReader&gt;. Calling one of these methods leaves the &lt;xref:System.Data.Common.DbDataReader&gt; in an unusable state. After disposing, you must release all references to the &lt;xref:System.Data.Common.DbDataReader&gt; so the garbage collector can reclaim the memory that the &lt;xref:System.Data.Common.DbDataReader&gt; was occupying.  
+ Call `Dispose` or `DisposeAsync` when you've finished using the <xref:System.Data.Common.DbDataReader>. Calling one of these methods leaves the <xref:System.Data.Common.DbDataReader> in an unusable state. After disposing, you must release all references to the <xref:System.Data.Common.DbDataReader> so the garbage collector can reclaim the memory that the <xref:System.Data.Common.DbDataReader> was occupying.  
   
  For more information, see [Cleaning Up Unmanaged Resources](/dotnet/standard/garbage-collection/unmanaged) and [Implementing a Dispose Method](/dotnet/standard/garbage-collection/implementing-dispose).  
   
-&gt; [!NOTE]
-&gt;  Always dispose before you release your last reference to the &lt;xref:System.Data.Common.DbDataReader&gt;. Otherwise, the resources it is using will not be freed until the garbage collector calls the &lt;xref:System.Data.Common.DbDataReader&gt; object's `Finalize` method.  
+> [!NOTE]
+>  Always dispose before you release your last reference to the <xref:System.Data.Common.DbDataReader>. Otherwise, the resources it is using will not be freed until the garbage collector calls the <xref:System.Data.Common.DbDataReader> object's `Finalize` method.  
   
  The default implementation of this asynchronous method delegates to its synchronous counterpart and returns a completed `ValueTask`, potentially blocking the calling thread.
  
  Data providers that support [asynchronous programming](/dotnet/framework/data/adonet/asynchronous-programming) should override the default implementation using asynchronous I/O operations.
 
- 
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Data.Common.DbDataReader.Dispose>.</remarks>
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="FieldCount">
@@ -776,7 +775,7 @@ This method stores all the exceptions that its synchronous counterpart can throw
             The default implementation will return a cancelled task if passed an already cancelled <paramref name="cancellationToken" />.
             Exceptions thrown by <see cref="M:System.Data.Common.DbDataReaderExtensions.GetColumnSchema(System.Data.Common.DbDataReader)" /> will be communicated via the returned Task Exception property.</summary>
         <returns>A task representing the asynchronous operation.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Data.Common.DbDataReader.GetColumnSchema(System.Threading.CancellationToken)>.</remarks>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="GetData">
@@ -2047,7 +2046,7 @@ Returns <see langword="null" /> if the executed command returned no resultset, o
             The default implementation will return a cancelled task if passed an already cancelled <paramref name="cancellationToken" />.
             Exceptions thrown by <see cref="M:System.Data.Common.DbDataReader.GetSchemaTable" /> will be communicated via the returned Task Exception property.</summary>
         <returns>A task representing the asynchronous operation.</returns>
-        <remarks>This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Data.Common.DbDataReader.GetSchemaTable(System.Threading.CancellationToken)>.</remarks>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="GetStream">
@@ -2523,6 +2522,7 @@ Returns <see langword="null" /> if the executed command returned no resultset, o
         <summary>Asynchronously gets a value that indicates whether the column contains non-existent or missing values.</summary>
         <returns>A <see cref="T:System.Threading.Tasks.Task`1" /> whose <see cref="P:System.Threading.Tasks.Task`1.Result" /> property is <see langword="true" /> if the specified column value is equivalent to <see langword="DBNull" /> or <see langword="false" /> if it is not.</returns>
         <remarks>
+          <format type="text/markdown"><![CDATA[
  ## Remarks
  This asynchronous method is only needed to avoid blocking the calling thread when the reader is created in sequential mode.
  
@@ -2534,9 +2534,8 @@ Returns <see langword="null" /> if the executed command returned no resultset, o
 
  Other methods and properties of the DbDataReader object should not be invoked while the returned Task is not yet completed.
 
- 
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Data.Common.DbDataReader.IsDBNull(System.Int32)>.</remarks>
+ ]]></format>
+        </remarks>
         <exception cref="T:System.InvalidOperationException">The connection was dropped or closed during the data retrieval.  
   
 -or-
@@ -2599,6 +2598,7 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <summary>Asynchronously gets a value that indicates whether the column contains non-existent or missing values.</summary>
         <returns>A <see cref="T:System.Threading.Tasks.Task`1" /> whose <see cref="P:System.Threading.Tasks.Task`1.Result" /> property is <see langword="true" /> if the specified column value is equivalent to <see langword="DBNull" /> or <see langword="false" /> if it is not.</returns>
         <remarks>
+          <format type="text/markdown"><![CDATA[
  ## Remarks
  This asynchronous method is only needed to avoid blocking the calling thread when the reader is created in sequential mode.
  
@@ -2611,9 +2611,8 @@ This method stores all the exceptions that its synchronous counterpart can throw
  This method accepts a cancellation token that can be used to request the operation to be cancelled early. Implementations may ignore this request.
  
  Other methods and properties of the DbDataReader object should not be invoked while the returned Task is not yet completed.
- 
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Data.Common.DbDataReader.IsDBNull(System.Int32,System.Threading.CancellationToken)>.</remarks>
+ ]]></format>
+        </remarks>
         <exception cref="T:System.InvalidOperationException">The connection was dropped or closed during the data retrieval.  
   
 -or-
@@ -2847,16 +2846,16 @@ This method stores all the exceptions that its synchronous counterpart can throw
       <Docs>
         <summary>Asynchronously advances the reader to the next result when reading the results of a batch of statements.</summary>
         <returns>A task whose <see cref="P:System.Threading.Tasks.Task`1.Result" /> property is <see langword="true" /> if there are more result sets or <see langword="false" /> if there aren't.</returns>
-        <remarks>  
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
 ## Remarks  
  The default implementation of this asynchronous method invokes its synchronous counterpart and returns a completed Task, potentially blocking the calling thread.
 
  Data providers that support [asynchronous programming](/dotnet/framework/data/adonet/asynchronous-programming) should override the default implementation using asynchronous I/O operations.
 
  Other methods and properties of the DbDataReader object should not be invoked while the returned Task is not yet completed.
- 
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Data.Common.DbDataReader.NextResult>.</remarks>
+ ]]></format>
+        </remarks>
         <exception cref="T:System.Data.Common.DbException">An error occurred while executing the command text.</exception>
         <related type="Article" href="/dotnet/framework/data/adonet/ado-net-overview">ADO.NET Overview</related>
       </Docs>
@@ -2900,7 +2899,8 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="cancellationToken">The cancellation instruction.</param>
         <summary>Asynchronously advances the reader to the next result when reading the results of a batch of statements.</summary>
         <returns>A <see cref="T:System.Threading.Tasks.Task`1" /> whose <see cref="P:System.Threading.Tasks.Task`1.Result" /> property is <see langword="true" /> if there are more result sets or <see langword="false" /> if there aren't.</returns>
-        <remarks>  
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
 ## Remarks  
  The default implementation of this asynchronous method invokes its synchronous counterpart and returns a completed Task, potentially blocking the calling thread. The default implementation also returns a cancelled task if passed an already cancelled cancellation token.
 
@@ -2909,9 +2909,8 @@ This method stores all the exceptions that its synchronous counterpart can throw
  This method accepts a cancellation token that can be used to request the operation to be cancelled early. Implementations may ignore this request.
  
  Other methods and properties of the DbDataReader object should not be invoked while the returned Task is not yet completed.
- 
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Data.Common.DbDataReader.NextResult(System.Threading.CancellationToken)>.</remarks>
+ ]]></format>
+        </remarks>
         <exception cref="T:System.Data.Common.DbException">An error occurred while executing the command text.</exception>
         <related type="Article" href="/dotnet/framework/data/adonet/ado-net-overview">ADO.NET Overview</related>
       </Docs>
@@ -3022,7 +3021,8 @@ This method stores all the exceptions that its synchronous counterpart can throw
       <Docs>
         <summary>Asynchronously advances the reader to the next record in a result set.</summary>
         <returns>A <see cref="T:System.Threading.Tasks.Task`1" /> whose <see cref="P:System.Threading.Tasks.Task`1.Result" /> property is <see langword="true" /> if there are more rows or <see langword="false" /> if there aren't.</returns>
-        <remarks>  
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
 ## Remarks  
  The default implementation of this asynchronous method invokes its synchronous counterpart and returns a completed Task, potentially blocking the calling thread.
 
@@ -3030,9 +3030,8 @@ This method stores all the exceptions that its synchronous counterpart can throw
  
  Other methods and properties of the DbDataReader object should not be invoked while the returned Task is not yet completed.
 
- 
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Data.Common.DbDataReader.Read>.</remarks>
+ ]]></format>
+        </remarks>
         <exception cref="T:System.Data.Common.DbException">An error occurred while executing the command text.</exception>
         <related type="Article" href="/dotnet/framework/data/adonet/ado-net-overview">ADO.NET Overview</related>
       </Docs>
@@ -3076,7 +3075,8 @@ This method stores all the exceptions that its synchronous counterpart can throw
         <param name="cancellationToken">The cancellation instruction.</param>
         <summary>Asynchronously advances the reader to the next record in a result set.</summary>
         <returns>A <see cref="T:System.Threading.Tasks.Task`1" /> whose <see cref="P:System.Threading.Tasks.Task`1.Result" /> property is <see langword="true" /> if there are more rows or <see langword="false" /> if there aren't.</returns>
-        <remarks>  
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
 ## Remarks  
  The default implementation of this asynchronous method invokes its synchronous counterpart and returns a completed Task, potentially blocking the calling thread. The default implementation also returns a cancelled task if passed an already cancelled cancellation token.
 
@@ -3086,9 +3086,8 @@ This method stores all the exceptions that its synchronous counterpart can throw
  
  Other methods and properties of the DbDataReader object should not be invoked while the returned Task is not yet completed.
 
- 
-
-This method stores all the exceptions that its synchronous counterpart can throw in the task it returns. If an exception is stored during execution, it will be thrown when you await either this method or the task it returns. For the stored exceptions, see the exceptions thrown by <xref:System.Data.Common.DbDataReader.Read(System.Threading.CancellationToken)>.</remarks>
+ ]]></format>
+        </remarks>
         <exception cref="T:System.Data.Common.DbException">An error occurred while executing the command text.</exception>
         <related type="Article" href="/dotnet/framework/data/adonet/ado-net-overview">ADO.NET Overview</related>
       </Docs>
