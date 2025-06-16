@@ -80,15 +80,7 @@
 ## Remarks
  If the command contains an ad hoc SQL statement, as opposed to a stored-procedure name, the number of the parameters in the collection must be equal to the number of parameter placeholders within the command text, or SQL Server raises an error. With a stored procedure, all the parameters declared in the stored procedure without a default value must be provided. Parameters declared with a default value are optional. This lets you specify a value other than the default.
 
- For more information with additional sample code demonstrating how to use parameters, see [Commands and Parameters](/dotnet/framework/data/adonet/commands-and-parameters).
-
-
-
-## Examples
- The following example creates multiple instances of <xref:System.Data.SqlClient.SqlParameter> through the <xref:System.Data.SqlClient.SqlParameterCollection> collection. The parameters are used to select data within the data source and populate the <xref:System.Data.DataSet>. This code assumes that a <xref:System.Data.DataSet> and a <xref:System.Data.SqlClient.SqlDataAdapter> have already been created with the appropriate schema, commands, and connection.
-
- :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlParameter Example/CS/source.cs" id="Snippet1":::
- :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlParameter Example/VB/source.vb" id="Snippet1":::
+ For more information, see [Commands and Parameters](/dotnet/framework/data/adonet/commands-and-parameters).
 
  ]]></format>
     </remarks>
@@ -143,15 +135,7 @@
         <param name="value">The <see cref="T:System.Data.SqlClient.SqlParameter" /> to add to the collection.</param>
         <summary>Adds the specified <see cref="T:System.Data.SqlClient.SqlParameter" /> object to the <see cref="T:System.Data.SqlClient.SqlParameterCollection" />.</summary>
         <returns>A new <see cref="T:System.Data.SqlClient.SqlParameter" /> object.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[
-
-## Examples
- :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlParameterCollection.Add Example/CS/source.cs" id="Snippet1":::
- :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlParameterCollection.Add Example/VB/source.vb" id="Snippet1":::
-
- ]]></format>
-        </remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">The <see cref="T:System.Data.SqlClient.SqlParameter" /> specified in the <paramref name="value" /> parameter is already added to this or another <see cref="T:System.Data.SqlClient.SqlParameterCollection" />.</exception>
         <exception cref="T:System.InvalidCastException">The parameter passed was not a <see cref="T:System.Data.SqlClient.SqlParameter" />.</exception>
         <exception cref="T:System.ArgumentNullException">The <paramref name="value" /> parameter is null.</exception>
@@ -216,15 +200,6 @@
 
 This member is an explicit interface member implementation. It can be used only when the <xref:System.Data.SqlClient.SqlParameterCollection> instance is cast to an <xref:System.Collections.IList> interface.
 
-
- ## Examples
-
- The following example demonstrates the implementation of the <xref:System.Collections.IList> interface to create a simple, fixed-size list. This code is part of a larger example for the <xref:System.Collections.IList> interface.
-
- :::code language="csharp" source="~/snippets/csharp/System.Collections/IList/Overview/Program.cs" id="Snippet02":::
-
- :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.IList_Implementation/vb/Program.vb" id="Snippet02":::
-
           ]]></format>
         </remarks>
         <related type="Article" href="/dotnet/framework/data/adonet/commands-and-parameters">Commands and Parameters (ADO.NET)</related>
@@ -270,15 +245,7 @@ This member is an explicit interface member implementation. It can be used only 
         <param name="sqlDbType">One of the <see cref="T:System.Data.SqlDbType" /> values.</param>
         <summary>Adds a <see cref="T:System.Data.SqlClient.SqlParameter" /> to the <see cref="T:System.Data.SqlClient.SqlParameterCollection" /> given the parameter name and the data type.</summary>
         <returns>A new <see cref="T:System.Data.SqlClient.SqlParameter" /> object.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[
-
-## Examples
- :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlParameterCollection.Add3 Example/CS/source.cs" id="Snippet1":::
- :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlParameterCollection.Add3 Example/VB/source.vb" id="Snippet1":::
-
- ]]></format>
-        </remarks>
+        <remarks>To be added.</remarks>
         <related type="Article" href="/dotnet/framework/data/adonet/commands-and-parameters">Commands and Parameters (ADO.NET)</related>
         <related type="Article" href="/dotnet/framework/data/adonet/dataadapter-parameters">DataAdapter Parameters (ADO.NET)</related>
         <related type="Article" href="/dotnet/framework/data/adonet/sql/">Using the .NET Framework Data Provider for SQL Server</related>
@@ -326,22 +293,10 @@ This member is an explicit interface member implementation. It can be used only 
         <summary>Adds the specified <see cref="T:System.Data.SqlClient.SqlParameter" /> object to the <see cref="T:System.Data.SqlClient.SqlParameterCollection" />.</summary>
         <returns>A new <see cref="T:System.Data.SqlClient.SqlParameter" /> object.
 
- Use caution when you are using this overload of the <see langword="SqlParameterCollection.Add" /> method to specify integer parameter values. Because this overload takes a <paramref name="value" /> of type <see cref="T:System.Object" />, you must convert the integral value to an <see cref="T:System.Object" /> type when the value is zero, as the following C# example demonstrates.
-
-```csharp
-parameters.Add("@pname", Convert.ToInt32(0));
-```
+ Use caution when you use this overload of the <see langword="SqlParameterCollection.Add" /> method to specify integer parameter values. Because this overload takes a <paramref name="value" /> of type <see cref="T:System.Object" />, you must convert the integral value to an <see cref="T:System.Object" /> type when the value is zero.
 
  If you do not perform this conversion, the compiler assumes that you are trying to call the <see langword="SqlParameterCollection.Add" /> (<see langword="string" />, <see langword="SqlDbType" />) overload.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[
-
-## Examples
- :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlParameterCollection.Add1 Example/CS/source.cs" id="Snippet1":::
- :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlParameterCollection.Add1 Example/VB/source.vb" id="Snippet1":::
-
- ]]></format>
-        </remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">The <see cref="T:System.Data.SqlClient.SqlParameter" /> specified in the <paramref name="value" /> parameter is already added to this or another <see cref="T:System.Data.SqlClient.SqlParameterCollection" />.</exception>
         <exception cref="T:System.ArgumentNullException">The <paramref name="value" /> parameter is null.</exception>
         <related type="Article" href="/dotnet/framework/data/adonet/ado-net-overview">ADO.NET Overview</related>
@@ -389,14 +344,7 @@ parameters.Add("@pname", Convert.ToInt32(0));
         <remarks>
           <format type="text/markdown"><![CDATA[
 
-## Remarks
- This overload is useful when you are adding a parameter of a variable-length data type such as `varchar` or `binary`.
-
-
-
-## Examples
- :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlParameterCollection.Add1 Example/CS/source.cs" id="Snippet1":::
- :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlParameterCollection.Add1 Example/VB/source.vb" id="Snippet1":::
+ This overload is useful when you're adding a parameter of a variable-length data type such as `varchar` or `binary`.
 
  ]]></format>
         </remarks>
@@ -441,15 +389,7 @@ parameters.Add("@pname", Convert.ToInt32(0));
         <param name="sourceColumn">The name of the source column (<see cref="P:System.Data.SqlClient.SqlParameter.SourceColumn" />) if this <see cref="T:System.Data.SqlClient.SqlParameter" /> is used in a call to <see cref="Overload:System.Data.Common.DbDataAdapter.Update" />.</param>
         <summary>Adds a <see cref="T:System.Data.SqlClient.SqlParameter" /> to the <see cref="T:System.Data.SqlClient.SqlParameterCollection" /> with the parameter name, the data type, and the column length.</summary>
         <returns>A new <see cref="T:System.Data.SqlClient.SqlParameter" /> object.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[
-
-## Examples
- :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlParameterCollection.Add5 Example/CS/source.cs" id="Snippet1":::
- :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlParameterCollection.Add5 Example/VB/source.vb" id="Snippet1":::
-
- ]]></format>
-        </remarks>
+        <remarks>To be added.</remarks>
         <related type="Article" href="/dotnet/framework/data/adonet/commands-and-parameters">Commands and Parameters (ADO.NET)</related>
         <related type="Article" href="/dotnet/framework/data/adonet/dataadapter-parameters">DataAdapter Parameters (ADO.NET)</related>
         <related type="Article" href="/dotnet/framework/data/adonet/sql/">Using the .NET Framework Data Provider for SQL Server</related>
@@ -587,14 +527,6 @@ parameters.Add("@pname", Convert.ToInt32(0));
 
  For <xref:System.Data.SqlDbType> `Xml` enumeration values, you can use a string, an XML value, an <xref:System.Xml.XmlReader> derived type instance, or a <xref:System.Data.SqlTypes.SqlXml> object.
 
-
-
-## Examples
- The following example demonstrates how to use the `AddWithValue` method.
-
- :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlParameterCollection.AddWithValue/CS/source.cs" id="Snippet1":::
- :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlParameterCollection.AddWithValue/VB/source.vb" id="Snippet1":::
-
  ]]></format>
         </remarks>
         <related type="Article" href="/dotnet/framework/data/adonet/commands-and-parameters">Commands and Parameters (ADO.NET)</related>
@@ -649,15 +581,6 @@ parameters.Add("@pname", Convert.ToInt32(0));
 This member is an explicit interface member implementation. It can be used only when the <xref:System.Data.SqlClient.SqlParameterCollection> instance is cast to an <xref:System.Collections.IList> interface.
 
  Implementations of this method can vary in how they handle the <xref:System.Collections.ICollection.Count%2A?displayProperty=nameWithType> and the capacity of a collection. Typically, the count is set to zero, and references to other objects from elements of the collection are also released. The capacity can be set to zero or a default value, or it can remain unchanged.
-
-
- ## Examples
-
- The following example demonstrates the implementation of the <xref:System.Collections.IList> interface to create a simple, fixed-size list. This code is part of a larger example for the <xref:System.Collections.IList> interface.
-
- :::code language="csharp" source="~/snippets/csharp/System.Collections/IList/Overview/Program.cs" id="Snippet02":::
-
- :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.IList_Implementation/vb/Program.vb" id="Snippet02":::
 
           ]]></format>
         </remarks>
@@ -772,13 +695,6 @@ This member is an explicit interface member implementation. It can be used only 
 This member is an explicit interface member implementation. It can be used only when the <xref:System.Data.SqlClient.SqlParameterCollection> instance is cast to an <xref:System.Collections.IList> interface.
 
 This method uses the collection's objects' <xref:System.Object.Equals%2A> and <xref:System.IComparable.CompareTo%2A> methods on `item` to determine whether `item` exists.
-
- ## Examples
-
- The following example demonstrates the implementation of the <xref:System.Collections.IList> interface to create a simple, fixed-size list. This code is part of a larger example for the <xref:System.Collections.IList> interface.
-
- :::code language="csharp" source="~/snippets/csharp/System.Collections/IList/Overview/Program.cs" id="Snippet02":::
- :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.IList_Implementation/vb/Program.vb" id="Snippet02":::
 
           ]]></format>
         </remarks>
@@ -1049,13 +965,6 @@ This member is an explicit interface member implementation. It can be used only 
 
  The enumerator does not have exclusive access to the collection; therefore, enumerating through a collection is intrinsically not a thread-safe procedure.  To guarantee thread safety during enumeration, you can lock the collection during the entire enumeration.  To allow the collection to be accessed by multiple threads for reading and writing, you must implement your own synchronization.
 
- ## Examples
-
- The following code example demonstrates the implementation of the <xref:System.Collections.IEnumerable> interfaces for a custom collection. In this example, <xref:System.Collections.IEnumerable.GetEnumerator%2A> is not explicitly called, but it is implemented to support the use of `foreach` (`For Each` in Visual Basic). This code example is part of a larger example for the <xref:System.Collections.IEnumerable> interface.
-
-:::code language="csharp" source="~/snippets/csharp/System.Collections/IEnumerable/Overview/ienumerator.cs" id="Snippet1":::
- :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections_EnumeratorInterfaces/vb/ienumerator.vb" id="Snippet1":::
-
           ]]></format>
         </remarks>
         <related type="Article" href="/dotnet/framework/data/adonet/commands-and-parameters">Commands and Parameters (ADO.NET)</related>
@@ -1237,13 +1146,6 @@ This member is an explicit interface member implementation. It can be used only 
 
  This method uses the collection's objects' <xref:System.Object.Equals%2A> and <xref:System.IComparable.CompareTo%2A> methods on `item` to determine whether `item` exists.
 
- ## Examples
-
- The following example demonstrates the implementation of the <xref:System.Collections.IList> interface to create a simple, fixed-size list. This code is part of a larger example for the <xref:System.Collections.IList> interface.
-
- :::code language="csharp" source="~/snippets/csharp/System.Collections/IList/Overview/Program.cs" id="Snippet02":::
- :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.IList_Implementation/vb/Program.vb" id="Snippet02":::
-
           ]]></format>
         </remarks>
         <related type="Article" href="/dotnet/framework/data/adonet/commands-and-parameters">Commands and Parameters (ADO.NET)</related>
@@ -1407,14 +1309,6 @@ This member is an explicit interface member implementation. It can be used only 
  If `index` equals the number of items in the <xref:System.Collections.IList>, then `value` is appended to the end.
  In collections of contiguous elements, such as lists, the elements that follow the insertion point move down to accommodate the new element. If the collection is indexed, the indexes of the elements that are moved are also updated. This behavior does not apply to collections where elements are conceptually grouped into buckets, such as a hash table.
 
-
- ## Examples
-
- The following example demonstrates the implementation of the <xref:System.Collections.IList> interface to create a simple, fixed-size list. This code is part of a larger example for the <xref:System.Collections.IList> interface.
-
- :::code language="csharp" source="~/snippets/csharp/System.Collections/IList/Overview/Program.cs" id="Snippet02":::
- :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.IList_Implementation/vb/Program.vb" id="Snippet02":::
-
           ]]></format>
         </remarks>
         <related type="Article" href="/dotnet/framework/data/adonet/commands-and-parameters">Commands and Parameters (ADO.NET)</related>
@@ -1454,17 +1348,7 @@ This member is an explicit interface member implementation. It can be used only 
 
 This member is an explicit interface member implementation. It can be used only when the <xref:System.Data.SqlClient.SqlParameterCollection> instance is cast to an <xref:System.Collections.IList> interface.
 
-
-
- A collection with a fixed size does not allow the addition or removal of elements after the collection is created, but it allows the modification of existing elements.
-
-
- ## Examples
-
- The following example demonstrates the implementation of the <xref:System.Collections.IList> interface to create a simple, fixed-size list. This code is part of a larger example for the <xref:System.Collections.IList> interface.
-
- :::code language="csharp" source="~/snippets/csharp/System.Collections/IList/Overview/Program.cs" id="Snippet02":::
- :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.IList_Implementation/vb/Program.vb" id="Snippet02":::
+A collection with a fixed size does not allow the addition or removal of elements after the collection is created, but it allows the modification of existing elements.
 
           ]]></format>
         </remarks>
@@ -1506,14 +1390,6 @@ This member is an explicit interface member implementation. It can be used only 
 This member is an explicit interface member implementation. It can be used only when the <xref:System.Data.SqlClient.SqlParameterCollection> instance is cast to an <xref:System.Collections.IList> interface.
 
  A collection that is read-only does not allow the addition, removal, or modification of elements after the collection is created.
-
-
- ## Examples
-
- The following example demonstrates the implementation of the <xref:System.Collections.IList> interface to create a simple, fixed-size list. This code is part of a larger example for the <xref:System.Collections.IList> interface.
-
- :::code language="csharp" source="~/snippets/csharp/System.Collections/IList/Overview/Program.cs" id="Snippet02":::
- :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.IList_Implementation/vb/Program.vb" id="Snippet02":::
 
           ]]></format>
         </remarks>
@@ -1557,12 +1433,6 @@ This member is an explicit interface member implementation. It can be used only 
  Most collection classes in the <xref:System.Collections?displayProperty=nameWithType> namespace also implement a Synchronized method, which provides a synchronized wrapper around the underlying collection.
 
  Enumerating through a collection is intrinsically not a thread-safe procedure. Even when a collection is synchronized, other threads can still modify the collection, which causes the enumerator to throw an exception. To guarantee thread safety during enumeration, you can either lock the collection during the entire enumeration or catch the exceptions resulting from changes made by other threads.
-
- The following code example shows how to lock the collection using the <xref:System.Collections.ICollection.SyncRoot%2A> property during the entire enumeration.
-
- :::code language="cpp" source="~/snippets/cpp/VS_Snippets_CLR_System/system.collections.icollection/cpp/remarks.cpp" id="Snippet1":::
- :::code language="csharp" source="~/snippets/csharp/System.Collections/ICollection/IsSynchronized/remarks.cs" id="Snippet1":::
- :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_CLR_System/system.collections.icollection/vb/remarks.vb" id="Snippet1":::
 
           ]]></format>
         </remarks>
@@ -1626,16 +1496,7 @@ This member is an explicit interface member implementation. It can be used only 
         <param name="index">The zero-based index of the parameter to retrieve.</param>
         <summary>Gets the <see cref="T:System.Data.SqlClient.SqlParameter" /> at the specified index.</summary>
         <value>The <see cref="T:System.Data.SqlClient.SqlParameter" /> at the specified index.</value>
-        <remarks>
-          <format type="text/markdown"><![CDATA[
-
-## Examples
- The following example demonstrates creating <xref:System.Data.SqlClient.SqlParameter> objects to supply an input parameter to a stored procedure that returns results in an output parameter. The code iterates through the items in the <xref:System.Data.SqlClient.SqlParameterCollection> and displays some parameter properties in the console window. This example assumes a valid connection string to the **AdventureWorks** sample database on an instance of SQL Server.
-
- :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlParameterCollection.Parent Example/CS/source.cs" id="Snippet1":::
-
- ]]></format>
-        </remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.IndexOutOfRangeException">The specified index does not exist.</exception>
         <related type="Article" href="/dotnet/framework/data/adonet/commands-and-parameters">Commands and Parameters (ADO.NET)</related>
         <related type="Article" href="/dotnet/framework/data/adonet/dataadapter-parameters">DataAdapter Parameters (ADO.NET)</related>
@@ -1744,17 +1605,7 @@ This member is an explicit interface member implementation. It can be used only 
       <Docs>
         <param name="value">A <see cref="T:System.Data.SqlClient.SqlParameter" /> object to remove from the collection.</param>
         <summary>Removes the specified <see cref="T:System.Data.SqlClient.SqlParameter" /> from the collection.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[
-
-## Examples
- The following example searches for a <xref:System.Data.SqlClient.SqlParameter> object in a <xref:System.Data.SqlClient.SqlParameterCollection> collection. If the parameter exists, the example removes it. This example assumes that a <xref:System.Data.SqlClient.SqlParameterCollection> collection has already been created by a <xref:System.Data.SqlClient.SqlCommand>.
-
- :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlParameterCollection.Remove Example/CS/source.cs" id="Snippet1":::
- :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlParameterCollection.Remove Example/VB/source.vb" id="Snippet1":::
-
- ]]></format>
-        </remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.InvalidCastException">The parameter is not a <see cref="T:System.Data.SqlClient.SqlParameter" />.</exception>
         <exception cref="T:System.SystemException">The parameter does not exist in the collection.</exception>
         <related type="Article" href="/dotnet/framework/data/adonet/commands-and-parameters">Commands and Parameters (ADO.NET)</related>
@@ -1812,13 +1663,6 @@ This member is an explicit interface member implementation. It can be used only 
 This member is an explicit interface member implementation. It can be used only when the <xref:System.Data.SqlClient.SqlParameterCollection> instance is cast to an <xref:System.Collections.IList> interface.
 
  In collections of contiguous elements, such as lists, the elements that follow the removed element move up to occupy the vacated spot. If the collection is indexed, the indexes of the elements that are moved are also updated. This behavior does not apply to collections where elements are conceptually grouped into buckets, such as a hash table. If `value` is not found in the <xref:System.Collections.IList>, the <xref:System.Collections.IList> remains unchanged and no exception is thrown.
-
- ## Examples
-
- The following example demonstrates the implementation of the <xref:System.Collections.IList> interface to create a simple, fixed-size list. This code is part of a larger example for the <xref:System.Collections.IList> interface.
-
- :::code language="csharp" source="~/snippets/csharp/System.Collections/IList/Overview/Program.cs" id="Snippet02":::
- :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.IList_Implementation/vb/Program.vb" id="Snippet02":::
 
           ]]></format>
         </remarks>
@@ -1887,13 +1731,6 @@ This member is an explicit interface member implementation. It can be used only 
 This member is an explicit interface member implementation. It can be used only when the <xref:System.Data.SqlClient.SqlParameterCollection> instance is cast to an <xref:System.Collections.IList> interface.
 
  In collections of contiguous elements, such as lists, the elements that follow the removed element move up to occupy the vacated spot. If the collection is indexed, the indexes of the elements that are moved are also updated. This behavior does not apply to collections where elements are conceptually grouped into buckets, such as a hash table.
-
- ## Examples
-
- The following example demonstrates the implementation of the <xref:System.Collections.IList> interface to create a simple, fixed-size list. This code is part of a larger example for the <xref:System.Collections.IList> interface.
-
- :::code language="csharp" source="~/snippets/csharp/System.Collections/IList/Overview/Program.cs" id="Snippet02":::
- :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.IList_Implementation/vb/Program.vb" id="Snippet02":::
 
           ]]></format>
         </remarks>
@@ -2064,21 +1901,7 @@ This member is an explicit interface member implementation. It can be used only 
  For collections whose underlying store is not publicly available, the expected implementation is to return the current instance. Note that the pointer to the current instance might not be sufficient for collections that wrap other collections; those should return the underlying collection's `SyncRoot` property.
  Most collection classes in the <xref:System.Collections?displayProperty=nameWithType> namespace also implement a `Synchronized` method, which provides a synchronized wrapper around the underlying collection. However, derived classes can provide their own synchronized version of the collection using the <xref:System.Collections.ICollection.SyncRoot%2A> property. The synchronizing code must perform operations on the <xref:System.Collections.ICollection.SyncRoot%2A> property of the collection, not directly on the collection. This ensures proper operation of collections that are derived from other objects. Specifically, it maintains proper synchronization with other threads that might be simultaneously modifying the collection instance.
 
- In the absence of a `Synchronized` method on a collection, the expected usage for <xref:System.Collections.ICollection.SyncRoot%2A> looks as follows:
-
- :::code language="cpp" source="~/snippets/cpp/VS_Snippets_CLR_System/system.collections.icollection/cpp/remarks.cpp" id="Snippet2":::
- :::code language="csharp" source="~/snippets/csharp/System.Collections/ICollection/IsSynchronized/remarks.cs" id="Snippet2":::
- :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_CLR_System/system.collections.icollection/vb/remarks.vb" id="Snippet2":::
-
  Enumerating through a collection is intrinsically not a thread-safe procedure. Even when a collection is synchronized, other threads can still modify the collection, which causes the enumerator to throw an exception. To guarantee thread safety during enumeration, you can either lock the collection during the entire enumeration or catch the exceptions resulting from changes made by other threads.
-
- ## Examples
-
- The following code example shows how to lock the collection using the <xref:System.Collections.ICollection.SyncRoot%2A> property during the entire enumeration.
-
- :::code language="cpp" source="~/snippets/cpp/VS_Snippets_CLR_System/system.collections.icollection/cpp/remarks.cpp" id="Snippet1":::
- :::code language="csharp" source="~/snippets/csharp/System.Collections/ICollection/IsSynchronized/remarks.cs" id="Snippet1":::
- :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_CLR_System/system.collections.icollection/vb/remarks.vb" id="Snippet1":::
 
           ]]></format>
         </remarks>
