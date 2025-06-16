@@ -88,14 +88,6 @@
 > [!NOTE]
 >  For optimal performance, <xref:System.Data.SqlClient.SqlDataReader> avoids creating unnecessary objects or making unnecessary copies of data. Therefore, multiple calls to methods such as <xref:System.Data.SqlClient.SqlDataReader.GetValue%2A> return a reference to the same object. Use caution if you are modifying the underlying value of the objects returned by methods such as <xref:System.Data.SqlClient.SqlDataReader.GetValue%2A>.
 
-
-
-## Examples
- The following example creates a <xref:System.Data.SqlClient.SqlConnection>, a <xref:System.Data.SqlClient.SqlCommand>, and a <xref:System.Data.SqlClient.SqlDataReader>. The example reads through the data, writing it out to the console window. The code then closes the <xref:System.Data.SqlClient.SqlDataReader>. The <xref:System.Data.SqlClient.SqlConnection> is closed automatically at the end of the `using` code block.
-
- :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlDataReader.Read Example/CS/source.cs" id="Snippet1":::
- :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlDataReader.Read Example/VB/source.vb" id="Snippet1":::
-
  ]]></format>
     </remarks>
     <related type="Article" href="/dotnet/framework/data/adonet/dataadapters-and-datareaders">DataAdapters and DataReaders</related>
@@ -145,14 +137,6 @@
 
 > [!CAUTION]
 >  Do not call `Close` or `Dispose` on a Connection, a DataReader, or any other managed object in the `Finalize` method of your class. In a finalizer, you should only release unmanaged resources that your class owns directly. If your class does not own any unmanaged resources, do not include a `Finalize` method in your class definition. For more information, see [Garbage Collection](/dotnet/standard/garbage-collection/).
-
-
-
-## Examples
- The following example creates a <xref:System.Data.SqlClient.SqlConnection>, a `SqlCommand`, and a <xref:System.Data.SqlClient.SqlDataReader>. The example reads through the data, writing it out to the console window. The code then closes the <xref:System.Data.SqlClient.SqlDataReader>. The <xref:System.Data.SqlClient.SqlConnection> is closed automatically at the end of the `using` code block.
-
- :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlDataReader.Close Example/CS/source.cs" id="Snippet1":::
- :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlDataReader.Close Example/VB/source.vb" id="Snippet1":::
 
  ]]></format>
         </remarks>
@@ -1586,14 +1570,6 @@ Boolean, Byte, Char, DateTime, DateTimeOffset, Decimal, Double, Float, Guid, Int
  `GetOrdinal` is kana-width insensitive.
 
  Because ordinal-based lookups are more efficient than named lookups, it is inefficient to call `GetOrdinal` within a loop. Save time by calling `GetOrdinal` once and assigning the results to an integer variable for use within the loop.
-
-
-
-## Examples
- The following example demonstrates how to use the <xref:System.Data.SqlClient.SqlDataReader.GetOrdinal%2A> method.
-
- :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlDataReader.GetOrdinal/CS/source.cs" id="Snippet1":::
- :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlDataReader.GetOrdinal/VB/source.vb" id="Snippet1":::
 
  ]]></format>
         </remarks>
@@ -3112,14 +3088,6 @@ Boolean, Byte, Char, DateTime, DateTimeOffset, Decimal, Double, Float, Guid, Int
 
  This method returns <xref:System.DBNull> for null database columns.
 
-
-
-## Examples
- The following example demonstrates using a correctly sized  array  to read all values from the current row in the supplied <xref:System.Data.SqlClient.SqlDataReader>. In addition, the sample demonstrates using a fixed-sized array that could be either smaller or larger than the number of available columns.
-
- :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetValueObject/CS/source.cs" id="Snippet2":::
- :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataTableReader.GetValueObject/VB/source.vb" id="Snippet2":::
-
  ]]></format>
         </remarks>
         <related type="Article" href="/dotnet/framework/data/adonet/sql/sql-server-data-types">SQL Server Data Types and ADO.NET</related>
@@ -3369,9 +3337,6 @@ Boolean, Byte, Char, DateTime, DateTimeOffset, Decimal, Double, Float, Guid, Int
 
 ## Remarks
  Call this method to check for null column values before calling the typed get methods (for example, <xref:System.Data.SqlClient.SqlDataReader.GetByte%2A>, <xref:System.Data.SqlClient.SqlDataReader.GetChar%2A>, and so on) to avoid raising an error.
-
- :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/sqldatareader_isdbnull/cs/source.cs" id="Snippet1":::
- :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/sqldatareader_isdbnull/vb/source.vb" id="Snippet1":::
 
  ]]></format>
         </remarks>
@@ -3708,14 +3673,6 @@ Boolean, Byte, Char, DateTime, DateTimeOffset, Decimal, Double, Float, Guid, Int
  The default position of the <xref:System.Data.SqlClient.SqlDataReader> is before the first record. Therefore, you must call <xref:System.Data.SqlClient.SqlDataReader.Read%2A> to begin accessing any data.
 
  Only one `SqlDataReader` per associated <xref:System.Data.SqlClient.SqlConnection> may be open at a time, and any attempt to open another will fail until the first one is closed. Similarly, while the `SqlDataReader` is being used, the associated `SqlConnection` is busy serving it until you call <xref:System.Data.SqlClient.SqlDataReader.Close%2A>.
-
-
-
-## Examples
- The following example creates a <xref:System.Data.SqlClient.SqlConnection>, a <xref:System.Data.SqlClient.SqlCommand>, and a <xref:System.Data.SqlClient.SqlDataReader>. The example reads through the data, writing it out to the console window. The code then closes the <xref:System.Data.SqlClient.SqlDataReader>. The <xref:System.Data.SqlClient.SqlConnection> is closed automatically at the end of the `using` code block.
-
- :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlDataReader.Read Example/CS/source.cs" id="Snippet1":::
- :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlDataReader.Read Example/VB/source.vb" id="Snippet1":::
 
  ]]></format>
         </remarks>
