@@ -2698,40 +2698,6 @@ The following example reads an XML file and displays each node.
 
  Use this method after calling <xref:System.Xml.XmlValidatingReader.MoveToAttribute%2A> to read through the text or entity reference nodes that make up the attribute value. The <xref:System.Xml.XmlReader.Depth%2A> of the attribute value nodes is one plus the depth of the attribute node. The `Depth` increments and decrements by one when you step into and out of general entity references.
 
- For example, suppose you have the following XML: `<test name="a &b; c"/>`
-
- where the entity `b` is defined in the document type definition (DTD) as follows: `<!ENTITY b "123">`
-
- If <xref:System.Xml.XmlValidatingReader.EntityHandling%2A> is set to `ExpandCharEntities`, the following C# code returns the attribute value as two text nodes and one entity reference node:
-
-```csharp
-reader.MoveToAttribute("name");
-  while (reader.ReadAttributeValue())
-  {
-  if (reader.NodeType == XmlNodeType.Text)
-  {
-  // at this point reader.Value == "a " or " c"
-  }
-  else if (reader.NodeType == XmlNodeType.EntityReference)
-  {
-  // at this point reader.Name == "b"
-  reader.ResolveEntity();
-  while (reader.ReadAttributeValue() &&
-  reader.NodeType != XmlNodeType.EndEntity)
-  {
-  // reader.Value == "123"
-  }
-  }
-    }
-```
-
-## Examples
-
-The following example reads an attribute with text and entity reference nodes.
-
- [!code-csharp[Classic WebData XmlValidatingReader.MoveToAttribute Example#1](~/snippets/csharp/System.Xml/XmlValidatingReader/MoveToAttribute/source.cs#1)]
- [!code-vb[Classic WebData XmlValidatingReader.MoveToAttribute Example#1](~/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlValidatingReader.MoveToAttribute Example/VB/source.vb#1)]
-
  ]]></format>
         </remarks>
         <altmember cref="T:System.Xml.XmlReader" />
@@ -3516,22 +3482,7 @@ The following example validates three XML files using schemas stored in the XmlS
 > [!NOTE]
 > The <xref:System.Xml.XmlValidatingReader> class is obsolete in .NET Framework 2.0. You can create a validating <xref:System.Xml.XmlReader> instance by using the <xref:System.Xml.XmlReaderSettings> class and the <xref:System.Xml.XmlReader.Create%2A> method. For more information, see the Remarks section of the <xref:System.Xml.XmlReader> reference page.
 
- The user needs to test for the returned type. For example,
-
-```csharp
-object obj = vreader.SchemaType;
- if (obj is XmlSchemaType)
- {
-   XmlSchemaType st = (XmlSchemaType)obj;
-   // use XmlSchemaType object
- }
- if (obj is XmlSchemaDatatype)
- {
-   XmlSchemaDatatype sd = (XmlSchemaDatatype)obj;
-   Type vt = sd.ValueType;
-   // use XmlSchemaDatatype object
-       }
-```
+ The user needs to test for the returned type.
 
  If XML Schema validation is being performed, the `XmlSchemaType` or `XmlSchemaDatatype` corresponds to the current element being read. If document type definition (DTD validation) is being performed, this property returns `null`.
 
@@ -3546,23 +3497,6 @@ object obj = vreader.SchemaType;
 
 > [!CAUTION]
 > After calling <xref:System.Xml.XmlValidatingReader.Close%2A>, SchemaType will return Null.
-
-## Examples
-
-The following example displays the type information for each of the elements in the XML document.
-
- [!code-csharp[XmlValidatingReader.SchemaType#1](~/snippets/csharp/System.Xml/XmlValidatingReader/ReadTypedValue/schematype.cs#1)]
- [!code-vb[XmlValidatingReader.SchemaType#1](~/snippets/visualbasic/VS_Snippets_Data/XmlValidatingReader.SchemaType/VB/schematype.vb#1)]
-
- The example uses the following input files.
-
- `booksSchema.xml`
-
- [!code-xml[XmlValidatingReader.SchemaType#2](~/snippets/xml/VS_Snippets_Data/XmlValidatingReader.SchemaType/XML/booksschema.xml#2)]
-
- `books.xsd`
-
- [!code-xml[XmlValidatingReader.SchemaType#3](~/snippets/xml/VS_Snippets_Data/XmlValidatingReader.SchemaType/XML/books.xsd#3)]
 
  ]]></format>
         </remarks>
