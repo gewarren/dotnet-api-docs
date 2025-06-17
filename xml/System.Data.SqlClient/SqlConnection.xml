@@ -80,7 +80,22 @@
 > [!NOTE]
 > Login and logout events will not be raised on the server when a connection is fetched from or returned to the connection pool, because the connection is not actually closed when it is returned to the connection pool. For more information, see [SQL Server Connection Pooling (ADO.NET)](/dotnet/framework/data/adonet/sql-server-connection-pooling).
 
- To ensure that connections are always closed, open the connection inside of a `using` block to ensure that the connection is automatically closed when the code exits the block.
+ To ensure that connections are always closed, open the connection inside of a `using` block, as shown in the following code fragment. Doing so ensures that the connection is automatically closed when the code exits the block.
+
+```vb
+Using connection As New SqlConnection(connectionString)
+    connection.Open()
+    ' Do work here; connection closed on following line.
+End Using
+```
+
+```csharp
+using (SqlConnection connection = new SqlConnection(connectionString))
+    {
+        connection.Open();
+        // Do work here; connection closed on following line.
+    }
+```
 
 > [!NOTE]
 > To deploy high-performance applications, you must use connection pooling. When you use the .NET Framework Data Provider for SQL Server, you do not have to enable connection pooling because the provider manages this automatically, although you can modify some settings. For more information, see [SQL Server Connection Pooling (ADO.NET)](/dotnet/framework/data/adonet/sql-server-connection-pooling).
@@ -93,6 +108,14 @@
 
 > [!CAUTION]
 > You can force TCP instead of shared memory. You can do that by prefixing tcp: to the server name in the connection string or you can use localhost.
+
+
+
+## Examples
+ The following example creates a <xref:System.Data.SqlClient.SqlCommand> and a <xref:System.Data.SqlClient.SqlConnection>. The <xref:System.Data.SqlClient.SqlConnection> is opened and set as the <xref:System.Data.SqlClient.SqlCommand.Connection%2A> for the <xref:System.Data.SqlClient.SqlCommand>. The example then calls <xref:System.Data.SqlClient.SqlCommand.ExecuteNonQuery%2A>. To accomplish this, the <xref:System.Data.SqlClient.SqlCommand.ExecuteNonQuery%2A> is passed a SqlConnection and a query string that is a Transact-SQL INSERT statement. The connection is closed automatically when the code exits the using block.
+
+ :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlCommand.ExecuteNonQuery Example/CS/source.cs" id="Snippet1":::
+ :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlCommand.ExecuteNonQuery Example/VB/source.vb" id="Snippet1":::
 
  ]]></format>
     </remarks>
@@ -152,6 +175,14 @@
 
  You can change the value for these properties only by using the <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> property. The <xref:System.Data.SqlClient.SqlConnectionStringBuilder> class provides functionality for creating and managing the contents of connection strings.
 
+
+
+## Examples
+ The following example creates and opens a <xref:System.Data.SqlClient.SqlConnection>.
+
+ :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlConnection.SqlConnection Example/CS/source.cs" id="Snippet1":::
+ :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlConnection.SqlConnection Example/VB/source.vb" id="Snippet1":::
+
  ]]></format>
         </remarks>
         <related type="Article" href="/dotnet/framework/data/adonet/connecting-to-a-data-source">Connecting to a Data Source in ADO.NET</related>
@@ -203,6 +234,14 @@
 |<xref:System.Data.SqlClient.SqlConnection.DataSource%2A>|empty string ("")|
 
  You can change the value for these properties only by using the <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> property. The <xref:System.Data.SqlClient.SqlConnection> class provides functionality for creating and managing the contents of connection strings.
+
+
+
+## Examples
+ The following example creates and opens a <xref:System.Data.SqlClient.SqlConnection>.
+
+ :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlConnection.SqlConnection1 Example/CS/source.cs" id="Snippet1":::
+ :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlConnection.SqlConnection1 Example/VB/source.vb" id="Snippet1":::
 
  ]]></format>
         </remarks>
@@ -373,6 +412,14 @@
 
  For more information on SQL Server transactions, see [Transactions (Transact-SQL)](/sql/t-sql/language-elements/transactions-transact-sql).
 
+
+
+## Examples
+ The following example creates a <xref:System.Data.SqlClient.SqlConnection> and a <xref:System.Data.SqlClient.SqlTransaction>. It also demonstrates how to use the <xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A>, a <xref:System.Data.SqlClient.SqlTransaction.Commit%2A>, and <xref:System.Data.SqlClient.SqlTransaction.Rollback%2A> methods.
+
+ :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlConnection.BeginTransaction Example/CS/source.cs" id="Snippet1":::
+ :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlConnection.BeginTransaction Example/VB/source.vb" id="Snippet1":::
+
  ]]></format>
         </remarks>
         <exception cref="T:System.Data.SqlClient.SqlException">Parallel transactions are not allowed when using Multiple Active Result Sets (MARS).</exception>
@@ -433,6 +480,12 @@
 
 > [!CAUTION]
 > When your query returns a large amount of data and calls `BeginTransaction`, a <xref:System.Data.SqlClient.SqlException> is thrown because SQL Server does not allow parallel transactions when using MARS. To avoid this problem, always associate a transaction with the command, the connection, or both before any readers are open.
+
+## Examples
+ The following example creates a <xref:System.Data.SqlClient.SqlConnection> and a <xref:System.Data.SqlClient.SqlTransaction>. It also demonstrates how to use the <xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A>, a <xref:System.Data.SqlClient.SqlTransaction.Commit%2A>, and <xref:System.Data.SqlClient.SqlTransaction.Rollback%2A> methods.
+
+ :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlConnection.BeginTransaction1 Example/CS/source.cs" id="Snippet1":::
+ :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlConnection.BeginTransaction1 Example/VB/source.vb" id="Snippet1":::
 
  ]]></format>
         </remarks>
@@ -495,6 +548,12 @@
 
 > [!CAUTION]
 > When your query returns a large amount of data and calls `BeginTransaction`, a <xref:System.Data.SqlClient.SqlException> is thrown because SQL Server does not allow parallel transactions when using MARS. To avoid this problem, always associate a transaction with the command, the connection, or both before any readers are open.
+
+## Examples
+ The following example creates a <xref:System.Data.SqlClient.SqlConnection> and a <xref:System.Data.SqlClient.SqlTransaction>. It also demonstrates how to use the <xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A>, a <xref:System.Data.SqlClient.SqlTransaction.Commit%2A>, and <xref:System.Data.SqlClient.SqlTransaction.Rollback%2A> methods.
+
+ :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlConnection.BeginTransaction2 Example/CS/source.cs" id="Snippet1":::
+ :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlConnection.BeginTransaction2 Example/VB/source.vb" id="Snippet1":::
 
  ]]></format>
         </remarks>
@@ -561,6 +620,12 @@
 > [!CAUTION]
 > When your query returns a large amount of data and calls `BeginTransaction`, a <xref:System.Data.SqlClient.SqlException> is thrown because SQL Server does not allow parallel transactions when using MARS. To avoid this problem, always associate a transaction with the command, the connection, or both before any readers are open.
 
+## Examples
+ The following example creates a <xref:System.Data.SqlClient.SqlConnection> and a <xref:System.Data.SqlClient.SqlTransaction>. It also demonstrates how to use the <xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A>, a <xref:System.Data.SqlClient.SqlTransaction.Commit%2A>, and <xref:System.Data.SqlClient.SqlTransaction.Rollback%2A> methods.
+
+ :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlConnection.BeginTransaction3 Example/CS/source.cs" id="Snippet1":::
+ :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlConnection.BeginTransaction3 Example/VB/source.vb" id="Snippet1":::
+
  ]]></format>
         </remarks>
         <exception cref="T:System.Data.SqlClient.SqlException">Parallel transactions are not allowed when using Multiple Active Result Sets (MARS).</exception>
@@ -617,6 +682,12 @@
 
 ## Remarks
  The value supplied in the `database` parameter must be a valid database name. The `database` parameter cannot contain a null value, an empty string, or a string with only blank characters.
+
+## Examples
+ The following example creates a <xref:System.Data.SqlClient.SqlConnection> and displays some of its read-only properties.
+
+ :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlConnection.Database Example/CS/source.cs" id="Snippet1":::
+ :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlConnection.Database Example/VB/source.vb" id="Snippet1":::
 
  ]]></format>
         </remarks>
@@ -942,6 +1013,12 @@ The connection string contains <see langword="Context Connection=true" />.
 > [!CAUTION]
 > Do not call `Close` or `Dispose` on a Connection, a DataReader, or any other managed object in the `Finalize` method of your class. In a finalizer, you should only release unmanaged resources that your class owns directly. If your class does not own any unmanaged resources, do not include a `Finalize` method in your class definition. For more information, see [Garbage Collection](/dotnet/standard/garbage-collection/).
 
+## Examples
+ The following example creates a <xref:System.Data.SqlClient.SqlConnection>, opens it, displays some of its properties. The connection is automatically closed at the end of the `using` block.
+
+ :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlConnection.Open Example/CS/source.cs" id="Snippet1":::
+ :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlConnection.Open Example/VB/source.vb" id="Snippet1":::
+
  ]]></format>
         </remarks>
         <exception cref="T:System.Data.SqlClient.SqlException">The connection-level error that occurred while opening the connection.</exception>
@@ -1127,7 +1204,11 @@ The connection string contains <see langword="Context Connection=true" />.
 
 The <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> is similar to an OLE DB connection string, but is not identical. Unlike OLE DB or ADO, the connection string that is returned is the same as the user-set <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>, minus security information if the Persist Security Info value is set to `false` (default). The .NET Framework Data Provider for SQL Server does not persist or return the password in a connection string unless you set Persist Security Info to `true`.
 
- You can use the <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> property to connect to a database.
+ You can use the <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> property to connect to a database. The following example illustrates a typical connection string.
+
+```txt
+"Persist Security Info=False;Integrated Security=true;Initial Catalog=Northwind;server=(local)"
+```
 
  Use the new <xref:System.Data.SqlClient.SqlConnectionStringBuilder> to construct valid connection strings at run time. For more information, see [Connection String Builders](/dotnet/framework/data/adonet/connection-string-builders).
 
@@ -1208,6 +1289,12 @@ The <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> is similar to
 > [!CAUTION]
 > Use caution when constructing a connection string based on user input (for example when retrieving user ID and password information from a dialog box, and appending it to the connection string). Make sure that a user cannot embed additional connection string parameters in these values (for example, entering a password as "validpassword;database=somedb" in an attempt to attach to a different database). If you need to construct connection strings based on user input, use <xref:System.Data.SqlClient.SqlConnectionStringBuilder>, which validates the connection string and helps to eliminate this problem. For more information, see [Connection String Builders](/dotnet/framework/data/adonet/connection-string-builders).
 
+## Examples
+ The following example creates a <xref:System.Data.SqlClient.SqlConnection> and sets the <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> property before opening the connection.
+
+ :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlConnection.ConnectionString Example/CS/source.cs" id="Snippet1":::
+ :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlConnection.ConnectionString Example/VB/source.vb" id="Snippet1":::
+
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">An invalid connection string argument has been supplied, or a required connection string argument has not been supplied.</exception>
@@ -1270,6 +1357,14 @@ The <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> is similar to
 ## Remarks
  You can set the amount of time a connection waits to time out by using the `Connect Timeout` or `Connection Timeout` keywords in the connection string. A value of 0 indicates no limit, and should be avoided in a <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> because an attempt to connect waits indefinitely.
 
+
+
+## Examples
+ The following example creates a <xref:System.Data.SqlClient.SqlConnection> and sets the `Connection Timeout` to 30 seconds in the connection string. The code opens the connection and displays the <xref:System.Data.SqlClient.SqlConnection.ConnectionTimeout%2A> property in the console window.
+
+ :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlConnection.ConnectionTimeout Example/CS/source.cs" id="Snippet1":::
+ :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlConnection.ConnectionTimeout Example/VB/source.vb" id="Snippet1":::
+
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">The value set is less than 0.</exception>
@@ -1311,7 +1406,15 @@ The <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> is similar to
       <Docs>
         <summary>Creates and returns a <see cref="T:System.Data.SqlClient.SqlCommand" /> object associated with the <see cref="T:System.Data.SqlClient.SqlConnection" />.</summary>
         <returns>A <see cref="T:System.Data.SqlClient.SqlCommand" /> object.</returns>
-        <remarks>To be added.</remarks>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Examples
+ :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/sqlconnection_createcommand/cs/source.cs" id="Snippet1":::
+ :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/sqlconnection_createcommand/vb/source.vb" id="Snippet1":::
+
+ ]]></format>
+        </remarks>
         <related type="Article" href="/dotnet/framework/data/adonet/ado-net-overview">ADO.NET Overview</related>
       </Docs>
     </Member>
@@ -1457,6 +1560,14 @@ The <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> is similar to
 ## Remarks
  The <xref:System.Data.SqlClient.SqlConnection.Database%2A> property updates dynamically. If you change the current database using a Transact-SQL statement or the <xref:System.Data.SqlClient.SqlConnection.ChangeDatabase%2A> method, an informational message is sent and the property is updated automatically.
 
+
+
+## Examples
+ The following example creates a <xref:System.Data.SqlClient.SqlConnection> and displays some of its read-only properties.
+
+ :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlConnection.Database Example/CS/source.cs" id="Snippet1":::
+ :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlConnection.Database Example/VB/source.vb" id="Snippet1":::
+
  ]]></format>
         </remarks>
         <related type="Article" href="/dotnet/framework/data/adonet/connecting-to-a-data-source">Connecting to a Data Source in ADO.NET</related>
@@ -1518,6 +1629,14 @@ The <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> is similar to
 
 > [!NOTE]
 > The <xref:System.Data.SqlClient.SqlConnection.DataSource%2A> property returns `null` if the connection string for the <xref:System.Data.SqlClient.SqlConnection> is "context connection=true".
+
+
+
+## Examples
+ The following example creates a <xref:System.Data.SqlClient.SqlConnection> and displays some of its read-only properties.
+
+ :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlConnection.DataSource Example/CS/source.cs" id="Snippet1":::
+ :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlConnection.DataSource Example/VB/source.vb" id="Snippet1":::
 
  ]]></format>
         </remarks>
@@ -1796,7 +1915,238 @@ The <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> is similar to
 
 ## Remarks
 
-You might need the schema information of the database, tables, or columns.
+You might need the schema information of the database, tables or columns. This sample:
+
+- Uses GetSchema to get schema information.
+- Use schema restrictions to get the specified information.
+- Gets schema information of the database, tables, and some columns.
+
+Before you run the sample, you need to create the sample database, using the following Transact-SQL:
+
+```sql
+USE [master]
+GO
+
+CREATE DATABASE [MySchool]
+
+GO
+
+USE [MySchool]
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Course]([CourseID] [nvarchar](10) NOT NULL,
+[Year] [smallint] NOT NULL,
+[Title] [nvarchar](100) NOT NULL,
+[Credits] [int] NOT NULL,
+[DepartmentID] [int] NOT NULL,
+ CONSTRAINT [PK_Course] PRIMARY KEY CLUSTERED
+(
+[CourseID] ASC,
+[Year] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]) ON [PRIMARY]
+
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Department]([DepartmentID] [int] IDENTITY(1,1) NOT NULL,
+[Name] [nvarchar](50) NOT NULL,
+[Budget] [money] NOT NULL,
+[StartDate] [datetime] NOT NULL,
+[Administrator] [int] NULL,
+ CONSTRAINT [PK_Department] PRIMARY KEY CLUSTERED
+(
+[DepartmentID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]) ON [PRIMARY]
+
+GO
+
+INSERT [dbo].[Course] ([CourseID], [Year], [Title], [Credits], [DepartmentID]) VALUES (N'C1045', 2012, N'Calculus', 4, 7)
+INSERT [dbo].[Course] ([CourseID], [Year], [Title], [Credits], [DepartmentID]) VALUES (N'C1061', 2012, N'Physics', 4, 1)
+INSERT [dbo].[Course] ([CourseID], [Year], [Title], [Credits], [DepartmentID]) VALUES (N'C2021', 2012, N'Composition', 3, 2)
+INSERT [dbo].[Course] ([CourseID], [Year], [Title], [Credits], [DepartmentID]) VALUES (N'C2042', 2012, N'Literature', 4, 2)
+
+SET IDENTITY_INSERT [dbo].[Department] ON
+
+INSERT [dbo].[Department] ([DepartmentID], [Name], [Budget], [StartDate], [Administrator]) VALUES (1, N'Engineering', 350000.0000, CAST(0x0000999C00000000 AS DateTime), 2)
+INSERT [dbo].[Department] ([DepartmentID], [Name], [Budget], [StartDate], [Administrator]) VALUES (2, N'English', 120000.0000, CAST(0x0000999C00000000 AS DateTime), 6)
+INSERT [dbo].[Department] ([DepartmentID], [Name], [Budget], [StartDate], [Administrator]) VALUES (4, N'Economics', 200000.0000, CAST(0x0000999C00000000 AS DateTime), 4)
+INSERT [dbo].[Department] ([DepartmentID], [Name], [Budget], [StartDate], [Administrator]) VALUES (7, N'Mathematics', 250024.0000, CAST(0x0000999C00000000 AS DateTime), 3)
+SET IDENTITY_INSERT [dbo].[Department] OFF
+
+ALTER TABLE [dbo].[Course]  WITH CHECK ADD  CONSTRAINT [FK_Course_Department] FOREIGN KEY([DepartmentID])
+REFERENCES [dbo].[Department] ([DepartmentID])
+GO
+ALTER TABLE [dbo].[Course] CHECK CONSTRAINT [FK_Course_Department]
+GO
+```
+
+```csharp
+using System;
+using System.Data;
+using System.Data.SqlClient;
+
+class Program {
+   static void Main(string[] args) {
+
+      using (SqlConnection conn = new SqlConnection("Data Source=(local);Initial Catalog=MySchool;Integrated Security=True;Asynchronous Processing=true;")) {
+         conn.Open();
+
+         // Get the Meta Data for Supported Schema Collections
+         DataTable metaDataTable = conn.GetSchema("MetaDataCollections");
+
+         Console.WriteLine("Meta Data for Supported Schema Collections:");
+         ShowDataTable(metaDataTable, 25);
+         Console.WriteLine();
+
+         // Get the schema information of Databases in your instance
+         DataTable databasesSchemaTable = conn.GetSchema("Databases");
+
+         Console.WriteLine("Schema Information of Databases:");
+         ShowDataTable(databasesSchemaTable, 25);
+         Console.WriteLine();
+
+         // First, get schema information of all the tables in current database;
+         DataTable allTablesSchemaTable = conn.GetSchema("Tables");
+
+         Console.WriteLine("Schema Information of All Tables:");
+         ShowDataTable(allTablesSchemaTable, 20);
+         Console.WriteLine();
+
+         // You can specify the Catalog, Schema, Table Name, Table Type to get
+         // the specified table(s).
+         // You can use four restrictions for Table, so you should create a 4 members array.
+         String[] tableRestrictions = new String[4];
+
+         // For the array, 0-member represents Catalog; 1-member represents Schema;
+         // 2-member represents Table Name; 3-member represents Table Type.
+         // Now we specify the Table Name of the table what we want to get schema information.
+         tableRestrictions[2] = "Course";
+
+         DataTable courseTableSchemaTable = conn.GetSchema("Tables", tableRestrictions);
+
+         Console.WriteLine("Schema Information of Course Tables:");
+         ShowDataTable(courseTableSchemaTable, 20);
+         Console.WriteLine();
+
+         // First, get schema information of all the columns in current database.
+         DataTable allColumnsSchemaTable = conn.GetSchema("Columns");
+
+         Console.WriteLine("Schema Information of All Columns:");
+         ShowColumns(allColumnsSchemaTable);
+         Console.WriteLine();
+
+         // You can specify the Catalog, Schema, Table Name, Column Name to get the specified column(s).
+         // You can use four restrictions for Column, so you should create a 4 members array.
+         String[] columnRestrictions = new String[4];
+
+         // For the array, 0-member represents Catalog; 1-member represents Schema;
+         // 2-member represents Table Name; 3-member represents Column Name.
+         // Now we specify the Table_Name and Column_Name of the columns what we want to get schema information.
+         columnRestrictions[2] = "Course";
+         columnRestrictions[3] = "DepartmentID";
+
+         DataTable departmentIDSchemaTable = conn.GetSchema("Columns", columnRestrictions);
+
+         Console.WriteLine("Schema Information of DepartmentID Column in Course Table:");
+         ShowColumns(departmentIDSchemaTable);
+         Console.WriteLine();
+
+         // First, get schema information of all the IndexColumns in current database
+         DataTable allIndexColumnsSchemaTable = conn.GetSchema("IndexColumns");
+
+         Console.WriteLine("Schema Information of All IndexColumns:");
+         ShowIndexColumns(allIndexColumnsSchemaTable);
+         Console.WriteLine();
+
+         // You can specify the Catalog, Schema, Table Name, Constraint Name, Column Name to
+         // get the specified column(s).
+         // You can use five restrictions for Column, so you should create a 5 members array.
+         String[] indexColumnsRestrictions = new String[5];
+
+         // For the array, 0-member represents Catalog; 1-member represents Schema;
+         // 2-member represents Table Name; 3-member represents Constraint Name;4-member represents Column Name.
+         // Now we specify the Table_Name and Column_Name of the columns what we want to get schema information.
+         indexColumnsRestrictions[2] = "Course";
+         indexColumnsRestrictions[4] = "CourseID";
+
+         DataTable courseIdIndexSchemaTable = conn.GetSchema("IndexColumns", indexColumnsRestrictions);
+
+         Console.WriteLine("Index Schema Information of CourseID Column in Course Table:");
+         ShowIndexColumns(courseIdIndexSchemaTable);
+         Console.WriteLine();
+      }
+
+      Console.WriteLine("Please press any key to exit...");
+      Console.ReadKey();
+   }
+
+   private static void ShowDataTable(DataTable table, Int32 length) {
+      foreach (DataColumn col in table.Columns) {
+         Console.Write("{0,-" + length + "}", col.ColumnName);
+      }
+      Console.WriteLine();
+
+      foreach (DataRow row in table.Rows) {
+         foreach (DataColumn col in table.Columns) {
+            if (col.DataType.Equals(typeof(DateTime)))
+               Console.Write("{0,-" + length + ":d}", row[col]);
+            else if (col.DataType.Equals(typeof(Decimal)))
+               Console.Write("{0,-" + length + ":C}", row[col]);
+            else
+               Console.Write("{0,-" + length + "}", row[col]);
+         }
+         Console.WriteLine();
+      }
+   }
+
+   private static void ShowDataTable(DataTable table) {
+      ShowDataTable(table, 14);
+   }
+
+   private static void ShowColumns(DataTable columnsTable) {
+      var selectedRows = from info in columnsTable.AsEnumerable()
+                         select new {
+                            TableCatalog = info["TABLE_CATALOG"],
+                            TableSchema = info["TABLE_SCHEMA"],
+                            TableName = info["TABLE_NAME"],
+                            ColumnName = info["COLUMN_NAME"],
+                            DataType = info["DATA_TYPE"]
+                         };
+
+      Console.WriteLine("{0,-15}{1,-15}{2,-15}{3,-15}{4,-15}", "TableCatalog", "TABLE_SCHEMA",
+          "TABLE_NAME", "COLUMN_NAME", "DATA_TYPE");
+      foreach (var row in selectedRows) {
+         Console.WriteLine("{0,-15}{1,-15}{2,-15}{3,-15}{4,-15}", row.TableCatalog,
+             row.TableSchema, row.TableName, row.ColumnName, row.DataType);
+      }
+   }
+
+   private static void ShowIndexColumns(DataTable indexColumnsTable) {
+      var selectedRows = from info in indexColumnsTable.AsEnumerable()
+                         select new {
+                            TableSchema = info["table_schema"],
+                            TableName = info["table_name"],
+                            ColumnName = info["column_name"],
+                            ConstraintSchema = info["constraint_schema"],
+                            ConstraintName = info["constraint_name"],
+                            KeyType = info["KeyType"]
+                         };
+
+      Console.WriteLine("{0,-14}{1,-11}{2,-14}{3,-18}{4,-16}{5,-8}", "table_schema", "table_name", "column_name", "constraint_schema", "constraint_name", "KeyType");
+      foreach (var row in selectedRows) {
+         Console.WriteLine("{0,-14}{1,-11}{2,-14}{3,-18}{4,-16}{5,-8}", row.TableSchema,
+             row.TableName, row.ColumnName, row.ConstraintSchema, row.ConstraintName, row.KeyType);
+      }
+   }
+}
+```
 
  ]]></format>
         </remarks>
@@ -1958,6 +2308,14 @@ You might need the schema information of the database, tables, or columns.
 > [!NOTE]
 > The .NET Framework Data Provider for SQL Server requires the Security permission with "Allows calls to unmanaged assemblies" enabled (<xref:System.Security.Permissions.SecurityPermission> with <xref:System.Security.Permissions.SecurityPermissionFlag> set to `UnmanagedCode`) to open a <xref:System.Data.SqlClient.SqlConnection> with SQL Debugging enabled.
 
+
+
+## Examples
+ The following example creates a <xref:System.Data.SqlClient.SqlConnection>, opens it, and displays some of its properties. The connection is automatically closed at the end of the `using` block.
+
+ :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlConnection.Open Example/CS/source.cs" id="Snippet1":::
+ :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlConnection.Open Example/VB/source.vb" id="Snippet1":::
+
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">Cannot open a connection without specifying a data source or server.
@@ -2080,6 +2438,14 @@ You might need the schema information of the database, tables, or columns.
 
  Setting the default value to a number greater than 8000 will cause the packets to use the MultiPage allocator on the instance of SQL Server instead of the much more efficient SinglePage allocator, reducing the overall scalability of the SQL Server. For more information on how SQL Server uses memory, see [Memory Management Architecture Guide](/sql/relational-databases/memory-management-architecture-guide).
 
+
+
+## Examples
+ The following example creates a <xref:System.Data.SqlClient.SqlConnection>, including setting the `Packet Size` to 512 in the connection string. It displays the <xref:System.Data.SqlClient.SqlConnection.PacketSize%2A> and <xref:System.Data.SqlClient.SqlConnection.ServerVersion%2A> properties in the console window.
+
+ :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlConnection.PacketSize Example/CS/source.cs" id="Snippet1":::
+ :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlConnection.PacketSize Example/VB/source.vb" id="Snippet1":::
+
  ]]></format>
         </remarks>
         <related type="Article" href="/dotnet/framework/data/adonet/connecting-to-a-data-source">Connecting to a Data Source in ADO.NET</related>
@@ -2110,7 +2476,19 @@ You might need the schema information of the database, tables, or columns.
       <Docs>
         <param name="customProviders">The custom providers.</param>
         <summary>Registers the column encryption key store providers.</summary>
-        <remarks>To be added.</remarks>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Examples
+
+```csharp
+Dictionary<string, SqlColumnEncryptionKeyStoreProvider> customKeyStoreProviders = new Dictionary<string, SqlColumnEncryptionKeyStoreProvider>();
+MySqlClientHSMProvider myProvider = new MySqlClientHSMProvider();
+customKeyStoreProviders.Add(@"HSM Provider", myProvider);
+SqlConnection.RegisterColumnEncryptionKeyStoreProviders(customKeyStoreProviders)
+```
+          ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="ResetStatistics">
@@ -2250,6 +2628,14 @@ You might need the schema information of the database, tables, or columns.
  The version is of the form *##.##.####*, where the first two digits are the major version, the next two digits are the minor version, and the last four digits are the release version. The string is of the form *major.minor.build*, where major and minor are exactly two digits and build is exactly four digits.
 
  <xref:System.Data.SqlClient.SqlConnection.ServerVersion%2A> was called while the returned Task was not completed and the connection was not opened after a call to <xref:System.Data.SqlClient.SqlConnection.OpenAsync%2A>.
+
+
+
+## Examples
+ The following example creates a <xref:System.Data.SqlClient.SqlConnection> and displays the <xref:System.Data.SqlClient.SqlConnection.ServerVersion%2A> property.
+
+ :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData ISqlConnection.ServerVersion Example/CS/source.cs" id="Snippet1":::
+ :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData ISqlConnection.ServerVersion Example/VB/source.vb" id="Snippet1":::
 
  ]]></format>
         </remarks>
@@ -2585,6 +2971,14 @@ Once the transaction has completed, you must explicitly commit or roll back the 
 
 ## Remarks
  The string typically contains the network name of the client. The <xref:System.Data.SqlClient.SqlConnection.WorkstationId%2A> property corresponds to the `Workstation ID` connection string property.
+
+
+
+## Examples
+ The following example creates a <xref:System.Data.SqlClient.SqlConnection> and displays the <xref:System.Data.SqlClient.SqlConnection.WorkstationId%2A> property.
+
+ :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlConnection.WorkstationId Example/CS/source.cs" id="Snippet1":::
+ :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlConnection.WorkstationId Example/VB/source.vb" id="Snippet1":::
 
  ]]></format>
         </remarks>

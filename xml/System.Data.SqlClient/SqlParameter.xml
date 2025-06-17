@@ -77,9 +77,17 @@
  Parameter names are not case sensitive.
 
 > [!NOTE]
-> Nameless, also called ordinal, parameters are not supported by the .NET Framework Data Provider for SQL Server.
+>  Nameless, also called ordinal, parameters are not supported by the .NET Framework Data Provider for SQL Server.
 
- For more information, see [Commands and Parameters](/dotnet/framework/data/adonet/commands-and-parameters).
+ For more information, along with additional sample code demonstrating how to use parameters, see [Commands and Parameters](/dotnet/framework/data/adonet/commands-and-parameters).
+
+
+
+## Examples
+ The following example creates multiple instances of <xref:System.Data.SqlClient.SqlParameter> through the <xref:System.Data.SqlClient.SqlParameterCollection> collection within the <xref:System.Data.SqlClient.SqlDataAdapter>. These parameters are used to select data from the data source and put the data in the <xref:System.Data.DataSet>. This example assumes that a <xref:System.Data.DataSet> and a <xref:System.Data.SqlClient.SqlDataAdapter> have already been created by using the appropriate schema, commands, and connection. For more information and additional examples on using parameters, see [Retrieving and Modifying Data in ADO.NET](/dotnet/framework/data/adonet/retrieving-and-modifying-data) and [Configuring Parameters and Parameter Data Types](/dotnet/framework/data/adonet/configuring-parameters-and-parameter-data-types).
+
+ :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlParameter Example/CS/source.cs" id="Snippet1":::
+ :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlParameter Example/VB/source.vb" id="Snippet1":::
 
  ]]></format>
     </remarks>
@@ -127,7 +135,17 @@
       <Parameters />
       <Docs>
         <summary>Initializes a new instance of the <see cref="T:System.Data.SqlClient.SqlParameter" /> class.</summary>
-        <remarks>To be added.</remarks>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Examples
+ The following example creates a <xref:System.Data.SqlClient.SqlParameter> and sets some of its properties.
+
+ :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlParameter.SqlParameter Example/CS/source.cs" id="Snippet1":::
+ :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlParameter.SqlParameter Example/VB/source.vb" id="Snippet1":::
+
+ ]]></format>
+        </remarks>
         <related type="Article" href="/dotnet/framework/data/adonet/commands-and-parameters">Commands and Parameters</related>
         <related type="Article" href="/dotnet/framework/data/adonet/dataadapter-parameters">DataAdapter Parameters</related>
         <related type="Article" href="/dotnet/framework/data/adonet/sql/">SQL Server and ADO.NET</related>
@@ -171,6 +189,14 @@
 
 ## Remarks
  The data type and, if appropriate, **Size** and <xref:System.Data.SqlClient.SqlParameter.Precision%2A> are inferred from the value of the `dbType` parameter.
+
+
+
+## Examples
+ The following example creates a <xref:System.Data.SqlClient.SqlParameter> and sets some of its properties.
+
+ :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlParameter.SqlParameter2 Example/CS/source.cs" id="Snippet1":::
+ :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlParameter.SqlParameter2 Example/VB/source.vb" id="Snippet1":::
 
  ]]></format>
         </remarks>
@@ -219,7 +245,19 @@
 ## Remarks
  When you specify an <xref:System.Object> in the `value` parameter, the <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> is inferred from the Microsoft .NET type of the <xref:System.Object>.
 
- Use caution when you use this overload of the <xref:System.Data.SqlClient.SqlParameter> constructor to specify integer parameter values. Because this overload takes a `value` of type <xref:System.Object>, you must convert the integral value to an <xref:System.Object> type when the value is zero. If you do not perform this conversion, the compiler assumes that you are trying to call the <xref:System.Data.SqlClient.SqlParameter.%23ctor(System.String,System.Data.SqlDbType)> constructor overload.
+ Use caution when you use this overload of the <xref:System.Data.SqlClient.SqlParameter> constructor to specify integer parameter values. Because this overload takes a `value` of type <xref:System.Object>, you must convert the integral value to an <xref:System.Object> type when the value is zero, as the following C# example demonstrates.
+
+```csharp
+Parameter = new SqlParameter("@pname", (object)0);
+```
+
+If you do not perform this conversion, the compiler assumes that you are trying to call the <xref:System.Data.SqlClient.SqlParameter.%23ctor(System.String,System.Data.SqlDbType)> constructor overload.
+
+## Examples
+ The following example creates a <xref:System.Data.SqlClient.SqlParameter> and sets some of its properties.
+
+ :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlParameter.SqlParameter6 Example/CS/source.cs" id="Snippet1":::
+ :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlParameter.SqlParameter6 Example/VB/source.vb" id="Snippet1":::
 
  ]]></format>
         </remarks>
@@ -268,6 +306,14 @@
 
 ## Remarks
  The **Size** is inferred from the value of the `dbType` parameter if it is not explicitly set in the `size` parameter.
+
+
+
+## Examples
+ The following example creates a <xref:System.Data.SqlClient.SqlParameter> and sets some of its properties.
+
+ :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlParameter.SqlParameter4 Example/CS/source.cs" id="Snippet1":::
+ :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlParameter.SqlParameter4 Example/VB/source.vb" id="Snippet1":::
 
  ]]></format>
         </remarks>
@@ -319,6 +365,14 @@
 
 ## Remarks
  The **Size** is inferred from the value of the `dbType` parameter if it is not explicitly set in the `size` parameter.
+
+
+
+## Examples
+ The following example creates a <xref:System.Data.SqlClient.SqlParameter> and sets some of its properties.
+
+ :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlParameter.SqlParameter5 Example/CS/source.cs" id="Snippet1":::
+ :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlParameter.SqlParameter5 Example/VB/source.vb" id="Snippet1":::
 
  ]]></format>
         </remarks>
@@ -383,6 +437,14 @@
 
 ## Remarks
  The **Size** and <xref:System.Data.SqlClient.SqlParameter.Precision%2A> are inferred from the value of the `dbType` parameter if they are not explicitly set in the `size` and `precision` parameters.
+
+
+
+## Examples
+ The following example creates a <xref:System.Data.SqlClient.SqlParameter> and sets some of its properties.
+
+ :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlParameter.SqlParameter1 Example/CS/source.cs" id="Snippet1":::
+ :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlParameter.SqlParameter1 Example/VB/source.vb" id="Snippet1":::
 
  ]]></format>
         </remarks>
@@ -556,6 +618,14 @@
  The <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> and <xref:System.Data.SqlClient.SqlParameter.DbType%2A> are linked. Therefore, setting the <xref:System.Data.SqlClient.SqlParameter.DbType%2A> changes the <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> to a supporting <xref:System.Data.SqlDbType>.
 
  For a list of the supported data types, see the appropriate <xref:System.Data.SqlDbType> member. For more information, see [DataAdapter Parameters](/dotnet/framework/data/adonet/dataadapter-parameters).
+
+
+
+## Examples
+ The following example creates a <xref:System.Data.SqlClient.SqlParameter> and sets some of its properties.
+
+ :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlParameter.IsNullable Example/CS/source.cs" id="Snippet1":::
+ :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlParameter.IsNullable Example/VB/source.vb" id="Snippet1":::
 
  ]]></format>
         </remarks>
@@ -734,6 +804,14 @@
 ## Remarks
  Null values are handled using the <xref:System.DBNull> class.
 
+
+
+## Examples
+ The following example creates a <xref:System.Data.SqlClient.SqlParameter> and sets some of its properties.
+
+ :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlParam.Properties/CS/source.cs" id="Snippet2":::
+ :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlParam.Properties/VB/source.vb" id="Snippet2":::
+
  ]]></format>
         </remarks>
         <related type="Article" href="/dotnet/framework/data/adonet/sql/sql-server-data-types">SQL Server Data Types and ADO.NET</related>
@@ -783,6 +861,13 @@
 
 ## Remarks
  The locale identifies conventions and language for a particular geographical region. The codepage used to encode a specific string (the character set) is based on the locale used by that string or the environment that produced it. This property sets (for input parameters) or gets (for output parameters) the locale to be attached to a string when exchanging data with the server. This property is typically used together with the <xref:System.Data.SqlClient.SqlParameter.CompareInfo%2A> property.
+
+```csharp
+static void CreateSqlParameterLocaleId(){
+   SqlParameter parameter = new SqlParameter("pName", SqlDbType.VarChar);
+   parameter.LocaleId = 1033;   // English - United States
+}
+```
 
  ]]></format>
         </remarks>
@@ -849,6 +934,14 @@
 
  `Offset` specifies the number of bytes for binary types, and the number of characters for strings. The count for strings does not include the terminating character.
 
+
+
+## Examples
+ The following example creates a <xref:System.Data.SqlClient.SqlParameter> and sets some of its properties.
+
+ :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlParam.Properties/CS/source.cs" id="Snippet3":::
+ :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlParam.Properties/VB/source.vb" id="Snippet3":::
+
  ]]></format>
         </remarks>
         <related type="Article" href="/dotnet/framework/data/adonet/commands-and-parameters">Commands and Parameters (ADO.NET)</related>
@@ -908,6 +1001,14 @@
 
 ## Remarks
  The <xref:System.Data.SqlClient.SqlParameter.ParameterName%2A> is specified in the form @paramname. You must set <xref:System.Data.SqlClient.SqlParameter.ParameterName%2A> before executing a <xref:System.Data.SqlClient.SqlCommand> that relies on parameters.
+
+
+
+## Examples
+ The following example creates a <xref:System.Data.SqlClient.SqlParameter> and sets some of its properties.
+
+ :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlParameter.ParameterName Example/CS/source.cs" id="Snippet1":::
+ :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlParameter.ParameterName Example/VB/source.vb" id="Snippet1":::
 
  ]]></format>
         </remarks>
@@ -973,6 +1074,14 @@
 
 > [!NOTE]
 >  Microsoft .NET Framework data providers that are included with the .NET Framework version 1.0 do not verify the <xref:System.Data.SqlClient.SqlParameter.Precision%2A> or <xref:System.Data.SqlClient.SqlParameter.Scale%2A> of <xref:System.Decimal> parameter values. This can cause truncated data being inserted at the data source. If you are using .NET Framework version 1.0, validate the <xref:System.Data.SqlClient.SqlParameter.Precision%2A> and <xref:System.Data.SqlClient.SqlParameter.Scale%2A> of <xref:System.Decimal> values before setting the parameter value. When you use .NET Framework version 1.1 or a later version, an exception is thrown if a <xref:System.Decimal> parameter value is set with an invalid <xref:System.Data.SqlClient.SqlParameter.Precision%2A>. <xref:System.Data.SqlClient.SqlParameter.Scale%2A> values that exceed the <xref:System.Decimal> parameter scale are still truncated.
+
+
+
+## Examples
+ The following example creates a <xref:System.Data.SqlClient.SqlParameter> and sets some of its properties.
+
+ :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlParameter.Precision Example/CS/source.cs" id="Snippet1":::
+ :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlParameter.Precision Example/VB/source.vb" id="Snippet1":::
 
  ]]></format>
         </remarks>
@@ -1132,6 +1241,14 @@
 > [!NOTE]
 >  .NET Framework data providers that are included with the .NET Framework version 1.0 do not verify the <xref:System.Data.SqlClient.SqlParameter.Precision%2A> or <xref:System.Data.SqlClient.SqlParameter.Scale%2A> of <xref:System.Decimal> parameter values. This can cause truncated data to be inserted at the data source. If you are using .NET Framework version 1.0, validate the <xref:System.Data.SqlClient.SqlParameter.Precision%2A> and <xref:System.Data.SqlClient.SqlParameter> of <xref:System.Decimal> values before setting the parameter value. <xref:System.Data.SqlClient.SqlParameter.Scale%2A> values that exceed the <xref:System.Decimal> parameter scale are still truncated.
 
+
+
+## Examples
+ The following example creates a <xref:System.Data.SqlClient.SqlParameter> and sets some of its properties.
+
+ :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlParam.Properties/CS/source.cs" id="Snippet4":::
+ :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlParam.Properties/VB/source.vb" id="Snippet4":::
+
  ]]></format>
         </remarks>
         <related type="Article" href="/dotnet/framework/data/adonet/sql/sql-server-data-types">SQL Server Data Types and ADO.NET</related>
@@ -1209,6 +1326,14 @@
 
  For information about streaming, see [SqlClient Streaming Support](/dotnet/framework/data/adonet/sqlclient-streaming-support).
 
+
+
+## Examples
+ The following example creates a <xref:System.Data.SqlClient.SqlParameter> and sets some of its properties.
+
+ :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlParam.Properties/CS/source.cs" id="Snippet5":::
+ :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlParam.Properties/VB/source.vb" id="Snippet5":::
+
  ]]></format>
         </remarks>
         <related type="Article" href="/dotnet/framework/data/adonet/sql/sql-server-data-types">SQL Server Data Types and ADO.NET</related>
@@ -1271,6 +1396,14 @@
  When <xref:System.Data.SqlClient.SqlParameter.SourceColumn%2A> is set to anything other than an empty string, the value of the parameter is retrieved from the column with the <xref:System.Data.SqlClient.SqlParameter.SourceColumn%2A> name. If <xref:System.Data.SqlClient.SqlParameter.Direction%2A> is set to `Input`, the value is taken from the <xref:System.Data.DataSet>. If <xref:System.Data.SqlClient.SqlParameter.Direction%2A> is set to `Output`, the value is taken from the data source. A <xref:System.Data.SqlClient.SqlParameter.Direction%2A> of `InputOutput` is a combination of both.
 
  For more information about how to use the <xref:System.Data.SqlClient.SqlParameter.SourceColumn%2A> property, see [DataAdapter Parameters](/dotnet/framework/data/adonet/dataadapter-parameters) and [Updating Data Sources with DataAdapters](/dotnet/framework/data/adonet/updating-data-sources-with-dataadapters).
+
+
+
+## Examples
+ The following example creates a <xref:System.Data.SqlClient.SqlParameter> and sets some of its properties.
+
+ :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlParam.Properties/CS/source.cs" id="Snippet6":::
+ :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlParam.Properties/VB/source.vb" id="Snippet6":::
 
  ]]></format>
         </remarks>
@@ -1384,6 +1517,14 @@ FieldName = @OriginalFieldName
 
 ## Remarks
  This property is used by the `SqlDataAdapter.UpdateCommand` during an update to determine whether the original or current value is used for a parameter value. This lets primary keys be updated. This property is set to the version of the <xref:System.Data.DataRow> used by the `DataRow.Item` property, or one of the `DataRow.GetChildRows` methods of the <xref:System.Data.DataRow> object.
+
+
+
+## Examples
+ The following example creates a <xref:System.Data.SqlClient.SqlParameter> and sets some of its properties.
+
+ :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlParam.Properties/CS/source.cs" id="Snippet7":::
+ :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlParam.Properties/VB/source.vb" id="Snippet7":::
 
  ]]></format>
         </remarks>
@@ -1770,6 +1911,14 @@ FieldName = @OriginalFieldName
  The <xref:System.Data.SqlClient.SqlParameter.Value%2A> property is overwritten by `SqlDataAdapter.UpdateCommand`.
 
  For information about streaming, see [SqlClient Streaming Support](/dotnet/framework/data/adonet/sqlclient-streaming-support).
+
+
+
+## Examples
+ The following example creates a <xref:System.Data.SqlClient.SqlParameter> and sets some of its properties.
+
+ :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlParam.Properties/CS/source.cs" id="Snippet8":::
+ :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlParam.Properties/VB/source.vb" id="Snippet8":::
 
  ]]></format>
         </remarks>
