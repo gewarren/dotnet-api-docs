@@ -25,6 +25,7 @@ Public Class Sample
         doc.Save(Console.Out)
     End Sub
 End Class
+
 ' The example displays the following output:
 '
 ' Display the modified XML...
@@ -33,4 +34,5 @@ End Class
 '   <title>Pride And Prejudice</title>
 '   <price>19.95</price>
 ' </book>
+' 
 ' </Snippet1>
