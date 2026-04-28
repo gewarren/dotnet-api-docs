@@ -1226,7 +1226,7 @@
 ## Remarks
  Disabling interface caching has a significant impact on the performance of interop calls.
 
- This member is introduced in the .NET Framework 3.5.
+ 
 
  ]]></format>
         </remarks>
@@ -1258,18 +1258,18 @@
       </Parameters>
       <Docs>
         <param name="switches">An enumerable set of string values that specify compatibility switches, or <see langword="null" /> to erase the existing compatibility switches.</param>
-        <summary>Sets the specified switches, making the application domain compatible with previous versions of the .NET Framework for the specified issues.</summary>
+        <summary>Sets the specified switches, making the application domain compatible with previous versions of .NET for the specified issues.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Major versions of the .NET Framework sometimes introduce breaking changes from the previous version. For example, the .NET Framework 4 introduces a small number of breaking changes from the .NET Framework 3.5. Use the <xref:System.AppDomainSetup.SetCompatibilitySwitches*> method to specify that one or more of these breaking changes should be rolled back for the application domain, to make the behavior compatible with the previous version of the .NET Framework.
+ Major versions of .NET sometimes introduce breaking changes from the previous version. For example, the .NET Framework 4 introduces a small number of breaking changes from the .NET Framework 3.5. Use the <xref:System.AppDomainSetup.SetCompatibilitySwitches*> method to specify that one or more of these breaking changes should be rolled back for the application domain, to make the behavior compatible with the previous version of .NET.
 
  Each time you call this method, it replaces the existing switch settings. To erase the settings, specify `null` for the `switches` parameter.
 
  The set of string values you provide for `switches` can be a simple string array, because arrays implement the <xref:System.Collections.IEnumerable> interface.
 
- The following table provides examples of compatibility switches that can be set to restore the behavior of earlier versions of the .NET Framework.
+ The following table provides examples of compatibility switches that can be set to restore the behavior of earlier versions of .NET.
 
 |Switch|Meaning|
 |------------|-------------|
@@ -1540,7 +1540,7 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Set this property to tell the currently running version of the .NET Framework that the application domain will be used to load and run assemblies that have been compiled for the target version and profile. If the currently running version of the .NET Framework has optional behaviors that affect the compatibility of code that was compiled with the target version, it can enable or disable those behaviors, as appropriate, to improve compatibility. This can be useful when an application supports add-ins compiled with multiple versions of the .NET Framework by running them in separate application domains.
+ Set this property to tell the currently running version of .NET that the application domain will be used to load and run assemblies that have been compiled for the target version and profile. If the currently running version of .NET has optional behaviors that affect the compatibility of code that was compiled with the target version, it can enable or disable those behaviors, as appropriate, to improve compatibility. This can be useful when an application supports add-ins compiled with multiple versions of .NET by running them in separate application domains.
 
  For client applications, the value of the <xref:System.AppDomainSetup.TargetFrameworkName> property is inferred from the <xref:System.Runtime.Versioning.TargetFrameworkAttribute> attribute. In Visual Studio 2010 and later, this attribute is added to the assembly automatically based on the setting of the project's **Target Framework** property.
 
