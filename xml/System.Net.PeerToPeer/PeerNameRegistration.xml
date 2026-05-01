@@ -33,7 +33,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Registration creates (or updates) all the information that is associated with a <xref:System.Net.PeerToPeer.PeerName> in a peer cloud or clouds.
+
+Registration creates (or updates) all the information that is associated with a <xref:System.Net.PeerToPeer.PeerName> in a peer cloud or clouds.
 
  It is possible to have multiple <xref:System.Net.PeerToPeer.PeerNameRegistration> objects for the same peer name. In such a case, if the peer name is secured, each instance represents <xref:System.Net.PeerToPeer.PeerNameRegistration> in a different cloud. However, if the peer name is not secured, it can be registered in the same cloud multiple times, providing that each registration is from a different process.
 
@@ -69,7 +70,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Returns a new default instance of type <xref:System.Net.PeerToPeer.PeerNameRegistration>. It does not perform peer name registration during construction.
+
+Returns a new default instance of type <xref:System.Net.PeerToPeer.PeerNameRegistration>. It does not perform peer name registration during construction.
 
  After instantiating an object with this constructor, the caller should populate the appropriate fields in the instance prior to calling <xref:System.Net.PeerToPeer.PeerNameRegistration.Start*> or <xref:System.Net.PeerToPeer.PeerNameRegistration.Stop*>.
 
@@ -108,7 +110,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Calling this constructor creates an instance that will be used to register all source addresses (both IPv6and IPv4) and the provided port for all clouds in which the peer is currently participating. If the object is constructed successfully, the specified <xref:System.Net.PeerToPeer.PeerNameRegistration.PeerName*> and <xref:System.Net.PeerToPeer.PeerNameRegistration.Port*> are populated.
+
+Calling this constructor creates an instance that will be used to register all source addresses (both IPv6and IPv4) and the provided port for all clouds in which the peer is currently participating. If the object is constructed successfully, the specified <xref:System.Net.PeerToPeer.PeerNameRegistration.PeerName*> and <xref:System.Net.PeerToPeer.PeerNameRegistration.Port*> are populated.
 
  If the peer name is secured and was previously registered in a <xref:System.Net.PeerToPeer.PeerNameRegistration.Cloud*> the peer is currently participating in, an <xref:System.Net.PeerToPeer.PeerToPeerException> is thrown.
 
@@ -178,7 +181,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Calling this constructor creates an instance that will be used to register all source addresses (both IPv6 and IPv4), the provided port, and the specified <xref:System.Net.PeerToPeer.PeerNameRegistration.Cloud*>. If the object is constructed successfully, the properties are populated with the specified <xref:System.Net.PeerToPeer.PeerNameRegistration.PeerName*>, <xref:System.Net.PeerToPeer.PeerNameRegistration.Port*> and <xref:System.Net.PeerToPeer.PeerNameRegistration.Cloud*>.
+
+Calling this constructor creates an instance that will be used to register all source addresses (both IPv6 and IPv4), the provided port, and the specified <xref:System.Net.PeerToPeer.PeerNameRegistration.Cloud*>. If the object is constructed successfully, the properties are populated with the specified <xref:System.Net.PeerToPeer.PeerNameRegistration.PeerName*>, <xref:System.Net.PeerToPeer.PeerNameRegistration.Port*> and <xref:System.Net.PeerToPeer.PeerNameRegistration.Cloud*>.
 
  If the cloud parameter is `null`, the name is registered using the <xref:System.Net.PeerToPeer.Cloud.Available> shortcut, which initializes default values for the <xref:System.Net.PeerToPeer.Cloud.Name*>, <xref:System.Net.PeerToPeer.Cloud.Scope*>, and <xref:System.Net.PeerToPeer.Cloud.ScopeId*>.
 
@@ -267,7 +271,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The maximum amount of <xref:System.Net.PeerToPeer.PeerNameRegistration.Data*> that can be supplied is 4,096 bytes.
+
+The maximum amount of <xref:System.Net.PeerToPeer.PeerNameRegistration.Data*> that can be supplied is 4,096 bytes.
 
  ]]></format>
         </remarks>
@@ -285,7 +290,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When a peer leaves a <xref:System.Net.PeerToPeer.Cloud>, the cloud no longer requires the <xref:System.Net.PeerToPeer.PeerNameRegistration> object associated with the peer. Whether the registration object is stopped or disposed is dependent upon whether the cloud will reuse the object to register this peer or another peer. If there are any other endpoint(s) within the registration object with which the peer host expected to communicate, registering those endpoints within the cloud must occur before stopping or disposing of this object.
+
+When a peer leaves a <xref:System.Net.PeerToPeer.Cloud>, the cloud no longer requires the <xref:System.Net.PeerToPeer.PeerNameRegistration> object associated with the peer. Whether the registration object is stopped or disposed is dependent upon whether the cloud will reuse the object to register this peer or another peer. If there are any other endpoint(s) within the registration object with which the peer host expected to communicate, registering those endpoints within the cloud must occur before stopping or disposing of this object.
 
  If the cloud expects to register more peers, the <xref:System.Net.PeerToPeer.PeerNameRegistration.Stop*> method is recommended; when the cloud no longer needs the memory, it should be returned to the operating system via the <xref:System.Net.PeerToPeer.PeerNameRegistration.Dispose*> method.
 
@@ -373,7 +379,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- In the <xref:System.Net> namespace, an <xref:System.Net.IPEndPoint> represents a network endpoint as an IP address and a port number. For PNRP, an IP address and port value must be provided for each endpoint. The maximum number of endpoints that can be provided is ten. Automatic address selection is used when this parameter is `null`.
+
+In the <xref:System.Net> namespace, an <xref:System.Net.IPEndPoint> represents a network endpoint as an IP address and a port number. For PNRP, an IP address and port value must be provided for each endpoint. The maximum number of endpoints that can be provided is ten. Automatic address selection is used when this parameter is `null`.
 
  If a registration method is used that automatically selects the addresses to register, there is no method to determine the addresses for which the peer name was registered. That is, the <xref:System.Net.PeerToPeer.PeerNameRegistration.EndPointCollection> property will not be updated to reflect the addresses selected.
 
@@ -463,7 +470,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A peer name can be registered for more than one node; each <xref:System.Net.PeerToPeer.PeerNameRegistration> instance is distinct. The <xref:System.Net.PeerToPeer.PeerNameRegistration.EndPointCollection> property associated with each corresponding <xref:System.Net.PeerToPeer.PeerName> instance is different. Also, it is possible to register a peer name for more than one cloud that the node is connected to; each of these registrations is distinct. The peer name's <xref:System.Net.IPEndPointCollection> will be different in each of these instances.
+
+A peer name can be registered for more than one node; each <xref:System.Net.PeerToPeer.PeerNameRegistration> instance is distinct. The <xref:System.Net.PeerToPeer.PeerNameRegistration.EndPointCollection> property associated with each corresponding <xref:System.Net.PeerToPeer.PeerName> instance is different. Also, it is possible to register a peer name for more than one cloud that the node is connected to; each of these registrations is distinct. The peer name's <xref:System.Net.IPEndPointCollection> will be different in each of these instances.
 
  ]]></format>
         </remarks>
@@ -494,7 +502,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The default port is used by the <xref:System.Net.PeerToPeer.PeerNameRegistration.Start*> method only when no endpoints are specified.
+
+The default port is used by the <xref:System.Net.PeerToPeer.PeerNameRegistration.Start*> method only when no endpoints are specified.
 
  ]]></format>
         </remarks>
@@ -532,7 +541,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The method registers the peer name specified in the <xref:System.Net.PeerToPeer.PeerNameRegistration.PeerName> property with all source addresses and the <xref:System.Net.PeerToPeer.PeerNameRegistration.Port*> specified in the constructor. The default port is used by this method only when no endpoints are specified.
+
+The method registers the peer name specified in the <xref:System.Net.PeerToPeer.PeerNameRegistration.PeerName> property with all source addresses and the <xref:System.Net.PeerToPeer.PeerNameRegistration.Port*> specified in the constructor. The default port is used by this method only when no endpoints are specified.
 
  If the <xref:System.Net.PeerToPeer.PeerNameRegistration.Cloud> property is `null`, this method registers the peer name specified in the <xref:System.Net.PeerToPeer.PeerNameRecord.PeerName> property using the <xref:System.Net.PeerToPeer.Cloud.Available> field, which initializes default values for the <xref:System.Net.PeerToPeer.Cloud.Name*>, <xref:System.Net.PeerToPeer.Cloud.Scope*>, and <xref:System.Net.PeerToPeer.Cloud.ScopeId*>.
 
@@ -588,7 +598,8 @@ The following code example creates a <xref:System.Net.PeerToPeer.PeerName> and r
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- After the registration process has been stopped, the registration object's state is equal to the state directly after being constructed by the parameterless constructor. In this state, all of its properties are assumed to have no value. The <xref:System.Net.PeerToPeer.PeerNameRegistration.Start*> method may be used to restart it.
+
+After the registration process has been stopped, the registration object's state is equal to the state directly after being constructed by the parameterless constructor. In this state, all of its properties are assumed to have no value. The <xref:System.Net.PeerToPeer.PeerNameRegistration.Start*> method may be used to restart it.
 
  It is possible to have multiple registration objects for the same peer name. In such a case, if the peer name is secured, each instance will represent a registration in a different PNRP cloud. However, if the peer name is not secured, it can be registered in the same cloud multiple times.
 
@@ -670,7 +681,8 @@ The following code example creates a <xref:System.Net.PeerToPeer.PeerName> and r
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- All information registered in cloud(s) for this <xref:System.Net.PeerToPeer.PeerName> prior to the call is completely discarded. The new data is not combined with the existing registration. To update a <xref:System.Net.PeerToPeer.PeerNameRegistration>, first update the properties on this instance and then call this method.
+
+All information registered in cloud(s) for this <xref:System.Net.PeerToPeer.PeerName> prior to the call is completely discarded. The new data is not combined with the existing registration. To update a <xref:System.Net.PeerToPeer.PeerNameRegistration>, first update the properties on this instance and then call this method.
 
  After a <xref:System.Net.PeerToPeer.PeerNameRecord> is registered, the <xref:System.Net.PeerToPeer.PeerNameRecord.PeerName> property cannot be updated. All other fields in the record may be updated.
 
@@ -714,7 +726,8 @@ The following code example creates a <xref:System.Net.PeerToPeer.PeerName> and r
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When auto endpoint selection is used (this property is set to `true`) with no endpoint information specified prior to the start of a <xref:System.Net.PeerToPeer.PeerNameRegistration>, the system chooses individual endpoints and publishes them with the associated peer name into all available clouds. If the port is not specified, auto selection chooses zero as the <xref:System.Net.PeerToPeer.PeerNameRegistration.Port*>.
+
+When auto endpoint selection is used (this property is set to `true`) with no endpoint information specified prior to the start of a <xref:System.Net.PeerToPeer.PeerNameRegistration>, the system chooses individual endpoints and publishes them with the associated peer name into all available clouds. If the port is not specified, auto selection chooses zero as the <xref:System.Net.PeerToPeer.PeerNameRegistration.Port*>.
 
  When set to `false`, auto selection as described above is not performed. This enables the registration process to publish a peer name along with a data blob (as specified by the <xref:System.Net.PeerToPeer.PeerNameRecord.Data> property). No endpoints are associated with the name.
 

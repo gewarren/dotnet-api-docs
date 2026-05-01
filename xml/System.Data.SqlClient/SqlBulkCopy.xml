@@ -40,7 +40,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Microsoft SQL Server includes a popular command-prompt utility named **bcp** for moving data from one table to another, whether on a single server or between servers. The <xref:System.Data.SqlClient.SqlBulkCopy> class lets you write managed code solutions that provide similar functionality. There are other ways to load data into a SQL Server table (INSERT statements, for example), but <xref:System.Data.SqlClient.SqlBulkCopy> offers a significant performance advantage over them.
+
+Microsoft SQL Server includes a popular command-prompt utility named **bcp** for moving data from one table to another, whether on a single server or between servers. The <xref:System.Data.SqlClient.SqlBulkCopy> class lets you write managed code solutions that provide similar functionality. There are other ways to load data into a SQL Server table (INSERT statements, for example), but <xref:System.Data.SqlClient.SqlBulkCopy> offers a significant performance advantage over them.
 
  The <xref:System.Data.SqlClient.SqlBulkCopy> class can be used to write data only to SQL Server tables. However, the data source is not limited to SQL Server; any data source can be used, as long as the data can be loaded to a <xref:System.Data.DataTable> instance or read with a <xref:System.Data.IDataReader> instance.
 
@@ -104,7 +105,8 @@ The following console application demonstrates how to load data using the <xref:
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Because the connection is already open when the <xref:System.Data.SqlClient.SqlBulkCopy> instance is initialized, the connection remains open after the <xref:System.Data.SqlClient.SqlBulkCopy> instance is closed.
+
+Because the connection is already open when the <xref:System.Data.SqlClient.SqlBulkCopy> instance is initialized, the connection remains open after the <xref:System.Data.SqlClient.SqlBulkCopy> instance is closed.
 
  If the `connection` argument is null, an <xref:System.ArgumentNullException> is thrown.
 
@@ -156,7 +158,8 @@ The following console application demonstrates how to bulk load data using a con
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The connection is automatically closed at the end of the bulk copy operation.
+
+The connection is automatically closed at the end of the bulk copy operation.
 
  If `connectionString` is null, an <xref:System.ArgumentNullException> is thrown. If `connectionString` is an empty string, an <xref:System.ArgumentException> is thrown.
 
@@ -212,7 +215,8 @@ The following console application demonstrates how to bulk load data by using a 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You can obtain detailed information about all the bulk copy options in the <xref:System.Data.SqlClient.SqlBulkCopyOptions> topic.
+
+You can obtain detailed information about all the bulk copy options in the <xref:System.Data.SqlClient.SqlBulkCopyOptions> topic.
 
 ## Examples
 
@@ -266,7 +270,8 @@ The following console application demonstrates how to perform a bulk load by usi
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If options include `UseInternalTransaction` and the `externalTransaction` argument is not null, an **InvalidArgumentException** is thrown.
+
+If options include `UseInternalTransaction` and the `externalTransaction` argument is not null, an **InvalidArgumentException** is thrown.
 
  For examples demonstrating how to use `SqlBulkCopy` in a transaction, see [Transaction and Bulk Copy Operations](/dotnet/framework/data/adonet/sql/transaction-and-bulk-copy-operations).
 
@@ -308,7 +313,8 @@ The following console application demonstrates how to perform a bulk load by usi
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A batch is complete when <xref:System.Data.SqlClient.SqlBulkCopy.BatchSize*> rows have been processed or there are no more rows to send to the destination data source.
+
+A batch is complete when <xref:System.Data.SqlClient.SqlBulkCopy.BatchSize*> rows have been processed or there are no more rows to send to the destination data source.
 
  Zero (the default) indicates that each <xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer*> operation is a single batch.
 
@@ -366,7 +372,8 @@ The following console application demonstrates how to bulk load data in batches 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the operation does time out, the transaction is not committed and all copied rows are removed from the destination table.
+
+If the operation does time out, the transaction is not committed and all copied rows are removed from the destination table.
 
 ## Examples
 
@@ -418,7 +425,8 @@ The following console application demonstrates how to modify the time-out to 60 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- After you call a <xref:System.Data.SqlClient.SqlBulkCopy.Close*> on the <xref:System.Data.SqlClient.SqlBulkCopy> object, no other operation will succeed. Calls to the <xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer*> method will throw an <xref:System.InvalidOperationException>.
+
+After you call a <xref:System.Data.SqlClient.SqlBulkCopy.Close*> on the <xref:System.Data.SqlClient.SqlBulkCopy> object, no other operation will succeed. Calls to the <xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer*> method will throw an <xref:System.InvalidOperationException>.
 
  Calling the <xref:System.Data.SqlClient.SqlBulkCopy.Close*> method from the <xref:System.Data.SqlClient.SqlBulkCopy.SqlRowsCopied> event causes an <xref:System.InvalidOperationException> to be thrown.
 
@@ -472,7 +480,8 @@ The following example uses the same <xref:System.Data.SqlClient.SqlBulkCopy> ins
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the data source and the destination table have the same number of columns, and the ordinal position of each source column within the data source matches the ordinal position of the corresponding destination column, the <xref:System.Data.SqlClient.SqlBulkCopy.ColumnMappings*> collection is unnecessary. However, if the column counts differ, or the ordinal positions are not consistent, you must use <xref:System.Data.SqlClient.SqlBulkCopy.ColumnMappings*> to make sure that data is copied into the correct columns.
+
+If the data source and the destination table have the same number of columns, and the ordinal position of each source column within the data source matches the ordinal position of the corresponding destination column, the <xref:System.Data.SqlClient.SqlBulkCopy.ColumnMappings*> collection is unnecessary. However, if the column counts differ, or the ordinal positions are not consistent, you must use <xref:System.Data.SqlClient.SqlBulkCopy.ColumnMappings*> to make sure that data is copied into the correct columns.
 
  During the execution of a bulk copy operation, this collection can be accessed, but it cannot be changed. Any attempt to change it will throw an <xref:System.InvalidOperationException>.
 
@@ -515,7 +524,8 @@ The following example uses the same <xref:System.Data.SqlClient.SqlBulkCopy> ins
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If <xref:System.Data.SqlClient.SqlBulkCopy.DestinationTableName*> has not been set when <xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer*> is called, an <xref:System.ArgumentNullException> is thrown.
+
+If <xref:System.Data.SqlClient.SqlBulkCopy.DestinationTableName*> has not been set when <xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer*> is called, an <xref:System.ArgumentNullException> is thrown.
 
  If <xref:System.Data.SqlClient.SqlBulkCopy.DestinationTableName*> is modified while a <xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer*> operation is running, the change does not affect the current operation. The new <xref:System.Data.SqlClient.SqlBulkCopy.DestinationTableName*> value is used the next time a <xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer*> method is called.
 
@@ -573,7 +583,8 @@ The following console application demonstrates how to bulk load data using a con
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When <xref:System.Data.SqlClient.SqlBulkCopy.EnableStreaming*> is `true`, <xref:System.Data.SqlClient.SqlBulkCopy> reads from an <xref:System.Data.IDataReader> object using <xref:System.Data.CommandBehavior.SequentialAccess>, optimizing memory usage by using the <xref:System.Data.IDataReader> streaming capabilities. When it's set to false, the <xref:System.Data.SqlClient.SqlBulkCopy> class loads all the data returned by the <xref:System.Data.IDataReader> object into memory before sending it to SQL Server or SQL Azure.
+
+When <xref:System.Data.SqlClient.SqlBulkCopy.EnableStreaming*> is `true`, <xref:System.Data.SqlClient.SqlBulkCopy> reads from an <xref:System.Data.IDataReader> object using <xref:System.Data.CommandBehavior.SequentialAccess>, optimizing memory usage by using the <xref:System.Data.IDataReader> streaming capabilities. When it's set to false, the <xref:System.Data.SqlClient.SqlBulkCopy> class loads all the data returned by the <xref:System.Data.IDataReader> object into memory before sending it to SQL Server or SQL Azure.
 
  ]]></format>
         </remarks>
@@ -611,7 +622,8 @@ The following console application demonstrates how to bulk load data using a con
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This property is designed for user interface components that illustrate the progress of a bulk copy operation. It indicates the number of rows to be processed before generating a notification event. The <xref:System.Data.SqlClient.SqlBulkCopy.NotifyAfter> property can be set at any time, even while a bulk copy operation is underway. Changes made during a bulk copy operation take effect after the next notification. The new setting applies to all subsequent operations on the same instance.
+
+This property is designed for user interface components that illustrate the progress of a bulk copy operation. It indicates the number of rows to be processed before generating a notification event. The <xref:System.Data.SqlClient.SqlBulkCopy.NotifyAfter> property can be set at any time, even while a bulk copy operation is underway. Changes made during a bulk copy operation take effect after the next notification. The new setting applies to all subsequent operations on the same instance.
 
  If <xref:System.Data.SqlClient.SqlBulkCopy.NotifyAfter*> is set to a number less than zero, an <xref:System.ArgumentOutOfRangeException> is thrown.
 
@@ -664,7 +676,8 @@ The following console application demonstrates how to bulk load data using a con
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Note that the settings of <xref:System.Data.SqlClient.SqlBulkCopy.NotifyAfter*> and <xref:System.Data.SqlClient.SqlBulkCopy.BatchSize*> are independent. Receipt of a <xref:System.Data.SqlClient.SqlBulkCopy.SqlRowsCopied> event does not imply that any rows have been sent to the server or committed.
+
+Note that the settings of <xref:System.Data.SqlClient.SqlBulkCopy.NotifyAfter*> and <xref:System.Data.SqlClient.SqlBulkCopy.BatchSize*> are independent. Receipt of a <xref:System.Data.SqlClient.SqlBulkCopy.SqlRowsCopied> event does not imply that any rows have been sent to the server or committed.
 
  You cannot call SqlBulkCopy.Close (<xref:System.Data.SqlClient.SqlBulkCopy.Close*>) or SqlConnection.Close (<xref:System.Data.SqlClient.SqlConnection.Close*>) from this event. Doing this will cause an <xref:System.InvalidOperationException> being thrown, and the <xref:System.Data.SqlClient.SqlBulkCopy> object state will not change. If the user wants to cancel the operation from the event, the <xref:System.Data.SqlClient.SqlRowsCopiedEventArgs.Abort> property of the <xref:System.Data.SqlClient.SqlRowsCopiedEventArgs> can be used. (See [Transaction and Bulk Copy Operations](/dotnet/framework/data/adonet/sql/transaction-and-bulk-copy-operations) for examples that use the <xref:System.Data.SqlClient.SqlRowsCopiedEventArgs.Abort> property.)
 
@@ -723,7 +736,8 @@ The following console application demonstrates how to bulk load data using a con
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Call `Dispose` when you are finished using the <xref:System.Data.SqlClient.SqlBulkCopy>. The `Dispose` method leaves the <xref:System.Data.SqlClient.SqlBulkCopy> in an unusable state. After calling `Dispose`, you must release all references to the <xref:System.Data.SqlClient.SqlBulkCopy> so the garbage collector can reclaim the memory that the <xref:System.Data.SqlClient.SqlBulkCopy> was occupying.
+
+Call `Dispose` when you are finished using the <xref:System.Data.SqlClient.SqlBulkCopy>. The `Dispose` method leaves the <xref:System.Data.SqlClient.SqlBulkCopy> in an unusable state. After calling `Dispose`, you must release all references to the <xref:System.Data.SqlClient.SqlBulkCopy> so the garbage collector can reclaim the memory that the <xref:System.Data.SqlClient.SqlBulkCopy> was occupying.
 
  For more information, see [Cleaning Up Unmanaged Resources](/dotnet/standard/garbage-collection/unmanaged) and [Implementing a Dispose Method](/dotnet/standard/garbage-collection/implementing-dispose).
 
@@ -746,7 +760,8 @@ The following console application demonstrates how to bulk load data using a con
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If multiple active result sets (MARS) is disabled, <xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer*> makes the connection busy. If MARS is enabled, you can interleave calls to <xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer*> with other commands in the same connection.
+
+If multiple active result sets (MARS) is disabled, <xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer*> makes the connection busy. If MARS is enabled, you can interleave calls to <xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer*> with other commands in the same connection.
 
  ]]></format>
         </remarks>
@@ -817,7 +832,8 @@ The following console application demonstrates how to bulk load data using a con
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- While the bulk copy operation is in progress, the associated destination <xref:System.Data.SqlClient.SqlConnection> is busy serving it, and no other operations can be performed on the connection.
+
+While the bulk copy operation is in progress, the associated destination <xref:System.Data.SqlClient.SqlConnection> is busy serving it, and no other operations can be performed on the connection.
 
  The <xref:System.Data.SqlClient.SqlBulkCopy.ColumnMappings*> collection maps from the <xref:System.Data.DataRow> columns to the destination database table.
 
@@ -869,7 +885,8 @@ The following console application demonstrates how to bulk load data from a <xre
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- All rows in the <xref:System.Data.DataTable> are copied to the destination table except those that have been deleted.
+
+All rows in the <xref:System.Data.DataTable> are copied to the destination table except those that have been deleted.
 
  While the bulk copy operation is in progress, the associated destination <xref:System.Data.SqlClient.SqlConnection> is busy serving it, and no other operations can be performed on the connection.
 
@@ -923,7 +940,8 @@ The following Console application demonstrates how to bulk load data from a <xre
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The copy operation starts at the next available row in the reader. Most of the time, the reader was just returned by <xref:System.Data.IDbCommand.ExecuteReader*> or a similar call, so the next available row is the first row. To process multiple results, call <xref:System.Data.IDataReader.NextResult*> on the data reader and call <xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer*> again.
+
+The copy operation starts at the next available row in the reader. Most of the time, the reader was just returned by <xref:System.Data.IDbCommand.ExecuteReader*> or a similar call, so the next available row is the first row. To process multiple results, call <xref:System.Data.IDataReader.NextResult*> on the data reader and call <xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer*> again.
 
  Note that using <xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer*> modifies the state of the reader. The method will call <xref:System.Data.IDataReader.Read*> until it returns false, the operation is aborted, or an error occurs. This means that the data reader will be in a different state, probably at the end of the result set, when the <xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer*> operation is complete.
 
@@ -979,7 +997,8 @@ The following console application demonstrates how to bulk load data from a <xre
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Only rows in the <xref:System.Data.DataTable> that are in the states indicated in the `rowState` argument and have not been deleted are copied to the destination table.
+
+Only rows in the <xref:System.Data.DataTable> that are in the states indicated in the `rowState` argument and have not been deleted are copied to the destination table.
 
 > [!NOTE]
 > If <xref:System.Data.DataRowState.Deleted> is specified, any <xref:System.Data.DataRowState.Unchanged>, <xref:System.Data.DataRowState.Added>, and <xref:System.Data.DataRowState.Modified> rows will also be copied to the server. No exception will be raised.
@@ -1018,7 +1037,8 @@ The following Console application demonstrates how to bulk load only the rows in
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If multiple active result sets (MARS) is disabled, <xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer*> makes the connection busy. If MARS is enabled, you can interleave calls to <xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer*> with other commands in the same connection.
+
+If multiple active result sets (MARS) is disabled, <xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer*> makes the connection busy. If MARS is enabled, you can interleave calls to <xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer*> with other commands in the same connection.
 
  The number of rows that are rolled back when one fails depends on several things:
 
@@ -1110,7 +1130,8 @@ This method stores in the task it returns all non-usage exceptions that the meth
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- For more information about asynchronous programming in the .NET Framework Data Provider for SQL Server, see [Asynchronous Programming](/dotnet/framework/data/adonet/asynchronous-programming).
+
+For more information about asynchronous programming in the .NET Framework Data Provider for SQL Server, see [Asynchronous Programming](/dotnet/framework/data/adonet/asynchronous-programming).
 
  This method stores in the task it returns all non-usage exceptions that the method's synchronous counterpart can throw. If an exception is stored into the returned task, that exception will be thrown when the task is awaited. Usage exceptions, such as <xref:System.ArgumentException>, are still thrown synchronously. For the stored exceptions, see the exceptions thrown by <xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer(System.Data.DataRow[])>.
 
@@ -1162,7 +1183,8 @@ This method stores in the task it returns all non-usage exceptions that the meth
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- For more information about asynchronous programming in the .NET Framework Data Provider for SQL Server, see [Asynchronous Programming](/dotnet/framework/data/adonet/asynchronous-programming).
+
+For more information about asynchronous programming in the .NET Framework Data Provider for SQL Server, see [Asynchronous Programming](/dotnet/framework/data/adonet/asynchronous-programming).
 
  This method stores in the task it returns all non-usage exceptions that the method's synchronous counterpart can throw. If an exception is stored into the returned task, that exception will be thrown when the task is awaited. Usage exceptions, such as <xref:System.ArgumentException>, are still thrown synchronously. For the stored exceptions, see the exceptions thrown by <xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer(System.Data.DataTable)>.
 
@@ -1214,7 +1236,8 @@ This method stores in the task it returns all non-usage exceptions that the meth
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- For more information about asynchronous programming in the .NET Framework Data Provider for SQL Server, see [Asynchronous Programming](/dotnet/framework/data/adonet/asynchronous-programming).
+
+For more information about asynchronous programming in the .NET Framework Data Provider for SQL Server, see [Asynchronous Programming](/dotnet/framework/data/adonet/asynchronous-programming).
 
  This method stores in the task it returns all non-usage exceptions that the method's synchronous counterpart can throw. If an exception is stored into the returned task, that exception will be thrown when the task is awaited. Usage exceptions, such as <xref:System.ArgumentException>, are still thrown synchronously. For the stored exceptions, see the exceptions thrown by <xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer(System.Data.IDataReader)>.
 
@@ -1311,7 +1334,8 @@ This method stores in the task it returns all non-usage exceptions that the meth
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- For more information about asynchronous programming in the .NET Framework Data Provider for SQL Server, see [Asynchronous Programming](/dotnet/framework/data/adonet/asynchronous-programming).
+
+For more information about asynchronous programming in the .NET Framework Data Provider for SQL Server, see [Asynchronous Programming](/dotnet/framework/data/adonet/asynchronous-programming).
 
  This method stores in the task it returns all non-usage exceptions that the method's synchronous counterpart can throw. If an exception is stored into the returned task, that exception will be thrown when the task is awaited. Usage exceptions, such as <xref:System.ArgumentException>, are still thrown synchronously. For the stored exceptions, see the exceptions thrown by <xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer(System.Data.DataRow[])>.
 
@@ -1366,7 +1390,8 @@ This method stores in the task it returns all non-usage exceptions that the meth
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- For more information about asynchronous programming in the .NET Framework Data Provider for SQL Server, see [Asynchronous Programming](/dotnet/framework/data/adonet/asynchronous-programming).
+
+For more information about asynchronous programming in the .NET Framework Data Provider for SQL Server, see [Asynchronous Programming](/dotnet/framework/data/adonet/asynchronous-programming).
 
  This method stores in the task it returns all non-usage exceptions that the method's synchronous counterpart can throw. If an exception is stored into the returned task, that exception will be thrown when the task is awaited. Usage exceptions, such as <xref:System.ArgumentException>, are still thrown synchronously. For the stored exceptions, see the exceptions thrown by <xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer(System.Data.DataTable,System.Data.DataRowState)>.
 
@@ -1422,7 +1447,8 @@ This method stores in the task it returns all non-usage exceptions that the meth
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- For more information about asynchronous programming in the .NET Framework Data Provider for SQL Server, see [Asynchronous Programming](/dotnet/framework/data/adonet/asynchronous-programming).
+
+For more information about asynchronous programming in the .NET Framework Data Provider for SQL Server, see [Asynchronous Programming](/dotnet/framework/data/adonet/asynchronous-programming).
 
  This method stores in the task it returns all non-usage exceptions that the method's synchronous counterpart can throw. If an exception is stored into the returned task, that exception will be thrown when the task is awaited. Usage exceptions, such as <xref:System.ArgumentException>, are still thrown synchronously. For the stored exceptions, see the exceptions thrown by <xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer(System.Data.DataTable)>.
 
@@ -1479,7 +1505,8 @@ This method stores in the task it returns all non-usage exceptions that the meth
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- For more information about asynchronous programming in the .NET Framework Data Provider for SQL Server, see [Asynchronous Programming](/dotnet/framework/data/adonet/asynchronous-programming).
+
+For more information about asynchronous programming in the .NET Framework Data Provider for SQL Server, see [Asynchronous Programming](/dotnet/framework/data/adonet/asynchronous-programming).
 
  This method stores in the task it returns all non-usage exceptions that the method's synchronous counterpart can throw. If an exception is stored into the returned task, that exception will be thrown when the task is awaited. Usage exceptions, such as <xref:System.ArgumentException>, are still thrown synchronously. For the stored exceptions, see the exceptions thrown by <xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer(System.Data.IDataReader)>.
 
@@ -1542,7 +1569,8 @@ This method stores in the task it returns all non-usage exceptions that the meth
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- For more information about asynchronous programming in the .NET Framework Data Provider for SQL Server, see [Asynchronous Programming](/dotnet/framework/data/adonet/asynchronous-programming).
+
+For more information about asynchronous programming in the .NET Framework Data Provider for SQL Server, see [Asynchronous Programming](/dotnet/framework/data/adonet/asynchronous-programming).
 
  This method stores in the task it returns all non-usage exceptions that the method's synchronous counterpart can throw. If an exception is stored into the returned task, that exception will be thrown when the task is awaited. Usage exceptions, such as <xref:System.ArgumentException>, are still thrown synchronously. For the stored exceptions, see the exceptions thrown by <xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer(System.Data.DataTable,System.Data.DataRowState)>.
 

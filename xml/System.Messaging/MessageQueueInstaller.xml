@@ -21,7 +21,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Messaging.MessageQueueInstaller> is used by the installation utility to write registry values that are associated with the queue. For more information about installation utilities, see [Installutil.exe (Installer Tool)](/dotnet/framework/tools/installutil-exe-installer-tool).
+
+The <xref:System.Messaging.MessageQueueInstaller> is used by the installation utility to write registry values that are associated with the queue. For more information about installation utilities, see [Installutil.exe (Installer Tool)](/dotnet/framework/tools/installutil-exe-installer-tool).
 
  To install a queue, create a project installer class that inherits from the <xref:System.Configuration.Install.Installer>, and set the <xref:System.ComponentModel.RunInstallerAttribute> for the class to `true`. Within your project, create a <xref:System.Messaging.MessageQueueInstaller> instance for each queue in the installation and add the instance to your project installer class.
 
@@ -122,7 +123,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When a non-authenticated message is sent to a queue that accepts only authenticated messages, the message is rejected. The sending application can request notification of a message rejection by setting the <xref:System.Messaging.Message.AcknowledgeType*> for the message. Otherwise, there is no indication that the message was rejected, so the message can be lost unless you send it to the dead-letter queue.
+
+When a non-authenticated message is sent to a queue that accepts only authenticated messages, the message is rejected. The sending application can request notification of a message rejection by setting the <xref:System.Messaging.Message.AcknowledgeType*> for the message. Otherwise, there is no indication that the message was rejected, so the message can be lost unless you send it to the dead-letter queue.
 
  ]]></format>
         </remarks>
@@ -158,7 +160,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Messaging.MessageQueueInstaller.BasePriority*> is used for routing the queue's messages over the network. Use the <xref:System.Messaging.MessageQueueInstaller.BasePriority*> to give the messages sent to the queue a higher or lower priority than that for messages sent to other queues. When a queue's base priority is set, all the messages sent to it are given a higher priority than that of the messages sent to queues with a lower base priority. The queue's base priority has no effect on the order of the messages in the queue or on how messages are read from the queue.
+
+The <xref:System.Messaging.MessageQueueInstaller.BasePriority*> is used for routing the queue's messages over the network. Use the <xref:System.Messaging.MessageQueueInstaller.BasePriority*> to give the messages sent to the queue a higher or lower priority than that for messages sent to other queues. When a queue's base priority is set, all the messages sent to it are given a higher priority than that of the messages sent to queues with a lower base priority. The queue's base priority has no effect on the order of the messages in the queue or on how messages are read from the queue.
 
  The <xref:System.Messaging.MessageQueueInstaller.BasePriority*> applies only to public queues that are accessed through the domain controller (in other words, using the public format name). The base priority of private queues and of directly accessed public queues is always zero.
 
@@ -204,7 +207,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The queue category enables an application to categorize associated queues according to the way they are used. The <xref:System.Messaging.MessageQueue.Category*> can be a null reference. You can also define a new category.
+
+The queue category enables an application to categorize associated queues according to the way they are used. The <xref:System.Messaging.MessageQueue.Category*> can be a null reference. You can also define a new category.
 
  The <xref:System.Messaging.MessageQueue.Category> property provides access to the Message Queuing type identifier property, which is associated with a particular queue and is read/write. You can use the <xref:System.Guid.NewGuid*> method to create a category value that is guaranteed to be unique across all <xref:System.Guid> values. However, it is necessary only for the category value to be distinct from other categories, not from all other <xref:System.Guid> values. For example, you can set the <xref:System.Messaging.MessageQueue.Category*> for one group of queues to {00000000-0000-0000-0000-000000000001} and the <xref:System.Messaging.MessageQueue.Category*> for another group to {00000000-0000-0000-0000-000000000002}.
 
@@ -239,7 +243,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Typically, you do not call the methods of the <xref:System.Messaging.MessageQueueInstaller> from within your code; they are generally called only by the installutil.exe installation utility. The utility automatically calls the <xref:System.Messaging.MessageQueueInstaller.Install*> method during the installation process. Installation is transactional, so if there is a failure of any installation project component during the installation, all the previously installed components are rolled back to their pre-installation states. This is accomplished by calling each component's <xref:System.Messaging.MessageQueueInstaller.Rollback*> method.
+
+Typically, you do not call the methods of the <xref:System.Messaging.MessageQueueInstaller> from within your code; they are generally called only by the installutil.exe installation utility. The utility automatically calls the <xref:System.Messaging.MessageQueueInstaller.Install*> method during the installation process. Installation is transactional, so if there is a failure of any installation project component during the installation, all the previously installed components are rolled back to their pre-installation states. This is accomplished by calling each component's <xref:System.Messaging.MessageQueueInstaller.Rollback*> method.
 
  After a successful installation of all the components that are associated with the installation project has occurred, the installation utility commits the installations. <xref:System.Messaging.MessageQueueInstaller.Commit*> completes the installation of the <xref:System.Messaging.MessageQueue> by setting the queue to the appropriate initial state. If the queue specified by the <xref:System.Messaging.MessageQueueInstaller.Path> property already exists and contains messages, <xref:System.Messaging.MessageQueueInstaller.Commit*> clears the messages. <xref:System.Messaging.MessageQueueInstaller.Commit*>, rather than <xref:System.Messaging.MessageQueueInstaller.Install*>, clears the messages because the act of purging the messages cannot be rolled back.
 
@@ -279,7 +284,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Typically, you do not call the methods of the <xref:System.Messaging.MessageQueueInstaller> from within your code; they are generally called only by the installutil.exe installation utility. <xref:System.Messaging.MessageQueueInstaller.CopyFromComponent*> is used by the installation utility to set the property values for the <xref:System.Messaging.MessageQueueInstaller> to the values of an existing <xref:System.Messaging.MessageQueue>.
+
+Typically, you do not call the methods of the <xref:System.Messaging.MessageQueueInstaller> from within your code; they are generally called only by the installutil.exe installation utility. <xref:System.Messaging.MessageQueueInstaller.CopyFromComponent*> is used by the installation utility to set the property values for the <xref:System.Messaging.MessageQueueInstaller> to the values of an existing <xref:System.Messaging.MessageQueue>.
 
  If the <xref:System.Messaging.MessageQueue.Path*> of the <xref:System.Messaging.MessageQueue> that is passed in is an empty string (""), you must set the <xref:System.Messaging.MessageQueue.Path> property to a non-empty value before the installer executes.
 
@@ -318,7 +324,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When encryption is specified, only the <xref:System.Messaging.Message.Body*> of a message is encrypted. Other properties, such as the <xref:System.Messaging.Message.Label*>, are not encrypted.
+
+When encryption is specified, only the <xref:System.Messaging.Message.Body*> of a message is encrypted. Other properties, such as the <xref:System.Messaging.Message.Label*>, are not encrypted.
 
  ]]></format>
         </remarks>
@@ -351,7 +358,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Messaging.MessageQueueInstaller.Install*> method writes message queue information to the registry, and associates the <xref:System.Messaging.MessageQueue> instance with a queue that is located at the path specified by the <xref:System.Messaging.MessageQueueInstaller.Path> property. If the queue does not already exist, <xref:System.Messaging.MessageQueueInstaller.Install*> creates a transactional queue. <xref:System.Messaging.MessageQueueInstaller.Install*> sets the new or existing queue properties to those that you have specified in the <xref:System.Messaging.MessageQueueInstaller>. If the queue already exists, its properties are reset to those of the <xref:System.Messaging.MessageQueueInstaller>. If the existing queue is not transactional, it is deleted and then recreated as a transactional queue.
+
+The <xref:System.Messaging.MessageQueueInstaller.Install*> method writes message queue information to the registry, and associates the <xref:System.Messaging.MessageQueue> instance with a queue that is located at the path specified by the <xref:System.Messaging.MessageQueueInstaller.Path> property. If the queue does not already exist, <xref:System.Messaging.MessageQueueInstaller.Install*> creates a transactional queue. <xref:System.Messaging.MessageQueueInstaller.Install*> sets the new or existing queue properties to those that you have specified in the <xref:System.Messaging.MessageQueueInstaller>. If the queue already exists, its properties are reset to those of the <xref:System.Messaging.MessageQueueInstaller>. If the existing queue is not transactional, it is deleted and then recreated as a transactional queue.
 
 > [!CAUTION]
 > If it is necessary to recreate the queue, messages in the queue will be lost.
@@ -399,7 +407,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Typically, <xref:System.Configuration.Install.ComponentInstaller.IsEquivalentInstaller*> returns `true` only if this installer and the installer specified by the `otherInstaller` parameter are of the same type.
+
+Typically, <xref:System.Configuration.Install.ComponentInstaller.IsEquivalentInstaller*> returns `true` only if this installer and the installer specified by the `otherInstaller` parameter are of the same type.
 
  ]]></format>
         </remarks>
@@ -435,7 +444,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Messaging.MessageQueue.Label> property does not need to be unique across queues.
+
+The <xref:System.Messaging.MessageQueue.Label> property does not need to be unique across queues.
 
  ]]></format>
         </remarks>
@@ -472,7 +482,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When a queue is created, Message Queuing automatically creates a queue journal in the same location as the new queue. The queue journal is used to track the messages that are removed from the queue.
+
+When a queue is created, Message Queuing automatically creates a queue journal in the same location as the new queue. The queue journal is used to track the messages that are removed from the queue.
 
  Two types of messages remain untracked: those that are removed from the queue because their time-to-be-received timer expired, and those that are purged from the queue.
 
@@ -512,7 +523,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The maximum queue size is typically set at the time of queue creation, although it can be reset later.
+
+The maximum queue size is typically set at the time of queue creation, although it can be reset later.
 
  ]]></format>
         </remarks>
@@ -607,7 +619,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The syntax for the <xref:System.Messaging.MessageQueue.Path> property depends on the type of queue it references. The following table shows the syntax you should use for queues of various types.
+
+The syntax for the <xref:System.Messaging.MessageQueue.Path> property depends on the type of queue it references. The following table shows the syntax you should use for queues of various types.
 
 |Queue type|Syntax|
 |----------------|------------|
@@ -672,7 +685,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- By default, the creator of a public or private queue has full control, and the domain group Everyone has permission to get queue properties, get permissions, and write to the queue. Message Queuing accesses each permission list entry in turn until it finds one that applies to the current user and the current attempted action. As with the operating system permissions, the rights that you specifically deny to a user take precedence over those you allow.
+
+By default, the creator of a public or private queue has full control, and the domain group Everyone has permission to get queue properties, get permissions, and write to the queue. Message Queuing accesses each permission list entry in turn until it finds one that applies to the current user and the current attempted action. As with the operating system permissions, the rights that you specifically deny to a user take precedence over those you allow.
 
  When you construct the <xref:System.Messaging.MessageQueueInstaller.Permissions> property, add <xref:System.Messaging.AccessControlEntry> instances to your <xref:System.Messaging.AccessControlList> collection. When you construct each access control entry, you can specify generic or standard access rights. The rights to a queue can be any combination of the following:
 
@@ -754,7 +768,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Messaging.MessageQueueInstaller.Rollback*> method undoes the effects of the <xref:System.Messaging.MessageQueueInstaller.Install*> method. <xref:System.Messaging.MessageQueueInstaller.Rollback*> is called if the installation of any component in the installation project fails. The <xref:System.Messaging.MessageQueueInstaller.Install*> method creates or sets the properties for a queue. <xref:System.Messaging.MessageQueueInstaller.Rollback*> either deletes the queue or resets the properties of a pre-existing queue to their pre-installation values.
+
+The <xref:System.Messaging.MessageQueueInstaller.Rollback*> method undoes the effects of the <xref:System.Messaging.MessageQueueInstaller.Install*> method. <xref:System.Messaging.MessageQueueInstaller.Rollback*> is called if the installation of any component in the installation project fails. The <xref:System.Messaging.MessageQueueInstaller.Install*> method creates or sets the properties for a queue. <xref:System.Messaging.MessageQueueInstaller.Rollback*> either deletes the queue or resets the properties of a pre-existing queue to their pre-installation values.
 
  Typically, you do not call the methods of the <xref:System.Messaging.MessageQueueInstaller> from within your code; they are generally called only by the InstallUtil.exe installation utility. The utility automatically calls the <xref:System.Messaging.MessageQueueInstaller.Rollback*> method after an installation failure to undo any changes that the installation process has already made.
 
@@ -799,7 +814,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Messages can be retrieved from a local transaction queue with or without using a transaction. If you do not specify a transaction context, Message Queuing creates a single internal transaction for you.
+
+Messages can be retrieved from a local transaction queue with or without using a transaction. If you do not specify a transaction context, Message Queuing creates a single internal transaction for you.
 
  ]]></format>
         </remarks>
@@ -832,7 +848,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the <xref:System.Messaging.MessageQueueInstaller.UninstallAction*> is `Remove`, <xref:System.Messaging.MessageQueueInstaller.Uninstall*> also deletes the queue associated with the <xref:System.Messaging.MessageQueue>.
+
+If the <xref:System.Messaging.MessageQueueInstaller.UninstallAction*> is `Remove`, <xref:System.Messaging.MessageQueueInstaller.Uninstall*> also deletes the queue associated with the <xref:System.Messaging.MessageQueue>.
 
  Typically, you do not call the methods of the <xref:System.Messaging.MessageQueueInstaller> from within your code; they are generally called only by the InstallUtil.exe installation utility (in uninstall mode). The utility automatically calls the <xref:System.Messaging.MessageQueueInstaller.Uninstall*> method to restore the parts of the system that were affected by the installation to their pre-installation states. This includes deleting registry information that is associated with the MessageQueue being uninstalled.
 
@@ -874,7 +891,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When you install a queue, you can optionally use an existing queue. If you do so, you must decide whether the queue should return to its pre-installation state, or remain in its current, post-installation state. If you elect to return the queue to its pre-installation state, messages that were deleted from the queue at install time are not restored. You can reset only queue properties that are associated with the <xref:System.Messaging.MessageQueueInstaller> to their pre-installation values.
+
+When you install a queue, you can optionally use an existing queue. If you do so, you must decide whether the queue should return to its pre-installation state, or remain in its current, post-installation state. If you elect to return the queue to its pre-installation state, messages that were deleted from the queue at install time are not restored. You can reset only queue properties that are associated with the <xref:System.Messaging.MessageQueueInstaller> to their pre-installation values.
 
  ]]></format>
         </remarks>
@@ -912,7 +930,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A journal queue lets you keep track of messages even after they have been retrieved from the queue. However, two types of messages remain untracked: those that are removed from the queue when their time-to-be-received timer expires, and those that are purged from the queue.
+
+A journal queue lets you keep track of messages even after they have been retrieved from the queue. However, two types of messages remain untracked: those that are removed from the queue when their time-to-be-received timer expires, and those that are purged from the queue.
 
  A journal queue should be cleared periodically to remove messages that are no longer needed. Messages stored in the journal queue count toward the quota for the computer on which the journal is located.
 

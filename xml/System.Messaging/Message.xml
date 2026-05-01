@@ -35,7 +35,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use the <xref:System.Messaging.Message> class to peek or receive messages from a queue, or to have fine control over message properties when sending a message to a queue.
+
+Use the <xref:System.Messaging.Message> class to peek or receive messages from a queue, or to have fine control over message properties when sending a message to a queue.
 
  <xref:System.Messaging.MessageQueue> uses the <xref:System.Messaging.Message> class when it peeks or receives messages from queues, because both the <xref:System.Messaging.MessageQueue.Peek*?displayProperty=nameWithType> and <xref:System.Messaging.MessageQueue.Receive*?displayProperty=nameWithType> methods create a new instance of the <xref:System.Messaging.Message> class and set the instance's properties. The <xref:System.Messaging.Message> class's read-only properties apply to retrieving messages from a queue, while the read/write properties apply to sending and retrieving messages. When <xref:System.Messaging.MessageQueue> peeks or receives a message from a queue, its <xref:System.Messaging.MessageQueue.MessageReadPropertyFilter> property determines which of the message's properties are retrieved.
 
@@ -100,7 +101,8 @@ The following code example demonstrates formatting a message body using <xref:Sy
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use this overload to create a new instance of the <xref:System.Messaging.Message> class that has an empty body.
+
+Use this overload to create a new instance of the <xref:System.Messaging.Message> class that has an empty body.
 
  Specify either the <xref:System.Messaging.Message.Body> property or the <xref:System.Messaging.Message.BodyStream> property before sending the <xref:System.Messaging.Message> object. The <xref:System.Messaging.Message.Body> property can be any object that can be serialized, such as a text string, a structure object, a class instance, or an embedded object.
 
@@ -186,7 +188,8 @@ The following code example sends two messages of different priorities to the que
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use this overload to create a new instance of the <xref:System.Messaging.Message> class that contains the <xref:System.Messaging.Message.Body*> specified by the `body` parameter. The `body` parameter can be any object that can be serialized, such as a text string, a structure object, a class instance, or an embedded object. The body is serialized using the <xref:System.Messaging.XmlMessageFormatter> unless you change the <xref:System.Messaging.Message.Formatter> property before the <xref:System.Messaging.Message> is sent. If you change the <xref:System.Messaging.Message.Body*> or <xref:System.Messaging.Message.Formatter> property at any time before calling <xref:System.Messaging.MessageQueue.Send*>, the message will be serialized according to the new property value.
+
+Use this overload to create a new instance of the <xref:System.Messaging.Message> class that contains the <xref:System.Messaging.Message.Body*> specified by the `body` parameter. The `body` parameter can be any object that can be serialized, such as a text string, a structure object, a class instance, or an embedded object. The body is serialized using the <xref:System.Messaging.XmlMessageFormatter> unless you change the <xref:System.Messaging.Message.Formatter> property before the <xref:System.Messaging.Message> is sent. If you change the <xref:System.Messaging.Message.Body*> or <xref:System.Messaging.Message.Formatter> property at any time before calling <xref:System.Messaging.MessageQueue.Send*>, the message will be serialized according to the new property value.
 
  The <xref:System.Messaging.XmlMessageFormatter> is loosely coupled, so it is not necessary to have the same object type on the sender and receiver when using this format. The <xref:System.Messaging.ActiveXMessageFormatter> and <xref:System.Messaging.BinaryMessageFormatter> serialize the data into binary representation. The <xref:System.Messaging.ActiveXMessageFormatter> is used when sending or receiving COM components.
 
@@ -269,7 +272,8 @@ The following code example creates a new queue, sends a message that contains an
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use this overload to create a new instance of the <xref:System.Messaging.Message> class that contains the <xref:System.Messaging.Message.Body*> specified by the `body` parameter and that uses any valid formatter to serialize the body. The `body` parameter is any object that can be serialized, such as a text string, a structure object, a class instance, or an embedded object. If you change the <xref:System.Messaging.Message.Body*> or <xref:System.Messaging.Message.Formatter> property at any time before calling <xref:System.Messaging.MessageQueue.Send*>, the message will be serialized according to the new property value.
+
+Use this overload to create a new instance of the <xref:System.Messaging.Message> class that contains the <xref:System.Messaging.Message.Body*> specified by the `body` parameter and that uses any valid formatter to serialize the body. The `body` parameter is any object that can be serialized, such as a text string, a structure object, a class instance, or an embedded object. If you change the <xref:System.Messaging.Message.Body*> or <xref:System.Messaging.Message.Formatter> property at any time before calling <xref:System.Messaging.MessageQueue.Send*>, the message will be serialized according to the new property value.
 
  The <xref:System.Messaging.XmlMessageFormatter> is loosely coupled, so it is not necessary to have the same object type on the sender and receiver when using this format. The <xref:System.Messaging.ActiveXMessageFormatter> and <xref:System.Messaging.BinaryMessageFormatter> serialize the data into binary representation. The <xref:System.Messaging.ActiveXMessageFormatter> is used when sending or receiving COM components.
 
@@ -363,7 +367,8 @@ The following code example creates a new queue, sends a message that contains an
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Messaging.Message.AcknowledgeType> property specifies the type of acknowledgment messages requested by the sending application. Set the <xref:System.Messaging.Message.AcknowledgeType> property before sending the message to request notification of certain occurrences - for example, a message reaching its destination queue, a message being retrieved, or a time-out preventing a message from reaching or being retrieved from the destination queue.
+
+The <xref:System.Messaging.Message.AcknowledgeType> property specifies the type of acknowledgment messages requested by the sending application. Set the <xref:System.Messaging.Message.AcknowledgeType> property before sending the message to request notification of certain occurrences - for example, a message reaching its destination queue, a message being retrieved, or a time-out preventing a message from reaching or being retrieved from the destination queue.
 
  Message Queuing returns notification by sending acknowledgment messages to the <xref:System.Messaging.Message.AdministrationQueue> property specified by the original message. An acknowledgment message's <xref:System.Messaging.Message.Acknowledgment> property indicates the type of acknowledgment that it represents. For example, if an acknowledgment message was sent because a message did not reach the destination before the <xref:System.Messaging.Message.TimeToReachQueue*> interval expired, the <xref:System.Messaging.Message.Acknowledgment> property of the acknowledgment message would contain the value `ReachQueueTimeout`.
 
@@ -420,7 +425,8 @@ The following code example sends and receives a message containing an order to a
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When you receive a message from an administration queue, read the <xref:System.Messaging.Message.Acknowledgment> property to verify the status of the original message.
+
+When you receive a message from an administration queue, read the <xref:System.Messaging.Message.Acknowledgment> property to verify the status of the original message.
 
  When a message is sent to its destination queue, Message Queuing can be requested to post an acknowledgment message. Such a message can indicate, for example, whether the message arrived and was retrieved within specified time-outs, or it can indicate what went wrong in the case of delivery failure. The destination queue returns acknowledgment messages and posts them to the administration queue specified in the original message's <xref:System.Messaging.Message.AdministrationQueue> property. The <xref:System.Messaging.Message.Id> property of an acknowledgment message identifies the acknowledgment message, not the original message. You can find the identifier of the original message in the acknowledgment <xref:System.Messaging.Message> instance's <xref:System.Messaging.Message.CorrelationId> property.
 
@@ -482,7 +488,8 @@ The following code example sends and receives a message containing an order to a
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The queue specified in the <xref:System.Messaging.Message.AdministrationQueue> property can be any non-transactional queue. The acknowledgment messages sent to the administration queue can indicate whether the original message reached its destination queue and whether it was removed from the queue.
+
+The queue specified in the <xref:System.Messaging.Message.AdministrationQueue> property can be any non-transactional queue. The acknowledgment messages sent to the administration queue can indicate whether the original message reached its destination queue and whether it was removed from the queue.
 
  When the <xref:System.Messaging.Message.AcknowledgeType> property has any value other than `None`, the sending application must specify the queue to use as the administration queue.
 
@@ -539,7 +546,8 @@ The following code example sends and receives a message containing an order to a
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Messaging.Message.AppSpecific> property contains application-specific information that you can use to organize different types of messages. For example, you can use application-specific indexes. It is the responsibility of the application to interpret <xref:System.Messaging.Message.AppSpecific> property information.
+
+The <xref:System.Messaging.Message.AppSpecific> property contains application-specific information that you can use to organize different types of messages. For example, you can use application-specific indexes. It is the responsibility of the application to interpret <xref:System.Messaging.Message.AppSpecific> property information.
 
  Whenever possible, you should include message data in the body of the message rather than the <xref:System.Messaging.Message.AppSpecific> property.
 
@@ -586,7 +594,8 @@ The following code example sends and receives a message containing an order to a
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The message's <xref:System.Messaging.Message.TimeToBeReceived> property indicates how quickly the message must be received from the destination queue. The <xref:System.Messaging.Message.TimeToBeReceived> property timer starts when the message is sent, not when the message arrives in the queue.
+
+The message's <xref:System.Messaging.Message.TimeToBeReceived> property indicates how quickly the message must be received from the destination queue. The <xref:System.Messaging.Message.TimeToBeReceived> property timer starts when the message is sent, not when the message arrives in the queue.
 
 ## Examples
 
@@ -643,7 +652,8 @@ The following code example displays the value of a message's <xref:System.Messag
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Messaging.Message.SenderId> property is an array of bytes that represents the identifier of the sending user. The sender ID is set by Message Queuing and is used by the receiving Queue Manager to verify whether the sender has access rights to a queue.
+
+The <xref:System.Messaging.Message.SenderId> property is an array of bytes that represents the identifier of the sending user. The sender ID is set by Message Queuing and is used by the receiving Queue Manager to verify whether the sender has access rights to a queue.
 
  The absence of the sender ID is an indication by the sending application that Message Queuing should not validate the message's sender nor verify the sender's access rights to the receiving queue. The <xref:System.Messaging.Message.SenderId*> is trustworthy only if the message was authenticated when it reached the destination queue. The message is rejected when it reaches the destination queue if the queue accepts only authenticated messages and either the <xref:System.Messaging.DefaultPropertiesToSend.UseAuthentication*> or the <xref:System.Messaging.DefaultPropertiesToSend.AttachSenderId> property is `false`.
 
@@ -703,7 +713,8 @@ The following code example gets and sets the value of a message's <xref:System.M
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Messaging.Message.Authenticated> property is used only by the application while it is interacting with the message and trying to determine if authentication was requested. If the message is in the queue, the message was authenticated. Conversely, if the <xref:System.Messaging.Message.Authenticated> property is `true`, the receiving Queue Manager authenticated the message when it received that message.
+
+The <xref:System.Messaging.Message.Authenticated> property is used only by the application while it is interacting with the message and trying to determine if authentication was requested. If the message is in the queue, the message was authenticated. Conversely, if the <xref:System.Messaging.Message.Authenticated> property is `true`, the receiving Queue Manager authenticated the message when it received that message.
 
  You cannot determine if a message failed authentication by looking at its properties. Message Queuing discards messages that fail authentication before they are delivered to the queue. However, you can request that an acknowledgment message be sent if a delivery failure prevents the message from arriving in the queue.
 
@@ -764,7 +775,8 @@ The following code example displays the value of a message's <xref:System.Messag
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You typically use the <xref:System.Messaging.Message.AuthenticationProviderName*> when working with foreign queues. Message Queuing requires the authentication provider name and authentication provider type of the cryptographic provider (authentication provider) to validate the digital signatures of both messages sent to a foreign queue and messages passed to Message Queuing from a foreign queue.
+
+You typically use the <xref:System.Messaging.Message.AuthenticationProviderName*> when working with foreign queues. Message Queuing requires the authentication provider name and authentication provider type of the cryptographic provider (authentication provider) to validate the digital signatures of both messages sent to a foreign queue and messages passed to Message Queuing from a foreign queue.
 
  When sending a message, always set the <xref:System.Messaging.Message.AuthenticationProviderName*> and <xref:System.Messaging.Message.ConnectorType*> properties together. When the message is sent, Message Queuing ignores the authentication provider name if the connector type is not also set.
 
@@ -823,7 +835,8 @@ The following code example displays the value of a message's <xref:System.Messag
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You typically use the <xref:System.Messaging.Message.AuthenticationProviderType> property when working with foreign queues to specify which cryptographic service provider is associated with a message. Message Queuing requires the authentication provider name and authentication provider type of the cryptographic provider (authentication provider) to validate the digital signatures of both messages sent to a foreign queue and messages passed to Message Queuing from a foreign queue.
+
+You typically use the <xref:System.Messaging.Message.AuthenticationProviderType> property when working with foreign queues to specify which cryptographic service provider is associated with a message. Message Queuing requires the authentication provider name and authentication provider type of the cryptographic provider (authentication provider) to validate the digital signatures of both messages sent to a foreign queue and messages passed to Message Queuing from a foreign queue.
 
  Only `RsaFull` is intended to be used with messaging.
 
@@ -878,7 +891,8 @@ The following code example displays the value of a message's <xref:System.Messag
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The message's <xref:System.Messaging.Message.Body> property usually contains the data associated with the message. Although you can also send application-specific data in the <xref:System.Messaging.Message.AppSpecific*> and <xref:System.Messaging.Message.Extension*> properties, you should include message data in the <xref:System.Messaging.Message.Body*> of the message whenever possible. Only the <xref:System.Messaging.Message.Body> property contents are serialized or encrypted.
+
+The message's <xref:System.Messaging.Message.Body> property usually contains the data associated with the message. Although you can also send application-specific data in the <xref:System.Messaging.Message.AppSpecific*> and <xref:System.Messaging.Message.Extension*> properties, you should include message data in the <xref:System.Messaging.Message.Body*> of the message whenever possible. Only the <xref:System.Messaging.Message.Body> property contents are serialized or encrypted.
 
  The <xref:System.Messaging.Message.Body> property can contain any object whose size does not exceed 4 MB. If you use <xref:System.Messaging.MessageQueue.Send*?displayProperty=nameWithType> to send any object that is not of type <xref:System.Messaging.Message> to the <xref:System.Messaging.MessageQueue>, that object will be located in the <xref:System.Messaging.Message.Body> property of the <xref:System.Messaging.Message> instance returned by <xref:System.Messaging.MessageQueue.Peek*> or <xref:System.Messaging.MessageQueue.Receive*>.
 
@@ -968,7 +982,8 @@ The following code example sends two messages of different priorities to the que
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The body of a message can consist of any type of information - for example, a string, a date, a currency, a number, an array of bytes, or any managed object. This information is serialized into a <xref:System.IO.Stream> to be passed to the queue.
+
+The body of a message can consist of any type of information - for example, a string, a date, a currency, a number, an array of bytes, or any managed object. This information is serialized into a <xref:System.IO.Stream> to be passed to the queue.
 
  Specify either the <xref:System.Messaging.Message.Body> property or the <xref:System.Messaging.Message.BodyStream> property before sending the <xref:System.Messaging.Message> object. If you set the <xref:System.Messaging.Message.Body> property, the contents are serialized into the <xref:System.Messaging.Message.BodyStream> property. However, you can choose to write the <xref:System.Messaging.Message.BodyStream> property directly. This is useful, for example, when you want to open a connection to a file and stream its contents as the body of your message.
 
@@ -1027,7 +1042,8 @@ The following code example sends two messages of different priorities to the que
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Message Queuing recognizes the body contents as an object or as a serialized stream. The <xref:System.Messaging.Message.BodyType> property indicates the type of the object within the <xref:System.Messaging.Message.Body> property of the message.
+
+Message Queuing recognizes the body contents as an object or as a serialized stream. The <xref:System.Messaging.Message.BodyType> property indicates the type of the object within the <xref:System.Messaging.Message.Body> property of the message.
 
  The <xref:System.Messaging.XmlMessageFormatter> performs binding between native types and the object in a message body. If you use the <xref:System.Messaging.XmlMessageFormatter>, the formatter sets the <xref:System.Messaging.Message.BodyType> property for you.
 
@@ -1098,7 +1114,8 @@ The following code example displays the value of a message's <xref:System.Messag
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Message Queuing requires the <xref:System.Messaging.Message.ConnectorType> property be set whenever an application sets a message property that is usually set by Message Queuing. An application typically uses a <xref:System.Messaging.Message.ConnectorType*> in the following two cases:
+
+Message Queuing requires the <xref:System.Messaging.Message.ConnectorType> property be set whenever an application sets a message property that is usually set by Message Queuing. An application typically uses a <xref:System.Messaging.Message.ConnectorType*> in the following two cases:
 
 - Whenever a connector application passes a message. The <xref:System.Messaging.Message.ConnectorType*> tells the sending and receiving applications how to interpret the security and acknowledgment properties of the message.
 
@@ -1167,7 +1184,8 @@ The following code example displays the value of a message's <xref:System.Messag
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When Message Queuing generates an acknowledgment or report message, it uses the correlation identifier property to specify the message identifier of the original message. In this manner, the correlation identifier ties the report or acknowledgment message to the original message.
+
+When Message Queuing generates an acknowledgment or report message, it uses the correlation identifier property to specify the message identifier of the original message. In this manner, the correlation identifier ties the report or acknowledgment message to the original message.
 
  The sending application can then match the acknowledgment or report with the original message by using the <xref:System.Messaging.Message.CorrelationId> property to identify the original message's <xref:System.Messaging.Message.Id> property.
 
@@ -1229,7 +1247,8 @@ The following code example sends and receives a message that contains an order t
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Messaging.Message.DestinationQueue> property is most commonly used to determine the original destination of a message that arrived in a journal or dead-letter queue. Usually, you do not need to examine this property, because you typically retrieve the message from its destination queue.
+
+The <xref:System.Messaging.Message.DestinationQueue> property is most commonly used to determine the original destination of a message that arrived in a journal or dead-letter queue. Usually, you do not need to examine this property, because you typically retrieve the message from its destination queue.
 
 ## Examples
 
@@ -1287,7 +1306,8 @@ The following code example displays the value of a message's <xref:System.Messag
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Two scenarios require you to use the <xref:System.Messaging.Message.DestinationSymmetricKey> property. The first is when your application, rather than Message Queuing, encrypts a message. The second is when you send an encrypted message to a queuing system other than Message Queuing.
+
+Two scenarios require you to use the <xref:System.Messaging.Message.DestinationSymmetricKey> property. The first is when your application, rather than Message Queuing, encrypts a message. The second is when you send an encrypted message to a queuing system other than Message Queuing.
 
  Before you set this property, you must encrypt the symmetric key with the public key of the receiving queue manager. When you send an application-encrypted message, the receiving queue manager uses the symmetric key to decrypt the message before sending it to its destination queue.
 
@@ -1343,7 +1363,8 @@ The following code example displays the value of a message's <xref:System.Messag
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Message Queuing uses the digital signature when authenticating messages that were sent by Message Queuing version 1.0. In most cases, Message Queuing generates and sets the <xref:System.Messaging.Message.DigitalSignature> property when the sending application requests authentication. The receiving application uses this property to retrieve the digital signature attached to the message.
+
+Message Queuing uses the digital signature when authenticating messages that were sent by Message Queuing version 1.0. In most cases, Message Queuing generates and sets the <xref:System.Messaging.Message.DigitalSignature> property when the sending application requests authentication. The receiving application uses this property to retrieve the digital signature attached to the message.
 
  You can only use the <xref:System.Messaging.Message.DigitalSignature> property when running Message Queuing version 2.0. The sending application must specify Message Queuing version 1.0 signatures when requesting authentication. If the sending application sends a Message Queuing version 2.0 signature, this property contains a buffer of four bytes, each containing zero.
 
@@ -1401,7 +1422,8 @@ The following code example displays the value of a message's <xref:System.Messag
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If a message is private (encrypted), it is encrypted before it is sent and decrypted upon receipt. The <xref:System.Messaging.Message.EncryptionAlgorithm> property specifies the algorithm used to encrypt the message body of a private message.
+
+If a message is private (encrypted), it is encrypted before it is sent and decrypted upon receipt. The <xref:System.Messaging.Message.EncryptionAlgorithm> property specifies the algorithm used to encrypt the message body of a private message.
 
  A queue can require that incoming messages be encrypted. If an application sends a non-encrypted (non-private) message to a queue that accepts only private messages, or if it sends a private message to a queue that accepts only non-private messages, the queue rejects the message. The sending application can request that a negative acknowledgment message be returned in such a case.
 
@@ -1452,7 +1474,8 @@ The following code example displays the value of a message's <xref:System.Messag
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Messaging.Message.Extension> property provides for application-defined information, like a large binary object, that is associated with the message. It is the responsibility of the receiving application to interpret the contents of the <xref:System.Messaging.Message.Extension> property.
+
+The <xref:System.Messaging.Message.Extension> property provides for application-defined information, like a large binary object, that is associated with the message. It is the responsibility of the receiving application to interpret the contents of the <xref:System.Messaging.Message.Extension> property.
 
  Where possible, you should include message data in the <xref:System.Messaging.Message.Body> property of the message rather than the <xref:System.Messaging.Message.Extension> property.
 
@@ -1502,7 +1525,8 @@ The following code example displays the value of a message's <xref:System.Messag
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use the <xref:System.Messaging.Message.Formatter> property when reading and writing a message. When a message is sent to the queue, the formatter serializes the <xref:System.Messaging.Message.Body> property into a stream that can be sent to the message queue. When reading from a queue, the formatter deserializes the message data into the <xref:System.Messaging.Message.Body> property.
+
+Use the <xref:System.Messaging.Message.Formatter> property when reading and writing a message. When a message is sent to the queue, the formatter serializes the <xref:System.Messaging.Message.Body> property into a stream that can be sent to the message queue. When reading from a queue, the formatter deserializes the message data into the <xref:System.Messaging.Message.Body> property.
 
  Unless you write the contents of the message directly to the <xref:System.Messaging.Message.BodyStream> property, set the <xref:System.Messaging.Message.Formatter> property before you send the message. When the <xref:System.Messaging.MessageQueue.Send*> method is called on the <xref:System.Messaging.MessageQueue> instance, the body is serialized using the formatter contained in the <xref:System.Messaging.Message.Formatter> property. If you send the message without specifying a value for the <xref:System.Messaging.Message.Formatter> property, the formatter defaults to <xref:System.Messaging.XmlMessageFormatter>.
 
@@ -1569,7 +1593,8 @@ The following code example demonstrates formatting a message body using <xref:Sy
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- On the source computer, Message Queuing uses the hashing algorithm when creating a digital signature for a message. The target Queue Manager then uses the same hashing algorithm to authenticate the message when it is received.
+
+On the source computer, Message Queuing uses the hashing algorithm when creating a digital signature for a message. The target Queue Manager then uses the same hashing algorithm to authenticate the message when it is received.
 
  Due to collision problems with MD5 and SHA-1, Microsoft recommends SHA-256.
 
@@ -1621,7 +1646,8 @@ The following code example demonstrates formatting a message body using <xref:Sy
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Message Queuing generates a message identifier when the message is sent. The identifier is composed of 20 bytes and includes two items: the machine <xref:System.Guid> of the sending computer and a unique identifier for the message on the computer. The combination of the two items produces a message identifier that is unique on the network.
+
+Message Queuing generates a message identifier when the message is sent. The identifier is composed of 20 bytes and includes two items: the machine <xref:System.Guid> of the sending computer and a unique identifier for the message on the computer. The combination of the two items produces a message identifier that is unique on the network.
 
  Message Queuing generates message identifiers for all messages - including acknowledgment and report messages. An acknowledgment message is generally sent by Message Queuing in reaction to the arrival or failure of an original, sent message. You can find the <xref:System.Messaging.Message.Id> property value of the original message in the <xref:System.Messaging.Message.CorrelationId> property of an acknowledgment message.
 
@@ -1717,7 +1743,8 @@ The following code example demonstrates the use of the <xref:System.Messaging.Me
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Receiving applications use the <xref:System.Messaging.Message.IsFirstInTransaction> property to verify that a message was the first message sent in a single transaction to a single queue.
+
+Receiving applications use the <xref:System.Messaging.Message.IsFirstInTransaction> property to verify that a message was the first message sent in a single transaction to a single queue.
 
  This property is available only with Message Queuing version 2.0 and later.
 
@@ -1778,7 +1805,8 @@ The following code example displays the value of a message's <xref:System.Messag
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Receiving applications use the <xref:System.Messaging.Message.IsLastInTransaction> property to verify that a message was the last message sent in a single transaction to a single queue.
+
+Receiving applications use the <xref:System.Messaging.Message.IsLastInTransaction> property to verify that a message was the last message sent in a single transaction to a single queue.
 
  This property is available only with Message Queuing version 2.0 and later.
 
@@ -1842,7 +1870,8 @@ The following code example displays the value of a message's <xref:System.Messag
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You can use a message label for several purposes. For example, you can use it for display purposes or to selectively process messages based on the label value. The label does not need to be unique across messages.
+
+You can use a message label for several purposes. For example, you can use it for display purposes or to selectively process messages based on the label value. The label does not need to be unique across messages.
 
  Message queue and message labels represent an application-defined value that can help identify the queue or message in human-readable terms. It is the responsibility of the application to interpret the label contents, which have no intrinsic meaning to the Message Queuing application.
 
@@ -1881,7 +1910,8 @@ The following code example gets and sets the value of a message's <xref:System.M
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Messaging.Message.LookupId> property provides read-only access to a message's lookup identifier. The lookup identifier, introduced in MSMQ 3.0, is a 64-bit identifier that is generated by Message Queuing and assigned to each message when the message is placed in the queue. The lookup identifier is not the same as the message identifier that is generated when the message is sent.
+
+The <xref:System.Messaging.Message.LookupId> property provides read-only access to a message's lookup identifier. The lookup identifier, introduced in MSMQ 3.0, is a 64-bit identifier that is generated by Message Queuing and assigned to each message when the message is placed in the queue. The lookup identifier is not the same as the message identifier that is generated when the message is sent.
 
  Message Queuing generates a lookup identifier for all messages that are placed in any queue, including application-generated destination, administration, and report queues, as well as system-generated journal, dead-letter, connector, and outgoing queues. In other words, this includes both messages sent by sending applications and by Message Queuing. The lookup identifier is unique to the queue and has no meaning outside the queue.
 
@@ -1939,7 +1969,8 @@ The following code example gets and sets the value of a message's <xref:System.M
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Message Queuing typically sets this property when it sends the message. A Message Queuing message can be one of the following types:
+
+Message Queuing typically sets this property when it sends the message. A Message Queuing message can be one of the following types:
 
 -   `Normal`, which is either a typical message sent from an application to a queue, or a response message returned to the sending application.
 
@@ -2004,7 +2035,8 @@ The following code example displays the value of a message's <xref:System.Messag
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Messaging.Message.Priority> property affects how Message Queuing handles the message both while it is en route and once it reaches its destination. Higher-priority messages are given preference during routing and inserted toward the front of the destination queue. Messages with the same priority are placed in the queue according to their arrival time.
+
+The <xref:System.Messaging.Message.Priority> property affects how Message Queuing handles the message both while it is en route and once it reaches its destination. Higher-priority messages are given preference during routing and inserted toward the front of the destination queue. Messages with the same priority are placed in the queue according to their arrival time.
 
  You can set a meaningful priority only for non-transactional messages. Message Queuing automatically sets the priority for transactional messages to `Lowest`, which causes transactional message priority to be ignored.
 
@@ -2063,7 +2095,8 @@ The following code example sends two messages of different priorities to the que
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Messaging.Message.Recoverable> property indicates whether the delivery of a message is guaranteed - even if a computer crashes while the message is en route to the destination queue.
+
+The <xref:System.Messaging.Message.Recoverable> property indicates whether the delivery of a message is guaranteed - even if a computer crashes while the message is en route to the destination queue.
 
  If delivery of a message is guaranteed, the message is stored locally at every step along the route, until the message is successfully forwarded to the next computer. Setting the <xref:System.Messaging.Message.Recoverable> property to `true` could affect throughput.
 
@@ -2119,7 +2152,8 @@ The following code example gets and sets the value of a message's <xref:System.M
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Messaging.Message.ResponseQueue> property identifies the queue that receives application-generated response messages, which the receiving application returns to the sending application. The sending application specifies response queues when the application sends its messages. Any available queue can be specified as a response queue.
+
+The <xref:System.Messaging.Message.ResponseQueue> property identifies the queue that receives application-generated response messages, which the receiving application returns to the sending application. The sending application specifies response queues when the application sends its messages. Any available queue can be specified as a response queue.
 
  Messages returned to the response queue are application-specific. The application must define the contents of the messages as well as the action to take upon receipt of a message.
 
@@ -2207,7 +2241,8 @@ The following code example gets and sets the value of a message's <xref:System.M
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The receiving application uses the <xref:System.Messaging.Message.SenderCertificate> property when the message includes an external security certificate.
+
+The receiving application uses the <xref:System.Messaging.Message.SenderCertificate> property when the message includes an external security certificate.
 
  Message Queuing can authenticate a message using either an internal or external security certificate. Message Queuing provides internal certificates, which are used to verify message integrity. A certification authority provides an external certificate, which you can access through the <xref:System.Messaging.Message.SenderCertificate> property of the message. In addition to allowing Message Queuing to authenticate the message, an external certificate allows the receiving application to further verify the sender. An internal certificate has no usable value to a receiving application.
 
@@ -2255,7 +2290,8 @@ The following code example gets and sets the value of a message's <xref:System.M
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the <xref:System.Messaging.Message.AttachSenderId> property is `false`, the sender identifier specified in the <xref:System.Messaging.Message.SenderId> property is not attached to the message when it is sent. This indicates to Message Queuing that the sender should not be validated when it sends the message to the destination queue. If the <xref:System.Messaging.Message.AttachSenderId> property is `true`, the <xref:System.Messaging.Message.SenderId> property value is trustworthy only if the message was authenticated. Use the <xref:System.Messaging.Message.Authenticated> property in conjunction with the <xref:System.Messaging.Message.SenderId> property to verify the sender's access rights.
+
+If the <xref:System.Messaging.Message.AttachSenderId> property is `false`, the sender identifier specified in the <xref:System.Messaging.Message.SenderId> property is not attached to the message when it is sent. This indicates to Message Queuing that the sender should not be validated when it sends the message to the destination queue. If the <xref:System.Messaging.Message.AttachSenderId> property is `true`, the <xref:System.Messaging.Message.SenderId> property value is trustworthy only if the message was authenticated. Use the <xref:System.Messaging.Message.Authenticated> property in conjunction with the <xref:System.Messaging.Message.SenderId> property to verify the sender's access rights.
 
  A connector application is an application that uses a connector server to provide communication between Message Queuing and other queuing systems. Message Queuing requires connector applications to provide sender identification. You must set the <xref:System.Messaging.Message.ConnectorType> property when sending a message through a connector application.
 
@@ -2311,7 +2347,8 @@ The following code example gets and sets the value of a message's <xref:System.M
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Messaging.Message.SenderVersion> property is important for certain features. For example, transaction processing is supported only by Message Queuing 2.0 and later, and digital signatures are used to authenticate messages sent by MSMQ 1.0.
+
+The <xref:System.Messaging.Message.SenderVersion> property is important for certain features. For example, transaction processing is supported only by Message Queuing 2.0 and later, and digital signatures are used to authenticate messages sent by MSMQ 1.0.
 
  The sending Queue Manager sets the <xref:System.Messaging.Message.SenderVersion> property when the message is sent.
 
@@ -2373,7 +2410,8 @@ The following code example displays the value of a message's <xref:System.Messag
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Messaging.Message.SentTime> property is adjusted to the local time of the computer on which this instance of the <xref:System.Messaging.Message> class was created. This time zone could be different from those of the source and destination queues.
+
+The <xref:System.Messaging.Message.SentTime> property is adjusted to the local time of the computer on which this instance of the <xref:System.Messaging.Message> class was created. This time zone could be different from those of the source and destination queues.
 
 ## Examples
 
@@ -2424,7 +2462,8 @@ The following code example displays the value of a message's <xref:System.Messag
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The format of the <xref:System.Messaging.Message.SourceMachine> property does not include preceding two forward slashes (\\\\). For example, `myServer` is a valid <xref:System.Messaging.Message.SourceMachine*>.
+
+The format of the <xref:System.Messaging.Message.SourceMachine> property does not include preceding two forward slashes (\\\\). For example, `myServer` is a valid <xref:System.Messaging.Message.SourceMachine*>.
 
 ## Examples
 
@@ -2485,7 +2524,8 @@ The following code example displays the value of a message's <xref:System.Messag
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Messaging.Message.TimeToBeReceived> property specifies the total time for a sent message to be received from the destination queue. The time limit includes the time spent getting to the destination queue and the time spent waiting in the queue before the message is received.
+
+The <xref:System.Messaging.Message.TimeToBeReceived> property specifies the total time for a sent message to be received from the destination queue. The time limit includes the time spent getting to the destination queue and the time spent waiting in the queue before the message is received.
 
 > [!CAUTION]
 > When using dependent client computers, be sure the clock on the client computer is synchronized with the clock on the server that is running Message Queuing. Otherwise, unpredictable behavior might result when sending a message whose <xref:System.Messaging.Message.TimeToBeReceived> property is not <xref:System.Messaging.Message.InfiniteTimeout>.
@@ -2554,7 +2594,8 @@ The following code example gets and sets the value of a message's <xref:System.M
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the interval specified by the <xref:System.Messaging.Message.TimeToReachQueue> property expires before the message reaches its destination, Message Queuing discards the message in one of two ways. If the message's <xref:System.Messaging.Message.UseDeadLetterQueue> property is `true`, the message is sent to the dead-letter queue. If <xref:System.Messaging.Message.UseDeadLetterQueue*> is `false`, the message is ignored
+
+If the interval specified by the <xref:System.Messaging.Message.TimeToReachQueue> property expires before the message reaches its destination, Message Queuing discards the message in one of two ways. If the message's <xref:System.Messaging.Message.UseDeadLetterQueue> property is `true`, the message is sent to the dead-letter queue. If <xref:System.Messaging.Message.UseDeadLetterQueue*> is `false`, the message is ignored
 
  You can set the message's <xref:System.Messaging.Message.AcknowledgeType> property to request that Message Queuing send a negative acknowledgment message back to the sending application if the message does not arrive before the timer expires.
 
@@ -2610,7 +2651,8 @@ The following code example gets and sets the value of a message's <xref:System.M
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Receiving applications use the <xref:System.Messaging.Message.TransactionId> property to verify that a message was sent as part of a specific transaction. The transaction identifier contains the identifier of the sending computer (first 16 bits) followed by a 4-byte transaction sequence number.
+
+Receiving applications use the <xref:System.Messaging.Message.TransactionId> property to verify that a message was sent as part of a specific transaction. The transaction identifier contains the identifier of the sending computer (first 16 bits) followed by a 4-byte transaction sequence number.
 
  This property is available only for Message Queuing version 2.0 and later.
 
@@ -2674,7 +2716,8 @@ The following code example displays the value of a message's <xref:System.Messag
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Messaging.Message.TransactionStatusQueue> property identifies the transactional queue on the source computer that receives read-receipt acknowledgments from connector applications. Message Queuing sets the property, and connector applications use the property when retrieving transactional messages sent to foreign queues.
+
+The <xref:System.Messaging.Message.TransactionStatusQueue> property identifies the transactional queue on the source computer that receives read-receipt acknowledgments from connector applications. Message Queuing sets the property, and connector applications use the property when retrieving transactional messages sent to foreign queues.
 
  A foreign queue exists in a queuing system other than Microsoft Message Queuing. Message Queuing communicates with such queues through a connector application.
 
@@ -2740,7 +2783,8 @@ The following code example displays the value of a message's <xref:System.Messag
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Messaging.Message.UseAuthentication> property specifies whether the message needs to be authenticated. If the sending application requests authentication, Message Queuing creates a digital signature and uses it to sign the message when it is sent and authenticate the message when it is received.
+
+The <xref:System.Messaging.Message.UseAuthentication> property specifies whether the message needs to be authenticated. If the sending application requests authentication, Message Queuing creates a digital signature and uses it to sign the message when it is sent and authenticate the message when it is received.
 
  If <xref:System.Messaging.Message.UseAuthentication*> is `false` and a message is sent to a queue that accepts only authenticated messages, the message will be rejected when it reaches the queue.
 
@@ -2798,7 +2842,8 @@ The following code example displays the value of a message's <xref:System.Messag
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Messaging.Message.UseJournalQueue*> and <xref:System.Messaging.Message.UseDeadLetterQueue*> properties specify how Message Queuing tracks a message. If <xref:System.Messaging.Message.UseDeadLetterQueue*> is `true`, delivery failure (of a non-transactional message), causes the message to be sent to the non-transactional dead-letter queue on the computer that could not deliver the message. Delivery failure could be caused by a message timer expiring, for example.
+
+The <xref:System.Messaging.Message.UseJournalQueue*> and <xref:System.Messaging.Message.UseDeadLetterQueue*> properties specify how Message Queuing tracks a message. If <xref:System.Messaging.Message.UseDeadLetterQueue*> is `true`, delivery failure (of a non-transactional message), causes the message to be sent to the non-transactional dead-letter queue on the computer that could not deliver the message. Delivery failure could be caused by a message timer expiring, for example.
 
  In the case of delivery failure for a transactional message, Message Queuing sends the message to the transactional dead-letter queue on the source machine in all negative and in-doubt cases.
 
@@ -2858,7 +2903,8 @@ The following code example gets and sets the value of a message's <xref:System.M
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If a message is private, its body is encrypted before it is sent and decrypted when it is received. To send a private message, the sending application must specify that encryption be used and, optionally, the encryption algorithm.
+
+If a message is private, its body is encrypted before it is sent and decrypted when it is received. To send a private message, the sending application must specify that encryption be used and, optionally, the encryption algorithm.
 
  When sending private messages, your application does not need to perform the message encryption. Message Queuing can encrypt the message body for you if your application is sending messages within a Microsoft Windows 2000 enterprise, which has access to the directory service. When receiving private messages, the receiving Queue Manager always decrypts the message body.
 
@@ -2914,7 +2960,8 @@ The following code example gets and sets the value of a message's <xref:System.M
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Messaging.Message.UseJournalQueue*> and <xref:System.Messaging.Message.UseDeadLetterQueue*> properties specify how Message Queuing tracks a message. If <xref:System.Messaging.Message.UseJournalQueue*> is `true`, then a copy is kept in the computer journal on the originating machine at each step that a message is transmitted.
+
+The <xref:System.Messaging.Message.UseJournalQueue*> and <xref:System.Messaging.Message.UseDeadLetterQueue*> properties specify how Message Queuing tracks a message. If <xref:System.Messaging.Message.UseJournalQueue*> is `true`, then a copy is kept in the computer journal on the originating machine at each step that a message is transmitted.
 
  The sent message is only copied to the journal queue if the destination queue is on a remote computer. If the destination is on the local computer, the message is sent directly to the queue; there are no intermediate steps to require journaling.
 
@@ -2976,7 +3023,8 @@ The following code example gets and sets the value of a message's <xref:System.M
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Messaging.Message.UseTracing> property specifies whether to track the route of a message as it moves toward its destination queue. If `true`, a report message (generated by Message Queuing) is sent to a report queue each time the message passes through a Message Queuing routing server. The report queue is specified by the source Queue Manager. Report queues are not limited to report messages generated by Message Queuing; your application-generated messages can also be sent to report queues.
+
+The <xref:System.Messaging.Message.UseTracing> property specifies whether to track the route of a message as it moves toward its destination queue. If `true`, a report message (generated by Message Queuing) is sent to a report queue each time the message passes through a Message Queuing routing server. The report queue is specified by the source Queue Manager. Report queues are not limited to report messages generated by Message Queuing; your application-generated messages can also be sent to report queues.
 
  Using tracing involves setting up Active Directory and specifying a report queue for the Message Queuing enterprise. The administrator configures these settings.
 

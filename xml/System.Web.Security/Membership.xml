@@ -20,7 +20,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Security.Membership> class is used in ASP.NET applications to validate user credentials and manage user settings such as passwords and email addresses. The <xref:System.Web.Security.Membership> class can be used on its own, or in conjunction with the <xref:System.Web.Security.FormsAuthentication> to create a complete system for authenticating users of a Web application or site. The <xref:System.Web.UI.WebControls.Login> control encapsulates the <xref:System.Web.Security.Membership> class to provide a convenient mechanism for validating users.
+
+The <xref:System.Web.Security.Membership> class is used in ASP.NET applications to validate user credentials and manage user settings such as passwords and email addresses. The <xref:System.Web.Security.Membership> class can be used on its own, or in conjunction with the <xref:System.Web.Security.FormsAuthentication> to create a complete system for authenticating users of a Web application or site. The <xref:System.Web.UI.WebControls.Login> control encapsulates the <xref:System.Web.Security.Membership> class to provide a convenient mechanism for validating users.
 
 > [!NOTE]
 > If you are not familiar with the membership features of ASP.NET, see [Introduction to Membership](https://learn.microsoft.com/previous-versions/aspnet/yh26yfzy(v=vs.100)) before continuing. For a list of other topics related to membership, see [Managing Users by Using Membership](https://learn.microsoft.com/previous-versions/aspnet/tw292whz(v=vs.100)).
@@ -107,7 +108,8 @@ The following code example shows the login page for an ASP.NET application confi
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Security.Membership.ApplicationName*> is used to identify users specific to an application. That is, the same user name can exist in the database for multiple ASP.NET applications that specify a different <xref:System.Web.Security.Membership.ApplicationName*>. This enables multiple applications to use the same database to store user information without running into duplicate user name conflicts. Alternatively, multiple ASP.NET applications can use the same user database by specifying the same <xref:System.Web.Security.Membership.ApplicationName*>. The <xref:System.Web.Security.Membership.ApplicationName*> can be set programmatically or declaratively in the configuration for the Web application.
+
+The <xref:System.Web.Security.Membership.ApplicationName*> is used to identify users specific to an application. That is, the same user name can exist in the database for multiple ASP.NET applications that specify a different <xref:System.Web.Security.Membership.ApplicationName*>. This enables multiple applications to use the same database to store user information without running into duplicate user name conflicts. Alternatively, multiple ASP.NET applications can use the same user database by specifying the same <xref:System.Web.Security.Membership.ApplicationName*>. The <xref:System.Web.Security.Membership.ApplicationName*> can be set programmatically or declaratively in the configuration for the Web application.
 
 > [!CAUTION]
 > Because a single default membership provider instance is used for all of the requests served by an <xref:System.Web.HttpApplication> object, you can have multiple requests executing concurrently and attempting to set the <xref:System.Web.Security.Membership.ApplicationName> property value. The <xref:System.Web.Security.Membership.ApplicationName> property is not thread safe for multiple writes, and changing the <xref:System.Web.Security.Membership.ApplicationName> property value can result in unexpected behavior for multiple users of an application. We recommend that you avoid writing code that allows users to set the <xref:System.Web.Security.Membership.ApplicationName> property, unless you must. An example of an application where setting the <xref:System.Web.Security.Membership.ApplicationName> property may be required is an administrative application that manages membership data for multiple applications. Such an application should be a single-user application and not a Web application.
@@ -426,7 +428,8 @@ The following code example creates a new user for an ASP.NET application configu
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- User data stored in the database for the <xref:System.Web.Security.Roles>, <xref:System.Web.HttpContext.Profile*>, or <xref:System.Web.UI.WebControls.WebParts.WebPart> personalization is also deleted when you are using the <xref:System.Web.Security.SqlRoleProvider>, <xref:System.Web.Profile.SqlProfileProvider>, and <xref:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider> objects for data storage.
+
+User data stored in the database for the <xref:System.Web.Security.Roles>, <xref:System.Web.HttpContext.Profile*>, or <xref:System.Web.UI.WebControls.WebParts.WebPart> personalization is also deleted when you are using the <xref:System.Web.Security.SqlRoleProvider>, <xref:System.Web.Profile.SqlProfileProvider>, and <xref:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider> objects for data storage.
 
 ## Examples
 
@@ -475,7 +478,8 @@ The following code example deletes the currently logged-on user and all related 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Users deleted from the database are only deleted from the configured `applicationName`.
+
+Users deleted from the database are only deleted from the configured `applicationName`.
 
  If `deleteAllRelatedData` is `true`, user data stored in the database for the <xref:System.Web.Security.Roles>, <xref:System.Web.HttpContext.Profile*>, or <xref:System.Web.UI.WebControls.WebParts.WebPart> personalization is also deleted when you are using the <xref:System.Web.Security.SqlRoleProvider>, <xref:System.Web.Profile.SqlProfileProvider>, and <xref:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider> objects for data storage.
 
@@ -519,7 +523,8 @@ The following code example deletes the currently logged-on user and all related 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Password reset is the ability for ASP.NET membership to replace the current password for a user name with a new, randomly generated password when a user has forgotten their password or the current password is no longer valid. This is especially useful when password format is set to <xref:System.Web.Security.MembershipPasswordFormat.Hashed>, as users cannot retrieve hashed password values.
+
+Password reset is the ability for ASP.NET membership to replace the current password for a user name with a new, randomly generated password when a user has forgotten their password or the current password is no longer valid. This is especially useful when password format is set to <xref:System.Web.Security.MembershipPasswordFormat.Hashed>, as users cannot retrieve hashed password values.
 
 ## Examples
 
@@ -574,7 +579,8 @@ The following code example shows the [membership](https://learn.microsoft.com/pr
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If <xref:System.Web.Security.Membership.EnablePasswordRetrieval*> is `false`, the underlying membership provider may throw a <xref:System.Web.HttpException>.
+
+If <xref:System.Web.Security.Membership.EnablePasswordRetrieval*> is `false`, the underlying membership provider may throw a <xref:System.Web.HttpException>.
 
  The providers that are included with the .NET Framework support multiple password formats to enhance password security. If the password format is set to <xref:System.Web.Security.MembershipPasswordFormat.Hashed>, then users will not be able to retrieve their existing password from the database. The <xref:System.Web.Security.MembershipPasswordFormat.Hashed> password format provides one-way encoding of password values. Passwords are "hashed" and compared to values stored in the database for authentication. "Hashed" values cannot be un-encoded to retrieve the original password value. For more information, see <xref:System.Web.Security.MembershipPasswordFormat>.
 
@@ -893,7 +899,8 @@ The following code example uses the <xref:System.Web.Security.Membership.FindUse
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Security.Membership.GeneratePassword*> method is used to generate a random password and is most commonly used by the <xref:System.Web.Security.MembershipProvider.ResetPassword*> method implemented by a membership provider to reset the password for a user to a new, temporary password.
+
+The <xref:System.Web.Security.Membership.GeneratePassword*> method is used to generate a random password and is most commonly used by the <xref:System.Web.Security.MembershipProvider.ResetPassword*> method implemented by a membership provider to reset the password for a user to a new, temporary password.
 
  The generated password only contains alphanumeric characters and the following punctuation marks: `!@#$%^&*()_-+=[{]};:<>|./?`. No hidden or non-printable control characters are included in the generated password.
 
@@ -998,7 +1005,8 @@ The following code example returns a list of users with a count of the number of
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The results returned by <xref:System.Web.Security.Membership.GetAllUsers*> are constrained by the `pageIndex` and `pageSize` parameters. The `pageSize` parameter identifies the maximum number of <xref:System.Web.Security.MembershipUser> objects to return in the <xref:System.Web.Security.MembershipUserCollection>. The `pageIndex` parameter identifies which page of results to return, where 0 identifies the first page. The `totalRecords` parameter is an `out` parameter that is set to the total number of membership users for the configured `applicationName`. For example, if there are 13 users for the configured `applicationName`, and the `pageIndex` value was 1 with a `pageSize` of 5, the <xref:System.Web.Security.MembershipUserCollection> returned would contain the sixth through the tenth users returned. `totalRecords` would be set to 13.
+
+The results returned by <xref:System.Web.Security.Membership.GetAllUsers*> are constrained by the `pageIndex` and `pageSize` parameters. The `pageSize` parameter identifies the maximum number of <xref:System.Web.Security.MembershipUser> objects to return in the <xref:System.Web.Security.MembershipUserCollection>. The `pageIndex` parameter identifies which page of results to return, where 0 identifies the first page. The `totalRecords` parameter is an `out` parameter that is set to the total number of membership users for the configured `applicationName`. For example, if there are 13 users for the configured `applicationName`, and the `pageIndex` value was 1 with a `pageSize` of 5, the <xref:System.Web.Security.MembershipUserCollection> returned would contain the sixth through the tenth users returned. `totalRecords` would be set to 13.
 
 ## Examples
 
@@ -1133,7 +1141,8 @@ The following code example updates the last-activity date/time stamp for the cur
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Security.Membership.GetUser*> method retrieves the user information from the data source and creates a <xref:System.Web.Security.MembershipUser> object populated with the returned data. If you use one of the <xref:System.Web.Security.Membership.GetUser*> overloads that does not take a `username` parameter, <xref:System.Web.Security.Membership.GetUser*> returns the information for the current logged-on membership user. The current logged-on membership user is identified by the <xref:System.Security.Principal.IIdentity.Name*> of the user in the current <xref:System.Web.HttpContext>.
+
+The <xref:System.Web.Security.Membership.GetUser*> method retrieves the user information from the data source and creates a <xref:System.Web.Security.MembershipUser> object populated with the returned data. If you use one of the <xref:System.Web.Security.Membership.GetUser*> overloads that does not take a `username` parameter, <xref:System.Web.Security.Membership.GetUser*> returns the information for the current logged-on membership user. The current logged-on membership user is identified by the <xref:System.Security.Principal.IIdentity.Name*> of the user in the current <xref:System.Web.HttpContext>.
 
  You can also specify whether you want <xref:System.Web.Security.Membership.GetUser*> to update the last-activity date/time stamp for the user being retrieved using the `userIsOnline` parameter. Of the <xref:System.Web.Security.Membership.GetUser*> overloads that do not take a `userIsOnline` parameter, `GetUser()` implicitly updates the last-activity date/time stamp for the user. `GetUser(System.String)` and `GetUser(System.Object)` do not.
 
@@ -1183,7 +1192,8 @@ The following code example displays the user name for the current logged-on memb
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Security.Membership.GetUser*> method retrieves the user information from the data source and creates a <xref:System.Web.Security.MembershipUser> object populated with the returned data. The user is identified using the unique identifier from the data source specified using the `providerUserKey` parameter.
+
+The <xref:System.Web.Security.Membership.GetUser*> method retrieves the user information from the data source and creates a <xref:System.Web.Security.MembershipUser> object populated with the returned data. The user is identified using the unique identifier from the data source specified using the `providerUserKey` parameter.
 
  You can also specify whether you want <xref:System.Web.Security.Membership.GetUser*> to update the last-activity date/time stamp for the user being retrieved with the `userIsOnline` parameter. Of the <xref:System.Web.Security.Membership.GetUser*> overloads that do not take a `userIsOnline` parameter, `GetUser()` implicitly updates the last-activity date/time stamp for the user. `GetUser(System.String)` and `GetUser(System.Object)` do not
 
@@ -1227,7 +1237,8 @@ The following code example displays the user name for the current logged-on memb
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Security.Membership.GetUser*> method retrieves the user information from the data source and creates a <xref:System.Web.Security.MembershipUser> object populated with the returned data. If you use one of the <xref:System.Web.Security.Membership.GetUser*> overloads that does not take a `username` parameter, <xref:System.Web.Security.Membership.GetUser*> returns the information for the current logged-on membership user. The current logged-on membership user is identified by the <xref:System.Security.Principal.IIdentity.Name*> of the user in the current <xref:System.Web.HttpContext>.
+
+The <xref:System.Web.Security.Membership.GetUser*> method retrieves the user information from the data source and creates a <xref:System.Web.Security.MembershipUser> object populated with the returned data. If you use one of the <xref:System.Web.Security.Membership.GetUser*> overloads that does not take a `username` parameter, <xref:System.Web.Security.Membership.GetUser*> returns the information for the current logged-on membership user. The current logged-on membership user is identified by the <xref:System.Security.Principal.IIdentity.Name*> of the user in the current <xref:System.Web.HttpContext>.
 
  You can also specify whether you want <xref:System.Web.Security.Membership.GetUser*> to update the last-activity date/time stamp for the user being retrieved with the `userIsOnline` parameter. Of the <xref:System.Web.Security.Membership.GetUser*> overloads that do not take a `userIsOnline` parameter, <xref:System.Web.Security.Membership.GetUser*?displayProperty=nameWithType> implicitly updates the last-activity date/time stamp for the user. <xref:System.Web.Security.Membership.GetUser*?displayProperty=nameWithType> and <xref:System.Web.Security.Membership.GetUser*> do not.
 
@@ -1276,7 +1287,8 @@ The following code example uses the <xref:System.Web.Security.Membership.GetUser
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Security.Membership.GetUser*> method retrieves the user information from the data source and creates a <xref:System.Web.Security.MembershipUser> object populated with the returned data. The user is identified with the unique identifier from the data source specified in the `providerUserKey` parameter.
+
+The <xref:System.Web.Security.Membership.GetUser*> method retrieves the user information from the data source and creates a <xref:System.Web.Security.MembershipUser> object populated with the returned data. The user is identified with the unique identifier from the data source specified in the `providerUserKey` parameter.
 
  ]]></format>
         </remarks>
@@ -1314,7 +1326,8 @@ The following code example uses the <xref:System.Web.Security.Membership.GetUser
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Security.Membership.GetUser*> method retrieves the user information from the data source and creates a <xref:System.Web.Security.MembershipUser> object populated with the returned data.
+
+The <xref:System.Web.Security.Membership.GetUser*> method retrieves the user information from the data source and creates a <xref:System.Web.Security.MembershipUser> object populated with the returned data.
 
  If you use one of the <xref:System.Web.Security.Membership.GetUser*> overloads that does not take a `username` parameter, <xref:System.Web.Security.Membership.GetUser*> returns the information for the current logged-on membership user. The current logged-on membership user is identified by the <xref:System.Security.Principal.IIdentity.Name*> of the user in the current <xref:System.Web.HttpContext>.
 
@@ -1405,7 +1418,8 @@ The following code example retrieves the user name for a specified email address
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Security.Membership.HashAlgorithmType> property identifies the custom hash algorithm used by the <xref:System.Web.Security.Membership> class. You set the <xref:System.Web.Security.Membership.HashAlgorithmType> property using the `hashAlgorithmType` attribute of the [membership](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/1b9hw62f(v%3dvs.100)) element.
+
+The <xref:System.Web.Security.Membership.HashAlgorithmType> property identifies the custom hash algorithm used by the <xref:System.Web.Security.Membership> class. You set the <xref:System.Web.Security.Membership.HashAlgorithmType> property using the `hashAlgorithmType` attribute of the [membership](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/1b9hw62f(v%3dvs.100)) element.
 
  .NET Framework enables you to configure custom cryptography classes using the [`<cryptographySettings>`](/dotnet/framework/configure-apps/file-schema/cryptography/cryptographysettings-element) element configuration section. The <xref:System.Web.Security.Membership.HashAlgorithmType> property must match the `name` attribute of the [`<nameEntry>`](/dotnet/framework/configure-apps/file-schema/cryptography/nameentry-element) element in a [`<cryptoNameMapping>`](/dotnet/framework/configure-apps/file-schema/cryptography/cryptonamemapping-element) element. For more information, see [Mapping Algorithm Names to Cryptography Classes](/dotnet/framework/configure-apps/map-algorithm-names-to-cryptography-classes).
 
@@ -1439,7 +1453,8 @@ The following code example retrieves the user name for a specified email address
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Security.Membership.MaxInvalidPasswordAttempts> property works in conjunction with the <xref:System.Web.Security.Membership.PasswordAttemptWindow> property to guard against an unwanted source using repeated attempts to guess the password or password answer of a membership user.
+
+The <xref:System.Web.Security.Membership.MaxInvalidPasswordAttempts> property works in conjunction with the <xref:System.Web.Security.Membership.PasswordAttemptWindow> property to guard against an unwanted source using repeated attempts to guess the password or password answer of a membership user.
 
  If the number of invalid passwords or password answers entered for a membership user is greater than or equal to the value of the <xref:System.Web.Security.Membership.MaxInvalidPasswordAttempts> property within the number of minutes specified by the <xref:System.Web.Security.Membership.PasswordAttemptWindow> property, then the user is locked out of the Web site by setting the <xref:System.Web.Security.MembershipUser.IsLockedOut> property to `true` until the user is unlocked by a call to the <xref:System.Web.Security.MembershipUser.UnlockUser*> method.
 
@@ -1499,7 +1514,8 @@ The following code example shows the [membership](https://learn.microsoft.com/pr
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Security.Membership.MinRequiredNonAlphanumericCharacters> property returns the minimum number of special, non-alphanumeric characters that must be entered to create a valid password for the membership provider specified in the <xref:System.Web.Security.Membership.Provider> property.
+
+The <xref:System.Web.Security.Membership.MinRequiredNonAlphanumericCharacters> property returns the minimum number of special, non-alphanumeric characters that must be entered to create a valid password for the membership provider specified in the <xref:System.Web.Security.Membership.Provider> property.
 
  The <xref:System.Web.Security.Membership.MinRequiredNonAlphanumericCharacters> property value is set in the application configuration using the `minRequiredNonAlphanumericCharacters` attribute of the [membership](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/1b9hw62f(v%3dvs.100)) configuration element.
 
@@ -1552,7 +1568,8 @@ The following code example shows the [membership](https://learn.microsoft.com/pr
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Security.Membership.MinRequiredPasswordLength> property gets the minimum number of characters that must be entered to create a valid password for the membership provider specified in the <xref:System.Web.Security.Membership.Provider> property.
+
+The <xref:System.Web.Security.Membership.MinRequiredPasswordLength> property gets the minimum number of characters that must be entered to create a valid password for the membership provider specified in the <xref:System.Web.Security.Membership.Provider> property.
 
  The <xref:System.Web.Security.Membership.MinRequiredPasswordLength> property value is set in the application configuration using the `minRequiredPasswordLength` attribute of the [membership](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/1b9hw62f(v%3dvs.100)) configuration element.
 
@@ -1603,7 +1620,8 @@ The following code example shows the [membership](https://learn.microsoft.com/pr
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Security.Membership.PasswordAttemptWindow> property works in conjunction with the <xref:System.Web.Security.Membership.MaxInvalidPasswordAttempts> property to help guard against an unwanted source guessing the password or password answer of a membership user through repeated attempts. When a user attempts to log in with, change, or reset their password, only a certain number of consecutive attempts are allowed within a specified time window. The length of this time window is specified in the <xref:System.Web.Security.Membership.PasswordAttemptWindow> property, which identifies the number of minutes allowed between invalid attempts.
+
+The <xref:System.Web.Security.Membership.PasswordAttemptWindow> property works in conjunction with the <xref:System.Web.Security.Membership.MaxInvalidPasswordAttempts> property to help guard against an unwanted source guessing the password or password answer of a membership user through repeated attempts. When a user attempts to log in with, change, or reset their password, only a certain number of consecutive attempts are allowed within a specified time window. The length of this time window is specified in the <xref:System.Web.Security.Membership.PasswordAttemptWindow> property, which identifies the number of minutes allowed between invalid attempts.
 
  If the number of consecutive failed attempts that a user makes to reset their password equals the value stored in the <xref:System.Web.Security.Membership.MaxInvalidPasswordAttempts> property, and the time elapsed since the last invalid attempt is less than the number of minutes specified in the <xref:System.Web.Security.Membership.PasswordAttemptWindow> property, then the membership user is locked out. The user is locked out by setting the <xref:System.Web.Security.MembershipUser.IsLockedOut> property to `true` until the user is unlocked by a call to the <xref:System.Web.Security.MembershipUser.UnlockUser*> method.
 
@@ -1662,7 +1680,8 @@ The following code example shows the [membership](https://learn.microsoft.com/pr
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Security.Membership.PasswordStrengthRegularExpression> property gets the regular expression used to evaluate password complexity from the provider specified in the <xref:System.Web.Security.Membership.Provider> property.
+
+The <xref:System.Web.Security.Membership.PasswordStrengthRegularExpression> property gets the regular expression used to evaluate password complexity from the provider specified in the <xref:System.Web.Security.Membership.Provider> property.
 
  The <xref:System.Web.Security.Membership.PasswordStrengthRegularExpression> property is set in the application configuration using the `passwordStrengthRegularExpression` attribute of the [membership](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/1b9hw62f(v%3dvs.100)) configuration element.
 
@@ -1727,7 +1746,8 @@ The following code example shows the [membership](https://learn.microsoft.com/pr
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Security.Membership.Provider> property enables you to reference the default membership provider for an application directly. This is commonly used to access custom members of the membership provider that are not part of the <xref:System.Web.Security.MembershipProvider> abstract base class.
+
+The <xref:System.Web.Security.Membership.Provider> property enables you to reference the default membership provider for an application directly. This is commonly used to access custom members of the membership provider that are not part of the <xref:System.Web.Security.MembershipProvider> abstract base class.
 
 ## Examples
 
@@ -1764,7 +1784,8 @@ The following code example accesses the default <xref:System.Web.Security.SqlMem
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Security.Membership.Providers> property references all of the membership providers enabled for an application, including providers added in the Web.config file for the application and the Machine.config file for all applications. You can control which membership providers are available for an application using the [providers](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/6d4936ht(v%3dvs.100)) element of the [membership](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/1b9hw62f(v%3dvs.100)) section in the configuration for your application. For example, the following sample shows the [membership](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/1b9hw62f(v%3dvs.100)) section in the Web.config file for an application that removes the <xref:System.Web.Security.SqlMembershipProvider> instance (`AspNetSqlProvider`) specified in the machine configuration file and adds a <xref:System.Web.Security.SqlMembershipProvider> instance named `SqlProvider` as the default membership provider for the application.
+
+The <xref:System.Web.Security.Membership.Providers> property references all of the membership providers enabled for an application, including providers added in the Web.config file for the application and the Machine.config file for all applications. You can control which membership providers are available for an application using the [providers](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/6d4936ht(v%3dvs.100)) element of the [membership](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/1b9hw62f(v%3dvs.100)) section in the configuration for your application. For example, the following sample shows the [membership](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/1b9hw62f(v%3dvs.100)) section in the Web.config file for an application that removes the <xref:System.Web.Security.SqlMembershipProvider> instance (`AspNetSqlProvider`) specified in the machine configuration file and adds a <xref:System.Web.Security.SqlMembershipProvider> instance named `SqlProvider` as the default membership provider for the application.
 
 ```
 <configuration>
@@ -1829,7 +1850,8 @@ The following code example lists the providers enabled for an application and th
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Requiring a password question and answer provides an additional layer of security when retrieving or resetting a user's password. Users can supply a question and answer when their user name is created that they can later use to retrieve or reset a forgotten password.
+
+Requiring a password question and answer provides an additional layer of security when retrieving or resetting a user's password. Users can supply a question and answer when their user name is created that they can later use to retrieve or reset a forgotten password.
 
  <xref:System.Web.Security.Membership.RequiresQuestionAndAnswer*> is checked when <xref:System.Web.Security.MembershipUser.ResetPassword*> or <xref:System.Web.Security.MembershipUser.GetPassword*> is called. The provider provided with .NET Framework throws a <xref:System.NotSupportedException> if <xref:System.Web.Security.Membership.RequiresQuestionAndAnswer*> is `true` and the supplied password answer is `null`.
 
@@ -1937,7 +1959,8 @@ The following code example updates the email address for the current logged-on u
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Security.Membership.UserIsOnlineTimeWindow> property value is checked during the call to <xref:System.Web.Security.Membership.GetNumberOfUsersOnline*>. If the <xref:System.Web.Security.MembershipUser.LastActivityDate*> for a user is greater than the current date and time minus the <xref:System.Web.Security.Membership.UserIsOnlineTimeWindow*> value in minutes, then the user is considered online. You can determine whether a membership user is considered online with the <xref:System.Web.Security.MembershipUser.IsOnline> property of the <xref:System.Web.Security.MembershipUser> class.
+
+The <xref:System.Web.Security.Membership.UserIsOnlineTimeWindow> property value is checked during the call to <xref:System.Web.Security.Membership.GetNumberOfUsersOnline*>. If the <xref:System.Web.Security.MembershipUser.LastActivityDate*> for a user is greater than the current date and time minus the <xref:System.Web.Security.Membership.UserIsOnlineTimeWindow*> value in minutes, then the user is considered online. You can determine whether a membership user is considered online with the <xref:System.Web.Security.MembershipUser.IsOnline> property of the <xref:System.Web.Security.MembershipUser> class.
 
  The <xref:System.Web.Security.MembershipUser.LastActivityDate*> for a user is updated when a user's credentials are successfully validated by the <xref:System.Web.Security.Membership.ValidateUser*> method. You can also update the <xref:System.Web.Security.MembershipUser.LastActivityDate*> for a membership user when you call one of the <xref:System.Web.Security.Membership.GetUser*> overloads. If you call a <xref:System.Web.Security.Membership.GetUser*> overload that takes a `userIsOnline` parameter, specify a value of `true` to update the <xref:System.Web.Security.MembershipUser.LastActivityDate*> for the user.
 
@@ -2035,7 +2058,8 @@ The following code example shows the login page for an ASP.NET application confi
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Security.MembershipProvider.ValidatingPassword> event is raised when the <xref:System.Web.Security.MembershipProvider.CreateUser*> method, the <xref:System.Web.Security.MembershipProvider.ChangePassword*> method, or the <xref:System.Web.Security.MembershipProvider.ResetPassword*> method of a membership provider is called.
+
+The <xref:System.Web.Security.MembershipProvider.ValidatingPassword> event is raised when the <xref:System.Web.Security.MembershipProvider.CreateUser*> method, the <xref:System.Web.Security.MembershipProvider.ChangePassword*> method, or the <xref:System.Web.Security.MembershipProvider.ResetPassword*> method of a membership provider is called.
 
  You can use the <xref:System.Web.Security.MembershipProvider.ValidatingPassword> event to validate password formats and values for membership users.
 

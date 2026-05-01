@@ -176,7 +176,8 @@ The following example creates a custom task scheduler that limits the number of 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When not called from within a task, <xref:System.Threading.Tasks.TaskScheduler.Current*> will return the <xref:System.Threading.Tasks.TaskScheduler.Default*> scheduler.
+
+When not called from within a task, <xref:System.Threading.Tasks.TaskScheduler.Current*> will return the <xref:System.Threading.Tasks.TaskScheduler.Default*> scheduler.
 
  For more information, see <xref:System.Threading.Tasks.TaskScheduler>.
 
@@ -232,7 +233,8 @@ The following example creates a custom task scheduler that limits the number of 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- For more information, see <xref:System.Threading.Tasks.TaskScheduler>.
+
+For more information, see <xref:System.Threading.Tasks.TaskScheduler>.
 
  ]]></format>
         </remarks>
@@ -317,7 +319,8 @@ The following example creates a custom task scheduler that limits the number of 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- All <xref:System.Threading.Tasks.Task> instances queued to the returned scheduler will be executed through a call to the <xref:System.Threading.SynchronizationContext.Post*> method on that context.
+
+All <xref:System.Threading.Tasks.Task> instances queued to the returned scheduler will be executed through a call to the <xref:System.Threading.SynchronizationContext.Post*> method on that context.
 
  For more information, see <xref:System.Threading.Tasks.TaskScheduler>.
 
@@ -381,7 +384,8 @@ The following example creates a custom task scheduler that limits the number of 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A class derived from <xref:System.Threading.Tasks.TaskScheduler> implements this method in order to support integration with debuggers. This method will only be invoked by the .NET Framework when the debugger requests access to the data. The enumerable returned will be traversed by debugging utilities to access the tasks currently queued to this scheduler, enabling the debugger to provide a representation of this information in the user interface.
+
+A class derived from <xref:System.Threading.Tasks.TaskScheduler> implements this method in order to support integration with debuggers. This method will only be invoked by the .NET Framework when the debugger requests access to the data. The enumerable returned will be traversed by debugging utilities to access the tasks currently queued to this scheduler, enabling the debugger to provide a representation of this information in the user interface.
 
  It is important to note that, when this method is called, all other threads in the process will be frozen. Therefore, it's important to avoid synchronization with other threads that may lead to blocking. If synchronization is necessary, and you are unable to acquire the lock in this method, then you should throw an exception so that the debugger does not block. The following example shows one possible approach in C#:
 
@@ -463,7 +467,8 @@ protected override IEnumerable<Task> GetScheduledTasks()
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- For more information, see <xref:System.Threading.Tasks.TaskScheduler>.
+
+For more information, see <xref:System.Threading.Tasks.TaskScheduler>.
 
  ]]></format>
         </remarks>
@@ -517,7 +522,8 @@ protected override IEnumerable<Task> GetScheduledTasks()
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- For more information, see <xref:System.Threading.Tasks.TaskScheduler>.
+
+For more information, see <xref:System.Threading.Tasks.TaskScheduler>.
 
  ]]></format>
         </remarks>
@@ -580,7 +586,8 @@ protected override IEnumerable<Task> GetScheduledTasks()
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A class derived from <xref:System.Threading.Tasks.TaskScheduler> implements this method to accept tasks being scheduled on the scheduler.
+
+A class derived from <xref:System.Threading.Tasks.TaskScheduler> implements this method to accept tasks being scheduled on the scheduler.
 
  A typical implementation would store the task in an internal data structure, which would be serviced by threads that would execute those tasks at some time in the future.
 
@@ -649,7 +656,8 @@ protected override IEnumerable<Task> GetScheduledTasks()
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- For more information, see <xref:System.Threading.Tasks.TaskScheduler>.
+
+For more information, see <xref:System.Threading.Tasks.TaskScheduler>.
 
  This method may execute in a finally block; therefore it should return as quickly as possible so that any resources such as <xref:System.Threading.CancellationTokenRegistration> objects can be disposed of in a timely manner.
 
@@ -716,7 +724,8 @@ protected override IEnumerable<Task> GetScheduledTasks()
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Scheduler implementations are provided with <xref:System.Threading.Tasks.Task> instances to be executed through either the <xref:System.Threading.Tasks.TaskScheduler.QueueTask*> method or the <xref:System.Threading.Tasks.TaskScheduler.TryExecuteTaskInline*> method. When the scheduler deems it appropriate to run the provided task, <xref:System.Threading.Tasks.TaskScheduler.TryExecuteTask*> should be used to do so. TryExecuteTask handles all aspects of executing a task, including action invocation, exception handling, state management, and lifecycle control.
+
+Scheduler implementations are provided with <xref:System.Threading.Tasks.Task> instances to be executed through either the <xref:System.Threading.Tasks.TaskScheduler.QueueTask*> method or the <xref:System.Threading.Tasks.TaskScheduler.TryExecuteTaskInline*> method. When the scheduler deems it appropriate to run the provided task, <xref:System.Threading.Tasks.TaskScheduler.TryExecuteTask*> should be used to do so. TryExecuteTask handles all aspects of executing a task, including action invocation, exception handling, state management, and lifecycle control.
 
  <xref:System.Threading.Tasks.TaskScheduler.TryExecuteTask*> must only be used for tasks provided to this scheduler by the .NET Framework infrastructure. It should not be used to execute arbitrary tasks obtained through custom mechanisms.
 
@@ -785,7 +794,8 @@ protected override IEnumerable<Task> GetScheduledTasks()
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A class derived from <xref:System.Threading.Tasks.TaskScheduler> implements this function to support inline execution of a task on a thread that initiates a wait on that task object. Inline execution is optional, and the request may be rejected by returning false. However, the more tasks that can be inlined, the better the scheduler will scale. In fact, a scheduler that inlines too little may be prone to deadlocks. A proper implementation should ensure that a request executing under the policies guaranteed by the scheduler can successfully inline. For example, if a scheduler uses a dedicated thread to execute tasks, any inlining requests from that thread should succeed.
+
+A class derived from <xref:System.Threading.Tasks.TaskScheduler> implements this function to support inline execution of a task on a thread that initiates a wait on that task object. Inline execution is optional, and the request may be rejected by returning false. However, the more tasks that can be inlined, the better the scheduler will scale. In fact, a scheduler that inlines too little may be prone to deadlocks. A proper implementation should ensure that a request executing under the policies guaranteed by the scheduler can successfully inline. For example, if a scheduler uses a dedicated thread to execute tasks, any inlining requests from that thread should succeed.
 
  If a scheduler decides to perform the inline execution, it should do so by calling to the base TaskScheduler's <xref:System.Threading.Tasks.TaskScheduler.TryExecuteTask*> method with the provided task object, propagating the return value. It may also be appropriate for the scheduler to remove an inlined task from its internal data structures if it decides to honor the inlining request. Note, however, that under some circumstances a scheduler may be asked to inline a task that was not previously provided to it with the <xref:System.Threading.Tasks.TaskScheduler.QueueTask*> method.
 

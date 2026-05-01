@@ -574,7 +574,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Encapsulate*> method requires two existing blocks: a target block (an instance of a class that implements <xref:System.Threading.Tasks.Dataflow.ITargetBlock`1>) and a source block (an instance of a class that implements <xref:System.Threading.Tasks.Dataflow.ISourceBlock`1>). <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Encapsulate*> creates a new instance of an internal class that connects the <xref:System.Threading.Tasks.Dataflow.ITargetBlock`1> interface members to the `target` parameter and the <xref:System.Threading.Tasks.Dataflow.ISourceBlock`1> interface members to the `source` parameter. Both <xref:System.Threading.Tasks.Dataflow.ITargetBlock`1> and <xref:System.Threading.Tasks.Dataflow.ISourceBlock`1> derive from <xref:System.Threading.Tasks.Dataflow.IDataflowBlock>. Block completion is explicitly passed from sources to targets. Therefore, the <xref:System.Threading.Tasks.Dataflow.IDataflowBlock.Complete*> and <xref:System.Threading.Tasks.Dataflow.IDataflowBlock.Fault*> methods are connected to the target while the <xref:System.Threading.Tasks.Dataflow.IDataflowBlock.Completion> property is connected to the source. You must ensure that when the target half  completes, the source half gets completed in the most appropriate manner; for example:
+
+The <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Encapsulate*> method requires two existing blocks: a target block (an instance of a class that implements <xref:System.Threading.Tasks.Dataflow.ITargetBlock`1>) and a source block (an instance of a class that implements <xref:System.Threading.Tasks.Dataflow.ISourceBlock`1>). <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Encapsulate*> creates a new instance of an internal class that connects the <xref:System.Threading.Tasks.Dataflow.ITargetBlock`1> interface members to the `target` parameter and the <xref:System.Threading.Tasks.Dataflow.ISourceBlock`1> interface members to the `source` parameter. Both <xref:System.Threading.Tasks.Dataflow.ITargetBlock`1> and <xref:System.Threading.Tasks.Dataflow.ISourceBlock`1> derive from <xref:System.Threading.Tasks.Dataflow.IDataflowBlock>. Block completion is explicitly passed from sources to targets. Therefore, the <xref:System.Threading.Tasks.Dataflow.IDataflowBlock.Complete*> and <xref:System.Threading.Tasks.Dataflow.IDataflowBlock.Fault*> methods are connected to the target while the <xref:System.Threading.Tasks.Dataflow.IDataflowBlock.Completion> property is connected to the source. You must ensure that when the target half  completes, the source half gets completed in the most appropriate manner; for example:
 
  `target.Completion.ContinueWith(completion => source.Complete());`
 
@@ -984,7 +985,8 @@ batchBlock.Complete();
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method will return once the target block has decided to accept or decline the item, but unless otherwise dictated by special semantics of the target block, it does not wait for the item to actually be processed. For example, <xref:System.Threading.Tasks.Dataflow.ActionBlock`1> will return from <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Post*> as soon as it has stored the posted item into its input queue). From the perspective of the block's processing, `Post` is asynchronous. For target blocks that support postponing offered messages, or for blocks that may do more processing in their `Post` implementation, consider using <xref:System.Threading.Tasks.Dataflow.DataflowBlock.SendAsync*>, which will return immediately and will enable the target to postpone the posted message and later consume it after `SendAsync` returns.
+
+This method will return once the target block has decided to accept or decline the item, but unless otherwise dictated by special semantics of the target block, it does not wait for the item to actually be processed. For example, <xref:System.Threading.Tasks.Dataflow.ActionBlock`1> will return from <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Post*> as soon as it has stored the posted item into its input queue). From the perspective of the block's processing, `Post` is asynchronous. For target blocks that support postponing offered messages, or for blocks that may do more processing in their `Post` implementation, consider using <xref:System.Threading.Tasks.Dataflow.DataflowBlock.SendAsync*>, which will return immediately and will enable the target to postpone the posted message and later consume it after `SendAsync` returns.
 
  ]]></format>
         </remarks>
@@ -1094,7 +1096,8 @@ batchBlock.Complete();
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the source successfully offered an item that was received by this operation, that item is returned even if a concurrent cancellation request occurs.
+
+If the source successfully offered an item that was received by this operation, that item is returned even if a concurrent cancellation request occurs.
 
  ]]></format>
         </remarks>
@@ -1156,7 +1159,8 @@ batchBlock.Complete();
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the source successfully offered an item that was received by this operation, that item is returned even if a concurrent time-out occurs.
+
+If the source successfully offered an item that was received by this operation, that item is returned even if a concurrent time-out occurs.
 
  ]]></format>
         </remarks>
@@ -1226,7 +1230,8 @@ batchBlock.Complete();
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the source successfully offered an item value that was received by this operation, that value is returned even if a concurrent time-out or cancellation request occurs.
+
+If the source successfully offered an item value that was received by this operation, that value is returned even if a concurrent time-out or cancellation request occurs.
 
  ]]></format>
         </remarks>
@@ -1681,7 +1686,8 @@ batchBlock.Complete();
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method does not wait until the source has an item to provide.
+
+This method does not wait until the source has an item to provide.
 
  It will return whether or not an element was available.
 

@@ -30,7 +30,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- To explicitly control the behavior of the application when an exception is thrown, implement the <xref:System.ServiceModel.Dispatcher.IErrorHandler> interface and add it to the <xref:System.ServiceModel.Dispatcher.ChannelDispatcher>'s <xref:System.ServiceModel.Dispatcher.ChannelDispatcher.ErrorHandlers> property. <xref:System.ServiceModel.Dispatcher.IErrorHandler> enables you to explicitly control the SOAP fault generated, decide whether to send it back to the client, and perform associated tasks, such as logging. Error handlers are called in the order in which they were added to the <xref:System.ServiceModel.Dispatcher.ChannelDispatcher.ErrorHandlers> property.
+
+To explicitly control the behavior of the application when an exception is thrown, implement the <xref:System.ServiceModel.Dispatcher.IErrorHandler> interface and add it to the <xref:System.ServiceModel.Dispatcher.ChannelDispatcher>'s <xref:System.ServiceModel.Dispatcher.ChannelDispatcher.ErrorHandlers> property. <xref:System.ServiceModel.Dispatcher.IErrorHandler> enables you to explicitly control the SOAP fault generated, decide whether to send it back to the client, and perform associated tasks, such as logging. Error handlers are called in the order in which they were added to the <xref:System.ServiceModel.Dispatcher.ChannelDispatcher.ErrorHandlers> property.
 
  Implement the <xref:System.ServiceModel.Dispatcher.IErrorHandler.ProvideFault*> method to control the fault message that is returned to the client.
 
@@ -108,7 +109,8 @@ The following code example demonstrates a service that implements <xref:System.S
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use the <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError*> method to implement error-related behaviors such as error logging, system notifications, shutting down the application, and so on, and return a value that specifies whether the exception has been handled appropriately.
+
+Use the <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError*> method to implement error-related behaviors such as error logging, system notifications, shutting down the application, and so on, and return a value that specifies whether the exception has been handled appropriately.
 
 > [!NOTE]
 > Because the <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError*> method can be called from many different places there are no guarantees made about which thread the method is called on. Do not depend on <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError*> method being called on the operation thread.
@@ -179,7 +181,8 @@ The following code example demonstrates a service that implements <xref:System.S
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Implement the <xref:System.ServiceModel.Dispatcher.IErrorHandler.ProvideFault*> method to create a custom fault message that is returned to the client. The <xref:System.ServiceModel.Dispatcher.IErrorHandler.ProvideFault*> method will always be called for exceptions that leave operations, except when the WCF runtime recognizes the exception as especially fatal and rethrows the exception itself. When all <xref:System.ServiceModel.Dispatcher.IErrorHandler.ProvideFault*> implementations have been called, the fault message is sent back to the client (if `fault` is non-`null`). If the `fault` parameter is `null` the default fault is sent to the client.
+
+Implement the <xref:System.ServiceModel.Dispatcher.IErrorHandler.ProvideFault*> method to create a custom fault message that is returned to the client. The <xref:System.ServiceModel.Dispatcher.IErrorHandler.ProvideFault*> method will always be called for exceptions that leave operations, except when the WCF runtime recognizes the exception as especially fatal and rethrows the exception itself. When all <xref:System.ServiceModel.Dispatcher.IErrorHandler.ProvideFault*> implementations have been called, the fault message is sent back to the client (if `fault` is non-`null`). If the `fault` parameter is `null` the default fault is sent to the client.
 
 > [!NOTE]
 > The inbound message that caused the processing error is available during this method from the <xref:System.ServiceModel.OperationContext.RequestContext?displayProperty=nameWithType> property.

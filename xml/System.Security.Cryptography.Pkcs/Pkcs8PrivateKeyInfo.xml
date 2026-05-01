@@ -66,9 +66,9 @@
           <see langword="true" /> to store <paramref name="algorithmParameters" /> and <paramref name="privateKey" /> without making a defensive copy; otherwise, <see langword="false" />. The default is <see langword="false" />.</param>
         <summary>Initializes a new instance of the <see cref="T:System.Security.Cryptography.Pkcs.Pkcs8PrivateKeyInfo" /> class.</summary>
         <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
+          <format type="text/markdown"><![CDATA[
+
+## Remarks
 
 No validation is done on the `privateKey` parameter; not all algorithms require a BER-encoded value.
 
@@ -77,7 +77,7 @@ When the `skipCopies` parameter is `true`, this defensive copy is skipped.
 If the defensive copy is skipped and the contents of either `algorithmParameters` or `privateKey` change during the lifetime of the returned value or of any object produced by its
 methods or properties, then methods and properties on those objects may produce nonsense results or throw exceptions due to the corrupted state.
 Callers are therefore advised to only use a `true` value for the `skipCopies` parameter when they can be reasonably assured that the data will stay intact.
-    
+
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="algorithmId" /> parameter is <see langword="null" />.</exception>
@@ -263,15 +263,16 @@ Callers are therefore advised to only use a `true` value for the `skipCopies` pa
         <summary>Reads the provided data as a PKCS#8 PrivateKeyInfo and returns an object view of the contents.</summary>
         <returns>An object view of the contents decoded as a PKCS#8 PrivateKeyInfo.</returns>
         <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
+          <format type="text/markdown"><![CDATA[
+
 ## Remarks
- The default behavior of this method is to make a defensive copy of the first `bytesConsumed` bytes from `source`.
+
+The default behavior of this method is to make a defensive copy of the first `bytesConsumed` bytes from `source`.
  When the `skipCopy` parameter is `true`, this defensive copy is skipped.
  If the defensive copy is skipped and the contents of the first `bytesConsumed` bytes of `source` change during the lifetime of the returned value or of any object produced by its
  methods or properties, then methods and properties on those objects may produce nonsense results or throw exceptions due to the corrupted state.
  Callers are therefore advised to only use a `true` value for the `skipCopy` parameter when they can be reasonably assured that the data will stay intact.
- 
+
  ]]></format>
         </remarks>
         <exception cref="T:System.Security.Cryptography.CryptographicException">The contents of the <paramref name="source" /> parameter were not successfully decoded as a PKCS#8 PrivateKeyInfo.</exception>
@@ -318,9 +319,9 @@ Callers are therefore advised to only use a `true` value for the `skipCopies` pa
         <summary>Decrypts the provided data using the provided byte-based password and decodes the output into an object view of the PKCS#8 PrivateKeyInfo.</summary>
         <returns>An object view of the contents decrypted decoded as a PKCS#8 PrivateKeyInfo.</returns>
         <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
+          <format type="text/markdown"><![CDATA[
+
+## Remarks
  The password bytes are passed directly into the Key Derivation Function (KDF) used by the algorithm indicated by `pbeParameters`.
  This enables compatibility with other systems which use a text encoding other than UTF-8 when processing passwords with PBKDF2 (Password-Based Key Derivation Function 2).
 
@@ -382,9 +383,9 @@ The contents of <paramref name="source" /> do not represent an ASN.1-BER-encoded
         <summary>Decrypts the provided data using the provided character-based password and decodes the output into an object view of the PKCS#8 PrivateKeyInfo.</summary>
         <returns>An object view of the contents decrypted decoded as a PKCS#8 PrivateKeyInfo.</returns>
         <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
+          <format type="text/markdown"><![CDATA[
+
+## Remarks
  When the contents of `source` indicate an algorithm that uses PBKDF1 (Password-Based Key Derivation Function 1) or PBKDF2 (Password-Based Key Derivation Function 2), the password is converted to bytes via the UTF-8 encoding.
 
  This method only supports the binary (BER/CER/DER) encoding of EncryptedPrivateKeyInfo.
@@ -466,9 +467,9 @@ The contents of <paramref name="source" /> do not represent an ASN.1-BER-encoded
         <summary>Produces a PKCS#8 EncryptedPrivateKeyInfo from the property contents of this object after encrypting with the specified byte-based password and encryption parameters.</summary>
         <returns>A byte array containing the encoded form of the PKCS#8 EncryptedPrivateKeyInfo.</returns>
         <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
+          <format type="text/markdown"><![CDATA[
+
+## Remarks
  The password bytes are passed directly into the Key Derivation Function (KDF) used by the algorithm indicated by `pbeParameters`.
  This enables compatibility with other systems which use a text encoding other than UTF-8 when processing passwords with PBKDF2 (Password-Based Key Derivation Function 2).
 
@@ -519,9 +520,9 @@ The contents of <paramref name="source" /> do not represent an ASN.1-BER-encoded
         <summary>Produces a PKCS#8 EncryptedPrivateKeyInfo from the property contents of this object after encrypting with the specified character-based password and encryption parameters.</summary>
         <returns>A byte array containing the encoded form of the PKCS#8 EncryptedPrivateKeyInfo.</returns>
         <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
+          <format type="text/markdown"><![CDATA[
+
+## Remarks
  When `pbeParameters` indicates an algorithm that uses PBKDF2 (Password-Based Key Derivation Function 2), the password is converted to bytes via the UTF-8 encoding.
 
  ]]></format>
@@ -640,9 +641,9 @@ The contents of <paramref name="source" /> do not represent an ASN.1-BER-encoded
         <returns>
           <see langword="true" /> if <paramref name="destination" /> is big enough to receive the output; otherwise, <see langword="false" />.</returns>
         <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
+          <format type="text/markdown"><![CDATA[
+
+## Remarks
  The password bytes are passed directly into the Key Derivation Function (KDF) used by the algorithm indicated by `pbeParameters`.
  This enables compatibility with other systems which use a text encoding other than UTF-8 when processing passwords with PBKDF2 (Password-Based Key Derivation Function 2).
 
@@ -696,9 +697,9 @@ The contents of <paramref name="source" /> do not represent an ASN.1-BER-encoded
         <returns>
           <see langword="true" /> if <paramref name="destination" /> is big enough to receive the output; otherwise, <see langword="false" />.</returns>
         <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
+          <format type="text/markdown"><![CDATA[
+
+## Remarks
  When `pbeParameters` indicates an algorithm that uses PBKDF2 (Password-Based Key Derivation Function 2), the password is converted to bytes via the UTF-8 encoding.
 
  ]]></format>

@@ -29,7 +29,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- For channels that use <xref:System.ServiceModel.WSHttpContextBinding> with the <xref:System.ServiceModel.SessionMode.NotAllowed> value set, the context cannot be retrieved on the client using <xref:System.ServiceModel.Channels.IContextManager> because a new channel that establishes a session is created each time <xref:System.ServiceModel.Channels.IChannelFactory.GetProperty*> is called to enforce <xref:System.ServiceModel.SessionMode.NotAllowed> semantics on a channel. This means that even though the context is properly propagated back to the client in this case, it cannot be retrieved using <xref:System.ServiceModel.Channels.IContextManager>. You can still retrieve it using <xref:System.ServiceModel.Channels.ContextMessageProperty> as shown in the following code.
+
+For channels that use <xref:System.ServiceModel.WSHttpContextBinding> with the <xref:System.ServiceModel.SessionMode.NotAllowed> value set, the context cannot be retrieved on the client using <xref:System.ServiceModel.Channels.IContextManager> because a new channel that establishes a session is created each time <xref:System.ServiceModel.Channels.IChannelFactory.GetProperty*> is called to enforce <xref:System.ServiceModel.SessionMode.NotAllowed> semantics on a channel. This means that even though the context is properly propagated back to the client in this case, it cannot be retrieved using <xref:System.ServiceModel.Channels.IContextManager>. You can still retrieve it using <xref:System.ServiceModel.Channels.ContextMessageProperty> as shown in the following code.
 
 ```csharp
 using (new OperationContextScope((IContextChannel)channel))
@@ -75,7 +76,8 @@ using (new OperationContextScope((IContextChannel)channel))
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When context management is enabled the context channel caches the context in its lifetime. Context can be retrieved from the channel through the `IContextManager` channel property by calling <xref:System.ServiceModel.Channels.IContextManager.GetContext*> method on it. The channel can also be pre-initialized with context before being opened by calling the <xref:System.ServiceModel.Channels.IContextManager.SetContext*> method on the channel property. Once the channel is initialized with context it cannot be reset.
+
+When context management is enabled the context channel caches the context in its lifetime. Context can be retrieved from the channel through the `IContextManager` channel property by calling <xref:System.ServiceModel.Channels.IContextManager.GetContext*> method on it. The channel can also be pre-initialized with context before being opened by calling the <xref:System.ServiceModel.Channels.IContextManager.SetContext*> method on the channel property. Once the channel is initialized with context it cannot be reset.
 
  The following are invariants in this mode:
 

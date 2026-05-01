@@ -27,7 +27,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A <xref:System.Windows.Automation.Text.TextPatternRange> can represent an insertion point, a subset, or all of the text in a <xref:System.Windows.Automation.TextPattern> container.
+
+A <xref:System.Windows.Automation.Text.TextPatternRange> can represent an insertion point, a subset, or all of the text in a <xref:System.Windows.Automation.TextPattern> container.
 
  A <xref:System.Windows.Automation.Text.TextPatternRange> will become invalid if one of the following occurs: the text in the <xref:System.Windows.Automation.TextPattern> container changes because of some user activity, or the <xref:System.Windows.Automation.ValuePattern.SetValue*> method of <xref:System.Windows.Automation.ValuePattern> is used to programmatically change the value of the text in the <xref:System.Windows.Automation.TextPattern> container.
 
@@ -68,7 +69,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The text insertion point moves to the area of the new selection.
+
+The text insertion point moves to the area of the new selection.
 
  Providing a degenerate text range moves the insertion point.
 
@@ -111,7 +113,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Alternatively, create a new <xref:System.Windows.Automation.TextPattern.DocumentRange*> from the <xref:System.Windows.Automation.TextPattern> and move the two endpoints to correspond with the endpoints of the original text range.
+
+Alternatively, create a new <xref:System.Windows.Automation.TextPattern.DocumentRange*> from the <xref:System.Windows.Automation.TextPattern> and move the two endpoints to correspond with the endpoints of the original text range.
 
  The new range can be manipulated independently from the original.
 
@@ -214,7 +217,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- By comparing the starting and ending endpoints of the same text range you can identify if a text range is degenerate or if the endpoints are in the order of logical text flow.
+
+By comparing the starting and ending endpoints of the same text range you can identify if a text range is degenerate or if the endpoints are in the order of logical text flow.
 
 ## Examples
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Automation/TextPattern/AnimationStyleAttribute/SearchWindow.cs" id="Snippet1062":::
@@ -261,7 +265,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the range is already an exact quantity of the specified units then it remains unchanged.
+
+If the range is already an exact quantity of the specified units then it remains unchanged.
 
  In order for the <xref:System.Windows.Automation.Text.TextPatternRange.ExpandToEnclosingUnit*> method to execute successfully, a sequence of actions is performed behind the scenes.
 
@@ -348,7 +353,8 @@ Examples of how a text range is adjusted for Move() and ExpandToEnclosingUnit()
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- There is no differentiation between hidden and visible text. UI Automation clients can use <xref:System.Windows.Automation.TextPattern.IsHiddenAttribute> to check text visibility.
+
+There is no differentiation between hidden and visible text. UI Automation clients can use <xref:System.Windows.Automation.TextPattern.IsHiddenAttribute> to check text visibility.
 
 > [!NOTE]
 > Use <xref:System.Windows.Automation.TextPattern.DocumentRange*> to search the entire document.
@@ -403,7 +409,8 @@ Examples of how a text range is adjusted for Move() and ExpandToEnclosingUnit()
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- There is no differentiation between hidden and visible text. UI Automation clients can use <xref:System.Windows.Automation.TextPattern.IsHiddenAttribute> to check text visibility.
+
+There is no differentiation between hidden and visible text. UI Automation clients can use <xref:System.Windows.Automation.TextPattern.IsHiddenAttribute> to check text visibility.
 
 > [!NOTE]
 > Use <xref:System.Windows.Automation.TextPattern.DocumentRange*> to search the entire document.
@@ -456,7 +463,8 @@ Examples of how a text range is adjusted for Move() and ExpandToEnclosingUnit()
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- There is no differentiation between hidden and visible text. UI Automation clients can use <xref:System.Windows.Automation.TextPattern.IsHiddenAttribute> to check text visibility.
+
+There is no differentiation between hidden and visible text. UI Automation clients can use <xref:System.Windows.Automation.TextPattern.IsHiddenAttribute> to check text visibility.
 
 ## Examples
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Automation/TextPattern/AnimationStyleAttribute/SearchWindow.cs" id="Snippet1066":::
@@ -586,7 +594,8 @@ Examples of how a text range is adjusted for Move() and ExpandToEnclosingUnit()
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The enclosing <xref:System.Windows.Automation.AutomationElement>, typically the text provider that supplies the text range. However, if the text provider supports child elements such as tables or hyperlinks, then the enclosing element could be a descendant of the text provider.
+
+The enclosing <xref:System.Windows.Automation.AutomationElement>, typically the text provider that supplies the text range. However, if the text provider supports child elements such as tables or hyperlinks, then the enclosing element could be a descendant of the text provider.
 
 ## Examples
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Automation/TextPattern/AnimationStyleAttribute/SearchWindow.cs" id="Snippet1069":::
@@ -684,7 +693,8 @@ Examples of how a text range is adjusted for Move() and ExpandToEnclosingUnit()
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When it is necessary to traverse the content of a text range, a series of steps are involved behind the scenes in order for the <xref:System.Windows.Automation.Text.TextPatternRange.Move*> method to execute successfully.
+
+When it is necessary to traverse the content of a text range, a series of steps are involved behind the scenes in order for the <xref:System.Windows.Automation.Text.TextPatternRange.Move*> method to execute successfully.
 
 1. The text range is normalized; that is, the text range is collapsed to a degenerate range at the <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start> endpoint, which makes the <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.End> endpoint superfluous. This step is necessary to remove ambiguity in situations where a text range spans `unit` boundaries; for example, "{The U}RL [https://www.microsoft.com/](https://www.microsoft.com/) is embedded in text" where "{" and "}" are the text range endpoints.
 
@@ -775,7 +785,8 @@ Example of a text stream with embedded objects and their range spans
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the endpoint being moved crosses the other endpoint of the same text range then that other endpoint is moved also, resulting in a degenerate range and ensuring the correct ordering of the endpoints (that is, <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start> is always less than or equal to <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.End>).
+
+If the endpoint being moved crosses the other endpoint of the same text range then that other endpoint is moved also, resulting in a degenerate range and ensuring the correct ordering of the endpoints (that is, <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start> is always less than or equal to <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.End>).
 
 ## Examples
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Automation/TextPattern/AnimationStyleAttribute/SearchWindow.cs" id="Snippet1072":::
@@ -824,7 +835,8 @@ Example of a text stream with embedded objects and their range spans
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When it is necessary to traverse the content of a text range, a series of steps are involved behind the scenes in order for the <xref:System.Windows.Automation.Text.TextPatternRange.Move*> method to execute successfully.
+
+When it is necessary to traverse the content of a text range, a series of steps are involved behind the scenes in order for the <xref:System.Windows.Automation.Text.TextPatternRange.Move*> method to execute successfully.
 
 1. The text range is normalized; that is, the text range is collapsed to a degenerate range at the <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start> endpoint, which makes the <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.End> endpoint superfluous. This step is necessary to remove ambiguity in situations where a text range spans `unit` boundaries; for example, "{The U}RL [https://www.microsoft.com/](https://www.microsoft.com/) is embedded in text" where "{" and "}" are the text range endpoints.
 
@@ -897,7 +909,8 @@ Example of a text stream with embedded objects and their range spans
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The text insertion point will move to the area of the removed highlight.
+
+The text insertion point will move to the area of the removed highlight.
 
  Providing a degenerate text range will move the insertion point.
 
@@ -985,7 +998,8 @@ Example of a text stream with embedded objects and their range spans
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If a degenerate text range is provided, the text insertion point will move to the <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start> endpoint of the text range.
+
+If a degenerate text range is provided, the text insertion point will move to the <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start> endpoint of the text range.
 
 ## Examples
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Automation/TextPattern/AnimationStyleAttribute/SearchWindow.cs" id="Snippet1075":::

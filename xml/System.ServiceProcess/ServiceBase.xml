@@ -57,7 +57,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Derive from <xref:System.ServiceProcess.ServiceBase> when defining your service class in a service application. Any useful service overrides the <xref:System.ServiceProcess.ServiceBase.OnStart*> and <xref:System.ServiceProcess.ServiceBase.OnStop*> methods. For additional functionality, you can override <xref:System.ServiceProcess.ServiceBase.OnPause*> and <xref:System.ServiceProcess.ServiceBase.OnContinue*> with specific behavior in response to changes in the service state.
+
+Derive from <xref:System.ServiceProcess.ServiceBase> when defining your service class in a service application. Any useful service overrides the <xref:System.ServiceProcess.ServiceBase.OnStart*> and <xref:System.ServiceProcess.ServiceBase.OnStop*> methods. For additional functionality, you can override <xref:System.ServiceProcess.ServiceBase.OnPause*> and <xref:System.ServiceProcess.ServiceBase.OnContinue*> with specific behavior in response to changes in the service state.
 
  A service is a long-running executable that does not support a user interface, and which might not run under the logged-on user account. The service can run without any user being logged on to the computer.
 
@@ -111,7 +112,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Do not create an instance of the <xref:System.ServiceProcess.ServiceBase> class. Instead, derive from <xref:System.ServiceProcess.ServiceBase> and instantiate your derived class. The minimum you need to implement in the constructor for a class inherited from <xref:System.ServiceProcess.ServiceBase> is to set the <xref:System.ServiceProcess.ServiceBase.ServiceName*> on your component. No other processing is specifically required in the constructor. You should handle most initialization in <xref:System.ServiceProcess.ServiceBase.OnStart*> rather than in the constructor. Otherwise, there is no guarantee the objects will be reinitialized when you restart a service after it has been stopped.
+
+Do not create an instance of the <xref:System.ServiceProcess.ServiceBase> class. Instead, derive from <xref:System.ServiceProcess.ServiceBase> and instantiate your derived class. The minimum you need to implement in the constructor for a class inherited from <xref:System.ServiceProcess.ServiceBase> is to set the <xref:System.ServiceProcess.ServiceBase.ServiceName*> on your component. No other processing is specifically required in the constructor. You should handle most initialization in <xref:System.ServiceProcess.ServiceBase.OnStart*> rather than in the constructor. Otherwise, there is no guarantee the objects will be reinitialized when you restart a service after it has been stopped.
 
  If you override the constructor in your derived class, call the base class constructor in your code.
 
@@ -171,7 +173,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Setting <xref:System.ServiceProcess.ServiceBase.AutoLog*> to `true` instructs the service to use the Application event log to report command failures, as well as state change information for Start, Stop, Pause, and Continue events on the service. The name of the service is used as the log's <xref:System.Diagnostics.EventLog.Source*?displayProperty=nameWithType>.
+
+Setting <xref:System.ServiceProcess.ServiceBase.AutoLog*> to `true` instructs the service to use the Application event log to report command failures, as well as state change information for Start, Stop, Pause, and Continue events on the service. The name of the service is used as the log's <xref:System.Diagnostics.EventLog.Source*?displayProperty=nameWithType>.
 
  To report information to a custom event log rather than the Application log, set <xref:System.ServiceProcess.ServiceBase.AutoLog*> to `false` and write instructions within the command-handling methods <xref:System.ServiceProcess.ServiceBase.OnContinue*>, <xref:System.ServiceProcess.ServiceBase.OnPause*>, or <xref:System.ServiceProcess.ServiceBase.OnStop*> to post to the appropriate log.
 
@@ -221,7 +224,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When the computer power status changes, the Service Control Manager (SCM) verifies whether the service accepts power event commands using the value of <xref:System.ServiceProcess.ServiceBase.CanHandlePowerEvent*>.
+
+When the computer power status changes, the Service Control Manager (SCM) verifies whether the service accepts power event commands using the value of <xref:System.ServiceProcess.ServiceBase.CanHandlePowerEvent*>.
 
  If <xref:System.ServiceProcess.ServiceBase.CanHandlePowerEvent*> is `true`, the command is passed to the service and the <xref:System.ServiceProcess.ServiceBase.OnPowerEvent*> method is called if defined. If <xref:System.ServiceProcess.ServiceBase.OnPowerEvent*> is not implemented in the derived class, the SCM handles the power event through the empty base class <xref:System.ServiceProcess.ServiceBase.OnPowerEvent*?displayProperty=nameWithType> method.
 
@@ -314,7 +318,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Set the value of the <xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue> property in the constructor for the service.
+
+Set the value of the <xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue> property in the constructor for the service.
 
  When a service is paused, it halts what it is doing. When you continue the service (either through the Service Control Manager or programmatically), <xref:System.ServiceProcess.ServiceBase.OnContinue*> runs.
 
@@ -370,7 +375,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If <xref:System.ServiceProcess.ServiceBase.CanShutdown*> is `true`, the service is notified when the system is shutting down. At shutdown, the <xref:System.ServiceProcess.ServiceBase.OnShutdown*> method is called if it has been implemented in your derived class.
+
+If <xref:System.ServiceProcess.ServiceBase.CanShutdown*> is `true`, the service is notified when the system is shutting down. At shutdown, the <xref:System.ServiceProcess.ServiceBase.OnShutdown*> method is called if it has been implemented in your derived class.
 
 > [!NOTE]
 > Only the system should cause the <xref:System.ServiceProcess.ServiceBase.OnShutdown*> method to execute; the service can call it, but this is not recommended.
@@ -420,7 +426,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When Stop is called on a service, the Service Control Manager (SCM) verifies whether the service accepts Stop commands using the value of <xref:System.ServiceProcess.ServiceBase.CanStop*>. For most services, the value of <xref:System.ServiceProcess.ServiceBase.CanStop*> is `true`, but some operating system services, for example, do not allow the user to stop them.
+
+When Stop is called on a service, the Service Control Manager (SCM) verifies whether the service accepts Stop commands using the value of <xref:System.ServiceProcess.ServiceBase.CanStop*>. For most services, the value of <xref:System.ServiceProcess.ServiceBase.CanStop*> is `true`, but some operating system services, for example, do not allow the user to stop them.
 
  If <xref:System.ServiceProcess.ServiceBase.CanStop*> is `true`, the Stop command is passed to the service and the <xref:System.ServiceProcess.ServiceBase.OnStop*> method is called if it is defined. If <xref:System.ServiceProcess.ServiceBase.OnStop*> is not implemented in the derived class, the SCM handles the Stop command through the empty base class <xref:System.ServiceProcess.ServiceBase.OnStop*?displayProperty=nameWithType> method.
 
@@ -466,7 +473,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Call <xref:System.ServiceProcess.ServiceBase.Dispose*> in your derived class (and through it, in the <xref:System.ServiceProcess.ServiceBase> class) when you are finished using the derived class. The <xref:System.ServiceProcess.ServiceBase.Dispose*> method leaves the derived class in an unusable state. After calling <xref:System.ServiceProcess.ServiceBase.Dispose*>, you must release all references to the derived class and <xref:System.ServiceProcess.ServiceBase> so the memory they were occupying can be reclaimed by garbage collection.
+
+Call <xref:System.ServiceProcess.ServiceBase.Dispose*> in your derived class (and through it, in the <xref:System.ServiceProcess.ServiceBase> class) when you are finished using the derived class. The <xref:System.ServiceProcess.ServiceBase.Dispose*> method leaves the derived class in an unusable state. After calling <xref:System.ServiceProcess.ServiceBase.Dispose*>, you must release all references to the derived class and <xref:System.ServiceProcess.ServiceBase> so the memory they were occupying can be reclaimed by garbage collection.
 
 > [!NOTE]
 > Always call <xref:System.ServiceProcess.ServiceBase.Dispose*> before you release your last reference to the class derived from <xref:System.ServiceProcess.ServiceBase>. Otherwise, the resources <xref:System.ServiceProcess.ServiceBase> and the derived class are using will not be freed until garbage collection calls the objects' destructors.
@@ -517,7 +525,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The constructor initializes the <xref:System.ServiceProcess.ServiceBase.EventLog> property to an instance with the <xref:System.Diagnostics.EventLog.Source*?displayProperty=nameWithType> and <xref:System.Diagnostics.EventLog.Log*?displayProperty=nameWithType> properties set. The source is the <xref:System.ServiceProcess.ServiceBase.ServiceName*> of the service, and the log is the computer's Application log. These values are set automatically and cannot be changed for automatic logging of service commands.
+
+The constructor initializes the <xref:System.ServiceProcess.ServiceBase.EventLog> property to an instance with the <xref:System.Diagnostics.EventLog.Source*?displayProperty=nameWithType> and <xref:System.Diagnostics.EventLog.Log*?displayProperty=nameWithType> properties set. The source is the <xref:System.ServiceProcess.ServiceBase.ServiceName*> of the service, and the log is the computer's Application log. These values are set automatically and cannot be changed for automatic logging of service commands.
 
  When <xref:System.ServiceProcess.ServiceBase.AutoLog*> is `true`, Start, Stop, Pause, Continue, and custom commands are recorded automatically in the Application event log. You can use the <xref:System.ServiceProcess.ServiceBase.EventLog> property to write additional messages to that log as well. The component calls <xref:System.Diagnostics.EventLog.WriteEntry*?displayProperty=nameWithType> using this <xref:System.ServiceProcess.ServiceBase.EventLog*> member.
 
@@ -564,7 +573,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Set the <xref:System.ServiceProcess.ServiceBase.ExitCode> property to a non-zero value before stopping the service to indicate an error to the Service Control Manager.
+
+Set the <xref:System.ServiceProcess.ServiceBase.ExitCode> property to a non-zero value before stopping the service to indicate an error to the Service Control Manager.
 
  ]]></format>
         </remarks>
@@ -599,7 +609,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- ServiceName and DisplayName both have size restrictions that must be observed when setting the properties on your service class.
+
+ServiceName and DisplayName both have size restrictions that must be observed when setting the properties on your service class.
 
  ]]></format>
         </remarks>
@@ -635,7 +646,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Implement <xref:System.ServiceProcess.ServiceBase.OnContinue*> to mirror your application's response to <xref:System.ServiceProcess.ServiceBase.OnPause*>. When you continue the service (either through the Services console or programmatically), the <xref:System.ServiceProcess.ServiceBase.OnContinue*> processing runs, and the service becomes active again.
+
+Implement <xref:System.ServiceProcess.ServiceBase.OnContinue*> to mirror your application's response to <xref:System.ServiceProcess.ServiceBase.OnPause*>. When you continue the service (either through the Services console or programmatically), the <xref:System.ServiceProcess.ServiceBase.OnContinue*> processing runs, and the service becomes active again.
 
  <xref:System.ServiceProcess.ServiceBase.OnContinue*> is expected to be overridden when the <xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue> property is `true`.
 
@@ -733,7 +745,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use <xref:System.ServiceProcess.ServiceBase.OnPause*> to specify the processing that occurs when the service receives a Pause command. <xref:System.ServiceProcess.ServiceBase.OnPause*> is expected to be overridden when the <xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue> property is `true`.
+
+Use <xref:System.ServiceProcess.ServiceBase.OnPause*> to specify the processing that occurs when the service receives a Pause command. <xref:System.ServiceProcess.ServiceBase.OnPause*> is expected to be overridden when the <xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue> property is `true`.
 
  When you continue a paused service (either through the Services console or programmatically), the <xref:System.ServiceProcess.ServiceBase.OnContinue*> processing is run, and the service becomes active again.
 
@@ -789,7 +802,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use <xref:System.ServiceProcess.ServiceBase.OnPowerEvent*> to specify the processing that occurs when the system event indicated in the <xref:System.ServiceProcess.PowerBroadcastStatus> enumeration occurs--for example, when the computer is placed in suspended mode or indicates low battery power.
+
+Use <xref:System.ServiceProcess.ServiceBase.OnPowerEvent*> to specify the processing that occurs when the system event indicated in the <xref:System.ServiceProcess.PowerBroadcastStatus> enumeration occurs--for example, when the computer is placed in suspended mode or indicates low battery power.
 
  <xref:System.ServiceProcess.ServiceBase.OnPowerEvent*> is expected to be overridden when the <xref:System.ServiceProcess.ServiceBase.CanHandlePowerEvent> property is `true`.
 
@@ -835,7 +849,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You must set the <xref:System.ServiceProcess.ServiceBase.CanHandleSessionChangeEvent> property to `true` to enable the execution of this method.
+
+You must set the <xref:System.ServiceProcess.ServiceBase.CanHandleSessionChangeEvent> property to `true` to enable the execution of this method.
 
  ]]></format>
         </remarks>
@@ -872,7 +887,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use <xref:System.ServiceProcess.ServiceBase.OnShutdown*> to specify the processing that occurs when the system shuts down.
+
+Use <xref:System.ServiceProcess.ServiceBase.OnShutdown*> to specify the processing that occurs when the system shuts down.
 
  This event occurs only when the operating system is shut down, not when the computer is turned off.
 
@@ -921,7 +937,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use <xref:System.ServiceProcess.ServiceBase.OnStart*> to specify the processing that occurs when the service receives a Start command. <xref:System.ServiceProcess.ServiceBase.OnStart*> is the method in which you specify the behavior of the service. <xref:System.ServiceProcess.ServiceBase.OnStart*> can take arguments as a way to pass data, but this usage is rare.
+
+Use <xref:System.ServiceProcess.ServiceBase.OnStart*> to specify the processing that occurs when the service receives a Start command. <xref:System.ServiceProcess.ServiceBase.OnStart*> is the method in which you specify the behavior of the service. <xref:System.ServiceProcess.ServiceBase.OnStart*> can take arguments as a way to pass data, but this usage is rare.
 
 > [!CAUTION]
 > Do not use the constructor to perform processing that should be in <xref:System.ServiceProcess.ServiceBase.OnStart*>. Use <xref:System.ServiceProcess.ServiceBase.OnStart*> to handle all initialization of your service. The constructor is called when the application's executable runs, not when the service runs. The executable runs before <xref:System.ServiceProcess.ServiceBase.OnStart*>. When you continue, for example, the constructor is not called again because the SCM already holds the object in memory. If <xref:System.ServiceProcess.ServiceBase.OnStop*> releases resources allocated in the constructor rather than in <xref:System.ServiceProcess.ServiceBase.OnStart*>, the needed resources would not be created again the second time the service is called.
@@ -971,7 +988,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use <xref:System.ServiceProcess.ServiceBase.OnStop*> to specify the processing that occurs when the service receives a Stop command.
+
+Use <xref:System.ServiceProcess.ServiceBase.OnStop*> to specify the processing that occurs when the service receives a Stop command.
 
  When the SCM receives a Stop command, it uses the value of <xref:System.ServiceProcess.ServiceBase.CanStop*> to verify whether the service accepts Stop commands. If <xref:System.ServiceProcess.ServiceBase.CanStop*> is `true`, the Stop command is passed to the service, and the <xref:System.ServiceProcess.ServiceBase.OnStop*> method is called if it is defined. If <xref:System.ServiceProcess.ServiceBase.OnStop*> is not implemented in the service, the SCM handles the Stop command.
 
@@ -1027,7 +1045,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ServiceProcess.ServiceBase.RequestAdditionalTime*> method is intended to be called by the overridden <xref:System.ServiceProcess.ServiceBase.OnContinue*>, <xref:System.ServiceProcess.ServiceBase.OnPause*>, <xref:System.ServiceProcess.ServiceBase.OnStart*>, or <xref:System.ServiceProcess.ServiceBase.OnStop*> methods to request additional time for a pending operation, to prevent the Service Control Manager (SCM) from marking the service as not responding. If the pending operation is not a continue, pause, start, or stop, an <xref:System.InvalidOperationException> is thrown.
+
+The <xref:System.ServiceProcess.ServiceBase.RequestAdditionalTime*> method is intended to be called by the overridden <xref:System.ServiceProcess.ServiceBase.OnContinue*>, <xref:System.ServiceProcess.ServiceBase.OnPause*>, <xref:System.ServiceProcess.ServiceBase.OnStart*>, or <xref:System.ServiceProcess.ServiceBase.OnStop*> methods to request additional time for a pending operation, to prevent the Service Control Manager (SCM) from marking the service as not responding. If the pending operation is not a continue, pause, start, or stop, an <xref:System.InvalidOperationException> is thrown.
 
  ]]></format>
         </remarks>
@@ -1106,7 +1125,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Call this overload in the `main()` function of the service executable to register the service with the Service Control Manager. After you call <xref:System.ServiceProcess.ServiceBase.Run(System.ServiceProcess.ServiceBase)>, the Service Control Manager issues a Start command, which results in a call to the <xref:System.ServiceProcess.ServiceBase.OnStart*> method in the service. The service is not started until the Start command is executed.
+
+Call this overload in the `main()` function of the service executable to register the service with the Service Control Manager. After you call <xref:System.ServiceProcess.ServiceBase.Run(System.ServiceProcess.ServiceBase)>, the Service Control Manager issues a Start command, which results in a call to the <xref:System.ServiceProcess.ServiceBase.OnStart*> method in the service. The service is not started until the Start command is executed.
 
  The <xref:System.ServiceProcess.ServiceBase.Run*?displayProperty=nameWithType> method is called in much the same way as <xref:System.Windows.Forms.Application.Run*?displayProperty=nameWithType> for Windows Forms applications.
 
@@ -1152,7 +1172,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Call this overload in the `main()` function of the service executable to register the services with the Service Control Manager. After you call <xref:System.ServiceProcess.ServiceBase.Run(System.ServiceProcess.ServiceBase[])>, the Service Control Manager issues Start commands, which result in calls to the <xref:System.ServiceProcess.ServiceBase.OnStart*> methods in the services. The services are not started until the Start commands are executed.
+
+Call this overload in the `main()` function of the service executable to register the services with the Service Control Manager. After you call <xref:System.ServiceProcess.ServiceBase.Run(System.ServiceProcess.ServiceBase[])>, the Service Control Manager issues Start commands, which result in calls to the <xref:System.ServiceProcess.ServiceBase.OnStart*> methods in the services. The services are not started until the Start commands are executed.
 
  The <xref:System.ServiceProcess.ServiceBase.Run*?displayProperty=nameWithType> method is called in much the same way as the <xref:System.Windows.Forms.Application.Run*?displayProperty=nameWithType> method for Windows Forms applications.
 
@@ -1199,7 +1220,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The service control handle is used to communicate with the Service Control Manager (SCM). The handle can be used to update the service control manager's status information for the calling service using the unmanaged `SetServiceStatus` function.
+
+The service control handle is used to communicate with the Service Control Manager (SCM). The handle can be used to update the service control manager's status information for the calling service using the unmanaged `SetServiceStatus` function.
 
  ]]></format>
         </remarks>
@@ -1294,7 +1316,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ServiceProcess.ServiceBase.ServiceName*> identifies the service to the Service Control Manager. The value of this property must be identical to the name recorded for the service in the <xref:System.ServiceProcess.ServiceInstaller.ServiceName?displayProperty=nameWithType> property of the corresponding installer class. In code, the <xref:System.ServiceProcess.ServiceBase.ServiceName*> of the service is usually set in the `main()` function of the executable.
+
+The <xref:System.ServiceProcess.ServiceBase.ServiceName*> identifies the service to the Service Control Manager. The value of this property must be identical to the name recorded for the service in the <xref:System.ServiceProcess.ServiceInstaller.ServiceName?displayProperty=nameWithType> property of the corresponding installer class. In code, the <xref:System.ServiceProcess.ServiceBase.ServiceName*> of the service is usually set in the `main()` function of the executable.
 
  The <xref:System.ServiceProcess.ServiceBase.ServiceName*> is also used to specify the <xref:System.Diagnostics.EventLog.Source*?displayProperty=nameWithType> associated with the <xref:System.ServiceProcess.ServiceBase.EventLog> property. This <xref:System.ServiceProcess.ServiceBase.EventLog*> is an instance that writes service command information to the Application log.
 
@@ -1336,7 +1359,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ServiceProcess.ServiceBase.Stop*> method sets the service state to indicate a stop is pending and calls the <xref:System.ServiceProcess.ServiceBase.OnStop*> method. After the application is stopped, the service state is set to stopped. If the application is a hosted service, the application domain is unloaded.
+
+The <xref:System.ServiceProcess.ServiceBase.Stop*> method sets the service state to indicate a stop is pending and calls the <xref:System.ServiceProcess.ServiceBase.OnStop*> method. After the application is stopped, the service state is set to stopped. If the application is a hosted service, the application domain is unloaded.
 
  ]]></format>
         </remarks>

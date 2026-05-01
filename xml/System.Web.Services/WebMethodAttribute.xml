@@ -28,7 +28,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Methods within a class that have this attribute set are called XML Web service methods. The method and class must be public and running inside an ASP.NET Web application.
+
+Methods within a class that have this attribute set are called XML Web service methods. The method and class must be public and running inside an ASP.NET Web application.
 
 ## Examples
  In the example below the method `GetMachineName` can be remotely called across the Web, because it has a <xref:System.Web.Services.WebMethodAttribute>. `GetUserName` cannot be called remotely, because it does not have a <xref:System.Web.Services.WebMethodAttribute>, even though it is `public`.
@@ -121,7 +122,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A web service call can only be the root of a transaction, due to the stateless nature of the HTTP protocol. This means that the following two settings are equivalent, with each call creating a new transaction:
+
+A web service call can only be the root of a transaction, due to the stateless nature of the HTTP protocol. This means that the following two settings are equivalent, with each call creating a new transaction:
 
 ```
 [WebMethod(TransactionOption = TransactionOption.Required)]
@@ -169,7 +171,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A web service call can only be the root of a transaction, due to the stateless nature of the HTTP protocol. This means that the following two settings are equivalent, with each call creating a new transaction:
+
+A web service call can only be the root of a transaction, due to the stateless nature of the HTTP protocol. This means that the following two settings are equivalent, with each call creating a new transaction:
 
 ```
 [WebMethod(TransactionOption = TransactionOption.Required)]
@@ -219,7 +222,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A web service call can only be the root of a transaction, due to the stateless nature of the HTTP protocol. This means that the following two settings are equivalent, with each call creating a new transaction:
+
+A web service call can only be the root of a transaction, due to the stateless nature of the HTTP protocol. This means that the following two settings are equivalent, with each call creating a new transaction:
 
 ```
 [WebMethod(TransactionOption = TransactionOption.Required)]
@@ -264,7 +268,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Setting <xref:System.Web.Services.WebMethodAttribute.BufferResponse*> to `true`, serializes the response of the XML Web service method into a memory buffer until either the response is completely serialized or the buffer is full. Once the response is buffered, it is returned to the XML Web service client over the network. When <xref:System.Web.Services.WebMethodAttribute.BufferResponse*> is `false`, the response to the XML Web service method is sent back to the client as it is serialized. In general, you only want to set <xref:System.Web.Services.WebMethodAttribute.BufferResponse*> to `false`, if it is known that an XML Web service method returns large amounts of data to the client. For smaller amounts of data, XML Web service performance is better with <xref:System.Web.Services.WebMethodAttribute.BufferResponse*> to `true`.
+
+Setting <xref:System.Web.Services.WebMethodAttribute.BufferResponse*> to `true`, serializes the response of the XML Web service method into a memory buffer until either the response is completely serialized or the buffer is full. Once the response is buffered, it is returned to the XML Web service client over the network. When <xref:System.Web.Services.WebMethodAttribute.BufferResponse*> is `false`, the response to the XML Web service method is sent back to the client as it is serialized. In general, you only want to set <xref:System.Web.Services.WebMethodAttribute.BufferResponse*> to `false`, if it is known that an XML Web service method returns large amounts of data to the client. For smaller amounts of data, XML Web service performance is better with <xref:System.Web.Services.WebMethodAttribute.BufferResponse*> to `true`.
 
  When <xref:System.Web.Services.WebMethodAttribute.BufferResponse*> is `false`, SOAP extensions are disabled for the XML Web service method.
 
@@ -302,7 +307,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When caching is enabled requests and responses are held in memory on the server for at least the cache duration so caution must be used if you expect requests or responses to be very large or you expect requests to vary widely.
+
+When caching is enabled requests and responses are held in memory on the server for at least the cache duration so caution must be used if you expect requests or responses to be very large or you expect requests to vary widely.
 
  There are two issues that can affect output caching in an ASP.NET 2.0 Web service application.
 
@@ -344,7 +350,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The descriptive message is displayed to prospective consumers of the XML Web service when description documents for the XML Web service are generated, such as the Service Description and the Service help page.
+
+The descriptive message is displayed to prospective consumers of the XML Web service when description documents for the XML Web service are generated, such as the Service Description and the Service help page.
 
 ## Examples
  In the example below, the string `Obtains the Server Computer Name` is used to describe the XML Web service method in the Service Description and Service help page for the XML Web service.
@@ -382,7 +389,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- In order to store session state in the ASP.NET <xref:System.Web.SessionState.HttpSessionState> object, the XML Web service must inherit from <xref:System.Web.Services.WebService> and a <xref:System.Web.Services.WebMethodAttribute> applied to the XML Web service method, setting the <xref:System.Web.Services.WebMethodAttribute.EnableSession> property to `true`. If session state is not needed for an XML Web service method, then disabling it may improve performance.
+
+In order to store session state in the ASP.NET <xref:System.Web.SessionState.HttpSessionState> object, the XML Web service must inherit from <xref:System.Web.Services.WebService> and a <xref:System.Web.Services.WebMethodAttribute> applied to the XML Web service method, setting the <xref:System.Web.Services.WebMethodAttribute.EnableSession> property to `true`. If session state is not needed for an XML Web service method, then disabling it may improve performance.
 
  An XML Web service client is uniquely identified by an HTTP cookie returned by an XML Web service. In order for an XML Web service to maintain session state for a client, the client must persist the cookie. Clients can receive the HTTP cookie by creating a new instance of <xref:System.Net.CookieContainer> and assigning that to the <xref:System.Web.Services.Protocols.HttpWebClientProtocol.CookieContainer> property of the proxy class before calling the XML Web service method. If you need to maintain session state beyond when the proxy class instance goes out of scope, the client must persist the HTTP cookie between calls to the XML Web service. For instance, a Web Forms client can persist the HTTP cookie by saving the <xref:System.Net.CookieContainer> in its own session state. Because not all XML Web services use session state and thus clients are not always required to use the <xref:System.Web.Services.Protocols.HttpWebClientProtocol.CookieContainer> property of a client proxy, the documentation for the XML Web service should state whether session state is used.
 
@@ -426,7 +434,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Services.WebMethodAttribute.MessageName> property can be used to alias method or property names. The most common use of the <xref:System.Web.Services.WebMethodAttribute.MessageName> property will be to uniquely identify polymorphic methods. By default, <xref:System.Web.Services.WebMethodAttribute.MessageName*> is set to the name of the XML Web service method. Therefore, if an XML Web service contains two or more XML Web service methods with the same name, you can uniquely identify the individual XML Web service methods by setting the <xref:System.Web.Services.WebMethodAttribute.MessageName*> to a name unique within the XML Web service, without changing the name of the actual method name in code.
+
+The <xref:System.Web.Services.WebMethodAttribute.MessageName> property can be used to alias method or property names. The most common use of the <xref:System.Web.Services.WebMethodAttribute.MessageName> property will be to uniquely identify polymorphic methods. By default, <xref:System.Web.Services.WebMethodAttribute.MessageName*> is set to the name of the XML Web service method. Therefore, if an XML Web service contains two or more XML Web service methods with the same name, you can uniquely identify the individual XML Web service methods by setting the <xref:System.Web.Services.WebMethodAttribute.MessageName*> to a name unique within the XML Web service, without changing the name of the actual method name in code.
 
  When data is passed to an XML Web service it is sent in a request and when it is returned it is sent in a response. Within the request and response, the name used for the XML Web service method is its <xref:System.Web.Services.WebMethodAttribute.MessageName> property.
 
@@ -469,7 +478,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- XML Web service methods can only participate as the root object in a transaction, due to the stateless nature of the HTTP protocol. XML Web service methods can invoke COM objects that participate in the same transaction as the XML Web service method, if the COM object is marked to run within a transaction in the Component Services administrative tool. If an XML Web service method with a <xref:System.Web.Services.WebMethodAttribute.TransactionOption> property of `Required` or `RequiresNew` invokes another XML Web service method with a <xref:System.Web.Services.WebMethodAttribute.TransactionOption> property of `Required` or `RequiresNew`, each XML Web service method participates in its own transaction, because an XML Web service method can only act as the root object in a transaction.
+
+XML Web service methods can only participate as the root object in a transaction, due to the stateless nature of the HTTP protocol. XML Web service methods can invoke COM objects that participate in the same transaction as the XML Web service method, if the COM object is marked to run within a transaction in the Component Services administrative tool. If an XML Web service method with a <xref:System.Web.Services.WebMethodAttribute.TransactionOption> property of `Required` or `RequiresNew` invokes another XML Web service method with a <xref:System.Web.Services.WebMethodAttribute.TransactionOption> property of `Required` or `RequiresNew`, each XML Web service method participates in its own transaction, because an XML Web service method can only act as the root object in a transaction.
 
 |Item|Description|
 |----------|-----------------|

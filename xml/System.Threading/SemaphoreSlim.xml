@@ -68,7 +68,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Semaphores are of two types: local semaphores and named system semaphores. Local semaphores are local to an application, system semaphores are visible throughout the operating system and are suitable for inter-process synchronization. The <xref:System.Threading.SemaphoreSlim> is a lightweight alternative to the <xref:System.Threading.Semaphore> class that doesn't use Windows kernel semaphores. Unlike the <xref:System.Threading.Semaphore> class, the <xref:System.Threading.SemaphoreSlim> class doesn't support named system semaphores. You can use it as a local semaphore only. The <xref:System.Threading.SemaphoreSlim> class is the recommended semaphore for synchronization within a single app.
+
+Semaphores are of two types: local semaphores and named system semaphores. Local semaphores are local to an application, system semaphores are visible throughout the operating system and are suitable for inter-process synchronization. The <xref:System.Threading.SemaphoreSlim> is a lightweight alternative to the <xref:System.Threading.Semaphore> class that doesn't use Windows kernel semaphores. Unlike the <xref:System.Threading.Semaphore> class, the <xref:System.Threading.SemaphoreSlim> class doesn't support named system semaphores. You can use it as a local semaphore only. The <xref:System.Threading.SemaphoreSlim> class is the recommended semaphore for synchronization within a single app.
 
  A lightweight semaphore controls access to a pool of resources that is local to your application. When you instantiate a semaphore, you can specify the maximum number of threads that can enter the semaphore concurrently. You also specify the initial number of threads that can enter the semaphore concurrently. This defines the semaphore's count.
 
@@ -157,7 +158,8 @@ The following example creates a semaphore with a maximum count of three threads 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The `initialCount` parameter defines the number of concurrent requests to enter the semaphore that can be granted. However, it doesn't define the maximum number of requests that can be granted concurrently. A   <xref:System.Threading.SemaphoreSlim> object instantiated by calling this constructor doesn't throw a <xref:System.Threading.SemaphoreFullException> exception if a call to the <xref:System.Threading.SemaphoreSlim.Release*> method increases the value of the <xref:System.Threading.SemaphoreSlim.CurrentCount> property beyond `initialCount`. This occurs if there are more calls to <xref:System.Threading.SemaphoreSlim.Release*> methods than there are to <xref:System.Threading.SemaphoreSlim.Wait*> or <xref:System.Threading.SemaphoreSlim.WaitAsync*> methods. To set the maximum number of concurrent requests to enter the semaphore that can be granted, call the <xref:System.Threading.SemaphoreSlim.%23ctor(System.Int32,System.Int32)> constructor.
+
+The `initialCount` parameter defines the number of concurrent requests to enter the semaphore that can be granted. However, it doesn't define the maximum number of requests that can be granted concurrently. A   <xref:System.Threading.SemaphoreSlim> object instantiated by calling this constructor doesn't throw a <xref:System.Threading.SemaphoreFullException> exception if a call to the <xref:System.Threading.SemaphoreSlim.Release*> method increases the value of the <xref:System.Threading.SemaphoreSlim.CurrentCount> property beyond `initialCount`. This occurs if there are more calls to <xref:System.Threading.SemaphoreSlim.Release*> methods than there are to <xref:System.Threading.SemaphoreSlim.Wait*> or <xref:System.Threading.SemaphoreSlim.WaitAsync*> methods. To set the maximum number of concurrent requests to enter the semaphore that can be granted, call the <xref:System.Threading.SemaphoreSlim.%23ctor(System.Int32,System.Int32)> constructor.
 
  ]]></format>
         </remarks>
@@ -256,7 +258,8 @@ The following example creates a semaphore with a maximum count of three threads 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use this property only when you must wait on a SemaphoreSlim together with other kernel-based synchronization objects with the same wait handle. A successful wait on the <xref:System.Threading.SemaphoreSlim.AvailableWaitHandle*> does not imply a successful wait on the <xref:System.Threading.SemaphoreSlim> itself, nor does it decrement the semaphore's count. After the available wait handle is signaled, you should wait on the <xref:System.Threading.SemaphoreSlim> specifically.
+
+Use this property only when you must wait on a SemaphoreSlim together with other kernel-based synchronization objects with the same wait handle. A successful wait on the <xref:System.Threading.SemaphoreSlim.AvailableWaitHandle*> does not imply a successful wait on the <xref:System.Threading.SemaphoreSlim> itself, nor does it decrement the semaphore's count. After the available wait handle is signaled, you should wait on the <xref:System.Threading.SemaphoreSlim> specifically.
 
  ]]></format>
         </remarks>
@@ -307,7 +310,8 @@ The following example creates a semaphore with a maximum count of three threads 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The initial value of the <xref:System.Threading.SemaphoreSlim.CurrentCount> property is set by the call to the <xref:System.Threading.SemaphoreSlim.%23ctor*> class constructor. It is decremented by each call to the <xref:System.Threading.SemaphoreSlim.Wait*> or <xref:System.Threading.SemaphoreSlim.WaitAsync*> method, and incremented by each call to the <xref:System.Threading.SemaphoreSlim.Release*> method.
+
+The initial value of the <xref:System.Threading.SemaphoreSlim.CurrentCount> property is set by the call to the <xref:System.Threading.SemaphoreSlim.%23ctor*> class constructor. It is decremented by each call to the <xref:System.Threading.SemaphoreSlim.Wait*> or <xref:System.Threading.SemaphoreSlim.WaitAsync*> method, and incremented by each call to the <xref:System.Threading.SemaphoreSlim.Release*> method.
 
  ]]></format>
         </remarks>
@@ -371,7 +375,8 @@ The following example creates a semaphore with a maximum count of three threads 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Call `Dispose` when you are finished using the <xref:System.Threading.SemaphoreSlim>. The `Dispose` method leaves the <xref:System.Threading.SemaphoreSlim> in an unusable state. After calling `Dispose`, you must release all references to the <xref:System.Threading.SemaphoreSlim> so the garbage collector can reclaim the memory that the <xref:System.Threading.SemaphoreSlim> was occupying.
+
+Call `Dispose` when you are finished using the <xref:System.Threading.SemaphoreSlim>. The `Dispose` method leaves the <xref:System.Threading.SemaphoreSlim> in an unusable state. After calling `Dispose`, you must release all references to the <xref:System.Threading.SemaphoreSlim> so the garbage collector can reclaim the memory that the <xref:System.Threading.SemaphoreSlim> was occupying.
 
  For more information, see [Cleaning Up Unmanaged Resources](/dotnet/standard/garbage-collection/unmanaged) and [Implementing a Dispose Method](/dotnet/standard/garbage-collection/implementing-dispose).
 
@@ -430,7 +435,8 @@ The following example creates a semaphore with a maximum count of three threads 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Unlike most of the members of <xref:System.Threading.SemaphoreSlim>, <xref:System.Threading.SemaphoreSlim.Dispose*> is not thread-safe and may not be used concurrently with other members of this instance.
+
+Unlike most of the members of <xref:System.Threading.SemaphoreSlim>, <xref:System.Threading.SemaphoreSlim.Dispose*> is not thread-safe and may not be used concurrently with other members of this instance.
 
  ]]></format>
         </remarks>
@@ -492,7 +498,8 @@ The following example creates a semaphore with a maximum count of three threads 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A call to the <xref:System.Threading.SemaphoreSlim.Release> method increments the <xref:System.Threading.SemaphoreSlim.CurrentCount> property by one. If the value of the <xref:System.Threading.SemaphoreSlim.CurrentCount> property is zero before this method is called, the method also allows one thread or task blocked by a call to the <xref:System.Threading.SemaphoreSlim.Wait*> or <xref:System.Threading.SemaphoreSlim.WaitAsync*> method to enter the semaphore.
+
+A call to the <xref:System.Threading.SemaphoreSlim.Release> method increments the <xref:System.Threading.SemaphoreSlim.CurrentCount> property by one. If the value of the <xref:System.Threading.SemaphoreSlim.CurrentCount> property is zero before this method is called, the method also allows one thread or task blocked by a call to the <xref:System.Threading.SemaphoreSlim.Wait*> or <xref:System.Threading.SemaphoreSlim.WaitAsync*> method to enter the semaphore.
 
  ]]></format>
         </remarks>
@@ -548,7 +555,8 @@ The following example creates a semaphore with a maximum count of three threads 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A call to the <xref:System.Threading.SemaphoreSlim.Release(System.Int32)> method increments the <xref:System.Threading.SemaphoreSlim.CurrentCount> property by `releaseCount`. If the value of the <xref:System.Threading.SemaphoreSlim.CurrentCount> property is zero before this method is called, the method also allows `releaseCount` threads or tasks blocked by a call to the <xref:System.Threading.SemaphoreSlim.Wait*> or <xref:System.Threading.SemaphoreSlim.WaitAsync*> method to enter the semaphore.
+
+A call to the <xref:System.Threading.SemaphoreSlim.Release(System.Int32)> method increments the <xref:System.Threading.SemaphoreSlim.CurrentCount> property by `releaseCount`. If the value of the <xref:System.Threading.SemaphoreSlim.CurrentCount> property is zero before this method is called, the method also allows `releaseCount` threads or tasks blocked by a call to the <xref:System.Threading.SemaphoreSlim.Wait*> or <xref:System.Threading.SemaphoreSlim.WaitAsync*> method to enter the semaphore.
 
  ]]></format>
         </remarks>
@@ -619,7 +627,8 @@ The following example creates a semaphore with a maximum count of three threads 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If a thread or task is able to enter the semaphore, it decrements the <xref:System.Threading.SemaphoreSlim.CurrentCount> property by one.
+
+If a thread or task is able to enter the semaphore, it decrements the <xref:System.Threading.SemaphoreSlim.CurrentCount> property by one.
 
  ]]></format>
         </remarks>
@@ -752,7 +761,8 @@ If a thread or task is blocked when calling <xref:System.Threading.SemaphoreSlim
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If a thread or task is able to enter the semaphore, it decrements the <xref:System.Threading.SemaphoreSlim.CurrentCount> property by one.
+
+If a thread or task is able to enter the semaphore, it decrements the <xref:System.Threading.SemaphoreSlim.CurrentCount> property by one.
 
  If `cancellationToken` is cancelled, the thread or task doesn't enter the semaphore, and the <xref:System.Threading.SemaphoreSlim.CurrentCount> property isn't decremented. Instead, the method throws an <xref:System.OperationCanceledException> exception.
 
@@ -1119,7 +1129,8 @@ The <see cref="T:System.Threading.CancellationTokenSource" /> that created <para
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the timeout is set to -1 milliseconds, the method waits indefinitely.
+
+If the timeout is set to -1 milliseconds, the method waits indefinitely.
 
  If the timeout is set to zero milliseconds, the method doesn't block. It tests the state of the wait handle and returns immediately.
 
@@ -1232,7 +1243,8 @@ The <see cref="T:System.Threading.CancellationTokenSource" /> that created <para
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the timeout is set to -1 milliseconds, the method waits indefinitely.
+
+If the timeout is set to -1 milliseconds, the method waits indefinitely.
 
  If the timeout is set to zero milliseconds, the method doesn't block. It tests the state of the wait handle and returns immediately.
 
@@ -1298,7 +1310,8 @@ In .NET 9 and earlier versions, <paramref name="timeout" /> is greater than <see
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the timeout is set to -1 milliseconds, the method waits indefinitely.
+
+If the timeout is set to -1 milliseconds, the method waits indefinitely.
 
  If the timeout is set to zero milliseconds, the method doesn't block. It tests the state of the wait handle and returns immediately.
 
@@ -1366,7 +1379,8 @@ In .NET 9 and earlier versions, <paramref name="timeout" /> is greater than <see
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the timeout is set to -1 milliseconds, the method waits indefinitely.
+
+If the timeout is set to -1 milliseconds, the method waits indefinitely.
 
  If the timeout is set to zero milliseconds, the method doesn't block. It tests the state of the wait handle and returns immediately.
 

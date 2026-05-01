@@ -27,7 +27,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Implement the <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider> interface to provide the appropriate <xref:System.ServiceModel.InstanceContext?displayProperty=nameWithType> object to the system. Typically, this interface is implemented to support shared sessions, enable service instance pooling, control lifetimes of service instances, or to group contexts among clients.
+
+Implement the <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider> interface to provide the appropriate <xref:System.ServiceModel.InstanceContext?displayProperty=nameWithType> object to the system. Typically, this interface is implemented to support shared sessions, enable service instance pooling, control lifetimes of service instances, or to group contexts among clients.
 
  For example, to implement sharing, insert a custom <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider> to decide which session or call from a client is associated with which <xref:System.ServiceModel.InstanceContext> object. For an example that demonstrates the sharing of instance contexts, see [InstanceContextSharing](https://msdn.microsoft.com/library/4a6a46d7-b7d7-4bb5-a0dd-03ffa3cbc230).
 
@@ -77,7 +78,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.GetExistingInstanceContext*> method is called when a message is received. Return the <xref:System.ServiceModel.InstanceContext> object that you want to process the message, or `null`. In the case of `null`, WCF creates a new <xref:System.ServiceModel.InstanceContext> object for the message and then calls the <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.InitializeInstanceContext*> method.
+
+The <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.GetExistingInstanceContext*> method is called when a message is received. Return the <xref:System.ServiceModel.InstanceContext> object that you want to process the message, or `null`. In the case of `null`, WCF creates a new <xref:System.ServiceModel.InstanceContext> object for the message and then calls the <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.InitializeInstanceContext*> method.
 
  If you return `null`, the new <xref:System.ServiceModel.InstanceContext> object goes through the throttling system and increments the count of <xref:System.ServiceModel.Dispatcher.ServiceThrottle.MaxConcurrentInstances*?displayProperty=nameWithType>.
 
@@ -185,7 +187,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.NotifyIdle*> method is called when the <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle*> method returns `false` to enable you to provide WCF with a <xref:System.ServiceModel.Dispatcher.InstanceContextIdleCallback?displayProperty=nameWithType> object that you use to inform the runtime that the <xref:System.ServiceModel.InstanceContext> has finished its work. When the <xref:System.ServiceModel.Dispatcher.InstanceContextIdleCallback?displayProperty=nameWithType> object notifies the runtime that the <xref:System.ServiceModel.InstanceContext> has finished its work, WCF calls <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle*> once again. This cycle continues until <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle*> returns `true` and the context is closed and recycled.
+
+The <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.NotifyIdle*> method is called when the <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle*> method returns `false` to enable you to provide WCF with a <xref:System.ServiceModel.Dispatcher.InstanceContextIdleCallback?displayProperty=nameWithType> object that you use to inform the runtime that the <xref:System.ServiceModel.InstanceContext> has finished its work. When the <xref:System.ServiceModel.Dispatcher.InstanceContextIdleCallback?displayProperty=nameWithType> object notifies the runtime that the <xref:System.ServiceModel.InstanceContext> has finished its work, WCF calls <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle*> once again. This cycle continues until <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle*> returns `true` and the context is closed and recycled.
 
  ]]></format>
         </remarks>

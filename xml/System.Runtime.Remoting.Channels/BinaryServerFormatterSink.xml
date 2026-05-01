@@ -28,7 +28,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The request stream propagates from the server transport sink through the server channel sinks until it reaches the appropriate formatter sink. The formatter sink deserializes the message and passes it through the pipeline. A special dispatch sink is inserted at the end of the channel sink chain by the <xref:System.Runtime.Remoting.Channels.ChannelServices.CreateServerChannelSinkChain*?displayProperty=nameWithType> method, which is called by server channels to create the server channel sink chains. When the message reaches the dispatch sink, the dispatch sink passes the message to the remoting infrastructure.
+
+The request stream propagates from the server transport sink through the server channel sinks until it reaches the appropriate formatter sink. The formatter sink deserializes the message and passes it through the pipeline. A special dispatch sink is inserted at the end of the channel sink chain by the <xref:System.Runtime.Remoting.Channels.ChannelServices.CreateServerChannelSinkChain*?displayProperty=nameWithType> method, which is called by server channels to create the server channel sink chains. When the message reaches the dispatch sink, the dispatch sink passes the message to the remoting infrastructure.
 
  The following table shows the sink configuration properties that can be specified for the current sink provider.
 
@@ -152,7 +153,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is called when a response stream needs to be created.
+
+This method is called when a response stream needs to be created.
 
  ]]></format>
         </remarks>
@@ -228,7 +230,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The proxy's job is to convert a method call that is invoked on it into a message. The message, which implements the <xref:System.Runtime.Remoting.Messaging.IMessage> interface, is passed from the client end to the server end by invoking <xref:System.Runtime.Remoting.Channels.IServerChannelSink.ProcessMessage*> on message sink objects. Message sinks are chained together, which means that every message sink is responsible for calling <xref:System.Runtime.Remoting.Channels.IServerChannelSink.ProcessMessage*> on the next message sink after the current message sink has finished its work. For instance, a synchronization-related message sink might cause a lock to be acquired or released and delegated to the downstream message sink.
+
+The proxy's job is to convert a method call that is invoked on it into a message. The message, which implements the <xref:System.Runtime.Remoting.Messaging.IMessage> interface, is passed from the client end to the server end by invoking <xref:System.Runtime.Remoting.Channels.IServerChannelSink.ProcessMessage*> on message sink objects. Message sinks are chained together, which means that every message sink is responsible for calling <xref:System.Runtime.Remoting.Channels.IServerChannelSink.ProcessMessage*> on the next message sink after the current message sink has finished its work. For instance, a synchronization-related message sink might cause a lock to be acquired or released and delegated to the downstream message sink.
 
  When the formatter channel sink gets a message that needs to be sent over the channel, it calls <xref:System.Runtime.Remoting.Messaging.IMessageSink.SyncProcessMessage*>, passing the message as a parameter. The formatter sink then creates the transport header array and calls <xref:System.Runtime.Remoting.Channels.IClientChannelSink.GetRequestStream*> on the formatter sink. This call is forwarded down the sink chain, and any sink can create a request stream that will be passed back to the formatter sink. After this call returns, the message is serialized, <xref:System.Runtime.Remoting.Channels.IClientChannelSink.ProcessMessage*> is called on the first chain in the sink chain, and the message is passed to the channel sinks.
 
@@ -267,7 +270,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- For more information, see [Channel and Formatter Configuration Properties](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/kw7c6kwc(v=vs.100)).
+
+For more information, see [Channel and Formatter Configuration Properties](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/kw7c6kwc(v=vs.100)).
 
  ]]></format>
         </remarks>
@@ -304,7 +308,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Supported values are `Low` (the default) and `Full`. For details about deserialization levels, see [Automatic Deserialization in .NET Remoting](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/5dxse167(v=vs.100)).
+
+Supported values are `Low` (the default) and `Full`. For details about deserialization levels, see [Automatic Deserialization in .NET Remoting](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/5dxse167(v=vs.100)).
 
  ]]></format>
         </remarks>

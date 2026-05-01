@@ -28,7 +28,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use <xref:System.Messaging.MessageEnumerator> for dynamic interaction with messages in a queue. Methods available through the <xref:System.Messaging.MessageQueue> class can return either a <xref:System.Messaging.MessageEnumerator> pointing to a dynamic list of messages in the queue, or an array that contains a copy at a given instant - a snapshot - of the queue at the time the specified method was called.
+
+Use <xref:System.Messaging.MessageEnumerator> for dynamic interaction with messages in a queue. Methods available through the <xref:System.Messaging.MessageQueue> class can return either a <xref:System.Messaging.MessageEnumerator> pointing to a dynamic list of messages in the queue, or an array that contains a copy at a given instant - a snapshot - of the queue at the time the specified method was called.
 
  Unlike a static snapshot, an enumerator allows you to modify the collection. Using a <xref:System.Messaging.MessageEnumerator>, you can remove messages from the queue, and the change is immediately reflected in the queue.
 
@@ -81,7 +82,8 @@ The following example gets a dynamic list of messages in a queue and counts all 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The operating system retains an open handle to the queue during the lifetime of the cursor. When you have finished working with the enumerator, call <xref:System.Messaging.MessageEnumerator.Close*> to release the resources associated with the handle.
+
+The operating system retains an open handle to the queue during the lifetime of the cursor. When you have finished working with the enumerator, call <xref:System.Messaging.MessageEnumerator.Close*> to release the resources associated with the handle.
 
  ]]></format>
         </remarks>
@@ -112,7 +114,8 @@ The following example gets a dynamic list of messages in a queue and counts all 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When the enumerator is created, it points to the head of the queue, at a location before the first message. In this case, <xref:System.Messaging.MessageEnumerator.Current*> is not valid and will throw an exception if it is accessed. You must call <xref:System.Messaging.MessageEnumerator.MoveNext*> to position the cursor at the first message in the queue.
+
+When the enumerator is created, it points to the head of the queue, at a location before the first message. In this case, <xref:System.Messaging.MessageEnumerator.Current*> is not valid and will throw an exception if it is accessed. You must call <xref:System.Messaging.MessageEnumerator.MoveNext*> to position the cursor at the first message in the queue.
 
  ]]></format>
         </remarks>
@@ -151,7 +154,8 @@ The following example gets a dynamic list of messages in a queue and counts all 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This property contains the native handle to the enumeration. When you have finished working with the enumerator, call <xref:System.Messaging.MessageEnumerator.Close*> to release this resource.
+
+This property contains the native handle to the enumeration. When you have finished working with the enumerator, call <xref:System.Messaging.MessageEnumerator.Close*> to release this resource.
 
  ]]></format>
         </remarks>
@@ -195,7 +199,8 @@ The following example gets a dynamic list of messages in a queue and counts all 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Calling <xref:System.Messaging.MessageEnumerator.Dispose*> allows the resources used by the <xref:System.Messaging.MessageEnumerator> to be reallocated for other purposes. For more information about <xref:System.Messaging.MessageEnumerator.Dispose*>, see [Cleaning Up Unmanaged Resources](/dotnet/standard/garbage-collection/unmanaged).
+
+Calling <xref:System.Messaging.MessageEnumerator.Dispose*> allows the resources used by the <xref:System.Messaging.MessageEnumerator> to be reallocated for other purposes. For more information about <xref:System.Messaging.MessageEnumerator.Dispose*>, see [Cleaning Up Unmanaged Resources](/dotnet/standard/garbage-collection/unmanaged).
 
  ]]></format>
         </remarks>
@@ -230,7 +235,8 @@ The following example gets a dynamic list of messages in a queue and counts all 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is called by the public <xref:System.Messaging.MessageEnumerator.Dispose*> method and the <xref:System.Object.Finalize> method, if it has been overridden. `Dispose()` invokes this method with the `disposing` parameter set to `true`. `Finalize` invokes this method with `disposing` set to `false`.
+
+This method is called by the public <xref:System.Messaging.MessageEnumerator.Dispose*> method and the <xref:System.Object.Finalize> method, if it has been overridden. `Dispose()` invokes this method with the `disposing` parameter set to `true`. `Finalize` invokes this method with `disposing` set to `false`.
 
  When the `disposing` parameter is `true`, this method releases all resources held by any managed objects that this <xref:System.Messaging.MessageEnumerator> references. This method invokes the `Dispose()` method of each referenced object.
 
@@ -316,7 +322,8 @@ For more information, see [Finalize Methods and Destructors](https://learn.micro
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This overload returns immediately if there is no message in the queue. There is another overload that waits a specified <xref:System.TimeSpan> for a message to arrive.
+
+This overload returns immediately if there is no message in the queue. There is another overload that waits a specified <xref:System.TimeSpan> for a message to arrive.
 
  If a message is not currently available because the queue is empty or because you have moved beyond the last element in the collection, <xref:System.Messaging.MessageEnumerator.MoveNext*> returns `false` to the calling method.
 
@@ -359,7 +366,8 @@ For more information, see [Finalize Methods and Destructors](https://learn.micro
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This overload waits if there is no message in the queue or if the cursor has reached the end of the queue. If a message is not currently available because the queue is empty or because you have moved beyond the last element in the collection, <xref:System.Messaging.MessageEnumerator.MoveNext*> waits the specified timeout.
+
+This overload waits if there is no message in the queue or if the cursor has reached the end of the queue. If a message is not currently available because the queue is empty or because you have moved beyond the last element in the collection, <xref:System.Messaging.MessageEnumerator.MoveNext*> waits the specified timeout.
 
  If the cursor is already at the end of the queue, <xref:System.Messaging.MessageEnumerator.MoveNext*> only returns `true` if the new message arrives within the specified time interval, has lower priority than all messages currently in the queue and is placed at the end of the queue. An overload with no parameter returns immediately if no further messages are in the queue.
 
@@ -389,7 +397,8 @@ For more information, see [Finalize Methods and Destructors](https://learn.micro
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The behavior described for these overloads is applicable only if the <xref:System.Messaging.MessageEnumerator> instance is retrieved by using the <xref:System.Messaging.MessageQueue.GetMessageEnumerator2*>. Do not use <xref:System.Messaging.MessageQueue.GetMessageEnumerator*> to retrieve an instance of <xref:System.Messaging.MessageEnumerator> as this method has been deprecated.
+
+The behavior described for these overloads is applicable only if the <xref:System.Messaging.MessageEnumerator> instance is retrieved by using the <xref:System.Messaging.MessageQueue.GetMessageEnumerator2*>. Do not use <xref:System.Messaging.MessageQueue.GetMessageEnumerator*> to retrieve an instance of <xref:System.Messaging.MessageEnumerator> as this method has been deprecated.
 
  ]]></format>
         </remarks>
@@ -693,7 +702,8 @@ For more information, see [Finalize Methods and Destructors](https://learn.micro
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- An enumerator can only move in a forward direction. Use this method to start over at the beginning of the queue.
+
+An enumerator can only move in a forward direction. Use this method to start over at the beginning of the queue.
 
  After calling <xref:System.Messaging.MessageEnumerator.Reset*>, the cursor points to the first message. You do not need to call <xref:System.Messaging.MessageEnumerator.MoveNext*> after calling <xref:System.Messaging.MessageEnumerator.Reset*> to move the cursor forward to the first message in the queue.
 

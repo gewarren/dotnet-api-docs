@@ -53,7 +53,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ServiceModel.Channels.Message> class provides a means of communicating arbitrary information between a sender and a receiver on a network. It can be used to relay information, suggest or demand a course of action, or request data.
+
+The <xref:System.ServiceModel.Channels.Message> class provides a means of communicating arbitrary information between a sender and a receiver on a network. It can be used to relay information, suggest or demand a course of action, or request data.
 
  The structure of a <xref:System.ServiceModel.Channels.Message> object represents a SOAP envelope. It consists of two distinct parts: the message's body and an optional collection of headers, represented by the <xref:System.ServiceModel.Channels.Message.Headers> class. The message content is application-defined data sent from a sender to a receiver. The message headers enable system and application extensibility to meet the changing requirements, because you can define code to manipulate and respond to specific headers. You can also define your own headers. Message headers are serialized or deserialized along with the contents of the message.
 
@@ -237,7 +238,8 @@ The following code example shows a client that uses the channel factory to send 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ServiceModel.Channels.Message> does have a finalizer, which causes <xref:System.ServiceModel.Channels.Message.Close*> to be called for you when the message is garbage-collected. This is non-optimal, as the .NET Framework's Garbage Collection (GC) mechanism does not necessarily run when you run out of system resources other than memory. For this reason, you should always call this method when finished with the contents of the message. The <xref:System.ServiceModel.Channels.Message.Close*> method is a synonym for <xref:System.IDisposable.Dispose*> (which <xref:System.ServiceModel.Channels.Message> also implements). The message also disposes the object that was used to construct the body when it is disposed.
+
+The <xref:System.ServiceModel.Channels.Message> does have a finalizer, which causes <xref:System.ServiceModel.Channels.Message.Close*> to be called for you when the message is garbage-collected. This is non-optimal, as the .NET Framework's Garbage Collection (GC) mechanism does not necessarily run when you run out of system resources other than memory. For this reason, you should always call this method when finished with the contents of the message. The <xref:System.ServiceModel.Channels.Message.Close*> method is a synonym for <xref:System.IDisposable.Dispose*> (which <xref:System.ServiceModel.Channels.Message> also implements). The message also disposes the object that was used to construct the body when it is disposed.
 
  An <xref:System.ObjectDisposedException> is thrown if you call any method or access any properties of the message once it is closed. Calling any method or accessing any properties of other objects related to the message once it is closed, (such as message header collection, message property values, or <xref:System.Xml.XmlReader> instances returned for the body or for a header) has undefined behavior.
 
@@ -291,7 +293,8 @@ The following code example shows how to create a message, send it to a service a
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The body of a <xref:System.ServiceModel.Channels.Message> instance can only be accessed or written once. If you want to access a <xref:System.ServiceModel.Channels.Message> instance more than once, you should use the <xref:System.ServiceModel.Channels.MessageBuffer> class to completely store an entire <xref:System.ServiceModel.Channels.Message> instance into memory. A <xref:System.ServiceModel.Channels.MessageBuffer> instance is constructed by calling <xref:System.ServiceModel.Channels.Message.CreateBufferedCopy*> of a <xref:System.ServiceModel.Channels.Message> instance.
+
+The body of a <xref:System.ServiceModel.Channels.Message> instance can only be accessed or written once. If you want to access a <xref:System.ServiceModel.Channels.Message> instance more than once, you should use the <xref:System.ServiceModel.Channels.MessageBuffer> class to completely store an entire <xref:System.ServiceModel.Channels.Message> instance into memory. A <xref:System.ServiceModel.Channels.MessageBuffer> instance is constructed by calling <xref:System.ServiceModel.Channels.Message.CreateBufferedCopy*> of a <xref:System.ServiceModel.Channels.Message> instance.
 
 > [!NOTE]
 > If <xref:System.ServiceModel.Channels.Message.Version> is equal to <xref:System.ServiceModel.Channels.MessageVersion.None>, this method only stores the body of the message, not the entire message into the memory buffer.
@@ -316,7 +319,8 @@ The following code example shows how to create a message, send it to a service a
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is used to create a new copy of a message ready for sending.
+
+This method is used to create a new copy of a message ready for sending.
 
  When working with JSON messages use the <xref:System.ServiceModel.Channels.Message.CreateMessage(System.ServiceModel.Channels.MessageVersion,System.String,System.Object,System.Runtime.Serialization.XmlObjectSerializer)> method, the <xref:System.ServiceModel.Channels.Message.CreateMessage(System.ServiceModel.Channels.MessageVersion,System.String,System.Object)> method does not work with JSON messages.
 
@@ -372,7 +376,8 @@ The following code example shows a client that uses the channel factory to send 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This static method is used to create a new copy of message ready for sending.
+
+This static method is used to create a new copy of message ready for sending.
 
  ]]></format>
         </remarks>
@@ -419,7 +424,8 @@ The following code example shows a client that uses the channel factory to send 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This static method is used to create a new copy of message ready for sending.
+
+This static method is used to create a new copy of message ready for sending.
 
  ]]></format>
         </remarks>
@@ -470,7 +476,8 @@ The following code example shows a client that uses the channel factory to send 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This static method is used to create a new copy of message ready for sending.
+
+This static method is used to create a new copy of message ready for sending.
 
  When working with JSON messages use the <xref:System.ServiceModel.Channels.Message.CreateMessage(System.ServiceModel.Channels.MessageVersion,System.String,System.Object,System.Runtime.Serialization.XmlObjectSerializer)> method, the <xref:System.ServiceModel.Channels.Message.CreateMessage(System.ServiceModel.Channels.MessageVersion,System.String,System.Object)> method does not work with JSON messages.
 
@@ -523,7 +530,8 @@ The following code example shows a client that uses the channel factory to send 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- An empty message is useful for an endpoint to send an alert to another endpoint without any actual content.
+
+An empty message is useful for an endpoint to send an alert to another endpoint without any actual content.
 
  ]]></format>
         </remarks>
@@ -574,7 +582,8 @@ The following code example shows a client that uses the channel factory to send 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This static method is used to create a new copy of message ready for sending.
+
+This static method is used to create a new copy of message ready for sending.
 
  ]]></format>
         </remarks>
@@ -625,7 +634,8 @@ The following code example shows a client that uses the channel factory to send 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This static method is used to create a new copy of message ready for sending.
+
+This static method is used to create a new copy of message ready for sending.
 
  ]]></format>
         </remarks>
@@ -793,7 +803,8 @@ The following code example shows a client that uses the channel factory to send 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This static method is used to create a new copy of message ready for sending.
+
+This static method is used to create a new copy of message ready for sending.
 
  ]]></format>
         </remarks>
@@ -846,7 +857,8 @@ The following code example shows a client that uses the channel factory to send 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This static method is used to create a new copy of message ready for sending.
+
+This static method is used to create a new copy of message ready for sending.
 
  When working with JSON messages use the <xref:System.ServiceModel.Channels.Message.CreateMessage(System.ServiceModel.Channels.MessageVersion,System.String,System.Object,System.Runtime.Serialization.XmlObjectSerializer)> method, the <xref:System.ServiceModel.Channels.Message.CreateMessage(System.ServiceModel.Channels.MessageVersion,System.String,System.Object)> method does not work with JSON messages.
 
@@ -900,7 +912,8 @@ The following code example shows a client that uses the channel factory to send 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This static method is used to create a new copy of message ready for sending.
+
+This static method is used to create a new copy of message ready for sending.
 
  ]]></format>
         </remarks>
@@ -984,7 +997,8 @@ The following code example shows a client that uses the channel factory to send 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- After a message is created, the message body can be read using the <xref:System.ServiceModel.Channels.Message.GetBody*> methods on the returned message. The returned object encapsulates all the child elements within the `Body` element. Because the body of a message is a stream, it can only be written once, or read once.
+
+After a message is created, the message body can be read using the <xref:System.ServiceModel.Channels.Message.GetBody*> methods on the returned message. The returned object encapsulates all the child elements within the `Body` element. Because the body of a message is a stream, it can only be written once, or read once.
 
  Use the <xref:System.ServiceModel.Channels.Message.GetBody``1(System.Runtime.Serialization.XmlObjectSerializer)> overload when working with JSON messages; the <xref:System.ServiceModel.Channels.Message.GetBody``1> overload does not work.
 
@@ -1039,7 +1053,8 @@ The following code example shows a client that uses the channel factory to send 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A <xref:System.ServiceModel.Channels.Message> instance has a body that corresponds to the SOAP body. It can be accessed as an <xref:System.Xml.XmlDictionaryReader> by calling <xref:System.ServiceModel.Channels.Message.GetReaderAtBodyContents*>. It is initially positioned directly after the `<S:Body>` element, and it returns `EOF` on reaching the `</S:Body>` element. Alternatively, if you expect the body to contain a serialized object, you can call <xref:System.ServiceModel.Channels.Message.GetBody*> instead. You should be aware that a message body can only be accessed once and a message can only be written once. If you want to access the `Body` multiple times, use <xref:System.ServiceModel.Channels.Message.CreateBufferedCopy*> to create a <xref:System.ServiceModel.Channels.MessageBuffer> instance.
+
+A <xref:System.ServiceModel.Channels.Message> instance has a body that corresponds to the SOAP body. It can be accessed as an <xref:System.Xml.XmlDictionaryReader> by calling <xref:System.ServiceModel.Channels.Message.GetReaderAtBodyContents*>. It is initially positioned directly after the `<S:Body>` element, and it returns `EOF` on reaching the `</S:Body>` element. Alternatively, if you expect the body to contain a serialized object, you can call <xref:System.ServiceModel.Channels.Message.GetBody*> instead. You should be aware that a message body can only be accessed once and a message can only be written once. If you want to access the `Body` multiple times, use <xref:System.ServiceModel.Channels.Message.CreateBufferedCopy*> to create a <xref:System.ServiceModel.Channels.MessageBuffer> instance.
 
  Use the <xref:System.ServiceModel.Channels.Message.GetBody``1(System.Runtime.Serialization.XmlObjectSerializer)> overload when working with JSON messages; the <xref:System.ServiceModel.Channels.Message.GetBody``1> overload does not work.
 
@@ -1090,7 +1105,8 @@ The following code example shows a client that uses the channel factory to send 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A <xref:System.ServiceModel.Channels.Message> instance has a body that corresponds to the SOAP body. It can be accessed as an <xref:System.Xml.XmlDictionaryReader> by calling <xref:System.ServiceModel.Channels.Message.GetReaderAtBodyContents*>. It is initially positioned directly after the `<S:Body>` element, and it returns `EOF` on reaching the `</S:Body>` element. Alternatively, if you expect the body to contain a serialized object, you can call <xref:System.ServiceModel.Channels.Message.GetBody*> instead. You should be aware that a message body can only be accessed once and a message can only be written once. If you want to access the body multiple times, use <xref:System.ServiceModel.Channels.Message.CreateBufferedCopy*> to create a <xref:System.ServiceModel.Channels.MessageBuffer> instance.
+
+A <xref:System.ServiceModel.Channels.Message> instance has a body that corresponds to the SOAP body. It can be accessed as an <xref:System.Xml.XmlDictionaryReader> by calling <xref:System.ServiceModel.Channels.Message.GetReaderAtBodyContents*>. It is initially positioned directly after the `<S:Body>` element, and it returns `EOF` on reaching the `</S:Body>` element. Alternatively, if you expect the body to contain a serialized object, you can call <xref:System.ServiceModel.Channels.Message.GetBody*> instead. You should be aware that a message body can only be accessed once and a message can only be written once. If you want to access the body multiple times, use <xref:System.ServiceModel.Channels.Message.CreateBufferedCopy*> to create a <xref:System.ServiceModel.Channels.MessageBuffer> instance.
 
  Use the <xref:System.ServiceModel.Channels.Message.GetBody``1(System.Runtime.Serialization.XmlObjectSerializer)> overload when working with JSON messages; the <xref:System.ServiceModel.Channels.Message.GetBody``1> overload does not work.
 
@@ -1145,7 +1161,8 @@ The following code example shows a client that uses the channel factory to send 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A <xref:System.ServiceModel.Channels.Message> instance has a body that corresponds to the SOAP body. It can be accessed as an <xref:System.Xml.XmlDictionaryReader> by calling <xref:System.ServiceModel.Channels.Message.GetReaderAtBodyContents*>. It is initially positioned directly after the `<S:Body>` element, and it returns `EOF` on reaching the `</S:Body>` element. Alternatively, if you expect the body to contain a serialized object, you can call <xref:System.ServiceModel.Channels.Message.GetBody*> instead. You should be aware that a message body can only be accessed once and a message can only be written once. If you want to access the body multiple times, use <xref:System.ServiceModel.Channels.Message.CreateBufferedCopy*> to create a <xref:System.ServiceModel.Channels.MessageBuffer> instance.
+
+A <xref:System.ServiceModel.Channels.Message> instance has a body that corresponds to the SOAP body. It can be accessed as an <xref:System.Xml.XmlDictionaryReader> by calling <xref:System.ServiceModel.Channels.Message.GetReaderAtBodyContents*>. It is initially positioned directly after the `<S:Body>` element, and it returns `EOF` on reaching the `</S:Body>` element. Alternatively, if you expect the body to contain a serialized object, you can call <xref:System.ServiceModel.Channels.Message.GetBody*> instead. You should be aware that a message body can only be accessed once and a message can only be written once. If you want to access the body multiple times, use <xref:System.ServiceModel.Channels.Message.CreateBufferedCopy*> to create a <xref:System.ServiceModel.Channels.MessageBuffer> instance.
 
  ]]></format>
         </remarks>
@@ -1191,7 +1208,8 @@ The following code example shows a client that uses the channel factory to send 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A <xref:System.ServiceModel.Channels.Message> instance has a body that corresponds to the SOAP body. It can be accessed as an <xref:System.Xml.XmlDictionaryReader> by calling <xref:System.ServiceModel.Channels.Message.GetReaderAtBodyContents*>. It is initially positioned directly after the `<S:Body>` element. Alternatively, if you expect the body to contain a serialized object, you can call <xref:System.ServiceModel.Channels.Message.GetBody*> instead. You should be aware that a message body can only be accessed once and a message can only be written once. If you want to access the body multiple times, use <xref:System.ServiceModel.Channels.Message.CreateBufferedCopy*> to create a <xref:System.ServiceModel.Channels.MessageBuffer> instance.
+
+A <xref:System.ServiceModel.Channels.Message> instance has a body that corresponds to the SOAP body. It can be accessed as an <xref:System.Xml.XmlDictionaryReader> by calling <xref:System.ServiceModel.Channels.Message.GetReaderAtBodyContents*>. It is initially positioned directly after the `<S:Body>` element. Alternatively, if you expect the body to contain a serialized object, you can call <xref:System.ServiceModel.Channels.Message.GetBody*> instead. You should be aware that a message body can only be accessed once and a message can only be written once. If you want to access the body multiple times, use <xref:System.ServiceModel.Channels.Message.CreateBufferedCopy*> to create a <xref:System.ServiceModel.Channels.MessageBuffer> instance.
 
  ]]></format>
         </remarks>
@@ -1234,7 +1252,8 @@ The following code example shows a client that uses the channel factory to send 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A <xref:System.ServiceModel.Channels.Message> can have zero or more headers that are used as an extension mechanism to pass information in messages that is application-specific. You can use <xref:System.ServiceModel.Channels.Message.Headers> to add message headers to a message by calling the <xref:System.ServiceModel.Channels.MessageHeaders.Add*> method.
+
+A <xref:System.ServiceModel.Channels.Message> can have zero or more headers that are used as an extension mechanism to pass information in messages that is application-specific. You can use <xref:System.ServiceModel.Channels.Message.Headers> to add message headers to a message by calling the <xref:System.ServiceModel.Channels.MessageHeaders.Add*> method.
 
  Windows Communication Foundation (WCF) provides a number of predefined message headers, as shown in the following table.
 
@@ -1958,7 +1977,8 @@ The following code example shows a client that uses the channel factory to send 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Because information in headers is transmitted on the wire, an entity that examines a header must support the underlying version(s) of the protocols used by the header. However, properties provide a more version-independent way of annotating a message.
+
+Because information in headers is transmitted on the wire, an entity that examines a header must support the underlying version(s) of the protocols used by the header. However, properties provide a more version-independent way of annotating a message.
 
  ]]></format>
         </remarks>
@@ -2006,7 +2026,8 @@ The following code example shows a client that uses the channel factory to send 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Because the body of a <xref:System.ServiceModel.Channels.Message> object is a stream, it can only be read or written once. This is enforced by maintaining the current state of the <xref:System.ServiceModel.Channels.Message> object. A <xref:System.ServiceModel.Channels.Message> object can be read, written, or copied when in the <xref:System.ServiceModel.Channels.MessageState.Created> state. Other states are <xref:System.ServiceModel.Channels.MessageState.Read>, <xref:System.ServiceModel.Channels.MessageState.Written> and <xref:System.ServiceModel.Channels.MessageState.Copied>, which means that the respective action has been performed already once.
+
+Because the body of a <xref:System.ServiceModel.Channels.Message> object is a stream, it can only be read or written once. This is enforced by maintaining the current state of the <xref:System.ServiceModel.Channels.Message> object. A <xref:System.ServiceModel.Channels.Message> object can be read, written, or copied when in the <xref:System.ServiceModel.Channels.MessageState.Created> state. Other states are <xref:System.ServiceModel.Channels.MessageState.Read>, <xref:System.ServiceModel.Channels.MessageState.Written> and <xref:System.ServiceModel.Channels.MessageState.Copied>, which means that the respective action has been performed already once.
 
  ]]></format>
         </remarks>
@@ -2056,7 +2077,8 @@ The following code example shows a client that uses the channel factory to send 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Call this method when you are finished using the <xref:System.ServiceModel.Channels.Message>. This method leaves the <xref:System.ServiceModel.Channels.Message> in an unusable state. After calling this method, you must release all references to the <xref:System.ServiceModel.Channels.Message> so the garbage collector can reclaim the memory that the <xref:System.ServiceModel.Channels.Message> resided in.
+
+Call this method when you are finished using the <xref:System.ServiceModel.Channels.Message>. This method leaves the <xref:System.ServiceModel.Channels.Message> in an unusable state. After calling this method, you must release all references to the <xref:System.ServiceModel.Channels.Message> so the garbage collector can reclaim the memory that the <xref:System.ServiceModel.Channels.Message> resided in.
 
 > [!NOTE]
 > Always call this method before you release your last reference to the <xref:System.ServiceModel.Channels.Message>. Otherwise, the resources it is using are not freed until the garbage collector calls the <xref:System.ServiceModel.Channels.Message> object's `Finalize` method.
@@ -2135,7 +2157,8 @@ The following code example shows a client that uses the channel factory to send 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This value is immutable for the message. There are two possible values for the version: <xref:System.ServiceModel.Channels.MessageVersion.Soap11> and <xref:System.ServiceModel.Channels.MessageVersion.Soap12> that correspond to SOAP 1.1 and SOAP 1.2 respectively.
+
+This value is immutable for the message. There are two possible values for the version: <xref:System.ServiceModel.Channels.MessageVersion.Soap11> and <xref:System.ServiceModel.Channels.MessageVersion.Soap12> that correspond to SOAP 1.1 and SOAP 1.2 respectively.
 
  Knowing the underlying SOAP version is important because the structure of <xref:System.ServiceModel.Channels.Message> is firmly correlated with that of a SOAP message.
 
@@ -2159,7 +2182,8 @@ The following code example shows a client that uses the channel factory to send 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method writes the body contents as well as the start and end tags of the element.
+
+This method writes the body contents as well as the start and end tags of the element.
 
  ]]></format>
         </remarks>
@@ -2203,7 +2227,8 @@ The following code example shows a client that uses the channel factory to send 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method writes the body contents as well as the start and end tags of the element.
+
+This method writes the body contents as well as the start and end tags of the element.
 
  ]]></format>
         </remarks>
@@ -2249,7 +2274,8 @@ The following code example shows a client that uses the channel factory to send 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method writes the body contents as well as the start and end tags of the element.
+
+This method writes the body contents as well as the start and end tags of the element.
 
  ]]></format>
         </remarks>
@@ -2311,7 +2337,8 @@ The following code example shows a client that uses the channel factory to send 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method serializes the entire message. Once a message is written, it cannot be rewritten unless there is a <xref:System.ServiceModel.Channels.MessageBuffer> for the message.
+
+This method serializes the entire message. Once a message is written, it cannot be rewritten unless there is a <xref:System.ServiceModel.Channels.MessageBuffer> for the message.
 
  ]]></format>
         </remarks>
@@ -2355,7 +2382,8 @@ The following code example shows a client that uses the channel factory to send 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method serializes the entire message. Once a message is written, it cannot be rewritten unless a <xref:System.ServiceModel.Channels.MessageBuffer> instance exists for the message.
+
+This method serializes the entire message. Once a message is written, it cannot be rewritten unless a <xref:System.ServiceModel.Channels.MessageBuffer> instance exists for the message.
 
  ]]></format>
         </remarks>
@@ -2403,7 +2431,8 @@ The following code example shows a client that uses the channel factory to send 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method serializes the entire message. Once a message is written, it cannot be rewritten unless there is a <xref:System.ServiceModel.Channels.MessageBuffer> for the message.
+
+This method serializes the entire message. Once a message is written, it cannot be rewritten unless there is a <xref:System.ServiceModel.Channels.MessageBuffer> for the message.
 
  ]]></format>
         </remarks>

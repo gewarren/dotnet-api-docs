@@ -64,7 +64,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You can use this class for better performance than <xref:System.Threading.ManualResetEvent> when wait times are expected to be very short, and when the event does not cross a process boundary. <xref:System.Threading.ManualResetEventSlim> uses busy spinning for a short time while it waits for the event to become signaled. When wait times are short, spinning can be much less expensive than waiting by using wait handles. However, if the event does not become signaled within a certain period of time, <xref:System.Threading.ManualResetEventSlim> resorts to a regular event handle wait.
+
+You can use this class for better performance than <xref:System.Threading.ManualResetEvent> when wait times are expected to be very short, and when the event does not cross a process boundary. <xref:System.Threading.ManualResetEventSlim> uses busy spinning for a short time while it waits for the event to become signaled. When wait times are short, spinning can be much less expensive than waiting by using wait handles. However, if the event does not become signaled within a certain period of time, <xref:System.Threading.ManualResetEventSlim> resorts to a regular event handle wait.
 
 > [!NOTE]
 > In .NET Core and .NET 5+, the default spin-waiting duration is short: on the order of 10s of microseconds, depending on platform and processor. If you expect wait times to be much longer than that, you can still use this class instead of <xref:System.Threading.ManualResetEvent> (perhaps configured with less or no spin-waiting). However, the performance benefit would likely be only marginal.
@@ -282,7 +283,8 @@ The following example shows how to use a <xref:System.Threading.ManualResetEvent
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Call `Dispose` when you are finished using the <xref:System.Threading.ManualResetEventSlim>. The `Dispose` method leaves the <xref:System.Threading.ManualResetEventSlim> in an unusable state. After calling `Dispose`, you must release all references to the <xref:System.Threading.ManualResetEventSlim> so the garbage collector can reclaim the memory that the <xref:System.Threading.ManualResetEventSlim> was occupying.
+
+Call `Dispose` when you are finished using the <xref:System.Threading.ManualResetEventSlim>. The `Dispose` method leaves the <xref:System.Threading.ManualResetEventSlim> in an unusable state. After calling `Dispose`, you must release all references to the <xref:System.Threading.ManualResetEventSlim> so the garbage collector can reclaim the memory that the <xref:System.Threading.ManualResetEventSlim> was occupying.
 
  For more information, see [Cleaning Up Unmanaged Resources](/dotnet/standard/garbage-collection/unmanaged) and [Implementing a Dispose Method](/dotnet/standard/garbage-collection/implementing-dispose).
 
@@ -340,7 +342,8 @@ The following example shows how to use a <xref:System.Threading.ManualResetEvent
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Unlike most of the members of <xref:System.Threading.ManualResetEventSlim>, <xref:System.Threading.ManualResetEventSlim.Dispose*> is not thread-safe and may not be used concurrently with other members of this instance.
+
+Unlike most of the members of <xref:System.Threading.ManualResetEventSlim>, <xref:System.Threading.ManualResetEventSlim.Dispose*> is not thread-safe and may not be used concurrently with other members of this instance.
 
  ]]></format>
         </remarks>
@@ -588,7 +591,8 @@ The following example shows how to use a <xref:System.Threading.ManualResetEvent
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The caller of this method blocks indefinitely until the current instance is set. The caller will return immediately if the event is currently in a set state.
+
+The caller of this method blocks indefinitely until the current instance is set. The caller will return immediately if the event is currently in a set state.
 
  ]]></format>
         </remarks>
@@ -707,7 +711,8 @@ The following example shows how to use a <xref:System.Threading.ManualResetEvent
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The caller of this method blocks indefinitely until the current instance is set. The caller will return immediately if the event is currently in a set state.
+
+The caller of this method blocks indefinitely until the current instance is set. The caller will return immediately if the event is currently in a set state.
 
  ]]></format>
         </remarks>
@@ -960,7 +965,8 @@ The following example shows how to use a <xref:System.Threading.ManualResetEvent
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Accessing this property forces initialization of an underlying event object if one hasn't already been created. To simply wait on this <xref:System.Threading.ManualResetEventSlim>, the public Wait methods should be preferred. It is recommended to dispose the <xref:System.Threading.ManualResetEventSlim> instance after accessing this property, in order to prevent a resource leak.
+
+Accessing this property forces initialization of an underlying event object if one hasn't already been created. To simply wait on this <xref:System.Threading.ManualResetEventSlim>, the public Wait methods should be preferred. It is recommended to dispose the <xref:System.Threading.ManualResetEventSlim> instance after accessing this property, in order to prevent a resource leak.
 
  ]]></format>
         </remarks>

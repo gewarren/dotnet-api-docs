@@ -62,7 +62,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- An encoding defines a mapping between a Unicode character and an encoded sequence of bytes. An encoding operation, which converts an input character to an output byte sequence, fails if no mapping is defined for a particular character.
+
+An encoding defines a mapping between a Unicode character and an encoded sequence of bytes. An encoding operation, which converts an input character to an output byte sequence, fails if no mapping is defined for a particular character.
 
  .NET Framework provides a failure handling mechanism, called a fallback, if a conversion cannot be performed. All encoder fallback handlers must implement the following:
 
@@ -197,7 +198,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Text.Encoding.GetBytes*?displayProperty=nameWithType> and <xref:System.Text.Encoder.Convert*?displayProperty=nameWithType> methods call <xref:System.Text.DecoderFallbackBuffer.Fallback(System.Byte[],System.Int32)> if they encounter an unknown input character that cannot be encoded. A return value of `true` indicates that the fallback buffer can process the input character, which causes the calling method to call the <xref:System.Text.EncoderFallbackBuffer.GetNextChar*> method to obtain each character of the fallback buffer. Because it does not process individual characters, the <xref:System.Text.EncoderFallbackBuffer.Fallback*> method in an exception fallback handler throws an exception.
+
+The <xref:System.Text.Encoding.GetBytes*?displayProperty=nameWithType> and <xref:System.Text.Encoder.Convert*?displayProperty=nameWithType> methods call <xref:System.Text.DecoderFallbackBuffer.Fallback(System.Byte[],System.Int32)> if they encounter an unknown input character that cannot be encoded. A return value of `true` indicates that the fallback buffer can process the input character, which causes the calling method to call the <xref:System.Text.EncoderFallbackBuffer.GetNextChar*> method to obtain each character of the fallback buffer. Because it does not process individual characters, the <xref:System.Text.EncoderFallbackBuffer.Fallback*> method in an exception fallback handler throws an exception.
 
  ]]></format>
         </remarks>
@@ -258,7 +260,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Text.Encoding.GetBytes*?displayProperty=nameWithType> and <xref:System.Text.Encoder.Convert*?displayProperty=nameWithType> methods call <xref:System.Text.EncoderFallbackBuffer.Fallback(System.Char,System.Char,System.Int32)> if they encounter a surrogate pair in their input. A return value of `true` indicates that the fallback buffer can process the surrogate pair, which causes the calling method to call the <xref:System.Text.EncoderFallbackBuffer.GetNextChar*> method to obtain each character of the fallback buffer. Because it does not process individual characters, the <xref:System.Text.EncoderFallbackBuffer.Fallback*> method in an exception fallback handler throws an exception.
+
+The <xref:System.Text.Encoding.GetBytes*?displayProperty=nameWithType> and <xref:System.Text.Encoder.Convert*?displayProperty=nameWithType> methods call <xref:System.Text.EncoderFallbackBuffer.Fallback(System.Char,System.Char,System.Int32)> if they encounter a surrogate pair in their input. A return value of `true` indicates that the fallback buffer can process the surrogate pair, which causes the calling method to call the <xref:System.Text.EncoderFallbackBuffer.GetNextChar*> method to obtain each character of the fallback buffer. Because it does not process individual characters, the <xref:System.Text.EncoderFallbackBuffer.Fallback*> method in an exception fallback handler throws an exception.
 
  ]]></format>
         </remarks>
@@ -311,7 +314,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- An encoding operation calls the <xref:System.Text.EncoderFallbackBuffer.Fallback*> method if the operation encounters an unknown character or surrogate pair in the input. For example, in the case of a replacement fallback, if the <xref:System.Text.EncoderFallbackBuffer.Fallback*> method returns `true`, a substitute string exists that can be encoded instead of the unknown input. The encoding operation calls the <xref:System.Text.EncoderFallbackBuffer.GetNextChar*> method repeatedly and obtains the substitute string one character at a time. When all characters in the fallback buffer have been returned to the encoder, the <xref:System.Text.EncoderFallbackBuffer.GetNextChar*> method should return U+0000.
+
+An encoding operation calls the <xref:System.Text.EncoderFallbackBuffer.Fallback*> method if the operation encounters an unknown character or surrogate pair in the input. For example, in the case of a replacement fallback, if the <xref:System.Text.EncoderFallbackBuffer.Fallback*> method returns `true`, a substitute string exists that can be encoded instead of the unknown input. The encoding operation calls the <xref:System.Text.EncoderFallbackBuffer.GetNextChar*> method repeatedly and obtains the substitute string one character at a time. When all characters in the fallback buffer have been returned to the encoder, the <xref:System.Text.EncoderFallbackBuffer.GetNextChar*> method should return U+0000.
 
  For an exception fallback handler, the <xref:System.Text.EncoderFallbackBuffer.GetNextChar*> method should return U+0000.
 
@@ -367,7 +371,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- An exception fallback handler should return `false`.
+
+An exception fallback handler should return `false`.
 
  ]]></format>
         </remarks>
@@ -419,7 +424,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Text.EncoderFallbackBuffer.Fallback*> method returns `true` if <xref:System.Text.EncoderFallbackBuffer.Remaining*> is a nonzero value.
+
+The <xref:System.Text.EncoderFallbackBuffer.Fallback*> method returns `true` if <xref:System.Text.EncoderFallbackBuffer.Remaining*> is a nonzero value.
 
  For an exception fallback handler, the <xref:System.Text.DecoderFallbackBuffer.Remaining*> method should return zero.
 

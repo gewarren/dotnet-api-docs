@@ -55,7 +55,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This class is the base class for the SOAP message security binding elements in WCF. There are three implementations of this abstract class: <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>, <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>, and <xref:System.ServiceModel.Channels.TransportSecurityBindingElement>. These implementations model the bindings defined in the WS-Security Policy specification.
+
+This class is the base class for the SOAP message security binding elements in WCF. There are three implementations of this abstract class: <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>, <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>, and <xref:System.ServiceModel.Channels.TransportSecurityBindingElement>. These implementations model the bindings defined in the WS-Security Policy specification.
 
  A custom binding contains a collection of binding elements arranged in a specific order: the element that represents the top of the binding stack is added first, the next element down in the binding stack is added second, and so on.
 
@@ -175,7 +176,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The channel factory created is a SOAP message security channel factory, which internally has a reference to the channel factory that corresponds to the binding context, (which includes the transport channel factory).
+
+The channel factory created is a SOAP message security channel factory, which internally has a reference to the channel factory that corresponds to the binding context, (which includes the transport channel factory).
 
  This method does parameter error-checking, and then calls <xref:System.ServiceModel.Channels.SecurityBindingElement.BuildChannelFactoryCore*>. That method, when implemented in a derived class, creates a channel factory, which is used to create a channel that processes outgoing messages for this binding.
 
@@ -289,7 +291,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The channel factory created is a SOAP message security channel listener, which internally has a reference to the channel listener that corresponds to the binding context, which includes the transport channel listener.
+
+The channel factory created is a SOAP message security channel listener, which internally has a reference to the channel listener that corresponds to the binding context, which includes the transport channel listener.
 
  This method does parameter error-checking, and then calls <xref:System.ServiceModel.Channels.SecurityBindingElement.BuildChannelListenerCore*>. That method, when implemented in a derived class, creates a channel listener, which is used to create a channel that processes incoming messages for this binding.
 
@@ -404,7 +407,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You should call this method before trying to create a channel factory.
+
+You should call this method before trying to create a channel factory.
 
  ]]></format>
         </remarks>
@@ -455,7 +459,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You should call this method before trying to create a channel listener.
+
+You should call this method before trying to create a channel listener.
 
  ]]></format>
         </remarks>
@@ -493,7 +498,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The client and server must be configured out of band with the service certificate.
+
+The client and server must be configured out of band with the service certificate.
 
  The binding is created with <xref:System.ServiceModel.Channels.SecurityBindingElement.MessageSecurityVersion> set to <xref:System.ServiceModel.MessageSecurityVersion.WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11> and <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.RequireSignatureConfirmation> set to `true`.
 
@@ -519,7 +525,8 @@ The following code shows how to call this method.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The client must be configured with a certificate it uses for authentication.
+
+The client must be configured with a certificate it uses for authentication.
 
 > [!NOTE]
 > Once a <xref:System.ServiceModel.Channels.SecurityBindingElement> object is created by calling this method, the <xref:System.ServiceModel.Channels.SecurityBindingElement.MessageSecurityVersion> property should be treated as immutable. Inconsistent binding behavior may occur if this value is modified.
@@ -567,7 +574,8 @@ The following code shows how to call this method.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This binding element expects the transport to provide server authentication as well as message protection (for example, HTTPS).
+
+This binding element expects the transport to provide server authentication as well as message protection (for example, HTTPS).
 
  The binding element is configured to use the <xref:System.ServiceModel.MessageSecurityVersion.Default> property of the <xref:System.ServiceModel.MessageSecurityVersion> class.
 
@@ -623,7 +631,8 @@ The following code shows how to call this method.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This binding element expects the transport to provide server authentication as well as message protection (for example, HTTPS). The binding element is configured with the specified <xref:System.ServiceModel.MessageSecurityVersion>.
+
+This binding element expects the transport to provide server authentication as well as message protection (for example, HTTPS). The binding element is configured with the specified <xref:System.ServiceModel.MessageSecurityVersion>.
 
  The created binding has <xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp> set to `true`.
 
@@ -667,7 +676,8 @@ The following code shows how to call this method.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ServiceModel.Channels.LocalClientSecuritySettings> object returned from <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalClientSettings> has its <xref:System.ServiceModel.Channels.LocalClientSecuritySettings.DetectReplays> property set to `false`.
+
+The <xref:System.ServiceModel.Channels.LocalClientSecuritySettings> object returned from <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalClientSettings> has its <xref:System.ServiceModel.Channels.LocalClientSecuritySettings.DetectReplays> property set to `false`.
 
  This binding element requires the client to configure a certificate for authentication purposes.
 
@@ -708,7 +718,8 @@ The following code shows how to call this method.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The issued token parameters must have a symmetric key type.
+
+The issued token parameters must have a symmetric key type.
 
 > [!NOTE]
 > Once a <xref:System.ServiceModel.Channels.SecurityBindingElement> object is created by calling this method, the <xref:System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters.KeyType> property should be treated as immutable. Inconsistent binding behavior may occur if this value is modified.
@@ -753,7 +764,8 @@ The following code shows how to call this method.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The issued token can have a symmetric or an asymmetric key. The client and server must be provisioned with the server's certificate.
+
+The issued token can have a symmetric or an asymmetric key. The client and server must be provisioned with the server's certificate.
 
  The created binding has <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.RequireSignatureConfirmation> set to `true` and <xref:System.ServiceModel.Channels.SecurityBindingElement.MessageSecurityVersion> set to <xref:System.ServiceModel.MessageSecurityVersion.WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11>.
 
@@ -777,7 +789,8 @@ The following code shows how to call this method.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The issued token can have a symmetric or an asymmetric key. The client authenticates the server using the SOAP-level SSL protocol.
+
+The issued token can have a symmetric or an asymmetric key. The client authenticates the server using the SOAP-level SSL protocol.
 
  Both overloads use a <xref:System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters> parameter. One of them includes a parameter that specifies whether cancellation is required.
 
@@ -824,7 +837,8 @@ The following code shows how to call this method.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The server issues a cookie-based security context token at the end of the SSL protocol.
+
+The server issues a cookie-based security context token at the end of the SSL protocol.
 
  The created binding has <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.RequireSignatureConfirmation> set to `true` and <xref:System.ServiceModel.Channels.SecurityBindingElement.MessageSecurityVersion> set to <xref:System.ServiceModel.MessageSecurityVersion.WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11>.
 
@@ -870,7 +884,8 @@ The following code shows how to call this method.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The created binding has <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.RequireSignatureConfirmation> set to `true` and <xref:System.ServiceModel.Channels.SecurityBindingElement.MessageSecurityVersion> set to <xref:System.ServiceModel.MessageSecurityVersion.WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11>.
+
+The created binding has <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.RequireSignatureConfirmation> set to `true` and <xref:System.ServiceModel.Channels.SecurityBindingElement.MessageSecurityVersion> set to <xref:System.ServiceModel.MessageSecurityVersion.WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11>.
 
  ]]></format>
         </remarks>
@@ -919,7 +934,8 @@ The following code shows how to call this method.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The created binding has <xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp> set to `true`.
+
+The created binding has <xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp> set to `true`.
 
  The <xref:System.ServiceModel.Channels.LocalClientSecuritySettings> object returned from <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalClientSettings> has its <xref:System.ServiceModel.Channels.LocalClientSecuritySettings.DetectReplays> property set to `false`.
 
@@ -964,7 +980,8 @@ The following code shows how to call this method.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- To do Kerberos authentication, the server must run in an account that has a service principal name registered with Active Directory. NetworkService is such an account.
+
+To do Kerberos authentication, the server must run in an account that has a service principal name registered with Active Directory. NetworkService is such an account.
 
  ]]></format>
         </remarks>
@@ -1000,7 +1017,8 @@ The following code shows how to call this method.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- To do Kerberos authentication, the server must run in an account that has a service principal name registered with Active Directory. NetworkService is such an account.
+
+To do Kerberos authentication, the server must run in an account that has a service principal name registered with Active Directory. NetworkService is such an account.
 
  The created binding has <xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp> set to `true`. The <xref:System.ServiceModel.Channels.LocalClientSecuritySettings> object returned from <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalClientSettings> has its <xref:System.ServiceModel.Channels.LocalClientSecuritySettings.DetectReplays> property set to `false`.
 
@@ -1021,7 +1039,8 @@ The following code shows how to call this method.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The client must be configured with its certificate as well as the server's certificate. The server must be configured with its certificate.
+
+The client must be configured with its certificate as well as the server's certificate. The server must be configured with its certificate.
 
  ]]></format>
         </remarks>
@@ -1062,7 +1081,8 @@ The following code shows how to call this method.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The binding is configured so that a new random symmetric key (encrypted for the server) is generated for every request by the client and is used to protect the request as well as the response from the server. The client's certificate is used as an endorsing supporting token on the request.
+
+The binding is configured so that a new random symmetric key (encrypted for the server) is generated for every request by the client and is used to protect the request as well as the response from the server. The client's certificate is used as an endorsing supporting token on the request.
 
  A <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> is actually created.
 
@@ -1120,7 +1140,8 @@ The following code shows how to call this method.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the version is WSSecurity10, then the binding element is configured so that the client request is signed by its certificate and encrypted with the server certificate.
+
+If the version is WSSecurity10, then the binding element is configured so that the client request is signed by its certificate and encrypted with the server certificate.
 
  If the version is WSSecurity11, then the binding element is configured so that a new random symmetric key (encrypted for the server) is generated for every request by the client and is used to protect the request as well as the response from the server. The client's certificate is used as an endorsing supporting token on the request.
 
@@ -1174,7 +1195,8 @@ The following code shows how to call this method.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The `allowSerializedSigningTokenOnReply` parameter, when `true`, enables interoperability with older versions of Web Services Enhancements (WSE).
+
+The `allowSerializedSigningTokenOnReply` parameter, when `true`, enables interoperability with older versions of Web Services Enhancements (WSE).
 
 > [!NOTE]
 > Once a <xref:System.ServiceModel.Channels.SecurityBindingElement> object is created by calling this method, the <xref:System.ServiceModel.Channels.SecurityBindingElement.MessageSecurityVersion> property should be treated as immutable. Inconsistent binding behavior may occur if this value is modified.
@@ -1330,7 +1352,8 @@ The following code shows how to call this method.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The binding element is configured to use session-based security context tokens.
+
+The binding element is configured to use session-based security context tokens.
 
  The `bootstrapSecurity` is used to indicate the security binding and policy used to request a secure conversation token from the service.
 
@@ -1391,7 +1414,8 @@ The following code shows how to call this method.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If `requireCancellation` is `false`, cookie-based security context tokens are issued; otherwise, session-based security context tokens are issued.
+
+If `requireCancellation` is `false`, cookie-based security context tokens are issued; otherwise, session-based security context tokens are issued.
 
  The `bootstrapSecurity` is used to indicate the security binding and policy used to request a `SecureConversationToken` from the service.
 
@@ -1457,7 +1481,8 @@ The following code shows how to call this method.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The `bootstrapProtectionRequirements` parameter enables customization of how the messages exchanged as part of the secure conversation handshake are secured.
+
+The `bootstrapProtectionRequirements` parameter enables customization of how the messages exchanged as part of the secure conversation handshake are secured.
 
  The `bootstrapSecurity` is used to indicate the security binding and policy used to request a secure conversation token from the service.
 
@@ -1523,7 +1548,8 @@ The following code shows how to call this method.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The security context token issued after the SSL negotiation is cookie based.
+
+The security context token issued after the SSL negotiation is cookie based.
 
  ]]></format>
         </remarks>
@@ -1566,7 +1592,8 @@ The following code shows how to call this method.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The security context token issued after the SSL negotiation is session based is `requireCancellation` is `true`; otherwise, it is cookie based.
+
+The security context token issued after the SSL negotiation is session based is `requireCancellation` is `true`; otherwise, it is cookie based.
 
  ]]></format>
         </remarks>
@@ -1617,7 +1644,8 @@ The following code shows how to call this method.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The security context token issued at the end of the SSPI negotiation is cookie based.
+
+The security context token issued at the end of the SSPI negotiation is cookie based.
 
  ]]></format>
         </remarks>
@@ -1656,7 +1684,8 @@ The following code shows how to call this method.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If `requireCancellation` is `false`, the security context token issued at the end of the SSPI negotiation is cookie based; otherwise, it is session based.
+
+If `requireCancellation` is `false`, the security context token issued at the end of the SSPI negotiation is cookie based; otherwise, it is session based.
 
  ]]></format>
         </remarks>
@@ -1707,7 +1736,8 @@ The following code shows how to call this method.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The security context token issued at the end of SSPI negotiation is cookie based.
+
+The security context token issued at the end of SSPI negotiation is cookie based.
 
  The created binding has <xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp> set to `true`. The <xref:System.ServiceModel.Channels.LocalClientSecuritySettings> object returned from <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalClientSettings> has its <xref:System.ServiceModel.Channels.LocalClientSecuritySettings.DetectReplays> property set to `false`.
 
@@ -1750,7 +1780,8 @@ The following code shows how to call this method.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If `requireCancellation` is `false`, cookie-based security context tokens are issued; otherwise, session-based security context tokens are issued.
+
+If `requireCancellation` is `false`, cookie-based security context tokens are issued; otherwise, session-based security context tokens are issued.
 
  The created binding has <xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp> set to `true`. The <xref:System.ServiceModel.Channels.LocalClientSecuritySettings> object returned from <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalClientSettings> has its <xref:System.ServiceModel.Channels.LocalClientSecuritySettings.DetectReplays> property set to `false`.
 
@@ -1790,7 +1821,8 @@ The following code shows how to call this method.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The server certificate must be configured out of band at the client.
+
+The server certificate must be configured out of band at the client.
 
  ]]></format>
         </remarks>
@@ -1841,7 +1873,8 @@ The following code shows how to call this method.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The security context token issued at the end of SSPI negotiation is cookie based.
+
+The security context token issued at the end of SSPI negotiation is cookie based.
 
  The client does not need to be provisioned with the server certificate because it obtains it as part of the SSL protocol.
 
@@ -1882,7 +1915,8 @@ The following code shows how to call this method.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If `requireCancellation` is `false`, stateful security context tokens are issued; otherwise, stateless security context tokens are issued.
+
+If `requireCancellation` is `false`, stateful security context tokens are issued; otherwise, stateless security context tokens are issued.
 
  The client does not need to be provisioned with the server certificate because it obtains it as part of the SSL protocol.
 
@@ -1935,7 +1969,8 @@ The following code shows how to call this method.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The created binding has <xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp> set to `true`. The <xref:System.ServiceModel.Channels.LocalClientSecuritySettings> object returned from <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalClientSettings> has its <xref:System.ServiceModel.Channels.LocalClientSecuritySettings.DetectReplays> property set to `false`.
+
+The created binding has <xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp> set to `true`. The <xref:System.ServiceModel.Channels.LocalClientSecuritySettings> object returned from <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalClientSettings> has its <xref:System.ServiceModel.Channels.LocalClientSecuritySettings.DetectReplays> property set to `false`.
 
  The <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings> object returned from <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalServiceSettings> has its <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.DetectReplays> property set to `false`.
 
@@ -1986,7 +2021,8 @@ The following code shows how to call this method.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> object that contains numerous properties that specify security algorithms that are to be used for signing, encryption, key derivation, and other cryptographic operations. It also controls the key sizes that are used for doing these cryptographic operations.
+
+The <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> object that contains numerous properties that specify security algorithms that are to be used for signing, encryption, key derivation, and other cryptographic operations. It also controls the key sizes that are used for doing these cryptographic operations.
 
 ## Examples
 
@@ -2094,7 +2130,8 @@ The following code shows how to set this property.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Supporting tokens provide additional claims beyond those contained in the primary tokens for the binding. The collection returned by the <xref:System.ServiceModel.Channels.SecurityBindingElement.EndpointSupportingTokenParameters> contains additional token parameters (<xref:System.ServiceModel.Security.Tokens.SecurityTokenParameters>) for all operations defined by an endpoint. The primary token parameters are found on either the <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> or the <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> (both inherit from the <xref:System.ServiceModel.Channels.SecurityBindingElement> class). In the case of the <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>, the primary token parameters are returned by the <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.ProtectionTokenParameters> property. On the <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> element there are two parameter properties, the <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement.InitiatorTokenParameters> and <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement.RecipientTokenParameters> properties.
+
+Supporting tokens provide additional claims beyond those contained in the primary tokens for the binding. The collection returned by the <xref:System.ServiceModel.Channels.SecurityBindingElement.EndpointSupportingTokenParameters> contains additional token parameters (<xref:System.ServiceModel.Security.Tokens.SecurityTokenParameters>) for all operations defined by an endpoint. The primary token parameters are found on either the <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> or the <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> (both inherit from the <xref:System.ServiceModel.Channels.SecurityBindingElement> class). In the case of the <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>, the primary token parameters are returned by the <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.ProtectionTokenParameters> property. On the <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> element there are two parameter properties, the <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement.InitiatorTokenParameters> and <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement.RecipientTokenParameters> properties.
 
 > [!NOTE]
 > The properties are called parameters because they specify only the type of the security token, not the actual values.
@@ -2163,7 +2200,8 @@ The following code shows how to set this property.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method gets the specified object from the base class, or from one of that class's ancestors. The object returned is usually a collection of properties, for example, an object that implements <xref:System.ServiceModel.Channels.ISecurityCapabilities>.
+
+This method gets the specified object from the base class, or from one of that class's ancestors. The object returned is usually a collection of properties, for example, an object that implements <xref:System.ServiceModel.Channels.ISecurityCapabilities>.
 
  If the `SecurityBindingElement` does not recognize the type of property requested, it delegates the call to the binding element stack below it, passing the binding context parameter. The types of properties that the `SecurityBindingElement` can provide are <xref:System.ServiceModel.Channels.ISecurityCapabilities> and <xref:System.ServiceModel.Security.IdentityVerifier>.
 
@@ -2226,7 +2264,8 @@ The following code shows how to set this property.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the <xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp> property is `true` and if `DetectReplays` is `true`, WCF detects a replay attack.
+
+If the <xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp> property is `true` and if `DetectReplays` is `true`, WCF detects a replay attack.
 
  ]]></format>
         </remarks>
@@ -2275,7 +2314,8 @@ The following code shows how to set this property.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ServiceModel.Channels.SecurityBindingElement.KeyEntropyMode> specifies how the key for tokens (such as <xref:System.ServiceModel.Security.Tokens.SecurityContextSecurityToken>) issued by the service is computed: whether it is computed based on the client key material only, on the service key material only, or on a combination of both.
+
+The <xref:System.ServiceModel.Channels.SecurityBindingElement.KeyEntropyMode> specifies how the key for tokens (such as <xref:System.ServiceModel.Security.Tokens.SecurityContextSecurityToken>) issued by the service is computed: whether it is computed based on the client key material only, on the service key material only, or on a combination of both.
 
  ]]></format>
         </remarks>
@@ -2331,7 +2371,8 @@ The following code shows how to set this property.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The settings are local in the sense that they are not the settings derived from the security policy of the service. You can get the <xref:System.ServiceModel.Channels.LocalClientSecuritySettings> object and use it to set security properties for this binding.
+
+The settings are local in the sense that they are not the settings derived from the security policy of the service. You can get the <xref:System.ServiceModel.Channels.LocalClientSecuritySettings> object and use it to set security properties for this binding.
 
 ## Examples
 
@@ -2379,7 +2420,8 @@ The following code shows how to access this property to set a property in anothe
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The settings are local because they are not published as part of the security policy of the service and do not affect the client's binding.
+
+The settings are local because they are not published as part of the security policy of the service and do not affect the client's binding.
 
  The following properties of the <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings> object can help mitigate a denial-of-service (DOS) security attack:
 
@@ -2447,7 +2489,8 @@ The following code shows how to access this property to set a property in anothe
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ServiceModel.MessageSecurityVersion> contains numerous properties that specify version numbers of different security specifications used when securing messages exchanged on the channel.
+
+The <xref:System.ServiceModel.MessageSecurityVersion> contains numerous properties that specify version numbers of different security specifications used when securing messages exchanged on the channel.
 
 > [!NOTE]
 > Once a <xref:System.ServiceModel.Channels.SecurityBindingElement> object is created, this property is immutable. Calling `set` on it does not change it.
@@ -2498,7 +2541,8 @@ The following code shows how to access this property to set a property in anothe
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Supporting tokens provide additional claims beyond those contained in the primary tokens for the binding.
+
+Supporting tokens provide additional claims beyond those contained in the primary tokens for the binding.
 
  The collection returned by the <xref:System.ServiceModel.Channels.SecurityBindingElement.OperationSupportingTokenParameters> property contains additional token parameters (<xref:System.ServiceModel.Security.Tokens.SecurityTokenParameters>) for specific operations defined. The primary token parameters are found on either the <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> or the <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> (both inherit from the <xref:System.ServiceModel.Channels.SecurityBindingElement> class). In the case of the <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>, the primary token parameters are returned by the <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.ProtectionTokenParameters> property. On the <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> there are two parameter properties, the <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement.InitiatorTokenParameters> and <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement.RecipientTokenParameters> properties.
 
@@ -2553,7 +2597,8 @@ The following code shows how to access this property to set a property in anothe
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Supporting tokens provide additional claims beyond those contained in the primary tokens for the binding. Supporting tokens can be scoped at a different scope than the binding, in this case the endpoint. The service does not reject the message in case it does not contain tokens that correspond to token types specified in the <xref:System.ServiceModel.Channels.SecurityBindingElement.OptionalEndpointSupportingTokenParameters> collection.
+
+Supporting tokens provide additional claims beyond those contained in the primary tokens for the binding. Supporting tokens can be scoped at a different scope than the binding, in this case the endpoint. The service does not reject the message in case it does not contain tokens that correspond to token types specified in the <xref:System.ServiceModel.Channels.SecurityBindingElement.OptionalEndpointSupportingTokenParameters> collection.
 
  ]]></format>
         </remarks>
@@ -2599,7 +2644,8 @@ The following code shows how to access this property to set a property in anothe
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Supporting tokens provide additional claims beyond those contained in the primary tokens for the binding. Supporting tokens can be scoped at a different scope than the binding, in this case the operation. The service does not reject the message in case it does not contain tokens that correspond to token types specified in the <xref:System.ServiceModel.Channels.SecurityBindingElement.OptionalOperationSupportingTokenParameters> collection.
+
+Supporting tokens provide additional claims beyond those contained in the primary tokens for the binding. Supporting tokens can be scoped at a different scope than the binding, in this case the operation. The service does not reject the message in case it does not contain tokens that correspond to token types specified in the <xref:System.ServiceModel.Channels.SecurityBindingElement.OptionalOperationSupportingTokenParameters> collection.
 
  ]]></format>
         </remarks>
@@ -2684,7 +2730,8 @@ The following code shows how to access this property to set a property in anothe
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ServiceModel.Channels.SecurityHeaderLayout> enumeration contains the following members:
+
+The <xref:System.ServiceModel.Channels.SecurityHeaderLayout> enumeration contains the following members:
 
 -   <xref:System.ServiceModel.Channels.SecurityHeaderLayout.Strict>: Items are added to the security header according to the general principle of "declare before use".
 
@@ -2738,7 +2785,8 @@ The following code shows how to access this property to set a property in anothe
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Reserved for system use.
+
+Reserved for system use.
 
  ]]></format>
         </remarks>
@@ -2835,7 +2883,8 @@ The following code shows how to call this method.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Information returned by <xref:System.ServiceModel.Channels.SecurityBindingElement.ToString*> includes the <xref:System.ServiceModel.Channels.SecurityBindingElement.DefaultAlgorithmSuite>, <xref:System.ServiceModel.Channels.SecurityBindingElement.EndpointSupportingTokenParameters>, <xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp>, <xref:System.ServiceModel.Channels.SecurityBindingElement.KeyEntropyMode>, <xref:System.ServiceModel.Channels.SecurityBindingElement.OptionalEndpointSupportingTokenParameters>, <xref:System.ServiceModel.Channels.SecurityBindingElement.SecurityHeaderLayout>, and <xref:System.ServiceModel.Channels.SecurityBindingElement.OperationSupportingTokenParameters> values of the current instance.
+
+Information returned by <xref:System.ServiceModel.Channels.SecurityBindingElement.ToString*> includes the <xref:System.ServiceModel.Channels.SecurityBindingElement.DefaultAlgorithmSuite>, <xref:System.ServiceModel.Channels.SecurityBindingElement.EndpointSupportingTokenParameters>, <xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp>, <xref:System.ServiceModel.Channels.SecurityBindingElement.KeyEntropyMode>, <xref:System.ServiceModel.Channels.SecurityBindingElement.OptionalEndpointSupportingTokenParameters>, <xref:System.ServiceModel.Channels.SecurityBindingElement.SecurityHeaderLayout>, and <xref:System.ServiceModel.Channels.SecurityBindingElement.OperationSupportingTokenParameters> values of the current instance.
 
  ]]></format>
         </remarks>

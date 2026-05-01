@@ -118,7 +118,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This constructor is called to initialize state in the type whenever an instance of the derived class is created. Although you can explicitly call this constructor in the constructor declaration of the derived class constructor, this is not usually necessary; most compilers will automatically generate the call for you.
+
+This constructor is called to initialize state in the type whenever an instance of the derived class is created. Although you can explicitly call this constructor in the constructor declaration of the derived class constructor, this is not usually necessary; most compilers will automatically generate the call for you.
 
  ]]></format>
         </remarks>
@@ -170,7 +171,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The call stack is typically represented as growing down, so that methods higher in the call stack call methods lower in the call stack. Calling <xref:System.Security.CodeAccessPermission.Assert*> prevents a stack walk originating lower in the call stack from proceeding up the call stack beyond the code that calls this method. Therefore, even if callers higher on the call stack do not have the requisite permissions to access a resource, they can still access it through the code that calls this method on the necessary permission. An assertion is effective only if the code that calls <xref:System.Security.CodeAccessPermission.Assert*> passes the security check for the permission that it is asserting.
+
+The call stack is typically represented as growing down, so that methods higher in the call stack call methods lower in the call stack. Calling <xref:System.Security.CodeAccessPermission.Assert*> prevents a stack walk originating lower in the call stack from proceeding up the call stack beyond the code that calls this method. Therefore, even if callers higher on the call stack do not have the requisite permissions to access a resource, they can still access it through the code that calls this method on the necessary permission. An assertion is effective only if the code that calls <xref:System.Security.CodeAccessPermission.Assert*> passes the security check for the permission that it is asserting.
 
  The call to <xref:System.Security.CodeAccessPermission.Assert*> is effective until the calling code returns to its caller. Only one <xref:System.Security.CodeAccessPermission.Assert*> can be active on a frame. An attempt to call <xref:System.Security.CodeAccessPermission.Assert*> when an active <xref:System.Security.CodeAccessPermission.Assert*> exists on the frame results in a <xref:System.Security.SecurityException>. Call <xref:System.Security.CodeAccessPermission.RevertAssert*> or <xref:System.Security.CodeAccessPermission.RevertAll*> to remove an active <xref:System.Security.CodeAccessPermission.Assert*>.
 
@@ -233,7 +235,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A copy of a permission object represents the same access to resources as the original permission object.
+
+A copy of a permission object represents the same access to resources as the original permission object.
 
  ]]></format>
         </remarks>
@@ -289,7 +292,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is typically used by secure libraries to ensure that callers have permission to access a resource. For example, a file class in a secure class library calls <xref:System.Security.CodeAccessPermission.Demand*> for the necessary <xref:System.Security.Permissions.FileIOPermission> before performing a file operation requested by the caller.
+
+This method is typically used by secure libraries to ensure that callers have permission to access a resource. For example, a file class in a secure class library calls <xref:System.Security.CodeAccessPermission.Demand*> for the necessary <xref:System.Security.Permissions.FileIOPermission> before performing a file operation requested by the caller.
 
  The permissions of the code that calls this method are not examined; the check begins from the immediate caller of that code and proceeds up the stack. The call stack is typically represented as growing down, so that methods higher in the call stack call methods lower in the call stack. <xref:System.Security.CodeAccessPermission.Demand*> succeeds only if no <xref:System.Security.SecurityException> is raised.
 
@@ -424,7 +428,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- For more information, see <xref:System.Object.Equals*>.
+
+For more information, see <xref:System.Object.Equals*>.
 
  ]]></format>
         </remarks>
@@ -473,7 +478,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Custom code that extends security objects needs to implement the <xref:System.Security.CodeAccessPermission.ToXml*> and <xref:System.Security.CodeAccessPermission.FromXml*> methods to make the objects security-encodable.
+
+Custom code that extends security objects needs to implement the <xref:System.Security.CodeAccessPermission.ToXml*> and <xref:System.Security.CodeAccessPermission.FromXml*> methods to make the objects security-encodable.
 
  ]]></format>
         </remarks>
@@ -531,7 +537,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The hash code for two instances of the same permission might be different, hence a hash code should not be used to compare two <xref:System.Security.CodeAccessPermission> objects.
+
+The hash code for two instances of the same permission might be different, hence a hash code should not be used to compare two <xref:System.Security.CodeAccessPermission> objects.
 
  ]]></format>
         </remarks>
@@ -581,7 +588,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The intersection of two permissions is a permission that describes the set of operations they both describe in common. Only a demand that passes both original permissions will pass the intersection.
+
+The intersection of two permissions is a permission that describes the set of operations they both describe in common. Only a demand that passes both original permissions will pass the intersection.
 
  ]]></format>
         </remarks>
@@ -636,7 +644,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The current permission is a subset of the specified permission if the current permission specifies a set of operations that is wholly contained by the specified permission. For example, a permission that represents access to C:\example.txt is a subset of a permission that represents access to C:\\. If this method returns `true`, the current permission represents no more access to the protected resource than does the specified permission.
+
+The current permission is a subset of the specified permission if the current permission specifies a set of operations that is wholly contained by the specified permission. For example, a permission that represents access to C:\example.txt is a subset of a permission that represents access to C:\\. If this method returns `true`, the current permission represents no more access to the protected resource than does the specified permission.
 
  The following statements are required to be `true` for all overrides of the <xref:System.Security.CodeAccessPermission.IsSubsetOf*> method. *X*, *Y*, and *Z* represent custom code access permission objects that are not null references, *U* represents an unrestricted code access permission, and *N* represents an empty permission with a <xref:System.Security.Permissions.PermissionState> of <xref:System.Security.Permissions.PermissionState.None>.
 
@@ -764,7 +773,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If there are no overrides (<xref:System.Security.CodeAccessPermission.Assert*>, <xref:System.Security.CodeAccessPermission.Deny*>, or <xref:System.Security.CodeAccessPermission.PermitOnly*>) for the current frame, an <xref:System.ExecutionEngineException> is thrown.
+
+If there are no overrides (<xref:System.Security.CodeAccessPermission.Assert*>, <xref:System.Security.CodeAccessPermission.Deny*>, or <xref:System.Security.CodeAccessPermission.PermitOnly*>) for the current frame, an <xref:System.ExecutionEngineException> is thrown.
 
  ]]></format>
         </remarks>
@@ -814,7 +824,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If there is no <xref:System.Security.CodeAccessPermission.Assert*> for the current frame, an <xref:System.ExecutionEngineException> is thrown.
+
+If there is no <xref:System.Security.CodeAccessPermission.Assert*> for the current frame, an <xref:System.ExecutionEngineException> is thrown.
 
  ]]></format>
         </remarks>
@@ -872,7 +883,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If there is no <xref:System.Security.CodeAccessPermission.Deny*> for the current frame, an <xref:System.ExecutionEngineException> is thrown.
+
+If there is no <xref:System.Security.CodeAccessPermission.Deny*> for the current frame, an <xref:System.ExecutionEngineException> is thrown.
 
  ]]></format>
         </remarks>
@@ -922,7 +934,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If there is no <xref:System.Security.CodeAccessPermission.PermitOnly*> for the current frame, an <xref:System.ExecutionEngineException> is thrown.
+
+If there is no <xref:System.Security.CodeAccessPermission.PermitOnly*> for the current frame, an <xref:System.ExecutionEngineException> is thrown.
 
  ]]></format>
         </remarks>
@@ -967,7 +980,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is useful in debugging when you need to display the permission as a string.
+
+This method is useful in debugging when you need to display the permission as a string.
 
  ]]></format>
         </remarks>
@@ -1014,7 +1028,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Custom code that extends security objects needs to implement the <xref:System.Security.CodeAccessPermission.ToXml*> and <xref:System.Security.CodeAccessPermission.FromXml*> methods to make the objects security-encodable.
+
+Custom code that extends security objects needs to implement the <xref:System.Security.CodeAccessPermission.ToXml*> and <xref:System.Security.CodeAccessPermission.FromXml*> methods to make the objects security-encodable.
 
  ]]></format>
         </remarks>
@@ -1067,7 +1082,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The result of a call to <xref:System.Security.CodeAccessPermission.Union*> is a permission that represents all the operations represented by both the current permission and the specified permission. Any demand that passes either permission passes their union.
+
+The result of a call to <xref:System.Security.CodeAccessPermission.Union*> is a permission that represents all the operations represented by both the current permission and the specified permission. Any demand that passes either permission passes their union.
 
  ]]></format>
         </remarks>

@@ -61,7 +61,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use the <xref:System.Threading.Semaphore> class to control access to a pool of resources. Threads enter the semaphore by calling the <xref:System.Threading.WaitHandle.WaitOne*> method, which is inherited from the <xref:System.Threading.WaitHandle> class, and release the semaphore by calling the <xref:System.Threading.Semaphore.Release*> method.
+
+Use the <xref:System.Threading.Semaphore> class to control access to a pool of resources. Threads enter the semaphore by calling the <xref:System.Threading.WaitHandle.WaitOne*> method, which is inherited from the <xref:System.Threading.WaitHandle> class, and release the semaphore by calling the <xref:System.Threading.Semaphore.Release*> method.
 
  The count on a semaphore is decremented each time a thread enters the semaphore, and incremented when a thread releases the semaphore. When the count is zero, subsequent requests block until other threads release the semaphore. When all threads have released the semaphore, the count is at the maximum value specified when the semaphore was created.
 
@@ -159,7 +160,8 @@ The following code example creates a semaphore with a maximum count of three and
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This constructor initializes an unnamed semaphore. All threads that use an instance of such a semaphore must have references to the instance.
+
+This constructor initializes an unnamed semaphore. All threads that use an instance of such a semaphore must have references to the instance.
 
  If `initialCount` is less than `maximumCount`, the effect is the same as if the current thread had called <xref:System.Threading.WaitHandle.WaitOne*> (`maximumCount` minus `initialCount`) times. If you do not want to reserve any entries for the thread that creates the semaphore, use the same number for `maximumCount` and `initialCount`.
 
@@ -233,7 +235,8 @@ The following example creates a semaphore with a maximum count of three and an i
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This constructor initializes a <xref:System.Threading.Semaphore> object that represents a named system semaphore. You can create multiple <xref:System.Threading.Semaphore> objects that represent the same named system semaphore.
+
+This constructor initializes a <xref:System.Threading.Semaphore> object that represents a named system semaphore. You can create multiple <xref:System.Threading.Semaphore> objects that represent the same named system semaphore.
 
  The `name` may be prefixed with `Global\` or `Local\` to specify a namespace. When the `Global` namespace is specified, the synchronization object may be shared with any processes on the system. When the `Local` namespace is specified, which is also the default when no namespace is specified, the synchronization object may be shared with processes in the same session. On Windows, a session is a login session, and services typically run in a different non-interactive session. On Unix-like operating systems, each shell has its own session. Session-local synchronization objects may be appropriate for synchronizing between processes with a parent/child relationship where they all run in the same session. For more information about synchronization object names on Windows, see [Object Names](https://learn.microsoft.com/windows/win32/sync/object-names).
 
@@ -345,7 +348,8 @@ There was some other error. The `HResult` property might provide more informatio
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The `name` may be prefixed with `Global\` or `Local\` to specify a namespace. When the `Global` namespace is specified, the synchronization object may be shared with any processes on the system. When the `Local` namespace is specified, which is also the default when no namespace is specified, the synchronization object may be shared with processes in the same session. On Windows, a session is a login session, and services typically run in a different non-interactive session. On Unix-like operating systems, each shell has its own session. Session-local synchronization objects may be appropriate for synchronizing between processes with a parent/child relationship where they all run in the same session. For more information about synchronization object names on Windows, see [Object Names](https://learn.microsoft.com/windows/win32/sync/object-names).
+
+The `name` may be prefixed with `Global\` or `Local\` to specify a namespace. When the `Global` namespace is specified, the synchronization object may be shared with any processes on the system. When the `Local` namespace is specified, which is also the default when no namespace is specified, the synchronization object may be shared with processes in the same session. On Windows, a session is a login session, and services typically run in a different non-interactive session. On Unix-like operating systems, each shell has its own session. Session-local synchronization objects may be appropriate for synchronizing between processes with a parent/child relationship where they all run in the same session. For more information about synchronization object names on Windows, see [Object Names](https://learn.microsoft.com/windows/win32/sync/object-names).
 
  If a `name` is provided and a synchronization object of the requested type already exists in the namespace, the existing synchronization object is used. If a synchronization object of a different type already exists in the namespace, a `WaitHandleCannotBeOpenedException` is thrown. Otherwise, a new synchronization object is created.
 
@@ -514,7 +518,8 @@ An object with the specified <paramref name="name" /> exists, but the specified 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use this constructor to apply access control security to a named system semaphore when it is created, preventing other code from taking control of the semaphore.
+
+Use this constructor to apply access control security to a named system semaphore when it is created, preventing other code from taking control of the semaphore.
 
  The `name` may be prefixed with `Global\` or `Local\` to specify a namespace. When the `Global` namespace is specified, the synchronization object may be shared with any processes on the system. When the `Local` namespace is specified, which is also the default when no namespace is specified, the synchronization object may be shared with processes in the same session. On Windows, a session is a login session, and services typically run in a different non-interactive session. On Unix-like operating systems, each shell has its own session. Session-local synchronization objects may be appropriate for synchronizing between processes with a parent/child relationship where they all run in the same session. For more information about synchronization object names on Windows, see [Object Names](https://learn.microsoft.com/windows/win32/sync/object-names).
 
@@ -684,7 +689,8 @@ An object with the specified <paramref name="name" /> exists, but the specified 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Threading.Semaphore.GetAccessControl*> method uses the following combination of flags (combined using the bitwise OR operation) to search for permissions: <xref:System.Security.AccessControl.AccessControlSections.Access?displayProperty=nameWithType>, <xref:System.Security.AccessControl.AccessControlSections.Owner?displayProperty=nameWithType>, and <xref:System.Security.AccessControl.AccessControlSections.Group?displayProperty=nameWithType>.
+
+The <xref:System.Threading.Semaphore.GetAccessControl*> method uses the following combination of flags (combined using the bitwise OR operation) to search for permissions: <xref:System.Security.AccessControl.AccessControlSections.Access?displayProperty=nameWithType>, <xref:System.Security.AccessControl.AccessControlSections.Owner?displayProperty=nameWithType>, and <xref:System.Security.AccessControl.AccessControlSections.Group?displayProperty=nameWithType>.
 
  The user must have <xref:System.Security.AccessControl.SemaphoreRights.ReadPermissions?displayProperty=nameWithType> rights to call this method, and the semaphore must have been opened with <xref:System.Security.AccessControl.SemaphoreRights.ReadPermissions?displayProperty=nameWithType> rights.
 
@@ -783,7 +789,8 @@ The following code example demonstrates the cross-process behavior of a named se
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The `name` may be prefixed with `Global\` or `Local\` to specify a namespace. When the `Global` namespace is specified, the synchronization object may be shared with any processes on the system. When the `Local` namespace is specified, which is also the default when no namespace is specified, the synchronization object may be shared with processes in the same session. On Windows, a session is a login session, and services typically run in a different non-interactive session. On Unix-like operating systems, each shell has its own session. Session-local synchronization objects may be appropriate for synchronizing between processes with a parent/child relationship where they all run in the same session. For more information about synchronization object names on Windows, see [Object Names](https://learn.microsoft.com/windows/win32/sync/object-names).
+
+The `name` may be prefixed with `Global\` or `Local\` to specify a namespace. When the `Global` namespace is specified, the synchronization object may be shared with any processes on the system. When the `Local` namespace is specified, which is also the default when no namespace is specified, the synchronization object may be shared with processes in the same session. On Windows, a session is a login session, and services typically run in a different non-interactive session. On Unix-like operating systems, each shell has its own session. Session-local synchronization objects may be appropriate for synchronizing between processes with a parent/child relationship where they all run in the same session. For more information about synchronization object names on Windows, see [Object Names](https://learn.microsoft.com/windows/win32/sync/object-names).
 
  If a synchronization object of the requested type exists in the namespace, the existing synchronization object is opened. If a synchronization object does not exist in the namespace, or a synchronization object of a different type exists in the namespace, a `WaitHandleCannotBeOpenedException` is thrown.
 
@@ -866,7 +873,8 @@ There was some other error. The `HResult` property might provide more informatio
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The `name` may be prefixed with `Global\` or `Local\` to specify a namespace. When the `Global` namespace is specified, the synchronization object may be shared with any processes on the system. When the `Local` namespace is specified, which is also the default when no namespace is specified, the synchronization object may be shared with processes in the same session. On Windows, a session is a login session, and services typically run in a different non-interactive session. On Unix-like operating systems, each shell has its own session. Session-local synchronization objects may be appropriate for synchronizing between processes with a parent/child relationship where they all run in the same session. For more information about synchronization object names on Windows, see [Object Names](https://learn.microsoft.com/windows/win32/sync/object-names).
+
+The `name` may be prefixed with `Global\` or `Local\` to specify a namespace. When the `Global` namespace is specified, the synchronization object may be shared with any processes on the system. When the `Local` namespace is specified, which is also the default when no namespace is specified, the synchronization object may be shared with processes in the same session. On Windows, a session is a login session, and services typically run in a different non-interactive session. On Unix-like operating systems, each shell has its own session. Session-local synchronization objects may be appropriate for synchronizing between processes with a parent/child relationship where they all run in the same session. For more information about synchronization object names on Windows, see [Object Names](https://learn.microsoft.com/windows/win32/sync/object-names).
 
  If a synchronization object of the requested type exists in the namespace, the existing synchronization object is opened. If a synchronization object does not exist in the namespace, or a synchronization object of a different type exists in the namespace, a `WaitHandleCannotBeOpenedException` is thrown.
 
@@ -1051,7 +1059,8 @@ There was some other error. The `HResult` property might provide more informatio
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Threads typically use the <xref:System.Threading.WaitHandle.WaitOne*> method to enter the semaphore, and they typically use this method overload to exit.
+
+Threads typically use the <xref:System.Threading.WaitHandle.WaitOne*> method to enter the semaphore, and they typically use this method overload to exit.
 
  If a <xref:System.Threading.SemaphoreFullException> is thrown by the <xref:System.Threading.Semaphore.Release*> method, it does not necessarily indicate a problem with the calling thread. A programming error in another thread might have caused that thread to exit the semaphore more times than it entered.
 
@@ -1133,7 +1142,8 @@ The following code example creates a semaphore with a maximum count of three and
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If a thread has entered the semaphore multiple times, this method overload allows the entire semaphore count to be restored with one call.
+
+If a thread has entered the semaphore multiple times, this method overload allows the entire semaphore count to be restored with one call.
 
  If a <xref:System.Threading.SemaphoreFullException> is thrown by the <xref:System.Threading.Semaphore.Release*> method, it does not necessarily indicate a problem with the calling thread. A programming error in another thread might have caused that thread to exit the semaphore more times than it entered.
 
@@ -1195,7 +1205,8 @@ The following code example creates a semaphore with a maximum count of three and
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You can set access control security only on <xref:System.Threading.Semaphore> objects that represent named system semaphores.
+
+You can set access control security only on <xref:System.Threading.Semaphore> objects that represent named system semaphores.
 
  The user must have <xref:System.Security.AccessControl.SemaphoreRights.ChangePermissions?displayProperty=nameWithType> rights to call this method, and the semaphore must have been opened with <xref:System.Security.AccessControl.SemaphoreRights.ChangePermissions?displayProperty=nameWithType> rights.
 
@@ -1305,7 +1316,8 @@ The following code example demonstrates the cross-process behavior of a named se
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The `name` may be prefixed with `Global\` or `Local\` to specify a namespace. When the `Global` namespace is specified, the synchronization object may be shared with any processes on the system. When the `Local` namespace is specified, which is also the default when no namespace is specified, the synchronization object may be shared with processes in the same session. On Windows, a session is a login session, and services typically run in a different non-interactive session. On Unix-like operating systems, each shell has its own session. Session-local synchronization objects may be appropriate for synchronizing between processes with a parent/child relationship where they all run in the same session. For more information about synchronization object names on Windows, see [Object Names](https://learn.microsoft.com/windows/win32/sync/object-names).
+
+The `name` may be prefixed with `Global\` or `Local\` to specify a namespace. When the `Global` namespace is specified, the synchronization object may be shared with any processes on the system. When the `Local` namespace is specified, which is also the default when no namespace is specified, the synchronization object may be shared with processes in the same session. On Windows, a session is a login session, and services typically run in a different non-interactive session. On Unix-like operating systems, each shell has its own session. Session-local synchronization objects may be appropriate for synchronizing between processes with a parent/child relationship where they all run in the same session. For more information about synchronization object names on Windows, see [Object Names](https://learn.microsoft.com/windows/win32/sync/object-names).
 
  If a synchronization object of the requested type exists in the namespace, the existing synchronization object is opened. If a synchronization object does not exist in the namespace, or a synchronization object of a different type exists in the namespace, `false` is returned.
 
@@ -1372,7 +1384,8 @@ There was some other error. The `HResult` property might provide more informatio
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The `name` may be prefixed with `Global\` or `Local\` to specify a namespace. When the `Global` namespace is specified, the synchronization object may be shared with any processes on the system. When the `Local` namespace is specified, which is also the default when no namespace is specified, the synchronization object may be shared with processes in the same session. On Windows, a session is a login session, and services typically run in a different non-interactive session. On Unix-like operating systems, each shell has its own session. Session-local synchronization objects may be appropriate for synchronizing between processes with a parent/child relationship where they all run in the same session. For more information about synchronization object names on Windows, see [Object Names](https://learn.microsoft.com/windows/win32/sync/object-names).
+
+The `name` may be prefixed with `Global\` or `Local\` to specify a namespace. When the `Global` namespace is specified, the synchronization object may be shared with any processes on the system. When the `Local` namespace is specified, which is also the default when no namespace is specified, the synchronization object may be shared with processes in the same session. On Windows, a session is a login session, and services typically run in a different non-interactive session. On Unix-like operating systems, each shell has its own session. Session-local synchronization objects may be appropriate for synchronizing between processes with a parent/child relationship where they all run in the same session. For more information about synchronization object names on Windows, see [Object Names](https://learn.microsoft.com/windows/win32/sync/object-names).
 
  If a synchronization object of the requested type exists in the namespace, the existing synchronization object is opened. If a synchronization object does not exist in the namespace, or a synchronization object of a different type exists in the namespace, `false` is returned.
 

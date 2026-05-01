@@ -25,7 +25,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A keyboard sink handles input from particular subsets of the overall keyboard input model for Win32 and Windows Presentation Foundation (WPF), and enables some keyboard input to be processed and directed to HWNDs other than the one with current keyboard focus.
+
+A keyboard sink handles input from particular subsets of the overall keyboard input model for Win32 and Windows Presentation Foundation (WPF), and enables some keyboard input to be processed and directed to HWNDs other than the one with current keyboard focus.
 
  If your component contains other components, and maintains a tab order, your component must also implement <xref:System.Windows.Interop.IKeyboardInputSite> and keep track of which component has focus.
 
@@ -72,7 +73,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is necessary for forwarding <xref:System.Windows.Interop.IKeyboardInputSink.TranslateAccelerator*> calls to child components with focus from within the <xref:System.Windows.Interop.IKeyboardInputSink.TranslateAccelerator*> implementation. Call <xref:System.Windows.Interop.IKeyboardInputSink.HasFocusWithin*> recursively until you reach the level of specific focus and forward <xref:System.Windows.Interop.IKeyboardInputSink.TranslateAccelerator*> there.
+
+This method is necessary for forwarding <xref:System.Windows.Interop.IKeyboardInputSink.TranslateAccelerator*> calls to child components with focus from within the <xref:System.Windows.Interop.IKeyboardInputSink.TranslateAccelerator*> implementation. Call <xref:System.Windows.Interop.IKeyboardInputSink.HasFocusWithin*> recursively until you reach the level of specific focus and forward <xref:System.Windows.Interop.IKeyboardInputSink.TranslateAccelerator*> there.
 
  ]]></format>
         </remarks>
@@ -116,7 +118,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This property should initially be set to `null`. Any container that adds the sink to its components list will set <xref:System.Windows.Interop.IKeyboardInputSink.KeyboardInputSite*> before any other methods are called, and it can be set multiple times after that. You should set the property to `null` again before disposal.
+
+This property should initially be set to `null`. Any container that adds the sink to its components list will set <xref:System.Windows.Interop.IKeyboardInputSink.KeyboardInputSite*> before any other methods are called, and it can be set multiple times after that. You should set the property to `null` again before disposal.
 
  ]]></format>
         </remarks>
@@ -167,7 +170,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The Microsoft Windows message must be WM_CHAR, WM_SYSCHAR, WM_DEADCHAR or WM_SYSDEADCHAR.
+
+The Microsoft Windows message must be WM_CHAR, WM_SYSCHAR, WM_DEADCHAR or WM_SYSDEADCHAR.
 
  If the component has contained components, the message must be passed in your implementation by calling each contained component's <xref:System.Windows.Interop.IKeyboardInputSink.OnMnemonic*> method.
 
@@ -219,7 +223,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Components with child components should maintain internal collections of sites and use this method to add a new sink and return the new site. You only need to maintain the site collection, because the sink can be obtained from the site.
+
+Components with child components should maintain internal collections of sites and use this method to add a new sink and return the new site. You only need to maintain the site collection, because the sink can be obtained from the site.
 
  ]]></format>
         </remarks>
@@ -309,7 +314,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The message must either be WM_KEYDOWN or WM_SYSKEYDOWN.
+
+The message must either be WM_KEYDOWN or WM_SYSKEYDOWN.
 
  If the component is unable to handle the input translations and has child components that might have translations, it typically calls <xref:System.Windows.Interop.IKeyboardInputSink.TranslateAccelerator*> method on the child component that holds the current focus before returning a result.
 
@@ -365,7 +371,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If you implement this method to return `true`, the input architecture will not call <xref:System.Windows.Interop.IKeyboardInputSink.OnMnemonic*> for that key message.
+
+If you implement this method to return `true`, the input architecture will not call <xref:System.Windows.Interop.IKeyboardInputSink.OnMnemonic*> for that key message.
 
  ]]></format>
         </remarks>

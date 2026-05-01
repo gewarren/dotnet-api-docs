@@ -406,7 +406,8 @@ The following code example shows how to acquire and release a reader lock, and h
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method blocks if another thread has a reader lock or writer lock. For a description of the way the writer lock alternates with multiple concurrent reader locks, see the <xref:System.Threading.ReaderWriterLock> class.
+
+This method blocks if another thread has a reader lock or writer lock. For a description of the way the writer lock alternates with multiple concurrent reader locks, see the <xref:System.Threading.ReaderWriterLock> class.
 
  A thread that already has a reader lock can acquire the writer lock in one of two ways: by releasing the reader lock before calling <xref:System.Threading.ReaderWriterLock.AcquireWriterLock*>, or by calling <xref:System.Threading.ReaderWriterLock.UpgradeToWriterLock*>.
 
@@ -492,7 +493,8 @@ The following code example shows how to acquire and release a writer lock, and h
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method blocks if another thread has a reader lock or writer lock. For a description of the way the writer lock alternates with multiple concurrent reader locks, see the <xref:System.Threading.ReaderWriterLock> class.
+
+This method blocks if another thread has a reader lock or writer lock. For a description of the way the writer lock alternates with multiple concurrent reader locks, see the <xref:System.Threading.ReaderWriterLock> class.
 
  A thread that already has a reader lock can acquire the writer lock in one of two ways: by releasing the reader lock before calling <xref:System.Threading.ReaderWriterLock.AcquireWriterLock*>, or by calling <xref:System.Threading.ReaderWriterLock.UpgradeToWriterLock*>.
 
@@ -569,7 +571,8 @@ The following code example shows how to acquire and release a writer lock, and h
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You can use <xref:System.Threading.ReaderWriterLock.WriterSeqNum*> and `AnyWritersSince` to improve application performance. For example, a thread might cache the information it obtains while holding a reader lock. After releasing and later reacquiring the lock, the thread can use `AnyWritersSince` to determine whether other threads have written to the resource in the interim; if not, the cached information can be used. This technique is useful where reading the information protected by the lock is expensive; for example, running a database query.
+
+You can use <xref:System.Threading.ReaderWriterLock.WriterSeqNum*> and `AnyWritersSince` to improve application performance. For example, a thread might cache the information it obtains while holding a reader lock. After releasing and later reacquiring the lock, the thread can use `AnyWritersSince` to determine whether other threads have written to the resource in the interim; if not, the cached information can be used. This technique is useful where reading the information protected by the lock is expensive; for example, running a database query.
 
  The caller must be holding a reader lock or a writer lock in order for the sequence number to be useful.
 
@@ -710,7 +713,8 @@ The following code example shows how to request a reader lock, upgrade the reade
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The garbage collector calls <xref:System.Threading.ReaderWriterLock.Finalize*> when the current <xref:System.Threading.ReaderWriterLock> object is ready to be finalized.
+
+The garbage collector calls <xref:System.Threading.ReaderWriterLock.Finalize*> when the current <xref:System.Threading.ReaderWriterLock> object is ready to be finalized.
 
  ]]></format>
         </remarks>
@@ -1131,7 +1135,8 @@ The following code example shows how to acquire and release a writer lock, and h
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The state restored by `RestoreLock` includes the recursive lock count.
+
+The state restored by `RestoreLock` includes the recursive lock count.
 
  A thread blocks if it tries to restore a reader lock after another thread has acquired the writer lock, or if it tries to restore the writer lock after another thread has acquired a reader lock or writer lock. Because `RestoreLock` does not accept a time-out, you should take care to avoid possible deadlocks.
 
@@ -1227,7 +1232,8 @@ The following code example shows how to use the <xref:System.Threading.ReaderWri
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When a thread calls `UpgradeToWriterLock` the reader lock is released, regardless of the lock count, and the thread goes to the end of the queue for the writer lock. Thus, other threads might write to the resource before the thread that requested the upgrade is granted the writer lock.
+
+When a thread calls `UpgradeToWriterLock` the reader lock is released, regardless of the lock count, and the thread goes to the end of the queue for the writer lock. Thus, other threads might write to the resource before the thread that requested the upgrade is granted the writer lock.
 
 > [!IMPORTANT]
 > The time-out exception is not thrown until the thread that called the <xref:System.Threading.ReaderWriterLock.UpgradeToWriterLock*> method can reacquire the reader lock. If there are no other threads waiting for the writer lock, this happens immediately. However, if another thread is queued for the writer lock, the thread that called the <xref:System.Threading.ReaderWriterLock.UpgradeToWriterLock*> method cannot reacquire the reader lock until all current readers have released their locks, and one thread has acquired and released the writer lock. This is true even if the other thread that requested the writer lock requested it after the current thread called the <xref:System.Threading.ReaderWriterLock.UpgradeToWriterLock*> method.
@@ -1312,7 +1318,8 @@ The following code example shows how to request a reader lock, upgrade the reade
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When a thread calls `UpgradeToWriterLock` the reader lock is released, regardless of the lock count, and the thread goes to the end of the queue for the writer lock. Thus, other threads might write to the resource before the thread that requested the upgrade is granted the writer lock.
+
+When a thread calls `UpgradeToWriterLock` the reader lock is released, regardless of the lock count, and the thread goes to the end of the queue for the writer lock. Thus, other threads might write to the resource before the thread that requested the upgrade is granted the writer lock.
 
 > [!IMPORTANT]
 > The time-out exception is not thrown until the thread that called the <xref:System.Threading.ReaderWriterLock.UpgradeToWriterLock*> method can reacquire the reader lock. If there are no other threads waiting for the writer lock, this happens immediately. However, if another thread is queued for the writer lock, the thread that called the <xref:System.Threading.ReaderWriterLock.UpgradeToWriterLock*> method cannot reacquire the reader lock until all current readers have released their locks, and one thread has acquired and released the writer lock. This is true even if the other thread that requested the writer lock requested it after the current thread called the <xref:System.Threading.ReaderWriterLock.UpgradeToWriterLock*> method.
@@ -1382,7 +1389,8 @@ The following code example shows how to request a reader lock, upgrade the reade
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The sequence number increases whenever a thread acquires the writer lock. You can save the sequence number and pass it to <xref:System.Threading.ReaderWriterLock.AnyWritersSince*> at a later time, if you want to determine whether other threads have acquired the writer lock in the meantime.
+
+The sequence number increases whenever a thread acquires the writer lock. You can save the sequence number and pass it to <xref:System.Threading.ReaderWriterLock.AnyWritersSince*> at a later time, if you want to determine whether other threads have acquired the writer lock in the meantime.
 
  You can use `WriterSeqNum` to improve application performance. For example, a thread might cache the information it obtains while holding a reader lock. After releasing and later reacquiring the lock, the thread can determine whether other threads have written to the resource by calling `AnyWritersSince`; if not, the cached information can be used. This technique is useful when reading the information protected by the lock is expensive; for example, running a database query.
 

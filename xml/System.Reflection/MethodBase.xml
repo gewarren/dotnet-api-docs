@@ -200,7 +200,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- All members have a set of attributes, which are defined in relation to the specific type of member.
+
+All members have a set of attributes, which are defined in relation to the specific type of member.
 
  To get the <xref:System.Reflection.MethodAttributes>, first get the type. From the type, get the method. From the method, get the <xref:System.Reflection.MethodAttributes>.
 
@@ -338,7 +339,8 @@ The following code example displays the attributes of the user-defined method My
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A generic method can be invoked only if there are no generic type definitions or open constructed types in the type arguments of the method itself or in any enclosing types. Because types can be arbitrarily complex, making this recursive determination is difficult. For convenience, and to reduce the chance of error, the <xref:System.Reflection.MethodBase.ContainsGenericParameters> property provides a standard way to distinguish between closed constructed methods, which can be invoked, and open constructed methods, which cannot. If the <xref:System.Reflection.MethodBase.ContainsGenericParameters> property returns `true`, the method cannot be invoked.
+
+A generic method can be invoked only if there are no generic type definitions or open constructed types in the type arguments of the method itself or in any enclosing types. Because types can be arbitrarily complex, making this recursive determination is difficult. For convenience, and to reduce the chance of error, the <xref:System.Reflection.MethodBase.ContainsGenericParameters> property provides a standard way to distinguish between closed constructed methods, which can be invoked, and open constructed methods, which cannot. If the <xref:System.Reflection.MethodBase.ContainsGenericParameters> property returns `true`, the method cannot be invoked.
 
  The <xref:System.Reflection.MethodBase.ContainsGenericParameters> property searches recursively for type parameters. For example, it returns `true` for any method in an open type `A<T>` (`A(Of T)` in Visual Basic), even though the method itself is not generic. Contrast this with the behavior of the <xref:System.Reflection.MethodBase.IsGenericMethod> property, which returns `false` for such a method.
 
@@ -469,7 +471,8 @@ The following code example displays the attributes of the user-defined method My
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the currently executing method is defined on a generic type, the <xref:System.Reflection.MethodInfo> that is returned by <xref:System.Reflection.MethodBase.GetCurrentMethod*> is obtained from the generic type definition (that is, <xref:System.Reflection.MethodBase.ContainsGenericParameters*?displayProperty=nameWithType> returns `true`). Therefore, it does not reflect the type arguments that were used when the method was called. For example, if a method `M()` is defined on a generic type `C<T>` (`C(Of T)` in Visual Basic), and <xref:System.Reflection.MethodBase.GetCurrentMethod*> is called from `C<string>.M()`, then <xref:System.Reflection.MethodBase.GetCurrentMethod*> returns `C<T>.M()` (`C(Of T).M()` in Visual Basic).
+
+If the currently executing method is defined on a generic type, the <xref:System.Reflection.MethodInfo> that is returned by <xref:System.Reflection.MethodBase.GetCurrentMethod*> is obtained from the generic type definition (that is, <xref:System.Reflection.MethodBase.ContainsGenericParameters*?displayProperty=nameWithType> returns `true`). Therefore, it does not reflect the type arguments that were used when the method was called. For example, if a method `M()` is defined on a generic type `C<T>` (`C(Of T)` in Visual Basic), and <xref:System.Reflection.MethodBase.GetCurrentMethod*> is called from `C<string>.M()`, then <xref:System.Reflection.MethodBase.GetCurrentMethod*> returns `C<T>.M()` (`C(Of T).M()` in Visual Basic).
 
  If the currently executing method is a generic method, <xref:System.Reflection.MethodBase.GetCurrentMethod*> returns the generic method definition. If the generic method is defined on a generic type, the <xref:System.Reflection.MethodInfo> is obtained from the generic type definition.
 
@@ -540,7 +543,8 @@ The following example defines two types. The first is a non-generic class, `Test
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The elements of the returned array are in the order in which they appear in the list of type parameters for the generic method.
+
+The elements of the returned array are in the order in which they appear in the list of type parameters for the generic method.
 
 - If the current method is a closed constructed method (that is, the <xref:System.Reflection.MethodBase.ContainsGenericParameters> property returns `false`), the array returned by the <xref:System.Reflection.MethodBase.GetGenericArguments*> method contains the types that have been assigned to the generic type parameters of the generic method definition.
 
@@ -668,7 +672,8 @@ The following example defines two types. The first is a non-generic class, `Test
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You do not have to override the <xref:System.Reflection.MethodBase.GetMethodBody*> in order to use it. You can call the <xref:System.Reflection.MethodBase.GetMethodBody*> method on <xref:System.Reflection.MethodInfo> and <xref:System.Reflection.ConstructorInfo> objects, because the method is overridden in the runtime versions of these classes. For example, the runtime version of the <xref:System.Reflection.MethodInfo> class derives from the <xref:System.Reflection.MethodInfo> class, which in turn derives from the <xref:System.Reflection.MethodBase> class.
+
+You do not have to override the <xref:System.Reflection.MethodBase.GetMethodBody*> in order to use it. You can call the <xref:System.Reflection.MethodBase.GetMethodBody*> method on <xref:System.Reflection.MethodInfo> and <xref:System.Reflection.ConstructorInfo> objects, because the method is overridden in the runtime versions of these classes. For example, the runtime version of the <xref:System.Reflection.MethodInfo> class derives from the <xref:System.Reflection.MethodInfo> class, which in turn derives from the <xref:System.Reflection.MethodBase> class.
 
 ## Examples
 
@@ -758,7 +763,8 @@ The following code example defines a test method named `MethodBodyExample` and d
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Handles are valid only in the application domain in which they were obtained.
+
+Handles are valid only in the application domain in which they were obtained.
 
  ]]></format>
         </remarks>
@@ -831,7 +837,8 @@ The following code example defines a test method named `MethodBodyExample` and d
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Handles are valid only in the application domain in which they were obtained.
+
+Handles are valid only in the application domain in which they were obtained.
 
  A <xref:System.RuntimeMethodHandle> structure for a constructor or method of a generic type can represent different <xref:System.Reflection.MethodBase> objects, depending on the types specified for the type parameters of the generic type. For example, if `class G<T>` (`class G(Of T)` in Visual Basic) has a method that returns type `T`, the <xref:System.Reflection.MethodBase> object for that method in a constructed class such as `G<int>` is different from the <xref:System.Reflection.MethodBase> object for that method in the generic type definition.
 
@@ -1086,7 +1093,8 @@ The following example uses the <xref:System.Reflection.MethodBase.GetParameters*
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This is a convenience method that calls the <xref:System.Reflection.MethodBase.Invoke(System.Object,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object[],System.Globalization.CultureInfo)> method overload, passing <xref:System.Reflection.BindingFlags.Default> for `invokeAttr` and `null` for `binder` and `culture`.
+
+This is a convenience method that calls the <xref:System.Reflection.MethodBase.Invoke(System.Object,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object[],System.Globalization.CultureInfo)> method overload, passing <xref:System.Reflection.BindingFlags.Default> for `invokeAttr` and `null` for `binder` and `culture`.
 
  If the invoked method throws an exception, the <xref:System.Exception.GetBaseException*?displayProperty=nameWithType> method returns the originating exception.
 
@@ -1306,7 +1314,8 @@ The following example demonstrates all members of the <xref:System.Reflection.Bi
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- An abstract member is declared on a base class and has no implementation supplied.
+
+An abstract member is declared on a base class and has no implementation supplied.
 
  To get the <xref:System.Reflection.MethodBase>, first get the type. From the type, get the method. From the method, get the `MethodBase`. If the `MethodBase` or constructor is other than public, it is protected and cannot be readily accessed. To access a non-public method, set the <xref:System.Reflection.BindingFlags> mask to `NonPublic` in `GetMethod`.
 
@@ -1376,7 +1385,8 @@ The following example determines whether specified the method is abstract and di
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The actual visibility of a method is limited by the visibility of its type. The <xref:System.Reflection.MethodBase.IsAssembly> property might be `true` for a method, but if it is a method of a private nested type then the method is not visible outside the containing type.
+
+The actual visibility of a method is limited by the visibility of its type. The <xref:System.Reflection.MethodBase.IsAssembly> property might be `true` for a method, but if it is a method of a private nested type then the method is not visible outside the containing type.
 
  The visibility of a method or constructor is exactly described by <xref:System.Reflection.MethodAttributes.Assembly?displayProperty=nameWithType> if the only visibility modifier is `internal` (`Friend` in Visual Basic). This property is `false` for methods that are `protected internal` in C# (`Protected Friend` in Visual Basic); use the <xref:System.Reflection.MethodBase.IsFamilyOrAssembly> property to identify such methods.
 
@@ -1555,7 +1565,8 @@ The following code example defines methods with varying levels of visibility, an
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The visibility of a method or constructor is exactly described by <xref:System.Reflection.MethodAttributes.Family?displayProperty=nameWithType> if the only visibility modifier is `protected`. This property is `false` for methods that are `protected internal` in C# (`Protected Friend` in Visual Basic); use the <xref:System.Reflection.MethodBase.IsFamilyOrAssembly> property to identify such methods.
+
+The visibility of a method or constructor is exactly described by <xref:System.Reflection.MethodAttributes.Family?displayProperty=nameWithType> if the only visibility modifier is `protected`. This property is `false` for methods that are `protected internal` in C# (`Protected Friend` in Visual Basic); use the <xref:System.Reflection.MethodBase.IsFamilyOrAssembly> property to identify such methods.
 
 ## Examples
 
@@ -1625,7 +1636,8 @@ The following code example defines methods with varying levels of visibility, an
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The visibility of a method or constructor is exactly described by <xref:System.Reflection.MethodAttributes.FamANDAssem?displayProperty=nameWithType> if the visibility modifier is `private protected` in C# or `Private Protected` in Visual Basic.
+
+The visibility of a method or constructor is exactly described by <xref:System.Reflection.MethodAttributes.FamANDAssem?displayProperty=nameWithType> if the visibility modifier is `private protected` in C# or `Private Protected` in Visual Basic.
 
 ## Examples
 
@@ -1695,7 +1707,8 @@ The following code example defines methods with varying levels of visibility, an
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If a type member has <xref:System.Reflection.MethodAttributes.FamORAssem?displayProperty=nameWithType> visibility, it can be called from any member in a derived class or any member in the same assembly, but not from any other type.
+
+If a type member has <xref:System.Reflection.MethodAttributes.FamORAssem?displayProperty=nameWithType> visibility, it can be called from any member in a derived class or any member in the same assembly, but not from any other type.
 
  The actual visibility of a method is limited by the visibility of its type. The <xref:System.Reflection.MethodBase.IsFamilyOrAssembly> property might be `true` for a method, but if it is a method of a private nested type then the method is not visible outside the containing type.
 
@@ -1845,7 +1858,8 @@ The following example displays `false` for `IsFinal`, which might lead you to th
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use the <xref:System.Reflection.MethodBase.IsGenericMethod> property to determine whether the current <xref:System.Reflection.MethodBase> object represents a generic method. Use the <xref:System.Reflection.MethodBase.ContainsGenericParameters> property to determine whether the current <xref:System.Reflection.MethodBase> object represents an open constructed method or a closed constructed method.
+
+Use the <xref:System.Reflection.MethodBase.IsGenericMethod> property to determine whether the current <xref:System.Reflection.MethodBase> object represents a generic method. Use the <xref:System.Reflection.MethodBase.ContainsGenericParameters> property to determine whether the current <xref:System.Reflection.MethodBase> object represents an open constructed method or a closed constructed method.
 
 > [!NOTE]
 > Generics are not supported by default; this property returns `false` if not overridden in a derived class. Generic constructors are not supported in the .NET Framework version 2.0, so this property returns `false` if the current instance is of type <xref:System.Reflection.ConstructorInfo>.
@@ -1916,7 +1930,8 @@ The following table summarizes the invariant conditions for terms specific to ge
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the current <xref:System.Reflection.MethodBase> represents a generic method definition, then:
+
+If the current <xref:System.Reflection.MethodBase> represents a generic method definition, then:
 
 - The <xref:System.Reflection.MethodBase.IsGenericMethodDefinition> property is `true`.
 
@@ -1991,7 +2006,8 @@ The following table summarizes the invariant conditions for terms specific to ge
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When a member in a derived class is declared with the C# `new` modifier or the Visual Basic `Shadows` modifier, it can hide a member of the same name in the base class. C# hides base class members by signature. That is, if the base class member has multiple overloads, the only one that is hidden is the one that has the identical signature. By contrast, Visual Basic hides all the base class overloads. Thus, <xref:System.Reflection.MethodBase.IsHideBySig*> returns `false` on a member declared with the Visual Basic `Shadows` modifier, and `true` on a member declared with the C# `new` modifier.
+
+When a member in a derived class is declared with the C# `new` modifier or the Visual Basic `Shadows` modifier, it can hide a member of the same name in the base class. C# hides base class members by signature. That is, if the base class member has multiple overloads, the only one that is hidden is the one that has the identical signature. By contrast, Visual Basic hides all the base class overloads. Thus, <xref:System.Reflection.MethodBase.IsHideBySig*> returns `false` on a member declared with the Visual Basic `Shadows` modifier, and `true` on a member declared with the C# `new` modifier.
 
 > [!WARNING]
 > This property does not determine whether a method has the <xref:System.Reflection.MethodAttributes.NewSlot> attribute. A method that is declared with either the `new` or the `Shadows` modifier will have the <xref:System.Reflection.MethodAttributes.NewSlot> attribute, but only methods declared with `new` (that is, only C# methods) will have the <xref:System.Reflection.MethodBase.IsHideBySig> property set to `true`. To determine whether a method has the <xref:System.Reflection.MethodAttributes.NewSlot> attribute, use code similar to the following: `if ((myMethodInfo.Attributes & MethodAttributes.VtableLayoutMask) == MethodAttributes.NewSlot)` in C# or `If (myMethodInfo.Attributes And MethodAttributes.VtableLayoutMask) = MethodAttributes.NewSlot` in Visual Basic. Note, however, that although all methods declared with `new` or `Shadows` have the <xref:System.Reflection.MethodAttributes.NewSlot> attribute, not all methods that have the <xref:System.Reflection.MethodAttributes.NewSlot> attribute are declared with `new` or `Shadows`.
@@ -2060,7 +2076,8 @@ The following code example contains a base class with an overloaded method, and 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If a type member has `Private` level visibility, it can be called from any member in the same class and no others.
+
+If a type member has `Private` level visibility, it can be called from any member in the same class and no others.
 
  ]]></format>
         </remarks>
@@ -2120,7 +2137,8 @@ The following code example contains a base class with an overloaded method, and 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- To get the <xref:System.Reflection.MethodBase>, first get the type. From the type, get the method. From the method, get the `MethodBase`. If the `MethodBase` or constructor is other than public, it is protected and cannot be readily accessed. To access a non-public method, set the <xref:System.Reflection.BindingFlags> mask to `NonPublic` in `GetMethod`.
+
+To get the <xref:System.Reflection.MethodBase>, first get the type. From the type, get the method. From the method, get the `MethodBase`. If the `MethodBase` or constructor is other than public, it is protected and cannot be readily accessed. To access a non-public method, set the <xref:System.Reflection.BindingFlags> mask to `NonPublic` in `GetMethod`.
 
 ## Examples
 
@@ -2180,7 +2198,8 @@ The following example uses the <xref:System.Reflection.MethodBase.IsPublic> prop
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Reflection.MethodBase.IsSecurityCritical*>, <xref:System.Reflection.MethodBase.IsSecuritySafeCritical*>, and <xref:System.Reflection.MethodBase.IsSecurityTransparent*> properties report the transparency level of the method or constructor at its current trust level, as determined by the common language runtime (CLR). The combinations of these properties are shown in the following table:
+
+The <xref:System.Reflection.MethodBase.IsSecurityCritical*>, <xref:System.Reflection.MethodBase.IsSecuritySafeCritical*>, and <xref:System.Reflection.MethodBase.IsSecurityTransparent*> properties report the transparency level of the method or constructor at its current trust level, as determined by the common language runtime (CLR). The combinations of these properties are shown in the following table:
 
 |Security level|IsSecurityCritical|IsSecuritySafeCritical|IsSecurityTransparent|
 |--------------------|------------------------|----------------------------|---------------------------|
@@ -2248,7 +2267,8 @@ The following example uses the <xref:System.Reflection.MethodBase.IsPublic> prop
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Reflection.MethodBase.IsSecurityCritical*>, <xref:System.Reflection.MethodBase.IsSecuritySafeCritical*>, and <xref:System.Reflection.MethodBase.IsSecurityTransparent*> properties report the transparency level of the method or constructor at its current trust level, as determined by the common language runtime (CLR). The combinations of these properties are shown in the following table:
+
+The <xref:System.Reflection.MethodBase.IsSecurityCritical*>, <xref:System.Reflection.MethodBase.IsSecuritySafeCritical*>, and <xref:System.Reflection.MethodBase.IsSecurityTransparent*> properties report the transparency level of the method or constructor at its current trust level, as determined by the common language runtime (CLR). The combinations of these properties are shown in the following table:
 
 |Security level|IsSecurityCritical|IsSecuritySafeCritical|IsSecurityTransparent|
 |--------------------|------------------------|----------------------------|---------------------------|
@@ -2316,7 +2336,8 @@ The following example uses the <xref:System.Reflection.MethodBase.IsPublic> prop
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If this property returns `true`, the <xref:System.Reflection.MethodBase.IsSecurityCritical*> and <xref:System.Reflection.MethodBase.IsSecuritySafeCritical*> properties return `false`.
+
+If this property returns `true`, the <xref:System.Reflection.MethodBase.IsSecurityCritical*> and <xref:System.Reflection.MethodBase.IsSecuritySafeCritical*> properties return `false`.
 
  The <xref:System.Reflection.MethodBase.IsSecurityCritical*>, <xref:System.Reflection.MethodBase.IsSecuritySafeCritical*>, and <xref:System.Reflection.MethodBase.IsSecurityTransparent*> properties report the transparency level of the method or constructor at its current trust level, as determined by the common language runtime (CLR). Using these properties is much simpler than examining the security annotations of an assembly and its types and members, checking the current trust level, and attempting to duplicate the runtime's rules.
 
@@ -2386,7 +2407,8 @@ The following example uses the <xref:System.Reflection.MethodBase.IsPublic> prop
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Reflection.MethodAttributes.SpecialName> bit is set to flag members that are treated in a special way by some compilers (such as property accessors and operator overloading methods).
+
+The <xref:System.Reflection.MethodAttributes.SpecialName> bit is set to flag members that are treated in a special way by some compilers (such as property accessors and operator overloading methods).
 
 ## Examples
 
@@ -2454,7 +2476,8 @@ This example shows a use of <xref:System.Reflection.MethodBase.IsSpecialName*> t
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A static member cannot implicitly reference instance data in a class.
+
+A static member cannot implicitly reference instance data in a class.
 
  ]]></format>
         </remarks>
@@ -2515,7 +2538,8 @@ This example shows a use of <xref:System.Reflection.MethodBase.IsSpecialName*> t
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A virtual member may reference instance data in a class and must be referenced through an instance of the class.
+
+A virtual member may reference instance data in a class and must be referenced through an instance of the class.
 
  To determine if a method is overridable, it is not sufficient to check that `IsVirtual` is `true`. For a method to be overridable, `IsVirtual` must be `true` and <xref:System.Reflection.MethodBase.IsFinal*> must be `false`. For example, a method might be non-virtual, but it implements an interface method. The common language runtime requires that all methods that implement interface members must be marked as `virtual`; therefore, the compiler marks the method `virtual final`. So there are cases where a method is marked as `virtual` but is still not overridable.
 
@@ -2596,7 +2620,8 @@ The following example displays `false` for `IsFinal`, which might lead you to th
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The handles are valid only in the application domain in which they were obtained.
+
+The handles are valid only in the application domain in which they were obtained.
 
  ]]></format>
         </remarks>
@@ -2652,7 +2677,8 @@ The following example displays `false` for `IsFinal`, which might lead you to th
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- See the <xref:System.Reflection.MethodBase.GetMethodImplementationFlags*> method for more information.
+
+See the <xref:System.Reflection.MethodBase.GetMethodImplementationFlags*> method for more information.
 
  ]]></format>
         </remarks>
@@ -2807,7 +2833,8 @@ The following example displays `false` for `IsFinal`, which might lead you to th
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is for access to managed classes from unmanaged code, and should not be called from managed code. For more information, see [IDispatch::GetIDsOfNames](/windows/win32/api/oaidl/nf-oaidl-idispatch-getidsofnames).
+
+This method is for access to managed classes from unmanaged code, and should not be called from managed code. For more information, see [IDispatch::GetIDsOfNames](/windows/win32/api/oaidl/nf-oaidl-idispatch-getidsofnames).
 
  ]]></format>
         </remarks>
@@ -2850,7 +2877,8 @@ The following example displays `false` for `IsFinal`, which might lead you to th
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This member is an explicit interface member implementation. It can be used only when the <xref:System.Reflection.MethodBase> instance is cast to an <xref:System.Runtime.InteropServices._MethodBase> interface.
+
+This member is an explicit interface member implementation. It can be used only when the <xref:System.Reflection.MethodBase> instance is cast to an <xref:System.Runtime.InteropServices._MethodBase> interface.
 
  ]]></format>
         </remarks>
@@ -2899,7 +2927,8 @@ The following example displays `false` for `IsFinal`, which might lead you to th
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is for access to managed classes from unmanaged code, and should not be called from managed code. For more information, see [IDispatch::GetTypeInfo](/windows/win32/api/oaidl/nf-oaidl-idispatch-gettypeinfo).
+
+This method is for access to managed classes from unmanaged code, and should not be called from managed code. For more information, see [IDispatch::GetTypeInfo](/windows/win32/api/oaidl/nf-oaidl-idispatch-gettypeinfo).
 
  ]]></format>
         </remarks>
@@ -2945,7 +2974,8 @@ The following example displays `false` for `IsFinal`, which might lead you to th
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is for access to managed classes from unmanaged code, and should not be called from managed code. For more information, see [IDispatch::GetTypeInfoCount](/windows/win32/api/oaidl/nf-oaidl-idispatch-gettypeinfocount).
+
+This method is for access to managed classes from unmanaged code, and should not be called from managed code. For more information, see [IDispatch::GetTypeInfoCount](/windows/win32/api/oaidl/nf-oaidl-idispatch-gettypeinfocount).
 
  ]]></format>
         </remarks>
@@ -3005,7 +3035,8 @@ The following example displays `false` for `IsFinal`, which might lead you to th
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is for access to managed classes from unmanaged code, and should not be called from managed code. For more information, see [IDispatch::Invoke](/windows/win32/api/oaidl/nf-oaidl-idispatch-invoke).
+
+This method is for access to managed classes from unmanaged code, and should not be called from managed code. For more information, see [IDispatch::Invoke](/windows/win32/api/oaidl/nf-oaidl-idispatch-invoke).
 
  ]]></format>
         </remarks>
@@ -3047,7 +3078,8 @@ The following example displays `false` for `IsFinal`, which might lead you to th
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This member is an explicit interface member implementation. It can be used only when the <xref:System.Reflection.MethodBase> instance is cast to an <xref:System.Runtime.InteropServices._MethodBase> interface.
+
+This member is an explicit interface member implementation. It can be used only when the <xref:System.Reflection.MethodBase> instance is cast to an <xref:System.Runtime.InteropServices._MethodBase> interface.
 
  ]]></format>
         </remarks>
@@ -3088,7 +3120,8 @@ The following example displays `false` for `IsFinal`, which might lead you to th
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This member is an explicit interface member implementation. It can be used only when the <xref:System.Reflection.MethodBase> instance is cast to an <xref:System.Runtime.InteropServices._MethodBase> interface.
+
+This member is an explicit interface member implementation. It can be used only when the <xref:System.Reflection.MethodBase> instance is cast to an <xref:System.Runtime.InteropServices._MethodBase> interface.
 
  ]]></format>
         </remarks>
@@ -3129,7 +3162,8 @@ The following example displays `false` for `IsFinal`, which might lead you to th
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This member is an explicit interface member implementation. It can be used only when the <xref:System.Reflection.MethodBase> instance is cast to an <xref:System.Runtime.InteropServices._MethodBase> interface.
+
+This member is an explicit interface member implementation. It can be used only when the <xref:System.Reflection.MethodBase> instance is cast to an <xref:System.Runtime.InteropServices._MethodBase> interface.
 
  ]]></format>
         </remarks>
@@ -3170,7 +3204,8 @@ The following example displays `false` for `IsFinal`, which might lead you to th
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This member is an explicit interface member implementation. It can be used only when the <xref:System.Reflection.MethodBase> instance is cast to an <xref:System.Runtime.InteropServices._MethodBase> interface.
+
+This member is an explicit interface member implementation. It can be used only when the <xref:System.Reflection.MethodBase> instance is cast to an <xref:System.Runtime.InteropServices._MethodBase> interface.
 
  ]]></format>
         </remarks>
@@ -3211,7 +3246,8 @@ The following example displays `false` for `IsFinal`, which might lead you to th
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This member is an explicit interface member implementation. It can be used only when the <xref:System.Reflection.MethodBase> instance is cast to an <xref:System.Runtime.InteropServices._MethodBase> interface.
+
+This member is an explicit interface member implementation. It can be used only when the <xref:System.Reflection.MethodBase> instance is cast to an <xref:System.Runtime.InteropServices._MethodBase> interface.
 
  ]]></format>
         </remarks>
@@ -3252,7 +3288,8 @@ The following example displays `false` for `IsFinal`, which might lead you to th
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This member is an explicit interface member implementation. It can be used only when the <xref:System.Reflection.MethodBase> instance is cast to an <xref:System.Runtime.InteropServices._MethodBase> interface.
+
+This member is an explicit interface member implementation. It can be used only when the <xref:System.Reflection.MethodBase> instance is cast to an <xref:System.Runtime.InteropServices._MethodBase> interface.
 
  ]]></format>
         </remarks>
@@ -3293,7 +3330,8 @@ The following example displays `false` for `IsFinal`, which might lead you to th
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This member is an explicit interface member implementation. It can be used only when the <xref:System.Reflection.MethodBase> instance is cast to an <xref:System.Runtime.InteropServices._MethodBase> interface.
+
+This member is an explicit interface member implementation. It can be used only when the <xref:System.Reflection.MethodBase> instance is cast to an <xref:System.Runtime.InteropServices._MethodBase> interface.
 
  ]]></format>
         </remarks>
@@ -3334,7 +3372,8 @@ The following example displays `false` for `IsFinal`, which might lead you to th
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This member is an explicit interface member implementation. It can be used only when the <xref:System.Reflection.MethodBase> instance is cast to an <xref:System.Runtime.InteropServices._MethodBase> interface.
+
+This member is an explicit interface member implementation. It can be used only when the <xref:System.Reflection.MethodBase> instance is cast to an <xref:System.Runtime.InteropServices._MethodBase> interface.
 
  ]]></format>
         </remarks>
@@ -3375,7 +3414,8 @@ The following example displays `false` for `IsFinal`, which might lead you to th
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This member is an explicit interface member implementation. It can be used only when the <xref:System.Reflection.MethodBase> instance is cast to an <xref:System.Runtime.InteropServices._MethodBase> interface.
+
+This member is an explicit interface member implementation. It can be used only when the <xref:System.Reflection.MethodBase> instance is cast to an <xref:System.Runtime.InteropServices._MethodBase> interface.
 
  ]]></format>
         </remarks>
@@ -3416,7 +3456,8 @@ The following example displays `false` for `IsFinal`, which might lead you to th
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This member is an explicit interface member implementation. It can be used only when the <xref:System.Reflection.MethodBase> instance is cast to an <xref:System.Runtime.InteropServices._MethodBase> interface.
+
+This member is an explicit interface member implementation. It can be used only when the <xref:System.Reflection.MethodBase> instance is cast to an <xref:System.Runtime.InteropServices._MethodBase> interface.
 
  ]]></format>
         </remarks>
@@ -3457,7 +3498,8 @@ The following example displays `false` for `IsFinal`, which might lead you to th
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This member is an explicit interface member implementation. It can be used only when the <xref:System.Reflection.MethodBase> instance is cast to an <xref:System.Runtime.InteropServices._MethodBase> interface.
+
+This member is an explicit interface member implementation. It can be used only when the <xref:System.Reflection.MethodBase> instance is cast to an <xref:System.Runtime.InteropServices._MethodBase> interface.
 
  ]]></format>
         </remarks>
@@ -3498,7 +3540,8 @@ The following example displays `false` for `IsFinal`, which might lead you to th
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This member is an explicit interface member implementation. It can be used only when the <xref:System.Reflection.MethodBase> instance is cast to an <xref:System.Runtime.InteropServices._MethodBase> interface.
+
+This member is an explicit interface member implementation. It can be used only when the <xref:System.Reflection.MethodBase> instance is cast to an <xref:System.Runtime.InteropServices._MethodBase> interface.
 
  ]]></format>
         </remarks>
@@ -3539,7 +3582,8 @@ The following example displays `false` for `IsFinal`, which might lead you to th
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This member is an explicit interface member implementation. It can be used only when the <xref:System.Reflection.MethodBase> instance is cast to an <xref:System.Runtime.InteropServices._MethodBase> interface.
+
+This member is an explicit interface member implementation. It can be used only when the <xref:System.Reflection.MethodBase> instance is cast to an <xref:System.Runtime.InteropServices._MethodBase> interface.
 
  ]]></format>
         </remarks>

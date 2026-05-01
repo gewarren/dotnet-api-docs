@@ -62,7 +62,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A <xref:System.Security.AccessControl.RegistrySecurity> object specifies access rights for a registry key, and also specifies how access attempts are audited. Access rights to the registry key are expressed as rules, with each access rule represented by a <xref:System.Security.AccessControl.RegistryAccessRule> object. Each auditing rule is represented by a <xref:System.Security.AccessControl.RegistryAuditRule> object.
+
+A <xref:System.Security.AccessControl.RegistrySecurity> object specifies access rights for a registry key, and also specifies how access attempts are audited. Access rights to the registry key are expressed as rules, with each access rule represented by a <xref:System.Security.AccessControl.RegistryAccessRule> object. Each auditing rule is represented by a <xref:System.Security.AccessControl.RegistryAuditRule> object.
 
  This mirrors the underlying Windows security system, in which each securable object has at most one discretionary access control list (DACL) that controls access to the secured object, and at most one system access control list (SACL) that specifies which access attempts are audited. The DACL and SACL are ordered lists of access control entries (ACE) that specify access and auditing for users and groups. A <xref:System.Security.AccessControl.RegistryAccessRule> or <xref:System.Security.AccessControl.RegistryAuditRule> object might represent more than one ACE.
 
@@ -165,7 +166,8 @@ This section contains two code examples. The first example shows how compatible 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A new <xref:System.Security.AccessControl.RegistrySecurity> object always starts with an empty discretionary access list (DACL), which denies all access for all users.
+
+A new <xref:System.Security.AccessControl.RegistrySecurity> object always starts with an empty discretionary access list (DACL), which denies all access for all users.
 
  ]]></format>
         </remarks>
@@ -211,7 +213,8 @@ This section contains two code examples. The first example shows how compatible 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Classes that derive from the <xref:System.Security.AccessControl.ObjectSecurity> class override the <xref:System.Security.AccessControl.ObjectSecurity.AccessRightType> property and return the type they use to represent access rights. When you work with arrays or collections that contain multiple types of security objects, use this property to determine the correct enumeration type to use with each security object.
+
+Classes that derive from the <xref:System.Security.AccessControl.ObjectSecurity> class override the <xref:System.Security.AccessControl.ObjectSecurity.AccessRightType> property and return the type they use to represent access rights. When you work with arrays or collections that contain multiple types of security objects, use this property to determine the correct enumeration type to use with each security object.
 
  ]]></format>
         </remarks>
@@ -271,7 +274,8 @@ This section contains two code examples. The first example shows how compatible 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The recommended way to create access control rules is to use the constructors of the <xref:System.Security.AccessControl.RegistryAccessRule> class.
+
+The recommended way to create access control rules is to use the constructors of the <xref:System.Security.AccessControl.RegistryAccessRule> class.
 
 > [!NOTE]
 > Although you can specify the <xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit?displayProperty=nameWithType> flag, there is no point in doing so. For the purposes of access control, the name/value pairs in a subkey are not separate objects. The access rights to name/value pairs are controlled by the rights of the subkey. Furthermore, since all subkeys are containers (that is, they can contain other subkeys), they are not affected by the <xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit> flag. Finally, specifying the <xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit> flag needlessly complicates the maintenance of rules, because it interferes with the normal combination of compatible rules.
@@ -330,7 +334,8 @@ This section contains two code examples. The first example shows how compatible 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Classes that derive from the <xref:System.Security.AccessControl.ObjectSecurity> class override the <xref:System.Security.AccessControl.ObjectSecurity.AccessRuleType> property and return the type they use to represent access rules. When you work with arrays or collections that contain multiple types of security objects, use this property to determine the correct access rule type to use with each security object.
+
+Classes that derive from the <xref:System.Security.AccessControl.ObjectSecurity> class override the <xref:System.Security.AccessControl.ObjectSecurity.AccessRuleType> property and return the type they use to represent access rules. When you work with arrays or collections that contain multiple types of security objects, use this property to determine the correct access rule type to use with each security object.
 
  ]]></format>
         </remarks>
@@ -379,7 +384,8 @@ This section contains two code examples. The first example shows how compatible 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Security.AccessControl.RegistrySecurity.AddAccessRule*> method searches for rules with the same user or group and the same <xref:System.Security.AccessControl.AccessControlType> as `rule`. If none are found, `rule` is added. If a matching rule is found, the rights in `rule` are merged with the existing rule.
+
+The <xref:System.Security.AccessControl.RegistrySecurity.AddAccessRule*> method searches for rules with the same user or group and the same <xref:System.Security.AccessControl.AccessControlType> as `rule`. If none are found, `rule` is added. If a matching rule is found, the rights in `rule` are merged with the existing rule.
 
  Rules cannot be merged if they have different inheritance flags. For example, if a user is allowed read access with no inheritance flags, and <xref:System.Security.AccessControl.RegistrySecurity.AddAccessRule*> is used to add a rule giving the user write access with inheritance for subkeys (<xref:System.Security.AccessControl.InheritanceFlags.ContainerInherit?displayProperty=nameWithType>), the two rules cannot be merged.
 
@@ -448,7 +454,8 @@ The following code example creates registry access rules and adds them to a <xre
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Security.AccessControl.RegistrySecurity.AddAuditRule*> method searches for rules with the same user or group as `rule`. If none are found, `rule` is added. If a matching rule is found, the flags in `rule` are merged into the existing rule.
+
+The <xref:System.Security.AccessControl.RegistrySecurity.AddAuditRule*> method searches for rules with the same user or group as `rule`. If none are found, `rule` is added. If a matching rule is found, the flags in `rule` are merged into the existing rule.
 
  Rules cannot be merged if they have different inheritance flags. For example, if failed attempts to write to a key are audited for a particular user, with no inheritance flags, and <xref:System.Security.AccessControl.RegistrySecurity.AddAuditRule*> is used to add a rule specifying that failed attempts to change permissions are to be audited for the same user, but with inheritance for subkeys (<xref:System.Security.AccessControl.InheritanceFlags.ContainerInherit?displayProperty=nameWithType>), the two rules cannot be merged.
 
@@ -510,7 +517,8 @@ The following code example creates registry access rules and adds them to a <xre
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The recommended way to create audit rules is to use the constructors of the <xref:System.Security.AccessControl.RegistryAuditRule> class.
+
+The recommended way to create audit rules is to use the constructors of the <xref:System.Security.AccessControl.RegistryAuditRule> class.
 
 > [!NOTE]
 > Although you can specify the <xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit?displayProperty=nameWithType> flag, there is no point in doing so. For the purposes of audit control, the name/value pairs in a subkey are not separate objects. The audit rights to name/value pairs are controlled by the rights of the subkey. Furthermore, since all subkeys are containers (that is, they can contain other subkeys), they are not affected by the <xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit> flag. Finally, specifying the <xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit> flag needlessly complicates the maintenance of rules, because it interferes with the normal combination of compatible rules.
@@ -569,7 +577,8 @@ The following code example creates registry access rules and adds them to a <xre
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Classes that derive from the <xref:System.Security.AccessControl.ObjectSecurity> class override the <xref:System.Security.AccessControl.ObjectSecurity.AuditRuleType> property and return the type they use to represent audit rights. When you work with arrays or collections that contain multiple types of security objects, use this property to determine the correct audit rule type to use with each security object.
+
+Classes that derive from the <xref:System.Security.AccessControl.ObjectSecurity> class override the <xref:System.Security.AccessControl.ObjectSecurity.AuditRuleType> property and return the type they use to represent audit rights. When you work with arrays or collections that contain multiple types of security objects, use this property to determine the correct audit rule type to use with each security object.
 
  ]]></format>
         </remarks>
@@ -620,7 +629,8 @@ The following code example creates registry access rules and adds them to a <xre
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The current <xref:System.Security.AccessControl.RegistrySecurity> is searched for a rule that has the same user and the same <xref:System.Security.AccessControl.AccessControlType> value as `rule`. If no such rule is found, no action is taken, and the method returns `false`. If matching rules are found, their inheritance and compatibility flags are checked for compatibility with the flags specified in `rule`. If no compatible rule is found, no action is taken, and the method returns `false`. If a rule with compatible flags is found, the rights specified in `rule` are removed from the compatible rule, and the method returns `true`. If `rule` specifies rights not contained in the compatible rule, no action is taken with respect to those rights. If all rights are removed from the compatible rule, the entire rule is removed from the current <xref:System.Security.AccessControl.RegistrySecurity> object.
+
+The current <xref:System.Security.AccessControl.RegistrySecurity> is searched for a rule that has the same user and the same <xref:System.Security.AccessControl.AccessControlType> value as `rule`. If no such rule is found, no action is taken, and the method returns `false`. If matching rules are found, their inheritance and compatibility flags are checked for compatibility with the flags specified in `rule`. If no compatible rule is found, no action is taken, and the method returns `false`. If a rule with compatible flags is found, the rights specified in `rule` are removed from the compatible rule, and the method returns `true`. If `rule` specifies rights not contained in the compatible rule, no action is taken with respect to those rights. If all rights are removed from the compatible rule, the entire rule is removed from the current <xref:System.Security.AccessControl.RegistrySecurity> object.
 
 ## Examples
 
@@ -685,7 +695,8 @@ The following code example shows how the <xref:System.Security.AccessControl.Reg
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The current <xref:System.Security.AccessControl.RegistrySecurity> is searched for rules that have the same user and the same <xref:System.Security.AccessControl.AccessControlType> value as `rule`. Any rights, inheritance flags, or propagation flags specified by `rule` are ignored when performing this search. If no matching rules are found, no action is taken.
+
+The current <xref:System.Security.AccessControl.RegistrySecurity> is searched for rules that have the same user and the same <xref:System.Security.AccessControl.AccessControlType> value as `rule`. Any rights, inheritance flags, or propagation flags specified by `rule` are ignored when performing this search. If no matching rules are found, no action is taken.
 
  For example, if a user has multiple rules that allow various rights with different inheritance and propagation flags, you can remove all those rules by creating a <xref:System.Security.AccessControl.RegistryAccessRule> object that specifies the user and <xref:System.Security.AccessControl.AccessControlType.Allow?displayProperty=nameWithType>, with any arbitrary rights and flags, and passing that rule to the <xref:System.Security.AccessControl.RegistrySecurity.RemoveAccessRuleAll*> method.
 
@@ -750,7 +761,8 @@ The following code example shows that the <xref:System.Security.AccessControl.Re
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The rule is removed only if it exactly matches `rule` in all details, including flags. Other rules with the same user and <xref:System.Security.AccessControl.AccessControlType> are not affected.
+
+The rule is removed only if it exactly matches `rule` in all details, including flags. Other rules with the same user and <xref:System.Security.AccessControl.AccessControlType> are not affected.
 
 > [!IMPORTANT]
 > A rule represents one or more underlying access control entries (ACE), and these entries are split or combined as necessary when you modify the access security rules for a user. Thus, a rule might no longer exist in the specific form it had when it was added, and in that case the <xref:System.Security.AccessControl.RegistrySecurity.RemoveAccessRuleSpecific*> method cannot remove it.
@@ -818,7 +830,8 @@ The following code example shows that the <xref:System.Security.AccessControl.Re
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The current <xref:System.Security.AccessControl.RegistrySecurity> is searched for an audit rule that has the same user as `rule`. If no such rule is found, no action is taken, and the method returns `false`. If matching rules are found, their inheritance and compatibility flags are checked for compatibility with the flags specified in `rule`. If no compatible rule is found, no action is taken, and the method returns `false`. If a rule with compatible flags is found, the rights specified in `rule` are removed from the compatible rule, and the method returns `true`. If `rule` specifies rights not contained in the compatible rule, no action is taken with respect to those rights. If all rights are removed from the compatible rule, the entire rule is removed from the current <xref:System.Security.AccessControl.RegistrySecurity> object.
+
+The current <xref:System.Security.AccessControl.RegistrySecurity> is searched for an audit rule that has the same user as `rule`. If no such rule is found, no action is taken, and the method returns `false`. If matching rules are found, their inheritance and compatibility flags are checked for compatibility with the flags specified in `rule`. If no compatible rule is found, no action is taken, and the method returns `false`. If a rule with compatible flags is found, the rights specified in `rule` are removed from the compatible rule, and the method returns `true`. If `rule` specifies rights not contained in the compatible rule, no action is taken with respect to those rights. If all rights are removed from the compatible rule, the entire rule is removed from the current <xref:System.Security.AccessControl.RegistrySecurity> object.
 
  ]]></format>
         </remarks>
@@ -869,7 +882,8 @@ The following code example shows that the <xref:System.Security.AccessControl.Re
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The current <xref:System.Security.AccessControl.RegistrySecurity> is searched for audit rules that have the same user as `rule`. Any rights, inheritance flags, or propagation flags specified by `rule` are ignored when performing this search. If no matching rules are found, no action is taken.
+
+The current <xref:System.Security.AccessControl.RegistrySecurity> is searched for audit rules that have the same user as `rule`. Any rights, inheritance flags, or propagation flags specified by `rule` are ignored when performing this search. If no matching rules are found, no action is taken.
 
  ]]></format>
         </remarks>
@@ -920,7 +934,8 @@ The following code example shows that the <xref:System.Security.AccessControl.Re
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The rule is removed only if it exactly matches `rule` in all details, including flags. Other audit rules for the same user are not affected.
+
+The rule is removed only if it exactly matches `rule` in all details, including flags. Other audit rules for the same user are not affected.
 
 > [!IMPORTANT]
 > A rule represents one or more underlying access control entries (ACE), and these entries are split or combined as necessary when you modify the audit security rules for a user. Thus, a rule might no longer exist in the specific form it had when it was added, and in that case the <xref:System.Security.AccessControl.RegistrySecurity.RemoveAuditRuleSpecific*> method cannot remove it.
@@ -974,7 +989,8 @@ The following code example shows that the <xref:System.Security.AccessControl.Re
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If there are no access rules whose user matches the specified rule, `rule` is added.
+
+If there are no access rules whose user matches the specified rule, `rule` is added.
 
 ## Examples
 
@@ -1035,7 +1051,8 @@ The following code example shows how the <xref:System.Security.AccessControl.Reg
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the specified rule has <xref:System.Security.AccessControl.AccessControlType.Allow>, the effect of this method is to remove all <xref:System.Security.AccessControl.AccessControlType.Allow> rules for the specified user, replacing them with the specified rule. If the specified rule has <xref:System.Security.AccessControl.AccessControlType.Deny>, all <xref:System.Security.AccessControl.AccessControlType.Deny> rules for the specified user are replaced with the specified rule.
+
+If the specified rule has <xref:System.Security.AccessControl.AccessControlType.Allow>, the effect of this method is to remove all <xref:System.Security.AccessControl.AccessControlType.Allow> rules for the specified user, replacing them with the specified rule. If the specified rule has <xref:System.Security.AccessControl.AccessControlType.Deny>, all <xref:System.Security.AccessControl.AccessControlType.Deny> rules for the specified user are replaced with the specified rule.
 
  If there are no rules whose user and <xref:System.Security.AccessControl.AccessControlType> match the specified rule, `rule` is added.
 
@@ -1100,7 +1117,8 @@ The following code example shows that the <xref:System.Security.AccessControl.Re
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If there are no audit rules whose user matches the specified rule, `rule` is added.
+
+If there are no audit rules whose user matches the specified rule, `rule` is added.
 
  ]]></format>
         </remarks>

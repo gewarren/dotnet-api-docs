@@ -32,7 +32,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Routing.Route> class enables you to specify how routing is processed in an ASP.NET application. You create a <xref:System.Web.Routing.Route> object for each URL pattern that you want to map to a class that can handle requests that correspond to that pattern. You then add the route to the <xref:System.Web.Routing.RouteTable.Routes*> collection. When the application receives a request, ASP.NET routing iterates through the routes in the <xref:System.Web.Routing.RouteTable.Routes*> collection to find the first route that matches the pattern of the URL.
+
+The <xref:System.Web.Routing.Route> class enables you to specify how routing is processed in an ASP.NET application. You create a <xref:System.Web.Routing.Route> object for each URL pattern that you want to map to a class that can handle requests that correspond to that pattern. You then add the route to the <xref:System.Web.Routing.RouteTable.Routes*> collection. When the application receives a request, ASP.NET routing iterates through the routes in the <xref:System.Web.Routing.RouteTable.Routes*> collection to find the first route that matches the pattern of the URL.
 
  Set the <xref:System.Web.Routing.Route.Url> property to a URL pattern. The URL pattern consists of segments that come after the application name in an HTTP request. For example, in the URL `http://www.contoso.com/products/show/beverages`, the pattern applies to `products/show/beverages`. A pattern with three segments, such as `{controller}/{action}/{id}`, matches the URL `http://www.contoso.com/products/show/beverages`. Each segment is delimited by the `/` character. When a segment is enclosed in braces (`{` and `}`), the segment is referred to a URL parameter. ASP.NET routing retrieves the value from the request and assigns it to the URL parameter. In the previous example, the URL parameter `action` is assigned the value `show`. If the segment is not enclosed in braces, the value is treated as a literal value.
 
@@ -236,7 +237,8 @@ The following example shows how to create a <xref:System.Web.Routing.Route> obje
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Routing.Route.Constraints> property enables you to limit acceptable values for a URL parameter that is processed by a route. You assign a <xref:System.Web.Routing.RouteValueDictionary> object to the <xref:System.Web.Routing.Route.Constraints> property. Each element in the <xref:System.Web.Routing.RouteValueDictionary> object contains the name of a parameter and one of the following:
+
+The <xref:System.Web.Routing.Route.Constraints> property enables you to limit acceptable values for a URL parameter that is processed by a route. You assign a <xref:System.Web.Routing.RouteValueDictionary> object to the <xref:System.Web.Routing.Route.Constraints> property. Each element in the <xref:System.Web.Routing.RouteValueDictionary> object contains the name of a parameter and one of the following:
 
 - A string that defines a regular expression. The regular expression is case-insensitive.
 
@@ -297,7 +299,8 @@ The following example shows how to create a <xref:System.Web.Routing.Route> obje
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You use the <xref:System.Web.Routing.RouteData.DataTokens> property to retrieve or assign values associated with the route that are not used to determine whether a route matches a URL pattern. These values are passed to the route handler, where they can be used for processing the request.
+
+You use the <xref:System.Web.Routing.RouteData.DataTokens> property to retrieve or assign values associated with the route that are not used to determine whether a route matches a URL pattern. These values are passed to the route handler, where they can be used for processing the request.
 
 ## Examples
 
@@ -347,7 +350,8 @@ The following example shows how to create a <xref:System.Web.Routing.Route> obje
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Routing.Route.Defaults> property enables you to set the value for a URL parameter if the URL does not contain a segment for that parameter. You assign a <xref:System.Web.Routing.RouteValueDictionary> object to the <xref:System.Web.Routing.Route.Defaults> property. Each element in the <xref:System.Web.Routing.RouteValueDictionary> object contains the name of a parameter and the value to use if the parameter is missing.
+
+The <xref:System.Web.Routing.Route.Defaults> property enables you to set the value for a URL parameter if the URL does not contain a segment for that parameter. You assign a <xref:System.Web.Routing.RouteValueDictionary> object to the <xref:System.Web.Routing.Route.Defaults> property. Each element in the <xref:System.Web.Routing.RouteValueDictionary> object contains the name of a parameter and the value to use if the parameter is missing.
 
  You can include a default value for a parameter that is not defined in the <xref:System.Web.Routing.Route.Url> property as a segment. When ASP.NET routing handles a request, this default value is always passed to the route handler. When you construct a URL and you include a value for a default parameter that is not defined as a segment, the route will only be considered a match if the value that you provided matches the default value for the route.
 
@@ -533,7 +537,8 @@ The following example shows how to create a <xref:System.Web.Routing.Route> obje
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When you assign a value to the <xref:System.Web.Routing.Route.Url> property, the `/` character is interpreted as a delimiter when the URL is parsed. Use braces (`{}`) to define a variable that is referred to as a *URL parameter*. The value from the matching segment in the URL is assigned to the URL parameter. Any values in the <xref:System.Web.Routing.Route.Url> property that are not enclosed in braces are treated as literal constants.
+
+When you assign a value to the <xref:System.Web.Routing.Route.Url> property, the `/` character is interpreted as a delimiter when the URL is parsed. Use braces (`{}`) to define a variable that is referred to as a *URL parameter*. The value from the matching segment in the URL is assigned to the URL parameter. Any values in the <xref:System.Web.Routing.Route.Url> property that are not enclosed in braces are treated as literal constants.
 
  The `?` character is not allowed in the <xref:System.Web.Routing.Route.Url> property. Each URL segment must be separated by either a delimiter or literal constant. You can use `{{` or `}}` as escape characters for a brace character.
 

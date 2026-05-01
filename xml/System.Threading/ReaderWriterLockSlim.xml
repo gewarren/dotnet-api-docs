@@ -112,7 +112,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A <xref:System.Threading.ReaderWriterLockSlim> that is initialized with this constructor does not allow recursion. That is, the <xref:System.Threading.ReaderWriterLockSlim.RecursionPolicy> property returns <xref:System.Threading.LockRecursionPolicy.NoRecursion?displayProperty=nameWithType>.
+
+A <xref:System.Threading.ReaderWriterLockSlim> that is initialized with this constructor does not allow recursion. That is, the <xref:System.Threading.ReaderWriterLockSlim.RecursionPolicy> property returns <xref:System.Threading.LockRecursionPolicy.NoRecursion?displayProperty=nameWithType>.
 
  For more information about recursion policy and its effects, see the <xref:System.Threading.LockRecursionPolicy> enumeration and the <xref:System.Threading.ReaderWriterLockSlim> class.
 
@@ -189,7 +190,8 @@ The following example shows a simple synchronized cache that holds strings with 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Recursion policy determines the restrictions on threads that enter the lock more than once. For example, if a lock was created with <xref:System.Threading.LockRecursionPolicy.NoRecursion?displayProperty=nameWithType> and a thread has entered the lock in read mode, <xref:System.Threading.LockRecursionException> is thrown if the thread tries to reenter the lock in read mode. Similarly, if a thread has entered the lock in write mode, <xref:System.Threading.LockRecursionException> is thrown if the thread tries to reenter the lock in any mode.
+
+Recursion policy determines the restrictions on threads that enter the lock more than once. For example, if a lock was created with <xref:System.Threading.LockRecursionPolicy.NoRecursion?displayProperty=nameWithType> and a thread has entered the lock in read mode, <xref:System.Threading.LockRecursionException> is thrown if the thread tries to reenter the lock in read mode. Similarly, if a thread has entered the lock in write mode, <xref:System.Threading.LockRecursionException> is thrown if the thread tries to reenter the lock in any mode.
 
 > [!NOTE]
 > A thread in upgradeable mode can upgrade to write mode or downgrade to read mode regardless of the lock recursion policy setting.
@@ -268,7 +270,8 @@ The following example shows two exception scenarios, one that depends on the <xr
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A thread is counted only once, even if the lock allows recursion and the thread has entered read mode multiple times.
+
+A thread is counted only once, even if the lock allows recursion and the thread has entered read mode multiple times.
 
  Use this property only for debugging, profiling, and logging purposes, and not to control the behavior of an algorithm. The results can change as soon as they have been calculated. Therefore, it is not safe to make decisions based on this property.
 
@@ -340,7 +343,8 @@ The following example shows how to use the <xref:System.Threading.ReaderWriterLo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Call <xref:System.Threading.ReaderWriterLockSlim.Dispose*> when you are finished using the <xref:System.Threading.ReaderWriterLockSlim>. The <xref:System.Threading.ReaderWriterLockSlim.Dispose*> method leaves the <xref:System.Threading.ReaderWriterLockSlim> in an unusable state. After calling <xref:System.Threading.ReaderWriterLockSlim.Dispose*>, you must release all references to the <xref:System.Threading.ReaderWriterLockSlim> so the garbage collector can reclaim the memory that the <xref:System.Threading.ReaderWriterLockSlim> was occupying. For more information, see [Cleaning Up Unmanaged Resources](/dotnet/standard/garbage-collection/unmanaged) and [Implementing a Dispose Method](/dotnet/standard/garbage-collection/implementing-dispose).
+
+Call <xref:System.Threading.ReaderWriterLockSlim.Dispose*> when you are finished using the <xref:System.Threading.ReaderWriterLockSlim>. The <xref:System.Threading.ReaderWriterLockSlim.Dispose*> method leaves the <xref:System.Threading.ReaderWriterLockSlim> in an unusable state. After calling <xref:System.Threading.ReaderWriterLockSlim.Dispose*>, you must release all references to the <xref:System.Threading.ReaderWriterLockSlim> so the garbage collector can reclaim the memory that the <xref:System.Threading.ReaderWriterLockSlim> was occupying. For more information, see [Cleaning Up Unmanaged Resources](/dotnet/standard/garbage-collection/unmanaged) and [Implementing a Dispose Method](/dotnet/standard/garbage-collection/implementing-dispose).
 
 > [!NOTE]
 > Always call <xref:System.Threading.ReaderWriterLockSlim.Dispose*> before you release your last reference to the <xref:System.Threading.ReaderWriterLockSlim> object.
@@ -403,7 +407,8 @@ The following example shows how to use the <xref:System.Threading.ReaderWriterLo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method blocks until the calling thread enters the lock, and therefore might never return. Use the <xref:System.Threading.ReaderWriterLockSlim.TryEnterReadLock*> method to block for a specified interval, and then return if the calling thread has not entered read mode during that interval.
+
+This method blocks until the calling thread enters the lock, and therefore might never return. Use the <xref:System.Threading.ReaderWriterLockSlim.TryEnterReadLock*> method to block for a specified interval, and then return if the calling thread has not entered read mode during that interval.
 
  Multiple threads can enter read mode at the same time.
 
@@ -483,7 +488,8 @@ The following example shows how to use the <xref:System.Threading.ReaderWriterLo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method blocks until the calling thread enters the lock, and therefore might never return. Use the <xref:System.Threading.ReaderWriterLockSlim.TryEnterUpgradeableReadLock*> method to block for a specified interval, and then return if the calling thread has not entered upgradeable mode during that interval.
+
+This method blocks until the calling thread enters the lock, and therefore might never return. Use the <xref:System.Threading.ReaderWriterLockSlim.TryEnterUpgradeableReadLock*> method to block for a specified interval, and then return if the calling thread has not entered upgradeable mode during that interval.
 
  Use upgradeable mode when a thread usually accesses the resource that is protected by the <xref:System.Threading.ReaderWriterLockSlim> in read mode, but may need to enter write mode if certain conditions are met. A thread in upgradeable mode can downgrade to read mode or upgrade to write mode.
 
@@ -569,7 +575,8 @@ The following example shows how to use the <xref:System.Threading.ReaderWriterLo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method blocks until the calling thread enters the lock, and therefore might never return. Use the <xref:System.Threading.ReaderWriterLockSlim.TryEnterWriteLock*> method to block for a specified interval, and then return if the calling thread has not entered write mode during that interval.
+
+This method blocks until the calling thread enters the lock, and therefore might never return. Use the <xref:System.Threading.ReaderWriterLockSlim.TryEnterWriteLock*> method to block for a specified interval, and then return if the calling thread has not entered write mode during that interval.
 
  If other threads have entered the lock in read mode, a thread that calls the <xref:System.Threading.ReaderWriterLockSlim.EnterWriteLock*> method blocks until those threads have exited read mode. When there are threads waiting to enter write mode, additional threads that try to enter read mode or upgradeable mode block until all the threads waiting to enter write mode have either timed out or entered write mode and then exited from it.
 
@@ -645,7 +652,8 @@ The following example shows how to use the <xref:System.Threading.ReaderWriterLo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is not sensitive to recursion order. For example, if a thread enters a lock in upgradeable mode and then enters the lock in read mode, the order in which the thread exits the two modes does not matter. If a lock allows recursion, a thread can enter the lock in write mode and then enter it recursively in read mode; the order in which the thread exits read mode and write mode does not matter.
+
+This method is not sensitive to recursion order. For example, if a thread enters a lock in upgradeable mode and then enters the lock in read mode, the order in which the thread exits the two modes does not matter. If a lock allows recursion, a thread can enter the lock in write mode and then enter it recursively in read mode; the order in which the thread exits read mode and write mode does not matter.
 
  Exiting the lock might signal other waiting threads.
 
@@ -709,7 +717,8 @@ The following example shows how to use a `finally` block to execute the <xref:Sy
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is not sensitive to recursion order. For example, if a thread enters a lock in upgradeable mode and then enters the lock in write mode, the order in which the thread exits the two modes does not matter. If a lock allows recursion, a thread can enter the lock in write mode and then enter it recursively in upgradeable mode; the order in which the thread exits upgradeable mode and write mode does not matter.
+
+This method is not sensitive to recursion order. For example, if a thread enters a lock in upgradeable mode and then enters the lock in write mode, the order in which the thread exits the two modes does not matter. If a lock allows recursion, a thread can enter the lock in write mode and then enter it recursively in upgradeable mode; the order in which the thread exits upgradeable mode and write mode does not matter.
 
  Exiting the lock might signal other waiting threads.
 
@@ -779,7 +788,8 @@ The following example shows how to use a `finally` block to execute the <xref:Sy
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is not sensitive to recursion order. For example, if a thread enters a lock in upgradeable mode and then enters the lock in write mode, the order in which the thread exits the two modes does not matter. If a lock allows recursion, a thread can enter the lock in write mode and then enter it recursively in read mode; the order in which the thread exits read mode and write mode does not matter.
+
+This method is not sensitive to recursion order. For example, if a thread enters a lock in upgradeable mode and then enters the lock in write mode, the order in which the thread exits the two modes does not matter. If a lock allows recursion, a thread can enter the lock in write mode and then enter it recursively in read mode; the order in which the thread exits read mode and write mode does not matter.
 
  Exiting the lock might signal other waiting threads.
 
@@ -844,7 +854,8 @@ The following example shows how to use a `finally` block to execute the <xref:Sy
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This property is intended for use in asserts or for other debugging purposes. Do not use it to control the flow of program execution.
+
+This property is intended for use in asserts or for other debugging purposes. Do not use it to control the flow of program execution.
 
 ## Examples
 
@@ -904,7 +915,8 @@ The following example shows how to use the <xref:System.Threading.ReaderWriterLo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This property is intended for use in asserts or for other debugging purposes. Do not use it to control the flow of program execution.
+
+This property is intended for use in asserts or for other debugging purposes. Do not use it to control the flow of program execution.
 
 ## Examples
 
@@ -964,7 +976,8 @@ The following example shows how to use the <xref:System.Threading.ReaderWriterLo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This property is intended for use in asserts or for other debugging purposes. Do not use it to control the flow of program execution.
+
+This property is intended for use in asserts or for other debugging purposes. Do not use it to control the flow of program execution.
 
 ## Examples
 
@@ -1023,7 +1036,8 @@ The following example shows how to use the <xref:System.Threading.ReaderWriterLo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Recursion policy determines the restrictions on threads that enter the lock more than once. For example, if a lock was created with <xref:System.Threading.LockRecursionPolicy.NoRecursion?displayProperty=nameWithType> and a thread has entered the lock in read mode, <xref:System.Threading.LockRecursionException> is thrown if the thread tries to reenter the lock in read mode.
+
+Recursion policy determines the restrictions on threads that enter the lock more than once. For example, if a lock was created with <xref:System.Threading.LockRecursionPolicy.NoRecursion?displayProperty=nameWithType> and a thread has entered the lock in read mode, <xref:System.Threading.LockRecursionException> is thrown if the thread tries to reenter the lock in read mode.
 
 > [!NOTE]
 > A thread in upgradeable mode can upgrade to write mode or downgrade to read mode regardless of the lock recursion policy setting.
@@ -1081,7 +1095,8 @@ The following example shows how to use the <xref:System.Threading.ReaderWriterLo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use this property only for debugging, profiling, and logging purposes, and not to control the behavior of an algorithm. The results can change as soon as they have been calculated. Therefore, it is not safe to make decisions based on this property.
+
+Use this property only for debugging, profiling, and logging purposes, and not to control the behavior of an algorithm. The results can change as soon as they have been calculated. Therefore, it is not safe to make decisions based on this property.
 
  ]]></format>
         </remarks>
@@ -1131,7 +1146,8 @@ The following example shows how to use the <xref:System.Threading.ReaderWriterLo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use this property only for debugging, profiling, and logging purposes, and not to control the behavior of an algorithm. The results can change as soon as they have been calculated. Therefore, it is not safe to make decisions based on this property.
+
+Use this property only for debugging, profiling, and logging purposes, and not to control the behavior of an algorithm. The results can change as soon as they have been calculated. Therefore, it is not safe to make decisions based on this property.
 
  ]]></format>
         </remarks>
@@ -1181,7 +1197,8 @@ The following example shows how to use the <xref:System.Threading.ReaderWriterLo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use this property only for debugging, profiling, and logging purposes, and not to control the behavior of an algorithm. The results can change as soon as they have been calculated. Therefore, it is not safe to make decisions based on this property.
+
+Use this property only for debugging, profiling, and logging purposes, and not to control the behavior of an algorithm. The results can change as soon as they have been calculated. Therefore, it is not safe to make decisions based on this property.
 
  ]]></format>
         </remarks>
@@ -1247,7 +1264,8 @@ The following example shows how to use the <xref:System.Threading.ReaderWriterLo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If `millisecondsTimeout` is 0 (zero), this method checks the lock state and returns `false` immediately if the desired state is unavailable.
+
+If `millisecondsTimeout` is 0 (zero), this method checks the lock state and returns `false` immediately if the desired state is unavailable.
 
  Multiple threads can enter read mode at the same time.
 
@@ -1318,7 +1336,8 @@ The following example shows how to use the <xref:System.Threading.ReaderWriterLo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If `timeout` is 0 (zero), this method checks the lock state and returns `false` immediately if the desired state is unavailable.
+
+If `timeout` is 0 (zero), this method checks the lock state and returns `false` immediately if the desired state is unavailable.
 
  Multiple threads can enter the lock in read mode at the same time.
 
@@ -1404,7 +1423,8 @@ The following example shows how to use the <xref:System.Threading.ReaderWriterLo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If `millisecondsTimeout` is 0 (zero), this method checks the lock state and returns `false` immediately if the desired state is unavailable.
+
+If `millisecondsTimeout` is 0 (zero), this method checks the lock state and returns `false` immediately if the desired state is unavailable.
 
  Use upgradeable mode when a thread usually accesses the resource that is protected by the <xref:System.Threading.ReaderWriterLockSlim> in read mode, but may need to enter write mode if certain conditions are met. A thread in upgradeable mode can upgrade to write mode or downgrade to read mode.
 
@@ -1479,7 +1499,8 @@ The following example shows how to use the <xref:System.Threading.ReaderWriterLo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If `timeout` is 0 (zero), this method checks the lock state and returns `false` immediately if the desired state is unavailable.
+
+If `timeout` is 0 (zero), this method checks the lock state and returns `false` immediately if the desired state is unavailable.
 
  Use upgradeable mode when a thread usually accesses the resource protected by the <xref:System.Threading.ReaderWriterLockSlim> in read mode, but may need to enter write mode if certain conditions are met. A thread in upgradeable mode can upgrade to write mode or downgrade to read mode.
 
@@ -1569,7 +1590,8 @@ The following example shows how to use the <xref:System.Threading.ReaderWriterLo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If `millisecondsTimeout` is 0 (zero), this method checks the lock state and returns `false` immediately if the desired state is unavailable.
+
+If `millisecondsTimeout` is 0 (zero), this method checks the lock state and returns `false` immediately if the desired state is unavailable.
 
  If other threads have entered the lock in read mode, a thread that calls the <xref:System.Threading.ReaderWriterLockSlim.TryEnterWriteLock*> method blocks until those threads have exited read mode or until the time-out interval has elapsed. While threads are blocked waiting to enter write mode, additional threads that try to enter read mode or upgradeable mode block until all the threads waiting to enter write mode have either timed out or entered write mode and then exited from it.
 
@@ -1653,7 +1675,8 @@ The following example shows how to use the <xref:System.Threading.ReaderWriterLo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If `timeout` is 0 (zero), this method checks the lock state and returns `false` immediately if the desired state is unavailable.
+
+If `timeout` is 0 (zero), this method checks the lock state and returns `false` immediately if the desired state is unavailable.
 
  If other threads have entered the lock in read mode, a thread that calls the <xref:System.Threading.ReaderWriterLockSlim.TryEnterWriteLock*> method blocks until those threads have exited read mode or until the time-out interval has elapsed. While threads are blocked waiting to enter write mode, additional threads that try to enter read mode or upgradeable mode block until all the threads waiting to enter write mode have either timed out or entered write mode and then exited from it.
 
@@ -1729,7 +1752,8 @@ The following example shows how to use the <xref:System.Threading.ReaderWriterLo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use this property only for debugging, profiling, and logging purposes, and not to control the behavior of an algorithm. The results can change as soon as they have been calculated. Therefore, it is not safe to make decisions based on this property.
+
+Use this property only for debugging, profiling, and logging purposes, and not to control the behavior of an algorithm. The results can change as soon as they have been calculated. Therefore, it is not safe to make decisions based on this property.
 
 ## Examples
 
@@ -1794,7 +1818,8 @@ The following example shows how to use the <xref:System.Threading.ReaderWriterLo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use this property only for debugging, profiling, and logging purposes, and not to control the behavior of an algorithm. The results can change as soon as they have been calculated. Therefore, it is not safe to make decisions based on this property.
+
+Use this property only for debugging, profiling, and logging purposes, and not to control the behavior of an algorithm. The results can change as soon as they have been calculated. Therefore, it is not safe to make decisions based on this property.
 
 ## Examples
 
@@ -1859,7 +1884,8 @@ The following example shows how to use the <xref:System.Threading.ReaderWriterLo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use this property only for debugging, profiling, and logging purposes, and not to control the behavior of an algorithm. The results can change as soon as they have been calculated. Therefore, it is not safe to make decisions based on this property.
+
+Use this property only for debugging, profiling, and logging purposes, and not to control the behavior of an algorithm. The results can change as soon as they have been calculated. Therefore, it is not safe to make decisions based on this property.
 
 ## Examples
 

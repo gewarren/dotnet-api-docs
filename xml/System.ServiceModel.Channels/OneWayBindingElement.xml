@@ -24,7 +24,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- To enable packet routing a *one-way conversion* layer is required, which this class provides. This class is a binding in the stack of bindings that performs a message-level shape change called `OneWayBindingElement`. This shape change can take a <xref:System.ServiceModel.Channels.IDuplexSessionChannel> or a <xref:System.ServiceModel.Channels.IRequestChannel> and expose it as a <xref:System.ServiceModel.Channels.IInputChannel>, or conversely it can take a <xref:System.ServiceModel.Channels.IDuplexSessionChannel> or a <xref:System.ServiceModel.Channels.IRequestChannel> and expose it as a <xref:System.ServiceModel.Channels.IOutputChannel>. A user can create a custom binding that layers this binding over a session-aware or request-reply transport to make it packet routable.
+
+To enable packet routing a *one-way conversion* layer is required, which this class provides. This class is a binding in the stack of bindings that performs a message-level shape change called `OneWayBindingElement`. This shape change can take a <xref:System.ServiceModel.Channels.IDuplexSessionChannel> or a <xref:System.ServiceModel.Channels.IRequestChannel> and expose it as a <xref:System.ServiceModel.Channels.IInputChannel>, or conversely it can take a <xref:System.ServiceModel.Channels.IDuplexSessionChannel> or a <xref:System.ServiceModel.Channels.IRequestChannel> and expose it as a <xref:System.ServiceModel.Channels.IOutputChannel>. A user can create a custom binding that layers this binding over a session-aware or request-reply transport to make it packet routable.
 
  This class is also useful when you want to expose one-way methods in a more native fashion. More transformations can be applied over this layer, such as Composite Duplex and Reliable Messaging.
 
@@ -81,7 +82,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method creates a channel factory, which is used to create a channel that processes outgoing messages for this binding.
+
+This method creates a channel factory, which is used to create a channel that processes outgoing messages for this binding.
 
  ]]></format>
         </remarks>
@@ -127,7 +129,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method creates a channel listener, which is used to create a channel that processes incoming messages for this binding.
+
+This method creates a channel listener, which is used to create a channel that processes incoming messages for this binding.
 
  ]]></format>
         </remarks>
@@ -169,7 +172,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You should call this method before trying to create a channel factory.
+
+You should call this method before trying to create a channel factory.
 
  This method returns `true` when `TChannel` is an <xref:System.ServiceModel.Channels.IOutputChannel>, and the binding below the present one in the binding stack is an <xref:System.ServiceModel.Channels.IDuplexSessionChannel> or <xref:System.ServiceModel.Channels.IRequestChannel>.
 
@@ -216,7 +220,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You should call this method before trying to create a channel listener.
+
+You should call this method before trying to create a channel listener.
 
  This method returns `true` when `TChannel` is an <xref:System.ServiceModel.Channels.IInputChannel>, and the binding below the present one in the binding stack is an <xref:System.ServiceModel.Channels.IDuplexSessionChannel> or <xref:System.ServiceModel.Channels.IReplyChannel>.
 
@@ -316,7 +321,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method receives a binding context as an input parameter, which represents the stack of binding elements.
+
+This method receives a binding context as an input parameter, which represents the stack of binding elements.
 
  Each binding element in the stack can handle the inquiry itself or delegate the inquiry, or a combination of the two. Each binding element can modify the context if it delegates the inquiry. However, a transport binding element handles the inquiry itself.
 
@@ -396,7 +402,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This class can optionally use a message-level protocol that transforms a `DuplexSessionChannel`/`RequestChannel`/`ReplyChannel` to a one-way channel and allows the messages from the transformed channel to be routed. Usage of this protocol is controlled by the <xref:System.ServiceModel.Channels.OneWayBindingElement.PacketRoutable> property.
+
+This class can optionally use a message-level protocol that transforms a `DuplexSessionChannel`/`RequestChannel`/`ReplyChannel` to a one-way channel and allows the messages from the transformed channel to be routed. Usage of this protocol is controlled by the <xref:System.ServiceModel.Channels.OneWayBindingElement.PacketRoutable> property.
 
  When this property is `true`, upon `DuplexSessionChannel` initiation (for example, Buffered TCP and Named Pipes), this class adds a message header (MustUnderstand = `false`, signed if security is enabled) that semantically means "you can packet-route this channel". On the acceptor side, when this property is `true`, this class looks for this header in the first message received on the channel. If this header does not exist, WCF faults the channel. If the header exists, then WCF funnels the new channel into a shared input channel.
 
@@ -466,7 +473,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method writes binding-related statements into the WSDL information exposed by a particular contract and is used by WCF to communicate to clients the existence of this custom binding element in the binding stack.
+
+This method writes binding-related statements into the WSDL information exposed by a particular contract and is used by WCF to communicate to clients the existence of this custom binding element in the binding stack.
 
  This method takes two parameters: the <xref:System.ServiceModel.Description.MetadataExporter> and <xref:System.ServiceModel.Description.PolicyConversionContext> objects. Use the <xref:System.ServiceModel.Description.PolicyConversionContext.GetBindingAssertions*>, <xref:System.ServiceModel.Description.PolicyConversionContext.GetMessageBindingAssertions*>, and <xref:System.ServiceModel.Description.PolicyConversionContext.GetOperationBindingAssertions*> methods to obtain collections of policy assertions that have already been exported at various scopes. Then use this method to add your own policy assertions to the appropriate collection.
 

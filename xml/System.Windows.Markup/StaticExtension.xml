@@ -65,7 +65,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This class is a markup extension implementation for `{x:Static}` in the .NET XAML services support of XAML language features. For XAML usage information, see [x:Static Markup Extension](/dotnet/framework/xaml-services/x-static-markup-extension).
+
+This class is a markup extension implementation for `{x:Static}` in the .NET XAML services support of XAML language features. For XAML usage information, see [x:Static Markup Extension](/dotnet/framework/xaml-services/x-static-markup-extension).
 
  You typically use static references to obtain static values from types, including from types that cannot be instantiated in XAML because the type is static. Common examples of cases where `{x:Static}` is useful include values that can be thought of as constants, such as fixed math values or unique keys for states. The static members being referenced do not have to come from specific framework assemblies associated with XAML schema context. You can map other assemblies and CLR namespaces for XAML usage and then can refer to static members of types in XAML using the prefix you mapped.
 
@@ -156,7 +157,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The `member` value is not evaluated when you set it. If the initial value is not `null`,then the value is accepted. The actual parsing and evaluation of the `member` value is deferred until <xref:System.Windows.Markup.StaticExtension.ProvideValue*> is called when a XAML writer processes an extension usage. At that time, XAML schema context informs the type mapping and the value can be obtained.
+
+The `member` value is not evaluated when you set it. If the initial value is not `null`,then the value is accepted. The actual parsing and evaluation of the `member` value is deferred until <xref:System.Windows.Markup.StaticExtension.ProvideValue*> is called when a XAML writer processes an extension usage. At that time, XAML schema context informs the type mapping and the value can be obtained.
 
  ]]></format>
         </remarks>
@@ -211,7 +213,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The string for <xref:System.Windows.Markup.StaticExtension.Member*> typically uses the format *prefix*`:`*typeName*`.`*fieldOrPropertyName*. (*prefix* is the mapping prefix for an XML namespace, and is only required to reference static values that are not mapped to the default XML namespace). The string can also specify only the member name, so long as <xref:System.Windows.Markup.StaticExtension.MemberType*> is also supplied, but note that this technique will not support XML namespaces and prefixes; it is working at the type system level.
+
+The string for <xref:System.Windows.Markup.StaticExtension.Member*> typically uses the format *prefix*`:`*typeName*`.`*fieldOrPropertyName*. (*prefix* is the mapping prefix for an XML namespace, and is only required to reference static values that are not mapped to the default XML namespace). The string can also specify only the member name, so long as <xref:System.Windows.Markup.StaticExtension.MemberType*> is also supplied, but note that this technique will not support XML namespaces and prefixes; it is working at the type system level.
 
  For XAML usage information, see [x:Static Markup Extension](/dotnet/framework/xaml-services/x-static-markup-extension).
 
@@ -269,7 +272,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- In .NET Framework 4, <xref:System.Windows.Markup.StaticExtension> supports an alternate mode whereby it can return a static member based on <xref:System.Windows.Markup.StaticExtension.Member*> being the simple member name and its owning type supplied as <xref:System.Windows.Markup.StaticExtension.MemberType*>, rather than <xref:System.Windows.Markup.StaticExtension.Member*> providing a full name in the form *type*`.`*member*. The type resolver still acts, but in this case the <xref:System.Windows.Markup.StaticExtension.Member*> and <xref:System.Windows.Markup.StaticExtension.MemberType*> are basically combined: `memberFullName = MemberType.FullName + "." + Member`. Note that this technique will not support XAML namespaces and prefixes; it is working against the backing type system, not the XAML type system.
+
+In .NET Framework 4, <xref:System.Windows.Markup.StaticExtension> supports an alternate mode whereby it can return a static member based on <xref:System.Windows.Markup.StaticExtension.Member*> being the simple member name and its owning type supplied as <xref:System.Windows.Markup.StaticExtension.MemberType*>, rather than <xref:System.Windows.Markup.StaticExtension.Member*> providing a full name in the form *type*`.`*member*. The type resolver still acts, but in this case the <xref:System.Windows.Markup.StaticExtension.Member*> and <xref:System.Windows.Markup.StaticExtension.MemberType*> are basically combined: `memberFullName = MemberType.FullName + "." + Member`. Note that this technique will not support XAML namespaces and prefixes; it is working against the backing type system, not the XAML type system.
 
  The string for <xref:System.Windows.Markup.StaticExtension.Member*> typically uses the format *prefix*`:`*typeName*`.`*fieldOrPropertyName*. (*prefix* is the mapping prefix for an XML namespace, and is only required to reference static values that are not mapped to the default XML namespace).
 
@@ -320,7 +324,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method supports XAML language features and is generally not intended to be called directly. The XAML processor implementation uses this method to correctly handle the `x:Static` extension values during object creation.
+
+This method supports XAML language features and is generally not intended to be called directly. The XAML processor implementation uses this method to correctly handle the `x:Static` extension values during object creation.
 
  This implementation relies on services that are based on the passed `serviceProvider`. `serviceProvider` must not be `null`. The `serviceProvider` object is expected to return a service for <xref:System.Windows.Markup.IXamlTypeResolver>. Under the normal scenario of use by the default XAML readers and XAML writers, a suitable service provider is available. An invalid XAML schema context might have the side effect of breaking type mapping and thus the <xref:System.Windows.Markup.IXamlTypeResolver> service.
 

@@ -27,7 +27,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The synchronous <xref:System.Windows.Markup.XamlReader.Load*> methods are static, but the asynchronous <xref:System.Windows.Markup.XamlReader.LoadAsync*> methods are not static and require an instance of the <xref:System.Windows.Markup.XamlReader> class to use.
+
+The synchronous <xref:System.Windows.Markup.XamlReader.Load*> methods are static, but the asynchronous <xref:System.Windows.Markup.XamlReader.LoadAsync*> methods are not static and require an instance of the <xref:System.Windows.Markup.XamlReader> class to use.
 
  The output of the `Load` methods is a single object, which represents the root object of a created object tree or object graph. Object graphs that are created by <xref:System.Windows.Markup.XamlReader> are typically added to the existing object tree of a WPF application at run time. Otherwise the new object graph is considered disconnected for purposes of the WPF application model. This means that it does not render, and cannot be accessed using any of the object tree techniques as applied to the WPF application's main object tree (for example, the APIs <xref:System.Windows.FrameworkElement.FindName*>, <xref:System.Windows.LogicalTreeHelper>, <xref:System.Windows.Media.VisualTreeHelper>). For more information on object tree concepts, see [Trees in WPF](/dotnet/desktop/wpf/advanced/trees-in-wpf).
 
@@ -258,7 +259,8 @@ The following example saves a <xref:System.Windows.Controls.Button> into a <xref
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The input <xref:System.Xaml.XamlReader> can be <xref:System.Windows.Baml2006.Baml2006Reader>. This is how you can load BAML at run time, or for localization tool purposes.
+
+The input <xref:System.Xaml.XamlReader> can be <xref:System.Windows.Baml2006.Baml2006Reader>. This is how you can load BAML at run time, or for localization tool purposes.
 
  ]]></format>
         </remarks>
@@ -499,7 +501,8 @@ The following example converts a <xref:System.Windows.Controls.Button> into a st
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- An asynchronous XAML load operation will initially return an object that is purely the root object. Asynchronously, XAML parsing then continues, and any child objects are filled in under the root. This is in contrast to the typical WPF XAML processing behavior and its interaction with WPF concepts of object lifetime. In the typical (non-async) interaction, all properties of an object including all child collections are filled before returning an element and reporting it as loaded. That behavior equates to a bottom-up methodology for creating the tree where the root object is the last object to become available.
+
+An asynchronous XAML load operation will initially return an object that is purely the root object. Asynchronously, XAML parsing then continues, and any child objects are filled in under the root. This is in contrast to the typical WPF XAML processing behavior and its interaction with WPF concepts of object lifetime. In the typical (non-async) interaction, all properties of an object including all child collections are filled before returning an element and reporting it as loaded. That behavior equates to a bottom-up methodology for creating the tree where the root object is the last object to become available.
 
  You typically would assign the returned object to some location in your WPF application's object tree, with the knowledge that content might still be filling in and might cause incremental layout updates if the entire content is exposed as part of the UI. For this reason it is typical to isolate or virtualize any asynchronously loaded objects from XAML, and to use application-specific logic or application state to notify when <xref:System.Windows.Markup.XamlReader.LoadCompleted> is handled.
 
@@ -551,7 +554,8 @@ The following example converts a <xref:System.Windows.Controls.Button> into a st
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- An asynchronous XAML load operation will initially return an object that is purely the root object. Asynchronously, XAML parsing then continues, and any child objects are filled in under the root. This is in contrast to the typical WPF XAML processing behavior and its interaction with WPF concepts of object lifetime. In the typical (non-async) interaction, all properties of an object including all child collections are filled before returning an element and reporting it as loaded. That behavior equates to a bottom-up methodology for creating the tree where the root object is the last object to become available.
+
+An asynchronous XAML load operation will initially return an object that is purely the root object. Asynchronously, XAML parsing then continues, and any child objects are filled in under the root. This is in contrast to the typical WPF XAML processing behavior and its interaction with WPF concepts of object lifetime. In the typical (non-async) interaction, all properties of an object including all child collections are filled before returning an element and reporting it as loaded. That behavior equates to a bottom-up methodology for creating the tree where the root object is the last object to become available.
 
  You typically would assign the returned object from <xref:System.Windows.Markup.XamlReader.LoadAsync*> to some location in your application's object tree, with the knowledge that content might still be filling in and might cause incremental layout updates if the entire content is exposed as part of the UI. For this reason it is typical to isolate or virtualize any asynchronously loaded objects from XAML, and to use application-specific logic or application state to notify when <xref:System.Windows.Markup.XamlReader.LoadCompleted> is handled.
 
@@ -638,7 +642,8 @@ The following example converts a <xref:System.Windows.Controls.Button> into a st
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- An asynchronous XAML load operation will initially return an object that is purely the root object. Asynchronously, XAML parsing then continues, and any child objects are filled in under the root. This is in contrast to the typical WPF XAML processing behavior and its interaction with WPF concepts of object lifetime. In the typical (non-async) interaction, all properties of an object including all child collections are filled before returning an element and reporting it as loaded. That behavior equates to a bottom-up methodology for creating the tree where the root object is the last object to become available.
+
+An asynchronous XAML load operation will initially return an object that is purely the root object. Asynchronously, XAML parsing then continues, and any child objects are filled in under the root. This is in contrast to the typical WPF XAML processing behavior and its interaction with WPF concepts of object lifetime. In the typical (non-async) interaction, all properties of an object including all child collections are filled before returning an element and reporting it as loaded. That behavior equates to a bottom-up methodology for creating the tree where the root object is the last object to become available.
 
  You typically would assign the returned object to some location in your application's object tree, with the knowledge that content might still be filling in and might cause incremental layout updates if the entire content is exposed as part of the UI. For this reason it is typical to isolate or virtualize any asynchronously loaded objects from XAML, and to use application-specific logic or application state to notify when <xref:System.Windows.Markup.XamlReader.LoadCompleted> is handled.
 
@@ -804,7 +809,8 @@ The following example converts a <xref:System.Windows.Controls.Button> into a st
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The implementation calls <xref:System.Windows.Markup.XamlReader.Load*> internally after creating a stream from the string. See <xref:System.Windows.Markup.XamlReader.Load*> for additional information such as possible exceptions.
+
+The implementation calls <xref:System.Windows.Markup.XamlReader.Load*> internally after creating a stream from the string. See <xref:System.Windows.Markup.XamlReader.Load*> for additional information such as possible exceptions.
 
  ]]></format>
         </remarks>
@@ -879,7 +885,8 @@ The following example converts a <xref:System.Windows.Controls.Button> into a st
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The implementation calls <xref:System.Windows.Markup.XamlReader.Load*> internally after creating a stream from the string. See <xref:System.Windows.Markup.XamlReader.Load*> for additional information such as possible exceptions.
+
+The implementation calls <xref:System.Windows.Markup.XamlReader.Load*> internally after creating a stream from the string. See <xref:System.Windows.Markup.XamlReader.Load*> for additional information such as possible exceptions.
 
  ]]></format>
         </remarks>

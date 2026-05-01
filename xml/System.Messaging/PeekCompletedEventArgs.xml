@@ -21,7 +21,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When you use event notification to peek (read without removing) messages asynchronously from the queue, you must create a method that handles your message processing. Your code must call <xref:System.Messaging.MessageQueue.BeginPeek*> to begin the asynchronous processing. When a message is peeked, your application is notified through the <xref:System.Messaging.MessageQueue.PeekCompleted> event. An instance of <xref:System.Messaging.PeekCompletedEventArgs> is passed into the event delegate that calls your event handler. The data associated with the <xref:System.Messaging.MessageQueue.PeekCompleted> event is contained in the delegate's <xref:System.Messaging.ReceiveCompletedEventArgs.AsyncResult*> parameter.
+
+When you use event notification to peek (read without removing) messages asynchronously from the queue, you must create a method that handles your message processing. Your code must call <xref:System.Messaging.MessageQueue.BeginPeek*> to begin the asynchronous processing. When a message is peeked, your application is notified through the <xref:System.Messaging.MessageQueue.PeekCompleted> event. An instance of <xref:System.Messaging.PeekCompletedEventArgs> is passed into the event delegate that calls your event handler. The data associated with the <xref:System.Messaging.MessageQueue.PeekCompleted> event is contained in the delegate's <xref:System.Messaging.ReceiveCompletedEventArgs.AsyncResult*> parameter.
 
  There are two ways to provide notification of event completion: event notification and callbacks. <xref:System.Messaging.PeekCompletedEventArgs> is used only with event notification. For information comparing callbacks and event notification, see "Events vs. Callbacks" on MSDN.
 
@@ -104,7 +105,8 @@ The following code example creates an event handler for the <xref:System.Messagi
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Messaging.PeekCompletedEventArgs.Message> property provides a means for retrieving the message that initiated the end of the asynchronous peek operation.
+
+The <xref:System.Messaging.PeekCompletedEventArgs.Message> property provides a means for retrieving the message that initiated the end of the asynchronous peek operation.
 
  <xref:System.Messaging.MessageQueue.EndPeek*?displayProperty=nameWithType> is called the first time the <xref:System.Messaging.PeekCompletedEventArgs.Message> property is read, so it is not necessary to call <xref:System.Messaging.MessageQueue.EndPeek*> prior to getting the value of this property.
 

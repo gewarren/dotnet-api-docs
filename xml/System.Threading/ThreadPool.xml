@@ -60,7 +60,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Many applications create threads that spend a great deal of time in the sleeping state, waiting for an event to occur. Other threads might enter a sleeping state only to be awakened periodically to poll for a change or update status information. The thread pool enables you to use threads more efficiently by providing your application with a pool of worker threads that are managed by the system. Examples of operations that use thread pool threads include the following:
+
+Many applications create threads that spend a great deal of time in the sleeping state, waiting for an event to occur. Other threads might enter a sleeping state only to be awakened periodically to poll for a change or update status information. The thread pool enables you to use threads more efficiently by providing your application with a pool of worker threads that are managed by the system. Examples of operations that use thread pool threads include the following:
 
 - When you create a <xref:System.Threading.Tasks.Task> or <xref:System.Threading.Tasks.Task`1> object to perform some task asynchronously, by default the task is scheduled to run on a thread pool thread.
 
@@ -197,7 +198,8 @@ In the following example, the main application thread  queues a method named `Th
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is not supported when the Windows thread pool is configured to be used instead of the .NET thread pool. For more information, see the [Windows thread pool config setting](https://learn.microsoft.com/dotnet/core/runtime-config/threading#windows-thread-pool). An alternative is the <xref:System.Threading.ThreadPoolBoundHandle> class.
+
+This method is not supported when the Windows thread pool is configured to be used instead of the .NET thread pool. For more information, see the [Windows thread pool config setting](https://learn.microsoft.com/dotnet/core/runtime-config/threading#windows-thread-pool). An alternative is the <xref:System.Threading.ThreadPoolBoundHandle> class.
 
  ]]></format>
         </remarks>
@@ -266,7 +268,8 @@ In the following example, the main application thread  queues a method named `Th
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is not supported when the Windows thread pool is configured to be used instead of the .NET thread pool. For more information, see the [Windows thread pool config setting](https://learn.microsoft.com/dotnet/core/runtime-config/threading#windows-thread-pool). An alternative is the <xref:System.Threading.ThreadPoolBoundHandle> class.
+
+This method is not supported when the Windows thread pool is configured to be used instead of the .NET thread pool. For more information, see the [Windows thread pool config setting](https://learn.microsoft.com/dotnet/core/runtime-config/threading#windows-thread-pool). An alternative is the <xref:System.Threading.ThreadPoolBoundHandle> class.
 
  The `osHandle` parameter should be a <xref:Microsoft.Win32.SafeHandles.SafeFileHandle>, which derives from the abstract <xref:System.Runtime.InteropServices.SafeHandle> class.
 
@@ -368,7 +371,8 @@ If a thread pool implementation may have different types of work items, the coun
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When <xref:System.Threading.ThreadPool.GetAvailableThreads*> returns, the variable specified by `workerThreads` contains the number of additional worker threads that can be started, and the variable specified by `completionPortThreads` contains the number of additional asynchronous I/O threads that can be started.
+
+When <xref:System.Threading.ThreadPool.GetAvailableThreads*> returns, the variable specified by `workerThreads` contains the number of additional worker threads that can be started, and the variable specified by `completionPortThreads` contains the number of additional asynchronous I/O threads that can be started.
 
  If there are no available threads, additional thread pool requests remain queued until thread pool threads become available.
 
@@ -441,7 +445,8 @@ The following example displays the number of worker threads and I/O threads avai
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When <xref:System.Threading.ThreadPool.GetMaxThreads*> returns, the variable specified by `workerThreads` contains the maximum number of worker threads allowed in the thread pool, and the variable specified by `completionPortThreads` contains the maximum number of asynchronous I/O threads allowed in the thread pool.
+
+When <xref:System.Threading.ThreadPool.GetMaxThreads*> returns, the variable specified by `workerThreads` contains the maximum number of worker threads allowed in the thread pool, and the variable specified by `completionPortThreads` contains the maximum number of asynchronous I/O threads allowed in the thread pool.
 
  You can use the <xref:System.Threading.ThreadPool.GetAvailableThreads*> method to determine the actual number of threads in the thread pool at any given time.
 
@@ -518,7 +523,8 @@ The following code example shows how to retrieve a count of the maximum and avai
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The thread pool provides new worker threads or I/O completion threads on demand until it reaches the minimum for each category. By default, the minimum number of threads is set to the number of processors on a system. When the minimum is reached, the thread pool can create additional threads in that category or wait until some tasks complete. Beginning with the .NET Framework 4, the thread pool creates and destroys threads in order to optimize throughput, which is defined as the number of tasks that complete per unit of time. Too few threads might not make optimal use of available resources, whereas too many threads could increase resource contention.
+
+The thread pool provides new worker threads or I/O completion threads on demand until it reaches the minimum for each category. By default, the minimum number of threads is set to the number of processors on a system. When the minimum is reached, the thread pool can create additional threads in that category or wait until some tasks complete. Beginning with the .NET Framework 4, the thread pool creates and destroys threads in order to optimize throughput, which is defined as the number of tasks that complete per unit of time. Too few threads might not make optimal use of available resources, whereas too many threads could increase resource contention.
 
 > [!NOTE]
 > When demand is low, the actual number of thread pool threads can fall below the minimum values.
@@ -725,7 +731,8 @@ The following example uses the <xref:System.Threading.ThreadPool.QueueUserWorkIt
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the callback method requires complex data, you can define a class to contain the data.
+
+If the callback method requires complex data, you can define a class to contain the data.
 
 > [!NOTE]
 > Visual Basic users can omit the <xref:System.Threading.WaitCallback> constructor, and simply use the `AddressOf` operator when passing the callback method to <xref:System.Threading.ThreadPool.QueueUserWorkItem*>. Visual Basic automatically calls the correct delegate constructor.
@@ -887,7 +894,8 @@ The following example uses the .NET thread pool to calculate the `Fibonacci` res
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When you are finished using the <xref:System.Threading.RegisteredWaitHandle> that is returned by this method, call its <xref:System.Threading.RegisteredWaitHandle.Unregister*?displayProperty=nameWithType> method to release references to the wait handle. We recommend that you always call the <xref:System.Threading.RegisteredWaitHandle.Unregister*?displayProperty=nameWithType> method, even if you specify `true` for `executeOnlyOnce`. Garbage collection works more efficiently if you call the <xref:System.Threading.RegisteredWaitHandle.Unregister*?displayProperty=nameWithType> method instead of depending on the registered wait handle's finalizer.
+
+When you are finished using the <xref:System.Threading.RegisteredWaitHandle> that is returned by this method, call its <xref:System.Threading.RegisteredWaitHandle.Unregister*?displayProperty=nameWithType> method to release references to the wait handle. We recommend that you always call the <xref:System.Threading.RegisteredWaitHandle.Unregister*?displayProperty=nameWithType> method, even if you specify `true` for `executeOnlyOnce`. Garbage collection works more efficiently if you call the <xref:System.Threading.RegisteredWaitHandle.Unregister*?displayProperty=nameWithType> method instead of depending on the registered wait handle's finalizer.
 
  The <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject*> method queues the specified delegate to the thread pool. A worker thread will execute the delegate when one of the following occurs:
 
@@ -986,7 +994,8 @@ The following example uses the .NET thread pool to calculate the `Fibonacci` res
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When you are finished using the <xref:System.Threading.RegisteredWaitHandle> that is returned by this method, call its <xref:System.Threading.RegisteredWaitHandle.Unregister*?displayProperty=nameWithType> method to release references to the wait handle. We recommend that you always call the <xref:System.Threading.RegisteredWaitHandle.Unregister*?displayProperty=nameWithType> method, even if you specify `true` for `executeOnlyOnce`. Garbage collection works more efficiently if you call the <xref:System.Threading.RegisteredWaitHandle.Unregister*?displayProperty=nameWithType> method instead of depending on the registered wait handle's finalizer.
+
+When you are finished using the <xref:System.Threading.RegisteredWaitHandle> that is returned by this method, call its <xref:System.Threading.RegisteredWaitHandle.Unregister*?displayProperty=nameWithType> method to release references to the wait handle. We recommend that you always call the <xref:System.Threading.RegisteredWaitHandle.Unregister*?displayProperty=nameWithType> method, even if you specify `true` for `executeOnlyOnce`. Garbage collection works more efficiently if you call the <xref:System.Threading.RegisteredWaitHandle.Unregister*?displayProperty=nameWithType> method instead of depending on the registered wait handle's finalizer.
 
  The <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject*> method queues the specified delegate to the thread pool. A worker thread will execute the delegate when one of the following occurs:
 
@@ -1085,7 +1094,8 @@ The following example uses the .NET thread pool to calculate the `Fibonacci` res
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When you are finished using the <xref:System.Threading.RegisteredWaitHandle> that is returned by this method, call its <xref:System.Threading.RegisteredWaitHandle.Unregister*?displayProperty=nameWithType> method to release references to the wait handle. We recommend that you always call the <xref:System.Threading.RegisteredWaitHandle.Unregister*?displayProperty=nameWithType> method, even if you specify `true` for `executeOnlyOnce`. Garbage collection works more efficiently if you call the <xref:System.Threading.RegisteredWaitHandle.Unregister*?displayProperty=nameWithType> method instead of depending on the registered wait handle's finalizer.
+
+When you are finished using the <xref:System.Threading.RegisteredWaitHandle> that is returned by this method, call its <xref:System.Threading.RegisteredWaitHandle.Unregister*?displayProperty=nameWithType> method to release references to the wait handle. We recommend that you always call the <xref:System.Threading.RegisteredWaitHandle.Unregister*?displayProperty=nameWithType> method, even if you specify `true` for `executeOnlyOnce`. Garbage collection works more efficiently if you call the <xref:System.Threading.RegisteredWaitHandle.Unregister*?displayProperty=nameWithType> method instead of depending on the registered wait handle's finalizer.
 
  The <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject*> method queues the specified delegate to the thread pool. A worker thread will execute the delegate when one of the following occurs:
 
@@ -1189,7 +1199,8 @@ The following example uses the .NET thread pool to calculate the `Fibonacci` res
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When you are finished using the <xref:System.Threading.RegisteredWaitHandle> that is returned by this method, call its <xref:System.Threading.RegisteredWaitHandle.Unregister*?displayProperty=nameWithType> method to release references to the wait handle. We recommend that you always call the <xref:System.Threading.RegisteredWaitHandle.Unregister*?displayProperty=nameWithType> method, even if you specify `true` for `executeOnlyOnce`. Garbage collection works more efficiently if you call the <xref:System.Threading.RegisteredWaitHandle.Unregister*?displayProperty=nameWithType> method instead of depending on the registered wait handle's finalizer.
+
+When you are finished using the <xref:System.Threading.RegisteredWaitHandle> that is returned by this method, call its <xref:System.Threading.RegisteredWaitHandle.Unregister*?displayProperty=nameWithType> method to release references to the wait handle. We recommend that you always call the <xref:System.Threading.RegisteredWaitHandle.Unregister*?displayProperty=nameWithType> method, even if you specify `true` for `executeOnlyOnce`. Garbage collection works more efficiently if you call the <xref:System.Threading.RegisteredWaitHandle.Unregister*?displayProperty=nameWithType> method instead of depending on the registered wait handle's finalizer.
 
  The <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject*> method queues the specified delegate to the thread pool. A worker thread will execute the delegate when one of the following occurs:
 
@@ -1281,7 +1292,8 @@ The following example shows how to use the <xref:System.Threading.ThreadPool.Reg
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is not supported when the Windows thread pool is configured to be used instead of the .NET thread pool. For more information, see the [Windows thread pool config setting](https://learn.microsoft.com/dotnet/core/runtime-config/threading#windows-thread-pool).
+
+This method is not supported when the Windows thread pool is configured to be used instead of the .NET thread pool. For more information, see the [Windows thread pool config setting](https://learn.microsoft.com/dotnet/core/runtime-config/threading#windows-thread-pool).
 
  You cannot set the maximum number of worker threads or I/O completion threads to a number smaller than the number of processors on the computer. To determine how many processors are present, retrieve the value of the <xref:System.Environment.ProcessorCount?displayProperty=nameWithType> property. In addition, you cannot set the maximum number of worker threads or I/O completion threads to a number smaller than the corresponding minimum number of worker threads or I/O completion threads. To determine the minimum thread pool size,  call the <xref:System.Threading.ThreadPool.GetMinThreads*> method.
 
@@ -1358,7 +1370,8 @@ The following example shows how to use the <xref:System.Threading.ThreadPool.Reg
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is not supported when the Windows thread pool is configured to be used instead of the .NET thread pool. For more information, see the [Windows thread pool config setting](https://learn.microsoft.com/dotnet/core/runtime-config/threading#windows-thread-pool).
+
+This method is not supported when the Windows thread pool is configured to be used instead of the .NET thread pool. For more information, see the [Windows thread pool config setting](https://learn.microsoft.com/dotnet/core/runtime-config/threading#windows-thread-pool).
 
  The thread pool provides new worker threads or I/O completion threads on demand until it reaches the minimum for each category. When the minimum is reached, the thread pool can create additional threads in that category or wait until some tasks complete. Beginning with the .NET Framework 4, the thread pool creates and destroys threads in order to optimize throughput, which is defined as the number of tasks that complete per unit of time. Too few threads might not make optimal use of available resources, whereas too many threads could increase resource contention.
 
@@ -1493,7 +1506,8 @@ If a thread pool implementation may have different types of threads, the count i
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- For information about using native Win32 overlapped I/O, see the <xref:System.Threading.Overlapped> class, the <xref:System.Threading.NativeOverlapped> structure, and the `OVERLAPPED` structure in the Win32 Platform SDK.
+
+For information about using native Win32 overlapped I/O, see the <xref:System.Threading.Overlapped> class, the <xref:System.Threading.NativeOverlapped> structure, and the `OVERLAPPED` structure in the Win32 Platform SDK.
 
 > [!CAUTION]
 > Using the <xref:System.Threading.ThreadPool.UnsafeQueueNativeOverlapped*> method could inadvertently open up a security hole. Code access security bases its permission checks on the permissions of all the callers on the stack. When work is queued on a thread pool thread using <xref:System.Threading.ThreadPool.UnsafeQueueNativeOverlapped*>, the stack of the thread pool thread does not have the context of the actual callers. Malicious code might be able exploit this to avoid permission checks.
@@ -1618,7 +1632,8 @@ The thread pool will invoke the work item's <xref:System.Threading.IThreadPoolWo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Unlike the <xref:System.Threading.ThreadPool.QueueUserWorkItem*> method, <xref:System.Threading.ThreadPool.UnsafeQueueUserWorkItem*> does not propagate the calling stack to the worker thread. This allows code to lose the calling stack and thereby to elevate its security privileges.
+
+Unlike the <xref:System.Threading.ThreadPool.QueueUserWorkItem*> method, <xref:System.Threading.ThreadPool.UnsafeQueueUserWorkItem*> does not propagate the calling stack to the worker thread. This allows code to lose the calling stack and thereby to elevate its security privileges.
 
 > [!CAUTION]
 > Using <xref:System.Threading.ThreadPool.UnsafeQueueUserWorkItem*> could inadvertently open up a security hole. Code access security bases its permission checks on the permissions of all the callers on the stack. When work is queued on a thread pool thread using <xref:System.Threading.ThreadPool.UnsafeQueueUserWorkItem*>, the stack of the thread pool thread will not have the context of the actual callers. Malicious code might be able exploit this to avoid permission checks.
@@ -1773,7 +1788,8 @@ The thread pool will invoke the work item's <xref:System.Threading.IThreadPoolWo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Unlike the <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject*> method, <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*> does not propagate the calling stack to the worker thread. This allows code to lose the calling stack and thereby to elevate its security privileges.
+
+Unlike the <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject*> method, <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*> does not propagate the calling stack to the worker thread. This allows code to lose the calling stack and thereby to elevate its security privileges.
 
 > [!CAUTION]
 > Using <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*> could inadvertently open up a security hole. Code access security bases its permission checks on the permissions of all the callers on the stack. When work is queued on a thread pool thread using <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*>, the stack of the thread pool thread will not have the context of the actual callers. Malicious code might be able exploit this to avoid permission checks.
@@ -1863,7 +1879,8 @@ The thread pool will invoke the work item's <xref:System.Threading.IThreadPoolWo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Unlike the <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject*> method, <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*> does not propagate the calling stack to the worker thread. This allows code to lose the calling stack and thereby to elevate its security privileges.
+
+Unlike the <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject*> method, <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*> does not propagate the calling stack to the worker thread. This allows code to lose the calling stack and thereby to elevate its security privileges.
 
 > [!CAUTION]
 > Using <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*> could inadvertently open up a security hole. Code access security bases its permission checks on the permissions of all the callers on the stack. When work is queued on a thread pool thread using <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*>, the stack of the thread pool thread will not have the context of the actual callers. Malicious code might be able exploit this to avoid permission checks.
@@ -1953,7 +1970,8 @@ The thread pool will invoke the work item's <xref:System.Threading.IThreadPoolWo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Unlike the <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject*> method, <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*> does not propagate the calling stack to the worker thread. This allows code to lose the calling stack and thereby to elevate its security privileges.
+
+Unlike the <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject*> method, <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*> does not propagate the calling stack to the worker thread. This allows code to lose the calling stack and thereby to elevate its security privileges.
 
 > [!CAUTION]
 > Using <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*> could inadvertently open up a security hole. Code access security bases its permission checks on the permissions of all the callers on the stack. When work is queued on a thread pool thread using <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*>, the stack of the thread pool thread will not have the context of the actual callers. Malicious code might be able exploit this to avoid permission checks.
@@ -2048,7 +2066,8 @@ The thread pool will invoke the work item's <xref:System.Threading.IThreadPoolWo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Unlike the <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject*> method, <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*> does not propagate the calling stack to the worker thread. This allows code to lose the calling stack and thereby to elevate its security privileges.
+
+Unlike the <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject*> method, <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*> does not propagate the calling stack to the worker thread. This allows code to lose the calling stack and thereby to elevate its security privileges.
 
 > [!CAUTION]
 > Using <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*> could inadvertently open up a security hole. Code access security bases its permission checks on the permissions of all the callers on the stack. When work is queued on a thread pool thread using <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*>, the stack of the thread pool thread will not have the context of the actual callers. Malicious code might be able exploit this to avoid permission checks.

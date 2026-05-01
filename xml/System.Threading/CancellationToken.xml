@@ -90,7 +90,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A <xref:System.Threading.CancellationToken> enables cooperative cancellation between threads, thread pool work items, or <xref:System.Threading.Tasks.Task> objects. You create a cancellation token by instantiating a <xref:System.Threading.CancellationTokenSource> object, which manages cancellation tokens retrieved from its <xref:System.Threading.CancellationTokenSource.Token?displayProperty=nameWithType> property. You then  pass the cancellation token to any number of threads, tasks, or operations that should receive notice of cancellation. The token cannot be used to initiate cancellation. When the owning object calls <xref:System.Threading.CancellationTokenSource.Cancel*?displayProperty=nameWithType>, the <xref:System.Threading.CancellationToken.IsCancellationRequested> property on every copy of the cancellation token is set to `true`. The objects that receive the notification can respond in whatever manner is appropriate.
+
+A <xref:System.Threading.CancellationToken> enables cooperative cancellation between threads, thread pool work items, or <xref:System.Threading.Tasks.Task> objects. You create a cancellation token by instantiating a <xref:System.Threading.CancellationTokenSource> object, which manages cancellation tokens retrieved from its <xref:System.Threading.CancellationTokenSource.Token?displayProperty=nameWithType> property. You then  pass the cancellation token to any number of threads, tasks, or operations that should receive notice of cancellation. The token cannot be used to initiate cancellation. When the owning object calls <xref:System.Threading.CancellationTokenSource.Cancel*?displayProperty=nameWithType>, the <xref:System.Threading.CancellationToken.IsCancellationRequested> property on every copy of the cancellation token is set to `true`. The objects that receive the notification can respond in whatever manner is appropriate.
 
  For more information and code examples see [Cancellation in Managed Threads](/dotnet/standard/threading/cancellation-in-managed-threads).
 
@@ -156,7 +157,8 @@ To handle the possible cancellation of the operation, the example instantiates a
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Tokens created with this constructor will remain in the canceled state specified by the `canceled` parameter. If `canceled` is `false`, both <xref:System.Threading.CancellationToken.CanBeCanceled*> and <xref:System.Threading.CancellationToken.IsCancellationRequested*> will be `false`.
+
+Tokens created with this constructor will remain in the canceled state specified by the `canceled` parameter. If `canceled` is `false`, both <xref:System.Threading.CancellationToken.CanBeCanceled*> and <xref:System.Threading.CancellationToken.IsCancellationRequested*> will be `false`.
 
  If `canceled` is `true`, both <xref:System.Threading.CancellationToken.CanBeCanceled*> and <xref:System.Threading.CancellationToken.IsCancellationRequested*> will be `true`.
 
@@ -219,7 +221,8 @@ To handle the possible cancellation of the operation, the example instantiates a
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If <xref:System.Threading.CancellationToken.CanBeCanceled*> returns `false`, it is guaranteed that the token will never transition into a canceled state, meaning that <xref:System.Threading.CancellationToken.IsCancellationRequested*> will never return `true`. A cancellation token that cannot be canceled is returned by the static <xref:System.Threading.CancellationToken.None?displayProperty=nameWithType> property.
+
+If <xref:System.Threading.CancellationToken.CanBeCanceled*> returns `false`, it is guaranteed that the token will never transition into a canceled state, meaning that <xref:System.Threading.CancellationToken.IsCancellationRequested*> will never return `true`. A cancellation token that cannot be canceled is returned by the static <xref:System.Threading.CancellationToken.None?displayProperty=nameWithType> property.
 
  You can optionally use this property to determine whether a cancellation token can be canceled before examining the value of the <xref:System.Threading.CancellationToken.IsCancellationRequested> property to determine whether it has been canceled.
 
@@ -482,7 +485,8 @@ Two cancellation tokens are equal if any one of the following conditions is true
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This property indicates whether cancellation has been requested for this token, either through the token initially being constructed in a canceled state, or through calling <xref:System.Threading.CancellationTokenSource.Cancel*> on the token's associated <xref:System.Threading.CancellationTokenSource>.
+
+This property indicates whether cancellation has been requested for this token, either through the token initially being constructed in a canceled state, or through calling <xref:System.Threading.CancellationTokenSource.Cancel*> on the token's associated <xref:System.Threading.CancellationTokenSource>.
 
  If this property is `true`, it only guarantees that cancellation has been requested. It does not guarantee that every registered handler has finished executing, nor that cancellation requests have finished propagating to all registered handlers. Additional synchronization may be required, particularly in situations where related objects are being canceled concurrently.
 
@@ -555,7 +559,8 @@ The following is a simple example that executes a server process until the <xref
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The cancellation token returned by this property cannot be canceled; that is, its <xref:System.Threading.CancellationToken.CanBeCanceled> property is `false`.
+
+The cancellation token returned by this property cannot be canceled; that is, its <xref:System.Threading.CancellationToken.CanBeCanceled> property is `false`.
 
  You can also use the C#  [default(CancellationToken)](/dotnet/csharp/language-reference/keywords/default) statement to create an empty cancellation token.
 
@@ -757,7 +762,8 @@ For the definition of equality, see the <xref:System.Threading.CancellationToken
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If this token is already in the canceled state, the delegate will be run immediately and synchronously. Any exception the delegate generates will be propagated out of this method call.
+
+If this token is already in the canceled state, the delegate will be run immediately and synchronously. Any exception the delegate generates will be propagated out of this method call.
 
  The current <xref:System.Threading.ExecutionContext> is captured along with the delegate and will be used when executing it.
 
@@ -825,7 +831,8 @@ For the definition of equality, see the <xref:System.Threading.CancellationToken
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If this token is already in the canceled state, the delegate will be run immediately and synchronously. Any exception the delegate generates will be propagated out of this method call.
+
+If this token is already in the canceled state, the delegate will be run immediately and synchronously. Any exception the delegate generates will be propagated out of this method call.
 
  The current <xref:System.Threading.ExecutionContext> is captured along with the delegate and will be used when executing it.
 
@@ -961,7 +968,8 @@ is captured along with the delegate and is used when executing it. The current <
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If this token is already in the canceled state, the delegate will be run immediately and synchronously. Any exception the delegate generates will be propagated out of this method call.
+
+If this token is already in the canceled state, the delegate will be run immediately and synchronously. Any exception the delegate generates will be propagated out of this method call.
 
  The current <xref:System.Threading.ExecutionContext> is captured along with the delegate and will be used when executing it.
 
@@ -1039,7 +1047,8 @@ is captured along with the delegate and is used when executing it. The current <
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If this token is already in the canceled state, the delegate will be run immediately and synchronously. Any exception the delegate generates will be propagated out of this method call.
+
+If this token is already in the canceled state, the delegate will be run immediately and synchronously. Any exception the delegate generates will be propagated out of this method call.
 
  The current <xref:System.Threading.ExecutionContext> is captured along with the delegate and will be used when executing it.
 
@@ -1107,7 +1116,8 @@ is captured along with the delegate and is used when executing it. The current <
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method provides functionality equivalent to:
+
+This method provides functionality equivalent to:
 
  C#
 
@@ -1303,7 +1313,8 @@ The  <xref:System.Threading.ExecutionContext> is not captured or flowed
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Accessing this property causes a <xref:System.Threading.WaitHandle> to be instantiated. It is preferable to only use this property when necessary, and to then dispose the associated <xref:System.Threading.CancellationTokenSource> instance at the earliest opportunity (disposing the source will dispose of this allocated handle). The handle should not be closed or disposed directly.
+
+Accessing this property causes a <xref:System.Threading.WaitHandle> to be instantiated. It is preferable to only use this property when necessary, and to then dispose the associated <xref:System.Threading.CancellationTokenSource> instance at the earliest opportunity (disposing the source will dispose of this allocated handle). The handle should not be closed or disposed directly.
 
  ]]></format>
         </remarks>

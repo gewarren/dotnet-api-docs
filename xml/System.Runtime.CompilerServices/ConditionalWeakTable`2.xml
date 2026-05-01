@@ -110,7 +110,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Runtime.CompilerServices.ConditionalWeakTable`2> class enables language compilers to attach arbitrary properties to managed objects at run time. A <xref:System.Runtime.CompilerServices.ConditionalWeakTable`2> object is a dictionary that binds a managed object, which is represented by a key, to its attached property, which is represented by a value. The object's keys are the individual instances of the `TKey` class to which the property is attached, and its values are the property values that are assigned to the corresponding objects.
+
+The <xref:System.Runtime.CompilerServices.ConditionalWeakTable`2> class enables language compilers to attach arbitrary properties to managed objects at run time. A <xref:System.Runtime.CompilerServices.ConditionalWeakTable`2> object is a dictionary that binds a managed object, which is represented by a key, to its attached property, which is represented by a value. The object's keys are the individual instances of the `TKey` class to which the property is attached, and its values are the property values that are assigned to the corresponding objects.
 
  Keys must be unique; in other words, the <xref:System.Runtime.CompilerServices.ConditionalWeakTable`2> class supports one attached value per managed object. Two keys are equal if passing them to the <xref:System.Object.ReferenceEquals*?displayProperty=nameWithType> method returns `true`.
 
@@ -187,7 +188,8 @@ The following example illustrates that a key stored in the <xref:System.Runtime.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Runtime.CompilerServices.ConditionalWeakTable`2.%23ctor*> constructor instantiates an empty <xref:System.Runtime.CompilerServices.ConditionalWeakTable`2> table; that is, the table contains no key/value pairs. You can add key/value pairs by calling the <xref:System.Runtime.CompilerServices.ConditionalWeakTable`2.Add*>, <xref:System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue*>, or <xref:System.Runtime.CompilerServices.ConditionalWeakTable`2.GetOrCreateValue*> method.
+
+The <xref:System.Runtime.CompilerServices.ConditionalWeakTable`2.%23ctor*> constructor instantiates an empty <xref:System.Runtime.CompilerServices.ConditionalWeakTable`2> table; that is, the table contains no key/value pairs. You can add key/value pairs by calling the <xref:System.Runtime.CompilerServices.ConditionalWeakTable`2.Add*>, <xref:System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue*>, or <xref:System.Runtime.CompilerServices.ConditionalWeakTable`2.GetOrCreateValue*> method.
 
  Every key in a <xref:System.Runtime.CompilerServices.ConditionalWeakTable`2> object must be unique. Keys are not unique if they refer to the same object (that is, if passing them as arguments to the <xref:System.Object.ReferenceEquals*?displayProperty=nameWithType> method returns `true`).
 
@@ -252,7 +254,8 @@ The following example illustrates that a key stored in the <xref:System.Runtime.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Every key in a <xref:System.Runtime.CompilerServices.ConditionalWeakTable`2> object must be unique. Keys are not unique if they refer to the same object (that is, if passing them as arguments to the <xref:System.Object.ReferenceEquals*?displayProperty=nameWithType> method returns `true`).
+
+Every key in a <xref:System.Runtime.CompilerServices.ConditionalWeakTable`2> object must be unique. Keys are not unique if they refer to the same object (that is, if passing them as arguments to the <xref:System.Object.ReferenceEquals*?displayProperty=nameWithType> method returns `true`).
 
  If the key is garbage-collected during the addition operation, the existing key/value pair is removed and the new key/value pair is added without an exception being thrown.
 
@@ -401,7 +404,8 @@ The following example defines a `MainClass` class and a `MainInfo` class, which 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The garbage collector calls <xref:System.Runtime.CompilerServices.ConditionalWeakTable`2.Finalize*> when the current object is ready to be finalized.
+
+The garbage collector calls <xref:System.Runtime.CompilerServices.ConditionalWeakTable`2.Finalize*> when the current object is ready to be finalized.
 
  ]]></format>
         </remarks>
@@ -607,7 +611,8 @@ The following example defines a `MainClass` class and a `MainInfo` class, which 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If `key` does not exist in the table, the method adds it, along with the object that is instantiated by calling the parameterless constructor of the class defined by the `TValue` generic type parameter. If the `TValue` class has no parameterless constructor, a <xref:System.MissingMethodException> is thrown.
+
+If `key` does not exist in the table, the method adds it, along with the object that is instantiated by calling the parameterless constructor of the class defined by the `TValue` generic type parameter. If the `TValue` class has no parameterless constructor, a <xref:System.MissingMethodException> is thrown.
 
  This is the recommended method of retrieving an existing value or adding a new value to the <xref:System.Runtime.CompilerServices.ConditionalWeakTable`2> table if the class of the table's value defines a parameterless constructor. If it does not define a parameterless constructor, you can instead call the <xref:System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue*> method, which relies on a callback-provided method to instantiate the object representing the table's value
 
@@ -693,7 +698,8 @@ Note: In the <see href="https://go.microsoft.com/fwlink/?LinkID=247912">.NET for
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If `key` does not exist in the table, <xref:System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue*> invokes the method that is defined by the `createValueCallback` parameter and passes it the key. A new value is bound to the key in the table and returned as a result.
+
+If `key` does not exist in the table, <xref:System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue*> invokes the method that is defined by the `createValueCallback` parameter and passes it the key. A new value is bound to the key in the table and returned as a result.
 
  Use this method only when the class that represents the table's value does not define a parameterless constructor. If it does define a parameterless constructor, use the <xref:System.Runtime.CompilerServices.ConditionalWeakTable`2.GetOrCreateValue*> method instead. To retrieve the value of an existing key without adding the key/value pair if the key is not found in the table, call the <xref:System.Runtime.CompilerServices.ConditionalWeakTable`2.TryGetValue*> method.
 
@@ -772,7 +778,8 @@ The following example defines a `MainClass` class and a `MainInfo` class, which 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the key is garbage-collected during this operation, the method does not raise an exception and the return value is undefined.
+
+If the key is garbage-collected during this operation, the method does not raise an exception and the return value is undefined.
 
  ]]></format>
         </remarks>
@@ -1044,7 +1051,8 @@ retrieved. Additionally, it may not return all entries that were present when th
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the key is garbage-collected during this operation, the method may return `false` and set `value` to the default value (as if the key were not present).
+
+If the key is garbage-collected during this operation, the method may return `false` and set `value` to the default value (as if the key were not present).
 
 ## Examples
 

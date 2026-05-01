@@ -69,7 +69,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Any class that might be serialized using binary or XML serialization must be marked with the <xref:System.SerializableAttribute>. If a class needs to control its binary or XML serialization process, it can implement the <xref:System.Runtime.Serialization.ISerializable> interface. The <xref:System.Runtime.Serialization.Formatter> calls the <xref:System.Runtime.Serialization.ISerializable.GetObjectData*> at serialization time and populates the supplied <xref:System.Runtime.Serialization.SerializationInfo> with all the data required to represent the object. The <xref:System.Runtime.Serialization.Formatter> creates a <xref:System.Runtime.Serialization.SerializationInfo> with the type of the object in the graph. Objects that need to send proxies for themselves can use the <xref:System.Runtime.Serialization.SerializationInfo.FullTypeName*> and <xref:System.Runtime.Serialization.SerializationInfo.AssemblyName*> methods on <xref:System.Runtime.Serialization.SerializationInfo> to change the transmitted information.
+
+Any class that might be serialized using binary or XML serialization must be marked with the <xref:System.SerializableAttribute>. If a class needs to control its binary or XML serialization process, it can implement the <xref:System.Runtime.Serialization.ISerializable> interface. The <xref:System.Runtime.Serialization.Formatter> calls the <xref:System.Runtime.Serialization.ISerializable.GetObjectData*> at serialization time and populates the supplied <xref:System.Runtime.Serialization.SerializationInfo> with all the data required to represent the object. The <xref:System.Runtime.Serialization.Formatter> creates a <xref:System.Runtime.Serialization.SerializationInfo> with the type of the object in the graph. Objects that need to send proxies for themselves can use the <xref:System.Runtime.Serialization.SerializationInfo.FullTypeName*> and <xref:System.Runtime.Serialization.SerializationInfo.AssemblyName*> methods on <xref:System.Runtime.Serialization.SerializationInfo> to change the transmitted information.
 
  In the case of class inheritance, it is possible to serialize a class that derives from a base class that implements <xref:System.Runtime.Serialization.ISerializable>. In this case, the derived class should call the base class implementation of <xref:System.Runtime.Serialization.ISerializable.GetObjectData*> inside its implementation of <xref:System.Runtime.Serialization.ISerializable.GetObjectData*>. Otherwise, the data from the base class will not be serialized.
 
@@ -161,7 +162,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Any objects that are included in the <xref:System.Runtime.Serialization.SerializationInfo> are automatically tracked and serialized by the formatter.
+
+Any objects that are included in the <xref:System.Runtime.Serialization.SerializationInfo> are automatically tracked and serialized by the formatter.
 
 > [!NOTE]
 > It's not guaranteed that this method will be called only once per object instance during serialization. Therefore, the method should be implemented in such a way that its behavior will be the same regardless of the number of times it is called.

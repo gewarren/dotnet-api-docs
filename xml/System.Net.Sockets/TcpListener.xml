@@ -65,7 +65,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Net.Sockets.TcpListener> class provides simple methods that listen for and accept incoming connection requests in blocking synchronous mode. You can use either a <xref:System.Net.Sockets.TcpClient> or a <xref:System.Net.Sockets.Socket> to connect with a <xref:System.Net.Sockets.TcpListener>. Create a <xref:System.Net.Sockets.TcpListener> using an <xref:System.Net.IPEndPoint>, a Local IP address and port number, or just a port number. Specify <xref:System.Net.IPAddress.Any> for the local IP address and 0 for the local port number if you want the underlying service provider to assign those values for you. If you choose to do this, you can use the <xref:System.Net.Sockets.TcpListener.LocalEndpoint> property to identify the assigned information, after the socket has connected.
+
+The <xref:System.Net.Sockets.TcpListener> class provides simple methods that listen for and accept incoming connection requests in blocking synchronous mode. You can use either a <xref:System.Net.Sockets.TcpClient> or a <xref:System.Net.Sockets.Socket> to connect with a <xref:System.Net.Sockets.TcpListener>. Create a <xref:System.Net.Sockets.TcpListener> using an <xref:System.Net.IPEndPoint>, a Local IP address and port number, or just a port number. Specify <xref:System.Net.IPAddress.Any> for the local IP address and 0 for the local port number if you want the underlying service provider to assign those values for you. If you choose to do this, you can use the <xref:System.Net.Sockets.TcpListener.LocalEndpoint> property to identify the assigned information, after the socket has connected.
 
  Use the <xref:System.Net.Sockets.TcpListener.Start*> method to begin listening for incoming connection requests. <xref:System.Net.Sockets.TcpListener.Start*> will queue incoming connections until you either call the <xref:System.Net.Sockets.TcpListener.Stop*> method or it has queued <xref:System.Net.Sockets.SocketOptionName.MaxConnections>. Use either <xref:System.Net.Sockets.TcpListener.AcceptSocket*> or <xref:System.Net.Sockets.TcpListener.AcceptTcpClient*> to pull a connection from the incoming connection request queue. These two methods will block. If you want to avoid blocking, you can use the <xref:System.Net.Sockets.TcpListener.Pending*> method first to determine if connection requests are available in the queue.
 
@@ -216,7 +217,8 @@ The following code example creates a <xref:System.Net.Sockets.TcpListener>.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This constructor allows you to specify the local IP address and port number on which to listen for incoming connection attempts. Before using this constructor, you must create an <xref:System.Net.IPEndPoint> using the desired local IP address and port number. Pass this <xref:System.Net.IPEndPoint> to the constructor as the `localEP` parameter.
+
+This constructor allows you to specify the local IP address and port number on which to listen for incoming connection attempts. Before using this constructor, you must create an <xref:System.Net.IPEndPoint> using the desired local IP address and port number. Pass this <xref:System.Net.IPEndPoint> to the constructor as the `localEP` parameter.
 
  If you do not care which local address is assigned, you can create an <xref:System.Net.IPEndPoint> using <xref:System.Net.IPAddress.Any?displayProperty=nameWithType> as the address parameter, and the underlying service provider will assign the most appropriate network address. This might help simplify your application if you have multiple network interfaces. If you do not care which local port is used, you can create an <xref:System.Net.IPEndPoint> using 0 for the port number. In this case, the service provider will assign an available ephemeral port number. If you use this approach, you can discover what local network address and port number has been assigned by using the <xref:System.Net.Sockets.TcpListener.LocalEndpoint> property.
 
@@ -286,7 +288,8 @@ The following code example creates an instance of the <xref:System.Net.Sockets.T
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This constructor allows you to specify the local IP address and port number on which to listen for incoming connection attempts. Before calling this constructor you must first create an <xref:System.Net.IPAddress> using the desired local address. Pass this <xref:System.Net.IPAddress> to the constructor as the `localaddr` parameter. If you do not care which local address is assigned, specify <xref:System.Net.IPAddress.Any?displayProperty=nameWithType> for the `localaddr` parameter, and the underlying service provider will assign the most appropriate network address. This might help simplify your application if you have multiple network interfaces. If you do not care which local port is used, you can specify 0 for the port number. In this case, the service provider will assign an available port number between 1024 and 65535. If you use this approach, you can discover what local network address and port number has been assigned by using the <xref:System.Net.Sockets.TcpListener.LocalEndpoint> property.
+
+This constructor allows you to specify the local IP address and port number on which to listen for incoming connection attempts. Before calling this constructor you must first create an <xref:System.Net.IPAddress> using the desired local address. Pass this <xref:System.Net.IPAddress> to the constructor as the `localaddr` parameter. If you do not care which local address is assigned, specify <xref:System.Net.IPAddress.Any?displayProperty=nameWithType> for the `localaddr` parameter, and the underlying service provider will assign the most appropriate network address. This might help simplify your application if you have multiple network interfaces. If you do not care which local port is used, you can specify 0 for the port number. In this case, the service provider will assign an available port number between 1024 and 65535. If you use this approach, you can discover what local network address and port number has been assigned by using the <xref:System.Net.Sockets.TcpListener.LocalEndpoint> property.
 
  Call the <xref:System.Net.Sockets.TcpListener.Start*> method to begin listening for incoming connection attempts.
 
@@ -419,7 +422,8 @@ In the following code example, the <xref:System.Net.Sockets.TcpListener.AcceptSo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This operation will not block. The returned <xref:System.Threading.Tasks.Task`1> object will complete after the socket connection has been accepted.
+
+This operation will not block. The returned <xref:System.Threading.Tasks.Task`1> object will complete after the socket connection has been accepted.
 
  The <xref:System.Net.Sockets.Socket> returned in <xref:System.Threading.Tasks.Task`1> is initialized with the IP address and port number of the remote host. You can use any of the <xref:System.Net.Sockets.Socket.Send*> and <xref:System.Net.Sockets.Socket.Receive*> methods available in the <xref:System.Net.Sockets.Socket> class to communicate with the remote host. When you are finished using the <xref:System.Net.Sockets.Socket>, be sure to call its <xref:System.Net.Sockets.Socket.Close*> method. If your application is relatively simple, consider using the <xref:System.Net.Sockets.TcpListener.AcceptTcpClient*> method rather than the <xref:System.Net.Sockets.TcpListener.AcceptSocketAsync*> method. <xref:System.Net.Sockets.TcpClient> provides you with simple methods for sending and receiving data over a network in blocking synchronous mode.
 
@@ -476,7 +480,8 @@ In the following code example, the <xref:System.Net.Sockets.TcpListener.AcceptSo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This operation will not block. The returned <xref:System.Threading.Tasks.Task`1> object will complete after the socket connection has been accepted.
+
+This operation will not block. The returned <xref:System.Threading.Tasks.Task`1> object will complete after the socket connection has been accepted.
 
  The <xref:System.Net.Sockets.Socket> returned in <xref:System.Threading.Tasks.Task`1> is initialized with the IP address and port number of the remote host. You can use any of the <xref:System.Net.Sockets.Socket.Send*> and <xref:System.Net.Sockets.Socket.Receive*> methods available in the <xref:System.Net.Sockets.Socket> class to communicate with the remote host. When you are finished using the <xref:System.Net.Sockets.Socket>, be sure to call its <xref:System.Net.Sockets.Socket.Close*> method. If your application is relatively simple, consider using the <xref:System.Net.Sockets.TcpListener.AcceptTcpClient*> method rather than the <xref:System.Net.Sockets.TcpListener.AcceptSocketAsync*> method. <xref:System.Net.Sockets.TcpClient> provides you with simple methods for sending and receiving data over a network in blocking synchronous mode.
 
@@ -601,7 +606,8 @@ In the following code example, the <xref:System.Net.Sockets.TcpListener.AcceptTc
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This operation will not block. The returned <xref:System.Threading.Tasks.Task`1> object will complete after the TCP connection has been accepted.
+
+This operation will not block. The returned <xref:System.Threading.Tasks.Task`1> object will complete after the TCP connection has been accepted.
 
  Use the <xref:System.Net.Sockets.TcpClient.GetStream*?displayProperty=nameWithType> method to obtain the underlying <xref:System.Net.Sockets.NetworkStream> of the returned <xref:System.Net.Sockets.TcpClient> in the <xref:System.Threading.Tasks.Task`1>. The <xref:System.Net.Sockets.NetworkStream> will provide you with methods for sending and receiving with the remote host. When you are through with the <xref:System.Net.Sockets.TcpClient>, be sure to call its <xref:System.Net.Sockets.TcpClient.Close*> method. If you want greater flexibility than a <xref:System.Net.Sockets.TcpClient> offers, consider using <xref:System.Net.Sockets.TcpListener.AcceptSocket*> or <xref:System.Net.Sockets.TcpListener.AcceptSocketAsync*>.
 
@@ -660,7 +666,8 @@ In the following code example, the <xref:System.Net.Sockets.TcpListener.AcceptTc
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This operation will not block. The returned <xref:System.Threading.Tasks.Task`1> object will complete after the TCP connection has been accepted.
+
+This operation will not block. The returned <xref:System.Threading.Tasks.Task`1> object will complete after the TCP connection has been accepted.
 
  Use the <xref:System.Net.Sockets.TcpClient.GetStream*?displayProperty=nameWithType> method to obtain the underlying <xref:System.Net.Sockets.NetworkStream> of the returned <xref:System.Net.Sockets.TcpClient> in the <xref:System.Threading.Tasks.Task`1>. The <xref:System.Net.Sockets.NetworkStream> will provide you with methods for sending and receiving with the remote host. When you are through with the <xref:System.Net.Sockets.TcpClient>, be sure to call its <xref:System.Net.Sockets.TcpClient.Close*> method. If you want greater flexibility than a <xref:System.Net.Sockets.TcpClient> offers, consider using <xref:System.Net.Sockets.TcpListener.AcceptSocket*> or <xref:System.Net.Sockets.TcpListener.AcceptSocketAsync*>.
 
@@ -725,7 +732,8 @@ In the following code example, the <xref:System.Net.Sockets.TcpListener.AcceptTc
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Classes deriving from <xref:System.Net.Sockets.TcpListener> can use this property to determine if the <xref:System.Net.Sockets.Socket> is currently listening for incoming connection attempts. The <xref:System.Net.Sockets.TcpClient.Active> property can be used to avoid redundant <xref:System.Net.Sockets.TcpListener.Start*> attempts.
+
+Classes deriving from <xref:System.Net.Sockets.TcpListener> can use this property to determine if the <xref:System.Net.Sockets.Socket> is currently listening for incoming connection attempts. The <xref:System.Net.Sockets.TcpClient.Active> property can be used to avoid redundant <xref:System.Net.Sockets.TcpListener.Start*> attempts.
 
  ]]></format>
         </remarks>
@@ -782,7 +790,8 @@ In the following code example, the <xref:System.Net.Sockets.TcpListener.AcceptTc
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Net.Sockets.TcpListener.AllowNatTraversal*> method is used to enable or disable NAT traversal for a <xref:System.Net.Sockets.TcpListener> instance. NAT traversal may be provided using Teredo, 6to4, or an ISATAP tunnel.
+
+The <xref:System.Net.Sockets.TcpListener.AllowNatTraversal*> method is used to enable or disable NAT traversal for a <xref:System.Net.Sockets.TcpListener> instance. NAT traversal may be provided using Teredo, 6to4, or an ISATAP tunnel.
 
  When the `allowed` parameter is false, the <xref:System.Net.Sockets.SocketOptionName.IPProtectionLevel> option on the associated socket is set to <xref:System.Net.Sockets.IPProtectionLevel.EdgeRestricted>. This explicitly disables NAT traversal for a <xref:System.Net.Sockets.TcpListener> instance.
 
@@ -857,7 +866,8 @@ In the following code example, the <xref:System.Net.Sockets.TcpListener.AcceptTc
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The asynchronous <xref:System.Net.Sockets.TcpListener.BeginAcceptSocket*> operation must be completed by calling the <xref:System.Net.Sockets.TcpListener.EndAcceptSocket*> method. Typically, the method is invoked by the `callback` delegate.
+
+The asynchronous <xref:System.Net.Sockets.TcpListener.BeginAcceptSocket*> operation must be completed by calling the <xref:System.Net.Sockets.TcpListener.EndAcceptSocket*> method. Typically, the method is invoked by the `callback` delegate.
 
  This method does not block until the operation completes. To block until the operation completes, use the <xref:System.Net.Sockets.TcpListener.AcceptSocket*> method.
 
@@ -933,7 +943,8 @@ In the following code example, the <xref:System.Net.Sockets.TcpListener.AcceptTc
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The asynchronous <xref:System.Net.Sockets.TcpListener.BeginAcceptTcpClient*> operation must be completed by calling the <xref:System.Net.Sockets.TcpListener.EndAcceptTcpClient*> method. Typically, the method is invoked by the `callback` delegate.
+
+The asynchronous <xref:System.Net.Sockets.TcpListener.BeginAcceptTcpClient*> operation must be completed by calling the <xref:System.Net.Sockets.TcpListener.EndAcceptTcpClient*> method. Typically, the method is invoked by the `callback` delegate.
 
  This method does not block until the operation completes. To block until the operation completes, use the <xref:System.Net.Sockets.TcpListener.AcceptTcpClient*> method.
 
@@ -1073,7 +1084,8 @@ In the following code example, the <xref:System.Net.Sockets.TcpListener.AcceptTc
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method blocks until the operation is complete. To perform this operation synchronously, use the <xref:System.Net.Sockets.TcpListener.AcceptSocket*> method.
+
+This method blocks until the operation is complete. To perform this operation synchronously, use the <xref:System.Net.Sockets.TcpListener.AcceptSocket*> method.
 
 > [!NOTE]
 > You can call the <xref:System.Net.Sockets.Socket.RemoteEndPoint> property of the returned <xref:System.Net.Sockets.Socket> to identify the remote host's network address and port number.
@@ -1141,7 +1153,8 @@ In the following code example, the <xref:System.Net.Sockets.TcpListener.AcceptTc
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method blocks until the operation is complete. To perform this operation synchronously, use the <xref:System.Net.Sockets.TcpListener.AcceptTcpClient*> method.
+
+This method blocks until the operation is complete. To perform this operation synchronously, use the <xref:System.Net.Sockets.TcpListener.AcceptTcpClient*> method.
 
 > [!NOTE]
 > You can call the <xref:System.Net.Sockets.Socket.RemoteEndPoint> property of the underlying socket (<xref:System.Net.Sockets.TcpClient.Client*>) to identify the remote host's network address and port number.
@@ -1201,7 +1214,8 @@ In the following code example, the <xref:System.Net.Sockets.TcpListener.AcceptTc
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- By default, multiple listeners can listen to a specific port. However, only one of the listeners can perform operations on the network traffic sent to the port. If more than one listener attempts to bind to a particular port, then the one with the more specific IP address handles the network traffic sent to that port. You can use the <xref:System.Net.Sockets.Socket.ExclusiveAddressUse> property to prevent multiple listeners from listening to a specific port.
+
+By default, multiple listeners can listen to a specific port. However, only one of the listeners can perform operations on the network traffic sent to the port. If more than one listener attempts to bind to a particular port, then the one with the more specific IP address handles the network traffic sent to that port. You can use the <xref:System.Net.Sockets.Socket.ExclusiveAddressUse> property to prevent multiple listeners from listening to a specific port.
 
  Set this property before calling <xref:System.Net.Sockets.TcpListener.Start*>, or call the <xref:System.Net.Sockets.TcpListener.Stop*> method and then set this property.
 
@@ -1297,7 +1311,8 @@ The <xref:System.Net.Sockets.TcpListener> class finalizer free resources associa
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You can use the <xref:System.Net.Sockets.TcpListener.LocalEndpoint> property to identify the local network interface and port number being used to listen for incoming client connection requests, after a socket connection has been made. You must first cast this <xref:System.Net.EndPoint> to an <xref:System.Net.IPEndPoint>. You can then call the <xref:System.Net.IPEndPoint.Address?displayProperty=nameWithType> property to retrieve the local IP address, and the <xref:System.Net.IPEndPoint.Port?displayProperty=nameWithType> property to retrieve the local port number.
+
+You can use the <xref:System.Net.Sockets.TcpListener.LocalEndpoint> property to identify the local network interface and port number being used to listen for incoming client connection requests, after a socket connection has been made. You must first cast this <xref:System.Net.EndPoint> to an <xref:System.Net.IPEndPoint>. You can then call the <xref:System.Net.IPEndPoint.Address?displayProperty=nameWithType> property to retrieve the local IP address, and the <xref:System.Net.IPEndPoint.Port?displayProperty=nameWithType> property to retrieve the local port number.
 
 ## Examples
 
@@ -1358,7 +1373,8 @@ The following code example displays the local IP address and port number on whic
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This non-blocking method determines if there are any pending connection requests. Because the <xref:System.Net.Sockets.TcpListener.AcceptSocket*> and <xref:System.Net.Sockets.TcpListener.AcceptTcpClient*> methods block execution until the <xref:System.Net.Sockets.TcpListener.Start*> method has queued an incoming connection request, the <xref:System.Net.Sockets.TcpListener.Pending*> method can be used to determine if connections are available before attempting to accept them.
+
+This non-blocking method determines if there are any pending connection requests. Because the <xref:System.Net.Sockets.TcpListener.AcceptSocket*> and <xref:System.Net.Sockets.TcpListener.AcceptTcpClient*> methods block execution until the <xref:System.Net.Sockets.TcpListener.Start*> method has queued an incoming connection request, the <xref:System.Net.Sockets.TcpListener.Pending*> method can be used to determine if connections are available before attempting to accept them.
 
 ## Examples
 
@@ -1507,7 +1523,8 @@ The following code example demonstrates the use of the <xref:System.Net.Sockets.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Net.Sockets.TcpListener.Start*> method initializes the underlying <xref:System.Net.Sockets.Socket>, binds it to a local endpoint, and listens for incoming connection attempts. If a connection request is received, the <xref:System.Net.Sockets.TcpListener.Start*> method will queue the request and continue listening for additional requests until you call the <xref:System.Net.Sockets.TcpListener.Stop*> method. If <xref:System.Net.Sockets.TcpListener> receives a connection request after it has already queued the maximum number of connections, it will throw a <xref:System.Net.Sockets.SocketException> on the client.
+
+The <xref:System.Net.Sockets.TcpListener.Start*> method initializes the underlying <xref:System.Net.Sockets.Socket>, binds it to a local endpoint, and listens for incoming connection attempts. If a connection request is received, the <xref:System.Net.Sockets.TcpListener.Start*> method will queue the request and continue listening for additional requests until you call the <xref:System.Net.Sockets.TcpListener.Stop*> method. If <xref:System.Net.Sockets.TcpListener> receives a connection request after it has already queued the maximum number of connections, it will throw a <xref:System.Net.Sockets.SocketException> on the client.
 
  To remove a connection from the incoming connection queue, use either the <xref:System.Net.Sockets.TcpListener.AcceptTcpClient*> method or the <xref:System.Net.Sockets.TcpListener.AcceptSocket*> method. The <xref:System.Net.Sockets.TcpListener.AcceptTcpClient*> method will remove a connection from the queue and return a <xref:System.Net.Sockets.TcpClient> that you can use to send and receive data. The <xref:System.Net.Sockets.TcpListener.AcceptSocket*> method will return a <xref:System.Net.Sockets.Socket> that you can use to do the same. If your application only requires synchronous I/O, use <xref:System.Net.Sockets.TcpListener.AcceptTcpClient*>. For more detailed behavioral control, use <xref:System.Net.Sockets.TcpListener.AcceptSocket*>. Both of these methods block until a connection request is available in the queue.
 
@@ -1578,7 +1595,8 @@ The following code example demonstrates how <xref:System.Net.Sockets.TcpListener
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Net.Sockets.TcpListener.Start*> method initializes the underlying <xref:System.Net.Sockets.Socket>, binds it to a local endpoint, and listens for incoming connection attempts. If a connection request is received, <xref:System.Net.Sockets.TcpListener.Start*> will queue the request and continue listening for additional requests until you call the <xref:System.Net.Sockets.TcpListener.Stop*> method. If <xref:System.Net.Sockets.TcpListener> receives a connection request after it has already queued the maximum number of connections it will throw a <xref:System.Net.Sockets.SocketException> on the client.
+
+The <xref:System.Net.Sockets.TcpListener.Start*> method initializes the underlying <xref:System.Net.Sockets.Socket>, binds it to a local endpoint, and listens for incoming connection attempts. If a connection request is received, <xref:System.Net.Sockets.TcpListener.Start*> will queue the request and continue listening for additional requests until you call the <xref:System.Net.Sockets.TcpListener.Stop*> method. If <xref:System.Net.Sockets.TcpListener> receives a connection request after it has already queued the maximum number of connections it will throw a <xref:System.Net.Sockets.SocketException> on the client.
 
  To remove a connection from the incoming connection queue, use either the <xref:System.Net.Sockets.TcpListener.AcceptTcpClient*> method or the <xref:System.Net.Sockets.TcpListener.AcceptSocket*> method. The <xref:System.Net.Sockets.TcpListener.AcceptTcpClient*> method will remove a connection from the queue and return a <xref:System.Net.Sockets.TcpClient> that you can use to send and receive data. The <xref:System.Net.Sockets.TcpListener.AcceptSocket*> method will return a <xref:System.Net.Sockets.Socket> that you can use to do the same. If your application only requires synchronous I/O, use the <xref:System.Net.Sockets.TcpListener.AcceptTcpClient*>. For more detailed behavioral control, use <xref:System.Net.Sockets.TcpListener.AcceptSocket*> method. Both of these methods block until a connection request is available in the queue.
 

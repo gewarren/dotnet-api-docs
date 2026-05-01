@@ -28,7 +28,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Runtime.Remoting.MetadataServices.SdlChannelSink> is used to create WSDL in situations where the URL ends with the string "?wsdl".
+
+The <xref:System.Runtime.Remoting.MetadataServices.SdlChannelSink> is used to create WSDL in situations where the URL ends with the string "?wsdl".
 
  The following table shows the channel configuration properties that can be specified for this channel sink. The first two properties combine to control the WSDL publication of objects published by the application domain. If `false` is specified for the first property, no WSDL is returned, regardless of the second property. (The default is `true`.) Otherwise, the second controls whether the global metadata object URI is permitted to respond. (The default is `false`.)
 
@@ -141,7 +142,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The current method is called when a response stream needs to be created.
+
+The current method is called when a response stream needs to be created.
 
  ]]></format>
         </remarks>
@@ -217,7 +219,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The proxy's job is to convert a method call that is invoked on it into a message object. The Message object, which implements the <xref:System.Runtime.Remoting.Messaging.IMessage> interface, is passed from the client end to the server end by invoking <xref:System.Runtime.Remoting.Channels.IServerChannelSink.ProcessMessage*> on message sink objects. Message sinks are chained together, which means that every message sink is responsible for calling <xref:System.Runtime.Remoting.Channels.IServerChannelSink.ProcessMessage*> on the next message sink after it has performed its work. For instance, a synchronization-related message sink might cause a lock to be acquired or released and delegated to the downstream message sink.
+
+The proxy's job is to convert a method call that is invoked on it into a message object. The Message object, which implements the <xref:System.Runtime.Remoting.Messaging.IMessage> interface, is passed from the client end to the server end by invoking <xref:System.Runtime.Remoting.Channels.IServerChannelSink.ProcessMessage*> on message sink objects. Message sinks are chained together, which means that every message sink is responsible for calling <xref:System.Runtime.Remoting.Channels.IServerChannelSink.ProcessMessage*> on the next message sink after it has performed its work. For instance, a synchronization-related message sink might cause a lock to be acquired or released and delegated to the downstream message sink.
 
  When the formatter channel sink gets a message that needs to be sent over the channel, it calls <xref:System.Runtime.Remoting.Messaging.IMessageSink.SyncProcessMessage*>, passing the message as a parameter. The formatter sink then creates the transport header array and calls <xref:System.Runtime.Remoting.Channels.IClientChannelSink.GetRequestStream*> on the formatter sink. This call is forwarded down the sink chain, and any sink can create a request stream that is passed back to the formatter sink. After this call returns, the message is serialized, <xref:System.Runtime.Remoting.Channels.IClientChannelSink.ProcessMessage*> is called on the first chain in the sink chain, and the message is passed to the channel sinks.
 

@@ -23,7 +23,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The claims authentication manager provides an extensibility point in the application's claims processing pipeline that you can use to validate, filter, modify, incoming claims or inject new claims into the set of claims presented by a <xref:System.Security.Claims.ClaimsPrincipal> before the RP application code is executed. You can even return a custom implementation of <xref:System.Security.Claims.ClaimsPrincipal> if your RP application requires it. The default implementation provided by the <xref:System.Security.Claims.ClaimsAuthenticationManager> class returns the claims in the <xref:System.Security.Claims.ClaimsPrincipal> unmodified; however, you can derive from this class and override the <xref:System.Security.Claims.ClaimsAuthenticationManager.Authenticate*> method to modify the claims in the <xref:System.Security.Claims.ClaimsPrincipal> (or to return a custom <xref:System.Security.Claims.ClaimsPrincipal>).
+
+The claims authentication manager provides an extensibility point in the application's claims processing pipeline that you can use to validate, filter, modify, incoming claims or inject new claims into the set of claims presented by a <xref:System.Security.Claims.ClaimsPrincipal> before the RP application code is executed. You can even return a custom implementation of <xref:System.Security.Claims.ClaimsPrincipal> if your RP application requires it. The default implementation provided by the <xref:System.Security.Claims.ClaimsAuthenticationManager> class returns the claims in the <xref:System.Security.Claims.ClaimsPrincipal> unmodified; however, you can derive from this class and override the <xref:System.Security.Claims.ClaimsAuthenticationManager.Authenticate*> method to modify the claims in the <xref:System.Security.Claims.ClaimsPrincipal> (or to return a custom <xref:System.Security.Claims.ClaimsPrincipal>).
 
  A typical reason for creating a custom claims authentication manager is to add, remove, or transform claims based on information that is only known by or is, perhaps, better maintained by the RP application. For example, a history of customer purchases in a shopping cart application might be kept in a data base maintained by the RP application and then added to the claims principal returned by the claims authentication manager based on the value of a name claim found in the incoming principal.
 
@@ -99,7 +100,8 @@ The following code shows a simple claims authentication manager that adds a role
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Security.Claims.ClaimsAuthenticationManager.Authenticate*> method is called from the request processing pipeline You can override this method in a derived class to filter, modify, or inject claims into the claims principal according to the policy of your RP application. Depending on the requirements of the RP application, you can even return a custom implementation of <xref:System.Security.Claims.ClaimsPrincipal>.
+
+The <xref:System.Security.Claims.ClaimsAuthenticationManager.Authenticate*> method is called from the request processing pipeline You can override this method in a derived class to filter, modify, or inject claims into the claims principal according to the policy of your RP application. Depending on the requirements of the RP application, you can even return a custom implementation of <xref:System.Security.Claims.ClaimsPrincipal>.
 
  ]]></format>
         </remarks>
@@ -133,7 +135,8 @@ The following code shows a simple claims authentication manager that adds a role
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Security.Claims.ClaimsAuthenticationManager.LoadCustomConfiguration*> method is called by the configuration infrastructure. When this method is called, the `nodelist` will contain the top-level child elements of the [&lt;claimsAuthenticationManager&gt;](/dotnet/framework/configure-apps/file-schema/windows-identity-foundation/claimsauthenticationmanager) element from the configuration file. Each of these elements may, in turn, contain attributes or child elements depending on the configuration schema you define for your derived class. If no child elements appear under the `<claimsAuthenticationManager>` element in the configuration file, this method is not called.
+
+The <xref:System.Security.Claims.ClaimsAuthenticationManager.LoadCustomConfiguration*> method is called by the configuration infrastructure. When this method is called, the `nodelist` will contain the top-level child elements of the [&lt;claimsAuthenticationManager&gt;](/dotnet/framework/configure-apps/file-schema/windows-identity-foundation/claimsauthenticationmanager) element from the configuration file. Each of these elements may, in turn, contain attributes or child elements depending on the configuration schema you define for your derived class. If no child elements appear under the `<claimsAuthenticationManager>` element in the configuration file, this method is not called.
 
  The default implementation throws a <xref:System.NotImplementedException>. Override this method in your derived class to enable initialization of your claims authentication manager from a configuration file. For example, the configuration elements might describe a policy to be followed when authenticating a claims principal; or they might be used to point to an attribute store from which additional claims are to be added to the principal.
 

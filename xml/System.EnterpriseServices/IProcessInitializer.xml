@@ -28,7 +28,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Implement the <xref:System.EnterpriseServices.IProcessInitializer> interface methods on serviced components if you want to run initialization or shutdown code when a server process (Dllhost.exe) starts up or shuts down, respectively.
+
+Implement the <xref:System.EnterpriseServices.IProcessInitializer> interface methods on serviced components if you want to run initialization or shutdown code when a server process (Dllhost.exe) starts up or shuts down, respectively.
 
  COM+ provides `Startup` and `Shutdown` events when Dllhost.exe starts and ends. This feature enables any COM+ components that are installed in a COM+ server application (referred to as server components hereafter) to run custom initialization and clean up code. An instance of each component that implements the <xref:System.EnterpriseServices.IProcessInitializer> interface will be created and stored for the duration of the process. When implemented on a <xref:System.EnterpriseServices.ServicedComponent>, the `InitializesServerApplication` parameter in the `COMAdminCatalogObject` within the Components collection needs to be set to `true` during registration of the component, in order for the interface methods to be called during startup and shutdown.
 
@@ -95,7 +96,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The object referenced by `punkProcessControl` implements an <xref:System.EnterpriseServices.IProcessInitControl> interface. <xref:System.EnterpriseServices.IProcessInitControl> supports the single method <xref:System.EnterpriseServices.IProcessInitControl.ResetInitializerTimeout*>.
+
+The object referenced by `punkProcessControl` implements an <xref:System.EnterpriseServices.IProcessInitControl> interface. <xref:System.EnterpriseServices.IProcessInitControl> supports the single method <xref:System.EnterpriseServices.IProcessInitControl.ResetInitializerTimeout*>.
 
  The initialization code in <xref:System.EnterpriseServices.IProcessInitializer.Startup*> can call the <xref:System.EnterpriseServices.IProcessInitControl.ResetInitializerTimeout*>, with the time-out set equal to the number of seconds remaining before the startup of the component times out.
 

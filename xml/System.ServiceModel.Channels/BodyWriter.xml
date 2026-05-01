@@ -49,7 +49,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A message consists of headers and a body. The headers are buffered and the body is streamed. Because the body is streamed, the user cannot pass the actual content of the body to a message. Instead the user must pass a class that knows how to write the body when asked to do so. This is done by passing a class derived from <xref:System.ServiceModel.Channels.BodyWriter> to the <xref:System.ServiceModel.Channels.Message>. A message calls the class derived from <xref:System.ServiceModel.Channels.BodyWriter> whenever it requires the body to be written using an <xref:System.Xml.XmlWriter>.
+
+A message consists of headers and a body. The headers are buffered and the body is streamed. Because the body is streamed, the user cannot pass the actual content of the body to a message. Instead the user must pass a class that knows how to write the body when asked to do so. This is done by passing a class derived from <xref:System.ServiceModel.Channels.BodyWriter> to the <xref:System.ServiceModel.Channels.Message>. A message calls the class derived from <xref:System.ServiceModel.Channels.BodyWriter> whenever it requires the body to be written using an <xref:System.Xml.XmlWriter>.
 
 ## Examples
 
@@ -98,7 +99,8 @@ The following example shows how to derive a class from <xref:System.ServiceModel
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If `isBuffered` is `false` then the message calls the write method once and buffers the contents.
+
+If `isBuffered` is `false` then the message calls the write method once and buffers the contents.
 
  ]]></format>
         </remarks>
@@ -180,7 +182,8 @@ The following example shows how to derive a class from <xref:System.ServiceModel
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If <xref:System.ServiceModel.Channels.BodyWriter.IsBuffered> is `true` then the <xref:System.ServiceModel.Channels.BodyWriter> object is returned. If <xref:System.ServiceModel.Channels.BodyWriter.IsBuffered> is `false` then the contents of the <xref:System.ServiceModel.Channels.BodyWriter> up to `maxBufferSize` is returned. This also calls <xref:System.ServiceModel.Channels.BodyWriter.OnCreateBufferedCopy(System.Int32)> as an extensibility point.
+
+If <xref:System.ServiceModel.Channels.BodyWriter.IsBuffered> is `true` then the <xref:System.ServiceModel.Channels.BodyWriter> object is returned. If <xref:System.ServiceModel.Channels.BodyWriter.IsBuffered> is `false` then the contents of the <xref:System.ServiceModel.Channels.BodyWriter> up to `maxBufferSize` is returned. This also calls <xref:System.ServiceModel.Channels.BodyWriter.OnCreateBufferedCopy(System.Int32)> as an extensibility point.
 
 ## Examples
 
@@ -269,7 +272,8 @@ The following sample shows how to create a buffered copy of an existing <xref:Sy
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If `isBuffered` is `false` then the message calls the write method once and buffers the contents.
+
+If `isBuffered` is `false` then the message calls the write method once and buffers the contents.
 
  ]]></format>
         </remarks>
@@ -351,7 +355,8 @@ The following sample shows how to create a buffered copy of an existing <xref:Sy
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A class derived from <xref:System.ServiceModel.Channels.BodyWriter> can override this method to create a buffered copy of the <xref:System.ServiceModel.Channels.BodyWriter>. But the default implementation of <xref:System.ServiceModel.Channels.BodyWriter.WriteBodyContents(System.Xml.XmlDictionaryWriter)> calls <xref:System.ServiceModel.Channels.BodyWriter.OnWriteBodyContents(System.Xml.XmlDictionaryWriter)>, so overriding just <xref:System.ServiceModel.Channels.BodyWriter.OnWriteBodyContents(System.Xml.XmlDictionaryWriter)> should be easier and work for most scenarios.
+
+A class derived from <xref:System.ServiceModel.Channels.BodyWriter> can override this method to create a buffered copy of the <xref:System.ServiceModel.Channels.BodyWriter>. But the default implementation of <xref:System.ServiceModel.Channels.BodyWriter.WriteBodyContents(System.Xml.XmlDictionaryWriter)> calls <xref:System.ServiceModel.Channels.BodyWriter.OnWriteBodyContents(System.Xml.XmlDictionaryWriter)>, so overriding just <xref:System.ServiceModel.Channels.BodyWriter.OnWriteBodyContents(System.Xml.XmlDictionaryWriter)> should be easier and work for most scenarios.
 
  Note that the <xref:System.ServiceModel.Channels.BodyWriter> returned must be buffered, that is <xref:System.ServiceModel.Channels.BodyWriter.IsBuffered> must be `true`.
 
@@ -429,7 +434,8 @@ The following sample shows how to create a buffered copy of an existing <xref:Sy
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method must be implemented by classes derived from <xref:System.ServiceModel.Channels.BodyWriter>. This is the key method that writes the body. If the <xref:System.ServiceModel.Channels.BodyWriter> is buffered then this method is called only once.
+
+This method must be implemented by classes derived from <xref:System.ServiceModel.Channels.BodyWriter>. This is the key method that writes the body. If the <xref:System.ServiceModel.Channels.BodyWriter> is buffered then this method is called only once.
 
 ## Examples
 
@@ -480,7 +486,8 @@ The following example illustrates an override of the <xref:System.ServiceModel.C
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The default implementation of <xref:System.ServiceModel.Channels.BodyWriter.WriteBodyContents(System.Xml.XmlDictionaryWriter)> calls <xref:System.ServiceModel.Channels.BodyWriter.OnWriteBodyContents(System.Xml.XmlDictionaryWriter)>, so overriding <xref:System.ServiceModel.Channels.BodyWriter.OnWriteBodyContents(System.Xml.XmlDictionaryWriter)> provides the best point of extension.
+
+The default implementation of <xref:System.ServiceModel.Channels.BodyWriter.WriteBodyContents(System.Xml.XmlDictionaryWriter)> calls <xref:System.ServiceModel.Channels.BodyWriter.OnWriteBodyContents(System.Xml.XmlDictionaryWriter)>, so overriding <xref:System.ServiceModel.Channels.BodyWriter.OnWriteBodyContents(System.Xml.XmlDictionaryWriter)> provides the best point of extension.
 
 ## Examples
 

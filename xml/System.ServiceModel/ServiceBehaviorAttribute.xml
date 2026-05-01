@@ -30,7 +30,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Apply the <xref:System.ServiceModel.ServiceBehaviorAttribute> attribute to a service implementation to specify service-wide execution behavior. (To specify execution behavior at the method level, use the <xref:System.ServiceModel.OperationBehaviorAttribute> attribute.) This attribute can be applied only to service implementations. For working examples, see the [Service: Behaviors Samples](https://learn.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751453(v=vs.90)).
+
+Apply the <xref:System.ServiceModel.ServiceBehaviorAttribute> attribute to a service implementation to specify service-wide execution behavior. (To specify execution behavior at the method level, use the <xref:System.ServiceModel.OperationBehaviorAttribute> attribute.) This attribute can be applied only to service implementations. For working examples, see the [Service: Behaviors Samples](https://learn.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751453(v=vs.90)).
 
  <xref:System.ServiceModel.ServiceBehaviorAttribute> properties are a Windows Communication Foundation (WCF) programming model feature that enables common features that developers otherwise have to implement. For more information about these and other behaviors, see [Specifying Service Run-Time Behavior](/dotnet/framework/wcf/specifying-service-run-time-behavior). For more information about the underlying runtime properties that some of the following properties set, see [Extending ServiceHost and the Service Model Layer](/dotnet/framework/wcf/extending/extending-servicehost-and-the-service-model-layer).
 
@@ -110,7 +111,8 @@ The following code example demonstrates the <xref:System.ServiceModel.ServiceBeh
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The default values for the <xref:System.ServiceModel.ServiceBehaviorAttribute> are:
+
+The default values for the <xref:System.ServiceModel.ServiceBehaviorAttribute> are:
 
 - The <xref:System.ServiceModel.ServiceBehaviorAttribute.AddressFilterMode> is set to <xref:System.ServiceModel.AddressFilterMode.Exact>.
 
@@ -217,7 +219,8 @@ The following code example demonstrates the <xref:System.ServiceModel.ServiceBeh
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- By default when a client closes an output session and the service has finished processing any remaining messages the server closes the session. Setting <xref:System.ServiceModel.ServiceBehaviorAttribute.AutomaticSessionShutdown> to `false` prevents the server from automatically closing the session and enables custom control of session lifetimes.
+
+By default when a client closes an output session and the service has finished processing any remaining messages the server closes the session. Setting <xref:System.ServiceModel.ServiceBehaviorAttribute.AutomaticSessionShutdown> to `false` prevents the server from automatically closing the session and enables custom control of session lifetimes.
 
  ]]></format>
         </remarks>
@@ -256,7 +259,8 @@ The following code example demonstrates the <xref:System.ServiceModel.ServiceBeh
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This property indicates whether an instance of a service can handle one thread or multiple threads that execute concurrently, and if single-threaded, whether reentrancy is supported.
+
+This property indicates whether an instance of a service can handle one thread or multiple threads that execute concurrently, and if single-threaded, whether reentrancy is supported.
 
 > [!NOTE]
 > The <xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode> property interacts with some other settings. For example, if the <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode> value is set to <xref:System.ServiceModel.InstanceContextMode.Single> the result is that your service can only process one message at a time unless you also set the <xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode> value to <xref:System.ServiceModel.ConcurrencyMode.Multiple>. This property also produces behavior in combination with the <xref:System.ServiceModel.ServiceContractAttribute.SessionMode?displayProperty=nameWithType> property. For details, see [Sessions, Instancing, and Concurrency](/dotnet/framework/wcf/feature-details/sessions-instancing-and-concurrency).
@@ -344,7 +348,8 @@ The following code example demonstrates the different between using <xref:System
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use this value to specify a particular service in the configuration file.
+
+Use this value to specify a particular service in the configuration file.
 
  ]]></format>
         </remarks>
@@ -404,7 +409,8 @@ The following code example demonstrates the different between using <xref:System
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A non-`null` value provides the service instance to which all messages addressed to the service will be dispatched.
+
+A non-`null` value provides the service instance to which all messages addressed to the service will be dispatched.
 
  ]]></format>
         </remarks>
@@ -448,7 +454,8 @@ The following code example demonstrates the different between using <xref:System
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If a type implements the <xref:System.Runtime.Serialization.IExtensibleDataObject> interface, it stores any extra data it doesn't know about that comes over the wire when deserializing into that type. For example, if a type `Person` has members `FirstName` and `LastName`, and an element called `PhoneNumber` comes in, it is stored. When later serializing the type, `PhoneNumber` will be re-emitted. The problem is that the schema for `Person` exported by that service only has `FirstName` and `LastName`, so Windows Communication Foundation (WCF) generates a schema-invalid instance! If strict schema compliance is important, you can set <xref:System.ServiceModel.ServiceBehaviorAttribute.IgnoreExtensionDataObject> to `true` to turn this re-emitting behavior off.
+
+If a type implements the <xref:System.Runtime.Serialization.IExtensibleDataObject> interface, it stores any extra data it doesn't know about that comes over the wire when deserializing into that type. For example, if a type `Person` has members `FirstName` and `LastName`, and an element called `PhoneNumber` comes in, it is stored. When later serializing the type, `PhoneNumber` will be re-emitted. The problem is that the schema for `Person` exported by that service only has `FirstName` and `LastName`, so Windows Communication Foundation (WCF) generates a schema-invalid instance! If strict schema compliance is important, you can set <xref:System.ServiceModel.ServiceBehaviorAttribute.IgnoreExtensionDataObject> to `true` to turn this re-emitting behavior off.
 
  Regardless <xref:System.ServiceModel.ServiceBehaviorAttribute.IgnoreExtensionDataObject> setting, WCF always processes known data (both in and out) and does not throw exceptions when extra data comes in. You can also set this property using the [&lt;dataContractSerializer&gt;](/dotnet/framework/configure-apps/file-schema/wcf/datacontractserializer-element) element in an application configuration file.
 
@@ -500,7 +507,8 @@ The following example shows the use of <xref:System.ServiceModel.ServiceBehavior
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Set <xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults> to `true` to enable exception information to flow to clients for debugging purposes. This property requires a binding that supports either request-response or duplex messaging.
+
+Set <xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults> to `true` to enable exception information to flow to clients for debugging purposes. This property requires a binding that supports either request-response or duplex messaging.
 
  In all managed applications, processing errors are represented by <xref:System.Exception> objects. In SOAP-based applications such as WCF applications, methods that implement service operations communicate error information using SOAP fault messages. Because WCF applications execute under both types of error systems, any managed exception information that needs to be sent to the client must be converted from exceptions into SOAP faults. For more information, see [Specifying and Handling Faults in Contracts and Services](/dotnet/framework/wcf/specifying-and-handling-faults-in-contracts-and-services).
 
@@ -574,7 +582,8 @@ The following code example demonstrates the <xref:System.ServiceModel.ServiceBeh
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use the <xref:System.ServiceModel.InstanceContextMode> property to specify when new service objects are created. Because the service object is not directly connected to the communicating channel, the lifetime of the service objects is independent of the lifetime of the channel between a client and the service application. The default value, <xref:System.ServiceModel.InstanceContextMode.PerSession>, instructs the service application to create a new service object when a new communication session is established between a client and the service application. Subsequent calls in the same session are handled by the same object.
+
+Use the <xref:System.ServiceModel.InstanceContextMode> property to specify when new service objects are created. Because the service object is not directly connected to the communicating channel, the lifetime of the service objects is independent of the lifetime of the channel between a client and the service application. The default value, <xref:System.ServiceModel.InstanceContextMode.PerSession>, instructs the service application to create a new service object when a new communication session is established between a client and the service application. Subsequent calls in the same session are handled by the same object.
 
  <xref:System.ServiceModel.InstanceContextMode.PerSession> indicates that each service object handles requests from one client channel.
 
@@ -648,7 +657,8 @@ The following code example demonstrates the <xref:System.ServiceModel.ServiceBeh
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use the <xref:System.ServiceModel.ServiceBehaviorAttribute.MaxItemsInObjectGraph> property set a limit on the number of items in an object graph that are serialized. You can also set this property using the [&lt;dataContractSerializer&gt;](/dotnet/framework/configure-apps/file-schema/wcf/datacontractserializer-element) element in an application configuration file.
+
+Use the <xref:System.ServiceModel.ServiceBehaviorAttribute.MaxItemsInObjectGraph> property set a limit on the number of items in an object graph that are serialized. You can also set this property using the [&lt;dataContractSerializer&gt;](/dotnet/framework/configure-apps/file-schema/wcf/datacontractserializer-element) element in an application configuration file.
 
  ]]></format>
         </remarks>
@@ -756,7 +766,8 @@ The following code example demonstrates the <xref:System.ServiceModel.ServiceBeh
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Note that you must explicitly set <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete> to `false` if there is an operation with <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired?displayProperty=nameWithType> set to true and you set <xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode> to <xref:System.ServiceModel.ConcurrencyMode.Reentrant>. Otherwise a validation exception is thrown because the default value of <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete> is `true`.
+
+Note that you must explicitly set <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete> to `false` if there is an operation with <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired?displayProperty=nameWithType> set to true and you set <xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode> to <xref:System.ServiceModel.ConcurrencyMode.Reentrant>. Otherwise a validation exception is thrown because the default value of <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete> is `true`.
 
  In addition, it is important to realize that if the service is created by passing a service object to the <xref:System.ServiceModel.ServiceHost.%23ctor(System.Object,System.Uri[])?displayProperty=nameWithType> constructor, the value of this property is treated as if it were `false`.
 
@@ -801,7 +812,8 @@ The following code example sets the transaction isolation level to <xref:System.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This provides the service instance to which all messages addressed to the service will be dispatched.
+
+This provides the service instance to which all messages addressed to the service will be dispatched.
 
  If <xref:System.ServiceModel.ServiceBehaviorAttribute.SetWellKnownSingleton*> is set to a non-`null` value, then the <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode> must be set to <xref:System.ServiceModel.InstanceContextMode.Single> or an <xref:System.InvalidOperationException> is thrown.
 
@@ -1101,7 +1113,8 @@ The following code example sets the transaction isolation level to <xref:System.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The isolation level in which your transaction runs determines how data is treated when changes are made in other transactions and how long your transaction must hold locks to protect against these changes. For example, the default value, <xref:System.Transactions.IsolationLevel.Unspecified>, specifies that no updating or inserting can occur until the transaction is complete.
+
+The isolation level in which your transaction runs determines how data is treated when changes are made in other transactions and how long your transaction must hold locks to protect against these changes. For example, the default value, <xref:System.Transactions.IsolationLevel.Unspecified>, specifies that no updating or inserting can occur until the transaction is complete.
 
  This property can also be used to restrict the isolation level of incoming transactions flowed from a client.
 
@@ -1150,7 +1163,8 @@ The following code example sets the transaction isolation level to <xref:System.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This value sets the <xref:System.ServiceModel.Dispatcher.ChannelDispatcher.TransactionTimeout?displayProperty=nameWithType> property. You can also set this property using the [&lt;serviceTimeouts&gt;](/dotnet/framework/configure-apps/file-schema/wcf/servicetimeouts) element in an application configuration file.
+
+This value sets the <xref:System.ServiceModel.Dispatcher.ChannelDispatcher.TransactionTimeout?displayProperty=nameWithType> property. You can also set this property using the [&lt;serviceTimeouts&gt;](/dotnet/framework/configure-apps/file-schema/wcf/servicetimeouts) element in an application configuration file.
 
 ## Examples
 
@@ -1203,7 +1217,8 @@ The following configuration file specifies a transaction timeout period of three
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use this property to provide the user interface thread affinity that some applications require. For example, a Windows Forms application may be registered as a singleton service object. In this case, all calls into the service must run on the Windows Forms thread. The default case, in which <xref:System.ServiceModel.ServiceBehaviorAttribute.UseSynchronizationContext> is set to `true`, synchronizes all calls to the service to run on the thread captured from the <xref:System.Threading.SynchronizationContext?displayProperty=nameWithType>.
+
+Use this property to provide the user interface thread affinity that some applications require. For example, a Windows Forms application may be registered as a singleton service object. In this case, all calls into the service must run on the Windows Forms thread. The default case, in which <xref:System.ServiceModel.ServiceBehaviorAttribute.UseSynchronizationContext> is set to `true`, synchronizes all calls to the service to run on the thread captured from the <xref:System.Threading.SynchronizationContext?displayProperty=nameWithType>.
 
  ]]></format>
         </remarks>
@@ -1247,7 +1262,8 @@ The following configuration file specifies a transaction timeout period of three
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use the <xref:System.ServiceModel.ServiceBehaviorAttribute.ValidateMustUnderstand> property to turn off the enforced validation of arriving message headers. In normal execution, message headers are compared against the <xref:System.ServiceModel.Channels.MessageHeaders.UnderstoodHeaders> property to confirm that arriving headers are explicitly handled by the service. Set this to `false` to disable this checking. When set to `false`, the application must check for headers marked with MustUnderstand="true" and return a fault if one or more of them were not understood. This is useful when the application is supposed to accept any incoming SOAP messages (for example, when using typed or untyped messages) and perform custom header processing.
+
+Use the <xref:System.ServiceModel.ServiceBehaviorAttribute.ValidateMustUnderstand> property to turn off the enforced validation of arriving message headers. In normal execution, message headers are compared against the <xref:System.ServiceModel.Channels.MessageHeaders.UnderstoodHeaders> property to confirm that arriving headers are explicitly handled by the service. Set this to `false` to disable this checking. When set to `false`, the application must check for headers marked with MustUnderstand="true" and return a fault if one or more of them were not understood. This is useful when the application is supposed to accept any incoming SOAP messages (for example, when using typed or untyped messages) and perform custom header processing.
 
  ]]></format>
         </remarks>

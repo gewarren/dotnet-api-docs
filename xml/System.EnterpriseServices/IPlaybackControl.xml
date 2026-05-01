@@ -28,7 +28,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The exception class defined for the component in the COM+ catalog implements both <xref:System.EnterpriseServices.IPlaybackControl> and the interface for the original class. The method implementations of the original class interface are used to perform the exception handling for the failed methods in the class itself. They will be called after <xref:System.EnterpriseServices.IPlaybackControl.FinalClientRetry*> or <xref:System.EnterpriseServices.IPlaybackControl.FinalServerRetry*> to process exceptions for the method originally called.
+
+The exception class defined for the component in the COM+ catalog implements both <xref:System.EnterpriseServices.IPlaybackControl> and the interface for the original class. The method implementations of the original class interface are used to perform the exception handling for the failed methods in the class itself. They will be called after <xref:System.EnterpriseServices.IPlaybackControl.FinalClientRetry*> or <xref:System.EnterpriseServices.IPlaybackControl.FinalServerRetry*> to process exceptions for the method originally called.
 
  The Queued Components Player calls the methods of <xref:System.EnterpriseServices.IPlaybackControl> to inform the exception-handler object that a message is about to be placed on the final resting or dead letter queue. The Queued Components Player then calls the same method in the exception-handler object that had failed in the original method call. The exception-handler object can implement an alternative, for example, by gathering problem diagnosis information or generating an object or message that informs the client of the problem. If the application does not implement <xref:System.EnterpriseServices.IPlaybackControl>, the poison message is placed on the final resting or dead letter queue when the Queued Components Player exhausts all retries.
 
@@ -66,7 +67,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- As messages arrive in the Xact Dead Letter queue, COM+ attempts to invoke a client-side exception handler related to the server class to deliver this notification. It does so by first calling <xref:System.EnterpriseServices.IPlaybackControl.FinalClientRetry*>, then calling the exception-handling version of the failed method in the exception-handler object. This exception method can then take an exception action, such as recording the failure, sending a mail message to the administrator, or taking client-side compensating action (reversing the effect of an earlier transaction). If the exception method is not successful, the message is left on the Xact Dead Letter queue.
+
+As messages arrive in the Xact Dead Letter queue, COM+ attempts to invoke a client-side exception handler related to the server class to deliver this notification. It does so by first calling <xref:System.EnterpriseServices.IPlaybackControl.FinalClientRetry*>, then calling the exception-handling version of the failed method in the exception-handler object. This exception method can then take an exception action, such as recording the failure, sending a mail message to the administrator, or taking client-side compensating action (reversing the effect of an earlier transaction). If the exception method is not successful, the message is left on the Xact Dead Letter queue.
 
  The Xact Dead Letter queue can be viewed in the Microsoft Message Queue (MSMQ) Explorer.
 
@@ -98,7 +100,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- As messages arrive on the Xact Dead Letter queue, COM+ attempts to invoke a server-side exception handler related to the server class to deliver this notification. It does so by first calling <xref:System.EnterpriseServices.IPlaybackControl.FinalServerRetry*>, then calling the exception handling version of the failed method in the exception handler object. This exception method can then take an exception action, such as recording the failure, sending a mail message to the administrator, or taking client-side compensating action (reversing the effect of an earlier transaction). The server object should make every effort to complete this transaction successfully. Otherwise, manual intervention is required to reprocess the message. If the exception method is not successful, the message is moved to the final resting queue.
+
+As messages arrive on the Xact Dead Letter queue, COM+ attempts to invoke a server-side exception handler related to the server class to deliver this notification. It does so by first calling <xref:System.EnterpriseServices.IPlaybackControl.FinalServerRetry*>, then calling the exception handling version of the failed method in the exception handler object. This exception method can then take an exception action, such as recording the failure, sending a mail message to the administrator, or taking client-side compensating action (reversing the effect of an earlier transaction). The server object should make every effort to complete this transaction successfully. Otherwise, manual intervention is required to reprocess the message. If the exception method is not successful, the message is moved to the final resting queue.
 
  ]]></format>
         </remarks>

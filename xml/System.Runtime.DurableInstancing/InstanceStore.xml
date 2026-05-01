@@ -19,7 +19,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A persistence provider provides access to an instance store through a concrete implementation of the <xref:System.Runtime.DurableInstancing.InstanceStore> class.
+
+A persistence provider provides access to an instance store through a concrete implementation of the <xref:System.Runtime.DurableInstancing.InstanceStore> class.
 
  Persistence providers may call InstanceHandle.Free on handles passed to TryCommand, even after the command has finished executing. But persistence providers must not hold strong references to InstanceHandle or InstanceOwner objects, as this can prevent InstanceStore from being garbage collected.
 
@@ -81,7 +82,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A host calls the <xref:System.Runtime.DurableInstancing.InstanceStore.BeginExecute*> method to execute a persistence command against an instance handle asynchronously. The host obtains the instance handle by invoking the <xref:System.Runtime.DurableInstancing.InstanceStore.CreateInstanceHandle*> method. The instance handle may be bound to entities that represent the context and subject of the command, such as an instance, instance owner, or instance lock. Only one command may be issued against an instance handle at a time.
+
+A host calls the <xref:System.Runtime.DurableInstancing.InstanceStore.BeginExecute*> method to execute a persistence command against an instance handle asynchronously. The host obtains the instance handle by invoking the <xref:System.Runtime.DurableInstancing.InstanceStore.CreateInstanceHandle*> method. The instance handle may be bound to entities that represent the context and subject of the command, such as an instance, instance owner, or instance lock. Only one command may be issued against an instance handle at a time.
 
  ]]></format>
         </remarks>
@@ -121,7 +123,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the command can be executed, the persistence provider calls relevant methods on the InstancePersistenceContext to provide the results of the command.
+
+If the command can be executed, the persistence provider calls relevant methods on the InstancePersistenceContext to provide the results of the command.
 
 > [!WARNING]
 > Even though this method is declared as `virtual` rather than `abstract`, there is no implementation. This method must be overridden in order to provide functionality.
@@ -301,7 +304,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Some hosts infer the instance owner to use by reading this property. WorkflowApplication can use this property. WorkflowServiceHost does not use this property.
+
+Some hosts infer the instance owner to use by reading this property. WorkflowApplication can use this property. WorkflowServiceHost does not use this property.
 
  The DefaultInstanceOwner property must be set to null when it is no longer necessary. InstanceStore objects might not be garbage collected if DefaultInstanceOwner is not null.
 
@@ -338,7 +342,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If BeginExecute was called under a transaction, this state may include uncommitted data. Once the transaction is committed successfully, the data in the InstanceView object can be considered committed.
+
+If BeginExecute was called under a transaction, this state may include uncommitted data. Once the transaction is committed successfully, the data in the InstanceView object can be considered committed.
 
  ]]></format>
         </remarks>
@@ -433,7 +438,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A host calls the <xref:System.Runtime.DurableInstancing.InstanceStore.Execute*> method to execute a persistence command against an instance handle, which the host obtains by invoking the <xref:System.Runtime.DurableInstancing.InstanceStore.CreateInstanceHandle*> method. The instance handle may be bound to entities that represent the context and subject of the command, such as an instance, instance owner, or instance lock. Only one command may be issued against an instance handle at a time.
+
+A host calls the <xref:System.Runtime.DurableInstancing.InstanceStore.Execute*> method to execute a persistence command against an instance handle, which the host obtains by invoking the <xref:System.Runtime.DurableInstancing.InstanceStore.CreateInstanceHandle*> method. The instance handle may be bound to entities that represent the context and subject of the command, such as an instance, instance owner, or instance lock. Only one command may be issued against an instance handle at a time.
 
 > [!WARNING]
 > If this method is executed with a <xref:System.Activities.DurableInstancing.CreateWorkflowOwnerCommand>, it will create an <xref:System.Runtime.DurableInstancing.InstanceOwner> and bind it to the instance. This means that no other process will be able to access that workflow; if the process ends, the workflow cannot be recovered or executed. If such a workflow is executed again, a <xref:System.Runtime.DurableInstancing.InstanceLockedException> will be thrown.
@@ -492,7 +498,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Returns an array of InstanceOwner objects.
+
+Returns an array of InstanceOwner objects.
 
  ]]></format>
         </remarks>
@@ -631,7 +638,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the command can be executed, the persistence provider calls relevant methods on the <xref:System.Runtime.DurableInstancing.InstancePersistenceContext> to provide the results of the command.
+
+If the command can be executed, the persistence provider calls relevant methods on the <xref:System.Runtime.DurableInstancing.InstancePersistenceContext> to provide the results of the command.
 
  ]]></format>
         </remarks>

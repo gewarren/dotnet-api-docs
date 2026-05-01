@@ -51,7 +51,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Provides sessions and optionally provides ordered message delivery. This implemented session can cross SOAP and transport intermediaries.
+
+Provides sessions and optionally provides ordered message delivery. This implemented session can cross SOAP and transport intermediaries.
 
  Each binding element represents a processing step when sending or receiving messages. At runtime, binding elements create the channel factories and listeners that are necessary to build outgoing and incoming channel stacks required to send and receive messages. The <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> provides an optional layer in the stack that can establish a reliable session between endpoints and configure the behavior of this session.
 
@@ -197,7 +198,8 @@ The <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> can be add
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The destination that receives messages on a reliable channel groups the acknowledgments for these messages together into a single message to reduce network traffic and to increase information density on messages. Grouping scales better as traffic increases. It does not attempt to send an acknowledgment for every message it receives as soon as possible, but rather waits for an interval of time, groups together the acknowledgments that have arrived during that interval, and then sends them all together. The first message that is received is the exception; it is acknowledged as soon as it is delivered. Also, if reliable sessions are used with single HTTP connections, as is the case for example with the <xref:System.ServiceModel.WSHttpBinding> but not <xref:System.ServiceModel.WSDualHttpBinding>, then this setting is not used.
+
+The destination that receives messages on a reliable channel groups the acknowledgments for these messages together into a single message to reduce network traffic and to increase information density on messages. Grouping scales better as traffic increases. It does not attempt to send an acknowledgment for every message it receives as soon as possible, but rather waits for an interval of time, groups together the acknowledgments that have arrived during that interval, and then sends them all together. The first message that is received is the exception; it is acknowledged as soon as it is delivered. Also, if reliable sessions are used with single HTTP connections, as is the case for example with the <xref:System.ServiceModel.WSHttpBinding> but not <xref:System.ServiceModel.WSDualHttpBinding>, then this setting is not used.
 
  The value that is set with the <xref:System.ServiceModel.Channels.ReliableSessionBindingElement.AcknowledgementInterval> property is a recommendation to the infrastructure and not a hard limit.
 
@@ -246,7 +248,8 @@ The <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> can be add
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ServiceModel.Channels.IChannel> produced by the factory is of type `TChannel`. The types of `TChannel` supported on the client is dependent of the types of underlying channels that connect to the service. The following table indicates what reliable session channel types are supported as a function of the underlying channels.
+
+The <xref:System.ServiceModel.Channels.IChannel> produced by the factory is of type `TChannel`. The types of `TChannel` supported on the client is dependent of the types of underlying channels that connect to the service. The following table indicates what reliable session channel types are supported as a function of the underlying channels.
 
 |Support for Reliable Session `TChannel` Types by Underlying Channel Types|IRequestChannel|IRequestSessionChannel|IDuplexChannel|IDuplexSessionChannel|
 |-------------------------------------------------------------------------------|---------------------|----------------------------|--------------------|---------------------------|
@@ -299,7 +302,8 @@ The <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> can be add
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ServiceModel.Channels.IChannel> accepted by the listener is of type `TChannel`. The types of `TChannel` supported on the server that hosts the service is dependent of the types of underlying channels used to connect to the client. The following table indicates what reliable session channel types are supported as a function of the underlying channels.
+
+The <xref:System.ServiceModel.Channels.IChannel> accepted by the listener is of type `TChannel`. The types of `TChannel` supported on the server that hosts the service is dependent of the types of underlying channels used to connect to the client. The following table indicates what reliable session channel types are supported as a function of the underlying channels.
 
 |Support for Reliable Session `TChannel` Types by Underlying Channel Types|IReplyChannel|IReplySessionChannel|IDuplexChannel|IDuplexSessionChannel|
 |-------------------------------------------------------------------------------|-------------------|--------------------------|--------------------|---------------------------|
@@ -354,7 +358,8 @@ The <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> can be add
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method returns `true` or `false` for a `TChannel` in accordance with the table of values provided in <xref:System.ServiceModel.Channels.ReliableSessionBindingElement.BuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)>.
+
+This method returns `true` or `false` for a `TChannel` in accordance with the table of values provided in <xref:System.ServiceModel.Channels.ReliableSessionBindingElement.BuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)>.
 
  ]]></format>
         </remarks>
@@ -400,7 +405,8 @@ The <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> can be add
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Channel stacks are typically created using a factory pattern where a binding creates the channel stack. When sending messages, a binding is used to build a channel factory which in turn builds a channel stack and returns a reference to the top channel in the stack. The application can then use this channel to send messages. Similarly when receiving messages, a binding is used to build a channel listener which listens for incoming messages. The channel listener provides messages to the listening application by creating channel stacks and handing the application a reference to the top channel.
+
+Channel stacks are typically created using a factory pattern where a binding creates the channel stack. When sending messages, a binding is used to build a channel factory which in turn builds a channel stack and returns a reference to the top channel in the stack. The application can then use this channel to send messages. Similarly when receiving messages, a binding is used to build a channel listener which listens for incoming messages. The channel listener provides messages to the listening application by creating channel stacks and handing the application a reference to the top channel.
 
  This method returns `true` or `false` for a `TChannel` in accordance with the table of values provided in <xref:System.ServiceModel.Channels.ReliableSessionBindingElement.BuildChannelListener``1(System.ServiceModel.Channels.BindingContext)>.
 
@@ -487,7 +493,8 @@ The <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> can be add
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Flow control is a mechanism that reliable sessions implement to ensure that senders do not send more messages than a receiver can handle. Receivers have a buffer of messages that is used to accommodate message bursts and out-of-order messages. Receivers advertise to senders the amount of space that remains in this buffer in each of their acknowledgements. Senders can use this information to stop sending new messages whenever the receiver has no buffer space left.
+
+Flow control is a mechanism that reliable sessions implement to ensure that senders do not send more messages than a receiver can handle. Receivers have a buffer of messages that is used to accommodate message bursts and out-of-order messages. Receivers advertise to senders the amount of space that remains in this buffer in each of their acknowledgements. Senders can use this information to stop sending new messages whenever the receiver has no buffer space left.
 
  ]]></format>
         </remarks>
@@ -578,7 +585,8 @@ The <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> can be add
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Activity on a channel is defined as receiving an application or infrastructure message. The inactivity timeout parameter controls the maximum amount of time to keep an inactive session alive. If more than <xref:System.ServiceModel.Channels.ReliableSessionBindingElement.InactivityTimeout> time interval passes with no activity, the session is aborted by the infrastructure and the channel faults. The reliable session is torn down unilaterally.
+
+Activity on a channel is defined as receiving an application or infrastructure message. The inactivity timeout parameter controls the maximum amount of time to keep an inactive session alive. If more than <xref:System.ServiceModel.Channels.ReliableSessionBindingElement.InactivityTimeout> time interval passes with no activity, the session is aborted by the infrastructure and the channel faults. The reliable session is torn down unilaterally.
 
  If the sending application has no messages to send then the reliable session is normally not faulted because of inactivity; instead a keep-alive mechanism keeps the session active indefinitely. Note that the dispatcher can independently abort the reliable session if no application messages are sent or received. Thus, the inactivity timeout typically expires if network conditions are such that no messages are received or if there is a failure on the sender.
 
@@ -629,7 +637,8 @@ The <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> can be add
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Channels are pending when they are waiting to be accepted. Once that limit is reached, no channels are created and put in pending mode until this number goes down (by accepting pending channels). This is a limit for each listener.
+
+Channels are pending when they are waiting to be accepted. Once that limit is reached, no channels are created and put in pending mode until this number goes down (by accepting pending channels). This is a limit for each listener.
 
  When the threshold is reached and a remote application tries to establish a new reliable session, the request is denied and the open operation that prompted this faults.
 
@@ -680,7 +689,8 @@ The <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> can be add
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A message is considered to be transferred if its delivery at the recipient has been acknowledged by the recipient.
+
+A message is considered to be transferred if its delivery at the recipient has been acknowledged by the recipient.
 
  If an acknowledgment has not been received within a certain amount of time for a message that has been transmitted, the infrastructure automatically retransmits the message. The infrastructure tries to send the message for, at most, a <xref:System.ServiceModel.Channels.ReliableSessionBindingElement.MaxRetryCount> number of times. Not receiving an acknowledgment before this limit is reached is considered a fatal communication failure and causes the channel faulted event to be raised.
 
@@ -733,7 +743,8 @@ The <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> can be add
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The value of the <xref:System.ServiceModel.Channels.ReliableSessionBindingElement.MaxTransferWindowSize> property can be set on both the sender and the receiver. This value is included in the binding policy of the WSDL, so if you use the [ServiceModel Metadata Utility Tool (Svcutil.exe)](/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe) to construct your client, it has the same value. Otherwise this value is whatever you set it to be on the client.
+
+The value of the <xref:System.ServiceModel.Channels.ReliableSessionBindingElement.MaxTransferWindowSize> property can be set on both the sender and the receiver. This value is included in the binding policy of the WSDL, so if you use the [ServiceModel Metadata Utility Tool (Svcutil.exe)](/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe) to construct your client, it has the same value. Otherwise this value is whatever you set it to be on the client.
 
  When this limit is reached on the sender, additional calls to send are blocked. When this limit is reached on the receiver, new messages that arrive on the underlying channel are not accepted.
 
@@ -791,7 +802,8 @@ The <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> can be add
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- To get messages dispatched in order, you also must set the <xref:System.ServiceModel.ConcurrencyMode> to <xref:System.ServiceModel.ConcurrencyMode.Single>.
+
+To get messages dispatched in order, you also must set the <xref:System.ServiceModel.ConcurrencyMode> to <xref:System.ServiceModel.ConcurrencyMode.Single>.
 
  ]]></format>
         </remarks>
@@ -839,7 +851,8 @@ The <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> can be add
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- There are currently two versions of the WS-ReliableMessaging protocol supported by Windows Communication Foundation (WCF): WS-ReliableMessaging1.1 and WS-ReliableMessagingFebruary2005. The default version is WS-ReliableMessagingFebruary2005.
+
+There are currently two versions of the WS-ReliableMessaging protocol supported by Windows Communication Foundation (WCF): WS-ReliableMessaging1.1 and WS-ReliableMessagingFebruary2005. The default version is WS-ReliableMessagingFebruary2005.
 
  ]]></format>
         </remarks>

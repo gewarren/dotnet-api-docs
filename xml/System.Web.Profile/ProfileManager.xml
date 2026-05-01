@@ -20,7 +20,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The ASP.NET profile is used to store and retrieve user settings in a data source such as a database. The user profile is accessed using the <xref:System.Web.HttpContext.Profile> property of the current <xref:System.Web.HttpContext>. Profile information and property values are managed using a profile provider.
+
+The ASP.NET profile is used to store and retrieve user settings in a data source such as a database. The user profile is accessed using the <xref:System.Web.HttpContext.Profile> property of the current <xref:System.Web.HttpContext>. Profile information and property values are managed using a profile provider.
 
  The <xref:System.Web.Profile.ProfileManager> class is used to manage profile settings, search for user profiles, and delete user profiles that are no longer in use. The <xref:System.Web.Profile.ProfileManager> class provides static methods and properties that can be accessed by referencing the <xref:System.Web.Profile.ProfileManager> class in your application code. For an example, see the Example section in this topic and additional examples in the topics for members of the <xref:System.Web.Profile.ProfileManager> class.
 
@@ -98,7 +99,8 @@ The following code example shows an ASP.NET page that uses the <xref:System.Web.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is functionally equivalent to adding the property to the `profile` section of the configuration file. To call this method to add the profile property, you must make the call in a method that is marked with the <xref:System.Web.PreApplicationStartMethodAttribute> attribute.
+
+This method is functionally equivalent to adding the property to the `profile` section of the configuration file. To call this method to add the profile property, you must make the call in a method that is marked with the <xref:System.Web.PreApplicationStartMethodAttribute> attribute.
 
  ]]></format>
         </remarks>
@@ -127,7 +129,8 @@ The following code example shows an ASP.NET page that uses the <xref:System.Web.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Profile.ProfileManager> uses the <xref:System.Web.Profile.ProfileManager.ApplicationName> property to associate profile information with different applications. This enables multiple applications to use the same database to store user information without running into conflicts between duplicate users. Multiple ASP.NET applications can use the same user database by specifying the same value in the <xref:System.Web.Profile.ProfileManager.ApplicationName> property. The <xref:System.Web.Profile.ProfileManager.ApplicationName> property can be set programmatically, or it can be set declaratively in the configuration file for the Web application by using the `applicationName` attribute.
+
+The <xref:System.Web.Profile.ProfileManager> uses the <xref:System.Web.Profile.ProfileManager.ApplicationName> property to associate profile information with different applications. This enables multiple applications to use the same database to store user information without running into conflicts between duplicate users. Multiple ASP.NET applications can use the same user database by specifying the same value in the <xref:System.Web.Profile.ProfileManager.ApplicationName> property. The <xref:System.Web.Profile.ProfileManager.ApplicationName> property can be set programmatically, or it can be set declaratively in the configuration file for the Web application by using the `applicationName` attribute.
 
  If a value is not specified for the `applicationName` attribute in the configuration file for the Web application, then the profile providers included with the .NET Framework use the <xref:System.Web.Hosting.HostingEnvironment.ApplicationVirtualPath> property value for ASP.NET applications. For non-ASP.NET applications, the default value is the <xref:System.Diagnostics.ProcessModule.ModuleName> property value, without the file extension.
 
@@ -180,7 +183,8 @@ The following configuration file excerpt shows the [profile](https://learn.micro
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Profile.ProfileManager.AutomaticSaveEnabled> property indicates whether automatic saving of the user profile is enabled for the application. If automatic saving is enabled, the <xref:System.Web.Profile.ProfileModule> object raises the <xref:System.Web.Profile.ProfileModule.ProfileAutoSaving> event and calls the <xref:System.Web.Profile.ProfileBase.Save*> method during the <xref:System.Web.HttpApplication.EndRequest> event at the end of the execution of an ASP.NET page.
+
+The <xref:System.Web.Profile.ProfileManager.AutomaticSaveEnabled> property indicates whether automatic saving of the user profile is enabled for the application. If automatic saving is enabled, the <xref:System.Web.Profile.ProfileModule> object raises the <xref:System.Web.Profile.ProfileModule.ProfileAutoSaving> event and calls the <xref:System.Web.Profile.ProfileBase.Save*> method during the <xref:System.Web.HttpApplication.EndRequest> event at the end of the execution of an ASP.NET page.
 
  The <xref:System.Web.Profile.ProfileManager.AutomaticSaveEnabled> property is set using the `automaticSaveEnabled` attribute of the [profile](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/ms164644(v%3dvs.100)) element in the Web.config file for an ASP.NET application.
 
@@ -236,7 +240,8 @@ The following configuration file excerpt shows the [profile](https://learn.micro
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Profile.ProfileManager.DeleteInactiveProfiles*> method is used to remove unused profile data from the data source for the application specified by the `applicationName` attribute in the configuration file. Use the `authenticationOption` parameter to specify whether you want only anonymous profiles, only authenticated profiles, or all profiles to be searched. Of the searched profiles, any profile with a <xref:System.Web.Profile.ProfileInfo.LastActivityDate*> that occurs on or before the specified `userInactiveSinceDate` parameter value is deleted.
+
+The <xref:System.Web.Profile.ProfileManager.DeleteInactiveProfiles*> method is used to remove unused profile data from the data source for the application specified by the `applicationName` attribute in the configuration file. Use the `authenticationOption` parameter to specify whether you want only anonymous profiles, only authenticated profiles, or all profiles to be searched. Of the searched profiles, any profile with a <xref:System.Web.Profile.ProfileInfo.LastActivityDate*> that occurs on or before the specified `userInactiveSinceDate` parameter value is deleted.
 
  The <xref:System.Web.Profile.ProfileManager.DeleteInactiveProfiles*> method calls the <xref:System.Web.Profile.ProfileProvider.DeleteInactiveProfiles*> method of the default profile provider. The default profile provider is specified using the `defaultProvider` attribute of the [profile](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/ms164644(v%3dvs.100)) configuration element. If the user profile contains properties that are managed by a profile provider other than the default provider, the profile information in the other data source is not deleted. To delete inactive profiles that are managed by a profile provider other than the default provider, obtain a reference to the profile provider using the <xref:System.Web.Profile.ProfileManager.Providers> property and call the <xref:System.Web.Profile.ProfileProvider.DeleteInactiveProfiles*> method of the provider directly.
 
@@ -283,7 +288,8 @@ The following code example shows an ASP.NET page that manages inactive profiles.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Profile.ProfileManager.DeleteProfile*> method deletes all profile information and properties for the user profile for the specified `username` from the data source for the specified <xref:System.Web.Profile.ProfileManager.ApplicationName*>.
+
+The <xref:System.Web.Profile.ProfileManager.DeleteProfile*> method deletes all profile information and properties for the user profile for the specified `username` from the data source for the specified <xref:System.Web.Profile.ProfileManager.ApplicationName*>.
 
  The <xref:System.Web.Profile.ProfileManager.DeleteProfile*> method calls the <xref:System.Web.Profile.ProfileProvider.DeleteProfiles*> method of the default profile provider to perform the delete operation. The default profile provider is specified using the `defaultProvider` attribute of the [profile](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/ms164644(v%3dvs.100)) configuration element. If the user profile contains properties that are managed by a profile provider other than the default provider, they are not deleted. To delete profile properties that are managed by a profile provider other than the default provider, obtain a reference to the profile provider using the <xref:System.Web.Profile.ProfileManager.Providers> property and call the <xref:System.Web.Profile.ProfileProvider.DeleteProfiles*> method of the provider directly.
 
@@ -343,7 +349,8 @@ The following code example shows an ASP.NET page that manages inactive profiles.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Profile.ProfileManager.DeleteProfiles*> method deletes all profile information and properties for the specified profiles from the data source for the application specified by the <xref:System.Web.Profile.ProfileManager.ApplicationName> property. The list of profiles to delete is specified as a string array of user names. If profile properties and information exist in the data source for a user name in the `usernames` parameter, they are deleted.
+
+The <xref:System.Web.Profile.ProfileManager.DeleteProfiles*> method deletes all profile information and properties for the specified profiles from the data source for the application specified by the <xref:System.Web.Profile.ProfileManager.ApplicationName> property. The list of profiles to delete is specified as a string array of user names. If profile properties and information exist in the data source for a user name in the `usernames` parameter, they are deleted.
 
  The return value may differ from the length of the specified array of `usernames`. This indicates that some of the profiles in the specified array of `usernames` were already deleted from the data store.
 
@@ -406,7 +413,8 @@ The following code example shows an ASP.NET page that manages inactive profiles.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Profile.ProfileManager.DeleteProfiles*> method deletes all profile information and properties for the specified profiles from the data source for the application specified by the <xref:System.Web.Profile.ProfileManager.ApplicationName> property. The list of profiles to delete is specified using a <xref:System.Web.Profile.ProfileInfoCollection> that is passed as the `profiles` parameter. A <xref:System.Web.Profile.ProfileInfoCollection> can be returned from the <xref:System.Web.Profile.ProfileManager.GetAllProfiles*>, <xref:System.Web.Profile.ProfileManager.GetAllInactiveProfiles*>, <xref:System.Web.Profile.ProfileManager.FindProfilesByUserName*>, and <xref:System.Web.Profile.ProfileManager.FindInactiveProfilesByUserName*> methods.
+
+The <xref:System.Web.Profile.ProfileManager.DeleteProfiles*> method deletes all profile information and properties for the specified profiles from the data source for the application specified by the <xref:System.Web.Profile.ProfileManager.ApplicationName> property. The list of profiles to delete is specified using a <xref:System.Web.Profile.ProfileInfoCollection> that is passed as the `profiles` parameter. A <xref:System.Web.Profile.ProfileInfoCollection> can be returned from the <xref:System.Web.Profile.ProfileManager.GetAllProfiles*>, <xref:System.Web.Profile.ProfileManager.GetAllInactiveProfiles*>, <xref:System.Web.Profile.ProfileManager.FindProfilesByUserName*>, and <xref:System.Web.Profile.ProfileManager.FindInactiveProfilesByUserName*> methods.
 
  Note that the return value may differ from the <xref:System.Web.Profile.ProfileInfoCollection.Count*> value for the supplied <xref:System.Web.Profile.ProfileInfoCollection>. This indicates that some of the profiles in the specified <xref:System.Web.Profile.ProfileInfoCollection> were already deleted from the data store.
 
@@ -463,7 +471,8 @@ The following code example allows a user to search for profiles using the <xref:
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The user profile is enabled for an application using the `enabled` attribute of the [profile](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/ms164644(v%3dvs.100)) configuration element.
+
+The user profile is enabled for an application using the `enabled` attribute of the [profile](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/ms164644(v%3dvs.100)) configuration element.
 
 ## Examples
 
@@ -526,7 +535,8 @@ The following code example shows the [profile](https://learn.microsoft.com/previ
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Profile.ProfileManager.FindInactiveProfilesByUserName*> method is used to retrieve profile information for all unused user profiles for the application specified by the `applicationName` attribute in the configuration file. This method will only retrieve profiles for which the profile user name matches the supplied `usernameToMatch` parameter value. Use the `authenticationOption` parameter to specify whether you want only anonymous profiles, only authenticated profiles, or all profiles to be searched. Of the searched profiles, any profile with a <xref:System.Web.Profile.ProfileInfo.LastActivityDate*> that occurs on or before the specified `userInactiveSinceDate` parameter value is returned.
+
+The <xref:System.Web.Profile.ProfileManager.FindInactiveProfilesByUserName*> method is used to retrieve profile information for all unused user profiles for the application specified by the `applicationName` attribute in the configuration file. This method will only retrieve profiles for which the profile user name matches the supplied `usernameToMatch` parameter value. Use the `authenticationOption` parameter to specify whether you want only anonymous profiles, only authenticated profiles, or all profiles to be searched. Of the searched profiles, any profile with a <xref:System.Web.Profile.ProfileInfo.LastActivityDate*> that occurs on or before the specified `userInactiveSinceDate` parameter value is returned.
 
  You can retrieve this information in pages of data using the overload for the <xref:System.Web.Profile.ProfileManager.FindInactiveProfilesByUserName(System.Web.Profile.ProfileAuthenticationOption,System.String,System.DateTime,System.Int32,System.Int32,System.Int32@)> method that takes additional `pageIndex` and `pageSize` parameters.
 
@@ -591,7 +601,8 @@ The following code example allows a user to supply a `usernameToMatch` value and
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Profile.ProfileManager.FindInactiveProfilesByUserName*> method is used to retrieve profile information for unused user profiles for the application specified by the `applicationName` attribute in the configuration file. This method will only retrieve profiles for which the user name matches the supplied `usernameToMatch` parameter value. Use the `authenticationOption` parameter to specify whether you want only anonymous profiles, only authenticated profiles, or all profiles to be searched. Of the searched profiles, any profile is returned that has a <xref:System.Web.Profile.ProfileInfo.LastActivityDate*> that occurs on or before the specified `userInactiveSinceDate` parameter value.
+
+The <xref:System.Web.Profile.ProfileManager.FindInactiveProfilesByUserName*> method is used to retrieve profile information for unused user profiles for the application specified by the `applicationName` attribute in the configuration file. This method will only retrieve profiles for which the user name matches the supplied `usernameToMatch` parameter value. Use the `authenticationOption` parameter to specify whether you want only anonymous profiles, only authenticated profiles, or all profiles to be searched. Of the searched profiles, any profile is returned that has a <xref:System.Web.Profile.ProfileInfo.LastActivityDate*> that occurs on or before the specified `userInactiveSinceDate` parameter value.
 
  The results returned by <xref:System.Web.Profile.ProfileManager.FindInactiveProfilesByUserName*> are constrained by the `pageIndex` and `pageSize` parameters. The `pageSize` parameter identifies the maximum number of <xref:System.Web.Profile.ProfileInfo> objects to return in the <xref:System.Web.Profile.ProfileInfoCollection> collection. The `pageIndex` parameter identifies which page of results to return; 0 identifies the first page. The `totalRecords` parameter is an `out` parameter that is set to the total number of inactive user profiles for the configured `applicationName`, based on the `authenticationOption` and `userInactiveSinceDate` parameters. For example, if there are 13 users for the configured `applicationName`, and the `pageIndex` value is 1 with a `pageSize` of 5, the <xref:System.Web.Profile.ProfileInfoCollection> returned will contain the sixth through the tenth inactive profiles. The `totalRecords` parameter will be set to 13.
 
@@ -669,7 +680,8 @@ The following code example allows a user to supply a `usernameToMatch` value and
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Profile.ProfileManager.FindProfilesByUserName*> method returns a list of all profile information for which the user name matches the supplied `usernameToMatch` parameter value for the configured <xref:System.Web.Profile.ProfileManager.ApplicationName> property value. Use the `authenticationOption` parameter to specify whether you want only anonymous profiles, only authenticated profiles, or all profiles to be searched.
+
+The <xref:System.Web.Profile.ProfileManager.FindProfilesByUserName*> method returns a list of all profile information for which the user name matches the supplied `usernameToMatch` parameter value for the configured <xref:System.Web.Profile.ProfileManager.ApplicationName> property value. Use the `authenticationOption` parameter to specify whether you want only anonymous profiles, only authenticated profiles, or all profiles to be searched.
 
  You can retrieve profile information for user profiles in pages of data using the overload for the <xref:System.Web.Profile.ProfileManager.FindProfilesByUserName*> method that takes additional `pageIndex` and `pageSize` parameters.
 
@@ -731,7 +743,8 @@ The following code example allows a user to supply a `usernameToMatch` value and
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Profile.ProfileManager.FindInactiveProfilesByUserName*> method returns a list of profile information for which the profile user name matches the supplied `usernameToMatch` parameter value of the configured <xref:System.Web.Profile.ProfileManager.ApplicationName*>. Use the `authenticationOption` parameter to specify whether you want only anonymous profiles, only authenticated profiles, or all profiles to be searched.
+
+The <xref:System.Web.Profile.ProfileManager.FindInactiveProfilesByUserName*> method returns a list of profile information for which the profile user name matches the supplied `usernameToMatch` parameter value of the configured <xref:System.Web.Profile.ProfileManager.ApplicationName*>. Use the `authenticationOption` parameter to specify whether you want only anonymous profiles, only authenticated profiles, or all profiles to be searched.
 
  Note that your profile provider may support wildcard characters in the `usernameToMatch` parameter. For example, the <xref:System.Web.Profile.SqlProfileProvider.FindProfilesByUserName*> method of the <xref:System.Web.Profile.SqlProfileProvider> class supports wildcard characters in the `usernameToMatch` parameter.
 
@@ -809,7 +822,8 @@ The following code example allows a user to supply a `usernameToMatch` value and
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Profile.ProfileManager.GetAllInactiveProfiles*> method is used to retrieve profile information from the data source for all unused user profiles for the application specified by the `applicationName` attribute in the configuration file. Use the `authenticationOption` parameter to specify whether you want only anonymous profiles, only authenticated profiles, or all profiles to be searched. Of the searched profiles, any profile is returned that has a <xref:System.Web.Profile.ProfileInfo.LastActivityDate*> that occurs on or before the specified `userInactiveSinceDate` parameter value.
+
+The <xref:System.Web.Profile.ProfileManager.GetAllInactiveProfiles*> method is used to retrieve profile information from the data source for all unused user profiles for the application specified by the `applicationName` attribute in the configuration file. Use the `authenticationOption` parameter to specify whether you want only anonymous profiles, only authenticated profiles, or all profiles to be searched. Of the searched profiles, any profile is returned that has a <xref:System.Web.Profile.ProfileInfo.LastActivityDate*> that occurs on or before the specified `userInactiveSinceDate` parameter value.
 
  You can retrieve profile information for inactive user profiles in pages of data using the overload for the <xref:System.Web.Profile.ProfileManager.GetAllInactiveProfiles*> method that takes additional `pageIndex` and `pageSize` parameters.
 
@@ -865,7 +879,8 @@ The following code example shows an ASP.NET page that manages inactive profiles.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Profile.ProfileManager.GetAllInactiveProfiles*> method is used to retrieve profile information from the data source for unused user profiles for the application specified by the `applicationName` attribute in the configuration file. Use the `authenticationOption` parameter to specify whether you want only anonymous profiles, only authenticated profiles, or all profiles to be searched. Of the searched profiles, any profile is returned that has a <xref:System.Web.Profile.ProfileInfo.LastActivityDate*> that occurs before the specified `userInactiveSinceDate` parameter value.
+
+The <xref:System.Web.Profile.ProfileManager.GetAllInactiveProfiles*> method is used to retrieve profile information from the data source for unused user profiles for the application specified by the `applicationName` attribute in the configuration file. Use the `authenticationOption` parameter to specify whether you want only anonymous profiles, only authenticated profiles, or all profiles to be searched. Of the searched profiles, any profile is returned that has a <xref:System.Web.Profile.ProfileInfo.LastActivityDate*> that occurs before the specified `userInactiveSinceDate` parameter value.
 
  The results returned by <xref:System.Web.Profile.ProfileManager.GetAllInactiveProfiles*> are constrained by the `pageIndex` and `pageSize` parameters. The `pageSize` parameter identifies the maximum number of <xref:System.Web.Profile.ProfileInfo> objects to return in the <xref:System.Web.Profile.ProfileInfoCollection>. The `pageIndex` parameter identifies which page of results to return; zero identifies the first page. The `totalRecords` parameter is an `out` parameter that is set to the total number of inactive user profiles for the configured `applicationName`, based on the `authenticationOption` and `userInactiveSinceDate` parameters. For example, if there are 13 users for the configured `applicationName`, and the `pageIndex` value is one with a `pageSize` of 5, the <xref:System.Web.Profile.ProfileInfoCollection> returned will contain the sixth through the tenth inactive profiles. The `totalRecords` parameter will be set to 13.
 
@@ -923,7 +938,8 @@ The following code example shows an ASP.NET Web page that manages inactive profi
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Profile.ProfileManager.GetAllProfiles*> method is used to retrieve profile information from the data source for the application specified by the `applicationName` attribute in the configuration file. Use the `authenticationOption` parameter to specify whether you want only anonymous profiles, only authenticated profiles, or all profiles to be searched.
+
+The <xref:System.Web.Profile.ProfileManager.GetAllProfiles*> method is used to retrieve profile information from the data source for the application specified by the `applicationName` attribute in the configuration file. Use the `authenticationOption` parameter to specify whether you want only anonymous profiles, only authenticated profiles, or all profiles to be searched.
 
  You can retrieve pages of <xref:System.Web.Profile.ProfileInfo> objects for user profiles using the overload for the <xref:System.Web.Profile.ProfileManager.GetAllProfiles*> method that takes additional `pageIndex` and `pageSize` parameters.
 
@@ -974,7 +990,8 @@ The following code example displays profile information for all of the profiles 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Profile.ProfileManager.GetAllProfiles*> method is used to retrieve profile information from the data source for the application specified by the `applicationName` attribute in the configuration file. Use the `authenticationOption` parameter to specify whether you want only anonymous profiles, only authenticated profiles, or all profiles to be searched.
+
+The <xref:System.Web.Profile.ProfileManager.GetAllProfiles*> method is used to retrieve profile information from the data source for the application specified by the `applicationName` attribute in the configuration file. Use the `authenticationOption` parameter to specify whether you want only anonymous profiles, only authenticated profiles, or all profiles to be searched.
 
  The results returned by <xref:System.Web.Profile.ProfileManager.GetAllInactiveProfiles*> are constrained by the `pageIndex` and `pageSize` parameters. The `pageSize` parameter identifies the maximum number of <xref:System.Web.Profile.ProfileInfo> objects to return in the <xref:System.Web.Profile.ProfileInfoCollection>. The `pageIndex` parameter identifies which page of results to return; zero identifies the first page. The `totalRecords` parameter is an `out` parameter that is set to the total number of inactive user profiles for the configured `applicationName`, based on the supplied `authenticationOption`. For example, if there are 13 users for the configured `applicationName`, and the `pageIndex` value is one with a `pageSize` of 5, the <xref:System.Web.Profile.ProfileInfoCollection> returned will contain the sixth through the tenth profiles. The `totalRecords` parameter will be set to 13.
 
@@ -1021,7 +1038,8 @@ The following code example displays profile information for all of the profiles 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Profile.ProfileManager.GetNumberOfInactiveProfiles*> method is used to retrieve a count of all of the unused user profiles from the data source for the application specified by the `applicationName` attribute in the configuration file. Use the `authenticationOption` parameter to specify whether you want only anonymous profiles, only authenticated profiles, or all profiles to be searched. Of the searched profiles, all profiles are counted that have a <xref:System.Web.Profile.ProfileInfo.LastActivityDate*> that occurs on or before the specified `userInactiveSinceDate` parameter value.
+
+The <xref:System.Web.Profile.ProfileManager.GetNumberOfInactiveProfiles*> method is used to retrieve a count of all of the unused user profiles from the data source for the application specified by the `applicationName` attribute in the configuration file. Use the `authenticationOption` parameter to specify whether you want only anonymous profiles, only authenticated profiles, or all profiles to be searched. Of the searched profiles, all profiles are counted that have a <xref:System.Web.Profile.ProfileInfo.LastActivityDate*> that occurs on or before the specified `userInactiveSinceDate` parameter value.
 
 ## Examples
 
@@ -1065,7 +1083,8 @@ The following code example allows a user to view and delete information for acti
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Profile.ProfileManager.GetNumberOfProfiles*> method is used to retrieve a count of all of the user profiles from the data source for the application specified by the `applicationName` attribute in the configuration file. Use the `authenticationOption` parameter to specify whether you want only anonymous profiles, only authenticated profiles, or all profiles to be searched.
+
+The <xref:System.Web.Profile.ProfileManager.GetNumberOfProfiles*> method is used to retrieve a count of all of the user profiles from the data source for the application specified by the `applicationName` attribute in the configuration file. Use the `authenticationOption` parameter to specify whether you want only anonymous profiles, only authenticated profiles, or all profiles to be searched.
 
 ## Examples
 
@@ -1102,7 +1121,8 @@ The following code example displays profile information for all of the profiles 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Profile.ProfileManager.Provider> property enables you to reference the default profile provider for an application directly. This is commonly used to access custom members of the profile provider that are not part of the <xref:System.Web.Profile.ProfileProvider> abstract base class.
+
+The <xref:System.Web.Profile.ProfileManager.Provider> property enables you to reference the default profile provider for an application directly. This is commonly used to access custom members of the profile provider that are not part of the <xref:System.Web.Profile.ProfileProvider> abstract base class.
 
 ## Examples
 
@@ -1140,7 +1160,8 @@ The following code example lists properties of the default profile provider.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Profile.ProfileManager.Providers> property references all of the profile providers enabled for an application, including providers added in the machine configuration and providers added in all Web.config files. You can control which profile providers are available for an application using the [providers](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/ms164654(v%3dvs.100)) element of the [profile](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/ms164644(v%3dvs.100)) section in the configuration file. For example, the following Web.config file removes the profile providers specified in parent configuration files and adds a <xref:System.Web.Profile.SqlProfileProvider> instance as the profile provider for the application.
+
+The <xref:System.Web.Profile.ProfileManager.Providers> property references all of the profile providers enabled for an application, including providers added in the machine configuration and providers added in all Web.config files. You can control which profile providers are available for an application using the [providers](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/ms164654(v%3dvs.100)) element of the [profile](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/ms164644(v%3dvs.100)) section in the configuration file. For example, the following Web.config file removes the profile providers specified in parent configuration files and adds a <xref:System.Web.Profile.SqlProfileProvider> instance as the profile provider for the application.
 
 ```xml
 <configuration>

@@ -373,7 +373,8 @@ This method is intended for compiler use rather than use directly in code. `T` m
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is used by compilers.
+
+This method is used by compilers.
 
 ## Examples
 
@@ -454,7 +455,8 @@ The following example demonstrates how to compare two objects by using the <xref
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is used by compilers.
+
+This method is used by compilers.
 
  ]]></format>
         </remarks>
@@ -576,7 +578,8 @@ The following example demonstrates how to compare two objects by using the <xref
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Boxing a value type creates an object and performs a shallow copy of the fields of the specified value type into the new object.
+
+Boxing a value type creates an object and performs a shallow copy of the fields of the specified value type into the new object.
 
  This method allows a value class to be manipulated as an object while it retains the aliasing behavior of a value class.
 
@@ -762,7 +765,8 @@ The following example demonstrates how to box a value class by using the <xref:S
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is used by compilers.
+
+This method is used by compilers.
 
  ]]></format>
         </remarks>
@@ -877,7 +881,8 @@ The following example demonstrates how to box a value class by using the <xref:S
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Compilers use this property for unsafe, but efficient, pointer operations on the characters in a managed string. Compilers should pin the string against movement by the garbage collector before use. Note that common language runtime strings are immutable; that is, their contents can be read but not changed.
+
+Compilers use this property for unsafe, but efficient, pointer operations on the characters in a managed string. Compilers should pin the string against movement by the garbage collector before use. Note that common language runtime strings are immutable; that is, their contents can be read but not changed.
 
  ]]></format>
         </remarks>
@@ -939,7 +944,8 @@ The following example demonstrates how to box a value class by using the <xref:S
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Compilers use this method to mark `catch`, `finally`, and `fault` blocks as constrained execution regions (CERs). Code that is marked as a constrained region must only call other code with strong reliability contracts. It should not allocate or make virtual calls to unprepared or unreliable methods unless it is prepared to handle failures.
+
+Compilers use this method to mark `catch`, `finally`, and `fault` blocks as constrained execution regions (CERs). Code that is marked as a constrained region must only call other code with strong reliability contracts. It should not allocate or make virtual calls to unprepared or unreliable methods unless it is prepared to handle failures.
 
  Note that no intermediate language opcodes, except `NOP`, are allowed between a call to the <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions*> method and the `try` block. For more information about CERs, see the classes in the <xref:System.Runtime.ConstrainedExecution> namespace.
 
@@ -1018,7 +1024,8 @@ The following example shows how to reliably set handles by using the <xref:Syste
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Compilers should not call this method directly. Instead, define a CER by calling the <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions*?displayProperty=nameWithType> method.
+
+Compilers should not call this method directly. Instead, define a CER by calling the <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions*?displayProperty=nameWithType> method.
 
  ]]></format>
         </remarks>
@@ -1143,7 +1150,8 @@ The following example shows how to reliably set handles by using the <xref:Syste
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Compilers use this method to prepare a delegate's invocation method and to prepare the target of that invocation (and the delegate's statically determinable call graph) as a constrained execution region (CER).
+
+Compilers use this method to prepare a delegate's invocation method and to prepare the target of that invocation (and the delegate's statically determinable call graph) as a constrained execution region (CER).
 
  ]]></format>
         </remarks>
@@ -1210,7 +1218,8 @@ The following example shows how to reliably set handles by using the <xref:Syste
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Compilers use the <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod(System.RuntimeMethodHandle)> method to handle virtual calls that are made inside a constrained execution region (CER). At JIT compilation time, the common language runtime does not usually have enough information about the target of a virtual call. Therefore, the runtime does not initially prepare that segment of the call graph. If the code that is using the CER has enough knowledge to determine the target at any point in time before the CER is actually entered, it can call <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod(System.RuntimeMethodHandle)> to perform the same runtime preparation normally done for a CER rooted at the method specified as an argument.
+
+Compilers use the <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod(System.RuntimeMethodHandle)> method to handle virtual calls that are made inside a constrained execution region (CER). At JIT compilation time, the common language runtime does not usually have enough information about the target of a virtual call. Therefore, the runtime does not initially prepare that segment of the call graph. If the code that is using the CER has enough knowledge to determine the target at any point in time before the CER is actually entered, it can call <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod(System.RuntimeMethodHandle)> to perform the same runtime preparation normally done for a CER rooted at the method specified as an argument.
 
  ]]></format>
         </remarks>
@@ -1270,7 +1279,8 @@ The following example shows how to reliably set handles by using the <xref:Syste
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You can provide generics support for compilers by using the <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod(System.RuntimeMethodHandle,System.RuntimeTypeHandle[])> method. The common language runtime cannot prepare constrained execution regions (CERs) rooted in a method that has generic type parameters (either a type parameter on the class containing the method or one on the method itself) when those type parameters are instantiated as reference types.
+
+You can provide generics support for compilers by using the <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod(System.RuntimeMethodHandle,System.RuntimeTypeHandle[])> method. The common language runtime cannot prepare constrained execution regions (CERs) rooted in a method that has generic type parameters (either a type parameter on the class containing the method or one on the method itself) when those type parameters are instantiated as reference types.
 
  You can use this overload to pass a specific instantiation (such as an array of types), specifying class type parameters first (if any), followed by method type parameters (if any). The runtime prepares that instantiation of the method. (This is necessary only if the instantiations you use contain at least one reference type parameter.) Thus, you can use a CER-style `try` clause in a generic method (or a nongeneric method on a generic class) and it will work reliably with instantiations of <xref:System.Int32> or other value types. To instantiate reference types such as <xref:System.String>, you must use an explicit <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod(System.RuntimeMethodHandle,System.RuntimeTypeHandle[])> method on the CER root method first.
 
@@ -1334,7 +1344,8 @@ The following example shows how to reliably set handles by using the <xref:Syste
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is used by the constrained execution region (CER) infrastructure when running in hosts that are resilient to stack overflow such as Microsoft SQL Server and Microsoft Exchange Server. This method currently probes for 48 KB of stack space on the x86 platform, but the exact amount may change over time and may vary on other platforms.
+
+This method is used by the constrained execution region (CER) infrastructure when running in hosts that are resilient to stack overflow such as Microsoft SQL Server and Microsoft Exchange Server. This method currently probes for 48 KB of stack space on the x86 platform, but the exact amount may change over time and may vary on other platforms.
 
  This method is also used by compilers.
 
@@ -1404,7 +1415,8 @@ The following example shows how to reliably set handles by using the <xref:Syste
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is used by compilers.
+
+This method is used by compilers.
 
  ]]></format>
         </remarks>
@@ -1456,7 +1468,8 @@ The following example shows how to reliably set handles by using the <xref:Syste
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is used by compilers.
+
+This method is used by compilers.
 
  The module constructor will not be run more than once, even if this method is called multiple times.
  ]]></format>

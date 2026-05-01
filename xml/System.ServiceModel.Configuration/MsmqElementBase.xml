@@ -122,7 +122,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The dead-letter queue is a queue on the queue manager of the sending application for expired messages that have failed to be delivered.
+
+The dead-letter queue is a queue on the queue manager of the sending application for expired messages that have failed to be delivered.
 
  The URI that is specified by <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue> must use the Net.msmq scheme.
 
@@ -161,7 +162,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The dead-letter queue is a queue on the queue manager of the sending application for expired messages that have failed to be delivered. The dead-letter queue enumeration specifies the type of dead-letter queue to use. The values are:
+
+The dead-letter queue is a queue on the queue manager of the sending application for expired messages that have failed to be delivered. The dead-letter queue enumeration specifies the type of dead-letter queue to use. The values are:
 
 - None: If no dead-letter queue is required. Thus, if a message were to fail delivery, no record of it would be maintained in the dead-letter queue. This is the default value when <xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce> is set to `false`.
 
@@ -225,7 +227,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A durable message survives a queue manager crash, while a volatile message does not. Volatile messages are useful when applications can tolerate occasional lost messages.
+
+A durable message survives a queue manager crash, while a volatile message does not. Volatile messages are useful when applications can tolerate occasional lost messages.
 
  If <xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce> is set to `true`, the messages must be durable.
 
@@ -263,7 +266,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A message can be sent with or without assurances. An assurance enables an application to ensure that a sent message reached the receiving message queue, or if it did not, the application can determine this by reading the dead-letter queue.
+
+A message can be sent with or without assurances. An assurance enables an application to ensure that a sent message reached the receiving message queue, or if it did not, the application can determine this by reading the dead-letter queue.
 
  Messages sent with <xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce> set to `true` must be sent only to a transactional queue.
 
@@ -335,7 +339,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A single retry cycle attempts to deliver a message to an application a specified number of times. The number of attempts made is set by the <xref:System.ServiceModel.MsmqBindingBase.ReceiveRetryCount> property. If the application fails to consume the message after the attempts at delivery have been exhausted, the message is sent to a retry queue. Subsequent retry cycles consist of the message being returned from the retry queue to the application queue to attempt delivery to the application again, after a delay specified by the <xref:System.ServiceModel.MsmqBindingBase.RetryCycleDelay> property. The <xref:System.ServiceModel.MsmqBindingBase.MaxRetryCycles> property specifies the number of retry cycles that the application uses to attempt to deliver the message.
+
+A single retry cycle attempts to deliver a message to an application a specified number of times. The number of attempts made is set by the <xref:System.ServiceModel.MsmqBindingBase.ReceiveRetryCount> property. If the application fails to consume the message after the attempts at delivery have been exhausted, the message is sent to a retry queue. Subsequent retry cycles consist of the message being returned from the retry queue to the application queue to attempt delivery to the application again, after a delay specified by the <xref:System.ServiceModel.MsmqBindingBase.RetryCycleDelay> property. The <xref:System.ServiceModel.MsmqBindingBase.MaxRetryCycles> property specifies the number of retry cycles that the application uses to attempt to deliver the message.
 
  ]]></format>
         </remarks>
@@ -420,7 +425,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When this is `true`, a service can "peek" a message on the queue to begin processing it, and, if anything goes wrong and an exception is thrown, it remains on the queue. Services can also "lock" messages in order to retry processing at a later point in time. ReceiveContext provides a mechanism for "completing" the message once processed so it can be removed from the queue. Messages are no longer being read and re-written to queues over the network, and individual messages aren't bouncing across different service instances during processing.
+
+When this is `true`, a service can "peek" a message on the queue to begin processing it, and, if anything goes wrong and an exception is thrown, it remains on the queue. Services can also "lock" messages in order to retry processing at a later point in time. ReceiveContext provides a mechanism for "completing" the message once processed so it can be removed from the queue. Messages are no longer being read and re-written to queues over the network, and individual messages aren't bouncing across different service instances during processing.
 
  ]]></format>
         </remarks>
@@ -455,7 +461,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When this property is set to <xref:System.ServiceModel.ReceiveErrorHandling.Fault>, the channel listener is faulted and a <xref:System.ServiceModel.ProtocolException> (wrapping a <xref:System.ServiceModel.MsmqPoisonMessageException>) is traced and thrown. The offending message is left in the queue and needs to be removed by some manual method. The <xref:System.ServiceModel.MsmqPoisonMessageException> contains a <xref:System.ServiceModel.MsmqPoisonMessageException.MessageLookupId> that can be used to identify and manually remove the offending message from the poison-message queue.
+
+When this property is set to <xref:System.ServiceModel.ReceiveErrorHandling.Fault>, the channel listener is faulted and a <xref:System.ServiceModel.ProtocolException> (wrapping a <xref:System.ServiceModel.MsmqPoisonMessageException>) is traced and thrown. The offending message is left in the queue and needs to be removed by some manual method. The <xref:System.ServiceModel.MsmqPoisonMessageException> contains a <xref:System.ServiceModel.MsmqPoisonMessageException.MessageLookupId> that can be used to identify and manually remove the offending message from the poison-message queue.
 
  When this property is set to <xref:System.ServiceModel.ReceiveErrorHandling.Drop>, the offending message is simply dropped.
 
@@ -500,7 +507,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the maximum number of delivery attempts is reached and the message is not consumed by the application, then the message is sent to a retry queue for redelivery at some later point in time. The amount of time before the message is transferred back to the sending queue is controlled by <xref:System.ServiceModel.Channels.MsmqBindingElementBase.RetryCycleDelay>. If retry cycles reach the <xref:System.ServiceModel.Channels.MsmqBindingElementBase.MaxRetryCycles> value, then either the message is sent to the poison-message queue, or a negative acknowledgment is sent back to the sender.
+
+If the maximum number of delivery attempts is reached and the message is not consumed by the application, then the message is sent to a retry queue for redelivery at some later point in time. The amount of time before the message is transferred back to the sending queue is controlled by <xref:System.ServiceModel.Channels.MsmqBindingElementBase.RetryCycleDelay>. If retry cycles reach the <xref:System.ServiceModel.Channels.MsmqBindingElementBase.MaxRetryCycles> value, then either the message is sent to the poison-message queue, or a negative acknowledgment is sent back to the sender.
 
  For more information, see <xref:System.ServiceModel.Channels.MsmqBindingElementBase.MaxRetryCycles> and <xref:System.ServiceModel.Channels.MsmqBindingElementBase.RetryCycleDelay>.
 
@@ -549,7 +557,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A single retry cycle attempts to deliver a message to a receiving application a specified number of times. The number of attempts made is specified by the <xref:System.ServiceModel.MsmqBindingBase.ReceiveRetryCount> property. If the application fails to consume the message after the specified number of immediate retries, the message is sent to a retry queue. Subsequent retry cycles consist of the message being returned from the retry queue to the application queue to attempt delivery to the application again, after a delay specified by the <xref:System.ServiceModel.MsmqBindingBase.RetryCycleDelay> property. The number of retry cycles is specified by the <xref:System.ServiceModel.MsmqBindingBase.MaxRetryCycles> property.
+
+A single retry cycle attempts to deliver a message to a receiving application a specified number of times. The number of attempts made is specified by the <xref:System.ServiceModel.MsmqBindingBase.ReceiveRetryCount> property. If the application fails to consume the message after the specified number of immediate retries, the message is sent to a retry queue. Subsequent retry cycles consist of the message being returned from the retry queue to the application queue to attempt delivery to the application again, after a delay specified by the <xref:System.ServiceModel.MsmqBindingBase.RetryCycleDelay> property. The number of retry cycles is specified by the <xref:System.ServiceModel.MsmqBindingBase.MaxRetryCycles> property.
 
  ]]></format>
         </remarks>
@@ -596,7 +605,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ServiceModel.MsmqBindingBase.TimeToLive> property is set to ensure that time-sensitive messages do not become stale before they are processed by the receiving applications. A message in a queue that is not consumed by the receiving application within the time interval specified is said to be expired. Expired messages are sent to a special queue called the dead-letter queue. The location of the dead-letter queue is set with the <xref:System.ServiceModel.MsmqBindingBase.DeadLetterQueue> property or to the appropriate default, based on assurances.
+
+The <xref:System.ServiceModel.MsmqBindingBase.TimeToLive> property is set to ensure that time-sensitive messages do not become stale before they are processed by the receiving applications. A message in a queue that is not consumed by the receiving application within the time interval specified is said to be expired. Expired messages are sent to a special queue called the dead-letter queue. The location of the dead-letter queue is set with the <xref:System.ServiceModel.MsmqBindingBase.DeadLetterQueue> property or to the appropriate default, based on assurances.
 
  ]]></format>
         </remarks>
@@ -632,7 +642,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When tracing is enabled, report messages are created and sent to the report queue each time the message leaves or arrives at a computer running Message Queuing (also known as MSMQ).
+
+When tracing is enabled, report messages are created and sent to the report queue each time the message leaves or arrives at a computer running Message Queuing (also known as MSMQ).
 
  ]]></format>
         </remarks>
@@ -668,7 +679,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Queued applications that must keep a record of messages that have left the computer's outgoing queue can copy the messages to a journal queue. Once a message leaves the outgoing queue and an acknowledgment is received that the message was received on the destination computer, a copy of the message is kept in the sending computer's system journal queue.
+
+Queued applications that must keep a record of messages that have left the computer's outgoing queue can copy the messages to a journal queue. Once a message leaves the outgoing queue and an acknowledgment is received that the message was received on the destination computer, a copy of the message is kept in the sending computer's system journal queue.
 
  ]]></format>
         </remarks>

@@ -49,7 +49,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Code groups are the building blocks of code access security policy. Each policy level consists of a root code group that can have child code groups. Each child code group can have their own child code groups; this behavior extends to any number of levels, forming a tree. Each code group has a membership condition that determines if a given assembly belongs to it based on the evidence for that assembly.
+
+Code groups are the building blocks of code access security policy. Each policy level consists of a root code group that can have child code groups. Each child code group can have their own child code groups; this behavior extends to any number of levels, forming a tree. Each code group has a membership condition that determines if a given assembly belongs to it based on the evidence for that assembly.
 
  Only those code groups whose membership conditions match a given assembly's evidence will be applied. If a matching code group has child code groups, then those children whose membership conditions also match the supplied evidence will likewise be applied.
 
@@ -100,7 +101,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This constructor creates a basic code group and should be called from the constructors of custom code groups. You can add child code groups using the <xref:System.Security.Policy.CodeGroup.AddChild*> method.
+
+This constructor creates a basic code group and should be called from the constructors of custom code groups. You can add child code groups using the <xref:System.Security.Policy.CodeGroup.AddChild*> method.
 
  ]]></format>
         </remarks>
@@ -202,7 +204,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The string representation is not localized.
+
+The string representation is not localized.
 
  ]]></format>
         </remarks>
@@ -251,7 +254,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The order of child code groups is significant for certain code groups.
+
+The order of child code groups is significant for certain code groups.
 
 > [!NOTE]
 > The return value is a copy of the child code list. Do not use the returned list to add a child code group; instead, use the <xref:System.Security.Policy.CodeGroup.AddChild*> method.
@@ -300,7 +304,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method makes a deep copy of the code group, so that copies of all objects the code group contains are also made.
+
+This method makes a deep copy of the code group, so that copies of all objects the code group contains are also made.
 
  ]]></format>
         </remarks>
@@ -454,7 +459,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Two code groups are equivalent if they have the same <xref:System.Security.Policy.CodeGroup.Name*>, <xref:System.Security.Policy.CodeGroup.Description*>, and <xref:System.Security.Policy.CodeGroup.MembershipCondition*>.
+
+Two code groups are equivalent if they have the same <xref:System.Security.Policy.CodeGroup.Name*>, <xref:System.Security.Policy.CodeGroup.Description*>, and <xref:System.Security.Policy.CodeGroup.MembershipCondition*>.
 
  This method tests the top-level code group only, not its child code groups.
 
@@ -513,7 +519,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Two code groups are equivalent if they have the same <xref:System.Security.Policy.CodeGroup.Name*>, <xref:System.Security.Policy.CodeGroup.Description*>, and <xref:System.Security.Policy.CodeGroup.MembershipCondition*>.
+
+Two code groups are equivalent if they have the same <xref:System.Security.Policy.CodeGroup.Name*>, <xref:System.Security.Policy.CodeGroup.Description*>, and <xref:System.Security.Policy.CodeGroup.MembershipCondition*>.
 
  If the `compareChildren` parameter is `true`, this method will only return `true` if the current code group and all its child code groups are equivalent to the specified code group and all its child code groups.
 
@@ -617,7 +624,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The policy level context is provided for resolution of named permission sets.
+
+The policy level context is provided for resolution of named permission sets.
 
  ]]></format>
         </remarks>
@@ -714,7 +722,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A membership condition tests evidence and returns a Boolean value that tells whether there is a match.
+
+A membership condition tests evidence and returns a Boolean value that tells whether there is a match.
 
  ]]></format>
         </remarks>
@@ -893,7 +902,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This property can be `null` if the code group contains an unnamed permission set.
+
+This property can be `null` if the code group contains an unnamed permission set.
 
  ]]></format>
         </remarks>
@@ -942,7 +952,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The policy statement applies to code in assemblies when evidence matches the membership condition.
+
+The policy statement applies to code in assemblies when evidence matches the membership condition.
 
  This property can also be set by passing a policy statement to the constructor.
 
@@ -1004,7 +1015,8 @@ The following example sets the <xref:System.Security.Policy.PolicyStatement> for
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Only immediate child code groups can be removed with this method.
+
+Only immediate child code groups can be removed with this method.
 
  ]]></format>
         </remarks>
@@ -1052,7 +1064,8 @@ The following example sets the <xref:System.Security.Policy.PolicyStatement> for
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Given evidence for an assembly to be loaded, this method evaluates the code group by checking the membership condition against the specified evidence. If there is a match, this method returns a policy statement for the code group, including evaluation of child code groups.
+
+Given evidence for an assembly to be loaded, this method evaluates the code group by checking the membership condition against the specified evidence. If there is a match, this method returns a policy statement for the code group, including evaluation of child code groups.
 
  For a <xref:System.Security.Policy.UnionCodeGroup>, all child code groups whose membership condition match the specified evidence are also resolved, and all resulting policy statements are combined with the policy statement of the parent union code group. Each child code group type determines how all child groups under it are applied, depending on how the <xref:System.Security.Policy.CodeGroup.Resolve*> methods of these child groups work.
 
@@ -1103,7 +1116,8 @@ The following example sets the <xref:System.Security.Policy.PolicyStatement> for
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method has the same evaluation characteristics as <xref:System.Security.Policy.CodeGroup.Resolve*>. The code group that is returned contains child code groups, which in turn can have child code groups as necessary to reflect the complete set of code groups that were matched by the evidence provided.
+
+This method has the same evaluation characteristics as <xref:System.Security.Policy.CodeGroup.Resolve*>. The code group that is returned contains child code groups, which in turn can have child code groups as necessary to reflect the complete set of code groups that were matched by the evidence provided.
 
  ]]></format>
         </remarks>
@@ -1213,7 +1227,8 @@ The following example sets the <xref:System.Security.Policy.PolicyStatement> for
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The policy level context is provided for resolution of named permission sets.
+
+The policy level context is provided for resolution of named permission sets.
 
  ]]></format>
         </remarks>

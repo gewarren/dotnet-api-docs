@@ -74,7 +74,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Threading.WaitHandle> class encapsulates a native operating system synchronization handle and is used to represent all synchronization objects in the runtime that allow multiple wait operations. For a comparison of wait handles with other synchronization objects, see [Overview of Synchronization Primitives](/dotnet/standard/threading/managed-threading-basicsoverview-of-synchronization-primitives).
+
+The <xref:System.Threading.WaitHandle> class encapsulates a native operating system synchronization handle and is used to represent all synchronization objects in the runtime that allow multiple wait operations. For a comparison of wait handles with other synchronization objects, see [Overview of Synchronization Primitives](/dotnet/standard/threading/managed-threading-basicsoverview-of-synchronization-primitives).
 
  The <xref:System.Threading.WaitHandle> class itself is abstract. Classes derived from <xref:System.Threading.WaitHandle> define a signaling mechanism to indicate taking or releasing access to a shared resource, but they use the inherited <xref:System.Threading.WaitHandle> methods to block while waiting for access to shared resources. The classes derived from <xref:System.Threading.WaitHandle> include:
 
@@ -211,7 +212,8 @@ The following code example shows how two threads can do background tasks while t
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is the public implementation of the <xref:System.IDisposable.Dispose*?displayProperty=nameWithType> method for the <xref:System.Threading.WaitHandle> class and its derived classes. It provides a standard implementation that calls the `Dispose(Boolean)` overload with a `true` argument and then calls the <xref:System.GC.SuppressFinalize*?displayProperty=nameWithType> method. Call this method to release all resources held by an instance of `WaitHandle` or a derived class.
+
+This method is the public implementation of the <xref:System.IDisposable.Dispose*?displayProperty=nameWithType> method for the <xref:System.Threading.WaitHandle> class and its derived classes. It provides a standard implementation that calls the `Dispose(Boolean)` overload with a `true` argument and then calls the <xref:System.GC.SuppressFinalize*?displayProperty=nameWithType> method. Call this method to release all resources held by an instance of `WaitHandle` or a derived class.
 
  Once this method is called, references to the current instance cause undefined behavior.
 
@@ -287,7 +289,8 @@ The following code example shows how two threads can do background tasks while t
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is equivalent to the <xref:System.Threading.WaitHandle.Close*> method.
+
+This method is equivalent to the <xref:System.Threading.WaitHandle.Close*> method.
 
 > [!NOTE]
 > Always call <xref:System.Threading.WaitHandle.Close*> or <xref:System.Threading.WaitHandle.Dispose> before you release your last reference to the <xref:System.Threading.WaitHandle>. Otherwise, the resources it is using will not be freed.
@@ -354,7 +357,8 @@ The following code example shows how two threads can do background tasks while t
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is called by the <xref:System.Threading.WaitHandle.Close*> and the <xref:System.Threading.WaitHandle.Dispose> methods with the `explicitDisposing` parameter set to `true`. When the `explicitDisposing` parameter is `true`, this method releases all resources held by any managed objects that this <xref:System.Threading.WaitHandle> object references.
+
+This method is called by the <xref:System.Threading.WaitHandle.Close*> and the <xref:System.Threading.WaitHandle.Dispose> methods with the `explicitDisposing` parameter set to `true`. When the `explicitDisposing` parameter is `true`, this method releases all resources held by any managed objects that this <xref:System.Threading.WaitHandle> object references.
 
  ]]></format>
         </remarks>
@@ -466,7 +470,8 @@ Application code does not call this method; it is automatically invoked during g
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Assigning a new value to the <xref:System.Threading.WaitHandle.Handle> property does not close the previous handle. This can result in a leaked handle.
+
+Assigning a new value to the <xref:System.Threading.WaitHandle.Handle> property does not close the previous handle. This can result in a leaked handle.
 
  Do not use this property in the .NET Framework version 2.0 or later; use the <xref:System.Threading.WaitHandle.SafeWaitHandle> property instead. Setting this property to a valid handle also sets the <xref:System.Threading.WaitHandle.SafeWaitHandle> property, but setting it to <xref:System.Threading.WaitHandle.InvalidHandle> can result in a leaked handle.
 
@@ -520,7 +525,8 @@ Application code does not call this method; it is automatically invoked during g
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Used internally to initialize the <xref:System.Threading.WaitHandle.Handle> property.
+
+Used internally to initialize the <xref:System.Threading.WaitHandle.Handle> property.
 
  ]]></format>
         </remarks>
@@ -589,7 +595,8 @@ Application code does not call this method; it is automatically invoked during g
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When you assign a new value to the <xref:System.Threading.WaitHandle.SafeWaitHandle> property, the previous handle will be closed when the previous <xref:Microsoft.Win32.SafeHandles.SafeWaitHandle> object is collected. Do not manually close the handle, because this results in an <xref:System.ObjectDisposedException> when the <xref:Microsoft.Win32.SafeHandles.SafeWaitHandle> attempts to close the handle.
+
+When you assign a new value to the <xref:System.Threading.WaitHandle.SafeWaitHandle> property, the previous handle will be closed when the previous <xref:Microsoft.Win32.SafeHandles.SafeWaitHandle> object is collected. Do not manually close the handle, because this results in an <xref:System.ObjectDisposedException> when the <xref:Microsoft.Win32.SafeHandles.SafeWaitHandle> attempts to close the handle.
 
  <xref:System.Threading.WaitHandle> implements the <xref:System.IDisposable.Dispose*> pattern. See [Implementing a Dispose method](/dotnet/standard/garbage-collection/implementing-dispose). When you derive from <xref:System.Threading.WaitHandle>, use the <xref:System.Threading.WaitHandle.SafeWaitHandle> property to store your native handle operating system handle. You do not need to override the protected <xref:System.Threading.WaitHandle.Dispose*> method unless you use additional unmanaged resources.
 
@@ -656,7 +663,8 @@ Application code does not call this method; it is automatically invoked during g
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This operation is not guaranteed to be atomic. After the current thread signals `toSignal` but before it waits on `toWaitOn`, a thread that is running on another processor might signal `toWaitOn` or wait on it.
+
+This operation is not guaranteed to be atomic. After the current thread signals `toSignal` but before it waits on `toWaitOn`, a thread that is running on another processor might signal `toWaitOn` or wait on it.
 
 ## Examples
 
@@ -817,7 +825,8 @@ If `millisecondsTimeout` is zero, the method does not block. It tests the state 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This operation is not guaranteed to be atomic. After the current thread signals `toSignal` but before it waits on `toWaitOn`, a thread that is running on another processor might signal `toWaitOn` or wait on it.
+
+This operation is not guaranteed to be atomic. After the current thread signals `toSignal` but before it waits on `toWaitOn`, a thread that is running on another processor might signal `toWaitOn` or wait on it.
 
  The maximum value for `timeout` is <xref:System.Int32.MaxValue?displayProperty=nameWithType>.
 
@@ -1053,7 +1062,8 @@ Note: In the <see href="https://go.microsoft.com/fwlink/?LinkID=247912">.NET for
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If `millisecondsTimeout` is zero, the method does not block. It tests the state of the wait handles and returns immediately.
+
+If `millisecondsTimeout` is zero, the method does not block. It tests the state of the wait handles and returns immediately.
 
  The <xref:System.Threading.WaitHandle.WaitAll*> method returns when the wait terminates, which means either when all the handles are signaled or when time-out occurs. If more than 64 handles are passed, a <xref:System.NotSupportedException> is thrown. If there are duplicates in the array, the call fails with a <xref:System.DuplicateWaitObjectException>.
 
@@ -1146,7 +1156,8 @@ Note: In the <see href="https://go.microsoft.com/fwlink/?LinkID=247912">.NET for
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If `timeout` is zero, the method does not block. It tests the state of the wait handles and returns immediately.
+
+If `timeout` is zero, the method does not block. It tests the state of the wait handles and returns immediately.
 
  The <xref:System.Threading.WaitHandle.WaitAll*> method returns when the wait terminates, which means either all the handles are signaled or a time-out occurs. If more than 64 handles are passed, a <xref:System.NotSupportedException> is thrown. If the array contains duplicates, the call will fail.
 
@@ -1556,7 +1567,8 @@ The following code example demonstrates calling the <xref:System.Threading.WaitH
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If `millisecondsTimeout` is zero, the method does not block. It tests the state of the wait handles and returns immediately.
+
+If `millisecondsTimeout` is zero, the method does not block. It tests the state of the wait handles and returns immediately.
 
  The <xref:System.Threading.WaitHandle.WaitAny*> method throws an <xref:System.Threading.AbandonedMutexException> only when the wait completes because of an abandoned mutex. If `waitHandles` contains a released mutex with a lower index number than the abandoned mutex, the <xref:System.Threading.WaitHandle.WaitAny*> method completes normally and the exception is not thrown.
 
@@ -1640,7 +1652,8 @@ The following code example demonstrates calling the <xref:System.Threading.WaitH
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If `timeout` is zero, the method does not block. It tests the state of the wait handles and returns immediately.
+
+If `timeout` is zero, the method does not block. It tests the state of the wait handles and returns immediately.
 
  The <xref:System.Threading.WaitHandle.WaitAny*> method throws an <xref:System.Threading.AbandonedMutexException> only when the wait completes because of an abandoned mutex. If `waitHandles` contains a released mutex with a lower index number than the abandoned mutex, the <xref:System.Threading.WaitHandle.WaitAny*> method completes normally and the exception is not thrown.
 
@@ -2005,7 +2018,8 @@ The following code example shows how to use a wait handle to keep a process from
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If `millisecondsTimeout` is zero, the method does not block. It tests the state of the wait handle and returns immediately.
+
+If `millisecondsTimeout` is zero, the method does not block. It tests the state of the wait handle and returns immediately.
 
  The caller of this method blocks until the current instance receives a signal or a time-out occurs. Use this method to block until a <xref:System.Threading.WaitHandle> receives a signal from another thread, such as is generated when an asynchronous operation completes. For more information, see the <xref:System.IAsyncResult> interface.
 
@@ -2080,7 +2094,8 @@ The following code example shows how to use a wait handle to keep a process from
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If `timeout` is zero, the method does not block. It tests the state of the wait handle and returns immediately.
+
+If `timeout` is zero, the method does not block. It tests the state of the wait handle and returns immediately.
 
  The caller of this method blocks until the current instance receives a signal or a time-out occurs. Use this method to block until a <xref:System.Threading.WaitHandle> receives a signal from another thread, such as is generated when an asynchronous operation completes. For more information, see the <xref:System.IAsyncResult> interface.
 
@@ -2312,7 +2327,8 @@ The following code example shows how to use a wait handle to keep a process from
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This field is one of the possible return values of `WaitAny`.
+
+This field is one of the possible return values of `WaitAny`.
 
 ## Examples
 

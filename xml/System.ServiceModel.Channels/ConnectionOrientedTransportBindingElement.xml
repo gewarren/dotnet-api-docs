@@ -69,7 +69,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This class is documented to give a more complete understanding of the transports hierarchy and is not expected to be directly called. The constructor is internal to avoid direct construction and invocation. The public properties of this binding element can be called from the derived classes <xref:System.ServiceModel.Channels.TcpTransportBindingElement> and <xref:System.ServiceModel.Channels.NamedPipeTransportBindingElement>.
+
+This class is documented to give a more complete understanding of the transports hierarchy and is not expected to be directly called. The constructor is internal to avoid direct construction and invocation. The public properties of this binding element can be called from the derived classes <xref:System.ServiceModel.Channels.TcpTransportBindingElement> and <xref:System.ServiceModel.Channels.NamedPipeTransportBindingElement>.
 
  ]]></format>
     </remarks>
@@ -185,7 +186,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You should call this method before trying to create a channel factory.
+
+You should call this method before trying to create a channel factory.
 
  If `TChannel` is <xref:System.ServiceModel.Channels.IDuplexSessionChannel> this method returns `true` only when in buffered mode. If `TChannel` is <xref:System.ServiceModel.Channels.IRequestChannel> this method returns `true` only when in streaming mode.
 
@@ -238,7 +240,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You should call this method before trying to create a channel listener.
+
+You should call this method before trying to create a channel listener.
 
  If `TChannel` is <xref:System.ServiceModel.Channels.IDuplexSessionChannel> this method returns `true` only when in buffered mode. If `TChannel` is <xref:System.ServiceModel.Channels.IReplyChannel> this method returns `true` only when in streaming mode.
 
@@ -291,7 +294,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This property determines how long a TCP connection can take to authenticate itself using the .NET Framing protocol. A client needs to send some initial data before the server has enough information to perform authentication. This timeout is intentionally made smaller than the ReceiveTimeout (10 min) so that malicious unauthenticated clients do not keep the connections tied up to the server for long. The default value is 30 seconds.
+
+This property determines how long a TCP connection can take to authenticate itself using the .NET Framing protocol. A client needs to send some initial data before the server has enough information to perform authentication. This timeout is intentionally made smaller than the ReceiveTimeout (10 min) so that malicious unauthenticated clients do not keep the connections tied up to the server for long. The default value is 30 seconds.
 
  ]]></format>
         </remarks>
@@ -352,7 +356,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This value can be changed to provide better throughput based on average message sizes and exchange patterns.
+
+This value can be changed to provide better throughput based on average message sizes and exchange patterns.
 
  ]]></format>
         </remarks>
@@ -416,7 +421,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method receives a binding context as an input parameter, which represents the stack of binding elements.
+
+This method receives a binding context as an input parameter, which represents the stack of binding elements.
 
  Each binding element in the stack can handle the inquiry itself, delegate the inquiry, or a combination of the two. Each binding element can modify the context if it delegates the inquiry. However, a transport binding element handles the inquiry itself.
 
@@ -465,7 +471,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- See the <xref:System.ServiceModel.HostNameComparisonMode> enumeration for further values and their descriptions.
+
+See the <xref:System.ServiceModel.HostNameComparisonMode> enumeration for further values and their descriptions.
 
  ]]></format>
         </remarks>
@@ -523,7 +530,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- For streamed messages this property only applies to the message headers; for buffered messages it applies to the entire message.
+
+For streamed messages this property only applies to the message headers; for buffered messages it applies to the entire message.
 
  The value of this property must be less than or equal to <xref:System.ServiceModel.Channels.TransportBindingElement.MaxReceivedMessageSize> and must be larger than the size of the headers of the message or the channel throws an exception.
 
@@ -573,7 +581,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If <xref:System.ServiceModel.Channels.MessageProperties.AllowOutputBatching> is `false` then this property is ignored for that message.
+
+If <xref:System.ServiceModel.Channels.MessageProperties.AllowOutputBatching> is `false` then this property is ignored for that message.
 
  ]]></format>
         </remarks>
@@ -619,7 +628,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This property limits the number of channels that the server can have waiting on a listener. When MaxPendingAccepts is too low, there will be a small interval of time in which all of the waiting channels have started servicing connections, but no new channels have begun listening. A connection can arrive during this interval and will fail because nothing is waiting for it on the server. This property can be configured by setting the <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingConnections> property to a larger number.
+
+This property limits the number of channels that the server can have waiting on a listener. When MaxPendingAccepts is too low, there will be a small interval of time in which all of the waiting channels have started servicing connections, but no new channels have begun listening. A connection can arrive during this interval and will fail because nothing is waiting for it on the server. This property can be configured by setting the <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingConnections> property to a larger number.
 
  ]]></format>
         </remarks>
@@ -665,7 +675,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This property controls how many connections a transport has accepted but have not been picked up by the ServiceModel Dispatcher. To set this value, use `MaxConnections` on the binding or `maxOutboundConnectionsPerEndpoint` on the binding element.
+
+This property controls how many connections a transport has accepted but have not been picked up by the ServiceModel Dispatcher. To set this value, use `MaxConnections` on the binding or `maxOutboundConnectionsPerEndpoint` on the binding element.
 
  When a higher layer in the stack calls `AcceptDispatch`, that connection is removed from the queue of connections awaiting dispatch.
 
@@ -781,7 +792,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method writes binding-related statements into the WSDL information exposed by a particular contract and is used by Windows Communication Foundation (WCF) to communicate to clients the existence of this custom binding element in the binding stack.
+
+This method writes binding-related statements into the WSDL information exposed by a particular contract and is used by Windows Communication Foundation (WCF) to communicate to clients the existence of this custom binding element in the binding stack.
 
  This method takes two parameters: the <xref:System.ServiceModel.Description.MetadataExporter> and <xref:System.ServiceModel.Description.PolicyConversionContext> objects. Use the <xref:System.ServiceModel.Description.PolicyConversionContext.GetBindingAssertions*>, <xref:System.ServiceModel.Description.PolicyConversionContext.GetMessageBindingAssertions*>, and <xref:System.ServiceModel.Description.PolicyConversionContext.GetOperationBindingAssertions*> methods to obtain collections of policy assertions that have already been exported at various scopes. Then use this method to add your own policy assertions to the appropriate collection.
 
@@ -922,7 +934,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This property determines the transfer mode for requests and responses. Possible values include:
+
+This property determines the transfer mode for requests and responses. Possible values include:
 
 -   <xref:System.ServiceModel.TransferMode.Buffered>
 

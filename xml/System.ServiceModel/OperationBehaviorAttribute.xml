@@ -30,7 +30,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use the <xref:System.ServiceModel.OperationBehaviorAttribute> attribute to indicate what operation-specific execution behavior the operation has when executed. (To specify execution behavior at the service level, use the <xref:System.ServiceModel.ServiceBehaviorAttribute> attribute.)
+
+Use the <xref:System.ServiceModel.OperationBehaviorAttribute> attribute to indicate what operation-specific execution behavior the operation has when executed. (To specify execution behavior at the service level, use the <xref:System.ServiceModel.ServiceBehaviorAttribute> attribute.)
 
 > [!NOTE]
 > You can also use <xref:System.ServiceModel.OperationBehaviorAttribute> to configure a callback contract operation in a duplex client application. When used on a callback operation, the <xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode> property must be <xref:System.ServiceModel.ReleaseInstanceMode.None> or an <xref:System.InvalidOperationException> exception is thrown at runtime.
@@ -77,7 +78,8 @@ The following code example shows an operation that executes within a mandatory d
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The parameterless constructor creates an instance of the class with the following defaults:
+
+The parameterless constructor creates an instance of the class with the following defaults:
 
 - The <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete> property is `true`.
 
@@ -125,7 +127,8 @@ The following code example shows an operation that executes within a mandatory d
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This property determines whether the service disposes all disposable parameters (input, output or reference parameters) that were created while processing a message. The default value is `true`. Set this property to `false` if you want to prevent the system from disposing of resources and cache them if required.
+
+This property determines whether the service disposes all disposable parameters (input, output or reference parameters) that were created while processing a message. The default value is `true`. Set this property to `false` if you want to prevent the system from disposing of resources and cache them if required.
 
  For example, if <xref:System.ServiceModel.OperationBehaviorAttribute.AutoDisposeParameters> is `false`, then the sender is responsible for closing the stream on the sending side.
 
@@ -162,7 +165,8 @@ The following code example shows an operation that executes within a mandatory d
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use the <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation> property (together with a binding configuration that supports impersonation) to enable specified methods (those marked with the <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation> property set to <xref:System.ServiceModel.ImpersonationOption.Allowed> or <xref:System.ServiceModel.ImpersonationOption.Required>) to execute under the caller's identity. For details, including how impersonation is performed when using <xref:System.ServiceModel.ImpersonationOption.Allowed> together with the <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.ImpersonateCallerForAllOperations?displayProperty=nameWithType> property, see [Delegation and Impersonation](/dotnet/framework/wcf/feature-details/delegation-and-impersonation-with-wcf) and [How to: Impersonate a Client on a Service](/dotnet/framework/wcf/how-to-impersonate-a-client-on-a-service).
+
+Use the <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation> property (together with a binding configuration that supports impersonation) to enable specified methods (those marked with the <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation> property set to <xref:System.ServiceModel.ImpersonationOption.Allowed> or <xref:System.ServiceModel.ImpersonationOption.Required>) to execute under the caller's identity. For details, including how impersonation is performed when using <xref:System.ServiceModel.ImpersonationOption.Allowed> together with the <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.ImpersonateCallerForAllOperations?displayProperty=nameWithType> property, see [Delegation and Impersonation](/dotnet/framework/wcf/feature-details/delegation-and-impersonation-with-wcf) and [How to: Impersonate a Client on a Service](/dotnet/framework/wcf/how-to-impersonate-a-client-on-a-service).
 
 > [!NOTE]
 > When programmatically adding a service endpoint that performs impersonation, you must either use one of the <xref:System.ServiceModel.ServiceHost.AddServiceEndpoint*> methods or the <xref:System.ServiceModel.Description.ContractDescription.GetContract*?displayProperty=nameWithType> method to properly load the contract into a new <xref:System.ServiceModel.Description.ServiceDescription?displayProperty=nameWithType> object. Using a configuration file requires no extra step.
@@ -214,7 +218,8 @@ The following service code example requires impersonation by setting the <xref:S
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use the <xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode> property to specify when Windows Communication Foundation (WCF) recycles a service object in the course of executing a method. The default behavior is to recycle a service object according to the <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode> value. Setting the <xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode> property changes that default behavior.
+
+Use the <xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode> property to specify when Windows Communication Foundation (WCF) recycles a service object in the course of executing a method. The default behavior is to recycle a service object according to the <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode> value. Setting the <xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode> property changes that default behavior.
 
  The <xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode> makes no threading guarantees. If you must have a new, unmodified object when your service runs, set the <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode> property to <xref:System.ServiceModel.InstanceContextMode.PerCall>.
 
@@ -398,7 +403,8 @@ The following example code shows the use of <xref:System.ServiceModel.ReleaseIns
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Set the <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete> property to `false` to complete or abort transactions directly in the code for the operation.
+
+Set the <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete> property to `false` to complete or abort transactions directly in the code for the operation.
 
  Handled exceptions can be thrown in the course of the operation without automatically aborting the transaction. Only unhandled exceptions trigger an automatic abort.
 
@@ -447,7 +453,8 @@ The following code example shows an operation that executes within a mandatory d
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Set the <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired> to `true` to require your operation to execute within a transaction scope. If a flowed transaction is available, the operation executes within that transaction. If one is not available, a new transaction is created and used for the operation execution. The binding specified in the endpoint controls whether flowed transactions are supported. Therefore, to obtain the proper behavior you must understand the interaction between whether transaction flow is permitted by the binding and the <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired> property. The following table shows the possible behavior.
+
+Set the <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired> to `true` to require your operation to execute within a transaction scope. If a flowed transaction is available, the operation executes within that transaction. If one is not available, a new transaction is created and used for the operation execution. The binding specified in the endpoint controls whether flowed transactions are supported. Therefore, to obtain the proper behavior you must understand the interaction between whether transaction flow is permitted by the binding and the <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired> property. The following table shows the possible behavior.
 
 |TransactionScopeRequired|Binding permits transaction flow|Caller flows transaction|Result|
 |-|-|-|-|

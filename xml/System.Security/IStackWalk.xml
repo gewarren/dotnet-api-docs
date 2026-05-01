@@ -138,7 +138,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Calling <xref:System.Security.IStackWalk.Assert*> stops the permission check on callers higher in the call stack. Therefore, even if these callers do not have the requisite permissions, they can still access resources. An assertion is effective only if the code that calls <xref:System.Security.IStackWalk.Assert*> passes the security check for the permission that it is asserting.
+
+Calling <xref:System.Security.IStackWalk.Assert*> stops the permission check on callers higher in the call stack. Therefore, even if these callers do not have the requisite permissions, they can still access resources. An assertion is effective only if the code that calls <xref:System.Security.IStackWalk.Assert*> passes the security check for the permission that it is asserting.
 
  A call to <xref:System.Security.IStackWalk.Assert*> is effective until the calling code returns to its caller or until a subsequent call to <xref:System.Security.IStackWalk.Assert*> renders the previous assertion ineffective. Also, <xref:System.Security.CodeAccessPermission.RevertAssert*> or <xref:System.Security.CodeAccessPermission.RevertAll*> removes a pending <xref:System.Security.IStackWalk.Assert*>.
 
@@ -204,7 +205,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is typically used by secure libraries to ensure that callers have permission to access a resource. For example, a file class in a secure class library calls <xref:System.Security.IStackWalk.Demand*> for the necessary <xref:System.Security.Permissions.FileIOPermission> before performing a file operation requested by the caller.
+
+This method is typically used by secure libraries to ensure that callers have permission to access a resource. For example, a file class in a secure class library calls <xref:System.Security.IStackWalk.Demand*> for the necessary <xref:System.Security.Permissions.FileIOPermission> before performing a file operation requested by the caller.
 
  The permissions of the code that calls this method are not examined; the check begins from the immediate caller of that code and proceeds up the stack. <xref:System.Security.IStackWalk.Demand*> succeeds only if no <xref:System.Security.SecurityException> is raised.
 
@@ -268,7 +270,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method prevents callers higher in the call stack from accessing the protected resource through the code that calls this method, even if those callers have been granted permission to access it. The call stack is typically represented as growing down, so that methods higher in the call stack call methods lower in the call stack.
+
+This method prevents callers higher in the call stack from accessing the protected resource through the code that calls this method, even if those callers have been granted permission to access it. The call stack is typically represented as growing down, so that methods higher in the call stack call methods lower in the call stack.
 
  <xref:System.Security.IStackWalk.Deny*> can limit the liability of the programmer or help prevent accidental security vulnerabilities because it helps prevent the method that calls <xref:System.Security.IStackWalk.Deny*> from being used to access the resource protected by the denied permission. If a method calls <xref:System.Security.IStackWalk.Deny*> on a permission, and if a <xref:System.Security.IStackWalk.Demand*> for that permission is invoked by a caller lower in the call stack, that security check will fail when it reaches the <xref:System.Security.IStackWalk.Deny*>.
 

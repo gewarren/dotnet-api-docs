@@ -28,7 +28,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Messaging.XmlMessageFormatter> is the default formatter that an instance of <xref:System.Messaging.MessageQueue> uses to serialize messages written to the queue. When you create an instance of <xref:System.Messaging.MessageQueue>, an instance of <xref:System.Messaging.XmlMessageFormatter> is created for you and associated with the <xref:System.Messaging.MessageQueue>. You can specify a different formatter by creating it in your code and assigning it to the <xref:System.Messaging.MessageQueue.Formatter> property of your <xref:System.Messaging.MessageQueue>.
+
+The <xref:System.Messaging.XmlMessageFormatter> is the default formatter that an instance of <xref:System.Messaging.MessageQueue> uses to serialize messages written to the queue. When you create an instance of <xref:System.Messaging.MessageQueue>, an instance of <xref:System.Messaging.XmlMessageFormatter> is created for you and associated with the <xref:System.Messaging.MessageQueue>. You can specify a different formatter by creating it in your code and assigning it to the <xref:System.Messaging.MessageQueue.Formatter> property of your <xref:System.Messaging.MessageQueue>.
 
  A queue's default <xref:System.Messaging.XmlMessageFormatter> instance can be used to write to the queue, but it cannot be used to read from the queue until you set either the <xref:System.Messaging.XmlMessageFormatter.TargetTypes*> or <xref:System.Messaging.XmlMessageFormatter.TargetTypeNames> property on the formatter. You can either set one or both of these values on the default formatter instance, or you can create a new instance of the formatter and set the values automatically by passing them as arguments into the appropriate <xref:System.Messaging.XmlMessageFormatter.%23ctor*> constructor.
 
@@ -109,7 +110,8 @@ The following code example includes three pieces of code: a server component, an
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This overload of the constructor is used most frequently when writing to the queue, as target types are not required when writing.
+
+This overload of the constructor is used most frequently when writing to the queue, as target types are not required when writing.
 
  To read a message from a queue using an instance of <xref:System.Messaging.XmlMessageFormatter> created using this constructor, you must set the <xref:System.Messaging.XmlMessageFormatter.TargetTypeNames*> or <xref:System.Messaging.XmlMessageFormatter.TargetTypes*> properties so the formatter knows what types to attempt to deserialize.
 
@@ -143,7 +145,8 @@ The following code example includes three pieces of code: a server component, an
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The constructors with target type parameters are most frequently used when reading from the queue. When writing, it is not necessary to specify target types.
+
+The constructors with target type parameters are most frequently used when reading from the queue. When writing, it is not necessary to specify target types.
 
  This overload of the <xref:System.Messaging.XmlMessageFormatter.%23ctor*> constructor sets the <xref:System.Messaging.XmlMessageFormatter.TargetTypeNames> property to the array values passed in through the `targetTypeNames` parameter. Setting this property enables a <xref:System.Messaging.MessageQueue> using this <xref:System.Messaging.XmlMessageFormatter> instance to read messages containing objects of given types.
 
@@ -187,7 +190,8 @@ The following code example includes three pieces of code: a server component, an
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The constructors with target type parameters are most frequently used when reading from the queue. When writing, it is not necessary to specify target types.
+
+The constructors with target type parameters are most frequently used when reading from the queue. When writing, it is not necessary to specify target types.
 
  This overload of the <xref:System.Messaging.XmlMessageFormatter.%23ctor*> constructor sets the <xref:System.Messaging.XmlMessageFormatter.TargetTypes> property to the array values passed in through the `targetTypes` parameter. Setting this property enables a <xref:System.Messaging.MessageQueue> using this <xref:System.Messaging.XmlMessageFormatter> instance to read messages containing objects of the given types.
 
@@ -242,7 +246,8 @@ TargetTypes = new Type[]{typeof(MyClass)}
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When <xref:System.Messaging.XmlMessageFormatter.CanRead*> is called, the formatter attempts to determine if the contents of the message are something it can deserialize. The formatter can only deserialize the message if the type in the message body has the same schema as one of the types in the array represented by the <xref:System.Messaging.XmlMessageFormatter.TargetTypeNames*> and <xref:System.Messaging.XmlMessageFormatter.TargetTypes*> properties. <xref:System.Messaging.XmlMessageFormatter.CanRead*> returns `false` under the following two circumstances:
+
+When <xref:System.Messaging.XmlMessageFormatter.CanRead*> is called, the formatter attempts to determine if the contents of the message are something it can deserialize. The formatter can only deserialize the message if the type in the message body has the same schema as one of the types in the array represented by the <xref:System.Messaging.XmlMessageFormatter.TargetTypeNames*> and <xref:System.Messaging.XmlMessageFormatter.TargetTypes*> properties. <xref:System.Messaging.XmlMessageFormatter.CanRead*> returns `false` under the following two circumstances:
 
 - The message was not formatted using the <xref:System.Messaging.XmlMessageFormatter>.
 
@@ -288,7 +293,8 @@ TargetTypes = new Type[]{typeof(MyClass)}
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method creates a copy of the formatter and initializes all its properties to the values of this <xref:System.Messaging.XmlMessageFormatter> object.
+
+This method creates a copy of the formatter and initializes all its properties to the values of this <xref:System.Messaging.XmlMessageFormatter> object.
 
  ]]></format>
         </remarks>
@@ -326,7 +332,8 @@ TargetTypes = new Type[]{typeof(MyClass)}
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Both the <xref:System.Messaging.XmlMessageFormatter.TargetTypeNames*> and <xref:System.Messaging.XmlMessageFormatter.TargetTypes*> properties tell the formatter what schemas to attempt to match when deserializing a message. One of these properties must be set before the message can be deserialized.
+
+Both the <xref:System.Messaging.XmlMessageFormatter.TargetTypeNames*> and <xref:System.Messaging.XmlMessageFormatter.TargetTypes*> properties tell the formatter what schemas to attempt to match when deserializing a message. One of these properties must be set before the message can be deserialized.
 
  The instance serialized in the message body must comply with one of the schemas represented in the type array. When you read the message using the <xref:System.Messaging.MessageQueue.Receive*> method, the method creates an object of the type that corresponds to the schema identified and reads the message body into it.
 
@@ -377,7 +384,8 @@ TargetTypes = new Type[]{typeof(MyClass)}
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Both the <xref:System.Messaging.XmlMessageFormatter.TargetTypeNames*> and <xref:System.Messaging.XmlMessageFormatter.TargetTypes*> properties tell the formatter what schemas to attempt to match when deserializing a message. This allows the formatter to interpret the message body.
+
+Both the <xref:System.Messaging.XmlMessageFormatter.TargetTypeNames*> and <xref:System.Messaging.XmlMessageFormatter.TargetTypes*> properties tell the formatter what schemas to attempt to match when deserializing a message. This allows the formatter to interpret the message body.
 
  The instance serialized in the message body must comply with one of the schemas represented in the type array. When you read the message using the <xref:System.Messaging.MessageQueue.Receive*> method, the method creates an object of the type that corresponds to the schema identified and reads the message body into it.
 
@@ -433,7 +441,8 @@ TargetTypes = new Type[]{typeof(MyClass)}
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Both the <xref:System.Messaging.XmlMessageFormatter.TargetTypeNames*> and <xref:System.Messaging.XmlMessageFormatter.TargetTypes*> properties tell the formatter what schemas to attempt to match when deserializing a message. This allows the formatter to interpret the message body.
+
+Both the <xref:System.Messaging.XmlMessageFormatter.TargetTypeNames*> and <xref:System.Messaging.XmlMessageFormatter.TargetTypes*> properties tell the formatter what schemas to attempt to match when deserializing a message. This allows the formatter to interpret the message body.
 
  The instance serialized in the message body must comply with one of the schemas represented in the type array. When you read the message using the <xref:System.Messaging.MessageQueue.Receive*> method, the method creates an object of the type that corresponds to the schema identified and reads the message body into it.
 
@@ -493,7 +502,8 @@ The following code example sends and receives a message that contains an order t
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The target types need not be specified to write to the queue as they must be when reading. The <xref:System.Messaging.XmlMessageFormatter.TargetTypeNames*> or <xref:System.Messaging.XmlMessageFormatter.TargetTypes> property is used by the formatter only when deserializing a message.
+
+The target types need not be specified to write to the queue as they must be when reading. The <xref:System.Messaging.XmlMessageFormatter.TargetTypeNames*> or <xref:System.Messaging.XmlMessageFormatter.TargetTypes> property is used by the formatter only when deserializing a message.
 
  The <xref:System.Messaging.XmlMessageFormatter> makes use of the <xref:System.Xml.Serialization.XmlSerializer> class, which defines what can be serialized. Only public fields and public properties can be serialized. Structures, structures with arrays, and arrays of structures are all serializable, as long as they do not use the encoded style with the SOAP protocol.
 

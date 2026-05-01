@@ -20,7 +20,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This class is used by the <xref:System.Web.Security.Roles> and <xref:System.Web.Security.RolePrincipal> classes to provide role-management services for an ASP.NET application using a SQL Server database. You can use role management to specify different levels of authorization for your application.
+
+This class is used by the <xref:System.Web.Security.Roles> and <xref:System.Web.Security.RolePrincipal> classes to provide role-management services for an ASP.NET application using a SQL Server database. You can use role management to specify different levels of authorization for your application.
 
  To use the <xref:System.Web.Security.SqlRoleProvider> class, you must first create the SQL Server database used by the <xref:System.Web.Security.SqlRoleProvider>. To create the database used by the <xref:System.Web.Security.SqlRoleProvider> class, run the `aspnet_regsql.exe` executable found in the C:\WINDOWS\Microsoft.NET\Framework\ `versionNumber` folder and specify the `-Ar` option (for example, `aspnet_regsql.exe -Ar`). The database created is called Aspnetdb. Alternatively, run aspnet_regsql.exe to pull up the GUI configuration mode and choose to configure all ASP.NET features.
 
@@ -113,7 +114,8 @@ The following example shows the Web.config file for an ASP.NET application confi
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Security.SqlRoleProvider.%23ctor*> constructor is called by ASP.NET to create an instance of the <xref:System.Web.Security.SqlRoleProvider> class as specified in the configuration for the application. This constructor is not intended to be used from your code.
+
+The <xref:System.Web.Security.SqlRoleProvider.%23ctor*> constructor is called by ASP.NET to create an instance of the <xref:System.Web.Security.SqlRoleProvider> class as specified in the configuration for the application. This constructor is not intended to be used from your code.
 
  ]]></format>
         </remarks>
@@ -148,7 +150,8 @@ The following example shows the Web.config file for an ASP.NET application confi
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Security.SqlRoleProvider.AddUsersToRoles*> method is called by the <xref:System.Web.Security.Roles> class to associate one or more users with one or more roles in the SQL Server database specified in the ASP.NET application's configuration file (Web.config). This method is called by the <xref:System.Web.Security.Roles.AddUserToRole*>, <xref:System.Web.Security.Roles.AddUserToRoles*>, <xref:System.Web.Security.Roles.AddUsersToRole*>, and <xref:System.Web.Security.Roles.AddUsersToRoles*> methods of the <xref:System.Web.Security.Roles> class.
+
+The <xref:System.Web.Security.SqlRoleProvider.AddUsersToRoles*> method is called by the <xref:System.Web.Security.Roles> class to associate one or more users with one or more roles in the SQL Server database specified in the ASP.NET application's configuration file (Web.config). This method is called by the <xref:System.Web.Security.Roles.AddUserToRole*>, <xref:System.Web.Security.Roles.AddUserToRoles*>, <xref:System.Web.Security.Roles.AddUsersToRole*>, and <xref:System.Web.Security.Roles.AddUsersToRoles*> methods of the <xref:System.Web.Security.Roles> class.
 
  The database updates that are performed during the call to the <xref:System.Web.Security.SqlRoleProvider.AddUsersToRoles*> method are made within a transaction. If an error is encountered, such as a user name that is already in a specified role, the transaction is rolled back and no updates are performed.
 
@@ -236,7 +239,8 @@ The following code example adds one or more users to a role or removes a user fr
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Security.SqlRoleProvider.ApplicationName*> is used by the <xref:System.Web.Security.SqlRoleProvider> to associate users and roles with different applications. This enables multiple applications to use the same database to store user and role information without running into conflicts between duplicate user names or role names. Multiple ASP.NET applications can use the same database by specifying the same value in the <xref:System.Web.Security.SqlRoleProvider.ApplicationName> property. The <xref:System.Web.Security.SqlRoleProvider.ApplicationName> property can be set programmatically, or it can be set declaratively in the configuration file for the Web application using the `applicationName` attribute.
+
+The <xref:System.Web.Security.SqlRoleProvider.ApplicationName*> is used by the <xref:System.Web.Security.SqlRoleProvider> to associate users and roles with different applications. This enables multiple applications to use the same database to store user and role information without running into conflicts between duplicate user names or role names. Multiple ASP.NET applications can use the same database by specifying the same value in the <xref:System.Web.Security.SqlRoleProvider.ApplicationName> property. The <xref:System.Web.Security.SqlRoleProvider.ApplicationName> property can be set programmatically, or it can be set declaratively in the configuration file for the Web application using the `applicationName` attribute.
 
  If a value is not specified for the `applicationName` attribute in the configuration file for the Web application, then the <xref:System.Web.HttpRequest.ApplicationPath?displayProperty=nameWithType> property value for the current <xref:System.Web.HttpContext.Request*?displayProperty=nameWithType> object is used.
 
@@ -300,7 +304,8 @@ The following example shows the `roleManager` element in the `system.web` sectio
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Security.SqlRoleProvider.CreateRole*> method is called by the <xref:System.Web.Security.Roles> class to create a role in the SQL Server database specified in the ASP.NET application's configuration file (Web.config).
+
+The <xref:System.Web.Security.SqlRoleProvider.CreateRole*> method is called by the <xref:System.Web.Security.Roles> class to create a role in the SQL Server database specified in the ASP.NET application's configuration file (Web.config).
 
  The maximum length for the role name is 256 characters. Role names are not case-sensitive. Commas are not allowed in role names.
 
@@ -363,7 +368,8 @@ The following code example creates a new role in the database. For an example of
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Security.SqlRoleProvider.DeleteRole*> method is called by the <xref:System.Web.Security.Roles> class to delete a role from the SQL Server database specified in the ASP.NET application's configuration file (Web.config). When a role is deleted, the list of users associated with that role is also deleted from the database. The user information in the database is not affected.
+
+The <xref:System.Web.Security.SqlRoleProvider.DeleteRole*> method is called by the <xref:System.Web.Security.Roles> class to delete a role from the SQL Server database specified in the ASP.NET application's configuration file (Web.config). When a role is deleted, the list of users associated with that role is also deleted from the database. The user information in the database is not affected.
 
  If `throwOnPopulatedRole` is `true`, then an exception will be thrown and the role will not be deleted if the role identified by the `roleName` parameter has one or more members. If `throwOnPopulatedRole` is `false`, then the role will be deleted whether it is empty or not.
 
@@ -422,7 +428,8 @@ The following example deletes a role from the database. For an example of a Web.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Security.SqlRoleProvider.FindUsersInRole*> method is called by the <xref:System.Web.Security.Roles> class and returns a list of users in a role where the user name contains a match of the supplied `usernameToMatch` for the configured `applicationName`. The <xref:System.Web.Security.SqlRoleProvider> searches for a user name that matches the `usernameToMatch` parameter value using the LIKE keyword and supports SQL Server wildcard characters. For example, if the `usernameToMatch` parameter is set to "user1", then membership information for the user with the user name of "user1" is returned, if it exists. If the `usernameToMatch` parameter is set to "user%", then membership information for users with the user name of "user1", "user2", "user_admin", and so on are returned.
+
+The <xref:System.Web.Security.SqlRoleProvider.FindUsersInRole*> method is called by the <xref:System.Web.Security.Roles> class and returns a list of users in a role where the user name contains a match of the supplied `usernameToMatch` for the configured `applicationName`. The <xref:System.Web.Security.SqlRoleProvider> searches for a user name that matches the `usernameToMatch` parameter value using the LIKE keyword and supports SQL Server wildcard characters. For example, if the `usernameToMatch` parameter is set to "user1", then membership information for the user with the user name of "user1" is returned, if it exists. If the `usernameToMatch` parameter is set to "user%", then membership information for users with the user name of "user1", "user2", "user_admin", and so on are returned.
 
 ## Examples
 
@@ -489,7 +496,8 @@ The following code example uses the <xref:System.Web.Security.Roles.FindUsersInR
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Security.SqlRoleProvider.GetAllRoles*> method is called by the <xref:System.Web.Security.Roles> class to retrieve a list of all the roles in the SQL Server database specified in the ASP.NET application's configuration file (Web.config).
+
+The <xref:System.Web.Security.SqlRoleProvider.GetAllRoles*> method is called by the <xref:System.Web.Security.Roles> class to retrieve a list of all the roles in the SQL Server database specified in the ASP.NET application's configuration file (Web.config).
 
 ## Examples
 
@@ -534,7 +542,8 @@ The following code example uses the <xref:System.Web.Security.Roles.GetAllRoles*
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Security.SqlRoleProvider.GetRolesForUser*> method is called by the <xref:System.Web.Security.Roles> class to retrieve a list of a specified user's roles from the SQL Server database specified in the ASP.NET application's configuration file (Web.config).
+
+The <xref:System.Web.Security.SqlRoleProvider.GetRolesForUser*> method is called by the <xref:System.Web.Security.Roles> class to retrieve a list of a specified user's roles from the SQL Server database specified in the ASP.NET application's configuration file (Web.config).
 
 ## Examples
 
@@ -584,7 +593,8 @@ The following code example uses the <xref:System.Web.Security.Roles.GetRolesForU
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Security.SqlRoleProvider.GetUsersInRole*> method is called by the <xref:System.Web.Security.Roles> class to retrieve the list of users associated with the specified role in the SQL Server database specified in the ASP.NET application's configuration file (Web.config).
+
+The <xref:System.Web.Security.SqlRoleProvider.GetUsersInRole*> method is called by the <xref:System.Web.Security.Roles> class to retrieve the list of users associated with the specified role in the SQL Server database specified in the ASP.NET application's configuration file (Web.config).
 
 ## Examples
 
@@ -640,7 +650,8 @@ The following code example uses the <xref:System.Web.Security.Roles.GetUsersInRo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method initializes the <xref:System.Web.Security.SqlRoleProvider> with the property values specified in the ASP.NET application configuration file (Web.config) and is not intended to be used directly from your code.
+
+This method initializes the <xref:System.Web.Security.SqlRoleProvider> with the property values specified in the ASP.NET application configuration file (Web.config) and is not intended to be used directly from your code.
 
  ]]></format>
         </remarks>
@@ -689,7 +700,8 @@ The following code example uses the <xref:System.Web.Security.Roles.GetUsersInRo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Security.SqlRoleProvider.IsUserInRole*> method is called by the <xref:System.Web.Security.Roles> class and the <xref:System.Security.Principal.IPrincipal.IsInRole*> method of the <xref:System.Web.UI.Page.User?displayProperty=nameWithType> property to determine whether a user is associated with a role in the SQL Server database specified in the ASP.NET application's configuration file (Web.config).
+
+The <xref:System.Web.Security.SqlRoleProvider.IsUserInRole*> method is called by the <xref:System.Web.Security.Roles> class and the <xref:System.Security.Principal.IPrincipal.IsInRole*> method of the <xref:System.Web.UI.Page.User?displayProperty=nameWithType> property to determine whether a user is associated with a role in the SQL Server database specified in the ASP.NET application's configuration file (Web.config).
 
 ## Examples
 
@@ -752,7 +764,8 @@ The following code example programmatically checks to see whether the logged-on 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Security.SqlRoleProvider.RemoveUsersFromRoles*> method is called by the <xref:System.Web.Security.Roles> class to remove one or more users from one or more roles in the SQL Server database specified in the ASP.NET application's configuration file (Web.config). This method is called by the <xref:System.Web.Security.Roles.RemoveUserFromRole*>, <xref:System.Web.Security.Roles.RemoveUserFromRoles*>, <xref:System.Web.Security.Roles.RemoveUsersFromRole*>, and <xref:System.Web.Security.Roles.RemoveUsersFromRoles*> methods of the <xref:System.Web.Security.Roles> class.
+
+The <xref:System.Web.Security.SqlRoleProvider.RemoveUsersFromRoles*> method is called by the <xref:System.Web.Security.Roles> class to remove one or more users from one or more roles in the SQL Server database specified in the ASP.NET application's configuration file (Web.config). This method is called by the <xref:System.Web.Security.Roles.RemoveUserFromRole*>, <xref:System.Web.Security.Roles.RemoveUserFromRoles*>, <xref:System.Web.Security.Roles.RemoveUsersFromRole*>, and <xref:System.Web.Security.Roles.RemoveUsersFromRoles*> methods of the <xref:System.Web.Security.Roles> class.
 
  The database updates that are performed during the call to <xref:System.Web.Security.SqlRoleProvider.RemoveUsersFromRoles*> are made within a transaction. If an error is encountered, such as a user name that does not exist or a user name that is already in a specified role, the transaction is rolled back and no updates are performed.
 
@@ -837,7 +850,8 @@ The following code example adds one or more users to a role or removes a user fr
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Security.SqlRoleProvider.RoleExists*> method is called by the <xref:System.Web.Security.Roles> class to determine whether a role name exists in the SQL Server database specified in the ASP.NET application's configuration file (Web.config).
+
+The <xref:System.Web.Security.SqlRoleProvider.RoleExists*> method is called by the <xref:System.Web.Security.Roles> class to determine whether a role name exists in the SQL Server database specified in the ASP.NET application's configuration file (Web.config).
 
 ## Examples
 

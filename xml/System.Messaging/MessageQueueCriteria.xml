@@ -21,7 +21,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Messaging.MessageQueue> class provides a number of methods that enable you to filter your search for public queues on the network. Specific methods for filtering by queue label, category, or server location are the <xref:System.Messaging.MessageQueue.GetPublicQueuesByLabel*>, <xref:System.Messaging.MessageQueue.GetPublicQueuesByCategory*>, and <xref:System.Messaging.MessageQueue.GetPublicQueuesByMachine*>.
+
+The <xref:System.Messaging.MessageQueue> class provides a number of methods that enable you to filter your search for public queues on the network. Specific methods for filtering by queue label, category, or server location are the <xref:System.Messaging.MessageQueue.GetPublicQueuesByLabel*>, <xref:System.Messaging.MessageQueue.GetPublicQueuesByCategory*>, and <xref:System.Messaging.MessageQueue.GetPublicQueuesByMachine*>.
 
  The <xref:System.Messaging.MessageQueueCriteria> class, when used with the <xref:System.Messaging.MessageQueue.GetPublicQueues*> method, allows you to refine your filter. You can specify search criteria not specifically addressed through one of the `GetPublicQueuesBy`* methods, or by multiple criteria. You can pass a <xref:System.Messaging.MessageQueueCriteria> instance into the <xref:System.Messaging.MessageQueue.GetPublicQueues*> method in order to search, for example, by queue creation or modification times, the computer the queue resides on, the queue label or category, or any combination of these properties.
 
@@ -90,7 +91,8 @@ The following example iterates through message queues and displays the path of e
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The queue category allows an application to categorize its queues. For example, you can place all Billing queues in one category and all Order queues in another. The <xref:System.Messaging.MessageQueue.Category> property is application-defined and has no intrinsic meaning to Message Queuing.
+
+The queue category allows an application to categorize its queues. For example, you can place all Billing queues in one category and all Order queues in another. The <xref:System.Messaging.MessageQueue.Category> property is application-defined and has no intrinsic meaning to Message Queuing.
 
  If you are filtering only by category when searching the queues on the network, you can use the method <xref:System.Messaging.MessageQueue.GetPublicQueuesByCategory*>, which is specifically designed for this purpose. If you are searching by multiple criteria that include the category, set this <xref:System.Messaging.MessageQueueCriteria.Category> property and pass the parameter into <xref:System.Messaging.MessageQueue.GetPublicQueues*>.
 
@@ -126,7 +128,8 @@ The following example iterates through message queues and displays the path of e
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When you call <xref:System.Messaging.MessageQueueCriteria.ClearAll*>, the method sets flags related to each of the <xref:System.Messaging.MessageQueueCriteria> properties, which indicate that no properties are to be included when the application creates the search filter. <xref:System.Messaging.MessageQueueCriteria.ClearAll*> resets all properties that currently have values into a "not set" default state. Any properties that you subsequently change are combined using the logical `AND` operator to define a new filter for the <xref:System.Messaging.MessageQueue.GetPublicQueues*> method. When you change the property, the method that sets the property also sets a flag to indicate that it should be included in the filter you are building.
+
+When you call <xref:System.Messaging.MessageQueueCriteria.ClearAll*>, the method sets flags related to each of the <xref:System.Messaging.MessageQueueCriteria> properties, which indicate that no properties are to be included when the application creates the search filter. <xref:System.Messaging.MessageQueueCriteria.ClearAll*> resets all properties that currently have values into a "not set" default state. Any properties that you subsequently change are combined using the logical `AND` operator to define a new filter for the <xref:System.Messaging.MessageQueue.GetPublicQueues*> method. When you change the property, the method that sets the property also sets a flag to indicate that it should be included in the filter you are building.
 
  You cannot remove individual properties from the search filter. Instead, you remove all properties from the filter by calling <xref:System.Messaging.MessageQueueCriteria.ClearAll*>, and then set the properties that you do want to build into the search filter.
 
@@ -158,7 +161,8 @@ The following example iterates through message queues and displays the path of e
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Messaging.MessageQueueCriteria> properties are combined using a logical `AND`, so setting both <xref:System.Messaging.MessageQueueCriteria.CreatedAfter*> and <xref:System.Messaging.MessageQueueCriteria.CreatedBefore*> bounds a time interval for the queues' creation. If you set only <xref:System.Messaging.MessageQueueCriteria.CreatedAfter*>, there is no upper boundary on the date.
+
+The <xref:System.Messaging.MessageQueueCriteria> properties are combined using a logical `AND`, so setting both <xref:System.Messaging.MessageQueueCriteria.CreatedAfter*> and <xref:System.Messaging.MessageQueueCriteria.CreatedBefore*> bounds a time interval for the queues' creation. If you set only <xref:System.Messaging.MessageQueueCriteria.CreatedAfter*>, there is no upper boundary on the date.
 
  If you try to set <xref:System.Messaging.MessageQueueCriteria.CreatedAfter*> to a later <xref:System.DateTime> value than <xref:System.Messaging.MessageQueueCriteria.CreatedBefore*>, <xref:System.Messaging.MessageQueueCriteria.CreatedBefore*> is reset to the same (new) value as <xref:System.Messaging.MessageQueueCriteria.CreatedAfter*>.
 
@@ -194,7 +198,8 @@ The following example iterates through message queues and displays the path of e
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Messaging.MessageQueueCriteria> properties are combined using a logical `AND`, so setting both <xref:System.Messaging.MessageQueueCriteria.CreatedAfter*> and <xref:System.Messaging.MessageQueueCriteria.CreatedBefore*> bounds a time interval for the queues' creation. If you set only <xref:System.Messaging.MessageQueueCriteria.CreatedBefore*>, there is no lower boundary on the date.
+
+The <xref:System.Messaging.MessageQueueCriteria> properties are combined using a logical `AND`, so setting both <xref:System.Messaging.MessageQueueCriteria.CreatedAfter*> and <xref:System.Messaging.MessageQueueCriteria.CreatedBefore*> bounds a time interval for the queues' creation. If you set only <xref:System.Messaging.MessageQueueCriteria.CreatedBefore*>, there is no lower boundary on the date.
 
  If you try to set <xref:System.Messaging.MessageQueueCriteria.CreatedBefore*> to an earlier <xref:System.DateTime> value than <xref:System.Messaging.MessageQueueCriteria.CreatedAfter*>, <xref:System.Messaging.MessageQueueCriteria.CreatedAfter*> is reset to the same (new) value as <xref:System.Messaging.MessageQueueCriteria.CreatedBefore*>.
 
@@ -230,7 +235,8 @@ The following example iterates through message queues and displays the path of e
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A message queue's label is an application-defined description of the queue. It does not have any intrinsic meaning to Message Queuing.
+
+A message queue's label is an application-defined description of the queue. It does not have any intrinsic meaning to Message Queuing.
 
  If you are filtering only by label when searching the queues on the network, you can use the method <xref:System.Messaging.MessageQueue.GetPublicQueuesByLabel*>, which is specifically designed for this purpose. If you are searching by multiple criteria that include the label, set this <xref:System.Messaging.MessageQueueCriteria.Label> property and pass the parameter into <xref:System.Messaging.MessageQueue.GetPublicQueues*>.
 
@@ -266,7 +272,8 @@ The following example iterates through message queues and displays the path of e
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A message queue's <xref:System.Messaging.MessageQueue.MachineName*> reflects the name of the server on which the queue resides, without preceding backslashes (\\\\).
+
+A message queue's <xref:System.Messaging.MessageQueue.MachineName*> reflects the name of the server on which the queue resides, without preceding backslashes (\\\\).
 
  If you are filtering only by computer name when searching the queues on the network, you can use the method <xref:System.Messaging.MessageQueue.GetPublicQueuesByMachine*>, which is specifically designed for this purpose. If you are searching by multiple criteria that include the computer name, set this <xref:System.Messaging.MessageQueueCriteria.MachineName> property and pass the parameter into <xref:System.Messaging.MessageQueue.GetPublicQueues*>.
 
@@ -308,7 +315,8 @@ The following example iterates through message queues and displays the path of e
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A queue's modification flag is set when you change the properties of a queue, but not when a message is read or written to the queue.
+
+A queue's modification flag is set when you change the properties of a queue, but not when a message is read or written to the queue.
 
  The <xref:System.Messaging.MessageQueueCriteria> properties are combined using a logical `AND`, so setting both <xref:System.Messaging.MessageQueueCriteria.ModifiedAfter*> and <xref:System.Messaging.MessageQueueCriteria.ModifiedBefore*> bounds a time interval for the queues' last modification. If you set only <xref:System.Messaging.MessageQueueCriteria.ModifiedAfter*>, there is no upper boundary on the date.
 
@@ -346,7 +354,8 @@ The following example iterates through message queues and displays the path of e
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A queue's modification flag is set when you change the properties of a queue, but not when a message is read or written to the queue.
+
+A queue's modification flag is set when you change the properties of a queue, but not when a message is read or written to the queue.
 
  The <xref:System.Messaging.MessageQueueCriteria> properties are combined using a logical `AND`, so setting both <xref:System.Messaging.MessageQueueCriteria.ModifiedBefore*> and <xref:System.Messaging.MessageQueueCriteria.ModifiedAfter*> bounds a time interval for the queues' last modification. If you set only <xref:System.Messaging.MessageQueueCriteria.ModifiedBefore*>, there is no lower boundary on the date.
 

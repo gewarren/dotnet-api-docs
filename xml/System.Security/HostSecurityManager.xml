@@ -52,7 +52,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When you create a new <xref:System.AppDomain>, the common language runtime queries the <xref:System.AppDomainManager> for the presence of a <xref:System.Security.HostSecurityManager>, which participates in making security decisions for the <xref:System.AppDomain>. Host providers should implement a host security manager that inherits from the <xref:System.Security.HostSecurityManager> class.
+
+When you create a new <xref:System.AppDomain>, the common language runtime queries the <xref:System.AppDomainManager> for the presence of a <xref:System.Security.HostSecurityManager>, which participates in making security decisions for the <xref:System.AppDomain>. Host providers should implement a host security manager that inherits from the <xref:System.Security.HostSecurityManager> class.
 
 ## Examples
 
@@ -152,7 +153,8 @@ The following example shows a very simple implementation of a <xref:System.Secur
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method can be overridden by a derived class. The base implementation calls the application security manager to determine if the application should be executed.
+
+This method can be overridden by a derived class. The base implementation calls the application security manager to determine if the application should be executed.
 
  The base implementation does not use the activator evidence. However, an overridden implementation could use the activator evidence to determine the security evidence for the application domain attempting to activate the application.
 
@@ -217,7 +219,8 @@ The following example shows how to override the <xref:System.Security.HostSecuri
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This property can be overridden in a derived class. The base implementation always returns `null`.
+
+This property can be overridden in a derived class. The base implementation always returns `null`.
 
  This property is called at <xref:System.AppDomain> creation time. It allows a host to supply a policy for the current <xref:System.AppDomain>. A policy level consists of the following:
 
@@ -271,7 +274,8 @@ The following example shows how to override the <xref:System.Security.HostSecuri
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This property can be overridden in a derived class. The base implementation always returns <xref:System.Security.HostSecurityManagerOptions.AllFlags>.
+
+This property can be overridden in a derived class. The base implementation always returns <xref:System.Security.HostSecurityManagerOptions.AllFlags>.
 
  The derived host can change the value of this property when only a subset of the <xref:System.Security.HostSecurityManagerOptions> is of interest. The possible subsets include none, the refused set, the policy level, and assembly evidence.
 
@@ -324,7 +328,8 @@ The following example shows how to override the <xref:System.Security.HostSecuri
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method can be overridden by a derived class. The base implementation returns `null`.
+
+This method can be overridden by a derived class. The base implementation returns `null`.
 
  The common language runtime calls this method when evidence of the specified type is needed for the current <xref:System.AppDomain>. The returned value is used as host-supplied evidence, and is stored in the <xref:System.AppDomain.Evidence*> collection of the <xref:System.AppDomain.CurrentDomain> property. You can use the <xref:System.Security.Policy.Evidence.GetAssemblyEvidence*?displayProperty=nameWithType> method to obtain the generated evidence from the collection.
 
@@ -387,7 +392,8 @@ The following example shows how to override the <xref:System.Security.HostSecuri
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method can be overridden by a derived class. The base implementation returns `null`.
+
+This method can be overridden by a derived class. The base implementation returns `null`.
 
  The common language runtime calls this method when evidence of the specified type is needed for the current assembly. The returned value is used as host-supplied evidence, and is stored in the <xref:System.Reflection.Assembly.Evidence> property. You can use the <xref:System.Security.Policy.Evidence.GetAssemblyEvidence*?displayProperty=nameWithType> method to obtain the generated evidence from the <xref:System.Reflection.Assembly.Evidence> property.
 
@@ -438,7 +444,8 @@ The following example shows how to override the <xref:System.Security.HostSecuri
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method can be overridden by a derived class. The base implementation returns `null`.
+
+This method can be overridden by a derived class. The base implementation returns `null`.
 
  The types returned by this method determine whether the <xref:System.Security.HostSecurityManager.GenerateAppDomainEvidence*> method is called back into. The presence of a type in this list does not mean that the host must be able to generate this evidence type, but that it may be able to. For that reason, it is best to over-specify rather than under-specify the types in this list.
 
@@ -484,7 +491,8 @@ The following example shows how to override the <xref:System.Security.HostSecuri
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method can be overridden by a derived class. The base implementation returns `null`.
+
+This method can be overridden by a derived class. The base implementation returns `null`.
 
  The types returned by this method determine whether the <xref:System.Security.HostSecurityManager.GenerateAssemblyEvidence*> method is called back into. The presence of a type in this list does not mean that the host must be able to generate this evidence type, but that it may be able to. For that reason, it is best to over-specify rather than under-specify the types in this list.
 
@@ -532,7 +540,8 @@ The following example shows how to override the <xref:System.Security.HostSecuri
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method can be overridden in a derived class.
+
+This method can be overridden in a derived class.
 
  This method is called whenever an <xref:System.AppDomain> object is created. The `inputEvidence` parameter is the computed evidence from the common language runtime. The host implementation can choose to extend or reduce the evidence. The return value is the evidence to be used for the application domain. The base implementation always returns the evidence object passed in as the `inputEvidence` parameter.
 
@@ -585,7 +594,8 @@ The following example shows how to override the <xref:System.Security.HostSecuri
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method can be overridden in a derived class.
+
+This method can be overridden in a derived class.
 
  This method is called whenever an assembly is loaded, either implicitly or explicitly. The passed in parameters are the assembly being loaded, and the computed evidence from the common language runtime. The host implementation can choose to extend or reduce the evidence. The return value is the evidence to be used for the assembly. The base implementation always returns the evidence object passed in as the `inputEvidence` parameter.
 
@@ -649,7 +659,8 @@ The following example shows how to override the <xref:System.Security.HostSecuri
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method invokes the security policy engine, providing it with the specified evidence. The result is determined by the security policy.
+
+This method invokes the security policy engine, providing it with the specified evidence. The result is determined by the security policy.
 
  ]]></format>
         </remarks>

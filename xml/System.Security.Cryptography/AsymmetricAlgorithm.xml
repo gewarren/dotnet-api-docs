@@ -68,7 +68,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Asymmetric cryptographic algorithms, also known as public-key algorithms, require that both sender and receiver maintain a pair of related keys: a private key and a public key. Both keys are unique to the entity. The public key can be made available to anyone; this key is used for encoding data that is sent to a receiver. The private key must be kept private by the receiver; this key is used for decoding messages encoded using the receiver's public key. The <xref:System.Security.Cryptography.RSACryptoServiceProvider> class is an implementation of a public-key algorithm. For an in-depth discussion of public-key encryption and algorithms, see the "Public-Key Encryption" section in [Cryptographic Services](/dotnet/standard/security/cryptographic-services). For information about how to use the Strong Name tool (Sn.exe) to create key pairs, see [How to: Create a Public-Private Key Pair](/dotnet/standard/assembly/create-public-private-key-pair).
+
+Asymmetric cryptographic algorithms, also known as public-key algorithms, require that both sender and receiver maintain a pair of related keys: a private key and a public key. Both keys are unique to the entity. The public key can be made available to anyone; this key is used for encoding data that is sent to a receiver. The private key must be kept private by the receiver; this key is used for decoding messages encoded using the receiver's public key. The <xref:System.Security.Cryptography.RSACryptoServiceProvider> class is an implementation of a public-key algorithm. For an in-depth discussion of public-key encryption and algorithms, see the "Public-Key Encryption" section in [Cryptographic Services](/dotnet/standard/security/cryptographic-services). For information about how to use the Strong Name tool (Sn.exe) to create key pairs, see [How to: Create a Public-Private Key Pair](/dotnet/standard/assembly/create-public-private-key-pair).
 
  You can use public-key systems to form digital signatures. Digital signatures are used to help to protect the integrity of data. For example, to use a public-key system to digitally sign a message, the sender first applies a hash function to the message to create a message digest. The sender then encrypts the message digest with the sender's private key to create the sender's personal signature. Upon receiving the message and signature, the receiver decrypts the signature using the sender's public key to recover the message digest and hashes the message using the same hash algorithm that the sender used. If the message digest that the receiver computes matches the message digest received from the sender, the receiver can assume that the message was not altered while in transit. Note that anyone can verify a signature, because the sender's public key is common knowledge. This technique does not retain the secrecy of the message; for the message to be secret, it must also be encrypted.
 
@@ -147,7 +148,8 @@ The following code example demonstrates how to implement a custom asymmetric alg
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You cannot create an instance of an abstract class. Application code creates a new instance of a derived class. The <xref:System.Security.Cryptography.RSACryptoServiceProvider> and <xref:System.Security.Cryptography.DSACryptoServiceProvider> classes are the only currently supported implementations.
+
+You cannot create an instance of an abstract class. Application code creates a new instance of a derived class. The <xref:System.Security.Cryptography.RSACryptoServiceProvider> and <xref:System.Security.Cryptography.DSACryptoServiceProvider> classes are the only currently supported implementations.
 
  ]]></format>
         </remarks>
@@ -201,7 +203,8 @@ The following code example demonstrates how to implement a custom asymmetric alg
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is a simple call to the <xref:System.IDisposable.Dispose*?displayProperty=nameWithType> method.
+
+This method is a simple call to the <xref:System.IDisposable.Dispose*?displayProperty=nameWithType> method.
 
  Calling `Dispose` allows the resources used by the <xref:System.Security.Cryptography.AsymmetricAlgorithm> class to be reallocated for other purposes. For more information about `Dispose`, see [Cleaning Up Unmanaged Resources](/dotnet/standard/garbage-collection/unmanaged).
 
@@ -473,7 +476,8 @@ The following code example demonstrates how to implement the <xref:System.Securi
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Call `Dispose` when you are finished using the <xref:System.Security.Cryptography.AsymmetricAlgorithm>. The `Dispose` method leaves the <xref:System.Security.Cryptography.AsymmetricAlgorithm> in an unusable state. After calling `Dispose`, you must release all references to the <xref:System.Security.Cryptography.AsymmetricAlgorithm> so the garbage collector can reclaim the memory that the <xref:System.Security.Cryptography.AsymmetricAlgorithm> was occupying.
+
+Call `Dispose` when you are finished using the <xref:System.Security.Cryptography.AsymmetricAlgorithm>. The `Dispose` method leaves the <xref:System.Security.Cryptography.AsymmetricAlgorithm> in an unusable state. After calling `Dispose`, you must release all references to the <xref:System.Security.Cryptography.AsymmetricAlgorithm> so the garbage collector can reclaim the memory that the <xref:System.Security.Cryptography.AsymmetricAlgorithm> was occupying.
 
  For more information, see [Cleaning Up Unmanaged Resources](/dotnet/standard/garbage-collection/unmanaged) and [Implementing a Dispose Method](/dotnet/standard/garbage-collection/implementing-dispose).
 
@@ -539,7 +543,8 @@ The following code example demonstrates how to implement the <xref:System.Securi
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is called by the public `Dispose()` method and the <xref:System.Object.Finalize> method, if it has been overridden. `Dispose()` invokes this method with the `disposing` parameter set to `true`. `Finalize` invokes this method with `disposing` set to `false`.
+
+This method is called by the public `Dispose()` method and the <xref:System.Object.Finalize> method, if it has been overridden. `Dispose()` invokes this method with the `disposing` parameter set to `true`. `Finalize` invokes this method with `disposing` set to `false`.
 
  When the `disposing` parameter is `true`, this method releases all resources held by any managed objects that this <xref:System.Security.Cryptography.AsymmetricAlgorithm> references. This method invokes the `Dispose()` method of each referenced object.
 
@@ -604,7 +609,8 @@ The following code example demonstrates how to implement the <xref:System.Securi
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The password bytes are passed directly into the Key Derivation Function (KDF) used by the algorithm indicated by `pbeParameters`.
+
+The password bytes are passed directly into the Key Derivation Function (KDF) used by the algorithm indicated by `pbeParameters`.
  This enables compatibility with other systems which use a text encoding other than UTF-8 when processing passwords with PBKDF2 (Password-Based Key Derivation Function 2).
 
  ]]></format>
@@ -668,7 +674,8 @@ The following code example demonstrates how to implement the <xref:System.Securi
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When `pbeParameters` indicates an algorithm that uses PBKDF2 (Password-Based Key Derivation Function 2), the password is converted to bytes via the UTF-8 encoding.
+
+When `pbeParameters` indicates an algorithm that uses PBKDF2 (Password-Based Key Derivation Function 2), the password is converted to bytes via the UTF-8 encoding.
 
  ]]></format>
         </remarks>
@@ -1076,7 +1083,8 @@ The following code example demonstrates how to implement the <xref:System.Securi
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The password bytes are passed directly into the Key Derivation Function (KDF) used by the algorithm indicated by `pbeParameters`.
+
+The password bytes are passed directly into the Key Derivation Function (KDF) used by the algorithm indicated by `pbeParameters`.
  This enables compatibility with other systems which use a text encoding other than UTF-8 when processing passwords with PBKDF2 (Password-Based Key Derivation Function 2).
 
  This method only supports the binary (BER/CER/DER) encoding of EncryptedPrivateKeyInfo.
@@ -1155,7 +1163,8 @@ The algorithm-specific key import failed.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When the contents of `source` indicate an algorithm that uses PBKDF1 (Password-Based Key Derivation Function 1) or PBKDF2 (Password-Based Key Derivation Function 2), the password is converted to bytes via the UTF-8 encoding.
+
+When the contents of `source` indicate an algorithm that uses PBKDF1 (Password-Based Key Derivation Function 1) or PBKDF2 (Password-Based Key Derivation Function 2), the password is converted to bytes via the UTF-8 encoding.
 
  This method only supports the binary (BER/CER/DER) encoding of EncryptedPrivateKeyInfo.
  If the value is Base64-encoded or in the PEM text format, the caller must Base64-decode the contents before calling this method.
@@ -1439,7 +1448,8 @@ Because each algorithm may have algorithm-specific PEM labels, the default behav
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method only supports the binary (BER/CER/DER) encoding of PrivateKeyInfo.
+
+This method only supports the binary (BER/CER/DER) encoding of PrivateKeyInfo.
  If the value is Base64-encoded or in the PEM text format, the caller must Base64-decode the contents before calling this method.
 
  Because algorithm-specific support is required to interpret the contents of this data format, <xref:System.Security.Cryptography.AsymmetricAlgorithm.ImportPkcs8PrivateKey*> throws a <xref:System.NotImplementedException> by default.
@@ -1505,7 +1515,8 @@ The algorithm-specific key import failed.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method only supports the binary (DER) encoding of SubjectPublicKeyInfo.
+
+This method only supports the binary (DER) encoding of SubjectPublicKeyInfo.
  If the value is Base64-encoded or in the PEM text format, the caller must Base64-decode the contents before calling this method.
 
  Because algorithm-specific support is required to interpret the contents of this data format, <xref:System.Security.Cryptography.AsymmetricAlgorithm.ImportSubjectPublicKeyInfo*> throws a <xref:System.NotImplementedException> by default.
@@ -1642,7 +1653,8 @@ The following code example demonstrates how to override the <xref:System.Securit
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The valid key sizes are specified by the particular implementation of the asymmetric algorithm and are listed in the <xref:System.Security.Cryptography.AsymmetricAlgorithm.LegalKeySizes> property.
+
+The valid key sizes are specified by the particular implementation of the asymmetric algorithm and are listed in the <xref:System.Security.Cryptography.AsymmetricAlgorithm.LegalKeySizes> property.
 
 ## Examples
 
@@ -1703,7 +1715,8 @@ The following code example demonstrates how to override the <xref:System.Securit
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The valid key sizes are specified by the particular implementation of the asymmetric algorithm and are listed in the <xref:System.Security.Cryptography.AsymmetricAlgorithm.LegalKeySizes> property.
+
+The valid key sizes are specified by the particular implementation of the asymmetric algorithm and are listed in the <xref:System.Security.Cryptography.AsymmetricAlgorithm.LegalKeySizes> property.
 
  This field is accessed through the <xref:System.Security.Cryptography.AsymmetricAlgorithm.KeySize> property.
 
@@ -1765,7 +1778,8 @@ The following code example demonstrates how to override the <xref:System.Securit
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The asymmetric algorithm supports only key sizes that match an entry in this array.
+
+The asymmetric algorithm supports only key sizes that match an entry in this array.
 
 ## Examples
 
@@ -1835,7 +1849,8 @@ The following code example demonstrates how to call the <xref:System.Security.Cr
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The asymmetric algorithm supports only key sizes that match an entry in this array.
+
+The asymmetric algorithm supports only key sizes that match an entry in this array.
 
  This field is accessed through the <xref:System.Security.Cryptography.AsymmetricAlgorithm.LegalKeySizes> property.
 
@@ -2075,7 +2090,8 @@ The following code example demonstrates how to call the <xref:System.Security.Cr
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The password bytes are passed directly into the Key Derivation Function (KDF) used by the algorithm indicated by `pbeParameters`.
+
+The password bytes are passed directly into the Key Derivation Function (KDF) used by the algorithm indicated by `pbeParameters`.
  This enables compatibility with other systems which use a text encoding other than UTF-8 when processing passwords with PBKDF2 (Password-Based Key Derivation Function 2).
 
  Because algorithm-specific support is required to produce this data format, <xref:System.Security.Cryptography.AsymmetricAlgorithm.TryExportEncryptedPkcs8PrivateKey*> throws a <xref:System.NotImplementedException> by default.
@@ -2147,7 +2163,8 @@ The following code example demonstrates how to call the <xref:System.Security.Cr
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When `pbeParameters` indicates an algorithm that uses PBKDF2 (Password-Based Key Derivation Function 2), the password is converted to bytes via the UTF-8 encoding.
+
+When `pbeParameters` indicates an algorithm that uses PBKDF2 (Password-Based Key Derivation Function 2), the password is converted to bytes via the UTF-8 encoding.
 
  Because algorithm-specific support is required to produce this data format, <xref:System.Security.Cryptography.AsymmetricAlgorithm.TryExportEncryptedPkcs8PrivateKey*> throws a <xref:System.NotImplementedException> by default.
 
@@ -2328,7 +2345,8 @@ The following code example demonstrates how to call the <xref:System.Security.Cr
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Because algorithm-specific support is required to produce this data format, <xref:System.Security.Cryptography.AsymmetricAlgorithm.TryExportPkcs8PrivateKey*> throws a <xref:System.NotImplementedException> by default.
+
+Because algorithm-specific support is required to produce this data format, <xref:System.Security.Cryptography.AsymmetricAlgorithm.TryExportPkcs8PrivateKey*> throws a <xref:System.NotImplementedException> by default.
 
  ]]></format>
         </remarks>
@@ -2435,7 +2453,8 @@ The following code example demonstrates how to call the <xref:System.Security.Cr
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Because algorithm-specific support is required to produce this data format, <xref:System.Security.Cryptography.AsymmetricAlgorithm.TryExportSubjectPublicKeyInfo*> throws a <xref:System.NotImplementedException> by default.
+
+Because algorithm-specific support is required to produce this data format, <xref:System.Security.Cryptography.AsymmetricAlgorithm.TryExportSubjectPublicKeyInfo*> throws a <xref:System.NotImplementedException> by default.
 
  ]]></format>
         </remarks>

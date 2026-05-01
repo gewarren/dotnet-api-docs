@@ -163,7 +163,8 @@ The following code example uses the <xref:System.Threading.WaitHandle.SignalAndW
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the initial state of the event is nonsignaled, threads that wait on the event will block. If the initial state is signaled, and the <xref:System.Threading.EventResetMode.ManualReset> flag is specified for `mode`, threads that wait on the event will not block. If the initial state is signaled and `mode` is <xref:System.Threading.EventResetMode.AutoReset>, the first thread that waits on the event will be released immediately, after which the event will reset, and subsequent threads will block.
+
+If the initial state of the event is nonsignaled, threads that wait on the event will block. If the initial state is signaled, and the <xref:System.Threading.EventResetMode.ManualReset> flag is specified for `mode`, threads that wait on the event will not block. If the initial state is signaled and `mode` is <xref:System.Threading.EventResetMode.AutoReset>, the first thread that waits on the event will be released immediately, after which the event will reset, and subsequent threads will block.
 
 ## Examples
 
@@ -474,7 +475,8 @@ An object with the specified <paramref name="name" /> exists, but the specified 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use this constructor to apply access control security to a named system event when it is created, preventing other code from taking control of the event.
+
+Use this constructor to apply access control security to a named system event when it is created, preventing other code from taking control of the event.
 
  This constructor initializes an <xref:System.Threading.EventWaitHandle> object that represents a system event. You can create multiple <xref:System.Threading.EventWaitHandle> objects that represent the same system event.
 
@@ -633,7 +635,8 @@ An object with the specified <paramref name="name" /> exists, but the specified 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Threading.EventWaitHandle.GetAccessControl*> method uses the following combination of flags (combined using the bitwise OR operation) to search for permissions: <xref:System.Security.AccessControl.AccessControlSections.Access?displayProperty=nameWithType>, <xref:System.Security.AccessControl.AccessControlSections.Owner?displayProperty=nameWithType>, and <xref:System.Security.AccessControl.AccessControlSections.Group?displayProperty=nameWithType>.
+
+The <xref:System.Threading.EventWaitHandle.GetAccessControl*> method uses the following combination of flags (combined using the bitwise OR operation) to search for permissions: <xref:System.Security.AccessControl.AccessControlSections.Access?displayProperty=nameWithType>, <xref:System.Security.AccessControl.AccessControlSections.Owner?displayProperty=nameWithType>, and <xref:System.Security.AccessControl.AccessControlSections.Group?displayProperty=nameWithType>.
 
  The user must have <xref:System.Security.AccessControl.EventWaitHandleRights.ReadPermissions?displayProperty=nameWithType> rights to call this method, and the event must have been opened with the <xref:System.Security.AccessControl.EventWaitHandleRights.ReadPermissions?displayProperty=nameWithType> flag.
 
@@ -731,7 +734,8 @@ The following code example demonstrates the cross-process behavior of a named sy
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The `name` can be prefixed with `Global\` or `Local\` to specify a namespace. When the `Global` namespace is specified, the synchronization object can be shared with any processes on the system. When the `Local` namespace is specified, which is also the default when no namespace is specified, the synchronization object can be shared with processes in the same session. On Windows, a session is a login session, and services typically run in a different non-interactive session. On Unix-like operating systems, each shell has its own session. Session-local synchronization objects might be appropriate for synchronizing between processes with a parent/child relationship where they all run in the same session. For more information about synchronization object names on Windows, see [Object Names](/windows/win32/sync/object-names).
+
+The `name` can be prefixed with `Global\` or `Local\` to specify a namespace. When the `Global` namespace is specified, the synchronization object can be shared with any processes on the system. When the `Local` namespace is specified, which is also the default when no namespace is specified, the synchronization object can be shared with processes in the same session. On Windows, a session is a login session, and services typically run in a different non-interactive session. On Unix-like operating systems, each shell has its own session. Session-local synchronization objects might be appropriate for synchronizing between processes with a parent/child relationship where they all run in the same session. For more information about synchronization object names on Windows, see [Object Names](/windows/win32/sync/object-names).
 
  If a synchronization object of the requested type exists in the namespace, the existing synchronization object is opened. If a synchronization object does not exist in the namespace, or a synchronization object of a different type exists in the namespace, a `WaitHandleCannotBeOpenedException` is thrown.
 
@@ -1027,7 +1031,8 @@ There was some other error. The `HResult` property might provide more informatio
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- For an <xref:System.Threading.EventWaitHandle> with <xref:System.Threading.EventResetMode.AutoReset?displayProperty=nameWithType> (including <xref:System.Threading.AutoResetEvent>), the <xref:System.Threading.EventWaitHandle.Set*> method releases a single thread. If there are no waiting threads, the wait handle remains signaled until a thread attempts to wait on it, or until its <xref:System.Threading.EventWaitHandle.Reset*> method is called.
+
+For an <xref:System.Threading.EventWaitHandle> with <xref:System.Threading.EventResetMode.AutoReset?displayProperty=nameWithType> (including <xref:System.Threading.AutoResetEvent>), the <xref:System.Threading.EventWaitHandle.Set*> method releases a single thread. If there are no waiting threads, the wait handle remains signaled until a thread attempts to wait on it, or until its <xref:System.Threading.EventWaitHandle.Reset*> method is called.
 
 > [!IMPORTANT]
 > There is no guarantee that every call to the <xref:System.Threading.EventWaitHandle.Set*> method will release a thread from an <xref:System.Threading.EventWaitHandle> whose reset mode is <xref:System.Threading.EventResetMode.AutoReset?displayProperty=nameWithType>. If two calls are too close together, so that the second call occurs before a thread has been released, only one thread is released. It is as if the second call did not happen. Also, if <xref:System.Threading.EventWaitHandle.Set*> is called when there are no threads waiting and the <xref:System.Threading.EventWaitHandle> is already signaled, the call has no effect.
@@ -1087,7 +1092,8 @@ The following code example uses the <xref:System.Threading.WaitHandle.SignalAndW
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The user must have <xref:System.Security.AccessControl.EventWaitHandleRights.ChangePermissions?displayProperty=nameWithType> rights to call this method, and the event must have been opened with the <xref:System.Security.AccessControl.EventWaitHandleRights.ChangePermissions?displayProperty=nameWithType> flag.
+
+The user must have <xref:System.Security.AccessControl.EventWaitHandleRights.ChangePermissions?displayProperty=nameWithType> rights to call this method, and the event must have been opened with the <xref:System.Security.AccessControl.EventWaitHandleRights.ChangePermissions?displayProperty=nameWithType> flag.
 
 ## Examples
 

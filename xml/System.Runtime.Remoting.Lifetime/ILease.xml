@@ -25,7 +25,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Distributed garbage collection controls when server applications can be deleted. Traditionally, distributed garbage collection uses reference counts and pinging for control. This works well when there are a few clients per object, but does not work well when there are thousands of clients per each object. The lifetime service can assume the function of a traditional distributed garbage collector, and scales well when the number of clients increases.
+
+Distributed garbage collection controls when server applications can be deleted. Traditionally, distributed garbage collection uses reference counts and pinging for control. This works well when there are a few clients per object, but does not work well when there are thousands of clients per each object. The lifetime service can assume the function of a traditional distributed garbage collector, and scales well when the number of clients increases.
 
  The lifetime service associates a lease with each remotely activated object. When the lease expires, the object is removed. A lease can specify that an object has an infinite lifetime.
 
@@ -134,7 +135,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the <xref:System.Runtime.Remoting.Lifetime.ILease.InitialLeaseTime> property is set to <xref:System.TimeSpan.Zero?displayProperty=nameWithType>, then the lease will never time out and the object associated with it will have an infinite lifetime.
+
+If the <xref:System.Runtime.Remoting.Lifetime.ILease.InitialLeaseTime> property is set to <xref:System.TimeSpan.Zero?displayProperty=nameWithType>, then the lease will never time out and the object associated with it will have an infinite lifetime.
 
  ]]></format>
         </remarks>
@@ -184,7 +186,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If a sponsor is registered with the current method, the lease is not renewed.
+
+If a sponsor is registered with the current method, the lease is not renewed.
 
  ]]></format>
         </remarks>
@@ -260,7 +263,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The lease time is set to the maximum of the <xref:System.Runtime.Remoting.Lifetime.ILease.CurrentLeaseTime*> or the current time plus the renewal time.
+
+The lease time is set to the maximum of the <xref:System.Runtime.Remoting.Lifetime.ILease.CurrentLeaseTime*> or the current time plus the renewal time.
 
  ]]></format>
         </remarks>
@@ -301,7 +305,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When you make a call to a remote object, the lifetime service adds the <xref:System.Runtime.Remoting.Lifetime.ILease.RenewOnCallTime*> to the <xref:System.Runtime.Remoting.Lifetime.ILease.CurrentLeaseTime*> only if the <xref:System.Runtime.Remoting.Lifetime.ILease.CurrentLeaseTime*> has dropped below the <xref:System.Runtime.Remoting.Lifetime.ILease.RenewOnCallTime*>. Sequential calls therefore do not increase the <xref:System.Runtime.Remoting.Lifetime.ILease.CurrentLeaseTime*> without bound. Instead, immediately after any call, the <xref:System.Runtime.Remoting.Lifetime.ILease.CurrentLeaseTime*> is guaranteed to be the <xref:System.Runtime.Remoting.Lifetime.ILease.RenewOnCallTime*> or longer.
+
+When you make a call to a remote object, the lifetime service adds the <xref:System.Runtime.Remoting.Lifetime.ILease.RenewOnCallTime*> to the <xref:System.Runtime.Remoting.Lifetime.ILease.CurrentLeaseTime*> only if the <xref:System.Runtime.Remoting.Lifetime.ILease.CurrentLeaseTime*> has dropped below the <xref:System.Runtime.Remoting.Lifetime.ILease.RenewOnCallTime*>. Sequential calls therefore do not increase the <xref:System.Runtime.Remoting.Lifetime.ILease.CurrentLeaseTime*> without bound. Instead, immediately after any call, the <xref:System.Runtime.Remoting.Lifetime.ILease.CurrentLeaseTime*> is guaranteed to be the <xref:System.Runtime.Remoting.Lifetime.ILease.RenewOnCallTime*> or longer.
 
  ]]></format>
         </remarks>
@@ -342,7 +347,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the <xref:System.Runtime.Remoting.Lifetime.ILease.SponsorshipTimeout*> is <xref:System.TimeSpan.Zero?displayProperty=nameWithType>, then this lease will not take sponsors.
+
+If the <xref:System.Runtime.Remoting.Lifetime.ILease.SponsorshipTimeout*> is <xref:System.TimeSpan.Zero?displayProperty=nameWithType>, then this lease will not take sponsors.
 
  If a sponsor does not respond to a call to renew a lease within the time-out period, it is assumed to be dead and is removed from the list of sponsors for the current lease.
 
