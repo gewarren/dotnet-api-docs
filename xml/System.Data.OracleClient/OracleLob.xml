@@ -341,7 +341,7 @@ connection.Close();
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The value returned by the <xref:System.Data.OracleClient.OracleLob.ChunkSize> property is not a setting of the .NET Framework Data Provider for Oracle. Instead, it is the value that the Oracle Call Interface (OCI) uses when communicating with the server. Use <xref:System.Data.OracleClient.OracleLob.ChunkSize*> to ensure that client-side chunks are the same size. Reading or writing in smaller chunks does not cache data, and causes a less-optimized round trip to the server, because a full packet is not received or sent.
+ The value returned by the <xref:System.Data.OracleClient.OracleLob.ChunkSize> property is not a setting of the .NET Data Provider for Oracle. Instead, it is the value that the Oracle Call Interface (OCI) uses when communicating with the server. Use <xref:System.Data.OracleClient.OracleLob.ChunkSize*> to ensure that client-side chunks are the same size. Reading or writing in smaller chunks does not cache data, and causes a less-optimized round trip to the server, because a full packet is not received or sent.
 
  ]]></format>
         </remarks>
@@ -1102,7 +1102,7 @@ if(myLob == OracleLob.Null)
 ## Remarks
  The <xref:System.Data.OracleClient.OracleLob.Read*> method reads a maximum of `count` bytes from the current stream and stores them in `buffer` beginning at `offset`. The current position within the stream is advanced by the number of bytes read; however, if an exception occurs, the current position within the stream remains unchanged. <xref:System.Data.OracleClient.OracleLob.Read*> returns the number of bytes read. The return value is zero only if the position is currently at the end of the stream. <xref:System.Data.OracleClient.OracleLob.Read*> will block until at least one byte of data can be read, in the event that no data is available.<xref:System.Data.OracleClient.OracleLob.Read*> returns 0 if you attempt to read from a `LOB` when the current position is at the end of `LOB`. <xref:System.Data.OracleClient.OracleLob.Read*> can return fewer bytes than requested even if the end of the stream has not been reached.
 
- The .NET Framework Data Provider for Oracle handles all `CLOB` and `NCLOB` data as Unicode. Therefore, when accessing `CLOB` and `NCLOB` data types, you are always dealing with the number of bytes, where each character is 2 bytes. For example, if a string of text containing three characters is saved as an `NCLOB` on an Oracle server where the character set is 4 bytes per character, and you perform a `Read` operation, you specify the length of the string as 6 bytes, although it is stored as 12 bytes on the server.
+ The .NET Data Provider for Oracle handles all `CLOB` and `NCLOB` data as Unicode. Therefore, when accessing `CLOB` and `NCLOB` data types, you are always dealing with the number of bytes, where each character is 2 bytes. For example, if a string of text containing three characters is saved as an `NCLOB` on an Oracle server where the character set is 4 bytes per character, and you perform a `Read` operation, you specify the length of the string as 6 bytes, although it is stored as 12 bytes on the server.
 
  The following example demonstrates how to read <xref:System.Data.OracleClient.OracleLob> objects.
 
@@ -1253,7 +1253,7 @@ if (myLob == OracleLob.Null)
 
  A stream must support both writing and seeking for <xref:System.Data.OracleClient.OracleLob.SetLength*> to function.
 
- The .NET Framework Data Provider for Oracle handles all `CLOB` and `NCLOB` data as Unicode. Therefore, when accessing `CLOB` and `NCLOB` data types, you are always dealing with the number of bytes, where each character is 2 bytes. For example, if a string of text containing three characters is saved as an `NCLOB` on an Oracle server where the character set is 4 bytes per character, and you perform a `SetLength` operation, you specify the length of the string as 6 bytes, although it is stored as 12 bytes on the server.
+ The .NET Data Provider for Oracle handles all `CLOB` and `NCLOB` data as Unicode. Therefore, when accessing `CLOB` and `NCLOB` data types, you are always dealing with the number of bytes, where each character is 2 bytes. For example, if a string of text containing three characters is saved as an `NCLOB` on an Oracle server where the character set is 4 bytes per character, and you perform a `SetLength` operation, you specify the length of the string as 6 bytes, although it is stored as 12 bytes on the server.
 
  To write to the `LOB`, you must have retrieved the `LOB` using the FOR UPDATE clause in the SQL SELECT statement, and you must have a local transaction started.
 
@@ -1342,7 +1342,7 @@ if (myLob == OracleLob.Null)
 
  Writing beyond the end of `LOB` is allowed and enlarges the `LOB` by the number of bytes written.
 
- The .NET Framework Data Provider for Oracle handles all `CLOB` and `NCLOB` data as Unicode. Therefore, when accessing `CLOB` and `NCLOB` data types, you are always dealing with the number of bytes, where each character is 2 bytes. For example, if a string of text containing three characters is saved as an `NCLOB` on an Oracle server where the character set is 4 bytes per character, and you perform a `Write` operation, you specify the length of the string as 6 bytes, although it is stored as 12 bytes on the server.
+ The .NET Data Provider for Oracle handles all `CLOB` and `NCLOB` data as Unicode. Therefore, when accessing `CLOB` and `NCLOB` data types, you are always dealing with the number of bytes, where each character is 2 bytes. For example, if a string of text containing three characters is saved as an `NCLOB` on an Oracle server where the character set is 4 bytes per character, and you perform a `Write` operation, you specify the length of the string as 6 bytes, although it is stored as 12 bytes on the server.
 
  To write to the `LOB`, you must have retrieved the `LOB` using the FOR UPDATE clause in the SQL SELECT statement, and you must have a local transaction started.
 

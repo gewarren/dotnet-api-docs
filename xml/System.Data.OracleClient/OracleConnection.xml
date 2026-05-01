@@ -47,19 +47,19 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This type is deprecated and will be removed in a future version of .NET Framework. For more information, see [Oracle and ADO.NET](/dotnet/framework/data/adonet/oracle-and-adonet).
+ This type is deprecated. For more information, see [Oracle and ADO.NET](/dotnet/framework/data/adonet/oracle-and-adonet).
 
  An <xref:System.Data.OracleClient.OracleConnection> object represents a unique connection to an Oracle database. In the case of a client/server database system, it is equivalent to a network connection to the server.
 
  An application that creates an instance of the <xref:System.Data.OracleClient.OracleConnection> object can set declarative or imperative security demands that require all direct and indirect callers to have adequate permission to the code. <xref:System.Data.OracleClient.OracleConnection> creates security demands by using the <xref:System.Data.OracleClient.OraclePermission> object. Users can verify that their code has adequate permissions by using the <xref:System.Data.OracleClient.OraclePermissionAttribute> object. Users and administrators can also use the Code Access Security Policy Tool (Caspol.exe) to modify security policy at the machine, user, and enterprise levels. For more information, see [Security](/dotnet/standard/security/).
 
 > [!NOTE]
-> Unlike the **Connection** object in the other .NET Framework data providers (SQL Server, OLE DB, and ODBC), <xref:System.Data.OracleClient.OracleConnection> does not support a <xref:System.Data.OracleClient.OracleConnection.ConnectionTimeout> property. Setting a connection time-out either as a property or in the connection string has no effect, and the value returned is always zero. <xref:System.Data.OracleClient.OracleConnection> also does not support a <xref:System.Data.OracleClient.OracleConnection.Database> property or a <xref:System.Data.OracleClient.OracleConnection.ChangeDatabase*> method.
+> Unlike the **Connection** object in the other .NET data providers (SQL Server, OLE DB, and ODBC), <xref:System.Data.OracleClient.OracleConnection> does not support a <xref:System.Data.OracleClient.OracleConnection.ConnectionTimeout> property. Setting a connection time-out either as a property or in the connection string has no effect, and the value returned is always zero. <xref:System.Data.OracleClient.OracleConnection> also does not support a <xref:System.Data.OracleClient.OracleConnection.Database> property or a <xref:System.Data.OracleClient.OracleConnection.ChangeDatabase*> method.
 
  If the <xref:System.Data.OracleClient.OracleConnection> object goes out of scope, it remains open. Therefore, you should always close <xref:System.Data.OracleClient.OracleConnection> objects by calling <xref:System.Data.OracleClient.OracleConnection.Close*> or **Dispose**, or by using the <xref:System.Data.OracleClient.OracleConnection> object within a `Using` statement. Otherwise, the garbage collection might not free them immediately. Such delays can cause errors if the maximum number of connections is reached while a number of connections are waiting to be deleted by the garbage collector. By contrast, closing the connections by calling <xref:System.Data.OracleClient.OracleConnection.Close*> uses native resources more efficiently, enhancing scalability and improving overall application performance. To ensure that connections are always closed, open the connection inside of a `Using` block.
 
 > [!NOTE]
-> To deploy high-performance applications, you often need to use connection pooling. However, when you use the .NET Framework Data Provider for Oracle, you do not need to enable connection pooling because the provider manages this automatically.
+> To deploy high-performance applications, you often need to use connection pooling. However, when you use the .NET Data Provider for Oracle, you do not need to enable connection pooling because the provider manages this automatically.
 
  ]]></format>
     </remarks>
@@ -181,7 +181,7 @@
 ## Remarks
  To commit or roll back the transaction, you must explicitly use the <xref:System.Data.OracleClient.OracleTransaction.Commit*> or <xref:System.Data.OracleClient.OracleTransaction.Rollback*> methods.
 
- To ensure that the .NET Framework Data Provider for Oracle transaction management model performs correctly, avoid using other transaction management models, such as those provided by the database.
+ To ensure that the .NET Data Provider for Oracle transaction management model performs correctly, avoid using other transaction management models, such as those provided by the database.
 
 > [!NOTE]
 > If you do not specify an isolation level, the default isolation level is used. To specify an isolation level with the <xref:System.Data.OracleClient.OracleConnection.BeginTransaction*> method, use the <xref:System.Data.OracleClient.OracleConnection.BeginTransaction*> overload.
@@ -224,7 +224,7 @@
 ## Remarks
  To commit or roll back the transaction, you must explicitly use the <xref:System.Data.OracleClient.OracleTransaction.Commit*> or <xref:System.Data.OracleClient.OracleTransaction.Rollback*> methods.
 
- To ensure that the .NET Framework Data Provider for Oracle transaction management model performs correctly, avoid using other transaction management models, such as those provided by the database.
+ To ensure that the .NET Data Provider for Oracle transaction management model performs correctly, avoid using other transaction management models, such as those provided by the database.
 
  ]]></format>
         </remarks>
@@ -262,7 +262,7 @@
  The `value` parameter must contain a valid database name, and cannot contain a null value, an empty string (""), or a string with only blank characters.
 
 > [!NOTE]
->  Unlike the **Connection** object in the other .NET Framework data providers (SQL Server, OLE DB, and ODBC), <xref:System.Data.OracleClient.OracleConnection> does not support a <xref:System.Data.OracleClient.OracleConnection.ConnectionTimeout> property. Setting a connection time-out either as a property or in the connection string has no effect, and the value returned is always zero. <xref:System.Data.OracleClient.OracleConnection> also does not support a <xref:System.Data.OracleClient.OracleConnection.Database> property or a <xref:System.Data.OracleClient.OracleConnection.ChangeDatabase*> method.
+>  Unlike the **Connection** object in the other .NET data providers (SQL Server, OLE DB, and ODBC), <xref:System.Data.OracleClient.OracleConnection> does not support a <xref:System.Data.OracleClient.OracleConnection.ConnectionTimeout> property. Setting a connection time-out either as a property or in the connection string has no effect, and the value returned is always zero. <xref:System.Data.OracleClient.OracleConnection> also does not support a <xref:System.Data.OracleClient.OracleConnection.Database> property or a <xref:System.Data.OracleClient.OracleConnection.ChangeDatabase*> method.
 
  ]]></format>
         </remarks>
@@ -369,7 +369,7 @@
  An application can call <xref:System.Data.OracleClient.OracleConnection.Close*> more than once without generating an exception.
 
 > [!NOTE]
->  When you use the .NET Framework Data Provider for Oracle, you do not need to enable connection pooling because the provider manages this automatically.
+>  When you use the .NET Data Provider for Oracle, you do not need to enable connection pooling because the provider manages this automatically.
 
 > [!CAUTION]
 >  Do not call <xref:System.Data.OracleClient.OracleConnection.Close*> on a <xref:System.Data.OracleClient.OracleConnection>, a <xref:System.Data.OracleClient.OracleDataReader>, or any other managed object in the `Finalize` method of your class. In a finalizer, you should only release unmanaged resources that your class owns directly. If your class does not own any unmanaged resources, do not include a `Finalize` method in your class definition. For more information, see [Garbage Collection](/dotnet/standard/garbage-collection/).
@@ -472,7 +472,7 @@
 |Integrated Security|'false'|Whether the connection is to be a secure connection or not.<br /><br /> Recognized values are `true` (strongly recommended), `false`, `yes`, and `no`.|
 |Password||The password for the Oracle account logging on. To maintain a high level of security, we strongly recommend that you use the Integrated Security keyword instead.|
 |Persist Security Info|'false'|When set to `false` or `no` (strongly recommended), security-sensitive information such as the password is not returned as part of the connection if the connection is open or has ever been in an open <xref:System.Data.OracleClient.OracleConnection.State*>. Resetting the connection string resets all connection string values, including the password.<br /><br /> Recognized values are `true`, `false`, `yes`, and `no`.|
-|Unicode|'false'|Specifies whether the .NET Framework Data Provider for Oracle uses UTF16 mode API calls. This keyword is ignored except when using Oracle9i client software.|
+|Unicode|'false'|Specifies whether the .NET Data Provider for Oracle uses UTF16 mode API calls. This keyword is ignored except when using Oracle9i client software.|
 |User ID||The Oracle login account. To maintain a high level of security, we strongly recommend that you use the Integrated Security keyword instead.|
 
  The following table lists the valid names for connection pooling values within the <xref:System.Data.OracleClient.OracleConnection.ConnectionString*>.
@@ -527,7 +527,7 @@
  You can set the amount of time a connection waits to time out by using the `Connect Timeout` or `Connection Timeout` keywords in the connection string. A value of 0 indicates no limit, and should be avoided in a <xref:System.Data.OracleClient.OracleConnection.ConnectionString*> because an attempt to connect waits indefinitely.
 
 > [!NOTE]
->  Unlike the `Connection` object in the other .NET Framework data providers (SQL Server, OLE DB, and ODBC), <xref:System.Data.OracleClient.OracleConnection> does not support a <xref:System.Data.OracleClient.OracleConnection.ConnectionTimeout> property. Setting a connection time-out either with a property or in the connection string has no effect, and the value returned is always zero. <xref:System.Data.OracleClient.OracleConnection> also does not support a <xref:System.Data.OracleClient.OracleConnection.Database> property or a <xref:System.Data.OracleClient.OracleConnection.ChangeDatabase*> method.
+>  Unlike the `Connection` object in the other .NET data providers (SQL Server, OLE DB, and ODBC), <xref:System.Data.OracleClient.OracleConnection> does not support a <xref:System.Data.OracleClient.OracleConnection.ConnectionTimeout> property. Setting a connection time-out either with a property or in the connection string has no effect, and the value returned is always zero. <xref:System.Data.OracleClient.OracleConnection> also does not support a <xref:System.Data.OracleClient.OracleConnection.Database> property or a <xref:System.Data.OracleClient.OracleConnection.ChangeDatabase*> method.
 
  ]]></format>
         </remarks>
@@ -618,7 +618,7 @@
  The <xref:System.Data.OracleClient.OracleConnection.Database> property updates dynamically. If you change the current database using a SQL statement or the <xref:System.Data.OracleClient.OracleConnection.ChangeDatabase*> method, an informational message is sent and the property is updated automatically.
 
 > [!NOTE]
->  Unlike the `Connection` object in the other .NET Framework data providers (SQL Server, OLE DB, and ODBC), <xref:System.Data.OracleClient.OracleConnection> does not support a <xref:System.Data.OracleClient.OracleConnection.ConnectionTimeout> property. Setting a connection time-out either with a property or in the connection string has no effect, and the value returned is always zero. <xref:System.Data.OracleClient.OracleConnection> also does not support a <xref:System.Data.OracleClient.OracleConnection.Database> property or a <xref:System.Data.OracleClient.OracleConnection.ChangeDatabase*> method.
+>  Unlike the `Connection` object in the other .NET data providers (SQL Server, OLE DB, and ODBC), <xref:System.Data.OracleClient.OracleConnection> does not support a <xref:System.Data.OracleClient.OracleConnection.ConnectionTimeout> property. Setting a connection time-out either with a property or in the connection string has no effect, and the value returned is always zero. <xref:System.Data.OracleClient.OracleConnection> also does not support a <xref:System.Data.OracleClient.OracleConnection.Database> property or a <xref:System.Data.OracleClient.OracleConnection.ChangeDatabase*> method.
 
  ]]></format>
         </remarks>
@@ -916,7 +916,7 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Because the .NET Framework Data Provider for Oracle uses the Oracle Call Interface (OCI), whenever the data provider receives a Success With Info message, an <xref:System.Data.OracleClient.OracleConnection.InfoMessage> event is generated. An example would be creating a stored procedure that contains a syntax error. The call to the <xref:System.Data.OracleClient.OracleCommand.ExecuteNonQuery*> method would succeed. However an <xref:System.Data.OracleClient.OracleConnection.InfoMessage> event would be generated informing you of the syntax error.
+ Because the .NET Data Provider for Oracle uses the Oracle Call Interface (OCI), whenever the data provider receives a Success With Info message, an <xref:System.Data.OracleClient.OracleConnection.InfoMessage> event is generated. An example would be creating a stored procedure that contains a syntax error. The call to the <xref:System.Data.OracleClient.OracleCommand.ExecuteNonQuery*> method would succeed. However an <xref:System.Data.OracleClient.OracleConnection.InfoMessage> event would be generated informing you of the syntax error.
 
  Clients who want to process warnings or informational messages sent by the server should create an <xref:System.Data.OracleClient.OracleInfoMessageEventHandler> delegate to listen to this event.
 

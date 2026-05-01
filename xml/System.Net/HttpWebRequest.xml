@@ -116,12 +116,10 @@
  The local computer or application config file may specify that a default proxy be used. If the <xref:System.Net.HttpWebRequest.Proxy> property is specified, then the proxy settings from the <xref:System.Net.HttpWebRequest.Proxy> property override the local computer or application config file and the <xref:System.Net.HttpWebRequest> instance will use the proxy settings specified. If no proxy is specified in a config file and the <xref:System.Net.HttpWebRequest.Proxy> property is unspecified, the <xref:System.Net.HttpWebRequest> class uses the proxy settings inherited from Internet options on the local computer. If there are no proxy settings in Internet options, the request is sent directly to the server.
 
 > [!NOTE]
-> The Framework caches SSL sessions as they are created and attempts to reuse a cached session for a new request, if possible. When attempting to reuse an SSL session, the Framework uses the first element of <xref:System.Net.HttpWebRequest.ClientCertificates*> (if there is one), or tries to reuse an anonymous sessions if <xref:System.Net.HttpWebRequest.ClientCertificates*> is empty.
+> .NET caches SSL sessions as they are created and attempts to reuse a cached session for a new request, if possible. When attempting to reuse an SSL session, the Framework uses the first element of <xref:System.Net.HttpWebRequest.ClientCertificates*> (if there is one), or tries to reuse an anonymous sessions if <xref:System.Net.HttpWebRequest.ClientCertificates*> is empty.
 
 > [!NOTE]
 > For security reasons, cookies are disabled by default. If you want to use cookies, use the <xref:System.Net.HttpWebRequest.CookieContainer> property to enable cookies.
-
-For apps that use TLS/SSL through APIs such as HttpClient, HttpWebRequest, FTPClient, SmtpClient, and SsStream, .NET blocks insecure cipher and hashing algorithms for connections by default. You might need to opt out of this behavior to maintain interoperability with existing SSL3 services OR TLS w/ RC4 services. [Cannot connect to a server by using the ServicePointManager or SslStream APIs after upgrade to the .NET Framework 4.6](https://support.microsoft.com/kb/3069494) explains how to modify your code to disable this behavior, if necessary.
 
 ## Examples
  The following code example creates an <xref:System.Net.HttpWebRequest> for the URI `http://www.contoso.com/`.
@@ -180,15 +178,15 @@ Both <xref:System.Net.HttpWebRequest> constructors are obsolete and should not b
           <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8">
-          <AttributeName>System.Obsolete("This API supports the .NET Framework infrastructure and is not intended to be used directly from your code.", true)</AttributeName>
+          <AttributeName>System.Obsolete("This API supports the .NET infrastructure and is not intended to be used directly from your code.", true)</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netframework-4.8.1">
           <AttributeName Language="C#">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]</AttributeName>
           <AttributeName Language="F#">[&lt;System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)&gt;]</AttributeName>
         </Attribute>
         <Attribute FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netframework-4.8.1">
-          <AttributeName Language="C#">[System.Obsolete("This API supports the .NET Framework infrastructure and is not intended to be used directly from your code.", true)]</AttributeName>
-          <AttributeName Language="F#">[&lt;System.Obsolete("This API supports the .NET Framework infrastructure and is not intended to be used directly from your code.", true)&gt;]</AttributeName>
+          <AttributeName Language="C#">[System.Obsolete("This API supports the .NET infrastructure and is not intended to be used directly from your code.", true)]</AttributeName>
+          <AttributeName Language="F#">[&lt;System.Obsolete("This API supports the .NET infrastructure and is not intended to be used directly from your code.", true)&gt;]</AttributeName>
         </Attribute>
       </Attributes>
       <Parameters />
@@ -1568,9 +1566,7 @@ Both <xref:System.Net.HttpWebRequest> constructors are obsolete and should not b
 > Your application cannot mix synchronous and asynchronous methods for a particular request. If you call the <xref:System.Net.HttpWebRequest.BeginGetRequestStream*> method, you must use the <xref:System.Net.HttpWebRequest.BeginGetResponse*> method to retrieve the response.
 
 > [!NOTE]
-> This member outputs trace information when you enable network tracing in your application. For more information, see [Network Tracing in the .NET Framework](/dotnet/framework/network-programming/network-tracing).
-
-
+> This member outputs trace information when you enable network tracing in your application.
 
 ## Examples
  The following code example uses the <xref:System.Net.HttpWebRequest.BeginGetRequestStream*> method to make an asynchronous request for a stream instance.
@@ -1672,9 +1668,7 @@ Both <xref:System.Net.HttpWebRequest> constructors are obsolete and should not b
 > Your application cannot mix synchronous and asynchronous methods for a particular request. If you call the <xref:System.Net.HttpWebRequest.BeginGetRequestStream*> method, you must use the <xref:System.Net.HttpWebRequest.BeginGetResponse*> method to retrieve the response.
 
 > [!NOTE]
-> This member outputs trace information when you enable network tracing in your application. For more information, see [Network Tracing in the .NET Framework](/dotnet/framework/network-programming/network-tracing).
-
-
+> This member outputs trace information when you enable network tracing in your application.
 
 ## Examples
  The following code example uses the <xref:System.Net.HttpWebRequest.BeginGetResponse*> method to make an asynchronous request for an Internet resource.
@@ -2693,9 +2687,7 @@ Both <xref:System.Net.HttpWebRequest> constructors are obsolete and should not b
 > [!NOTE]
 >  - You must set the value of the <xref:System.Net.HttpWebRequest.ContentLength> property before writing data to the stream.
 >  - You must call the <xref:System.IO.Stream.Close*?displayProperty=nameWithType> method to close the stream and release the connection for reuse. Failure to close the stream causes your application to run out of connections.
->  - This member outputs trace information when you enable network tracing in your application. For more information, see [Network Tracing in the .NET Framework](/dotnet/framework/network-programming/network-tracing).
-
-
+>  - This member outputs trace information when you enable network tracing in your application.
 
 ## Examples
  The following code example uses the <xref:System.Net.HttpWebRequest.EndGetRequestStream*> method to end an asynchronous request for a stream instance.
@@ -2788,9 +2780,7 @@ Both <xref:System.Net.HttpWebRequest> constructors are obsolete and should not b
 > [!NOTE]
 >  - If you need to set the value of the <xref:System.Net.HttpWebRequest.ContentLength> property before writing data to the stream.
 >  - You must call the <xref:System.IO.Stream.Close*?displayProperty=nameWithType> method to close the stream and release the connection for reuse. Failure to close the stream causes your application to run out of connections.
->  - This member outputs trace information when you enable network tracing in your application. For more information, see [Network Tracing in the .NET Framework](/dotnet/framework/network-programming/network-tracing).
-
- ]]></format>
+>  - This member outputs trace information when you enable network tracing in your application. ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">
           <paramref name="asyncResult" /> was not returned by the current instance from a call to <see cref="M:System.Net.HttpWebRequest.BeginGetRequestStream(System.AsyncCallback,System.Object)" />.</exception>
@@ -2871,9 +2861,7 @@ Both <xref:System.Net.HttpWebRequest> constructors are obsolete and should not b
 > You must call the <xref:System.Net.HttpWebResponse.Close*> method to close the stream and release the connection. Failure to do so may cause your application to run out of connections.
 
 > [!NOTE]
-> This member outputs trace information when you enable network tracing in your application. For more information, see [Network Tracing in the .NET Framework](/dotnet/framework/network-programming/network-tracing).
-
-
+> This member outputs trace information when you enable network tracing in your application.
 
 ## Examples
  The following code example uses the <xref:System.Net.HttpWebRequest.EndGetResponse*> method to end an asynchronous request for an Internet resource.
@@ -3130,9 +3118,7 @@ The GetHashCode method returns a hash code of the web request. This value can be
 > Your application cannot mix synchronous and asynchronous methods for a particular request. If you call the <xref:System.Net.HttpWebRequest.GetRequestStream*> method, you must use the <xref:System.Net.HttpWebRequest.GetResponse*> method to retrieve the response.
 
 > [!NOTE]
-> This member outputs trace information when you enable network tracing in your application. For more information, see [Network Tracing in the .NET Framework](/dotnet/framework/network-programming/network-tracing).
-
-
+> This member outputs trace information when you enable network tracing in your application.
 
 ## Examples
  The following code example uses the <xref:System.Net.HttpWebRequest.GetRequestStream*> method to return a stream instance.
@@ -3239,9 +3225,7 @@ The GetHashCode method returns a hash code of the web request. This value can be
 > Your application cannot mix synchronous and asynchronous methods for a particular request. If you call the <xref:System.Net.HttpWebRequest.GetRequestStream*> method, you must use the <xref:System.Net.HttpWebRequest.GetResponse*> method to retrieve the response.
 
 > [!NOTE]
-> This member outputs trace information when you enable network tracing in your application. For more information, see [Network Tracing in the .NET Framework](/dotnet/framework/network-programming/network-tracing).
-
- ]]></format>
+> This member outputs trace information when you enable network tracing in your application. ]]></format>
         </remarks>
         <exception cref="T:System.Exception">The <see cref="M:System.Net.HttpWebRequest.GetRequestStream" /> method was unable to obtain the <see cref="T:System.IO.Stream" />.</exception>
         <exception cref="T:System.InvalidOperationException">The <see cref="M:System.Net.HttpWebRequest.GetRequestStream" /> method is called more than once.
@@ -3341,9 +3325,7 @@ The GetHashCode method returns a hash code of the web request. This value can be
 > If a <xref:System.Net.WebException> is thrown, use the <xref:System.Net.WebException.Response*> and <xref:System.Net.WebException.Status*> properties of the exception to determine the response from the server.
 
 > [!NOTE]
-> This member outputs trace information when you enable network tracing in your application. For more information, see [Network Tracing in the .NET Framework](/dotnet/framework/network-programming/network-tracing).
-
-> [!NOTE]
+> This member outputs trace information when you enable network tracing in your application.> [!NOTE]
 > For security reasons, cookies are disabled by default. If you wish to use cookies, use the <xref:System.Net.HttpWebRequest.CookieContainer> property to enable cookies.
 
 

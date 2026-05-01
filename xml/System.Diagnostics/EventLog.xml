@@ -3294,12 +3294,7 @@ SVC_UPDATE.EXE
  If your application writes entries using both resource identifiers and string values, you must register two separate sources. For example, configure one source with resource files, and then use that source in the <xref:System.Diagnostics.EventLog.WriteEvent*> method to write entries using resource identifiers to the event log. Then create a different source without resource files, and use that source in the <xref:System.Diagnostics.EventLog.WriteEntry*> method to write strings directly to the event log using that source.
 
 > [!NOTE]
->  If you write an entry to a remote computer, the value of the message (the text string) might not be what you expect if the remote computer is not running the .NET Framework.
-
-> [!NOTE]
 >  If the `message` parameter contains a NUL character, the message in the event log is terminated at the NUL character.
-
-
 
 ## Examples
  The following example creates the source `MySource` if it does not already exist, and writes an entry to the event log `MyNewLog`.
@@ -3404,9 +3399,6 @@ SVC_UPDATE.EXE
  The source must be configured either for writing localized entries or for writing direct strings. The <xref:System.Diagnostics.EventLog.WriteEntry*> method writes the given string directly to the event log; it does not use a localizable message resource file. Use the <xref:System.Diagnostics.EventLog.WriteEvent*> method to write events using a localized message resource file.
 
  If your application writes entries using both resource identifiers and string values, you must register two separate sources. For example, configure one source with resource files, and then use that source in the <xref:System.Diagnostics.EventLog.WriteEvent*> method to write entries using resource identifiers to the event log. Then create a different source without resource files, and use that source in the <xref:System.Diagnostics.EventLog.WriteEntry*> method to write strings directly to the event log using that source.
-
-> [!NOTE]
->  If you write an entry to a remote computer, the value of the message (the text string) might not be what you expect if the remote computer is not running the .NET Framework.
 
 > [!NOTE]
 > If the `message` parameter contains a NUL character, the message in the event log is terminated at the NUL character.
@@ -3614,12 +3606,7 @@ SVC_UPDATE.EXE
  If your application writes entries using both resource identifiers and string values, you must register two separate sources. For example, configure one source with resource files, and then use that source in the <xref:System.Diagnostics.EventLog.WriteEvent*> method to write entries using resource identifiers to the event log. Then create a different source without resource files, and use that source in the <xref:System.Diagnostics.EventLog.WriteEntry*> method to write strings directly to the event log using that source.
 
 > [!NOTE]
->  If you write an entry to a remote computer, the value of the message (the text string) might not be what you expect if the remote computer is not running the .NET Framework.
-
-> [!NOTE]
 >  If the `message` parameter contains a NUL character, the message in the event log is terminated at the NUL character.
-
-
 
 ## Examples
  :::code language="csharp" source="~/snippets/csharp/System.Diagnostics/EventLog/WriteEntry/eventlog_writeentry_1_3.cs" id="Snippet3":::
@@ -3840,9 +3827,6 @@ SVC_UPDATE.EXE
  The source must be configured either for writing localized entries or for writing direct strings. The <xref:System.Diagnostics.EventLog.WriteEntry*> method writes the given string directly to the event log; it does not use a localizable message resource file. Use the <xref:System.Diagnostics.EventLog.WriteEvent*> method to write events using a localized message resource file.
 
  If your application writes entries using both resource identifiers and string values, you must register two separate sources. For example, configure one source with resource files, and then use that source in the <xref:System.Diagnostics.EventLog.WriteEvent*> method to write entries using resource identifiers to the event log. Then create a different source without resource files, and use that source in the <xref:System.Diagnostics.EventLog.WriteEntry*> method to write strings directly to the event log using that source.
-
-> [!NOTE]
->  If you write an entry to a remote computer, the value of the message (the text string) might not be what you expect if the remote computer is not running the .NET Framework.
 
 > [!NOTE]
 >  If the `message` parameter contains a NUL character, the message in the event log is terminated at the NUL character.
@@ -4072,9 +4056,6 @@ SVC_UPDATE.EXE
  The source must be configured either for writing localized entries or for writing direct strings. The <xref:System.Diagnostics.EventLog.WriteEntry*> method writes the given string directly to the event log; it does not use a localizable message resource file. Use the <xref:System.Diagnostics.EventLog.WriteEvent*> method to write events using a localized message resource file.
 
  If your application writes entries using both resource identifiers and string values, you must register two separate sources. For example, configure one source with resource files, and then use that source in the <xref:System.Diagnostics.EventLog.WriteEvent*> method to write entries using resource identifiers to the event log. Then create a different source without resource files, and use that source in the <xref:System.Diagnostics.EventLog.WriteEntry*> method to write strings directly to the event log using that source.
-
-> [!NOTE]
->  If you write an entry to a remote computer, the value of the message (the text string) might not be what you expect if the remote computer is not running the .NET Framework.
 
 > [!NOTE]
 >  If the `message` parameter contains a NUL character, the message in the event log is terminated at the NUL character.
@@ -4653,9 +4634,7 @@ SVC_UPDATE.EXE
  If your application writes entries using both resource identifiers and string values, you must register two separate sources. For example, configure one source with resource files, and then use that source in the <xref:System.Diagnostics.EventLog.WriteEvent*> method to write entries using resource identifiers to the event log. Then create a different source without resource files, and use that source in the <xref:System.Diagnostics.EventLog.WriteEntry*> method to write strings directly to the event log using that source.
 
 > [!NOTE]
->  If you write an entry to a remote computer, the value of the `message` string might not be what you expect if the remote computer is not running the .NET Framework. Also, the `message` string cannot contain %*n*, where *n* is an integer value (for example, %1), because the event viewer treats it as an insertion string. Because an Internet Protocol, version 6 (IPv6) address can contain this character sequence, you cannot log an event message that contains an IPv6 address.
-
-
+> The `message` string cannot contain %*n*, where *n* is an integer value (for example, %1), because the event viewer treats it as an insertion string. Because an Internet Protocol, version 6 (IPv6) address can contain this character sequence, you cannot log an event message that contains an IPv6 address.
 
 ## Examples
  The following example writes two audit entries to the event log `myNewLog`. The example creates a new event source and a new event log if they do not exist on the local computer. The event message text is specified using a resource identifier in a resource file.

@@ -45,7 +45,7 @@
 ## Remarks
  Parameter names are not case-sensitive.
 
- When querying an Oracle database using the Microsoft OLE DB Provider for Oracle (MSDAORA) and the ODBC.NET Framework Data Provider, using the `LIKE` clause to query values in fixed-length fields may not return all expected matches. The reason is that when Oracle matches values for fixed-length fields in a `LIKE` clause, it matches the entire length of the string, including any padding trailing spaces. For example, if a table in an Oracle database contains a field named "Field1" that is defined as `char(3)`, and you enter the value "a" into a row of that table, the following code will not return the row.
+ When querying an Oracle database using the Microsoft OLE DB Provider for Oracle (MSDAORA) and the ODBC.NET Data Provider, using the `LIKE` clause to query values in fixed-length fields may not return all expected matches. The reason is that when Oracle matches values for fixed-length fields in a `LIKE` clause, it matches the entire length of the string, including any padding trailing spaces. For example, if a table in an Oracle database contains a field named "Field1" that is defined as `char(3)`, and you enter the value "a" into a row of that table, the following code will not return the row.
 
 ```vb
 Dim queryString As String = "SELECT * FROM Table1 WHERE Field1 LIKE ?"
@@ -715,7 +715,7 @@ public void CreateOracleParameter()
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The .NET Framework Data Provider for Oracle does not support positional parameters that are marked with a question mark (?).
+ The .NET Data Provider for Oracle does not support positional parameters that are marked with a question mark (?).
 
 
 
@@ -1276,7 +1276,7 @@ public void CreateOracleParameter()
 ## Remarks
  For input parameters, the value is bound to the <xref:System.Data.OracleClient.OracleCommand> that is sent to the server. For output and return-value parameters, the value is set on completion of the <xref:System.Data.OracleClient.OracleCommand> and after the <xref:System.Data.OracleClient.OracleDataReader> is closed.
 
- For an input parameter, <xref:System.Data.OracleClient.OracleParameter.Value*> can be set to an object of either a Microsoft .NET Framework data type or an Oracle data type (for example, an <xref:System.Data.OracleClient.OracleNumber> or <xref:System.Data.OracleClient.OracleString>).
+ For an input parameter, <xref:System.Data.OracleClient.OracleParameter.Value*> can be set to an object of either a .NET data type or an Oracle data type (for example, an <xref:System.Data.OracleClient.OracleNumber> or <xref:System.Data.OracleClient.OracleString>).
 
  When you send a null parameter value to the server, you must specify DBNull, not null. A null value in the system is an empty object that has no value. DBNull is used to represent null values.
 
@@ -1284,7 +1284,7 @@ public void CreateOracleParameter()
 
  The <xref:System.Data.OracleClient.OracleParameter.DbType*>, <xref:System.Data.OracleClient.OracleParameter.OracleType*>, and <xref:System.Data.OracleClient.OracleParameter.Size*> properties of a parameter can be inferred by setting Value. Therefore, you are not required to specify them. However, they are not exposed in <xref:System.Data.OracleClient.OracleParameter> property settings. For example, if the size of the parameter has been inferred, Size does not contain inferred value after statement execution.
 
- The `InputOutput`, `Output`, and `ReturnValue` <xref:System.Data.ParameterDirection> values used by the Value property will be Microsoft .NET Framework data types, unless the input value was an Oracle data type (for example, <xref:System.Data.OracleClient.OracleNumber> or <xref:System.Data.OracleClient.OracleString>). This does not apply to REF CURSOR, BFILE, or LOB data types.
+ The `InputOutput`, `Output`, and `ReturnValue` <xref:System.Data.ParameterDirection> values used by the Value property will be .NET data types, unless the input value was an Oracle data type (for example, <xref:System.Data.OracleClient.OracleNumber> or <xref:System.Data.OracleClient.OracleString>). This does not apply to REF CURSOR, BFILE, or LOB data types.
 
  The <xref:System.Data.OracleClient.OracleParameter.Value> property is overwritten by the **Update** method.
 

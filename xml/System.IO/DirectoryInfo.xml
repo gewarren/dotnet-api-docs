@@ -200,7 +200,6 @@
         <exception cref="T:System.ArgumentNullException">
           <paramref name="path" /> is <see langword="null" />.</exception>
         <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
-        <exception cref="T:System.ArgumentException">.NET Framework and .NET Core versions older than 2.1: <paramref name="path" /> contains invalid characters such as ", &lt;, &gt;, or |.</exception>
         <exception cref="T:System.IO.PathTooLongException">The specified path, file name, or both exceed the system-defined maximum length. </exception>
         <altmember cref="T:System.IO.DriveInfo" />
         <related type="Article" href="/dotnet/standard/io/">File and Stream I/O</related>
@@ -2380,7 +2379,6 @@ namespace ConsoleApp
 
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">.NET Framework and .NET Core versions older than 2.1: <paramref name="searchPattern" /> contains one or more invalid characters defined by the <see cref="M:System.IO.Path.GetInvalidPathChars" /> method.</exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="searchPattern" /> is <see langword="null" />.</exception>
         <exception cref="T:System.IO.DirectoryNotFoundException">The path encapsulated in the <see langword="DirectoryInfo" /> object is invalid (for example, it is on an unmapped drive).</exception>
@@ -2463,7 +2461,6 @@ namespace ConsoleApp
 
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">.NET Framework and .NET Core versions older than 2.1: <paramref name="searchPattern" /> contains one or more invalid characters defined by the <see cref="M:System.IO.Path.GetInvalidPathChars" /> method.</exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="searchPattern" /> is <see langword="null" />.</exception>
         <exception cref="T:System.IO.DirectoryNotFoundException">The path encapsulated in the <see langword="DirectoryInfo" /> object is invalid (for example, it is on an unmapped drive).</exception>
@@ -2567,7 +2564,6 @@ namespace ConsoleApp
 
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">.NET Framework and .NET Core versions older than 2.1: <paramref name="searchPattern" /> contains one or more invalid characters defined by the <see cref="M:System.IO.Path.GetInvalidPathChars" /> method.</exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="searchPattern" /> is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">
@@ -2814,7 +2810,6 @@ namespace ConsoleApp
 
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">.NET Framework and .NET Core versions older than 2.1: <paramref name="searchPattern" /> contains one or more invalid characters defined by the <see cref="M:System.IO.Path.GetInvalidPathChars" /> method.</exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="searchPattern" /> is <see langword="null" />.</exception>
         <exception cref="T:System.IO.DirectoryNotFoundException">The path is invalid (for example, it is on an unmapped drive).</exception>
@@ -2926,7 +2921,6 @@ namespace ConsoleApp
 
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">.NET Framework and .NET Core versions older than 2.1: <paramref name="searchPattern" /> contains one or more invalid characters defined by the <see cref="M:System.IO.Path.GetInvalidPathChars" /> method.</exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="searchPattern" /> is <see langword="null" />.</exception>
         <exception cref="T:System.IO.DirectoryNotFoundException">The path is invalid (for example, it is on an unmapped drive).</exception>
@@ -3058,7 +3052,6 @@ namespace ConsoleApp
 
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">.NET Framework and .NET Core versions older than 2.1: <paramref name="searchPattern" /> contains one or more invalid characters defined by the <see cref="M:System.IO.Path.GetInvalidPathChars" /> method.</exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="searchPattern" /> is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">
@@ -3276,7 +3269,6 @@ namespace ConsoleApp
 
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">.NET Framework and .NET Core versions older than 2.1: <paramref name="searchPattern" /> contains one or more invalid characters defined by the <see cref="M:System.IO.Path.GetInvalidPathChars" /> method.</exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="searchPattern" /> is <see langword="null" />.</exception>
         <exception cref="T:System.IO.DirectoryNotFoundException">The specified path is invalid (for example, it is on an unmapped drive).</exception>
@@ -3369,7 +3361,6 @@ namespace ConsoleApp
 
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">.NET Framework and .NET Core versions older than 2.1: <paramref name="searchPattern" /> contains one or more invalid characters defined by the <see cref="M:System.IO.Path.GetInvalidPathChars" /> method.</exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="searchPattern" /> is <see langword="null" />.</exception>
         <exception cref="T:System.IO.DirectoryNotFoundException">The specified path is invalid (for example, it is on an unmapped drive).</exception>
@@ -3463,7 +3454,6 @@ namespace ConsoleApp
 
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">.NET Framework and .NET Core versions older than 2.1: <paramref name="searchPattern" /> contains one or more invalid characters defined by the <see cref="M:System.IO.Path.GetInvalidPathChars" /> method.</exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="searchPattern" /> is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">
@@ -3702,17 +3692,14 @@ namespace ConsoleApp
 
 ## Remarks
 
-> [!IMPORTANT]
-> In .NET Framework, `Parent` returns a relative path.
-> In .NET Core, `Parent` returns a fully qualified path.
+This property returns a fully qualified path.
 
-To ensure consistent behavior across versions and to make your intent explicit, retrieve the value of one of the following properties on the <xref:System.IO.DirectoryInfo> instance returned by `Parent`.
+To ensure consistent behavior across versions and to make your intent explicit, retrieve the value of one of the following properties on the <xref:System.IO.DirectoryInfo> instance returned by `Parent`:
+
 - <xref:System.IO.DirectoryInfo.Name>, which returns the simple name of the directory (such as `bin`).
 - <xref:System.IO.DirectoryInfo.FullName>, which returns the absolute path of the directory.
 
-
 For a list of common I/O tasks, see [Common I/O Tasks](/dotnet/standard/io/common-i-o-tasks).
-
 
 ## Examples
 

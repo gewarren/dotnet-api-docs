@@ -338,12 +338,13 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- In the .NET Framework 4 and earlier versions, you have to use methods such as <xref:System.IO.Stream.BeginRead*> and <xref:System.IO.Stream.EndRead*> to implement asynchronous file operations. These methods are still available in the .NET Framework 4.5 to support legacy code; however, the new async methods, such as <xref:System.IO.BufferedStream.ReadAsync*>, <xref:System.IO.BufferedStream.WriteAsync*>, and <xref:System.IO.BufferedStream.FlushAsync*>, help you implement asynchronous file operations more easily.
 
- <xref:System.IO.BufferedStream.EndWrite*> must be called exactly once for every call to <xref:System.IO.BufferedStream.BeginRead*>. Failing to end a read process before beginning another read can cause undesirable behavior such as deadlock.
+This method is available to support legacy code; however, the newer async methods, such as <xref:System.IO.BufferedStream.ReadAsync*>, <xref:System.IO.BufferedStream.WriteAsync*>, and <xref:System.IO.BufferedStream.FlushAsync*>, help you implement asynchronous file operations more easily.
+
+ <xref:System.IO.BufferedStream.EndRead*> must be called exactly once for every call to <xref:System.IO.BufferedStream.BeginRead*>. Failing to end a read process before beginning another read can cause undesirable behavior such as deadlock.
 
 > [!NOTE]
->  Use the <xref:System.IO.BufferedStream.CanRead> property to determine whether the current instance supports reading.
+> Use the <xref:System.IO.BufferedStream.CanRead> property to determine whether the current instance supports reading.
 
  <xref:System.IO.BufferedStream.EndRead*> must be called with this <xref:System.IAsyncResult> to find out how many bytes were read.
 
@@ -433,9 +434,10 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- In the .NET Framework 4 and earlier versions, you have to use methods such as <xref:System.IO.Stream.BeginWrite*> and <xref:System.IO.Stream.EndWrite*> to implement asynchronous file operations. These methods are still available in the .NET Framework 4.5 to support legacy code; however, the new async methods, such as <xref:System.IO.BufferedStream.ReadAsync*>, <xref:System.IO.BufferedStream.WriteAsync*>, and <xref:System.IO.BufferedStream.FlushAsync*>, help you implement asynchronous file operations more easily.
 
- <xref:System.IO.BufferedStream.EndWrite*> must be called exactly once on every <xref:System.IAsyncResult> from <xref:System.IO.BufferedStream.BeginWrite*>. <xref:System.IO.BufferedStream.EndWrite*> will block until the I/O operation has completed.
+This method is available to support legacy code; however, the newer async methods, such as <xref:System.IO.BufferedStream.ReadAsync*>, <xref:System.IO.BufferedStream.WriteAsync*>, and <xref:System.IO.BufferedStream.FlushAsync*>, help you implement asynchronous file operations more easily.
+
+ <xref:System.IO.BufferedStream.EndWrite*> must be called exactly once on every <xref:System.IAsyncResult> from <xref:System.IO.BufferedStream.BeginWrite*>. <xref:System.IO.BufferedStream.EndWrite*> blocks until the I/O operation has completed.
 
  ]]></format>
         </remarks>
@@ -543,8 +545,6 @@
 
  If the stream is closed, this property returns `false`.
 
-
-
 ## Examples
  This code example is part of a larger example provided for the <xref:System.IO.BufferedStream> class.
 
@@ -614,8 +614,6 @@
  If a class derived from <xref:System.IO.Stream> does not support seeking, calls to <xref:System.IO.BufferedStream.Length*>, <xref:System.IO.BufferedStream.SetLength*>, <xref:System.IO.BufferedStream.Position*>, and <xref:System.IO.BufferedStream.Seek*> throw a <xref:System.NotSupportedException>.
 
  If the stream is closed, this property returns `false`.
-
-
 
 ## Examples
  This code example is part of a larger example provided for the <xref:System.IO.BufferedStream> class.
@@ -687,8 +685,6 @@
  If a class derived from <xref:System.IO.Stream> does not support writing, a call to <xref:System.IO.BufferedStream.SetLength*>, <xref:System.IO.BufferedStream.Write*>, or <xref:System.IO.BufferedStream.WriteByte*> throws a <xref:System.NotSupportedException>.
 
  If the stream is closed, this property returns `false`.
-
-
 
 ## Examples
  This code example is part of a larger example provided for the <xref:System.IO.BufferedStream> class.
@@ -1036,7 +1032,8 @@ Calling `DisposeAsync` allows the resources used by the <xref:System.IO.Buffered
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- In the .NET Framework 4 and earlier versions, you have to use methods such as <xref:System.IO.Stream.BeginRead*> and <xref:System.IO.Stream.EndRead*> to implement asynchronous file operations. These methods are still available in the .NET Framework 4.5 to support legacy code; however, the new async methods, such as <xref:System.IO.BufferedStream.ReadAsync*>, <xref:System.IO.BufferedStream.WriteAsync*>, and <xref:System.IO.BufferedStream.FlushAsync*>, help you implement asynchronous file operations more easily.
+
+This method is available to support legacy code; however, the newer async methods, such as <xref:System.IO.BufferedStream.ReadAsync*>, <xref:System.IO.BufferedStream.WriteAsync*>, and <xref:System.IO.BufferedStream.FlushAsync*>, help you implement asynchronous file operations more easily.
 
  <xref:System.IO.BufferedStream.EndRead*> must be called with this <xref:System.IAsyncResult> to find out how many bytes were read.
 
@@ -1097,9 +1094,10 @@ Calling `DisposeAsync` allows the resources used by the <xref:System.IO.Buffered
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- In the .NET Framework 4 and earlier versions, you have to use methods such as <xref:System.IO.Stream.BeginWrite*> and <xref:System.IO.Stream.EndWrite*> to implement asynchronous file operations. These methods are still available in the .NET Framework 4.5 to support legacy code; however, the new async methods, such as <xref:System.IO.BufferedStream.ReadAsync*>, <xref:System.IO.BufferedStream.WriteAsync*>, and <xref:System.IO.BufferedStream.FlushAsync*>, help you implement asynchronous file operations more easily.
 
- <xref:System.IO.BufferedStream.EndWrite*> must be called exactly once for every call to <xref:System.IO.BufferedStream.BeginRead*>. Failing to end a read process before beginning another read operation can cause deadlock or other undesirable behavior.
+This method is available to support legacy code; however, the newer async methods, such as <xref:System.IO.BufferedStream.ReadAsync*>, <xref:System.IO.BufferedStream.WriteAsync*>, and <xref:System.IO.BufferedStream.FlushAsync*>, help you implement asynchronous file operations more easily.
+
+ <xref:System.IO.BufferedStream.EndWrite*> must be called exactly once for every call to <xref:System.IO.BufferedStream.BeginWrite*>. Failing to end a read process before beginning another write operation can cause deadlock or other undesirable behavior.
 
  ]]></format>
         </remarks>

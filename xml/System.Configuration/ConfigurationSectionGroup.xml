@@ -572,15 +572,15 @@
         <Parameter Name="targetFramework" Type="System.Runtime.Versioning.FrameworkName" Index="0" FrameworkAlternate="net-10.0-pp;net-11.0-pp;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.6.2-pp;netframework-4.7;netframework-4.7.1;netframework-4.7.1-pp;netframework-4.7.2;netframework-4.7.2-pp;netframework-4.7-pp;netframework-4.8;netframework-4.8.1;netframework-4.8.1-pp;netframework-4.8-pp;netstandard-2.0-pp;windowsdesktop-10.0;windowsdesktop-11.0;windowsdesktop-3.0;windowsdesktop-3.1;windowsdesktop-5.0;windowsdesktop-6.0;windowsdesktop-7.0;windowsdesktop-8.0;windowsdesktop-9.0" />
       </Parameters>
       <Docs>
-        <param name="targetFramework">The target version of the .NET Framework.</param>
-        <summary>Indicates whether the current <see cref="T:System.Configuration.ConfigurationSectionGroup" /> instance should be serialized when the configuration object hierarchy is serialized for the specified target version of the .NET Framework.</summary>
+        <param name="targetFramework">The target version of .NET.</param>
+        <summary>Indicates whether the current <see cref="T:System.Configuration.ConfigurationSectionGroup" /> instance should be serialized when the configuration object hierarchy is serialized for the specified target version of .NET.</summary>
         <returns>
           <see langword="true" /> if the current section group should be serialized; otherwise, <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Each configuration section group that is created for the .NET Framework 4 and later versions must explicitly override this method and return `true`, but only if the section group is valid for the specified version of the .NET Framework. Existing configuration section groups that were created for earlier versions of the .NET Framework do not have to be changed.
+ Each configuration section group that is created must explicitly override this method and return `true`, but only if the section group is valid for the specified version of .NET.
 
  The base type contains a default implementation of this method that always returns `true`. In other words, if a configuration section group implementer does not override this method, by default the configuration section group will be serialized for all framework versions.
 
