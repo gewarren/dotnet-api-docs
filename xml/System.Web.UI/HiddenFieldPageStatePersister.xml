@@ -20,7 +20,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- ASP.NET pages can store <xref:System.Web.UI.Page> state between the inherently stateless HTTP request and response required to process and serve any Web page. This state is called "view state". The default mechanism used to store view state for a page and its controls is in one or more `<hidden>` HTML fields included in the page that is served to a client from a Web server. The <xref:System.Web.UI.Page> class can use the <xref:System.Web.UI.HiddenFieldPageStatePersister> class to do this work. <xref:System.Web.UI.HiddenFieldPageStatePersister> implements the <xref:System.Web.UI.HiddenFieldPageStatePersister.Save*> and <xref:System.Web.UI.HiddenFieldPageStatePersister.Load*> methods of the <xref:System.Web.UI.PageStatePersister> class so that the <xref:System.Web.UI.Page> can store state in a `<hidden>` HTML element named "__VIEWSTATE" on a Web client. When the client requests the same page from the Web server (a postback), the `<hidden>` element is parsed and converted to state information by ASP.NET.
+
+ASP.NET pages can store <xref:System.Web.UI.Page> state between the inherently stateless HTTP request and response required to process and serve any Web page. This state is called "view state". The default mechanism used to store view state for a page and its controls is in one or more `<hidden>` HTML fields included in the page that is served to a client from a Web server. The <xref:System.Web.UI.Page> class can use the <xref:System.Web.UI.HiddenFieldPageStatePersister> class to do this work. <xref:System.Web.UI.HiddenFieldPageStatePersister> implements the <xref:System.Web.UI.HiddenFieldPageStatePersister.Save*> and <xref:System.Web.UI.HiddenFieldPageStatePersister.Load*> methods of the <xref:System.Web.UI.PageStatePersister> class so that the <xref:System.Web.UI.Page> can store state in a `<hidden>` HTML element named "__VIEWSTATE" on a Web client. When the client requests the same page from the Web server (a postback), the `<hidden>` element is parsed and converted to state information by ASP.NET.
 
  If the <xref:System.Web.UI.Page> instance that is requested has an associated <xref:System.Web.UI.Adapters.PageAdapter> class, it retrieves the <xref:System.Web.UI.PageStatePersister> object from this adapter using the <xref:System.Web.UI.Adapters.PageAdapter.GetStatePersister*> method. Adapters can override the <xref:System.Web.UI.Adapters.PageAdapter.GetStatePersister*> method to return a <xref:System.Web.UI.PageStatePersister> object that stores page and control state in some way that a specific client supports. For example, the <xref:System.Web.UI.SessionPageStatePersister> class stores page and controls' state on the Web server, instead of the client, to decrease the amount of information that must be sent and stored on a client that has potentially limited memory and bandwidth.
 
@@ -118,7 +119,8 @@ The following code example demonstrates how to bind a <xref:System.Web.UI.WebCon
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.HiddenFieldPageStatePersister> class implements the <xref:System.Web.UI.HiddenFieldPageStatePersister.Load*> method to load page and control state information from an incoming request to the Web server. The <xref:System.Web.UI.ObjectStateFormatter> object accessed by the <xref:System.Web.UI.PageStatePersister.StateFormatter> property is used to deserialize the data.
+
+The <xref:System.Web.UI.HiddenFieldPageStatePersister> class implements the <xref:System.Web.UI.HiddenFieldPageStatePersister.Load*> method to load page and control state information from an incoming request to the Web server. The <xref:System.Web.UI.ObjectStateFormatter> object accessed by the <xref:System.Web.UI.PageStatePersister.StateFormatter> property is used to deserialize the data.
 
  ]]></format>
         </remarks>
@@ -149,7 +151,8 @@ The following code example demonstrates how to bind a <xref:System.Web.UI.WebCon
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.HiddenFieldPageStatePersister> implements the <xref:System.Web.UI.HiddenFieldPageStatePersister.Save*> method to persist page and control state to a client by writing it to a `<hidden>` HTML element in the outgoing response to the client. The <xref:System.Web.UI.ObjectStateFormatter> object accessed by the <xref:System.Web.UI.PageStatePersister.StateFormatter> property is used to deserialize the data.
+
+The <xref:System.Web.UI.HiddenFieldPageStatePersister> implements the <xref:System.Web.UI.HiddenFieldPageStatePersister.Save*> method to persist page and control state to a client by writing it to a `<hidden>` HTML element in the outgoing response to the client. The <xref:System.Web.UI.ObjectStateFormatter> object accessed by the <xref:System.Web.UI.PageStatePersister.StateFormatter> property is used to deserialize the data.
 
  ]]></format>
         </remarks>

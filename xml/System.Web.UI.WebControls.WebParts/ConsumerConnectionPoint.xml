@@ -20,7 +20,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- In every Web Parts connection between two server controls, each control must have (among other requirements) an associated connection point object that enables it to connect to the other control and to either provide or consume data, depending on whether the control is designated as the provider or consumer for the connection. A <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint> object in general contains the details for how a control can connect to another control and the type of data it can share. For a control acting as the consumer in a connection, its connection point must be a <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint> object. For details on Web Parts connections and connection points, read the topics listed in the See Also section below.
+
+In every Web Parts connection between two server controls, each control must have (among other requirements) an associated connection point object that enables it to connect to the other control and to either provide or consume data, depending on whether the control is designated as the provider or consumer for the connection. A <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint> object in general contains the details for how a control can connect to another control and the type of data it can share. For a control acting as the consumer in a connection, its connection point must be a <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint> object. For details on Web Parts connections and connection points, read the topics listed in the See Also section below.
 
  To create a <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint> object, several steps are required:
 
@@ -125,7 +126,8 @@ The following code example shows simple ways to create a connection declarativel
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint.%23ctor*> constructor for the <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint> class simply calls the base constructor, passing to it the various parameters and initializing the base class.
+
+The <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint.%23ctor*> constructor for the <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint> class simply calls the base constructor, passing to it the various parameters and initializing the base class.
 
  The base class constructor checks a number of the parameters for a connection point and can throw several exceptions. For a list of possible exceptions, see the Exceptions section.
 
@@ -203,7 +205,8 @@ The following code example demonstrates how to derive from the <xref:System.Web.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method receives an interface instance from a provider that contains data for the consumer control.
+
+This method receives an interface instance from a provider that contains data for the consumer control.
 
  The <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint.SetObject*> method is called by <xref:System.Web.UI.WebControls.WebParts.WebPartConnection> objects when a connection is being activated. This is a critical step that is part of initiating a connection and enabling two controls to share data.
 
@@ -245,7 +248,8 @@ The following code example demonstrates how to derive from the <xref:System.Web.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint.SupportsConnection*> method as implemented always returns `true` in all cases for the <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint> class. The intent for this method is to have it check on the state of `control` and `secondaryInterfaces` at certain critical points to determine whether a <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint> object is presently able to create a connection.
+
+The <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint.SupportsConnection*> method as implemented always returns `true` in all cases for the <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint> class. The intent for this method is to have it check on the state of `control` and `secondaryInterfaces` at certain critical points to determine whether a <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint> object is presently able to create a connection.
 
  There can be scenarios where `control` is in a state that would make it impossible to form a connection, or where `secondaryInterfaces` must exist before a connection can be formed. In such cases, developers can inherit from the <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint> class, and override the <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint.SupportsConnection*> method, providing a custom implementation to determine when the connection point is ready to support connections.
 

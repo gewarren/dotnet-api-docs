@@ -43,7 +43,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You can use the <xref:System.Windows.Forms.ApplicationContext> class to redefine the circumstances that cause a message loop to exit. By default, the <xref:System.Windows.Forms.ApplicationContext> listens to the <xref:System.Windows.Forms.Form.Closed> event on the application's main <xref:System.Windows.Forms.Form>, then exits the thread's message loop.
+
+You can use the <xref:System.Windows.Forms.ApplicationContext> class to redefine the circumstances that cause a message loop to exit. By default, the <xref:System.Windows.Forms.ApplicationContext> listens to the <xref:System.Windows.Forms.Form.Closed> event on the application's main <xref:System.Windows.Forms.Form>, then exits the thread's message loop.
 
 ## Examples
 
@@ -134,7 +135,8 @@ The following code example displays two forms and exits the application when bot
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If <xref:System.Windows.Forms.ApplicationContext.OnMainFormClosed*> is not overridden, the message loop of the thread terminates when <xref:System.Windows.Forms.ApplicationContext.MainForm*> is closed.
+
+If <xref:System.Windows.Forms.ApplicationContext.OnMainFormClosed*> is not overridden, the message loop of the thread terminates when <xref:System.Windows.Forms.ApplicationContext.MainForm*> is closed.
 
  ]]></format>
         </remarks>
@@ -186,7 +188,8 @@ The following code example displays two forms and exits the application when bot
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Call <xref:System.Windows.Forms.ApplicationContext.Dispose> when you are finished using the <xref:System.Windows.Forms.ApplicationContext>. The <xref:System.Windows.Forms.ApplicationContext.Dispose> method leaves the <xref:System.Windows.Forms.ApplicationContext> in an unusable state. After calling <xref:System.Windows.Forms.ApplicationContext.Dispose>, you must release all references to the <xref:System.Windows.Forms.ApplicationContext> so the garbage collector can reclaim the memory that the <xref:System.Windows.Forms.ApplicationContext> was occupying. For more information, see [Cleaning Up Unmanaged Resources](/dotnet/standard/garbage-collection/unmanaged) and [Implementing a Dispose Method](/dotnet/standard/garbage-collection/implementing-dispose).
+
+Call <xref:System.Windows.Forms.ApplicationContext.Dispose> when you are finished using the <xref:System.Windows.Forms.ApplicationContext>. The <xref:System.Windows.Forms.ApplicationContext.Dispose> method leaves the <xref:System.Windows.Forms.ApplicationContext> in an unusable state. After calling <xref:System.Windows.Forms.ApplicationContext.Dispose>, you must release all references to the <xref:System.Windows.Forms.ApplicationContext> so the garbage collector can reclaim the memory that the <xref:System.Windows.Forms.ApplicationContext> was occupying. For more information, see [Cleaning Up Unmanaged Resources](/dotnet/standard/garbage-collection/unmanaged) and [Implementing a Dispose Method](/dotnet/standard/garbage-collection/implementing-dispose).
 
 > [!NOTE]
 > Always call <xref:System.Windows.Forms.ApplicationContext.Dispose> before you release your last reference to the <xref:System.Windows.Forms.ApplicationContext>. Otherwise, the resources it is using will not be freed until the garbage collector calls the <xref:System.Windows.Forms.ApplicationContext> object's `Finalize` method.
@@ -230,7 +233,8 @@ The following code example displays two forms and exits the application when bot
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is called by the public `Dispose()` method and the <xref:System.Object.Finalize> method, if it has been overridden. `Dispose()` invokes the protected <xref:System.Windows.Forms.ApplicationContext.Dispose(System.Boolean)> method with the `disposing` parameter set to `true`. `Finalize` specifies the `disposing` parameter as `false`.
+
+This method is called by the public `Dispose()` method and the <xref:System.Object.Finalize> method, if it has been overridden. `Dispose()` invokes the protected <xref:System.Windows.Forms.ApplicationContext.Dispose(System.Boolean)> method with the `disposing` parameter set to `true`. `Finalize` specifies the `disposing` parameter as `false`.
 
  When the `disposing` parameter is true, this method releases all resources held by any managed objects that this <xref:System.Windows.Forms.ApplicationContext> references. This method invokes the `Dispose()` method of each referenced object.
 
@@ -281,7 +285,8 @@ The following code example displays two forms and exits the application when bot
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method calls <xref:System.Windows.Forms.ApplicationContext.ExitThreadCore*>.
+
+This method calls <xref:System.Windows.Forms.ApplicationContext.ExitThreadCore*>.
 
 > [!NOTE]
 >  <xref:System.Windows.Forms.ApplicationContext.ExitThread*> and <xref:System.Windows.Forms.ApplicationContext.ExitThreadCore*> do not actually cause the thread to terminate. These methods raise the <xref:System.Windows.Forms.Application.ThreadExit> event to which the <xref:System.Windows.Forms.Application> object listens. The <xref:System.Windows.Forms.Application> object then terminates the thread.
@@ -331,7 +336,8 @@ The following code example is an excerpt from the example in the <xref:System.Wi
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is called from <xref:System.Windows.Forms.ApplicationContext.ExitThread*>.
+
+This method is called from <xref:System.Windows.Forms.ApplicationContext.ExitThread*>.
 
 > [!NOTE]
 >  <xref:System.Windows.Forms.ApplicationContext.ExitThread*> and <xref:System.Windows.Forms.ApplicationContext.ExitThreadCore*> do not actually cause the thread to terminate. These methods raise the <xref:System.Windows.Forms.Application.ThreadExit> event to which the <xref:System.Windows.Forms.Application> object listens. The <xref:System.Windows.Forms.Application> object then terminates the thread.
@@ -371,7 +377,8 @@ The following code example is an excerpt from the example in the <xref:System.Wi
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method overrides <xref:System.Object.Finalize*?displayProperty=nameWithType> and cleans up resources by calling `Dispose(false)`. Override `Dispose(Boolean)` to customize the cleanup.
+
+This method overrides <xref:System.Object.Finalize*?displayProperty=nameWithType> and cleans up resources by calling `Dispose(false)`. Override `Dispose(Boolean)` to customize the cleanup.
 
  Application code should not call this method; an object's `Finalize` method is automatically invoked during garbage collection, unless finalization by the garbage collector has been disabled by a call to the <xref:System.GC.SuppressFinalize*?displayProperty=nameWithType> method.
 
@@ -419,7 +426,8 @@ The following code example is an excerpt from the example in the <xref:System.Wi
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This property determines the main <xref:System.Windows.Forms.Form> for this context. This property can change at any time. If <xref:System.Windows.Forms.ApplicationContext.OnMainFormClosed*> is not overridden, the message loop of the thread terminates when the `mainForm` parameter closes.
+
+This property determines the main <xref:System.Windows.Forms.Form> for this context. This property can change at any time. If <xref:System.Windows.Forms.ApplicationContext.OnMainFormClosed*> is not overridden, the message loop of the thread terminates when the `mainForm` parameter closes.
 
  ]]></format>
         </remarks>
@@ -475,7 +483,8 @@ The following code example is an excerpt from the example in the <xref:System.Wi
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The default implementation of this method calls <xref:System.Windows.Forms.ApplicationContext.ExitThreadCore*>.
+
+The default implementation of this method calls <xref:System.Windows.Forms.ApplicationContext.ExitThreadCore*>.
 
  ]]></format>
         </remarks>
@@ -538,7 +547,8 @@ The following code example is an excerpt from the example in the <xref:System.Wi
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Any type derived from the <xref:System.Object> class can be assigned to this property. If the <xref:System.Windows.Forms.ApplicationContext.Tag> property is set through the Windows Forms designer, only text can be assigned.
+
+Any type derived from the <xref:System.Object> class can be assigned to this property. If the <xref:System.Windows.Forms.ApplicationContext.Tag> property is set through the Windows Forms designer, only text can be assigned.
 
  A common use for the <xref:System.Windows.Forms.ApplicationContext.Tag> property is to store data that is closely associated with the control. For example, if you have a control that displays information about a customer, you might store a <xref:System.Data.DataSet> that contains the customer's order history in that control's <xref:System.Windows.Forms.ApplicationContext.Tag> property so the data can be accessed quickly.
 

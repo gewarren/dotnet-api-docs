@@ -20,7 +20,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You can implement the <xref:System.Web.Hosting.IStopListeningRegisteredObject> interface by passing an object to the <xref:System.Web.Hosting.HostingEnvironment.RegisterObject*> method. The passed object listens for `GL_STOP_LISTENING` notifications from IIS. You can call this implementation when ASP.NET receives a `GL_STOP_LISTENING` notification from IIS, which signals that IIS is no longer listening for new requests for this application. The web server can allow requests that are in progress to run to completion. If your application processes long running requests, you might want to have the application listen for these IIS notifications to gracefully wind down the request. The <xref:System.Web.Hosting.IStopListeningRegisteredObject.StopListening*> method contrasts with the <xref:System.Web.Hosting.IRegisteredObject.Stop*> method, which signals immediate application shutdown.
+
+You can implement the <xref:System.Web.Hosting.IStopListeningRegisteredObject> interface by passing an object to the <xref:System.Web.Hosting.HostingEnvironment.RegisterObject*> method. The passed object listens for `GL_STOP_LISTENING` notifications from IIS. You can call this implementation when ASP.NET receives a `GL_STOP_LISTENING` notification from IIS, which signals that IIS is no longer listening for new requests for this application. The web server can allow requests that are in progress to run to completion. If your application processes long running requests, you might want to have the application listen for these IIS notifications to gracefully wind down the request. The <xref:System.Web.Hosting.IStopListeningRegisteredObject.StopListening*> method contrasts with the <xref:System.Web.Hosting.IRegisteredObject.Stop*> method, which signals immediate application shutdown.
 
  ]]></format>
     </remarks>
@@ -49,7 +50,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Hosting.IStopListeningRegisteredObject.StopListening*> method is supported only when running in IIS integrated mode. The ASP.NET runtime does not guarantee that the <xref:System.Web.Hosting.IStopListeningRegisteredObject.StopListening*> method will ever fire.
+
+The <xref:System.Web.Hosting.IStopListeningRegisteredObject.StopListening*> method is supported only when running in IIS integrated mode. The ASP.NET runtime does not guarantee that the <xref:System.Web.Hosting.IStopListeningRegisteredObject.StopListening*> method will ever fire.
 
  The <xref:System.Web.Hosting.IStopListeningRegisteredObject.StopListening*> method must not throw exceptions, otherwise the behavior is undefined and the process will likely be terminated. Further, to avoid creating deadlocks, the <xref:System.Web.Hosting.IStopListeningRegisteredObject.StopListening*> method should not block execution.
 

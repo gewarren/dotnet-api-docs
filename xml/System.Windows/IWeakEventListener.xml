@@ -25,7 +25,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Windows.WeakEventManager> (a dispatcher) forwards an event by calling the <xref:System.Windows.IWeakEventListener.ReceiveWeakEvent*> method on classes that implement this interface, and that have been added as listeners by calling <xref:System.Windows.WeakEventManager> methods beforehand.
+
+The <xref:System.Windows.WeakEventManager> (a dispatcher) forwards an event by calling the <xref:System.Windows.IWeakEventListener.ReceiveWeakEvent*> method on classes that implement this interface, and that have been added as listeners by calling <xref:System.Windows.WeakEventManager> methods beforehand.
 
  The principal reason for following the WeakEvent pattern is when the event source has an object lifetime that is potentially independent of the event listeners. Using the central event dispatching of a <xref:System.Windows.WeakEventManager> enables the handlers for listeners to be garbage collected (or manually purged) even if the source object lifetime extends beyond the listeners. By contrast, a normal event hookup using `+=` or equivalent language-specific event syntax causes the potentially still-connected source to hold a strong reference to the handlers. This keeps the listener references from being garbage collected in a timely fashion.
 

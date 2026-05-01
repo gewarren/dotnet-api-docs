@@ -24,7 +24,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.SessionState.SessionIDManager> class is an HTTP module that manages unique session identifiers for use with ASP.NET session state. The unique identifier for an ASP.NET session is the <xref:System.Web.SessionState.HttpSessionState.SessionID> property, which can be accessed from the <xref:System.Web.HttpContext.Session> property of the current <xref:System.Web.HttpContext> or <xref:System.Web.UI.Page>. The ASP.NET session identifier is a randomly generated number encoded into a 24-character string consisting of lowercase characters from a to z and numbers from 0 to 5.
+
+The <xref:System.Web.SessionState.SessionIDManager> class is an HTTP module that manages unique session identifiers for use with ASP.NET session state. The unique identifier for an ASP.NET session is the <xref:System.Web.SessionState.HttpSessionState.SessionID> property, which can be accessed from the <xref:System.Web.HttpContext.Session> property of the current <xref:System.Web.HttpContext> or <xref:System.Web.UI.Page>. The ASP.NET session identifier is a randomly generated number encoded into a 24-character string consisting of lowercase characters from a to z and numbers from 0 to 5.
 
  By default, the <xref:System.Web.SessionState.HttpSessionState.SessionID*> value is sent in a cookie with each request to the ASP.NET application. The name of the cookie that contains the <xref:System.Web.SessionState.HttpSessionState.SessionID*> value is ASP.NET_SessionId by default. You can configure a different cookie name by setting the `cookieName` attribute of the [sessionState Element (ASP.NET Settings Schema)](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/h6bb9cz9(v=vs.100)) to the desired cookie name.
 
@@ -66,7 +67,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This constructor is not intended to be called from application code.
+
+This constructor is not intended to be called from application code.
 
  ASP.NET calls this constructor to create an instance of the <xref:System.Web.SessionState.SessionIDManager> class. After calling the constructor, ASP.NET calls the <xref:System.Web.SessionState.SessionIDManager.Initialize*> method to initialize the new <xref:System.Web.SessionState.SessionIDManager> object.
 
@@ -105,7 +107,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is not intended to be called from application code.
+
+This method is not intended to be called from application code.
 
  The <xref:System.Web.SessionState.SessionIDManager.CreateSessionID*> method returns a unique session identifier that is a randomly generated number encoded into a 24-character string consisting of lowercase characters from a to z and numbers from 0 to 5.
 
@@ -169,7 +172,8 @@ The following code example shows a class that inherits the <xref:System.Web.Sess
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is not intended to be called from application code.
+
+This method is not intended to be called from application code.
 
  This method is used internally by the <xref:System.Web.SessionState.SessionIDManager> class to decode custom <xref:System.Web.SessionState.HttpSessionState.SessionID*> values created by classes that inherit the <xref:System.Web.SessionState.SessionIDManager> class and override the <xref:System.Web.SessionState.SessionIDManager.CreateSessionID*> and <xref:System.Web.SessionState.SessionIDManager.Validate*> methods. To ensure the fidelity of a custom session-identifier value retrieved from the HTTP request by the <xref:System.Web.SessionState.SessionIDManager.GetSessionID*> method, the <xref:System.Web.SessionState.SessionIDManager> decodes the custom value using the <xref:System.Web.HttpUtility.UrlDecode*> method.
 
@@ -208,7 +212,8 @@ The following code example shows a class that inherits the <xref:System.Web.Sess
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is not intended to be called from application code.
+
+This method is not intended to be called from application code.
 
  This method is used internally by the <xref:System.Web.SessionState.SessionIDManager> class to encode custom <xref:System.Web.SessionState.HttpSessionState.SessionID*> values created by classes that inherit the <xref:System.Web.SessionState.SessionIDManager> class and override the <xref:System.Web.SessionState.SessionIDManager.CreateSessionID*> and <xref:System.Web.SessionState.SessionIDManager.Validate*> methods. To ensure the fidelity of a custom session-identifier value stored in the HTTP response by the <xref:System.Web.SessionState.SessionIDManager.SaveSessionID*> method, the <xref:System.Web.SessionState.SessionIDManager> encodes the custom value using the <xref:System.Web.HttpUtility.UrlEncode*> method.
 
@@ -249,7 +254,8 @@ The following code example shows a class that inherits the <xref:System.Web.Sess
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is not intended to be called from application code.
+
+This method is not intended to be called from application code.
 
  The <xref:System.Web.SessionState.SessionStateModule> calls the <xref:System.Web.SessionState.SessionIDManager.GetSessionID*> method during the <xref:System.Web.HttpApplication.AcquireRequestState> event to retrieve the <xref:System.Web.SessionState.HttpSessionState.SessionID*> from the current <xref:System.Web.HttpRequest>.
 
@@ -285,7 +291,8 @@ The following code example shows a class that inherits the <xref:System.Web.Sess
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.SessionState.SessionIDManager.Initialize*> method reads the session configuration data from the [sessionState Element (ASP.NET Settings Schema)](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/h6bb9cz9(v=vs.100)) configuration element of the configuration files.
+
+The <xref:System.Web.SessionState.SessionIDManager.Initialize*> method reads the session configuration data from the [sessionState Element (ASP.NET Settings Schema)](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/h6bb9cz9(v=vs.100)) configuration element of the configuration files.
 
  ]]></format>
         </remarks>
@@ -328,7 +335,8 @@ The following code example shows a class that inherits the <xref:System.Web.Sess
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When the `cookieless` attribute of the `sessionState` element is set to `AutoDetect`, the <xref:System.Web.SessionState.SessionIDManager> object will redirect to the same path to determine whether the connecting browser supports cookies. If the `suppressAutoDetectRedirect` parameter is `false`, the server will not perform this redirection.
+
+When the `cookieless` attribute of the `sessionState` element is set to `AutoDetect`, the <xref:System.Web.SessionState.SessionIDManager> object will redirect to the same path to determine whether the connecting browser supports cookies. If the `suppressAutoDetectRedirect` parameter is `false`, the server will not perform this redirection.
 
  The `supportSessionIDReissue` parameter will be returned `false` if the request is using cookies for session identification.
 
@@ -365,7 +373,8 @@ The following code example shows a class that inherits the <xref:System.Web.Sess
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is not intended to be called from application code.
+
+This method is not intended to be called from application code.
 
  The <xref:System.Web.SessionState.SessionStateModule> calls the <xref:System.Web.SessionState.SessionIDManager.RemoveSessionID*> method during the <xref:System.Web.HttpApplication.ReleaseRequestState> event to remove the session identifier from the <xref:System.Web.HttpResponse.Cookies*> collection of the <xref:System.Web.HttpResponse> if a new session was created but was not used.
 
@@ -409,7 +418,8 @@ The following code example shows a class that inherits the <xref:System.Web.Sess
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is not intended to be called from application code.
+
+This method is not intended to be called from application code.
 
  The <xref:System.Web.SessionState.SessionIDManager.SaveSessionID*> method is called by the <xref:System.Web.SessionState.SessionStateModule> object during the <xref:System.Web.HttpApplication.AcquireRequestState> event. The <xref:System.Web.SessionState.SessionIDManager.SaveSessionID*> method stores the session identifier in either the URL (when cookieless session state is used) or in a non-expiring session cookie.
 
@@ -450,7 +460,8 @@ The following code example shows a class that inherits the <xref:System.Web.Sess
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The maximum length of a session identifier is 80 characters.
+
+The maximum length of a session identifier is 80 characters.
 
  While session identifiers created by the <xref:System.Web.SessionState.SessionIDManager.CreateSessionID*> method are 24 characters long, the maximum length of a session identifier allowed by the <xref:System.Web.SessionState.SessionIDManager> class is 80 characters. This is especially important if you implement a custom <xref:System.Web.SessionState.SessionIDManager>. The <xref:System.Web.SessionState.SessionIDManager.GetSessionID*> method, which retrieves session-identifier values from the current <xref:System.Web.HttpRequest>, ensures that values do not exceed the <xref:System.Web.SessionState.SessionIDManager.SessionIDMaxLength*> value and that the session identifier is a 24-character string containing only the lowercase characters a to z and the numbers 0 to 5 by calling the <xref:System.Web.SessionState.SessionIDManager.Validate*> method. If you implement a custom <xref:System.Web.SessionState.SessionIDManager> class that inherits the <xref:System.Web.SessionState.SessionIDManager> class and overrides the <xref:System.Web.SessionState.SessionIDManager.CreateSessionID*> method but not the <xref:System.Web.SessionState.SessionIDManager.Validate*> method, your custom session-identifier values must meet the constraints above. For an example of overriding the <xref:System.Web.SessionState.SessionIDManager> class and implementing these methods, see the example provided for the <xref:System.Web.SessionState.SessionIDManager.CreateSessionID*> method.
 
@@ -490,7 +501,8 @@ The following code example shows a class that inherits the <xref:System.Web.Sess
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is not intended to be called from application code.
+
+This method is not intended to be called from application code.
 
  The <xref:System.Web.SessionState.SessionIDManager.Validate*> method verifies that the supplied `id` is a 24-character string consisting of lowercase characters from a to z and numbers from 0 to 5 and that the maximum length of the session ID does not exceed 80 characters.
 

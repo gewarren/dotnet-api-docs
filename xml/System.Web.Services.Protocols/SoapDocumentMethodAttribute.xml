@@ -28,7 +28,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Web Services Description Language (WSDL) defines two styles for how an XML Web service method, which it calls an operation, can be formatted in a SOAP message: `RPC` and `Document`. `Document` refers to formatting the XML Web service method according to an XSD schema. The `Document` style refers to formatting the `Body` element as a series of one or more message parts following the `Body` element. Exactly how the individual message parts is determined by the <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.Use*> and <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.ParameterStyle*> properties. The <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.Use> property determines whether parameters are formatted `Encoded` or `Literal`. The <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.ParameterStyle*> determines whether the parameters are encapsulated within a single message part following the `Body` element or whether each parameter is an individual message part.
+
+Web Services Description Language (WSDL) defines two styles for how an XML Web service method, which it calls an operation, can be formatted in a SOAP message: `RPC` and `Document`. `Document` refers to formatting the XML Web service method according to an XSD schema. The `Document` style refers to formatting the `Body` element as a series of one or more message parts following the `Body` element. Exactly how the individual message parts is determined by the <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.Use*> and <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.ParameterStyle*> properties. The <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.Use> property determines whether parameters are formatted `Encoded` or `Literal`. The <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.ParameterStyle*> determines whether the parameters are encapsulated within a single message part following the `Body` element or whether each parameter is an individual message part.
 
  For more details, see [Customizing SOAP Message Formatting](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/dkwy2d72(v=vs.100)).
 
@@ -126,7 +127,8 @@ The following code example sets the message style to `Document` for the `GetUser
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Typically, the <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.Action> property is a URI indicating the intent of the request. However, the SOAP specification places no restrictions on the format of the URI, or any rules about whether the URI is resolvable. The presence and content of the <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.Action> property can be used by Web servers, such as firewalls, to appropriately filter SOAP request messages in HTTP.
+
+Typically, the <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.Action> property is a URI indicating the intent of the request. However, the SOAP specification places no restrictions on the format of the URI, or any rules about whether the URI is resolvable. The presence and content of the <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.Action> property can be used by Web servers, such as firewalls, to appropriately filter SOAP request messages in HTTP.
 
  By default, the .NET Framework version 1.1 publishes the <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.Action> property in the `soapAction` attribute of the `soap:operation` element for each supported SOAP binding in WSDL documents generated for an XML Web service. For more information, see the [SOAP](https://www.w3.org/TR/soap/) specification on the W3C website.
 
@@ -165,7 +167,8 @@ The following code example sets the <xref:System.Web.Services.Protocols.SoapDocu
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A binding, as defined by Web Services Description Language (WSDL), is similar to an interface in that it defines a concrete set of operations. With respect to XML Web services created using ASP.NET, each XML Web service method is an operation within a binding. XML Web service methods are members of either the default binding for an XML Web service or a binding specified within a <xref:System.Web.Services.WebServiceBindingAttribute> applied to an XML Web service. An XML Web service can implement multiple bindings when multiple <xref:System.Web.Services.WebServiceBindingAttribute> attributes are applied to an XML Web service.
+
+A binding, as defined by Web Services Description Language (WSDL), is similar to an interface in that it defines a concrete set of operations. With respect to XML Web services created using ASP.NET, each XML Web service method is an operation within a binding. XML Web service methods are members of either the default binding for an XML Web service or a binding specified within a <xref:System.Web.Services.WebServiceBindingAttribute> applied to an XML Web service. An XML Web service can implement multiple bindings when multiple <xref:System.Web.Services.WebServiceBindingAttribute> attributes are applied to an XML Web service.
 
  Once one or more <xref:System.Web.Services.WebServiceBindingAttribute> attributes are applied to an XML Web service, a <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute> or <xref:System.Web.Services.Protocols.SoapRpcMethodAttribute> can be applied to individual XML Web service methods to indicate the binding operation implemented by a particular XML Web service method. Set the <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.Binding> property of <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute> or <xref:System.Web.Services.Protocols.SoapRpcMethodAttribute> to specify the binding an XML Web service method is implementing an operation for. Only one <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute> or <xref:System.Web.Services.Protocols.SoapRpcMethodAttribute> can be applied to an XML Web service method. Therefore, an XML Web service method can only implement an operation for one binding.
 
@@ -201,7 +204,8 @@ The following code example sets the <xref:System.Web.Services.Protocols.SoapDocu
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When an XML Web service method has the <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.OneWay> property set to `true`, the XML Web service client does not have to wait for the Web server to finish processing the XML Web service method. As soon as the Web server has deserialized the <xref:System.Web.Services.Protocols.SoapServerMessage>, but before invoking the XML Web service method, the server returns an HTTP 202 status code. A HTTP 202 status code indicates to the client that the Web server has started processing the message. Therefore, an XML Web service client receives no acknowledgment that the Web server successfully processed the message.
+
+When an XML Web service method has the <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.OneWay> property set to `true`, the XML Web service client does not have to wait for the Web server to finish processing the XML Web service method. As soon as the Web server has deserialized the <xref:System.Web.Services.Protocols.SoapServerMessage>, but before invoking the XML Web service method, the server returns an HTTP 202 status code. A HTTP 202 status code indicates to the client that the Web server has started processing the message. Therefore, an XML Web service client receives no acknowledgment that the Web server successfully processed the message.
 
  One-way methods cannot have a return value or any out parameters.
 
@@ -279,7 +283,8 @@ The following code example specifies that parameters sent in the SOAP messages s
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.RequestElementName*> defines the XML element used to wrap the parameters beneath the `Body` element of the SOAP request when <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.ParameterStyle*> is <xref:System.Web.Services.Protocols.SoapParameterStyle.Wrapped>. This is reflected in the XSD schema representing the SOAP request to the XML Web service method within the service description for an XML Web service.
+
+The <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.RequestElementName*> defines the XML element used to wrap the parameters beneath the `Body` element of the SOAP request when <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.ParameterStyle*> is <xref:System.Web.Services.Protocols.SoapParameterStyle.Wrapped>. This is reflected in the XSD schema representing the SOAP request to the XML Web service method within the service description for an XML Web service.
 
 ## Examples
 
@@ -353,7 +358,8 @@ The following code example sets the <xref:System.Web.Services.Protocols.SoapDocu
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.ResponseElementName*> defines the XML element used to wrap the parameters beneath the `Body` element of the SOAP response when <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.ParameterStyle*> is <xref:System.Web.Services.Protocols.SoapParameterStyle.Wrapped>. This is reflected in the XSD schema representing the SOAP response to the XML Web service method within the XML Web service's service description.
+
+The <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.ResponseElementName*> defines the XML element used to wrap the parameters beneath the `Body` element of the SOAP response when <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.ParameterStyle*> is <xref:System.Web.Services.Protocols.SoapParameterStyle.Wrapped>. This is reflected in the XSD schema representing the SOAP response to the XML Web service method within the XML Web service's service description.
 
 ## Examples
 
@@ -390,7 +396,8 @@ The following code example sets the name of the XML element associated with the 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.ResponseNamespace> property is used in the XSD schema for the XML Web service method in its service description.
+
+The <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.ResponseNamespace> property is used in the XSD schema for the XML Web service method in its service description.
 
 ## Examples
 
@@ -427,7 +434,8 @@ The following code example sets the <xref:System.Web.Services.Protocols.SoapDocu
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The Web Services Description Language (WSDL) defines two methods for formatting parameters: <xref:System.Web.Services.Description.SoapBindingUse.Encoded> and <xref:System.Web.Services.Description.SoapBindingUse.Literal>. <xref:System.Web.Services.Description.SoapBindingUse.Encoded> refers to formatting parameters using SOAP encoding, as outlined in the SOAP specification in section 5. <xref:System.Web.Services.Description.SoapBindingUse.Literal> refers to formatting the parameters using a pre-defined XSD schema for each parameter.
+
+The Web Services Description Language (WSDL) defines two methods for formatting parameters: <xref:System.Web.Services.Description.SoapBindingUse.Encoded> and <xref:System.Web.Services.Description.SoapBindingUse.Literal>. <xref:System.Web.Services.Description.SoapBindingUse.Encoded> refers to formatting parameters using SOAP encoding, as outlined in the SOAP specification in section 5. <xref:System.Web.Services.Description.SoapBindingUse.Literal> refers to formatting the parameters using a pre-defined XSD schema for each parameter.
 
  For more details, see [Customizing SOAP Message Formatting](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/dkwy2d72(v=vs.100)).
 

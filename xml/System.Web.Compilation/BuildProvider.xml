@@ -20,7 +20,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The ASP.NET build environment uses <xref:System.Web.Compilation.BuildProvider> objects to generate source code for different file types within an application. Classes derived from <xref:System.Web.Compilation.BuildProvider> predominantly provide source code for files, Web pages, resources, and other custom items.
+
+The ASP.NET build environment uses <xref:System.Web.Compilation.BuildProvider> objects to generate source code for different file types within an application. Classes derived from <xref:System.Web.Compilation.BuildProvider> predominantly provide source code for files, Web pages, resources, and other custom items.
 
  Typically, you do not create an instance of the <xref:System.Web.Compilation.BuildProvider> class directly. Instead, you implement a class that derives from <xref:System.Web.Compilation.BuildProvider>, and configure the <xref:System.Web.Compilation.BuildProvider> implementation for use within the ASP.NET build environment.
 
@@ -79,7 +80,8 @@ The following code example illustrates a simple build provider implementation, i
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Because the <xref:System.Web.Compilation.BuildProvider> class is abstract, you cannot create an instance of <xref:System.Web.Compilation.BuildProvider> directly using the constructor.
+
+Because the <xref:System.Web.Compilation.BuildProvider> class is abstract, you cannot create an instance of <xref:System.Web.Compilation.BuildProvider> directly using the constructor.
 
  When deriving from the <xref:System.Web.Compilation.BuildProvider> class, override the constructor to implement custom initialization actions for your build provider implementation.
 
@@ -110,7 +112,8 @@ The following code example illustrates a simple build provider implementation, i
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use the <xref:System.Web.Compilation.BuildProvider.CodeCompilerType> property to provide the settings for compiling source code for an implementation of <xref:System.Web.Compilation.BuildProvider>. The <xref:System.Web.Compilation.BuildProvider.CodeCompilerType> property is `null` if the build provider does not require a specific code language for generating and compiling source code.
+
+Use the <xref:System.Web.Compilation.BuildProvider.CodeCompilerType> property to provide the settings for compiling source code for an implementation of <xref:System.Web.Compilation.BuildProvider>. The <xref:System.Web.Compilation.BuildProvider.CodeCompilerType> property is `null` if the build provider does not require a specific code language for generating and compiling source code.
 
  To set the value for a <xref:System.Web.Compilation.CompilerType> object within a build provider implementation, use the <xref:System.Web.Compilation.BuildProvider.GetDefaultCompilerType*> or <xref:System.Web.Compilation.BuildProvider.GetDefaultCompilerTypeForLanguage*> method.
 
@@ -154,7 +157,8 @@ The following code example illustrates a simple build provider implementation, i
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- To implement a build provider that generates source code for a custom file type, derive a class from the <xref:System.Web.Compilation.BuildProvider> class, and override the <xref:System.Web.Compilation.BuildProvider.GenerateCode*> method to generate source code for the supported file type.
+
+To implement a build provider that generates source code for a custom file type, derive a class from the <xref:System.Web.Compilation.BuildProvider> class, and override the <xref:System.Web.Compilation.BuildProvider.GenerateCode*> method to generate source code for the supported file type.
 
  Typically, a build provider's <xref:System.Web.Compilation.BuildProvider.GenerateCode*> implementation reads the <xref:System.Web.Compilation.BuildProvider.VirtualPath> property, parses the contents, and adds the generated source code to the specified <xref:System.Web.Compilation.AssemblyBuilder> object. You can contribute source code to the assembly in the form of a <xref:System.IO.TextWriter> object or a CodeDOM graph. To add source code to the assembly through a <xref:System.IO.TextWriter> object, use the <xref:System.Web.Compilation.AssemblyBuilder.CreateCodeFile*> method. To add source code in a CodeDOM graph to the assembly, use the <xref:System.Web.Compilation.AssemblyBuilder.AddCodeCompileUnit*> method.
 
@@ -202,7 +206,8 @@ The following code example illustrates a simple build provider implementation, i
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method can be used through the <xref:System.Web.Compilation.ClientBuildManager> class for syntax highlighting and designer support in Visual Studio.
+
+This method can be used through the <xref:System.Web.Compilation.ClientBuildManager> class for syntax highlighting and designer support in Visual Studio.
 
  ]]></format>
         </remarks>
@@ -235,7 +240,8 @@ The following code example illustrates a simple build provider implementation, i
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Compilation.BuildManager.GetCompiledCustomString*> method of a <xref:System.Web.Compilation.BuildManager> object creates an instance of a build provider for an input virtual path, and calls the <xref:System.Web.Compilation.BuildProvider.GetCustomString*> method on the <xref:System.Web.Compilation.BuildProvider> object.
+
+The <xref:System.Web.Compilation.BuildManager.GetCompiledCustomString*> method of a <xref:System.Web.Compilation.BuildManager> object creates an instance of a build provider for an input virtual path, and calls the <xref:System.Web.Compilation.BuildProvider.GetCustomString*> method on the <xref:System.Web.Compilation.BuildProvider> object.
 
  The base <xref:System.Web.Compilation.BuildProvider> class returns `null` for the <xref:System.Web.Compilation.BuildProvider.GetCustomString*> method, indicating that <xref:System.Web.Compilation.BuildProvider.GetCustomString*> is not implemented.
 
@@ -271,7 +277,8 @@ The following code example illustrates a simple build provider implementation, i
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use the <xref:System.Web.Compilation.BuildProvider.GetDefaultCompilerType*> method to examine the default compiler type for a build provider. Use the <xref:System.Web.Compilation.BuildProvider.GetDefaultCompilerTypeForLanguage*> method to examine the compiler type configured in a build provider for a specific language name.
+
+Use the <xref:System.Web.Compilation.BuildProvider.GetDefaultCompilerType*> method to examine the default compiler type for a build provider. Use the <xref:System.Web.Compilation.BuildProvider.GetDefaultCompilerTypeForLanguage*> method to examine the compiler type configured in a build provider for a specific language name.
 
  The base <xref:System.Web.Compilation.BuildProvider> class determines the default compiler type using the `defaultLanguage` attribute value in the `compilation` section of the application configuration file. If there is no default language setting in the `compilation` section, the default compiler type is set using the <xref:Microsoft.VisualBasic.VBCodeProvider> language provider.
 
@@ -310,7 +317,8 @@ The following code example illustrates a simple build provider implementation, i
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use the <xref:System.Web.Compilation.BuildProvider.GetDefaultCompilerTypeForLanguage*> method to examine the compiler type configured in the build provider for a specific language name. Use the <xref:System.Web.Compilation.BuildProvider.GetDefaultCompilerType*> method to examine the default compiler type for a build provider.
+
+Use the <xref:System.Web.Compilation.BuildProvider.GetDefaultCompilerTypeForLanguage*> method to examine the compiler type configured in the build provider for a specific language name. Use the <xref:System.Web.Compilation.BuildProvider.GetDefaultCompilerType*> method to examine the default compiler type for a build provider.
 
  The base <xref:System.Web.Compilation.BuildProvider> class determines the default compiler type using the <xref:System.Web.Configuration.Compiler> elements in the <xref:System.Web.Configuration.CompilationSection.Compilers> property of the <xref:System.Web.Configuration.CompilationSection> object for the configuration file. This is equivalent to examining the `buildProviders` elements and the `compiler` elements in the `compilers` sections of the configuration file. For example, for the `language` value `VB`, the base class method returns a <xref:System.Web.Compilation.CompilerType> object that corresponds to the configured settings for an instance of <xref:Microsoft.VisualBasic.VBCodeProvider?displayProperty=nameWithType>.
 
@@ -355,7 +363,8 @@ The following code example illustrates a simple build provider implementation, i
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- To implement a build provider that generates source code for Web content such as .aspx files, derive a class from the <xref:System.Web.Compilation.BuildProvider> class and override the <xref:System.Web.Compilation.BuildProvider.GetGeneratedType*> method to return the type generated by the build provider.
+
+To implement a build provider that generates source code for Web content such as .aspx files, derive a class from the <xref:System.Web.Compilation.BuildProvider> class and override the <xref:System.Web.Compilation.BuildProvider.GetGeneratedType*> method to return the type generated by the build provider.
 
  The ASP.NET build system compiles files for each build provider, and generates a <xref:System.CodeDom.Compiler.CompilerResults> object, which is passed to the <xref:System.Web.Compilation.BuildProvider.GetGeneratedType*> method. Typically, a build provider's <xref:System.Web.Compilation.BuildProvider.GetGeneratedType*> implementation uses the <xref:System.Reflection.Assembly.GetType*> method on the <xref:System.CodeDom.Compiler.CompilerResults.CompiledAssembly> property of the input `results` object to return the provided type.
 
@@ -391,7 +400,8 @@ The following code example illustrates a simple build provider implementation, i
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Compilation.BuildProvider.GetResultFlags*> method is used by the ASP.NET build environment when using instances of the <xref:System.Web.Compilation.BuildProvider> class to build files and load the compiled assemblies.
+
+The <xref:System.Web.Compilation.BuildProvider.GetResultFlags*> method is used by the ASP.NET build environment when using instances of the <xref:System.Web.Compilation.BuildProvider> class to build files and load the compiled assemblies.
 
  The base <xref:System.Web.Compilation.BuildProvider> class method returns the <xref:System.Web.Compilation.BuildProviderResultFlags.Default> field value, indicating that no special action is required when the virtual path is built.
 
@@ -436,7 +446,8 @@ The following code example illustrates a simple build provider implementation, i
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use the <xref:System.IO.TextReader.Read*> method on the returned <xref:System.IO.TextReader> object to read the contents of the <xref:System.Web.Compilation.BuildProvider.VirtualPath> property for a <xref:System.Web.Compilation.BuildProvider> object.
+
+Use the <xref:System.IO.TextReader.Read*> method on the returned <xref:System.IO.TextReader> object to read the contents of the <xref:System.Web.Compilation.BuildProvider.VirtualPath> property for a <xref:System.Web.Compilation.BuildProvider> object.
 
  After calling the <xref:System.Web.Compilation.BuildProvider.OpenReader*> method, you must use the <xref:System.IO.TextReader.Close*> method to close the <xref:System.IO.TextReader> object and free associated system resources.
 
@@ -473,7 +484,8 @@ The following code example illustrates a simple build provider implementation, i
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use the <xref:System.IO.TextReader.Read*> method on the returned <xref:System.IO.TextReader> object to read the contents of the virtual path.
+
+Use the <xref:System.IO.TextReader.Read*> method on the returned <xref:System.IO.TextReader> object to read the contents of the virtual path.
 
  After calling the <xref:System.Web.Compilation.BuildProvider.OpenReader*> method, you must use the <xref:System.IO.TextReader.Close*> method to close the <xref:System.IO.TextReader> object and free associated system resources.
 
@@ -515,7 +527,8 @@ The following code example illustrates a simple build provider implementation, i
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use the <xref:System.IO.Stream.Read*> method on the returned <xref:System.IO.Stream> object to read the contents of the virtual path for the <xref:System.Web.Compilation.BuildProvider> object.
+
+Use the <xref:System.IO.Stream.Read*> method on the returned <xref:System.IO.Stream> object to read the contents of the virtual path for the <xref:System.Web.Compilation.BuildProvider> object.
 
  After calling the <xref:System.Web.Compilation.BuildProvider.OpenStream*> method, you must use the <xref:System.IO.Stream.Close*> method to close the <xref:System.IO.Stream> object and free associated system resources.
 
@@ -552,7 +565,8 @@ The following code example illustrates a simple build provider implementation, i
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use the <xref:System.IO.Stream.Read*> method on the returned <xref:System.IO.Stream> object to read the contents of the virtual path.
+
+Use the <xref:System.IO.Stream.Read*> method on the returned <xref:System.IO.Stream> object to read the contents of the virtual path.
 
  After calling the <xref:System.Web.Compilation.BuildProvider.OpenStream*> method, you must use the <xref:System.IO.Stream.Close*> method to close the <xref:System.IO.Stream> object and free associated system resources.
 
@@ -586,7 +600,8 @@ The following code example illustrates a simple build provider implementation, i
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You typically override this method so that you can modify compiler errors before they are displayed in order to make the error text more helpful to the user. This is useful in scenarios where you know the context of certain errors and can provide information to the user about how to fix them. The original compiler error message is usually specific to a particular language construct and might not make the real cause or solution obvious to the user.
+
+You typically override this method so that you can modify compiler errors before they are displayed in order to make the error text more helpful to the user. This is useful in scenarios where you know the context of certain errors and can provide information to the user about how to fix them. The original compiler error message is usually specific to a particular language construct and might not make the real cause or solution obvious to the user.
 
  You can access the errors by using the <xref:System.CodeDom.Compiler.CompilerResults> object that is passed to the method.
 
@@ -623,7 +638,8 @@ The following code example illustrates a simple build provider implementation, i
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The ASP.NET build environment initializes the collection of assemblies that are available for reference by the build provider. The source code generated by a build provider can use public types in the referenced assemblies. The referenced assembly collection consists of other assemblies built in the ASP.NET application, and assemblies listed in the `assemblies` element in the configuration file.
+
+The ASP.NET build environment initializes the collection of assemblies that are available for reference by the build provider. The source code generated by a build provider can use public types in the referenced assemblies. The referenced assembly collection consists of other assemblies built in the ASP.NET application, and assemblies listed in the `assemblies` element in the configuration file.
 
  If the build provider generates source code that references additional assemblies, the build provider adds the additional assemblies using the <xref:System.Web.Compilation.AssemblyBuilder.AddAssemblyReference*> method. The ASP.NET build environment resolves external types during assembly compilation using both the referenced assemblies added by build providers and the default collection of assemblies available for reference.
 
@@ -662,7 +678,8 @@ The following code example illustrates a simple build provider implementation, i
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You can use this method to register build providers instead of defining them in the Web.config file. For more information about build providers, see the <xref:System.Web.Compilation.BuildProvider> class and [buildProviders Element for compilation (ASP.NET Settings Schema)](https://msdn.microsoft.com/library/40fa889d-5412-487a-b6a9-21eb011c2384).
+
+You can use this method to register build providers instead of defining them in the Web.config file. For more information about build providers, see the <xref:System.Web.Compilation.BuildProvider> class and [buildProviders Element for compilation (ASP.NET Settings Schema)](https://msdn.microsoft.com/library/40fa889d-5412-487a-b6a9-21eb011c2384).
 
  ]]></format>
         </remarks>
@@ -691,7 +708,8 @@ The following code example illustrates a simple build provider implementation, i
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The virtual path of a <xref:System.Web.Compilation.BuildProvider> object is the path to the file that is being compiled by the build provider. For example, if you have configured a custom <xref:System.Web.Compilation.BuildProvider> class to build all files in the Web site with the custom extension of .abc, if your Web site is named WebSite1, and the Web site contains a file named Example.abc, the <xref:System.Web.Compilation.BuildProvider.VirtualPath> property contains the value `/WebSite1/Example.abc`.
+
+The virtual path of a <xref:System.Web.Compilation.BuildProvider> object is the path to the file that is being compiled by the build provider. For example, if you have configured a custom <xref:System.Web.Compilation.BuildProvider> class to build all files in the Web site with the custom extension of .abc, if your Web site is named WebSite1, and the Web site contains a file named Example.abc, the <xref:System.Web.Compilation.BuildProvider.VirtualPath> property contains the value `/WebSite1/Example.abc`.
 
  The file extension of each file within the application determines the file type, and the corresponding build provider for the file type. The ASP.NET build environment initializes a <xref:System.Web.Compilation.BuildProvider> object for each file based on the file type, and uses the <xref:System.Web.Compilation.BuildProvider> methods to generate source for each file.
 
@@ -726,7 +744,8 @@ The following code example illustrates a simple build provider implementation, i
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Compilation.BuildProvider.VirtualPathDependencies> property is a collection of virtual paths that must be compiled before the <xref:System.Web.Compilation.BuildProvider> instance generates source code. The assemblies from the virtual paths in <xref:System.Web.Compilation.BuildProvider.VirtualPathDependencies*> are added as references to the compilation for the <xref:System.Web.Compilation.BuildProvider> instance.
+
+The <xref:System.Web.Compilation.BuildProvider.VirtualPathDependencies> property is a collection of virtual paths that must be compiled before the <xref:System.Web.Compilation.BuildProvider> instance generates source code. The assemblies from the virtual paths in <xref:System.Web.Compilation.BuildProvider.VirtualPathDependencies*> are added as references to the compilation for the <xref:System.Web.Compilation.BuildProvider> instance.
 
  ]]></format>
         </remarks>

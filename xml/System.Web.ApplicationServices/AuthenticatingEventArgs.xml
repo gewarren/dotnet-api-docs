@@ -20,7 +20,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You create a handler for the <xref:System.Web.ApplicationServices.AuthenticationService.Authenticating> event when you want to customize how the user's credentials are authenticated at run time. The <xref:System.Web.ApplicationServices.AuthenticatingEventArgs> class supplies values to any <xref:System.Web.ApplicationServices.AuthenticationService.Authenticating> event handler. By using the properties available in this class, you can retrieve the user credentials to customize authentication.
+
+You create a handler for the <xref:System.Web.ApplicationServices.AuthenticationService.Authenticating> event when you want to customize how the user's credentials are authenticated at run time. The <xref:System.Web.ApplicationServices.AuthenticatingEventArgs> class supplies values to any <xref:System.Web.ApplicationServices.AuthenticationService.Authenticating> event handler. By using the properties available in this class, you can retrieve the user credentials to customize authentication.
 
  The <xref:System.Web.ApplicationServices.AuthenticationService> class raises the <xref:System.Web.ApplicationServices.AuthenticationService.Authenticating> event before validating the user credentials. The <xref:System.Web.ApplicationServices.AuthenticationService> class constructs an instance of the <xref:System.Web.ApplicationServices.AuthenticatingEventArgs> object and passes it to any <xref:System.Web.ApplicationServices.AuthenticationService.Authenticating> event handler.
 
@@ -74,7 +75,8 @@ The following example shows an event handler that passes the <xref:System.Web.Ap
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If you authenticate user credentials in an event handler for the <xref:System.Web.ApplicationServices.AuthenticationService.Authenticating> event, set the <xref:System.Web.ApplicationServices.AuthenticatingEventArgs.Authenticated> property to indicate whether the user credentials are valid. If the user credentials are valid and no additional validation is needed, set <xref:System.Web.ApplicationServices.AuthenticatingEventArgs.Authenticated*> to `true` and <xref:System.Web.ApplicationServices.AuthenticatingEventArgs.AuthenticationIsComplete*> to `true`. You set the <xref:System.Web.ApplicationServices.AuthenticatingEventArgs.AuthenticationIsComplete> property to indicate that the authentication service should bypass the default steps for authenticating a user. The value in <xref:System.Web.ApplicationServices.AuthenticatingEventArgs.Authenticated*> is used by the <xref:System.Web.ApplicationServices.AuthenticationService> class only if <xref:System.Web.ApplicationServices.AuthenticatingEventArgs.AuthenticationIsComplete*> is set to `true`. If <xref:System.Web.ApplicationServices.AuthenticatingEventArgs.AuthenticationIsComplete*> is `false`, the <xref:System.Web.ApplicationServices.AuthenticationService> class calls the default membership provider to validate user credentials, and then overwrites the value in <xref:System.Web.ApplicationServices.AuthenticatingEventArgs.Authenticated*>.
+
+If you authenticate user credentials in an event handler for the <xref:System.Web.ApplicationServices.AuthenticationService.Authenticating> event, set the <xref:System.Web.ApplicationServices.AuthenticatingEventArgs.Authenticated> property to indicate whether the user credentials are valid. If the user credentials are valid and no additional validation is needed, set <xref:System.Web.ApplicationServices.AuthenticatingEventArgs.Authenticated*> to `true` and <xref:System.Web.ApplicationServices.AuthenticatingEventArgs.AuthenticationIsComplete*> to `true`. You set the <xref:System.Web.ApplicationServices.AuthenticatingEventArgs.AuthenticationIsComplete> property to indicate that the authentication service should bypass the default steps for authenticating a user. The value in <xref:System.Web.ApplicationServices.AuthenticatingEventArgs.Authenticated*> is used by the <xref:System.Web.ApplicationServices.AuthenticationService> class only if <xref:System.Web.ApplicationServices.AuthenticatingEventArgs.AuthenticationIsComplete*> is set to `true`. If <xref:System.Web.ApplicationServices.AuthenticatingEventArgs.AuthenticationIsComplete*> is `false`, the <xref:System.Web.ApplicationServices.AuthenticationService> class calls the default membership provider to validate user credentials, and then overwrites the value in <xref:System.Web.ApplicationServices.AuthenticatingEventArgs.Authenticated*>.
 
 ## Examples
 
@@ -122,7 +124,8 @@ The following example shows an event handler that passes <xref:System.Web.Applic
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You can set the <xref:System.Web.ApplicationServices.AuthenticatingEventArgs.AuthenticationIsComplete> property to indicate whether the <xref:System.Web.ApplicationServices.AuthenticationService> class must authenticate the user credentials. If <xref:System.Web.ApplicationServices.AuthenticatingEventArgs.AuthenticationIsComplete*> is `true`, the <xref:System.Web.ApplicationServices.AuthenticationService> class does not validate the user credentials through the default membership provider. Instead, it uses the value in <xref:System.Web.ApplicationServices.AuthenticatingEventArgs.Authenticated*> to determine whether to create an authentication cookie.
+
+You can set the <xref:System.Web.ApplicationServices.AuthenticatingEventArgs.AuthenticationIsComplete> property to indicate whether the <xref:System.Web.ApplicationServices.AuthenticationService> class must authenticate the user credentials. If <xref:System.Web.ApplicationServices.AuthenticatingEventArgs.AuthenticationIsComplete*> is `true`, the <xref:System.Web.ApplicationServices.AuthenticationService> class does not validate the user credentials through the default membership provider. Instead, it uses the value in <xref:System.Web.ApplicationServices.AuthenticatingEventArgs.Authenticated*> to determine whether to create an authentication cookie.
 
  If <xref:System.Web.ApplicationServices.AuthenticatingEventArgs.AuthenticationIsComplete*> is `false`, the <xref:System.Web.ApplicationServices.AuthenticationService> class validates the user credentials through the default membership provider and overwrites the value in the <xref:System.Web.ApplicationServices.AuthenticatingEventArgs.Authenticated> property.
 
@@ -167,7 +170,8 @@ The following example shows an event handler that passes <xref:System.Web.Applic
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You can use the <xref:System.Web.ApplicationServices.AuthenticatingEventArgs.CustomCredential> property to retrieve authentication values other than user name and password during the <xref:System.Web.ApplicationServices.AuthenticationService.Authenticating> event. For example, an application might be configured to validate an identification number together with the user name and password. In that case, the identification number will be passed in the `CustomCredential` parameter of the <xref:System.Web.ApplicationServices.AuthenticationService.Login*> method. You can then retrieve the custom value through the <xref:System.Web.ApplicationServices.AuthenticatingEventArgs.CustomCredential> property.
+
+You can use the <xref:System.Web.ApplicationServices.AuthenticatingEventArgs.CustomCredential> property to retrieve authentication values other than user name and password during the <xref:System.Web.ApplicationServices.AuthenticationService.Authenticating> event. For example, an application might be configured to validate an identification number together with the user name and password. In that case, the identification number will be passed in the `CustomCredential` parameter of the <xref:System.Web.ApplicationServices.AuthenticationService.Login*> method. You can then retrieve the custom value through the <xref:System.Web.ApplicationServices.AuthenticatingEventArgs.CustomCredential> property.
 
  The <xref:System.Web.ApplicationServices.AuthenticatingEventArgs.CustomCredential> property contains the customized values in the same format as they are passed to the <xref:System.Web.ApplicationServices.AuthenticationService.Login*> method. In the <xref:System.Web.ApplicationServices.AuthenticationService.Authenticating> event handler, if more than one value is stored in the property, you must parse the value of the <xref:System.Web.ApplicationServices.AuthenticatingEventArgs.CustomCredential> property to retrieve the values.
 
@@ -212,7 +216,8 @@ The following example shows an event handler for the <xref:System.Web.Applicatio
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You use the <xref:System.Web.ApplicationServices.AuthenticatingEventArgs.Password> property to retrieve the password during the <xref:System.Web.ApplicationServices.AuthenticationService.Authenticating> event.
+
+You use the <xref:System.Web.ApplicationServices.AuthenticatingEventArgs.Password> property to retrieve the password during the <xref:System.Web.ApplicationServices.AuthenticationService.Authenticating> event.
 
 ## Examples
 
@@ -255,7 +260,8 @@ The following example shows an event handler that passes <xref:System.Web.Applic
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You use the <xref:System.Web.ApplicationServices.AuthenticatingEventArgs.UserName> property to retrieve the authentication name during the <xref:System.Web.ApplicationServices.AuthenticationService.Authenticating> event.
+
+You use the <xref:System.Web.ApplicationServices.AuthenticatingEventArgs.UserName> property to retrieve the authentication name during the <xref:System.Web.ApplicationServices.AuthenticationService.Authenticating> event.
 
 ## Examples
 

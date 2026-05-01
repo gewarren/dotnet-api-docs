@@ -26,7 +26,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Although this list contains members that resemble those defined by <xref:System.Collections.IList> and <xref:System.Collections.ICollection>, and provide similar functionality, this class implements neither of those interfaces.
+
+Although this list contains members that resemble those defined by <xref:System.Collections.IList> and <xref:System.Collections.ICollection>, and provide similar functionality, this class implements neither of those interfaces.
 
  Most <xref:System.Windows.WeakEventManager> derived classes do not need to use any members on <xref:System.Windows.WeakEventManager.ListenerList>. The <xref:System.Windows.WeakEventManager> methods <xref:System.Windows.WeakEventManager.ProtectedAddListener*> and <xref:System.Windows.WeakEventManager.ProtectedRemoveListener*> use a default <xref:System.Windows.WeakEventManager.ListenerList> internally, one list for each `source`.
 
@@ -142,7 +143,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The object provided as listener should be a <xref:System.Windows.DependencyObject> that implements the <xref:System.Windows.IWeakEventListener> interface and therefore has a working <xref:System.Windows.IWeakEventListener.ReceiveWeakEvent*> implementation.
+
+The object provided as listener should be a <xref:System.Windows.DependencyObject> that implements the <xref:System.Windows.IWeakEventListener> interface and therefore has a working <xref:System.Windows.IWeakEventListener.ReceiveWeakEvent*> implementation.
 
  You should always call <xref:System.Windows.WeakEventManager.ListenerList.PrepareForWriting*> before changing the list contents. Otherwise, the list may be in process of delivering events and therefore the original is locked. Calling <xref:System.Windows.WeakEventManager.ListenerList.PrepareForWriting*> changes the input `list` to be a clone so that your <xref:System.Windows.WeakEventManager.ListenerList.Add*> call can still work on the clone. If <xref:System.Windows.WeakEventManager.ListenerList.PrepareForWriting*> returns `true`, you might need to update any private references to the list that you maintain in other areas of your code.
 
@@ -215,7 +217,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A <xref:System.Windows.WeakEventManager> implementation should call <xref:System.Windows.WeakEventManager.ListenerList.BeginUse*> before iterating through the list to deliver an event to the listeners, and should call <xref:System.Windows.WeakEventManager.ListenerList.EndUse*> when it is done. This prevents another caller from modifying the list while the iteration for purposes of event delivery is in progress. If the list is modified during this time, then the list is cloned. If the list is cloned, then <xref:System.Windows.WeakEventManager.ListenerList.PrepareForWriting*> returns `true`, which means that you have missed a recent listener change in the last delivery.
+
+A <xref:System.Windows.WeakEventManager> implementation should call <xref:System.Windows.WeakEventManager.ListenerList.BeginUse*> before iterating through the list to deliver an event to the listeners, and should call <xref:System.Windows.WeakEventManager.ListenerList.EndUse*> when it is done. This prevents another caller from modifying the list while the iteration for purposes of event delivery is in progress. If the list is modified during this time, then the list is cloned. If the list is cloned, then <xref:System.Windows.WeakEventManager.ListenerList.PrepareForWriting*> returns `true`, which means that you have missed a recent listener change in the last delivery.
 
  ]]></format>
         </remarks>
@@ -448,7 +451,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is equivalent to checking whether the <xref:System.Windows.WeakEventManager.ListenerList.Count*> is zero, and does not check whether any of the references in the list are now stale. If you want to assure that all references are still valid, call <xref:System.Windows.WeakEventManager.ListenerList.Purge*> just prior to checking the empty status of the list.
+
+This method is equivalent to checking whether the <xref:System.Windows.WeakEventManager.ListenerList.Count*> is zero, and does not check whether any of the references in the list are now stale. If you want to assure that all references are still valid, call <xref:System.Windows.WeakEventManager.ListenerList.Purge*> just prior to checking the empty status of the list.
 
  ]]></format>
         </remarks>
@@ -522,7 +526,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the given list is in use (which means an event is currently being delivered), calling this method will replace the input `list` with a clone. The existing users will finish delivering the event to the original list, without interference from changes to the new list.
+
+If the given list is in use (which means an event is currently being delivered), calling this method will replace the input `list` with a clone. The existing users will finish delivering the event to the original list, without interference from changes to the new list.
 
  If the method returns `true`, callers may want to insert the new list in their own data structures, since this indicates the possibility that the provided list is no longer current.
 
@@ -597,7 +602,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You should always call <xref:System.Windows.WeakEventManager.ListenerList.PrepareForWriting*> before changing the list contents. Otherwise, the list may be in process of delivering events and therefore the original is locked. Calling <xref:System.Windows.WeakEventManager.ListenerList.PrepareForWriting*> changes the input `list` to be a clone so that your <xref:System.Windows.WeakEventManager.ListenerList.Remove*> call can still work on the clone. If <xref:System.Windows.WeakEventManager.ListenerList.PrepareForWriting*> returns `true`, you might need to update any private references to the list that you maintain in other areas of your code.
+
+You should always call <xref:System.Windows.WeakEventManager.ListenerList.PrepareForWriting*> before changing the list contents. Otherwise, the list may be in process of delivering events and therefore the original is locked. Calling <xref:System.Windows.WeakEventManager.ListenerList.PrepareForWriting*> changes the input `list` to be a clone so that your <xref:System.Windows.WeakEventManager.ListenerList.Remove*> call can still work on the clone. If <xref:System.Windows.WeakEventManager.ListenerList.PrepareForWriting*> returns `true`, you might need to update any private references to the list that you maintain in other areas of your code.
 
  ]]></format>
         </remarks>

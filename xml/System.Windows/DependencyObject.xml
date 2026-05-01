@@ -37,7 +37,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Windows.DependencyObject> class enables Windows Presentation Foundation (WPF) property system services on its many derived classes.
+
+The <xref:System.Windows.DependencyObject> class enables Windows Presentation Foundation (WPF) property system services on its many derived classes.
 
  The property system's primary function is to compute the values of properties, and to provide system notification about values that have changed. Another key class that participates in the property system is <xref:System.Windows.DependencyProperty>. <xref:System.Windows.DependencyProperty> enables the registration of dependency properties into the property system, and provides identification and information about each dependency property, whereas <xref:System.Windows.DependencyObject> as a base class enables objects to use the dependency properties.
 
@@ -132,7 +133,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Clearing the property value by calling <xref:System.Windows.DependencyObject.ClearValue*> does not necessarily give a dependency property the default value that is specified in the dependency property metadata. Clearing the property only specifically clears whatever local value may have been applied. For more information, see [Dependency Property Value Precedence](/dotnet/framework/wpf/advanced/dependency-property-value-precedence).
+
+Clearing the property value by calling <xref:System.Windows.DependencyObject.ClearValue*> does not necessarily give a dependency property the default value that is specified in the dependency property metadata. Clearing the property only specifically clears whatever local value may have been applied. For more information, see [Dependency Property Value Precedence](/dotnet/framework/wpf/advanced/dependency-property-value-precedence).
 
 ## Examples
  The following example iterates all properties that have local values set on an object, then calls <xref:System.Windows.DependencyObject.ClearValue*> to clear the values of each such property.
@@ -181,7 +183,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A <xref:System.Windows.DependencyPropertyKey> identifies a read-only dependency property for property system operations. Classes that define read-only dependency properties should not expose this key with public access. A publicly exposed key would provide a public code pathway that negated the read-only character of the property, if methods such as <xref:System.Windows.DependencyObject.ClearValue*> or <xref:System.Windows.DependencyObject.SetValue*> could be called outside the class or assembly, referencing the key.
+
+A <xref:System.Windows.DependencyPropertyKey> identifies a read-only dependency property for property system operations. Classes that define read-only dependency properties should not expose this key with public access. A publicly exposed key would provide a public code pathway that negated the read-only character of the property, if methods such as <xref:System.Windows.DependencyObject.ClearValue*> or <xref:System.Windows.DependencyObject.SetValue*> could be called outside the class or assembly, referencing the key.
 
  Clearing the property value by calling <xref:System.Windows.DependencyObject.ClearValue*> does not necessarily give a dependency property the default value that is specified in the dependency property metadata. Clearing the value only specifically clears whatever local value may have been applied. For more information, see [Dependency Property Value Precedence](/dotnet/framework/wpf/advanced/dependency-property-value-precedence).
 
@@ -225,7 +228,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- In addition to being explicitly invoked through calling <xref:System.Windows.DependencyObject.CoerceValue*>, the <xref:System.Windows.CoerceValueCallback> for a dependency property is also invoked internally whenever the dependency property value is being re-evaluated by the WPF property system.
+
+In addition to being explicitly invoked through calling <xref:System.Windows.DependencyObject.CoerceValue*>, the <xref:System.Windows.CoerceValueCallback> for a dependency property is also invoked internally whenever the dependency property value is being re-evaluated by the WPF property system.
 
  When you invoke the <xref:System.Windows.DependencyObject.CoerceValue*> method, you are ultimately invoking the coerce value callback for the property that you specify. Typically you will invoke <xref:System.Windows.DependencyObject.CoerceValue*> only if you know that a coerce value callback exists, and if you know the callback's criteria for coercion.
 
@@ -274,7 +278,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This property is useful if an object that is returned from a method has a return value type of <xref:System.Windows.DependencyObject> and you want to perform property system specific operations on it depending on its type. For example it is more efficient to call <xref:System.Windows.DependencyProperty.GetMetadata(System.Windows.DependencyObjectType)> using the <xref:System.Windows.DependencyObjectType> rather than the CLR type. <xref:System.Windows.DependencyObjectType> facilitates faster lookup.
+
+This property is useful if an object that is returned from a method has a return value type of <xref:System.Windows.DependencyObject> and you want to perform property system specific operations on it depending on its type. For example it is more efficient to call <xref:System.Windows.DependencyProperty.GetMetadata(System.Windows.DependencyObjectType)> using the <xref:System.Windows.DependencyObjectType> rather than the CLR type. <xref:System.Windows.DependencyObjectType> facilitates faster lookup.
 
 ## Examples
  In the following pseudocode example, `MySubClass` anticipates that additional derived classes might change the default value of the `MyCustom` dependency property. The class implements a parameterless constructor that can determine the actual derived class by taking advantage of polymorphism on the <xref:System.Windows.DependencyObjectType> value whenever that constructor is used as a derived class instantiator.
@@ -330,7 +335,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This implementation is reference equality only, and does not attempt to evaluate value equality of the contained properties.
+
+This implementation is reference equality only, and does not attempt to evaluate value equality of the contained properties.
 
  ]]></format>
         </remarks>
@@ -405,7 +411,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A *local value* is any dependency property value that was set by <xref:System.Windows.DependencyObject.SetValue*>, as opposed to other aspects of the property system.
+
+A *local value* is any dependency property value that was set by <xref:System.Windows.DependencyObject.SetValue*>, as opposed to other aspects of the property system.
 
  The <xref:System.Windows.LocalValueEnumerator> obtained by calling <xref:System.Windows.DependencyObject.GetLocalValueEnumerator*> can be used to enumerate properties that have a locally set value on a <xref:System.Windows.DependencyObject> instance. Each such property is represented in the enumerator by a <xref:System.Windows.LocalValueEntry> object, which has properties that reference the specific <xref:System.Windows.DependencyProperty> and its values. This technique of enumerating over the locally set values can be used for optimization or for other handling of local values, such as to determine which property values of a <xref:System.Windows.DependencyObject> would change if they were cleared.
 
@@ -457,7 +464,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The *effective value* is the value of the property that is returned by the property system to any caller that is requesting the value. The effective value is the result of the property system having evaluated all the possible inputs that participate in the property system value precedence. This includes coercion and animation. For more information, see [Dependency Property Value Precedence](/dotnet/framework/wpf/advanced/dependency-property-value-precedence).
+
+The *effective value* is the value of the property that is returned by the property system to any caller that is requesting the value. The effective value is the result of the property system having evaluated all the possible inputs that participate in the property system value precedence. This includes coercion and animation. For more information, see [Dependency Property Value Precedence](/dotnet/framework/wpf/advanced/dependency-property-value-precedence).
 
  This method will never return <xref:System.Windows.DependencyProperty.UnsetValue>. The <xref:System.Windows.DependencyProperty.UnsetValue> is a sentinel value for the property system that is used in various capacities internally and occasionally also exposed through coercion callbacks.
 
@@ -503,7 +511,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When you call <xref:System.Windows.DependencyObject.InvalidateProperty*>, any associated and applicable <xref:System.Windows.CoerceValueCallback> or <xref:System.Windows.PropertyChangedCallback> functions registered for that dependency property might be invoked.
+
+When you call <xref:System.Windows.DependencyObject.InvalidateProperty*>, any associated and applicable <xref:System.Windows.CoerceValueCallback> or <xref:System.Windows.PropertyChangedCallback> functions registered for that dependency property might be invoked.
 
  Calling <xref:System.Windows.DependencyObject.InvalidateProperty*> on a property that has its local value set will have no effect, because the local value takes precedence over other property system inputs, except for animations. However, you could call <xref:System.Windows.DependencyObject.ClearValue*>, then call <xref:System.Windows.DependencyObject.InvalidateProperty*>. For more information, see [Dependency Property Value Precedence](/dotnet/framework/wpf/advanced/dependency-property-value-precedence).
 
@@ -557,7 +566,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This value is set internally.
+
+This value is set internally.
 
  ]]></format>
         </remarks>
@@ -597,7 +607,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is not intended to generally detect individual property changes or perform invalidations of properties on a per-case basis. <xref:System.Windows.DependencyObject.OnPropertyChanged*> is instead intended for modifications of the general invalidation pattern, if certain information is known about wide classifications of properties. For example, changes in a <xref:System.Windows.Freezable> might be changes in the value types of the <xref:System.Windows.Freezable>, or might be subproperties, where the changes are within other <xref:System.Windows.Freezable> references. The <xref:System.Windows.Freezable> override implementation of <xref:System.Windows.DependencyObject.OnPropertyChanged*> uses internal information to determine whether the properties are subproperties, and provides appropriate base class logic for either case.
+
+This method is not intended to generally detect individual property changes or perform invalidations of properties on a per-case basis. <xref:System.Windows.DependencyObject.OnPropertyChanged*> is instead intended for modifications of the general invalidation pattern, if certain information is known about wide classifications of properties. For example, changes in a <xref:System.Windows.Freezable> might be changes in the value types of the <xref:System.Windows.Freezable>, or might be subproperties, where the changes are within other <xref:System.Windows.Freezable> references. The <xref:System.Windows.Freezable> override implementation of <xref:System.Windows.DependencyObject.OnPropertyChanged*> uses internal information to determine whether the properties are subproperties, and provides appropriate base class logic for either case.
 
  <xref:System.Windows.DependencyObject.OnPropertyChanged*> is potentially invoked many times during the life of an object. Therefore, you can achieve better performance for the overall property system if you override the metadata of specific properties and then attach <xref:System.Windows.CoerceValueCallback> or <xref:System.Windows.PropertyChangedCallback> functions for individual properties. However, you would use this method if a <xref:System.Windows.DependencyObject> includes a significant number of value-interrelated dependency properties, or if it includes logic such as rendering behavior that must be rerun for several related cases of property invalidations.
 
@@ -643,7 +654,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You should use <xref:System.Windows.DependencyObject.GetValue*> for most typical "get" operations for a dependency property. <xref:System.Windows.DependencyObject.ReadLocalValue*> does not return the effective value for a variety of circumstances where the value was not locally set.
+
+You should use <xref:System.Windows.DependencyObject.GetValue*> for most typical "get" operations for a dependency property. <xref:System.Windows.DependencyObject.ReadLocalValue*> does not return the effective value for a variety of circumstances where the value was not locally set.
 
  Values that are set by styles, themes, templates, the default value from metadata, or property value inheritance are not considered to be local values. However, bindings and other expressions are considered to be local values, after they have been evaluated.
 
@@ -691,7 +703,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is used by a component that programmatically sets the value of one of its own properties without disabling an application's declared use of the property. The <xref:System.Windows.DependencyObject.SetCurrentValue*> method changes the effective value of the property, but existing triggers, data bindings, and styles will continue to work.
+
+This method is used by a component that programmatically sets the value of one of its own properties without disabling an application's declared use of the property. The <xref:System.Windows.DependencyObject.SetCurrentValue*> method changes the effective value of the property, but existing triggers, data bindings, and styles will continue to work.
 
  ]]></format>
         </remarks>
@@ -744,7 +757,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the provided type does not match the type that is declared for the dependency property as it was originally registered, an exception is thrown. The `value` parameter should always be provided as the appropriate type.
+
+If the provided type does not match the type that is declared for the dependency property as it was originally registered, an exception is thrown. The `value` parameter should always be provided as the appropriate type.
 
  The exception conditions are potentially influenced by the <xref:System.Windows.DependencyProperty.ValidateValueCallback*> callback that exists on the dependency property identifier of the dependency property being set. Otherwise, the value provided might be failing general type-checking conditions (for example, passing a string when the native type is Double).
 
@@ -790,7 +804,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This signature is generally used when you set values for read-only dependency properties that are defined by your custom classes. Generally, <xref:System.Windows.DependencyObject.SetValue*> is called only from the type that registered that dependency property, which implements the internal logic that provides the determined value for the dependency property. For more information, see [Read-Only Dependency Properties](/dotnet/framework/wpf/advanced/read-only-dependency-properties).
+
+This signature is generally used when you set values for read-only dependency properties that are defined by your custom classes. Generally, <xref:System.Windows.DependencyObject.SetValue*> is called only from the type that registered that dependency property, which implements the internal logic that provides the determined value for the dependency property. For more information, see [Read-Only Dependency Properties](/dotnet/framework/wpf/advanced/read-only-dependency-properties).
 
  If the provided type does not match the type that is declared for the dependency property as it was originally registered, an exception is thrown. The `value` parameter should always be provided as the appropriate type. The exception conditions are potentially influenced by the <xref:System.Windows.DependencyProperty.ValidateValueCallback*> callback that exists on the dependency property identifier of the dependency property being set.
 
@@ -845,7 +860,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The default implementation returns `true` for all cases in which a dependency property had a local value established on the <xref:System.Windows.DependencyObject>.
+
+The default implementation returns `true` for all cases in which a dependency property had a local value established on the <xref:System.Windows.DependencyObject>.
 
  ]]></format>
         </remarks>

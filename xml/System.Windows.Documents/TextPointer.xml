@@ -27,7 +27,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Windows.Documents.TextPointer> class introduces the following terminology:
+
+The <xref:System.Windows.Documents.TextPointer> class introduces the following terminology:
 
 - Position - Inherently, a <xref:System.Windows.Documents.TextPointer> always points to a *position* in content. Such positions either fall between characters in the content, or between flow content element tags that define structure for the content.
 
@@ -136,7 +137,8 @@ The following example demonstrates how to use a <xref:System.Windows.Documents.T
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A value of -1 indicates that the position specified by the current <xref:System.Windows.Documents.TextPointer> precedes the position specified by `position`. A value of 0 indicates that the indicated positions are equal. A value of positive +1 indicates that the position specified by the current <xref:System.Windows.Documents.TextPointer> follows the position specified by `position`.
+
+A value of -1 indicates that the position specified by the current <xref:System.Windows.Documents.TextPointer> precedes the position specified by `position`. A value of 0 indicates that the indicated positions are equal. A value of positive +1 indicates that the position specified by the current <xref:System.Windows.Documents.TextPointer> follows the position specified by `position`.
 
 ## Examples
 
@@ -186,7 +188,8 @@ The following example demonstrates a use for this method. In the example, the <x
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Specify a positive value to delete characters that follow the current position (as in <xref:System.Windows.Documents.LogicalDirection.Forward?displayProperty=nameWithType>); specify a negative value to delete characters that precede the current position (as in <xref:System.Windows.Documents.LogicalDirection.Backward?displayProperty=nameWithType>).
+
+Specify a positive value to delete characters that follow the current position (as in <xref:System.Windows.Documents.LogicalDirection.Forward?displayProperty=nameWithType>); specify a negative value to delete characters that precede the current position (as in <xref:System.Windows.Documents.LogicalDirection.Backward?displayProperty=nameWithType>).
 
  The number of characters actually deleted may be less than the number specified by `count`. This happens in cases where `count` specifies more characters than exist to be deleted.
 
@@ -227,7 +230,8 @@ The following example demonstrates a use for this method. In the example, the <x
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Windows.Documents.TextPointer.Parent*> for the returned <xref:System.Windows.Documents.TextPointer> is always a text container (<xref:System.Windows.Controls.TextBlock> or <xref:System.Windows.Documents.FlowDocument>), rather than a <xref:System.Windows.Documents.TextElement>.
+
+The <xref:System.Windows.Documents.TextPointer.Parent*> for the returned <xref:System.Windows.Documents.TextPointer> is always a text container (<xref:System.Windows.Controls.TextBlock> or <xref:System.Windows.Documents.FlowDocument>), rather than a <xref:System.Windows.Documents.TextElement>.
 
  ]]></format>
         </remarks>
@@ -264,7 +268,8 @@ The following example demonstrates a use for this method. In the example, the <x
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use the position returned by this property as a baseline position from which to work with relative offsets to other positions. The <xref:System.Windows.Documents.TextPointer.GetOffsetToPosition*> and <xref:System.Windows.Documents.TextPointer.GetPositionAtOffset*> methods provide a way to translate between positions and position offsets.
+
+Use the position returned by this property as a baseline position from which to work with relative offsets to other positions. The <xref:System.Windows.Documents.TextPointer.GetOffsetToPosition*> and <xref:System.Windows.Documents.TextPointer.GetPositionAtOffset*> methods provide a way to translate between positions and position offsets.
 
  The <xref:System.Windows.Documents.TextPointer.Parent*> for the returned <xref:System.Windows.Documents.TextPointer> is always a text container (<xref:System.Windows.Controls.TextBlock> or <xref:System.Windows.Documents.FlowDocument>), rather than a <xref:System.Windows.Documents.TextElement>.
 
@@ -307,7 +312,8 @@ The following example demonstrates a use for this method. In the example, the <x
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The returned element is typically a <xref:System.Windows.Documents.TextElement>. A <xref:System.Windows.UIElement> can be returned when the <xref:System.Windows.Documents.TextPointer> indicates a position inside a <xref:System.Windows.Documents.BlockUIContainer> element or an <xref:System.Windows.Documents.InlineUIContainer> element.
+
+The returned element is typically a <xref:System.Windows.Documents.TextElement>. A <xref:System.Windows.UIElement> can be returned when the <xref:System.Windows.Documents.TextPointer> indicates a position inside a <xref:System.Windows.Documents.BlockUIContainer> element or an <xref:System.Windows.Documents.InlineUIContainer> element.
 
  ]]></format>
         </remarks>
@@ -391,7 +397,8 @@ The following example demonstrates a use for this method. In the example, the <x
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- An insertion position is a position where new content may be added without breaking any semantic rules for the associated content. In practice, an insertion position is anywhere in content where a caret may be positioned. An example of a valid <xref:System.Windows.Documents.TextPointer> position that is not an insertion position is the position between two adjacent <xref:System.Windows.Documents.Paragraph> tags (that is, between the closing tag of the preceding paragraph and the opening tag of the next paragraph).
+
+An insertion position is a position where new content may be added without breaking any semantic rules for the associated content. In practice, an insertion position is anywhere in content where a caret may be positioned. An example of a valid <xref:System.Windows.Documents.TextPointer> position that is not an insertion position is the position between two adjacent <xref:System.Windows.Documents.Paragraph> tags (that is, between the closing tag of the preceding paragraph and the opening tag of the next paragraph).
 
  If the <xref:System.Windows.Documents.TextPointer> already points to a valid insertion position, but the closing tag for a non-empty formatting sequence directly follows that position in the given direction, then the <xref:System.Windows.Documents.TextPointer> returned by this method is adjusted to point to the insertion position just after the close of the formatting sequence. For example, consider the markup sequence `<Bold>a</Bold>b`. Note that there are two insertion positions between the letters `a` and `b` - one that precedes the closing `Bold` tag, and one directly following the closing `Bold` tag. If <xref:System.Windows.Documents.TextPointer.GetInsertionPosition*> is called on a <xref:System.Windows.Documents.TextPointer> to the position directly after the letter `a` and before of the closing `Bold` tag, and with a `direction` of <xref:System.Windows.Documents.LogicalDirection.Forward>, the returned <xref:System.Windows.Documents.TextPointer> is adjusted to point to the position just before the letter `b`, after the closing `Bold` tag. A similar adjustment is made for opening formatting tags when working in the opposite logical direction. This method is intended to provide a means of disambiguation between insertion positions in similar cases.
 
@@ -456,7 +463,8 @@ This example shows how to use the <xref:System.Windows.Documents.TextPointer.Get
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the <xref:System.Windows.Documents.TextPointer> points to an ambiguous position, for example, between two lines, the line in the direction specified by <xref:System.Windows.Documents.TextPointer.LogicalDirection*> is selected as the relative starting line.
+
+If the <xref:System.Windows.Documents.TextPointer> points to an ambiguous position, for example, between two lines, the line in the direction specified by <xref:System.Windows.Documents.TextPointer.LogicalDirection*> is selected as the relative starting line.
 
  The operation performed by this method depends on a valid layout. When necessary, this method attempts to automatically regenerate a valid layout before proceeding with the operation. Regenerating a layout can be a relatively expensive operation. Use <xref:System.Windows.Documents.TextPointer.HasValidLayout*> to check for a valid layout before performing operations that may regenerate the layout. For more information, see [Layout](/dotnet/desktop/wpf/advanced/layout).
 
@@ -500,7 +508,8 @@ This example shows how to use the <xref:System.Windows.Documents.TextPointer.Get
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the <xref:System.Windows.Documents.TextPointer> points to an ambiguous position, for example, between two lines, the line in the direction specified by the <xref:System.Windows.Documents.TextPointer.LogicalDirection> property is selected as the relative starting line.
+
+If the <xref:System.Windows.Documents.TextPointer> points to an ambiguous position, for example, between two lines, the line in the direction specified by the <xref:System.Windows.Documents.TextPointer.LogicalDirection> property is selected as the relative starting line.
 
  ]]></format>
         </remarks>
@@ -540,7 +549,8 @@ This example shows how to use the <xref:System.Windows.Documents.TextPointer.Get
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Any of the following is considered to be a symbol:
+
+Any of the following is considered to be a symbol:
 
 - An opening or closing tag for a <xref:System.Windows.Documents.TextElement> element.
 
@@ -599,7 +609,8 @@ The following example demonstrates a use for this method. The example uses the <
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- An *insertion position* is a position where new content may be added without breaking any semantic rules for the associated content. In practice, an insertion position is anywhere in content where a caret may be positioned. An example of a valid <xref:System.Windows.Documents.TextPointer> position that is not an insertion position is the position between two adjacent <xref:System.Windows.Documents.Paragraph> tags (that is, between the closing tag of the preceding paragraph and the opening tag of the next paragraph).
+
+An *insertion position* is a position where new content may be added without breaking any semantic rules for the associated content. In practice, an insertion position is anywhere in content where a caret may be positioned. An example of a valid <xref:System.Windows.Documents.TextPointer> position that is not an insertion position is the position between two adjacent <xref:System.Windows.Documents.Paragraph> tags (that is, between the closing tag of the preceding paragraph and the opening tag of the next paragraph).
 
 ## Examples
 
@@ -647,7 +658,8 @@ The following example demonstrates a use for this method. The example uses the <
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Any of the following is considered to be a symbol:
+
+Any of the following is considered to be a symbol:
 
 - An opening or closing tag for a <xref:System.Windows.Documents.TextElement> element.
 
@@ -757,7 +769,8 @@ The following example demonstrates a use for this method. The example uses the <
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Any of the following is considered to be a symbol:
+
+Any of the following is considered to be a symbol:
 
 - An opening or closing tag for the <xref:System.Windows.Documents.TextElement> element.
 
@@ -813,7 +826,8 @@ The following example demonstrates a use for this method. The example uses the <
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Any of the following is considered to be a symbol:
+
+Any of the following is considered to be a symbol:
 
 - An opening or closing tag for the <xref:System.Windows.Documents.TextElement> element.
 
@@ -869,7 +883,8 @@ The following example demonstrates a use for this method. The example uses the <
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method returns only uninterrupted runs of text. Nothing is returned if any symbol type other than <xref:System.Windows.Documents.TextPointerContext.Text> is adjacent to the current <xref:System.Windows.Documents.TextPointer> in the specified direction. Similarly, text is returned only up to the next non-text symbol.
+
+This method returns only uninterrupted runs of text. Nothing is returned if any symbol type other than <xref:System.Windows.Documents.TextPointerContext.Text> is adjacent to the current <xref:System.Windows.Documents.TextPointer> in the specified direction. Similarly, text is returned only up to the next non-text symbol.
 
 ## Examples
 
@@ -926,7 +941,8 @@ The following example demonstrates a use for this method. The example uses the <
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method returns only uninterrupted runs of text. Nothing is returned if any symbol type other than <xref:System.Windows.Documents.TextPointerContext.Text> is adjacent to the current <xref:System.Windows.Documents.TextPointer> in the specified direction. Similarly, text is returned only up to the next non-text symbol.
+
+This method returns only uninterrupted runs of text. Nothing is returned if any symbol type other than <xref:System.Windows.Documents.TextPointerContext.Text> is adjacent to the current <xref:System.Windows.Documents.TextPointer> in the specified direction. Similarly, text is returned only up to the next non-text symbol.
 
  ]]></format>
         </remarks>
@@ -974,7 +990,8 @@ The following example demonstrates a use for this method. The example uses the <
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Any of the following is considered to be a symbol:
+
+Any of the following is considered to be a symbol:
 
 - An opening or closing tag for the <xref:System.Windows.Documents.TextElement> element.
 
@@ -1017,7 +1034,8 @@ The following example demonstrates a use for this method. The example uses the <
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When necessary, operations that depend on a valid layout (such as the <xref:System.Windows.Documents.TextPointer.GetLineStartPosition*> method, <xref:System.Windows.Documents.TextPointer.GetCharacterRect*> method, and <xref:System.Windows.Documents.TextPointer.IsAtLineStartPosition> property) attempt to automatically regenerate a valid layout before proceeding with the operation. Regenerating a layout can be a relatively expensive operation. Use this property to check for a valid layout before performing operations that may regenerate the layout. For more information, see [Layout](/dotnet/desktop/wpf/advanced/layout).
+
+When necessary, operations that depend on a valid layout (such as the <xref:System.Windows.Documents.TextPointer.GetLineStartPosition*> method, <xref:System.Windows.Documents.TextPointer.GetCharacterRect*> method, and <xref:System.Windows.Documents.TextPointer.IsAtLineStartPosition> property) attempt to automatically regenerate a valid layout before proceeding with the operation. Regenerating a layout can be a relatively expensive operation. Use this property to check for a valid layout before performing operations that may regenerate the layout. For more information, see [Layout](/dotnet/desktop/wpf/advanced/layout).
 
  ]]></format>
         </remarks>
@@ -1084,7 +1102,8 @@ The following example demonstrates a use for this method. The example uses the <
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If this method is called when the current position is inside of an existing <xref:System.Windows.Documents.Paragraph> element, the existing paragraph and any content it contains are split into two paragraphs at the current position. If this method is called when the current position is not inside of an existing paragraph, a new, empty paragraph is inserted. If this method is called at a position unsuitable for splitting or inserting a paragraph (for example, if the current position is inside of a <xref:System.Windows.Documents.Hyperlink> element), an exception is thrown.
+
+If this method is called when the current position is inside of an existing <xref:System.Windows.Documents.Paragraph> element, the existing paragraph and any content it contains are split into two paragraphs at the current position. If this method is called when the current position is not inside of an existing paragraph, a new, empty paragraph is inserted. If this method is called at a position unsuitable for splitting or inserting a paragraph (for example, if the current position is inside of a <xref:System.Windows.Documents.Hyperlink> element), an exception is thrown.
 
  ]]></format>
         </remarks>
@@ -1124,7 +1143,8 @@ The following example demonstrates a use for this method. The example uses the <
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the <xref:System.Windows.Documents.TextPointer> is not scoped by a <xref:System.Windows.Documents.Run> element, a <xref:System.Windows.Documents.Run> is inserted along with the `textData`.
+
+If the <xref:System.Windows.Documents.TextPointer> is not scoped by a <xref:System.Windows.Documents.Run> element, a <xref:System.Windows.Documents.Run> is inserted along with the `textData`.
 
  ]]></format>
         </remarks>
@@ -1164,7 +1184,8 @@ The following example demonstrates a use for this method. The example uses the <
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- An insertion position is a position where new content may be added without breaking any semantic rules for the associated content. In practice, an insertion position is anywhere in content where a caret may be positioned. An example of a valid <xref:System.Windows.Documents.TextPointer> position that is not an insertion position is the position between two adjacent <xref:System.Windows.Documents.Paragraph> tags (that is, between the closing tag of the preceding paragraph and the opening tag of the next paragraph).
+
+An insertion position is a position where new content may be added without breaking any semantic rules for the associated content. In practice, an insertion position is anywhere in content where a caret may be positioned. An example of a valid <xref:System.Windows.Documents.TextPointer> position that is not an insertion position is the position between two adjacent <xref:System.Windows.Documents.Paragraph> tags (that is, between the closing tag of the preceding paragraph and the opening tag of the next paragraph).
 
  ]]></format>
         </remarks>
@@ -1203,7 +1224,8 @@ The following example demonstrates a use for this method. The example uses the <
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the <xref:System.Windows.Documents.TextPointer> points to an ambiguous position, for example, between two lines, the line in the direction specified by the <xref:System.Windows.Documents.TextPointer.LogicalDirection> property is selected as the relative starting line.
+
+If the <xref:System.Windows.Documents.TextPointer> points to an ambiguous position, for example, between two lines, the line in the direction specified by the <xref:System.Windows.Documents.TextPointer.LogicalDirection> property is selected as the relative starting line.
 
  The operation performed by this property depends on a valid layout. When necessary, this method attempts to automatically regenerate a valid layout before proceeding with the operation. Regenerating a layout can be a relatively expensive operation. Use the <xref:System.Windows.Documents.TextPointer.HasValidLayout> property to check for a valid layout before performing operations that may regenerate the layout. For more information, see [Layout](/dotnet/desktop/wpf/advanced/layout).
 
@@ -1247,7 +1269,8 @@ The following example demonstrates a use for this method. The example uses the <
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Most operations that involve multiple <xref:System.Windows.Documents.TextPointer> instances are only valid if the instances in question indicate positions that are in the same text container scope. For example the <xref:System.Windows.Documents.TextPointer.CompareTo*> and <xref:System.Windows.Documents.TextPointer.GetOffsetToPosition*> methods cannot be used with a <xref:System.Windows.Documents.TextPointer> to a position outside of the text container associated with the current position. Use this method to verify that a specified <xref:System.Windows.Documents.TextPointer> is compatible with the current position for such operations.
+
+Most operations that involve multiple <xref:System.Windows.Documents.TextPointer> instances are only valid if the instances in question indicate positions that are in the same text container scope. For example the <xref:System.Windows.Documents.TextPointer.CompareTo*> and <xref:System.Windows.Documents.TextPointer.GetOffsetToPosition*> methods cannot be used with a <xref:System.Windows.Documents.TextPointer> to a position outside of the text container associated with the current position. Use this method to verify that a specified <xref:System.Windows.Documents.TextPointer> is compatible with the current position for such operations.
 
 ## Examples
 
@@ -1298,7 +1321,8 @@ The following example demonstrates a use for this method. The example uses the <
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- As an example of how this property is used, the <xref:System.Windows.Documents.LogicalDirection> of the <xref:System.Windows.Documents.TextPointer> returned by a hit test method gives a hit that is between two characters of text. The logical direction specifies which of the two characters was actually hit - the left or the right.
+
+As an example of how this property is used, the <xref:System.Windows.Documents.LogicalDirection> of the <xref:System.Windows.Documents.TextPointer> returned by a hit test method gives a hit that is between two characters of text. The logical direction specifies which of the two characters was actually hit - the left or the right.
 
  ]]></format>
         </remarks>

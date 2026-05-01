@@ -28,7 +28,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The properties of the <xref:System.Web.Services.Protocols.WebClientProtocol> class are used to control the behavior of the transport used to transmit the XML Web service request and response. The properties on this class map to properties found on <xref:System.Net.WebRequest>. Instances of classes deriving from <xref:System.Net.WebRequest>, such as <xref:System.Net.HttpWebRequest>, are used as the transport mechanism for XML Web services created using ASP.NET.
+
+The properties of the <xref:System.Web.Services.Protocols.WebClientProtocol> class are used to control the behavior of the transport used to transmit the XML Web service request and response. The properties on this class map to properties found on <xref:System.Net.WebRequest>. Instances of classes deriving from <xref:System.Net.WebRequest>, such as <xref:System.Net.HttpWebRequest>, are used as the transport mechanism for XML Web services created using ASP.NET.
 
  To communicate with an XML Web service, you must create a proxy class deriving indirectly or directly from <xref:System.Web.Services.Protocols.WebClientProtocol> for the XML Web service you want to call. Instead of creating the proxy class manually, you can use the Wsdl.exe tool to create a proxy class for a given XML Web service's service description. Since <xref:System.Web.Services.Protocols.WebClientProtocol> is the base class for your client proxy, you will find its properties on your proxy classes. These properties are useful for controlling the request behavior of the underlying transport. For instance, use the <xref:System.Web.Services.Protocols.WebClientProtocol.Credentials> property for calling authenticated XML Web services. Many of the <xref:System.Web.Services.Protocols.WebClientProtocol> properties are used to initialize the <xref:System.Net.WebRequest> object that is used to make the Web request.
 
@@ -166,7 +167,8 @@ The following example is an ASP.NET Web Form, which calls an XML Web service nam
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Services.Protocols.WebClientProtocol.ConnectionGroupName> property enables you to associate a request to a connection group. For more details, see <xref:System.Net.HttpWebRequest.ConnectionGroupName*>.
+
+The <xref:System.Web.Services.Protocols.WebClientProtocol.ConnectionGroupName> property enables you to associate a request to a connection group. For more details, see <xref:System.Net.HttpWebRequest.ConnectionGroupName*>.
 
  ]]></format>
         </remarks>
@@ -198,7 +200,8 @@ The following example is an ASP.NET Web Form, which calls an XML Web service nam
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When using the `Credentials` property, a XML Web service client must instantiate a class implementing <xref:System.Net.ICredentials>, such as <xref:System.Net.NetworkCredential>, and then set the client credentials specific to the authentication mechanism. The <xref:System.Net.NetworkCredential> class can be used to set authentication credentials using the basic, digest, NTLM and Kerberos authentication mechanisms.
+
+When using the `Credentials` property, a XML Web service client must instantiate a class implementing <xref:System.Net.ICredentials>, such as <xref:System.Net.NetworkCredential>, and then set the client credentials specific to the authentication mechanism. The <xref:System.Net.NetworkCredential> class can be used to set authentication credentials using the basic, digest, NTLM and Kerberos authentication mechanisms.
 
  When the <xref:System.Web.Services.Protocols.WebClientProtocol.Credentials> property is set to <xref:System.Net.CredentialCache.DefaultCredentials*?displayProperty=nameWithType> then the client negotiates with the server to do Kerberos and/or NTLM authentication depending on how the server is configured.
 
@@ -276,7 +279,8 @@ The following example is an ASP.NET Web Form, which calls an XML Web service nam
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method can be overridden to customize the <xref:System.Net.WebRequest> object before the XML Web service request is made. For example you could add a custom header to the request.
+
+This method can be overridden to customize the <xref:System.Net.WebRequest> object before the XML Web service request is made. For example you could add a custom header to the request.
 
  ]]></format>
         </remarks>
@@ -396,7 +400,8 @@ The following example is an ASP.NET Web Form, which calls an XML Web service nam
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When a client requests a resource without using credentials, the server challenges the request and indicates what authentication schemes it supports. The client chooses an authentication scheme and sends the appropriate `WWW-authenticate` header to the server. When <xref:System.Web.Services.Protocols.WebClientProtocol.PreAuthenticate*> is `true`, the `WWW-authenticate` header is sent with all subsequent requests.
+
+When a client requests a resource without using credentials, the server challenges the request and indicates what authentication schemes it supports. The client chooses an authentication scheme and sends the appropriate `WWW-authenticate` header to the server. When <xref:System.Web.Services.Protocols.WebClientProtocol.PreAuthenticate*> is `true`, the `WWW-authenticate` header is sent with all subsequent requests.
 
  When <xref:System.Web.Services.Protocols.WebClientProtocol.PreAuthenticate*> is `false`, a request is made to the XML Web service method without initially attempting to authenticate the user. If the XML Web service allows anonymous access, then the XML Web service method is executed. If anonymous access is disallowed, a 401 HTTP return code is sent back to the client. In response, the <xref:System.Web.Services.Protocols.WebClientProtocol> class returns authentication credentials to the Web server. If the client is authenticated and subsequently authorized to access the XML Web service, the XML Web service method is executed; otherwise the client is denied access.
 
@@ -443,7 +448,8 @@ The following example is an ASP.NET Web Form, which calls an XML Web service nam
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.Services.Protocols.WebClientProtocol.RequestEncoding*> determines the encoding for the request message. The <xref:System.Net.WebRequest.ContentType*> of the request will be annotated with the encoding value.
+
+The <xref:System.Web.Services.Protocols.WebClientProtocol.RequestEncoding*> determines the encoding for the request message. The <xref:System.Net.WebRequest.ContentType*> of the request will be annotated with the encoding value.
 
  Classes deriving from <xref:System.Web.Services.Protocols.WebClientProtocol> support a particular protocol, such as <xref:System.Web.Services.Protocols.SoapHttpClientProtocol> does for SOAP, set this property to conform to encoding requirements for the specific protocol. For example, the <xref:System.Web.Services.Protocols.SoapHttpClientProtocol> sets the default encoding to UTF-8.
 
@@ -502,7 +508,8 @@ The following example is an ASP.NET Web Form, which calls an XML Web service nam
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Setting the <xref:System.Web.Services.Protocols.WebClientProtocol.Timeout> property to <xref:System.Threading.Timeout.Infinite?displayProperty=nameWithType> indicates that the request does not time out. Even though an XML Web service client can set the <xref:System.Web.Services.Protocols.WebClientProtocol.Timeout> property to not time out, the Web server can still cause the request to time out on the server side.
+
+Setting the <xref:System.Web.Services.Protocols.WebClientProtocol.Timeout> property to <xref:System.Threading.Timeout.Infinite?displayProperty=nameWithType> indicates that the request does not time out. Even though an XML Web service client can set the <xref:System.Web.Services.Protocols.WebClientProtocol.Timeout> property to not time out, the Web server can still cause the request to time out on the server side.
 
 ## Examples
 
@@ -557,7 +564,8 @@ The following example sets the `Timeout` value to 15000 (15 seconds) for the syn
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Proxy classes generated using Wsdl.exe will set a default <xref:System.Web.Services.Protocols.WebClientProtocol.Url> property for the client to use. The default <xref:System.Web.Services.Protocols.WebClientProtocol.Url*> is determined by the location attribute found in the service description from which the proxy class was generated.
+
+Proxy classes generated using Wsdl.exe will set a default <xref:System.Web.Services.Protocols.WebClientProtocol.Url> property for the client to use. The default <xref:System.Web.Services.Protocols.WebClientProtocol.Url*> is determined by the location attribute found in the service description from which the proxy class was generated.
 
  Derived classes supporting specific protocols, such as <xref:System.Web.Services.Protocols.HttpGetClientProtocol> and <xref:System.Web.Services.Protocols.HttpPostClientProtocol> might add extra information to <xref:System.Web.Services.Protocols.WebClientProtocol.Url*> to make the XML Web service request.
 

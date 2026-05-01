@@ -20,7 +20,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This class provides several static methods and properties that expose management and administrative functionality for Web Parts personalization. These methods apply to the default personalization provider configured in the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control for a Web Parts control. If you need to administer several data stores that are acting as personalization providers, you should use the methods on the individual personalization provider classes directly. Note that the collection of configured personalization providers for a <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control is available from the <xref:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.Providers*> static property.
+
+This class provides several static methods and properties that expose management and administrative functionality for Web Parts personalization. These methods apply to the default personalization provider configured in the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control for a Web Parts control. If you need to administer several data stores that are acting as personalization providers, you should use the methods on the individual personalization provider classes directly. Note that the collection of configured personalization providers for a <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control is available from the <xref:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.Providers*> static property.
 
  It is important to be aware that personalization will fail if your Web application does not run at the default trust level of <xref:System.Web.AspNetHostingPermissionLevel.Medium> or higher (you can set custom trust levels in a Web.config file using the `<trust level="" />` element). The <xref:System.Web.UI.WebControls.WebParts.PersonalizationAdministration> and <xref:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider> classes both check for a trust level of <xref:System.Web.AspNetHostingPermissionLevel.Low> when they are initialized. If you configure your application to run at a trust level of <xref:System.Web.AspNetHostingPermissionLevel.Low>, and you use the default <xref:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider> provider to manage the personalization data for your application, the first time that the application tries to access personalization data, it will fail because an ASP.NET worker process running in <xref:System.Web.AspNetHostingPermissionLevel.Low> trust does not have the permissions necessary to call into the various classes in the <xref:System.Data.SqlClient> namespace.
 
@@ -70,7 +71,8 @@ The following code example demonstrates how to use several methods in the <xref:
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The application name affects the data retrieved and saved by the personalization provider, and allows for multiple applications to either share data by setting an identical application name, or partition data within the same database by specifying different application names. The application name is found in the personalization provider section of the Web.config or System.config file.
+
+The application name affects the data retrieved and saved by the personalization provider, and allows for multiple applications to either share data by setting an identical application name, or partition data within the same database by specifying different application names. The application name is found in the personalization provider section of the Web.config or System.config file.
 
 > [!CAUTION]
 > Because a single default profile provider instance is used for all the requests served by an <xref:System.Web.HttpApplication> object, you can have multiple requests executing concurrently and attempting to set the <xref:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.ApplicationName> property value. The <xref:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.ApplicationName> property is not thread-safe for multiple writes, and changing the <xref:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.ApplicationName> property value can result in unexpected behavior for multiple users of an application. It is recommended that you avoid code to allow users to set the <xref:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.ApplicationName> property unless required. An example of an application where setting the <xref:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.ApplicationName> property might be required is an administrative application that manages profile data for multiple applications. Such an application should be a single-user application and not a Web application.
@@ -135,7 +137,8 @@ The following code example demonstrates how to use several methods in the <xref:
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method returns a collection of <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo> instances, per-user personalization state information where the `pathToMatch` parameter value matches the path of a page, `usernameToMatch` matches a user name that has personalization data associated with that page, and the users are considered inactive. In other words, for each returned record the user's <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo.LastActivityDate> property value is less than or equal to `userInactiveSinceDate`. The returned collection contains only <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo> instances.
+
+This method returns a collection of <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo> instances, per-user personalization state information where the `pathToMatch` parameter value matches the path of a page, `usernameToMatch` matches a user name that has personalization data associated with that page, and the users are considered inactive. In other words, for each returned record the user's <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo.LastActivityDate> property value is less than or equal to `userInactiveSinceDate`. The returned collection contains only <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo> instances.
 
  This method passes query wildcard characters to the underlying data store. Support for wildcard characters is currently dependent on how each provider handles characters such as an asterisk (*), a percent symbol (%), or an underscore (_).
 
@@ -210,7 +213,8 @@ The following code example demonstrates how to use several methods in the <xref:
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method returns a collection of <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo> instances, per-user personalization state information where the `pathToMatch` parameter value matches the path of a page, `usernameToMatch` matches a user name that has personalization data associated with that page, and the users are considered inactive. In other words, for each returned record the user's <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo.LastActivityDate> property value is less than or equal to `userInactiveSinceDate`. The collection contains only <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo> instances.
+
+This method returns a collection of <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo> instances, per-user personalization state information where the `pathToMatch` parameter value matches the path of a page, `usernameToMatch` matches a user name that has personalization data associated with that page, and the users are considered inactive. In other words, for each returned record the user's <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo.LastActivityDate> property value is less than or equal to `userInactiveSinceDate`. The collection contains only <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo> instances.
 
  This method passes parameter wildcard characters to the underlying personalization provider, so how the data store handles these characters depends on how the provider handles characters such as an asterisk (*), a percent symbol (%), or an underscore (_).
 
@@ -303,7 +307,8 @@ The following code example demonstrates how to use several methods in the <xref:
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method returns a collection of <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo> instances where the `pathToMatch` value matches the path of a page that has shared personalization state data. The collection contains only <xref:System.Web.UI.WebControls.WebParts.SharedPersonalizationStateInfo> instances.
+
+This method returns a collection of <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo> instances where the `pathToMatch` value matches the path of a page that has shared personalization state data. The collection contains only <xref:System.Web.UI.WebControls.WebParts.SharedPersonalizationStateInfo> instances.
 
  This method passes parameter wildcard characters to the underlying personalization provider, so how the data store handles these characters depends on how the provider handles characters such as an asterisk (*), a percent symbol (%), or an underscore (_).
 
@@ -370,7 +375,8 @@ The following code example demonstrates how to use several methods in the <xref:
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method returns a collection of <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo> instances where the `pathToMatch` value matches the path of a page that has shared personalization state data. The collection contains only <xref:System.Web.UI.WebControls.WebParts.SharedPersonalizationStateInfo> instances.
+
+This method returns a collection of <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo> instances where the `pathToMatch` value matches the path of a page that has shared personalization state data. The collection contains only <xref:System.Web.UI.WebControls.WebParts.SharedPersonalizationStateInfo> instances.
 
  This method passes parameter wildcard characters to the underlying personalization provider, so how the data store handles these characters depends on how the provider handles characters such as an asterisk (*), a percent symbol (%), or an underscore (_).
 
@@ -461,7 +467,8 @@ The following code example demonstrates how to use several methods in the <xref:
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method returns a collection of <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo> instances where the `pathToMatch` parameter value matches the path of a page, and `usernameToMatch` matches a user name that has personalization data associated with that page. The collection contains only <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo> instances.
+
+This method returns a collection of <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo> instances where the `pathToMatch` parameter value matches the path of a page, and `usernameToMatch` matches a user name that has personalization data associated with that page. The collection contains only <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo> instances.
 
  This method passes parameter wildcard characters to the underlying personalization provider, so how the data store handles these characters depends on how the provider handles characters such as an asterisk (*), a percent symbol (%), or an underscore (_).
 
@@ -541,7 +548,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method returns a collection of <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo> instances where the `pathToMatch` parameter value matches the path of a page and `usernameToMatch` matches a user name that has personalization data associated with that page. The collection contains only <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo> instances.
+
+This method returns a collection of <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo> instances where the `pathToMatch` parameter value matches the path of a page and `usernameToMatch` matches a user name that has personalization data associated with that page. The collection contains only <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo> instances.
 
  This method passes parameter wildcard characters to the underlying personalization provider, so how the data store handles these characters depends on how the provider handles characters as an asterisk (*), a percent symbol (%), or an underscore (_).
 
@@ -641,7 +649,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The returned collection contains only <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo> instances. Using the default personalization provider, the <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo>-derived objects are returned in alphabetical order, and sorted by a combination of path and user name in ascending order. The order of the objects in the collection is determined by the provider.
+
+The returned collection contains only <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo> instances. Using the default personalization provider, the <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo>-derived objects are returned in alphabetical order, and sorted by a combination of path and user name in ascending order. The order of the objects in the collection is determined by the provider.
 
  This method returns items where the user's <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo.LastActivityDate> property value is less than or equal to the <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate> property value. If <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate*> is <xref:System.DateTime.MaxValue>, this method effectively returns all per-user data in the underlying data store.
 
@@ -693,7 +702,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The returned collection contains only <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo> instances. Using the default personalization provider, the <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo>-derived objects are returned in alphabetical order, and sorted by a combination of path and user name in ascending order. The order of the objects in the collection is determined by the provider.
+
+The returned collection contains only <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo> instances. Using the default personalization provider, the <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo>-derived objects are returned in alphabetical order, and sorted by a combination of path and user name in ascending order. The order of the objects in the collection is determined by the provider.
 
  This method returns items where the user's <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo.LastActivityDate> property value is less than or equal to the <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate> property value. If <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate*> is <xref:System.DateTime.MaxValue>, this method effectively returns all per-user data in the underlying data store.
 
@@ -763,7 +773,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Note that the returned collection contains only <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo>-derived objects of either type <xref:System.Web.UI.WebControls.WebParts.SharedPersonalizationStateInfo> or type <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo>. Using the default personalization provider, the <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo>-derived objects are returned in alphabetical order, and sorted by a combination of path and user name in ascending order. The order of the objects in the collection is determined by the provider.
+
+Note that the returned collection contains only <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo>-derived objects of either type <xref:System.Web.UI.WebControls.WebParts.SharedPersonalizationStateInfo> or type <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo>. Using the default personalization provider, the <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo>-derived objects are returned in alphabetical order, and sorted by a combination of path and user name in ascending order. The order of the objects in the collection is determined by the provider.
 
  ]]></format>
         </remarks>
@@ -815,7 +826,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The items in the collection returned are based primarily on scope, and then the records corresponding to that scope are further reduced to a subset based on the `pageIndex` and `pageSize` parameters. The collection returned contains either <xref:System.Web.UI.WebControls.WebParts.SharedPersonalizationStateInfo> instances only, or <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo> instances only.
+
+The items in the collection returned are based primarily on scope, and then the records corresponding to that scope are further reduced to a subset based on the `pageIndex` and `pageSize` parameters. The collection returned contains either <xref:System.Web.UI.WebControls.WebParts.SharedPersonalizationStateInfo> instances only, or <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo> instances only.
 
  The items returned are constrained by the `pageIndex` and `pageSize` parameters, where `pageIndex` controls which records to return and `pageSize` controls the number of records returned. For example, if `pageIndex` was set to 0 and `pageSize` was set to 25, the data returned would be the first 25 entries. If `pageIndex` was set to 1 and `pageSize` was set to 25, the data returned would be entries 26 to 50. The `totalRecords` parameter returns the total number of records that are available.
 
@@ -898,7 +910,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method returns records where the user's <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo.LastActivityDate> property value is less than or equal to the <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate> property value. If <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate*> is set to <xref:System.DateTime.MaxValue>, a count of all users' personalization information is returned.
+
+This method returns records where the user's <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo.LastActivityDate> property value is less than or equal to the <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate> property value. If <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate*> is set to <xref:System.DateTime.MaxValue>, a count of all users' personalization information is returned.
 
  ]]></format>
         </remarks>
@@ -949,7 +962,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method returns records where the page matches the specified `pathtoMatch` parameter and the user's <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo.LastActivityDate> property value is less than or equal to the <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate> property value. If <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate*> is set to <xref:System.DateTime.MaxValue>, a count of all users' personalization information is returned.
+
+This method returns records where the page matches the specified `pathtoMatch` parameter and the user's <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo.LastActivityDate> property value is less than or equal to the <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate> property value. If <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate*> is set to <xref:System.DateTime.MaxValue>, a count of all users' personalization information is returned.
 
  Note that the `pathToMatch` parameter can include wildcard characters. The method passes wildcard characters to the underlying data store. Wildcard character support is currently dependent on how each provider handles characters such as an asterisk (*), a percent symbol (%), or an underscore (_).
 
@@ -1029,7 +1043,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use this method to determine the number of personalization state items in the underlying data store for the specified scope. Use the <xref:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.GetCountOfState*> method to further narrow the count to a particular page.
+
+Use this method to determine the number of personalization state items in the underlying data store for the specified scope. Use the <xref:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.GetCountOfState*> method to further narrow the count to a particular page.
 
 ## Examples
 
@@ -1088,7 +1103,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use this method to determine the number of personalization state items in the underlying data store for the specified scope and path.
+
+Use this method to determine the number of personalization state items in the underlying data store for the specified scope and path.
 
  ]]></format>
         </remarks>
@@ -1143,7 +1159,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method returns a count of the number of per-user personalization items in the underlying data store that exist for the given `usernameToMatch`.
+
+This method returns a count of the number of per-user personalization items in the underlying data store that exist for the given `usernameToMatch`.
 
  Note that the `usernameToMatch` parameter can include wildcard characters. This method passes wildcard characters to the underlying data store. Wildcard character support is currently dependent on how each provider handles characters such as an asterisk (*), a percent symbol (%), or an underscore (_).
 
@@ -1199,7 +1216,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use this property to retrieve an instance of the default personalization provider. This is the provider specified in the personalization provider section of the Web.config or Machine.config file.
+
+Use this property to retrieve an instance of the default personalization provider. This is the provider specified in the personalization provider section of the Web.config or Machine.config file.
 
 ## Examples
 
@@ -1245,7 +1263,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This property returns a collection of personalization providers. The collection is populated at the initialization of the application and contains references to provider objects indexed by name. The default provider is indexed by the name specified in the Web.config or Machine.config configuration file.
+
+This property returns a collection of personalization providers. The collection is populated at the initialization of the application and contains references to provider objects indexed by name. The default provider is indexed by the name specified in the Web.config or Machine.config configuration file.
 
  Note that the returned collection is read-only; calls to `Remove`, `Add`, or `Clear` will result in an exception being thrown.
 
@@ -1291,7 +1310,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method deletes all rows in the underlying data store associated with the specified personalization scope.
+
+This method deletes all rows in the underlying data store associated with the specified personalization scope.
 
  ]]></format>
         </remarks>
@@ -1358,7 +1378,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method resets all per-user state information in the underlying data store, where the user's <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo.LastActivityDate> property value is less than or equal to the <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate*> value.
+
+This method resets all per-user state information in the underlying data store, where the user's <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo.LastActivityDate> property value is less than or equal to the <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate*> value.
 
  If <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate*> is set to <xref:System.DateTime.MaxValue>, this method resets all per-user data in the underlying data store.
 
@@ -1411,7 +1432,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method resets all per-user state in the underlying data store associated with the specified path, where the user's <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo.LastActivityDate> property value is less than or equal to the <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate> property value.
+
+This method resets all per-user state in the underlying data store associated with the specified path, where the user's <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo.LastActivityDate> property value is less than or equal to the <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate> property value.
 
  For data stores that require more than one row of data to store personalization state for a page, or for a user and page combination, the count of reset rows might differ from the count of personalization state. If the underlying provider exposes data from a transaction-aware data store, this method performs its operations in a single transaction.
 
@@ -1488,7 +1510,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- It is not an error to attempt to reset nonexistent shared state.
+
+It is not an error to attempt to reset nonexistent shared state.
 
  ]]></format>
         </remarks>
@@ -1544,7 +1567,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method returns the count of the number of rows that were reset. It is not an error to attempt to reset nonexistent shared state.
+
+This method returns the count of the number of rows that were reset. It is not an error to attempt to reset nonexistent shared state.
 
  ]]></format>
         </remarks>
@@ -1604,7 +1628,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method resets personalization data in the underlying data store, based on the <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo> objects contained in the collection. You can use this method to selectively delete a mixture of shared and per-user data based on the collection's contents. <xref:System.Web.UI.WebControls.WebParts.SharedPersonalizationStateInfo> objects indicate that shared data for a page will be reset; <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo> objects indicate that per-user data for a specific page will be reset.
+
+This method resets personalization data in the underlying data store, based on the <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateInfo> objects contained in the collection. You can use this method to selectively delete a mixture of shared and per-user data based on the collection's contents. <xref:System.Web.UI.WebControls.WebParts.SharedPersonalizationStateInfo> objects indicate that shared data for a page will be reset; <xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo> objects indicate that per-user data for a specific page will be reset.
 
 > [!NOTE]
 > This method does not guarantee that all resets occur within a single transaction because the collection points to random sets of personalization data.
@@ -1691,7 +1716,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method returns the count of the number of rows that were reset. It is not an error to attempt to reset nonexistent shared state.
+
+This method returns the count of the number of rows that were reset. It is not an error to attempt to reset nonexistent shared state.
 
  ]]></format>
         </remarks>
@@ -1747,7 +1773,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method resets all per-user state in the underlying data store associated with the users contained in the `usernames` parameter, and returns a count of the number of rows that were reset.
+
+This method resets all per-user state in the underlying data store associated with the users contained in the `usernames` parameter, and returns a count of the number of rows that were reset.
 
  It is not an error to attempt to reset nonexistent shared state.
 
@@ -1811,7 +1838,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- It is not an error to attempt to reset nonexistent user state.
+
+It is not an error to attempt to reset nonexistent user state.
 
  ]]></format>
         </remarks>
@@ -1873,7 +1901,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method resets per-user state in the underlying data store associated with each user contained in the `usernames` parameter for the page specified by `path`.
+
+This method resets per-user state in the underlying data store associated with each user contained in the `usernames` parameter for the page specified by `path`.
 
  It is not an error to attempt to reset nonexistent user state.
 

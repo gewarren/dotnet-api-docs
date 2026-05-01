@@ -50,7 +50,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Promotable Enlistments (PSPE) allow a resource, such as a database, to take ownership of the transaction if it is the only entity participating in the transaction. Later, if needed, the <xref:System.Transactions> infrastructure can still escalate the transaction to MSDTC. For more information, see [Optimization Using Single Phase Commit and Promotable Single Phase Notification](https://learn.microsoft.com/previous-versions/dotnet/netframework-3.0/ms229980(v=vs.85)).
+
+Promotable Enlistments (PSPE) allow a resource, such as a database, to take ownership of the transaction if it is the only entity participating in the transaction. Later, if needed, the <xref:System.Transactions> infrastructure can still escalate the transaction to MSDTC. For more information, see [Optimization Using Single Phase Commit and Promotable Single Phase Notification](https://learn.microsoft.com/previous-versions/dotnet/netframework-3.0/ms229980(v=vs.85)).
 
  A resource manager that implements this interface delegates control of the commit of it's internal non-distributed transaction to an enlistment on a <xref:System.Transactions> transaction through the <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase*> method on the <xref:System.Transactions.Transaction> class.
 
@@ -108,7 +109,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If initialization logic is required to prepare an enlisted object to participate in a transaction, it is preferable to implement that logic in this method instead of in a constructor. In this way, the initialization occurs only if the object is successfully enlisted as a transaction participant.
+
+If initialization logic is required to prepare an enlisted object to participate in a transaction, it is preferable to implement that logic in this method instead of in a constructor. In this way, the initialization occurs only if the object is successfully enlisted as a transaction participant.
 
  ]]></format>
         </remarks>
@@ -160,7 +162,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- On receiving this notification, the PSPE should always rollback it's internal transaction and then reply with the <xref:System.Transactions.SinglePhaseEnlistment.Aborted*> callback method on the `singlePhaseEnlistment` parameter. If the PSPE replies with  <xref:System.Transactions.SinglePhaseEnlistment.Committed*> or <xref:System.Transactions.SinglePhaseEnlistment.InDoubt*>, an <xref:System.InvalidOperationException> is thrown from the callback.
+
+On receiving this notification, the PSPE should always rollback it's internal transaction and then reply with the <xref:System.Transactions.SinglePhaseEnlistment.Aborted*> callback method on the `singlePhaseEnlistment` parameter. If the PSPE replies with  <xref:System.Transactions.SinglePhaseEnlistment.Committed*> or <xref:System.Transactions.SinglePhaseEnlistment.InDoubt*>, an <xref:System.InvalidOperationException> is thrown from the callback.
 
  ]]></format>
         </remarks>
@@ -211,7 +214,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method notifies an enlisted object that the transaction is to be committed.
+
+This method notifies an enlisted object that the transaction is to be committed.
 
  The `singlePhaseEnlistment` parameters contain callbacks that allow the implementation of this interface to notify the transaction manager of the outcome of the transaction, since the transaction manager has delegated control of the transaction. In the case of a promoted transaction, the transaction manager listens to the transaction outcome and overrides the response being sent.
 

@@ -27,7 +27,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Property metadata can be defined and used during dependency property registration when calling the <xref:System.Windows.DependencyProperty.Register*> method (or variations for attached properties or read-only dependency properties), or after original owner registration when calling the <xref:System.Windows.DependencyPropertyKey.OverrideMetadata*> method. <xref:System.Windows.DependencyProperty.AddOwner*> also takes property metadata.
+
+Property metadata can be defined and used during dependency property registration when calling the <xref:System.Windows.DependencyProperty.Register*> method (or variations for attached properties or read-only dependency properties), or after original owner registration when calling the <xref:System.Windows.DependencyPropertyKey.OverrideMetadata*> method. <xref:System.Windows.DependencyProperty.AddOwner*> also takes property metadata.
 
  This class is a concrete base class that can be used in each of these calls. However, it is very common to specify metadata using one of the derived classes such as <xref:System.Windows.FrameworkPropertyMetadata>. These derived classes support more detailed metadata carried as Boolean property values, which are useful for either detecting or enabling some property system and layout behaviors that are only implemented at the WPF framework level.
 
@@ -111,7 +112,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The type of the value provided for `defaultValue` must be match or be related to the type specified in the original registration of the dependency property that this metadata will be applied to. Mismatches between metadata default value type and the type of the dependency property it is being applied to can be difficult to debug, because the mismatch is not detectable during compilation (the mismatch will raise a run-time exception).
+
+The type of the value provided for `defaultValue` must be match or be related to the type specified in the original registration of the dependency property that this metadata will be applied to. Mismatches between metadata default value type and the type of the dependency property it is being applied to can be difficult to debug, because the mismatch is not detectable during compilation (the mismatch will raise a run-time exception).
 
  Although it is the default per the parameterless constructor, a `defaultValue` of <xref:System.Windows.DependencyProperty.UnsetValue> cannot be specified. Attempting to do so will raise an exception.
 
@@ -194,7 +196,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The type of the value provided `defaultValue` must be match or be related to the type specified in the original registration of the dependency property that this metadata will be applied to. Mismatches between metadata default value type and the type of the dependency property it is being applied to can be difficult to debug, because the mismatch is not detectable during compilation (the mismatch will raise a run-time exception).
+
+The type of the value provided `defaultValue` must be match or be related to the type specified in the original registration of the dependency property that this metadata will be applied to. Mismatches between metadata default value type and the type of the dependency property it is being applied to can be difficult to debug, because the mismatch is not detectable during compilation (the mismatch will raise a run-time exception).
 
  Although it is the default per the parameterless constructor, a `defaultValue` of <xref:System.Windows.DependencyProperty.UnsetValue> cannot be specified. Attempting to do so will raise an exception.
 
@@ -242,7 +245,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If you want to specify a <xref:System.Windows.CoerceValueCallback> but not a <xref:System.Windows.PropertyChangedCallback>, you can pass `null` for the `propertyChangedCallback` parameter.
+
+If you want to specify a <xref:System.Windows.CoerceValueCallback> but not a <xref:System.Windows.PropertyChangedCallback>, you can pass `null` for the `propertyChangedCallback` parameter.
 
  The type of the value provided for `defaultValue` must be match or be related to the type specified in the original registration of the dependency property that this metadata will be applied to. Mismatches between metadata default value type and the type of the dependency property it is being applied to can be difficult to debug, because the mismatch is not detectable during compilation (the mismatch will raise a run-time exception).
 
@@ -294,7 +298,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The callbacks in property metadata are not typically public members on the containing type, so the value of this property is not important for most scenarios that just consume an existing dependency property's metadata. One reason this property is exposed is so that metadata subclasses can perform their desired merge logic if both base metadata and overriding/adding metadata specify a <xref:System.Windows.CoerceValueCallback>. However, the default merge logic for a <xref:System.Windows.PropertyMetadata.CoerceValueCallback*> is to replace the previous one.
+
+The callbacks in property metadata are not typically public members on the containing type, so the value of this property is not important for most scenarios that just consume an existing dependency property's metadata. One reason this property is exposed is so that metadata subclasses can perform their desired merge logic if both base metadata and overriding/adding metadata specify a <xref:System.Windows.CoerceValueCallback>. However, the default merge logic for a <xref:System.Windows.PropertyMetadata.CoerceValueCallback*> is to replace the previous one.
 
  <xref:System.Windows.PropertyMetadata.CoerceValueCallback*> is defined in the object model as read-write. This is so <xref:System.Windows.PropertyMetadata.CoerceValueCallback*> can be adjusted after initialization of the <xref:System.Windows.PropertyMetadata> object itself. However, once the metadata is consumed as part of a call to <xref:System.Windows.DependencyProperty.Register*>, <xref:System.Windows.DependencyProperty.AddOwner*>, or <xref:System.Windows.DependencyProperty.OverrideMetadata*>, the property system will seal that metadata instance and the properties are now considered immutable. Attempting to set <xref:System.Windows.PropertyMetadata.CoerceValueCallback*> once <xref:System.Windows.PropertyMetadata.IsSealed*> is `true` on this metadata instance will raise an exception.
 
@@ -384,7 +389,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Various properties of <xref:System.Windows.PropertyMetadata>, such as <xref:System.Windows.PropertyMetadata.DefaultValue*>, are defined in the object model as read-write. This is so those properties can be adjusted after initialization of the <xref:System.Windows.PropertyMetadata> object itself. However, once the metadata is applied to a dependency property as part of a call to <xref:System.Windows.DependencyProperty.Register*>, <xref:System.Windows.DependencyProperty.AddOwner*>, or <xref:System.Windows.DependencyProperty.OverrideMetadata*>, the property system will seal that metadata instance and the properties are now considered immutable. At the time of one of these calls, <xref:System.Windows.PropertyMetadata.OnApply*> is called, and the value of this property is set to `true`.
+
+Various properties of <xref:System.Windows.PropertyMetadata>, such as <xref:System.Windows.PropertyMetadata.DefaultValue*>, are defined in the object model as read-write. This is so those properties can be adjusted after initialization of the <xref:System.Windows.PropertyMetadata> object itself. However, once the metadata is applied to a dependency property as part of a call to <xref:System.Windows.DependencyProperty.Register*>, <xref:System.Windows.DependencyProperty.AddOwner*>, or <xref:System.Windows.DependencyProperty.OverrideMetadata*>, the property system will seal that metadata instance and the properties are now considered immutable. At the time of one of these calls, <xref:System.Windows.PropertyMetadata.OnApply*> is called, and the value of this property is set to `true`.
 
 ## Examples
  The following example  checks <xref:System.Windows.PropertyMetadata.IsSealed*> prior to a set operation of a custom metadata property.
@@ -431,7 +437,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is used internally when metadata is being overridden (<xref:System.Windows.DependencyProperty.OverrideMetadata*> method).
+
+This method is used internally when metadata is being overridden (<xref:System.Windows.DependencyProperty.OverrideMetadata*> method).
 
 ## Examples
  The following example implements a merge for a custom metadata type that adds an additional property to the property metadata.
@@ -485,7 +492,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Subclasses should assure that any mutability of the data structure of a <xref:System.Windows.PropertyMetadata> subclass should be marked as immutable once <xref:System.Windows.PropertyMetadata.OnApply*> is called. This will be called once the metadata is applied to a property system operation (register, add owner, override metadata).
+
+Subclasses should assure that any mutability of the data structure of a <xref:System.Windows.PropertyMetadata> subclass should be marked as immutable once <xref:System.Windows.PropertyMetadata.OnApply*> is called. This will be called once the metadata is applied to a property system operation (register, add owner, override metadata).
 
  ]]></format>
         </remarks>
@@ -527,7 +535,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The callbacks in property metadata are not typically public members on the defining type, so the value of this property is not important for most scenarios that just consume an existing dependency property's metadata. One reason this property is exposed is so that metadata classes can perform their desired merge logic if both base metadata and overriding/adding metadata specify a <xref:System.Windows.PropertyChangedCallback>. The default merge logic for is to maintain all <xref:System.Windows.PropertyMetadata.PropertyChangedCallback*> implementations in a table and call each of them, with callbacks established by the deepest class in hierarchy running first.
+
+The callbacks in property metadata are not typically public members on the defining type, so the value of this property is not important for most scenarios that just consume an existing dependency property's metadata. One reason this property is exposed is so that metadata classes can perform their desired merge logic if both base metadata and overriding/adding metadata specify a <xref:System.Windows.PropertyChangedCallback>. The default merge logic for is to maintain all <xref:System.Windows.PropertyMetadata.PropertyChangedCallback*> implementations in a table and call each of them, with callbacks established by the deepest class in hierarchy running first.
 
  <xref:System.Windows.PropertyMetadata.PropertyChangedCallback*> is defined in the object model as read-write. This is so <xref:System.Windows.PropertyMetadata.PropertyChangedCallback*> can be adjusted after initialization of the <xref:System.Windows.PropertyMetadata> object itself. However, once the metadata is consumed as part of a call to <xref:System.Windows.DependencyProperty.Register*>, <xref:System.Windows.DependencyProperty.AddOwner*>, or <xref:System.Windows.DependencyProperty.OverrideMetadata*>, the property system will seal that metadata instance and the properties are now considered immutable. Attempting to set <xref:System.Windows.PropertyMetadata.PropertyChangedCallback*> once <xref:System.Windows.PropertyMetadata.IsSealed*> is `true` on this metadata instance will raise an exception.
 

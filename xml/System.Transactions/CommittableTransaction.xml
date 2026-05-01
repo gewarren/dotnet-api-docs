@@ -63,7 +63,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The `CommittableTransaction` class provides an explicit way for applications to use a transaction, as opposed to using the <xref:System.Transactions.TransactionScope> class implicitly. Unlike the <xref:System.Transactions.TransactionScope> class, the application writer needs to specifically call the <xref:System.Transactions.CommittableTransaction.Commit*> and <xref:System.Transactions.Transaction.Rollback*> methods in order to commit or abort the transaction. However, only the creator of a transaction can commit the transaction. Therefore, copies of a committable transaction obtained through the <xref:System.Transactions.Transaction.Clone*?displayProperty=nameWithType> method are not committable.
+
+The `CommittableTransaction` class provides an explicit way for applications to use a transaction, as opposed to using the <xref:System.Transactions.TransactionScope> class implicitly. Unlike the <xref:System.Transactions.TransactionScope> class, the application writer needs to specifically call the <xref:System.Transactions.CommittableTransaction.Commit*> and <xref:System.Transactions.Transaction.Rollback*> methods in order to commit or abort the transaction. However, only the creator of a transaction can commit the transaction. Therefore, copies of a committable transaction obtained through the <xref:System.Transactions.Transaction.Clone*?displayProperty=nameWithType> method are not committable.
 
 > [!NOTE]
 > We recommend that you create implicit transactions using the <xref:System.Transactions.TransactionScope> class, so that the ambient transaction context is automatically managed for you. You should also use the <xref:System.Transactions.TransactionScope> and <xref:System.Transactions.DependentTransaction> classes for applications that require the use of the same transaction across multiple function calls or multiple thread calls. For more information on this model, see the [Implementing An Implicit Transaction Using Transaction Scope](/dotnet/framework/data/transactions/implementing-an-implicit-transaction-using-transaction-scope) topic.
@@ -288,7 +289,8 @@ The following sample creates a new instance of <xref:System.Transactions.Committ
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method returns immediately, before the transaction has been completed. The transaction then commits on a different thread, and the `asyncCallback` delegate is invoked when it has completed. After this method is called, you do not receive the outcome of the transaction until you call <xref:System.Transactions.CommittableTransaction.EndCommit*>.
+
+This method returns immediately, before the transaction has been completed. The transaction then commits on a different thread, and the `asyncCallback` delegate is invoked when it has completed. After this method is called, you do not receive the outcome of the transaction until you call <xref:System.Transactions.CommittableTransaction.EndCommit*>.
 
 > [!NOTE]
 > The commit process may complete synchronously inside this method call.
@@ -340,7 +342,8 @@ The following sample creates a new instance of <xref:System.Transactions.Committ
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When this method is called, all objects that have registered to participate in the transaction are polled and can independently indicate their vote to either commit or roll back the transaction. If any participant votes to roll back the transaction, it is rolled back and this method throws a <xref:System.Transactions.TransactionException> exception. This is a normal occurrence for a transaction and your code should catch and process such exceptions.
+
+When this method is called, all objects that have registered to participate in the transaction are polled and can independently indicate their vote to either commit or roll back the transaction. If any participant votes to roll back the transaction, it is rolled back and this method throws a <xref:System.Transactions.TransactionException> exception. This is a normal occurrence for a transaction and your code should catch and process such exceptions.
 
  <xref:System.Transactions.CommittableTransaction.Commit*> and <xref:System.Transactions.CommittableTransaction.EndCommit*> block until the first phase of transaction processing is complete. The first phase ends after all resource managers and enlistments in the transaction have voted on the transaction outcome and the <xref:System.Transactions.TransactionManager> has durably decided to commit or abort the transaction. The second phase of processing is always asynchronous. Therefore, there is no guarantee that data just committed from within a given transaction will be immediately available afterwards when not using another transaction to view this data.
 
@@ -399,7 +402,8 @@ The following sample creates a new instance of <xref:System.Transactions.Committ
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You should call this method in the callback delegate specified as a parameter to the <xref:System.Transactions.CommittableTransaction.BeginCommit*> method, when you have finished any cleanup work associated with the asynchronous commitment. You can also call this method early without waiting for the delegate. If, by the time you call this method, the transaction has not completed, this method waits for its completion.
+
+You should call this method in the callback delegate specified as a parameter to the <xref:System.Transactions.CommittableTransaction.BeginCommit*> method, when you have finished any cleanup work associated with the asynchronous commitment. You can also call this method early without waiting for the delegate. If, by the time you call this method, the transaction has not completed, this method waits for its completion.
 
 > [!CAUTION]
 > The <xref:System.IAsyncResult.CompletedSynchronously> property returned by `asyncResult` is always `false`, even if the operation completed synchronously.

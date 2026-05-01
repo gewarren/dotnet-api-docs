@@ -34,7 +34,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.ApplicationServices.AuthenticationService> object enables you to authenticate users through a Windows Communication Foundation (WCF) service. You use the WCF authentication service when you must authenticate users through ASP.NET membership from an application that is outside the Web application that stores the user credentials. The application must be able to send and consume message in the SOAP format. Through the <xref:System.Web.ApplicationServices.AuthenticationService> class, you can log users in, log users out, validate credentials, check authentication status, customize authentication, and set the authentication cookie.
+
+The <xref:System.Web.ApplicationServices.AuthenticationService> object enables you to authenticate users through a Windows Communication Foundation (WCF) service. You use the WCF authentication service when you must authenticate users through ASP.NET membership from an application that is outside the Web application that stores the user credentials. The application must be able to send and consume message in the SOAP format. Through the <xref:System.Web.ApplicationServices.AuthenticationService> class, you can log users in, log users out, validate credentials, check authentication status, customize authentication, and set the authentication cookie.
 
  The <xref:System.Web.ApplicationServices.AuthenticationService> class contains four methods that you should access only through a WCF service: the <xref:System.Web.ApplicationServices.AuthenticationService.IsLoggedIn*>, <xref:System.Web.ApplicationServices.AuthenticationService.Login*>, <xref:System.Web.ApplicationServices.AuthenticationService.Logout*>, and <xref:System.Web.ApplicationServices.AuthenticationService.ValidateUser*> methods. To call these methods, you enable the authentication service on a Web server and then connect a WCF-compatible client application to the Web service. For information about how to configure the authentication service, see [How to: Enable the WCF Authentication Service](https://learn.microsoft.com/previous-versions/aspnet/bb398990(v=vs.100)).
 
@@ -90,7 +91,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.ApplicationServices.AuthenticationService.Authenticating> event is raised when user credentials are being validated. Create an event handler for the <xref:System.Web.ApplicationServices.AuthenticationService.Authenticating> event to customize how user credentials are validated.
+
+The <xref:System.Web.ApplicationServices.AuthenticationService.Authenticating> event is raised when user credentials are being validated. Create an event handler for the <xref:System.Web.ApplicationServices.AuthenticationService.Authenticating> event to customize how user credentials are validated.
 
 ## Examples
 
@@ -132,7 +134,8 @@ The following example shows how to bind an event handler for the <xref:System.We
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.ApplicationServices.AuthenticationService.CreatingCookie> event is raised when the authentication cookie is being set after user credentials have been validated. Create an event handler for the <xref:System.Web.ApplicationServices.AuthenticationService.CreatingCookie> event to customize the authentication cookie.
+
+The <xref:System.Web.ApplicationServices.AuthenticationService.CreatingCookie> event is raised when the authentication cookie is being set after user credentials have been validated. Create an event handler for the <xref:System.Web.ApplicationServices.AuthenticationService.CreatingCookie> event to customize the authentication cookie.
 
 ## Examples
 
@@ -183,7 +186,8 @@ The following example shows how to bind an event handler to the <xref:System.Web
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.ApplicationServices.AuthenticationService.IsLoggedIn*> method checks whether the current user is authenticated by checking the <xref:System.Security.Principal.IIdentity.IsAuthenticated*>.property.
+
+The <xref:System.Web.ApplicationServices.AuthenticationService.IsLoggedIn*> method checks whether the current user is authenticated by checking the <xref:System.Security.Principal.IIdentity.IsAuthenticated*>.property.
 
 > [!NOTE]
 > Do not call the <xref:System.Web.ApplicationServices.AuthenticationService.IsLoggedIn*> method from code that is executing on the Web server. You call the <xref:System.Web.ApplicationServices.AuthenticationService.IsLoggedIn*> method only as part of a WCF service.
@@ -233,7 +237,8 @@ The following example shows how to bind an event handler to the <xref:System.Web
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.ApplicationServices.AuthenticationService.Login*> method validates user credentials through a membership provider. You can use the default membership provider or specify a custom membership provider at run time. The <xref:System.Web.ApplicationServices.AuthenticationService> class passes `userName` and `password` to the membership provider's <xref:System.Web.Security.MembershipProvider.ValidateUser*> method, but does not pass `customCredential`. If <xref:System.Web.Security.MembershipProvider.ValidateUser*> returns `true`, <xref:System.Web.ApplicationServices.AuthenticationService> creates an authentication ticket as a cookie. Set the `isPersistent` parameter to `true` to create an authentication ticket that lasts beyond the current session.
+
+The <xref:System.Web.ApplicationServices.AuthenticationService.Login*> method validates user credentials through a membership provider. You can use the default membership provider or specify a custom membership provider at run time. The <xref:System.Web.ApplicationServices.AuthenticationService> class passes `userName` and `password` to the membership provider's <xref:System.Web.Security.MembershipProvider.ValidateUser*> method, but does not pass `customCredential`. If <xref:System.Web.Security.MembershipProvider.ValidateUser*> returns `true`, <xref:System.Web.ApplicationServices.AuthenticationService> creates an authentication ticket as a cookie. Set the `isPersistent` parameter to `true` to create an authentication ticket that lasts beyond the current session.
 
 > [!NOTE]
 > Always use the authentication service together with the secure sockets layer (SSL, by using HTTPS) to protect sensitive data.
@@ -279,7 +284,8 @@ The following example shows how to bind an event handler to the <xref:System.Web
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.ApplicationServices.AuthenticationService.Logout*> method clears the authentication cookie from the browser's cookie collection. The user must log in again to be authenticated.
+
+The <xref:System.Web.ApplicationServices.AuthenticationService.Logout*> method clears the authentication cookie from the browser's cookie collection. The user must log in again to be authenticated.
 
  The <xref:System.Web.ApplicationServices.AuthenticationService> class does not store information on the server about which authentication tickets have been cleared.
 
@@ -330,7 +336,8 @@ The following example shows how to bind an event handler to the <xref:System.Web
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.ApplicationServices.AuthenticationService.ValidateUser*> method authenticates the user credentials but does not set an authentication cookie. Without an authentication cookie, the user will not be logged in even if the credentials are valid.
+
+The <xref:System.Web.ApplicationServices.AuthenticationService.ValidateUser*> method authenticates the user credentials but does not set an authentication cookie. Without an authentication cookie, the user will not be logged in even if the credentials are valid.
 
  Use the <xref:System.Web.ApplicationServices.AuthenticationService.ValidateUser*> method when you must check whether a user's credentials are valid without receiving an authentication cookie. For example, you might do this if the authentication cookie is already stored in a client application but you want to verify that the user's credentials are still valid when a new session starts.
 

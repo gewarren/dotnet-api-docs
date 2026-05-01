@@ -20,7 +20,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.LinqDataSourceStatusEventArgs> class enables you to examine the results of data operations that have been performed by a <xref:System.Web.UI.WebControls.LinqDataSource> control. A <xref:System.Web.UI.WebControls.LinqDataSourceStatusEventArgs> object is passed to event handlers for the <xref:System.Web.UI.WebControls.LinqDataSource.ContextCreated>, <xref:System.Web.UI.WebControls.LinqDataSource.Deleted>, <xref:System.Web.UI.WebControls.LinqDataSource.Inserted>, <xref:System.Web.UI.WebControls.LinqDataSource.Selected>, and <xref:System.Web.UI.WebControls.LinqDataSource.Updated> events of the <xref:System.Web.UI.WebControls.LinqDataSource> control.
+
+The <xref:System.Web.UI.WebControls.LinqDataSourceStatusEventArgs> class enables you to examine the results of data operations that have been performed by a <xref:System.Web.UI.WebControls.LinqDataSource> control. A <xref:System.Web.UI.WebControls.LinqDataSourceStatusEventArgs> object is passed to event handlers for the <xref:System.Web.UI.WebControls.LinqDataSource.ContextCreated>, <xref:System.Web.UI.WebControls.LinqDataSource.Deleted>, <xref:System.Web.UI.WebControls.LinqDataSource.Inserted>, <xref:System.Web.UI.WebControls.LinqDataSource.Selected>, and <xref:System.Web.UI.WebControls.LinqDataSource.Updated> events of the <xref:System.Web.UI.WebControls.LinqDataSource> control.
 
  If the data operation completed successfully, the resulting data object is stored in the <xref:System.Web.UI.WebControls.LinqDataSourceStatusEventArgs.Result> property and the <xref:System.Web.UI.WebControls.LinqDataSourceStatusEventArgs.Exception> property is `null`. If the data operation failed, the exception that occurred during the data operation is stored in the <xref:System.Web.UI.WebControls.LinqDataSourceStatusEventArgs.Exception> property and the <xref:System.Web.UI.WebControls.LinqDataSourceStatusEventArgs.Result> property is `null`. If you handled the exception represented by the <xref:System.Web.UI.WebControls.LinqDataSourceStatusEventArgs.Exception> property, set the <xref:System.Web.UI.WebControls.LinqDataSourceStatusEventArgs.ExceptionHandled> property to `true` so that the exception will not be thrown.
 
@@ -68,7 +69,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This constructor is used when an exception is thrown during the data operation. The <xref:System.Web.UI.WebControls.LinqDataSourceStatusEventArgs.Result> property is automatically set to `null`.
+
+This constructor is used when an exception is thrown during the data operation. The <xref:System.Web.UI.WebControls.LinqDataSourceStatusEventArgs.Result> property is automatically set to `null`.
 
  ]]></format>
         </remarks>
@@ -97,7 +99,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This constructor is used when the data operation has finished without an error. The `result` parameter contains an object that represents the result of the data operation. The <xref:System.Web.UI.WebControls.LinqDataSourceStatusEventArgs.Exception> property is automatically set to `null`.
+
+This constructor is used when the data operation has finished without an error. The `result` parameter contains an object that represents the result of the data operation. The <xref:System.Web.UI.WebControls.LinqDataSourceStatusEventArgs.Exception> property is automatically set to `null`.
 
  ]]></format>
         </remarks>
@@ -156,7 +159,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If an exception is raised during the data operation, the exception is stored in the <xref:System.Web.UI.WebControls.LinqDataSourceStatusEventArgs.Exception> property. You can create event handlers for the <xref:System.Web.UI.WebControls.LinqDataSource.ContextCreated>, <xref:System.Web.UI.WebControls.LinqDataSource.Deleted>, <xref:System.Web.UI.WebControls.LinqDataSource.Inserted>, <xref:System.Web.UI.WebControls.LinqDataSource.Selected>, and <xref:System.Web.UI.WebControls.LinqDataSource.Updated> events and retrieve the exception, if any, through the <xref:System.Web.UI.WebControls.LinqDataSourceStatusEventArgs.Exception> property.
+
+If an exception is raised during the data operation, the exception is stored in the <xref:System.Web.UI.WebControls.LinqDataSourceStatusEventArgs.Exception> property. You can create event handlers for the <xref:System.Web.UI.WebControls.LinqDataSource.ContextCreated>, <xref:System.Web.UI.WebControls.LinqDataSource.Deleted>, <xref:System.Web.UI.WebControls.LinqDataSource.Inserted>, <xref:System.Web.UI.WebControls.LinqDataSource.Selected>, and <xref:System.Web.UI.WebControls.LinqDataSource.Updated> events and retrieve the exception, if any, through the <xref:System.Web.UI.WebControls.LinqDataSourceStatusEventArgs.Exception> property.
 
 ## Examples
  The following example shows an event handler for the <xref:System.Web.UI.WebControls.LinqDataSource.Inserted> event. In the event handler, if the <xref:System.Web.UI.WebControls.LinqDataSourceStatusEventArgs.Exception> property is `null`, the product ID is retrieved from the object in the <xref:System.Web.UI.WebControls.LinqDataSourceStatusEventArgs.Result> property. The product ID is a primary key for the table and is set by the database, so the value is not known until the insert operation has finished. The exception message is logged if the <xref:System.Web.UI.WebControls.LinqDataSourceStatusEventArgs.Exception> property is not equal to `null`. The <xref:System.Web.UI.WebControls.LinqDataSourceStatusEventArgs.ExceptionHandled> property is then set to `true`.
@@ -202,7 +206,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You can create event handlers for the <xref:System.Web.UI.WebControls.LinqDataSource.ContextCreated>, <xref:System.Web.UI.WebControls.LinqDataSource.Deleted>, <xref:System.Web.UI.WebControls.LinqDataSource.Inserted>, <xref:System.Web.UI.WebControls.LinqDataSource.Selected>, and <xref:System.Web.UI.WebControls.LinqDataSource.Updated> events to examine any exceptions that occurred during those operations. If you handle the exception and do not want it to be thrown again, set the <xref:System.Web.UI.WebControls.LinqDataSourceStatusEventArgs.ExceptionHandled> property to `true`. If you do not set the <xref:System.Web.UI.WebControls.LinqDataSourceStatusEventArgs.ExceptionHandled> property to `true`, the exception will be propagated to the next event handler in the call stack.
+
+You can create event handlers for the <xref:System.Web.UI.WebControls.LinqDataSource.ContextCreated>, <xref:System.Web.UI.WebControls.LinqDataSource.Deleted>, <xref:System.Web.UI.WebControls.LinqDataSource.Inserted>, <xref:System.Web.UI.WebControls.LinqDataSource.Selected>, and <xref:System.Web.UI.WebControls.LinqDataSource.Updated> events to examine any exceptions that occurred during those operations. If you handle the exception and do not want it to be thrown again, set the <xref:System.Web.UI.WebControls.LinqDataSourceStatusEventArgs.ExceptionHandled> property to `true`. If you do not set the <xref:System.Web.UI.WebControls.LinqDataSourceStatusEventArgs.ExceptionHandled> property to `true`, the exception will be propagated to the next event handler in the call stack.
 
 ## Examples
  The following example shows an event handler for the <xref:System.Web.UI.WebControls.LinqDataSource.Inserted> event. In the event handler, if the <xref:System.Web.UI.WebControls.LinqDataSourceStatusEventArgs.Exception> property is `null`, the product ID is retrieved from the object in the <xref:System.Web.UI.WebControls.LinqDataSourceStatusEventArgs.Result> property. The product ID is a primary key for the table and is set by the database, therefore the value is not known until the insert operation has finished. The exception message is logged if the <xref:System.Web.UI.WebControls.LinqDataSourceStatusEventArgs.Exception> property is not equal to `null`. The <xref:System.Web.UI.WebControls.LinqDataSourceStatusEventArgs.ExceptionHandled> property is then set to `true`.
@@ -243,7 +248,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You use the <xref:System.Web.UI.WebControls.LinqDataSourceStatusEventArgs.Result> property to examine values returned from a data operation. You can retrieve output parameters from a data operation or modify the values returned from a query.
+
+You use the <xref:System.Web.UI.WebControls.LinqDataSourceStatusEventArgs.Result> property to examine values returned from a data operation. You can retrieve output parameters from a data operation or modify the values returned from a query.
 
  The data stored in the <xref:System.Web.UI.WebControls.LinqDataSourceStatusEventArgs.Result> property depends on the type of data operation that has been performed. When you delete data, the <xref:System.Web.UI.WebControls.LinqDataSourceStatusEventArgs.Result> property contains an object of the type specified in the <xref:System.Web.UI.WebControls.LinqDataSource.TableName> property, with the original values that were deleted from the data source. When you insert or update data, the <xref:System.Web.UI.WebControls.LinqDataSourceStatusEventArgs.Result> property contains an object of the type specified in the <xref:System.Web.UI.WebControls.LinqDataSource.TableName> property, with the new values that were saved to the data source. When you select data, the <xref:System.Web.UI.WebControls.LinqDataSourceStatusEventArgs.Result> property contains the results of the query.
 
@@ -288,7 +294,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You use the <xref:System.Web.UI.WebControls.LinqDataSourceStatusEventArgs.TotalRowCount> property to get the number of records in the data set during a data retrieval operation. Typically, you retrieve this property when you are displaying pages of data and want to show the total number of records.
+
+You use the <xref:System.Web.UI.WebControls.LinqDataSourceStatusEventArgs.TotalRowCount> property to get the number of records in the data set during a data retrieval operation. Typically, you retrieve this property when you are displaying pages of data and want to show the total number of records.
 
  When data is being paged, the value in the <xref:System.Web.UI.WebControls.LinqDataSourceStatusEventArgs.TotalRowCount> property might be different from the actual number of rows that are returned by the query. This is because the query returns only the number of rows that are needed for that page of data.
 

@@ -48,7 +48,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- During the initial (prepare) phase of the transaction, the transaction manager passes this type to the resource manager by calling the <xref:System.Transactions.IEnlistmentNotification.Prepare*> method to obtain a resource's vote on the transaction. Depending on whether it votes to commit or roll back, your implementation of the resource manager should call the <xref:System.Transactions.PreparingEnlistment.Prepared*> or <xref:System.Transactions.PreparingEnlistment.ForceRollback*> methods of this type.
+
+During the initial (prepare) phase of the transaction, the transaction manager passes this type to the resource manager by calling the <xref:System.Transactions.IEnlistmentNotification.Prepare*> method to obtain a resource's vote on the transaction. Depending on whether it votes to commit or roll back, your implementation of the resource manager should call the <xref:System.Transactions.PreparingEnlistment.Prepared*> or <xref:System.Transactions.PreparingEnlistment.ForceRollback*> methods of this type.
 
  The resource manager can also call the <xref:System.Transactions.Enlistment.Done*> method at anytime before it has called the <xref:System.Transactions.PreparingEnlistment.Prepared*> method. By doing so, the enlistment is casting a read only vote, meaning that it votes commit on the transaction but does not need to receive the final outcome.
 
@@ -116,7 +117,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- An implementation of the <xref:System.Transactions.IEnlistmentNotification.Prepare*> method of the <xref:System.Transactions.IEnlistmentNotification> interface calls this method to indicate that the transaction must be rolled back.
+
+An implementation of the <xref:System.Transactions.IEnlistmentNotification.Prepare*> method of the <xref:System.Transactions.IEnlistmentNotification> interface calls this method to indicate that the transaction must be rolled back.
 
 ## Examples
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_CFX/tx_enlist/cs/enlist.cs" id="Snippet2":::
@@ -213,7 +215,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- In the first (prepare) phase of a two phase commit, a resource manager implementing the <xref:System.Transactions.IEnlistmentNotification.Prepare*> method of the <xref:System.Transactions.IEnlistmentNotification> interface, calls this method to indicate that the transaction can be committed.
+
+In the first (prepare) phase of a two phase commit, a resource manager implementing the <xref:System.Transactions.IEnlistmentNotification.Prepare*> method of the <xref:System.Transactions.IEnlistmentNotification> interface, calls this method to indicate that the transaction can be committed.
 
  The resource manager can call the <xref:System.Transactions.Enlistment.Done*> method at anytime before it has called this method. By doing so, the enlistment is casting a read only vote, meaning that it votes commit on the transaction but does not need to receive the final outcome.
 

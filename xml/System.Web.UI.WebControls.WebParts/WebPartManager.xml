@@ -57,7 +57,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control acts as the hub or control center of a Web Parts application. There must be one--and only one--<xref:System.Web.UI.WebControls.WebParts.WebPartManager> control instance on every page that uses Web Parts controls. As with most aspects of Web Parts applications, the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control works only with authenticated users. Further, its functionality works almost entirely with server controls that reside within Web Parts zones that inherit from the <xref:System.Web.UI.WebControls.WebParts.WebZone> class. Server controls that reside on a page outside of these zones can have very little Web Parts functionality or interaction with the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control acts as the hub or control center of a Web Parts application. There must be one--and only one--<xref:System.Web.UI.WebControls.WebParts.WebPartManager> control instance on every page that uses Web Parts controls. As with most aspects of Web Parts applications, the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control works only with authenticated users. Further, its functionality works almost entirely with server controls that reside within Web Parts zones that inherit from the <xref:System.Web.UI.WebControls.WebParts.WebZone> class. Server controls that reside on a page outside of these zones can have very little Web Parts functionality or interaction with the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control.
 
  As the hub for Web Parts functionality on a page, the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control carries out the kinds of tasks described in the following table.
 
@@ -192,7 +193,8 @@ The following code example demonstrates both declarative and programmatic use of
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.%23ctor*> constructor initializes several important variables used by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control. One assignment that directly impacts all Web Parts pages is the fact that the default page display mode is set to browse mode (<xref:System.Web.UI.WebControls.WebParts.WebPartManager.BrowseDisplayMode>).
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.%23ctor*> constructor initializes several important variables used by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control. One assignment that directly impacts all Web Parts pages is the fact that the default page display mode is set to browse mode (<xref:System.Web.UI.WebControls.WebParts.WebPartManager.BrowseDisplayMode>).
 
  ]]></format>
         </remarks>
@@ -221,7 +223,8 @@ The following code example demonstrates both declarative and programmatic use of
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ActivateConnections*> method is called on each request to a page to activate existing connections between <xref:System.Web.UI.WebControls.WebParts.WebPart> and other server controls residing in <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase> zones. In some cases, for instance if there is a conflict in the connections being activated, this method in turn calls the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisconnectWebPart*> method to end the problematic connection. During the disconnection process the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsDisconnecting> event is raised. Normally developers can cancel this event, but in the case where this is a conflict among the connections it cannot be cancelled, because the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control needs to resolve the conflict in order to finish the process of activating connections. For details, see <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsDisconnecting> event.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ActivateConnections*> method is called on each request to a page to activate existing connections between <xref:System.Web.UI.WebControls.WebParts.WebPart> and other server controls residing in <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase> zones. In some cases, for instance if there is a conflict in the connections being activated, this method in turn calls the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisconnectWebPart*> method to end the problematic connection. During the disconnection process the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsDisconnecting> event is raised. Normally developers can cancel this event, but in the case where this is a conflict among the connections it cannot be cancelled, because the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control needs to resolve the conflict in order to finish the process of activating connections. For details, see <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsDisconnecting> event.
 
  ]]></format>
         </remarks>
@@ -258,7 +261,8 @@ The following code example demonstrates both declarative and programmatic use of
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.AddWebPart*> method is used both to add new dynamic <xref:System.Web.UI.WebControls.WebParts.WebPart> controls to a page, and to reopen static or dynamic controls that have previously been closed on a page. When the method is called to add a new control, it actually creates a copy of the control referenced in the `webPart` parameter. A new ID is generated for the copy of the control, so developers should reference the <xref:System.Web.UI.WebControls.WebParts.WebPart> control returned from the method to get the new ID value. When the method is called to reopen a previously closed control, it returns a direct reference to the control referenced by the `webPart` parameter.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.AddWebPart*> method is used both to add new dynamic <xref:System.Web.UI.WebControls.WebParts.WebPart> controls to a page, and to reopen static or dynamic controls that have previously been closed on a page. When the method is called to add a new control, it actually creates a copy of the control referenced in the `webPart` parameter. A new ID is generated for the copy of the control, so developers should reference the <xref:System.Web.UI.WebControls.WebParts.WebPart> control returned from the method to get the new ID value. When the method is called to reopen a previously closed control, it returns a direct reference to the control referenced by the `webPart` parameter.
 
 > [!IMPORTANT]
 > You should always use the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.AddWebPart*> method, rather than the <xref:System.Web.UI.ControlCollection.Add*> method of the collection of controls referenced by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.Controls?displayProperty=nameWithType> property, to add <xref:System.Web.UI.WebControls.WebParts.WebPart> controls programmatically to the page, because using the <xref:System.Web.UI.ControlCollection.Add*> method throws an exception. To add a control that is not a <xref:System.Web.UI.WebControls.WebParts.WebPart> control (in other words, a server control that will be wrapped with a <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> control at run time), you should first call the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CreateWebPart*> method to create the control, and then call the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.AddWebPart*> method to add the control. For a demonstration of this approach, see the Example section.
@@ -311,7 +315,8 @@ The following code example demonstrates use of the <xref:System.Web.UI.WebContro
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.AuthorizeWebPart> event occurs whenever a <xref:System.Web.UI.WebControls.WebParts.WebPart> control is being added to a page. There are a number of common scenarios where a control can be added to a page. For a full description of these, see the Remarks section for the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.IsAuthorized*> method. When a control is added, it must be checked to see whether its <xref:System.Web.UI.WebControls.WebParts.WebPart.AuthorizationFilter> property has been set and, if so, whether the control is authorized to be added to the page.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.AuthorizeWebPart> event occurs whenever a <xref:System.Web.UI.WebControls.WebParts.WebPart> control is being added to a page. There are a number of common scenarios where a control can be added to a page. For a full description of these, see the Remarks section for the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.IsAuthorized*> method. When a control is added, it must be checked to see whether its <xref:System.Web.UI.WebControls.WebParts.WebPart.AuthorizationFilter> property has been set and, if so, whether the control is authorized to be added to the page.
 
  Developers can create event handlers for the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.AuthorizeWebPart> event, to provide filtering for controls. If a control's <xref:System.Web.UI.WebControls.WebParts.WebPart.AuthorizationFilter> property value does not meet the criteria in the event handler code, the control is not added to the page.
 
@@ -364,7 +369,8 @@ The following code example demonstrates how to set a custom event handler for th
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This property uses the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CreateAvailableTransformers*> method to create the collection. By default, it reads the available transformers from the application configuration file.
+
+This property uses the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CreateAvailableTransformers*> method to create the collection. By default, it reads the available transformers from the application configuration file.
 
  ]]></format>
         </remarks>
@@ -397,7 +403,8 @@ The following code example demonstrates how to set a custom event handler for th
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.BeginWebPartConnecting*> method exists so that the process of forming connections between controls can be done in distinct stages, giving developers more control over the connection process. The method performs a set of initial checks to ensure that `webPart` is in a state where a connection can legitimately be formed. If `webPart` passes all the checks, it is then set as the currently selected control (see the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SelectedWebPart> property), and the connecting process can continue.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.BeginWebPartConnecting*> method exists so that the process of forming connections between controls can be done in distinct stages, giving developers more control over the connection process. The method performs a set of initial checks to ensure that `webPart` is in a state where a connection can legitimately be formed. If `webPart` passes all the checks, it is then set as the currently selected control (see the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SelectedWebPart> property), and the connecting process can continue.
 
  ]]></format>
         </remarks>
@@ -446,7 +453,8 @@ The following code example demonstrates how to set a custom event handler for th
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.BeginWebPartEditing*> method exists so that the process of editing controls can be done in distinct stages, giving developers more control over the process. The method performs a set of initial checks to ensure that `webPart` is in a state where it can be edited. If `webPart` passes all the checks, it is then set as the currently selected control (see the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SelectedWebPart> property), and the editing process can continue.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.BeginWebPartEditing*> method exists so that the process of editing controls can be done in distinct stages, giving developers more control over the process. The method performs a set of initial checks to ensure that `webPart` is in a state where it can be edited. If `webPart` passes all the checks, it is then set as the currently selected control (see the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SelectedWebPart> property), and the editing process can continue.
 
  ]]></format>
         </remarks>
@@ -489,7 +497,8 @@ The following code example demonstrates how to set a custom event handler for th
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.BrowseDisplayMode> field references a custom <xref:System.Web.UI.WebControls.WebParts.WebPartDisplayMode> object that is created and contained by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control. Because this is a static object, you can refer to it directly through the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> class without needing an instance of the control.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.BrowseDisplayMode> field references a custom <xref:System.Web.UI.WebControls.WebParts.WebPartDisplayMode> object that is created and contained by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control. Because this is a static object, you can refer to it directly through the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> class without needing an instance of the control.
 
  When a page that contains Web Parts controls first loads, it is in <xref:System.Web.UI.WebControls.WebParts.WebPartManager.BrowseDisplayMode> (browse mode) by default. When users are simply browsing as they would on a normal Web page, the page remains in browse mode. If users want to personalize a page's layout, controls, appearance, or behavior, they must switch the page into one of the specialized display modes available through the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SupportedDisplayModes> property.
 
@@ -521,7 +530,8 @@ The following code example demonstrates how to work with the <xref:System.Web.UI
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CanConnectWebParts*> method is used to determine whether two <xref:System.Web.UI.WebControls.WebParts.WebPart> controls can be connected. The method is typically used as a conditional check prior to calling the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectWebParts*> method.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CanConnectWebParts*> method is used to determine whether two <xref:System.Web.UI.WebControls.WebParts.WebPart> controls can be connected. The method is typically used as a conditional check prior to calling the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectWebParts*> method.
 
  The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CanConnectWebParts*> method checks a number of criteria that must be met before two controls can form a connection. The following list summarizes the primary criteria for making a connection. If all these criteria (plus some additional internal conditions) are met, the method returns `true`, meaning that the controls can be connected:
 
@@ -590,7 +600,8 @@ The following code example demonstrates how to work with the <xref:System.Web.UI
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is used to connect `provider` and `consumer` when both controls have compatible connection point types, so that a <xref:System.Web.UI.WebControls.WebParts.WebPartTransformer> object is not needed. You might want to use this method to verify that two controls can be connected before calling <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectWebParts*> to create a programmatic connection.
+
+This method is used to connect `provider` and `consumer` when both controls have compatible connection point types, so that a <xref:System.Web.UI.WebControls.WebParts.WebPartTransformer> object is not needed. You might want to use this method to verify that two controls can be connected before calling <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectWebParts*> to create a programmatic connection.
 
  This overload uses the same implementation as the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CanConnectWebParts(System.Web.UI.WebControls.WebParts.WebPart,System.Web.UI.WebControls.WebParts.ProviderConnectionPoint,System.Web.UI.WebControls.WebParts.WebPart,System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint,System.Web.UI.WebControls.WebParts.WebPartTransformer)> method overload, with the only exception being that this overload does not require a transformer.
 
@@ -668,7 +679,8 @@ The following code example demonstrates how to use this method.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is used to connect `provider` and `consumer` when both controls have incompatible connection point types, so that a <xref:System.Web.UI.WebControls.WebParts.WebPartTransformer> object is required. You might want to use this method to verify that two controls can be connected before calling <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectWebParts*> to create a programmatic connection.
+
+This method is used to connect `provider` and `consumer` when both controls have incompatible connection point types, so that a <xref:System.Web.UI.WebControls.WebParts.WebPartTransformer> object is required. You might want to use this method to verify that two controls can be connected before calling <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectWebParts*> to create a programmatic connection.
 
  This overload uses the same implementation as the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CanConnectWebParts(System.Web.UI.WebControls.WebParts.WebPart,System.Web.UI.WebControls.WebParts.ProviderConnectionPoint,System.Web.UI.WebControls.WebParts.WebPart,System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint)> method overload, with the only exception being that this overload requires a transformer.
 
@@ -698,7 +710,8 @@ The following code example demonstrates how to use this method.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CatalogDisplayMode> field references a custom <xref:System.Web.UI.WebControls.WebParts.WebPartDisplayMode> object that is created and contained by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control. Because this is a static object, you can refer to it directly through the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> class without needing an instance of the control.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CatalogDisplayMode> field references a custom <xref:System.Web.UI.WebControls.WebParts.WebPartDisplayMode> object that is created and contained by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control. Because this is a static object, you can refer to it directly through the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> class without needing an instance of the control.
 
  When users want to add controls to a page, if a catalog of server controls is available, they can switch the page to <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CatalogDisplayMode> (catalog mode), and the catalog user interface (UI) appears. The UI for a Web Parts catalog is provided by a <xref:System.Web.UI.WebControls.WebParts.CatalogZoneBase> zone control. Developers add this zone to the page at design time, and then add server controls to the zone, so that users will be able to add those controls to their pages at run time. After the developer has added these controls, catalog mode becomes a supported display mode on the page because the necessary controls are there to enable catalog mode.
 
@@ -769,7 +782,8 @@ The following code example demonstrates how to work with the <xref:System.Web.UI
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When a user closes a <xref:System.Web.UI.WebControls.WebParts.WebPart> control, normally no message is displayed. For more information about what it means to close a control, see the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CloseWebPart*> method.
+
+When a user closes a <xref:System.Web.UI.WebControls.WebParts.WebPart> control, normally no message is displayed. For more information about what it means to close a control, see the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CloseWebPart*> method.
 
  However, when a control is connected to another control and is acting as a provider of data to the other control, a default warning message is displayed when a user attempts to close the control. The message tells users that a provider control is about to close, which means that controls connected to this provider as consumers will no longer have any data to consume. The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CloseProviderWarning> property enables developers to customize the warning message that is displayed to the user.
 
@@ -835,7 +849,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CloseWebPart*> method removes a <xref:System.Web.UI.WebControls.WebParts.WebPart> or other server control so that it is not rendered on the Web page that originally contained it. The closed control is added to a <xref:System.Web.UI.WebControls.WebParts.PageCatalogPart> object, which maintains a reference to the closed control and makes it possible for the control to be restored to the page. A closed <xref:System.Web.UI.WebControls.WebParts.WebPart> control still appears in the collection referenced by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebParts> property.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CloseWebPart*> method removes a <xref:System.Web.UI.WebControls.WebParts.WebPart> or other server control so that it is not rendered on the Web page that originally contained it. The closed control is added to a <xref:System.Web.UI.WebControls.WebParts.PageCatalogPart> object, which maintains a reference to the closed control and makes it possible for the control to be restored to the page. A closed <xref:System.Web.UI.WebControls.WebParts.WebPart> control still appears in the collection referenced by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebParts> property.
 
  Closing a control is different from deleting it. Closed controls are still available to be restored to a page, but a deleted control instance is permanently removed and can never be restored. Regardless of whether a <xref:System.Web.UI.WebControls.WebParts.WebPart> or server control is static (declared in the markup of a page) or dynamic (added to the page programmatically or by a user from a Web Parts catalog), it can be closed and reopened on a page.
 
@@ -911,7 +926,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectDisplayMode> field references a custom <xref:System.Web.UI.WebControls.WebParts.WebPartDisplayMode> object that is created and contained by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control. Because this is a static object, you can refer to it directly through the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> class without needing an instance of the control.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectDisplayMode> field references a custom <xref:System.Web.UI.WebControls.WebParts.WebPartDisplayMode> object that is created and contained by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control. Because this is a static object, you can refer to it directly through the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> class without needing an instance of the control.
 
  When users want to manage connections between <xref:System.Web.UI.WebControls.WebParts.WebPart> controls on a Web page, if a <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone> zone has been declared on the page, they can switch the page into the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectDisplayMode> mode. The connect display mode displays a special UI for managing connections, which includes the ability to connect or disconnect controls, and to edit the details of existing connections.
 
@@ -984,7 +1000,8 @@ The following code example demonstrates the usage of the <xref:System.Web.UI.Web
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.Connections> property provides a way to access the current set of connections on a page. The collection itself is read-only, and developers who want to manipulate a specific connection from the collection should use <xref:System.Web.UI.WebControls.WebParts.WebPartManager> methods such as <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectWebParts*> and <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisconnectWebParts*>.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.Connections> property provides a way to access the current set of connections on a page. The collection itself is read-only, and developers who want to manipulate a specific connection from the collection should use <xref:System.Web.UI.WebControls.WebParts.WebPartManager> methods such as <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectWebParts*> and <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisconnectWebParts*>.
 
 ## Examples
 
@@ -1037,7 +1054,8 @@ The following code example demonstrates declarative and programmatic use of the 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- In the life cycle of connections, this event occurs after a page completes its loading process. It also occurs after the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsConnected> event, which indicates only that the <xref:System.Web.UI.WebControls.WebParts.WebPart> or server controls involved in a specific connection have successfully connected. In a case where there are multiple connections on a page, the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectionsActivated> method indicates that all the valid Web Parts connections on a page are now active and able to share data. Knowing that all connections are active, developers can carry out any number of tasks, including notifying users of the status of all the connections, notifying consumer controls to process and display data from their providers, and so on.
+
+In the life cycle of connections, this event occurs after a page completes its loading process. It also occurs after the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsConnected> event, which indicates only that the <xref:System.Web.UI.WebControls.WebParts.WebPart> or server controls involved in a specific connection have successfully connected. In a case where there are multiple connections on a page, the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectionsActivated> method indicates that all the valid Web Parts connections on a page are now active and able to share data. Knowing that all connections are active, developers can carry out any number of tasks, including notifying users of the status of all the connections, notifying consumer controls to process and display data from their providers, and so on.
 
  This event is associated with the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnConnectionsActivated*> method, which raises the event and allows developers to create custom handlers for the event.
 
@@ -1073,7 +1091,8 @@ The following code example demonstrates declarative and programmatic use of the 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- In the life cycle of connections, this event occurs as a page is completing its loading process, just before the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ActivateConnections*> method is called. It is different from the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsConnecting> event, which involves a particular connection between <xref:System.Web.UI.WebControls.WebParts.WebPart> or other server controls. The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectionsActivating> event occurs when all the possible connections on a page have been connected and are about to be activated.
+
+In the life cycle of connections, this event occurs as a page is completing its loading process, just before the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ActivateConnections*> method is called. It is different from the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsConnecting> event, which involves a particular connection between <xref:System.Web.UI.WebControls.WebParts.WebPart> or other server controls. The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectionsActivating> event occurs when all the possible connections on a page have been connected and are about to be activated.
 
  The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectionsActivating> event is associated with the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnConnectionsActivating*> method, which raises the event. Control developers who want to extend the type of connections that can be added to a page could override the protected <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnConnectionsActivating*> method and activate additional types of connections.
 
@@ -1098,7 +1117,8 @@ The following code example demonstrates declarative and programmatic use of the 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectWebParts*> method forms a connection between any two <xref:System.Web.UI.WebControls.WebParts.WebPart> controls that can be connected. Before calling this method to create a connection, you might also want to call the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CanConnectWebParts*> method in a conditional check to ensure that the controls meet the requirements for forming a connection.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectWebParts*> method forms a connection between any two <xref:System.Web.UI.WebControls.WebParts.WebPart> controls that can be connected. Before calling this method to create a connection, you might also want to call the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CanConnectWebParts*> method in a conditional check to ensure that the controls meet the requirements for forming a connection.
 
 > [!NOTE]
 > It is also possible to create a connection between two server controls that are not <xref:System.Web.UI.WebControls.WebParts.WebPart> controls. In general, the two controls would have to be custom server controls (for example, controls that inherit from <xref:System.Web.UI.WebControls.WebControl> or existing ASP.NET server controls) so that you could add the required members. The controls would also have to meet the requirements specified below.
@@ -1160,7 +1180,8 @@ The following code example demonstrates declarative and programmatic use of the 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This overload is used to connect controls when their connection points are sufficiently compatible that they can connect without using a <xref:System.Web.UI.WebControls.WebParts.WebPartTransformer> object. When this overload of the method is called, it simply passes the call to the other overloaded version of the method, and passes `null` for the parameter that requires a <xref:System.Web.UI.WebControls.WebParts.WebPartTransformer> object.
+
+This overload is used to connect controls when their connection points are sufficiently compatible that they can connect without using a <xref:System.Web.UI.WebControls.WebParts.WebPartTransformer> object. When this overload of the method is called, it simply passes the call to the other overloaded version of the method, and passes `null` for the parameter that requires a <xref:System.Web.UI.WebControls.WebParts.WebPartTransformer> object.
 
  When you attempt to connect two controls programmatically, you can use the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CanConnectWebParts*> method in a conditional check to determine whether the controls can be directly connected.
 
@@ -1219,7 +1240,8 @@ The following code example demonstrates how to use this method to create a conne
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This overload is used to connect controls when their connection points are incompatible. The incompatibility occurs when `consumer` implements a different interface than `provider` as its connection point. The transformer converts the data into a type that can be understood by `consumer`.
+
+This overload is used to connect controls when their connection points are incompatible. The incompatibility occurs when `consumer` implements a different interface than `provider` as its connection point. The transformer converts the data into a type that can be understood by `consumer`.
 
  ]]></format>
         </remarks>
@@ -1260,7 +1282,8 @@ The following code example demonstrates how to use this method to create a conne
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.Controls> property does not reference the other controls that are referenced by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control, such as the various zone controls, <xref:System.Web.UI.WebControls.WebParts.EditorPart> or <xref:System.Web.UI.WebControls.WebParts.CatalogPart> controls, and others.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.Controls> property does not reference the other controls that are referenced by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control, such as the various zone controls, <xref:System.Web.UI.WebControls.WebParts.EditorPart> or <xref:System.Web.UI.WebControls.WebParts.CatalogPart> controls, and others.
 
  This property is used by the Web Parts control set, and in most development situations it is not intended to be called from your code. For this reason, although the property is public, it is hidden from IntelliSense. Developers who want to access the collection of <xref:System.Web.UI.WebControls.WebParts.WebPart> or other server controls managed by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control should use its <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebParts> property.
 
@@ -1297,7 +1320,8 @@ The following code example demonstrates how to use this method to create a conne
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You cannot call the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CopyWebPart*> method directly from your code. This method is called internally by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control as part of the process of adding a new dynamic <xref:System.Web.UI.WebControls.WebParts.WebPart> or server control to a page. A dynamic control is added to a page programmatically or through the Web Parts user interface (UI), for example by a user adding a control from a catalog of controls, as opposed to a static control, which is declared directly in the markup of a page.
+
+You cannot call the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CopyWebPart*> method directly from your code. This method is called internally by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control as part of the process of adding a new dynamic <xref:System.Web.UI.WebControls.WebParts.WebPart> or server control to a page. A dynamic control is added to a page programmatically or through the Web Parts user interface (UI), for example by a user adding a control from a catalog of controls, as opposed to a static control, which is declared directly in the markup of a page.
 
 > [!NOTE]
 > The method can be overridden in a derived class if developers want to enable the method to handle additional control copying scenarios. For details, see the Notes to Inheritors section.
@@ -1396,7 +1420,8 @@ The following code example demonstrates how to use this method to create a conne
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method creates the list of all possible display modes, not just the display modes supported on a particular page. For more information about the supported display modes, see the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SupportedDisplayModes> property.
+
+This method creates the list of all possible display modes, not just the display modes supported on a particular page. For more information about the supported display modes, see the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SupportedDisplayModes> property.
 
  By default, the Web Parts control set creates the following set of display modes to be used on Web Parts pages:
 
@@ -1483,7 +1508,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CreateDynamicConnectionID*> method generates a GUID value and converts it to a string to serve as the unique ID for a connection. The method is called each time a dynamic connection is created.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CreateDynamicConnectionID*> method generates a GUID value and converts it to a string to serve as the unique ID for a connection. The method is called each time a dynamic connection is created.
 
  ]]></format>
         </remarks>
@@ -1522,7 +1548,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When <xref:System.Web.UI.WebControls.WebParts.WebPart> controls are added to a Web page, they can be static (which means the control is declared in the page markup) or dynamic (which means they are added programmatically). In any scenario where the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control is creating new dynamic controls to add to the page, it calls this method to generate a unique ID.
+
+When <xref:System.Web.UI.WebControls.WebParts.WebPart> controls are added to a Web page, they can be static (which means the control is declared in the page markup) or dynamic (which means they are added programmatically). In any scenario where the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control is creating new dynamic controls to add to the page, it calls this method to generate a unique ID.
 
  The method is virtual so that developers can override it if they want to provide a custom implementation for generating the ID.
 
@@ -1568,7 +1595,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CreateErrorWebPart*> method is called when the Web Parts control set attempts to load or create an instance of a dynamic <xref:System.Web.UI.WebControls.WebParts.WebPart> or server control, and it fails for some reason. The method creates an <xref:System.Web.UI.WebControls.WebParts.ErrorWebPart> object, assigns an error message to it, and returns it. The <xref:System.Web.UI.WebControls.WebParts.ErrorWebPart> control is inserted in place of the control that failed, and its error message is displayed on the page.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CreateErrorWebPart*> method is called when the Web Parts control set attempts to load or create an instance of a dynamic <xref:System.Web.UI.WebControls.WebParts.WebPart> or server control, and it fails for some reason. The method creates an <xref:System.Web.UI.WebControls.WebParts.ErrorWebPart> object, assigns an error message to it, and returns it. The <xref:System.Web.UI.WebControls.WebParts.ErrorWebPart> control is inserted in place of the control that failed, and its error message is displayed on the page.
 
  You cannot call the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CreateErrorWebPart*> method directly from your code. However, you can inherit from the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> class and extend the method. For details, see the Notes for Inheritors section.
 
@@ -1609,7 +1637,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CreatePersonalization*> method returns an object to contain and manage the user's personalization settings for the current page. The <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control manages this object.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CreatePersonalization*> method returns an object to contain and manage the user's personalization settings for the current page. The <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control manages this object.
 
  ]]></format>
         </remarks>
@@ -1650,7 +1679,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CreateWebPart*> method is the main mechanism for enabling server controls that are not <xref:System.Web.UI.WebControls.WebParts.WebPart> controls to take on the same functionality as a <xref:System.Web.UI.WebControls.WebParts.WebPart> control, and thus to participate fully in Web Parts applications. By using this method, developers vastly expand the number of server controls that they can use in a Web Parts application, because virtually any type of server control--standard ASP.NET controls, user controls, and custom controls--can be used.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CreateWebPart*> method is the main mechanism for enabling server controls that are not <xref:System.Web.UI.WebControls.WebParts.WebPart> controls to take on the same functionality as a <xref:System.Web.UI.WebControls.WebParts.WebPart> control, and thus to participate fully in Web Parts applications. By using this method, developers vastly expand the number of server controls that they can use in a Web Parts application, because virtually any type of server control--standard ASP.NET controls, user controls, and custom controls--can be used.
 
  The <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control also uses this method in two other scenarios to wrap server controls with a <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> object. When users add server controls to a page by using the <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart> control, if the imported control is not a <xref:System.Web.UI.WebControls.WebParts.WebPart> control, the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CreateWebPart*> method is called. Also, when server controls are declared in persistence format within a <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase> zone on a Web page, the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CreateWebPart*> method is called for any controls that are not <xref:System.Web.UI.WebControls.WebParts.WebPart> controls.
 
@@ -1695,7 +1725,8 @@ The following code example demonstrates use of the <xref:System.Web.UI.WebContro
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When a user deletes a <xref:System.Web.UI.WebControls.WebParts.WebPart> control, normally a default warning message is displayed. It warns the user that when this instance of a control is deleted, the deletion is permanent. The page developer might provide users with a way to add a new instance of the control to the page (such as through a catalog of <xref:System.Web.UI.WebControls.WebParts.WebPart> controls, or through some programmatic means), but the current instance of a control that is deleted is permanently removed. The dialog box that displays the warning includes a button for the user to cancel the deletion, if desired.
+
+When a user deletes a <xref:System.Web.UI.WebControls.WebParts.WebPart> control, normally a default warning message is displayed. It warns the user that when this instance of a control is deleted, the deletion is permanent. The page developer might provide users with a way to add a new instance of the control to the page (such as through a catalog of <xref:System.Web.UI.WebControls.WebParts.WebPart> controls, or through some programmatic means), but the current instance of a control that is deleted is permanently removed. The dialog box that displays the warning includes a button for the user to cancel the deletion, if desired.
 
  The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DeleteWarning> property enables developers to set the warning message that is displayed to the user.
 
@@ -1770,7 +1801,8 @@ The following code example demonstrates the use of the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DeleteWebPart*> method permanently removes the control represented by the `webPart` parameter from a page. Unlike a closed control, which is added to the <xref:System.Web.UI.WebControls.WebParts.PageCatalogPart> control and can be added back to the page, a deleted control instance can never be added back to the page.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DeleteWebPart*> method permanently removes the control represented by the `webPart` parameter from a page. Unlike a closed control, which is added to the <xref:System.Web.UI.WebControls.WebParts.PageCatalogPart> control and can be added back to the page, a deleted control instance can never be added back to the page.
 
 > [!NOTE]
 > As implemented by the Web Parts control set, the ability for users to delete a dynamic <xref:System.Web.UI.WebControls.WebParts.WebPart> control depends on the user and the personalization scope in which the control was added to a page. If the control is added when the page is in shared scope (by a user who has permissions), then the control cannot be deleted by individual users when the page is in user scope.
@@ -1813,7 +1845,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DesignDisplayMode> field references a custom <xref:System.Web.UI.WebControls.WebParts.WebPartDisplayMode> object that is created and contained by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control. Because this is a static object, you can refer to it directly through the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> class without needing an instance of the control.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DesignDisplayMode> field references a custom <xref:System.Web.UI.WebControls.WebParts.WebPartDisplayMode> object that is created and contained by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control. Because this is a static object, you can refer to it directly through the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> class without needing an instance of the control.
 
  When a page that contains Web Parts controls first loads, it is in <xref:System.Web.UI.WebControls.WebParts.WebPartManager.BrowseDisplayMode> (browse mode) by default. When users want to change the layout of the page by moving controls to different zones or within the current zones, they must first switch the page to <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DesignDisplayMode> (design mode). In design mode, the user interface (UI) for the various zones appears, and users can then drag controls to change the layout.
 
@@ -1860,7 +1893,8 @@ The following code example demonstrates how to work with the <xref:System.Web.UI
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisconnectWebPart*> method is called internally by the Web Parts control set when a control is either closed on a page or deleted from a page. In such a scenario, the method is called to remove the control from any connections where it is involved as a consumer or provider. If the control is removed from any connection, this method also calls the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisconnectWebParts*> method to end any connections in which `webPart` was involved.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisconnectWebPart*> method is called internally by the Web Parts control set when a control is either closed on a page or deleted from a page. In such a scenario, the method is called to remove the control from any connections where it is involved as a consumer or provider. If the control is removed from any connection, this method also calls the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisconnectWebParts*> method to end any connections in which `webPart` was involved.
 
  When the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisconnectWebPart*> method is called, it raises the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsDisconnecting> event. Normally this event can be cancelled, but in two cases it cannot be cancelled. One case occurs during requests to the page, when the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ActivateConnections*> method is called. If there is a conflict among existing connections, the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisconnectWebPart*> method will be invoked to close one of the conflicting connections, and in this instance the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsDisconnecting> event cannot be cancelled, because the conflict must be resolved.
 
@@ -1928,7 +1962,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisconnectWebParts*> method carries out the complete process of ending a connection between <xref:System.Web.UI.WebControls.WebParts.WebPart> or server controls, when you pass it the `connection` parameter.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisconnectWebParts*> method carries out the complete process of ending a connection between <xref:System.Web.UI.WebControls.WebParts.WebPart> or server controls, when you pass it the `connection` parameter.
 
  This method is used to disconnect controls when you place an `<asp:connectionszone>` element in a Web page, to provide a user interface (UI) for managing connections. When a page is in connect display mode (<xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectDisplayMode>), and a current connection exists, users can click a button that calls the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisconnectWebParts*> method to end the connection.
 
@@ -2026,7 +2061,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A page that contains Web Parts controls is always in one of several possible display modes. For details about display modes, see [Web Parts Page Display Modes](https://msdn.microsoft.com/library/cc106284-82dc-4770-98cb-673dbc4ed4c4).
+
+A page that contains Web Parts controls is always in one of several possible display modes. For details about display modes, see [Web Parts Page Display Modes](https://msdn.microsoft.com/library/cc106284-82dc-4770-98cb-673dbc4ed4c4).
 
  The <xref:System.Web.UI.WebControls.WebParts.WebPartManager> class creates the display modes for a Web page. Using the base <xref:System.Web.UI.WebControls.WebParts.WebPartDisplayMode> class, the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control creates several standard display mode objects that can be used on pages that contain Web Parts controls. These standard display modes are described in the <xref:System.Web.UI.WebControls.WebParts.WebPartDisplayMode> class overview.
 
@@ -2081,7 +2117,8 @@ The following code example demonstrates programmatic use of the <xref:System.Web
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Display modes are an integral part of Web Parts applications. When users switch to a different display mode on a Web page, the page will often take on a very different appearance, depending on the purpose of the new display mode. After a display mode has changed, you might want to make certain changes in the user interface (UI), such as hiding or showing certain controls, changing the appearance of selected UI elements, and so on.
+
+Display modes are an integral part of Web Parts applications. When users switch to a different display mode on a Web page, the page will often take on a very different appearance, depending on the purpose of the new display mode. After a display mode has changed, you might want to make certain changes in the user interface (UI), such as hiding or showing certain controls, changing the appearance of selected UI elements, and so on.
 
 > [!NOTE]
 > For more information on display modes, see [Web Parts Page Display Modes](https://msdn.microsoft.com/library/cc106284-82dc-4770-98cb-673dbc4ed4c4). For more information on consuming events, see [How to: Consume Events in a Web Forms Application](/dotnet/standard/events/how-to-consume-events-in-a-web-forms-application).
@@ -2114,7 +2151,8 @@ The following code example demonstrates programmatic use of the <xref:System.Web
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Display modes are an integral part of Web Parts applications. When users switch to a different display mode on a Web page, the page will often take on a very different appearance, depending on the purpose of the new display mode. After a user initiates the process of changing to a new display mode by clicking a verb, you might want to make certain changes in the user interface (UI) by using the <xref:System.Web.UI.WebControls.WebParts.WebPartDisplayModeCancelEventArgs.NewDisplayMode> property to determine what the new display mode will be, and then changing various UI elements accordingly. A useful way to do this is to override the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnDisplayModeChanging*> method to customize the UI.
+
+Display modes are an integral part of Web Parts applications. When users switch to a different display mode on a Web page, the page will often take on a very different appearance, depending on the purpose of the new display mode. After a user initiates the process of changing to a new display mode by clicking a verb, you might want to make certain changes in the user interface (UI) by using the <xref:System.Web.UI.WebControls.WebParts.WebPartDisplayModeCancelEventArgs.NewDisplayMode> property to determine what the new display mode will be, and then changing various UI elements accordingly. A useful way to do this is to override the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnDisplayModeChanging*> method to customize the UI.
 
 > [!NOTE]
 > For more information on display modes, see [Web Parts Page Display Modes](https://msdn.microsoft.com/library/cc106284-82dc-4770-98cb-673dbc4ed4c4). For more information on consuming events, see [How to: Consume Events in a Web Forms Application](/dotnet/standard/events/how-to-consume-events-in-a-web-forms-application).
@@ -2158,7 +2196,8 @@ The following code example demonstrates programmatic use of the <xref:System.Web
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisplayModes> property references all associated display modes, in contrast with the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SupportedDisplayModes> property, which references only the display modes that are available (supported) on the current page.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisplayModes> property references all associated display modes, in contrast with the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SupportedDisplayModes> property, which references only the display modes that are available (supported) on the current page.
 
  Two of the provided display modes, browse and design, are always supported on a page. The other three display modes, edit, catalog, and connections, are supported only when a page has the corresponding type of zone necessary for a particular display mode to work. For example, if you page does not contain an <xref:System.Web.UI.WebControls.WebParts.EditorZone> zone, the edit display mode would appear in the collection referenced by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisplayModes> property, but would not appear in the collection referenced by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SupportedDisplayModes> property.
 
@@ -2206,7 +2245,8 @@ The following code example shows the programmatic use of the <xref:System.Web.UI
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Dynamic connections are connections that are created programmatically, as opposed to statically. Static connections are created by declaring them in the markup of a Web Forms page. Dynamic connections are formed either programmatically, or by a user creating a connection using the connection user interface (UI).
+
+Dynamic connections are connections that are created programmatically, as opposed to statically. Static connections are created by declaring them in the markup of a Web Forms page. Dynamic connections are formed either programmatically, or by a user creating a connection using the connection user interface (UI).
 
  The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DynamicConnections*> collection, though it is read-only and you cannot change its contents, does provide programmatic access to each dynamic connection object.
 
@@ -2241,7 +2281,8 @@ The following code example shows the programmatic use of the <xref:System.Web.UI
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.EditDisplayMode> field references a custom <xref:System.Web.UI.WebControls.WebParts.WebPartDisplayMode> object that is created and contained by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control. Because this is a static object, you can refer to it directly through the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> class without needing an instance of the control.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.EditDisplayMode> field references a custom <xref:System.Web.UI.WebControls.WebParts.WebPartDisplayMode> object that is created and contained by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control. Because this is a static object, you can refer to it directly through the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> class without needing an instance of the control.
 
  When a page that contains Web Parts controls first loads, it is in <xref:System.Web.UI.WebControls.WebParts.WebPartManager.BrowseDisplayMode> (browse mode) by default. When users want to edit or modify a server control, they must first switch the page to <xref:System.Web.UI.WebControls.WebParts.WebPartManager.EditDisplayMode> (edit mode). Second, they must select a specific server control to edit, by clicking the edit verb on the verbs menu in that control's header. After the control is in edit mode, the editing user interface (UI) appears for editing the selected control.
 
@@ -2293,7 +2334,8 @@ The following code example demonstrates how to work with the <xref:System.Web.UI
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.EnableClientScript> property provides a way for developers to disable client scripts. You might want to disable client scripting for security purposes, or to ensure that all users of a page will have a similar user experience, even if they use different browsers.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.EnableClientScript> property provides a way for developers to disable client scripts. You might want to disable client scripting for security purposes, or to ensure that all users of a page will have a similar user experience, even if they use different browsers.
 
  You can disable client scripting by adding an `EnableClientScript` attribute to the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> element on a Web page, as in the following line of declarative code:
 
@@ -2347,7 +2389,8 @@ The following code example demonstrates how to work with the <xref:System.Web.UI
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control overrides the base <xref:System.Web.UI.Control.EnableTheming> property to ensure that it always returns a value of `true`. This is done because the Web Parts control set requires the use of themes to render the Web Parts controls that are child controls of the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control and that form the user interface (UI) of a Web page. For example, themes are used to render the various zones, and the controls that reside in the zones, including the various types of part controls (controls that inherit from the <xref:System.Web.UI.WebControls.WebParts.Part> class), user controls, ASP.NET server controls, and custom server controls.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control overrides the base <xref:System.Web.UI.Control.EnableTheming> property to ensure that it always returns a value of `true`. This is done because the Web Parts control set requires the use of themes to render the Web Parts controls that are child controls of the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control and that form the user interface (UI) of a Web page. For example, themes are used to render the various zones, and the controls that reside in the zones, including the various types of part controls (controls that inherit from the <xref:System.Web.UI.WebControls.WebParts.Part> class), user controls, ASP.NET server controls, and custom server controls.
 
  Although the overridden <xref:System.Web.UI.WebControls.WebParts.WebPartManager.EnableTheming> property is implemented as a read/write property in accordance with its base property, you cannot set the property, because by design it must always return a value of `true`. If you attempt to set the property, a <xref:System.NotSupportedException> exception is thrown.
 
@@ -2380,7 +2423,8 @@ The following code example demonstrates how to work with the <xref:System.Web.UI
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.EndWebPartConnecting*> method finishes the process of connecting a <xref:System.Web.UI.WebControls.WebParts.WebPart> control to another control. It is the counterpart to the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.BeginWebPartConnecting*> method.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.EndWebPartConnecting*> method finishes the process of connecting a <xref:System.Web.UI.WebControls.WebParts.WebPart> control to another control. It is the counterpart to the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.BeginWebPartConnecting*> method.
 
  The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.EndWebPartConnecting*> method ensures that the personalization object referenced by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.Personalization> property is modifiable, which is necessary because forming a connection is itself a type of personalization. The method then ensures that the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SelectedWebPart*> object is not `null`, and finally calls the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnSelectedWebPartChanged*> method.
 
@@ -2417,7 +2461,8 @@ The following code example demonstrates how to work with the <xref:System.Web.UI
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.EndWebPartEditing*> method finishes the process of editing a <xref:System.Web.UI.WebControls.WebParts.WebPart> control. It is the counterpart to the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.BeginWebPartEditing*> method.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.EndWebPartEditing*> method finishes the process of editing a <xref:System.Web.UI.WebControls.WebParts.WebPart> control. It is the counterpart to the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.BeginWebPartEditing*> method.
 
  The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.EndWebPartEditing*> method ensures that the personalization object referenced by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.Personalization> property is modifiable, which is necessary because editing a control is a process that requires personalization changes. The method then ensures that the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SelectedWebPart*> object is not `null`, so that the currently selected <xref:System.Web.UI.WebControls.WebParts.WebPart> control can change, and finally it calls the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnSelectedWebPartChanged*> method.
 
@@ -2454,7 +2499,8 @@ The following code example demonstrates how to work with the <xref:System.Web.UI
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When a user attempts to export sensitive state data from a <xref:System.Web.UI.WebControls.WebParts.WebPart> control, if any of the data being exported comes from a member that was marked as sensitive in the source code, a warning message is displayed to the user in a message box, telling them that sensitive data is being exported and providing an opportunity to cancel the export. Developers can mark a specific member's data as sensitive by setting the `isSensitive` parameter of the `[Personalizable]` attribute to `true` on the member. For more information about this attribute and parameter, see the <xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute> class.
+
+When a user attempts to export sensitive state data from a <xref:System.Web.UI.WebControls.WebParts.WebPart> control, if any of the data being exported comes from a member that was marked as sensitive in the source code, a warning message is displayed to the user in a message box, telling them that sensitive data is being exported and providing an opportunity to cancel the export. Developers can mark a specific member's data as sensitive by setting the `isSensitive` parameter of the `[Personalizable]` attribute to `true` on the member. For more information about this attribute and parameter, see the <xref:System.Web.UI.WebControls.WebParts.PersonalizableAttribute> class.
 
 > [!IMPORTANT]
 > When you use the export feature of Web Parts, sensitive data could potentially be exported to unauthorized users. For details on how to protect against this threat, see [Securing Web Parts Pages](https://msdn.microsoft.com/library/8ada6210-ed00-4157-b3e9-a7e87e77caa2).
@@ -2515,7 +2561,8 @@ The following code example demonstrates the declarative use of the <xref:System.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ExportWebPart*> method assembles various state and property data from `webPart` into an XML file. The data includes information about the control itself, including its assembly, state data, and property data. The user who initiates the export can save the XML file to disk on the local computer or the network. Other users can then import the description file to a different page or Web site, and apply the state and property data to a different instance of `webPart`. This provides a fast and convenient mechanism for users to share and reuse their settings on server controls, and it also provides developers with a means to control the appearance and behavior of exported and imported controls.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ExportWebPart*> method assembles various state and property data from `webPart` into an XML file. The data includes information about the control itself, including its assembly, state data, and property data. The user who initiates the export can save the XML file to disk on the local computer or the network. Other users can then import the description file to a different page or Web site, and apply the state and property data to a different instance of `webPart`. This provides a fast and convenient mechanism for users to share and reuse their settings on server controls, and it also provides developers with a means to control the appearance and behavior of exported and imported controls.
 
  Properties on `webPart` are not exported by default. To enable export of a property, you must mark it with the `[Personalizable]` attribute in the source code. You can also optionally mark an exportable property as containing sensitive data, by setting the `isSensitive` parameter of the `[Personalizable]` attribute to `true`. By default, `isSensitive` is `false`. Developers can set the parameter to `true` to indicate that the data is sensitive.
 
@@ -2572,7 +2619,8 @@ The following code example demonstrates the declarative use of the <xref:System.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.Focus*> method overrides the base <xref:System.Web.UI.Control.Focus*?displayProperty=nameWithType> method, and throws an exception if a caller calls the method. Because the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control has no UI and is never visible to users, it can never allow focus to be set on itself.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.Focus*> method overrides the base <xref:System.Web.UI.Control.Focus*?displayProperty=nameWithType> method, and throws an exception if a caller calls the method. Because the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control has no UI and is never visible to users, it can never allow focus to be set on itself.
 
  ]]></format>
         </remarks>
@@ -2606,7 +2654,8 @@ The following code example demonstrates the declarative use of the <xref:System.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A Web Parts connection always involves exactly two controls, one acting as the provider of data, the other acting as the consumer of data. Each control must have one or more methods that are defined as connection points. In the case of a consumer control, its connection points are <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint> objects. Retrieving the consumer connection points is a necessary step in forming a Web Parts connection.
+
+A Web Parts connection always involves exactly two controls, one acting as the provider of data, the other acting as the consumer of data. Each control must have one or more methods that are defined as connection points. In the case of a consumer control, its connection points are <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint> objects. Retrieving the consumer connection points is a necessary step in forming a Web Parts connection.
 
  A consumer must always have at least one connection point to be able to establish a connection. The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.GetConsumerConnectionPoints*> method checks a consumer control and retrieves a collection of all its connection points. If a <xref:System.Web.UI.WebControls.WebParts.WebPart> control has no connection points, the method returns an empty collection.
 
@@ -2671,7 +2720,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.GetCurrentWebPartManager*> method is useful in contexts where you want to retrieve a reference to the current <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control. A common scenario where this would occur is if you are writing a custom control that cannot know during development what the ID of the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control on its page will be.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.GetCurrentWebPartManager*> method is useful in contexts where you want to retrieve a reference to the current <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control. A common scenario where this would occur is if you are writing a custom control that cannot know during development what the ID of the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control on its page will be.
 
 > [!NOTE]
 > The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.GetCurrentWebPartManager*> method is static, so you can call it directly without needing an instance of a <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control.
@@ -2730,7 +2780,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Gets the calculated value of the <xref:System.Web.UI.WebControls.WebParts.WebPart.DisplayTitle> property for `webPart`. When developers do not assign a value to the <xref:System.Web.UI.WebControls.WebParts.Part.Title> property of a <xref:System.Web.UI.WebControls.WebParts.WebPart> control, this method produces the value to display as the title. The calculated value for untitled controls consists of a number appended to a string, with the number indicating a control's sequence within the current zone.
+
+Gets the calculated value of the <xref:System.Web.UI.WebControls.WebParts.WebPart.DisplayTitle> property for `webPart`. When developers do not assign a value to the <xref:System.Web.UI.WebControls.WebParts.Part.Title> property of a <xref:System.Web.UI.WebControls.WebParts.WebPart> control, this method produces the value to display as the title. The calculated value for untitled controls consists of a number appended to a string, with the number indicating a control's sequence within the current zone.
 
  ]]></format>
         </remarks>
@@ -2771,7 +2822,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The value returned by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.GetExportUrl*> method is a relative virtual path to the server location of the page that contains the control, plus the appended query string value that forms the export request submitted to the server. The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.GetExportUrl*> method encodes the string before allowing the request to be submitted, to protect against malicious script attacks.
+
+The value returned by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.GetExportUrl*> method is a relative virtual path to the server location of the page that contains the control, plus the appended query string value that forms the export request submitted to the server. The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.GetExportUrl*> method encodes the string before allowing the request to be submitted, to protect against malicious script attacks.
 
 > [!NOTE]
 > For more information about securing Web Parts applications, see [Securing Web Parts Pages](https://msdn.microsoft.com/library/8ada6210-ed00-4157-b3e9-a7e87e77caa2).
@@ -2809,7 +2861,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- In general, there are two categories of controls that developers place in <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase> zones to participate in Web Parts applications: <xref:System.Web.UI.WebControls.WebParts.WebPart> controls, which inherit from the <xref:System.Web.UI.WebControls.WebParts.WebPart> base class, and other server controls, which can be standard ASP.NET controls, custom controls, or user controls. When any of these controls is placed in a <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase> zone, it takes on the functionality of a <xref:System.Web.UI.WebControls.WebParts.WebPart> control. A <xref:System.Web.UI.WebControls.WebParts.WebPart> control has this functionality inherently, but the other kinds of server controls do not. To enable the other server controls to act as <xref:System.Web.UI.WebControls.WebParts.WebPart> controls when they are placed in a <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase> zone, ASP.NET wraps them with a <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> control. Because the <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> control inherits directly from the <xref:System.Web.UI.WebControls.WebParts.WebPart> class, it provides its child controls with true Web Parts features.
+
+In general, there are two categories of controls that developers place in <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase> zones to participate in Web Parts applications: <xref:System.Web.UI.WebControls.WebParts.WebPart> controls, which inherit from the <xref:System.Web.UI.WebControls.WebParts.WebPart> base class, and other server controls, which can be standard ASP.NET controls, custom controls, or user controls. When any of these controls is placed in a <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase> zone, it takes on the functionality of a <xref:System.Web.UI.WebControls.WebParts.WebPart> control. A <xref:System.Web.UI.WebControls.WebParts.WebPart> control has this functionality inherently, but the other kinds of server controls do not. To enable the other server controls to act as <xref:System.Web.UI.WebControls.WebParts.WebPart> controls when they are placed in a <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase> zone, ASP.NET wraps them with a <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> control. Because the <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> control inherits directly from the <xref:System.Web.UI.WebControls.WebParts.WebPart> class, it provides its child controls with true Web Parts features.
 
  Often at run time, page developers might want to get a reference to the <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> control that contains one of the server controls in a zone. The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.GetGenericWebPart*> method enables them to retrieve a reference to the <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> control.
 
@@ -2855,7 +2908,8 @@ The following code example demonstrates the use of the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A Web Parts connection always involves exactly two controls, one acting as the provider of data, the other acting as the consumer of data. Each control must have one or more methods that are defined as connection points. In the case of a provider control, its connection points are <xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint> objects.
+
+A Web Parts connection always involves exactly two controls, one acting as the provider of data, the other acting as the consumer of data. Each control must have one or more methods that are defined as connection points. In the case of a provider control, its connection points are <xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint> objects.
 
  A provider must always have at least one connection point to be able to establish a connection. The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.GetProviderConnectionPoints*> method checks a provider control and retrieves a collection of all its connection points. Retrieving the provider connection points is a necessary step in forming a Web Parts connection.
 
@@ -2922,7 +2976,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ImportWebPart*> method imports an XML description file that was created by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ExportWebPart*> method for a server control. It is not the actual server control that is imported, but only the description file containing state and property data about the control. The control and assembly referenced in the description file must already be available on the server where a user attempts to import the description file.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ImportWebPart*> method imports an XML description file that was created by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ExportWebPart*> method for a server control. It is not the actual server control that is imported, but only the description file containing state and property data about the control. The control and assembly referenced in the description file must already be available on the server where a user attempts to import the description file.
 
  To enable importing a control, a developer needs to add a <xref:System.Web.UI.WebControls.WebParts.CatalogZone> control on the page where import will be enabled. Within the zone, an <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart> control must be added. This control provides a file dialog box that allows users to browse and locate the description file to import.
 
@@ -2979,7 +3034,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.Internals> property exposes the APIs to call into a set of <xref:System.Web.UI.WebControls.WebParts.WebPartManager> methods that are used mostly in extensibility cases.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.Internals> property exposes the APIs to call into a set of <xref:System.Web.UI.WebControls.WebParts.WebPartManager> methods that are used mostly in extensibility cases.
 
  The designed way to use these internal methods is to access them through the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.Internals> property. Because the property is protected, you can only access it and call the methods within an instance of the <xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals> class by inheriting from the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> class.
 
@@ -3002,7 +3058,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Part of the flexibility of the Web Parts feature is the ability to add server controls to Web pages at run time. There are a number of common scenarios in which a server control (which can be a custom <xref:System.Web.UI.WebControls.WebParts.WebPart> control, a custom server control, a user control, or an ASP.NET control) can be added.
+
+Part of the flexibility of the Web Parts feature is the ability to add server controls to Web pages at run time. There are a number of common scenarios in which a server control (which can be a custom <xref:System.Web.UI.WebControls.WebParts.WebPart> control, a custom server control, a user control, or an ASP.NET control) can be added.
 
  In the following common scenarios, the Web Parts control set attempts to add server controls to a page, and the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.IsAuthorized*> method is called to authorize them:
 
@@ -3061,7 +3118,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.IsAuthorized*> method is the initial method called by the Web Parts control set to check authorization for a <xref:System.Web.UI.WebControls.WebParts.WebPart> control. It accepts `webPart` as a parameter, and begins a process that ultimately determines whether the control will be added to a page. Call this method from your code directly when you need to determine whether a given control is authorized.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.IsAuthorized*> method is the initial method called by the Web Parts control set to check authorization for a <xref:System.Web.UI.WebControls.WebParts.WebPart> control. It accepts `webPart` as a parameter, and begins a process that ultimately determines whether the control will be added to a page. Call this method from your code directly when you need to determine whether a given control is authorized.
 
  This method carries out the initial tasks of determining whether the control inherits from the <xref:System.Web.UI.WebControls.WebParts.WebPart> class or is a <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> control and, if so, what type of child control it contains. To finish the task of authorization, it calls the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.IsAuthorized(System.Type,System.String,System.String,System.Boolean)> overload method.
 
@@ -3145,7 +3203,8 @@ The following code example demonstrates how to call the <xref:System.Web.UI.WebC
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.IsAuthorized(System.Type,System.String,System.String,System.Boolean)> overload method carries out the final steps in determining whether a control is authorized to be added to a page. The method ensures that `type` is a valid type, and that `path` has a value only if the control being checked is a user control. Then it calls the critical <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnAuthorizeWebPart*> method, which raises the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.AuthorizeWebPart> event.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.IsAuthorized(System.Type,System.String,System.String,System.Boolean)> overload method carries out the final steps in determining whether a control is authorized to be added to a page. The method ensures that `type` is a valid type, and that `path` has a value only if the control being checked is a user control. Then it calls the critical <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnAuthorizeWebPart*> method, which raises the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.AuthorizeWebPart> event.
 
 ## Examples
 
@@ -3230,7 +3289,8 @@ else
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control uses the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.IsCustomPersonalizationStateDirty> property internally to track whether any of the page-level personalization data that it manages has changed. The personalization data changes when users carry out various personalization actions at the page level, such as adding or removing <xref:System.Web.UI.WebControls.WebParts.WebPart> controls, connecting or disconnecting controls, changing the page's layout by moving controls, and other actions.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control uses the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.IsCustomPersonalizationStateDirty> property internally to track whether any of the page-level personalization data that it manages has changed. The personalization data changes when users carry out various personalization actions at the page level, such as adding or removing <xref:System.Web.UI.WebControls.WebParts.WebPart> controls, connecting or disconnecting controls, changing the page's layout by moving controls, and other actions.
 
 > [!NOTE]
 > Users can also perform personalization at the control level, which means that they make personalization changes to a specific control, and the changes affect only that control. An example would be editing the control and changing its title text, or its background color. Control-level personalization does not affect the page-level personalization data tracked by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control, and so the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.IsCustomPersonalizationStateDirty> property value is not changed to `true` when control-level personalization occurs.
@@ -3271,7 +3331,8 @@ else
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.LoadControlState*> method is helpful for restoring property data that should be persisted across postbacks of a page, even when the <xref:System.Web.UI.Control.EnableViewState> property is set to `false`.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.LoadControlState*> method is helpful for restoring property data that should be persisted across postbacks of a page, even when the <xref:System.Web.UI.Control.EnableViewState> property is set to `false`.
 
  ]]></format>
         </remarks>
@@ -3306,7 +3367,8 @@ else
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.LoadCustomPersonalizationState*> method provides saved state data in the form of a <xref:System.Web.UI.WebControls.WebParts.PersonalizationDictionary> object. This data is eventually used to load personalization data into the Web Parts controls and to perform other initialization tasks.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.LoadCustomPersonalizationState*> method provides saved state data in the form of a <xref:System.Web.UI.WebControls.WebParts.PersonalizationDictionary> object. This data is eventually used to load personalization data into the Web Parts controls and to perform other initialization tasks.
 
 > [!NOTE]
 > This method is called by a sequence of methods that begins when the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.TrackViewState*> method initially requests the associated <xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization> object to supply personalization data to the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control.
@@ -3344,7 +3406,8 @@ else
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Security.PermissionSet> object that is returned by this property is used during import for type deserialization.
+
+The <xref:System.Security.PermissionSet> object that is returned by this property is used during import for type deserialization.
 
  ]]></format>
         </remarks>
@@ -3372,7 +3435,8 @@ else
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Security.PermissionSet> object returned by this property is used during import for everything except type deserialization.
+
+The <xref:System.Security.PermissionSet> object returned by this property is used during import for everything except type deserialization.
 
  ]]></format>
         </remarks>
@@ -3408,7 +3472,8 @@ else
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control uses the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.MoveWebPart*> method to move `webPart` to a new location in the same zone, or in a different zone. You can call this method directly from code, and it is also invoked when a user moves a control to a new position using various options in the Web Parts user interface (UI).
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control uses the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.MoveWebPart*> method to move `webPart` to a new location in the same zone, or in a different zone. You can call this method directly from code, and it is also invoked when a user moves a control to a new position using various options in the Web Parts user interface (UI).
 
  A number of conditions must be met before `webPart` can be moved, and most of these are indicated by items listed in the Exceptions section of this topic. If `webPart` was not contained in a <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase> zone to begin with, it cannot be moved into a zone.
 
@@ -3490,7 +3555,8 @@ The following code example demonstrates how to call the <xref:System.Web.UI.WebC
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnAuthorizeWebPart*> method is called by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.IsAuthorized*> method, when a <xref:System.Web.UI.WebControls.WebParts.WebPart> control is being checked for authorization to be added to a page. When the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnAuthorizeWebPart*> method is called, it raises the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.AuthorizeWebPart> event, and if there is a handler method for the event, it invokes the handler.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnAuthorizeWebPart*> method is called by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.IsAuthorized*> method, when a <xref:System.Web.UI.WebControls.WebParts.WebPart> control is being checked for authorization to be added to a page. When the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnAuthorizeWebPart*> method is called, it raises the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.AuthorizeWebPart> event, and if there is a handler method for the event, it invokes the handler.
 
  The process of authorizing <xref:System.Web.UI.WebControls.WebParts.WebPart> controls is an important Web Parts feature. Every <xref:System.Web.UI.WebControls.WebParts.WebPart> or server control that is added to a zone by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control goes through an authorization process to determine whether the control can be added. By default, the Web Parts control set does not provide any filtering criteria to prevent controls from being added to a zone. But the control set does provide the mechanisms necessary for developers to create their own filtering criteria. By using these mechanisms, you can create custom filtering scenarios. For example, you could create a filter so that, if a user is in an administrator role, certain controls would be added to a zone when the page is rendered, and if the user is in a user role, those controls would not be added.
 
@@ -3587,7 +3653,8 @@ protected void mgr1_AuthorizeWebPart(object sender,
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnConnectionsActivated*> method raises the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectionsActivated> event after a page has completed the loading process. The method provides a way to add a handler for the event.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnConnectionsActivated*> method raises the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectionsActivated> event after a page has completed the loading process. The method provides a way to add a handler for the event.
 
  Page developers can add a custom handler for the event by adding an `OnConnectionsActivated` attribute to the `<asp:webpartmanager>` element in a page, and then assigning a custom method name to the attribute.
 
@@ -3626,7 +3693,8 @@ protected void mgr1_AuthorizeWebPart(object sender,
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnConnectionsActivating*> method raises the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectionsActivating> event, which provides developers with a mechanism for programmatically customizing the process of activating connections.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnConnectionsActivating*> method raises the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectionsActivating> event, which provides developers with a mechanism for programmatically customizing the process of activating connections.
 
  Page developers can add a custom handler for the event by adding an `OnConnectionsActivating` attribute to the `<asp:webpartmanager>` element in a page, and then assigning a custom method name to the attribute.
 
@@ -3665,7 +3733,8 @@ protected void mgr1_AuthorizeWebPart(object sender,
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnDisplayModeChanged*> method in its base form simply raises the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisplayModeChanged> event.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnDisplayModeChanged*> method in its base form simply raises the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisplayModeChanged> event.
 
  ]]></format>
         </remarks>
@@ -3703,7 +3772,8 @@ protected void mgr1_AuthorizeWebPart(object sender,
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnDisplayModeChanging*> method in its base form simply raises the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisplayModeChanging> event.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnDisplayModeChanging*> method in its base form simply raises the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisplayModeChanging> event.
 
  ]]></format>
         </remarks>
@@ -3741,7 +3811,8 @@ protected void mgr1_AuthorizeWebPart(object sender,
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnInit*> method calls the base method, which raises the <xref:System.Web.UI.Control.Init> event for the control, and then carries out several preparatory steps, such as ensuring that there is only one instance of the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control on a page, and loading personalization data.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnInit*> method calls the base method, which raises the <xref:System.Web.UI.Control.Init> event for the control, and then carries out several preparatory steps, such as ensuring that there is only one instance of the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control on a page, and loading personalization data.
 
  ]]></format>
         </remarks>
@@ -3776,7 +3847,8 @@ protected void mgr1_AuthorizeWebPart(object sender,
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnPreRender*> method calls the base method, which raises the <xref:System.Web.UI.Control.PreRender> event for the control, and then registers several client scripts that are needed on pages that contain Web Parts controls.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnPreRender*> method calls the base method, which raises the <xref:System.Web.UI.Control.PreRender> event for the control, and then registers several client scripts that are needed on pages that contain Web Parts controls.
 
  ]]></format>
         </remarks>
@@ -3810,7 +3882,8 @@ protected void mgr1_AuthorizeWebPart(object sender,
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnSelectedWebPartChanged*> method raises the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SelectedWebPartChanged> event, which is typically a point in time where a developer might want to change the appearance of the user interface (UI). For example, when a new <xref:System.Web.UI.WebControls.WebParts.WebPart> control is selected, the Web Parts control set changes the rendering of the newly selected control. After a control's selection is cleared, the rendering is returned to normal.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnSelectedWebPartChanged*> method raises the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SelectedWebPartChanged> event, which is typically a point in time where a developer might want to change the appearance of the user interface (UI). For example, when a new <xref:System.Web.UI.WebControls.WebParts.WebPart> control is selected, the Web Parts control set changes the rendering of the newly selected control. After a control's selection is cleared, the rendering is returned to normal.
 
  After a user selects a particular <xref:System.Web.UI.WebControls.WebParts.WebPart> control for editing, the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnSelectedWebPartChanged*> method is called. When the user finishes editing the control and closes it, with the result that the control's selection is cleared, the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnSelectedWebPartChanged*> method is called again.
 
@@ -3849,7 +3922,8 @@ protected void mgr1_AuthorizeWebPart(object sender,
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnSelectedWebPartChanging*> method raises the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SelectedWebPartChanging> event, which occurs during the process of changing which <xref:System.Web.UI.WebControls.WebParts.WebPart> control is currently selected.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnSelectedWebPartChanging*> method raises the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SelectedWebPartChanging> event, which occurs during the process of changing which <xref:System.Web.UI.WebControls.WebParts.WebPart> control is currently selected.
 
  The <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control uses this method, and the associated event, to provide an opportunity to cancel a process in which the selected control is changing. For example, the method is called within the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.BeginWebPartEditing*> method, and also within the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.EndWebPartEditing*> method, to provide a way to cancel the process. If a user clicks the cancel verb on a control that is being edited, the control is no longer selected and any editing changes are not saved, because the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnSelectedWebPartChanging*> method makes it possible to cancel the editing changes.
 
@@ -3915,7 +3989,8 @@ protected void mgr1_AuthorizeWebPart(object sender,
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartAdded*> method is called during the process of adding a <xref:System.Web.UI.WebControls.WebParts.WebPart> control (or other server control that is added to a <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase> zone) to a page.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartAdded*> method is called during the process of adding a <xref:System.Web.UI.WebControls.WebParts.WebPart> control (or other server control that is added to a <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase> zone) to a page.
 
  Page developers can create a custom handler for the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartAdded> event by adding the `OnWebPartAdded` attribute to the `<asp:webpartmanager>` element, and assigning a custom method name to the attribute.
 
@@ -3951,7 +4026,8 @@ protected void mgr1_AuthorizeWebPart(object sender,
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartAdding*> method raises the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartAdding> event to indicate that a control is in the process of being added. The method also provides the option to cancel the adding process. If the control is successfully added, the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartAdded> event follows.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartAdding*> method raises the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartAdding> event to indicate that a control is in the process of being added. The method also provides the option to cancel the adding process. If the control is successfully added, the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartAdded> event follows.
 
  Page developers can provide a custom handler for the associated event by adding the `OnWebPartAdding` attribute to the `<asp:webpartmanager>` element on a Web page, and then assigning a custom method name to the attribute.
 
@@ -3992,7 +4068,8 @@ protected void mgr1_AuthorizeWebPart(object sender,
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartClosed*> method raises the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartClosed> event to indicate that a <xref:System.Web.UI.WebControls.WebParts.WebPart> control (or other server or user control) has been successfully closed on a page.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartClosed*> method raises the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartClosed> event to indicate that a <xref:System.Web.UI.WebControls.WebParts.WebPart> control (or other server or user control) has been successfully closed on a page.
 
  To close a <xref:System.Web.UI.WebControls.WebParts.WebPart> control means to remove it from a page so that it is not rendered, and also to place it in a special holding object called a page catalog. A page catalog, which corresponds to the <xref:System.Web.UI.WebControls.WebParts.PageCatalogPart> control, maintains references to closed <xref:System.Web.UI.WebControls.WebParts.WebPart> controls for each page. If a <xref:System.Web.UI.WebControls.WebParts.PageCatalogPart> control is declared on a page within a <xref:System.Web.UI.WebControls.WebParts.CatalogZone> zone, users can switch the page into catalog display mode, and add back to the page any controls that were previously closed.
 
@@ -4031,7 +4108,8 @@ protected void mgr1_AuthorizeWebPart(object sender,
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartClosing*> method raises the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartClosing> event to indicate that a control is in the process of being closed or removed from a page. The method also provides the option to cancel the closing process. If the control is successfully removed from the page, the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartClosed> event follows.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartClosing*> method raises the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartClosing> event to indicate that a control is in the process of being closed or removed from a page. The method also provides the option to cancel the closing process. If the control is successfully removed from the page, the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartClosed> event follows.
 
  Page developers can provide a custom handler for the associated event by adding the `OnWebPartClosing` attribute to the `<asp:webpartmanager>` element on a Web page, and then assigning a custom method name to the attribute.
 
@@ -4072,7 +4150,8 @@ protected void mgr1_AuthorizeWebPart(object sender,
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartDeleted*> method is called during the process of deleting a <xref:System.Web.UI.WebControls.WebParts.WebPart> control (or other server control that is added to a <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase> zone) from a page.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartDeleted*> method is called during the process of deleting a <xref:System.Web.UI.WebControls.WebParts.WebPart> control (or other server control that is added to a <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase> zone) from a page.
 
  Page developers can create a custom handler for the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartDeleted> event by adding the `OnWebPartDeleted` attribute to the `<asp:webpartmanager>` element, and assigning a custom method name to the attribute.
 
@@ -4108,7 +4187,8 @@ protected void mgr1_AuthorizeWebPart(object sender,
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Only dynamic <xref:System.Web.UI.WebControls.WebParts.WebPart> controls can be deleted, and when a control is deleted, the control instance is permanently removed from a page and cannot be restored. Dynamic <xref:System.Web.UI.WebControls.WebParts.WebPart> controls are those that are added programmatically, or from a Web Parts catalog, as opposed to static controls that are declared in the markup of a Web page.
+
+Only dynamic <xref:System.Web.UI.WebControls.WebParts.WebPart> controls can be deleted, and when a control is deleted, the control instance is permanently removed from a page and cannot be restored. Dynamic <xref:System.Web.UI.WebControls.WebParts.WebPart> controls are those that are added programmatically, or from a Web Parts catalog, as opposed to static controls that are declared in the markup of a Web page.
 
  The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartDeleting*> method raises the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartDeleting> event to indicate that a control is being permanently deleted from its zone. The method also provides the opportunity to cancel the deleting process. If the control is successfully deleted from the page, the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartDeleted> event follows.
 
@@ -4151,7 +4231,8 @@ protected void mgr1_AuthorizeWebPart(object sender,
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartMoved*> method raises the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartMoved> event at the very end of the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.MoveWebPart*> method, which ensures that the process of moving a control is complete before any code in the event handler runs.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartMoved*> method raises the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartMoved> event at the very end of the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.MoveWebPart*> method, which ensures that the process of moving a control is complete before any code in the event handler runs.
 
  The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartMoved> event is raised when a control is moved within its current zone, or to another zone, and it does not matter whether the movement is done programmatically or by a user dragging the control.
 
@@ -4189,7 +4270,8 @@ protected void mgr1_AuthorizeWebPart(object sender,
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartMoving*> method raises the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartMoving> event, which occurs when a <xref:System.Web.UI.WebControls.WebParts.WebPart> or other server control is being moved within its zone or to another zone. The method also provides the opportunity to cancel the moving process. If the move is successfully completed, the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartMoved> event follows.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartMoving*> method raises the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartMoving> event, which occurs when a <xref:System.Web.UI.WebControls.WebParts.WebPart> or other server control is being moved within its zone or to another zone. The method also provides the opportunity to cancel the moving process. If the move is successfully completed, the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartMoved> event follows.
 
  Page developers can provide a custom handler for the associated event by adding the `OnWebPartMoving` attribute to the `<asp:webpartmanager>` element on a Web page, and then assigning a custom method name to the attribute.
 
@@ -4230,7 +4312,8 @@ protected void mgr1_AuthorizeWebPart(object sender,
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartsConnected*> method raises its corresponding event at the very end of the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectWebParts*> method, which ensures that the steps necessary to connect two controls are completed before any code in the event handler runs.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartsConnected*> method raises its corresponding event at the very end of the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectWebParts*> method, which ensures that the steps necessary to connect two controls are completed before any code in the event handler runs.
 
  The method provides programmatic control over the process of creating connections, and the associated event is a convenient point at which to update the user interface (UI) or notify a user that a connection has been established.
 
@@ -4268,7 +4351,8 @@ protected void mgr1_AuthorizeWebPart(object sender,
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartsConnecting*> method raises the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsConnecting> event, which occurs when two controls attempt to establish a connection. The method provides the opportunity to cancel the connection attempt. If the connection is successful, the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsConnected> event follows.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartsConnecting*> method raises the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsConnecting> event, which occurs when two controls attempt to establish a connection. The method provides the opportunity to cancel the connection attempt. If the connection is successful, the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsConnected> event follows.
 
  Page developers can provide a custom handler for the associated event by adding the `OnWebPartsConnecting` attribute to the `<asp:webpartmanager>` element on a Web page, and then assigning a custom method name to the attribute.
 
@@ -4309,7 +4393,8 @@ protected void mgr1_AuthorizeWebPart(object sender,
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartsDisconnected*> method raises its corresponding event at the very end of the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisconnectWebParts*> method, which carries out the process of terminating a connection between two controls.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartsDisconnected*> method raises its corresponding event at the very end of the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisconnectWebParts*> method, which carries out the process of terminating a connection between two controls.
 
  The method provides programmatic control over the process of ending a connection, so that developers can inform the user, make changes to the user interface (UI), or make other changes to the application.
 
@@ -4347,7 +4432,8 @@ protected void mgr1_AuthorizeWebPart(object sender,
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartsDisconnecting*> method raises the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsDisconnecting> event, which occurs when two controls are ending a connection. The method provides the opportunity to cancel the disconnection process. If the connection is successfully removed, the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsDisconnected> event follows.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartsDisconnecting*> method raises the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsDisconnecting> event, which occurs when two controls are ending a connection. The method provides the opportunity to cancel the disconnection process. If the connection is successfully removed, the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsDisconnected> event follows.
 
  Page developers can provide a custom handler for the associated event by adding the `OnWebPartsDisconnecting` attribute to the `<asp:webpartmanager>` element on a Web page, and then assigning a custom method name to the attribute.
 
@@ -4403,7 +4489,8 @@ protected void mgr1_AuthorizeWebPart(object sender,
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.Personalization> property provides a way to access the <xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization> object that is associated with a page through the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control. Using this property, you can access the various members of the personalization object. For example, you can use the <xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.ToggleScope*> method to switch the page's personalization scope from shared to user scope, or vice versa. You can also find out the current personalization scope of the page, whether personalization is even enabled on the page, which provider is being used for the personalization data, and more.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.Personalization> property provides a way to access the <xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization> object that is associated with a page through the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control. Using this property, you can access the various members of the personalization object. For example, you can use the <xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.ToggleScope*> method to switch the page's personalization scope from shared to user scope, or vice versa. You can also find out the current personalization scope of the page, whether personalization is even enabled on the page, which provider is being used for the personalization data, and more.
 
  Note that the data referenced by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.Personalization> property is only the page-level personalization data that is tracked by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control. Control-specific personalization data, such as the values of personalizable properties on <xref:System.Web.UI.WebControls.WebParts.WebPart> controls, is not part of the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.Personalization> property.
 
@@ -4515,7 +4602,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SaveControlState*> method saves state data for properties that should be persisted across page postbacks, even when the <xref:System.Web.UI.Control.EnableViewState> property is set to `false`.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SaveControlState*> method saves state data for properties that should be persisted across page postbacks, even when the <xref:System.Web.UI.Control.EnableViewState> property is set to `false`.
 
  ]]></format>
         </remarks>
@@ -4547,7 +4635,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SaveCustomPersonalizationState*> method is critical in the process of personalization, because it enables personalized user settings to be stored for future browser sessions and visits to a page. The method saves custom personalization state data, which includes items such as the following: dynamic <xref:System.Web.UI.WebControls.WebParts.WebPart> or server controls that have been added to a page or deleted from a page; controls that have been moved on a page; and dynamic connections that have been created or deleted.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SaveCustomPersonalizationState*> method is critical in the process of personalization, because it enables personalized user settings to be stored for future browser sessions and visits to a page. The method saves custom personalization state data, which includes items such as the following: dynamic <xref:System.Web.UI.WebControls.WebParts.WebPart> or server controls that have been added to a page or deleted from a page; controls that have been moved on a page; and dynamic connections that have been created or deleted.
 
  You cannot call this method directly from your code. You can, however, call the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.System%23Web%23UI%23WebControls%23WebParts%23IPersonalizable%23Save*> method, which itself calls this method to save personalization data.
 
@@ -4597,7 +4686,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SelectedWebPart> property returns a reference to a <xref:System.Web.UI.WebControls.WebParts.WebPart> or other server control that is currently selected for editing or for creating a connection with another control.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SelectedWebPart> property returns a reference to a <xref:System.Web.UI.WebControls.WebParts.WebPart> or other server control that is currently selected for editing or for creating a connection with another control.
 
  The <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control provides several useful methods and events for handling the process of selecting a control. The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SelectedWebPartChanging> event occurs just after a control is selected, but before any changes are made. To carry out some actions on the control after it is selected, override the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnSelectedWebPartChanging*> method. For example, you might want to change the appearance of a control that is selected but has not changed yet, to emphasize visually which control is selected.
 
@@ -4635,7 +4725,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This event can be used in conjunction with the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnSelectedWebPartChanged*> method to change the user interface (UI) of a selected control. For example, if the user switches the page to design mode (<xref:System.Web.UI.WebControls.WebParts.WebPartManager.DesignDisplayMode>), and then selects a <xref:System.Web.UI.WebControls.WebParts.WebPart> control with the intent of dragging it to a new position, it is common to change the rendering of the selected control, for example by changing the color of its border or background while it is selected.
+
+This event can be used in conjunction with the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnSelectedWebPartChanged*> method to change the user interface (UI) of a selected control. For example, if the user switches the page to design mode (<xref:System.Web.UI.WebControls.WebParts.WebPartManager.DesignDisplayMode>), and then selects a <xref:System.Web.UI.WebControls.WebParts.WebPart> control with the intent of dragging it to a new position, it is common to change the rendering of the selected control, for example by changing the color of its border or background while it is selected.
 
 > [!NOTE]
 > For more information on consuming events, see [How to: Consume Events in a Web Forms Application](/dotnet/standard/events/how-to-consume-events-in-a-web-forms-application).
@@ -4668,7 +4759,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This event can be used in conjunction with the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnSelectedWebPartChanging*> method. Page developers can create an event handler in their code by adding the `OnSelectedWebPartChanging` attribute to the `<asp:webpartmanager>` element in a page, and setting the value of the attribute to the name of a custom method that will handle the event.
+
+This event can be used in conjunction with the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnSelectedWebPartChanging*> method. Page developers can create an event handler in their code by adding the `OnSelectedWebPartChanging` attribute to the `<asp:webpartmanager>` element in a page, and setting the value of the attribute to the name of a custom method that will handle the event.
 
  This event is raised during the process of beginning or ending a connection between controls, and when beginning and ending an edit of a control. For details, see the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnSelectedWebPartChanging*> method.
 
@@ -4703,7 +4795,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SetPersonalizationDirty*> method sets a flag that ultimately causes the personalization components in the Web Parts control set to save the updated personalization data. For more information on the scenarios that can cause changes to the personalization data tracked by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control, see the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.System%23Web%23UI%23WebControls%23WebParts%23IPersonalizable%23IsDirty> property.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SetPersonalizationDirty*> method sets a flag that ultimately causes the personalization components in the Web Parts control set to save the updated personalization data. For more information on the scenarios that can cause changes to the personalization data tracked by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control, see the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.System%23Web%23UI%23WebControls%23WebParts%23IPersonalizable%23IsDirty> property.
 
  The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SetPersonalizationDirty*> method cannot be called directly from your code, and cannot be overridden, because it is used internally by the Web Parts control set as part of the Web Parts personalization feature.
 
@@ -4742,7 +4835,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SetSelectedWebPart*> method is called during the processes that begin or end editing of the control specified by the `webPart` parameter, and those that begin or end a connection that includes `webPart`.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SetSelectedWebPart*> method is called during the processes that begin or end editing of the control specified by the `webPart` parameter, and those that begin or end a connection that includes `webPart`.
 
  At the beginning of the edit and connection processes, `webPart` is the control that has been selected to be edited or to enter a connection.
 
@@ -4797,7 +4891,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SkinID> property overrides the inherited <xref:System.Web.UI.Control.SkinID?displayProperty=nameWithType> property to prevent the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control, which is an invisible control, from using skins. The implementation of the property prevents a skin from being assigned by always returning an empty string from the `get` accessor, and always throwing an exception if there is an attempt to set a value in the `set` accessor.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SkinID> property overrides the inherited <xref:System.Web.UI.Control.SkinID?displayProperty=nameWithType> property to prevent the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control, which is an invisible control, from using skins. The implementation of the property prevents a skin from being assigned by always returning an empty string from the `get` accessor, and always throwing an exception if there is an attempt to set a value in the `set` accessor.
 
  ]]></format>
         </remarks>
@@ -4847,7 +4942,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.StaticConnections> property is used by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control to track and manage all static connections on a page. A static connection, in contrast with a dynamic connection, does not need to be added to a page every time the page is rendered.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.StaticConnections> property is used by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control to track and manage all static connections on a page. A static connection, in contrast with a dynamic connection, does not need to be added to a page every time the page is rendered.
 
  The collection referenced by this property contains all the static connections that exist on the page, whether they are created programmatically or specified with an `<asp:webpartconnection>` element in the page's markup.
 
@@ -4913,7 +5009,8 @@ The following code example demonstrates programmatic use of the <xref:System.Web
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SupportedDisplayModes> property contains only the display modes that are actually available on a page, given the kinds of zone controls present on the page.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SupportedDisplayModes> property contains only the display modes that are actually available on a page, given the kinds of zone controls present on the page.
 
 > [!NOTE]
 > Display modes can be disabled, and when a display mode is disabled, it is not added to the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SupportedDisplayModes*> collection, even when the corresponding type of zone that supports that display mode is present on the page.
@@ -4973,7 +5070,8 @@ The following code example shows the programmatic use of the <xref:System.Web.UI
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.System%23Web%23UI%23WebControls%23WebParts%23IPersonalizable%23IsDirty> property provides a way for callers to determine whether personalization state data that is managed by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control has changed. When users personalize page-level details, for example by changing page layout, creating or deleting connections, and adding or deleting controls, the personalization data managed by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control changes. This is a pass-through method that returns to callers the value of the protected <xref:System.Web.UI.WebControls.WebParts.WebPartManager.IsCustomPersonalizationStateDirty> property, which cannot be directly accessed by callers.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.System%23Web%23UI%23WebControls%23WebParts%23IPersonalizable%23IsDirty> property provides a way for callers to determine whether personalization state data that is managed by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control has changed. When users personalize page-level details, for example by changing page layout, creating or deleting connections, and adding or deleting controls, the personalization data managed by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control changes. This is a pass-through method that returns to callers the value of the protected <xref:System.Web.UI.WebControls.WebParts.WebPartManager.IsCustomPersonalizationStateDirty> property, which cannot be directly accessed by callers.
 
 > [!NOTE]
 > The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.System%23Web%23UI%23WebControls%23WebParts%23IPersonalizable%23IsDirty> property does not indicate whether personalizable property values, or individual properties that affect the appearance of individual <xref:System.Web.UI.WebControls.WebParts.WebPart> controls, have changed. Control-level personalization is tracked for each control individually. The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.System%23Web%23UI%23WebControls%23WebParts%23IPersonalizable%23IsDirty> property indicates only whether personalization data that is at the page level and is managed by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control has changed.
@@ -5077,7 +5175,8 @@ The following code example demonstrates a simple usage of the <xref:System.Web.U
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is an implementation of the <xref:System.Web.UI.WebControls.WebParts.IPersonalizable.Load*?displayProperty=nameWithType> method, which provides a way for the Web Parts control set to directly access the protected <xref:System.Web.UI.WebControls.WebParts.WebPartManager.LoadCustomPersonalizationState*?displayProperty=nameWithType> method. When this method is called, it stores the custom personalized data that is managed by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control, and that was previously saved in the permanent data store for use later in the initialization process.
+
+This method is an implementation of the <xref:System.Web.UI.WebControls.WebParts.IPersonalizable.Load*?displayProperty=nameWithType> method, which provides a way for the Web Parts control set to directly access the protected <xref:System.Web.UI.WebControls.WebParts.WebPartManager.LoadCustomPersonalizationState*?displayProperty=nameWithType> method. When this method is called, it stores the custom personalized data that is managed by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control, and that was previously saved in the permanent data store for use later in the initialization process.
 
 > [!NOTE]
 > In most cases, page and control developer code does not need to call this method, because it is primarily used by the Web Parts control set as its mechanism for retrieving personalization data.
@@ -5126,7 +5225,8 @@ The following code example demonstrates a simple usage of the <xref:System.Web.U
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.System%23Web%23UI%23WebControls%23WebParts%23IPersonalizable%23Save*> method is an implementation of the <xref:System.Web.UI.WebControls.WebParts.IPersonalizable.Save*?displayProperty=nameWithType> method, which provides a way for the Web Parts control set to directly access the protected <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SaveCustomPersonalizationState*?displayProperty=nameWithType> method. When this method is called, it saves all personalized data that is managed by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control to the permanent data store configured for a Web Parts application.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.System%23Web%23UI%23WebControls%23WebParts%23IPersonalizable%23Save*> method is an implementation of the <xref:System.Web.UI.WebControls.WebParts.IPersonalizable.Save*?displayProperty=nameWithType> method, which provides a way for the Web Parts control set to directly access the protected <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SaveCustomPersonalizationState*?displayProperty=nameWithType> method. When this method is called, it saves all personalized data that is managed by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control to the permanent data store configured for a Web Parts application.
 
 > [!NOTE]
 > In most cases, page and control developer code does not need to call this method, because it is primarily used by the Web Parts control set as its mechanism for saving personalization data.
@@ -5164,7 +5264,8 @@ The following code example demonstrates a simple usage of the <xref:System.Web.U
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The changes to the view-state data are stored in a <xref:System.Web.UI.StateBag> object, and can be accessed through the control's <xref:System.Web.UI.Control.ViewState> property.
+
+The changes to the view-state data are stored in a <xref:System.Web.UI.StateBag> object, and can be accessed through the control's <xref:System.Web.UI.Control.ViewState> property.
 
  ]]></format>
         </remarks>
@@ -5211,7 +5312,8 @@ The following code example demonstrates a simple usage of the <xref:System.Web.U
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control overrides the base <xref:System.Web.UI.Control.Visible?displayProperty=nameWithType> property to always return a value of `true` for the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.Visible> property. Even though the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control itself is not visible, the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.Visible> property needs to be set to `true` so that all its child controls are visible by default.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control overrides the base <xref:System.Web.UI.Control.Visible?displayProperty=nameWithType> property to always return a value of `true` for the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.Visible> property. Even though the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control itself is not visible, the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.Visible> property needs to be set to `true` so that all its child controls are visible by default.
 
  If you try to set the value of the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.Visible> property, it always generates an error because the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control has overridden the base property behavior and prevents assigning any value to the property.
 
@@ -5244,7 +5346,8 @@ The following code example demonstrates a simple usage of the <xref:System.Web.U
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartAdded> event is useful for indicating that a dynamic control (a control added programmatically, as opposed to being declared in page markup) was successfully added to a zone. In conjunction with the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartAdded*> method, the event provides developers with a way to update the user interface (UI) or otherwise notify users that a control was successfully added.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartAdded> event is useful for indicating that a dynamic control (a control added programmatically, as opposed to being declared in page markup) was successfully added to a zone. In conjunction with the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartAdded*> method, the event provides developers with a way to update the user interface (UI) or otherwise notify users that a control was successfully added.
 
  ]]></format>
         </remarks>
@@ -5275,7 +5378,8 @@ The following code example demonstrates a simple usage of the <xref:System.Web.U
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartAdding> event is raised by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartAdding*> method after the process of adding a control to a zone has begun. This event provides an opportunity to cancel the process before it is complete. If the adding process is successful, this event is followed by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartAdded> event.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartAdding> event is raised by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartAdding*> method after the process of adding a control to a zone has begun. This event provides an opportunity to cancel the process before it is complete. If the adding process is successful, this event is followed by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartAdded> event.
 
  Page developers can provide custom handlers for the event by adding the `OnWebPartAdding` attribute to the `<asp:webpartmanager>` element in a page, and assigning a custom method name to the attribute.
 
@@ -5309,7 +5413,8 @@ The following code example demonstrates a simple usage of the <xref:System.Web.U
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartClosed> event indicates that a control has been successfully closed, either by a user or programmatically. To close a <xref:System.Web.UI.WebControls.WebParts.WebPart> control means to remove it from a page so that it is not rendered, and also to place it in a special holding object called a page catalog. A page catalog, which corresponds to the <xref:System.Web.UI.WebControls.WebParts.PageCatalogPart> control, maintains references to closed <xref:System.Web.UI.WebControls.WebParts.WebPart> controls for each page. If a <xref:System.Web.UI.WebControls.WebParts.PageCatalogPart> control is declared on a page within a <xref:System.Web.UI.WebControls.WebParts.CatalogZone> zone, users can switch a page into catalog display mode, and add back to a page any controls that were previously closed.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartClosed> event indicates that a control has been successfully closed, either by a user or programmatically. To close a <xref:System.Web.UI.WebControls.WebParts.WebPart> control means to remove it from a page so that it is not rendered, and also to place it in a special holding object called a page catalog. A page catalog, which corresponds to the <xref:System.Web.UI.WebControls.WebParts.PageCatalogPart> control, maintains references to closed <xref:System.Web.UI.WebControls.WebParts.WebPart> controls for each page. If a <xref:System.Web.UI.WebControls.WebParts.PageCatalogPart> control is declared on a page within a <xref:System.Web.UI.WebControls.WebParts.CatalogZone> zone, users can switch a page into catalog display mode, and add back to a page any controls that were previously closed.
 
  The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartClosed> event is associated with the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartClosed*> method, which both raises the event and provides a handler for it.
 
@@ -5344,7 +5449,8 @@ The following code example demonstrates a simple usage of the <xref:System.Web.U
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartClosing> event is raised by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartClosing*> method when the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control is in the process of closing a control. If the removal of the control is successful, this event is followed by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartClosed> event.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartClosing> event is raised by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartClosing*> method when the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control is in the process of closing a control. If the removal of the control is successful, this event is followed by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartClosed> event.
 
  Page developers can provide a custom handler for the event by adding the `OnWebPartClosed` attribute to the `<asp:webpartmanager>` element in a page, and assigning a custom method name to the attribute.
 
@@ -5380,7 +5486,8 @@ The following code example demonstrates a simple usage of the <xref:System.Web.U
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartDeleted> event is useful for indicating that a dynamic control (a control added programmatically, as opposed to being declared in page markup) was successfully deleted from a zone. In conjunction with the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartDeleted*> method, the event provides developers with a way to update the user interface (UI) or otherwise notify users that a control was successfully deleted.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartDeleted> event is useful for indicating that a dynamic control (a control added programmatically, as opposed to being declared in page markup) was successfully deleted from a zone. In conjunction with the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartDeleted*> method, the event provides developers with a way to update the user interface (UI) or otherwise notify users that a control was successfully deleted.
 
  ]]></format>
         </remarks>
@@ -5410,7 +5517,8 @@ The following code example demonstrates a simple usage of the <xref:System.Web.U
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartDeleting> event is raised by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartDeleting*> method, during the process of deleting a dynamic control (one that has been added programmatically or by a user through the Web Parts user interface). The event provides an opportunity to cancel the process before it is finished. If the deletion process is successfully completed, this event is followed by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartDeleted> event.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartDeleting> event is raised by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartDeleting*> method, during the process of deleting a dynamic control (one that has been added programmatically or by a user through the Web Parts user interface). The event provides an opportunity to cancel the process before it is finished. If the deletion process is successfully completed, this event is followed by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartDeleted> event.
 
  Page developers can provide custom handlers for the event by adding the `OnWebPartDeleting` attribute to the `<asp:webpartmanager>` element in a page, and assigning a custom method name to the attribute.
 
@@ -5444,7 +5552,8 @@ The following code example demonstrates a simple usage of the <xref:System.Web.U
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This event applies to both static (declared in the markup of a Web page) and dynamic controls. It is associated with the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartMoved*> method. Because the event is raised after a move is complete, developers can include an event handler to provide some notification to users, some validation, or some other actions. To add an event handler, you can add an `OnWebPartMoved` attribute to the `<asp:webpartmanager>` element in a page, and assign the name of a custom method to the attribute.
+
+This event applies to both static (declared in the markup of a Web page) and dynamic controls. It is associated with the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartMoved*> method. Because the event is raised after a move is complete, developers can include an event handler to provide some notification to users, some validation, or some other actions. To add an event handler, you can add an `OnWebPartMoved` attribute to the `<asp:webpartmanager>` element in a page, and assign the name of a custom method to the attribute.
 
  ]]></format>
         </remarks>
@@ -5473,7 +5582,8 @@ The following code example demonstrates a simple usage of the <xref:System.Web.U
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartMoving> event is raised when a <xref:System.Web.UI.WebControls.WebParts.WebPart> or other server control is being moved within its own zone, or to another zone. This can occur both when a user drags a control, and when there is a programmatic move.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartMoving> event is raised when a <xref:System.Web.UI.WebControls.WebParts.WebPart> or other server control is being moved within its own zone, or to another zone. This can occur both when a user drags a control, and when there is a programmatic move.
 
  The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartMoving> event is raised by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartMoving*> method, and it provides an opportunity to cancel the moving process before it is complete. If the move is completed and the control placed in a new position, this event is followed by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartMoved> event.
 
@@ -5520,7 +5630,8 @@ The following code example demonstrates a simple usage of the <xref:System.Web.U
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebParts> property is used by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control to track all <xref:System.Web.UI.WebControls.WebParts.WebPart> controls that are contained within <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase> zones on the page. Although the collection is read-only, you can access individual <xref:System.Web.UI.WebControls.WebParts.WebPart> controls through the collection and make changes to them programmatically.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebParts> property is used by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control to track all <xref:System.Web.UI.WebControls.WebParts.WebPart> controls that are contained within <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase> zones on the page. Although the collection is read-only, you can access individual <xref:System.Web.UI.WebControls.WebParts.WebPart> controls through the collection and make changes to them programmatically.
 
 > [!NOTE]
 > It is possible to have a <xref:System.Web.UI.WebControls.WebParts.WebPart> control placed on a page outside of a <xref:System.Web.UI.WebControls.WebParts.WebPartZone> zone, which results in the control not being tracked by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control or referenced in its <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebParts*> collection. However, there is little reason to use a <xref:System.Web.UI.WebControls.WebParts.WebPart> control outside of a zone, because it then loses its Web Parts functionality and acts as a normal server control.
@@ -5570,7 +5681,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsConnected> event is associated with the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartsConnected*> method. The event is useful because after you know that a connection is complete, you might want to inform the user of the fact, or even change the user interface (UI) of the page. For example, you might want to display some graphic image that suggests a successful connection between two controls, or display a brief message, and then change the page display mode back to browse mode.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsConnected> event is associated with the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartsConnected*> method. The event is useful because after you know that a connection is complete, you might want to inform the user of the fact, or even change the user interface (UI) of the page. For example, you might want to display some graphic image that suggests a successful connection between two controls, or display a brief message, and then change the page display mode back to browse mode.
 
  Page developers can associate a custom event handler with this event by adding the `OnWebPartsConnected` attribute to the `<asp:webpartmanager>` element in the page, and assigning a custom method name to the attribute.
 
@@ -5602,7 +5714,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsConnecting> event is raised by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartsConnecting*> method, and it signals that the connection process has begun (for example, a user has selected a control and clicked a connect verb), but is not yet completed. The event provides an opportunity to cancel a connection before it is complete. If the connection is successfully completed, this event is followed by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsConnected> event.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsConnecting> event is raised by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartsConnecting*> method, and it signals that the connection process has begun (for example, a user has selected a control and clicked a connect verb), but is not yet completed. The event provides an opportunity to cancel a connection before it is complete. If the connection is successfully completed, this event is followed by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsConnected> event.
 
  Page developers can add a custom handler for the event by adding the `OnWebPartsConnecting` attribute to the `<asp:webpartmanager>` element, and assigning a custom method name to the attribute.
 
@@ -5636,7 +5749,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsDisconnected> event is associated with the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartsDisconnected*> method. The event is useful because after you know that a connection is terminated, you might want to inform the user, perform some cleanup actions in the code, or make other changes in the user interface (UI).
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsDisconnected> event is associated with the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartsDisconnected*> method. The event is useful because after you know that a connection is terminated, you might want to inform the user, perform some cleanup actions in the code, or make other changes in the user interface (UI).
 
  Page developers can associate a custom event handler with this event by adding the `OnWebPartsDisConnected` attribute to the `<asp:webpartmanager>` element in the page, and assigning a custom method name to the attribute.
 
@@ -5668,7 +5782,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsDisconnecting> event is raised by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartsDisconnecting*> method, and it signals the fact that a user has clicked a disconnect verb, or the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisconnectWebParts*> method has otherwise been called. The event provides an opportunity to cancel the process of ending a connection before it is complete. If the connection is ended successfully, this event is followed by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsDisconnected> event.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsDisconnecting> event is raised by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnWebPartsDisconnecting*> method, and it signals the fact that a user has clicked a disconnect verb, or the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisconnectWebParts*> method has otherwise been called. The event provides an opportunity to cancel the process of ending a connection before it is complete. If the connection is ended successfully, this event is followed by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsDisconnected> event.
 
  Page developers can add a custom handler for the event by adding the `OnWebPartsDisconnecting` attribute to the `<asp:webpartmanager>` element, and assigning a custom method name to the attribute.
 
@@ -5723,7 +5838,8 @@ The following code example demonstrates how to use the <xref:System.Web.UI.WebCo
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.Zones> property is used by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control to track the <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase> zones on a Web page. Note that the property does not reference all types of zones; it references only zones that derive from the <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase> class, including <xref:System.Web.UI.WebControls.WebParts.WebPartZone> zones.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.Zones> property is used by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control to track the <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase> zones on a Web page. Note that the property does not reference all types of zones; it references only zones that derive from the <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase> class, including <xref:System.Web.UI.WebControls.WebParts.WebPartZone> zones.
 
  Although the collection referenced by the property is read-only, you can use it to access the individual objects in the collection and work with them programmatically.
 

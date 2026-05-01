@@ -17,7 +17,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This interface allows control developers to track different phases of the personalization life cycle, including the loading and saving of personalization data. In most cases, to use this interface you would create a custom <xref:System.Web.UI.WebControls.WebParts.WebPart> or <xref:System.Web.UI.WebControls.WebParts.WebPartManager> and implement this interface. Additionally, controls that need to manage their own change ("dirty") tracking should implement this interface. Controls that manage their own change tracking should return `true` from the <xref:System.Web.UI.WebControls.WebParts.ITrackingPersonalizable.TracksChanges> property.
+
+This interface allows control developers to track different phases of the personalization life cycle, including the loading and saving of personalization data. In most cases, to use this interface you would create a custom <xref:System.Web.UI.WebControls.WebParts.WebPart> or <xref:System.Web.UI.WebControls.WebParts.WebPartManager> and implement this interface. Additionally, controls that need to manage their own change ("dirty") tracking should implement this interface. Controls that manage their own change tracking should return `true` from the <xref:System.Web.UI.WebControls.WebParts.ITrackingPersonalizable.TracksChanges> property.
 
  If `false` is returned, then ASP.NET is responsible for determining changes by comparing the property information loaded with the property information that was saved.
 
@@ -66,7 +67,8 @@ The following code example demonstrates using <xref:System.Web.UI.WebControls.We
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The Web Parts control set calls this method prior to applying personalization data. A control that tracks its own change state should use this method to set an internal flag indicating that properties should not call <xref:System.Web.UI.WebControls.WebParts.WebPart.SetPersonalizationDirty*>. This is because property-setting methods can be called during the application of personalization data, subsequent to the call to <xref:System.Web.UI.WebControls.WebParts.ITrackingPersonalizable.BeginLoad*>. In most scenarios, a control should not be considered changed ("dirty") just because its personalizable properties have been set based on data loaded from the underlying data store.
+
+The Web Parts control set calls this method prior to applying personalization data. A control that tracks its own change state should use this method to set an internal flag indicating that properties should not call <xref:System.Web.UI.WebControls.WebParts.WebPart.SetPersonalizationDirty*>. This is because property-setting methods can be called during the application of personalization data, subsequent to the call to <xref:System.Web.UI.WebControls.WebParts.ITrackingPersonalizable.BeginLoad*>. In most scenarios, a control should not be considered changed ("dirty") just because its personalizable properties have been set based on data loaded from the underlying data store.
 
 > [!NOTE]
 > This method is also called when personalization data is applied after importing a Web Parts control.
@@ -105,7 +107,8 @@ The following code example demonstrates using the <xref:System.Web.UI.WebControl
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The Web Parts control set calls this method prior to extracting personalization data from the control.
+
+The Web Parts control set calls this method prior to extracting personalization data from the control.
 
 ## Examples
 
@@ -141,7 +144,8 @@ The following code example demonstrates using the <xref:System.Web.UI.WebControl
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The Web Parts control set calls this method after personalization data has been applied to the control. A control that tracks its change state should use this method to reset its internal state to indicate that subsequent property-setting methods should call <xref:System.Web.UI.WebControls.WebParts.WebPart.SetPersonalizationDirty*>. By the time the <xref:System.Web.UI.WebControls.WebParts.ITrackingPersonalizable.EndLoad*> method is called, the Web Parts control set has completed any application of personalization data to the control. As a result, subsequent changes to the control's state should be considered valid indicators that the control has changed (is "dirty").
+
+The Web Parts control set calls this method after personalization data has been applied to the control. A control that tracks its change state should use this method to reset its internal state to indicate that subsequent property-setting methods should call <xref:System.Web.UI.WebControls.WebParts.WebPart.SetPersonalizationDirty*>. By the time the <xref:System.Web.UI.WebControls.WebParts.ITrackingPersonalizable.EndLoad*> method is called, the Web Parts control set has completed any application of personalization data to the control. As a result, subsequent changes to the control's state should be considered valid indicators that the control has changed (is "dirty").
 
 > [!NOTE]
 > This method is also called when personalization data is applied after importing a Web Parts control.
@@ -180,7 +184,8 @@ The following code example demonstrates using the <xref:System.Web.UI.WebControl
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The Web Parts control set calls this method after personalization data has been extracted from the control.
+
+The Web Parts control set calls this method after personalization data has been extracted from the control.
 
 ## Examples
 
@@ -217,7 +222,8 @@ The following code example demonstrates using the <xref:System.Web.UI.WebControl
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If a control returns `true` from this property, then it is the Web Parts control's responsibility to determine when it considers itself "dirty." If a control determines that it has changed (is "dirty"), that control must call <xref:System.Web.UI.WebControls.WebParts.WebPart.SetPersonalizationDirty*> on itself.
+
+If a control returns `true` from this property, then it is the Web Parts control's responsibility to determine when it considers itself "dirty." If a control determines that it has changed (is "dirty"), that control must call <xref:System.Web.UI.WebControls.WebParts.WebPart.SetPersonalizationDirty*> on itself.
 
 ## Examples
 

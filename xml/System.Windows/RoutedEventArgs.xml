@@ -27,7 +27,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Different <xref:System.Windows.RoutedEventArgs> can be used with a single <xref:System.Windows.RoutedEventArgs.RoutedEvent*>. This class is responsible for packaging the event data for a <xref:System.Windows.RoutedEventArgs.RoutedEvent*>, providing extra event state information, and is used by the event system for invoking the handler associated with the routed event.
+
+Different <xref:System.Windows.RoutedEventArgs> can be used with a single <xref:System.Windows.RoutedEventArgs.RoutedEvent*>. This class is responsible for packaging the event data for a <xref:System.Windows.RoutedEventArgs.RoutedEvent*>, providing extra event state information, and is used by the event system for invoking the handler associated with the routed event.
 
  ]]></format>
     </remarks>
@@ -77,7 +78,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When using this parameterless constructor, all public properties of the new <xref:System.Windows.RoutedEventArgs> instance assume the following default values:
+
+When using this parameterless constructor, all public properties of the new <xref:System.Windows.RoutedEventArgs> instance assume the following default values:
 
 -   <xref:System.Windows.RoutedEventArgs.RoutedEvent*> defaults to `null`.
 
@@ -130,7 +132,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When using this overloaded constructor, unspecified properties of the new <xref:System.Windows.RoutedEventArgs> instance assume the following default values:
+
+When using this overloaded constructor, unspecified properties of the new <xref:System.Windows.RoutedEventArgs> instance assume the following default values:
 
 -   <xref:System.Windows.RoutedEventArgs.Handled*> defaults to `false`
 
@@ -184,7 +187,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When using this overloaded constructor, unspecified properties of the new <xref:System.Windows.RoutedEventArgs> instance assume the following default values:
+
+When using this overloaded constructor, unspecified properties of the new <xref:System.Windows.RoutedEventArgs> instance assume the following default values:
 
 -   <xref:System.Windows.RoutedEventArgs.Handled*> defaults to `false`
 
@@ -240,7 +244,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Marking the event handled will limit the visibility of the routed event to listeners along the event route. The event does still travel the remainder of the route, but only handlers specifically added with `HandledEventsToo` `true` in the <xref:System.Windows.UIElement.AddHandler(System.Windows.RoutedEvent,System.Delegate,System.Boolean)> method call will be invoked in response. Default handlers on instance listeners (such as those expressed in Extensible Application Markup Language (XAML)) will not be invoked. Handling events that are marked handled is not a common scenario.
+
+Marking the event handled will limit the visibility of the routed event to listeners along the event route. The event does still travel the remainder of the route, but only handlers specifically added with `HandledEventsToo` `true` in the <xref:System.Windows.UIElement.AddHandler(System.Windows.RoutedEvent,System.Delegate,System.Boolean)> method call will be invoked in response. Default handlers on instance listeners (such as those expressed in Extensible Application Markup Language (XAML)) will not be invoked. Handling events that are marked handled is not a common scenario.
 
  If you are a control author defining your own events, the decisions you make regarding event handling at the class level will impact users of your control as well as any users of derived controls, and potentially other elements that are either contained by your control or that contain your control. For more information, see [Marking Routed Events as Handled, and Class Handling](/dotnet/framework/wpf/advanced/marking-routed-events-as-handled-and-class-handling).
 
@@ -291,7 +296,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The base implementation incorporates reflection to determine the right handler for any case where the handler is not literally <xref:System.Windows.RoutedEventHandler>, and this reflection step does have some performance consequences. Invocations can be made more efficient by not relying on reflection. This is the scenario that motivates this method being available for any routed event arguments class that choose to override it. Implementations should not call the base for this method, because your implementation should already be responsible for invoking the type safe handlers.
+
+The base implementation incorporates reflection to determine the right handler for any case where the handler is not literally <xref:System.Windows.RoutedEventHandler>, and this reflection step does have some performance consequences. Invocations can be made more efficient by not relying on reflection. This is the scenario that motivates this method being available for any routed event arguments class that choose to override it. Implementations should not call the base for this method, because your implementation should already be responsible for invoking the type safe handlers.
 
 ## Examples
  The following is pseudocode that illustrates a basic pattern that can be used for implementation. Here, `MyRoutedEventHandler` is a subclass of <xref:System.Windows.RoutedEventHandler>.
@@ -382,7 +388,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This property acquires its value once, before the class event handlers or any instance handlers are invoked, and is never adjusted past this point. The original source information is read-only to class handlers or class implementations, just as it is reported in the event data.
+
+This property acquires its value once, before the class event handlers or any instance handlers are invoked, and is never adjusted past this point. The original source information is read-only to class handlers or class implementations, just as it is reported in the event data.
 
  Common cases where the source may be adjusted include content elements inside a content model for a control (the contents of a list item, for instance, will report the list item element as the <xref:System.Windows.RoutedEventArgs.Source*> and the actual element within the list item will be the <xref:System.Windows.RoutedEventArgs.OriginalSource*>.
 
@@ -429,7 +436,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You cannot set this value on a <xref:System.Windows.RoutedEventArgs> that has already been routed (for instance, if you obtained the arguments through a handler). Attempting to do so will generate an exception. You can only set it on an instance that has not yet been used to generate an invocation of the event.
+
+You cannot set this value on a <xref:System.Windows.RoutedEventArgs> that has already been routed (for instance, if you obtained the arguments through a handler). Attempting to do so will generate an exception. You can only set it on an instance that has not yet been used to generate an invocation of the event.
 
  The value of <xref:System.Windows.RoutedEventArgs.RoutedEvent*> cannot be `null` at any time.
 
@@ -480,7 +488,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- For any bubbling routed event that has actually traveled the route beyond the element that raised it, and for any tunneling routed event that has not yet tunneled down to the element that raised it, the value of <xref:System.Windows.RoutedEventArgs.Source*> will be different than the value of the `sender` parameter of the event arguments class. Which of the two elements involved in the event is of the most importance in any given handler (<xref:System.Windows.RoutedEventArgs.Source*>, the element that raised it, or `sender`, the element that is currently handling it) is dependent on the application logic that your handler is addressing.
+
+For any bubbling routed event that has actually traveled the route beyond the element that raised it, and for any tunneling routed event that has not yet tunneled down to the element that raised it, the value of <xref:System.Windows.RoutedEventArgs.Source*> will be different than the value of the `sender` parameter of the event arguments class. Which of the two elements involved in the event is of the most importance in any given handler (<xref:System.Windows.RoutedEventArgs.Source*>, the element that raised it, or `sender`, the element that is currently handling it) is dependent on the application logic that your handler is addressing.
 
  Setting this property is typically only done when overriding or implementing other APIs that adjust event sources, such as when class handling an event. Resetting apparent event sources from instance handlers is not recommended, particularly when the handler does not mark the event as handled.
 

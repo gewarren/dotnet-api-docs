@@ -17,7 +17,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.SessionState.ISessionIDManager> interface identifies the methods that you must implement to create a custom manager for session-identifier values. An <xref:System.Web.SessionState.ISessionIDManager> interface implementation creates and validates session-identifier values, and manages the storage of a session identifier in the HTTP response as well as the retrieval of a session-identifier value from the HTTP request. You enable the custom session-ID manager using the `sessionIDManagerType` attribute of the [sessionState Element (ASP.NET Settings Schema)](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/h6bb9cz9(v=vs.100)) configuration element.
+
+The <xref:System.Web.SessionState.ISessionIDManager> interface identifies the methods that you must implement to create a custom manager for session-identifier values. An <xref:System.Web.SessionState.ISessionIDManager> interface implementation creates and validates session-identifier values, and manages the storage of a session identifier in the HTTP response as well as the retrieval of a session-identifier value from the HTTP request. You enable the custom session-ID manager using the `sessionIDManagerType` attribute of the [sessionState Element (ASP.NET Settings Schema)](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/h6bb9cz9(v=vs.100)) configuration element.
 
  If your <xref:System.Web.SessionState.ISessionIDManager> interface implementation will support cookieless session identifiers, you will need to implement a solution for sending and retrieving session identifiers in the URL, such as an ISAPI filter.
 
@@ -62,7 +63,8 @@ The following code example shows a class that implements a cookie-based session-
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.SessionState.ISessionIDManager.CreateSessionID*> method is used to generate a unique session identifier that the <xref:System.Web.SessionState.SessionStateModule> object will use to identify a new session. The value returned by <xref:System.Web.SessionState.ISessionIDManager.CreateSessionID*> must be unique and must contain valid characters that can be stored in an HTTP response and request. If it is possible that the value returned by your <xref:System.Web.SessionState.ISessionIDManager.CreateSessionID*> implementation contains characters that are not valid in an HTTP response or request, you should use the <xref:System.Web.HttpUtility.UrlEncode*> method to encode the session-identifier value in your <xref:System.Web.SessionState.ISessionIDManager.SaveSessionID*> method implementation and the <xref:System.Web.HttpUtility.UrlDecode*> method to decode the session-identifier value in your <xref:System.Web.SessionState.ISessionIDManager.GetSessionID*> method implementation.
+
+The <xref:System.Web.SessionState.ISessionIDManager.CreateSessionID*> method is used to generate a unique session identifier that the <xref:System.Web.SessionState.SessionStateModule> object will use to identify a new session. The value returned by <xref:System.Web.SessionState.ISessionIDManager.CreateSessionID*> must be unique and must contain valid characters that can be stored in an HTTP response and request. If it is possible that the value returned by your <xref:System.Web.SessionState.ISessionIDManager.CreateSessionID*> implementation contains characters that are not valid in an HTTP response or request, you should use the <xref:System.Web.HttpUtility.UrlEncode*> method to encode the session-identifier value in your <xref:System.Web.SessionState.ISessionIDManager.SaveSessionID*> method implementation and the <xref:System.Web.HttpUtility.UrlDecode*> method to decode the session-identifier value in your <xref:System.Web.SessionState.ISessionIDManager.GetSessionID*> method implementation.
 
 ## Examples
 
@@ -103,7 +105,8 @@ The following code example implements the <xref:System.Web.SessionState.ISession
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.SessionState.ISessionIDManager.GetSessionID*> method is called by the <xref:System.Web.SessionState.SessionStateModule> during the <xref:System.Web.HttpApplication.AcquireRequestState?displayProperty=nameWithType> and <xref:System.Web.HttpApplication.EndRequest?displayProperty=nameWithType> events. If you cannot retrieve a valid session identifier from the HTTP request, return `null`. If the <xref:System.Web.SessionState.SessionStateModule> receives `null` from the <xref:System.Web.SessionState.ISessionIDManager.GetSessionID*> method, it will call the <xref:System.Web.SessionState.ISessionIDManager.CreateSessionID*> method to get a new session identifier for a new session.
+
+The <xref:System.Web.SessionState.ISessionIDManager.GetSessionID*> method is called by the <xref:System.Web.SessionState.SessionStateModule> during the <xref:System.Web.HttpApplication.AcquireRequestState?displayProperty=nameWithType> and <xref:System.Web.HttpApplication.EndRequest?displayProperty=nameWithType> events. If you cannot retrieve a valid session identifier from the HTTP request, return `null`. If the <xref:System.Web.SessionState.SessionStateModule> receives `null` from the <xref:System.Web.SessionState.ISessionIDManager.GetSessionID*> method, it will call the <xref:System.Web.SessionState.ISessionIDManager.CreateSessionID*> method to get a new session identifier for a new session.
 
  If it is possible that the value returned by your <xref:System.Web.SessionState.ISessionIDManager.CreateSessionID*> implementation contains characters that are not valid in an HTTP response or request, you should use the <xref:System.Web.HttpUtility.UrlEncode*> method to encode the session-identifier value in your <xref:System.Web.SessionState.ISessionIDManager.SaveSessionID*> method implementation and the <xref:System.Web.HttpUtility.UrlDecode*> method to decode the session-identifier value in your <xref:System.Web.SessionState.ISessionIDManager.GetSessionID*> method implementation.
 
@@ -142,7 +145,8 @@ The following code example shows a partially implemented <xref:System.Web.Sessio
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use the <xref:System.Web.SessionState.ISessionIDManager.Initialize*> method to initialize the <xref:System.Web.SessionState.ISessionIDManager> object.
+
+Use the <xref:System.Web.SessionState.ISessionIDManager.Initialize*> method to initialize the <xref:System.Web.SessionState.ISessionIDManager> object.
 
  ]]></format>
         </remarks>
@@ -186,7 +190,8 @@ The following code example shows a partially implemented <xref:System.Web.Sessio
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.SessionState.ISessionIDManager.InitializeRequest*> method is called for each request handled by the <xref:System.Web.SessionState.ISessionIDManager> object. Use the <xref:System.Web.SessionState.ISessionIDManager.InitializeRequest*> method to initialize per-request data for the <xref:System.Web.SessionState.SessionIDManager> object.
+
+The <xref:System.Web.SessionState.ISessionIDManager.InitializeRequest*> method is called for each request handled by the <xref:System.Web.SessionState.ISessionIDManager> object. Use the <xref:System.Web.SessionState.ISessionIDManager.InitializeRequest*> method to initialize per-request data for the <xref:System.Web.SessionState.SessionIDManager> object.
 
  When the `suppressAutoDetectRedirect` parameter is `true`, the <xref:System.Web.SessionState.ISessionIDManager> object should not use redirection to determine whether the browser supports cookies.
 
@@ -222,7 +227,8 @@ The following code example shows a partially implemented <xref:System.Web.Sessio
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.SessionState.SessionStateModule> calls the <xref:System.Web.SessionState.SessionIDManager.RemoveSessionID*> method during the <xref:System.Web.HttpApplication.ReleaseRequestState?displayProperty=nameWithType> event to remove the session identifier from the <xref:System.Web.HttpResponse.Cookies*?displayProperty=nameWithType> collection if a new session was created but was not used.
+
+The <xref:System.Web.SessionState.SessionStateModule> calls the <xref:System.Web.SessionState.SessionIDManager.RemoveSessionID*> method during the <xref:System.Web.HttpApplication.ReleaseRequestState?displayProperty=nameWithType> event to remove the session identifier from the <xref:System.Web.HttpResponse.Cookies*?displayProperty=nameWithType> collection if a new session was created but was not used.
 
 ## Examples
 
@@ -268,7 +274,8 @@ The following code example implements the <xref:System.Web.SessionState.ISession
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.SessionState.ISessionIDManager.SaveSessionID*> method is called by the <xref:System.Web.SessionState.SessionStateModule> object during the <xref:System.Web.HttpApplication.AcquireRequestState?displayProperty=nameWithType> event. The <xref:System.Web.SessionState.ISessionIDManager.SaveSessionID*> method stores the session identifier either in the URL (when cookieless session state is used) or in a non-expiring session cookie.
+
+The <xref:System.Web.SessionState.ISessionIDManager.SaveSessionID*> method is called by the <xref:System.Web.SessionState.SessionStateModule> object during the <xref:System.Web.HttpApplication.AcquireRequestState?displayProperty=nameWithType> event. The <xref:System.Web.SessionState.ISessionIDManager.SaveSessionID*> method stores the session identifier either in the URL (when cookieless session state is used) or in a non-expiring session cookie.
 
  If it is possible that the value returned from your <xref:System.Web.SessionState.ISessionIDManager.CreateSessionID*> implementation contains characters that are not valid in an HTTP response or request, you should use the <xref:System.Web.HttpUtility.UrlEncode*> method to encode the session-identifier value in your <xref:System.Web.SessionState.ISessionIDManager.SaveSessionID*> method implementation and the <xref:System.Web.HttpUtility.UrlDecode*> method to decode the session-identifier value in your <xref:System.Web.SessionState.ISessionIDManager.GetSessionID*> method implementation.
 
@@ -312,7 +319,8 @@ The following code example shows a partially implemented <xref:System.Web.Sessio
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.SessionState.ISessionIDManager.Validate*> method verifies that the supplied `id` is a valid session identifier.
+
+The <xref:System.Web.SessionState.ISessionIDManager.Validate*> method verifies that the supplied `id` is a valid session identifier.
 
  Your <xref:System.Web.SessionState.ISessionIDManager> implementation should call the <xref:System.Web.SessionState.ISessionIDManager.Validate*> method from the <xref:System.Web.SessionState.ISessionIDManager.GetSessionID*> method when retrieving a session identifier from an HTTP request to ensure that the supplied session identifier is properly formatted.
 

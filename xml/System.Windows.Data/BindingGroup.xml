@@ -27,7 +27,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A <xref:System.Windows.Data.BindingGroup> creates a relationship between multiple bindings, which can be validated and updated together. For example, suppose that an application prompts the user to enter an address. The application then populates an object of type `Address`, which has the properties, `Street`, `City`, `ZipCode`, and `Country`, with the values that the user provided. The application has a panel that contains four <xref:System.Windows.Controls.TextBox> controls, each of which is data bound to one of the object's properties. You can use a <xref:System.Windows.Controls.ValidationRule> in a <xref:System.Windows.Data.BindingGroup> to validate the `Address` object. If the bindings participate in the same <xref:System.Windows.Data.BindingGroup>, you can ensure that the zip-code is valid for the country/region of the address.
+
+A <xref:System.Windows.Data.BindingGroup> creates a relationship between multiple bindings, which can be validated and updated together. For example, suppose that an application prompts the user to enter an address. The application then populates an object of type `Address`, which has the properties, `Street`, `City`, `ZipCode`, and `Country`, with the values that the user provided. The application has a panel that contains four <xref:System.Windows.Controls.TextBox> controls, each of which is data bound to one of the object's properties. You can use a <xref:System.Windows.Controls.ValidationRule> in a <xref:System.Windows.Data.BindingGroup> to validate the `Address` object. If the bindings participate in the same <xref:System.Windows.Data.BindingGroup>, you can ensure that the zip-code is valid for the country/region of the address.
 
  You set the <xref:System.Windows.FrameworkElement.BindingGroup> property on <xref:System.Windows.FrameworkElement> or <xref:System.Windows.FrameworkContentElement>. Child elements inherit the <xref:System.Windows.Data.BindingGroup> from their parent elements, just as with any other inheritable property. A binding on a descendent element is added to a <xref:System.Windows.Data.BindingGroup> if one of the following situations occurs:
 
@@ -126,7 +127,8 @@ The following examples create an application that prompts the user to enter the 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the sources in the <xref:System.Windows.Data.BindingGroup> support discarding pending changes, you can call <xref:System.Windows.Data.BindingGroup.BeginEdit*> to begin the edit transaction, call <xref:System.Windows.Data.BindingGroup.CommitEdit*> to save the pending changes, call <xref:System.Windows.Data.BindingGroup.CancelEdit*> to discard the pending changes.
+
+If the sources in the <xref:System.Windows.Data.BindingGroup> support discarding pending changes, you can call <xref:System.Windows.Data.BindingGroup.BeginEdit*> to begin the edit transaction, call <xref:System.Windows.Data.BindingGroup.CommitEdit*> to save the pending changes, call <xref:System.Windows.Data.BindingGroup.CancelEdit*> to discard the pending changes.
 
  For each object in <xref:System.Windows.Data.BindingGroup.Items*> that implements <xref:System.ComponentModel.IEditableObject>, <xref:System.Windows.Data.BindingGroup.BeginEdit*> calls <xref:System.ComponentModel.IEditableObject.BeginEdit*?displayProperty=nameWithType>
 
@@ -177,7 +179,8 @@ The following example calls <xref:System.Windows.Data.BindingGroup.BeginEdit*> w
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A <xref:System.Windows.Data.BindingExpression> belongs to a <xref:System.Windows.Data.BindingGroup> if one of the following cases occurs:
+
+A <xref:System.Windows.Data.BindingExpression> belongs to a <xref:System.Windows.Data.BindingGroup> if one of the following cases occurs:
 
 - The binding's source and the <xref:System.Windows.FrameworkElement.DataContext*> of the element that has the <xref:System.Windows.Data.BindingGroup> are the same object and the <xref:System.Windows.Data.BindingBase.BindingGroupName*> is not set.
 
@@ -219,7 +222,8 @@ The following example calls <xref:System.Windows.Data.BindingGroup.BeginEdit*> w
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method causes the sources to discard the pending changes, if a source object is capable of doing so and end the edit transaction. Then the method updates the target properties with the saved source values.
+
+This method causes the sources to discard the pending changes, if a source object is capable of doing so and end the edit transaction. Then the method updates the target properties with the saved source values.
 
  For each object in <xref:System.Windows.Data.BindingGroup.Items*> that implements <xref:System.ComponentModel.IEditableObject>, <xref:System.Windows.Data.BindingGroup.CancelEdit*> calls <xref:System.ComponentModel.IEditableObject.CancelEdit*?displayProperty=nameWithType>
 
@@ -265,7 +269,8 @@ The following example calls <xref:System.Windows.Data.BindingGroup.CancelEdit*> 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A source can discard pending changes if it implements <xref:System.ComponentModel.IEditableObject>.
+
+A source can discard pending changes if it implements <xref:System.ComponentModel.IEditableObject>.
 
  ]]></format>
         </remarks>
@@ -303,7 +308,8 @@ The following example calls <xref:System.Windows.Data.BindingGroup.CancelEdit*> 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If every <xref:System.Windows.Controls.ValidationRule> succeeds, this method causes the sources to commit the pending changes and end the edit transaction, if a source object is capable of doing so.
+
+If every <xref:System.Windows.Controls.ValidationRule> succeeds, this method causes the sources to commit the pending changes and end the edit transaction, if a source object is capable of doing so.
 
  For each object in <xref:System.Windows.Data.BindingGroup.Items*> that implements <xref:System.ComponentModel.IEditableObject>, <xref:System.Windows.Data.BindingGroup.CommitEdit*> calls <xref:System.ComponentModel.IEditableObject.EndEdit*?displayProperty=nameWithType>
 
@@ -354,7 +360,8 @@ The following example calls <xref:System.Windows.Data.BindingGroup.CommitEdit*> 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use this method in the <xref:System.Windows.Controls.ValidationRule.Validate*?displayProperty=nameWithType> method to get the value to be committed to the source. The type of the return value depends on the stage at which the <xref:System.Windows.Controls.ValidationRule> occurs. For example, if a <xref:System.Windows.Controls.TextBox> is data bound to a property of type integer and the <xref:System.Windows.Controls.ValidationRule> that calls <xref:System.Windows.Data.BindingGroup.GetValue(System.Object,System.String)> has its <xref:System.Windows.Controls.ValidationRule.ValidationStep*> set to <xref:System.Windows.Controls.ValidationStep.RawProposedValue>, the method returns a string. If the <xref:System.Windows.Controls.ValidationRule> has its <xref:System.Windows.Controls.ValidationRule.ValidationStep*> set to <xref:System.Windows.Controls.ValidationStep.ConvertedProposedValue>, the method returns whatever type that is returned by the binding's converter. In this example, <xref:System.Windows.Data.BindingGroup.GetValue(System.Object,System.String)> usually returns an integer.
+
+Use this method in the <xref:System.Windows.Controls.ValidationRule.Validate*?displayProperty=nameWithType> method to get the value to be committed to the source. The type of the return value depends on the stage at which the <xref:System.Windows.Controls.ValidationRule> occurs. For example, if a <xref:System.Windows.Controls.TextBox> is data bound to a property of type integer and the <xref:System.Windows.Controls.ValidationRule> that calls <xref:System.Windows.Data.BindingGroup.GetValue(System.Object,System.String)> has its <xref:System.Windows.Controls.ValidationRule.ValidationStep*> set to <xref:System.Windows.Controls.ValidationStep.RawProposedValue>, the method returns a string. If the <xref:System.Windows.Controls.ValidationRule> has its <xref:System.Windows.Controls.ValidationRule.ValidationStep*> set to <xref:System.Windows.Controls.ValidationStep.ConvertedProposedValue>, the method returns whatever type that is returned by the binding's converter. In this example, <xref:System.Windows.Data.BindingGroup.GetValue(System.Object,System.String)> usually returns an integer.
 
 ## Examples
 
@@ -457,7 +464,8 @@ The following example is part of an application that prompts the user to enter m
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Each object that is used as a source is added into the <xref:System.Windows.Data.BindingGroup.Items> property once, even if the object is used as the source for multiple bindings. Often, there is just one item in <xref:System.Windows.Data.BindingGroup.Items*>, which is the object that is the <xref:System.Windows.FrameworkElement.DataContext*> of the element that uses the <xref:System.Windows.Data.BindingGroup>. It is possible for a <xref:System.Windows.Data.BindingGroup> to have multiple sources, however. For example, if Binding objects share the same <xref:System.Windows.Data.BindingBase.BindingGroupName*> but use different source objects, each object that is used as a source is in <xref:System.Windows.Data.BindingGroup.Items*>.
+
+Each object that is used as a source is added into the <xref:System.Windows.Data.BindingGroup.Items> property once, even if the object is used as the source for multiple bindings. Often, there is just one item in <xref:System.Windows.Data.BindingGroup.Items*>, which is the object that is the <xref:System.Windows.FrameworkElement.DataContext*> of the element that uses the <xref:System.Windows.Data.BindingGroup>. It is possible for a <xref:System.Windows.Data.BindingGroup> to have multiple sources, however. For example, if Binding objects share the same <xref:System.Windows.Data.BindingBase.BindingGroupName*> but use different source objects, each object that is used as a source is in <xref:System.Windows.Data.BindingGroup.Items*>.
 
  There can also be multiple objects in <xref:System.Windows.Data.BindingGroup.Items*> if the path of a Binding resolves to a nested property of the source. For example, suppose a <xref:System.Windows.Controls.TextBox> control's binding is a part of a <xref:System.Windows.Data.BindingGroup> and its <xref:System.Windows.FrameworkElement.DataContext*> is a `Customer` object, which has a property of type `Address`. If the <xref:System.Windows.Data.Binding.Path*> of the <xref:System.Windows.Data.Binding> is the `Address.ZipCode` property, the `Address` is added to the <xref:System.Windows.Data.BindingGroup.Items> property.
 
@@ -517,7 +525,8 @@ The following examples are part of an application that checks whether the user h
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If <xref:System.Windows.Data.BindingGroup.Name*> is `null`, bindings that have a source that is the same object as the <xref:System.Windows.FrameworkElement.DataContext*> of the element that has the <xref:System.Windows.Data.BindingGroup> participate in the <xref:System.Windows.Data.BindingGroup>.
+
+If <xref:System.Windows.Data.BindingGroup.Name*> is `null`, bindings that have a source that is the same object as the <xref:System.Windows.FrameworkElement.DataContext*> of the element that has the <xref:System.Windows.Data.BindingGroup> participate in the <xref:System.Windows.Data.BindingGroup>.
 
  You can include bindings that have a source that is different from the <xref:System.Windows.FrameworkElement.DataContext*> of the parent element that has the <xref:System.Windows.Data.BindingGroup> by setting <xref:System.Windows.Data.BindingGroup.Name*> of the <xref:System.Windows.Data.BindingGroup> and the <xref:System.Windows.Data.BindingBase.BindingGroupName> property of a binding to the same value. You can exclude bindings that have the same source as <xref:System.Windows.FrameworkElement.DataContext*> of the parent element that has the <xref:System.Windows.Data.BindingGroup> by setting <xref:System.Windows.Data.BindingGroup.Name*> of the <xref:System.Windows.Data.BindingGroup> and the <xref:System.Windows.Data.BindingBase.BindingGroupName> property of a binding to different values.
 
@@ -580,7 +589,8 @@ The following examples are part of an application that checks whether the user h
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Windows.Controls.Validation.Error?displayProperty=nameWithType> attached event occurs on the element that has the <xref:System.Windows.Data.BindingGroup>.
+
+The <xref:System.Windows.Controls.Validation.Error?displayProperty=nameWithType> attached event occurs on the element that has the <xref:System.Windows.Data.BindingGroup>.
 
 ## Examples
 
@@ -661,7 +671,8 @@ The following example creates a <xref:System.Windows.Data.BindingGroup> and sets
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A proposed value is a value that has been changed on the target of a binding, but has not been committed to the source. For example, suppose that there is a two-way binding on a <xref:System.Windows.Controls.TextBox> and the <xref:System.Windows.Data.Binding.UpdateSourceTrigger> property is set to <xref:System.Windows.Data.UpdateSourceTrigger.Explicit>. If the user changes the value of the <xref:System.Windows.Controls.TextBox>, the proposed value is the value that is in the <xref:System.Windows.Controls.TextBox> before it is committed to source.
+
+A proposed value is a value that has been changed on the target of a binding, but has not been committed to the source. For example, suppose that there is a two-way binding on a <xref:System.Windows.Controls.TextBox> and the <xref:System.Windows.Data.Binding.UpdateSourceTrigger> property is set to <xref:System.Windows.Data.UpdateSourceTrigger.Explicit>. If the user changes the value of the <xref:System.Windows.Controls.TextBox>, the proposed value is the value that is in the <xref:System.Windows.Controls.TextBox> before it is committed to source.
 
  When <xref:System.Windows.Data.BindingGroup.SharesProposedValues*> is `true`, the <xref:System.Windows.Data.BindingGroup> uses the proposed value when one binding leaves the BindingGroup and another Binding with the same source joins the BindingGroup. For example, suppose that an application enables a user to edit multiple fields and update the source object by clicking a button. When a field is not being edited, the application displays it in a <xref:System.Windows.Controls.TextBlock>. When the user begins to edit a field, the application replaces the <xref:System.Windows.Controls.TextBlock> with a <xref:System.Windows.Controls.TextBox>. When the user finishes editing that field, the application replaces the <xref:System.Windows.Controls.TextBox> with a <xref:System.Windows.Controls.TextBlock>. Because the source is not updated until the user clicks the button, there must be a way for the <xref:System.Windows.Controls.TextBlock> to display the proposed value. By setting <xref:System.Windows.Data.BindingGroup.SharesProposedValues*> to `true`, the application will display the user's changes to a field even when the source has not been updated.
 
@@ -761,7 +772,8 @@ The following example creates a custom <xref:System.Windows.Controls.ValidationR
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method updates the source if every <xref:System.Windows.Controls.ValidationRule> succeeds, but it does not cause the sources to commit the pending changes and end the edit transaction. That is, if the source object implements <xref:System.ComponentModel.IEditableObject>. Calling this method does not cause <xref:System.ComponentModel.IEditableObject.EndEdit*> to be called. Use the <xref:System.Windows.Data.BindingGroup.CommitEdit*> method to have the sources commit the pending changes.
+
+This method updates the source if every <xref:System.Windows.Controls.ValidationRule> succeeds, but it does not cause the sources to commit the pending changes and end the edit transaction. That is, if the source object implements <xref:System.ComponentModel.IEditableObject>. Calling this method does not cause <xref:System.ComponentModel.IEditableObject.EndEdit*> to be called. Use the <xref:System.Windows.Data.BindingGroup.CommitEdit*> method to have the sources commit the pending changes.
 
 ## Examples
 
@@ -804,7 +816,8 @@ The following example is part of an application that prompts the user to enter m
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When <xref:System.Windows.Data.BindingGroup.ValidatesOnNotifyDataError*> is `true`, the binding checks for and reports errors that are raised by a data source that implements <xref:System.ComponentModel.INotifyDataErrorInfo>.
+
+When <xref:System.Windows.Data.BindingGroup.ValidatesOnNotifyDataError*> is `true`, the binding checks for and reports errors that are raised by a data source that implements <xref:System.ComponentModel.INotifyDataErrorInfo>.
 
  ]]></format>
         </remarks>
@@ -848,7 +861,8 @@ The following example is part of an application that prompts the user to enter m
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The sources are not updated when you call this method.
+
+The sources are not updated when you call this method.
 
  ]]></format>
         </remarks>
@@ -918,7 +932,8 @@ The following example is part of an application that prompts the user to enter m
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When a <xref:System.Windows.Controls.ValidationRule> is added to a <xref:System.Windows.Data.BindingGroup>, the <xref:System.Windows.Data.BindingGroup> is passed in as the first parameter of the <xref:System.Windows.Controls.ValidationRule.Validate*> method. You can get the proposed values of the object by using the <xref:System.Windows.Data.BindingGroup.TryGetValue*> or <xref:System.Windows.Data.BindingGroup.GetValue(System.Object,System.String)> method. You can get the objects that are the sources of the bindings from the <xref:System.Windows.Data.BindingGroup.Items> property.
+
+When a <xref:System.Windows.Controls.ValidationRule> is added to a <xref:System.Windows.Data.BindingGroup>, the <xref:System.Windows.Data.BindingGroup> is passed in as the first parameter of the <xref:System.Windows.Controls.ValidationRule.Validate*> method. You can get the proposed values of the object by using the <xref:System.Windows.Data.BindingGroup.TryGetValue*> or <xref:System.Windows.Data.BindingGroup.GetValue(System.Object,System.String)> method. You can get the objects that are the sources of the bindings from the <xref:System.Windows.Data.BindingGroup.Items> property.
 
 ## Examples
 

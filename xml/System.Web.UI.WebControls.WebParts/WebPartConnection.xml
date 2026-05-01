@@ -30,7 +30,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- In the Web Parts control set, a connection is a link or association between two <xref:System.Web.UI.WebControls.WebParts.WebPart> (or other server or user) controls that enables them to share data. This ability to share data allows connected controls to be used in ways that exceed the functionality offered by the isolated controls. For example, if one control provides postal code data, and another control can read that data and provide local weather information based on the postal code, then the connected capability of the two controls provides more value to users. To extend this example, other controls could be created that also display information based on a postal code, such as a control with links to local news, and all these controls that can work with postal code data could share data with the single control that provides a postal code. End users of Web Parts applications can create and manage connections between all such compatible controls directly from a Web browser, using the standard connections user interface (UI) provided by the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone> control, or using a custom UI provided by a developer.
+
+In the Web Parts control set, a connection is a link or association between two <xref:System.Web.UI.WebControls.WebParts.WebPart> (or other server or user) controls that enables them to share data. This ability to share data allows connected controls to be used in ways that exceed the functionality offered by the isolated controls. For example, if one control provides postal code data, and another control can read that data and provide local weather information based on the postal code, then the connected capability of the two controls provides more value to users. To extend this example, other controls could be created that also display information based on a postal code, such as a control with links to local news, and all these controls that can work with postal code data could share data with the single control that provides a postal code. End users of Web Parts applications can create and manage connections between all such compatible controls directly from a Web browser, using the standard connections user interface (UI) provided by the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone> control, or using a custom UI provided by a developer.
 
  This <xref:System.Web.UI.WebControls.WebParts.WebPartConnection> class overview is a general statement of the basic details for creating a connection. For more on specific components and requirements involved in creating connections, see [Web Parts Connections Overview](https://learn.microsoft.com/previous-versions/aspnet/ms178187(v=vs.100)), or see the reference classes and code examples mentioned in the following discussion. There are several fundamental aspects of a Web Parts connection:
 
@@ -127,7 +128,8 @@ The following code example demonstrates how to create a simple connection betwee
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.%23ctor*> constructor is public so that the ASP.NET parser can create an instance when a connection is declared in the markup of a Web page; this constructor is not intended to be used in developer code.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.%23ctor*> constructor is public so that the ASP.NET parser can create an instance when a connection is declared in the markup of a Web page; this constructor is not intended to be used in developer code.
 
  When you want to create a <xref:System.Web.UI.WebControls.WebParts.WebPartConnection> object programmatically, you should use the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectWebParts*?displayProperty=nameWithType> or the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectWebParts*?displayProperty=nameWithType> method provided in the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control. These methods handle the many details of creating a connection, and return a <xref:System.Web.UI.WebControls.WebParts.WebPartConnection> object.
 
@@ -175,7 +177,8 @@ The following code example demonstrates how to create a simple connection betwee
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Every Web Parts connection consists of two controls that share data. One control acts as the provider of data, and the other control acts as a consumer, receiving and processing the data from the provider. The <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.Consumer> property gets a reference to the <xref:System.Web.UI.WebControls.WebParts.WebPart> control acting as a consumer in a connection relationship.
+
+Every Web Parts connection consists of two controls that share data. One control acts as the provider of data, and the other control acts as a consumer, receiving and processing the data from the provider. The <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.Consumer> property gets a reference to the <xref:System.Web.UI.WebControls.WebParts.WebPart> control acting as a consumer in a connection relationship.
 
 ## Examples
 
@@ -249,7 +252,8 @@ The following code example demonstrates the programmatic use of the <xref:System
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- One of the required steps for creating a connection between two <xref:System.Web.UI.WebControls.WebParts.WebPart> controls is to create connection points for each control. The consumer connection point is an object that contains the information about how to connect to the control acting as a consumer. In the consumer's source code, one of the methods must be identified with the `ConnectionConsumer` attribute. The <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint> object that is associated with a consumer control contains details about the method and the attribute, including an ID for the method, a display name for use in the user interface (UI), and what type of interface the method can retrieve. This set of information about the consumer, its method for forming connections, and the type of interface it understands, collectively forms a consumer connection point.
+
+One of the required steps for creating a connection between two <xref:System.Web.UI.WebControls.WebParts.WebPart> controls is to create connection points for each control. The consumer connection point is an object that contains the information about how to connect to the control acting as a consumer. In the consumer's source code, one of the methods must be identified with the `ConnectionConsumer` attribute. The <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint> object that is associated with a consumer control contains details about the method and the attribute, including an ID for the method, a display name for use in the user interface (UI), and what type of interface the method can retrieve. This set of information about the consumer, its method for forming connections, and the type of interface it understands, collectively forms a consumer connection point.
 
  By default, a <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint> object can connect to only one <xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint> object at a time. A consumer could have multiple methods identified as possible consumer connection points, but a consumer can only participate in one connection as a consumer (hence, only one of its consumer connection points can be active) at a time. In contrast, a <xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint> can connect to any number of <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint> objects. This default behavior can be changed by overriding the <xref:System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute.AllowsMultipleConnections> property on the <xref:System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute> attribute.
 
@@ -324,7 +328,8 @@ The following code example demonstrates the programmatic use of the <xref:System
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- For a static connection declared in the markup of a Web page, developers can specify which consumer connection point will be used for the connection by assigning a value to the `ConsumerConnectionPointID` attribute on the `<asp:webpartconnection>` element. If a value is not assigned to the attribute, the <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint.DefaultID> property value is used.
+
+For a static connection declared in the markup of a Web page, developers can specify which consumer connection point will be used for the connection by assigning a value to the `ConsumerConnectionPointID` attribute on the `<asp:webpartconnection>` element. If a value is not assigned to the attribute, the <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint.DefaultID> property value is used.
 
  When you create dynamic (programmatic) connections, normally you should not set the value of the <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ConsumerConnectionPointID> property. You can simply call the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectWebParts*> method on the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control, passing to it the consumer and consumer connection point objects (along with the other required parameters), and that method determines the correct ID to use for the consumer's connection point. Similarly, when you disconnect, you can call the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisconnectWebParts*> method without needing to specify the <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ConsumerConnectionPointID> property value.
 
@@ -402,7 +407,8 @@ The following code example shows the declarative and programmatic use of the <xr
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ConsumerID> property value is required when you create a connection between <xref:System.Web.UI.WebControls.WebParts.WebPart> controls. If a value is not assigned to the property, an exception is thrown when the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control attempts to activate the connection.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ConsumerID> property value is required when you create a connection between <xref:System.Web.UI.WebControls.WebParts.WebPart> controls. If a value is not assigned to the property, an exception is thrown when the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control attempts to activate the connection.
 
 ## Examples
 
@@ -474,7 +480,8 @@ The following code example shows the declarative and programmatic use of the <xr
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Every <xref:System.Web.UI.WebControls.WebParts.WebPartConnection> object has a unique value assigned to its <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ID> property. This is to ensure that there is a way to distinguish between multiple connections.
+
+Every <xref:System.Web.UI.WebControls.WebParts.WebPartConnection> object has a unique value assigned to its <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ID> property. This is to ensure that there is a way to distinguish between multiple connections.
 
  If you create a static connection by declaring an `<asp:webpartconnection>` element in a Web page, and you do not assign a value to the `ID` attribute for the connection, an exception is thrown when the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control attempts to activate the connection.
 
@@ -554,7 +561,8 @@ The following code example shows the declarative and programmatic use of the <xr
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.IsActive> property indicates a state of a <xref:System.Web.UI.WebControls.WebParts.WebPartConnection> object. When the connection is in this state, the provider and consumer controls in the connection are communicating and able to exchange data through a common interface or a <xref:System.Web.UI.WebControls.WebParts.WebPartTransformer> object.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.IsActive> property indicates a state of a <xref:System.Web.UI.WebControls.WebParts.WebPartConnection> object. When the connection is in this state, the provider and consumer controls in the connection are communicating and able to exchange data through a common interface or a <xref:System.Web.UI.WebControls.WebParts.WebPartTransformer> object.
 
  When a user views a rendered page that includes an established connection in normal browse mode, the connection is typically active (unless it failed to be activated due to some conflict or other issue when the page loaded). In the early stages of the page and control life cycle, the property value is `false`. The connection is activated just after the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectionsActivated> event on the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control is raised. Specifically, the connection is activated after the consumer has retrieved an instance of the specified interface from the provider or a <xref:System.Web.UI.WebControls.WebParts.WebPartTransformer> object.
 
@@ -631,7 +639,8 @@ The following code example demonstrates use of the <xref:System.Web.UI.WebContro
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- As with individual <xref:System.Web.UI.WebControls.WebParts.WebPart> controls, a <xref:System.Web.UI.WebControls.WebParts.WebPartConnection> object can be a shared or a per-user instance. A shared instance means that the connection is visible to all users of a Web page, and a per-user instance means the connection is visible only to a specific user.
+
+As with individual <xref:System.Web.UI.WebControls.WebParts.WebPart> controls, a <xref:System.Web.UI.WebControls.WebParts.WebPartConnection> object can be a shared or a per-user instance. A shared instance means that the connection is visible to all users of a Web page, and a per-user instance means the connection is visible only to a specific user.
 
  In general, the way a connection is added to a page determines whether the connection is shared. If the connection is declared in the markup of a Web page, then the connection is shared and the <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.IsShared> property value is `true`. In addition, if the Web page is in shared personalization scope when a connection is added, the connection is also shared. Typically, when a user uses the `<asp:connectionszone>` user interface (UI) to add a connection, the page is in user personalization scope, so the connection is not shared and the <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.IsShared> property value is `false`.
 
@@ -730,7 +739,8 @@ The following code example demonstrates programmatic use of the <xref:System.Web
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Connections between Web Parts controls can be either static or dynamic. A static connection is declared in the markup of a Web page, using an `<asp:WebPartConnection>` element. Dynamic connections are created programmatically or when a user creates a connection through the user interface (UI) defined by the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone> control.
+
+Connections between Web Parts controls can be either static or dynamic. A static connection is declared in the markup of a Web page, using an `<asp:WebPartConnection>` element. Dynamic connections are created programmatically or when a user creates a connection through the user interface (UI) defined by the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone> control.
 
  Static connections are shared objects, meaning they are available to all users of the Web page. Also, they are essentially permanent because, like a static <xref:System.Web.UI.WebControls.WebParts.WebPart> control, they cannot be permanently deleted.
 
@@ -800,7 +810,8 @@ The following code example demonstrates the programmatic use of the <xref:System
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Every Web Parts connection consists of two <xref:System.Web.UI.WebControls.WebParts.WebPart> controls--a consumer and a provider--and the <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.Provider> property returns a reference to the provider control in a connection.
+
+Every Web Parts connection consists of two <xref:System.Web.UI.WebControls.WebParts.WebPart> controls--a consumer and a provider--and the <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.Provider> property returns a reference to the provider control in a connection.
 
  Like its counterpart in a connection (the consumer control), the provider control is required to establish a connection. Whether you create the connection programmatically, or by declaring it in page persistence format, you must specify a control to act as the provider for a connection.
 
@@ -869,7 +880,8 @@ The following code example demonstrates use of the <xref:System.Web.UI.WebContro
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- One of the required steps for creating a connection between two <xref:System.Web.UI.WebControls.WebParts.WebPart> controls is to create connection points for each control. The provider connection point is an object that contains the information about how to connect to the control acting as a provider. In the provider's source code, one of the methods must be identified with the `ConnectionProvider` attribute. The <xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint> that is associated with a provider control contains details about the method and the attribute, including an ID for the method, a display name for use in the user interface (UI), and what type of interface instance the method can return to a consumer control. This set of information about the provider, its method for forming connections, and the type of interface it provides, collectively forms a provider connection point.
+
+One of the required steps for creating a connection between two <xref:System.Web.UI.WebControls.WebParts.WebPart> controls is to create connection points for each control. The provider connection point is an object that contains the information about how to connect to the control acting as a provider. In the provider's source code, one of the methods must be identified with the `ConnectionProvider` attribute. The <xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint> that is associated with a provider control contains details about the method and the attribute, including an ID for the method, a display name for use in the user interface (UI), and what type of interface instance the method can return to a consumer control. This set of information about the provider, its method for forming connections, and the type of interface it provides, collectively forms a provider connection point.
 
  By default, a <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint> can connect to only one <xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint> object at a time. A consumer could have multiple methods identified as possible consumer connection points, but a consumer can only participate in one connection as a consumer (hence, only one of its consumer connection points can be active) at a time. In contrast, a <xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint> can connect to any number of <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint> objects by default. For example, a provider control that provides a postal code could be connected to multiple consumer controls that use a postal code to create various kinds of data based on a postal code, such as weather data, news, and so on. This default behavior can be changed by overriding the <xref:System.Web.UI.WebControls.WebParts.ConnectionProviderAttribute.AllowsMultipleConnections> property on the <xref:System.Web.UI.WebControls.WebParts.ConnectionProviderAttribute> attribute.
 
@@ -945,7 +957,8 @@ The following code example demonstrates the programmatic use of the <xref:System
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- For a static connection declared in the markup of a Web page, developers can specify which provider connection point will be used for the connection by assigning a value to the `ProviderConnectionPointID` attribute on the `<asp:webpartconnection>` element. If a value is not assigned to the attribute, the <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint.DefaultID> property value is used.
+
+For a static connection declared in the markup of a Web page, developers can specify which provider connection point will be used for the connection by assigning a value to the `ProviderConnectionPointID` attribute on the `<asp:webpartconnection>` element. If a value is not assigned to the attribute, the <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint.DefaultID> property value is used.
 
  When you create dynamic (programmatic) connections, normally you should not set the value of the <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ProviderConnectionPointID> property. You can simply call the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectWebParts*> method on the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control, passing to it the provider and provider connection point objects (along with the other required parameters), and that method determines the correct ID to use for the provider's connection point. Similarly, when you disconnect, you can call the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisconnectWebParts*> method without needing to specify the <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ProviderConnectionPointID> property value.
 
@@ -1023,7 +1036,8 @@ The following code example shows the declarative and programmatic use of the <xr
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ProviderID> property value is required when you create a connection between two <xref:System.Web.UI.WebControls.WebParts.WebPart> controls. If a value is not assigned to the property, an exception is thrown when the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control attempts to activate the connection.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.ProviderID> property value is required when you create a connection between two <xref:System.Web.UI.WebControls.WebParts.WebPart> controls. If a value is not assigned to the property, an exception is thrown when the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control attempts to activate the connection.
 
 ## Examples
 
@@ -1086,7 +1100,8 @@ The following code example shows the declarative and programmatic use of the <xr
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is used mostly for convenience by control designers. It improves how connection objects appear in Design view by using the shorter type name, as opposed to a fully qualified type name. However, the method can be called at any point in your code where you want to know the type name of a connection object.
+
+This method is used mostly for convenience by control designers. It improves how connection objects appear in Design view by using the shorter type name, as opposed to a fully qualified type name. However, the method can be called at any point in your code where you want to know the type name of a connection object.
 
 ## Examples
 
@@ -1150,7 +1165,8 @@ The following code example demonstrates how to call the <xref:System.Web.UI.WebC
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- In a Web Parts connection, there are two ways in which the provider and consumer controls in the connection can connect. They can connect directly, through their respective <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint> objects and an interface type that is understood by both controls. Or, if they are incompatible, they can connect indirectly, using a <xref:System.Web.UI.WebControls.WebParts.WebPartTransformer> object that transforms an interface instance from a provider into a type understood by a consumer.
+
+In a Web Parts connection, there are two ways in which the provider and consumer controls in the connection can connect. They can connect directly, through their respective <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint> objects and an interface type that is understood by both controls. Or, if they are incompatible, they can connect indirectly, using a <xref:System.Web.UI.WebControls.WebParts.WebPartTransformer> object that transforms an interface instance from a provider into a type understood by a consumer.
 
  When a transformer is needed as part of a connection, the <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.Transformer> property provides a reference to the <xref:System.Web.UI.WebControls.WebParts.WebPartTransformer> object. You can add a transformer for a connection declaratively in the markup of a Web page, by adding a tag for a custom transformer (or one of the transformers provided with the Web Parts control set) within the `<asp:WebPartConnection>` element. You can also add a transformer programmatically, creating an instance of it in your code, and calling the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectWebParts(System.Web.UI.WebControls.WebParts.WebPart,System.Web.UI.WebControls.WebParts.ProviderConnectionPoint,System.Web.UI.WebControls.WebParts.WebPart,System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint,System.Web.UI.WebControls.WebParts.WebPartTransformer)> method on the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control to create the connection, passing to it the transformer object along with the other required parameters.
 
@@ -1197,7 +1213,8 @@ The following code example demonstrates how to call the <xref:System.Web.UI.WebC
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.Transformers> property is never intended for use by developers. To access the transformer associated with a connection, developers should always use the <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.Transformer> property.
+
+The <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.Transformers> property is never intended for use by developers. To access the transformer associated with a connection, developers should always use the <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.Transformer> property.
 
  The <xref:System.Web.UI.WebControls.WebParts.WebPartConnection.Transformers> property is used internally by the Web Parts control set to enable page developers to declare transformer elements within the `<asp:webpartconnection>` element in the markup of a Web page.
 
