@@ -67,7 +67,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Data.Common.DataAdapter> serves as a bridge between a <xref:System.Data.DataSet> and a data source for retrieving and saving data. The <xref:System.Data.Common.DataAdapter> provides this bridge by mapping <xref:System.Data.Common.DataAdapter.Fill*>, which changes the data in the <xref:System.Data.DataSet> to match the data in the data source, and <xref:System.Data.IDataAdapter.Update*>, which changes the data in the data source to match the data in the <xref:System.Data.DataSet>.
+
+The <xref:System.Data.Common.DataAdapter> serves as a bridge between a <xref:System.Data.DataSet> and a data source for retrieving and saving data. The <xref:System.Data.Common.DataAdapter> provides this bridge by mapping <xref:System.Data.Common.DataAdapter.Fill*>, which changes the data in the <xref:System.Data.DataSet> to match the data in the data source, and <xref:System.Data.IDataAdapter.Update*>, which changes the data in the data source to match the data in the <xref:System.Data.DataSet>.
 
  If you are connecting to a SQL Server database, you can increase overall performance by using the <xref:System.Data.SqlClient.SqlDataAdapter> along with its associated <xref:System.Data.SqlClient.SqlCommand> and <xref:System.Data.SqlClient.SqlConnection> objects. For OLE DB-supported data sources, use the <xref:System.Data.Common.DataAdapter> with its associated <xref:System.Data.OleDb.OleDbCommand> and <xref:System.Data.OleDb.OleDbConnection> objects. For ODBC-supported data sources, use the <xref:System.Data.Common.DataAdapter> with its associated <xref:System.Data.Odbc.OdbcCommand> and <xref:System.Data.Odbc.OdbcConnection> objects. For Oracle databases, use the <xref:System.Data.Common.DataAdapter> with its associated <xref:System.Data.OracleClient.OracleCommand> and <xref:System.Data.OracleClient.OracleConnection> objects.
 
@@ -128,7 +129,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When an instance of <xref:System.Data.Common.DataAdapter> is created, the following read/write properties are set to the following initial values.
+
+When an instance of <xref:System.Data.Common.DataAdapter> is created, the following read/write properties are set to the following initial values.
 
 |Properties|Initial value|
 |----------------|-------------------|
@@ -193,7 +195,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This overload of the <xref:System.Data.Common.DataAdapter> constructor is designed for use by a .NET Framework data provider when implementing a similar constructor for use in a clone implementation.
+
+This overload of the <xref:System.Data.Common.DataAdapter> constructor is designed for use by a .NET Framework data provider when implementing a similar constructor for use in a clone implementation.
 
  ]]></format>
         </remarks>
@@ -254,7 +257,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If `false`, <xref:System.Data.DataRow.AcceptChanges*> is not called, and the newly added rows are treated as inserted rows.
+
+If `false`, <xref:System.Data.DataRow.AcceptChanges*> is not called, and the newly added rows are treated as inserted rows.
 
  ]]></format>
         </remarks>
@@ -310,7 +314,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- During a call to the `Update` method of a `DataAdapter`, the database can send data back to your ADO.NET application as output parameters or as the first returned record of a result set. ADO.NET can retrieve these values and update the corresponding columns in the <xref:System.Data.DataRow> being updated. By default, ADO.NET calls the `AcceptChanges` method of the `DataRow` after the update. However, if you want to merge the updated row back into another <xref:System.Data.DataTable>, you may want to preserver the original value of a primary key column. For example, a primary key column corresponding to an automatically incrementing column in the database, such as an identity column, can contain new values that are assigned by the database that do not match the original values assigned in the `DataRow`. By default, `AcceptChanges` is called implicitly after an update, and the original values in the row, which may have been <xref:System.Data.DataColumn.AutoIncrement*> values assigned by ADO.NET, are lost. You can preserve the original values in the `DataRow` by preventing `ADO.NET` from calling `AcceptChanges` after it performs an update on a row, by setting the <xref:System.Data.Common.DataAdapter.AcceptChangesDuringUpdate> property to `false`, which preserves the original values.
+
+During a call to the `Update` method of a `DataAdapter`, the database can send data back to your ADO.NET application as output parameters or as the first returned record of a result set. ADO.NET can retrieve these values and update the corresponding columns in the <xref:System.Data.DataRow> being updated. By default, ADO.NET calls the `AcceptChanges` method of the `DataRow` after the update. However, if you want to merge the updated row back into another <xref:System.Data.DataTable>, you may want to preserver the original value of a primary key column. For example, a primary key column corresponding to an automatically incrementing column in the database, such as an identity column, can contain new values that are assigned by the database that do not match the original values assigned in the `DataRow`. By default, `AcceptChanges` is called implicitly after an update, and the original values in the row, which may have been <xref:System.Data.DataColumn.AutoIncrement*> values assigned by ADO.NET, are lost. You can preserve the original values in the `DataRow` by preventing `ADO.NET` from calling `AcceptChanges` after it performs an update on a row, by setting the <xref:System.Data.Common.DataAdapter.AcceptChangesDuringUpdate> property to `false`, which preserves the original values.
 
 > [!NOTE]
 > Setting the `AcceptChangesDuringUpdate` property to `false` applies to all data modifications, not only inserts. If you want to edit or delete rows in the same update, and if you want to suppress the call to `AcceptChanges` only for inserts, then instead of setting `AcceptChangesDuringUpdate` to `false`, use an event handler for the `RowUpdated` event of the `DataAdapter`. In the event handler, you can check the <xref:System.Data.Common.RowUpdatedEventArgs.StatementType*> to determine if the data modification is an insert, and if `true`, set the <xref:System.Data.Common.RowUpdatedEventArgs.Status> property of the <xref:System.Data.Common.RowUpdatedEventArgs> to <xref:System.Data.UpdateStatus.SkipCurrentRow>. For more information and an example, see [Retrieving Identity or Autonumber Values](/dotnet/framework/data/adonet/retrieving-identity-or-autonumber-values).
@@ -391,7 +396,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is deprecated. The <xref:System.Data.Common.DataAdapter.%23ctor*> constructor should be used instead of this method.
+
+This method is deprecated. The <xref:System.Data.Common.DataAdapter.%23ctor*> constructor should be used instead of this method.
 
  All the commands, the <xref:System.Data.Common.DataAdapter.TableMappings*>, the <xref:System.Data.Common.DataAdapter.MissingSchemaAction*>, and the <xref:System.Data.Common.DataAdapter.MissingMappingAction*> are cloned. However, the connections for the commands are not copied, but shared. Thus, the cloned <xref:System.Data.Common.DataAdapter> can be used against the same connection as the original.
 
@@ -457,7 +463,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If `ContinueUpdateOnError` is set to `true`, no exception is thrown when an error occurs during the update of a row. The update of the row is skipped and the error information is placed in the <xref:System.Data.DataRow.RowError> property of the row in error. The <xref:System.Data.Common.DataAdapter> continues to update subsequent rows.
+
+If `ContinueUpdateOnError` is set to `true`, no exception is thrown when an error occurs during the update of a row. The update of the row is skipped and the error information is placed in the <xref:System.Data.DataRow.RowError> property of the row in error. The <xref:System.Data.Common.DataAdapter> continues to update subsequent rows.
 
  If `ContinueUpdateOnError` is set to `false`, an exception is thrown when an error occurs during the update of a row.
 
@@ -557,7 +564,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is called by the public `Dispose()` method and the <xref:System.Object.Finalize> method, if it has been overridden. `Dispose()` invokes this method with the `disposing` parameter set to `true`. `Finalize` invokes this method with `disposing` set to `false`.
+
+This method is called by the public `Dispose()` method and the <xref:System.Object.Finalize> method, if it has been overridden. `Dispose()` invokes this method with the `disposing` parameter set to `true`. `Finalize` invokes this method with `disposing` set to `false`.
 
  When the `disposing` parameter is `true`, this method releases all resources held by any managed objects that this <xref:System.Data.Common.DataAdapter> references. This method invokes the `Dispose` method of each referenced object.
 
@@ -637,7 +645,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Data.Common.DataAdapter.Fill*> method retrieves rows from the data source using the SELECT statement specified by an associated <xref:System.Data.IDbDataAdapter.SelectCommand> property. The connection object associated with the SELECT statement must be valid, but it does not need to be open. If the connection is closed before <xref:System.Data.Common.DataAdapter.Fill*> is called, it is opened to retrieve data, then closed. If the connection is open before <xref:System.Data.Common.DataAdapter.Fill*> is called, it remains open.
+
+The <xref:System.Data.Common.DataAdapter.Fill*> method retrieves rows from the data source using the SELECT statement specified by an associated <xref:System.Data.IDbDataAdapter.SelectCommand> property. The connection object associated with the SELECT statement must be valid, but it does not need to be open. If the connection is closed before <xref:System.Data.Common.DataAdapter.Fill*> is called, it is opened to retrieve data, then closed. If the connection is open before <xref:System.Data.Common.DataAdapter.Fill*> is called, it remains open.
 
  The <xref:System.Data.Common.DataAdapter.Fill*> operation then adds the rows to destination <xref:System.Data.DataTable> objects in the <xref:System.Data.DataSet>, creating the <xref:System.Data.DataTable> objects if they do not already exist. When creating <xref:System.Data.DataTable> objects, the <xref:System.Data.Common.DataAdapter.Fill*> operation normally creates only column name metadata. However, if the <xref:System.Data.IDataAdapter.MissingSchemaAction> property is set to `AddWithKey`, appropriate primary keys and constraints are also created.
 
@@ -706,7 +715,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- See the remarks for <xref:System.Data.Common.DataAdapter.Fill(System.Data.DataSet)?displayProperty=nameWithType> for additional information.
+
+See the remarks for <xref:System.Data.Common.DataAdapter.Fill(System.Data.DataSet)?displayProperty=nameWithType> for additional information.
 
  ]]></format>
         </remarks>
@@ -765,7 +775,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- See the remarks for `System.Data.Common.DataAdapter.Fill(System.Data.DataSet)` for additional information.
+
+See the remarks for `System.Data.Common.DataAdapter.Fill(System.Data.DataSet)` for additional information.
 
  ]]></format>
         </remarks>
@@ -826,7 +837,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- See the remarks for `System.Data.Common.DataAdapter.Fill(System.Data.DataSet)` for additional information.
+
+See the remarks for `System.Data.Common.DataAdapter.Fill(System.Data.DataSet)` for additional information.
 
  ]]></format>
         </remarks>
@@ -881,7 +893,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The **FillError** event allows a user to determine whether or not the fill operation should continue after the error occurs. Examples of when the **FillError** event might occur are:
+
+The **FillError** event allows a user to determine whether or not the fill operation should continue after the error occurs. Examples of when the **FillError** event might occur are:
 
 - The data being added to a `DataSet` cannot be converted to a common language runtime type without losing precision.
 
@@ -1018,7 +1031,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Data.Common.DataAdapter.FillSchema*> method retrieves the schema from the data source using the <xref:System.Data.IDbDataAdapter.SelectCommand*>. The connection object associated with the <xref:System.Data.IDbDataAdapter.SelectCommand*> must be valid, but it does not need to be open. If the connection is closed before <xref:System.Data.Common.DataAdapter.FillSchema*> is called, it is opened to retrieve data and then closed. If the connection is open before <xref:System.Data.Common.DataAdapter.FillSchema*> is called, it remains open.
+
+The <xref:System.Data.Common.DataAdapter.FillSchema*> method retrieves the schema from the data source using the <xref:System.Data.IDbDataAdapter.SelectCommand*>. The connection object associated with the <xref:System.Data.IDbDataAdapter.SelectCommand*> must be valid, but it does not need to be open. If the connection is closed before <xref:System.Data.Common.DataAdapter.FillSchema*> is called, it is opened to retrieve data and then closed. If the connection is open before <xref:System.Data.Common.DataAdapter.FillSchema*> is called, it remains open.
 
  A <xref:System.Data.Common.DataAdapter.FillSchema*> operation adds a <xref:System.Data.DataTable> to the destination <xref:System.Data.DataSet>. It then adds columns to the <xref:System.Data.DataColumnCollection> of the <xref:System.Data.DataTable>, and configures the following <xref:System.Data.DataColumn> properties if they exist at the data source:
 
@@ -1338,7 +1352,8 @@ If a unique clustered index is defined on a column or columns in a SQL Server ta
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Data.Common.DataAdapter.TableMappings> property provides the primary mapping between the returned records and the <xref:System.Data.DataSet>.
+
+The <xref:System.Data.Common.DataAdapter.TableMappings> property provides the primary mapping between the returned records and the <xref:System.Data.DataSet>.
 
 ## Examples
  The following example creates a derived class, <xref:System.Data.OleDb.OleDbDataAdapter> and sets some of its properties.
@@ -1563,7 +1578,8 @@ If a unique clustered index is defined on a column or columns in a SQL Server ta
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The default value is `false`.
+
+The default value is `false`.
 
  ]]></format>
         </remarks>
@@ -1760,7 +1776,8 @@ If a unique clustered index is defined on a column or columns in a SQL Server ta
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This member is an explicit interface member implementation. It can be used only when the <xref:System.Data.Common.DataAdapter> instance is cast to an <xref:System.Data.IDataAdapter> interface.
+
+This member is an explicit interface member implementation. It can be used only when the <xref:System.Data.Common.DataAdapter> instance is cast to an <xref:System.Data.IDataAdapter> interface.
 
  For more information, see <xref:System.Data.IDataAdapter.TableMappings*>.
 
@@ -1822,7 +1839,8 @@ If a unique clustered index is defined on a column or columns in a SQL Server ta
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When reconciling changes, the <xref:System.Data.Common.DataAdapter> uses the <xref:System.Data.Common.DataTableMappingCollection> collection to associate the column names used by the data source with the column names used by the <xref:System.Data.DataSet>.
+
+When reconciling changes, the <xref:System.Data.Common.DataAdapter> uses the <xref:System.Data.Common.DataTableMappingCollection> collection to associate the column names used by the data source with the column names used by the <xref:System.Data.DataSet>.
 
 ## Examples
  The following example uses a derived class, <xref:System.Data.OleDb.OleDbDataAdapter>, to add <xref:System.Data.Common.DataTableMapping> objects to its <xref:System.Data.Common.DataAdapter.TableMappings*> collection and display a list of those mapped source tables. This example assumes that an <xref:System.Data.OleDb.OleDbDataAdapter> has already been created.
@@ -1895,7 +1913,8 @@ If a unique clustered index is defined on a column or columns in a SQL Server ta
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The update is performed on a by-row basis. For every inserted, modified, and deleted row, the <xref:System.Data.Common.DataAdapter.Update*> method determines the type of change that has been performed on it (Insert, Update or Delete). Depending on the type of change, the `Insert`, `Update,` or `Delete` command template executes to propagate the modified row to the data source. When an application calls the <xref:System.Data.Common.DataAdapter.Update*> method, the <xref:System.Data.Common.DataAdapter> examines the <xref:System.Data.DataRow.RowState> property, and executes the required INSERT, UPDATE, or DELETE statements iteratively for each row, based on the order of the indexes configured in the <xref:System.Data.DataSet>. For example, <xref:System.Data.Common.DataAdapter.Update*> might execute a DELETE statement, followed by an INSERT statement, and then another DELETE statement, due to the ordering of the rows in the <xref:System.Data.DataTable>.
+
+The update is performed on a by-row basis. For every inserted, modified, and deleted row, the <xref:System.Data.Common.DataAdapter.Update*> method determines the type of change that has been performed on it (Insert, Update or Delete). Depending on the type of change, the `Insert`, `Update,` or `Delete` command template executes to propagate the modified row to the data source. When an application calls the <xref:System.Data.Common.DataAdapter.Update*> method, the <xref:System.Data.Common.DataAdapter> examines the <xref:System.Data.DataRow.RowState> property, and executes the required INSERT, UPDATE, or DELETE statements iteratively for each row, based on the order of the indexes configured in the <xref:System.Data.DataSet>. For example, <xref:System.Data.Common.DataAdapter.Update*> might execute a DELETE statement, followed by an INSERT statement, and then another DELETE statement, due to the ordering of the rows in the <xref:System.Data.DataTable>.
 
  It should be noted that these statements are not performed as a batch process; each row is updated individually. An application can call the <xref:System.Data.DataSet.GetChanges*> method in situations where you must control the sequence of statement types (for example, INSERT before UPDATE). For more information, see [Updating Data Sources with DataAdapters](/dotnet/framework/data/adonet/updating-data-sources-with-dataadapters).
 

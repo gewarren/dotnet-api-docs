@@ -54,7 +54,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager> interface is designed to be a format-independent interface to an object that controls serialization. It essentially provides context and services to serializers, which actually perform the deserialization. <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager> assists in the deserialization process by keeping track of objects. This is similar in technique to the <xref:System.ComponentModel.Design.IDesignerHost> interface: designers actually provide the user interface (UI), and <xref:System.ComponentModel.Design.IDesignerHost> provides the glue that allows different designers to work together.
+
+The <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager> interface is designed to be a format-independent interface to an object that controls serialization. It essentially provides context and services to serializers, which actually perform the deserialization. <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager> assists in the deserialization process by keeping track of objects. This is similar in technique to the <xref:System.ComponentModel.Design.IDesignerHost> interface: designers actually provide the user interface (UI), and <xref:System.ComponentModel.Design.IDesignerHost> provides the glue that allows different designers to work together.
 
  The <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager> class implements <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager>. It's designed to provide a generic form of deserialization that is similar to run-time serializers like the <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>.
 
@@ -163,7 +164,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This constructor sets the <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.PreserveNames*> and <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.ValidateRecycledTypes*> properties to `true`.
+
+This constructor sets the <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.PreserveNames*> and <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.ValidateRecycledTypes*> properties to `true`.
 
  ]]></format>
         </remarks>
@@ -206,7 +208,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If a serializer requests services that cannot be satisfied by the serialization manager, the default implementation will forward those requests to the `provider` parameter.
+
+If a serializer requests services that cannot be satisfied by the serialization manager, the default implementation will forward those requests to the `provider` parameter.
 
  This constructor sets the <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.PreserveNames*> and <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.ValidateRecycledTypes*> properties to `true`.
 
@@ -260,7 +263,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If a container exists, all components that are created by the serialization manager will be added to the container. The default implementation of this property will search the service provider for an <xref:System.ComponentModel.Design.IDesignerHost> and use the container provided by the designer host, should one exist. Otherwise, this property will return `null` and no components will be added to a container.
+
+If a container exists, all components that are created by the serialization manager will be added to the container. The default implementation of this property will search the service provider for an <xref:System.ComponentModel.Design.IDesignerHost> and use the container provided by the designer host, should one exist. Otherwise, this property will return `null` and no components will be added to a container.
 
  ]]></format>
         </remarks>
@@ -327,7 +331,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is called by serializers when they attempt to create an instance of a type. The default implementation creates a new instance of the type, or it may return an existing instance depending on the values of the <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.PreserveNames*> and <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.RecycleInstances*> properties. The <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.CreateInstance*> method uses reflection to create instances and will perform some generic <xref:System.IConvertible> transformations on parameters to find a matching constructor.
+
+This method is called by serializers when they attempt to create an instance of a type. The default implementation creates a new instance of the type, or it may return an existing instance depending on the values of the <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.PreserveNames*> and <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.RecycleInstances*> properties. The <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.CreateInstance*> method uses reflection to create instances and will perform some generic <xref:System.IConvertible> transformations on parameters to find a matching constructor.
 
  ]]></format>
         </remarks>
@@ -374,7 +379,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Most data within the serialization manager is transient and only lives for the life of a serialization session. When a session is disposed, serialization is considered to be complete and this transient state is cleared. This allows a single instance of a serialization manager to be used to serialize multiple object trees. Some state, including the service provider and any custom serialization providers that were added to the serialization manager, span sessions.
+
+Most data within the serialization manager is transient and only lives for the life of a serialization session. When a session is disposed, serialization is considered to be complete and this transient state is cleared. This allows a single instance of a serialization manager to be used to serialize multiple object trees. Some state, including the service provider and any custom serialization providers that were added to the serialization manager, span sessions.
 
  ]]></format>
         </remarks>
@@ -417,7 +423,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You can only read the error list while a serialization session is active.
+
+You can only read the error list while a serialization session is active.
 
  ]]></format>
         </remarks>
@@ -509,7 +516,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You can request the type of serializer you would like. This method returns `null` if there is no serializer of the requested type for the specified object type.
+
+You can request the type of serializer you would like. This method returns `null` if there is no serializer of the requested type for the specified object type.
 
  ]]></format>
         </remarks>
@@ -558,7 +566,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.GetService*> method provides access to the underlying container or service provider that was set in the constructor.
+
+The <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.GetService*> method provides access to the underlying container or service provider that was set in the constructor.
 
  ]]></format>
         </remarks>
@@ -603,7 +612,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.GetType*> method will search the service provider for an <xref:System.ComponentModel.Design.ITypeResolutionService> and, if available, it will delegate to that service to resolve the type. If an <xref:System.ComponentModel.Design.ITypeResolutionService> is not available, <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.GetType*> will call the <xref:System.Object.GetType*?displayProperty=nameWithType> method.
+
+The <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.GetType*> method will search the service provider for an <xref:System.ComponentModel.Design.ITypeResolutionService> and, if available, it will delegate to that service to resolve the type. If an <xref:System.ComponentModel.Design.ITypeResolutionService> is not available, <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.GetType*> will call the <xref:System.Object.GetType*?displayProperty=nameWithType> method.
 
  ]]></format>
         </remarks>
@@ -646,7 +656,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](/dotnet/standard/events/).
+
+Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](/dotnet/standard/events/).
 
  The <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.OnResolveName*> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
 
@@ -697,7 +708,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](/dotnet/standard/events/).
+
+Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](/dotnet/standard/events/).
 
  The <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.OnSessionCreated*> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
 
@@ -747,7 +759,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](/dotnet/standard/events/).
+
+Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](/dotnet/standard/events/).
 
  The <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.OnSessionDisposed*> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
 
@@ -801,7 +814,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.PreserveNames> property determines the behavior of the <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance*> method. If `true`, <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance*> will pass the given component name. If `false`, <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance*> will check for the presence of the given name in the container. If the name does not exist in the container, <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance*> will use the given name. If the name does exist in the container, <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance*> will pass a null value as the name of a component when adding it to the container, thereby giving it a new name. This second variation is useful for implementing a serializer that always duplicates objects, rather than assuming those objects do not exist. Paste commands often use this type of serializer.
+
+The <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.PreserveNames> property determines the behavior of the <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance*> method. If `true`, <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance*> will pass the given component name. If `false`, <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance*> will check for the presence of the given name in the container. If the name does not exist in the container, <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance*> will use the given name. If the name does exist in the container, <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance*> will pass a null value as the name of a component when adding it to the container, thereby giving it a new name. This second variation is useful for implementing a serializer that always duplicates objects, rather than assuming those objects do not exist. Paste commands often use this type of serializer.
 
  You can only change this property when you are not in a serialization session.
 
@@ -857,7 +871,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.PropertyProvider> property provides a way to give the serialization manager a set of serialization properties that serializers can use to guide their behavior.
+
+The <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.PropertyProvider> property provides a way to give the serialization manager a set of serialization properties that serializers can use to guide their behavior.
 
  This object's public properties will be inspected and wrapped in new property descriptors that have a target object of the serialization manager.
 
@@ -906,7 +921,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.RecycleInstances> property is `false`, the <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance*> method will always create a new instance of a type. If <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.RecycleInstances*> is `true`, <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance*> will first search the name table and container for an object of the same name. If such an object exists and is of the same type, <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance*> will return the existing instance. This second variation is useful for implementing a serializer that applies serialization state to an existing set of objects, rather than always creating a new tree. The **Undo** command often uses this type of serializer.
+
+If the <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.RecycleInstances> property is `false`, the <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance*> method will always create a new instance of a type. If <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.RecycleInstances*> is `true`, <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance*> will first search the name table and container for an object of the same name. If such an object exists and is of the same type, <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance*> will return the existing instance. This second variation is useful for implementing a serializer that applies serialization state to an existing set of objects, rather than always creating a new tree. The **Undo** command often uses this type of serializer.
 
  In the case where the <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.RecycleInstances> property is `true`, the <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.ValidateRecycledTypes> property will further modify the behavior of <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance*> depending on the types of the two objects.
 
@@ -1035,7 +1051,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When the <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.GetSerializer*> method is used to request a serialization provider, the serialization manager queries the custom serialization providers first before looking in the type's metadata for the appropriate serializer.
+
+When the <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.GetSerializer*> method is used to request a serialization provider, the serialization manager queries the custom serialization providers first before looking in the type's metadata for the appropriate serializer.
 
  ]]></format>
         </remarks>
@@ -1080,7 +1097,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A context stack provides a user-defined storage area, implemented as a stack. This storage area is a useful way to provide communication across serializers, as serialization is a generally hierarchical process.
+
+A context stack provides a user-defined storage area, implemented as a stack. This storage area is a useful way to provide communication across serializers, as serialization is a generally hierarchical process.
 
  ]]></format>
         </remarks>
@@ -1239,7 +1257,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.System%23ComponentModel%23Design%23Serialization%23IDesignerSerializationManager%23GetName*> method cannot find a corresponding name for the `value` parameter, it raises the <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.ResolveName> event before it returns `null`.
+
+If the <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.System%23ComponentModel%23Design%23Serialization%23IDesignerSerializationManager%23GetName*> method cannot find a corresponding name for the `value` parameter, it raises the <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.ResolveName> event before it returns `null`.
 
  ]]></format>
         </remarks>
@@ -1434,7 +1453,8 @@ This member is an explicit interface member implementation. It can be used only 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.System%23ComponentModel%23Design%23Serialization%23IDesignerSerializationManager%23RemoveSerializationProvider*> method removes a custom serialization provider that was previously added by a call to the <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.System%23ComponentModel%23Design%23Serialization%23IDesignerSerializationManager%23AddSerializationProvider*> method.
+
+The <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.System%23ComponentModel%23Design%23Serialization%23IDesignerSerializationManager%23RemoveSerializationProvider*> method removes a custom serialization provider that was previously added by a call to the <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.System%23ComponentModel%23Design%23Serialization%23IDesignerSerializationManager%23AddSerializationProvider*> method.
 
  ]]></format>
         </remarks>
@@ -1482,7 +1502,8 @@ This member is an explicit interface member implementation. It can be used only 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Serializers can be written to handle recoverable errors gracefully by calling the <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.System%23ComponentModel%23Design%23Serialization%23IDesignerSerializationManager%23ReportError*> method with the error information. The serialization manager may support reporting a list of errors after it completes, or it may throw an exception from this method and abort the serialization process. The serializer should continue after calling this function.
+
+Serializers can be written to handle recoverable errors gracefully by calling the <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.System%23ComponentModel%23Design%23Serialization%23IDesignerSerializationManager%23ReportError*> method with the error information. The serialization manager may support reporting a list of errors after it completes, or it may throw an exception from this method and abort the serialization process. The serializer should continue after calling this function.
 
  <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.System%23ComponentModel%23Design%23Serialization%23IDesignerSerializationManager%23ReportError*> adds the `errorInformation` parameter to the <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.Errors*> collection. If `errorInformation` is `null`, no action is taken.
 
@@ -1628,7 +1649,8 @@ In a related use, this event can be used to remove a temporary service installed
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.System%23ComponentModel%23Design%23Serialization%23IDesignerSerializationManager%23SetName*> method provides a way to set the name of an existing object. This enables creation of an instance of the object through a call to the <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.System%23ComponentModel%23Design%23Serialization%23IDesignerSerializationManager%23GetInstance*> method, avoiding the overhead of the <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance*> method.
+
+The <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.System%23ComponentModel%23Design%23Serialization%23IDesignerSerializationManager%23SetName*> method provides a way to set the name of an existing object. This enables creation of an instance of the object through a call to the <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.System%23ComponentModel%23Design%23Serialization%23IDesignerSerializationManager%23GetInstance*> method, avoiding the overhead of the <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance*> method.
 
  ]]></format>
         </remarks>
@@ -1692,7 +1714,8 @@ In a related use, this event can be used to remove a temporary service installed
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This member is an explicit interface member implementation. It can be used only when the <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager> instance is cast to an <xref:System.IServiceProvider> interface.
+
+This member is an explicit interface member implementation. It can be used only when the <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager> instance is cast to an <xref:System.IServiceProvider> interface.
 
  ]]></format>
         </remarks>
@@ -1739,7 +1762,8 @@ In a related use, this event can be used to remove a temporary service installed
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.ValidateRecycledTypes> property modifies the behavior of the <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance*> method when the <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.RecycleInstances> property is `true`, as detailed in the following table.
+
+The <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.ValidateRecycledTypes> property modifies the behavior of the <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.CreateInstance*> method when the <xref:System.ComponentModel.Design.Serialization.DesignerSerializationManager.RecycleInstances> property is `true`, as detailed in the following table.
 
 |`RecycleInstances`|`ValidateRecycledTypes`|Behavior of `CreateInstance`|
 |------------------------|-----------------------------|----------------------------------|

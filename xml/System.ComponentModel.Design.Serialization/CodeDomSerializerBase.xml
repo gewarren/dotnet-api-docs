@@ -51,7 +51,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase> class is used as a shared base between the <xref:System.ComponentModel.Design.Serialization.CodeDomSerializer> and <xref:System.ComponentModel.Design.Serialization.TypeCodeDomSerializer> classes. Public <xref:System.ComponentModel.Design.Serialization.CodeDomSerializer> classes derive from the <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase> class. Each public class defines its own public API. The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase> class defines no public API, but does offer a multitude of utility methods that can be used to aid the serialization process.
+
+The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase> class is used as a shared base between the <xref:System.ComponentModel.Design.Serialization.CodeDomSerializer> and <xref:System.ComponentModel.Design.Serialization.TypeCodeDomSerializer> classes. Public <xref:System.ComponentModel.Design.Serialization.CodeDomSerializer> classes derive from the <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase> class. Each public class defines its own public API. The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase> class defines no public API, but does offer a multitude of utility methods that can be used to aid the serialization process.
 
  ]]></format>
     </remarks>
@@ -112,7 +113,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This is a helper method that derived classes can call to deserialize an expression. It deserializes the statement by interpreting and executing the CodeDOM expression specified by the `expression` parameter, and then returns the results. If an object needs to be created as a result of this expression, it will be given the name specified by the `name` parameter. The name can be `null` if there is no need to name the object. The following table describes how specific expressions are handled.
+
+This is a helper method that derived classes can call to deserialize an expression. It deserializes the statement by interpreting and executing the CodeDOM expression specified by the `expression` parameter, and then returns the results. If an object needs to be created as a result of this expression, it will be given the name specified by the `name` parameter. The name can be `null` if there is no need to name the object. The following table describes how specific expressions are handled.
 
 |Expression|Behavior|
 |----------------|--------------|
@@ -197,7 +199,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.DeserializeInstance*> method is invoked during deserialization to obtain an instance of an object. When this is called, an instance of the requested type should be returned. The default implementation invokes the <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.CreateInstance*> method of the `manager` parameter.
+
+The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.DeserializeInstance*> method is invoked during deserialization to obtain an instance of an object. When this is called, an instance of the requested type should be returned. The default implementation invokes the <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.CreateInstance*> method of the `manager` parameter.
 
  ]]></format>
         </remarks>
@@ -256,7 +259,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.DeserializePropertiesFromResources*> method is a helper method that derived classes can call. It looks for properties on the given object and attempts to load their values out of the invariant culture's resource bundle. This is generally used to handle design-time properties that are not emitted into source code. It should not be used for localized properties because it only operates on the invariant culture.
+
+The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.DeserializePropertiesFromResources*> method is a helper method that derived classes can call. It looks for properties on the given object and attempts to load their values out of the invariant culture's resource bundle. This is generally used to handle design-time properties that are not emitted into source code. It should not be used for localized properties because it only operates on the invariant culture.
 
  This method inspects all of the properties of the `value` parameter that match the attributes specified by the `filter` parameter, and then checks for those properties in a resource binary object. This is useful for deserializing properties that cannot be represented in code, such as design-time properties.
 
@@ -307,7 +311,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.DeserializeStatement*> method is a helper method that derived classes can call. It interprets the `statement` parameter.
+
+The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.DeserializeStatement*> method is a helper method that derived classes can call. It interprets the `statement` parameter.
 
  The <xref:System.CodeDom.CodeStatement> being deserialized will be pushed on the context stack.
 
@@ -483,7 +488,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.GetExpression*> method returns an expression representing the given object. It can return `null`, indicating that no expression has been set that describes the object. Expressions are acquired in one of three ways:
+
+The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.GetExpression*> method returns an expression representing the given object. It can return `null`, indicating that no expression has been set that describes the object. Expressions are acquired in one of three ways:
 
 - The expression could be the result of a prior call to the <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SetExpression*> method.
 
@@ -591,7 +597,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The return value will not be equal to `type` and should not be used for comparison with non-reflection types.
+
+The return value will not be equal to `type` and should not be used for comparison with non-reflection types.
 
  ]]></format>
         </remarks>
@@ -636,7 +643,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The return value will not be equal to the type of object and should not be used for comparison with non-reflection types.
+
+The return value will not be equal to the type of object and should not be used for comparison with non-reflection types.
 
  ]]></format>
         </remarks>
@@ -699,7 +707,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.GetSerializer*> method is an extension to the <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.GetSerializer*?displayProperty=nameWithType> method. The <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.GetSerializer*?displayProperty=nameWithType> method takes an object type, rather than an object value. If an external party had overridden metadata for a specific object through <xref:System.ComponentModel.TypeDescriptor>, that metadata override would not be seen by the <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.GetSerializer*?displayProperty=nameWithType> method, which only takes a type. The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.GetSerializer*> method checks the metadata of the value and the value's type. If the two differ, <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.GetSerializer*> will look to see if there is a custom designer serializer attribute on the value. If so, <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.GetSerializer*> will attempt to use it. Otherwise, it will defer to <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.GetSerializer*?displayProperty=nameWithType>.
+
+The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.GetSerializer*> method is an extension to the <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.GetSerializer*?displayProperty=nameWithType> method. The <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.GetSerializer*?displayProperty=nameWithType> method takes an object type, rather than an object value. If an external party had overridden metadata for a specific object through <xref:System.ComponentModel.TypeDescriptor>, that metadata override would not be seen by the <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.GetSerializer*?displayProperty=nameWithType> method, which only takes a type. The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.GetSerializer*> method checks the metadata of the value and the value's type. If the two differ, <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.GetSerializer*> will look to see if there is a custom designer serializer attribute on the value. If so, <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.GetSerializer*> will attempt to use it. Otherwise, it will defer to <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.GetSerializer*?displayProperty=nameWithType>.
 
  ]]></format>
         </remarks>
@@ -750,7 +759,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.GetSerializer*> method is an extension to the <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.GetSerializer*?displayProperty=nameWithType> method. The <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.GetSerializer*?displayProperty=nameWithType> method takes an object type, rather than an object value.
+
+The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.GetSerializer*> method is an extension to the <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.GetSerializer*?displayProperty=nameWithType> method. The <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.GetSerializer*?displayProperty=nameWithType> method takes an object type, rather than an object value.
 
  ]]></format>
         </remarks>
@@ -839,7 +849,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.GetUniqueName*> method calls the <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.GetName*> method. If this method does not return a name, then <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.GetUniqueName*> uses <xref:System.ComponentModel.Design.Serialization.INameCreationService> to fabricate a valid name for the object. If the service is not available, <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.GetUniqueName*> will fabricate a name based on the short type name combined with an index number to make it unique. The resulting name is associated with the serialization manager by calling the <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.SetName*> method before the new name is returned.
+
+The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.GetUniqueName*> method calls the <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.GetName*> method. If this method does not return a name, then <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.GetUniqueName*> uses <xref:System.ComponentModel.Design.Serialization.INameCreationService> to fabricate a valid name for the object. If the service is not available, <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.GetUniqueName*> will fabricate a name based on the short type name combined with an index number to make it unique. The resulting name is associated with the serialization manager by calling the <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.SetName*> method before the new name is returned.
 
  ]]></format>
         </remarks>
@@ -906,7 +917,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- For the `value` parameter to be considered serialized, the `manager` parameter or another serializer must have called the <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SetExpression*> method to create a relationship between `value` and a referring expression.
+
+For the `value` parameter to be considered serialized, the `manager` parameter or another serializer must have called the <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SetExpression*> method to create a relationship between `value` and a referring expression.
 
  ]]></format>
         </remarks>
@@ -960,7 +972,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- For the `value` parameter to be considered serialized, the `manager` parameter or another serializer must have called the <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SetExpression*> method to create a relationship between `value` and a referring expression.
+
+For the `value` parameter to be considered serialized, the `manager` parameter or another serializer must have called the <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SetExpression*> method to create a relationship between `value` and a referring expression.
 
  ]]></format>
         </remarks>
@@ -1014,7 +1027,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeCreationExpression*> method can be used to serialize an expression that represents the creation of the `value` parameter. It is aware of instance descriptors.
+
+The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeCreationExpression*> method can be used to serialize an expression that represents the creation of the `value` parameter. It is aware of instance descriptors.
 
  The `isComplete` parameter is set to `true` if the expression represents a fully configured object, or `false` if further serialization must be done on the object's properties.
 
@@ -1069,7 +1083,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeEvent*> method is a helper method that derived classes can call to serialize a single event into the given <xref:System.CodeDom.CodeStatementCollection>. <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeEvent*> queries the serialization manager for a <xref:System.ComponentModel.Design.Serialization.MemberCodeDomSerializer> for the given event, and then asks the <xref:System.ComponentModel.Design.Serialization.MemberCodeDomSerializer> to serialize it.
+
+The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeEvent*> method is a helper method that derived classes can call to serialize a single event into the given <xref:System.CodeDom.CodeStatementCollection>. <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeEvent*> queries the serialization manager for a <xref:System.ComponentModel.Design.Serialization.MemberCodeDomSerializer> for the given event, and then asks the <xref:System.ComponentModel.Design.Serialization.MemberCodeDomSerializer> to serialize it.
 
  <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeEvent*> places the `statements` and `descriptor` parameters on the <xref:System.ComponentModel.Design.Serialization.ContextStack>.
 
@@ -1144,7 +1159,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeEvents*> method is a helper method that derived classes can call. It looks at events on the `value` parameter that match the `filter` parameter, and then it calls the <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeEvent*> method for each event.
+
+The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeEvents*> method is a helper method that derived classes can call. It looks at events on the `value` parameter that match the `filter` parameter, and then it calls the <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeEvent*> method for each event.
 
  The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeEvents*> method places the <xref:System.ComponentModel.InheritanceAttribute> for `value` on the <xref:System.ComponentModel.Design.Serialization.ContextStack>.
 
@@ -1209,7 +1225,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeProperties*> method is a helper method that derived classes can call. It looks at properties on the `value` parameter that match the `filter` parameter, and then it calls the <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeProperty*> method for each property.
+
+The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeProperties*> method is a helper method that derived classes can call. It looks at properties on the `value` parameter that match the `filter` parameter, and then it calls the <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeProperty*> method for each property.
 
  The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeProperties*> method places the <xref:System.ComponentModel.InheritanceAttribute> for `value` on the <xref:System.ComponentModel.Design.Serialization.ContextStack>.
 
@@ -1274,7 +1291,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializePropertiesToResources*> method is a helper method that derived classes can call. It looks at properties on the `value` parameter that match the `filter` parameter, and then it serializes the properties into the invariant culture resource bundle. If the resource service returns a <xref:System.Resources.ResXResourceWriter>, the property values will be stored in the metadata section of the XML resource (.resx) file. The `statements` parameter is not used.
+
+The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializePropertiesToResources*> method is a helper method that derived classes can call. It looks at properties on the `value` parameter that match the `filter` parameter, and then it serializes the properties into the invariant culture resource bundle. If the resource service returns a <xref:System.Resources.ResXResourceWriter>, the property values will be stored in the metadata section of the XML resource (.resx) file. The `statements` parameter is not used.
 
  To be serialized as a resource, a property must be simple (not a content property) and its value must be serializable. Properties that do not conform to this pattern will be skipped.
 
@@ -1335,7 +1353,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeProperty*> method retrieves a <xref:System.ComponentModel.Design.Serialization.MemberCodeDomSerializer> for the `propertyToSerialize` parameter and delegates to it.
+
+The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeProperty*> method retrieves a <xref:System.ComponentModel.Design.Serialization.MemberCodeDomSerializer> for the `propertyToSerialize` parameter and delegates to it.
 
  <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeProperty*> places the `statements` and `propertyToSerialize` parameters on the <xref:System.ComponentModel.Design.Serialization.ContextStack>.
 
@@ -1398,7 +1417,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeResource*> method is a helper method that serializes a value to a resource bundle under the given name. The culture that the resource is written to is determined by searching the serialization manager's <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.Properties*> collection for a property called `ResourceCulture`. If this property exists, resources will be written to that culture. Otherwise, resources will be written to the invariant culture. The `value` parameter must be serializable.
+
+The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeResource*> method is a helper method that serializes a value to a resource bundle under the given name. The culture that the resource is written to is determined by searching the serialization manager's <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.Properties*> collection for a property called `ResourceCulture`. If this property exists, resources will be written to that culture. Otherwise, resources will be written to the invariant culture. The `value` parameter must be serializable.
 
  <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeResource*> requires an <xref:System.ComponentModel.Design.IResourceService> to obtain a <xref:System.Resources.ResourceWriter> to write resources for the correct culture. If this service is not available, <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeResource*> will instead build a binary object in code that represents the resource.
 
@@ -1463,7 +1483,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The resource is always written to the invariant culture. The `value` parameter must be serializable.
+
+The resource is always written to the invariant culture. The `value` parameter must be serializable.
 
  The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeResourceInvariant*> method requires an <xref:System.ComponentModel.Design.IResourceService> to obtain a <xref:System.Resources.ResourceWriter> to write resources for the correct culture. If this service is not available, <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeResource*> will instead build a binary object in code that represents the resource.
 
@@ -1523,7 +1544,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The `value` parameter can be `null`, in which case a primitive expression will be returned.
+
+The `value` parameter can be `null`, in which case a primitive expression will be returned.
 
  The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeToExpression*> method uses the following rules for serializing types:
 
@@ -1618,7 +1640,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeToResourceExpression*> method is a helper method that serializes a value to a resource expression. This is in contrast to the <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeResource*> method, which writes a value to a resource binary object. <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeToResourceExpression*> goes one step further and returns an expression that can be used to recover the resource. For example, the return value might be "rm.GetValue("SomeBitmap");". The name of the resource is calculated from the <xref:System.ComponentModel.Design.Serialization.ExpressionContext>, if one can be found on the context stack.
+
+The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeToResourceExpression*> method is a helper method that serializes a value to a resource expression. This is in contrast to the <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeResource*> method, which writes a value to a resource binary object. <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeToResourceExpression*> goes one step further and returns an expression that can be used to recover the resource. For example, the return value might be "rm.GetValue("SomeBitmap");". The name of the resource is calculated from the <xref:System.ComponentModel.Design.Serialization.ExpressionContext>, if one can be found on the context stack.
 
  The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeToResourceExpression*> method will look on the <xref:System.ComponentModel.Design.Serialization.ContextStack> for the following objects:
 
@@ -1688,7 +1711,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the `ensureInvariant` parameter is `true`, the <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeToResourceExpression*> method will also write the resource value into the invariant culture's resource file if the current `ResourceCulture` is not the invariant culture.
+
+If the `ensureInvariant` parameter is `true`, the <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SerializeToResourceExpression*> method will also write the resource value into the invariant culture's resource file if the current `ResourceCulture` is not the invariant culture.
 
  ]]></format>
         </remarks>
@@ -1755,7 +1779,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SetExpression*> method is a helper method that associates a <xref:System.CodeDom.CodeExpression> with an object. Objects that have been associated with expressions in this way are accessible through the <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.GetExpression*> method. <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SetExpression*> stores its expression table as an appended object on the context stack so it is accessible by any serializer's <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.GetExpression*> method.
+
+The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SetExpression*> method is a helper method that associates a <xref:System.CodeDom.CodeExpression> with an object. Objects that have been associated with expressions in this way are accessible through the <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.GetExpression*> method. <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SetExpression*> stores its expression table as an appended object on the context stack so it is accessible by any serializer's <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.GetExpression*> method.
 
  ]]></format>
         </remarks>
@@ -1810,7 +1835,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SetExpression*> method is a helper method that associates a <xref:System.CodeDom.CodeExpression> with an object. Objects that have been associated with expressions in this way are accessible through the <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.GetExpression*> method. The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SetExpression*> stores its expression table as an appended object on the context stack so it is accessible by any serializer's <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.GetExpression*> method.
+
+The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SetExpression*> method is a helper method that associates a <xref:System.CodeDom.CodeExpression> with an object. Objects that have been associated with expressions in this way are accessible through the <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.GetExpression*> method. The <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.SetExpression*> stores its expression table as an appended object on the context stack so it is accessible by any serializer's <xref:System.ComponentModel.Design.Serialization.CodeDomSerializerBase.GetExpression*> method.
 
  ]]></format>
         </remarks>

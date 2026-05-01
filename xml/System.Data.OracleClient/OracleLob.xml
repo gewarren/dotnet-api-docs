@@ -31,7 +31,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- An <xref:System.Data.OracleClient.OracleLob> differs from an <xref:System.Data.OracleClient.OracleBFile> in that the data is stored on the server instead of in a physical file in the operating system. It can also be a read-write object, unlike an <xref:System.Data.OracleClient.OracleBFile>, which is always read-only.
+
+An <xref:System.Data.OracleClient.OracleLob> differs from an <xref:System.Data.OracleClient.OracleBFile> in that the data is stored on the server instead of in a physical file in the operating system. It can also be a read-write object, unlike an <xref:System.Data.OracleClient.OracleBFile>, which is always read-only.
 
  An <xref:System.Data.OracleClient.OracleLob> may be one of these <xref:System.Data.OracleClient.OracleType> data types.
 
@@ -140,7 +141,8 @@ connection.Close();
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- To write to the `LOB`, you must have retrieved the `LOB` using the FOR UPDATE clause in the SQL SELECT statement, and you must have a local transaction started.
+
+To write to the `LOB`, you must have retrieved the `LOB` using the FOR UPDATE clause in the SQL SELECT statement, and you must have a local transaction started.
 
  All data from the source `LOB` is appended to the end of the current `LOB`. The position of neither `LOB` is evaluated or changed during this process.
 
@@ -190,7 +192,8 @@ connection.Close();
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Opens the `LOB` in <xref:System.Data.OracleClient.OracleLobOpenMode.ReadOnly> mode; therefore, the `LOB` can only be read from, not written to, until the corresponding call to <xref:System.Data.OracleClient.OracleLob.EndBatch*>. To perform batch writes to the `LOB`, call <xref:System.Data.OracleClient.OracleLob.BeginBatch*> with <xref:System.Data.OracleClient.OracleLobOpenMode.ReadWrite>.
+
+Opens the `LOB` in <xref:System.Data.OracleClient.OracleLobOpenMode.ReadOnly> mode; therefore, the `LOB` can only be read from, not written to, until the corresponding call to <xref:System.Data.OracleClient.OracleLob.EndBatch*>. To perform batch writes to the `LOB`, call <xref:System.Data.OracleClient.OracleLob.BeginBatch*> with <xref:System.Data.OracleClient.OracleLobOpenMode.ReadWrite>.
 
  Calling <xref:System.Data.OracleClient.OracleLob.BeginBatch*> more than one time within the same transaction currently throws the Oracle "ORA-22293: LOB already opened in the same transaction" error. In addition, if you obtain the `LOB` using another <xref:System.Data.OracleClient.OracleDataReader>, and the original caller has not called the <xref:System.Data.OracleClient.OracleLob.EndBatch*> method, the same error is generated. Therefore, you must call the <xref:System.Data.OracleClient.OracleLob.EndBatch*> method when you are finished using the <xref:System.Data.OracleClient.OracleLob>.
 
@@ -228,7 +231,8 @@ connection.Close();
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- To write to the `LOB`, you must have retrieved the `LOB` using the FOR UPDATE clause in the SQL SELECT statement, and you must have a local transaction started.
+
+To write to the `LOB`, you must have retrieved the `LOB` using the FOR UPDATE clause in the SQL SELECT statement, and you must have a local transaction started.
 
  Calling <xref:System.Data.OracleClient.OracleLob.BeginBatch*> more than one time within the same transaction currently throws the Oracle "ORA-22293: LOB already opened in the same transaction" error. In addition, if you obtain the `LOB` using another <xref:System.Data.OracleClient.OracleDataReader>, and the original caller has not called the <xref:System.Data.OracleClient.OracleLob.EndBatch*> method, the same error is generated. Therefore, you must call the <xref:System.Data.OracleClient.OracleLob.EndBatch*> method when you are finished using the <xref:System.Data.OracleClient.OracleLob>.
 
@@ -311,7 +315,8 @@ connection.Close();
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- To write to the `LOB`, you must have retrieved the `LOB` using the FOR UPDATE clause in the SQL SELECT statement, and you must have started a local transaction.
+
+To write to the `LOB`, you must have retrieved the `LOB` using the FOR UPDATE clause in the SQL SELECT statement, and you must have started a local transaction.
 
  ]]></format>
         </remarks>
@@ -341,7 +346,8 @@ connection.Close();
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The value returned by the <xref:System.Data.OracleClient.OracleLob.ChunkSize> property is not a setting of the .NET Framework Data Provider for Oracle. Instead, it is the value that the Oracle Call Interface (OCI) uses when communicating with the server. Use <xref:System.Data.OracleClient.OracleLob.ChunkSize*> to ensure that client-side chunks are the same size. Reading or writing in smaller chunks does not cache data, and causes a less-optimized round trip to the server, because a full packet is not received or sent.
+
+The value returned by the <xref:System.Data.OracleClient.OracleLob.ChunkSize> property is not a setting of the .NET Framework Data Provider for Oracle. Instead, it is the value that the Oracle Call Interface (OCI) uses when communicating with the server. Use <xref:System.Data.OracleClient.OracleLob.ChunkSize*> to ensure that client-side chunks are the same size. Reading or writing in smaller chunks does not cache data, and causes a less-optimized round trip to the server, because a full packet is not received or sent.
 
  ]]></format>
         </remarks>
@@ -378,7 +384,8 @@ connection.Close();
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The properties of the new <xref:System.Data.OracleClient.OracleLob> object initially have the same values as those of the original object. However, after the <xref:System.Data.OracleClient.OracleLob.Clone*> is complete, each <xref:System.Data.OracleClient.OracleLob> object is independent from the other. For example, changing the value of the <xref:System.Data.OracleClient.OracleLob.Position> property on the original <xref:System.Data.OracleClient.OracleLob> does not change the value of <xref:System.Data.OracleClient.OracleLob.Position*> on the copy.
+
+The properties of the new <xref:System.Data.OracleClient.OracleLob> object initially have the same values as those of the original object. However, after the <xref:System.Data.OracleClient.OracleLob.Clone*> is complete, each <xref:System.Data.OracleClient.OracleLob> object is independent from the other. For example, changing the value of the <xref:System.Data.OracleClient.OracleLob.Position> property on the original <xref:System.Data.OracleClient.OracleLob> does not change the value of <xref:System.Data.OracleClient.OracleLob.Position*> on the copy.
 
  ]]></format>
         </remarks>
@@ -469,7 +476,8 @@ connection.Close();
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The underlying data types must always be the same. For example, if you are copying from an <xref:System.Data.OracleClient.OracleType.NClob>, the destination <xref:System.Data.OracleClient.OracleLob> must also be an <xref:System.Data.OracleClient.OracleType.NClob>.
+
+The underlying data types must always be the same. For example, if you are copying from an <xref:System.Data.OracleClient.OracleType.NClob>, the destination <xref:System.Data.OracleClient.OracleLob> must also be an <xref:System.Data.OracleClient.OracleType.NClob>.
 
  If the destination offset is beyond the end of destination `LOB`, the `LOB` to which the data is being copied is extended. The space between the end of the `LOB` and the destination offset beyond the end is padded with zeros for `BLOB` data types and spaces for `CLOB` and `NCLOB` data types.
 
@@ -518,7 +526,8 @@ connection.Close();
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The underlying data types must always be the same. For example, if you are copying from an <xref:System.Data.OracleClient.OracleType.NClob>, the destination <xref:System.Data.OracleClient.OracleLob> must also be an <xref:System.Data.OracleClient.OracleType.NClob>.
+
+The underlying data types must always be the same. For example, if you are copying from an <xref:System.Data.OracleClient.OracleType.NClob>, the destination <xref:System.Data.OracleClient.OracleLob> must also be an <xref:System.Data.OracleClient.OracleType.NClob>.
 
  If the destination offset is beyond the end of destination `LOB`, the `LOB` to which the data is being copied is extended. The space between the end of `LOB` and destination offset beyond the end is padded with zeros for `BLOB` data types and spaces for `CLOB` and `NCLOB` data types.
 
@@ -580,7 +589,8 @@ connection.Close();
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The underlying data types must always be the same. For example, if you are copying from an <xref:System.Data.OracleClient.OracleType.NClob>, the destination <xref:System.Data.OracleClient.OracleLob> must also be an <xref:System.Data.OracleClient.OracleType.NClob>.
+
+The underlying data types must always be the same. For example, if you are copying from an <xref:System.Data.OracleClient.OracleType.NClob>, the destination <xref:System.Data.OracleClient.OracleLob> must also be an <xref:System.Data.OracleClient.OracleType.NClob>.
 
  If the destination offset is beyond the end of destination `LOB`, the `LOB` to which the data is being copied is extended. The space between the end of `LOB` and destination offset beyond the end is padded with zeros for `BLOB` data types and spaces for `CLOB` and `NCLOB` data types.
 
@@ -676,7 +686,8 @@ connection.Close();
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Call the <xref:System.Data.OracleClient.OracleLob.BeginBatch*> method before you begin performing write operations on the <xref:System.Data.OracleClient.OracleLob>.
+
+Call the <xref:System.Data.OracleClient.OracleLob.BeginBatch*> method before you begin performing write operations on the <xref:System.Data.OracleClient.OracleLob>.
 
  ]]></format>
         </remarks>
@@ -763,7 +774,8 @@ connection.Close();
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The sum of the values in the `offset` and `amount` parameters can be greater than that of the size of the <xref:System.Data.OracleClient.OracleLob>. Therefore, specifying a value greater than that returned by the <xref:System.Data.OracleClient.OracleLob.Length> property succeeds; however <xref:System.Data.OracleClient.OracleLob.Erase*> only erases to the end of the <xref:System.Data.OracleClient.OracleLob>. (Similarly, if a negative value is passed to `offset`, <xref:System.Data.OracleClient.OracleLob.Erase*> will succeed, but only erase starting from the beginning of the <xref:System.Data.OracleClient.OracleLob>.) This behavior is different from that of the <xref:System.Data.OracleClient.OracleLob.Read*> and <xref:System.Data.OracleClient.OracleLob.Write*> methods, and offers the advantage of being able to erase all data from the value specified by `offset` without making an additional roundtrip to the server to verify the actual size.
+
+The sum of the values in the `offset` and `amount` parameters can be greater than that of the size of the <xref:System.Data.OracleClient.OracleLob>. Therefore, specifying a value greater than that returned by the <xref:System.Data.OracleClient.OracleLob.Length> property succeeds; however <xref:System.Data.OracleClient.OracleLob.Erase*> only erases to the end of the <xref:System.Data.OracleClient.OracleLob>. (Similarly, if a negative value is passed to `offset`, <xref:System.Data.OracleClient.OracleLob.Erase*> will succeed, but only erase starting from the beginning of the <xref:System.Data.OracleClient.OracleLob>.) This behavior is different from that of the <xref:System.Data.OracleClient.OracleLob.Read*> and <xref:System.Data.OracleClient.OracleLob.Write*> methods, and offers the advantage of being able to erase all data from the value specified by `offset` without making an additional roundtrip to the server to verify the actual size.
 
  <xref:System.Data.OracleClient.OracleLob.Erase*> does not truncate data. The `LOB` length remains the same for a `BLOB` data type, and the erased data is replaced by 0x00. `CLOB` and `NCLOB` data types are replaced by spaces.
 
@@ -803,7 +815,8 @@ connection.Close();
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- In this release, this method is not functional.
+
+In this release, this method is not functional.
 
  ]]></format>
         </remarks>
@@ -834,7 +847,8 @@ connection.Close();
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When using an Oracle 8.0.5 server, an Oracle "ORA-00600: internal error code" exception is thrown.
+
+When using an Oracle 8.0.5 server, an Oracle "ORA-00600: internal error code" exception is thrown.
 
  ]]></format>
         </remarks>
@@ -893,7 +907,8 @@ connection.Close();
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The following example demonstrates how to create a temporary `LOB`.
+
+The following example demonstrates how to create a temporary `LOB`.
 
 ```csharp
 OracleConnection connection = new OracleConnection("server=MyServer; integrated security=yes;");
@@ -948,7 +963,8 @@ connection.Close
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The size of the <xref:System.Data.OracleClient.OracleLob> is always returned in bytes for all data types.
+
+The size of the <xref:System.Data.OracleClient.OracleLob> is always returned in bytes for all data types.
 
  ]]></format>
         </remarks>
@@ -981,7 +997,8 @@ connection.Close
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- An <xref:System.Data.OracleClient.OracleLob> may be one of the following <xref:System.Data.OracleClient.OracleType> data types.
+
+An <xref:System.Data.OracleClient.OracleLob> may be one of the following <xref:System.Data.OracleClient.OracleType> data types.
 
 |OracleType data type|Description|
 |--------------------------|-----------------|
@@ -1016,7 +1033,8 @@ connection.Close
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You can construct an <xref:System.Data.OracleClient.OracleLob> that is NULL using this format:
+
+You can construct an <xref:System.Data.OracleClient.OracleLob> that is NULL using this format:
 
 ```csharp
 OracleLob myLob = OracleLOB.Null;
@@ -1058,7 +1076,8 @@ if(myLob == OracleLob.Null)
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The stream must support seeking to get or set the position. Use the <xref:System.Data.OracleClient.OracleLob.CanSeek> property to determine whether the stream supports seeking.
+
+The stream must support seeking to get or set the position. Use the <xref:System.Data.OracleClient.OracleLob.CanSeek> property to determine whether the stream supports seeking.
 
  Seeking to any location beyond the length of the stream is supported. Seeking to an odd position for `CLOB` and `NCLOB` data types is also supported. For more information, see the Remarks section of the <xref:System.Data.OracleClient.OracleLob.Read*> property.
 
@@ -1100,7 +1119,8 @@ if(myLob == OracleLob.Null)
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Data.OracleClient.OracleLob.Read*> method reads a maximum of `count` bytes from the current stream and stores them in `buffer` beginning at `offset`. The current position within the stream is advanced by the number of bytes read; however, if an exception occurs, the current position within the stream remains unchanged. <xref:System.Data.OracleClient.OracleLob.Read*> returns the number of bytes read. The return value is zero only if the position is currently at the end of the stream. <xref:System.Data.OracleClient.OracleLob.Read*> will block until at least one byte of data can be read, in the event that no data is available.<xref:System.Data.OracleClient.OracleLob.Read*> returns 0 if you attempt to read from a `LOB` when the current position is at the end of `LOB`. <xref:System.Data.OracleClient.OracleLob.Read*> can return fewer bytes than requested even if the end of the stream has not been reached.
+
+The <xref:System.Data.OracleClient.OracleLob.Read*> method reads a maximum of `count` bytes from the current stream and stores them in `buffer` beginning at `offset`. The current position within the stream is advanced by the number of bytes read; however, if an exception occurs, the current position within the stream remains unchanged. <xref:System.Data.OracleClient.OracleLob.Read*> returns the number of bytes read. The return value is zero only if the position is currently at the end of the stream. <xref:System.Data.OracleClient.OracleLob.Read*> will block until at least one byte of data can be read, in the event that no data is available.<xref:System.Data.OracleClient.OracleLob.Read*> returns 0 if you attempt to read from a `LOB` when the current position is at the end of `LOB`. <xref:System.Data.OracleClient.OracleLob.Read*> can return fewer bytes than requested even if the end of the stream has not been reached.
 
  The .NET Framework Data Provider for Oracle handles all `CLOB` and `NCLOB` data as Unicode. Therefore, when accessing `CLOB` and `NCLOB` data types, you are always dealing with the number of bytes, where each character is 2 bytes. For example, if a string of text containing three characters is saved as an `NCLOB` on an Oracle server where the character set is 4 bytes per character, and you perform a `Read` operation, you specify the length of the string as 6 bytes, although it is stored as 12 bytes on the server.
 
@@ -1210,7 +1230,8 @@ if (myLob == OracleLob.Null)
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If `offset` is negative, the new position must precede the position specified by `origin` by the number of bytes specified by `offset`. If `offset` is zero, the new position must be the position specified by `origin`. If `offset` is positive, the new position must follow the position specified by `origin` by the number of bytes specified by `offset`.
+
+If `offset` is negative, the new position must precede the position specified by `origin` by the number of bytes specified by `offset`. If `offset` is zero, the new position must be the position specified by `origin`. If `offset` is positive, the new position must follow the position specified by `origin` by the number of bytes specified by `offset`.
 
  Seeking to any location beyond the length of the stream is supported. Seeking to an odd position for `CLOB` and `NCLOB` data types is also supported. For more information, see the Remarks section of the <xref:System.Data.OracleClient.OracleLob.Read*> property.
 
@@ -1249,7 +1270,8 @@ if (myLob == OracleLob.Null)
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- An attempt to increase the length of the <xref:System.Data.OracleClient.OracleLob> stream fails, and returns "Message: ORA-22926: specified trim length is greater than current LOB value's length" from the Oracle server.
+
+An attempt to increase the length of the <xref:System.Data.OracleClient.OracleLob> stream fails, and returns "Message: ORA-22926: specified trim length is greater than current LOB value's length" from the Oracle server.
 
  A stream must support both writing and seeking for <xref:System.Data.OracleClient.OracleLob.SetLength*> to function.
 
@@ -1296,7 +1318,8 @@ if (myLob == OracleLob.Null)
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- For <xref:System.Data.OracleClient.OracleType.Blob> data types, <xref:System.Data.OracleClient.OracleLob.Value*> returns the entire underlying data as a contiguous array of type `Byte[]`. For <xref:System.Data.OracleClient.OracleType.Clob> and <xref:System.Data.OracleClient.OracleType.NClob> data types, <xref:System.Data.OracleClient.OracleLob.Value*> returns all the data as a `String` data type. For null data, <xref:System.Data.OracleClient.OracleLob.Value*> returns <xref:System.DBNull>. By comparing the returned values, you can distinguish among empty data, null data, and data.
+
+For <xref:System.Data.OracleClient.OracleType.Blob> data types, <xref:System.Data.OracleClient.OracleLob.Value*> returns the entire underlying data as a contiguous array of type `Byte[]`. For <xref:System.Data.OracleClient.OracleType.Clob> and <xref:System.Data.OracleClient.OracleType.NClob> data types, <xref:System.Data.OracleClient.OracleLob.Value*> returns all the data as a `String` data type. For null data, <xref:System.Data.OracleClient.OracleLob.Value*> returns <xref:System.DBNull>. By comparing the returned values, you can distinguish among empty data, null data, and data.
 
 > [!NOTE]
 > A benefit of using `LOB` data types is the capability to retrieve large amounts of data in chunks at the client. However, when you use <xref:System.Data.OracleClient.OracleLob.Value*>, you obtain all the data for the `LOB` column as one contiguous chunk, which can significantly increase application overhead.
@@ -1338,7 +1361,8 @@ if (myLob == OracleLob.Null)
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the write operation is successful, the position within the stream advances by the number of bytes written. If an exception occurs, the position within the stream remains unchanged.
+
+If the write operation is successful, the position within the stream advances by the number of bytes written. If an exception occurs, the position within the stream remains unchanged.
 
  Writing beyond the end of `LOB` is allowed and enlarges the `LOB` by the number of bytes written.
 
@@ -1442,7 +1466,8 @@ public static void WriteLobExample(OracleCommand command)
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the write operation is successful, the position within the stream advances by one byte. If an exception occurs, the position within the stream remains unchanged.
+
+If the write operation is successful, the position within the stream advances by one byte. If an exception occurs, the position within the stream remains unchanged.
 
  Writing beyond the end of the `LOB` is allowed and enlarges the `LOB` by one byte.
 

@@ -54,7 +54,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Code contract classes let you specify preconditions, postconditions, and object invariants in your code. Preconditions are requirements that must be met when entering a method or property. Postconditions describe expectations at the time the method or property code exits. Object invariants describe the expected state for a class that has no condition problems. For more information about preconditions, postconditions, and object invariants, see [Code Contracts](/dotnet/framework/debug-trace-profile/code-contracts).
+
+Code contract classes let you specify preconditions, postconditions, and object invariants in your code. Preconditions are requirements that must be met when entering a method or property. Postconditions describe expectations at the time the method or property code exits. Object invariants describe the expected state for a class that has no condition problems. For more information about preconditions, postconditions, and object invariants, see [Code Contracts](/dotnet/framework/debug-trace-profile/code-contracts).
 
  For tools and detailed instructions for using code contracts, see [Code Contracts](https://marketplace.visualstudio.com/items?itemName=RiSEResearchinSoftwareEngineering.CodeContractsforNET) on the Visual Studio Marketplace.
 
@@ -140,7 +141,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The default escalation policy is to notify the attached debugger about a contract failure or to display an **Assert** dialog box if a debugger is not attached. Optionally, the analyzer can be instructed to throw an exception.
+
+The default escalation policy is to notify the attached debugger about a contract failure or to display an **Assert** dialog box if a debugger is not attached. Optionally, the analyzer can be instructed to throw an exception.
 
  ]]></format>
         </remarks>
@@ -214,7 +216,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The default escalation policy is to notify the attached debugger about a contract failure or to display an **Assert** dialog box if a debugger is not attached. Optionally, the analyzer can be instructed to throw an exception. The `userMessage` parameter is passed to the debugger output. If `userMessage` is not a constant string literal, tools may not be able to read it.
+
+The default escalation policy is to notify the attached debugger about a contract failure or to display an **Assert** dialog box if a debugger is not attached. Optionally, the analyzer can be instructed to throw an exception. The `userMessage` parameter is passed to the debugger output. If `userMessage` is not a constant string literal, tools may not be able to read it.
 
  ]]></format>
         </remarks>
@@ -295,7 +298,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- At run time, using this method is equivalent to using the <xref:System.Diagnostics.Contracts.Contract.Assert(System.Boolean)> method.
+
+At run time, using this method is equivalent to using the <xref:System.Diagnostics.Contracts.Contract.Assert(System.Boolean)> method.
 
  ]]></format>
         </remarks>
@@ -369,7 +373,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If `userMessage` is not a constant string literal, the contract may not be understood by tools.
+
+If `userMessage` is not a constant string literal, the contract may not be understood by tools.
 
  At run time, using this method is equivalent to using the <xref:System.Diagnostics.Contracts.Contract.Assert(System.Boolean,System.String)> method.
 
@@ -432,7 +437,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The event information for this event is supplied by the <xref:System.Diagnostics.Contracts.ContractFailedEventArgs?displayProperty=nameWithType> object that is passed to the event handler. This event notifies a managed application environment such as an interactive interpreter or a Web browser host that a contract has failed. Before doing so, it will raise an event that an application can handle as it sees fit. For example, if code is being run in a testing framework, you can log a test failure and then end the test.
+
+The event information for this event is supplied by the <xref:System.Diagnostics.Contracts.ContractFailedEventArgs?displayProperty=nameWithType> object that is passed to the event handler. This event notifies a managed application environment such as an interactive interpreter or a Web browser host that a contract has failed. Before doing so, it will raise an event that an application can handle as it sees fit. For example, if code is being run in a testing framework, you can log a test failure and then end the test.
 
  The default implementation of the <xref:System.Diagnostics.Contracts.Internal.ContractHelper.RaiseContractFailedEvent*> method in the .NET Framework class library is to call each handler that is registered with the <xref:System.Diagnostics.Contracts.Contract.ContractFailed> event. Exceptions thrown by handlers are ignored, but each handler can indicate whether the failure is handled by calling the <xref:System.Diagnostics.Contracts.ContractFailedEventArgs.SetHandled*> method for the event arguments. If any handler sets the failure as handled, the method returns `null` and no further action is taken. Alternatively, handlers can call the <xref:System.Diagnostics.Contracts.ContractFailedEventArgs.SetUnwind*> method to instruct the code to unwind. In that case, an exception is thrown after all handlers have executed.
 
@@ -491,7 +497,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Most code already contains some parameter validation in the form of `if`-`then`-`throw` code. The contract tools recognize `if`-`then`-`throw` statements as preconditions when the statements appear first inside a method, and the entire set of such statements is followed by an explicit <xref:System.Diagnostics.Contracts.Contract> method call, such as a <xref:System.Diagnostics.Contracts.Contract.Requires*>, <xref:System.Diagnostics.Contracts.Contract.Ensures*>, <xref:System.Diagnostics.Contracts.Contract.EnsuresOnThrow*>, or <xref:System.Diagnostics.Contracts.Contract.EndContractBlock*>.
+
+Most code already contains some parameter validation in the form of `if`-`then`-`throw` code. The contract tools recognize `if`-`then`-`throw` statements as preconditions when the statements appear first inside a method, and the entire set of such statements is followed by an explicit <xref:System.Diagnostics.Contracts.Contract> method call, such as a <xref:System.Diagnostics.Contracts.Contract.Requires*>, <xref:System.Diagnostics.Contracts.Contract.Ensures*>, <xref:System.Diagnostics.Contracts.Contract.EnsuresOnThrow*>, or <xref:System.Diagnostics.Contracts.Contract.EndContractBlock*>.
 
  When `if`-`then`-`throw` statements appear in this form, the contract tools recognize them as legacy-require statements. The <xref:System.Diagnostics.Contracts.Contract.EndContractBlock*> form is used only if no other contracts follow the `if`-`then`-`throw` sequences, but they should still be tagged as legacy-requires.
 
@@ -563,7 +570,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The `condition` parameter specifies a postcondition that is expected to be `true` when the enclosing method or property returns normally.
+
+The `condition` parameter specifies a postcondition that is expected to be `true` when the enclosing method or property returns normally.
 
 - This method call must be at the beginning of a method or property, before any other code.
 
@@ -636,7 +644,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The `condition` parameter specifies a postcondition that is expected to be `true` when the enclosing method or property returns normally.
+
+The `condition` parameter specifies a postcondition that is expected to be `true` when the enclosing method or property returns normally.
 
 - This method call must be at the beginning of a method or property, before any other code.
 
@@ -722,7 +731,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The `condition` parameter specifies a postcondition that is expected to be `true` when the enclosing method or property terminates abnormally and an exception of type `TException` is thrown.
+
+The `condition` parameter specifies a postcondition that is expected to be `true` when the enclosing method or property terminates abnormally and an exception of type `TException` is thrown.
 
 - This method call must be at the beginning of a method or property, before any other code.
 
@@ -806,7 +816,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The `condition` parameter specifies a postcondition that is expected to be `true` when the enclosing method or property terminates abnormally and an exception of type `TException` is thrown. The `message` parameter specifies a message to display if the condition is `false`.
+
+The `condition` parameter specifies a postcondition that is expected to be `true` when the enclosing method or property terminates abnormally and an exception of type `TException` is thrown. The `message` parameter specifies a message to display if the condition is `false`.
 
 - This method call must be at the beginning of a method or property, before any other code.
 
@@ -876,7 +887,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The `toExclusive` parameter is one more than the last integer to facilitate using the length of a range of integers starting at 0. For example, it would be set to 5 for integers 0 through 4.
+
+The `toExclusive` parameter is one more than the last integer to facilitate using the length of a range of integers starting at 0. For example, it would be set to 5 for integers 0 through 4.
 
  ]]></format>
         </remarks>
@@ -1011,7 +1023,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The `toExclusive` parameter is one more than the last integer to facilitate using the length of a range of integers starting at 0. For example, it would be set to 5 for integers 0 through 4.
+
+The `toExclusive` parameter is one more than the last integer to facilitate using the length of a range of integers starting at 0. For example, it would be set to 5 for integers 0 through 4.
 
 ## Examples
  The following example demonstrates how to use the <xref:System.Diagnostics.Contracts.Contract.ForAll*> method to determine whether an array has a null element.
@@ -1318,7 +1331,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method can be used only in the conditional expression for the <xref:System.Diagnostics.Contracts.Contract.Ensures*> contract.
+
+This method can be used only in the conditional expression for the <xref:System.Diagnostics.Contracts.Contract.Ensures*> contract.
 
 ## Examples
  The following example shows the use of the <xref:System.Diagnostics.Contracts.Contract.OldValue*> method to ensure that a count has been updated. This code example is part of a larger example provided for the <xref:System.Diagnostics.Contracts.ContractClassAttribute> class.
@@ -1686,7 +1700,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method can be used only in the conditional expression for the <xref:System.Diagnostics.Contracts.Contract.Ensures*> contract.
+
+This method can be used only in the conditional expression for the <xref:System.Diagnostics.Contracts.Contract.Ensures*> contract.
 
 ## Examples
  The following example shows how to use the <xref:System.Diagnostics.Contracts.Contract.Result*> method to specify an expected return value. This code example is part of a larger example provided for the <xref:System.Diagnostics.Contracts.ContractClassAttribute> class.
@@ -1760,7 +1775,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method can be used only in the conditional expression for the <xref:System.Diagnostics.Contracts.Contract.Ensures*> contract. As with the <xref:System.Diagnostics.Contracts.Contract.OldValue*> method, you can omit the generic type parameter whenever the compiler is able to infer its type. The contract rewriter replaces the method call with the value of the `out` parameter. The <xref:System.Diagnostics.Contracts.Contract.ValueAtReturn*> method may appear only in postconditions. The argument to the method must be an `out` parameter or a field of a structure `out` parameter. The latter is also useful when referring to fields in the postcondition of a structure constructor.
+
+This method can be used only in the conditional expression for the <xref:System.Diagnostics.Contracts.Contract.Ensures*> contract. As with the <xref:System.Diagnostics.Contracts.Contract.OldValue*> method, you can omit the generic type parameter whenever the compiler is able to infer its type. The contract rewriter replaces the method call with the value of the `out` parameter. The <xref:System.Diagnostics.Contracts.Contract.ValueAtReturn*> method may appear only in postconditions. The argument to the method must be an `out` parameter or a field of a structure `out` parameter. The latter is also useful when referring to fields in the postcondition of a structure constructor.
 
  ]]></format>
         </remarks>

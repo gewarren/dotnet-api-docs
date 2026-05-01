@@ -77,7 +77,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use the <xref:System.Environment> class to retrieve information such as command-line arguments, the exit code, environment variable settings, contents of the call stack, time since last system boot, and the version of the common language runtime.
+
+Use the <xref:System.Environment> class to retrieve information such as command-line arguments, the exit code, environment variable settings, contents of the call stack, time since last system boot, and the version of the common language runtime.
 
 ## Examples
  The following example displays a list of information about the current environment.
@@ -142,7 +143,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This property provides access to the program name and any arguments specified on the command line when the current process was started.
+
+This property provides access to the program name and any arguments specified on the command line when the current process was started.
 
  The program name can include path information, but is not required to do so. Use the <xref:System.Environment.GetCommandLineArgs*> method to retrieve the command-line information parsed and stored in an array of strings.
 
@@ -258,7 +260,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- By definition, if this process starts in the root directory of a local or network drive, the value of this property is the drive name followed by a trailing slash (for example, "C:\\"). If this process starts in a subdirectory, the value of this property is the drive and subdirectory path, without a trailing slash (for example, "C:\mySubDirectory").
+
+By definition, if this process starts in the root directory of a local or network drive, the value of this property is the drive name followed by a trailing slash (for example, "C:\\"). If this process starts in a subdirectory, the value of this property is the drive and subdirectory path, without a trailing slash (for example, "C:\mySubDirectory").
 
 ## Examples
  The following example demonstrates setting the <xref:System.Environment.CurrentDirectory> property.
@@ -392,7 +395,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- For the `exitCode` parameter, use a non-zero number to indicate an error. In your application, you can define your own error codes in an enumeration, and return the appropriate error code based on the scenario. For example, return a value of 1 to indicate that the required file is not present, and a value of 2 to indicate that the file is in the wrong format. For a list of exit codes used by the Windows operating system, see [System Error Codes](/windows/win32/debug/system-error-codes) in the Windows documentation.
+
+For the `exitCode` parameter, use a non-zero number to indicate an error. In your application, you can define your own error codes in an enumeration, and return the appropriate error code based on the scenario. For example, return a value of 1 to indicate that the required file is not present, and a value of 2 to indicate that the file is in the wrong format. For a list of exit codes used by the Windows operating system, see [System Error Codes](/windows/win32/debug/system-error-codes) in the Windows documentation.
 
  Calling the <xref:System.Environment.Exit*> method differs from using your programming language's `return` statement in the following ways:
 
@@ -467,7 +471,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the `Main` method returns `void`, you can use this property to set the exit code that will be returned to the calling environment. If `Main` does not return `void`, this property is ignored. The initial value of this property is zero.
+
+If the `Main` method returns `void`, you can use this property to set the exit code that will be returned to the calling environment. If `Main` does not return `void`, this property is ignored. The initial value of this property is zero.
 
 > [!WARNING]
 > The <xref:System.Environment.ExitCode> property is a signed 32-bit integer. To prevent the property from returning a negative exit code, you should not use values greater than or equal to 0x80000000.
@@ -590,7 +595,8 @@ Invalid argument
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- COM interop is used to retrieve the environment variables from the operating system. If the environment variables cannot be retrieved due to a COM error, the HRESULT that explains the cause of the failure is used to generate one of several possible exceptions; that is, the exception depends on the HRESULT. For more information about how the HRESULT is processed, see the Remarks section of the <xref:System.Runtime.InteropServices.Marshal.ThrowExceptionForHR*?displayProperty=nameWithType> method.
+
+COM interop is used to retrieve the environment variables from the operating system. If the environment variables cannot be retrieved due to a COM error, the HRESULT that explains the cause of the failure is used to generate one of several possible exceptions; that is, the exception depends on the HRESULT. For more information about how the HRESULT is processed, see the Remarks section of the <xref:System.Runtime.InteropServices.Marshal.ThrowExceptionForHR*?displayProperty=nameWithType> method.
 
  Replacement only occurs for environment variables that are set. For example, suppose `name` is "MyENV = %MyENV%". If the environment variable, MyENV, is set to 42, this method returns "MyENV = 42". If MyENV is not set, no change occurs; this method returns "MyENV = %MyENV%".
 
@@ -683,7 +689,8 @@ Invalid argument
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method terminates a process without running any active `try`/`finally` blocks or finalizers.
+
+This method terminates a process without running any active `try`/`finally` blocks or finalizers.
 
  On Windows, the `Environment.FailFast` method writes the `message` string to the Windows Application event log, creates a dump of your application, and then terminates the current process. The `message` string is also included in error reporting to Microsoft via Windows Error Reporting. For more information, see [Windows Error Reporting: Getting Started](/windows-hardware/drivers/dashboard/).
 
@@ -767,7 +774,8 @@ Calling the `Environment.FailFast` method to terminate execution of an applicati
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method terminates the process without running any active `try`/`finally` blocks or finalizers.
+
+This method terminates the process without running any active `try`/`finally` blocks or finalizers.
 
  On Windows, the `Environment.FailFast` method writes the `message` string to the Windows Application event log, creates a dump of your application, and then terminates the current process.
 
@@ -839,7 +847,8 @@ Calling the `Environment.FailFast` method to terminate execution of an applicati
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The first element in the array contains the file name of the executing program. If the file name is not available, the first element is equal to <xref:System.String.Empty?displayProperty=nameWithType>. The remaining elements contain any additional tokens entered on the command line.
+
+The first element in the array contains the file name of the executing program. If the file name is not available, the first element is equal to <xref:System.String.Empty?displayProperty=nameWithType>. The remaining elements contain any additional tokens entered on the command line.
 
 In .NET 5 and later versions, for single-file publishing, the first element is the name of the host executable.
 
@@ -1302,7 +1311,8 @@ The following example creates environment variables for the <xref:System.Environ
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method retrieves the path to a system special folder, such as Program Files, Programs, System, or Startup, which can be used to access common information. Special folders are set by default by the system, or explicitly by the user, when installing a version of Windows.
+
+This method retrieves the path to a system special folder, such as Program Files, Programs, System, or Startup, which can be used to access common information. Special folders are set by default by the system, or explicitly by the user, when installing a version of Windows.
 
  The `folder` parameter designates the special folder to retrieve and must be one of the values in the <xref:System.Environment.SpecialFolder> enumeration; any other value throws an exception.
 
@@ -1381,7 +1391,8 @@ The following example creates environment variables for the <xref:System.Environ
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method retrieves the path to a system special folder, such as Program Files, Programs, System, or Startup, which can be used to access common information. Special folders are set by default by the system, or explicitly by the user, when installing a version of Windows.
+
+This method retrieves the path to a system special folder, such as Program Files, Programs, System, or Startup, which can be used to access common information. Special folders are set by default by the system, or explicitly by the user, when installing a version of Windows.
 
  The `folder` parameter designates the special folder to retrieve and must be one of the values in the <xref:System.Environment.SpecialFolder> enumeration; any other value throws an exception.
 
@@ -1452,7 +1463,8 @@ The following example creates environment variables for the <xref:System.Environ
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- On Windows, `GetLogicalDrives` returns the names of all accessible drives on a particular machine, including any optical drives or removable media devices, in the form "\<drive letter\>:\\" (for example, "C:\\"). On Unix, it returns the paths of all filesystem mount points mounted on a particular machine (for example, "/home/user", "/media/usb").
+
+On Windows, `GetLogicalDrives` returns the names of all accessible drives on a particular machine, including any optical drives or removable media devices, in the form "\<drive letter\>:\\" (for example, "C:\\"). On Unix, it returns the paths of all filesystem mount points mounted on a particular machine (for example, "/home/user", "/media/usb").
 
 ## Examples
  The following example shows how to display the logical drives of the current computer using the <xref:System.Environment.GetLogicalDrives*> method.
@@ -1714,7 +1726,8 @@ The following example creates environment variables for the <xref:System.Environ
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The name of this computer is established at system startup when the name is read from the registry. If this computer is a node in a cluster, the name of the node is returned.
+
+The name of this computer is established at system startup when the name is read from the registry. If this computer is a node in a cluster, the name of the node is returned.
 
 ## Examples
  The following example displays the name of the computer that runs the code example. (The machine name is omitted from the example output for security reasons.)
@@ -1778,7 +1791,8 @@ The following example creates environment variables for the <xref:System.Environ
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The property value of <xref:System.Environment.NewLine*> is a constant customized specifically for the current platform and implementation of the .NET Framework. For more information about the escape characters in the property value, see [Character Escapes](/dotnet/standard/base-types/character-escapes-in-regular-expressions).
+
+The property value of <xref:System.Environment.NewLine*> is a constant customized specifically for the current platform and implementation of the .NET Framework. For more information about the escape characters in the property value, see [Character Escapes](/dotnet/standard/base-types/character-escapes-in-regular-expressions).
 
  The functionality provided by <xref:System.Environment.NewLine*> is often what is meant by the terms newline, line feed, line break, carriage return, CRLF, and end of line.
 
@@ -2336,7 +2350,8 @@ The following example creates environment variables for the <xref:System.Environ
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Environment.StackTrace> property lists method calls in reverse chronological order, that is, the most recent method call is described first, and one line of stack trace information is listed for each method call on the stack. However, the <xref:System.Environment.StackTrace> property might not report as many method calls as expected due to code transformations that occur during optimization.
+
+The <xref:System.Environment.StackTrace> property lists method calls in reverse chronological order, that is, the most recent method call is described first, and one line of stack trace information is listed for each method call on the stack. However, the <xref:System.Environment.StackTrace> property might not report as many method calls as expected due to code transformations that occur during optimization.
 
 > [!NOTE]
 > For a hierarchical view of the stack trace information by class, use the <xref:System.Diagnostics.StackTrace> class.
@@ -2427,7 +2442,8 @@ The following example creates environment variables for the <xref:System.Environ
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- An example of the value returned is the string "C:\WINDOWS\System32".
+
+An example of the value returned is the string "C:\WINDOWS\System32".
 
 ## Examples
  The following example displays the system directory of the computer that runs the code example. (The system directory is omitted from the example output for security reasons.)
@@ -2490,7 +2506,8 @@ The following example creates environment variables for the <xref:System.Environ
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This information can be useful when determining whether to use the <xref:System.IO.MemoryMappedFiles.MemoryMappedFileOptions.DelayAllocatePages?displayProperty=nameWithType> option when you work with memory-mapped files.
+
+This information can be useful when determining whether to use the <xref:System.IO.MemoryMappedFiles.MemoryMappedFileOptions.DelayAllocatePages?displayProperty=nameWithType> option when you work with memory-mapped files.
 
  In Windows, this value is the `dwPageSize` member in the `SYSTEM_INFO` structure.
 
@@ -2668,7 +2685,8 @@ This value updates at the same frequency as the underlying interrupt timer for t
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The domain account credentials for a user are formatted as the user's domain name, the '\\' character, and user name. Use the <xref:System.Environment.UserDomainName> property to obtain the user's domain name without the user name, and the <xref:System.Environment.UserName> property to obtain the user name without the domain name. For example, if a user's domain name and user name are CORPORATENETWORK\john, the <xref:System.Environment.UserDomainName> property returns "CORPORATENETWORK".
+
+The domain account credentials for a user are formatted as the user's domain name, the '\\' character, and user name. Use the <xref:System.Environment.UserDomainName> property to obtain the user's domain name without the user name, and the <xref:System.Environment.UserName> property to obtain the user name without the domain name. For example, if a user's domain name and user name are CORPORATENETWORK\john, the <xref:System.Environment.UserDomainName> property returns "CORPORATENETWORK".
 
  The <xref:System.Environment.UserDomainName> property first attempts to get the domain name component of the Windows account name for the current user. If that attempt fails, this property attempts to get the domain name associated with the user name provided by the <xref:System.Environment.UserName> property. If that attempt fails because the host computer is not joined to a domain, then the host computer name is returned.
 
@@ -2732,7 +2750,8 @@ This value updates at the same frequency as the underlying interrupt timer for t
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Environment.UserInteractive> property reports `false` for a Windows process or a service like IIS that runs without a user interface. If this property is `false`, do not display modal dialogs or message boxes because there is no graphical user interface for the user to interact with.
+
+The <xref:System.Environment.UserInteractive> property reports `false` for a Windows process or a service like IIS that runs without a user interface. If this property is `false`, do not display modal dialogs or message boxes because there is no graphical user interface for the user to interact with.
 
 ## Examples
  The following example displays whether the current process is running in user interactive mode.
@@ -2798,7 +2817,8 @@ This value updates at the same frequency as the underlying interrupt timer for t
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You can use the <xref:System.Environment.UserName> property to identify the user on the current thread, to the system and application for security or access purposes. It can also be used to customize a particular application for each user.
+
+You can use the <xref:System.Environment.UserName> property to identify the user on the current thread, to the system and application for security or access purposes. It can also be used to customize a particular application for each user.
 
  On Windows the <xref:System.Environment.UserName> property wraps a call to the Windows [GetUserName](/windows/win32/api/winbase/nf-winbase-getusernamea) function. The domain account credentials for a user are formatted as the user's domain name, the '\\' character, and user name. Use the <xref:System.Environment.UserDomainName> property to obtain the user's domain name and the <xref:System.Environment.UserName> property to obtain the user name.
 

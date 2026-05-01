@@ -43,7 +43,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Parameter names are not case-sensitive.
+
+Parameter names are not case-sensitive.
 
  When querying an Oracle database using the Microsoft OLE DB Provider for Oracle (MSDAORA) and the ODBC.NET Framework Data Provider, using the `LIKE` clause to query values in fixed-length fields may not return all expected matches. The reason is that when Oracle matches values for fixed-length fields in a `LIKE` clause, it matches the entire length of the string, including any padding trailing spaces. For example, if a table in an Oracle database contains a field named "Field1" that is defined as `char(3)`, and you enter the value "a" into a row of that table, the following code will not return the row.
 
@@ -165,7 +166,8 @@ OleDbDataReader reader = command.ExecuteReader();
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When you specify an <xref:System.Object> in the `value` parameter, the <xref:System.Data.DbType> is inferred from the Microsoft .NET type of the <xref:System.Object>.
+
+When you specify an <xref:System.Object> in the `value` parameter, the <xref:System.Data.DbType> is inferred from the Microsoft .NET type of the <xref:System.Object>.
 
  Use caution when you are using this overload of the <xref:System.Data.OracleClient.OracleParameter> constructor. Because this overload takes a `value` of type <xref:System.Object>, you must convert the integral value to an <xref:System.Object> type when the value is zero, as the following C# example demonstrates.
 
@@ -392,7 +394,8 @@ Parameter = new OracleParameter("pname", Convert.ToInt32(0));
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Data.OracleClient.OracleParameter.OracleType*> and <xref:System.Data.OracleClient.OracleParameter.DbType*> are linked. Therefore, setting the <xref:System.Data.OracleClient.OracleParameter.DbType*> changes the <xref:System.Data.OracleClient.OracleParameter.OracleType*> to a supporting <xref:System.Data.OracleClient.OracleParameter.OracleType*>.
+
+The <xref:System.Data.OracleClient.OracleParameter.OracleType*> and <xref:System.Data.OracleClient.OracleParameter.DbType*> are linked. Therefore, setting the <xref:System.Data.OracleClient.OracleParameter.DbType*> changes the <xref:System.Data.OracleClient.OracleParameter.OracleType*> to a supporting <xref:System.Data.OracleClient.OracleParameter.OracleType*>.
 
  The <xref:System.Data.OracleClient.OracleParameter.DbType*>, <xref:System.Data.OracleClient.OracleParameter.OracleType*>, and <xref:System.Data.OracleClient.OracleParameter.Size*> properties of a parameter can be inferred by setting <xref:System.Data.OracleClient.OracleParameter.Value*>. Therefore, you are not required to specify them. However, they are not exposed in <xref:System.Data.OracleClient.OracleParameter> property settings. For example, if the size of the parameter has been inferred, <xref:System.Data.OracleClient.OracleParameter.Size*> does not contain inferred value after statement execution. For `String` data types the default is <xref:System.Data.DbType.AnsiString>.
 
@@ -450,7 +453,8 @@ Parameter = new OracleParameter("pname", Convert.ToInt32(0));
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the <xref:System.Data.ParameterDirection> is output, and execution of the associated <xref:System.Data.OracleClient.OracleCommand> does not return a value, the <xref:System.Data.OracleClient.OracleParameter> contains a null value.
+
+If the <xref:System.Data.ParameterDirection> is output, and execution of the associated <xref:System.Data.OracleClient.OracleCommand> does not return a value, the <xref:System.Data.OracleClient.OracleParameter> contains a null value.
 
  `Output`, `InputOut`, and `ReturnValue` parameters returned by calling <xref:System.Data.OracleClient.OracleCommand.ExecuteReader*> cannot be accessed until you call <xref:System.Data.OracleClient.OracleDataReader.Close*> on the <xref:System.Data.OracleClient.OracleDataReader>.
 
@@ -529,7 +533,8 @@ public void CreateOracleDbParameter()
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Null values are handled using the <xref:System.DBNull> class.
+
+Null values are handled using the <xref:System.DBNull> class.
 
 ## Examples
  The following example creates a <xref:System.Data.OracleClient.OracleParameter> and sets some of its properties.
@@ -593,7 +598,8 @@ public void CreateOracleParameter()
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The `Offset` property is used for client-side chunking of binary and string data. For example, in order to insert 10MB of text into a column on a server, a user might execute 10 parameterized inserts of 1MB chunks, shifting the value of `Offset` on each iteration by 1MB.
+
+The `Offset` property is used for client-side chunking of binary and string data. For example, in order to insert 10MB of text into a column on a server, a user might execute 10 parameterized inserts of 1MB chunks, shifting the value of `Offset` on each iteration by 1MB.
 
  `Offset` specifies the number of bytes for binary types, and the number of characters for strings. The count for strings does not include the terminating character.
 
@@ -659,7 +665,8 @@ public void CreateOracleParameter()
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Data.OracleClient.OracleParameter.OracleType*> and <xref:System.Data.OracleClient.OracleParameter.DbType*> are linked. Therefore, setting the <xref:System.Data.OracleClient.OracleParameter.DbType*> changes the <xref:System.Data.OracleClient.OracleParameter.OracleType*> to a supporting <xref:System.Data.OracleClient.OracleType>.
+
+The <xref:System.Data.OracleClient.OracleParameter.OracleType*> and <xref:System.Data.OracleClient.OracleParameter.DbType*> are linked. Therefore, setting the <xref:System.Data.OracleClient.OracleParameter.DbType*> changes the <xref:System.Data.OracleClient.OracleParameter.OracleType*> to a supporting <xref:System.Data.OracleClient.OracleType>.
 
  The <xref:System.Data.OracleClient.OracleParameter.DbType*>, <xref:System.Data.OracleClient.OracleParameter.OracleType*>, and <xref:System.Data.OracleClient.OracleParameter.Size*> properties of a parameter can be inferred by setting <xref:System.Data.OracleClient.OracleParameter.Value*>. Therefore, you are not required to specify them. However, they are not exposed in <xref:System.Data.OracleClient.OracleParameter> property settings. For example, if the size of the parameter has been inferred, <xref:System.Data.OracleClient.OracleParameter.Size*> does not contain inferred value after statement execution. For `String` data types the default is <xref:System.Data.OracleClient.OracleType.VarChar>.
 
@@ -705,7 +712,8 @@ public void CreateOracleParameter()
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The .NET Framework Data Provider for Oracle does not support positional parameters that are marked with a question mark (?).
+
+The .NET Framework Data Provider for Oracle does not support positional parameters that are marked with a question mark (?).
 
 ## Examples
  The following example creates a <xref:System.Data.OracleClient.OracleParameter> and sets some of its properties.
@@ -780,7 +788,8 @@ public void CreateOracleDbParameter()
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Setting the <xref:System.Data.OracleClient.OracleParameter.Precision*> or <xref:System.Data.OracleClient.OracleParameter.Scale*> properties has no effect.
+
+Setting the <xref:System.Data.OracleClient.OracleParameter.Precision*> or <xref:System.Data.OracleClient.OracleParameter.Scale*> properties has no effect.
 
  ]]></format>
         </remarks>
@@ -809,7 +818,8 @@ public void CreateOracleDbParameter()
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When executing a command that includes parameter values, code can either set the type of a parameter explicitly, or the parameter can infer its type from its value. Calling this method resets the parameter so that it can again infer its type from the value passed in the parameter. Calling this method affects both the <xref:System.Data.Odbc.OdbcParameter.DbType*> and <xref:System.Data.OracleClient.OracleParameter.OracleType*> properties of the <xref:System.Data.OracleClient.OracleParameter>.
+
+When executing a command that includes parameter values, code can either set the type of a parameter explicitly, or the parameter can infer its type from its value. Calling this method resets the parameter so that it can again infer its type from the value passed in the parameter. Calling this method affects both the <xref:System.Data.Odbc.OdbcParameter.DbType*> and <xref:System.Data.OracleClient.OracleParameter.OracleType*> properties of the <xref:System.Data.OracleClient.OracleParameter>.
 
  ]]></format>
         </remarks>
@@ -841,7 +851,8 @@ public void CreateOracleDbParameter()
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When executing a command that includes parameter values, code can either set the type of a parameter explicitly, or the parameter can infer its type from its value. Calling this method resets the parameter so that it can again infer its type from the value passed in the parameter. Calling this method affects both the <xref:System.Data.Odbc.OdbcParameter.DbType*> and <xref:System.Data.OracleClient.OracleParameter.OracleType*> properties of the <xref:System.Data.OracleClient.OracleParameter>.
+
+When executing a command that includes parameter values, code can either set the type of a parameter explicitly, or the parameter can infer its type from its value. Calling this method resets the parameter so that it can again infer its type from the value passed in the parameter. Calling this method affects both the <xref:System.Data.Odbc.OdbcParameter.DbType*> and <xref:System.Data.OracleClient.OracleParameter.OracleType*> properties of the <xref:System.Data.OracleClient.OracleParameter>.
 
  ]]></format>
         </remarks>
@@ -895,7 +906,8 @@ public void CreateOracleDbParameter()
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Setting the <xref:System.Data.OracleClient.OracleParameter.Precision*> or <xref:System.Data.OracleClient.OracleParameter.Scale*> properties has no effect.
+
+Setting the <xref:System.Data.OracleClient.OracleParameter.Precision*> or <xref:System.Data.OracleClient.OracleParameter.Scale*> properties has no effect.
 
  ]]></format>
         </remarks>
@@ -937,7 +949,8 @@ public void CreateOracleDbParameter()
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Setting <xref:System.Data.OracleClient.OracleParameter.Size*> affects only the input value of a parameter. Return values and output parameters are not affected by this property.
+
+Setting <xref:System.Data.OracleClient.OracleParameter.Size*> affects only the input value of a parameter. Return values and output parameters are not affected by this property.
 
  The <xref:System.Data.OracleClient.OracleParameter.Size> property is used for binary and string types.
 
@@ -1013,7 +1026,8 @@ public void CreateOracleParameter()
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The link between the value of the <xref:System.Data.OracleClient.OracleParameter> and the <xref:System.Data.DataTable> may be bidirectional depending on the value of the <xref:System.Data.OracleClient.OracleParameter.Direction> property.
+
+The link between the value of the <xref:System.Data.OracleClient.OracleParameter> and the <xref:System.Data.DataTable> may be bidirectional depending on the value of the <xref:System.Data.OracleClient.OracleParameter.Direction> property.
 
 ## Examples
  The following example creates a <xref:System.Data.OracleClient.OracleParameter> and sets some of its properties.
@@ -1124,7 +1138,8 @@ FieldName = @OriginalFieldName
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This property is used by the <xref:System.Data.OracleClient.OracleDataAdapter.UpdateCommand*> during the <xref:System.Data.Common.DbDataAdapter.Update*?displayProperty=nameWithType> to determine whether the original or current value is used for a parameter value. This lets primary keys be updated. This property is set to the version of the <xref:System.Data.DataRow> used by the <xref:System.Data.DataRow.Item*?displayProperty=nameWithType> property (<xref:System.Data.DataRow> indexer), or the <xref:System.Data.DataRow.GetChildRows*?displayProperty=nameWithType> method of the <xref:System.Data.DataRow> object.
+
+This property is used by the <xref:System.Data.OracleClient.OracleDataAdapter.UpdateCommand*> during the <xref:System.Data.Common.DbDataAdapter.Update*?displayProperty=nameWithType> to determine whether the original or current value is used for a parameter value. This lets primary keys be updated. This property is set to the version of the <xref:System.Data.DataRow> used by the <xref:System.Data.DataRow.Item*?displayProperty=nameWithType> property (<xref:System.Data.DataRow> indexer), or the <xref:System.Data.DataRow.GetChildRows*?displayProperty=nameWithType> method of the <xref:System.Data.DataRow> object.
 
 ## Examples
  The following example creates a <xref:System.Data.OracleClient.OracleParameter> and sets some of its properties.
@@ -1182,7 +1197,8 @@ public void CreateOracleParameter()
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This member is an explicit interface member implementation. It can be used only when the <xref:System.Data.OracleClient.OracleParameter> instance is cast to an <xref:System.ICloneable> interface.
+
+This member is an explicit interface member implementation. It can be used only when the <xref:System.Data.OracleClient.OracleParameter> instance is cast to an <xref:System.ICloneable> interface.
 
  ]]></format>
         </remarks>
@@ -1256,7 +1272,8 @@ public void CreateOracleParameter()
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- For input parameters, the value is bound to the <xref:System.Data.OracleClient.OracleCommand> that is sent to the server. For output and return-value parameters, the value is set on completion of the <xref:System.Data.OracleClient.OracleCommand> and after the <xref:System.Data.OracleClient.OracleDataReader> is closed.
+
+For input parameters, the value is bound to the <xref:System.Data.OracleClient.OracleCommand> that is sent to the server. For output and return-value parameters, the value is set on completion of the <xref:System.Data.OracleClient.OracleCommand> and after the <xref:System.Data.OracleClient.OracleDataReader> is closed.
 
  For an input parameter, <xref:System.Data.OracleClient.OracleParameter.Value*> can be set to an object of either a Microsoft .NET Framework data type or an Oracle data type (for example, an <xref:System.Data.OracleClient.OracleNumber> or <xref:System.Data.OracleClient.OracleString>).
 

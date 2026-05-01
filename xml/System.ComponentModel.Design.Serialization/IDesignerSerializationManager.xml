@@ -51,7 +51,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A designer can utilize <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager> to access services useful to managing design-time serialization processes. For example, a class that implements the designer serialization manager can use this interface to create objects, look up types, identify objects, and customize the serialization of particular types.
+
+A designer can utilize <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager> to access services useful to managing design-time serialization processes. For example, a class that implements the designer serialization manager can use this interface to create objects, look up types, identify objects, and customize the serialization of particular types.
 
 ## Examples
  The following example illustrates how to use <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager> to serialize and deserialize Code DOM statements.
@@ -111,7 +112,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method adds a custom serialization provider to the serialization manager. Serialization providers can provide custom serializers for a particular type of object or set of types of objects. During serialization, each custom serialization provider is queried to return a serializer for a specific data type, if it can provide one. The serialization manager uses the custom serializer provided by this method before using the default serializer for a particular type.
+
+This method adds a custom serialization provider to the serialization manager. Serialization providers can provide custom serializers for a particular type of object or set of types of objects. During serialization, each custom serialization provider is queried to return a serializer for a specific data type, if it can provide one. The serialization manager uses the custom serializer provided by this method before using the default serializer for a particular type.
 
  ]]></format>
         </remarks>
@@ -160,7 +162,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This storage area provides communication of object context information to serializers. Context information about objects that are being serialized can be stored and accessed through this <xref:System.ComponentModel.Design.Serialization.ContextStack>.
+
+This storage area provides communication of object context information to serializers. Context information about objects that are being serialized can be stored and accessed through this <xref:System.ComponentModel.Design.Serialization.ContextStack>.
 
  ]]></format>
         </remarks>
@@ -234,7 +237,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Objects that implement <xref:System.ComponentModel.IComponent> are added to the design-time container if the `addToContainer` parameter is `true`.
+
+Objects that implement <xref:System.ComponentModel.IComponent> are added to the design-time container if the `addToContainer` parameter is `true`.
 
  ]]></format>
         </remarks>
@@ -294,7 +298,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The name of the object to retrieve must have been set through a prior call to <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.CreateInstance*>.
+
+The name of the object to retrieve must have been set through a prior call to <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.CreateInstance*>.
 
  ]]></format>
         </remarks>
@@ -505,7 +510,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This property can contain an empty collection. A serializer should never assume that such properties exist. A derived class or implementation of <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager> defines the set of properties that are exposed here.
+
+This property can contain an empty collection. A serializer should never assume that such properties exist. A derived class or implementation of <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager> defines the set of properties that are exposed here.
 
  ]]></format>
         </remarks>
@@ -605,7 +611,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the serialization manager supports logging multiple errors in its implementation of <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.ReportError*>, it can store the error information object for a future report where all the errors encountered can be displayed at once. If this method stores multiple errors, serialization can continue after a call to this method. If this method does not support logging multiple errors, this method should throw an exception, which aborts serialization.
+
+If the serialization manager supports logging multiple errors in its implementation of <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.ReportError*>, it can store the error information object for a future report where all the errors encountered can be displayed at once. If this method stores multiple errors, serialization can continue after a call to this method. If this method does not support logging multiple errors, this method should throw an exception, which aborts serialization.
 
 > [!NOTE]
 > The serialization manager should never throw an exception for errors encountered during serialization. It should only throw an exception during deserialization. Otherwise, users become confused because saving the document should never fail.
@@ -656,7 +663,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This event provides a way for a serializer to create an object on demand, so that the serializer does not have to order object creation by dependency. The delegate for this event is cleared immediately after serialization or deserialization is complete.
+
+This event provides a way for a serializer to create an object on demand, so that the serializer does not have to order object creation by dependency. The delegate for this event is cleared immediately after serialization or deserialization is complete.
 
  ]]></format>
         </remarks>
@@ -704,7 +712,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This event is raised when serialization or deserialization is complete.
+
+This event is raised when serialization or deserialization is complete.
 
  Generally, serialization code is written to emit serialization data and does not typically require state-related checking and processing. If it is necessary to maintain state data throughout serialization, data can be set and accessed by a serializer, which can listen to the <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.SerializationComplete> event, and clear the data after serialization. Restoring the proper state after serialization can be important because serializers can be reused during serialization, and leftover state data or open streams might not be correct.
 
@@ -762,7 +771,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is useful when it is necessary to create and then name an instance of an object without using <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.CreateInstance*>. An exception is thrown if you try to rename an existing object or if you try to give a new object a name that is already taken.
+
+This method is useful when it is necessary to create and then name an instance of an object without using <xref:System.ComponentModel.Design.Serialization.IDesignerSerializationManager.CreateInstance*>. An exception is thrown if you try to rename an existing object or if you try to give a new object a name that is already taken.
 
  ]]></format>
         </remarks>

@@ -17,7 +17,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- An object that implements the <xref:System.ComponentModel.Design.Data.IDataEnvironment> interface can access the data connections available to an application at design time. The <xref:System.ComponentModel.Design.Data.IDataEnvironment> interface provides methods to list available data connections, create new data connections, retrieve schema information from a connection, and save data-connection configuration information to the application's configuration file.
+
+An object that implements the <xref:System.ComponentModel.Design.Data.IDataEnvironment> interface can access the data connections available to an application at design time. The <xref:System.ComponentModel.Design.Data.IDataEnvironment> interface provides methods to list available data connections, create new data connections, retrieve schema information from a connection, and save data-connection configuration information to the application's configuration file.
 
  The <xref:System.ComponentModel.Design.Data.IDataEnvironment> interface enables you to interact with data connections in the design environment, but it is not intended as a data-management API.
 
@@ -54,7 +55,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use the <xref:System.ComponentModel.Design.Data.IDataEnvironment.BuildConnection*> method to activate the design environment's user interface for creating or editing data connections. If the `initialConnection` parameter is `null`, it indicates the user wants to create a new connection. If the `initialConnection` parameter is a <xref:System.ComponentModel.Design.Data.DesignerDataConnection> object, it indicates the user wants to edit an existing connection.
+
+Use the <xref:System.ComponentModel.Design.Data.IDataEnvironment.BuildConnection*> method to activate the design environment's user interface for creating or editing data connections. If the `initialConnection` parameter is `null`, it indicates the user wants to create a new connection. If the `initialConnection` parameter is a <xref:System.ComponentModel.Design.Data.DesignerDataConnection> object, it indicates the user wants to edit an existing connection.
 
  Your design environment is responsible for creating the data connection, adding the connection either to a global list of connections or to the Web application's configuration file, and adding the new connection to the <xref:System.ComponentModel.Design.Data.IDataEnvironment.Connections> property.
 
@@ -99,7 +101,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Data.IDataEnvironment.BuildQuery*> method launches the design environment's UI for editing or creating SQL query strings. If the `initialQueryText` parameter is <xref:System.String.Empty>, it indicates the user wants to create a new query. If the `initialQueryText` parameter contains a string, it indicates the user wants to edit the existing query.
+
+The <xref:System.ComponentModel.Design.Data.IDataEnvironment.BuildQuery*> method launches the design environment's UI for editing or creating SQL query strings. If the `initialQueryText` parameter is <xref:System.String.Empty>, it indicates the user wants to create a new query. If the `initialQueryText` parameter contains a string, it indicates the user wants to edit the existing query.
 
  The `mode` parameter indicates the type of query the user wants to build; either select, update, insert, or delete. Your user interface can use the `mode` parameter to configure itself for the type of query desired, limit the user to using SQL statements valid only for the type of query desired, and/or validate the query against the desired type.
 
@@ -138,7 +141,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Data.IDataEnvironment.ConfigureConnection*> method writes a connection to the application's configuration file. The connection string and provider name are written to the [connectionStrings Element (ASP.NET Settings Schema)](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/bf7sd233(v=vs.100)) configuration element named according to the `name` parameter. The <xref:System.ComponentModel.Design.Data.DesignerDataConnection.Name> property of the `connection` parameter is ignored.
+
+The <xref:System.ComponentModel.Design.Data.IDataEnvironment.ConfigureConnection*> method writes a connection to the application's configuration file. The connection string and provider name are written to the [connectionStrings Element (ASP.NET Settings Schema)](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/bf7sd233(v=vs.100)) configuration element named according to the `name` parameter. The <xref:System.ComponentModel.Design.Data.DesignerDataConnection.Name> property of the `connection` parameter is ignored.
 
  Implementations of the <xref:System.ComponentModel.Design.Data.IDataEnvironment.ConfigureConnection*> method should throw the following exceptions.
 
@@ -177,7 +181,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Data.IDataEnvironment.Connections> property returns the set of connections available at design time. Your implementation of the <xref:System.ComponentModel.Design.Data.IDataEnvironment.Connections> property can return either the list of connections defined in the current Web application, or a list of connections defined at a global level, such as a list of data connections maintained by the design environment.
+
+The <xref:System.ComponentModel.Design.Data.IDataEnvironment.Connections> property returns the set of connections available at design time. Your implementation of the <xref:System.ComponentModel.Design.Data.IDataEnvironment.Connections> property can return either the list of connections defined in the current Web application, or a list of connections defined at a global level, such as a list of data connections maintained by the design environment.
 
  Each connection in the collection should have a unique connection string. If your collection includes both connections from the application's configuration file and global connections, your implementation must handle the case where connections from the global list and the configuration file have the same connection string. In this case, it is recommended that you eliminate duplicates and use the configuration-file connection only.
 
@@ -238,7 +243,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Data.IDataEnvironment.GetConnectionSchema*> method returns the database schema for the specified data connection. If the schema is unavailable, or if the provider for the connection is unavailable, the <xref:System.ComponentModel.Design.Data.IDataEnvironment.GetConnectionSchema*> should return `null`.
+
+The <xref:System.ComponentModel.Design.Data.IDataEnvironment.GetConnectionSchema*> method returns the database schema for the specified data connection. If the schema is unavailable, or if the provider for the connection is unavailable, the <xref:System.ComponentModel.Design.Data.IDataEnvironment.GetConnectionSchema*> should return `null`.
 
  ]]></format>
         </remarks>
@@ -271,7 +277,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Data.IDataEnvironment.GetDesignTimeConnection*> method returns a valid, open connection to the data store that can be used by the control designer.
+
+The <xref:System.ComponentModel.Design.Data.IDataEnvironment.GetDesignTimeConnection*> method returns a valid, open connection to the data store that can be used by the control designer.
 
  Control designers should use the <xref:System.ComponentModel.Design.Data.IDataEnvironment.GetDesignTimeConnection*> to obtain a data connection and should not attempt to open a connection using the <xref:System.ComponentModel.Design.Data.DesignerDataConnection.ConnectionString> property.
 

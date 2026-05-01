@@ -54,7 +54,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader> is a complete implementation of a designer loader without anything relating to a persistence format. A <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader> does not dictate either a text or binary persistence, but it does support the following features:
+
+A <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader> is a complete implementation of a designer loader without anything relating to a persistence format. A <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader> does not dictate either a text or binary persistence, but it does support the following features:
 
 - Multiple load dependencies.
 
@@ -145,7 +146,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This is an implementation of the abstract <xref:System.ComponentModel.Design.Serialization.DesignerLoader.BeginLoad*?displayProperty=nameWithType> method. You do not need to override this method in your own class. The <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.BeginLoad*> method performs the following actions:
+
+This is an implementation of the abstract <xref:System.ComponentModel.Design.Serialization.DesignerLoader.BeginLoad*?displayProperty=nameWithType> method. You do not need to override this method in your own class. The <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.BeginLoad*> method performs the following actions:
 
 - It verifies that the design surface has not already loaded.
 
@@ -199,7 +201,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Calling the <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.Dispose*> method does not flush changes to the designer loader. If you want changes to be saved, call <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.Flush*> before calling <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.Dispose*>.
+
+Calling the <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.Dispose*> method does not flush changes to the designer loader. If you want changes to be saved, call <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.Flush*> before calling <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.Dispose*>.
 
  Call <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.Dispose*> when you are finished using the <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader>. The <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.Dispose*> method leaves the <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader> in an unusable state. After calling <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.Dispose*>, you must release all references to the <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader> so the garbage collector can reclaim the memory that the <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader> was occupying. For more information, see [Cleaning Up Unmanaged Resources](/dotnet/standard/garbage-collection/unmanaged) and [Implementing a Dispose Method](/dotnet/standard/garbage-collection/implementing-dispose).
 
@@ -283,7 +286,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the designer loader has not been loaded or has not been marked as modified, the <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.Flush*> method returns immediately. Otherwise, <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.Flush*> asks the serialization manager to create a serialization session and then calls <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.PerformFlush*>.
+
+If the designer loader has not been loaded or has not been marked as modified, the <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.Flush*> method returns immediately. Otherwise, <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.Flush*> asks the serialization manager to create a serialization session and then calls <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.PerformFlush*>.
 
  ]]></format>
         </remarks>
@@ -368,7 +372,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.Initialize*> method is called the first time <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.BeginLoad*> is invoked. You can add any services necessary to the designer loader host at this time. The base implementation adds services that <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader> provides, so after calling the base implementation you may replace existing services. You must remove any custom services you add here by overriding <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.Dispose*>.
+
+The <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.Initialize*> method is called the first time <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.BeginLoad*> is invoked. You can add any services necessary to the designer loader host at this time. The base implementation adds services that <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader> provides, so after calling the base implementation you may replace existing services. You must remove any custom services you add here by overriding <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.Dispose*>.
 
  ]]></format>
         </remarks>
@@ -412,7 +417,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.IsReloadNeeded*> method is used by some designer loaders to optimize reloading. This method can be overridden if your designer loader supports intelligent reloading. Some designer loaders can detect changes made to their underlying document and determine if a reload of the designer is actually necessary. If not, they should return `false` from this method. The default implementation always returns `true`, indicating that any call to <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.Reload*> will succeed.
+
+The <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.IsReloadNeeded*> method is used by some designer loaders to optimize reloading. This method can be overridden if your designer loader supports intelligent reloading. Some designer loaders can detect changes made to their underlying document and determine if a reload of the designer is actually necessary. If not, they should return `false` from this method. The default implementation always returns `true`, indicating that any call to <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.Reload*> will succeed.
 
  ]]></format>
         </remarks>
@@ -452,7 +458,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method returns the loader host that was given to this designer loader. This can be `null` if <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.BeginLoad*> has not been called yet, or if this designer loader has been disposed.
+
+This method returns the loader host that was given to this designer loader. This can be `null` if <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.BeginLoad*> has not been called yet, or if this designer loader has been disposed.
 
  ]]></format>
         </remarks>
@@ -496,7 +503,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader> class provides the <xref:System.ComponentModel.Design.Serialization.IDesignerLoaderService>, which supports load dependencies. This property takes load dependencies into account and will return `true` if there are any outstanding load dependencies.
+
+The <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader> class provides the <xref:System.ComponentModel.Design.Serialization.IDesignerLoaderService>, which supports load dependencies. This property takes load dependencies into account and will return `true` if there are any outstanding load dependencies.
 
  ]]></format>
         </remarks>
@@ -537,7 +545,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Determines if the designer loader has detected that the designer has been modified. If this property is `true` when the designer loader's <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.Flush*> method is called, the designer loader will call the <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.PerformFlush*> method.
+
+Determines if the designer loader has detected that the designer has been modified. If this property is `true` when the designer loader's <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.Flush*> method is called, the designer loader will call the <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.PerformFlush*> method.
 
  ]]></format>
         </remarks>
@@ -577,7 +586,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.OnBeginLoad*> method is invoked to start the loading process. You should perform any necessary initialization for loading at this time. This method should not be used to perform the actual load. The default implementation disables change notifications and sets up the <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader> for loading.
+
+The <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.OnBeginLoad*> method is invoked to start the loading process. You should perform any necessary initialization for loading at this time. This method should not be used to perform the actual load. The default implementation disables change notifications and sets up the <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader> for loading.
 
  If you implement <xref:System.ComponentModel.Design.Serialization.IDesignerLoaderService> to provide dependent load support, you should call <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.OnBeginLoad*> when the first dependent load occurs. Call the <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.OnEndLoad*> method after the last call to the <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.System%23ComponentModel%23Design%23Serialization%23IDesignerLoaderService%23DependentLoadComplete*> method. By default, <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader> implements <xref:System.ComponentModel.Design.Serialization.IDesignerLoaderService> and does this for you. If <xref:System.ComponentModel.Design.Serialization.IDesignerLoaderService> is not available when <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.BeginLoad*> is called, <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.BeginLoad*> will directly call <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.OnBeginLoad*>.
 
@@ -621,7 +631,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.OnBeginUnload*> method is invoked when the designer loader is about to unload the document.
+
+The <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.OnBeginUnload*> method is invoked when the designer loader is about to unload the document.
 
  The document may be unloaded in preparation for reloading, or if the document failed to load. If you added document-specific services in <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.OnBeginLoad*> or <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.OnEndLoad*>, remove them here.
 
@@ -670,7 +681,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.OnEndLoad*> method is invoked when loading is finished. It is always called, even if an exception is thrown during loading. The value of `successful` will be set to `true` if the load succeeded, or `false` if a fatal error occurred. The `errors` collection will contain objects that were reported as errors. Usually, these objects are exceptions.
+
+The <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.OnEndLoad*> method is invoked when loading is finished. It is always called, even if an exception is thrown during loading. The value of `successful` will be set to `true` if the load succeeded, or `false` if a fatal error occurred. The `errors` collection will contain objects that were reported as errors. Usually, these objects are exceptions.
 
  If you implement <xref:System.ComponentModel.Design.Serialization.IDesignerLoaderService> to provide dependent load support, you should call the <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.OnEndLoad*> method after the last call to the <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.System%23ComponentModel%23Design%23Serialization%23IDesignerLoaderService%23DependentLoadComplete*> method. By default, <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader> implements <xref:System.ComponentModel.Design.Serialization.IDesignerLoaderService> and does this for you. If <xref:System.ComponentModel.Design.Serialization.IDesignerLoaderService> is not available when <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.BeginLoad*> is called, <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.BeginLoad*> will directly call <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.OnEndLoad*> after calling <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.PerformLoad*>.
 
@@ -716,7 +728,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.OnModifying*> method is called in response to a component changing, adding, or removing event which indicates that the designer is about to be modified. You can implement source code control by overriding this method. A call to <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.OnModifying*> does not mean that the <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.Modified> property will later be set to `true`; it merely indicates an intention to do so.
+
+The <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.OnModifying*> method is called in response to a component changing, adding, or removing event which indicates that the designer is about to be modified. You can implement source code control by overriding this method. A call to <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.OnModifying*> does not mean that the <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.Modified> property will later be set to `true`; it merely indicates an intention to do so.
 
  ]]></format>
         </remarks>
@@ -759,7 +772,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.PerformFlush*> method is invoked when the designer loader needs to flush to persistence any changes made to the designers. It is invoked in response to a call to the <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.Flush*> method.
+
+The <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.PerformFlush*> method is invoked when the designer loader needs to flush to persistence any changes made to the designers. It is invoked in response to a call to the <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.Flush*> method.
 
  ]]></format>
         </remarks>
@@ -803,7 +817,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.PerformLoad*> method is invoked when the designer loader needs to load its state. <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.PerformLoad*> is called before the <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.OnBeginLoad*> method. You must implement this method to load the designer contents.
+
+The <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.PerformLoad*> method is invoked when the designer loader needs to load its state. <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.PerformLoad*> is called before the <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.OnBeginLoad*> method. You must implement this method to load the designer contents.
 
  ]]></format>
         </remarks>
@@ -851,7 +866,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The serialization manager provides a `Properties` property on its primary interface that can be read by serializers to customize their serialization to specific needs. The properties that are examined by the serializers vary depending on the type of serializer used.
+
+The serialization manager provides a `Properties` property on its primary interface that can be read by serializers to customize their serialization to specific needs. The properties that are examined by the serializers vary depending on the type of serializer used.
 
  ]]></format>
         </remarks>
@@ -895,7 +911,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.Reload*> method can be invoked by the designer loader to request a reload of the designer. Because reloads are performed at idle time, this method does not actually reload the designer; it just queues the reload.
+
+The <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.Reload*> method can be invoked by the designer loader to request a reload of the designer. Because reloads are performed at idle time, this method does not actually reload the designer; it just queues the reload.
 
  ]]></format>
         </remarks>
@@ -974,7 +991,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.ReportFlushErrors*> method is called during <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.Flush*> if one or more errors occurred while flushing changes. The values in the `errors` collection can be exceptions or objects with <xref:System.Object.ToString*> values that describe the error. The default implementation of <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.ReportFlushErrors*> raises the last exception in the collection.
+
+The <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.ReportFlushErrors*> method is called during <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.Flush*> if one or more errors occurred while flushing changes. The values in the `errors` collection can be exceptions or objects with <xref:System.Object.ToString*> values that describe the error. The default implementation of <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.ReportFlushErrors*> raises the last exception in the collection.
 
  ]]></format>
         </remarks>
@@ -1018,7 +1036,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.SetBaseComponentClassName*> method should be called during loading to establish the full name of the component a designer is designing.
+
+The <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.SetBaseComponentClassName*> method should be called during loading to establish the full name of the component a designer is designing.
 
  ]]></format>
         </remarks>
@@ -1063,7 +1082,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Call the <xref:System.ComponentModel.Design.Serialization.IDesignerLoaderService.AddLoadDependency*> method once for each external object participating in the load process. The <xref:System.ComponentModel.Design.Serialization.IDesignerLoaderService.DependentLoadComplete*> method is called when the work of the load process is done.
+
+Call the <xref:System.ComponentModel.Design.Serialization.IDesignerLoaderService.AddLoadDependency*> method once for each external object participating in the load process. The <xref:System.ComponentModel.Design.Serialization.IDesignerLoaderService.DependentLoadComplete*> method is called when the work of the load process is done.
 
  ]]></format>
         </remarks>
@@ -1114,7 +1134,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.System%23ComponentModel%23Design%23Serialization%23IDesignerLoaderService%23DependentLoadComplete*> method is called to signal that a dependent loading operation has completed. Call the <xref:System.ComponentModel.Design.Serialization.IDesignerLoaderService.DependentLoadComplete*> method once for every process that was registered by calling the <xref:System.ComponentModel.Design.Serialization.IDesignerLoaderService.AddLoadDependency*> method, which has already completed.
+
+The <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.System%23ComponentModel%23Design%23Serialization%23IDesignerLoaderService%23DependentLoadComplete*> method is called to signal that a dependent loading operation has completed. Call the <xref:System.ComponentModel.Design.Serialization.IDesignerLoaderService.DependentLoadComplete*> method once for every process that was registered by calling the <xref:System.ComponentModel.Design.Serialization.IDesignerLoaderService.AddLoadDependency*> method, which has already completed.
 
  If the dependent load succeeds, the caller sets the `successful` parameter to `true` and passes either an empty collection or `null` to the `errorCollection` parameter. If the dependent load encounters errors, the caller sets the `successful` parameter to `false` and passes a collection of exceptions that indicate the reason or reasons for failure to the `errorCollection` parameter.
 
@@ -1163,7 +1184,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Any object can call the <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.System%23ComponentModel%23Design%23Serialization%23IDesignerLoaderService%23Reload*> method to request that the loader reload the design document. If the loader supports reloading and complies with the reload, the designer loader can return `true`. Otherwise, it returns `false`, indicating that the reload will not occur. Callers cannot rely on the reload happening immediately; the designer loader can schedule this for some other time, or it can try to reload the designer at once.
+
+Any object can call the <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.System%23ComponentModel%23Design%23Serialization%23IDesignerLoaderService%23Reload*> method to request that the loader reload the design document. If the loader supports reloading and complies with the reload, the designer loader can return `true`. Otherwise, it returns `false`, indicating that the reload will not occur. Callers cannot rely on the reload happening immediately; the designer loader can schedule this for some other time, or it can try to reload the designer at once.
 
  The caller can display a message to the user if the designer cannot be reloaded.
 

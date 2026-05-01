@@ -231,7 +231,8 @@ The following example uses the parameterless constructor to instantiate three <x
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Providing an identical seed value to different <xref:System.Random> objects causes each instance to produce identical sequences of random numbers. This is often done when testing apps that rely on random number generators.
+
+Providing an identical seed value to different <xref:System.Random> objects causes each instance to produce identical sequences of random numbers. This is often done when testing apps that rely on random number generators.
 
  If your application requires different random number sequences, invoke this constructor repeatedly with different seed values. One way to produce a unique seed value is to make it time-dependent. For example, derive the seed value from the system clock, as the <xref:System.Random.%23ctor> overload does. However, the system clock might not have sufficient resolution to provide different invocations of this constructor with a different seed value. On the .NET Framework, this results in random number generators that generate identical sequences of pseudo-random numbers, as illustrated by the first two <xref:System.Random> objects in the following example. To prevent this, apply an algorithm to differentiate the seed value in each invocation, or call the <xref:System.Threading.Thread.Sleep*?displayProperty=nameWithType> method to ensure that you provide each constructor with a different seed value.
 
@@ -698,7 +699,8 @@ The following example uses the parameterless constructor to instantiate three <x
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Random.Next(System.Int32)> overload returns random integers that range from 0 to `maxValue` - 1. However, if `maxValue` is 0, the method returns 0.
+
+The <xref:System.Random.Next(System.Int32)> overload returns random integers that range from 0 to `maxValue` - 1. However, if `maxValue` is 0, the method returns 0.
 
 ## Examples
  The following example generates random integers with various overloads of the <xref:System.Random.Next*> method.
@@ -775,7 +777,8 @@ The following example uses the parameterless constructor to instantiate three <x
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Random.Next(System.Int32,System.Int32)> overload returns random integers that range from `minValue` to `maxValue` - 1. However, if `maxValue` equals `minValue`, the method returns `minValue`.
+
+The <xref:System.Random.Next(System.Int32,System.Int32)> overload returns random integers that range from `minValue` to `maxValue` - 1. However, if `maxValue` equals `minValue`, the method returns `minValue`.
 
  Unlike the other overloads of the <xref:System.Random.Next*> method, which return only non-negative values, this method can return a negative random integer.
 
@@ -854,7 +857,8 @@ The following example uses the parameterless constructor to instantiate three <x
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Each element of the array of bytes is set to a random number greater than or equal to 0, and less than or equal to <xref:System.Byte.MaxValue>.
+
+Each element of the array of bytes is set to a random number greater than or equal to 0, and less than or equal to <xref:System.Byte.MaxValue>.
 
  For example, to generate a cryptographically secured random number suitable for creating a random password, use a method such as <xref:System.Security.Cryptography.RNGCryptoServiceProvider.GetBytes*?displayProperty=nameWithType>.
 
@@ -981,7 +985,8 @@ Each element of the span of bytes is set to a random number greater than or equa
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The actual upper bound of the random number returned by this method is 0.99999999999999978.
+
+The actual upper bound of the random number returned by this method is 0.99999999999999978.
 
  To retrieve random floating-point values within a range other than 0.0 and 1.0, see the "Retrieve floating-point values in a specified range" section of the <xref:System.Random> class topic.
 
@@ -1217,7 +1222,8 @@ Each element of the span of bytes is set to a random number greater than or equa
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- To produce a different random distribution or a different random number generator principle, derive a class from the <xref:System.Random> class and override the <xref:System.Random.Sample*> method.
+
+To produce a different random distribution or a different random number generator principle, derive a class from the <xref:System.Random> class and override the <xref:System.Random.Sample*> method.
 
 > [!IMPORTANT]
 > The <xref:System.Random.Sample*> method is `protected`, which means that it is accessible only within the <xref:System.Random> class and its derived classes. To generate a random number between 0 and 1 from a <xref:System.Random> instance, call the <xref:System.Random.NextDouble*> method.

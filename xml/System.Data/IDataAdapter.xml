@@ -49,7 +49,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Data.IDataAdapter> interface allows an inheriting class to implement a DataAdapter class, which represents the bridge between a data source and a <xref:System.Data.DataSet>. For more information about DataAdapter classes, see [Populating a DataSet from a DataAdapter](/dotnet/framework/data/adonet/populating-a-dataset-from-a-dataadapter).
+
+The <xref:System.Data.IDataAdapter> interface allows an inheriting class to implement a DataAdapter class, which represents the bridge between a data source and a <xref:System.Data.DataSet>. For more information about DataAdapter classes, see [Populating a DataSet from a DataAdapter](/dotnet/framework/data/adonet/populating-a-dataset-from-a-dataadapter).
 
  An application does not create an instance of the <xref:System.Data.IDataAdapter> interface directly, but implements an instance of a class that inherits <xref:System.Data.IDataAdapter>.
 
@@ -214,7 +215,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Data.IDataAdapter.FillSchema*> method retrieves the schema from the data source using the <xref:System.Data.IDbDataAdapter.SelectCommand*>. The connection object associated with the <xref:System.Data.IDbDataAdapter.SelectCommand*> must be valid, but it does not need to be open. If the connection is closed before <xref:System.Data.IDataAdapter.FillSchema*> is called, it is opened to retrieve data, then closed. If the connection is open before <xref:System.Data.IDataAdapter.FillSchema*> is called, it remains open.
+
+The <xref:System.Data.IDataAdapter.FillSchema*> method retrieves the schema from the data source using the <xref:System.Data.IDbDataAdapter.SelectCommand*>. The connection object associated with the <xref:System.Data.IDbDataAdapter.SelectCommand*> must be valid, but it does not need to be open. If the connection is closed before <xref:System.Data.IDataAdapter.FillSchema*> is called, it is opened to retrieve data, then closed. If the connection is open before <xref:System.Data.IDataAdapter.FillSchema*> is called, it remains open.
 
  A <xref:System.Data.IDataAdapter.FillSchema*> operation adds a <xref:System.Data.DataTable> to the destination <xref:System.Data.DataSet>. It then adds columns to the <xref:System.Data.DataColumnCollection> of the <xref:System.Data.DataTable> and configures the following <xref:System.Data.DataColumn> properties if they exist at the data source:
 
@@ -364,7 +366,8 @@ private static void GetParameters(string connectionString)
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Data.IDataAdapter.TableMappings> property provides the primary mapping between the returned records and the <xref:System.Data.DataSet>.
+
+The <xref:System.Data.IDataAdapter.TableMappings> property provides the primary mapping between the returned records and the <xref:System.Data.DataSet>.
 
  ]]></format>
         </remarks>
@@ -459,7 +462,8 @@ private static void GetParameters(string connectionString)
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Data.IDataAdapter> uses only the mappings for the source table named "Table". All SELECT, INSERT, DELETE, and UPDATE statements returning data must do so using consistent column naming. The column names returned in the records must be unique, otherwise columns with duplicate names overwrite previous data. On <xref:System.Data.IDataAdapter.Update*>, only the table mapped to the source table named "Table" will have its changes reconciled.
+
+The <xref:System.Data.IDataAdapter> uses only the mappings for the source table named "Table". All SELECT, INSERT, DELETE, and UPDATE statements returning data must do so using consistent column naming. The column names returned in the records must be unique, otherwise columns with duplicate names overwrite previous data. On <xref:System.Data.IDataAdapter.Update*>, only the table mapped to the source table named "Table" will have its changes reconciled.
 
  ]]></format>
         </remarks>
@@ -518,7 +522,8 @@ private static void GetParameters(string connectionString)
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When an application calls the <xref:System.Data.IDataAdapter.Update*> method, the <xref:System.Data.IDataAdapter> examines the <xref:System.Data.DataRow.RowState> property, and executes the required INSERT, UPDATE, or DELETE statements iteratively for each row, based on the order of the indexes configured in the <xref:System.Data.DataSet>. For example, <xref:System.Data.IDataAdapter.Update*> might execute a DELETE statement, followed by an INSERT statement, and then another DELETE statement, because of the ordering of the rows in the <xref:System.Data.DataTable>.
+
+When an application calls the <xref:System.Data.IDataAdapter.Update*> method, the <xref:System.Data.IDataAdapter> examines the <xref:System.Data.DataRow.RowState> property, and executes the required INSERT, UPDATE, or DELETE statements iteratively for each row, based on the order of the indexes configured in the <xref:System.Data.DataSet>. For example, <xref:System.Data.IDataAdapter.Update*> might execute a DELETE statement, followed by an INSERT statement, and then another DELETE statement, because of the ordering of the rows in the <xref:System.Data.DataTable>.
 
  Be aware that these statements are not performed as a batch process; each row is updated individually. An application can call the <xref:System.Data.DataSet.GetChanges*> method if you must control the sequence of statement types (for example, INSERTs before UPDATEs). For more information, see [Updating Data Sources with DataAdapters](/dotnet/framework/data/adonet/updating-data-sources-with-dataadapters).
 

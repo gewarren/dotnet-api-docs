@@ -83,7 +83,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When using the <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> or <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> classes to serialize an object, use the <xref:System.NonSerializedAttribute> attribute to prevent a field from being serialized. For example, you can use this attribute to prevent the serialization of sensitive data.
+
+When using the <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> or <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> classes to serialize an object, use the <xref:System.NonSerializedAttribute> attribute to prevent a field from being serialized. For example, you can use this attribute to prevent the serialization of sensitive data.
 
  The target objects for the <xref:System.NonSerializedAttribute> attribute are public and private fields of a serializable class. By default, classes are not serializable unless they are marked with <xref:System.SerializableAttribute>. During the serialization process all the public and private fields of a class are serialized by default. Fields marked with <xref:System.NonSerializedAttribute> are excluded during serialization. If you are using the <xref:System.Xml.Serialization.XmlSerializer> class to serialize an object, use the <xref:System.Xml.Serialization.XmlIgnoreAttribute> class to get the same functionality. Alternatively, implement the <xref:System.Runtime.Serialization.ISerializable> interface to explicitly control the serialization process. Note that classes that implement <xref:System.Runtime.Serialization.ISerializable> must still be marked with <xref:System.SerializableAttribute>.
 
@@ -106,7 +107,7 @@ public event ChangedEventHandler Changed;
 
 > [!NOTE]
 > The code uses the <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> class to serialize the object. The class is found in the system.runtime.serialization.formatters.soap.dll file, which is not loaded by default into a project. To run the code, you must add a reference to the DLL to your project.
-  
+
  :::code language="csharp" source="~/snippets/csharp/System/NonSerializedAttribute/Overview/s.cs" id="Snippet1":::
  :::code language="fsharp" source="~/snippets/fsharp/System/NonSerializedAttribute/Overview/s.fs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System/NonSerializedAttribute/Overview/s.vb" id="Snippet1":::

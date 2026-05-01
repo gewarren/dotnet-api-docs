@@ -55,7 +55,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If your class needs to provide asynchronous behavior according to the [Event-based Asynchronous Pattern Overview](/dotnet/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview), you will encounter a number of concurrency management issues. Among these is the requirement to ensure that event handlers are called on a thread or context that is appropriate for the application model (for example, Windows Forms applications, ASP.NET applications, console applications, and so on). The <xref:System.ComponentModel.AsyncOperationManager> provides a convenient way to create a class that runs properly under all application models supported by the .NET Framework.
+
+If your class needs to provide asynchronous behavior according to the [Event-based Asynchronous Pattern Overview](/dotnet/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview), you will encounter a number of concurrency management issues. Among these is the requirement to ensure that event handlers are called on a thread or context that is appropriate for the application model (for example, Windows Forms applications, ASP.NET applications, console applications, and so on). The <xref:System.ComponentModel.AsyncOperationManager> provides a convenient way to create a class that runs properly under all application models supported by the .NET Framework.
 
  The <xref:System.ComponentModel.AsyncOperationManager> class has one method, <xref:System.ComponentModel.AsyncOperationManager.CreateOperation*>, which returns an <xref:System.ComponentModel.AsyncOperation?displayProperty=nameWithType> that can be used to track the duration of a particular asynchronous task. The <xref:System.ComponentModel.AsyncOperation?displayProperty=nameWithType> for a task can be used to alert clients when a task completes. It can also be used to post progress updates and incremental results without terminating the operation.
 
@@ -131,7 +132,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.AsyncOperationManager.CreateOperation*> method returns an <xref:System.ComponentModel.AsyncOperation?displayProperty=nameWithType> that you can use to track the duration of a particular asynchronous operation and to alert the application model when the operation completes. You can also use it to post progress updates and incremental results without terminating the operation. The <xref:System.ComponentModel.AsyncOperation?displayProperty=nameWithType> will correctly marshal these calls to the appropriate thread or context for the application model.
+
+The <xref:System.ComponentModel.AsyncOperationManager.CreateOperation*> method returns an <xref:System.ComponentModel.AsyncOperation?displayProperty=nameWithType> that you can use to track the duration of a particular asynchronous operation and to alert the application model when the operation completes. You can also use it to post progress updates and incremental results without terminating the operation. The <xref:System.ComponentModel.AsyncOperation?displayProperty=nameWithType> will correctly marshal these calls to the appropriate thread or context for the application model.
 
  If you implement a class that supports the Event-based Asynchronous Pattern, your class should call <xref:System.ComponentModel.AsyncOperationManager.CreateOperation*> each time your *MethodName*`Async` method is called. The client application that makes calls to the method can use the `userSuppliedState` parameter to uniquely identify each invocation, so as to distinguish events raised during the execution of the asynchronous operation.
 
@@ -204,7 +206,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The default implementation is the free-threaded implementation.
+
+The default implementation is the free-threaded implementation.
 
  A thread should set the <xref:System.ComponentModel.AsyncOperationManager.SynchronizationContext> property to `null` to release the free-threaded factory when it is done, or else its factory will never be disposed.
 

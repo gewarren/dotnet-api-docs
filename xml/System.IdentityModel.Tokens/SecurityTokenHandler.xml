@@ -23,7 +23,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.IdentityModel.Tokens.SecurityTokenHandler> class is the base class from which all security token handlers derive. A security token handler is responsible for:
+
+The <xref:System.IdentityModel.Tokens.SecurityTokenHandler> class is the base class from which all security token handlers derive. A security token handler is responsible for:
 
 - Validating security tokens (<xref:System.IdentityModel.Tokens.SecurityToken>) of the type it is designed to process and packaging the claims contained in the token into a <xref:System.Security.Claims.ClaimsIdentity> object.
 
@@ -154,7 +155,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The default implementation returns `false` to indicate that the key identifier clause cannot be read.
+
+The default implementation returns `false` to indicate that the key identifier clause cannot be read.
 
  A derived class checks the element that the reader is referring to in order to determine whether the instance can deserialize a key identifier clause. This is typically accomplished through a call to the <xref:System.Xml.XmlReader.IsStartElement*?displayProperty=nameWithType> method with the appropriate element and namespace strings specified. If you override <xref:System.IdentityModel.Tokens.SecurityTokenHandler.CanReadKeyIdentifierClause*>, you must also override the <xref:System.IdentityModel.Tokens.SecurityTokenHandler.ReadKeyIdentifierClause*> method to provide the logic to deserialize the key identifier clause.
 
@@ -198,7 +200,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The default implementation always returns `false`.
+
+The default implementation always returns `false`.
 
  If you override this method, you must also override the <xref:System.IdentityModel.Tokens.SecurityTokenHandler.ReadToken*?displayProperty=nameWithType> method to provide the logic to deserialize the token.
 
@@ -233,7 +236,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The default implementation always returns `false`.
+
+The default implementation always returns `false`.
 
  A derived class checks the element that the reader is referring to in order to determine whether the instance can deserialize a security token. This is typically accomplished through a call to the <xref:System.Xml.XmlReader.IsStartElement*> method with the appropriate element and namespace strings specified. If you override <xref:System.IdentityModel.Tokens.SecurityTokenHandler.CanReadKeyIdentifierClause*>, you must also override the <xref:System.IdentityModel.Tokens.SecurityTokenHandler.ReadToken*?displayProperty=nameWithType> method or the <xref:System.IdentityModel.Tokens.SecurityTokenHandler.ReadToken*?displayProperty=nameWithType> method to provide the logic to deserialize the key identifier clause.
 
@@ -269,7 +273,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- To implement validation in a derived class, override this property to return `true` and override the <xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken*> method to implement the validation logic.
+
+To implement validation in a derived class, override this property to return `true` and override the <xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken*> method to implement the validation logic.
 
 ## Examples
  The following code shows how to override the <xref:System.IdentityModel.Tokens.SecurityTokenHandler.CanValidateToken> property to indicate that a custom handler can validate tokens. The code is taken from the `Custom Token` sample. This sample provides custom classes that enable processing of Simple Web Tokens (SWT). For information about this sample and other samples available for WIF and where to download them, see [WIF Code Sample Index](/previous-versions/dotnet/framework/windows-identity-foundation/wif-code-sample-index).
@@ -307,7 +312,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The default implementation always returns `false`.
+
+The default implementation always returns `false`.
 
  If you override <xref:System.IdentityModel.Tokens.SecurityTokenHandler.CanWriteKeyIdentifierClause*>, you must also override the <xref:System.IdentityModel.Tokens.SecurityTokenHandler.WriteKeyIdentifierClause*> method to provide the logic to serialize the key identifier clause.
 
@@ -338,7 +344,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- To implement serialization in a derived class, override this property to return `true` and override the <xref:System.IdentityModel.Tokens.SecurityTokenHandler.WriteToken*> methods to implement the serialization logic.
+
+To implement serialization in a derived class, override this property to return `true` and override the <xref:System.IdentityModel.Tokens.SecurityTokenHandler.WriteToken*> methods to implement the serialization logic.
 
 ## Examples
  The following code shows how to override the <xref:System.IdentityModel.Tokens.SecurityTokenHandler.CanWriteToken> property to indicate that a custom handler can serialize tokens. The code is taken from the `Custom Token` sample. This sample provides custom classes that enable processing of Simple Web Tokens (SWT). For information about this sample and other samples available for WIF and where to download them, see [WIF Code Sample Index](/previous-versions/dotnet/framework/windows-identity-foundation/wif-code-sample-index).
@@ -371,7 +378,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.IdentityModel.Tokens.SecurityTokenHandler.Configuration> property is typically set by the configuration infrastructure from the [&lt;securityTokenHandlerConfiguration&gt;](/dotnet/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration) element in the configuration file during application start up.
+
+The <xref:System.IdentityModel.Tokens.SecurityTokenHandler.Configuration> property is typically set by the configuration infrastructure from the [&lt;securityTokenHandlerConfiguration&gt;](/dotnet/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration) element in the configuration file during application start up.
 
  In derived classes, you use the <xref:System.IdentityModel.Tokens.SecurityTokenHandler.Configuration> property to access configuration settings; for example, the issuer name registry to use in the <xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken*> method can be accessed from the <xref:System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration.IssuerNameRegistry?displayProperty=nameWithType> property of the configuration object.
 
@@ -401,7 +409,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When the token handler is added to a <xref:System.IdentityModel.Tokens.SecurityTokenHandlerCollection> instance, this property is automatically set.
+
+When the token handler is added to a <xref:System.IdentityModel.Tokens.SecurityTokenHandlerCollection> instance, this property is automatically set.
 
  ]]></format>
         </remarks>
@@ -436,7 +445,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- By default this method throws a <xref:System.NotImplementedException> exception.
+
+By default this method throws a <xref:System.NotImplementedException> exception.
 
  Derived classes override this method to return a key identifier clause (<xref:System.IdentityModel.Tokens.SecurityKeyIdentifierClause>) that can be used to create a `<wsse:SecurityTokenReference>` element for the specified token.
 
@@ -479,7 +489,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- By default this method throws a <xref:System.NotImplementedException> exception.
+
+By default this method throws a <xref:System.NotImplementedException> exception.
 
  Called from implementations of the <xref:System.IdentityModel.SecurityTokenService> class.
 
@@ -517,7 +528,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The default implementation does nothing.
+
+The default implementation does nothing.
 
  Derived classes should throw a <xref:System.IdentityModel.Tokens.SecurityTokenReplayDetectedException> if the token has already been used.
 
@@ -550,7 +562,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Type> of the token processed by the current instance is accessed through the <xref:System.IdentityModel.Tokens.SecurityTokenHandler.TokenType> property. The <xref:System.IdentityModel.Tokens.SecurityTokenHandler.GetTokenTypeIdentifiers*> method returns the set of acceptable identifiers that can be used in messages to refer to the token type. For example, the URI value used in the `<wst:TokenType>` element under the `<wst:RequestSecurityToken>` element to request a specific kind of token (represented by the <xref:System.IdentityModel.Protocols.WSTrust.WSTrustMessage.TokenType?displayProperty=nameWithType> property in the object model).
+
+The <xref:System.Type> of the token processed by the current instance is accessed through the <xref:System.IdentityModel.Tokens.SecurityTokenHandler.TokenType> property. The <xref:System.IdentityModel.Tokens.SecurityTokenHandler.GetTokenTypeIdentifiers*> method returns the set of acceptable identifiers that can be used in messages to refer to the token type. For example, the URI value used in the `<wst:TokenType>` element under the `<wst:RequestSecurityToken>` element to request a specific kind of token (represented by the <xref:System.IdentityModel.Protocols.WSTrust.WSTrustMessage.TokenType?displayProperty=nameWithType> property in the object model).
 
 ## Examples
  The following code shows how to override the <xref:System.IdentityModel.Tokens.SecurityTokenHandler.GetTokenTypeIdentifiers*> method to return the token type identifiers for a custom token. The code is taken from the `Custom Token` sample. This sample provides custom classes that enable processing of Simple Web Tokens (SWT). For information about this sample and other samples available for WIF and where to download them, see [WIF Code Sample Index](/previous-versions/dotnet/framework/windows-identity-foundation/wif-code-sample-index).
@@ -590,7 +603,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.IdentityModel.Tokens.SecurityTokenHandler.LoadCustomConfiguration*> method is called by the configuration infrastructure. When this method is called, the `nodelist` will contain the top-level child elements of the token handler's [&lt;add&gt;](/dotnet/framework/configure-apps/file-schema/windows-identity-foundation/add) element from the configuration file. Each of these may, in turn, contain attributes or child elements depending on the configuration schema you define for your derived class.
+
+The <xref:System.IdentityModel.Tokens.SecurityTokenHandler.LoadCustomConfiguration*> method is called by the configuration infrastructure. When this method is called, the `nodelist` will contain the top-level child elements of the token handler's [&lt;add&gt;](/dotnet/framework/configure-apps/file-schema/windows-identity-foundation/add) element from the configuration file. Each of these may, in turn, contain attributes or child elements depending on the configuration schema you define for your derived class.
 
  The default implementation throws a <xref:System.NotImplementedException>. Override this method in your derived class to enable initialization of your security token handler from a configuration file.
 
@@ -624,7 +638,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- By default this method throws a <xref:System.NotImplementedException> exception.
+
+By default this method throws a <xref:System.NotImplementedException> exception.
 
  Override this method to provide the logic to deserialize a key identifier clause from XML. If you override this method, you should also override the <xref:System.IdentityModel.Tokens.SecurityTokenHandler.CanReadKeyIdentifierClause*?displayProperty=nameWithType> method.
 
@@ -783,7 +798,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You must override this property in derived classes and return the <xref:System.Type> of the security token (<xref:System.IdentityModel.Tokens.SecurityToken>) that is processed by the derived class.
+
+You must override this property in derived classes and return the <xref:System.Type> of the security token (<xref:System.IdentityModel.Tokens.SecurityToken>) that is processed by the derived class.
 
 ## Examples
  The following code shows how to override the <xref:System.IdentityModel.Tokens.SecurityTokenHandler.TokenType> property to return the <xref:System.Type> of the security tokens that are processed by a custom handler. The code is taken from the `Custom Token` sample. This sample provides custom classes that enable processing of Simple Web Tokens (SWT). For information about this sample and other samples available for WIF and where to download them, see [WIF Code Sample Index](/previous-versions/dotnet/framework/windows-identity-foundation/wif-code-sample-index).
@@ -821,7 +837,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method should be called from the <xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken*> method when validation of the token fails.
+
+This method should be called from the <xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken*> method when validation of the token fails.
 
  ]]></format>
         </remarks>
@@ -852,7 +869,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method should be called from the <xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken*> method after the token has been successfully validated.
+
+This method should be called from the <xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken*> method after the token has been successfully validated.
 
  ]]></format>
         </remarks>
@@ -884,7 +902,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- By default this method throws a <xref:System.NotImplementedException> exception.
+
+By default this method throws a <xref:System.NotImplementedException> exception.
 
  The <xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken*> method is called by the infrastructure to validate and extract the claims from the deserialized security token. These claims are returned in the collection of <xref:System.Security.Claims.ClaimsIdentity> objects returned by the method. In the typical case, this collection will contain a single identity.
 
@@ -941,7 +960,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- By default this method throws a <xref:System.NotImplementedException> exception.
+
+By default this method throws a <xref:System.NotImplementedException> exception.
 
  Override this method to provide the logic to serialize a key identifier clause to XML. If you override this method, you should also override the <xref:System.IdentityModel.Tokens.SecurityTokenHandler.CanWriteKeyIdentifierClause*> method.
 
@@ -984,7 +1004,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- By default this method throws a <xref:System.NotImplementedException> exception.
+
+By default this method throws a <xref:System.NotImplementedException> exception.
 
  Override this method to provide the logic to serialize a security token to XML. If you override this method, you should also override the <xref:System.IdentityModel.Tokens.SecurityTokenHandler.CanWriteToken> property.
 
@@ -1019,7 +1040,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- By default this method throws a <xref:System.NotImplementedException> exception.
+
+By default this method throws a <xref:System.NotImplementedException> exception.
 
  Override this method to provide the logic to serialize a security token to XML. If you override this method, you should also override the <xref:System.IdentityModel.Tokens.SecurityTokenHandler.CanWriteToken> property.
 

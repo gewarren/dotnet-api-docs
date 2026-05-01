@@ -148,7 +148,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This constructor initializes the <xref:System.Exception.Message> property of the new instance to a system-supplied message that describes the error, such as "System.AggregateException: One or more errors occurred." This message takes into account the current system culture.
+
+This constructor initializes the <xref:System.Exception.Message> property of the new instance to a system-supplied message that describes the error, such as "System.AggregateException: One or more errors occurred." This message takes into account the current system culture.
 
  The following table shows the initial property values for an instance of <xref:System.AggregateException>.
 
@@ -310,7 +311,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The following table shows the initial property values for an instance of <xref:System.AggregateException>.
+
+The following table shows the initial property values for an instance of <xref:System.AggregateException>.
 
 |Property|Value|
 |--------------|-----------|
@@ -382,7 +384,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This constructor is called during deserialization to reconstitute the exception object transmitted over a stream. For more information, see [XML and SOAP Serialization](/dotnet/standard/serialization/xml-and-soap-serialization).
+
+This constructor is called during deserialization to reconstitute the exception object transmitted over a stream. For more information, see [XML and SOAP Serialization](/dotnet/standard/serialization/xml-and-soap-serialization).
 
  ]]></format>
         </remarks>
@@ -504,7 +507,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- An exception that is thrown as a direct result of a previous exception should include a reference to the previous exception in the <xref:System.Exception.InnerException> property. The <xref:System.Exception.InnerException> property returns the same value that is passed into the constructor, or `null` if the <xref:System.Exception.InnerException> property does not supply the inner exception value to the constructor.
+
+An exception that is thrown as a direct result of a previous exception should include a reference to the previous exception in the <xref:System.Exception.InnerException> property. The <xref:System.Exception.InnerException> property returns the same value that is passed into the constructor, or `null` if the <xref:System.Exception.InnerException> property does not supply the inner exception value to the constructor.
 
  The following table shows the initial property values for an instance of <xref:System.AggregateException>.
 
@@ -630,7 +634,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If a task has an attached child task that throws an exception, that exception is wrapped in an <xref:System.AggregateException> exception before it is propagated to the parent task, which wraps that exception in its own <xref:System.AggregateException> exception before it propagates it back to the calling thread. In such cases, the <xref:System.AggregateException.InnerExceptions> property of the <xref:System.AggregateException> exception that is caught by the <xref:System.Threading.Tasks.Task.Wait*?displayProperty=nameWithType>, <xref:System.Threading.Tasks.Task.Wait*>, <xref:System.Threading.Tasks.Task.WaitAny*?displayProperty=nameWithType> or <xref:System.Threading.Tasks.Task.WaitAll*?displayProperty=nameWithType> method contains one or more <xref:System.AggregateException> instances, not the original exceptions that caused the fault. To avoid having to iterate over nested <xref:System.AggregateException> exceptions, you can use the <xref:System.AggregateException.Flatten*> method to remove all the nested <xref:System.AggregateException> exceptions, so that the <xref:System.AggregateException.InnerExceptions> property of the returned <xref:System.AggregateException> object contains the original exceptions.
+
+If a task has an attached child task that throws an exception, that exception is wrapped in an <xref:System.AggregateException> exception before it is propagated to the parent task, which wraps that exception in its own <xref:System.AggregateException> exception before it propagates it back to the calling thread. In such cases, the <xref:System.AggregateException.InnerExceptions> property of the <xref:System.AggregateException> exception that is caught by the <xref:System.Threading.Tasks.Task.Wait*?displayProperty=nameWithType>, <xref:System.Threading.Tasks.Task.Wait*>, <xref:System.Threading.Tasks.Task.WaitAny*?displayProperty=nameWithType> or <xref:System.Threading.Tasks.Task.WaitAll*?displayProperty=nameWithType> method contains one or more <xref:System.AggregateException> instances, not the original exceptions that caused the fault. To avoid having to iterate over nested <xref:System.AggregateException> exceptions, you can use the <xref:System.AggregateException.Flatten*> method to remove all the nested <xref:System.AggregateException> exceptions, so that the <xref:System.AggregateException.InnerExceptions> property of the returned <xref:System.AggregateException> object contains the original exceptions.
 
  This method recursively flattens all instances of  <xref:System.AggregateException> exceptions that are inner exceptions of the current <xref:System.AggregateException> instance. The inner exceptions returned in the new <xref:System.AggregateException> are the union of all the inner exceptions from exception tree rooted at the current <xref:System.AggregateException> instance.
 
@@ -764,7 +769,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This constructor is called during deserialization to reconstitute the exception object transmitted over a stream. For more information, see [XML and SOAP Serialization](/dotnet/standard/serialization/xml-and-soap-serialization).
+
+This constructor is called during deserialization to reconstitute the exception object transmitted over a stream. For more information, see [XML and SOAP Serialization](/dotnet/standard/serialization/xml-and-soap-serialization).
 
  ]]></format>
         </remarks>
@@ -821,7 +827,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Each invocation of the `predicate` returns true or false to indicate whether the <xref:System.Exception> was handled. After all invocations, any unhandled exceptions are put into a new <xref:System.AggregateException> that will be thrown. If there are no unhandled exceptions, the <xref:System.AggregateException.Handle*> method simply returns. If any invocations of the `predicate` throws an exception, it will halt the processing of any more exceptions and immediately propagate the thrown exception as-is.
+
+Each invocation of the `predicate` returns true or false to indicate whether the <xref:System.Exception> was handled. After all invocations, any unhandled exceptions are put into a new <xref:System.AggregateException> that will be thrown. If there are no unhandled exceptions, the <xref:System.AggregateException.Handle*> method simply returns. If any invocations of the `predicate` throws an exception, it will halt the processing of any more exceptions and immediately propagate the thrown exception as-is.
 
 ## Examples
  Ordinarily, an exception handler that catches an <xref:System.AggregateException> exception uses a `foreach` loop (in C#) or `For Each` loop (in Visual Basic) to handle each exception in its <xref:System.AggregateException.InnerExceptions*> collection. Instead, the following example uses the <xref:System.AggregateException.Handle*> method to handle each exception, and only rethrows exceptions that are not `CustomException` instances.

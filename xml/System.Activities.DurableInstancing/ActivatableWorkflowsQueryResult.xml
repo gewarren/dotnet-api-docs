@@ -19,7 +19,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- An instance store should periodically search for activatable workflow instances that belong to a workflow host that uses the store. It should raise the <xref:System.Activities.DurableInstancing.HasActivatableWorkflowEvent> when it finds an activatable instance in the persistence store. If the instance store does not find an activatable instance in the persistence store, it should continue to monitor the persistence store for any activatable instances.
+
+An instance store should periodically search for activatable workflow instances that belong to a workflow host that uses the store. It should raise the <xref:System.Activities.DurableInstancing.HasActivatableWorkflowEvent> when it finds an activatable instance in the persistence store. If the instance store does not find an activatable instance in the persistence store, it should continue to monitor the persistence store for any activatable instances.
 
  After raising the HasActivatableWorkflowEvent, the instance store should stop monitoring the persistence store for activatable instances until it receives and executes the <xref:System.Activities.DurableInstancing.QueryActivatableWorkflowsCommand>. The monitoring continues only if the command execution does not return any activatable workflow instances.
 

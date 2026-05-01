@@ -30,7 +30,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The `Write` methods of <xref:System.Xaml.XamlObjectWriter> implement a pattern so that the <xref:System.Xaml.XamlObjectWriter> uses the <xref:System.Xaml.XamlWriter> that is defined by the <xref:System.Xaml.XamlWriter.WriteNode*> method. <xref:System.Xaml.XamlWriter.WriteNode*> logic switches between the `Write` methods, depending on which node type is at the current position in the reader.
+
+The `Write` methods of <xref:System.Xaml.XamlObjectWriter> implement a pattern so that the <xref:System.Xaml.XamlObjectWriter> uses the <xref:System.Xaml.XamlWriter> that is defined by the <xref:System.Xaml.XamlWriter.WriteNode*> method. <xref:System.Xaml.XamlWriter.WriteNode*> logic switches between the `Write` methods, depending on which node type is at the current position in the reader.
 
 ## Scope
  A <xref:System.Xaml.XamlObjectWriter> has a concept of scope; that is, the <xref:System.Xaml.XamlObjectWriter> maintains a conceptual point of reference in its output object graph. For a particular scope, certain operations might be valid or invalid, or produce a no-operation result. For example, if you call <xref:System.Xaml.XamlObjectWriter.WriteStartMember*> to write directives for initialization on an object that already exists as an instance, the default implementation throws an exception.
@@ -354,7 +355,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the `SetValue` operation for this XAML writer has an associated handler (a <xref:System.Xaml.XamlObjectWriterSettings.XamlSetValueHandler> is declared in <xref:System.Xaml.XamlObjectWriterSettings>), this method creates new <xref:System.Windows.Markup.XamlSetValueEventArgs> and passes them to the handler. The return value is set by reading the <xref:System.Windows.Markup.XamlSetValueEventArgs.Handled*> value that is passed through the event data. If no handler exists and this method is invoked, the call returns `false`.
+
+If the `SetValue` operation for this XAML writer has an associated handler (a <xref:System.Xaml.XamlObjectWriterSettings.XamlSetValueHandler> is declared in <xref:System.Xaml.XamlObjectWriterSettings>), this method creates new <xref:System.Windows.Markup.XamlSetValueEventArgs> and passes them to the handler. The return value is set by reading the <xref:System.Windows.Markup.XamlSetValueEventArgs.Handled*> value that is passed through the event data. If no handler exists and this method is invoked, the call returns `false`.
 
  ]]></format>
         </remarks>
@@ -395,7 +397,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The most typical usage of <xref:System.Xaml.XamlObjectWriter.Result> is to call it only when the node stream is known to be at its end, and the object graph is complete. Otherwise, the object graph is likely to be incomplete, and is not useful for most platform scenarios.
+
+The most typical usage of <xref:System.Xaml.XamlObjectWriter.Result> is to call it only when the node stream is known to be at its end, and the object graph is complete. Otherwise, the object graph is likely to be incomplete, and is not useful for most platform scenarios.
 
  <xref:System.Xaml.XamlObjectWriter.Result> typically only contains a non-null value if it is called immediately after a call to <xref:System.Xaml.XamlObjectWriter.WriteEndObject*>, and if the current scope is in the member where the object provides a value.
 
@@ -432,7 +435,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The value of this property may come from the object writer context.
+
+The value of this property may come from the object writer context.
 
  ]]></format>
         </remarks>
@@ -467,7 +471,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- XAML schema context is a necessary information source for most practical object-writing scenarios. The XAML schema context influences the type lookup for backing types and holds information about the assemblies where backing types exist. The default XAML schema context is based on CLR type-mapping rules. Frameworks typically provide their own XAML schema context in order to assure that the assembly-loading mechanisms match the framework's programming amd application models.
+
+XAML schema context is a necessary information source for most practical object-writing scenarios. The XAML schema context influences the type lookup for backing types and holds information about the assemblies where backing types exist. The default XAML schema context is based on CLR type-mapping rules. Frameworks typically provide their own XAML schema context in order to assure that the assembly-loading mechanisms match the framework's programming amd application models.
 
  ]]></format>
         </remarks>
@@ -510,7 +515,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This service method is not intended to be called directly from your code. However, if you are creating a derived class from <xref:System.Xaml.XamlObjectWriter> and expect to report a context where line numbers are unavailable or not useful, this method may be called.
+
+This service method is not intended to be called directly from your code. However, if you are creating a derived class from <xref:System.Xaml.XamlObjectWriter> and expect to report a context where line numbers are unavailable or not useful, this method may be called.
 
  ]]></format>
         </remarks>
@@ -549,7 +555,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This implementation always returns `true`.
+
+This implementation always returns `true`.
 
  ]]></format>
         </remarks>
@@ -613,7 +620,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If this `EndObject` position scope is closing the root object, the new object scope becomes the root scope.
+
+If this `EndObject` position scope is closing the root object, the new object scope becomes the root scope.
 
  The call to <xref:System.Xaml.XamlObjectWriter.WriteStartObject*> might not yet have created the object because an object member might be a necessary initialization pathway, such as initialization text or initialization parameters. For these cases, the call to <xref:System.Xaml.XamlObjectWriter.WriteEndObject*> actually writes the object.
 
@@ -650,7 +658,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The difference between writing with <xref:System.Xaml.XamlObjectWriter.WriteGetObject*> and writing with <xref:System.Xaml.XamlObjectWriter.WriteStartObject*> can be seen in the resulting object graph. <xref:System.Xaml.XamlObjectWriter.WriteGetObject*> does not construct an instance of a type because the <xref:System.Xaml.XamlObjectWriter.WriteGetObject*> API has no information to inform the object graph of what to construct. Instead, the object was created when the parent property was initialized; so a <xref:System.Xaml.XamlObjectWriter> does not need to construct it. In contrast, <xref:System.Xaml.XamlObjectWriter.WriteStartObject*> specifies that an instance of that type should be constructed and inserted into the object graph.
+
+The difference between writing with <xref:System.Xaml.XamlObjectWriter.WriteGetObject*> and writing with <xref:System.Xaml.XamlObjectWriter.WriteStartObject*> can be seen in the resulting object graph. <xref:System.Xaml.XamlObjectWriter.WriteGetObject*> does not construct an instance of a type because the <xref:System.Xaml.XamlObjectWriter.WriteGetObject*> API has no information to inform the object graph of what to construct. Instead, the object was created when the parent property was initialized; so a <xref:System.Xaml.XamlObjectWriter> does not need to construct it. In contrast, <xref:System.Xaml.XamlObjectWriter.WriteStartObject*> specifies that an instance of that type should be constructed and inserted into the object graph.
 
  If you think of the XAML node stream as a series of frames, a <xref:System.Xaml.XamlObjectWriter.WriteGetObject*> is balanced to a <xref:System.Xaml.XamlObjectWriter.WriteEndObject*> call. Therefore, the number of <xref:System.Xaml.XamlObjectWriter.WriteGetObject*> plus <xref:System.Xaml.XamlObjectWriter.WriteStartObject*> calls should equal the number of <xref:System.Xaml.XamlObjectWriter.WriteEndObject*> calls as part of a complete object-writing evaluation of the XAML node stream.
 
@@ -692,7 +701,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A namespace declaration can be written if the current scope is a root scope, object scope, or member scope. However, <xref:System.Xaml.XamlObjectWriter.WriteNamespace*> can only be called immediately before a call to one of the following: <xref:System.Xaml.XamlObjectWriter.WriteNamespace*>, <xref:System.Xaml.XamlObjectWriter.WriteStartObject*>, or <xref:System.Xaml.XamlObjectWriter.WriteStartMember*>. The consecutive <xref:System.Xaml.XamlObjectWriter.WriteNamespace*> case is for writing multiple namespace declarations to the same node. Eventually, either <xref:System.Xaml.XamlObjectWriter.WriteStartObject*> or <xref:System.Xaml.XamlObjectWriter.WriteStartMember*> must be called.
+
+A namespace declaration can be written if the current scope is a root scope, object scope, or member scope. However, <xref:System.Xaml.XamlObjectWriter.WriteNamespace*> can only be called immediately before a call to one of the following: <xref:System.Xaml.XamlObjectWriter.WriteNamespace*>, <xref:System.Xaml.XamlObjectWriter.WriteStartObject*>, or <xref:System.Xaml.XamlObjectWriter.WriteStartMember*>. The consecutive <xref:System.Xaml.XamlObjectWriter.WriteNamespace*> case is for writing multiple namespace declarations to the same node. Eventually, either <xref:System.Xaml.XamlObjectWriter.WriteStartObject*> or <xref:System.Xaml.XamlObjectWriter.WriteStartMember*> must be called.
 
  <xref:System.Xaml.XamlObjectWriter.WriteNamespace*> does not use a `Start`/`End` metaphor. Although a XAML namespace has members in the CLR representation sense, the members are known and do not need to be represented as a special type of <xref:System.Xaml.XamlMember> for extensibility. To access the values of a <xref:System.Xaml.NamespaceDeclaration>, you access its <xref:System.Xaml.NamespaceDeclaration.Namespace> and <xref:System.Xaml.NamespaceDeclaration.Prefix> properties.
 

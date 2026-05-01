@@ -23,7 +23,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The issuer name registry is used to associate a mnemonic name to the cryptographic material needed to verify signatures of tokens produced by the corresponding issuer. This name is then used to set the <xref:System.Security.Claims.Claim.Issuer> or the <xref:System.Security.Claims.Claim.OriginalIssuer> property of a claim. The methods exposed by the <xref:System.IdentityModel.Tokens.IssuerNameRegistry> class are called from the pipeline by the security token handler that is processing the token. Tokens signed by material that is not mapped by an issuer name registry are discarded as untrusted. The name returned by the issuer name registry should be unique within the context of an RP application.
+
+The issuer name registry is used to associate a mnemonic name to the cryptographic material needed to verify signatures of tokens produced by the corresponding issuer. This name is then used to set the <xref:System.Security.Claims.Claim.Issuer> or the <xref:System.Security.Claims.Claim.OriginalIssuer> property of a claim. The methods exposed by the <xref:System.IdentityModel.Tokens.IssuerNameRegistry> class are called from the pipeline by the security token handler that is processing the token. Tokens signed by material that is not mapped by an issuer name registry are discarded as untrusted. The name returned by the issuer name registry should be unique within the context of an RP application.
 
  In code, you can specify the issuer name registry to use by setting the <xref:System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration.IssuerNameRegistry?displayProperty=nameWithType> property. In a configuration file, the issuer name registry can be specified by specifying the [&lt;issuerNameRegistry&gt;](/dotnet/framework/configure-apps/file-schema/windows-identity-foundation/issuernameregistry) element under the [&lt;securityTokenHandlerConfiguration&gt;](/dotnet/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration) element.
 
@@ -84,7 +85,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Called from the processing pipeline by the security token handler that is processing the token. The method should return a unique name for the issuer within the context of the RP application.
+
+Called from the processing pipeline by the security token handler that is processing the token. The method should return a unique name for the issuer within the context of the RP application.
 
  ]]></format>
         </remarks>
@@ -116,7 +118,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Implementations should return a non-null and non-empty string to identify a recognized issuer, or a null string to identify an unrecognized issuer.
+
+Implementations should return a non-null and non-empty string to identify a recognized issuer, or a null string to identify an unrecognized issuer.
 
  Called from the processing pipeline by the security token handler that is processing the token. The method should return a unique name for the issuer within the context of the RP application.
 
@@ -161,7 +164,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The default implementation ignores the `requestedIssuerName` parameter and simply calls the <xref:System.IdentityModel.Tokens.IssuerNameRegistry.GetIssuerName(System.IdentityModel.Tokens.SecurityToken)?displayProperty=nameWithType> method.
+
+The default implementation ignores the `requestedIssuerName` parameter and simply calls the <xref:System.IdentityModel.Tokens.IssuerNameRegistry.GetIssuerName(System.IdentityModel.Tokens.SecurityToken)?displayProperty=nameWithType> method.
 
  Called from the processing pipeline by the security token handler that is processing the token. The method should return a unique name for the issuer within the context of the RP application.
 
@@ -193,7 +197,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The default implementation returns <xref:System.Security.Claims.ClaimsIdentity.DefaultIssuer>.
+
+The default implementation returns <xref:System.Security.Claims.ClaimsIdentity.DefaultIssuer>.
 
  Called from the processing pipeline by the security token handler that is processing the token. The method should return a unique name for the issuer within the context of the RP application.
 
@@ -230,7 +235,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.IdentityModel.Tokens.IssuerNameRegistry.LoadCustomConfiguration*> method is called by the configuration infrastructure. When this method is called, the `nodelist` will contain the top-level child elements of the [&lt;issuerNameRegistry&gt;](/dotnet/framework/configure-apps/file-schema/windows-identity-foundation/issuernameregistry) element from the configuration file. Each of these may, in turn, contain attributes or child elements depending on the configuration schema you define for your derived class.
+
+The <xref:System.IdentityModel.Tokens.IssuerNameRegistry.LoadCustomConfiguration*> method is called by the configuration infrastructure. When this method is called, the `nodelist` will contain the top-level child elements of the [&lt;issuerNameRegistry&gt;](/dotnet/framework/configure-apps/file-schema/windows-identity-foundation/issuernameregistry) element from the configuration file. Each of these may, in turn, contain attributes or child elements depending on the configuration schema you define for your derived class.
 
  The default implementation throws a <xref:System.NotImplementedException>. Override this method in your derived class to enable initialization of your issuer name registry from a configuration file.
 

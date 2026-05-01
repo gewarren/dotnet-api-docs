@@ -57,7 +57,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.DesignSurfaceManager> class is designed to be a container of <xref:System.ComponentModel.Design.DesignSurface> objects. It provides common services that handle event routing between designers, property windows, and other global objects. Using <xref:System.ComponentModel.Design.DesignSurfaceManager> is optional, but it is recommended if you intend to have several designer windows.
+
+The <xref:System.ComponentModel.Design.DesignSurfaceManager> class is designed to be a container of <xref:System.ComponentModel.Design.DesignSurface> objects. It provides common services that handle event routing between designers, property windows, and other global objects. Using <xref:System.ComponentModel.Design.DesignSurfaceManager> is optional, but it is recommended if you intend to have several designer windows.
 
  The <xref:System.ComponentModel.Design.DesignSurfaceManager> class provides several design-time services automatically. You can override each of these services by replacing them in the protected <xref:System.ComponentModel.Design.DesignSurfaceManager.ServiceContainer> property. To replace a service, override the constructor, call base, and make any changes through the protected <xref:System.ComponentModel.Design.DesignSurfaceManager.ServiceContainer> property. All services added to the service container that implement the <xref:System.IDisposable> interface are disposed when the design surface manager is disposed. The <xref:System.ComponentModel.Design.DesignSurfaceManager> class provides the <xref:System.ComponentModel.Design.IDesignerEventService> interface as the default service. <xref:System.ComponentModel.Design.IDesignerEventService> provides a global eventing mechanism for designer events. With this mechanism, an application is informed when a designer becomes active. The service provides a collection of designers and a single place where global objects, such as the Properties window, can monitor selection change events.
 
@@ -186,7 +187,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.DesignSurfaceManager.ActiveDesignSurface> property should be set by the designer's user interface whenever a designer becomes the active window. The default implementation of this property works with the default implementation of the <xref:System.ComponentModel.Design.IDesignerEventService> interface to notify interested parties that a new designer is now active. If you provide your own implementation of <xref:System.ComponentModel.Design.IDesignerEventService>, you should override this property to notify your service appropriately. This property can be set to `null`, indicating that no designer is active.
+
+The <xref:System.ComponentModel.Design.DesignSurfaceManager.ActiveDesignSurface> property should be set by the designer's user interface whenever a designer becomes the active window. The default implementation of this property works with the default implementation of the <xref:System.ComponentModel.Design.IDesignerEventService> interface to notify interested parties that a new designer is now active. If you provide your own implementation of <xref:System.ComponentModel.Design.IDesignerEventService>, you should override this property to notify your service appropriately. This property can be set to `null`, indicating that no designer is active.
 
  ]]></format>
         </remarks>
@@ -308,7 +310,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If you want to conveniently add additional per-designer services, use the `parentProvider` parameter to provide a service provider for this design surface. The <xref:System.ComponentModel.Design.DesignSurfaceManager.CreateDesignSurface*> method creates a merged service provider that can satisfy service requests from both the given service provider as well as the <xref:System.ComponentModel.Design.DesignSurfaceManager> itself. The <xref:System.ComponentModel.Design.DesignSurfaceManager.CreateDesignSurface*> method then passes this service provider into the <xref:System.ComponentModel.Design.DesignSurfaceManager.CreateDesignSurfaceCore*> method.
+
+If you want to conveniently add additional per-designer services, use the `parentProvider` parameter to provide a service provider for this design surface. The <xref:System.ComponentModel.Design.DesignSurfaceManager.CreateDesignSurface*> method creates a merged service provider that can satisfy service requests from both the given service provider as well as the <xref:System.ComponentModel.Design.DesignSurfaceManager> itself. The <xref:System.ComponentModel.Design.DesignSurfaceManager.CreateDesignSurface*> method then passes this service provider into the <xref:System.ComponentModel.Design.DesignSurfaceManager.CreateDesignSurfaceCore*> method.
 
  After <xref:System.ComponentModel.Design.DesignSurfaceManager.CreateDesignSurfaceCore*> returns the design surface, the <xref:System.ComponentModel.Design.DesignSurfaceManager.CreateDesignSurface*> method tries to obtain the <xref:System.ComponentModel.Design.IDesignerEventService>. If it is present, and if it is the instance of the service that <xref:System.ComponentModel.Design.DesignSurfaceManager> provided by default, the <xref:System.ComponentModel.Design.DesignSurfaceManager.CreateDesignSurface*> method raises the <xref:System.ComponentModel.Design.IDesignerEventService.DesignerCreated> event.
 
@@ -361,7 +364,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.DesignSurfaceManager.CreateDesignSurfaceCore*> method is called by both <xref:System.ComponentModel.Design.DesignSurfaceManager.CreateDesignSurface*> methods. It is the implementation that actually creates the design surface. The default implementation just returns a new <xref:System.ComponentModel.Design.DesignSurface>. You may override this method to provide a custom object that derives from the <xref:System.ComponentModel.Design.DesignSurface> class.
+
+The <xref:System.ComponentModel.Design.DesignSurfaceManager.CreateDesignSurfaceCore*> method is called by both <xref:System.ComponentModel.Design.DesignSurfaceManager.CreateDesignSurface*> methods. It is the implementation that actually creates the design surface. The default implementation just returns a new <xref:System.ComponentModel.Design.DesignSurface>. You may override this method to provide a custom object that derives from the <xref:System.ComponentModel.Design.DesignSurface> class.
 
  ]]></format>
         </remarks>
@@ -475,7 +479,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.DesignSurfaceManager.DesignSurfaces> property is implemented directly on top of <xref:System.ComponentModel.Design.IDesignerEventService>, so if you provide your own implementation of that service, this property uses your implementation.
+
+The <xref:System.ComponentModel.Design.DesignSurfaceManager.DesignSurfaces> property is implemented directly on top of <xref:System.ComponentModel.Design.IDesignerEventService>, so if you provide your own implementation of that service, this property uses your implementation.
 
  ]]></format>
         </remarks>
@@ -535,7 +540,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The public <xref:System.ComponentModel.Design.DesignSurfaceManager.Dispose*> method follows the standard <xref:System.IDisposable> pattern. Calling this method destroys the design surface manager. It also disposes the service container, which causes all services that implement <xref:System.IDisposable> to also be disposed. The protected version of this method is `virtual` and follows the normal <xref:System.IDisposable> pattern.
+
+The public <xref:System.ComponentModel.Design.DesignSurfaceManager.Dispose*> method follows the standard <xref:System.IDisposable> pattern. Calling this method destroys the design surface manager. It also disposes the service container, which causes all services that implement <xref:System.IDisposable> to also be disposed. The protected version of this method is `virtual` and follows the normal <xref:System.IDisposable> pattern.
 
 > [!NOTE]
 > Because <xref:System.ComponentModel.Design.DesignSurfaceManager> does not have any native code to clean up, it does not have a finalizer that calls <xref:System.ComponentModel.Design.DesignSurfaceManager.Dispose*>. If you need to call <xref:System.ComponentModel.Design.DesignSurfaceManager.Dispose*>, you must add a finalizer yourself.
@@ -582,7 +588,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The public <xref:System.ComponentModel.Design.DesignSurfaceManager.Dispose*> method follows the standard <xref:System.IDisposable> pattern. Calling this method destroys the design surface manager. It also disposes the service container, which causes all services that implement <xref:System.IDisposable> to also be disposed. The protected version of this method is `virtual` and follows the normal <xref:System.IDisposable> pattern.
+
+The public <xref:System.ComponentModel.Design.DesignSurfaceManager.Dispose*> method follows the standard <xref:System.IDisposable> pattern. Calling this method destroys the design surface manager. It also disposes the service container, which causes all services that implement <xref:System.IDisposable> to also be disposed. The protected version of this method is `virtual` and follows the normal <xref:System.IDisposable> pattern.
 
 > [!NOTE]
 > Because <xref:System.ComponentModel.Design.DesignSurfaceManager> does not have any native code to clean up, it does not have a finalizer that calls <xref:System.ComponentModel.Design.DesignSurfaceManager.Dispose*>. If you need to call <xref:System.ComponentModel.Design.DesignSurfaceManager.Dispose*>, you must add a finalizer yourself.
@@ -643,7 +650,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.Design.DesignSurfaceManager.GetService*> method forwards to any service provider that was given to the design surface manager at construction time.
+
+The <xref:System.ComponentModel.Design.DesignSurfaceManager.GetService*> method forwards to any service provider that was given to the design surface manager at construction time.
 
  ]]></format>
         </remarks>
@@ -683,7 +691,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This event is raised when the active designer's selection of component set changes. This is mapped through the <xref:System.ComponentModel.Design.IDesignerEventService> interface.
+
+This event is raised when the active designer's selection of component set changes. This is mapped through the <xref:System.ComponentModel.Design.IDesignerEventService> interface.
 
  ]]></format>
         </remarks>

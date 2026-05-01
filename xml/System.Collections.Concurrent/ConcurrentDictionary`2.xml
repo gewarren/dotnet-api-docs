@@ -120,7 +120,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- For very large <xref:System.Collections.Concurrent.ConcurrentDictionary`2> objects, you can increase the maximum array size to 2 gigabytes (GB) on a 64-bit system by setting the [`<gcAllowVeryLargeObjects>`](/dotnet/framework/configure-apps/file-schema/runtime/gcallowverylargeobjects-element) configuration element to `true` in the run-time environment.
+
+For very large <xref:System.Collections.Concurrent.ConcurrentDictionary`2> objects, you can increase the maximum array size to 2 gigabytes (GB) on a 64-bit system by setting the [`<gcAllowVeryLargeObjects>`](/dotnet/framework/configure-apps/file-schema/runtime/gcallowverylargeobjects-element) configuration element to `true` in the run-time environment.
 
 > [!NOTE]
 >  <xref:System.Collections.Concurrent.ConcurrentDictionary`2> implements the <xref:System.Collections.Generic.IReadOnlyCollection`1> and <xref:System.Collections.Generic.IReadOnlyDictionary`2> interfaces starting with the .NET Framework 4.6; in previous versions of the .NET Framework, the <xref:System.Collections.Concurrent.ConcurrentDictionary`2> class did not implement these interfaces.
@@ -202,7 +203,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The default concurrency level is equal to the number of CPUs. The higher the concurrency level is, the more concurrent write operations can take place without interference and blocking. Higher concurrency level values also cause operations that require all locks (for example, table resizing, `ToArray` and `Count`) to become more expensive. The default capacity (DEFAULT_CAPACITY), which represents the initial number of buckets, is a trade-off between the size of a very small dictionary and the number of resizes when constructing a large dictionary. Also, the capacity should not be divisible by a small prime number. The default capacity is 31.
+
+The default concurrency level is equal to the number of CPUs. The higher the concurrency level is, the more concurrent write operations can take place without interference and blocking. Higher concurrency level values also cause operations that require all locks (for example, table resizing, `ToArray` and `Count`) to become more expensive. The default capacity (DEFAULT_CAPACITY), which represents the initial number of buckets, is a trade-off between the size of a very small dictionary and the number of resizes when constructing a large dictionary. Also, the capacity should not be divisible by a small prime number. The default capacity is 31.
 
  ]]></format>
         </remarks>
@@ -631,7 +633,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If you call <xref:System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate*> simultaneously on different threads, `addValueFactory` may be called multiple times, but its key/value pair might not be added to the dictionary for every call.
+
+If you call <xref:System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate*> simultaneously on different threads, `addValueFactory` may be called multiple times, but its key/value pair might not be added to the dictionary for every call.
 
  For modifications and write operations to the dictionary, <xref:System.Collections.Concurrent.ConcurrentDictionary`2> uses fine-grained locking to ensure thread safety (read operations on the dictionary are performed in a lock-free manner). The `addValueFactory` and `updateValueFactory` delegates may be executed multiple times to verify the value was added or updated as expected. However, they are called outside the locks to avoid the problems that can arise from executing unknown code under a lock. Therefore, <xref:System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate*> is not atomic with regards to all other operations on the <xref:System.Collections.Concurrent.ConcurrentDictionary`2> class.
 
@@ -701,7 +704,8 @@
  :::code language="vb" source="~/snippets/visualbasic/System.Collections.Concurrent/ConcurrentDictionaryTKey,TValue/AddOrUpdate/module1.vb" id="Snippet1":::
 
 ## Remarks
- For modifications and write operations to the dictionary, <xref:System.Collections.Concurrent.ConcurrentDictionary`2> uses fine-grained locking to ensure thread safety. (Read operations on the dictionary are performed in a lock-free manner.) The `addValueFactory` and `updateValueFactory` delegates may be executed multiple times to verify the value was added or updated as expected. However, they are called outside the locks to avoid the problems that can arise from executing unknown code under a lock. Therefore, <xref:System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate*> is not atomic with regards to all other operations on the <xref:System.Collections.Concurrent.ConcurrentDictionary`2> class.
+
+For modifications and write operations to the dictionary, <xref:System.Collections.Concurrent.ConcurrentDictionary`2> uses fine-grained locking to ensure thread safety. (Read operations on the dictionary are performed in a lock-free manner.) The `addValueFactory` and `updateValueFactory` delegates may be executed multiple times to verify the value was added or updated as expected. However, they are called outside the locks to avoid the problems that can arise from executing unknown code under a lock. Therefore, <xref:System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate*> is not atomic with regards to all other operations on the <xref:System.Collections.Concurrent.ConcurrentDictionary`2> class.
 
  ]]></format>
         </remarks>
@@ -775,7 +779,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If you call <xref:System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate*> simultaneously on different threads, `addValueFactory` may be called multiple times, but its key/value pair might not be added to the dictionary for every call.
+
+If you call <xref:System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate*> simultaneously on different threads, `addValueFactory` may be called multiple times, but its key/value pair might not be added to the dictionary for every call.
 
  For modifications and write operations to the dictionary, <xref:System.Collections.Concurrent.ConcurrentDictionary`2> uses fine-grained locking to ensure thread safety. (Read operations on the dictionary are performed in a lock-free manner.) The `addValueFactory` and `updateValueFactory` delegates may be executed multiple times to verify the value was added or updated as expected. However, they are called outside the locks to avoid the problems that can arise from executing unknown code under a lock. Therefore, <xref:System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate*> is not atomic with regards to all other operations on the <xref:System.Collections.Concurrent.ConcurrentDictionary`2> class.
 
@@ -977,7 +982,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This property has snapshot semantics and represents the number of items in the <xref:System.Collections.Concurrent.ConcurrentDictionary`2?displayProperty=nameWithType> at the moment when the property was accessed.
+
+This property has snapshot semantics and represents the number of items in the <xref:System.Collections.Concurrent.ConcurrentDictionary`2?displayProperty=nameWithType> at the moment when the property was accessed.
 
  ]]></format>
         </remarks>
@@ -1097,7 +1103,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The enumerator returned from the dictionary is safe to use concurrently with reads and writes to the dictionary, however it does not represent a moment-in-time snapshot of the dictionary. The contents exposed through the enumerator may contain modifications made to the dictionary after <xref:System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator*> was called.
+
+The enumerator returned from the dictionary is safe to use concurrently with reads and writes to the dictionary, however it does not represent a moment-in-time snapshot of the dictionary. The contents exposed through the enumerator may contain modifications made to the dictionary after <xref:System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator*> was called.
 
  ]]></format>
         </remarks>
@@ -1177,7 +1184,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- For modifications and write operations to the dictionary, <xref:System.Collections.Concurrent.ConcurrentDictionary`2> uses fine-grained locking to ensure thread safety. (Read operations on the dictionary are performed in a lock-free manner.) However, the `valueFactory` delegate is called outside the locks to avoid the problems that can arise from executing unknown code under a lock. Therefore, <xref:System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd*> is not atomic with regards to all other operations on the <xref:System.Collections.Concurrent.ConcurrentDictionary`2> class.
+
+For modifications and write operations to the dictionary, <xref:System.Collections.Concurrent.ConcurrentDictionary`2> uses fine-grained locking to ensure thread safety. (Read operations on the dictionary are performed in a lock-free manner.) However, the `valueFactory` delegate is called outside the locks to avoid the problems that can arise from executing unknown code under a lock. Therefore, <xref:System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd*> is not atomic with regards to all other operations on the <xref:System.Collections.Concurrent.ConcurrentDictionary`2> class.
 
  Since a key/value can be inserted by another thread while `valueFactory` is generating a value, you cannot trust that just because `valueFactory` executed, its produced value will be inserted into the dictionary and returned. If you call <xref:System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd*> simultaneously on different threads, `valueFactory` may be called multiple times, but only one key/value pair will be added to the dictionary.
 
@@ -1311,7 +1319,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- For modifications and write operations to the dictionary, <xref:System.Collections.Concurrent.ConcurrentDictionary`2> uses fine-grained locking to ensure thread safety. (Read operations on the dictionary are performed in a lock-free manner.) However, the `valueFactory` delegate is called outside the locks to avoid the problems that can arise from executing unknown code under a lock. Therefore, <xref:System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd*> is not atomic with regards to all other operations on the <xref:System.Collections.Concurrent.ConcurrentDictionary`2> class.
+
+For modifications and write operations to the dictionary, <xref:System.Collections.Concurrent.ConcurrentDictionary`2> uses fine-grained locking to ensure thread safety. (Read operations on the dictionary are performed in a lock-free manner.) However, the `valueFactory` delegate is called outside the locks to avoid the problems that can arise from executing unknown code under a lock. Therefore, <xref:System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd*> is not atomic with regards to all other operations on the <xref:System.Collections.Concurrent.ConcurrentDictionary`2> class.
 
  Since a key/value can be inserted by another thread while `valueFactory` is generating a value, you cannot trust that just because `valueFactory` executed, its produced value will be inserted into the dictionary and returned. If you call <xref:System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd*> simultaneously on different threads, `valueFactory` may be called multiple times, but only one key/value pair will be added to the dictionary.
 
@@ -2648,7 +2657,8 @@ This member is an explicit interface member implementation. It can be used only 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The enumerator returned from the dictionary is safe to use concurrently with reads and writes to the dictionary, however it does not represent a moment-in-time snapshot of the dictionary. The contents exposed through the enumerator may contain modifications made to the dictionary after <xref:System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator*> was called.
+
+The enumerator returned from the dictionary is safe to use concurrently with reads and writes to the dictionary, however it does not represent a moment-in-time snapshot of the dictionary. The contents exposed through the enumerator may contain modifications made to the dictionary after <xref:System.Collections.Concurrent.ConcurrentDictionary`2.GetEnumerator*> was called.
 
  ]]></format>
         </remarks>
@@ -2749,7 +2759,8 @@ This member is an explicit interface member implementation. It can be used only 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method returns `false` if the key already exists. Use the <xref:System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate*> or <xref:System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate*> method to update the value in case a key already exists.
+
+This method returns `false` if the key already exists. Use the <xref:System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate*> or <xref:System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate*> method to update the value in case a key already exists.
 
 ## Examples
  The following example shows how to call the <xref:System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd*?displayProperty=nameWithType> method:

@@ -196,7 +196,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The workflow runtime engine uses <xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService.LoadCompletedContextActivity*> to implement compensation. You must restore an identical copy of the completed scope. To do this, you must restore a valid <xref:System.IO.Stream> from your representation of the completed scope in the data store. Then you must pass this <xref:System.IO.Stream> to one of the overloaded methods of <xref:System.Workflow.ComponentModel.Activity.Load*> to perform deserialization of the scope.
+
+The workflow runtime engine uses <xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService.LoadCompletedContextActivity*> to implement compensation. You must restore an identical copy of the completed scope. To do this, you must restore a valid <xref:System.IO.Stream> from your representation of the completed scope in the data store. Then you must pass this <xref:System.IO.Stream> to one of the overloaded methods of <xref:System.Workflow.ComponentModel.Activity.Load*> to perform deserialization of the scope.
 
  If your persistence service cannot load the completed scope from its data store, it should throw a <xref:System.Workflow.Runtime.Hosting.PersistenceException> with an appropriate message.
 
@@ -231,7 +232,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You must restore an identical copy of the activity. To do this, you must restore a valid <xref:System.IO.Stream> from your representation of the workflow instance in the data store; then you must pass this <xref:System.IO.Stream> to one of the overloaded <xref:System.Workflow.ComponentModel.Activity.Load*> methods to deserialize the workflow instance state. If your persistence service cannot load the workflow instance state from its data store, it should throw a <xref:System.Workflow.Runtime.Hosting.PersistenceException> with an appropriate message.
+
+You must restore an identical copy of the activity. To do this, you must restore a valid <xref:System.IO.Stream> from your representation of the workflow instance in the data store; then you must pass this <xref:System.IO.Stream> to one of the overloaded <xref:System.Workflow.ComponentModel.Activity.Load*> methods to deserialize the workflow instance state. If your persistence service cannot load the workflow instance state from its data store, it should throw a <xref:System.Workflow.Runtime.Hosting.PersistenceException> with an appropriate message.
 
  The workflow runtime engine implements locking semantics to restrict access to a workflow instance state that is saved in a data store. This can be accessed by persistence services that run in multiple processes. The locking semantics are designed to prevent persistence services that run in two different processes from loading the same workflow instance into memory at the same time. Depending on the type of environment that your persistence service is designed to support, you may choose whether to support this functionality. If you choose to support the runtime locking semantics, and if this workflow instance state has been previously locked by another process, then you should throw a <xref:System.Workflow.Runtime.WorkflowOwnershipException>. Otherwise, you should lock access to the workflow instance state in your data store. The workflow instance state can be unlocked by a call to <xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService.UnlockWorkflowInstanceState*> or a call to <xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService.SaveWorkflowInstanceState*> with the unlock parameter set to `true`.
 
@@ -293,7 +295,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The workflow runtime engine saves the state of completed scope activities in order to implement compensation. You must call one of the overloaded <xref:System.Workflow.ComponentModel.Activity.Save*> methods to serialize `activity` into a <xref:System.IO.Stream>; you may then choose to additionally process the <xref:System.IO.Stream> before writing it to your data store. However, when the workflow runtime engine calls <xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService.LoadCompletedContextActivity*>, you must restore an identical copy of the activity.
+
+The workflow runtime engine saves the state of completed scope activities in order to implement compensation. You must call one of the overloaded <xref:System.Workflow.ComponentModel.Activity.Save*> methods to serialize `activity` into a <xref:System.IO.Stream>; you may then choose to additionally process the <xref:System.IO.Stream> before writing it to your data store. However, when the workflow runtime engine calls <xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService.LoadCompletedContextActivity*>, you must restore an identical copy of the activity.
 
  You must be able to associate the completed scope with its enclosing workflow instance to mark the scope as unneeded in your data store when the workflow instance finishes or is terminated. Therefore, you should also save the <xref:System.Guid> of the workflow instance that is associated with the completed scope; this can be obtained from the <xref:System.Workflow.Runtime.WorkflowInstance.InstanceId> property of the <xref:System.Workflow.Runtime.WorkflowInstance> associated with `activity`.
 
@@ -336,7 +339,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You must call one of the overloaded <xref:System.Workflow.ComponentModel.Activity.Save*> methods to serialize `rootActivity` into a <xref:System.IO.Stream>. You can then choose to additionally process the <xref:System.IO.Stream> before writing it to your data store. However, when the workflow runtime engine calls <xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService.LoadWorkflowInstanceState*>, you must restore an identical copy of the root activity. If you cannot save the workflow instance state to your data store, you should throw a <xref:System.Workflow.Runtime.Hosting.PersistenceException> with an appropriate error message.
+
+You must call one of the overloaded <xref:System.Workflow.ComponentModel.Activity.Save*> methods to serialize `rootActivity` into a <xref:System.IO.Stream>. You can then choose to additionally process the <xref:System.IO.Stream> before writing it to your data store. However, when the workflow runtime engine calls <xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService.LoadWorkflowInstanceState*>, you must restore an identical copy of the root activity. If you cannot save the workflow instance state to your data store, you should throw a <xref:System.Workflow.Runtime.Hosting.PersistenceException> with an appropriate error message.
 
  The workflow runtime engine provides locking semantics to restrict access to a workflow instance state that is saved in the data store. This can be accessed by the persistence services running in multiple hosts and pointing to the same data store. The locking semantics are designed to prevent persistence services that run in two different workflow runtimes from loading the same workflow instance into memory at the same time. Depending on the type of environment your persistence service is designed to support, you can choose whether to support this functionality. If you choose to support the runtime locking semantics, then, if a persistence service tries to save a workflow instance state that has been previously locked by another persistence service, you should throw a <xref:System.Workflow.Runtime.WorkflowOwnershipException>. If `unlock` is `true`, you should unlock access to the workflow instance state after you save it.
 
@@ -402,7 +406,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is abstract, so it does not contain a default implementation on locking and unlocking.
+
+This method is abstract, so it does not contain a default implementation on locking and unlocking.
 
  While implementing a custom persistence service, if you want to implement a locking scheme you will need to override this method and provide a locking-unlocking mechanism in the <xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService.SaveWorkflowInstanceState*> method based on the value of the unlock parameter.
 

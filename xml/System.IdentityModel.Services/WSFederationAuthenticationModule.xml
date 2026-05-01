@@ -21,7 +21,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> class implements an HTTP module known as the WS-Federation Authentication Module (WSFAM). The WSFAM is implemented out of the box by Windows Identity Foundation (WIF). The WSFAM is added to the ASP.NET pipeline by making an entry in the web.config file. It derives from <xref:System.IdentityModel.Services.HttpModuleBase>, which implements <xref:System.Web.IHttpModule>. It registers with the ASP.NET runtime to listen for the <xref:System.Web.HttpApplication.EndRequest> and <xref:System.Web.HttpApplication.AuthenticateRequest> events. Listening to the <xref:System.Web.HttpApplication.EndRequest> event, lets the WSFAM redirect clients to a security token service (STS) to obtain a security token when authorization fails on a requested resource. Listening to the <xref:System.Web.HttpApplication.AuthenticateRequest> event enables the WSFAM to monitor HTTP requests for a response from the STS that contains the requested token. When such a token is present and valid, it creates an instance of <xref:System.Security.Claims.ClaimsPrincipal> for the authenticated user using the claims that are present in the token.
+
+The <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> class implements an HTTP module known as the WS-Federation Authentication Module (WSFAM). The WSFAM is implemented out of the box by Windows Identity Foundation (WIF). The WSFAM is added to the ASP.NET pipeline by making an entry in the web.config file. It derives from <xref:System.IdentityModel.Services.HttpModuleBase>, which implements <xref:System.Web.IHttpModule>. It registers with the ASP.NET runtime to listen for the <xref:System.Web.HttpApplication.EndRequest> and <xref:System.Web.HttpApplication.AuthenticateRequest> events. Listening to the <xref:System.Web.HttpApplication.EndRequest> event, lets the WSFAM redirect clients to a security token service (STS) to obtain a security token when authorization fails on a requested resource. Listening to the <xref:System.Web.HttpApplication.AuthenticateRequest> event enables the WSFAM to monitor HTTP requests for a response from the STS that contains the requested token. When such a token is present and valid, it creates an instance of <xref:System.Security.Claims.ClaimsPrincipal> for the authenticated user using the claims that are present in the token.
 
  When using the WSFAM, session management is provided by a session authentication module (SAM), which is an instance of the <xref:System.IdentityModel.Services.SessionAuthenticationModule> class, or a class derived from it. The SAM is also added to the ASP.NET pipeline in the configuration file. The SAM monitors requests for authentication (session) cookies. When these cookies are present and valid, the module extracts the <xref:System.Security.Claims.ClaimsPrincipal> for the authenticated user from the <xref:System.IdentityModel.Tokens.SessionSecurityToken> and sets the <xref:System.Web.HttpContext.User?displayProperty=nameWithType> property and the thread principal <xref:System.Threading.Thread.CurrentPrincipal?displayProperty=nameWithType> properties.
 
@@ -144,7 +145,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The wauth parameter is optional. If the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.AuthenticationType> property is set to `null` or an empty string, the wauth parameter is not included in the sign-in request.
+
+The wauth parameter is optional. If the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.AuthenticationType> property is set to `null` or an empty string, the wauth parameter is not included in the sign-in request.
 
  You can override this setting on each HTTP request by adding a handler for the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider> event. This event is raised just before the module redirects to the security token service (STS) with a WS-Federation sign-in request message. The STS is specified by the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer> property.
 
@@ -174,7 +176,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.AuthorizationFailed> event is raised when authorization has failed for an HTTP request. It is raised from within the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnEndRequest*> event-handler delegate through a call to the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnAuthorizationFailed*> method.
+
+The <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.AuthorizationFailed> event is raised when authorization has failed for an HTTP request. It is raised from within the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnEndRequest*> event-handler delegate through a call to the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnAuthorizationFailed*> method.
 
  You can set the <xref:System.IdentityModel.Services.AuthorizationFailedEventArgs.RedirectToIdentityProvider?displayProperty=nameWithType> property to control whether the request is redirected to the identity provider. The framework initializes this property to `false` if the user has already been authenticated. In this case, setting the property to `true` may cause a circular loop with the STS.
 
@@ -201,7 +204,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A sign-in response message is sent to the relying party (RP) by a security token service (STS) in response to a sign-in request message.
+
+A sign-in response message is sent to the relying party (RP) by a security token service (STS) in response to a sign-in request message.
 
  ]]></format>
         </remarks>
@@ -234,7 +238,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is invoked from the request processing pipeline to determine whether the incoming HTTP request is a FORM post that contains a WS-Federation sign-in response message.
+
+This method is invoked from the request processing pipeline to determine whether the incoming HTTP request is a FORM post that contains a WS-Federation sign-in response message.
 
  It invokes the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.CanReadSignInResponse(System.Web.HttpRequestBase,System.Boolean)?displayProperty=nameWithType> overload with the `onPage` parameter set `false` to indicate that the call did  not originate while processing a page.
 
@@ -276,7 +281,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is invoked from the request processing pipeline through the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.CanReadSignInResponse(System.Web.HttpRequestBase)?displayProperty=nameWithType> overload to determine whether the incoming HTTP request is a form POST that contains a WS-Federation sign-in response message.
+
+This method is invoked from the request processing pipeline through the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.CanReadSignInResponse(System.Web.HttpRequestBase)?displayProperty=nameWithType> overload to determine whether the incoming HTTP request is a form POST that contains a WS-Federation sign-in response message.
 
  The default implementation performs the following:
 
@@ -323,7 +329,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Creates a WS-Federation sign-in request that is represented by a <xref:System.IdentityModel.Services.SignInRequestMessage> object. The properties of the new <xref:System.IdentityModel.Services.SignInRequestMessage> object are set as follows:
+
+Creates a WS-Federation sign-in request that is represented by a <xref:System.IdentityModel.Services.SignInRequestMessage> object. The properties of the new <xref:System.IdentityModel.Services.SignInRequestMessage> object are set as follows:
 
 - The <xref:System.IdentityModel.Services.WSFederationMessage.Context> property (the wctx parameter) is set to a value created by using the method parameters.
 
@@ -378,7 +385,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Call this method to send a WS-Federation sign-out request message to the specified STS. You can optionally supply a value for the wreply parameter in the sign-out request.
+
+Call this method to send a WS-Federation sign-out request message to the specified STS. You can optionally supply a value for the wreply parameter in the sign-out request.
 
  The method does the following:
 
@@ -429,7 +437,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The wfresh parameter is optional. If the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Freshness> property is set to `null` or an empty string, the wfresh parameter is not included in the sign-in request.
+
+The wfresh parameter is optional. If the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Freshness> property is set to `null` or an empty string, the wfresh parameter is not included in the sign-in request.
 
  You can override this setting on each HTTP request by adding a handler for the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider> event. This event is raised just before the module redirects to the security token service (STS) with a WS-Federation sign-in request message. The STS is specified by the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer> property.
 
@@ -467,7 +476,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- In the URL that is returned: the base URI is set to `issuer`; the wa parameter is set to "wsignout1.0"; the wreply parameter is set to `signOutReply`; and the parameters specified in `signOutQueryString` are present as additional query string parameters.
+
+In the URL that is returned: the base URI is set to `issuer`; the wa parameter is set to "wsignout1.0"; the wreply parameter is set to `signOutReply`; and the parameters specified in `signOutQueryString` are present as additional query string parameters.
 
  ]]></format>
         </remarks>
@@ -501,7 +511,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Called by the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.GetXmlTokenFromMessage(System.IdentityModel.Services.SignInResponseMessage)?displayProperty=nameWithType> method from inside the processing pipeline to resolve the URL specified in the wresultptr parameter in the sign-in response message received from a security token service (STS).
+
+Called by the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.GetXmlTokenFromMessage(System.IdentityModel.Services.SignInResponseMessage)?displayProperty=nameWithType> method from inside the processing pipeline to resolve the URL specified in the wresultptr parameter in the sign-in response message received from a security token service (STS).
 
  By default this method throws a <xref:System.NotSupportedException>. Override this method in a derived class to support the wresultptr parameter. The URL points to the issuance result, which should be one of the following: a `<wst:RequestSecurityTokenResponse>` element, a `<wst:RequestSecurityTokenResponseCollection>` element, a SOAP response, or a SOAP `<S:Fault>` element.
 
@@ -536,7 +547,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is called from the request processing pipeline (the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnAuthenticateRequest*> method) to get the URL of the page at the relying party (RP) to direct the client to after successful sign-in. This is, typically, the URL of the RP resource to which the client originally requested access.
+
+This method is called from the request processing pipeline (the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnAuthenticateRequest*> method) to get the URL of the page at the relying party (RP) to direct the client to after successful sign-in. This is, typically, the URL of the RP resource to which the client originally requested access.
 
  By default, WSFAM saves the return URL inside the wctx message parameter when it sends the WS-Federation sign-in request to the security token service (STS). In accordance with the WS-Federation specification, the wctx parameter is preserved across entities through which the message passes and is returned unaltered in the WS-Federation sign-in response message that is sent by the STS.
 
@@ -585,7 +597,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The default implementation invokes the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.GetXmlTokenFromMessage(System.IdentityModel.Services.SignInResponseMessage,System.IdentityModel.Services.WSFederationSerializer)?displayProperty=nameWithType> method to get the token and reads it by using the appropriate handler from the configured security token handlers.
+
+The default implementation invokes the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.GetXmlTokenFromMessage(System.IdentityModel.Services.SignInResponseMessage,System.IdentityModel.Services.WSFederationSerializer)?displayProperty=nameWithType> method to get the token and reads it by using the appropriate handler from the configured security token handlers.
 
  ]]></format>
         </remarks>
@@ -619,7 +632,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Called from the request processing pipeline to get the WS-Federation sign-in request message as a <xref:System.IdentityModel.Tokens.SecurityToken> object.
+
+Called from the request processing pipeline to get the WS-Federation sign-in request message as a <xref:System.IdentityModel.Tokens.SecurityToken> object.
 
  The default implementation invokes the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.GetSignInResponseMessage*> method to get a <xref:System.IdentityModel.Services.SignInResponseMessage> object and then invokes the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.GetSecurityToken(System.IdentityModel.Services.SignInResponseMessage)?displayProperty=nameWithType> overload.
 
@@ -654,7 +668,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.GetSessionTokenContext*> method is called from the request processing pipeline when processing a WS-Federation sign-in response message to get the value to store in the <xref:System.IdentityModel.Tokens.SessionSecurityToken.Context?displayProperty=nameWithType> property inside the session cookie.
+
+The <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.GetSessionTokenContext*> method is called from the request processing pipeline when processing a WS-Federation sign-in response message to get the value to store in the <xref:System.IdentityModel.Tokens.SessionSecurityToken.Context?displayProperty=nameWithType> property inside the session cookie.
 
  You can override this method to provide an application-specific value to be stored in the cookie. WSFAM does not expose any methods to retrieve the value from the cookie. You must provide the logic in your application to read the value back from the cookie if it is needed.
 
@@ -690,7 +705,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Called from the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.GetSecurityToken(System.Web.HttpRequestBase)?displayProperty=nameWithType> method in the request processing pipeline to get a sign-in response message from the form POST contained in the HTTP request.
+
+Called from the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.GetSecurityToken(System.Web.HttpRequestBase)?displayProperty=nameWithType> method in the request processing pipeline to get a sign-in response message from the form POST contained in the HTTP request.
 
  ]]></format>
         </remarks>
@@ -725,7 +741,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is called from the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.CanReadSignInResponse*> method in the request processing pipeline to determine the URL to redirect to after processing a WS-Federation sign-out clean-up request. It is only invoked if the message has a wreply parameter (the `signOutMessage` parameter has a <xref:System.IdentityModel.Services.SignOutCleanupRequestMessage.Reply> property that is neither `null` nor empty).
+
+This method is called from the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.CanReadSignInResponse*> method in the request processing pipeline to determine the URL to redirect to after processing a WS-Federation sign-out clean-up request. It is only invoked if the message has a wreply parameter (the `signOutMessage` parameter has a <xref:System.IdentityModel.Services.SignOutCleanupRequestMessage.Reply> property that is neither `null` nor empty).
 
  The default implementation validates the reply URL contained in the message (the <xref:System.IdentityModel.Services.SignOutCleanupRequestMessage.Reply?displayProperty=nameWithType> property) against the address of the security token service (STS) that is specified by the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer> property. The following conditions must be true for the reply URL to be valid:
 
@@ -784,7 +801,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If there is no wresult parameter in the sign-in response message, the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.GetReferencedResult*> method is called to try to get the token using the wresultptr parameter.
+
+If there is no wresult parameter in the sign-in response message, the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.GetReferencedResult*> method is called to try to get the token using the wresultptr parameter.
 
  ]]></format>
         </remarks>
@@ -845,7 +863,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The whr parameter is optional. If the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.HomeRealm> property is set to `null` or an empty string, the whr parameter is not included in the sign-in request.
+
+The whr parameter is optional. If the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.HomeRealm> property is set to `null` or an empty string, the whr parameter is not included in the sign-in request.
 
  You can override this setting on each HTTP request by adding a handler for the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider> event. This event is raised just before the module redirects to the security token service (STS) with a WS-Federation sign-in request message. The STS is specified by the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer> property.
 
@@ -878,7 +897,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Adds handlers for ASP.NET pipeline events according to the following table.
+
+Adds handlers for ASP.NET pipeline events according to the following table.
 
 |Event|Handler|
 |-----------|-------------|
@@ -918,7 +938,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Module properties are initialized using the equivalent properties of the <xref:System.IdentityModel.Services.Configuration.WsFederationConfiguration> object specified by the <xref:System.IdentityModel.Services.Configuration.FederationConfiguration.WsFederationConfiguration?displayProperty=nameWithType> property.
+
+Module properties are initialized using the equivalent properties of the <xref:System.IdentityModel.Services.Configuration.WsFederationConfiguration> object specified by the <xref:System.IdentityModel.Services.Configuration.FederationConfiguration.WsFederationConfiguration?displayProperty=nameWithType> property.
 
  You can specify settings in a configuration file through the [&lt;wsFederation&gt;](/dotnet/framework/configure-apps/file-schema/windows-identity-foundation/wsfederation) element.
 
@@ -953,7 +974,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is called from the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.CanReadSignInResponse*> method in the request processing pipeline to determine whether the incoming HTTP request is a WS-Federation sign-in response message.
+
+This method is called from the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.CanReadSignInResponse*> method in the request processing pipeline to determine whether the incoming HTTP request is a WS-Federation sign-in response message.
 
  The default implementation returns `true` if the wa parameter is "wsignin1.0" and the wreq and wreqptr parameters are not both set.
 
@@ -987,7 +1009,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This is a required property. It must be set if passive redirects are enabled. It specifies the URL of the security token service (STS) to which WS-Federation requests should be issued.
+
+This is a required property. It must be set if passive redirects are enabled. It specifies the URL of the security token service (STS) to which WS-Federation requests should be issued.
 
  You can override this setting on each HTTP request by adding a handler for the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider> event. This event is raised just before the module redirects to the security token service (STS) with a WS-Federation sign-in request message. The STS is specified by the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer> property.
 
@@ -1027,7 +1050,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnAuthenticateRequest*> method implements the WS-Federation request processing pipeline. It is added to the <xref:System.Web.HttpApplication.AuthenticateRequest?displayProperty=nameWithType> event in the ASP.NET pipeline by the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.InitializeModule*> method.
+
+The <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnAuthenticateRequest*> method implements the WS-Federation request processing pipeline. It is added to the <xref:System.Web.HttpApplication.AuthenticateRequest?displayProperty=nameWithType> event in the ASP.NET pipeline by the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.InitializeModule*> method.
 
  The method performs the following:
 
@@ -1081,7 +1105,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Called from the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnEndRequest*> event-handler delegate when authorization has failed.
+
+Called from the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnEndRequest*> event-handler delegate when authorization has failed.
 
  Initializes the <xref:System.IdentityModel.Services.AuthorizationFailedEventArgs.RedirectToIdentityProvider?displayProperty=nameWithType> property before raising the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.AuthorizationFailed> event to prevent circular redirects if the user has already been authenticated. If the user is already authenticated, the property is initialized to `false` to prevent redirects; otherwise, it is initialized to `true`.
 
@@ -1116,7 +1141,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The event is ignored unless the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.PassiveRedirectEnabled> property is `true`.
+
+The event is ignored unless the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.PassiveRedirectEnabled> property is `true`.
 
  ]]></format>
         </remarks>
@@ -1149,7 +1175,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- By default, this is an empty handler.
+
+By default, this is an empty handler.
 
  ]]></format>
         </remarks>
@@ -1252,7 +1279,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Called from the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut(System.Boolean)?displayProperty=nameWithType> method just after the session is deleted.
+
+Called from the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut(System.Boolean)?displayProperty=nameWithType> method just after the session is deleted.
 
  ]]></format>
         </remarks>
@@ -1308,7 +1336,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Called from the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut(System.Boolean)?displayProperty=nameWithType> method just before the session is deleted.
+
+Called from the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut(System.Boolean)?displayProperty=nameWithType> method just before the session is deleted.
 
  ]]></format>
         </remarks>
@@ -1340,7 +1369,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Called from the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut(System.Boolean)?displayProperty=nameWithType> method if an exception occurs during processing.
+
+Called from the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut(System.Boolean)?displayProperty=nameWithType> method if an exception occurs during processing.
 
  ]]></format>
         </remarks>
@@ -1370,7 +1400,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The module will not initiate WS-Federation protocol redirects when this mode is not enabled. If this property is `true`, the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer> property must be set to the URL of the Security Token Service (STS) to which the caller should be redirected.
+
+The module will not initiate WS-Federation protocol redirects when this mode is not enabled. If this property is `true`, the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer> property must be set to the URL of the Security Token Service (STS) to which the caller should be redirected.
 
 > [!WARNING]
 > Application code can issue WS-Federation sign-in requests explicitly by using the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignIn*> method, regardless of the value of the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.PassiveRedirectEnabled> property.
@@ -1403,7 +1434,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You can override this setting on each HTTP request by adding a handler for the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SessionSecurityTokenCreated> event. This event is raised from the request processing pipeline when processing a WS-Federation sign-in response message from a security token service (STS).
+
+You can override this setting on each HTTP request by adding a handler for the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SessionSecurityTokenCreated> event. This event is raised from the request processing pipeline when processing a WS-Federation sign-in response message from a security token service (STS).
 
  ]]></format>
         </remarks>
@@ -1432,7 +1464,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The wp parameter is optional. If the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Policy> property is set to `null` or an empty string, the wp parameter is not included in the sign-in request.
+
+The wp parameter is optional. If the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Policy> property is set to `null` or an empty string, the wp parameter is not included in the sign-in request.
 
  You can override this setting on each HTTP request by adding a handler for the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider> event. This event is raised just before the module redirects to the security token service (STS) with a WS-Federation sign-in request message. The STS is specified by the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer> property.
 
@@ -1462,7 +1495,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This is a required property for WS-Federation sign-in requests. It must be set if passive redirects are enabled. The URI identifies the RP to the STS. (For identifying the STS to the RP, see the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer> property).
+
+This is a required property for WS-Federation sign-in requests. It must be set if passive redirects are enabled. The URI identifies the RP to the STS. (For identifying the STS to the RP, see the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer> property).
 
  The value of this property is serialized as the wtrealm query string parameter in WS-Federation protocol. It identifies the RP to the STS. It is used by the STS to decide what policy to apply for token issuance and where to redirect the user to after token issuance. (For identifying the STS to the RP, see <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer>.)
 
@@ -1499,7 +1533,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You can access and modify the WS-Federation sign-in request through the <xref:System.IdentityModel.Services.RedirectingToIdentityProviderEventArgs.SignInRequestMessage?displayProperty=nameWithType> property. For example, you can modify the <xref:System.IdentityModel.Services.FederationMessage.BaseUri> property in the sign-in message to change the identity provider to which the request will be redirected. The <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider> event is a cancelable event and you can set the <xref:System.ComponentModel.CancelEventArgs.Cancel> property to `true` to cancel the redirect.
+
+You can access and modify the WS-Federation sign-in request through the <xref:System.IdentityModel.Services.RedirectingToIdentityProviderEventArgs.SignInRequestMessage?displayProperty=nameWithType> property. For example, you can modify the <xref:System.IdentityModel.Services.FederationMessage.BaseUri> property in the sign-in message to change the identity provider to which the request will be redirected. The <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider> event is a cancelable event and you can set the <xref:System.ComponentModel.CancelEventArgs.Cancel> property to `true` to cancel the redirect.
 
  The event is raised from inside the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectToIdentityProvider*> method through a call to the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnRedirectingToIdentityProvider*> method.
 
@@ -1551,7 +1586,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectToIdentityProvider*> method is called from the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignIn*> method when the request is issued from a web page presented by the relying party (RP) or from the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnEndRequest*> event-handler delegate to perform a passive redirect to the identity provider on authorization failure.
+
+The <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectToIdentityProvider*> method is called from the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignIn*> method when the request is issued from a web page presented by the relying party (RP) or from the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnEndRequest*> event-handler delegate to perform a passive redirect to the identity provider on authorization failure.
 
  The parameters passed to the method are used to create the wctx message parameter. The only significant parameter is the `returnUrl` parameter. This specifies the URL that the RP should direct the browser to following successful authentication. It should not be confused with the wreply message parameter, which is specified by the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Reply> property and which provides the address at the RP to which the security token service (STS) should direct its response.
 
@@ -1603,7 +1639,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The wreply parameter is optional. If the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Reply> property is set to `null` or an empty string, the wreply parameter is not included in the sign-in request.
+
+The wreply parameter is optional. If the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Reply> property is set to `null` or an empty string, the wreply parameter is not included in the sign-in request.
 
  The wreply parameter is used by the STS to decide where to redirect the user to after token issuance. It is not advisable for the STS to blindly use this address to redirect the user as such redirection has security vulnerabilities. The reply address must be validated by the STS (possibly by comparing to a set of preconfigured reply addresses for the purposes or some other method) to make sure that the reply is being sent to understood well known and secure location.
 
@@ -1634,7 +1671,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The wreq parameter is optional. If the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Request> property is set to `null` or an empty string, the wreq parameter is not included in the sign-in request.
+
+The wreq parameter is optional. If the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Request> property is set to `null` or an empty string, the wreq parameter is not included in the sign-in request.
 
  You can override this setting on each HTTP request by adding a handler for the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider> event. This event is raised just before the module redirects to the security token service (STS) with a WS-Federation sign-in request message. The STS is specified by the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer> property.
 
@@ -1664,7 +1702,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The wreqptr parameter is optional. If the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RequestPtr> property is set to `null` or an empty string, the wreq parameter is not included in the sign-in request.
+
+The wreqptr parameter is optional. If the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RequestPtr> property is set to `null` or an empty string, the wreq parameter is not included in the sign-in request.
 
  You can override this setting on each HTTP request by adding a handler for the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider> event. This event is raised just before the module redirects to the security token service (STS) with a WS-Federation sign-in request message. The STS is specified by the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer> property.
 
@@ -1717,7 +1756,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The wtrealm parameter, which is set by the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Realm> property, should be used instead of this parameter.
+
+The wtrealm parameter, which is set by the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Realm> property, should be used instead of this parameter.
 
  The wres parameter is optional. If the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Resource> property is set to `null` or an empty string, the wres parameter is not included in the sign-in request.
 
@@ -1749,7 +1789,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You can add an event handler to modify the token before it is validated. In the event handler you can access the security token through the <xref:System.IdentityModel.Services.SecurityTokenReceivedEventArgs.SecurityToken?displayProperty=nameWithType> property. The <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SecurityTokenReceived> event is a cancelable event, you can set the <xref:System.ComponentModel.CancelEventArgs.Cancel> property to `true` in an event handler to terminate processing of the WS-Federation sign-in response message.
+
+You can add an event handler to modify the token before it is validated. In the event handler you can access the security token through the <xref:System.IdentityModel.Services.SecurityTokenReceivedEventArgs.SecurityToken?displayProperty=nameWithType> property. The <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SecurityTokenReceived> event is a cancelable event, you can set the <xref:System.ComponentModel.CancelEventArgs.Cancel> property to `true` in an event handler to terminate processing of the WS-Federation sign-in response message.
 
  This event is raised from inside the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnAuthenticateRequest*> event-handler delegate when processing a WS-Federation sign-in response message ("wsignin1.0") received from the security token service (STS). It is raised just after a security token has been deserialized from the wresult or the wresultptr parameter in the sign-in response message, but before the security token is validated.
 
@@ -1783,7 +1824,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You can add an event handler to modify the principal created while processing a WS-Federation sign-in response message from a security token service (STS) before it is used to create the session token. In the event handler, you can access the principal through the <xref:System.IdentityModel.Services.SecurityTokenValidatedEventArgs.ClaimsPrincipal> property. The <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SecurityTokenValidated> event is a cancelable event, you can set the <xref:System.ComponentModel.CancelEventArgs.Cancel> property to `true` in an event handler to terminate processing of the WS-Federation sign-in response message.
+
+You can add an event handler to modify the principal created while processing a WS-Federation sign-in response message from a security token service (STS) before it is used to create the session token. In the event handler, you can access the principal through the <xref:System.IdentityModel.Services.SecurityTokenValidatedEventArgs.ClaimsPrincipal> property. The <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SecurityTokenValidated> event is a cancelable event, you can set the <xref:System.ComponentModel.CancelEventArgs.Cancel> property to `true` in an event handler to terminate processing of the WS-Federation sign-in response message.
 
  This event is raised from inside the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnAuthenticateRequest*> event-handler delegate when processing a WS-Federation sign-in response message ("wsignin1.0") received from the security token service (STS). It is raised just after the security token that was deserialized from the wresult or the wresultptr parameter in the sign-in response message has been validated, and before the session security token is created.
 
@@ -1816,7 +1858,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You can add an event handler to modify the session token before it is used to set the thread principal and is written to the session cookie. In the event handler, you can access the session token through the <xref:System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs.SessionToken?displayProperty=nameWithType> property. You can specify whether a session cookie should be written by setting the <xref:System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs.WriteSessionCookie?displayProperty=nameWithType> property.
+
+You can add an event handler to modify the session token before it is used to set the thread principal and is written to the session cookie. In the event handler, you can access the session token through the <xref:System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs.SessionToken?displayProperty=nameWithType> property. You can specify whether a session cookie should be written by setting the <xref:System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs.WriteSessionCookie?displayProperty=nameWithType> property.
 
  This event is raised from inside the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnAuthenticateRequest*> event-handler delegate when processing a WS-Federation sign-in response message ("wsignin1.0") received from the security token service (STS). It is raised just after the security token that was deserialized from the wresult or the wresultptr parameter in the sign-in response message has been validated, and before the claims principal is set on the <xref:System.Threading.Thread.CurrentPrincipal?displayProperty=nameWithType> (and on the <xref:System.Web.HttpContext.User> property of <xref:System.Web.HttpContext.Current?displayProperty=nameWithType>).
 
@@ -1858,7 +1901,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Called from the request processing pipeline implemented in the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnAuthenticateRequest*> event-handler delegate. This method does the following:
+
+Called from the request processing pipeline implemented in the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnAuthenticateRequest*> event-handler delegate. This method does the following:
 
 1.  Invokes the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnSessionSecurityTokenCreated*> method to raise the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SessionSecurityTokenCreated> event. You can use this event to modify the session token before it is used to set the thread principal and written to the session cookie and to specify whether the session cookie should be written.
 
@@ -1893,7 +1937,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the request is posted to the login page, a control on the page will raise this event, not this module.
+
+If the request is posted to the login page, a control on the page will raise this event, not this module.
 
 ## Examples
  :::code language="csharp" source="~/snippets/csharp/System.IdentityModel.Services/WSFederationAuthenticationModule/Overview/global.asax.cs" id="Snippet3":::
@@ -1924,7 +1969,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This event is raised through a call to the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnSignedOut*> method from inside the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut(System.Boolean)?displayProperty=nameWithType> method while signing out of the session at the relying party (RP). The event is not raised when doing federated sign-out through the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.FederatedSignOut*> method.
+
+This event is raised through a call to the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnSignedOut*> method from inside the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut(System.Boolean)?displayProperty=nameWithType> method while signing out of the session at the relying party (RP). The event is not raised when doing federated sign-out through the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.FederatedSignOut*> method.
 
  You can add an event handler to perform any additional processing that is needed by your application after the session cookie has been deleted.
 
@@ -1959,7 +2005,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The default implementation invokes the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectToIdentityProvider*> method to perform the sign-in.
+
+The default implementation invokes the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectToIdentityProvider*> method to perform the sign-in.
 
  ]]></format>
         </remarks>
@@ -1987,7 +2034,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.CreateSignInRequest*> method is invoked, the sign-in message that is generated contains a wctx parameter that has the following format: `ru=returnUrl&cx=SignInContext&rm=rememberMeSet&id=uniqueId`. The value of the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignInContext> is stored in the `cx` parameter. <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.CreateSignInRequest*> can be called directly from your code. It is also called when the WSFAM is performing passive redirects and also when either the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignIn*> method or the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectToIdentityProvider*> method is invoked by application code.
+
+When the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.CreateSignInRequest*> method is invoked, the sign-in message that is generated contains a wctx parameter that has the following format: `ru=returnUrl&cx=SignInContext&rm=rememberMeSet&id=uniqueId`. The value of the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignInContext> is stored in the `cx` parameter. <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.CreateSignInRequest*> can be called directly from your code. It is also called when the WSFAM is performing passive redirects and also when either the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignIn*> method or the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectToIdentityProvider*> method is invoked by application code.
 
  Although the WSFAM saves the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignInContext> value in sign-in request messages, if the value is used by your application during response processing, you must provide the logic for extracting it from the wctx parameter in the sign-in response message.
 
@@ -2020,7 +2068,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the request is posted to the login page, a control on the page will raise this event, not this module.
+
+If the request is posted to the login page, a control on the page will raise this event, not this module.
 
  ]]></format>
         </remarks>
@@ -2048,7 +2097,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This event is raised through a call to the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnSigningOut*> method from inside the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut(System.Boolean)?displayProperty=nameWithType> method while signing out of the session at the relying party (RP). The event is not raised when doing federated sign-out through the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.FederatedSignOut*> method.
+
+This event is raised through a call to the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnSigningOut*> method from inside the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut(System.Boolean)?displayProperty=nameWithType> method while signing out of the session at the relying party (RP). The event is not raised when doing federated sign-out through the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.FederatedSignOut*> method.
 
  You can add an event handler to perform any additional processing that is needed by your application before the session cookie is deleted. You can read the <xref:System.IdentityModel.Services.SigningOutEventArgs.IsIPInitiated*> property in the event handler to determine whether the sign-out is the result of receiving a WS-Federation sign-out clean-up request message ("wsignoutcleanup1.0") from a security token service (STS) or whether it was initiated at the RP.
 
@@ -2080,7 +2130,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You can use this property to send additional parameters in a sign-in request. These would be application-specific parameters that are not one of the parameters that are specified by the WS-Federation protocol. To remove additional parameters from the request set the property to an empty string.
+
+You can use this property to send additional parameters in a sign-in request. These would be application-specific parameters that are not one of the parameters that are specified by the WS-Federation protocol. To remove additional parameters from the request set the property to an empty string.
 
  You can override this setting on each HTTP request by adding a handler for the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider> event. This event is raised just before the module redirects to the security token service (STS) with a WS-Federation sign-in request message. The STS is specified by the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer> property.
 
@@ -2100,7 +2151,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Deletes the current session.
+
+Deletes the current session.
 
  No sign-out request message ("wsignout1.0") is sent to the security token service (STS). To sign-out at the STS using WS-Federation protocol, use the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.FederatedSignOut*> method.
 
@@ -2130,7 +2182,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Deletes the current session and redirects the browser back to the URL specified in the current HTTP request.
+
+Deletes the current session and redirects the browser back to the URL specified in the current HTTP request.
 
  Invokes the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut(System.String)?displayProperty=nameWithType> method with the `redirectUrl` parameter set to the URL of the current request.
 
@@ -2166,7 +2219,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method performs the actual work of deleting the current session and raising the appropriate sign-out events. The method does the following:
+
+This method performs the actual work of deleting the current session and raising the appropriate sign-out events. The method does the following:
 
 1.  Invokes the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnSigningOut*> method to raise the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SigningOut> event. An event handler can provide any necessary processing before the session is deleted. The <xref:System.IdentityModel.Services.SigningOutEventArgs.IsIPInitiated?displayProperty=nameWithType> property is set according to the `isIPRequest` parameter.
 
@@ -2209,7 +2263,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Deletes the current session and redirects the browser back to the specified URL.
+
+Deletes the current session and redirects the browser back to the specified URL.
 
  Invokes the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut(System.String,System.Boolean)?displayProperty=nameWithType> method with the `redirectUrl` parameter and with the `initiateSignoutCleanup` set `false`.
 
@@ -2248,7 +2303,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Deletes the current session and redirects the browser back to the specified URL.
+
+Deletes the current session and redirects the browser back to the specified URL.
 
  Invokes the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut(System.Boolean)?displayProperty=nameWithType> method with the `initiateSignoutCleanup` parameter set `false`.
 
@@ -2283,7 +2339,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This event is raised through a call to the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnSignOutError*> method from inside the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut(System.Boolean)?displayProperty=nameWithType> method while signing out of the session at the relying party (RP). The event is not raised when doing federated sign-out through the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.FederatedSignOut*> method.
+
+This event is raised through a call to the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnSignOutError*> method from inside the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut(System.Boolean)?displayProperty=nameWithType> method while signing out of the session at the relying party (RP). The event is not raised when doing federated sign-out through the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.FederatedSignOut*> method.
 
  The <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOutError> event is a cancellable event. You can set the <xref:System.ComponentModel.CancelEventArgs.Cancel> property in an event handler to prevent the exception that caused the error from being returned to the initiator of the sign-out.
 
@@ -2313,7 +2370,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- By default, this property is initialized from the `signOutQueryString` attribute of the [&lt;wsFederation&gt;](/dotnet/framework/configure-apps/file-schema/windows-identity-foundation/wsfederation) element in the configuration file. It is intended to contain any application-specific parameters to be sent in a WS-Federation sign-out request. To remove these parameters, you can set the property to an empty string.
+
+By default, this property is initialized from the `signOutQueryString` attribute of the [&lt;wsFederation&gt;](/dotnet/framework/configure-apps/file-schema/windows-identity-foundation/wsfederation) element in the configuration file. It is intended to contain any application-specific parameters to be sent in a WS-Federation sign-out request. To remove these parameters, you can set the property to an empty string.
 
  The WSFAM does not use this property directly; however, you can pass it to the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.GetFederationPassiveSignOutUrl*> method to create a complete WS-Federation sign-out URL that can then be used by your code.
 
@@ -2344,7 +2402,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- By default, this property is initialized from the `signOutReply` attribute of the [&lt;wsFederation&gt;](/dotnet/framework/configure-apps/file-schema/windows-identity-foundation/wsfederation) element in the configuration file. It is intended to represent the wreply parameter in a WS-Federation sign-out request.
+
+By default, this property is initialized from the `signOutReply` attribute of the [&lt;wsFederation&gt;](/dotnet/framework/configure-apps/file-schema/windows-identity-foundation/wsfederation) element in the configuration file. It is intended to represent the wreply parameter in a WS-Federation sign-out request.
 
  The wreply parameter is optional. If the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOutReply> property is set to `null` or an empty string, the wreply parameter is not included in the sign-out request.
 

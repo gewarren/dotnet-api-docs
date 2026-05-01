@@ -50,7 +50,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Structural equality means that two objects are equal because they have equal values. It differs from reference equality, which indicates that two object references are equal because they reference the same physical object. The <xref:System.Collections.IStructuralEquatable> interface enables you to implement customized comparisons to check for the structural equality of collection objects. That is, you can create your own definition of structural equality and specify that this definition be used with a collection type that accepts the <xref:System.Collections.IStructuralEquatable> interface. The interface has two members: <xref:System.Collections.IStructuralEquatable.Equals*>, which tests for equality by using a specified <xref:System.Collections.IEqualityComparer> implementation, and <xref:System.Collections.IStructuralEquatable.GetHashCode*>, which returns identical hash codes for objects that are equal.
+
+Structural equality means that two objects are equal because they have equal values. It differs from reference equality, which indicates that two object references are equal because they reference the same physical object. The <xref:System.Collections.IStructuralEquatable> interface enables you to implement customized comparisons to check for the structural equality of collection objects. That is, you can create your own definition of structural equality and specify that this definition be used with a collection type that accepts the <xref:System.Collections.IStructuralEquatable> interface. The interface has two members: <xref:System.Collections.IStructuralEquatable.Equals*>, which tests for equality by using a specified <xref:System.Collections.IEqualityComparer> implementation, and <xref:System.Collections.IStructuralEquatable.GetHashCode*>, which returns identical hash codes for objects that are equal.
 
 > [!NOTE]
 > The <xref:System.Collections.IStructuralEquatable> interface supports only custom comparisons for structural equality. The <xref:System.Collections.IStructuralComparable> interface supports custom structural comparisons for sorting and ordering.
@@ -138,7 +139,8 @@ The default equality comparer, `EqualityComparer<Object>.Default.Equals`, consid
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Collections.IStructuralEquatable.Equals*> method supports custom structural comparison of array and tuple objects. This method in turn calls the `comparer` object's <xref:System.Collections.IEqualityComparer.Equals*?displayProperty=nameWithType> method to compare individual array elements or tuple components, starting with the first element or component. The individual calls to <xref:System.Collections.IEqualityComparer.Equals*?displayProperty=nameWithType> end and the <xref:System.Collections.IStructuralEquatable.Equals*?displayProperty=nameWithType> method returns a value either when a method call returns `false` or after all array elements or tuple components have been compared.
+
+The <xref:System.Collections.IStructuralEquatable.Equals*> method supports custom structural comparison of array and tuple objects. This method in turn calls the `comparer` object's <xref:System.Collections.IEqualityComparer.Equals*?displayProperty=nameWithType> method to compare individual array elements or tuple components, starting with the first element or component. The individual calls to <xref:System.Collections.IEqualityComparer.Equals*?displayProperty=nameWithType> end and the <xref:System.Collections.IStructuralEquatable.Equals*?displayProperty=nameWithType> method returns a value either when a method call returns `false` or after all array elements or tuple components have been compared.
 
 ## Examples
  The default equality comparer, `EqualityComparer<Object>.Default.Equals`, considers two `NaN` values to be equal. However, in some cases, you may want the comparison of `NaN` values for equality to return `false`, which indicates that the values cannot be compared. The following example defines a `NanComparer` class that implements the <xref:System.Collections.IStructuralEquatable> interface. It compares two <xref:System.Double> or two <xref:System.Single> values by using the equality operator. It passes values of any other type to the default equality comparer.
@@ -205,7 +207,8 @@ The default equality comparer, `EqualityComparer<Object>.Default.Equals`, consid
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Implement this method to return customized hash codes for collection objects that correspond to the customized comparison for structural equality provided by the <xref:System.Collections.IStructuralEquatable.Equals*> method.
+
+Implement this method to return customized hash codes for collection objects that correspond to the customized comparison for structural equality provided by the <xref:System.Collections.IStructuralEquatable.Equals*> method.
 
  ]]></format>
         </remarks>

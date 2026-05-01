@@ -63,7 +63,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The workflow instance is aborted in a synchronous manner; that is, the method returns after the workflow instance has been aborted. The workflow runtime engine invalidates the workflow instance in memory and clears the <xref:System.Workflow.Runtime.WorkflowEnvironment.WorkBatch*>. If a persistence service was used by your workflow instance, all work performed since the last persistence point is thrown away. After it aborts the workflow instance, the workflow runtime engine raises the <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowAborted> event. You can call <xref:System.Workflow.Runtime.WorkflowRuntime.GetWorkflow*> to reload the workflow instance and start from its last persistence point.
+
+The workflow instance is aborted in a synchronous manner; that is, the method returns after the workflow instance has been aborted. The workflow runtime engine invalidates the workflow instance in memory and clears the <xref:System.Workflow.Runtime.WorkflowEnvironment.WorkBatch*>. If a persistence service was used by your workflow instance, all work performed since the last persistence point is thrown away. After it aborts the workflow instance, the workflow runtime engine raises the <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowAborted> event. You can call <xref:System.Workflow.Runtime.WorkflowRuntime.GetWorkflow*> to reload the workflow instance and start from its last persistence point.
 
  `Abort` is different from <xref:System.Workflow.Runtime.WorkflowInstance.Terminate*> in that while `Abort` simply clears the in-memory workflow instance and can be restarted from the last persistence point, Terminate clears the in-memory workflow instance and informs the persistence service that the instance has been cleared from memory. For the <xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService>, this means that all state information for that workflow instance is deleted from the database upon termination. You will not be able to reload the workflow instance from a previously stored persistence point.
 
@@ -98,7 +99,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the workflow instance is not already suspended, the workflow runtime engine temporarily suspends the instance before applying the changes.
+
+If the workflow instance is not already suspended, the workflow runtime engine temporarily suspends the instance before applying the changes.
 
  ]]></format>
         </remarks>
@@ -137,7 +139,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Sends the `item` to the specified <xref:System.Workflow.Runtime.WorkflowQueue>. If you want to be notified when the message is delivered, you can implement <xref:System.Workflow.Runtime.IPendingWork> in your service and pass a `workItem` and an <xref:System.Workflow.Runtime.IPendingWork> object to <xref:System.Workflow.Runtime.WorkflowInstance.EnqueueItem*>. If you do not want such notification, you can pass a null reference (`Nothing` in Visual Basic) for `pendingWork` and `workItem`.
+
+Sends the `item` to the specified <xref:System.Workflow.Runtime.WorkflowQueue>. If you want to be notified when the message is delivered, you can implement <xref:System.Workflow.Runtime.IPendingWork> in your service and pass a `workItem` and an <xref:System.Workflow.Runtime.IPendingWork> object to <xref:System.Workflow.Runtime.WorkflowInstance.EnqueueItem*>. If you do not want such notification, you can pass a null reference (`Nothing` in Visual Basic) for `pendingWork` and `workItem`.
 
  When using this method with a state machine workflow, you might get an exception with the message "Queue '{0}' is not enabled." This happens when the current state of the state machine does not know how to handle a specific event. For example, when some state other than the current state contains the <xref:System.Workflow.Activities.EventDrivenActivity> that contains the <xref:System.Workflow.Activities.HandleExternalEventActivity> that is represented by the queue '{0}'.
 
@@ -191,7 +194,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Waits for the workflow instance to become idle and then sends the `item` to the specified <xref:System.Workflow.Runtime.WorkflowQueue>. If you call <xref:System.Workflow.Runtime.WorkflowInstance.EnqueueItemOnIdle*> while the workflow instance is suspended, the workflow runtime engine will throw an <xref:System.InvalidOperationException>. If you want to be notified when the message is delivered, you can implement <xref:System.Workflow.Runtime.IPendingWork> in your service and pass a `workItem` and an <xref:System.Workflow.Runtime.IPendingWork> object to <xref:System.Workflow.Runtime.WorkflowInstance.EnqueueItem*>. If you do not want such notification, you can pass a null reference (`Nothing` in Visual Basic) for `pendingWork` and `workItem`.
+
+Waits for the workflow instance to become idle and then sends the `item` to the specified <xref:System.Workflow.Runtime.WorkflowQueue>. If you call <xref:System.Workflow.Runtime.WorkflowInstance.EnqueueItemOnIdle*> while the workflow instance is suspended, the workflow runtime engine will throw an <xref:System.InvalidOperationException>. If you want to be notified when the message is delivered, you can implement <xref:System.Workflow.Runtime.IPendingWork> in your service and pass a `workItem` and an <xref:System.Workflow.Runtime.IPendingWork> object to <xref:System.Workflow.Runtime.WorkflowInstance.EnqueueItem*>. If you do not want such notification, you can pass a null reference (`Nothing` in Visual Basic) for `pendingWork` and `workItem`.
 
  When you are using this method with a state machine workflow, you might get an exception that contains the message "Queue '{0}' is not enabled." This occurs when the current state of the state machine does not know how to handle a specific event. For example, when some state other than the current state contains the <xref:System.Workflow.Activities.EventDrivenActivity> that contains the <xref:System.Workflow.Activities.HandleExternalEventActivity> that is represented by the queue '{0}'.
 
@@ -242,7 +246,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The object must be an instance of the <xref:System.Workflow.Runtime.WorkflowInstance> class and have the same <xref:System.Workflow.Runtime.WorkflowInstance.InstanceId*> as this <xref:System.Workflow.Runtime.WorkflowInstance>.
+
+The object must be an instance of the <xref:System.Workflow.Runtime.WorkflowInstance> class and have the same <xref:System.Workflow.Runtime.WorkflowInstance.InstanceId*> as this <xref:System.Workflow.Runtime.WorkflowInstance>.
 
  ]]></format>
         </remarks>
@@ -302,7 +307,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You can use the root activity to navigate the activity hierarchy of the workflow.
+
+You can use the root activity to navigate the activity hierarchy of the workflow.
 
  This method is not thread safe, so the host should synchronize its calls to this method.
 
@@ -388,7 +394,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You can use <xref:System.Workflow.Runtime.WorkflowInstance.InstanceId*> to reference the workflow instance.
+
+You can use <xref:System.Workflow.Runtime.WorkflowInstance.InstanceId*> to reference the workflow instance.
 
  ]]></format>
         </remarks>
@@ -447,7 +454,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The runtime tracking infrastructure will reload each <xref:System.Workflow.Runtime.Tracking.TrackingProfile> for this workflow instance associated with its tracking channels. If it is not already in a suspended state, the workflow is temporarily suspended by the runtime tracking infrastructure while the tracking profiles are reloaded.
+
+The runtime tracking infrastructure will reload each <xref:System.Workflow.Runtime.Tracking.TrackingProfile> for this workflow instance associated with its tracking channels. If it is not already in a suspended state, the workflow is temporarily suspended by the runtime tracking infrastructure while the tracking profiles are reloaded.
 
  ]]></format>
         </remarks>
@@ -477,7 +485,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The host can call <xref:System.Workflow.Runtime.WorkflowInstance.Resume*> to resume execution of a workflow instance that has been previously suspended. If the workflow instance is not in the suspended state, no action is taken. The runtime raises the <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowResumed> event just before execution of the workflow instance is resumed.
+
+The host can call <xref:System.Workflow.Runtime.WorkflowInstance.Resume*> to resume execution of a workflow instance that has been previously suspended. If the workflow instance is not in the suspended state, no action is taken. The runtime raises the <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowResumed> event just before execution of the workflow instance is resumed.
 
  ]]></format>
         </remarks>
@@ -544,7 +553,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The workflow instance is suspended in a synchronous manner. If the workflow instance is already suspended, no action is taken; otherwise, the workflow runtime engine suspends the workflow instance, raises the <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowSuspended> event and passes `reason` in a <xref:System.Workflow.Runtime.WorkflowSuspendedEventArgs>.
+
+The workflow instance is suspended in a synchronous manner. If the workflow instance is already suspended, no action is taken; otherwise, the workflow runtime engine suspends the workflow instance, raises the <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowSuspended> event and passes `reason` in a <xref:System.Workflow.Runtime.WorkflowSuspendedEventArgs>.
 
 > [!NOTE]
 >  <xref:System.Workflow.Runtime.WorkflowInstance.Suspend*> does not unload the workflow instance.
@@ -580,7 +590,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The workflow instance is terminated in a synchronous manner. The host calls <xref:System.Workflow.Runtime.WorkflowInstance.Terminate*> to terminate the workflow instance. The workflow runtime engine clears the in-memory workflow instance and informs the persistence service that the instance has been cleared from memory. For the <xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService>, this means that all state information for that workflow instance is deleted from the database upon termination. You will not be able to reload the workflow instance from a previously stored persistence point.
+
+The workflow instance is terminated in a synchronous manner. The host calls <xref:System.Workflow.Runtime.WorkflowInstance.Terminate*> to terminate the workflow instance. The workflow runtime engine clears the in-memory workflow instance and informs the persistence service that the instance has been cleared from memory. For the <xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService>, this means that all state information for that workflow instance is deleted from the database upon termination. You will not be able to reload the workflow instance from a previously stored persistence point.
 
  After the in-memory workflow instance is cleared and the persistence service is informed of the termination, the `Terminate` method raises the <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowTerminated> event and passes `reason` in the <xref:System.Exception.Message> property of a <xref:System.Workflow.ComponentModel.WorkflowTerminatedException> contained in the <xref:System.Workflow.Runtime.WorkflowTerminatedEventArgs>.
 
@@ -616,7 +627,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the workflow instance is idle or suspended, <xref:System.Workflow.Runtime.WorkflowInstance.TryUnload*> uses the persistence service to remove the workflow instance from memory and persist it to a data store. If there is no persistence service registered with the <xref:System.Workflow.Runtime.WorkflowRuntime>, <xref:System.Workflow.Runtime.WorkflowInstance.TryUnload*> throws an <xref:System.InvalidOperationException>. If the workflow instance is successfully persisted, the runtime raises the <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowUnloaded> event, and returns `true`. <xref:System.Workflow.Runtime.WorkflowInstance.Unload*> returns `false` if the workflow instance has already been unloaded, has been terminated, has been aborted, or has already completed.
+
+If the workflow instance is idle or suspended, <xref:System.Workflow.Runtime.WorkflowInstance.TryUnload*> uses the persistence service to remove the workflow instance from memory and persist it to a data store. If there is no persistence service registered with the <xref:System.Workflow.Runtime.WorkflowRuntime>, <xref:System.Workflow.Runtime.WorkflowInstance.TryUnload*> throws an <xref:System.InvalidOperationException>. If the workflow instance is successfully persisted, the runtime raises the <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowUnloaded> event, and returns `true`. <xref:System.Workflow.Runtime.WorkflowInstance.Unload*> returns `false` if the workflow instance has already been unloaded, has been terminated, has been aborted, or has already completed.
 
  The host can use <xref:System.Workflow.Runtime.WorkflowInstance.TryUnload*> to reclaim system resources from an idle workflow.
 

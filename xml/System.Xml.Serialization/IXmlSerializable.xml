@@ -69,7 +69,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- There are two reasons to implement this interface. The first is to control how your object is serialized or deserialized by the <xref:System.Xml.Serialization.XmlSerializer>. For example, you can chunk data into bytes instead of buffering large data sets, and also avoid the inflation that occurs when the data is encoded using Base64 encoding. To control the serialization, implement the <xref:System.Xml.Serialization.IXmlSerializable.ReadXml*> and <xref:System.Xml.Serialization.IXmlSerializable.WriteXml*> methods to control the <xref:System.Xml.XmlReader> and <xref:System.Xml.XmlWriter> classes used to read and write the XML. For an example of this, see [How to: Chunk Serialized Data](/dotnet/standard/serialization/how-to-chunk-serialized-data).
+
+There are two reasons to implement this interface. The first is to control how your object is serialized or deserialized by the <xref:System.Xml.Serialization.XmlSerializer>. For example, you can chunk data into bytes instead of buffering large data sets, and also avoid the inflation that occurs when the data is encoded using Base64 encoding. To control the serialization, implement the <xref:System.Xml.Serialization.IXmlSerializable.ReadXml*> and <xref:System.Xml.Serialization.IXmlSerializable.WriteXml*> methods to control the <xref:System.Xml.XmlReader> and <xref:System.Xml.XmlWriter> classes used to read and write the XML. For an example of this, see [How to: Chunk Serialized Data](/dotnet/standard/serialization/how-to-chunk-serialized-data).
 
  The second reason is to be able to control the schema. To enable this, you must apply the <xref:System.Xml.Serialization.XmlSchemaProviderAttribute> to the serializable type, and specify the name of the static member that returns the schema. See the <xref:System.Xml.Serialization.XmlSchemaProviderAttribute> for an example.
 
@@ -144,7 +145,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When serializing or deserializing an object, the <xref:System.Xml.Serialization.XmlSerializer> class does not perform XML validation. For this reason, it is often safe to omit schema information by providing a trivial implementation of this method, for example by returning `null` (`Nothing` in Visual Basic).
+
+When serializing or deserializing an object, the <xref:System.Xml.Serialization.XmlSerializer> class does not perform XML validation. For this reason, it is often safe to omit schema information by providing a trivial implementation of this method, for example by returning `null` (`Nothing` in Visual Basic).
 
  If providing schema information is necessary, you should use the <xref:System.Xml.Serialization.XmlSchemaProviderAttribute> attribute. The `GetSchema` method should still return `null` (or `Nothing`).
 
@@ -208,7 +210,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Xml.Serialization.IXmlSerializable.ReadXml*> method must reconstitute your object using the information that was written by the <xref:System.Xml.Serialization.IXmlSerializable.WriteXml*> method.
+
+The <xref:System.Xml.Serialization.IXmlSerializable.ReadXml*> method must reconstitute your object using the information that was written by the <xref:System.Xml.Serialization.IXmlSerializable.WriteXml*> method.
 
  When this method is called, the reader is positioned on the start tag that wraps the information for your type. That is, directly on the start tag that indicates the beginning of a serialized object. When this method returns, it must have read the entire element from beginning to end, including all of its contents. Unlike the <xref:System.Xml.Serialization.IXmlSerializable.WriteXml*> method, the framework does not handle the wrapper element automatically. Your implementation must do so. Failing to observe these positioning rules may cause code to generate unexpected runtime exceptions or corrupt data.
 
@@ -281,7 +284,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Xml.Serialization.IXmlSerializable.WriteXml*> implementation you provide should write out the XML representation of the object. The framework writes a wrapper element and positions the XML writer after its start. Your implementation may write its contents, including child elements. The framework then closes the wrapper element.
+
+The <xref:System.Xml.Serialization.IXmlSerializable.WriteXml*> implementation you provide should write out the XML representation of the object. The framework writes a wrapper element and positions the XML writer after its start. Your implementation may write its contents, including child elements. The framework then closes the wrapper element.
 
  Write sufficient information to the <xref:System.Xml.XmlWriter> stream to allow the <xref:System.Xml.Serialization.IXmlSerializable.ReadXml*> method to reconstitute your object.
 

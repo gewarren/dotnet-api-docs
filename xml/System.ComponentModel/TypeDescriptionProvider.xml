@@ -56,7 +56,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.TypeDescriptionProvider> class dynamically extends the type information associated with a type or object by adding, modifying, or hiding characteristics such as attributes, properties, and events. There can be multiple type description provider classes that offer metadata to a single <xref:System.ComponentModel.TypeDescriptor>.
+
+The <xref:System.ComponentModel.TypeDescriptionProvider> class dynamically extends the type information associated with a type or object by adding, modifying, or hiding characteristics such as attributes, properties, and events. There can be multiple type description provider classes that offer metadata to a single <xref:System.ComponentModel.TypeDescriptor>.
 
  There are two ways to associate a <xref:System.ComponentModel.TypeDescriptionProvider> with a <xref:System.ComponentModel.TypeDescriptor>:
 
@@ -133,7 +134,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This constructor is equivalent to calling the other <xref:System.ComponentModel.TypeDescriptionProvider.%23ctor(System.ComponentModel.TypeDescriptionProvider)> constructor with a parameter value that is `null`.
+
+This constructor is equivalent to calling the other <xref:System.ComponentModel.TypeDescriptionProvider.%23ctor(System.ComponentModel.TypeDescriptionProvider)> constructor with a parameter value that is `null`.
 
  ]]></format>
         </remarks>
@@ -189,7 +191,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the `parent` parameter is `null`, all <xref:System.ComponentModel.TypeDescriptionProvider> methods will return default values. Otherwise, all <xref:System.ComponentModel.TypeDescriptionProvider> methods will delegate to the methods of `parent`.
+
+If the `parent` parameter is `null`, all <xref:System.ComponentModel.TypeDescriptionProvider> methods will return default values. Otherwise, all <xref:System.ComponentModel.TypeDescriptionProvider> methods will delegate to the methods of `parent`.
 
  The following table shows the default return values for <xref:System.ComponentModel.TypeDescriptionProvider> methods.
 
@@ -285,7 +288,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.IServiceProvider> specified by the `provider` parameter is passed in by the <xref:System.ComponentModel.TypeDescriptor.CreateInstance*?displayProperty=nameWithType> method of the <xref:System.ComponentModel.TypeDescriptor> class. If `provider` is not `null`, the service provider can be used by the type description provider to obtain additional context about the creation call.
+
+The <xref:System.IServiceProvider> specified by the `provider` parameter is passed in by the <xref:System.ComponentModel.TypeDescriptor.CreateInstance*?displayProperty=nameWithType> method of the <xref:System.ComponentModel.TypeDescriptor> class. If `provider` is not `null`, the service provider can be used by the type description provider to obtain additional context about the creation call.
 
  The <xref:System.ComponentModel.TypeDescriptionProvider.CreateInstance*> method is `virtual` and, by default, returns the result of the <xref:System.Activator.CreateInstance*?displayProperty=nameWithType> method if `parent` is `null`. If `parent` is not `null`, this method will invoke the <xref:System.ComponentModel.TypeDescriptionProvider.CreateInstance*> method of the parent provider.
 
@@ -351,7 +355,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A <xref:System.ComponentModel.TypeDescriptor> may need to perform complex operations on collections of metadata. Because types are not unloaded for the life of a domain, the <xref:System.ComponentModel.TypeDescriptor> class will automatically cache the results of these operations based on type. However, some operations use live object instances. These operations cannot be cached within the <xref:System.ComponentModel.TypeDescriptor> class because caching them would prevent the object from being garbage collected. Instead, the <xref:System.ComponentModel.TypeDescriptor> class allows for a per-object cache, accessed as an <xref:System.Collections.IDictionary> of key/value pairs, to exist on an object. The <xref:System.ComponentModel.TypeDescriptionProvider.GetCache*> method returns an instance of this cache. The <xref:System.ComponentModel.TypeDescriptionProvider.GetCache*> method will return `null` if there is no supported cache for an object.
+
+A <xref:System.ComponentModel.TypeDescriptor> may need to perform complex operations on collections of metadata. Because types are not unloaded for the life of a domain, the <xref:System.ComponentModel.TypeDescriptor> class will automatically cache the results of these operations based on type. However, some operations use live object instances. These operations cannot be cached within the <xref:System.ComponentModel.TypeDescriptor> class because caching them would prevent the object from being garbage collected. Instead, the <xref:System.ComponentModel.TypeDescriptor> class allows for a per-object cache, accessed as an <xref:System.Collections.IDictionary> of key/value pairs, to exist on an object. The <xref:System.ComponentModel.TypeDescriptionProvider.GetCache*> method returns an instance of this cache. The <xref:System.ComponentModel.TypeDescriptionProvider.GetCache*> method will return `null` if there is no supported cache for an object.
 
  The default <xref:System.ComponentModel.TypeDescriptionProvider> used by <xref:System.ComponentModel.TypeDescriptor> examines the object to see if it is a sited component that implements the <xref:System.ComponentModel.Design.IDictionaryService> interface. If the object is, it uses the dictionary service to store the object's cache. Otherwise, the object it returns `null`. Other type description providers may provide their own implementation here. For example, dependency objects can just attach a property of type <xref:System.Collections.IDictionary>.
 
@@ -414,7 +419,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- An extended type descriptor is a custom type descriptor that offers properties that other objects have added to this object, but that are not actually defined on the object. For example, in the .NET Framework component model, objects that implement the <xref:System.ComponentModel.IExtenderProvider> interface can attach properties to other objects that reside in the same logical container. The overloaded <xref:System.ComponentModel.TypeDescriptionProvider.GetTypeDescriptor*> methods do not return a type descriptor that provides these extra extended properties. The <xref:System.ComponentModel.TypeDescriptionProvider.GetExtendedTypeDescriptor*> method returns the set of these extended properties. The <xref:System.ComponentModel.TypeDescriptor> will automatically merge the results of these two property collections. While the .NET Framework component model supports only extended properties, <xref:System.ComponentModel.TypeDescriptionProvider.GetExtendedTypeDescriptor*> can be used for extended attributes as well as events, if the type description provider supports it.
+
+An extended type descriptor is a custom type descriptor that offers properties that other objects have added to this object, but that are not actually defined on the object. For example, in the .NET Framework component model, objects that implement the <xref:System.ComponentModel.IExtenderProvider> interface can attach properties to other objects that reside in the same logical container. The overloaded <xref:System.ComponentModel.TypeDescriptionProvider.GetTypeDescriptor*> methods do not return a type descriptor that provides these extra extended properties. The <xref:System.ComponentModel.TypeDescriptionProvider.GetExtendedTypeDescriptor*> method returns the set of these extended properties. The <xref:System.ComponentModel.TypeDescriptor> will automatically merge the results of these two property collections. While the .NET Framework component model supports only extended properties, <xref:System.ComponentModel.TypeDescriptionProvider.GetExtendedTypeDescriptor*> can be used for extended attributes as well as events, if the type description provider supports it.
 
  <xref:System.ComponentModel.TypeDescriptionProvider.GetExtendedTypeDescriptor*> is `virtual` and, by default, returns a custom type descriptor that returns empty results if no parent provider was passed. If a parent provider was passed, this method will invoke the parent provider's <xref:System.ComponentModel.TypeDescriptionProvider.GetExtendedTypeDescriptor*> method.
 
@@ -625,7 +631,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.TypeDescriptionProvider.GetReflectionType*> method is a lower-level version of the <xref:System.ComponentModel.TypeDescriptionProvider.GetTypeDescriptor*> method. If no custom type descriptor can be located for an object, <xref:System.ComponentModel.TypeDescriptionProvider.GetReflectionType*> is called to perform normal reflection against the object.
+
+The <xref:System.ComponentModel.TypeDescriptionProvider.GetReflectionType*> method is a lower-level version of the <xref:System.ComponentModel.TypeDescriptionProvider.GetTypeDescriptor*> method. If no custom type descriptor can be located for an object, <xref:System.ComponentModel.TypeDescriptionProvider.GetReflectionType*> is called to perform normal reflection against the object.
 
  Use this method overload if you have called a type descriptor member that uses an instance instead of a type.
 
@@ -702,7 +709,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.TypeDescriptionProvider.GetReflectionType*> method is a lower-level version of the <xref:System.ComponentModel.TypeDescriptionProvider.GetTypeDescriptor*> method. If no custom type descriptor can be located for an object, <xref:System.ComponentModel.TypeDescriptionProvider.GetReflectionType*> is called to perform normal reflection against the object.
+
+The <xref:System.ComponentModel.TypeDescriptionProvider.GetReflectionType*> method is a lower-level version of the <xref:System.ComponentModel.TypeDescriptionProvider.GetTypeDescriptor*> method. If no custom type descriptor can be located for an object, <xref:System.ComponentModel.TypeDescriptionProvider.GetReflectionType*> is called to perform normal reflection against the object.
 
  Use this method overload if you have called a type descriptor member that uses a type instead of an instance.
 
@@ -783,7 +791,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.TypeDescriptionProvider.GetReflectionType*> method is a lower-level version of the <xref:System.ComponentModel.TypeDescriptionProvider.GetTypeDescriptor*> method. If no custom type descriptor can be located for an object, <xref:System.ComponentModel.TypeDescriptionProvider.GetReflectionType*> is called to perform normal reflection against the object.
+
+The <xref:System.ComponentModel.TypeDescriptionProvider.GetReflectionType*> method is a lower-level version of the <xref:System.ComponentModel.TypeDescriptionProvider.GetTypeDescriptor*> method. If no custom type descriptor can be located for an object, <xref:System.ComponentModel.TypeDescriptionProvider.GetReflectionType*> is called to perform normal reflection against the object.
 
  ]]></format>
         </remarks>
@@ -839,7 +848,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.ComponentModel.TypeDescriptionProvider.GetRuntimeType*> method reverses the <xref:System.ComponentModel.TypeDescriptionProvider.GetReflectionType*> method to convert a reflection type back into a runtime type. Using the <xref:System.ComponentModel.TypeDescriptionProvider.GetRuntimeType*> method is preferred over using the <xref:System.Type.UnderlyingSystemType> property, which was used in earlier versions to return the runtime type.
+
+The <xref:System.ComponentModel.TypeDescriptionProvider.GetRuntimeType*> method reverses the <xref:System.ComponentModel.TypeDescriptionProvider.GetReflectionType*> method to convert a reflection type back into a runtime type. Using the <xref:System.ComponentModel.TypeDescriptionProvider.GetRuntimeType*> method is preferred over using the <xref:System.Type.UnderlyingSystemType> property, which was used in earlier versions to return the runtime type.
 
  ]]></format>
         </remarks>
@@ -1055,7 +1065,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is prototyped as `virtual` and, by default, returns an empty descriptor if no parent provider was passed. If a parent provider was passed, this method will invoke the parent provider's <xref:System.ComponentModel.TypeDescriptionProvider.GetTypeDescriptor*> method.
+
+This method is prototyped as `virtual` and, by default, returns an empty descriptor if no parent provider was passed. If a parent provider was passed, this method will invoke the parent provider's <xref:System.ComponentModel.TypeDescriptionProvider.GetTypeDescriptor*> method.
 
  ]]></format>
         </remarks>

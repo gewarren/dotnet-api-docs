@@ -60,7 +60,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The connection string builder lets developers programmatically create syntactically correct connection strings, and parse and rebuild existing connection strings, using properties and methods of the class. The connection string builder provides strongly typed properties corresponding to the known key/value pairs allowed by OLE DB connections, and developers can add arbitrary key/value pairs for any other connection string values. The <xref:System.Data.OleDb.OleDbConnectionStringBuilder> class implements the <xref:System.ComponentModel.ICustomTypeDescriptor> interface. This means that the class works with Visual Studio .NET designers at design time. When developers use the designer to build strongly typed DataSets and strongly typed connections within Visual Studio .NET, the strongly typed connection string builder class will display the properties associated with its type and will also have converters that can map common values for known keys.
+
+The connection string builder lets developers programmatically create syntactically correct connection strings, and parse and rebuild existing connection strings, using properties and methods of the class. The connection string builder provides strongly typed properties corresponding to the known key/value pairs allowed by OLE DB connections, and developers can add arbitrary key/value pairs for any other connection string values. The <xref:System.Data.OleDb.OleDbConnectionStringBuilder> class implements the <xref:System.ComponentModel.ICustomTypeDescriptor> interface. This means that the class works with Visual Studio .NET designers at design time. When developers use the designer to build strongly typed DataSets and strongly typed connections within Visual Studio .NET, the strongly typed connection string builder class will display the properties associated with its type and will also have converters that can map common values for known keys.
 
  Developers needing to create connection strings as part of applications can use the <xref:System.Data.OleDb.OleDbConnectionStringBuilder> class to build and modify connection strings. The class also makes it easy to manage connection strings stored in an application configuration file. The <xref:System.Data.OleDb.OleDbConnectionStringBuilder> performs checks only for the limited set of known key/value pairs. Therefore, this class can be used to create invalid connection strings. The following table lists the known keys and their corresponding properties within the <xref:System.Data.OleDb.OleDbConnectionStringBuilder> class, and their default values. Besides these specific values, developers can add any key/value pairs to the collection that is contained within the <xref:System.Data.OleDb.OleDbConnectionStringBuilder> instance:
 
@@ -210,7 +211,8 @@ Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Sample.mdb;User ID="Admin;NewVal
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Data.OleDb.OleDbConnectionStringBuilder.Clear*> method removes all key/value pairs from the <xref:System.Data.OleDb.OleDbConnectionStringBuilder>, and resets all corresponding properties to their default values. This includes setting the <xref:System.Data.Common.DbConnectionStringBuilder.Count> property to 0, and setting the <xref:System.Data.Common.DbConnectionStringBuilder.ConnectionString> property to an empty string.
+
+The <xref:System.Data.OleDb.OleDbConnectionStringBuilder.Clear*> method removes all key/value pairs from the <xref:System.Data.OleDb.OleDbConnectionStringBuilder>, and resets all corresponding properties to their default values. This includes setting the <xref:System.Data.Common.DbConnectionStringBuilder.Count> property to 0, and setting the <xref:System.Data.Common.DbConnectionStringBuilder.ConnectionString> property to an empty string.
 
  ]]></format>
         </remarks>
@@ -250,7 +252,8 @@ Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Sample.mdb;User ID="Admin;NewVal
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Although setting the <xref:System.Data.OleDb.OleDbConnectionStringBuilder.Provider> property may implicitly fill in appropriate key/value pairs for the provider, the <xref:System.Data.OleDb.OleDbConnectionStringBuilder.ContainsKey*> method does not return `true` for implicitly provided keys. This method returns `true` only for explicitly provided keys.
+
+Although setting the <xref:System.Data.OleDb.OleDbConnectionStringBuilder.Provider> property may implicitly fill in appropriate key/value pairs for the provider, the <xref:System.Data.OleDb.OleDbConnectionStringBuilder.ContainsKey*> method does not return `true` for implicitly provided keys. This method returns `true` only for explicitly provided keys.
 
 ## Examples
  The following example creates an <xref:System.Data.OleDb.OleDbConnectionStringBuilder> instance, sets some of its properties, and then tries to determine whether various keys exist within the object by calling the <xref:System.Data.OleDb.OleDbConnectionStringBuilder.ContainsKey*> method.
@@ -300,7 +303,8 @@ Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Sample.mdb;User ID="Admin;NewVal
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the value passed in is null when you try to set the property, the <xref:System.Data.OleDb.OleDbConnectionStringBuilder.DataSource> property is reset. If the value has not been set and the developer tries to retrieve the property, the return value is `String.Empty`. This property corresponds to the "Data Source" key within the connection string.
+
+If the value passed in is null when you try to set the property, the <xref:System.Data.OleDb.OleDbConnectionStringBuilder.DataSource> property is reset. If the value has not been set and the developer tries to retrieve the property, the return value is `String.Empty`. This property corresponds to the "Data Source" key within the connection string.
 
 ## Examples
  The following example console application creates a new <xref:System.Data.OleDb.OleDbConnectionStringBuilder> instance, and then sets the <xref:System.Data.OleDb.OleDbConnectionStringBuilder.DataSource*> and <xref:System.Data.OleDb.OleDbConnectionStringBuilder.Provider*> properties. Finally, the example creates a new <xref:System.Data.OleDb.OleDbConnection> instance, and uses that object to connect to the indicated data store.
@@ -359,7 +363,8 @@ Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Sample.mdb;User ID="Admin;NewVal
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the value passed in is null when you try to set the property, the <xref:System.Data.OleDb.OleDbConnectionStringBuilder.FileName> property is reset. If the value has not been set and the developer tries to retrieve the property, the return value is `String.Empty`. This property corresponds to the "FileName" key within the connection string.
+
+If the value passed in is null when you try to set the property, the <xref:System.Data.OleDb.OleDbConnectionStringBuilder.FileName> property is reset. If the value has not been set and the developer tries to retrieve the property, the return value is `String.Empty`. This property corresponds to the "FileName" key within the connection string.
 
  Setting this property does not cause the <xref:System.Data.OleDb.OleDbConnectionStringBuilder> instance to read the contents of the referenced file, even if the file exists and contains valid connection information. Setting this property has no effect other than to indicate the file to read when connecting to the data source.
 
@@ -428,7 +433,8 @@ Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Sample.mdb;User ID="Admin;NewVal
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Because setting the <xref:System.Data.OleDb.OleDbConnectionStringBuilder.Provider> property may add corresponding items to the collection of key/value pairs (depending on the behavior of the specific provider), you may be able to retrieve a value for a key you have not set explicitly. For example, as soon as you have set the <xref:System.Data.OleDb.OleDbConnectionStringBuilder.Provider> property to "sqloledb," you can retrieve the "Workstation ID" value even if you have not set it yourself. See the example in this topic for a demonstration.
+
+Because setting the <xref:System.Data.OleDb.OleDbConnectionStringBuilder.Provider> property may add corresponding items to the collection of key/value pairs (depending on the behavior of the specific provider), you may be able to retrieve a value for a key you have not set explicitly. For example, as soon as you have set the <xref:System.Data.OleDb.OleDbConnectionStringBuilder.Provider> property to "sqloledb," you can retrieve the "Workstation ID" value even if you have not set it yourself. See the example in this topic for a demonstration.
 
 ## Examples
  The following example uses the <xref:System.Data.OleDb.OleDbConnectionStringBuilder.Item*> property (the indexer, in C#) to retrieve and set values within the collection of key/value pairs. Note that setting the provider, in this case, also provides default values for all the key/value pairs associated with the selected provider.
@@ -520,7 +526,8 @@ The order of the values in the <xref:System.Collections.ICollection> is unspecif
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The OLE DB Services key within the connection string defines a combination of values that let developers enable or disable OLE DB services. The property contains a bitwise combination of values, described in the OLE DB documentation. For more information about appropriate values for this property, see the OLE DB Programmer's Reference, in particular, "Overriding Provider Service Defaults." The default value for this property is -13. This corresponds to a request for resource pooling, automatic transaction enlistment, session-level aggregation, and no client cursor engine.
+
+The OLE DB Services key within the connection string defines a combination of values that let developers enable or disable OLE DB services. The property contains a bitwise combination of values, described in the OLE DB documentation. For more information about appropriate values for this property, see the OLE DB Programmer's Reference, in particular, "Overriding Provider Service Defaults." The default value for this property is -13. This corresponds to a request for resource pooling, automatic transaction enlistment, session-level aggregation, and no client cursor engine.
 
 ## Examples
  The following example works with the <xref:System.Data.OleDb.OleDbConnectionStringBuilder.OleDbServices> property in two ways. First, it assigns a value directly to the property, demonstrating the effect this action has on the resulting connection string. Then, the example clears the <xref:System.Data.OleDb.OleDbConnectionStringBuilder> and assigns a complete connection string that contains a value for the OLE DB Services key. This step demonstrates that setting the value from the connection string modifies the <xref:System.Data.OleDb.OleDbConnectionStringBuilder.OleDbServices> property, as well.
@@ -571,7 +578,8 @@ The order of the values in the <xref:System.Collections.ICollection> is unspecif
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This property corresponds to the "Persist Security Info" key within the connection string.
+
+This property corresponds to the "Persist Security Info" key within the connection string.
 
 ## Examples
  The following example works with the <xref:System.Data.OleDb.OleDbConnectionStringBuilder.PersistSecurityInfo> property in two ways. First, it assigns a value directly to the property, demonstrating the effect this action has on the resulting connection string. Then, the example clears the <xref:System.Data.OleDb.OleDbConnectionStringBuilder> and assigns a complete connection string that contains a value for the "Persist Security Info" key. This step demonstrates that setting the value from the connection string modifies the <xref:System.Data.OleDb.OleDbConnectionStringBuilder.PersistSecurityInfo> property, as well.
@@ -626,7 +634,8 @@ The order of the values in the <xref:System.Collections.ICollection> is unspecif
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the value passed in is null when you try to set the property, the <xref:System.Data.OleDb.OleDbConnectionStringBuilder.Provider> property is reset. If the value has not been set and the developer tries to retrieve the property, the return value is `String.Empty`. This property corresponds to the "Provider" key within the connection string.
+
+If the value passed in is null when you try to set the property, the <xref:System.Data.OleDb.OleDbConnectionStringBuilder.Provider> property is reset. If the value has not been set and the developer tries to retrieve the property, the return value is `String.Empty`. This property corresponds to the "Provider" key within the connection string.
 
  Setting the value of the `Provider` property, either directly (by setting the <xref:System.Data.Common.DbConnectionStringBuilder.ConnectionString> property) or by passing a connection string as a parameter to the constructor, might affect the set of key/value pairs that are contained within the <xref:System.Data.OleDb.OleDbConnectionStringBuilder> instance. Setting the <xref:System.Data.OleDb.OleDbConnectionStringBuilder.Provider> property to "sqloledb," for example, adds all the standard SQL connection string properties. See the example in this topic for a demonstration of this behavior.
 
@@ -670,7 +679,8 @@ The order of the values in the <xref:System.Collections.ICollection> is unspecif
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Because the <xref:System.Data.OleDb.OleDbConnectionStringBuilder.Remove*> method returns a value that indicates its success, it is not required to look for the existence of a key before trying to remove the key/value pair from the <xref:System.Data.OleDb.OleDbConnectionStringBuilder> instance.
+
+Because the <xref:System.Data.OleDb.OleDbConnectionStringBuilder.Remove*> method returns a value that indicates its success, it is not required to look for the existence of a key before trying to remove the key/value pair from the <xref:System.Data.OleDb.OleDbConnectionStringBuilder> instance.
 
 ## Examples
  The following example creates a <xref:System.Data.OleDb.OleDbConnectionStringBuilder> and demonstrates the behavior of the <xref:System.Data.OleDb.OleDbConnectionStringBuilder.Remove*> method.
@@ -732,7 +742,8 @@ The order of the values in the <xref:System.Collections.ICollection> is unspecif
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Data.OleDb.OleDbConnectionStringBuilder.TryGetValue*> method lets developers safely retrieve a value from a <xref:System.Data.OleDb.OleDbConnectionStringBuilder> without needing to verify that the supplied key name is a valid key name. Because <xref:System.Data.OleDb.OleDbConnectionStringBuilder.TryGetValue*> does not raise an exception when you call it, passing in a nonexistent key, you do not have to look for a key before retrieving its value. Calling <xref:System.Data.OleDb.OleDbConnectionStringBuilder.TryGetValue*> with a nonexistent key will place the value null (`Nothing` in Visual Basic) in the `value` parameter.
+
+The <xref:System.Data.OleDb.OleDbConnectionStringBuilder.TryGetValue*> method lets developers safely retrieve a value from a <xref:System.Data.OleDb.OleDbConnectionStringBuilder> without needing to verify that the supplied key name is a valid key name. Because <xref:System.Data.OleDb.OleDbConnectionStringBuilder.TryGetValue*> does not raise an exception when you call it, passing in a nonexistent key, you do not have to look for a key before retrieving its value. Calling <xref:System.Data.OleDb.OleDbConnectionStringBuilder.TryGetValue*> with a nonexistent key will place the value null (`Nothing` in Visual Basic) in the `value` parameter.
 
 ## Examples
  The following example demonstrates the behavior of the <xref:System.Data.OleDb.OleDbConnectionStringBuilder.TryGetValue*> method.

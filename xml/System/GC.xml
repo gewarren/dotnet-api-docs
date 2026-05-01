@@ -130,7 +130,8 @@ The following example uses several GC methods to get generation and memory infor
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The common pattern for releasing native resources is via a type's finalizer. If a managed object uses native memory, it can free that native memory in its finalizer. The garbage collector only knows about managed memory and schedules collections based on this knowledge. Imagine a scenario where a small managed object is associated with a large amount of native memory usage, and this managed object now lives in gen2. A gen2 GC might not happen for some time, which means the large amount of native memory won't be released until the next gen2 happens. The runtime provides the <xref:System.GC.AddMemoryPressure*> and <xref:System.GC.RemoveMemoryPressure*> methods to help with this scenario. The runtime keeps an internal record of how much memory pressure these APIs added and removed, and triggers a gen2 GC if deemed productive. So this is not a feature of the GC but rather something that the runtime provides to trigger GCs.
+
+The common pattern for releasing native resources is via a type's finalizer. If a managed object uses native memory, it can free that native memory in its finalizer. The garbage collector only knows about managed memory and schedules collections based on this knowledge. Imagine a scenario where a small managed object is associated with a large amount of native memory usage, and this managed object now lives in gen2. A gen2 GC might not happen for some time, which means the large amount of native memory won't be released until the next gen2 happens. The runtime provides the <xref:System.GC.AddMemoryPressure*> and <xref:System.GC.RemoveMemoryPressure*> methods to help with this scenario. The runtime keeps an internal record of how much memory pressure these APIs added and removed, and triggers a gen2 GC if deemed productive. So this is not a feature of the GC but rather something that the runtime provides to trigger GCs.
 
  The <xref:System.GC.AddMemoryPressure*> and <xref:System.GC.RemoveMemoryPressure*> methods improve performance only for types that exclusively depend on finalizers to release the unmanaged resources. It's not necessary to use these methods in types that follow the dispose pattern, where finalizers are used to clean up unmanaged resources only in the event that a consumer of the type forgets to call `Dispose`. For more information on object finalization and the dispose pattern, see [Cleaning Up Unmanaged Resources](/dotnet/standard/garbage-collection/unmanaged).
 
@@ -318,7 +319,8 @@ Skipping zero-initialization using this API only has a material performance bene
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method cancels a garbage collection notification that was registered by using the <xref:System.GC.RegisterForFullGCNotification*> method. You do not have to call this method before adjusting threshold parameter values in subsequent calls to the <xref:System.GC.RegisterForFullGCNotification*> method.
+
+This method cancels a garbage collection notification that was registered by using the <xref:System.GC.RegisterForFullGCNotification*> method. You do not have to call this method before adjusting threshold parameter values in subsequent calls to the <xref:System.GC.RegisterForFullGCNotification*> method.
 
 ## Examples
  The following example cancels a garbage collection registration. This example is part of a larger example provided for the [Garbage Collection Notifications](/dotnet/standard/garbage-collection/notifications) topic.
@@ -399,7 +401,8 @@ Skipping zero-initialization using this API only has a material performance bene
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use this method to try to reclaim all memory that is inaccessible. It performs a blocking garbage collection of all generations.
+
+Use this method to try to reclaim all memory that is inaccessible. It performs a blocking garbage collection of all generations.
 
  All objects, regardless of how long they have been in memory, are considered for collection; however, objects that are referenced in managed code are not collected. Use this method to force the system to try to reclaim the maximum amount of available memory.
 
@@ -471,7 +474,8 @@ Skipping zero-initialization using this API only has a material performance bene
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use this method to try to reclaim memory that is inaccessible. However, using this method does not guarantee that all inaccessible memory in the specified generation is reclaimed.
+
+Use this method to try to reclaim memory that is inaccessible. However, using this method does not guarantee that all inaccessible memory in the specified generation is reclaimed.
 
  If object aging is implemented, the garbage collector does not collect objects with a generation number that is higher than the specified generation. If object aging is not implemented, the garbage collector considers all objects during the garbage collection.
 
@@ -550,7 +554,8 @@ Skipping zero-initialization using this API only has a material performance bene
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use the `mode` parameter to specify whether garbage collection should occur immediately or only if the time is optimal to reclaim objects. Using this method does not guarantee that all inaccessible memory in the specified generation is reclaimed.
+
+Use the `mode` parameter to specify whether garbage collection should occur immediately or only if the time is optimal to reclaim objects. Using this method does not guarantee that all inaccessible memory in the specified generation is reclaimed.
 
  To adjust the intrusiveness of garbage collection during critical periods in your application, set the <xref:System.Runtime.GCSettings.LatencyMode> property.
 
@@ -637,7 +642,8 @@ Skipping zero-initialization using this API only has a material performance bene
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The following table summarizes the interaction of the `mode` and `blocking` parameters:
+
+The following table summarizes the interaction of the `mode` and `blocking` parameters:
 
 |`mode`|`blocking` is `true`|`blocking` is `false`|
 |-|-|-|
@@ -714,7 +720,8 @@ If a call to the <xref:System.GC.Collect(System.Int32,System.GCCollectionMode,Sy
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If `blocking` is `false`, the GC decides whether to perform a background or a blocking garbage collection. If `compacting` is `true`, it performs a blocking garbage collection.
+
+If `blocking` is `false`, the GC decides whether to perform a background or a blocking garbage collection. If `compacting` is `true`, it performs a blocking garbage collection.
 
  If `compacting` is `true`, the runtime compacts the small object heap (SOH). The large object heap (LOH) is not compacted unless the <xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode?displayProperty=nameWithType> property is set to <xref:System.Runtime.GCLargeObjectHeapCompactionMode.CompactOnce?displayProperty=nameWithType>. Note that this includes all blocking garbage collections, not just full blocking garbage collections.
 
@@ -790,7 +797,8 @@ If a call to the <xref:System.GC.Collect(System.Int32,System.GCCollectionMode,Sy
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If you implement your own resource management, you might need to force garbage collection periodically by calling the <xref:System.GC.Collect*> method. Because this is an expensive operation, you can improve performance by skipping the call when a garbage collection has occurred recently. Save the value returned by <xref:System.GC.CollectionCount*> immediately after calling <xref:System.GC.Collect*>. The next time you need to call <xref:System.GC.Collect*>, compare the current value returned by <xref:System.GC.CollectionCount*> to the saved value. If the two values are equal, no collection has occurred in the interim and it is reasonable to call <xref:System.GC.Collect*> again.
+
+If you implement your own resource management, you might need to force garbage collection periodically by calling the <xref:System.GC.Collect*> method. Because this is an expensive operation, you can improve performance by skipping the call when a garbage collection has occurred recently. Save the value returned by <xref:System.GC.CollectionCount*> immediately after calling <xref:System.GC.Collect*>. The next time you need to call <xref:System.GC.Collect*>, compare the current value returned by <xref:System.GC.CollectionCount*> to the saved value. If the two values are equal, no collection has occurred in the interim and it is reasonable to call <xref:System.GC.Collect*> again.
 
  ]]></format>
         </remarks>
@@ -845,7 +853,8 @@ If a call to the <xref:System.GC.Collect(System.Int32,System.GCCollectionMode,Sy
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.GC.EndNoGCRegion*> method throws an <xref:System.InvalidOperationException> if the garbage collector is not in no GC region latency mode. This occurs under any of the following conditions:
+
+The <xref:System.GC.EndNoGCRegion*> method throws an <xref:System.InvalidOperationException> if the garbage collector is not in no GC region latency mode. This occurs under any of the following conditions:
 
 - The <xref:System.GC.TryStartNoGCRegion*> method was not called previously.
 
@@ -1287,7 +1296,8 @@ The following example demonstrates the use of the <xref:System.GC.GetGeneration*
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the `forceFullCollection` parameter is `true`, this method waits a short interval before returning while the system collects garbage and finalizes objects. The duration of the interval is an internally specified limit determined by the number of garbage collection cycles completed and the change in the amount of memory recovered between cycles. The garbage collector does not guarantee that all inaccessible memory is collected.
+
+If the `forceFullCollection` parameter is `true`, this method waits a short interval before returning while the system collects garbage and finalizes objects. The duration of the interval is an internally specified limit determined by the number of garbage collection cycles completed and the change in the amount of memory recovered between cycles. The garbage collector does not guarantee that all inaccessible memory is collected.
 
 ## Examples
  The following example demonstrates how to use the <xref:System.GC.GetTotalMemory*> method to get and display the number of bytes currently allocated in managed memory.
@@ -1393,7 +1403,8 @@ The following example demonstrates the use of the <xref:System.GC.GetGeneration*
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The purpose of the <xref:System.GC.KeepAlive*> method is to ensure the existence of a reference to an object that is at risk of being prematurely reclaimed by the garbage collector. A common scenario where this might happen is when there are no references to the object in managed code or data, but the object is still in use in unmanaged code such as Windows APIs, unmanaged DLLs, or methods using COM.
+
+The purpose of the <xref:System.GC.KeepAlive*> method is to ensure the existence of a reference to an object that is at risk of being prematurely reclaimed by the garbage collector. A common scenario where this might happen is when there are no references to the object in managed code or data, but the object is still in use in unmanaged code such as Windows APIs, unmanaged DLLs, or methods using COM.
 
  This method references the `obj` parameter, making that object ineligible for garbage collection from the start of the routine to the point, in execution order, where this method is called. Code this method at the end, not the beginning, of the range of instructions where `obj` must be available.
 
@@ -1463,7 +1474,8 @@ The following example demonstrates the use of the <xref:System.GC.GetGeneration*
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The generation number, or age, of an object is an implementation-defined relative measure of an object's lifespan. The most recently created objects are in generation 0 and the oldest objects are in a generation less than or equal to the generation returned by the <xref:System.GC.MaxGeneration> property.
+
+The generation number, or age, of an object is an implementation-defined relative measure of an object's lifespan. The most recently created objects are in generation 0 and the oldest objects are in a generation less than or equal to the generation returned by the <xref:System.GC.MaxGeneration> property.
 
  The garbage collector assumes that newer memory is more likely to be eligible for garbage collection than older memory. Therefore, the garbage collector improves its performance by adjusting generation numbers each time it reclaims memory, and the <xref:System.GC.MaxGeneration> property value can grow over time.
 
@@ -1593,7 +1605,8 @@ The following example demonstrates the use of the <xref:System.GC.GetGeneration*
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- For each generation, the garbage collector sets a threshold for allocations into that generation. When the size of allocations exceeds this threshold, a garbage collection is triggered on that generation. For example, if generation 2's threshold is 20MB (which means that 20MB survives generation 1 collections and is promoted into generation 2), and more than 20MB has survived generation 1 and is prompted into generation 2, the next garbage collection will be attempted as a generation 2 collection. Similarly, if the large object heap's (LOH's) threshold is 20MB and your app has allocated more than 20MB of large objects, the next garbage collection will also be attempted as a generation 2 collection (since the LOH is only collected in gen2 garbage collections).
+
+For each generation, the garbage collector sets a threshold for allocations into that generation. When the size of allocations exceeds this threshold, a garbage collection is triggered on that generation. For example, if generation 2's threshold is 20MB (which means that 20MB survives generation 1 collections and is promoted into generation 2), and more than 20MB has survived generation 1 and is prompted into generation 2, the next garbage collection will be attempted as a generation 2 collection. Similarly, if the large object heap's (LOH's) threshold is 20MB and your app has allocated more than 20MB of large objects, the next garbage collection will also be attempted as a generation 2 collection (since the LOH is only collected in gen2 garbage collections).
 
  The `maxGenerationThreshold` and `largeObjectHeapThreshold` thresholds control how much in advance you are notified before a full garbage collection occurs. The greater the threshold, the more allocations that can occur between notification and the next full garbage collection.
 
@@ -1734,7 +1747,8 @@ The following example demonstrates the use of the <xref:System.GC.GetGeneration*
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The common pattern for releasing native resources is via a type's finalizer. If a managed object uses native memory, it can free that native memory in its finalizer. The garbage collector only knows about managed memory and schedules collections based on this knowledge. Imagine a scenario where a small managed object is associated with a large amount of native memory usage, and this managed object now lives in gen2. A gen2 GC might not happen for some time, which means the large amount of native memory won't be released until the next gen2 happens. The runtime provides the <xref:System.GC.AddMemoryPressure*> and <xref:System.GC.RemoveMemoryPressure*> methods to help with this scenario. The runtime keeps an internal record of how much memory pressure these APIs added and removed, and triggers a gen2 GC if deemed productive. So this is not a feature of the GC but rather something that the runtime provides to trigger GCs.
+
+The common pattern for releasing native resources is via a type's finalizer. If a managed object uses native memory, it can free that native memory in its finalizer. The garbage collector only knows about managed memory and schedules collections based on this knowledge. Imagine a scenario where a small managed object is associated with a large amount of native memory usage, and this managed object now lives in gen2. A gen2 GC might not happen for some time, which means the large amount of native memory won't be released until the next gen2 happens. The runtime provides the <xref:System.GC.AddMemoryPressure*> and <xref:System.GC.RemoveMemoryPressure*> methods to help with this scenario. The runtime keeps an internal record of how much memory pressure these APIs added and removed, and triggers a gen2 GC if deemed productive. So this is not a feature of the GC but rather something that the runtime provides to trigger GCs.
 
  The <xref:System.GC.AddMemoryPressure*> and <xref:System.GC.RemoveMemoryPressure*> methods improve performance only for types that exclusively depend on finalizers to release the unmanaged resources. It's not necessary to use these methods in types that follow the dispose pattern, where finalizers are used to clean up unmanaged resources only in the event that a consumer of the type forgets to call `Dispose`. For more information on object finalization and the dispose pattern, see [Cleaning Up Unmanaged Resources](/dotnet/standard/garbage-collection/unmanaged).
 
@@ -1811,7 +1825,8 @@ The following example demonstrates the use of the <xref:System.GC.GetGeneration*
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.GC.ReRegisterForFinalize*> method adds the `obj` parameter to the list of objects that request finalization before the garbage collector frees the object. The `obj` parameter must be the caller of this method.
+
+The <xref:System.GC.ReRegisterForFinalize*> method adds the `obj` parameter to the list of objects that request finalization before the garbage collector frees the object. The `obj` parameter must be the caller of this method.
 
  Calling the <xref:System.GC.ReRegisterForFinalize*> method does not guarantee that the garbage collector will call an object's finalizer.
 
@@ -1992,7 +2007,8 @@ If `obj` does not have a finalizer or the GC has already signaled the finalizer 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.GC.TryStartNoGCRegion(System.Int64)> method attempts to place the garbage collector in no GC region latency mode, which disallows garbage collection while an app executes a critical region of code.  If the runtime is unable to initially allocate the requested amount of memory, the garbage collector performs a full blocking garbage collection in an attempt to free additional memory. The garbage collector enters no GC region latency mode if it is able to allocate the required amount of memory, which in this case is actually 2 * `totalSize` bytes (it attempts to allocate `totalSize` bytes for the small object heap and `totalSize` bytes for the large object heap).
+
+The <xref:System.GC.TryStartNoGCRegion(System.Int64)> method attempts to place the garbage collector in no GC region latency mode, which disallows garbage collection while an app executes a critical region of code.  If the runtime is unable to initially allocate the requested amount of memory, the garbage collector performs a full blocking garbage collection in an attempt to free additional memory. The garbage collector enters no GC region latency mode if it is able to allocate the required amount of memory, which in this case is actually 2 * `totalSize` bytes (it attempts to allocate `totalSize` bytes for the small object heap and `totalSize` bytes for the large object heap).
 
  `totalSize` must be large enough to handle all memory allocations that occur in the critical path. This includes allocations by the app, as well as allocations that the runtime makes on the app's behalf.
 
@@ -2066,7 +2082,8 @@ If `obj` does not have a finalizer or the GC has already signaled the finalizer 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.GC.TryStartNoGCRegion(System.Int64,System.Boolean)> method attempts to place the garbage collector in no GC region latency mode, which disallows garbage collection while an app executes a critical region of code.  If the runtime is unable to initially allocate the requested amount of memory and the `disallowFullBlockingGC` argument is `false`, the garbage collector performs a full blocking garbage collection in an attempt to free additional memory; otherwise, the allocation fails, and the method returns `false`. The garbage collector enters no GC region latency mode if it is able to allocate the required amount of memory, which in this case is actually 2 * `totalSize` (it attempts to allocate `totalSize` for the small object heap and `totalSize` for the large object heap).
+
+The <xref:System.GC.TryStartNoGCRegion(System.Int64,System.Boolean)> method attempts to place the garbage collector in no GC region latency mode, which disallows garbage collection while an app executes a critical region of code.  If the runtime is unable to initially allocate the requested amount of memory and the `disallowFullBlockingGC` argument is `false`, the garbage collector performs a full blocking garbage collection in an attempt to free additional memory; otherwise, the allocation fails, and the method returns `false`. The garbage collector enters no GC region latency mode if it is able to allocate the required amount of memory, which in this case is actually 2 * `totalSize` (it attempts to allocate `totalSize` for the small object heap and `totalSize` for the large object heap).
 
  `totalSize` must be large enough to handle all memory allocations that occur in the critical path. This includes allocations by the app, as well as allocations that the runtime makes on the app's behalf.
 
@@ -2141,7 +2158,8 @@ If `obj` does not have a finalizer or the GC has already signaled the finalizer 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.GC.TryStartNoGCRegion(System.Int64,System.Int64)> method attempts to place the garbage collector in no GC region latency mode, which disallows garbage collection while an app executes a critical region of code.  If the runtime is unable to initially allocate the requested amount of memory, the garbage collector performs a full blocking garbage collection in an attempt to free additional memory. The garbage collector enters no GC region latency mode if it is able to allocate `lohSize` for the LOH and `totalSize` - `lohSize` for the small object heap (SOH).
+
+The <xref:System.GC.TryStartNoGCRegion(System.Int64,System.Int64)> method attempts to place the garbage collector in no GC region latency mode, which disallows garbage collection while an app executes a critical region of code.  If the runtime is unable to initially allocate the requested amount of memory, the garbage collector performs a full blocking garbage collection in an attempt to free additional memory. The garbage collector enters no GC region latency mode if it is able to allocate `lohSize` for the LOH and `totalSize` - `lohSize` for the small object heap (SOH).
 
  `lohSize` must be large enough to handle all memory allocations that occur in the critical path for the LOH, and `totalSize` - `lohSize` must be large enough to handle all memory allocations that occur in the critical path for the SOH. This includes allocations by the app, as well as allocations that the runtime makes on the app's behalf.
 
@@ -2217,7 +2235,8 @@ If `obj` does not have a finalizer or the GC has already signaled the finalizer 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.GC.TryStartNoGCRegion(System.Int64,System.Int64,System.Boolean)> method attempts to place the garbage collector in no GC region latency mode, which disallows garbage collection while an app executes a critical region of code.  If the runtime is unable to initially allocate the requested amount of memory and the `disallowFullBlockingGC` argument is `false`, the garbage collector performs a full blocking garbage collection in an attempt to free additional memory; otherwise, the allocation fails, and the method returns `false`. The garbage collector enters no GC region latency mode if it is able to allocate `lohSize` for the LOH and `totalSize` - `lohSize` for the small object heap (SOH).
+
+The <xref:System.GC.TryStartNoGCRegion(System.Int64,System.Int64,System.Boolean)> method attempts to place the garbage collector in no GC region latency mode, which disallows garbage collection while an app executes a critical region of code.  If the runtime is unable to initially allocate the requested amount of memory and the `disallowFullBlockingGC` argument is `false`, the garbage collector performs a full blocking garbage collection in an attempt to free additional memory; otherwise, the allocation fails, and the method returns `false`. The garbage collector enters no GC region latency mode if it is able to allocate `lohSize` for the LOH and `totalSize` - `lohSize` for the small object heap (SOH).
 
  `lohSize` must be large enough to handle all memory allocations that occur in the critical path for the LOH, and `totalSize` - `lohSize` must be large enough to handle all memory allocations that occur in the critical path for the SOH. This includes allocations by the app, as well as allocations that the runtime makes on the app's behalf.
 
@@ -2297,7 +2316,8 @@ If `obj` does not have a finalizer or the GC has already signaled the finalizer 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use the <xref:System.GCNotificationStatus> enumeration returned by this method to determine the status of the current garbage collection notification that was registered by using the <xref:System.GC.RegisterForFullGCNotification*> method. You can also use the <xref:System.GC.WaitForFullGCComplete*> method to determine whether the full garbage collection has completed.
+
+Use the <xref:System.GCNotificationStatus> enumeration returned by this method to determine the status of the current garbage collection notification that was registered by using the <xref:System.GC.RegisterForFullGCNotification*> method. You can also use the <xref:System.GC.WaitForFullGCComplete*> method to determine whether the full garbage collection has completed.
 
  When the enumeration returns <xref:System.GCNotificationStatus.Succeeded>, you can do tasks such as preventing additional objects from being allocated and inducing a collection yourself with the <xref:System.GC.Collect*> method. Note that the notification does not guarantee that a full garbage collection will occur, only that conditions have reached the threshold that are favorable for a full garbage collection to occur.
 
@@ -2369,7 +2389,8 @@ If `obj` does not have a finalizer or the GC has already signaled the finalizer 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use the <xref:System.GCNotificationStatus> enumeration returned by this method to determine the status of the current garbage collection notification that was registered by using the <xref:System.GC.RegisterForFullGCNotification*> method. You can also use the <xref:System.GC.WaitForFullGCComplete*> method to determine whether the full garbage collection has completed.
+
+Use the <xref:System.GCNotificationStatus> enumeration returned by this method to determine the status of the current garbage collection notification that was registered by using the <xref:System.GC.RegisterForFullGCNotification*> method. You can also use the <xref:System.GC.WaitForFullGCComplete*> method to determine whether the full garbage collection has completed.
 
  Note that this method returns immediately whenever a garbage collection notification status is obtained, regardless of the value specified by `millisecondsTimeout`. If a garbage collection notification status is not obtained before `millisecondsTimeout` times out, this method returns <xref:System.GCNotificationStatus.NotApplicable>.
 
@@ -2480,7 +2501,8 @@ If `obj` does not have a finalizer or the GC has already signaled the finalizer 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use the <xref:System.GCNotificationStatus> enumeration returned by this method to determine the status of the current garbage collection notification that was registered by using the <xref:System.GC.RegisterForFullGCNotification*> method. You can also use the <xref:System.GC.WaitForFullGCApproach*> method to determine whether a full garbage collection is imminent.
+
+Use the <xref:System.GCNotificationStatus> enumeration returned by this method to determine the status of the current garbage collection notification that was registered by using the <xref:System.GC.RegisterForFullGCNotification*> method. You can also use the <xref:System.GC.WaitForFullGCApproach*> method to determine whether a full garbage collection is imminent.
 
  When the enumeration returns <xref:System.GCNotificationStatus.Succeeded>, you can do tasks such as resuming work and obtaining a collection count with the <xref:System.GC.CollectionCount(System.Int32)> method.
 
@@ -2552,7 +2574,8 @@ If `obj` does not have a finalizer or the GC has already signaled the finalizer 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use the <xref:System.GCNotificationStatus> enumeration returned by this method to determine the status of the current garbage collection notification that was registered by using the <xref:System.GC.RegisterForFullGCNotification*> method. You can also use the <xref:System.GC.WaitForFullGCApproach*> method to determine whether a full garbage collection is imminent.
+
+Use the <xref:System.GCNotificationStatus> enumeration returned by this method to determine the status of the current garbage collection notification that was registered by using the <xref:System.GC.RegisterForFullGCNotification*> method. You can also use the <xref:System.GC.WaitForFullGCApproach*> method to determine whether a full garbage collection is imminent.
 
  Note that this method returns immediately whenever a garbage collection notification status is obtained, regardless of the value specified by `millisecondsTimeout`. If a garbage collection notification status is not obtained before `millisecondsTimeout` times out, this method returns <xref:System.GCNotificationStatus.NotApplicable>.
 
@@ -2657,7 +2680,8 @@ If `obj` does not have a finalizer or the GC has already signaled the finalizer 
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When the garbage collector finds objects that can be reclaimed, it checks each object to determine the object's finalization requirements. If an object implements a finalizer and has not disabled finalization by calling <xref:System.GC.SuppressFinalize*>, the object is placed in a list of objects that are marked as ready for finalization. The garbage collector calls the <xref:System.Object.Finalize*> methods for the objects in this list and removes the entries from the list. This method blocks until all finalizers have run to completion.
+
+When the garbage collector finds objects that can be reclaimed, it checks each object to determine the object's finalization requirements. If an object implements a finalizer and has not disabled finalization by calling <xref:System.GC.SuppressFinalize*>, the object is placed in a list of objects that are marked as ready for finalization. The garbage collector calls the <xref:System.Object.Finalize*> methods for the objects in this list and removes the entries from the list. This method blocks until all finalizers have run to completion.
 
  The thread on which finalizers are run is unspecified, so there is no guarantee that this method will terminate. However, this thread can be interrupted by another thread while the <xref:System.GC.WaitForPendingFinalizers*> method is in progress. For example, you can start another thread that waits for a period of time and then interrupts this thread if this thread is still suspended.
 

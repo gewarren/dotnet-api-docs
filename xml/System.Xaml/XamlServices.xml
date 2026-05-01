@@ -26,7 +26,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The modes of the <xref:System.Xaml.XamlServices> class that are used in the most common XAML reading and writing scenarios rely on creating instances of XAML readers and XAML writers. These readers and writers are specialized but internal implementations of public classes, such as <xref:System.Xml.XmlReader>, <xref:System.Xaml.XamlXmlReader>, and <xref:System.Xaml.XamlObjectWriter>. To use <xref:System.Xaml.XamlServices> for most scenarios, you can rely on the default internal implementations to obtain the results that you want. For more specialized scenarios, you might define readers and writers yourself, and then pass them as arguments for overloads of the <xref:System.Xaml.XamlServices> methods.
+
+The modes of the <xref:System.Xaml.XamlServices> class that are used in the most common XAML reading and writing scenarios rely on creating instances of XAML readers and XAML writers. These readers and writers are specialized but internal implementations of public classes, such as <xref:System.Xml.XmlReader>, <xref:System.Xaml.XamlXmlReader>, and <xref:System.Xaml.XamlObjectWriter>. To use <xref:System.Xaml.XamlServices> for most scenarios, you can rely on the default internal implementations to obtain the results that you want. For more specialized scenarios, you might define readers and writers yourself, and then pass them as arguments for overloads of the <xref:System.Xaml.XamlServices> methods.
 
 > [!IMPORTANT]
 >  <xref:System.Xaml.XamlServices> is not the recommended XAML reading or XAML writing API set if you are processing WPF-defined types, or types based on WPF. For WPF usage, use <xref:System.Windows.Markup.XamlReader?displayProperty=nameWithType> for reading or loading XAML (or BAML); and <xref:System.Windows.Markup.XamlWriter?displayProperty=nameWithType> for writing back XAML. These classes use .NET Framework XAML Services APIs and the XAML readers and XAML writers internally in their implementation; however, they also provide support and specialized XAML schema context for WPF-specific concepts, such as optimizations for dependency properties and WPF known types.
@@ -77,7 +78,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Different signatures for the <xref:System.Xaml.XamlServices.Load(System.IO.Stream)> method specify different types of input for the source XAML. The <xref:System.Xaml.XamlServices.Load(System.IO.Stream)> internal implementation first creates an <xref:System.Xml.XmlReader> by calling <xref:System.Xml.XmlReader.Create(System.IO.Stream)> and then creates a new instance of a specialized <xref:System.Xaml.XamlReader> that processes the input.
+
+Different signatures for the <xref:System.Xaml.XamlServices.Load(System.IO.Stream)> method specify different types of input for the source XAML. The <xref:System.Xaml.XamlServices.Load(System.IO.Stream)> internal implementation first creates an <xref:System.Xml.XmlReader> by calling <xref:System.Xml.XmlReader.Create(System.IO.Stream)> and then creates a new instance of a specialized <xref:System.Xaml.XamlReader> that processes the input.
 
  In order for the <xref:System.Xaml.XamlServices.Load(System.IO.Stream)> call to successfully create an object graph, the following must be true:
 
@@ -129,7 +131,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- In order to return the object graph, the `textReader` input should be constructed by using its relevant input. For example, it should pass a <xref:System.IO.StringReader> that is constructed by using a valid XAML-as-string input for the <xref:System.IO.StringReader.%23ctor(System.String)> constructor.
+
+In order to return the object graph, the `textReader` input should be constructed by using its relevant input. For example, it should pass a <xref:System.IO.StringReader> that is constructed by using a valid XAML-as-string input for the <xref:System.IO.StringReader.%23ctor(System.String)> constructor.
 
  ]]></format>
         </remarks>
@@ -170,7 +173,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Different signatures for the <xref:System.Xaml.XamlServices.Load*> method specify different types of input for the source XAML. The <xref:System.Xaml.XamlServices.Load*> internal implementation first creates an <xref:System.Xml.XmlReader> by calling <xref:System.Xml.XmlReader.Create(System.String)> and then creates a new instance of a specialized <xref:System.Xaml.XamlReader> that processes the input.
+
+Different signatures for the <xref:System.Xaml.XamlServices.Load*> method specify different types of input for the source XAML. The <xref:System.Xaml.XamlServices.Load*> internal implementation first creates an <xref:System.Xml.XmlReader> by calling <xref:System.Xml.XmlReader.Create(System.String)> and then creates a new instance of a specialized <xref:System.Xaml.XamlReader> that processes the input.
 
  In order for the <xref:System.Xaml.XamlServices.Load(System.String)> call to successfully create an object graph, the following must be true:
 
@@ -219,7 +223,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You should typically use this signature only in the following cases:
+
+You should typically use this signature only in the following cases:
 
 - You defined your own implementation of a <xref:System.Xaml.XamlReader>.
 
@@ -264,7 +269,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You should typically use this signature only if you defined your own implementation of a <xref:System.Xml.XmlReader>.
+
+You should typically use this signature only if you defined your own implementation of a <xref:System.Xml.XmlReader>.
 
  ]]></format>
         </remarks>
@@ -305,7 +311,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- In order for the <xref:System.Xaml.XamlServices.Parse*> call to successfully create an object tree, the following must be true:
+
+In order for the <xref:System.Xaml.XamlServices.Parse*> call to successfully create an object tree, the following must be true:
 
 - The `xaml` input is well-formed and valid XML.
 
@@ -364,7 +371,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The output from this method is the `ToString` result of an <xref:System.Xml.XmlWriter> that is created by the method call. That <xref:System.Xml.XmlWriter> is created by using the following settings: <xref:System.Xml.XmlWriterSettings.Indent?displayProperty=nameWithType> is `true`; and <xref:System.Xml.XmlWriterSettings.OmitXmlDeclaration?displayProperty=nameWithType> is `true`.
+
+The output from this method is the `ToString` result of an <xref:System.Xml.XmlWriter> that is created by the method call. That <xref:System.Xml.XmlWriter> is created by using the following settings: <xref:System.Xml.XmlWriterSettings.Indent?displayProperty=nameWithType> is `true`; and <xref:System.Xml.XmlWriterSettings.OmitXmlDeclaration?displayProperty=nameWithType> is `true`.
 
  The returned string can be loaded as valid XML through the <xref:System.Xml.XmlReader.Create*> method if you processed the string into a stream, or into a reader more specifically dedicated for XAML.
 
@@ -485,7 +493,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The `fileName` parameter value is used as the `outputFileName` input for a call to <xref:System.Xml.XmlWriter.Create*?displayProperty=nameWithType>, which creates a <xref:System.Xml.XmlWriter> as part of the method call.
+
+The `fileName` parameter value is used as the `outputFileName` input for a call to <xref:System.Xml.XmlWriter.Create*?displayProperty=nameWithType>, which creates a <xref:System.Xml.XmlWriter> as part of the method call.
 
  ]]></format>
         </remarks>
@@ -529,7 +538,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You should typically use this signature only in the following cases:
+
+You should typically use this signature only in the following cases:
 
 - You defined your own implementation of a <xref:System.Xaml.XamlWriter>.
 
@@ -625,7 +635,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is a wrapper around <xref:System.Xaml.XamlServices.Transform(System.Xaml.XamlReader,System.Xaml.XamlWriter,System.Boolean)>, where `closeWriter` is specified as `true`.
+
+This method is a wrapper around <xref:System.Xaml.XamlServices.Transform(System.Xaml.XamlReader,System.Xaml.XamlWriter,System.Boolean)>, where `closeWriter` is specified as `true`.
 
  ]]></format>
         </remarks>

@@ -59,7 +59,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When the loader cannot resolve an assembly reference and a handler has been provided for the appropriate loader resolution event, the event is raised and the <xref:System.ResolveEventArgs> contains information about the item to be resolved.
+
+When the loader cannot resolve an assembly reference and a handler has been provided for the appropriate loader resolution event, the event is raised and the <xref:System.ResolveEventArgs> contains information about the item to be resolved.
 
 - The <xref:System.ResolveEventArgs.Name> property contains the name of the item to be resolved.
 
@@ -127,7 +128,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This constructor is typically called only by the common language runtime.
+
+This constructor is typically called only by the common language runtime.
 
  ]]></format>
         </remarks>
@@ -228,7 +230,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- For the <xref:System.AppDomain.AssemblyResolve> event, <xref:System.ResolveEventArgs.Name*> is the assembly name before policy is applied.
+
+For the <xref:System.AppDomain.AssemblyResolve> event, <xref:System.ResolveEventArgs.Name*> is the assembly name before policy is applied.
 
  ]]></format>
         </remarks>
@@ -282,7 +285,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The assembly that is returned by this property is an assembly that was unable to resolve the item specified by the <xref:System.ResolveEventArgs.Name> property, because the item did not exist in that assembly, in any of its loaded dependencies, or in any dependencies the loader could find through probing.
+
+The assembly that is returned by this property is an assembly that was unable to resolve the item specified by the <xref:System.ResolveEventArgs.Name> property, because the item did not exist in that assembly, in any of its loaded dependencies, or in any dependencies the loader could find through probing.
 
  For example, suppose the current assembly uses the <xref:System.Reflection.Assembly.LoadFile*?displayProperty=nameWithType> method to load assembly A from a directory outside the probing path, in order to use class CA. Suppose further that class CA uses class CB, in assembly B, and that assembly A has a compile-time reference to assembly B, also located outside the probing path. When the current assembly attempts to instantiate CA, the loader attempts to resolve the reference to assembly B. However, because assembly A was loaded by using the <xref:System.Reflection.Assembly.LoadFile*?displayProperty=nameWithType> method, the loader cannot resolve the dependency. If there is a handler for the <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> event, the event is raised, and the <xref:System.ResolveEventArgs.RequestingAssembly> property of the resulting <xref:System.ResolveEventArgs> object contains assembly A, because assembly A is the assembly that is missing a dependency.
 

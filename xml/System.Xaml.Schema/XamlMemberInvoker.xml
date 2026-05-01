@@ -26,7 +26,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The purpose of <xref:System.Xaml.Schema.XamlMemberInvoker> is to enable an extensible XAML type system, schema, and a working run time that does not rely as fully on CLR features such as CLR attributes, reflection information through <xref:System.Type> and <xref:System.Reflection.MemberInfo>, and so on. Subclasses of <xref:System.Xaml.Schema.XamlMemberInvoker> are used as input parameters for the alternate constructors of XAML schema classes such as <xref:System.Xaml.XamlMember>. You subclass <xref:System.Xaml.XamlMember> and pass the <xref:System.Xaml.Schema.XamlMemberInvoker> through to the base constructor. Along with defining a <xref:System.Xaml.Schema.XamlMemberInvoker> for the constructor, you must also provide overrides for at least some of the `Lookup` methods of <xref:System.Xaml.XamlMember>.
+
+The purpose of <xref:System.Xaml.Schema.XamlMemberInvoker> is to enable an extensible XAML type system, schema, and a working run time that does not rely as fully on CLR features such as CLR attributes, reflection information through <xref:System.Type> and <xref:System.Reflection.MemberInfo>, and so on. Subclasses of <xref:System.Xaml.Schema.XamlMemberInvoker> are used as input parameters for the alternate constructors of XAML schema classes such as <xref:System.Xaml.XamlMember>. You subclass <xref:System.Xaml.XamlMember> and pass the <xref:System.Xaml.Schema.XamlMemberInvoker> through to the base constructor. Along with defining a <xref:System.Xaml.Schema.XamlMemberInvoker> for the constructor, you must also provide overrides for at least some of the `Lookup` methods of <xref:System.Xaml.XamlMember>.
 
  <xref:System.Xaml.Schema.XamlMemberInvoker> has a default implementation. The default implementation follows a similar model to the default implementation of XAML schema types <xref:System.Xaml.XamlType> and <xref:System.Xaml.XamlMember>: the CLR type system is used for instantiation, values and lookups, including using CLR attributes, <xref:System.Type> and <xref:System.Reflection.MemberInfo>, and so on.
 
@@ -79,7 +80,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The default implementation is empty.
+
+The default implementation is empty.
 
  This constructor is invoked internally to provide a value for <xref:System.Xaml.Schema.XamlMemberInvoker.UnknownInvoker>. For a <xref:System.Xaml.Schema.XamlMemberInvoker> subclass, it is expected that you either use the <xref:System.Xaml.Schema.XamlMemberInvoker.%23ctor(System.Xaml.XamlMember)> signature for construction or provide an override that calls <xref:System.Xaml.Schema.XamlMemberInvoker.%23ctor(System.Xaml.XamlMember)> as base. Providing the <xref:System.Xaml.XamlMember> implements a default pattern where <xref:System.Xaml.Schema.XamlMemberInvoker> is immutable.
 
@@ -116,7 +118,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This constructor is called internally based on the <xref:System.Xaml.XamlMember> where the <xref:System.Xaml.Schema.XamlMemberInvoker> is used for construction.
+
+This constructor is called internally based on the <xref:System.Xaml.XamlMember> where the <xref:System.Xaml.Schema.XamlMemberInvoker> is used for construction.
 
  ]]></format>
         </remarks>
@@ -258,7 +261,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The default implementation returns <xref:System.Xaml.Schema.ShouldSerializeResult.Default> if the XAML member itself is <xref:System.Xaml.XamlMember.IsUnknown>, or if no CLR-reflection relevant `ShouldSerialize` method is found on the underlying member through default reflection.
+
+The default implementation returns <xref:System.Xaml.Schema.ShouldSerializeResult.Default> if the XAML member itself is <xref:System.Xaml.XamlMember.IsUnknown>, or if no CLR-reflection relevant `ShouldSerialize` method is found on the underlying member through default reflection.
 
  ]]></format>
         </remarks>
@@ -293,7 +297,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This property relies on calling <xref:System.Xaml.XamlMember.LookupUnderlyingGetter*> on the constructing <xref:System.Xaml.XamlMember>. For an unknown <xref:System.Xaml.XamlMember>, or for cases where <xref:System.Xaml.XamlMember.LookupUnderlyingGetter*> returns `null`, this property returns `null`.
+
+This property relies on calling <xref:System.Xaml.XamlMember.LookupUnderlyingGetter*> on the constructing <xref:System.Xaml.XamlMember>. For an unknown <xref:System.Xaml.XamlMember>, or for cases where <xref:System.Xaml.XamlMember.LookupUnderlyingGetter*> returns `null`, this property returns `null`.
 
  ]]></format>
         </remarks>
@@ -328,7 +333,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This property relies on calling <xref:System.Xaml.XamlMember.LookupUnderlyingSetter*> on the constructing <xref:System.Xaml.XamlMember>. For an unknown <xref:System.Xaml.XamlMember>, or for cases where <xref:System.Xaml.XamlMember.LookupUnderlyingSetter*> returns `null`, this property returns `null`.
+
+This property relies on calling <xref:System.Xaml.XamlMember.LookupUnderlyingSetter*> on the constructing <xref:System.Xaml.XamlMember>. For an unknown <xref:System.Xaml.XamlMember>, or for cases where <xref:System.Xaml.XamlMember.LookupUnderlyingSetter*> returns `null`, this property returns `null`.
 
  ]]></format>
         </remarks>
@@ -363,7 +369,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Supplying this value for a <xref:System.Xaml.Schema.XamlMemberInvoker> parameter of System.Xaml defined API will typically cause the called code to throw exceptions.
+
+Supplying this value for a <xref:System.Xaml.Schema.XamlMemberInvoker> parameter of System.Xaml defined API will typically cause the called code to throw exceptions.
 
  ]]></format>
         </remarks>

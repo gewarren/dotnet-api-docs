@@ -64,7 +64,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.IObserver`1> and <xref:System.IObservable`1> interfaces provide a generalized mechanism for push-based notification, also known as the observer design pattern. The <xref:System.IObservable`1> interface represents the class that sends notifications (the provider); the <xref:System.IObserver`1> interface represents the class that receives them (the observer). `T` represents the class that provides the notification information.
+
+The <xref:System.IObserver`1> and <xref:System.IObservable`1> interfaces provide a generalized mechanism for push-based notification, also known as the observer design pattern. The <xref:System.IObservable`1> interface represents the class that sends notifications (the provider); the <xref:System.IObserver`1> interface represents the class that receives them (the observer). `T` represents the class that provides the notification information.
 
  An <xref:System.IObserver`1> implementation arranges to receive notifications from a provider (an <xref:System.IObservable`1> implementation) by passing an instance of itself to the provider's <xref:System.IObservable`1.Subscribe*?displayProperty=nameWithType> method. This method returns an <xref:System.IDisposable> object that can be used to unsubscribe the observer before the provider finishes sending notifications.
 
@@ -159,7 +160,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When the observer's <xref:System.IObserver`1.OnCompleted*> implementation is called, the <xref:System.IObserver`1.OnCompleted*> method can optionally call the <xref:System.IDisposable.Dispose*> method of the <xref:System.IDisposable> object that was returned to the observer when it called the <xref:System.IObservable`1.Subscribe*?displayProperty=nameWithType> method.
+
+When the observer's <xref:System.IObserver`1.OnCompleted*> implementation is called, the <xref:System.IObserver`1.OnCompleted*> method can optionally call the <xref:System.IDisposable.Dispose*> method of the <xref:System.IDisposable> object that was returned to the observer when it called the <xref:System.IObservable`1.Subscribe*?displayProperty=nameWithType> method.
 
 ## Examples
  The following example provides an implementation of the <xref:System.IObserver`1.OnCompleted*> method in a latitude/longitude tracking application. The method simply reports that no further data is available and calls the provider's <xref:System.IDisposable.Dispose*?displayProperty=nameWithType> implementation. See the Example section of the <xref:System.IObserver`1> topic for the complete example.
@@ -220,7 +222,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Although `error` is an object that is derived from <xref:System.Exception?displayProperty=nameWithType>, it does not necessarily represent an exception that is thrown by the provider. It can also represent a routine or expected error condition, such as data that is missing or unavailable. The <xref:System.IObserver`1.OnError*> method should be seen as informational, and the provider should not expect the observer to provide error handling.
+
+Although `error` is an object that is derived from <xref:System.Exception?displayProperty=nameWithType>, it does not necessarily represent an exception that is thrown by the provider. It can also represent a routine or expected error condition, such as data that is missing or unavailable. The <xref:System.IObserver`1.OnError*> method should be seen as informational, and the provider should not expect the observer to provide error handling.
 
 ## Examples
  The following example provides an implementation of the <xref:System.IObserver`1.OnError*> method in a latitude/longitude tracking application. The method simply reports that data is currently unavailable; it does not make use of the <xref:System.Exception> object passed to it as a parameter. See the Example section of the <xref:System.IObserver`1> topic for the complete example.
@@ -281,7 +284,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- After an observer has called a provider's <xref:System.IObservable`1.Subscribe*?displayProperty=nameWithType> method, the provider calls the observer's <xref:System.IObserver`1.OnNext*> method to provide notifications.
+
+After an observer has called a provider's <xref:System.IObservable`1.Subscribe*?displayProperty=nameWithType> method, the provider calls the observer's <xref:System.IObserver`1.OnNext*> method to provide notifications.
 
 ## Examples
  The following example provides an implementation of the <xref:System.IObserver`1.OnNext*> method in a latitude/longitude tracking application. See the Example section of the <xref:System.IObserver`1> topic for the complete example.
