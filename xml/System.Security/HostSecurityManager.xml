@@ -52,7 +52,7 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When you create a new <xref:System.AppDomain>, the common language runtime queries the <xref:System.AppDomainManager> for the presence of a <xref:System.Security.HostSecurityManager>, which participates in making security decisions for the <xref:System.AppDomain>.  Host providers should implement a host security manager that inherits from the <xref:System.Security.HostSecurityManager> class.
+ When you create a new <xref:System.AppDomain>, the common language runtime queries the <xref:System.AppDomainManager> for the presence of a <xref:System.Security.HostSecurityManager>, which participates in making security decisions for the <xref:System.AppDomain>. Host providers should implement a host security manager that inherits from the <xref:System.Security.HostSecurityManager> class.
 
 ## Examples
 
@@ -98,7 +98,7 @@ The following example shows a very simple implementation of a <xref:System.Secur
         <summary>Initializes a new instance of the <see cref="T:System.Security.HostSecurityManager" /> class.</summary>
         <remarks>To be added.</remarks>
         <block subset="none" type="overrides">
-          <para>Create instances of classes that can cause assemblies to be loaded, either explicitly or implicitly, in this constructor.  The get accessor for the <see cref="P:System.Security.HostSecurityManager.DomainPolicy" /> property and the <see cref="M:System.Security.HostSecurityManager.ProvideAssemblyEvidence(System.Reflection.Assembly,System.Security.Policy.Evidence)" /> and <see cref="M:System.Security.HostSecurityManager.ProvideAppDomainEvidence(System.Security.Policy.Evidence)" /> methods are called whenever an assembly is loaded, and their subsequent loading of assemblies will cause circular references.</para>
+          <para>Create instances of classes that can cause assemblies to be loaded, either explicitly or implicitly, in this constructor. The get accessor for the <see cref="P:System.Security.HostSecurityManager.DomainPolicy" /> property and the <see cref="M:System.Security.HostSecurityManager.ProvideAssemblyEvidence(System.Reflection.Assembly,System.Security.Policy.Evidence)" /> and <see cref="M:System.Security.HostSecurityManager.ProvideAppDomainEvidence(System.Security.Policy.Evidence)" /> methods are called whenever an assembly is loaded, and their subsequent loading of assemblies will cause circular references.</para>
         </block>
       </Docs>
     </Member>
@@ -219,7 +219,7 @@ The following example shows how to override the <xref:System.Security.HostSecuri
 ## Remarks
  This property can be overridden in a derived class. The base implementation always returns `null`.
 
- This property is called at <xref:System.AppDomain> creation time. It allows a host to supply a policy for the current <xref:System.AppDomain>.  A policy level consists of the following:
+ This property is called at <xref:System.AppDomain> creation time. It allows a host to supply a policy for the current <xref:System.AppDomain>. A policy level consists of the following:
 
 - A set of code groups organized into a single rooted tree.
 
@@ -273,7 +273,7 @@ The following example shows how to override the <xref:System.Security.HostSecuri
 ## Remarks
  This property can be overridden in a derived class. The base implementation always returns <xref:System.Security.HostSecurityManagerOptions.AllFlags>.
 
- The derived host can change the value of this property when only a subset of the <xref:System.Security.HostSecurityManagerOptions> is of interest.  The possible subsets include none, the refused set, the policy level, and assembly evidence.
+ The derived host can change the value of this property when only a subset of the <xref:System.Security.HostSecurityManagerOptions> is of interest. The possible subsets include none, the refused set, the policy level, and assembly evidence.
 
 ## Examples
 
@@ -534,7 +534,7 @@ The following example shows how to override the <xref:System.Security.HostSecuri
 ## Remarks
  This method can be overridden in a derived class.
 
- This method is called whenever an <xref:System.AppDomain> object is created. The `inputEvidence` parameter is the computed evidence from the common language runtime. The host implementation can choose to extend or reduce the evidence. The return value is the evidence to be used for the application domain.  The base implementation always returns the evidence object passed in as the `inputEvidence` parameter.
+ This method is called whenever an <xref:System.AppDomain> object is created. The `inputEvidence` parameter is the computed evidence from the common language runtime. The host implementation can choose to extend or reduce the evidence. The return value is the evidence to be used for the application domain. The base implementation always returns the evidence object passed in as the `inputEvidence` parameter.
 
 > [!IMPORTANT]
 > See the Notes to Inheritors for the <xref:System.Security.HostSecurityManager> class for critical implementation information.
@@ -587,7 +587,7 @@ The following example shows how to override the <xref:System.Security.HostSecuri
 ## Remarks
  This method can be overridden in a derived class.
 
- This method is called whenever an assembly is loaded, either implicitly or explicitly. The passed in parameters are the assembly being loaded, and the computed evidence from the common language runtime. The host implementation can choose to extend or reduce the evidence. The return value is the evidence to be used for the assembly.  The base implementation always returns the evidence object passed in as the `inputEvidence` parameter.
+ This method is called whenever an assembly is loaded, either implicitly or explicitly. The passed in parameters are the assembly being loaded, and the computed evidence from the common language runtime. The host implementation can choose to extend or reduce the evidence. The return value is the evidence to be used for the assembly. The base implementation always returns the evidence object passed in as the `inputEvidence` parameter.
 
 > [!IMPORTANT]
 > See the Notes to Inheritors for the <xref:System.Security.HostSecurityManager> class for critical implementation information.

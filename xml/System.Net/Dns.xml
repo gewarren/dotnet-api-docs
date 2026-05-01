@@ -874,7 +874,7 @@ The following code example uses the <xref:System.Net.Dns.BeginGetHostEntry*> met
 
  IPv6 addresses are filtered from the results of the <xref:System.Net.Dns.GetHostAddresses*> method if the local computer does not have IPv6 installed. As a result, it is possible to get back an empty <xref:System.Net.IPAddress> instance if only IPv6 results were available for the `hostNameOrAddress` parameter.
 
- This method is implemented using the underlying operating system's name resolution APIs (such as the Win32 API getaddrinfo on Windows, and equivalent APIs on other platforms).  If a host is described in the `hosts` file, the IP address or addresses there will be returned without querying the DNS server.
+ This method is implemented using the underlying operating system's name resolution APIs (such as the Win32 API getaddrinfo on Windows, and equivalent APIs on other platforms). If a host is described in the `hosts` file, the IP address or addresses there will be returned without querying the DNS server.
 
 > [!NOTE]
 > This member emits trace information when you enable network tracing in your application. For more information, see [Network Tracing in the .NET Framework](/dotnet/framework/network-programming/network-tracing).
@@ -1437,11 +1437,11 @@ The following code example uses the <xref:System.Net.Dns.GetHostEntry*> method t
 
  The <xref:System.Net.Dns.GetHostEntry*> method assumes that if an IP literal string is passed in the `hostNameOrAddress` parameter that the application wants an <xref:System.Net.IPHostEntry> instance returned with all of the properties set. These properties include the <xref:System.Net.IPHostEntry.AddressList*>, <xref:System.Net.IPHostEntry.Aliases*>, and <xref:System.Net.IPHostEntry.HostName*>. As a result, the implementation of the <xref:System.Net.Dns.GetHostEntry*> method exhibits the following behavior when an IP string literal is passed:
 
-1.  The method tries to parse the address. If the `hostNameOrAddress` parameter contains a legal IP string literal, then the first phase succeeds.
+1. The method tries to parse the address. If the `hostNameOrAddress` parameter contains a legal IP string literal, then the first phase succeeds.
 
-2.  A reverse lookup using the IP address of the IP string literal is attempted to obtain the host name. This result is set as the <xref:System.Net.IPHostEntry.HostName> property.
+2. A reverse lookup using the IP address of the IP string literal is attempted to obtain the host name. This result is set as the <xref:System.Net.IPHostEntry.HostName> property.
 
-3.  The host name from this reverse lookup is used again to obtain all the possible IP addresses associated with the name and set as the <xref:System.Net.IPHostEntry.AddressList> property.
+3. The host name from this reverse lookup is used again to obtain all the possible IP addresses associated with the name and set as the <xref:System.Net.IPHostEntry.AddressList> property.
 
  For an IPv4 string literal, all three steps above may succeed. But it is possible for a stale DNS record for an IPv4 address that actually belongs to a different host to be returned. This may cause step #3 to fail and throw an exception (there is a DNS PTR record for the IPv4 address, but no DNS A record for the IPv4 address).
 
@@ -1642,11 +1642,11 @@ The following example uses the <xref:System.Net.Dns.GetHostEntry*> method to res
 
  This method assumes that if an IP literal string is passed in the `hostNameOrAddress` parameter that the application wants an <xref:System.Net.IPHostEntry> instance returned with all of the properties set. These properties include the <xref:System.Net.IPHostEntry.AddressList*>, <xref:System.Net.IPHostEntry.Aliases*>, and <xref:System.Net.IPHostEntry.HostName*>. As a result, the implementation of this method exhibits the following behavior when an IP string literal is passed:
 
-1.  The method tries to parse the address. If the `hostNameOrAddress` parameter contains a legal IP string literal, then the first phase succeeds.
+1. The method tries to parse the address. If the `hostNameOrAddress` parameter contains a legal IP string literal, then the first phase succeeds.
 
-2.  A reverse lookup using the IP address of the IP string literal is attempted to obtain the host name. This result is set as the <xref:System.Net.IPHostEntry.HostName> property.
+2. A reverse lookup using the IP address of the IP string literal is attempted to obtain the host name. This result is set as the <xref:System.Net.IPHostEntry.HostName> property.
 
-3.  The host name from this reverse lookup is used again to obtain all the possible IP addresses associated with the name and set as the <xref:System.Net.IPHostEntry.AddressList> property.
+3. The host name from this reverse lookup is used again to obtain all the possible IP addresses associated with the name and set as the <xref:System.Net.IPHostEntry.AddressList> property.
 
  For an IPv4 string literal, all three steps above may succeed. But it is possible for a stale DNS record for an IPv4 address that actually belongs to a different host to be returned. This may cause step #3 to fail and throw an exception (there is a DNS PTR record for the IPv4 address, but no DNS A record for the IPv4 address).
 
@@ -1658,7 +1658,7 @@ The following example uses the <xref:System.Net.Dns.GetHostEntry*> method to res
 
  The <xref:System.Net.IPHostEntry.Aliases> property of the <xref:System.Net.IPHostEntry> instance returned is not populated by this method and will always be empty.
 
- This method is implemented using the underlying operating system's name resolution APIs (such as the Win32 API getaddrinfo on Windows, and equivalent APIs on other platforms).  If a host is described in the `hosts` file, the IP address or addresses there will be returned without querying the DNS server.
+ This method is implemented using the underlying operating system's name resolution APIs (such as the Win32 API getaddrinfo on Windows, and equivalent APIs on other platforms). If a host is described in the `hosts` file, the IP address or addresses there will be returned without querying the DNS server.
 
 > [!NOTE]
 > This member emits trace information when you enable network tracing in your application. For more information, see [Network Tracing in the .NET Framework](/dotnet/framework/network-programming/network-tracing).

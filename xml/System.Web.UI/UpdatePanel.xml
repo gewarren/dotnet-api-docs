@@ -83,13 +83,13 @@
 
 - If the <xref:System.Web.UI.UpdatePanel.UpdateMode> property is set to <xref:System.Web.UI.UpdatePanelUpdateMode.Conditional>, the <xref:System.Web.UI.UpdatePanel> control's content is updated in the following circumstances:
 
-    -   When you call the <xref:System.Web.UI.UpdatePanel.Update*> method of the <xref:System.Web.UI.UpdatePanel> control explicitly.
+    - When you call the <xref:System.Web.UI.UpdatePanel.Update*> method of the <xref:System.Web.UI.UpdatePanel> control explicitly.
 
-    -   When the <xref:System.Web.UI.UpdatePanel> control is nested inside another <xref:System.Web.UI.UpdatePanel> control, and the parent panel is updated.
+    - When the <xref:System.Web.UI.UpdatePanel> control is nested inside another <xref:System.Web.UI.UpdatePanel> control, and the parent panel is updated.
 
-    -   When a postback is caused by a control that is defined as a trigger by using the `Triggers` property of the <xref:System.Web.UI.UpdatePanel> control. In this scenario, the control explicitly triggers an update of the panel content. The control can be either inside or outside the <xref:System.Web.UI.UpdatePanel> control that the trigger is associated with.
+    - When a postback is caused by a control that is defined as a trigger by using the `Triggers` property of the <xref:System.Web.UI.UpdatePanel> control. In this scenario, the control explicitly triggers an update of the panel content. The control can be either inside or outside the <xref:System.Web.UI.UpdatePanel> control that the trigger is associated with.
 
-    -   When the <xref:System.Web.UI.UpdatePanel.ChildrenAsTriggers> property is set to `true` and a child control of the <xref:System.Web.UI.UpdatePanel> control causes a postback. Child controls of nested <xref:System.Web.UI.UpdatePanel> controls do not cause an update to the outer <xref:System.Web.UI.UpdatePanel> control unless they are explicitly defined as triggers.
+    - When the <xref:System.Web.UI.UpdatePanel.ChildrenAsTriggers> property is set to `true` and a child control of the <xref:System.Web.UI.UpdatePanel> control causes a postback. Child controls of nested <xref:System.Web.UI.UpdatePanel> controls do not cause an update to the outer <xref:System.Web.UI.UpdatePanel> control unless they are explicitly defined as triggers.
 
  The combination of setting the <xref:System.Web.UI.UpdatePanel.ChildrenAsTriggers> property to `false` and the <xref:System.Web.UI.UpdatePanel.UpdateMode> property to <xref:System.Web.UI.UpdatePanelUpdateMode.Always> is not allowed and will throw an exception.
 
@@ -1122,11 +1122,11 @@
 
 - If the <xref:System.Web.UI.UpdatePanel.UpdateMode> property is set to <xref:System.Web.UI.UpdatePanelUpdateMode.Conditional>, and one of the following conditions occurs:
 
-    -   You call the <xref:System.Web.UI.UpdatePanel.Update*> method of the <xref:System.Web.UI.UpdatePanel> control explicitly.
+    - You call the <xref:System.Web.UI.UpdatePanel.Update*> method of the <xref:System.Web.UI.UpdatePanel> control explicitly.
 
-    -   The postback is caused by a control defined as a trigger by using the <xref:System.Web.UI.UpdatePanel.Triggers> property of the <xref:System.Web.UI.UpdatePanel> control. In this scenario, the control explicitly triggers an update of the panel content. The control can be either inside or outside the <xref:System.Web.UI.UpdatePanel> control that defines the trigger.
+    - The postback is caused by a control defined as a trigger by using the <xref:System.Web.UI.UpdatePanel.Triggers> property of the <xref:System.Web.UI.UpdatePanel> control. In this scenario, the control explicitly triggers an update of the panel content. The control can be either inside or outside the <xref:System.Web.UI.UpdatePanel> control that defines the trigger.
 
-    -   The <xref:System.Web.UI.UpdatePanel.ChildrenAsTriggers> property is set to `true` and a child control of the <xref:System.Web.UI.UpdatePanel> control causes a postback. A child control of a nested <xref:System.Web.UI.UpdatePanel> control does not cause an update to the outer <xref:System.Web.UI.UpdatePanel> control unless it is explicitly defined as a trigger.
+    - The <xref:System.Web.UI.UpdatePanel.ChildrenAsTriggers> property is set to `true` and a child control of the <xref:System.Web.UI.UpdatePanel> control causes a postback. A child control of a nested <xref:System.Web.UI.UpdatePanel> control does not cause an update to the outer <xref:System.Web.UI.UpdatePanel> control unless it is explicitly defined as a trigger.
 
 ## Examples
  The following example declares two <xref:System.Web.UI.UpdatePanel> controls. In the first panel, the <xref:System.Web.UI.UpdatePanel.UpdateMode> property is set to <xref:System.Web.UI.UpdatePanelUpdateMode.Conditional>. In the second panel, <xref:System.Web.UI.UpdatePanel.UpdateMode*> is set to <xref:System.Web.UI.UpdatePanelUpdateMode.Always>. A button outside both panels is registered as an asynchronous postback control by calling the <xref:System.Web.UI.ScriptManager.RegisterAsyncPostBackControl*> method of the <xref:System.Web.UI.ScriptManager> control. In the button's `Click` event handler, the <xref:System.Web.UI.UpdatePanel.Update*> method of the first panel is called if more than five seconds have elapsed since its last update. In this scenario, the panel's content is updated only if the last panel refresh was more than five seconds ago. The content of the second panel is always updated.

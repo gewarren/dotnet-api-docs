@@ -20,7 +20,7 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This class is a static class - it is sealed, abstract and does not have a public constructor. It is used to contain and manage application, object, and presence information for peers that have accepted invitations to a collaboration session. In terms of peers, objects, and applications, the PeerCollaboration class provides three accessors, one for each collection, as an interface or point of connectivity for whatever else is happening on the machine.  This class cannot be inherited; a compile-time error will occur if this sealed class is specified as the base class.
+ This class is a static class - it is sealed, abstract and does not have a public constructor. It is used to contain and manage application, object, and presence information for peers that have accepted invitations to a collaboration session. In terms of peers, objects, and applications, the PeerCollaboration class provides three accessors, one for each collection, as an interface or point of connectivity for whatever else is happening on the machine. This class cannot be inherited; a compile-time error will occur if this sealed class is specified as the base class.
 
  Methods and properties in this class can be used to:
 
@@ -66,12 +66,12 @@
       </ReturnValue>
       <Docs>
         <summary>Gets the <see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplicationLaunchInfo" /> object that contains information needed when an application is started due to a collaboration request from a remote peer.</summary>
-        <value>If the application was started due to an invitation, a <see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplicationLaunchInfo" /> object that contains both information about the peer that sent the application invitation and the invitation itself is returned; otherwise, <see langword="null" /> is returned.  The default value for this property is <see langword="null" />.</value>
+        <value>If the application was started due to an invitation, a <see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplicationLaunchInfo" /> object that contains both information about the peer that sent the application invitation and the invitation itself is returned; otherwise, <see langword="null" /> is returned. The default value for this property is <see langword="null" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This property is to be used by a collaboration-aware <xref:System.Net.PeerToPeer.Collaboration.PeerApplication> instance after it is started to determine whether it was started due to a collaboration request from a remote peer.  The calling application should inspect the <xref:System.Net.PeerToPeer.Collaboration.PeerApplicationLaunchInfo.Data*> and <xref:System.Net.PeerToPeer.Collaboration.PeerApplicationLaunchInfo.Message*> properties to get further information about the invitation request.
+ This property is to be used by a collaboration-aware <xref:System.Net.PeerToPeer.Collaboration.PeerApplication> instance after it is started to determine whether it was started due to a collaboration request from a remote peer. The calling application should inspect the <xref:System.Net.PeerToPeer.Collaboration.PeerApplicationLaunchInfo.Data*> and <xref:System.Net.PeerToPeer.Collaboration.PeerApplicationLaunchInfo.Message*> properties to get further information about the invitation request.
 
  Access to this property requires a <xref:System.Security.Permissions.PermissionState> of <xref:System.Security.Permissions.PermissionState.Unrestricted>. This state is created when the <xref:System.Net.PeerToPeer.Collaboration.Peer> collaboration session begins.
 
@@ -146,7 +146,7 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Peer objects are automatically unregistered (removed) from the Peer Collaboration infrastructure when a reference to the object is no longer valid.  If a caller does not maintain a reference to the object, it is unregistered from the Peer Collaboration infrastructure.  Alternatively, an object can be manually unregistered by using this method.
+ Peer objects are automatically unregistered (removed) from the Peer Collaboration infrastructure when a reference to the object is no longer valid. If a caller does not maintain a reference to the object, it is unregistered from the Peer Collaboration infrastructure. Alternatively, an object can be manually unregistered by using this method.
 
  Calling this method requires a <xref:System.Security.Permissions.PermissionState> of <xref:System.Security.Permissions.PermissionState.Unrestricted>. This state is created when the <xref:System.Net.PeerToPeer.Collaboration.Peer> collaboration session begins.
 
@@ -608,7 +608,7 @@ The following code example illustrates how to retrieve PeersNearMe as a PeerNear
       </Parameters>
       <Docs>
         <param name="application">The <see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplication" /> for which to register the calling peer within the associated scope (global, local, and link-local).</param>
-        <param name="type">The type of registration to perform.  The application may be registered for just the calling peer or for all peers using the machine.</param>
+        <param name="type">The type of registration to perform. The application may be registered for just the calling peer or for all peers using the machine.</param>
         <summary>Registers the specified <see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplication" /> for a collaboration session with the calling peer.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[
@@ -626,10 +626,10 @@ The following code example illustrates how to register an application with the C
 
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">-   The <see cref="P:System.Net.PeerToPeer.Collaboration.PeerApplication.Path" /> property on the <see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplication" /> object passed to <paramref name="application" /> is <see langword="null" />.
+        <exception cref="T:System.ArgumentException">- The <see cref="P:System.Net.PeerToPeer.Collaboration.PeerApplication.Path" /> property on the <see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplication" /> object passed to <paramref name="application" /> is <see langword="null" />.
 
-- The peer application instance provided has the same globally unique <see cref="P:System.Net.PeerToPeer.Collaboration.PeerApplication.Id" /> as an application which is already registered.  The existing registration must be unregistered before a new application can be registered with the provided identifier.</exception>
-        <exception cref="T:System.ArgumentNullException">The <paramref name="application" /> and <paramref name="type" /> parameters cannot be <see langword="null" />.  Both parameters must be specified.</exception>
+- The peer application instance provided has the same globally unique <see cref="P:System.Net.PeerToPeer.Collaboration.PeerApplication.Id" /> as an application which is already registered. The existing registration must be unregistered before a new application can be registered with the provided identifier.</exception>
+        <exception cref="T:System.ArgumentNullException">The <paramref name="application" /> and <paramref name="type" /> parameters cannot be <see langword="null" />. Both parameters must be specified.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">The type parameter is not set to a known value in the <see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplicationRegistrationType" /> enumeration.</exception>
         <exception cref="T:System.Net.PeerToPeer.PeerToPeerException">The <see cref="M:System.Net.PeerToPeer.Collaboration.PeerCollaboration.RegisterApplication(System.Net.PeerToPeer.Collaboration.PeerApplication,System.Net.PeerToPeer.Collaboration.PeerApplicationRegistrationType)" /> operation cannot be completed until the caller has signed-in to the infrastructure.</exception>
       </Docs>
@@ -815,7 +815,7 @@ The following code example illustrates how to sign the users into the Collaborat
 ## Remarks
  This method is not an application-specific operation and signing out may affect other applications that may be currently running. If the user is not already signed into the specified scope calling this method results in a no-op.
 
- When a user signs out of People Near Me, their published information is deleted from the <xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration> endpoint object set.  This includes <xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration.LocalEndPointName*> and <xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration.LocalPresenceInfo*>, in addition to any identifying objects registered by the calling peer into the collaboration infrastructure. Because this information is deleted, it is no longer available to either remote peers or a peer host for collaboration. From the perspective of the <xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration> class, other sharing of the same information with trusted contacts is not relevant; use of the <xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration> class does not affect other objects in which this information was persisted, such as a remote peer <xref:System.Net.PeerToPeer.Collaboration.ContactManager> object. Likewise, deleting a peer from the <xref:System.Net.PeerToPeer.Collaboration.ContactManager> does not affect its presence in a collaboration application; other contacts are still able to view its presence and collaborate with it.
+ When a user signs out of People Near Me, their published information is deleted from the <xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration> endpoint object set. This includes <xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration.LocalEndPointName*> and <xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration.LocalPresenceInfo*>, in addition to any identifying objects registered by the calling peer into the collaboration infrastructure. Because this information is deleted, it is no longer available to either remote peers or a peer host for collaboration. From the perspective of the <xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration> class, other sharing of the same information with trusted contacts is not relevant; use of the <xref:System.Net.PeerToPeer.Collaboration.PeerCollaboration> class does not affect other objects in which this information was persisted, such as a remote peer <xref:System.Net.PeerToPeer.Collaboration.ContactManager> object. Likewise, deleting a peer from the <xref:System.Net.PeerToPeer.Collaboration.ContactManager> does not affect its presence in a collaboration application; other contacts are still able to view its presence and collaborate with it.
 
  Calling this method requires a <xref:System.Security.Permissions.PermissionState> of <xref:System.Security.Permissions.PermissionState.Unrestricted>. This state is created when the <xref:System.Net.PeerToPeer.Collaboration.Peer> collaboration session begins.
 

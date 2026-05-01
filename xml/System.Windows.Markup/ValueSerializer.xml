@@ -47,7 +47,7 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The string a converter returns for serialization must be loss-less and the converter must always return the same string for a particular value.  If a type converter (derived from <xref:System.ComponentModel.TypeConverter>) does not meet these requirements in its `ConvertTo` implementations for string output, a custom <xref:System.Windows.Markup.ValueSerializer> must be declared. Either the <xref:System.Windows.Markup.ValueSerializer> should meet the requirements, or a null <xref:System.Windows.Markup.ValueSerializer> should be associated with the type. A <xref:System.Windows.Markup.ValueSerializer> is associated with a type by applying the <xref:System.Windows.Markup.ValueSerializerAttribute> attribute.
+ The string a converter returns for serialization must be loss-less and the converter must always return the same string for a particular value. If a type converter (derived from <xref:System.ComponentModel.TypeConverter>) does not meet these requirements in its `ConvertTo` implementations for string output, a custom <xref:System.Windows.Markup.ValueSerializer> must be declared. Either the <xref:System.Windows.Markup.ValueSerializer> should meet the requirements, or a null <xref:System.Windows.Markup.ValueSerializer> should be associated with the type. A <xref:System.Windows.Markup.ValueSerializer> is associated with a type by applying the <xref:System.Windows.Markup.ValueSerializerAttribute> attribute.
 
  A null <xref:System.Windows.Markup.ValueSerializer> indicates the type converter should be ignored for convert-to-string conversions from the object graph.
 
@@ -558,7 +558,7 @@
 ## Remarks
  Rather than relying purely on attributes reported in the CLR type system, this overload uses the `context` as a service, and calls the service's implementation of <xref:System.Windows.Markup.IValueSerializerContext.GetValueSerializerFor*?displayProperty=nameWithType>. The <xref:System.Windows.Markup.IValueSerializerContext.GetValueSerializerFor*?displayProperty=nameWithType> implementation would typically also rely on the `descriptor`, but might implement special behavior for certain contexts.
 
- This method should be called when the caller has an available <xref:System.Windows.Markup.IValueSerializerContext> from a service.  This will ensure that the correct <xref:System.Windows.Markup.ValueSerializer> is returned for the specific context.
+ This method should be called when the caller has an available <xref:System.Windows.Markup.IValueSerializerContext> from a service. This will ensure that the correct <xref:System.Windows.Markup.ValueSerializer> is returned for the specific context.
 
  If the context returns `null` from its <xref:System.Windows.Markup.IValueSerializerContext.GetValueSerializerFor*?displayProperty=nameWithType> for your specified `descriptor`, or if the context you specify is `null`, then behavior is identical to calling the <xref:System.Windows.Markup.ValueSerializer.GetSerializerFor(System.ComponentModel.PropertyDescriptor)> overload.
 
@@ -658,7 +658,7 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Any types a <xref:System.Windows.Markup.ValueSerializer> converts should be included in the returned enumeration.  This allows a serializer to ensure a de-serializer has enough information about the types this serializer converts.
+ Any types a <xref:System.Windows.Markup.ValueSerializer> converts should be included in the returned enumeration. This allows a serializer to ensure a de-serializer has enough information about the types this serializer converts.
 
  Overriding this method is an advanced scenario. Overriding should only be necessary if you are implementing a system where CLR type system ownertype-property relationships available to a XAML schema context do not report enough information.
 

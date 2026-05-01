@@ -2503,7 +2503,7 @@ The two overloads of the <xref:System.DateTime.CompareTo*> method return a signe
 
 ## Remarks
 
-To determine the relationship of the current instance to `value`, the <xref:System.DateTime.CompareTo*> method compares the <xref:System.DateTime.Ticks> property of the current instance and `value` but ignores their <xref:System.DateTime.Kind> property.  Before comparing <xref:System.DateTime> objects, make sure that the objects represent times in the same time zone. You can do this by comparing the values of their <xref:System.DateTime.Kind*> properties.
+To determine the relationship of the current instance to `value`, the <xref:System.DateTime.CompareTo*> method compares the <xref:System.DateTime.Ticks> property of the current instance and `value` but ignores their <xref:System.DateTime.Kind> property. Before comparing <xref:System.DateTime> objects, make sure that the objects represent times in the same time zone. You can do this by comparing the values of their <xref:System.DateTime.Kind*> properties.
 
  This method implements the <xref:System.IComparable`1?displayProperty=nameWithType> interface and performs slightly better than the <xref:System.DateTime.CompareTo(System.Object)?displayProperty=nameWithType> method overload because it does not have to convert the `value` parameter to an object.
 
@@ -5752,9 +5752,9 @@ The following example parses strings in each of these formats by using the forma
 > [!IMPORTANT]
 > Note that the formatting conventions for a particular culture are dynamic and can be subject to change. This means that parsing operations that depend on the formatting conventions of the default (current) culture or that specify an <xref:System.IFormatProvider> object that represents a culture other than the invariant culture can unexpectedly fail if any of the following occurs:
 >
-> -   The culture-specific data has changed between major or minor versions of the .NET Framework or as the result of an update to the existing version of the .NET Framework.
-> -   The culture-specific data reflects user preferences, which can vary from machine to machine or session to session.
-> -   The culture-specific data represents a replacement culture that overrides the settings of a standard culture or a custom culture.
+> - The culture-specific data has changed between major or minor versions of the .NET Framework or as the result of an update to the existing version of the .NET Framework.
+> - The culture-specific data reflects user preferences, which can vary from machine to machine or session to session.
+> - The culture-specific data represents a replacement culture that overrides the settings of a standard culture or a custom culture.
 >
 > To prevent the difficulties in parsing data and time strings that are associated with changes in cultural data, you can parse date and time strings by using the invariant culture, or you can call the <xref:System.DateTime.ParseExact*> or <xref:System.DateTime.TryParseExact*> method and specify the exact format of the string to be parsed. If you are serializing and deserializing date and time data, you can either use the formatting conventions of the invariant culture, or you can serialize and deserialize the <xref:System.DateTime> value in a binary format.
 >
@@ -5767,7 +5767,7 @@ The following example parses strings in each of these formats by using the forma
 
 |DateTimeStyles member|Effect on conversion|
 |---------------------------|--------------------------|
-|<xref:System.Globalization.DateTimeStyles.AdjustToUniversal>|Parses `s` and, if necessary, converts it to UTC, as follows:<br /><br /> -   If `s` includes a time zone offset, or if `s` contains no time zone information but `styles` includes the <xref:System.Globalization.DateTimeStyles.AssumeLocal> flag, the method parses the string, calls <xref:System.DateTime.ToUniversalTime*> to convert the returned <xref:System.DateTime> value to UTC, and sets the <xref:System.DateTime.Kind> property to <xref:System.DateTimeKind.Utc?displayProperty=nameWithType>.<br />-   If `s` indicates that it represents UTC, or if `s` does not contain time zone information but `styles` includes the <xref:System.Globalization.DateTimeStyles.AssumeUniversal> flag, the method parses the string, performs no time zone conversion on the returned <xref:System.DateTime> value, and sets the <xref:System.DateTime.Kind> property to <xref:System.DateTimeKind.Utc?displayProperty=nameWithType>.<br />-   In all other cases, the flag has no effect.|
+|<xref:System.Globalization.DateTimeStyles.AdjustToUniversal>|Parses `s` and, if necessary, converts it to UTC, as follows:<br /><br /> - If `s` includes a time zone offset, or if `s` contains no time zone information but `styles` includes the <xref:System.Globalization.DateTimeStyles.AssumeLocal> flag, the method parses the string, calls <xref:System.DateTime.ToUniversalTime*> to convert the returned <xref:System.DateTime> value to UTC, and sets the <xref:System.DateTime.Kind> property to <xref:System.DateTimeKind.Utc?displayProperty=nameWithType>.<br />- If `s` indicates that it represents UTC, or if `s` does not contain time zone information but `styles` includes the <xref:System.Globalization.DateTimeStyles.AssumeUniversal> flag, the method parses the string, performs no time zone conversion on the returned <xref:System.DateTime> value, and sets the <xref:System.DateTime.Kind> property to <xref:System.DateTimeKind.Utc?displayProperty=nameWithType>.<br />- In all other cases, the flag has no effect.|
 |<xref:System.Globalization.DateTimeStyles.AllowInnerWhite>|This value is ignored. Inner white space is always permitted in the date and time elements of `s`.|
 |<xref:System.Globalization.DateTimeStyles.AllowLeadingWhite>|This value is ignored. Leading white space is always permitted in the date and time elements of `s`.|
 |<xref:System.Globalization.DateTimeStyles.AllowTrailingWhite>|This value is ignored. Trailing white space is always permitted in the date and time elements of `s`.|
@@ -6021,7 +6021,7 @@ It handles the <xref:System.FormatException> exception that is thrown when the m
       </Parameters>
       <Docs>
         <param name="s">A string that contains a date and time to convert. See <see href="#the-string-to-parse">The string to parse</see> for more information.</param>
-        <param name="provider">An object that supplies culture-specific format information about <paramref name="s" />.  See <see href="#parsing-and-cultural-conventions">Parsing and cultural conventions</see></param>
+        <param name="provider">An object that supplies culture-specific format information about <paramref name="s" />. See <see href="#parsing-and-cultural-conventions">Parsing and cultural conventions</see></param>
         <summary>Converts the string representation of a date and time to its <see cref="T:System.DateTime" /> equivalent by using culture-specific format information.</summary>
         <returns>An object that is equivalent to the date and time contained in <paramref name="s" /> as specified by <paramref name="provider" />.</returns>
         <remarks>
@@ -6099,7 +6099,7 @@ The following example parses an array of date strings by using the conventions o
       </Parameters>
       <Docs>
         <param name="s">The memory span that contains the string to parse. See <see href="#the-string-to-parse">The string to parse</see> for more information.</param>
-        <param name="provider">An object that supplies culture-specific format information about <paramref name="s" />.  See <see href="#parsing-and-cultural-conventions">Parsing and cultural conventions</see></param>
+        <param name="provider">An object that supplies culture-specific format information about <paramref name="s" />. See <see href="#parsing-and-cultural-conventions">Parsing and cultural conventions</see></param>
         <param name="styles">A bitwise combination of the enumeration values that indicates the style elements that can be present in <paramref name="s" /> for the parse operation to succeed, and that defines how to interpret the parsed date in relation to the current time zone or the current date. A typical value to specify is <see cref="F:System.Globalization.DateTimeStyles.None" />.</param>
         <summary>Converts a memory span that contains string representation of a date and time to its <see cref="T:System.DateTime" /> equivalent by using culture-specific format information and a formatting style.</summary>
         <returns>An object that is equivalent to the date and time contained in <paramref name="s" />, as specified by <paramref name="provider" /> and <paramref name="styles" />.</returns>
@@ -6171,7 +6171,7 @@ The following example parses an array of date strings by using the conventions o
       </Parameters>
       <Docs>
         <param name="s">A string that contains a date and time to convert. See <see href="#the-string-to-parse">The string to parse</see> for more information.</param>
-        <param name="provider">An object that supplies culture-specific formatting information about <paramref name="s" />.  See <see href="#parsing-and-cultural-conventions">Parsing and cultural conventions</see></param>
+        <param name="provider">An object that supplies culture-specific formatting information about <paramref name="s" />. See <see href="#parsing-and-cultural-conventions">Parsing and cultural conventions</see></param>
         <param name="styles">A bitwise combination of the enumeration values that indicates the style elements that can be present in <paramref name="s" /> for the parse operation to succeed, and that defines how to interpret the parsed date in relation to the current time zone or the current date. A typical value to specify is <see cref="F:System.Globalization.DateTimeStyles.None" />.</param>
         <summary>Converts the string representation of a date and time to its <see cref="T:System.DateTime" /> equivalent by using culture-specific format information and a formatting style.</summary>
         <returns>An object that is equivalent to the date and time contained in <paramref name="s" />, as specified by <paramref name="provider" /> and <paramref name="styles" />.</returns>

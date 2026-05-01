@@ -223,7 +223,7 @@ The following example uses a random number generator to emulate a data collectio
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The countdown for the `millisecondsDelay` starts during the call to the constructor.  When the `millisecondsDelay` expires, the constructed <xref:System.Threading.CancellationTokenSource> is canceled (if it has not been canceled already).
+ The countdown for the `millisecondsDelay` starts during the call to the constructor. When the `millisecondsDelay` expires, the constructed <xref:System.Threading.CancellationTokenSource> is canceled (if it has not been canceled already).
 
  Subsequent calls to <xref:System.Threading.CancellationTokenSource.CancelAfter*> will reset the `millisecondsDelay` for the constructed <xref:System.Threading.CancellationTokenSource>, if it has not been canceled already.
 
@@ -322,7 +322,7 @@ The following example uses a random number generator to emulate a data collectio
         <param name="delay">The time interval to wait before canceling this <see cref="T:System.Threading.CancellationTokenSource" />.</param>
         <param name="timeProvider">The <see cref="T:System.TimeProvider" /> with which to interpret the <paramref name="delay" />.</param>
         <summary>Initializes a new instance of the <see cref="T:System.Threading.CancellationTokenSource" /> class that will be canceled after the specified <see cref="T:System.TimeSpan" />.</summary>
-        <remarks>The countdown for the delay starts during the call to the constructor.  When the delay expires, the constructed <see cref="T:System.Threading.CancellationTokenSource" /> is canceled, if it has not been canceled already. Subsequent calls to CancelAfter will reset the delay for the constructed <see cref="T:System.Threading.CancellationTokenSource" />, if it has not been canceled already.</remarks>
+        <remarks>The countdown for the delay starts during the call to the constructor. When the delay expires, the constructed <see cref="T:System.Threading.CancellationTokenSource" /> is canceled, if it has not been canceled already. Subsequent calls to CancelAfter will reset the delay for the constructed <see cref="T:System.Threading.CancellationTokenSource" />, if it has not been canceled already.</remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">
           <paramref name="delay" />'s <see cref="P:System.TimeSpan.TotalMilliseconds" /> is less than -1 or greater than <see cref="F:System.UInt32.MaxValue" /> - 1.</exception>
         <exception cref="T:System.ArgumentNullException">
@@ -1174,7 +1174,7 @@ Upon a successful reset, such registrations will no longer be notified for any s
 <xref:System.Threading.CancellationTokenSource>; however, if any component still holds a reference to this
 <xref:System.Threading.CancellationTokenSource> either directly or indirectly via a <xref:System.Threading.CancellationToken>
 handed out from it, polling via their reference will show the current state any time after the reset as
-it's the same instance.  Usage of <xref:System.Threading.CancellationTokenSource.TryReset> concurrently with requesting cancellation is not
+it's the same instance. Usage of <xref:System.Threading.CancellationTokenSource.TryReset> concurrently with requesting cancellation is not
 thread-safe and may result in <xref:System.Threading.CancellationTokenSource.TryReset> returning `true` even if cancellation was already requested. Also, it may result
 in registrations not being invoked as part of the concurrent cancellation request.
 

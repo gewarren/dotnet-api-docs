@@ -519,21 +519,21 @@ The following code example demonstrates calling the `Close` method:
 
  The <xref:System.Security.Authentication.ExtendedProtection.ServiceNameCollection> that is retrieved with the <xref:System.Net.HttpListener.DefaultServiceNames> property is built from the <xref:System.Net.HttpListener.Prefixes> property according to the following rules:
 
-1.  If the hostname is "+", "*", or an IPv4 or IPv6 literal (equivalent to "\*" but restricted to a specific local interface), the following SPN is added:
+1. If the hostname is "+", "*", or an IPv4 or IPv6 literal (equivalent to "\*" but restricted to a specific local interface), the following SPN is added:
 
  `"HTTP/"` plus the fully qualified domain name of the computer.
 
-1.  If the hostname contains no dots (no domains or subdomains), an attempt is made to resolve the fully-qualified domain name using DNS (the same behavior used by <xref:System.Net.HttpWebRequest>). If the fully-qualified domain name can be resolved, the following SPNs are added:
+1. If the hostname contains no dots (no domains or subdomains), an attempt is made to resolve the fully-qualified domain name using DNS (the same behavior used by <xref:System.Net.HttpWebRequest>). If the fully-qualified domain name can be resolved, the following SPNs are added:
 
  `"HTTP/"` plus the hostname (the short name).
 
  `"HTTP/"` plus the fully qualified domain name for the hostname.
 
-1.  If the hostname contains not dots (no domains or subdomains) and a fully-qualified domain name can't be resolved, the following SPN is added:
+1. If the hostname contains not dots (no domains or subdomains) and a fully-qualified domain name can't be resolved, the following SPN is added:
 
  `"HTTP/"` plus the hostname.
 
-1.  If the hostname contains dots (domains or subdomains), the following SPN is added:
+1. If the hostname contains dots (domains or subdomains), the following SPN is added:
 
  `"HTTP/"` plus the hostname.
 

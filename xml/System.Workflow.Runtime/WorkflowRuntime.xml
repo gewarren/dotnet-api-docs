@@ -23,8 +23,8 @@
   </Interfaces>
   <Attributes>
     <Attribute FrameworkAlternate="netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;netframework-4.8.1">
-      <AttributeName Language="C#">[System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")]</AttributeName>
-      <AttributeName Language="F#">[&lt;System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")&gt;]</AttributeName>
+      <AttributeName Language="C#">[System.Obsolete("The System.Workflow.* types are deprecated. Instead, please use the new types from System.Activities.*")]</AttributeName>
+      <AttributeName Language="F#">[&lt;System.Obsolete("The System.Workflow.* types are deprecated. Instead, please use the new types from System.Activities.*")&gt;]</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -116,13 +116,13 @@ The <xref:System.Workflow.Runtime.WorkflowRuntime> is initialized according to t
 
  When the workflow run-time engine is configured by using an application configuration file, it loads and instantiates classes of the types listed in the `Services` section of the configuration file. When the workflow run-time engine constructs these classes it looks for class constructors with the following signatures in the following order:
 
-1.  Service(WorkflowRuntime runtime, NameValueCollection parameters)
+1. Service(WorkflowRuntime runtime, NameValueCollection parameters)
 
-2.  Service(WorkflowRuntime runtime)
+2. Service(WorkflowRuntime runtime)
 
-3.  Service(NameValueCollection parameters)
+3. Service(NameValueCollection parameters)
 
-4.  Service()
+4. Service()
 
  All service classes that are loaded from a configuration file must implement at least one of these constructor signatures.
 
@@ -164,13 +164,13 @@ This constructor provides a mechanism to configure the workflow run-time engine 
 
  The workflow run-time engine loads and instantiates classes of the types contained in <xref:System.Workflow.Runtime.Configuration.WorkflowRuntimeSection.Services*?displayProperty=nameWithType>. When the workflow run-time engine constructs these classes it looks for class constructors with the following signatures in the following order:
 
-1.  Service(WorkflowRuntime runtime, NameValueCollection parameters)
+1. Service(WorkflowRuntime runtime, NameValueCollection parameters)
 
-2.  Service(WorkflowRuntime runtime)
+2. Service(WorkflowRuntime runtime)
 
-3.  Service(NameValueCollection parameters)
+3. Service(NameValueCollection parameters)
 
-4.  Service()
+4. Service()
 
  All service classes that are specified in `settings` must implement at least one of these constructor signatures.
 
@@ -208,10 +208,10 @@ This constructor provides a mechanism to configure the workflow run-time engine 
 
 ## Remarks
 
-You can configure the workflow run-time engine by adding core services. Core services are those that derive from any of the following service base classes: the <xref:System.Workflow.Runtime.Hosting.WorkflowSchedulerService> class, the <xref:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService> class, the <xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService> class, and the <xref:System.Workflow.Runtime.Tracking.TrackingService> class.  Core services can only be added when the workflow run-time engine is not running; that is, when <xref:System.Workflow.Runtime.WorkflowRuntime.IsStarted*> is `false`. The <xref:System.Workflow.Runtime.WorkflowRuntime> can also be used as a storage container for other services that can be used by other workflows or by applications running on a host. If you add a non-core service that derives from the <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService> class after the workflow run-time engine has been started, <xref:System.Workflow.Runtime.WorkflowRuntime.AddService*> calls the <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Start*> method implemented by that service.
+You can configure the workflow run-time engine by adding core services. Core services are those that derive from any of the following service base classes: the <xref:System.Workflow.Runtime.Hosting.WorkflowSchedulerService> class, the <xref:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService> class, the <xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService> class, and the <xref:System.Workflow.Runtime.Tracking.TrackingService> class. Core services can only be added when the workflow run-time engine is not running; that is, when <xref:System.Workflow.Runtime.WorkflowRuntime.IsStarted*> is `false`. The <xref:System.Workflow.Runtime.WorkflowRuntime> can also be used as a storage container for other services that can be used by other workflows or by applications running on a host. If you add a non-core service that derives from the <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService> class after the workflow run-time engine has been started, <xref:System.Workflow.Runtime.WorkflowRuntime.AddService*> calls the <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Start*> method implemented by that service.
 
 > [!NOTE]
->  <xref:System.Workflow.Runtime.WorkflowRuntime.AddService*> enforces the restriction that no two services of the same <xref:System.Type> can be added to the <xref:System.Workflow.Runtime.WorkflowRuntime>. However, you can add multiple services that derive from the same base class.  There can be only one service derived from each of the following service base classes in the <xref:System.Workflow.Runtime.WorkflowRuntime>: the <xref:System.Workflow.Runtime.Hosting.WorkflowSchedulerService> class, the <xref:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService> class, and the <xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService> class.  If you add multiple services derived from one of these classes, for example two persistence services, <xref:System.Workflow.Runtime.WorkflowRuntime.StartRuntime*> throws an <xref:System.InvalidOperationException>.
+>  <xref:System.Workflow.Runtime.WorkflowRuntime.AddService*> enforces the restriction that no two services of the same <xref:System.Type> can be added to the <xref:System.Workflow.Runtime.WorkflowRuntime>. However, you can add multiple services that derive from the same base class. There can be only one service derived from each of the following service base classes in the <xref:System.Workflow.Runtime.WorkflowRuntime>: the <xref:System.Workflow.Runtime.Hosting.WorkflowSchedulerService> class, the <xref:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService> class, and the <xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService> class. If you add multiple services derived from one of these classes, for example two persistence services, <xref:System.Workflow.Runtime.WorkflowRuntime.StartRuntime*> throws an <xref:System.InvalidOperationException>.
 
  ]]></format>
         </remarks>
@@ -853,7 +853,7 @@ You cannot set <xref:System.Workflow.Runtime.WorkflowRuntime.Name*> while the wo
 
 ## Remarks
 
-You cannot remove a core service while the workflow run-time engine is running (<xref:System.Workflow.Runtime.WorkflowRuntime.IsStarted*> is `true`). Core services are services that derive from the <xref:System.Workflow.Runtime.Hosting.WorkflowSchedulerService> class, the <xref:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService> class, the <xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService> class, or the <xref:System.Workflow.Runtime.Tracking.TrackingService> class.  If `service` derives from the <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService> class, <xref:System.Workflow.Runtime.WorkflowRuntime.RemoveService*> calls the <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Stop*> method implemented by `service`.
+You cannot remove a core service while the workflow run-time engine is running (<xref:System.Workflow.Runtime.WorkflowRuntime.IsStarted*> is `true`). Core services are services that derive from the <xref:System.Workflow.Runtime.Hosting.WorkflowSchedulerService> class, the <xref:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService> class, the <xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService> class, or the <xref:System.Workflow.Runtime.Tracking.TrackingService> class. If `service` derives from the <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService> class, <xref:System.Workflow.Runtime.WorkflowRuntime.RemoveService*> calls the <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Stop*> method implemented by `service`.
 
  ]]></format>
         </remarks>
@@ -959,9 +959,9 @@ The <xref:System.Workflow.Runtime.WorkflowRuntime.StartRuntime*> method raises t
 
 ## Remarks
 
-This method verifies that a valid set of core services exists and then starts any services that derive from the <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService> class.  There must be one and only one of each of the following core services: a workflow `CommitWorkBatch` service derived from the <xref:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService> base class and a scheduler service derived from the <xref:System.Workflow.Runtime.Hosting.WorkflowSchedulerService> base class.  If either or both of these core services are missing, the workflow run-time engine supplies the appropriate default service: <xref:System.Workflow.Runtime.Hosting.DefaultWorkflowCommitWorkBatchService> for the workflow `CommitWorkBatch` service and <xref:System.Workflow.Runtime.Hosting.DefaultWorkflowSchedulerService> for the scheduler service. A persistence service is optional, but there can be at most only one persistence service present. After it has validated the service configuration, <xref:System.Workflow.Runtime.WorkflowRuntime.StartRuntime*> calls <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Start*> on all of the services that are derived from the <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService> class.  Finally, the workflow run-time engine sets <xref:System.Workflow.Runtime.WorkflowRuntime.IsStarted*> and raises the <xref:System.Workflow.Runtime.WorkflowRuntime.Started> event.
+This method verifies that a valid set of core services exists and then starts any services that derive from the <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService> class. There must be one and only one of each of the following core services: a workflow `CommitWorkBatch` service derived from the <xref:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService> base class and a scheduler service derived from the <xref:System.Workflow.Runtime.Hosting.WorkflowSchedulerService> base class. If either or both of these core services are missing, the workflow run-time engine supplies the appropriate default service: <xref:System.Workflow.Runtime.Hosting.DefaultWorkflowCommitWorkBatchService> for the workflow `CommitWorkBatch` service and <xref:System.Workflow.Runtime.Hosting.DefaultWorkflowSchedulerService> for the scheduler service. A persistence service is optional, but there can be at most only one persistence service present. After it has validated the service configuration, <xref:System.Workflow.Runtime.WorkflowRuntime.StartRuntime*> calls <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Start*> on all of the services that are derived from the <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService> class. Finally, the workflow run-time engine sets <xref:System.Workflow.Runtime.WorkflowRuntime.IsStarted*> and raises the <xref:System.Workflow.Runtime.WorkflowRuntime.Started> event.
 
- You cannot add or remove core services after the workflow run-time engine is started. Core services are services that derive from the <xref:System.Workflow.Runtime.Hosting.WorkflowSchedulerService> class, the <xref:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService> class, the <xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService> class, or the <xref:System.Workflow.Runtime.Tracking.TrackingService> class.  If you call <xref:System.Workflow.Runtime.WorkflowRuntime.StartRuntime*> while the workflow run-time engine is running, no action is performed.
+ You cannot add or remove core services after the workflow run-time engine is started. Core services are services that derive from the <xref:System.Workflow.Runtime.Hosting.WorkflowSchedulerService> class, the <xref:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService> class, the <xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService> class, or the <xref:System.Workflow.Runtime.Tracking.TrackingService> class. If you call <xref:System.Workflow.Runtime.WorkflowRuntime.StartRuntime*> while the workflow run-time engine is running, no action is performed.
 
  ]]></format>
         </remarks>
@@ -1001,7 +1001,7 @@ This method verifies that a valid set of core services exists and then starts an
 
 ## Remarks
 
-The <xref:System.Workflow.Runtime.WorkflowRuntime.StopRuntime*> method raises the <xref:System.Workflow.Runtime.WorkflowRuntime.Stopped> event after it has invoked the <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Stop*> method implemented by each of its services that derive from the <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService> class.  There is no guarantee about the order in which these workflow run-time engine services are stopped, and some of these services may need to preserve some functionality that is relied on by other services until they too are stopped. Such services can override the <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.OnStopped*?displayProperty=nameWithType> method to perform any residual shutdown logic when the <xref:System.Workflow.Runtime.WorkflowRuntime.Stopped> event is raised.
+The <xref:System.Workflow.Runtime.WorkflowRuntime.StopRuntime*> method raises the <xref:System.Workflow.Runtime.WorkflowRuntime.Stopped> event after it has invoked the <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.Stop*> method implemented by each of its services that derive from the <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService> class. There is no guarantee about the order in which these workflow run-time engine services are stopped, and some of these services may need to preserve some functionality that is relied on by other services until they too are stopped. Such services can override the <xref:System.Workflow.Runtime.Hosting.WorkflowRuntimeService.OnStopped*?displayProperty=nameWithType> method to perform any residual shutdown logic when the <xref:System.Workflow.Runtime.WorkflowRuntime.Stopped> event is raised.
 
  For more information about handling events, see [Handling and raising events](/dotnet/standard/events/).
 

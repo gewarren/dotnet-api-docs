@@ -86,7 +86,7 @@
 |<xref:System.Windows.Documents.EditingCommands.ToggleSuperscript*>|`Ctrl`+`Shift+OemPlus`|
 |<xref:System.Windows.Documents.EditingCommands.ToggleUnderline*>|`Ctrl`+`U`|
 
- Caret movement commands and selection expanding commands share a common set of default key gestures, the general difference being the addition of the <xref:System.Windows.Input.ModifierKeys.Shift> key to differentiate selection commands from caret movement commands.  For example, the <xref:System.Windows.Documents.EditingCommands.MoveLeftByCharacter*> command has a default key gesture of <xref:System.Windows.Input.Key.Left>, and the corresponding <xref:System.Windows.Documents.EditingCommands.SelectLeftByCharacter*> command has a default key gesture of <xref:System.Windows.Input.ModifierKeys.Shift>+<xref:System.Windows.Input.Key.Left>.
+ Caret movement commands and selection expanding commands share a common set of default key gestures, the general difference being the addition of the <xref:System.Windows.Input.ModifierKeys.Shift> key to differentiate selection commands from caret movement commands. For example, the <xref:System.Windows.Documents.EditingCommands.MoveLeftByCharacter*> command has a default key gesture of <xref:System.Windows.Input.Key.Left>, and the corresponding <xref:System.Windows.Documents.EditingCommands.SelectLeftByCharacter*> command has a default key gesture of <xref:System.Windows.Input.ModifierKeys.Shift>+<xref:System.Windows.Input.Key.Left>.
 
  In general, the command definitions provided by the <xref:System.Windows.Documents.EditingCommands> class do not make use of command parameters (the `parameter` parameter expected by the <xref:System.Windows.Input.ICommand.Execute*> method).
 
@@ -96,11 +96,11 @@
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -142,12 +142,12 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.AlignCenter" /> command, which requests that the current paragraph or a selection of paragraphs be centered.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Ctrl" />+<see langword="E" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Ctrl" />+<see langword="E" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This command operates at the <xref:System.Windows.Documents.Paragraph> level.  If this command is invoked on a partial selection of content within a paragraph (including an empty selection where the caret is within a paragraph), the requested effect is applied to the entire paragraph.  If this command is invoked on a selection that spans multiple paragraphs, the effect is applied to the entire contents of each paragraph that participates in the selection.
+ This command operates at the <xref:System.Windows.Documents.Paragraph> level. If this command is invoked on a partial selection of content within a paragraph (including an empty selection where the caret is within a paragraph), the requested effect is applied to the entire paragraph. If this command is invoked on a selection that spans multiple paragraphs, the effect is applied to the entire contents of each paragraph that participates in the selection.
 
  The following figure shows an example of centered content.
 
@@ -166,11 +166,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -207,14 +207,14 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.AlignJustify" /> command, which requests that the current paragraph or a selection of paragraphs be justified.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Ctrl" />+<see langword="J" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Ctrl" />+<see langword="J" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This command operates at the <xref:System.Windows.Documents.Paragraph> level.  If this command is invoked on a partial selection of content within a paragraph (including an empty selection where the caret is within a paragraph), the requested effect is applied to the entire paragraph.  If this command is invoked on a selection that spans multiple paragraphs, the effect is applied to all the paragraphs in the selection.
+ This command operates at the <xref:System.Windows.Documents.Paragraph> level. If this command is invoked on a partial selection of content within a paragraph (including an empty selection where the caret is within a paragraph), the requested effect is applied to the entire paragraph. If this command is invoked on a selection that spans multiple paragraphs, the effect is applied to all the paragraphs in the selection.
 
- When content is justified, the horizontal spacing within each line of content is adjusted so that the justified lines are of equal or near-equal width.  Content is typically justified to create smooth edges on the sides of the content.
+ When content is justified, the horizontal spacing within each line of content is adjusted so that the justified lines are of equal or near-equal width. Content is typically justified to create smooth edges on the sides of the content.
 
  Because it is often shorter than the rest, the last line in a paragraph may remain unjustified after this command is invoked.
 
@@ -241,11 +241,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -282,12 +282,12 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.AlignLeft" /> command, which requests that a selection of content be aligned left.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Ctrl" />+<see langword="L" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Ctrl" />+<see langword="L" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This command operates at the <xref:System.Windows.Documents.Paragraph> level.  If this command is invoked on a partial selection of content within a paragraph (including an empty selection where the caret is within a paragraph), the requested effect is applied to the entire paragraph.  If this command is invoked on a selection that spans multiple paragraphs, the effect is applied to the entire contents of each paragraph that participates in the selection.
+ This command operates at the <xref:System.Windows.Documents.Paragraph> level. If this command is invoked on a partial selection of content within a paragraph (including an empty selection where the caret is within a paragraph), the requested effect is applied to the entire paragraph. If this command is invoked on a selection that spans multiple paragraphs, the effect is applied to the entire contents of each paragraph that participates in the selection.
 
  The following figure shows an example of left-aligned content.
 
@@ -308,11 +308,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -349,12 +349,12 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.AlignRight" /> command, which requests that a selection of content be aligned right.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Ctrl" />+<see langword="R" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Ctrl" />+<see langword="R" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This command operates at the <xref:System.Windows.Documents.Paragraph> level.  If this command is invoked on a partial selection of content within a paragraph (including an empty selection where the caret is within a paragraph), the requested effect is applied to the entire paragraph.  If this command is invoked on a selection that spans multiple paragraphs, the effect is applied to the entire contents of each paragraph that participates in the selection.
+ This command operates at the <xref:System.Windows.Documents.Paragraph> level. If this command is invoked on a partial selection of content within a paragraph (including an empty selection where the caret is within a paragraph), the requested effect is applied to the entire paragraph. If this command is invoked on a selection that spans multiple paragraphs, the effect is applied to the entire contents of each paragraph that participates in the selection.
 
  The following figure shows an example of right-aligned content.
 
@@ -375,11 +375,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -416,14 +416,14 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.Backspace" /> command, which requests that a backspace be entered at the current position or over the current selection.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Backspace" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Backspace" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
  When invoked on an empty selection, this command deletes the character or paragraph separator just before the caret. When invoked on a non-empty selection, this command deletes the selection.
 
- This command retains any formatting from the deleted selection for content immediately inserted at the same location after this command is invoked.  Contrast with the <xref:System.Windows.Documents.EditingCommands.Delete*> command, which does not retain previous formatting.
+ This command retains any formatting from the deleted selection for content immediately inserted at the same location after this command is invoked. Contrast with the <xref:System.Windows.Documents.EditingCommands.Delete*> command, which does not retain previous formatting.
 
  There is not necessarily an actual implementation that responds to this command on any given object; in many cases the implementation that responds to a command is the responsibility of the application writer.
 
@@ -440,11 +440,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -478,7 +478,7 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.CorrectSpellingError" /> command, which requests that any misspelled word at the current position be corrected.</summary>
-        <value>The requested command.  This command has no default key gesture.</value>
+        <value>The requested command. This command has no default key gesture.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
@@ -522,7 +522,7 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.DecreaseFontSize" /> command, which requests that the font size for the current selection be decreased by 1 point.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Ctrl" />+<see langword="OemOpenBrackets" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Ctrl" />+<see langword="OemOpenBrackets" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
@@ -544,11 +544,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -583,7 +583,7 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.DecreaseIndentation" /> command, which requests that indentation for the current paragraph be decreased by one tab stop.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Ctrl" />+<see langword="Shift" />+<see langword="T" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Ctrl" />+<see langword="Shift" />+<see langword="T" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
@@ -606,11 +606,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -645,12 +645,12 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.Delete" /> command, which requests that the current selection be deleted.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Delete" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Delete" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This command discards any formatting from the deleted selection.  Contrast with the <xref:System.Windows.Documents.EditingCommands.Backspace*> command, which retains any formatting from the deleted selection for content immediately inserted at the same location after this command is invoked.
+ This command discards any formatting from the deleted selection. Contrast with the <xref:System.Windows.Documents.EditingCommands.Backspace*> command, which retains any formatting from the deleted selection for content immediately inserted at the same location after this command is invoked.
 
  There is not necessarily an actual implementation that responds to this command on any given object; in many cases the implementation that responds to a command is the responsibility of the application writer.
 
@@ -667,11 +667,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -705,7 +705,7 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.DeleteNextWord" /> command, which requests that the next word (relative to a current position) be deleted.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Ctrl" />+<see langword="Delete" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Ctrl" />+<see langword="Delete" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
@@ -727,11 +727,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -770,7 +770,7 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.DeletePreviousWord" /> command, which requests that the previous word (relative to a current position) be deleted.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Ctrl" />+<see langword="Backspace" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Ctrl" />+<see langword="Backspace" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
@@ -792,11 +792,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -835,7 +835,7 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.EnterLineBreak" /> command, which requests that a line break be inserted at the current position or over the current selection.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Shift" />+<see langword="Enter" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Shift" />+<see langword="Enter" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
@@ -857,11 +857,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -896,7 +896,7 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.EnterParagraphBreak" /> command, which requests that a paragraph break be inserted at the current position or over the current selection.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Enter" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Enter" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
@@ -921,11 +921,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -960,7 +960,7 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.IgnoreSpellingError" /> command, which requests that any instances of misspelled words at the current position or in the current selection be ignored.</summary>
-        <value>The requested command.  This command has no default key gesture.</value>
+        <value>The requested command. This command has no default key gesture.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
@@ -1004,7 +1004,7 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.IncreaseFontSize" /> command, which requests that the font size for the current selection be increased by 1 point.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Ctrl" />+<see langword="OemCloseBrackets" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Ctrl" />+<see langword="OemCloseBrackets" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
@@ -1026,11 +1026,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -1065,7 +1065,7 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.IncreaseIndentation" /> command, which requests that indentation for the current paragraph be increased by one tab stop.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Ctrl" />+<see langword="T" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Ctrl" />+<see langword="T" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
@@ -1088,11 +1088,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -1127,7 +1127,7 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.MoveDownByLine" /> command, which requests that the caret move down by one line.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Down" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Down" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
@@ -1147,11 +1147,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -1189,7 +1189,7 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.MoveDownByPage" /> command, which requests that the caret move down by one page.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="PageDown" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="PageDown" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
@@ -1209,11 +1209,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -1251,7 +1251,7 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.MoveDownByParagraph" /> command, which requests that the caret move down by one paragraph.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Ctrl" />+<see langword="Down" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Ctrl" />+<see langword="Down" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
@@ -1275,11 +1275,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -1317,7 +1317,7 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.MoveLeftByCharacter" /> command, which requests that the caret move one character left.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Left" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Left" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
@@ -1337,11 +1337,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -1378,12 +1378,12 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.MoveLeftByWord" /> command, which requests that the caret move one word left.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Ctrl" />+<see langword="Left" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Ctrl" />+<see langword="Left" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the caret is within a word, this command moves the caret to the beginning of that word.  Otherwise, this command moves the caret to the beginning of the previous word.
+ If the caret is within a word, this command moves the caret to the beginning of that word. Otherwise, this command moves the caret to the beginning of the previous word.
 
  There is not necessarily an actual implementation that responds to this command on any given object; in many cases the implementation that responds to a command is the responsibility of the application writer.
 
@@ -1400,11 +1400,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -1441,7 +1441,7 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.MoveRightByCharacter" /> command, which requests that the caret move one character right.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Right" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Right" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
@@ -1461,11 +1461,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -1502,12 +1502,12 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.MoveRightByWord" /> command, which requests that the caret move right by one word.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Ctrl" />+<see langword="Right" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Ctrl" />+<see langword="Right" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the caret is within a word, this command moves the caret to the end of that word.  Otherwise, this command moves the caret to the beginning of the next word.
+ If the caret is within a word, this command moves the caret to the end of that word. Otherwise, this command moves the caret to the beginning of the next word.
 
  There is not necessarily an actual implementation that responds to this command on any given object; in many cases the implementation that responds to a command is the responsibility of the application writer.
 
@@ -1524,11 +1524,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -1565,12 +1565,12 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.MoveToDocumentEnd" /> command, which requests that the caret move to the very end of content.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Ctrl" />+<see langword="End" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Ctrl" />+<see langword="End" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A *text container* is the element that forms the ultimate border for the content at hand.  <xref:System.Windows.Controls.TextBlock> and <xref:System.Windows.Documents.FlowDocument> are examples of text containers.  The content collectively contained within a text container is referred to as a *document*.
+ A *text container* is the element that forms the ultimate border for the content at hand.  <xref:System.Windows.Controls.TextBlock> and <xref:System.Windows.Documents.FlowDocument> are examples of text containers. The content collectively contained within a text container is referred to as a *document*.
 
  There is not necessarily an actual implementation that responds to this command on any given object; in many cases the implementation that responds to a command is the responsibility of the application writer.
 
@@ -1587,11 +1587,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -1627,12 +1627,12 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.MoveToDocumentStart" /> command, which requests that the caret move to the very beginning of content.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Ctrl" />+<see langword="Home" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Ctrl" />+<see langword="Home" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A *text container* is the element that forms the ultimate border for the content at hand.  <xref:System.Windows.Controls.TextBlock> and <xref:System.Windows.Documents.FlowDocument> are examples of text containers.  The content collectively contained within a text container is referred to as a *document*.
+ A *text container* is the element that forms the ultimate border for the content at hand.  <xref:System.Windows.Controls.TextBlock> and <xref:System.Windows.Documents.FlowDocument> are examples of text containers. The content collectively contained within a text container is referred to as a *document*.
 
  There is not necessarily an actual implementation that responds to this command on any given object; in many cases the implementation that responds to a command is the responsibility of the application writer.
 
@@ -1649,11 +1649,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -1689,7 +1689,7 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.MoveToLineEnd" /> command, which requests that the caret move to the end of the current line.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="End" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="End" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
@@ -1709,11 +1709,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -1749,7 +1749,7 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.MoveToLineStart" /> command, which requests that the caret move to the beginning of the current line.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Home" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Home" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
@@ -1769,11 +1769,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -1809,7 +1809,7 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.MoveUpByLine" /> command, which requests that the caret move up by one line.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Up" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Up" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
@@ -1829,11 +1829,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -1871,7 +1871,7 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.MoveUpByPage" /> command, which requests that the caret move up by one page.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="PageUp" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="PageUp" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
@@ -1891,11 +1891,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -1933,7 +1933,7 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.MoveUpByParagraph" /> command, which requests that the caret move up by one paragraph.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Ctrl" />+<see langword="Up" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Ctrl" />+<see langword="Up" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
@@ -1957,11 +1957,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -1999,7 +1999,7 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.SelectDownByLine" /> command, which requests that the current selection be expanded down by one line.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Shift" />+<see langword="Down" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Shift" />+<see langword="Down" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
@@ -2019,11 +2019,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -2061,7 +2061,7 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.SelectDownByPage" /> command, which requests that the current selection be expanded down by one page.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Shift" />+<see langword="PageDown" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Shift" />+<see langword="PageDown" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
@@ -2081,11 +2081,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -2123,12 +2123,12 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.SelectDownByParagraph" /> command, which requests that the current selection be expanded down by one paragraph.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Ctrl" />+<see langword="Shift" />+<see langword="Down" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Ctrl" />+<see langword="Shift" />+<see langword="Down" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This command expands the selection to the beginning of the next paragraph.  Otherwise, this command expands the selection to the end of the current paragraph.  The expanded selection includes the paragraph break that marks the end of the paragraph.
+ This command expands the selection to the beginning of the next paragraph. Otherwise, this command expands the selection to the end of the current paragraph. The expanded selection includes the paragraph break that marks the end of the paragraph.
 
  There is not necessarily an actual implementation that responds to this command on any given object; in many cases the implementation that responds to a command is the responsibility of the application writer.
 
@@ -2145,11 +2145,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -2187,7 +2187,7 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.SelectLeftByCharacter" /> command, which requests that the current selection be expanded left by one character.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Shift" />+<see langword="Left" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Shift" />+<see langword="Left" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
@@ -2207,11 +2207,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -2248,14 +2248,14 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.SelectLeftByWord" /> command, which requests that the current selection be expanded left by one word.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Ctrl" />+<see langword="Shift" />+<see langword="Left" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Ctrl" />+<see langword="Shift" />+<see langword="Left" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the caret is within a word, this command expands the selection to the beginning of that word.  Otherwise, this command expands the selection to the beginning of the previous word.
+ If the caret is within a word, this command expands the selection to the beginning of that word. Otherwise, this command expands the selection to the beginning of the previous word.
 
- The expanded selection does not include the word delimiter.  Contrast with <xref:System.Windows.Documents.EditingCommands.SelectRightByWord*>, which does include the word delimiter in the expanded selection.
+ The expanded selection does not include the word delimiter. Contrast with <xref:System.Windows.Documents.EditingCommands.SelectRightByWord*>, which does include the word delimiter in the expanded selection.
 
  There is not necessarily an actual implementation that responds to this command on any given object; in many cases the implementation that responds to a command is the responsibility of the application writer.
 
@@ -2272,11 +2272,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -2313,7 +2313,7 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.SelectRightByCharacter" /> command, which requests that the current selection be expanded right by one character.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Shift" />+<see langword="Right" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Shift" />+<see langword="Right" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
@@ -2333,11 +2333,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -2374,14 +2374,14 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.SelectRightByWord" /> command, which requests that the current selection be expanded right by one word.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Ctrl" />+<see langword="Shift" />+<see langword="Right" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Ctrl" />+<see langword="Shift" />+<see langword="Right" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the caret is within a word, this command expands the selection to the end of that word.  Otherwise, this command expands the selection to the end of the next word.
+ If the caret is within a word, this command expands the selection to the end of that word. Otherwise, this command expands the selection to the end of the next word.
 
- The expanded selection includes the word delimiter.  Contrast with <xref:System.Windows.Documents.EditingCommands.SelectLeftByWord*> which does not include the word delimiter in the expanded selection.
+ The expanded selection includes the word delimiter. Contrast with <xref:System.Windows.Documents.EditingCommands.SelectLeftByWord*> which does not include the word delimiter in the expanded selection.
 
  There is not necessarily an actual implementation that responds to this command on any given object; in many cases the implementation that responds to a command is the responsibility of the application writer.
 
@@ -2398,11 +2398,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -2439,12 +2439,12 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.SelectToDocumentEnd" /> command, which requests that the current selection be expanded to the very end of content.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Ctrl" />+<see langword="Shift" />+<see langword="End" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Ctrl" />+<see langword="Shift" />+<see langword="End" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A *text container* is the element that forms the ultimate border for the content at hand.  <xref:System.Windows.Controls.TextBlock> and <xref:System.Windows.Documents.FlowDocument> are examples of text containers.  The content collectively contained within a text container is referred to as a *document*.
+ A *text container* is the element that forms the ultimate border for the content at hand.  <xref:System.Windows.Controls.TextBlock> and <xref:System.Windows.Documents.FlowDocument> are examples of text containers. The content collectively contained within a text container is referred to as a *document*.
 
  There is not necessarily an actual implementation that responds to this command on any given object; in many cases the implementation that responds to a command is the responsibility of the application writer.
 
@@ -2461,11 +2461,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -2501,12 +2501,12 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.SelectToDocumentStart" /> command, which requests that the current selection be expanded to the very beginning of content.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Ctrl" />+<see langword="Shift" />+<see langword="Home" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Ctrl" />+<see langword="Shift" />+<see langword="Home" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A *text container* is the element that forms the ultimate border for the content at hand.  <xref:System.Windows.Controls.TextBlock> and <xref:System.Windows.Documents.FlowDocument> are examples of text containers.  The content collectively contained within a text container is referred to as a *document*.
+ A *text container* is the element that forms the ultimate border for the content at hand.  <xref:System.Windows.Controls.TextBlock> and <xref:System.Windows.Documents.FlowDocument> are examples of text containers. The content collectively contained within a text container is referred to as a *document*.
 
  There is not necessarily an actual implementation that responds to this command on any given object; in many cases the implementation that responds to a command is the responsibility of the application writer.
 
@@ -2523,11 +2523,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -2563,7 +2563,7 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.SelectToLineEnd" /> command, which requests that the current selection be expanded to the end of the current line.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Shift" />+<see langword="End" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Shift" />+<see langword="End" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
@@ -2583,11 +2583,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -2623,7 +2623,7 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.SelectToLineStart" /> command, which requests that the current selection be expanded to the beginning of the current line.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Shift" />+<see langword="Home" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Shift" />+<see langword="Home" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
@@ -2643,11 +2643,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -2683,7 +2683,7 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.SelectUpByLine" /> command, which requests that the current selection be expanded up by one line.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Shift" />+<see langword="Up" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Shift" />+<see langword="Up" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
@@ -2703,11 +2703,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -2745,7 +2745,7 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.SelectUpByPage" /> command, which requests that the current selection be expanded  up by one page.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Shift" />+<see langword="PageUp" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Shift" />+<see langword="PageUp" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
@@ -2765,11 +2765,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -2807,12 +2807,12 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.SelectUpByParagraph" /> command, which requests that the current selection be expanded up by one paragraph.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Ctrl" />+<see langword="Shift" />+<see langword="Up" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Ctrl" />+<see langword="Shift" />+<see langword="Up" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the caret is at the beginning of a paragraph, this command expands the selection to the beginning of the previous paragraph.  Otherwise, this command expands the selection to the beginning of the current paragraph.
+ If the caret is at the beginning of a paragraph, this command expands the selection to the beginning of the previous paragraph. Otherwise, this command expands the selection to the beginning of the current paragraph.
 
  There is not necessarily an actual implementation that responds to this command on any given object; in many cases the implementation that responds to a command is the responsibility of the application writer.
 
@@ -2829,11 +2829,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -2871,7 +2871,7 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.TabBackward" /> command.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Shift" />+<see langword="Tab" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Shift" />+<see langword="Tab" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
@@ -2893,11 +2893,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
 ```csharp
 RichTextBox rTB = new RichTextBox();
@@ -2941,12 +2941,12 @@ EditingCommands.ToggleInsert.Execute(Nothing, rTB)
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.TabForward" /> command.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Tab" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Tab" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The behavior for this command depends on the current selection. If the selection is non-empty, or if the selection is empty and the current caret position is at the beginning of a paragraph, this command is equivalent to <xref:System.Windows.Documents.EditingCommands.IncreaseIndentation*>. If the caret is in a table cell (represented by the <xref:System.Windows.Documents.TableCell> element), this command moves the caret to the next cell. If the caret is in the last cell of a table, this command causes a new row to be appended to the table, with the caret positioned in the first cell of the new row.  Otherwise, a tab character is inserted in current position.
+ The behavior for this command depends on the current selection. If the selection is non-empty, or if the selection is empty and the current caret position is at the beginning of a paragraph, this command is equivalent to <xref:System.Windows.Documents.EditingCommands.IncreaseIndentation*>. If the caret is in a table cell (represented by the <xref:System.Windows.Documents.TableCell> element), this command moves the caret to the next cell. If the caret is in the last cell of a table, this command causes a new row to be appended to the table, with the caret positioned in the first cell of the new row. Otherwise, a tab character is inserted in current position.
 
  There is not necessarily an actual implementation that responds to this command on any given object; in many cases the implementation that responds to a command is the responsibility of the application writer.
 
@@ -2963,11 +2963,11 @@ EditingCommands.ToggleInsert.Execute(Nothing, rTB)
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
 ```csharp
 RichTextBox rTB = new RichTextBox();
@@ -3011,12 +3011,12 @@ EditingCommands.ToggleInsert.Execute(Nothing, rTB)
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.ToggleBold" /> command, which requests that <see cref="T:System.Windows.Documents.Bold" /> formatting be toggled on the current selection.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Ctrl" />+<see langword="B" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Ctrl" />+<see langword="B" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the <xref:System.Windows.FontWeight> for the current selection is in the range from <xref:System.Windows.FontWeights.Thin*> to <xref:System.Windows.FontWeights.SemiBold*>, <xref:System.Windows.FontWeights.Bold*> is applied to the current selection.  Otherwise, <xref:System.Windows.FontWeights.Normal*> is applied.  For a comparative list of <xref:System.Windows.FontWeight> values, see <xref:System.Windows.FontWeights>.
+ If the <xref:System.Windows.FontWeight> for the current selection is in the range from <xref:System.Windows.FontWeights.Thin*> to <xref:System.Windows.FontWeights.SemiBold*>, <xref:System.Windows.FontWeights.Bold*> is applied to the current selection. Otherwise, <xref:System.Windows.FontWeights.Normal*> is applied. For a comparative list of <xref:System.Windows.FontWeight> values, see <xref:System.Windows.FontWeights>.
 
  When the selection is empty and the caret is within a word, the selection is expanded to include the entire word.
 
@@ -3035,11 +3035,11 @@ EditingCommands.ToggleInsert.Execute(Nothing, rTB)
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -3075,12 +3075,12 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.ToggleBullets" /> command, which requests that unordered list (also referred to as bulleted list) formatting be toggled on the current selection.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Ctrl" />+<see langword="Shift" />+<see langword="L" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Ctrl" />+<see langword="Shift" />+<see langword="L" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This command operates at the <xref:System.Windows.Documents.Paragraph> level.  If this command is invoked on a partial selection of content within a paragraph (including an empty selection where the caret is within a paragraph), the requested effect is applied to the entire paragraph.  If this command is invoked on a selection that spans multiple paragraphs, the effect is applied to the entire contents of each paragraph that participates in the selection.
+ This command operates at the <xref:System.Windows.Documents.Paragraph> level. If this command is invoked on a partial selection of content within a paragraph (including an empty selection where the caret is within a paragraph), the requested effect is applied to the entire paragraph. If this command is invoked on a selection that spans multiple paragraphs, the effect is applied to the entire contents of each paragraph that participates in the selection.
 
  There is not necessarily an actual implementation that responds to this command on any given object; in many cases the implementation that responds to a command is the responsibility of the application writer.
 
@@ -3097,11 +3097,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -3136,7 +3136,7 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.ToggleInsert" /> command, which toggles the typing mode between Insert and Overtype.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Insert" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Insert" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
@@ -3156,11 +3156,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -3194,12 +3194,12 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.ToggleItalic" /> command, which requests that <see cref="T:System.Windows.Documents.Italic" /> formatting be toggled on the current selection.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Ctrl" />+<see langword="I" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Ctrl" />+<see langword="I" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If the <xref:System.Windows.FontStyle> for the current selection is <xref:System.Windows.FontStyles.Normal*>, <xref:System.Windows.FontStyles.Italic*> is applied to the current selection.  Otherwise, <xref:System.Windows.FontStyles.Normal*> is applied.
+ If the <xref:System.Windows.FontStyle> for the current selection is <xref:System.Windows.FontStyles.Normal*>, <xref:System.Windows.FontStyles.Italic*> is applied to the current selection. Otherwise, <xref:System.Windows.FontStyles.Normal*> is applied.
 
  When the selection is empty and the caret is within a word, the selection is expanded to include the entire word.
 
@@ -3218,11 +3218,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -3258,12 +3258,12 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.ToggleNumbering" /> command, which requests that ordered list (also referred to as numbered list) formatting be toggled on the current selection.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Ctrl" />+<see langword="Shift" />+<see langword="N" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Ctrl" />+<see langword="Shift" />+<see langword="N" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This command operates at the <xref:System.Windows.Documents.Paragraph> level.  If this command is invoked on a partial selection of content within a paragraph (including an empty selection where the caret is within a paragraph), the requested effect is applied to the entire paragraph.  If this command is invoked on a selection that spans multiple paragraphs, the effect is applied to the entire contents of each paragraph that participates in the selection.
+ This command operates at the <xref:System.Windows.Documents.Paragraph> level. If this command is invoked on a partial selection of content within a paragraph (including an empty selection where the caret is within a paragraph), the requested effect is applied to the entire paragraph. If this command is invoked on a selection that spans multiple paragraphs, the effect is applied to the entire contents of each paragraph that participates in the selection.
 
  There is not necessarily an actual implementation that responds to this command on any given object; in many cases the implementation that responds to a command is the responsibility of the application writer.
 
@@ -3280,11 +3280,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -3319,7 +3319,7 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.ToggleSubscript" /> command, which requests that subscript formatting be toggled on the current selection.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Ctrl" />+<see langword="OemPlus" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Ctrl" />+<see langword="OemPlus" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
@@ -3337,11 +3337,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -3376,7 +3376,7 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.ToggleSuperscript" /> command, which requests that superscript formatting be toggled on the current selection.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Ctrl" />+<see langword="Shift" />+<see langword="OemPlus" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Ctrl" />+<see langword="Shift" />+<see langword="OemPlus" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
@@ -3394,11 +3394,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::
@@ -3433,7 +3433,7 @@ The following example demonstrates how to invoke an editing command on an object
       </ReturnValue>
       <Docs>
         <summary>Represents the <see cref="P:System.Windows.Documents.EditingCommands.ToggleUnderline" /> command, which requests that <see cref="T:System.Windows.Documents.Underline" /> formatting be toggled on the current selection.</summary>
-        <value>The requested command.  The default key gesture for this command is <see langword="Ctrl" />+<see langword="U" />.</value>
+        <value>The requested command. The default key gesture for this command is <see langword="Ctrl" />+<see langword="U" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
@@ -3455,11 +3455,11 @@ The following example demonstrates how to invoke an editing command on an object
 
 The following example demonstrates how to invoke an editing command on an object that supports the command.
 
- For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target.  Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
+ For this example, a <xref:System.Windows.Controls.RichTextBox> serves as the command target. Note that <xref:System.Windows.Controls.RichTextBox> implements the <xref:System.Windows.IInputElement> interface (inherited from <xref:System.Windows.FrameworkElement>), and that it includes native support for many editing commands.
 
- The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter.  Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
+ The first argument for the <xref:System.Windows.Input.RoutedCommand.Execute*> method is a command parameter. Most editing commands ignore the command parameter; in general, this parameter should be `null` for editing commands.
 
- The second argument specifies the object to which the command will be routed.  This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command.  Generally, a command is ignored when invoked on an object that does not handle the command.
+ The second argument specifies the object to which the command will be routed. This object must implement the <xref:System.Windows.IInputElement> interface, and should include a handler for the specified command. Generally, a command is ignored when invoked on an object that does not handle the command.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Controls/RichTextBox/Overview/Window1.xaml.cs" id="Snippet_editingcommands_invoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Controls/RichTextBox/.ctor/window1.xaml.vb" id="Snippet_editingcommands_invoke":::

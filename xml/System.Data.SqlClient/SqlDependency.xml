@@ -346,13 +346,13 @@
 
 - Multiple calls with different connection strings are valid as long as:
 
-    -   Each connection string specifies a different database, or
+    - Each connection string specifies a different database, or
 
-    -   Each connection string specifies a different user, or
+    - Each connection string specifies a different user, or
 
-    -   The calls come from different application domains.
+    - The calls come from different application domains.
 
- You can make the <xref:System.Data.SqlClient.SqlDependency> work correctly for applications that use multiple threads to represent different user credentials without giving the dbo role to the group, because different users can subscribe and listen (using <xref:System.Web.Caching.SqlCacheDependency> or <xref:System.Data.SqlClient.SqlCommand>) to a notification queue created by an administrator. When the relevant application domain starts, call Start with the (Windows) credentials of a user that has permission to initialize a service/queue (the CREATE QUEUE and CREATE SERVICE permissions for the database). Ensure that Start is only called once per AppDomain, otherwise an ambiguity exception is raised.  The user thread must have permission to subscribe to the notification (the SUBSCRIBE QUERY NOTIFICATIONS permission for the database). <xref:System.Data.SqlClient.SqlDependency> will associate the subscription request of a non-administrator user to the service/queue created by the administrator.
+ You can make the <xref:System.Data.SqlClient.SqlDependency> work correctly for applications that use multiple threads to represent different user credentials without giving the dbo role to the group, because different users can subscribe and listen (using <xref:System.Web.Caching.SqlCacheDependency> or <xref:System.Data.SqlClient.SqlCommand>) to a notification queue created by an administrator. When the relevant application domain starts, call Start with the (Windows) credentials of a user that has permission to initialize a service/queue (the CREATE QUEUE and CREATE SERVICE permissions for the database). Ensure that Start is only called once per AppDomain, otherwise an ambiguity exception is raised. The user thread must have permission to subscribe to the notification (the SUBSCRIBE QUERY NOTIFICATIONS permission for the database). <xref:System.Data.SqlClient.SqlDependency> will associate the subscription request of a non-administrator user to the service/queue created by the administrator.
 
  ]]></format>
         </remarks>

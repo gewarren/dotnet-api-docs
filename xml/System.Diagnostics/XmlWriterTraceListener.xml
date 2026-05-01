@@ -68,7 +68,7 @@ You can create an <xref:System.Diagnostics.XmlWriterTraceListener> in your code.
 > If an attempt is made to write to a file that is in use or unavailable, the file name is automatically prefixed by a GUID.
 
 > [!NOTE]
-> Listener methods are intended to be called by methods of the <xref:System.Diagnostics.Debug>, <xref:System.Diagnostics.Trace>, and <xref:System.Diagnostics.TraceSource> classes.  The listener methods are not intended to be called directly from application code. The <xref:System.Diagnostics.XmlWriterTraceListener> listener is primarily intended for use by the <xref:System.Diagnostics.TraceSource> class. The <xref:System.Diagnostics.XmlWriterTraceListener.Write*> and <xref:System.Diagnostics.XmlWriterTraceListener.WriteLine*> methods can be called by the <xref:System.Diagnostics.Trace> and <xref:System.Diagnostics.Debug> classes, and default values are provided for the XML elements that <xref:System.Diagnostics.Trace> and <xref:System.Diagnostics.Debug> do not supply values for.
+> Listener methods are intended to be called by methods of the <xref:System.Diagnostics.Debug>, <xref:System.Diagnostics.Trace>, and <xref:System.Diagnostics.TraceSource> classes. The listener methods are not intended to be called directly from application code. The <xref:System.Diagnostics.XmlWriterTraceListener> listener is primarily intended for use by the <xref:System.Diagnostics.TraceSource> class. The <xref:System.Diagnostics.XmlWriterTraceListener.Write*> and <xref:System.Diagnostics.XmlWriterTraceListener.WriteLine*> methods can be called by the <xref:System.Diagnostics.Trace> and <xref:System.Diagnostics.Debug> classes, and default values are provided for the XML elements that <xref:System.Diagnostics.Trace> and <xref:System.Diagnostics.Debug> do not supply values for.
 
  The following table describes the elements and attributes of the XML output.
 
@@ -576,7 +576,7 @@ The following code example shows the use of the <xref:System.Diagnostics.XmlWrit
  The `eventCache`, `source`, `eventType`, and `id` parameters are used in the header and footer of the trace. The `id` parameter is converted to an unsigned integer before writing, so a negative `id` value is written as a large positive integer. The `data` parameter is written as a `DataItem` node in the `TraceData` element. The `ToString` method of the data object is used to convert the object to a string.
 
 > [!IMPORTANT]
-> This method is not intended to be called directly by application code.  It is called by methods of the <xref:System.Diagnostics.Debug>, <xref:System.Diagnostics.Trace>, and <xref:System.Diagnostics.TraceSource> classes to write trace data.
+> This method is not intended to be called directly by application code. It is called by methods of the <xref:System.Diagnostics.Debug>, <xref:System.Diagnostics.Trace>, and <xref:System.Diagnostics.TraceSource> classes to write trace data.
 
  ]]></format>
         </remarks>
@@ -646,7 +646,7 @@ The following code example shows the use of the <xref:System.Diagnostics.XmlWrit
  The `eventCache`, `source`, `eventType`, and `id` parameters are used in the header and footer of the trace. The `id` parameter is converted to an unsigned integer before writing, so a negative `id` value is written as a large positive integer. The objects in the `data` parameter array are written as `DataItem` nodes in the `TraceData` element. The `ToString` method of each data object is used to convert the object to a string.
 
 > [!IMPORTANT]
-> This method is not intended to be called directly by application code.  It is called by methods of the <xref:System.Diagnostics.Debug>, <xref:System.Diagnostics.Trace>, and <xref:System.Diagnostics.TraceSource> classes to write trace data.
+> This method is not intended to be called directly by application code. It is called by methods of the <xref:System.Diagnostics.Debug>, <xref:System.Diagnostics.Trace>, and <xref:System.Diagnostics.TraceSource> classes to write trace data.
 
  ]]></format>
         </remarks>
@@ -718,7 +718,7 @@ The following code example shows the use of the <xref:System.Diagnostics.XmlWrit
  The `eventCache`, `source`, `eventType`, and `id` parameters are used in the header and footer of the trace. The `id` parameter is converted to an unsigned integer before writing, so a negative `id` value is written as a large positive integer. The `message` parameter is written as the `Message` element.
 
 > [!IMPORTANT]
-> This method is not intended to be called directly by application code.  It is called by methods of the <xref:System.Diagnostics.Debug>, <xref:System.Diagnostics.Trace>, and <xref:System.Diagnostics.TraceSource> classes to write trace data.
+> This method is not intended to be called directly by application code. It is called by methods of the <xref:System.Diagnostics.Debug>, <xref:System.Diagnostics.Trace>, and <xref:System.Diagnostics.TraceSource> classes to write trace data.
 
  ]]></format>
         </remarks>
@@ -798,7 +798,7 @@ The following code example shows the use of the <xref:System.Diagnostics.XmlWrit
  The `eventCache`, `source`, `eventType`, and `id` parameters are used in the header and footer of the trace. The `id` parameter is converted to an unsigned integer before writing, so a negative `id` value is written as a large positive integer. The <xref:System.String.Format(System.String,System.Object[])?displayProperty=nameWithType> method is called, passing in the `format` string and `args` array as parameters, to format the `args` object array as the `Message` element.
 
 > [!IMPORTANT]
-> This method is not intended to be called directly by application code.  It is called by methods of the <xref:System.Diagnostics.Debug>, <xref:System.Diagnostics.Trace>, and <xref:System.Diagnostics.TraceSource> classes to write trace data.
+> This method is not intended to be called directly by application code. It is called by methods of the <xref:System.Diagnostics.Debug>, <xref:System.Diagnostics.Trace>, and <xref:System.Diagnostics.TraceSource> classes to write trace data.
 
  ]]></format>
         </remarks>
@@ -861,7 +861,7 @@ The following code example shows the use of the <xref:System.Diagnostics.XmlWrit
  The <xref:System.Diagnostics.XmlWriterTraceListener.TraceTransfer*> method is used for the correlation of related traces. The `eventCache`, `source`, `id`, and `relatedActivityId` parameters are used in the header and footer of the trace. The `id` parameter is converted to an unsigned integer before writing, so a negative `id` value is written as a large positive integer. The `message` parameter is written as the `Message` element. The <xref:System.Guid.ToString(System.String)?displayProperty=nameWithType> method is called to convert the `relatedActivityId`value to a "B" formatted string, which appears in the header. The `SubTypeName` element in the footer identifies the trace event type as a <xref:System.Diagnostics.TraceEventType.Transfer>.
 
 > [!IMPORTANT]
-> The <xref:System.Diagnostics.XmlWriterTraceListener.TraceTransfer*> method is not intended to be called by application code.  It is intended to be called by a <xref:System.Diagnostics.TraceSource> object to emit the trace information for its <xref:System.Diagnostics.TraceSource.TraceTransfer*> method.
+> The <xref:System.Diagnostics.XmlWriterTraceListener.TraceTransfer*> method is not intended to be called by application code. It is intended to be called by a <xref:System.Diagnostics.TraceSource> object to emit the trace information for its <xref:System.Diagnostics.TraceSource.TraceTransfer*> method.
 
  ]]></format>
         </remarks>

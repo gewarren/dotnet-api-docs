@@ -53,7 +53,7 @@
 
  A <xref:System.Windows.Documents.DocumentStructures.StoryFragment> represents all or a portion of a story. It can never span more than one page, but it can occupy the whole of a page or share a page with other fragments. If a story is on more than one page, each part of it on each page is a separate fragment. Although stories can have discontinuous sets of fragments, no fragment can itself be discontinuous.
 
- Only a <xref:System.Windows.Documents.DocumentStructures.StoryFragments> element can be a parent of a <xref:System.Windows.Documents.DocumentStructures.StoryFragment>.  The location of the <xref:System.Windows.Documents.DocumentStructures.StoryBreak> elements within a <xref:System.Windows.Documents.DocumentStructures.StoryFragment> indicates if the story is contained in multiple fragments, and if the additional fragments either precede or follow the current fragment.
+ Only a <xref:System.Windows.Documents.DocumentStructures.StoryFragments> element can be a parent of a <xref:System.Windows.Documents.DocumentStructures.StoryFragment>. The location of the <xref:System.Windows.Documents.DocumentStructures.StoryBreak> elements within a <xref:System.Windows.Documents.DocumentStructures.StoryFragment> indicates if the story is contained in multiple fragments, and if the additional fragments either precede or follow the current fragment.
 
  When a <xref:System.Windows.Documents.DocumentStructures.StoryFragment> ends in the middle of some structural element; say a `<TableRowGroupStructure>`, then XPS document-producing applications must insert an appropriate end tag for the element (in this case `</TableRowGroupStructure>`) before the `</StoryFragment>` tag, even though the structure is being continued in a later fragment. (This is necessary to ensure that the element tree within the <xref:System.Windows.Documents.DocumentStructures.StoryFragment> is valid XML.) The fragment that continues the story must begin with an opening tag for the interrupted structure. The entire tree of interrupted structures must be treated the same way (with one exception, discussed below): End tags must be added for every unmatched start tag above the point of interruption.
 
@@ -147,7 +147,7 @@
 </StoryFragment>
 ```
 
- An application that reads the document might need to merge this content. Consider, for example, an XPS viewer with a **Copy Whole Story to Clipboard** button; or an **XPS for the Blind** application that passed stories to a voice synthesizer.  Some applications that read the document may need to merge a subset of the fragments of a story. For example, a feature that copies a whole paragraph to the clipboard by triple-clicking it would need to do a merge whenever the paragraph spanned a page break, because such a paragraph would be split between two <xref:System.Windows.Documents.DocumentStructures.StoryFragment>s.
+ An application that reads the document might need to merge this content. Consider, for example, an XPS viewer with a **Copy Whole Story to Clipboard** button; or an **XPS for the Blind** application that passed stories to a voice synthesizer. Some applications that read the document may need to merge a subset of the fragments of a story. For example, a feature that copies a whole paragraph to the clipboard by triple-clicking it would need to do a merge whenever the paragraph spanned a page break, because such a paragraph would be split between two <xref:System.Windows.Documents.DocumentStructures.StoryFragment>s.
 
  **To merge use this algorithm:**
 

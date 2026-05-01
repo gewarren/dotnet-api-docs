@@ -390,11 +390,11 @@ Call this method to send a WS-Federation sign-out request message to the specifi
 
  The method does the following:
 
-1.  Creates a WS-Federation sign-out request message by using the specified parameters.
+1. Creates a WS-Federation sign-out request message by using the specified parameters.
 
-2.  Calls the <xref:System.IdentityModel.Services.SessionAuthenticationModule.DeleteSessionTokenCookie*?displayProperty=nameWithType> method on the SAM to delete the session cookie.
+2. Calls the <xref:System.IdentityModel.Services.SessionAuthenticationModule.DeleteSessionTokenCookie*?displayProperty=nameWithType> method on the SAM to delete the session cookie.
 
-3.  Redirects to the STS using the sign-out request message from the first step.
+3. Redirects to the STS using the sign-out request message from the first step.
 
  None of the sign-out events: <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SigningOut>, <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignedOut>, or <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOutError> are raised by this method. To delete the session without sending a sign-out request message to the STS, call one of the overloaded <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut*> methods.
 
@@ -746,13 +746,13 @@ This method is called from the <xref:System.IdentityModel.Services.WSFederationA
 
  The default implementation validates the reply URL contained in the message (the <xref:System.IdentityModel.Services.SignOutCleanupRequestMessage.Reply?displayProperty=nameWithType> property) against the address of the security token service (STS) that is specified by the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer> property. The following conditions must be true for the reply URL to be valid:
 
-1.  The reply URL is an absolute URL.
+1. The reply URL is an absolute URL.
 
-2.  The reply URL has the same scheme as the issuer.
+2. The reply URL has the same scheme as the issuer.
 
-3.  The reply URL has the same port as the issuer.
+3. The reply URL has the same port as the issuer.
 
-4.  Either the reply URL has the same host as the issuer or the reply URL specifies a sub-domain of the issuer.
+4. Either the reply URL has the same host as the issuer or the reply URL specifies a sub-domain of the issuer.
 
  If all of these conditions are true, the reply URL (Reply) is returned; otherwise, the URL specified by the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer> property is returned.
 
@@ -1055,24 +1055,24 @@ The <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnAuthe
 
  The method performs the following:
 
-1.  Calls the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.CanReadSignInResponse(System.Web.HttpRequestBase)> method to determine whether a WS-Federation sign-in response message ("wsignin1.0") has been received. If the response is a WS-Federation sign-out clean-up request ("wsignoutcleanup1.0"), <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.CanReadSignInResponse(System.Web.HttpRequestBase)> processes the message, terminates the request and redirects the client according to the WS-Federation parameters in the request. If the message is not a sign-in response or a sign-out clean-up request, the module just returns; otherwise it performs the following steps to process the sign-in response.
+1. Calls the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.CanReadSignInResponse(System.Web.HttpRequestBase)> method to determine whether a WS-Federation sign-in response message ("wsignin1.0") has been received. If the response is a WS-Federation sign-out clean-up request ("wsignoutcleanup1.0"), <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.CanReadSignInResponse(System.Web.HttpRequestBase)> processes the message, terminates the request and redirects the client according to the WS-Federation parameters in the request. If the message is not a sign-in response or a sign-out clean-up request, the module just returns; otherwise it performs the following steps to process the sign-in response.
 
-2.  Calls the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.GetSecurityToken(System.Web.HttpRequestBase)> method to deserialize a <xref:System.IdentityModel.Tokens.SecurityToken> object from the request.
+2. Calls the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.GetSecurityToken(System.Web.HttpRequestBase)> method to deserialize a <xref:System.IdentityModel.Tokens.SecurityToken> object from the request.
 
-3.  Raises the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SecurityTokenReceived> event. You can cancel further processing or modify the received security token in a handler for this event. A handler is typically used to modify the <xref:System.IdentityModel.Tokens.SecurityToken.ValidFrom?displayProperty=nameWithType> or <xref:System.IdentityModel.Tokens.SecurityToken.ValidTo?displayProperty=nameWithType> properties.
+3. Raises the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SecurityTokenReceived> event. You can cancel further processing or modify the received security token in a handler for this event. A handler is typically used to modify the <xref:System.IdentityModel.Tokens.SecurityToken.ValidFrom?displayProperty=nameWithType> or <xref:System.IdentityModel.Tokens.SecurityToken.ValidTo?displayProperty=nameWithType> properties.
 
-4.  Validates the security token and creates a <xref:System.Security.Claims.ClaimsPrincipal> object from the claims in the security token.
+4. Validates the security token and creates a <xref:System.Security.Claims.ClaimsPrincipal> object from the claims in the security token.
 
-5.  Raises the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SecurityTokenValidated> event. You can cancel further processing or modify the claims principal in a handler for this event.
+5. Raises the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SecurityTokenValidated> event. You can cancel further processing or modify the claims principal in a handler for this event.
 
-6.  Uses the configured session authentication module (SAM) to create a <xref:System.IdentityModel.Tokens.SessionSecurityToken> object. (The configured SAM is the <xref:System.IdentityModel.Services.SessionAuthenticationModule> object returned by the <xref:System.IdentityModel.Services.FederatedAuthentication.SessionAuthenticationModule?displayProperty=nameWithType> property.) The session token is created by using the claims principal returned in step 5. The <xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidFrom?displayProperty=nameWithType> and <xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidTo?displayProperty=nameWithType> properties are set by using the <xref:System.IdentityModel.Tokens.SecurityToken.ValidFrom> and <xref:System.IdentityModel.Tokens.SecurityToken.ValidTo> properties of the <xref:System.IdentityModel.Tokens.SecurityToken> returned in step 3 and are validated against the current time and the token lifetime specified by either the <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.DefaultTokenLifetime> or the <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.TokenLifetime> property of the <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> object in the token handler collection being used by WSFAM. The token lifetime on the session token handler can be specified in configuration through the [&lt;sessionTokenRequirement&gt;](/dotnet/framework/configure-apps/file-schema/windows-identity-foundation/sessiontokenrequirement) element. Note: The <xref:System.IdentityModel.Services.CookieHandler.PersistentSessionLifetime> property on the cookie handler configured for the SAM is not used.
+6. Uses the configured session authentication module (SAM) to create a <xref:System.IdentityModel.Tokens.SessionSecurityToken> object. (The configured SAM is the <xref:System.IdentityModel.Services.SessionAuthenticationModule> object returned by the <xref:System.IdentityModel.Services.FederatedAuthentication.SessionAuthenticationModule?displayProperty=nameWithType> property.) The session token is created by using the claims principal returned in step 5. The <xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidFrom?displayProperty=nameWithType> and <xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidTo?displayProperty=nameWithType> properties are set by using the <xref:System.IdentityModel.Tokens.SecurityToken.ValidFrom> and <xref:System.IdentityModel.Tokens.SecurityToken.ValidTo> properties of the <xref:System.IdentityModel.Tokens.SecurityToken> returned in step 3 and are validated against the current time and the token lifetime specified by either the <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.DefaultTokenLifetime> or the <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.TokenLifetime> property of the <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> object in the token handler collection being used by WSFAM. The token lifetime on the session token handler can be specified in configuration through the [&lt;sessionTokenRequirement&gt;](/dotnet/framework/configure-apps/file-schema/windows-identity-foundation/sessiontokenrequirement) element. Note: The <xref:System.IdentityModel.Services.CookieHandler.PersistentSessionLifetime> property on the cookie handler configured for the SAM is not used.
 
-7.  Calls the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SetPrincipalAndWriteSessionToken*> method with the session token to write the session cookie. The <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SetPrincipalAndWriteSessionToken*> method first raises the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SessionSecurityTokenCreated> event. You can change properties on the session token or change whether the cookie should be persisted in a handler for this event. After the event is raised, the method then writes the cookie using the SAM.
+7. Calls the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SetPrincipalAndWriteSessionToken*> method with the session token to write the session cookie. The <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SetPrincipalAndWriteSessionToken*> method first raises the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SessionSecurityTokenCreated> event. You can change properties on the session token or change whether the cookie should be persisted in a handler for this event. After the event is raised, the method then writes the cookie using the SAM.
 
     > [!NOTE]
     >  The <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> set in configuration is not used to write the cookie.
 
-8.  Calls the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnSignedIn*> method to raise the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignedIn> event.
+8. Calls the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnSignedIn*> method to raise the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignedIn> event.
 
 9. Calls the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.GetReturnUrlFromResponse*> method to get the RP page to which to redirect the client. By default, this method reads the return URL from the wctx parameter in the sign-in response. For more information about how WSFAM stores the return URL, see the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.CreateSignInRequest*> method.
 
@@ -1594,11 +1594,11 @@ The <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Redirec
 
  The method performs the following:
 
-1.  Invokes the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.VerifyProperties*> method to ensure that a valid sign-in request can be issued by the module.
+1. Invokes the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.VerifyProperties*> method to ensure that a valid sign-in request can be issued by the module.
 
-2.  Invokes the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.CreateSignInRequest*> method to create the sign-in request from the properties configured on the module.
+2. Invokes the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.CreateSignInRequest*> method to create the sign-in request from the properties configured on the module.
 
-3.  Invokes the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnRedirectingToIdentityProvider*> method to raise the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider> event. You can cancel the redirect or modify the sign-in request message in the event handler for this event.
+3. Invokes the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnRedirectingToIdentityProvider*> method to raise the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider> event. You can cancel the redirect or modify the sign-in request message in the event handler for this event.
 
  ]]></format>
         </remarks>
@@ -1905,9 +1905,9 @@ You can add an event handler to modify the session token before it is used to se
 
 Called from the request processing pipeline implemented in the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnAuthenticateRequest*> event-handler delegate. This method does the following:
 
-1.  Invokes the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnSessionSecurityTokenCreated*> method to raise the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SessionSecurityTokenCreated> event. You can use this event to modify the session token before it is used to set the thread principal and written to the session cookie and to specify whether the session cookie should be written.
+1. Invokes the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnSessionSecurityTokenCreated*> method to raise the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SessionSecurityTokenCreated> event. You can use this event to modify the session token before it is used to set the thread principal and written to the session cookie and to specify whether the session cookie should be written.
 
-2.  Invokes the <xref:System.IdentityModel.Services.SessionAuthenticationModule.AuthenticateSessionSecurityToken*> method on the configured session authentication module (<xref:System.IdentityModel.Services.SessionAuthenticationModule>) to set the thread principal and optionally write the session cookie.
+2. Invokes the <xref:System.IdentityModel.Services.SessionAuthenticationModule.AuthenticateSessionSecurityToken*> method on the configured session authentication module (<xref:System.IdentityModel.Services.SessionAuthenticationModule>) to set the thread principal and optionally write the session cookie.
 
  ]]></format>
         </remarks>
@@ -2223,13 +2223,13 @@ Deletes the current session and redirects the browser back to the URL specified 
 
 This method performs the actual work of deleting the current session and raising the appropriate sign-out events. The method does the following:
 
-1.  Invokes the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnSigningOut*> method to raise the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SigningOut> event. An event handler can provide any necessary processing before the session is deleted. The <xref:System.IdentityModel.Services.SigningOutEventArgs.IsIPInitiated?displayProperty=nameWithType> property is set according to the `isIPRequest` parameter.
+1. Invokes the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnSigningOut*> method to raise the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SigningOut> event. An event handler can provide any necessary processing before the session is deleted. The <xref:System.IdentityModel.Services.SigningOutEventArgs.IsIPInitiated?displayProperty=nameWithType> property is set according to the `isIPRequest` parameter.
 
-2.  Calls the <xref:System.IdentityModel.Services.SessionAuthenticationModule.DeleteSessionTokenCookie*?displayProperty=nameWithType> method on the current session authentication manager to delete the session cookie.
+2. Calls the <xref:System.IdentityModel.Services.SessionAuthenticationModule.DeleteSessionTokenCookie*?displayProperty=nameWithType> method on the current session authentication manager to delete the session cookie.
 
      Invokes the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnSignedOut*> method to raise the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignedOut> event.
 
-3.  If an error occurs during sign-out processing, invokes the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnSignOutError*> method to raise the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOutError> event. An event handler can cancel the processing and prevent an exception from being returned to the caller of <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut*>
+3. If an error occurs during sign-out processing, invokes the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnSignOutError*> method to raise the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOutError> event. An event handler can cancel the processing and prevent an exception from being returned to the caller of <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut*>
 
  You can call the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut*?displayProperty=nameWithType> method with the `isIPRequest` parameter set `false` to sign out of a session without performing a redirect. The method is ultimately called by all of the other overloaded <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut*> methods (with the `isIPRequest` parameter set to `false`) to perform the sign out handling. The method is called from the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.CanReadSignInResponse(System.Web.HttpRequestBase,System.Boolean)?displayProperty=nameWithType> method with the `isIPRequest` parameter set `true` to sign out of the session when it is processing a WS-Federation sign-out clean-up message ("wsignoutcleanup1.0").
 

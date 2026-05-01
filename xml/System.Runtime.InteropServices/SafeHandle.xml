@@ -169,7 +169,7 @@ Optionally specify `-Fault` to intentionally attempt to leak the handle by abort
         <Parameter Name="ownsHandle" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="invalidHandleValue">The value of an invalid handle (usually 0 or -1).  Your implementation of <see cref="P:System.Runtime.InteropServices.SafeHandle.IsInvalid" /> should return <see langword="true" /> for this value.</param>
+        <param name="invalidHandleValue">The value of an invalid handle (usually 0 or -1). Your implementation of <see cref="P:System.Runtime.InteropServices.SafeHandle.IsInvalid" /> should return <see langword="true" /> for this value.</param>
         <param name="ownsHandle">
           <see langword="true" /> to reliably let <see cref="T:System.Runtime.InteropServices.SafeHandle" /> release the handle during the finalization phase; otherwise, <see langword="false" /> (not recommended).</param>
         <summary>Initializes a new instance of the <see cref="T:System.Runtime.InteropServices.SafeHandle" /> class with the specified invalid handle value.</summary>
@@ -320,7 +320,7 @@ Optionally specify `-Fault` to intentionally attempt to leak the handle by abort
 ## Remarks
  The <xref:System.Runtime.InteropServices.SafeHandle.DangerousAddRef*> method prevents the common language runtime from reclaiming memory used by a handle (which occurs when the runtime calls the <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle*> method). You can use this method to manually increment the reference count on a <xref:System.Runtime.InteropServices.SafeHandle> instance. <xref:System.Runtime.InteropServices.SafeHandle.DangerousAddRef*> returns a Boolean value using a `ref` parameter (`success`) that indicates whether the reference count was incremented successfully. This allows your program logic to back out in case of failure. You should set `success` to `false` before calling <xref:System.Runtime.InteropServices.SafeHandle.DangerousAddRef*>. If `success` is `true`, avoid resource leaks by matching the call to <xref:System.Runtime.InteropServices.SafeHandle.DangerousAddRef*> with a corresponding call to <xref:System.Runtime.InteropServices.SafeHandle.DangerousRelease*>.
 
-If this call is successful, it will set the `ref bool success` parameter to `true` and return successfully.  If this call is unsuccessful, it will throw an exception and leave the `ref bool success` parameter unmodified.
+If this call is successful, it will set the `ref bool success` parameter to `true` and return successfully. If this call is unsuccessful, it will throw an exception and leave the `ref bool success` parameter unmodified.
 
  ]]></format>
         </remarks>
@@ -952,7 +952,7 @@ The following example checks if a file was opened successfully. This code exampl
 
  Additionally, for simple cleanup (for example, calling the Windows API `CloseHandle` on a file handle) you can check the return value for the single platform invoke call. For complex cleanup, you may have a lot of program logic and many method calls, some of which might fail. You must ensure that your program logic has fallback code for each of those cases.
 
- If <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle*> returns `false` for any reason, it generates a [releaseHandleFailed](/dotnet/framework/debug-trace-profile/releasehandlefailed-mda) Managed Debugging Assistant when running on .NET Framework.  This helps you detect cases where your attempt to release resources fails.
+ If <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle*> returns `false` for any reason, it generates a [releaseHandleFailed](/dotnet/framework/debug-trace-profile/releasehandlefailed-mda) Managed Debugging Assistant when running on .NET Framework. This helps you detect cases where your attempt to release resources fails.
 
 ## Examples
 

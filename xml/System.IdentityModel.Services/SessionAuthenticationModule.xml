@@ -382,17 +382,17 @@ In reference mode, the <xref:System.IdentityModel.Tokens.SessionSecurityToken> i
 
 This method does the following:
 
-1.  Invokes the <xref:System.IdentityModel.Services.SessionAuthenticationModule.TryReadSessionTokenFromCookie*> method to read a <xref:System.IdentityModel.Tokens.SessionSecurityToken> from the session cookie, if one is present.
+1. Invokes the <xref:System.IdentityModel.Services.SessionAuthenticationModule.TryReadSessionTokenFromCookie*> method to read a <xref:System.IdentityModel.Tokens.SessionSecurityToken> from the session cookie, if one is present.
 
-2.  If a session security token cannot be read (most likely because a session has not been established), return.
+2. If a session security token cannot be read (most likely because a session has not been established), return.
 
-3.  Invokes the <xref:System.IdentityModel.Services.SessionAuthenticationModule.OnSessionSecurityTokenReceived*> method to raise the <xref:System.IdentityModel.Services.SessionAuthenticationModule.SessionSecurityTokenReceived> event. This provides an opportunity for the token read from the cookie to be modified or for the request to be canceled. The handler can also specify that the token should be reissued, by setting the <xref:System.IdentityModel.Services.SessionSecurityTokenReceivedEventArgs.ReissueCookie?displayProperty=nameWithType> property.
+3. Invokes the <xref:System.IdentityModel.Services.SessionAuthenticationModule.OnSessionSecurityTokenReceived*> method to raise the <xref:System.IdentityModel.Services.SessionAuthenticationModule.SessionSecurityTokenReceived> event. This provides an opportunity for the token read from the cookie to be modified or for the request to be canceled. The handler can also specify that the token should be reissued, by setting the <xref:System.IdentityModel.Services.SessionSecurityTokenReceivedEventArgs.ReissueCookie?displayProperty=nameWithType> property.
 
-4.  If the token is to be reissued, removes it from the cache and invokes the <xref:System.IdentityModel.Services.SessionAuthenticationModule.OnSessionSecurityTokenCreated*> method to raise the <xref:System.IdentityModel.Services.SessionAuthenticationModule.SessionSecurityTokenCreated> event. This provides opportunity for the token to again be modified. The reissue behavior can also be modified by setting the <xref:System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs.WriteSessionCookie?displayProperty=nameWithType> property in the event handler.
+4. If the token is to be reissued, removes it from the cache and invokes the <xref:System.IdentityModel.Services.SessionAuthenticationModule.OnSessionSecurityTokenCreated*> method to raise the <xref:System.IdentityModel.Services.SessionAuthenticationModule.SessionSecurityTokenCreated> event. This provides opportunity for the token to again be modified. The reissue behavior can also be modified by setting the <xref:System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs.WriteSessionCookie?displayProperty=nameWithType> property in the event handler.
 
-5.  Invokes the <xref:System.IdentityModel.Services.SessionAuthenticationModule.AuthenticateSessionSecurityToken*> method to authenticate the user. If successful, this has the effect of setting the <xref:System.Threading.Thread.CurrentPrincipal?displayProperty=nameWithType> property to the principal that is contained in the <xref:System.IdentityModel.Tokens.SessionSecurityToken.ClaimsPrincipal?displayProperty=nameWithType> property of the incoming token.
+5. Invokes the <xref:System.IdentityModel.Services.SessionAuthenticationModule.AuthenticateSessionSecurityToken*> method to authenticate the user. If successful, this has the effect of setting the <xref:System.Threading.Thread.CurrentPrincipal?displayProperty=nameWithType> property to the principal that is contained in the <xref:System.IdentityModel.Tokens.SessionSecurityToken.ClaimsPrincipal?displayProperty=nameWithType> property of the incoming token.
 
-6.  If the session has expired, invokes the <xref:System.IdentityModel.Services.SessionAuthenticationModule.SignOut*> method.
+6. If the session has expired, invokes the <xref:System.IdentityModel.Services.SessionAuthenticationModule.SignOut*> method.
 
  The <xref:System.IdentityModel.Services.SessionAuthenticationModule.OnAuthenticateRequest*> method is added to the handlers for the <xref:System.Web.HttpApplication.AuthenticateRequest?displayProperty=nameWithType> event in the <xref:System.IdentityModel.Services.SessionAuthenticationModule.InitializeModule*> method.
 

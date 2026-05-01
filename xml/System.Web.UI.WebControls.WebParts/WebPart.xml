@@ -1216,20 +1216,20 @@ The following code example demonstrates the use of the <xref:System.Web.UI.WebCo
 
 ## Examples
 
-The following code example demonstrates the rendering issue that affects the height of <xref:System.Web.UI.WebControls.WebParts.WebPart> controls in a <xref:System.Web.UI.WebControls.WebParts.WebPartZone>.  To demonstrate this issue, you must run the page in Internet Explorer.
+The following code example demonstrates the rendering issue that affects the height of <xref:System.Web.UI.WebControls.WebParts.WebPart> controls in a <xref:System.Web.UI.WebControls.WebParts.WebPartZone>. To demonstrate this issue, you must run the page in Internet Explorer.
 
- Note that the zone's orientation is set to horizontal, and that the height of the zone and the controls within it is not set explicitly.  The result is that in the <xref:System.Web.UI.WebControls.WebParts.WebPartZone>, the shorter <xref:System.Web.UI.WebControls.WebParts.WebPart> control does not stretch to the height of the zone upon rendering.  However, if you remove the `DOCTYPE` declaration from the page and run the page again, the issue does not occur, because now the browser will not render the page in standards mode.
+ Note that the zone's orientation is set to horizontal, and that the height of the zone and the controls within it is not set explicitly. The result is that in the <xref:System.Web.UI.WebControls.WebParts.WebPartZone>, the shorter <xref:System.Web.UI.WebControls.WebParts.WebPart> control does not stretch to the height of the zone upon rendering. However, if you remove the `DOCTYPE` declaration from the page and run the page again, the issue does not occur, because now the browser will not render the page in standards mode.
 
  :::code language="aspx-csharp" source="~/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPart_Height/CS/Defaultcs.aspx" id="Snippet1":::
  :::code language="aspx-vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPart_Height/VB/Defaultvb.aspx" id="Snippet1":::
 
- To see how the workaround (described in the Remarks section) works, try adding a `height` attribute to the `<asp:webpartzone>` element, while keeping the `DOCTYPE` declaration in the page.  You can use the following code to add the attribute to the tag:
+ To see how the workaround (described in the Remarks section) works, try adding a `height` attribute to the `<asp:webpartzone>` element, while keeping the `DOCTYPE` declaration in the page. You can use the following code to add the attribute to the tag:
 
  `Height="200px"`
 
  Run the page, and now both <xref:System.Web.UI.WebControls.WebParts.WebPart> controls stretch to fill the explicitly declared height of the zone.
 
- You can also experiment with this code example to observe the height-related rendering issue in the other scenario, which occurs when the zone's <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase.LayoutOrientation*> is set to <xref:System.Web.UI.WebControls.Orientation.Vertical>.  Remove the existing `LayoutOrientation` attribute and its value from the `<asp:webpartzone>` element, which will cause the zone's orientation to revert to the default vertical orientation.  Set the height attribute on the `<asp:webpartzone>` element to 200 pixels, as you did above, and run the page.  The zone's height looks too large, and the controls are not sized proportionately to the zone's height.  Now remove the height attribute and run the page again.  The controls now render relative to the height of the zone.
+ You can also experiment with this code example to observe the height-related rendering issue in the other scenario, which occurs when the zone's <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase.LayoutOrientation*> is set to <xref:System.Web.UI.WebControls.Orientation.Vertical>. Remove the existing `LayoutOrientation` attribute and its value from the `<asp:webpartzone>` element, which will cause the zone's orientation to revert to the default vertical orientation. Set the height attribute on the `<asp:webpartzone>` element to 200 pixels, as you did above, and run the page. The zone's height looks too large, and the controls are not sized proportionately to the zone's height. Now remove the height attribute and run the page again. The controls now render relative to the height of the zone.
 
  ]]></format>
         </remarks>

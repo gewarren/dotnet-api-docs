@@ -619,17 +619,17 @@ You can specify the settings for the <xref:System.Runtime.Caching.MemoryCache.Ca
 
  The disposed cache instance is shut down using the following steps:
 
-1.  The state of the cache is set to indicate that the cache is disposed. Any attempt to call public caching methods that change the state of the cache, such as methods that add, remove, or retrieve cache entries, might cause unexpected behavior. For example, if you call the <xref:System.Runtime.Caching.MemoryCache.Set*> method after the cache is disposed, a no-op error occurs. If you attempt to retrieve items from the cache, the <xref:System.Runtime.Caching.MemoryCache.Get*> method will always return `null`.
+1. The state of the cache is set to indicate that the cache is disposed. Any attempt to call public caching methods that change the state of the cache, such as methods that add, remove, or retrieve cache entries, might cause unexpected behavior. For example, if you call the <xref:System.Runtime.Caching.MemoryCache.Set*> method after the cache is disposed, a no-op error occurs. If you attempt to retrieve items from the cache, the <xref:System.Runtime.Caching.MemoryCache.Get*> method will always return `null`.
 
-2.  Performance counter information is no longer raised from the current cache instance.
+2. Performance counter information is no longer raised from the current cache instance.
 
-3.  All references to cached objects held by the current cache instance are released.
+3. All references to cached objects held by the current cache instance are released.
 
-4.  Any <xref:System.Runtime.Caching.CacheEntryChangeMonitor> instances that are currently monitoring entries in the cache are notified.
+4. Any <xref:System.Runtime.Caching.CacheEntryChangeMonitor> instances that are currently monitoring entries in the cache are notified.
 
-5.  Callback objects that provide notification of changes for those monitors are called.
+5. Callback objects that provide notification of changes for those monitors are called.
 
-6.  Any <xref:System.Web.Caching.CacheItemRemovedCallback> instances that are registered with entries in the cache are called. The removal reason that is passed to the callbacks is <xref:System.Runtime.Caching.CacheEntryRemovedReason.CacheSpecificEviction>.
+6. Any <xref:System.Web.Caching.CacheItemRemovedCallback> instances that are registered with entries in the cache are called. The removal reason that is passed to the callbacks is <xref:System.Runtime.Caching.CacheEntryRemovedReason.CacheSpecificEviction>.
 
  ]]></format>
         </remarks>
@@ -1174,7 +1174,7 @@ You can specify the settings for the <xref:System.Runtime.Caching.MemoryCache.Ca
  -or-
 
  <paramref name="value" /> is <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">-   An invalid combination of arguments for the cache entry was passed. This occurs if the following expiration details are set on the policy object for the cache entry:
+        <exception cref="T:System.ArgumentException">- An invalid combination of arguments for the cache entry was passed. This occurs if the following expiration details are set on the policy object for the cache entry:
 
 - If both the absolute and sliding expiration values on <see cref="T:System.Runtime.Caching.CacheItemPolicy" /> object are set to values other than the defaults of <see cref="F:System.Runtime.Caching.ObjectCache.InfiniteAbsoluteExpiration" /> and <see cref="F:System.Runtime.Caching.ObjectCache.NoSlidingExpiration" />. This occurs because the <see cref="T:System.Runtime.Caching.MemoryCache" /> class does not support expiring entries based on both an absolute and a sliding expiration. Only one expiration setting can be explicitly set when you use the <see cref="T:System.Runtime.Caching.MemoryCache" /> class. The other setting must be set to <see cref="F:System.Runtime.Caching.ObjectCache.InfiniteAbsoluteExpiration" /> or <see cref="F:System.Runtime.Caching.ObjectCache.NoSlidingExpiration" />.
 
@@ -1237,7 +1237,7 @@ You can specify the settings for the <xref:System.Runtime.Caching.MemoryCache.Ca
  -or-
 
  The callback reference that was passed to the helper method in the <see cref="P:System.Runtime.Caching.CacheItemPolicy.UpdateCallback" /> property is <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">-   An invalid combination of arguments for the cache entry exists. This occurs if the following expiration details are set on the policy object for the cache entry:
+        <exception cref="T:System.ArgumentException">- An invalid combination of arguments for the cache entry exists. This occurs if the following expiration details are set on the policy object for the cache entry:
 
 - If both the absolute and sliding expiration values on <see cref="T:System.Runtime.Caching.CacheItemPolicy" /> object are set to values other than the defaults of <see cref="F:System.Runtime.Caching.ObjectCache.InfiniteAbsoluteExpiration" /> and <see cref="F:System.Runtime.Caching.ObjectCache.NoSlidingExpiration" />. This is because the <see cref="T:System.Runtime.Caching.MemoryCache" /> class does not support expiring entries based on both an absolute and a sliding expiration. Only one expiration setting can be explicitly set when you use the <see cref="T:System.Runtime.Caching.MemoryCache" /> class. The other setting must be set to <see cref="F:System.Runtime.Caching.ObjectCache.InfiniteAbsoluteExpiration" /> or <see cref="F:System.Runtime.Caching.ObjectCache.NoSlidingExpiration" />.
 

@@ -1621,7 +1621,7 @@ For each generation, the garbage collector sets a threshold for allocations into
 
 - You monitor for the approach of a full garbage collection and, when you are notified that one is approaching, you reduce live data size (for example, by releasing some cache entries). As a result, when the garbage collection occurs, it is able to reclaim more memory.
 
-- You monitor for the completion of a full garbage collection so that you can collect some statistics.  For example, you might want to measure the size of the heap at GC completion so that you know the size of live data. (After a full GC, the heap is at its smallest size.)
+- You monitor for the completion of a full garbage collection so that you can collect some statistics. For example, you might want to measure the size of the heap at GC completion so that you know the size of live data. (After a full GC, the heap is at its smallest size.)
 
  For more information about what represents a full garbage collection, see [Garbage Collection Notifications](/dotnet/standard/garbage-collection/notifications).
 
@@ -2018,7 +2018,7 @@ The following example demonstrates how to use the <xref:System.GC.SuppressFinali
 
 ## Remarks
 
-The <xref:System.GC.TryStartNoGCRegion(System.Int64)> method attempts to place the garbage collector in no GC region latency mode, which disallows garbage collection while an app executes a critical region of code.  If the runtime is unable to initially allocate the requested amount of memory, the garbage collector performs a full blocking garbage collection in an attempt to free additional memory. The garbage collector enters no GC region latency mode if it is able to allocate the required amount of memory, which in this case is actually 2 * `totalSize` bytes (it attempts to allocate `totalSize` bytes for the small object heap and `totalSize` bytes for the large object heap).
+The <xref:System.GC.TryStartNoGCRegion(System.Int64)> method attempts to place the garbage collector in no GC region latency mode, which disallows garbage collection while an app executes a critical region of code. If the runtime is unable to initially allocate the requested amount of memory, the garbage collector performs a full blocking garbage collection in an attempt to free additional memory. The garbage collector enters no GC region latency mode if it is able to allocate the required amount of memory, which in this case is actually 2 * `totalSize` bytes (it attempts to allocate `totalSize` bytes for the small object heap and `totalSize` bytes for the large object heap).
 
  `totalSize` must be large enough to handle all memory allocations that occur in the critical path. This includes allocations by the app, as well as allocations that the runtime makes on the app's behalf.
 
@@ -2093,7 +2093,7 @@ The <xref:System.GC.TryStartNoGCRegion(System.Int64)> method attempts to place t
 
 ## Remarks
 
-The <xref:System.GC.TryStartNoGCRegion(System.Int64,System.Boolean)> method attempts to place the garbage collector in no GC region latency mode, which disallows garbage collection while an app executes a critical region of code.  If the runtime is unable to initially allocate the requested amount of memory and the `disallowFullBlockingGC` argument is `false`, the garbage collector performs a full blocking garbage collection in an attempt to free additional memory; otherwise, the allocation fails, and the method returns `false`. The garbage collector enters no GC region latency mode if it is able to allocate the required amount of memory, which in this case is actually 2 * `totalSize` (it attempts to allocate `totalSize` for the small object heap and `totalSize` for the large object heap).
+The <xref:System.GC.TryStartNoGCRegion(System.Int64,System.Boolean)> method attempts to place the garbage collector in no GC region latency mode, which disallows garbage collection while an app executes a critical region of code. If the runtime is unable to initially allocate the requested amount of memory and the `disallowFullBlockingGC` argument is `false`, the garbage collector performs a full blocking garbage collection in an attempt to free additional memory; otherwise, the allocation fails, and the method returns `false`. The garbage collector enters no GC region latency mode if it is able to allocate the required amount of memory, which in this case is actually 2 * `totalSize` (it attempts to allocate `totalSize` for the small object heap and `totalSize` for the large object heap).
 
  `totalSize` must be large enough to handle all memory allocations that occur in the critical path. This includes allocations by the app, as well as allocations that the runtime makes on the app's behalf.
 
@@ -2169,7 +2169,7 @@ The <xref:System.GC.TryStartNoGCRegion(System.Int64,System.Boolean)> method atte
 
 ## Remarks
 
-The <xref:System.GC.TryStartNoGCRegion(System.Int64,System.Int64)> method attempts to place the garbage collector in no GC region latency mode, which disallows garbage collection while an app executes a critical region of code.  If the runtime is unable to initially allocate the requested amount of memory, the garbage collector performs a full blocking garbage collection in an attempt to free additional memory. The garbage collector enters no GC region latency mode if it is able to allocate `lohSize` for the LOH and `totalSize` - `lohSize` for the small object heap (SOH).
+The <xref:System.GC.TryStartNoGCRegion(System.Int64,System.Int64)> method attempts to place the garbage collector in no GC region latency mode, which disallows garbage collection while an app executes a critical region of code. If the runtime is unable to initially allocate the requested amount of memory, the garbage collector performs a full blocking garbage collection in an attempt to free additional memory. The garbage collector enters no GC region latency mode if it is able to allocate `lohSize` for the LOH and `totalSize` - `lohSize` for the small object heap (SOH).
 
  `lohSize` must be large enough to handle all memory allocations that occur in the critical path for the LOH, and `totalSize` - `lohSize` must be large enough to handle all memory allocations that occur in the critical path for the SOH. This includes allocations by the app, as well as allocations that the runtime makes on the app's behalf.
 
@@ -2246,7 +2246,7 @@ The <xref:System.GC.TryStartNoGCRegion(System.Int64,System.Int64)> method attemp
 
 ## Remarks
 
-The <xref:System.GC.TryStartNoGCRegion(System.Int64,System.Int64,System.Boolean)> method attempts to place the garbage collector in no GC region latency mode, which disallows garbage collection while an app executes a critical region of code.  If the runtime is unable to initially allocate the requested amount of memory and the `disallowFullBlockingGC` argument is `false`, the garbage collector performs a full blocking garbage collection in an attempt to free additional memory; otherwise, the allocation fails, and the method returns `false`. The garbage collector enters no GC region latency mode if it is able to allocate `lohSize` for the LOH and `totalSize` - `lohSize` for the small object heap (SOH).
+The <xref:System.GC.TryStartNoGCRegion(System.Int64,System.Int64,System.Boolean)> method attempts to place the garbage collector in no GC region latency mode, which disallows garbage collection while an app executes a critical region of code. If the runtime is unable to initially allocate the requested amount of memory and the `disallowFullBlockingGC` argument is `false`, the garbage collector performs a full blocking garbage collection in an attempt to free additional memory; otherwise, the allocation fails, and the method returns `false`. The garbage collector enters no GC region latency mode if it is able to allocate `lohSize` for the LOH and `totalSize` - `lohSize` for the small object heap (SOH).
 
  `lohSize` must be large enough to handle all memory allocations that occur in the critical path for the LOH, and `totalSize` - `lohSize` must be large enough to handle all memory allocations that occur in the critical path for the SOH. This includes allocations by the app, as well as allocations that the runtime makes on the app's behalf.
 

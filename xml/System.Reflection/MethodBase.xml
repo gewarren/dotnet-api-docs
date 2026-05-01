@@ -1922,11 +1922,11 @@ The following table summarizes the invariant conditions for terms specific to ge
 
 - For each <xref:System.Type> object in the array returned by the <xref:System.Reflection.MethodBase.GetGenericArguments*> method:
 
-    -   The <xref:System.Type.IsGenericParameter?displayProperty=nameWithType> property is `true`.
+    - The <xref:System.Type.IsGenericParameter?displayProperty=nameWithType> property is `true`.
 
-    -   The <xref:System.Type.DeclaringMethod?displayProperty=nameWithType> property returns the current instance.
+    - The <xref:System.Type.DeclaringMethod?displayProperty=nameWithType> property returns the current instance.
 
-    -   The <xref:System.Type.GenericParameterPosition?displayProperty=nameWithType> property is the same as the position of the <xref:System.Type> object in the array.
+    - The <xref:System.Type.GenericParameterPosition?displayProperty=nameWithType> property is the same as the position of the <xref:System.Type> object in the array.
 
 > [!NOTE]
 > Generics are not supported by default; this property returns `false` if not overridden in a derived class. Generic constructors are not supported in the .NET Framework version 2.0, so this property returns `false` if the current instance is of type <xref:System.Reflection.ConstructorInfo>.
@@ -1994,7 +1994,7 @@ The following table summarizes the invariant conditions for terms specific to ge
  When a member in a derived class is declared with the C# `new` modifier or the Visual Basic `Shadows` modifier, it can hide a member of the same name in the base class. C# hides base class members by signature. That is, if the base class member has multiple overloads, the only one that is hidden is the one that has the identical signature. By contrast, Visual Basic hides all the base class overloads. Thus, <xref:System.Reflection.MethodBase.IsHideBySig*> returns `false` on a member declared with the Visual Basic `Shadows` modifier, and `true` on a member declared with the C# `new` modifier.
 
 > [!WARNING]
-> This property does not determine whether a method has the <xref:System.Reflection.MethodAttributes.NewSlot> attribute. A method that is declared with either the `new` or the `Shadows` modifier will have the <xref:System.Reflection.MethodAttributes.NewSlot> attribute, but only methods declared with `new` (that is, only C# methods) will have the <xref:System.Reflection.MethodBase.IsHideBySig> property set to `true`.  To determine whether a method has the <xref:System.Reflection.MethodAttributes.NewSlot> attribute, use code similar to the following: `if ((myMethodInfo.Attributes & MethodAttributes.VtableLayoutMask) == MethodAttributes.NewSlot)` in C# or `If (myMethodInfo.Attributes And MethodAttributes.VtableLayoutMask) = MethodAttributes.NewSlot` in Visual Basic. Note, however, that although all methods declared with `new` or `Shadows` have the <xref:System.Reflection.MethodAttributes.NewSlot> attribute, not all methods that have the <xref:System.Reflection.MethodAttributes.NewSlot> attribute are declared with `new` or `Shadows`.
+> This property does not determine whether a method has the <xref:System.Reflection.MethodAttributes.NewSlot> attribute. A method that is declared with either the `new` or the `Shadows` modifier will have the <xref:System.Reflection.MethodAttributes.NewSlot> attribute, but only methods declared with `new` (that is, only C# methods) will have the <xref:System.Reflection.MethodBase.IsHideBySig> property set to `true`. To determine whether a method has the <xref:System.Reflection.MethodAttributes.NewSlot> attribute, use code similar to the following: `if ((myMethodInfo.Attributes & MethodAttributes.VtableLayoutMask) == MethodAttributes.NewSlot)` in C# or `If (myMethodInfo.Attributes And MethodAttributes.VtableLayoutMask) = MethodAttributes.NewSlot` in Visual Basic. Note, however, that although all methods declared with `new` or `Shadows` have the <xref:System.Reflection.MethodAttributes.NewSlot> attribute, not all methods that have the <xref:System.Reflection.MethodAttributes.NewSlot> attribute are declared with `new` or `Shadows`.
 
 ## Examples
 

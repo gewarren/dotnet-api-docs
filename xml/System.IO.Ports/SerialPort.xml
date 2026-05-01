@@ -43,7 +43,7 @@
 ## Remarks
  Use this class to control a serial port file resource. This class provides synchronous and event-driven I/O, access to pin and break states, and access to serial driver properties. Additionally, the functionality of this class can be wrapped in an internal <xref:System.IO.Stream> object, accessible through the <xref:System.IO.Ports.SerialPort.BaseStream> property, and passed to classes that wrap or use streams.
 
- The <xref:System.IO.Ports.SerialPort> class supports the following encodings: <xref:System.Text.ASCIIEncoding>, <xref:System.Text.UTF8Encoding>, <xref:System.Text.UnicodeEncoding>, <xref:System.Text.UTF32Encoding>, and any encoding defined in mscorlib.dll where the code page is less than 50000 or the code page is 54936.  You can use alternate encodings, but you must use the <xref:System.IO.Ports.SerialPort.ReadByte*> or <xref:System.IO.Ports.SerialPort.Write*> method and perform the encoding yourself.
+ The <xref:System.IO.Ports.SerialPort> class supports the following encodings: <xref:System.Text.ASCIIEncoding>, <xref:System.Text.UTF8Encoding>, <xref:System.Text.UnicodeEncoding>, <xref:System.Text.UTF32Encoding>, and any encoding defined in mscorlib.dll where the code page is less than 50000 or the code page is 54936. You can use alternate encodings, but you must use the <xref:System.IO.Ports.SerialPort.ReadByte*> or <xref:System.IO.Ports.SerialPort.Write*> method and perform the encoding yourself.
 
  You use the <xref:System.IO.Ports.SerialPort.GetPortNames*> method to retrieve the valid ports for the current computer.
 
@@ -968,7 +968,7 @@ This example adds a <xref:System.IO.Ports.SerialDataReceivedEventHandler> to <xr
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This value should normally be set to `false`, especially for binary transmissions.  Setting this property to `true` can cause unexpected results for UTF32- and UTF16-encoded bytes.
+ This value should normally be set to `false`, especially for binary transmissions. Setting this property to `true` can cause unexpected results for UTF32- and UTF16-encoded bytes.
 
  ]]></format>
         </remarks>
@@ -1848,7 +1848,7 @@ The following code example demonstrates the use of the <xref:System.IO.Ports.Ser
 ## Remarks
  If it is necessary to switch between reading text and reading binary data from the stream, select a protocol that carefully defines the boundary between text and binary data, such as manually reading bytes and decoding the data.
 
- Because the <xref:System.IO.Ports.SerialPort> class buffers data, and the stream contained in the <xref:System.IO.Ports.SerialPort.BaseStream> property does not, the two might conflict about how many bytes are available to read.  The <xref:System.IO.Ports.SerialPort.BytesToRead> property can indicate that there are bytes to read, but these bytes might not be accessible to the stream contained in the <xref:System.IO.Ports.SerialPort.BaseStream> property because they have been buffered to the <xref:System.IO.Ports.SerialPort> class.
+ Because the <xref:System.IO.Ports.SerialPort> class buffers data, and the stream contained in the <xref:System.IO.Ports.SerialPort.BaseStream> property does not, the two might conflict about how many bytes are available to read. The <xref:System.IO.Ports.SerialPort.BytesToRead> property can indicate that there are bytes to read, but these bytes might not be accessible to the stream contained in the <xref:System.IO.Ports.SerialPort.BaseStream> property because they have been buffered to the <xref:System.IO.Ports.SerialPort> class.
 
  The <xref:System.IO.Ports.SerialPort.Read*> method does not block other operations when the number of bytes read equals `count` but there are still unread bytes available on the serial port.
 
@@ -1901,7 +1901,7 @@ The following code example demonstrates the use of the <xref:System.IO.Ports.Ser
 
  If it is necessary to switch between reading text and reading binary data from the stream, select a protocol that carefully defines the boundary between text and binary data, such as manually reading bytes and decoding the data.
 
- Because the <xref:System.IO.Ports.SerialPort> class buffers data, and the stream contained in the <xref:System.IO.Ports.SerialPort.BaseStream> property does not, the two might conflict about how many characters are available to read.  The <xref:System.IO.Ports.SerialPort.BytesToRead> property can indicate that there are characters to read, but these characters might not be accessible to the stream contained in the <xref:System.IO.Ports.SerialPort.BaseStream> property because they have been buffered to the <xref:System.IO.Ports.SerialPort> class.
+ Because the <xref:System.IO.Ports.SerialPort> class buffers data, and the stream contained in the <xref:System.IO.Ports.SerialPort.BaseStream> property does not, the two might conflict about how many characters are available to read. The <xref:System.IO.Ports.SerialPort.BytesToRead> property can indicate that there are characters to read, but these characters might not be accessible to the stream contained in the <xref:System.IO.Ports.SerialPort.BaseStream> property because they have been buffered to the <xref:System.IO.Ports.SerialPort> class.
 
  The <xref:System.IO.Ports.SerialPort.Read*> method does not block other operations when the number of bytes read equals `count` but there are still unread bytes available on the serial port.
 
@@ -2008,7 +2008,7 @@ The following code example demonstrates the use of the <xref:System.IO.Ports.Ser
  Use caution when using <xref:System.IO.Ports.SerialPort.ReadByte*> and <xref:System.IO.Ports.SerialPort.ReadChar*> together. Switching between reading bytes and reading characters can cause extra data to be read and/or other unintended behavior. If it is necessary to switch between reading text and reading binary data from the stream, select a protocol that carefully defines the boundary between text and binary data, such as manually reading bytes and decoding the data.
 
 > [!NOTE]
-> Because the <xref:System.IO.Ports.SerialPort> class buffers data, and the stream contained in the <xref:System.IO.Ports.SerialPort.BaseStream> property does not, the two might conflict about how many bytes are available to read.  The <xref:System.IO.Ports.SerialPort.BytesToRead> property can indicate that there are bytes to read, but these bytes might not be accessible to the stream contained in the <xref:System.IO.Ports.SerialPort.BaseStream> property because they have been buffered to the <xref:System.IO.Ports.SerialPort> class.
+> Because the <xref:System.IO.Ports.SerialPort> class buffers data, and the stream contained in the <xref:System.IO.Ports.SerialPort.BaseStream> property does not, the two might conflict about how many bytes are available to read. The <xref:System.IO.Ports.SerialPort.BytesToRead> property can indicate that there are bytes to read, but these bytes might not be accessible to the stream contained in the <xref:System.IO.Ports.SerialPort.BaseStream> property because they have been buffered to the <xref:System.IO.Ports.SerialPort> class.
 
  ]]></format>
         </remarks>
@@ -2053,7 +2053,7 @@ The following code example demonstrates the use of the <xref:System.IO.Ports.Ser
  Use caution when using <xref:System.IO.Ports.SerialPort.ReadByte*> and <xref:System.IO.Ports.SerialPort.ReadChar*> together. Switching between reading bytes and reading characters can cause extra data to be read and/or other unintended behavior. If it is necessary to switch between reading text and reading binary data from the stream, select a protocol that carefully defines the boundary between text and binary data, such as manually reading bytes and decoding the data.
 
 > [!NOTE]
-> Because the <xref:System.IO.Ports.SerialPort> class buffers data, and the stream contained in the <xref:System.IO.Ports.SerialPort.BaseStream> property does not, the two might conflict about how many bytes are available to read.  The <xref:System.IO.Ports.SerialPort.BytesToRead> property can indicate that there are bytes to read, but these bytes might not be accessible to the stream contained in the <xref:System.IO.Ports.SerialPort.BaseStream> property because they have been buffered to the <xref:System.IO.Ports.SerialPort> class.
+> Because the <xref:System.IO.Ports.SerialPort> class buffers data, and the stream contained in the <xref:System.IO.Ports.SerialPort.BaseStream> property does not, the two might conflict about how many bytes are available to read. The <xref:System.IO.Ports.SerialPort.BytesToRead> property can indicate that there are bytes to read, but these bytes might not be accessible to the stream contained in the <xref:System.IO.Ports.SerialPort.BaseStream> property because they have been buffered to the <xref:System.IO.Ports.SerialPort> class.
 
  ]]></format>
         </remarks>
@@ -2140,7 +2140,7 @@ The following code example demonstrates the use of the <xref:System.IO.Ports.Ser
  If it is necessary to switch between reading text and reading binary data from the stream, select a protocol that carefully defines the boundary between text and binary data, such as manually reading bytes and decoding the data.
 
 > [!NOTE]
-> Because the <xref:System.IO.Ports.SerialPort> class buffers data, and the stream contained in the <xref:System.IO.Ports.SerialPort.BaseStream> property does not, the two might conflict about how many bytes are available to read.  The <xref:System.IO.Ports.SerialPort.BytesToRead> property can indicate that there are bytes to read, but these bytes might not be accessible to the stream contained in the <xref:System.IO.Ports.SerialPort.BaseStream> property because they have been buffered to the <xref:System.IO.Ports.SerialPort> class.
+> Because the <xref:System.IO.Ports.SerialPort> class buffers data, and the stream contained in the <xref:System.IO.Ports.SerialPort.BaseStream> property does not, the two might conflict about how many bytes are available to read. The <xref:System.IO.Ports.SerialPort.BytesToRead> property can indicate that there are bytes to read, but these bytes might not be accessible to the stream contained in the <xref:System.IO.Ports.SerialPort.BaseStream> property because they have been buffered to the <xref:System.IO.Ports.SerialPort> class.
 
 ## Examples
 
@@ -2264,7 +2264,7 @@ The following code example demonstrates the use of the <xref:System.IO.Ports.Ser
  If it is necessary to switch between reading text and reading binary data from the stream, select a protocol that carefully defines the boundary between text and binary data, such as manually reading bytes and decoding the data.
 
 > [!NOTE]
-> Because the <xref:System.IO.Ports.SerialPort> class buffers data, and the stream contained in the <xref:System.IO.Ports.SerialPort.BaseStream> property does not, the two might conflict about how many bytes are available to read.  The <xref:System.IO.Ports.SerialPort.BytesToRead> property can indicate that there are bytes to read, but these bytes might not be accessible to the stream contained in the <xref:System.IO.Ports.SerialPort.BaseStream> property because they have been buffered to the <xref:System.IO.Ports.SerialPort> class.
+> Because the <xref:System.IO.Ports.SerialPort> class buffers data, and the stream contained in the <xref:System.IO.Ports.SerialPort.BaseStream> property does not, the two might conflict about how many bytes are available to read. The <xref:System.IO.Ports.SerialPort.BytesToRead> property can indicate that there are bytes to read, but these bytes might not be accessible to the stream contained in the <xref:System.IO.Ports.SerialPort.BaseStream> property because they have been buffered to the <xref:System.IO.Ports.SerialPort> class.
 
  ]]></format>
         </remarks>

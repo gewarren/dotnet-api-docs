@@ -138,23 +138,23 @@ The following code example demonstrates how to derive from the <xref:System.Web.
 
  At a minimum, an <see cref="M:System.Web.UI.Design.ExpressionEditor.EvaluateExpression(System.String,System.Object,System.Type,System.IServiceProvider)" /> implementation must use the following steps:
 
-1.  Evaluate the expression string and determine the object that is referenced by the expression.
+1. Evaluate the expression string and determine the object that is referenced by the expression.
 
-2.  Return <see langword="null" />, if the expression string cannot be evaluated.
+2. Return <see langword="null" />, if the expression string cannot be evaluated.
 
-3.  Use the <see cref="M:System.Type.IsAssignableFrom(System.Type)" /> method on <paramref name="propertyType" /> to determine whether the referenced object can be assigned directly to the control property type, and then, depending on the result, complete one of the following actions:
+3. Use the <see cref="M:System.Type.IsAssignableFrom(System.Type)" /> method on <paramref name="propertyType" /> to determine whether the referenced object can be assigned directly to the control property type, and then, depending on the result, complete one of the following actions:
 
-    -   If the referenced object can be assigned directly to the control property, return the referenced object for the expression.
+    - If the referenced object can be assigned directly to the control property, return the referenced object for the expression.
 
-    -   If the referenced object is a simple type, such as a string, return the referenced object.
+    - If the referenced object is a simple type, such as a string, return the referenced object.
 
-    -   Otherwise, determine whether the referenced object can be assigned to or converted to the property type.
+    - Otherwise, determine whether the referenced object can be assigned to or converted to the property type.
 
-4.  Use the <see cref="Overload:System.ComponentModel.TypeConverter.CanConvertFrom" /> method on the <see cref="T:System.ComponentModel.TypeConverter" /> object for <paramref name="propertyType" /> to determine whether the referenced object can be converted to the control property type, and then, depending on the result, complete one of the following actions:
+4. Use the <see cref="Overload:System.ComponentModel.TypeConverter.CanConvertFrom" /> method on the <see cref="T:System.ComponentModel.TypeConverter" /> object for <paramref name="propertyType" /> to determine whether the referenced object can be converted to the control property type, and then, depending on the result, complete one of the following actions:
 
-    -   If the object can be converted to the control property type, return the converted object using the <see cref="Overload:System.ComponentModel.TypeConverter.ConvertFrom" /> method.
+    - If the object can be converted to the control property type, return the converted object using the <see cref="Overload:System.ComponentModel.TypeConverter.ConvertFrom" /> method.
 
-    -   If the referenced object cannot be assigned or converted to <paramref name="propertyType" />, return the referenced object.
+    - If the referenced object cannot be assigned or converted to <paramref name="propertyType" />, return the referenced object.
 
  Optionally, the <see cref="M:System.Web.UI.Design.ExpressionEditor.EvaluateExpression(System.String,System.Object,System.Type,System.IServiceProvider)" /> implementation can use the <paramref name="parseTimeData" /> object that is supplied by the <see cref="M:System.Web.Compilation.ExpressionBuilder.ParseExpression(System.String,System.Type,System.Web.Compilation.ExpressionBuilderContext)" /> implementation to optimize or help in the evaluation of the input expression string.</para>
         </block>

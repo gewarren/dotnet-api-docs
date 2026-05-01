@@ -269,7 +269,7 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Use this property if you need to deal with the <xref:System.Windows.FrameworkElement.DataContext*> of an item container.  An item container is the UI element that displays an item in an <xref:System.Windows.Controls.ItemsControl>.  When an <xref:System.Windows.Controls.ItemsControl> is data bound to a collection, an item container is generated for each item.  In some cases, item containers are removed from the visual tree.  Two typical cases where an item container is removed are when an item is removed from the underlying collection and when virtualization is enabled on the <xref:System.Windows.Controls.ItemsControl>.  In these cases, the <xref:System.Windows.FrameworkElement.DataContext> property of the item container will be set to the <xref:System.Windows.Data.BindingOperations.DisconnectedSource> property  You should check whether the <xref:System.Windows.FrameworkElement.DataContext*> is equal to the <xref:System.Windows.Data.BindingOperations.DisconnectedSource*> before accessing the <xref:System.Windows.FrameworkElement.DataContext*> in the <xref:System.Windows.FrameworkElement.DataContextChanged> event for item containers. For more information about item containers and virtualization, see the remarks in the <xref:System.Windows.Controls.VirtualizingStackPanel> class.
+ Use this property if you need to deal with the <xref:System.Windows.FrameworkElement.DataContext*> of an item container. An item container is the UI element that displays an item in an <xref:System.Windows.Controls.ItemsControl>. When an <xref:System.Windows.Controls.ItemsControl> is data bound to a collection, an item container is generated for each item. In some cases, item containers are removed from the visual tree. Two typical cases where an item container is removed are when an item is removed from the underlying collection and when virtualization is enabled on the <xref:System.Windows.Controls.ItemsControl>. In these cases, the <xref:System.Windows.FrameworkElement.DataContext> property of the item container will be set to the <xref:System.Windows.Data.BindingOperations.DisconnectedSource> property  You should check whether the <xref:System.Windows.FrameworkElement.DataContext*> is equal to the <xref:System.Windows.Data.BindingOperations.DisconnectedSource*> before accessing the <xref:System.Windows.FrameworkElement.DataContext*> in the <xref:System.Windows.FrameworkElement.DataContextChanged> event for item containers. For more information about item containers and virtualization, see the remarks in the <xref:System.Windows.Controls.VirtualizingStackPanel> class.
 
  ]]></format>
         </remarks>
@@ -291,7 +291,7 @@ A WPF application can display a collection of data using an <xref:System.Windows
 
 You may want to use the collection on multiple threads.   For example, you want to update the collection (add or remove items) on a "data-gathering" thread, while displaying the results on a "user interface" thread, so that the UI remains responsive while data-gathering is happening. In such a situation, you are responsible for ensuring synchronized ("thread-safe") access to the collection.   This is typically done using either a simple lock mechanism or a more elaborate synchronization mechanism such as semaphores, reset events, etc.
 
-While you must synchronize your application's access to the collection, you must also guarantee that access from WPF (specifically from <xref:System.Windows.Data.CollectionView>) participates in the same synchronization mechanism.  You do this by calling the <xref:System.Windows.Data.BindingOperations.EnableCollectionSynchronization*> method.
+While you must synchronize your application's access to the collection, you must also guarantee that access from WPF (specifically from <xref:System.Windows.Data.CollectionView>) participates in the same synchronization mechanism. You do this by calling the <xref:System.Windows.Data.BindingOperations.EnableCollectionSynchronization*> method.
 
 To use a collection on multiple threads, one of which is the UI thread that owns the <xref:System.Windows.Controls.ItemsControl>, an application has the following responsibilities:
 
@@ -313,7 +313,7 @@ To use a collection on multiple threads, one of which is the UI thread that owns
 
 1. If you want to use the same collection on multiple UI threads, you must call <xref:System.Windows.Data.BindingOperations.EnableCollectionSynchronization*> (and <xref:System.Windows.Data.BindingOperations.DisableCollectionSynchronization*>, if needed) separately on each UI thread.
 
-1. Avoid deadlock.  This is already the application's responsibility once it chooses to use synchronization, but it must also take into account WPF's participation in the synchronization, as discussed in the following paragraph.
+1. Avoid deadlock. This is already the application's responsibility once it chooses to use synchronization, but it must also take into account WPF's participation in the synchronization, as discussed in the following paragraph.
 
 In return, WPF provides the following behavior:
 
@@ -327,7 +327,7 @@ In return, WPF provides the following behavior:
 
 - The <xref:System.Windows.Data.CollectionView> won't directly use any other synchronization mechanism visible to the application. This is WPF's way of helping to avoid deadlock (see the previous item 7).
 
-The net effect is that you can change the collection on any thread, and those changes eventually appear in the <xref:System.Windows.Controls.ItemsControl> when the UI thread has time to "catch up".  The implementation has been tuned to throttle the rate that changes flow into the UI thread to keep background threads from saturating the UI thread and starving the response to normal user input.
+The net effect is that you can change the collection on any thread, and those changes eventually appear in the <xref:System.Windows.Controls.ItemsControl> when the UI thread has time to "catch up". The implementation has been tuned to throttle the rate that changes flow into the UI thread to keep background threads from saturating the UI thread and starving the response to normal user input.
 
  ]]></format>
         </remarks>
@@ -390,7 +390,7 @@ To use a collection on multiple threads, one of which is the UI thread that owns
 
 1. If you want to use the same collection on multiple UI threads, you must call <xref:System.Windows.Data.BindingOperations.EnableCollectionSynchronization*> (and <xref:System.Windows.Data.BindingOperations.DisableCollectionSynchronization*>, if needed) separately on each UI thread.
 
-1. Avoid deadlock.  This is already the application's responsibility once it chooses to use synchronization, but it must also take into account WPF's participation in the synchronization. (See more, below.)
+1. Avoid deadlock. This is already the application's responsibility once it chooses to use synchronization, but it must also take into account WPF's participation in the synchronization. (See more, below.)
 
 In return, WPF provides the following behavior:
 
@@ -404,7 +404,7 @@ In return, WPF provides the following behavior:
 
 - The <xref:System.Windows.Data.CollectionView> will not directly use any other synchronization mechanism visible to the application. This is WPF's way of helping to avoid deadlock (see the previous item 7).
 
-The net effect is that you can change the collection on any thread, and those changes eventually appear in the <xref:System.Windows.Controls.ItemsControl> when the UI thread has time to "catch up".  The implementation has been tuned to throttle the rate that changes flow into the UI thread to keep background threads from saturating the UI thread and starving the response to normal user input.
+The net effect is that you can change the collection on any thread, and those changes eventually appear in the <xref:System.Windows.Controls.ItemsControl> when the UI thread has time to "catch up". The implementation has been tuned to throttle the rate that changes flow into the UI thread to keep background threads from saturating the UI thread and starving the response to normal user input.
 
  ]]></format>
         </remarks>
@@ -469,7 +469,7 @@ To use a collection on multiple threads, one of which is the UI thread that owns
 
 1. If you want to use the same collection on multiple UI threads, you must call <xref:System.Windows.Data.BindingOperations.EnableCollectionSynchronization*> (and <xref:System.Windows.Data.BindingOperations.DisableCollectionSynchronization*>, if needed) separately on each UI thread.
 
-1. Avoid deadlock.  This is already the application's responsibility once it chooses to use synchronization, but it must also take into account WPF's participation in the synchronization. (See more, below.)
+1. Avoid deadlock. This is already the application's responsibility once it chooses to use synchronization, but it must also take into account WPF's participation in the synchronization. (See more, below.)
 
 In return, WPF provides the following behavior:
 
@@ -490,7 +490,7 @@ In return, WPF provides the following behavior:
 
 - The <xref:System.Windows.Data.CollectionView> will not directly use any other synchronization mechanism visible to the application. This is WPF's way of helping to avoid deadlock (see the previous item 7).
 
-The net effect is that you can change the collection on any thread, and those changes eventually appear in the <xref:System.Windows.Controls.ItemsControl> when the UI thread has time to "catch up".  The implementation has been tuned to throttle the rate that changes flow into the UI thread to keep background threads from saturating the UI thread and starving the response to normal user input.
+The net effect is that you can change the collection on any thread, and those changes eventually appear in the <xref:System.Windows.Controls.ItemsControl> when the UI thread has time to "catch up". The implementation has been tuned to throttle the rate that changes flow into the UI thread to keep background threads from saturating the UI thread and starving the response to normal user input.
 
  The `context` parameter is an arbitrary object that is passed to the `callback`. You can use it to determine the synchronization mechanism used to control access to `collection`. `Context` can be `null`.
 
@@ -868,7 +868,7 @@ The following example shows the implementation of a <xref:System.Windows.Control
         <Parameter Name="root" Type="System.Windows.DependencyObject" Index="0" FrameworkAlternate="net-5.0;net-6.0;netcore-3.0;netcore-3.1;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;windowsdesktop-3.0;windowsdesktop-3.1;windowsdesktop-5.0;windowsdesktop-6.0;windowsdesktop-7.0;netframework-4.8.1;windowsdesktop-8.0;windowsdesktop-9.0;windowsdesktop-10.0;windowsdesktop-11.0" />
       </Parameters>
       <Docs>
-        <param name="root">The root <see cref="T:System.Windows.UIElement" /> to get binding groups for.  This method returns <see cref="T:System.Windows.Data.BindingGroup" /> objects that are associated with this element or its descendant elements.</param>
+        <param name="root">The root <see cref="T:System.Windows.UIElement" /> to get binding groups for. This method returns <see cref="T:System.Windows.Data.BindingGroup" /> objects that are associated with this element or its descendant elements.</param>
         <summary>Gets all <see cref="T:System.Windows.Data.BindingGroup" /> objects that have invalid values or target values have not been updated the source.</summary>
         <returns>A collection of <see cref="T:System.Windows.Data.BindingGroup" /> objects that are associated with the specified element and have invalid values or target values have not been updated the source.</returns>
         <remarks>
@@ -907,7 +907,7 @@ The following example shows the implementation of a <xref:System.Windows.Control
         <Parameter Name="root" Type="System.Windows.DependencyObject" Index="0" FrameworkAlternate="net-5.0;net-6.0;netcore-3.0;netcore-3.1;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8;windowsdesktop-3.0;windowsdesktop-3.1;windowsdesktop-5.0;windowsdesktop-6.0;windowsdesktop-7.0;netframework-4.8.1;windowsdesktop-8.0;windowsdesktop-9.0;windowsdesktop-10.0;windowsdesktop-11.0" />
       </Parameters>
       <Docs>
-        <param name="root">The root <see cref="T:System.Windows.UIElement" /> to get binding groups for.  This method returns <see cref="T:System.Windows.Data.BindingExpressionBase" /> objects that are associated with this element or its descendant elements.</param>
+        <param name="root">The root <see cref="T:System.Windows.UIElement" /> to get binding groups for. This method returns <see cref="T:System.Windows.Data.BindingExpressionBase" /> objects that are associated with this element or its descendant elements.</param>
         <summary>Gets all <see cref="T:System.Windows.Data.BindingExpressionBase" /> objects that have invalid values or target values have not been updated the source.</summary>
         <returns>A collection of <see cref="T:System.Windows.Data.BindingExpressionBase" /> objects that are associated with the specified element and have invalid values or target values have not been updated the source.</returns>
         <remarks>

@@ -41,7 +41,7 @@
 ## Remarks
  With <xref:System.Speech.Synthesis.PromptBuilder>, you can add a variety of content types to a prompt, including plain text, SSML markup (as a string or a file), recorded audio, or even another <xref:System.Speech.Synthesis.PromptBuilder> object.
 
- To append text to a <xref:System.Speech.Synthesis.PromptBuilder> object and optionally control voice attributes such as emphasis, rate, and volume, use one of the <xref:System.Speech.Synthesis.PromptBuilder.AppendText*> methods.  You can also control voice attributes as a group with the <xref:System.Speech.Synthesis.PromptBuilder.StartStyle*> and <xref:System.Speech.Synthesis.PromptBuilder.EndStyle*> methods.
+ To append text to a <xref:System.Speech.Synthesis.PromptBuilder> object and optionally control voice attributes such as emphasis, rate, and volume, use one of the <xref:System.Speech.Synthesis.PromptBuilder.AppendText*> methods. You can also control voice attributes as a group with the <xref:System.Speech.Synthesis.PromptBuilder.StartStyle*> and <xref:System.Speech.Synthesis.PromptBuilder.EndStyle*> methods.
 
  You can append text and control what is spoken or how it is pronounced using the <xref:System.Speech.Synthesis.PromptBuilder.AppendTextWithHint*>, <xref:System.Speech.Synthesis.PromptBuilder.AppendTextWithAlias*>, <xref:System.Speech.Synthesis.PromptBuilder.AppendTextWithPronunciation*>,  <xref:System.Speech.Synthesis.PromptBuilder.AppendSsml*>, or <xref:System.Speech.Synthesis.PromptBuilder.AppendSsmlMarkup*> methods.
 
@@ -2154,8 +2154,8 @@ namespace SampleSynthesis
  The <xref:System.Speech.Synthesis.PromptBuilder.StartStyle*> method takes a <xref:System.Speech.Synthesis.PromptStyle> object as its argument. You can use the properties of the <xref:System.Speech.Synthesis.PromptStyle> object to set the emphasis, speaking rate, and volume (loudness) to apply to speech output while the style is in effect. To stop using the current style, call the <xref:System.Speech.Synthesis.PromptBuilder.EndStyle*> method.
 
 > [!NOTE]
-> -   The speech synthesis engines in Windows do not support the emphasis parameter at this time. Setting values for the emphasis parameter will produce no audible change in the synthesized speech output.
-> -   The <xref:System.Speech.Synthesis.PromptVolume.Default> setting for <xref:System.Speech.Synthesis.PromptVolume> is full volume, which is the same as <xref:System.Speech.Synthesis.PromptVolume.ExtraLoud>. The other settings decrease the volume of speech output relative to full volume.
+> - The speech synthesis engines in Windows do not support the emphasis parameter at this time. Setting values for the emphasis parameter will produce no audible change in the synthesized speech output.
+> - The <xref:System.Speech.Synthesis.PromptVolume.Default> setting for <xref:System.Speech.Synthesis.PromptVolume> is full volume, which is the same as <xref:System.Speech.Synthesis.PromptVolume.ExtraLoud>. The other settings decrease the volume of speech output relative to full volume.
 
 ## Examples
 
@@ -2249,7 +2249,7 @@ namespace SampleSynthesis
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The `culture` parameter for <xref:System.Speech.Synthesis.PromptBuilder.StartVoice*> can be different than the <xref:System.Speech.Synthesis.PromptBuilder.Culture> property of the <xref:System.Speech.Synthesis.PromptBuilder> object that contains it.  While in effect, the value of the `culture` parameter will override the <xref:System.Speech.Synthesis.PromptBuilder.Culture> property. The <xref:System.Speech.Synthesis.SpeechSynthesizer> will attempt to select an installed voice that supports the language specified by the `culture` parameter to speak the content enclosed by <xref:System.Speech.Synthesis.PromptBuilder.StartVoice*> and <xref:System.Speech.Synthesis.PromptBuilder.EndVoice*>. If a voice with the specified culture is found, it will be used. If a voice with the specified culture cannot be found, the default voice will be used. To stop using the voice specified by <xref:System.Speech.Synthesis.PromptBuilder.StartVoice*>, call <xref:System.Speech.Synthesis.PromptBuilder.EndVoice*>.
+ The `culture` parameter for <xref:System.Speech.Synthesis.PromptBuilder.StartVoice*> can be different than the <xref:System.Speech.Synthesis.PromptBuilder.Culture> property of the <xref:System.Speech.Synthesis.PromptBuilder> object that contains it. While in effect, the value of the `culture` parameter will override the <xref:System.Speech.Synthesis.PromptBuilder.Culture> property. The <xref:System.Speech.Synthesis.SpeechSynthesizer> will attempt to select an installed voice that supports the language specified by the `culture` parameter to speak the content enclosed by <xref:System.Speech.Synthesis.PromptBuilder.StartVoice*> and <xref:System.Speech.Synthesis.PromptBuilder.EndVoice*>. If a voice with the specified culture is found, it will be used. If a voice with the specified culture cannot be found, the default voice will be used. To stop using the voice specified by <xref:System.Speech.Synthesis.PromptBuilder.StartVoice*>, call <xref:System.Speech.Synthesis.PromptBuilder.EndVoice*>.
 
  To correctly pronounce words in the language specified by the `culture` parameter, a speech synthesis (text-to-speech or TTS) engine that supports the language must be installed. An installed TTS engine is called a voice. To get information about which voices are installed for a specific culture, use the <xref:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices*> method.
 

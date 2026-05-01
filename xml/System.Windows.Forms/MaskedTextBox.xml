@@ -3335,21 +3335,21 @@
 ## Remarks
  The <xref:System.Windows.Forms.MaskedTextBox> control will optionally validate user input against the type defined by its <xref:System.Windows.Forms.MaskedTextBox.ValidatingType?displayProperty=nameWithType> property. When this property is not `null`, the following series of events occurs:
 
-1.  The validation sequence begins when one of the following occurs:
+1. The validation sequence begins when one of the following occurs:
 
     -   <xref:System.Windows.Forms.MaskedTextBox> control looses focus.
 
-    -   The <xref:System.Windows.Forms.MaskedTextBox.Text> property is retrieved.
+    - The <xref:System.Windows.Forms.MaskedTextBox.Text> property is retrieved.
 
-    -   The <xref:System.Windows.Forms.MaskedTextBox.ValidateText*> method is called.
+    - The <xref:System.Windows.Forms.MaskedTextBox.ValidateText*> method is called.
 
-2.  Any of these events result in a call to the `Parse` method of the type specified with the <xref:System.Windows.Forms.TypeValidationEventArgs.ValidatingType> property. `Parse` is responsible for the conversion of the formatted input string to the target type. A successful conversion equates to a successful validation.
+2. Any of these events result in a call to the `Parse` method of the type specified with the <xref:System.Windows.Forms.TypeValidationEventArgs.ValidatingType> property. `Parse` is responsible for the conversion of the formatted input string to the target type. A successful conversion equates to a successful validation.
 
-3.  After `Parse` returns, the <xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted> event is raised. The event handler for this event is most commonly implemented to perform type or mask validation processing. It receives a <xref:System.Windows.Forms.TypeValidationEventArgs> parameter containing information about the conversion; for example, the <xref:System.Windows.Forms.TypeValidationEventArgs.IsValidInput*> member indicates whether the conversion was successful.
+3. After `Parse` returns, the <xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted> event is raised. The event handler for this event is most commonly implemented to perform type or mask validation processing. It receives a <xref:System.Windows.Forms.TypeValidationEventArgs> parameter containing information about the conversion; for example, the <xref:System.Windows.Forms.TypeValidationEventArgs.IsValidInput*> member indicates whether the conversion was successful.
 
-4.  After the event handler for the <xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted> event returns, the standard validation event, <xref:System.Windows.Forms.Control.Validating>, is raised. A handler can be implemented to perform standard validation, perhaps including canceling the event.
+4. After the event handler for the <xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted> event returns, the standard validation event, <xref:System.Windows.Forms.Control.Validating>, is raised. A handler can be implemented to perform standard validation, perhaps including canceling the event.
 
-5.  If the event is not canceled in step 3, the standard control validation event <xref:System.Windows.Forms.Control.Validated> is raised.
+5. If the event is not canceled in step 3, the standard control validation event <xref:System.Windows.Forms.Control.Validated> is raised.
 
  If the <xref:System.Windows.Forms.TypeValidationEventArgs.Cancel> property is set to `true` in the <xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted> event handler, the event will be canceled and the <xref:System.Windows.Forms.MaskedTextBox> control retains focus, unless the subsequent <xref:System.Windows.Forms.Control.Validating> event sets its version of the <xref:System.ComponentModel.CancelEventArgs.Cancel?displayProperty=nameWithType> property back to `false`.
 

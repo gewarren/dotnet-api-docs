@@ -28,15 +28,15 @@
 
 ## Remarks
 
-Only the thread that the <xref:System.Windows.Threading.DispatcherObject.Dispatcher*> was created on may access the <xref:System.Windows.Threading.DispatcherObject> directly.  To access a <xref:System.Windows.Threading.DispatcherObject> from a thread other than the thread the <xref:System.Windows.Threading.DispatcherObject> was created on, call <xref:System.Windows.Threading.Dispatcher.Invoke*> or <xref:System.Windows.Threading.Dispatcher.BeginInvoke*> on the <xref:System.Windows.Threading.Dispatcher> the <xref:System.Windows.Threading.DispatcherObject> is associated with.
+Only the thread that the <xref:System.Windows.Threading.DispatcherObject.Dispatcher*> was created on may access the <xref:System.Windows.Threading.DispatcherObject> directly. To access a <xref:System.Windows.Threading.DispatcherObject> from a thread other than the thread the <xref:System.Windows.Threading.DispatcherObject> was created on, call <xref:System.Windows.Threading.Dispatcher.Invoke*> or <xref:System.Windows.Threading.Dispatcher.BeginInvoke*> on the <xref:System.Windows.Threading.Dispatcher> the <xref:System.Windows.Threading.DispatcherObject> is associated with.
 
- Subclasses of <xref:System.Windows.Threading.DispatcherObject> that need to enforce thread safety can do so by calling <xref:System.Windows.Threading.DispatcherObject.VerifyAccess*> on all public methods.  This guarantees the calling thread is the thread that the <xref:System.Windows.Threading.DispatcherObject> was created on.
+ Subclasses of <xref:System.Windows.Threading.DispatcherObject> that need to enforce thread safety can do so by calling <xref:System.Windows.Threading.DispatcherObject.VerifyAccess*> on all public methods. This guarantees the calling thread is the thread that the <xref:System.Windows.Threading.DispatcherObject> was created on.
 
  A <xref:System.Windows.Threading.DispatcherObject> cannot be independently instantiated; that is, all constructors are protected.
 
  Objects that derive from <xref:System.Windows.Threading.DispatcherObject> have thread affinity.
 
- Objects that derive from <xref:System.Windows.Freezable> are free-threaded when they are frozen.  For more information, see the [Freezable Objects Overview](/dotnet/desktop/wpf/advanced/freezable-objects-overview).
+ Objects that derive from <xref:System.Windows.Freezable> are free-threaded when they are frozen. For more information, see the [Freezable Objects Overview](/dotnet/desktop/wpf/advanced/freezable-objects-overview).
 
  ]]></format>
     </remarks>
@@ -119,7 +119,7 @@ Only the thread the <xref:System.Windows.Threading.DispatcherObject.Dispatcher*>
 
 ## Examples
 
-The following example uses <xref:System.Windows.Threading.DispatcherObject.CheckAccess*> to determine whether a thread has access to the thread that a <xref:System.Windows.Controls.Button> was created on.  The <xref:System.Windows.Threading.DispatcherObject.CheckAccess*> method on the <xref:System.Windows.Controls.Button> is called to verify access to the thread.  If the calling thread has access, the <xref:System.Windows.Controls.Button> is updated by just accessing the members of the <xref:System.Windows.Controls.Button>; otherwise, a delegate, which accepts a <xref:System.Windows.Controls.Button> as an argument, is posted onto the <xref:System.Windows.Threading.Dispatcher> of the <xref:System.Windows.Controls.Button>.
+The following example uses <xref:System.Windows.Threading.DispatcherObject.CheckAccess*> to determine whether a thread has access to the thread that a <xref:System.Windows.Controls.Button> was created on. The <xref:System.Windows.Threading.DispatcherObject.CheckAccess*> method on the <xref:System.Windows.Controls.Button> is called to verify access to the thread. If the calling thread has access, the <xref:System.Windows.Controls.Button> is updated by just accessing the members of the <xref:System.Windows.Controls.Button>; otherwise, a delegate, which accepts a <xref:System.Windows.Controls.Button> as an argument, is posted onto the <xref:System.Windows.Threading.Dispatcher> of the <xref:System.Windows.Controls.Button>.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Threading/DispatcherObject/CheckAccess/Window1.xaml.cs" id="Snippetdispatcherobjectaccesscheckaccess":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Threading/DispatcherObject/CheckAccess/window1.xaml.vb" id="Snippetdispatcherobjectaccesscheckaccess":::
@@ -169,7 +169,7 @@ The following example uses <xref:System.Windows.Threading.DispatcherObject.Check
 
 ## Remarks
 
-Only the thread that the <xref:System.Windows.Threading.DispatcherObject.Dispatcher*> was created on may access the <xref:System.Windows.Threading.DispatcherObject> directly.  To access a <xref:System.Windows.Threading.DispatcherObject> from a thread other than the thread the <xref:System.Windows.Threading.DispatcherObject> was created on, call <xref:System.Windows.Threading.Dispatcher.Invoke*> and <xref:System.Windows.Threading.Dispatcher.BeginInvoke*> on the <xref:System.Windows.Threading.Dispatcher> the <xref:System.Windows.Threading.DispatcherObject> is associated with.
+Only the thread that the <xref:System.Windows.Threading.DispatcherObject.Dispatcher*> was created on may access the <xref:System.Windows.Threading.DispatcherObject> directly. To access a <xref:System.Windows.Threading.DispatcherObject> from a thread other than the thread the <xref:System.Windows.Threading.DispatcherObject> was created on, call <xref:System.Windows.Threading.Dispatcher.Invoke*> and <xref:System.Windows.Threading.Dispatcher.BeginInvoke*> on the <xref:System.Windows.Threading.Dispatcher> the <xref:System.Windows.Threading.DispatcherObject> is associated with.
 
  ]]></format>
         </remarks>
@@ -220,7 +220,7 @@ Only the thread the <xref:System.Windows.Threading.DispatcherObject.Dispatcher*>
 
 ## Examples
 
-The following example uses <xref:System.Windows.Threading.DispatcherObject.VerifyAccess*> to determine whether a thread has access to the thread that a <xref:System.Windows.Controls.Button> was created on.  If the calling thread does not have access, an <xref:System.InvalidOperationException> is thrown.
+The following example uses <xref:System.Windows.Threading.DispatcherObject.VerifyAccess*> to determine whether a thread has access to the thread that a <xref:System.Windows.Controls.Button> was created on. If the calling thread does not have access, an <xref:System.InvalidOperationException> is thrown.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Threading/DispatcherObject/CheckAccess/Window1.xaml.cs" id="Snippetdispatcherobjectaccessverifyaccess":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Threading/DispatcherObject/CheckAccess/window1.xaml.vb" id="Snippetdispatcherobjectaccessverifyaccess":::

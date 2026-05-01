@@ -47,11 +47,11 @@ A settings provider defines the mechanism for storing configuration data used in
 
  At minimum, a settings provider must recognize three attributes - <xref:System.Configuration.ApplicationScopedSettingAttribute>, <xref:System.Configuration.UserScopedSettingAttribute>, and <xref:System.Configuration.DefaultSettingValueAttribute>. For a full listing of attributes that can be applied to application settings, see [Application Settings Attributes](/dotnet/desktop/winforms/advanced/application-settings-attributes). A custom setting provider should resolve attributes applied to settings properties in the following manner:
 
-1.  If the provider can fulfill the request implied by the attribute, obviously it should do so.
+1. If the provider can fulfill the request implied by the attribute, obviously it should do so.
 
-2.  If the provider cannot fulfill the request, it should ignore it silently.
+2. If the provider cannot fulfill the request, it should ignore it silently.
 
-3.  If two or more properties conflict; for example, a property being decorated with both <xref:System.Configuration.ApplicationScopedSettingAttribute> and <xref:System.Configuration.UserScopedSettingAttribute>; the provider should throw a <xref:System.Configuration.ConfigurationException>.
+3. If two or more properties conflict; for example, a property being decorated with both <xref:System.Configuration.ApplicationScopedSettingAttribute> and <xref:System.Configuration.UserScopedSettingAttribute>; the provider should throw a <xref:System.Configuration.ConfigurationException>.
 
  ]]></format>
     </remarks>
@@ -106,9 +106,9 @@ This is this default protected constructor for this abstract class. Derived cust
 
  Client code typically does not directly instantiate a settings provider; instead, you use the following procedure to find a settings provider for a particular settings property:
 
-1.  Call the <xref:System.ComponentModel.Component.GetService*> method on the current <xref:System.ComponentModel.Component> or <xref:System.ComponentModel.ISite> to return a reference to the current <xref:System.Configuration.ISettingsProviderService>.
+1. Call the <xref:System.ComponentModel.Component.GetService*> method on the current <xref:System.ComponentModel.Component> or <xref:System.ComponentModel.ISite> to return a reference to the current <xref:System.Configuration.ISettingsProviderService>.
 
-2.  Call the <xref:System.Configuration.ISettingsProviderService.GetSettingsProvider*> method of the <xref:System.Configuration.ISettingsProviderService> retrieved in the first step to return the settings provider.
+2. Call the <xref:System.Configuration.ISettingsProviderService.GetSettingsProvider*> method of the <xref:System.Configuration.ISettingsProviderService> retrieved in the first step to return the settings provider.
 
  ]]></format>
         </remarks>

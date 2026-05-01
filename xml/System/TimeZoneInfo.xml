@@ -1322,11 +1322,11 @@ This overload of the <xref:System.TimeZoneInfo.CreateCustomTimeZone*?displayProp
 
  A time zone's adjustment rules are defined by doing the following:
 
-1.  Calling either the <xref:System.TimeZoneInfo.TransitionTime.CreateFloatingDateRule*> or the <xref:System.TimeZoneInfo.TransitionTime.CreateFixedDateRule*> method to define the starting and ending transition time for each adjustment rule.
+1. Calling either the <xref:System.TimeZoneInfo.TransitionTime.CreateFloatingDateRule*> or the <xref:System.TimeZoneInfo.TransitionTime.CreateFixedDateRule*> method to define the starting and ending transition time for each adjustment rule.
 
-2.  Calling the <xref:System.TimeZoneInfo.AdjustmentRule.CreateAdjustmentRule*> method for each adjustment rule.
+2. Calling the <xref:System.TimeZoneInfo.AdjustmentRule.CreateAdjustmentRule*> method for each adjustment rule.
 
-3.  Assigning the adjustment rules to an array that can be passed as the `adjustmentRules` parameter.
+3. Assigning the adjustment rules to an array that can be passed as the `adjustmentRules` parameter.
 
 ## Examples
 
@@ -1641,7 +1641,7 @@ The following example defines a method named `DisplayDateWithTimeZoneName` that 
 
 The display name is localized based on the culture installed with the Windows operating system.
 
- Time zone display names for Windows system time zones follow a fairly standard format. The first portion of the display name is the time zone's base offset from Coordinated Universal Time, which is indicated by the acronym GMT (for Greenwich Mean Time), enclosed in parentheses. For Coordinated Universal Time, the GMT acronym with no offset is enclosed in parentheses.  This is followed by a string that identifies the time zone or one or more of the cities, regions, or countries in the time zone. For example:
+ Time zone display names for Windows system time zones follow a fairly standard format. The first portion of the display name is the time zone's base offset from Coordinated Universal Time, which is indicated by the acronym GMT (for Greenwich Mean Time), enclosed in parentheses. For Coordinated Universal Time, the GMT acronym with no offset is enclosed in parentheses. This is followed by a string that identifies the time zone or one or more of the cities, regions, or countries in the time zone. For example:
 
 ```txt
 (GMT) Greenwich Mean Time : Dublin, Edinburgh, Lisbon, London
@@ -2978,7 +2978,7 @@ The return value of <xref:System.TimeZoneInfo.IsDaylightSavingTime*?displayPrope
 |Any other <xref:System.TimeZoneInfo> object.|`DateTimeKind.Utc`|Converts UTC to the equivalent time of the <xref:System.TimeZoneInfo> object and then determines whether the latter is daylight saving time.|
 |Any other <xref:System.TimeZoneInfo> object.|`DateTimeKind.Unspecified`|Determines whether `dateTime` is daylight saving time.|
 
- If the time zone represented by the <xref:System.TimeZoneInfo> object does not support daylight saving time, the method always returns `false`. A number of time zones, including <xref:System.TimeZoneInfo.Utc*>, do not observe daylight saving time.  To determine whether a time zone supports daylight saving time, retrieve the value of its <xref:System.TimeZoneInfo.SupportsDaylightSavingTime> property.
+ If the time zone represented by the <xref:System.TimeZoneInfo> object does not support daylight saving time, the method always returns `false`. A number of time zones, including <xref:System.TimeZoneInfo.Utc*>, do not observe daylight saving time. To determine whether a time zone supports daylight saving time, retrieve the value of its <xref:System.TimeZoneInfo.SupportsDaylightSavingTime> property.
 
  If the `dateTime` parameter specifies an ambiguous time in the current object's time zone, the <xref:System.TimeZoneInfo.IsDaylightSavingTime*?displayProperty=nameWithType> method interprets `dateTime` as standard time and returns `false` if its <xref:System.DateTime.Kind> property is <xref:System.DateTimeKind.Local?displayProperty=nameWithType> or <xref:System.DateTimeKind.Unspecified?displayProperty=nameWithType>. If the <xref:System.DateTime.Kind> property is <xref:System.DateTimeKind.Utc?displayProperty=nameWithType>, this method will select the correct ambiguous time and indicate whether it is a daylight saving time.
 

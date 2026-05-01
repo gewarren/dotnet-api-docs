@@ -51,9 +51,9 @@
 ## Remarks
  Use the <xref:System.ServiceModel.Dispatcher.DispatchRuntime> class either to modify the default behavior of a service or individual endpoint, or to insert objects that implement custom modifications to one or both of the following service processes:
 
-1.  The transformation of incoming messages into objects and releasing those objects as method invocations on a service object.
+1. The transformation of incoming messages into objects and releasing those objects as method invocations on a service object.
 
-2.  The transformation of objects received from the response to a service operation invocation into outbound messages.
+2. The transformation of objects received from the response to a service operation invocation into outbound messages.
 
  In Windows Communication Foundation (WCF), the channel and endpoint dispatchers are the service components responsible for accepting new channels, receiving messages, method dispatch and invocation, and response processing. Each endpoint exposed by a <xref:System.ServiceModel.ServiceHost> object has one endpoint dispatcher and an associated channel dispatcher; in addition, each client that participates in duplex communication also has an endpoint dispatcher and channel dispatcher for each callback endpoint.
 
@@ -61,13 +61,13 @@
 
  There are four main areas of dispatcher extensibility exposed by the <xref:System.ServiceModel.Dispatcher.DispatchRuntime> class:
 
-1.  Dispatch components use the properties of the <xref:System.ServiceModel.Dispatcher.DispatchRuntime> and those of the associated channel dispatcher returned by the <xref:System.ServiceModel.Dispatcher.DispatchRuntime.ChannelDispatcher> property to customize how the channel dispatcher accepts and closes channels. This category includes the <xref:System.ServiceModel.Dispatcher.ChannelDispatcher.ChannelInitializers> and <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InputSessionShutdownHandlers> properties.
+1. Dispatch components use the properties of the <xref:System.ServiceModel.Dispatcher.DispatchRuntime> and those of the associated channel dispatcher returned by the <xref:System.ServiceModel.Dispatcher.DispatchRuntime.ChannelDispatcher> property to customize how the channel dispatcher accepts and closes channels. This category includes the <xref:System.ServiceModel.Dispatcher.ChannelDispatcher.ChannelInitializers> and <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InputSessionShutdownHandlers> properties.
 
-2.  Message components are customized for each message processed. This category includes the <xref:System.ServiceModel.Dispatcher.DispatchRuntime.MessageInspectors>, <xref:System.ServiceModel.Dispatcher.DispatchRuntime.OperationSelector>, <xref:System.ServiceModel.Dispatcher.DispatchRuntime.Operations>, and the <xref:System.ServiceModel.Dispatcher.ChannelDispatcher.ErrorHandlers> properties.
+2. Message components are customized for each message processed. This category includes the <xref:System.ServiceModel.Dispatcher.DispatchRuntime.MessageInspectors>, <xref:System.ServiceModel.Dispatcher.DispatchRuntime.OperationSelector>, <xref:System.ServiceModel.Dispatcher.DispatchRuntime.Operations>, and the <xref:System.ServiceModel.Dispatcher.ChannelDispatcher.ErrorHandlers> properties.
 
-3.  Instance components customize the creation, lifetime, and disposal of instances of the service type. For more information about service object lifetimes, see the <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode> property. This category includes the <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceContextInitializers> and the <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceProvider> properties.
+3. Instance components customize the creation, lifetime, and disposal of instances of the service type. For more information about service object lifetimes, see the <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode> property. This category includes the <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceContextInitializers> and the <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceProvider> properties.
 
-4.  Security-related components can use the following properties:
+4. Security-related components can use the following properties:
 
     -   <xref:System.ServiceModel.Dispatcher.DispatchRuntime.SecurityAuditLogLocation> indicates where audit events are written.
 

@@ -24,17 +24,17 @@
 
  The base class for <xref:System.ServiceModel.Description.WsdlImporter>, the <xref:System.ServiceModel.Description.MetadataImporter> class, defines methods that selectively import contract and endpoint information and properties that expose any import errors and accept type information relevant to the import and conversion process. The <xref:System.ServiceModel.Description.WsdlImporter> type uses the custom policy importers (<xref:System.ServiceModel.Description.IPolicyImportExtension> implementations) from its parent type to handle custom policy statements and its own custom WSDL importers (<xref:System.ServiceModel.Description.IWsdlImportExtension> implementations) to handle custom WSDL elements. For details, see [Extending the Metadata System](/dotnet/framework/wcf/extending/extending-the-metadata-system).
 
- When importing policy from WSDL documents, the <xref:System.ServiceModel.Description.WsdlImporter> type will try up to 32 combinations of policy alternatives attached to the different WSDL policy subjects.  If no combination imports cleanly, the first combination is used to construct a partial custom binding.
+ When importing policy from WSDL documents, the <xref:System.ServiceModel.Description.WsdlImporter> type will try up to 32 combinations of policy alternatives attached to the different WSDL policy subjects. If no combination imports cleanly, the first combination is used to construct a partial custom binding.
 
  In addition to these methods and properties, <xref:System.ServiceModel.Description.WsdlImporter> also implements methods that support importing binding information and properties that provide access to any policy documents, WSDL documents, WSDL extensions, and XML schema documents. For information about extending <xref:System.ServiceModel.Description.WsdlImporter> to support custom WSDL elements, see <xref:System.ServiceModel.Description.IWsdlImportExtension>.
 
  Typically the <xref:System.ServiceModel.Description.WsdlImporter> class is used in a three-step process.
 
-1.  Create a <xref:System.ServiceModel.Description.WsdlImporter> object and pass a <xref:System.ServiceModel.Description.MetadataSet> object to the constructor.
+1. Create a <xref:System.ServiceModel.Description.WsdlImporter> object and pass a <xref:System.ServiceModel.Description.MetadataSet> object to the constructor.
 
-2.  Call the appropriate `Import` method to retrieve the results.
+2. Call the appropriate `Import` method to retrieve the results.
 
-3.  Check the <xref:System.ServiceModel.Description.MetadataImporter.Errors> property to determine whether there are any import errors.
+3. Check the <xref:System.ServiceModel.Description.MetadataImporter.Errors> property to determine whether there are any import errors.
 
 > [!NOTE]
 > When importing WSDL port types, if the QName of the port type matches an entry in the <xref:System.ServiceModel.Description.MetadataImporter.KnownContracts> dictionary then the port type is not imported and the known contract is used instead.

@@ -54,7 +54,7 @@
 
  To enlist your resource manager as a participant in a transaction, call the <xref:System.Transactions.Transaction.EnlistVolatile*> method or the <xref:System.Transactions.Transaction.EnlistDurable*> method of the <xref:System.Transactions.Transaction> class. Specifically, the `EnlistmentOptions` parameter should equal to <xref:System.Transactions.EnlistmentOptions.None> to ensure that a single phase commit is performed. If it is mistakenly set to <xref:System.Transactions.EnlistmentOptions.EnlistDuringPrepareRequired>, no single phase commit occurs.
 
- Since the <xref:System.Transactions.ISinglePhaseNotification> interface derives from the <xref:System.Transactions.IEnlistmentNotification> interface, the resource manager must also implement all the methods of the latter for two phase commit notifications.  It is the transaction manager's choice as to whether two phase commit or the single phase commit optimization is used with this resource manager.  However, implementing this interface gives the resource manager the opportunity to take advantage of the optimization when it is available.
+ Since the <xref:System.Transactions.ISinglePhaseNotification> interface derives from the <xref:System.Transactions.IEnlistmentNotification> interface, the resource manager must also implement all the methods of the latter for two phase commit notifications. It is the transaction manager's choice as to whether two phase commit or the single phase commit optimization is used with this resource manager. However, implementing this interface gives the resource manager the opportunity to take advantage of the optimization when it is available.
 
  If the optimization is used and the transaction manager calls the <xref:System.Transactions.ISinglePhaseNotification.SinglePhaseCommit*> method of the enlisted resource, the resource manager should respond to this call by using various methods of the <xref:System.Transactions.SinglePhaseEnlistment> class to inform the transaction manager if the transaction is to be committed or rolled back.
 
@@ -108,7 +108,7 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- It is the transaction manager's choice as to whether two phase commit or the single phase commit optimization is used with this resource manager.  For more information on single phase and two phase commit, see [Committing A Transaction In Single-Phase and Multi-Phase](https://msdn.microsoft.com/library/74b3cfe1-d33a-45b8-91f4-dfd6f6598c4d).
+ It is the transaction manager's choice as to whether two phase commit or the single phase commit optimization is used with this resource manager. For more information on single phase and two phase commit, see [Committing A Transaction In Single-Phase and Multi-Phase](https://msdn.microsoft.com/library/74b3cfe1-d33a-45b8-91f4-dfd6f6598c4d).
 
  Therefore, on this enlistment of the resource manager, either the <xref:System.Transactions.ISinglePhaseNotification.SinglePhaseCommit*> method is called, or the two phase commit methods defined in the <xref:System.Transactions.IEnlistmentNotification> interface are called.
 

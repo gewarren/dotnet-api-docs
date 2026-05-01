@@ -119,7 +119,7 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Clones are created to pass transactions.  For example, you might not want to pass a <xref:System.Transactions.CommittableTransaction> to other applications, because you do not want others to commit your transaction.  If you try to marshal or serialize a transaction, a clone is created for you automatically.
+ Clones are created to pass transactions. For example, you might not want to pass a <xref:System.Transactions.CommittableTransaction> to other applications, because you do not want others to commit your transaction. If you try to marshal or serialize a transaction, a clone is created for you automatically.
 
  ]]></format>
         </remarks>
@@ -368,7 +368,7 @@ The following example shows you how to create a dependent transaction.
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Resource managers with a durable enlistment must be able to perform recovery if they experience a failure. For more information on recovery, see [Performing Recovery](/previous-versions/ms229982(v=vs.90)). For more information on volatile and durable resources, as well as how to enlist a resource, see [Implementing A Resource Manager](/previous-versions/ms229975(v=vs.90)).  For more information on how a resource manager responds to commit notification and prepare the commit in two-phase commit, see [Committing A Transaction In Single-Phase and Multi-Phase](/previous-versions/ckawh9ct(v=vs.90)).
+ Resource managers with a durable enlistment must be able to perform recovery if they experience a failure. For more information on recovery, see [Performing Recovery](/previous-versions/ms229982(v=vs.90)). For more information on volatile and durable resources, as well as how to enlist a resource, see [Implementing A Resource Manager](/previous-versions/ms229975(v=vs.90)). For more information on how a resource manager responds to commit notification and prepare the commit in two-phase commit, see [Committing A Transaction In Single-Phase and Multi-Phase](/previous-versions/ckawh9ct(v=vs.90)).
 
  Resource managers enlisted for participation in a transaction through this method receive two phase commit notifications that correspond to the methods defined on the <xref:System.Transactions.IEnlistmentNotification> interface.
 
@@ -493,7 +493,7 @@ The following example shows you how to create a dependent transaction.
 ## Remarks
  Enlistments in a transaction are volatile; that is, they do not survive the failure of the participant. In addition, this method only suggests the transaction manager to escalate control, but the escalation itself is not guaranteed. If escalation fails, the user is not notified and the transaction is rolled back.
 
- The parameter `promotableSinglePhaseNotification` is used to communicate to the transaction manager the outcome of attempting to commit the resource manager's internal transaction.  If inconsistent data is reported, the transaction manager throws an exception. If an <xref:System.Transactions.TransactionStatus.InDoubt> outcome is reported, the transaction manager looks for the outcome notification in its own internal enlistment and ignores the reported response.
+ The parameter `promotableSinglePhaseNotification` is used to communicate to the transaction manager the outcome of attempting to commit the resource manager's internal transaction. If inconsistent data is reported, the transaction manager throws an exception. If an <xref:System.Transactions.TransactionStatus.InDoubt> outcome is reported, the transaction manager looks for the outcome notification in its own internal enlistment and ignores the reported response.
 
  For more information on enlistments and escalation of a transaction, please see [Transaction Management Escalation](/previous-versions/ms229978(v=vs.90)). For more information on PSPE, see [Optimization Using Single Phase Commit and Promotable Single Phase Notification](/previous-versions/dotnet/netframework-3.0/ms229980(v=vs.85)).
 

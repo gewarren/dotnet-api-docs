@@ -51,11 +51,11 @@
 
 1.  **AddBackEntry** is called to associate a custom state with the current content.
 
-2.  The navigation history entry is navigated back to, and the <xref:System.Windows.Navigation.CustomContentState.Replay*> method of the custom state is called, and the state is applied to the content.
+2. The navigation history entry is navigated back to, and the <xref:System.Windows.Navigation.CustomContentState.Replay*> method of the custom state is called, and the state is applied to the content.
 
-3.  The previous content is navigated to in forward navigation history.
+3. The previous content is navigated to in forward navigation history.
 
-4.  The navigation history entry is navigated back to, but the custom state has not been retained since the last time the navigation history entry it was associated with was navigated to.
+4. The navigation history entry is navigated back to, but the custom state has not been retained since the last time the navigation history entry it was associated with was navigated to.
 
  This is the default behavior because the state that is initially recorded in custom state may change after it was added to navigation history. If the custom state object is navigated back to and its state is applied, before some aspect about the state changes before the entry in navigation history is navigated to, the change in state cannot be reflected in the custom state object. Furthermore, <xref:System.Windows.Navigation.NavigationService.AddBackEntry*> can't be explicitly called to add a new custom state object that reflects the state changes. Consequently, to ensure the current state for a particular navigation is always stored in navigation history, <xref:System.Windows.Navigation.IProvideCustomContentState.GetContentState*> is called.
 

@@ -679,7 +679,7 @@ public class Example
 
 ## Remarks
 
-If the search returns a large result set, the search will be more efficient if this property is set to `false` to avoid the transfer of the result set to the client computer.  If you do so, however, you will not be able to enumerate the results twice, because the <xref:System.DirectoryServices.SearchResultCollection> object creates a new enumerator object each time it is called.
+If the search returns a large result set, the search will be more efficient if this property is set to `false` to avoid the transfer of the result set to the client computer. If you do so, however, you will not be able to enumerate the results twice, because the <xref:System.DirectoryServices.SearchResultCollection> object creates a new enumerator object each time it is called.
 
  ]]></format>
         </remarks>
@@ -1000,11 +1000,11 @@ SearchResultCollection res = src.FindAll();
 
 The filter uses the following guidelines:
 
-1.  The string must be enclosed in parentheses.
+1. The string must be enclosed in parentheses.
 
-2.  Expressions can use the relational operators: <, \<=, =, >=, and >. An example is "(objectClass=user)". Another example is "(lastName>=Davis)".
+2. Expressions can use the relational operators: <, \<=, =, >=, and >. An example is "(objectClass=user)". Another example is "(lastName>=Davis)".
 
-3.  Compound expressions are formed with the prefix operators & and &#124;. An example is "(&(objectClass=user)(lastName= Davis))". Another example is "(&(objectClass=printer)(&#124;(building=42)(building=43)))".
+3. Compound expressions are formed with the prefix operators & and &#124;. An example is "(&(objectClass=user)(lastName= Davis))". Another example is "(&(objectClass=printer)(&#124;(building=42)(building=43)))".
 
  When the filter contains an attribute of ADS_UTC_TIME type, its value must be of the yyyymmddhhmmssZ format where y, m, d, h, m, and s stand for year, month, day, hour, minute, and second, respectively. The seconds (ss) value is optional. The final letter Z means there is no time differential. In this format, "10:20:00 A.M. May 13, 1999" becomes "19990513102000Z". Note that Active Directory Domain Services stores date and time as Coordinated Universal Time (Greenwich Mean Time). If you specify a time with no time differential, you are specifying the time in GMT time.
 

@@ -41,9 +41,9 @@
 
  A <xref:System.Windows.Documents.DynamicDocumentPaginator.PaginationCompleted> event also occurs when background pagination is disabled. For example, if there is only one page of content and <xref:System.Windows.Documents.DynamicDocumentPaginator.IsBackgroundPaginationEnabled*> = `false`), calling <xref:System.Windows.Documents.DocumentPaginator.GetPage*> with an argument of 0 will result in two events:
 
-1.  A <xref:System.Windows.Documents.DynamicDocumentPaginator.PaginationProgress> event with <xref:System.Windows.Documents.PaginationProgressEventArgs> settings of <xref:System.Windows.Documents.PaginationProgressEventArgs.Start*> = 0 and <xref:System.Windows.Documents.PaginationProgressEventArgs.Count*> = 1.
+1. A <xref:System.Windows.Documents.DynamicDocumentPaginator.PaginationProgress> event with <xref:System.Windows.Documents.PaginationProgressEventArgs> settings of <xref:System.Windows.Documents.PaginationProgressEventArgs.Start*> = 0 and <xref:System.Windows.Documents.PaginationProgressEventArgs.Count*> = 1.
 
-2.  A <xref:System.Windows.Documents.DynamicDocumentPaginator.PaginationCompleted> event.
+2. A <xref:System.Windows.Documents.DynamicDocumentPaginator.PaginationCompleted> event.
 
  ]]></format>
     </remarks>
@@ -254,15 +254,15 @@
 
  The following steps illustrate how to retrieve the page number of a given `contentPosition` asynchronously.
 
-1.  Create a <xref:System.Windows.Documents.GetPageNumberCompletedEventHandler> delegate and add it to be notified of <xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberCompleted> events.
+1. Create a <xref:System.Windows.Documents.GetPageNumberCompletedEventHandler> delegate and add it to be notified of <xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberCompleted> events.
 
-2.  Call <xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberAsync(System.Windows.Documents.ContentPosition,System.Object)> specifying the `contentPosition` desired and a unique `userState` object that will be used to identify the asynchronous task.
+2. Call <xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberAsync(System.Windows.Documents.ContentPosition,System.Object)> specifying the `contentPosition` desired and a unique `userState` object that will be used to identify the asynchronous task.
 
-3.  When the event occurs and the delegate is called, compare the event's <xref:System.Windows.Documents.GetPageNumberCompletedEventArgs>.<xref:System.ComponentModel.AsyncCompletedEventArgs.UserState> property with the original <xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberAsync*> `userState` parameter.
+3. When the event occurs and the delegate is called, compare the event's <xref:System.Windows.Documents.GetPageNumberCompletedEventArgs>.<xref:System.ComponentModel.AsyncCompletedEventArgs.UserState> property with the original <xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberAsync*> `userState` parameter.
 
-4.  When the <xref:System.Windows.Documents.GetPageNumberCompletedEventArgs>.<xref:System.ComponentModel.AsyncCompletedEventArgs.UserState> property matches the original <xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberAsync(System.Windows.Documents.ContentPosition,System.Object)> `userState`, the operation is complete and the page number is ready.  (The <xref:System.Windows.Documents.GetPageNumberCompletedEventArgs>.<xref:System.Windows.Documents.GetPageNumberCompletedEventArgs.ContentPosition> property will also match the original <xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberAsync(System.Windows.Documents.ContentPosition,System.Object)> `contentPosition` parameter.)
+4. When the <xref:System.Windows.Documents.GetPageNumberCompletedEventArgs>.<xref:System.ComponentModel.AsyncCompletedEventArgs.UserState> property matches the original <xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberAsync(System.Windows.Documents.ContentPosition,System.Object)> `userState`, the operation is complete and the page number is ready.  (The <xref:System.Windows.Documents.GetPageNumberCompletedEventArgs>.<xref:System.Windows.Documents.GetPageNumberCompletedEventArgs.ContentPosition> property will also match the original <xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberAsync(System.Windows.Documents.ContentPosition,System.Object)> `contentPosition` parameter.)
 
-5.  The <xref:System.Windows.Documents.GetPageNumberCompletedEventArgs>.<xref:System.Windows.Documents.GetPageNumberCompletedEventArgs.PageNumber> property contains the zero-based page number of the specified `contentPosition`.
+5. The <xref:System.Windows.Documents.GetPageNumberCompletedEventArgs>.<xref:System.Windows.Documents.GetPageNumberCompletedEventArgs.PageNumber> property contains the zero-based page number of the specified `contentPosition`.
 
  <xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumber*> provides similar functionality as <xref:System.Windows.Documents.DynamicDocumentPaginator.GetPageNumberAsync*>, but for synchronous operation.
 

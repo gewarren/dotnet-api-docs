@@ -143,15 +143,15 @@ The parameterless constructor was designed to work under the assumption that the
 
  When an instance of a wrapper class is created, inherited code will automatically perform the following actions:
 
-1.  Reflect over the class.
+1. Reflect over the class.
 
-2.  For each property on the wrapper marked with either `[UserScopedSettingAttribute]` or `[ApplicationScopedSettingAttribute]`, a corresponding <xref:System.Configuration.SettingsProperty> is created.
+2. For each property on the wrapper marked with either `[UserScopedSettingAttribute]` or `[ApplicationScopedSettingAttribute]`, a corresponding <xref:System.Configuration.SettingsProperty> is created.
 
-3.  Each <xref:System.Configuration.SettingsProperty> has some of its properties set based on other attributes that are optionally present on the wrapper's properties, such as the default value or the settings provider.
+3. Each <xref:System.Configuration.SettingsProperty> has some of its properties set based on other attributes that are optionally present on the wrapper's properties, such as the default value or the settings provider.
 
-4.  All other attributes are simply put into an attribute bag, the <xref:System.Configuration.SettingsProperty.Attributes> property of the <xref:System.Configuration.SettingsProperty> class.
+4. All other attributes are simply put into an attribute bag, the <xref:System.Configuration.SettingsProperty.Attributes> property of the <xref:System.Configuration.SettingsProperty> class.
 
-5.  All <xref:System.Configuration.SettingsProperty> objects are added to a <xref:System.Configuration.SettingsPropertyCollection> represented by the <xref:System.Configuration.ApplicationSettingsBase.Properties> property of the <xref:System.Configuration.ApplicationSettingsBase> class. This collection is then passed to the <xref:System.Configuration.SettingsBase.Initialize*> method.
+5. All <xref:System.Configuration.SettingsProperty> objects are added to a <xref:System.Configuration.SettingsPropertyCollection> represented by the <xref:System.Configuration.ApplicationSettingsBase.Properties> property of the <xref:System.Configuration.ApplicationSettingsBase> class. This collection is then passed to the <xref:System.Configuration.SettingsBase.Initialize*> method.
 
  As implied by step 3 mentioned previously, <xref:System.Configuration.ApplicationSettingsBase> natively works with several property attributes, specifically the following: <xref:System.Configuration.SettingsProviderAttribute>, <xref:System.Configuration.DefaultSettingValueAttribute>, and <xref:System.Configuration.SettingsSerializeAsAttribute>. All other settings attributes are simply passed through to the appropriate underlying provider.
 

@@ -75,17 +75,17 @@
 
 - A contract interface. In this case, the behavior is applied to all contracts of that type in any endpoint.
 
-- A service class.  In this case, the behavior is applied to all endpoints regardless of contract.
+- A service class. In this case, the behavior is applied to all endpoints regardless of contract.
 
-- A callback class.  In this case, the behavior is applied to the duplex client's endpoint.
+- A callback class. In this case, the behavior is applied to the duplex client's endpoint.
 
  The behavior of the second approach varies slightly if the custom attribute also implements <xref:System.ServiceModel.Description.IContractBehaviorAttribute?displayProperty=nameWithType>. In this case, the behavior is as follows:
 
 - A contract interface. In this case, the behavior is applied to all contracts of that type in any endpoint and Windows Communication Foundation (WCF) ignores the value of the <xref:System.ServiceModel.Description.IContractBehaviorAttribute.TargetContract?displayProperty=nameWithType> property.
 
-- A service class.  In this case, the behavior is applied only to endpoints the contract of which is the value of the <xref:System.ServiceModel.Description.IContractBehaviorAttribute.TargetContract?displayProperty=nameWithType> property.
+- A service class. In this case, the behavior is applied only to endpoints the contract of which is the value of the <xref:System.ServiceModel.Description.IContractBehaviorAttribute.TargetContract?displayProperty=nameWithType> property.
 
-- A callback class.  In this case, the behavior is applied to the duplex client's endpoint and WCF ignores the value of the <xref:System.ServiceModel.Description.IContractBehaviorAttribute.TargetContract?displayProperty=nameWithType> property.
+- A callback class. In this case, the behavior is applied to the duplex client's endpoint and WCF ignores the value of the <xref:System.ServiceModel.Description.IContractBehaviorAttribute.TargetContract?displayProperty=nameWithType> property.
 
  To perform the customization task on the client for which it is intended, the <xref:System.ServiceModel.Description.IContractBehavior> object must be added to the <xref:System.ServiceModel.Description.ContractDescription.Behaviors> property prior to the construction of the client runtime, which occurs when <xref:System.ServiceModel.ChannelFactory`1.CreateChannel*?displayProperty=nameWithType> is called. There are two ways to do this:
 

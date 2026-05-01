@@ -29,11 +29,11 @@
 ## Remarks
  The <xref:System.Windows.Documents.TextRange> class introduces the following terminology.
 
--   **Selection** - A <xref:System.Windows.Documents.TextRange> is a selection of content between two positions indicated by **TextPointers**.  One of these positions a fixed anchor with respect to the selection, while the other position is movable.  This is similar to how a selection made by a user using the mouse or keyboard behaves.
+-   **Selection** - A <xref:System.Windows.Documents.TextRange> is a selection of content between two positions indicated by **TextPointers**. One of these positions a fixed anchor with respect to the selection, while the other position is movable. This is similar to how a selection made by a user using the mouse or keyboard behaves.
 
 -   **Current Selection** - Because a <xref:System.Windows.Documents.TextRange> always indicates a selection in content, it makes sense to simply refer to the selection indicated by a <xref:System.Windows.Documents.TextRange> as the *current selection*.
 
--   **Text Container** - A *text container* is the element that forms the ultimate border for the flow content at hand; the selection indicated by a <xref:System.Windows.Documents.TextRange> always falls within a text container.  Currently, a text container must be either a <xref:System.Windows.Documents.FlowDocument> or a <xref:System.Windows.Controls.TextBlock>.
+-   **Text Container** - A *text container* is the element that forms the ultimate border for the flow content at hand; the selection indicated by a <xref:System.Windows.Documents.TextRange> always falls within a text container. Currently, a text container must be either a <xref:System.Windows.Documents.FlowDocument> or a <xref:System.Windows.Controls.TextBlock>.
 
 -   **Document** - The content collectively contained within a text container is referred to as a *document*.
 
@@ -89,7 +89,7 @@ The following example demonstrates using the <xref:System.Windows.Documents.Text
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A <xref:System.Windows.Documents.TextRange> is formed from a selection between two positions indicated by **TextPointers**.  One of these positions (indicated by `position1`) is fixed with respect to the selection, while the other position (indicated by `position2`) is movable.  This is similar to how a selection made by a user using the mouse or keyboard behaves.
+ A <xref:System.Windows.Documents.TextRange> is formed from a selection between two positions indicated by **TextPointers**. One of these positions (indicated by `position1`) is fixed with respect to the selection, while the other position (indicated by `position2`) is movable. This is similar to how a selection made by a user using the mouse or keyboard behaves.
 
  The actual ends of the new <xref:System.Windows.Documents.TextRange> may be adjusted to match any selection heuristics that are applicable to the document that contains the new <xref:System.Windows.Documents.TextRange>.
 
@@ -191,7 +191,7 @@ The following example demonstrates the use of the <xref:System.Windows.Documents
         <Parameter Name="dataFormat" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="dataFormat">A data format to check for load-compatibility into the current selection.  See <see cref="T:System.Windows.DataFormats" /> for a list of predefined data formats.</param>
+        <param name="dataFormat">A data format to check for load-compatibility into the current selection. See <see cref="T:System.Windows.DataFormats" /> for a list of predefined data formats.</param>
         <summary>Checks whether the current selection can be loaded with content in a specified data format.</summary>
         <returns>
           <see langword="true" /> if the current selection can be loaded with content in the specified data format; otherwise, <see langword="false" />.</returns>
@@ -241,7 +241,7 @@ The following example demonstrates the use of the <xref:System.Windows.Documents
         <Parameter Name="dataFormat" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="dataFormat">A data format to check for save compatibility with the current selection.  See <see cref="T:System.Windows.DataFormats" /> for a list of predefined data formats.</param>
+        <param name="dataFormat">A data format to check for save compatibility with the current selection. See <see cref="T:System.Windows.DataFormats" /> for a list of predefined data formats.</param>
         <summary>Checks whether the current selection can be saved as a specified data format.</summary>
         <returns>
           <see langword="true" /> if the current selection can be saved as the specified data format; otherwise, <see langword="false" />.</returns>
@@ -543,13 +543,13 @@ The following example demonstrates the use of the <xref:System.Windows.Documents
       </Parameters>
       <Docs>
         <param name="stream">A readable stream that contains data to load into the current selection.</param>
-        <param name="dataFormat">A data format to load the data as.  Currently supported data formats are <see cref="F:System.Windows.DataFormats.Rtf" />, <see cref="F:System.Windows.DataFormats.Text" />, <see cref="F:System.Windows.DataFormats.Xaml" />, and <see cref="F:System.Windows.DataFormats.XamlPackage" />.</param>
+        <param name="dataFormat">A data format to load the data as. Currently supported data formats are <see cref="F:System.Windows.DataFormats.Rtf" />, <see cref="F:System.Windows.DataFormats.Text" />, <see cref="F:System.Windows.DataFormats.Xaml" />, and <see cref="F:System.Windows.DataFormats.XamlPackage" />.</param>
         <summary>Loads the current selection in a specified data format from a specified stream.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- If <xref:System.IO.Stream.CanSeek*> is `true` for `stream`, content will be loaded from the beginning of the stream to the end of the stream.  Otherwise, content will be read from the current <xref:System.IO.Stream.Position*> to the end of the stream.  When this method returns, `stream` is left open, and the current position within `stream` is undefined.
+ If <xref:System.IO.Stream.CanSeek*> is `true` for `stream`, content will be loaded from the beginning of the stream to the end of the stream. Otherwise, content will be read from the current <xref:System.IO.Stream.Position*> to the end of the stream. When this method returns, `stream` is left open, and the current position within `stream` is undefined.
 
  A load operation replaces the current selection with the newly loaded content.
 
@@ -563,7 +563,7 @@ The following example demonstrates the use of the <xref:System.Windows.Documents
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">Occurs when <paramref name="stream" /> or <paramref name="dataFormat" /> is <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">Occurs when the specified data format is unsupported.  May also be raised if content loaded from <paramref name="stream" /> does not match the specified data format.</exception>
+        <exception cref="T:System.ArgumentException">Occurs when the specified data format is unsupported. May also be raised if content loaded from <paramref name="stream" /> does not match the specified data format.</exception>
         <altmember cref="M:System.Windows.Documents.TextRange.CanLoad(System.String)" />
         <altmember cref="M:System.Windows.Documents.TextRange.Save(System.IO.Stream,System.String)" />
         <altmember cref="M:System.Windows.Documents.TextRange.CanSave(System.String)" />
@@ -607,7 +607,7 @@ The following example demonstrates the use of the <xref:System.Windows.Documents
       </Parameters>
       <Docs>
         <param name="stream">An empty, writable stream to save the current selection to.</param>
-        <param name="dataFormat">A data format to save the current selection as.  Currently supported data formats are <see cref="F:System.Windows.DataFormats.Rtf" />, <see cref="F:System.Windows.DataFormats.Text" />, <see cref="F:System.Windows.DataFormats.Xaml" />, and <see cref="F:System.Windows.DataFormats.XamlPackage" />.</param>
+        <param name="dataFormat">A data format to save the current selection as. Currently supported data formats are <see cref="F:System.Windows.DataFormats.Rtf" />, <see cref="F:System.Windows.DataFormats.Text" />, <see cref="F:System.Windows.DataFormats.Xaml" />, and <see cref="F:System.Windows.DataFormats.XamlPackage" />.</param>
         <summary>Saves the current selection to a specified stream in a specified data format.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[
@@ -668,7 +668,7 @@ The following example demonstrates the use of the <xref:System.Windows.Documents
       </Parameters>
       <Docs>
         <param name="stream">An empty, writable stream to save the current selection to.</param>
-        <param name="dataFormat">A data format to save the current selection as.  Currently supported data formats are <see cref="F:System.Windows.DataFormats.Rtf" />, <see cref="F:System.Windows.DataFormats.Text" />, <see cref="F:System.Windows.DataFormats.Xaml" />, and <see cref="F:System.Windows.DataFormats.XamlPackage" />.</param>
+        <param name="dataFormat">A data format to save the current selection as. Currently supported data formats are <see cref="F:System.Windows.DataFormats.Rtf" />, <see cref="F:System.Windows.DataFormats.Text" />, <see cref="F:System.Windows.DataFormats.Xaml" />, and <see cref="F:System.Windows.DataFormats.XamlPackage" />.</param>
         <param name="preserveTextElements">
           <see langword="true" /> to preserve custom <see cref="T:System.Windows.Documents.TextElement" /> objects; otherwise, <see langword="false" />.</param>
         <summary>Saves the current selection to a specified stream in a specified data format, with the option of preserving custom <see cref="T:System.Windows.Documents.TextElement" /> objects.</summary>
@@ -676,14 +676,14 @@ The following example demonstrates the use of the <xref:System.Windows.Documents
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When `preserveTextElements` is `false`, custom <xref:System.Windows.Documents.TextElement> objects are saved as known <xref:System.Windows.Documents.TextElement> types.  For example, suppose you create a custom <xref:System.Windows.Documents.TextElement> called `Heading1`, which inherits from <xref:System.Windows.Documents.Paragraph>. When you call this method with `preserveTextElements` set to `false`, `Heading1` is converted to a <xref:System.Windows.Documents.Paragraph> when the <xref:System.Windows.Documents.TextRange> is saved.  When you call this method with `preserveTextElements` set to `true`, `Heading1` is saved without being converted. To preserve custom text elements, `dataFormat` must be set to <xref:System.Windows.DataFormats.Xaml?displayProperty=nameWithType>.
+ When `preserveTextElements` is `false`, custom <xref:System.Windows.Documents.TextElement> objects are saved as known <xref:System.Windows.Documents.TextElement> types. For example, suppose you create a custom <xref:System.Windows.Documents.TextElement> called `Heading1`, which inherits from <xref:System.Windows.Documents.Paragraph>. When you call this method with `preserveTextElements` set to `false`, `Heading1` is converted to a <xref:System.Windows.Documents.Paragraph> when the <xref:System.Windows.Documents.TextRange> is saved. When you call this method with `preserveTextElements` set to `true`, `Heading1` is saved without being converted. To preserve custom text elements, `dataFormat` must be set to <xref:System.Windows.DataFormats.Xaml?displayProperty=nameWithType>.
 
- <xref:System.Windows.Documents.TextRange.Save(System.IO.Stream,System.String,System.Boolean)> is introduced in the .NET Framework version 3.5.  For more information, see [Versions and Dependencies](/dotnet/framework/migration-guide/versions-and-dependencies).
+ <xref:System.Windows.Documents.TextRange.Save(System.IO.Stream,System.String,System.Boolean)> is introduced in the .NET Framework version 3.5. For more information, see [Versions and Dependencies](/dotnet/framework/migration-guide/versions-and-dependencies).
 
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">Occurs when <paramref name="stream" /> or <paramref name="dataFormat" /> is <see langword="null" />.</exception>
-        <exception cref="T:System.ArgumentException">Occurs when the specified data format is unsupported.  May also be raised if content loaded from <paramref name="stream" /> does not match the specified data format.</exception>
+        <exception cref="T:System.ArgumentException">Occurs when the specified data format is unsupported. May also be raised if content loaded from <paramref name="stream" /> does not match the specified data format.</exception>
       </Docs>
     </Member>
     <Member MemberName="Select">
@@ -721,7 +721,7 @@ The following example demonstrates the use of the <xref:System.Windows.Documents
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- A <xref:System.Windows.Documents.TextRange> is formed from a selection between two positions indicated by **TextPointers**.  One of these positions (indicated by `position1`) is fixed with respect to the selection, while the other position (indicated by `position2`) is movable.  This is similar to how a selection made by a user using the mouse or keyboard behaves.
+ A <xref:System.Windows.Documents.TextRange> is formed from a selection between two positions indicated by **TextPointers**. One of these positions (indicated by `position1`) is fixed with respect to the selection, while the other position (indicated by `position2`) is movable. This is similar to how a selection made by a user using the mouse or keyboard behaves.
 
  The actual ends of the new selection may be adjusted to match any selection heuristics that are applicable to the document that contains the new current selection.
 
@@ -804,7 +804,7 @@ The following example demonstrates the use of the <xref:System.Windows.Documents
 ## Remarks
  Use this property to extract the plain text content in the current selection, regardless of any formatting that may be present.
 
- New line characters and paragraph breaks are treated as equivalent with respect to this property.  Any types of content breaks present in the current selection are converted to new lines when this property is read.
+ New line characters and paragraph breaks are treated as equivalent with respect to this property. Any types of content breaks present in the current selection are converted to new lines when this property is read.
 
 ## Examples
 

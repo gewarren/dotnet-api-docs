@@ -66,13 +66,13 @@
         <summary>Gets or sets the fully-qualified type name of the custom type to be used as a filter.</summary>
         <value>The fully-qualified type.</value>
         <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- If <xref:System.ServiceModel.Routing.Configuration.FilterElement.FilterType> is set to custom, <xref:System.ServiceModel.Routing.Configuration.FilterElement.CustomType> is the fully-qualified type name of the class to create. <xref:System.ServiceModel.Routing.Configuration.FilterElement.FilterData> can also contain values to be used during evaluation of the <xref:System.ServiceModel.Routing.Configuration.FilterElement.CustomType> filter. The <xref:System.ServiceModel.Routing.Configuration.FilterElement.CustomType> must implement a constructor that accepts a string value, which contains the <xref:System.ServiceModel.Routing.Configuration.FilterElement.FilterData> information.  
-  
- For more information, see <xref:System.ServiceModel.Routing.Configuration.FilterElement.FilterData>.  
-  
+          <format type="text/markdown"><![CDATA[
+
+## Remarks
+ If <xref:System.ServiceModel.Routing.Configuration.FilterElement.FilterType> is set to custom, <xref:System.ServiceModel.Routing.Configuration.FilterElement.CustomType> is the fully-qualified type name of the class to create. <xref:System.ServiceModel.Routing.Configuration.FilterElement.FilterData> can also contain values to be used during evaluation of the <xref:System.ServiceModel.Routing.Configuration.FilterElement.CustomType> filter. The <xref:System.ServiceModel.Routing.Configuration.FilterElement.CustomType> must implement a constructor that accepts a string value, which contains the <xref:System.ServiceModel.Routing.Configuration.FilterElement.FilterData> information.
+
+ For more information, see <xref:System.ServiceModel.Routing.Configuration.FilterElement.FilterData>.
+
  ]]></format>
         </remarks>
       </Docs>
@@ -102,11 +102,11 @@
         <summary>Gets or sets the filter1 data of this configuration element. This value is only used when <see cref="P:System.ServiceModel.Routing.Configuration.FilterElement.FilterType" /> is set to And.</summary>
         <value>The filter1 value of this element.</value>
         <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- The content of <xref:System.ServiceModel.Routing.Configuration.FilterElement.Filter1> is only used during evaluation of the AND filter. For more information, see <xref:System.ServiceModel.Routing.Configuration.FilterElement.FilterData>.  
-  
+          <format type="text/markdown"><![CDATA[
+
+## Remarks
+ The content of <xref:System.ServiceModel.Routing.Configuration.FilterElement.Filter1> is only used during evaluation of the AND filter. For more information, see <xref:System.ServiceModel.Routing.Configuration.FilterElement.FilterData>.
+
  ]]></format>
         </remarks>
       </Docs>
@@ -136,11 +136,11 @@
         <summary>Gets or sets the filter2 data of this configuration element. This value is only used when <see cref="P:System.ServiceModel.Routing.Configuration.FilterElement.FilterType" /> is set to AND.</summary>
         <value>The filter2 value of this element.</value>
         <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- The content of <xref:System.ServiceModel.Routing.Configuration.FilterElement.Filter2> is only used during evaluation of the AND filters. For more information, see <xref:System.ServiceModel.Routing.Configuration.FilterElement.FilterData>.  
-  
+          <format type="text/markdown"><![CDATA[
+
+## Remarks
+ The content of <xref:System.ServiceModel.Routing.Configuration.FilterElement.Filter2> is only used during evaluation of the AND filters. For more information, see <xref:System.ServiceModel.Routing.Configuration.FilterElement.FilterData>.
+
  ]]></format>
         </remarks>
       </Docs>
@@ -170,22 +170,22 @@
         <summary>Gets or sets the filter data of this configuration element.</summary>
         <value>The filter data of this element.</value>
         <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- The following table describes the meaning of <xref:System.ServiceModel.Routing.Configuration.FilterElement.FilterData> based on the value of <xref:System.ServiceModel.Routing.Configuration.FilterType>.  
-  
-|Filter  Type|Description|Filter Data Meaning|Example Filter|  
-|------------------|-----------------|-------------------------|--------------------|  
-|Action|Uses the ActionMessageFilter that comes with WCF.|The Action to filter upon.|`<filter name="action1" filterType="Action" filterData="http://ACTION" />`|  
-|Address|Uses the EndpointAddressMessageFilter that comes with WCF with ignore host name == true.|The address to filter upon (in the To header).|`<filter name="address1" filterType="Address" filterData="http://host/vdir/s.svc/b" />`|  
-|AddressPrefix|Uses the PrefixEndpointAddressMessageFilter that comes with WCF with ignore host name == true.|The address to filter upon using longest prefix matching.|`<filter name="prefix1" filterType="AddressPrefix" filterData="http://host" />`|  
-|StrictAnd|A custom AndMessageFilter that always evaluates both conditions before returning.|filterData is not used, instead filter1 and filter2 have the names of the corresponding messages filters (also in the table), which should be ANDed together.|`<filter name="and1" filterType="And" filter1="address1" filter2="action1" />`|  
-|Custom|A user-defined type that extends MessageFilter and has a constructor taking a string.|customType attribute is the fully-qualified type name of the class to create, filterData is the string to pass to the constructor when creating the filter.|`<filter name="custom1" filterType="Custom" customType="CustomAssembly.CustomMsgFilter, CustomAssembly" filterData="Custom Data" />`|  
-|EndpointName|A custom message filter for use solely in the Routing Service, which filters messages based on the name of the service endpoint.|The name of the service endpoint, for example: "serviceEndpoint1".  This should be one of the endpoints exposed on the Routing Service.|`<filter name="stock1" filterType="Endpoint" filterData="SvcEndpoint" />`|  
-|MatchAll|Uses the MatchAllMessageFilter that comes with WCF.|N/A|`<filter name="matchAll1" filterType="MatchAll" />`|  
-|XPath|Uses the XPathMessageFilter that comes with WCF.|The XPath query to use when matching messages.|`<filter name="XPath1" filterType="XPath" filterData="//ns:element" />`|  
-  
+          <format type="text/markdown"><![CDATA[
+
+## Remarks
+ The following table describes the meaning of <xref:System.ServiceModel.Routing.Configuration.FilterElement.FilterData> based on the value of <xref:System.ServiceModel.Routing.Configuration.FilterType>.
+
+|Filter  Type|Description|Filter Data Meaning|Example Filter|
+|------------------|-----------------|-------------------------|--------------------|
+|Action|Uses the ActionMessageFilter that comes with WCF.|The Action to filter upon.|`<filter name="action1" filterType="Action" filterData="http://ACTION" />`|
+|Address|Uses the EndpointAddressMessageFilter that comes with WCF with ignore host name == true.|The address to filter upon (in the To header).|`<filter name="address1" filterType="Address" filterData="http://host/vdir/s.svc/b" />`|
+|AddressPrefix|Uses the PrefixEndpointAddressMessageFilter that comes with WCF with ignore host name == true.|The address to filter upon using longest prefix matching.|`<filter name="prefix1" filterType="AddressPrefix" filterData="http://host" />`|
+|StrictAnd|A custom AndMessageFilter that always evaluates both conditions before returning.|filterData is not used, instead filter1 and filter2 have the names of the corresponding messages filters (also in the table), which should be ANDed together.|`<filter name="and1" filterType="And" filter1="address1" filter2="action1" />`|
+|Custom|A user-defined type that extends MessageFilter and has a constructor taking a string.|customType attribute is the fully-qualified type name of the class to create, filterData is the string to pass to the constructor when creating the filter.|`<filter name="custom1" filterType="Custom" customType="CustomAssembly.CustomMsgFilter, CustomAssembly" filterData="Custom Data" />`|
+|EndpointName|A custom message filter for use solely in the Routing Service, which filters messages based on the name of the service endpoint.|The name of the service endpoint, for example: "serviceEndpoint1". This should be one of the endpoints exposed on the Routing Service.|`<filter name="stock1" filterType="Endpoint" filterData="SvcEndpoint" />`|
+|MatchAll|Uses the MatchAllMessageFilter that comes with WCF.|N/A|`<filter name="matchAll1" filterType="MatchAll" />`|
+|XPath|Uses the XPathMessageFilter that comes with WCF.|The XPath query to use when matching messages.|`<filter name="XPath1" filterType="XPath" filterData="//ns:element" />`|
+
  ]]></format>
         </remarks>
       </Docs>

@@ -41,16 +41,16 @@ The following example is part of a custom speech synthesis implementation inheri
 
  The implementation of <xref:System.Speech.Synthesis.TtsEngine.TtsEngineSsml.Speak*?displayProperty=nameWithType> includes the following steps:
 
-1.  Receives an array of <xref:System.Speech.Synthesis.TtsEngine.TextFragment> instances and creates a new array of <xref:System.Speech.Synthesis.TtsEngine.TextFragment> instances to be passed to the `Speak` method on an underlying synthesis engine.
+1. Receives an array of <xref:System.Speech.Synthesis.TtsEngine.TextFragment> instances and creates a new array of <xref:System.Speech.Synthesis.TtsEngine.TextFragment> instances to be passed to the `Speak` method on an underlying synthesis engine.
 
-2.  If the <xref:System.Speech.Synthesis.TtsEngine.FragmentState.Action> property of each <xref:System.Speech.Synthesis.TtsEngine.TextFragment.State*?displayProperty=nameWithType> instance is equal to
+2. If the <xref:System.Speech.Synthesis.TtsEngine.FragmentState.Action> property of each <xref:System.Speech.Synthesis.TtsEngine.TextFragment.State*?displayProperty=nameWithType> instance is equal to
 <xref:System.Speech.Synthesis.TtsEngine.TtsEngineAction.Speak?displayProperty=nameWithType>, the code does the following:
 
     - Translates American English to British English in the text to be spoken.
 
     - If the <xref:System.Speech.Synthesis.TtsEngine.ITtsEngineSite.EventInterest?displayProperty=nameWithType> property provided to the implementation supports the `WordBoundary` event type, a <xref:System.Speech.Synthesis.TtsEngine.SpeechEventInfo> instance is used to create an event to drive a synthesizer progress meter is created.
 
-3.  A speech rendering engine is then called with the modified <xref:System.Speech.Synthesis.TtsEngine.TextFragment> array.
+3. A speech rendering engine is then called with the modified <xref:System.Speech.Synthesis.TtsEngine.TextFragment> array.
 
 ```csharp
 private const int WordBoundaryFlag = 1 << (int)TtsEventId.WordBoundary;

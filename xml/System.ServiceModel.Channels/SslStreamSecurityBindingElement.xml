@@ -81,23 +81,23 @@
 
 ### To add this class to a binding
 
-1.  Create a <xref:System.ServiceModel.Channels.BindingElementCollection>.
+1. Create a <xref:System.ServiceModel.Channels.BindingElementCollection>.
 
-2.  Create custom binding elements that are above this binding element in the binding stack, such as the optional <xref:System.ServiceModel.Channels.TransactionFlowBindingElement> and <xref:System.ServiceModel.Channels.ReliableSessionBindingElement>.
+2. Create custom binding elements that are above this binding element in the binding stack, such as the optional <xref:System.ServiceModel.Channels.TransactionFlowBindingElement> and <xref:System.ServiceModel.Channels.ReliableSessionBindingElement>.
 
-3.  Add the created elements in the order described previously to the <xref:System.ServiceModel.Channels.BindingElementCollection> using the <xref:System.ServiceModel.Channels.BindingElementCollection.InsertItem*> method.
+3. Add the created elements in the order described previously to the <xref:System.ServiceModel.Channels.BindingElementCollection> using the <xref:System.ServiceModel.Channels.BindingElementCollection.InsertItem*> method.
 
-4.  Create an instance of <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement> and add it to the collection.
+4. Create an instance of <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement> and add it to the collection.
 
-5.  Add any additional custom binding elements to the collection, such as <xref:System.ServiceModel.Channels.TcpTransportBindingElement>.
+5. Add any additional custom binding elements to the collection, such as <xref:System.ServiceModel.Channels.TcpTransportBindingElement>.
 
  There are three scenarios in which you must either manually specify the correct UPN/SPN on the client endpoint after importing the WSDL, or specify a custom <xref:System.ServiceModel.Security.IdentityVerifier> on the client's <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement>.
 
-1.  No service identity is published in WSDL. <xref:System.ServiceModel.Configuration.AuthenticationMode.SspiNegotiatedOverTransport> and HTTPS are used (for example, a <xref:System.ServiceModel.WSHttpBinding> with SecurityMode = <xref:System.ServiceModel.SecurityMode.TransportWithMessageCredential>). If the service is not running with the machine identity, you must manually specify the correct UPN/SPN on the client endpoint after importing the WSDL.
+1. No service identity is published in WSDL. <xref:System.ServiceModel.Configuration.AuthenticationMode.SspiNegotiatedOverTransport> and HTTPS are used (for example, a <xref:System.ServiceModel.WSHttpBinding> with SecurityMode = <xref:System.ServiceModel.SecurityMode.TransportWithMessageCredential>). If the service is not running with the machine identity, you must manually specify the correct UPN/SPN on the client endpoint after importing the WSDL.
 
-2.  DNS service identity is published in WSDL. <xref:System.ServiceModel.Configuration.AuthenticationMode.SspiNegotiatedOverTransport> and <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement> are used (for example, <xref:System.ServiceModel.NetTcpBinding> with SecurityMode = <xref:System.ServiceModel.SecurityMode.TransportWithMessageCredential>) instead of a UPN/SPN. If the service is not running with the machine identity, or the DNS identity is not the machine's identity, you must manually specify the correct UPN/SPN on the client endpoint after importing the WSDL.
+2. DNS service identity is published in WSDL. <xref:System.ServiceModel.Configuration.AuthenticationMode.SspiNegotiatedOverTransport> and <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement> are used (for example, <xref:System.ServiceModel.NetTcpBinding> with SecurityMode = <xref:System.ServiceModel.SecurityMode.TransportWithMessageCredential>) instead of a UPN/SPN. If the service is not running with the machine identity, or the DNS identity is not the machine's identity, you must manually specify the correct UPN/SPN on the client endpoint after importing the WSDL.
 
-3.  DNS identity is published in WSDL. If <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement> is overridden on the client, you must specify a custom <xref:System.ServiceModel.Security.IdentityVerifier> on the client's <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement>.
+3. DNS identity is published in WSDL. If <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement> is overridden on the client, you must specify a custom <xref:System.ServiceModel.Security.IdentityVerifier> on the client's <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement>.
 
  The following code shows how to manually specify the correct UPN/SPN on the client endpoint, as well as how to specify a custom <xref:System.ServiceModel.Security.IdentityVerifier> on the client's <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement>.
 

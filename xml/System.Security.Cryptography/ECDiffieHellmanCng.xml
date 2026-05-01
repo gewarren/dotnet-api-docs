@@ -50,7 +50,7 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Security.Cryptography.ECDiffieHellmanCng> class enables two parties to exchange private key material even if they are communicating through a public channel.  Both parties can calculate the same secret value, which is referred to as the *secret agreement* in the managed Diffie-Hellman classes. The secret agreement can then be used for a variety of purposes, including as a symmetric key. However, instead of exposing the secret agreement directly, the <xref:System.Security.Cryptography.ECDiffieHellmanCng> class does some post-processing on the agreement before providing the value. This post processing is referred to as the *key derivation function (KDF)*; you can select which KDF you want to use and set its parameters through a set of properties on the instance of the Diffie-Hellman object.
+ The <xref:System.Security.Cryptography.ECDiffieHellmanCng> class enables two parties to exchange private key material even if they are communicating through a public channel. Both parties can calculate the same secret value, which is referred to as the *secret agreement* in the managed Diffie-Hellman classes. The secret agreement can then be used for a variety of purposes, including as a symmetric key. However, instead of exposing the secret agreement directly, the <xref:System.Security.Cryptography.ECDiffieHellmanCng> class does some post-processing on the agreement before providing the value. This post processing is referred to as the *key derivation function (KDF)*; you can select which KDF you want to use and set its parameters through a set of properties on the instance of the Diffie-Hellman object.
 
 |Key derivation function|Properties|
 |-----------------------------|----------------|
@@ -60,15 +60,15 @@
 
  The result of passing the secret agreement through the key derivation function is a byte array that may be used as key material for your application. The number of bytes of key material generated is dependent on the key derivation function; for example, SHA-256 will generate 256 bits of key material, whereas SHA-512 will generate 512 bits of key material. The basic flow of an ECDH key exchange is as follows:
 
-1.  Alice and Bob create a key pair to use for the Diffie-Hellman key exchange operation
+1. Alice and Bob create a key pair to use for the Diffie-Hellman key exchange operation
 
-2.  Alice and Bob configure the KDF using parameters the agree on.
+2. Alice and Bob configure the KDF using parameters the agree on.
 
-3.  Alice sends Bob her public key.
+3. Alice sends Bob her public key.
 
-4.  Bob sends Alice his public key.
+4. Bob sends Alice his public key.
 
-5.  Alice and Bob use each other's public keys to generate the secret agreement, and apply the KDF to the secret agreement to generate key material.
+5. Alice and Bob use each other's public keys to generate the secret agreement, and apply the KDF to the secret agreement to generate key material.
 
 ## Examples
 

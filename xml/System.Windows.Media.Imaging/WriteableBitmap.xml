@@ -39,15 +39,15 @@
 
  For greater control over updates, and for multi-threaded access to the back buffer, use the following workflow.
 
-1.  Call the <xref:System.Windows.Media.Imaging.WriteableBitmap.Lock*> method to reserve the back buffer for updates.
+1. Call the <xref:System.Windows.Media.Imaging.WriteableBitmap.Lock*> method to reserve the back buffer for updates.
 
-2.  Obtain a pointer to the back buffer by accessing the <xref:System.Windows.Media.Imaging.WriteableBitmap.BackBuffer> property.
+2. Obtain a pointer to the back buffer by accessing the <xref:System.Windows.Media.Imaging.WriteableBitmap.BackBuffer> property.
 
-3.  Write changes to the back buffer. Other threads may write changes to the back buffer when the <xref:System.Windows.Media.Imaging.WriteableBitmap> is locked.
+3. Write changes to the back buffer. Other threads may write changes to the back buffer when the <xref:System.Windows.Media.Imaging.WriteableBitmap> is locked.
 
-4.  Call the <xref:System.Windows.Media.Imaging.WriteableBitmap.AddDirtyRect*> method to indicate areas that have changed.
+4. Call the <xref:System.Windows.Media.Imaging.WriteableBitmap.AddDirtyRect*> method to indicate areas that have changed.
 
-5.  Call the <xref:System.Windows.Media.Imaging.WriteableBitmap.Unlock*> method to release the back buffer and allow presentation to the screen.
+5. Call the <xref:System.Windows.Media.Imaging.WriteableBitmap.Unlock*> method to release the back buffer and allow presentation to the screen.
 
  When updates are sent to the rendering thread, the rendering thread copies the changed rectangles from the back buffer to the front buffer. The rendering system controls this exchange to avoid deadlocks and redraw artifacts, such as "tearing".
 
