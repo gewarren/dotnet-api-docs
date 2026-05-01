@@ -219,8 +219,6 @@
 
  After the registered asynchronous event handlers have been called, the rest of the page events are called, beginning with the <xref:System.Web.UI.Page.PreRenderComplete> event.
 
-
-
 ## Examples
  The following code example uses an asynchronous request to display the HTML source code of the local Web server's default page in a <xref:System.Web.UI.WebControls.TextBox> control.
 
@@ -282,8 +280,6 @@
  First, all <xref:System.Web.UI.Page> events (through the <xref:System.Web.UI.Control.PreRender> event) are run, and then each registered <xref:System.Web.BeginEventHandler> method is called. When the handler completes, the corresponding <xref:System.Web.EndEventHandler> method is called. If there are multiple asynchronous handlers, the next handler is called.
 
  After the registered asynchronous event handlers have been called, the rest of the page events are called, beginning with the <xref:System.Web.UI.Page.PreRenderComplete> event.
-
-
 
 ## Examples
  The following code example uses an asynchronous request to display the HTML source code of the local Web server's default page in a <xref:System.Web.UI.WebControls.TextBox> control.
@@ -675,8 +671,6 @@
 
  Define your asynchronous task using the <xref:System.Web.UI.PageAsyncTask> class and register a beginning, an ending, and a time-out handler. If the asynchronous task does not complete in the time interval specified, the time-out handler will be invoked.
 
-
-
 ## Examples
  The following code example demonstrates the use of the <xref:System.Web.UI.Page.AsyncTimeout> property with the <xref:System.Web.UI.Page.ExecuteRegisteredAsyncTasks*> and <xref:System.Web.UI.Page.RegisterAsyncTask*> methods. Note the use of beginning, ending, and time-out handlers. In the example, an artificial delay is introduced to demonstrate the situation of an asynchronous task exceeding the allotted time for the task as specified in the <xref:System.Web.UI.Page.AsyncTimeout> property. In a real-world scenario, an asynchronous task could be used to perform database calls or image generation, for example, and the time-out handler provides graceful degradation if the task is not performed in a specified amount of time. Note that the <xref:System.Web.UI.Page.AsyncTimeout> property is set in the page directive.
 
@@ -814,8 +808,6 @@
 ## Remarks
  An application's <xref:System.Web.Caching.Cache> object allows you to store and retrieve arbitrary data on subsequent requests. The cache is not specifically associated with a page or user session. It is used primarily to enhance application performance. For more information, see [Caching Application Data](https://learn.microsoft.com/previous-versions/aspnet/6hbbsfk6(v=vs.100)). For more information on the difference between application caching and page output caching, see [ASP.NET Caching Overview](https://learn.microsoft.com/previous-versions/aspnet/ms178597(v=vs.100)).
 
-
-
 ## Examples
  The following code example inserts the sum of two integers into the <xref:System.Web.Caching.Cache?displayProperty=nameWithType> object using the <xref:System.Web.UI.Page.Cache?displayProperty=nameWithType> property. It then retrieves the value using the <xref:System.Web.Caching.Cache.Get*?displayProperty=nameWithType> method and writes it to a <xref:System.Web.UI.WebControls.Label> Web server control.
 
@@ -886,8 +878,6 @@
 
  The <xref:System.Web.UI.ClientScriptManager> class is new in ASP.NET 2.0 and replaces <xref:System.Web.UI.Page> class methods for managing scripts that are now deprecated.
 
-
-
 ## Examples
  For an example, see the <xref:System.Web.UI.ClientScriptManager> class overview topic.
 
@@ -949,8 +939,6 @@
  You can set the alias programmatically using this property, or you can set it declaratively using the `ClientTarget` attribute of the [@ Page](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/ydy4x04a(v=vs.100)) directive.
 
  You can define additional aliases in the `clientTarget` section of the application-level Web.config file. For more information, see [clientTarget Element (ASP.NET Settings Schema)](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/6379d90d(v=vs.100)).
-
-
 
 ## Examples
  The following code example defines an `ie302` alias and includes sections needed to configure your application in its Web.config file. Using this alias, you can set the <xref:System.Web.UI.Page.ClientTarget> property to `ie302` and customize pages specifically for Internet Explorer 3.02 browsers.
@@ -1107,8 +1095,6 @@
 ## Remarks
  This property provides programmatic access to the context the page runs in, including information about the request, response, session, and application.
 
-
-
 ## Examples
  The following code example uses the <xref:System.Web.UI.Page.Context> property to access the <xref:System.Web.HttpContext.AddError*?displayProperty=nameWithType> and <xref:System.Web.HttpContext.ClearError*?displayProperty=nameWithType> methods and the <xref:System.Web.HttpContext.AllErrors?displayProperty=nameWithType> property. The example creates three custom exceptions using the <xref:System.Web.HttpContext.AddError*> method and uses the <xref:System.Web.HttpContext.AllErrors> property to load these exceptions to an array. It then writes the array to the containing page and uses the <xref:System.Web.HttpContext.ClearError*> method to clear all the errors from the <xref:System.Web.UI.Page.Context> property.
 
@@ -1159,8 +1145,6 @@
 
 ## Remarks
  The <xref:System.Web.UI.Page.CreateHtmlTextWriter*> method creates a <xref:System.IO.TextWriter> through the <xref:System.Web.HttpRequest.Browser> property of the <xref:System.Web.HttpContext.Request*> object associated with the page request. You can add a reference to an <xref:System.Web.UI.HtmlTextWriter> in the `browserCaps` configuration section. Override the <xref:System.Web.UI.Page.CreateHtmlTextWriter*> method to perform custom lookup.
-
-
 
 ## Examples
  The following code example uses the <xref:System.Web.UI.Page.CreateHtmlTextWriter*> method to create an instance of a custom <xref:System.Web.UI.HtmlTextWriter> object named `MyHtmlTextWriter`. The <xref:System.Web.UI.Page.CreateHtmlTextWriter*> method is overridden in the `MyPage` class, which is derived from <xref:System.Web.UI.Page>, so that `MyHtmlTextWriter` renders ASP.NET server controls when the page is requested. Note that this example will prevent adapter <xref:System.IO.TextWriter> behavior.
@@ -1479,8 +1463,6 @@
 
  Even if <xref:System.Web.UI.Page.EnableViewState*> is `false`, the page might contain a hidden view state field that is used by ASP.NET to detect a postback.
 
-
-
 ## Examples
  The following code example sets the <xref:System.Web.UI.Page.EnableViewState> property to `false` when the page is loaded. This disables view state for the <xref:System.Web.UI.Page> object, meaning that neither view-state information for the page nor any controls contained by the page are saved.
 
@@ -1637,8 +1619,6 @@
 
  The <xref:System.Web.UI.Page.AsyncTimeout> property is reset on every call to the <xref:System.Web.UI.Page.ExecuteRegisteredAsyncTasks*> method. The last value of the <xref:System.Web.UI.Page.AsyncTimeout*> prior to invoking the <xref:System.Web.UI.Page.ExecuteRegisteredAsyncTasks*> method takes precedence. If an asynchronous task takes more than the <xref:System.Web.UI.Page.AsyncTimeout*>, subsequent tasks invoked during that <xref:System.Web.UI.Page.ExecuteRegisteredAsyncTasks*> call are timed out immediately.
 
-
-
 ## Examples
  The following code example demonstrates the use of the <xref:System.Web.UI.Page.AsyncTimeout> property with the <xref:System.Web.UI.Page.ExecuteRegisteredAsyncTasks*> and <xref:System.Web.UI.Page.RegisterAsyncTask*> methods. Note the use of beginning, ending, and time-out handlers. In the example, an artificial delay is introduced to demonstrate the situation of an asynchronous task exceeding the allotted time for the task as specified in the <xref:System.Web.UI.Page.AsyncTimeout> property. In a real-world scenario, an asynchronous task could be used to perform database calls or image generation, for example, and the time-out handler provides graceful degradation if the task is not performed in a specified amount of time.
 
@@ -1728,8 +1708,6 @@
 
 ## Remarks
  The <xref:System.Web.UI.Page.FindControl*> method can be used to access a control whose <xref:System.Web.UI.Control.ID*> is not available at design time. The method searches only the page's immediate, or top-level, container; it does not recursively search for controls in naming containers contained on the page. To access controls in a subordinate naming container, call the `FindControl` method of that container.
-
-
 
 ## Examples
  The following code example demonstrates how to use the <xref:System.Web.UI.Page.FindControl*> method to locate controls inside templates. In this example, two <xref:System.Web.UI.WebControls.Repeater> controls are defined; each shows a different way to catch the <xref:System.Web.UI.WebControls.LinkButton.Click> event of a <xref:System.Web.UI.WebControls.LinkButton> inside the repeater item template.
@@ -2097,8 +2075,6 @@
 
  To validate the members of the validation group, you can enumerate over the collection and call the <xref:System.Web.UI.IValidator.Validate*> method of each validator returned.
 
-
-
 ## Examples
  The following code example uses the <xref:System.Web.UI.Page.GetValidators*> method to return the default validation group.
 
@@ -2191,8 +2167,6 @@
 
 > [!NOTE]
 > Adding styles programmatically using the methods of the <xref:System.Web.UI.IStyleSheet> interface during asynchronous postbacks is not supported. When you add AJAX capabilities to a Web page, asynchronous postbacks update regions of the page without updating the whole page. For more information, see [Microsoft Ajax Overview](https://learn.microsoft.com/previous-versions/aspnet/bb398874(v=vs.100)).
-
-
 
 ## Examples
  The following code example demonstrates how to access the <xref:System.Web.UI.HtmlControls.HtmlHead> control programmatically using the <xref:System.Web.UI.Page.Header> property. A `title` element and `style` element are added to the `head` element of the page.
@@ -2645,8 +2619,6 @@
 
  The <xref:System.Web.UI.Page.IsClientScriptBlockRegistered*> method has been deprecated. Use the <xref:System.Web.UI.ClientScriptManager.IsClientScriptBlockRegistered*> method in the <xref:System.Web.UI.ClientScriptManager> class.
 
-
-
 ## Examples
  The following code example demonstrates the use of the <xref:System.Web.UI.Page.RegisterClientScriptBlock*> method in conjunction with the <xref:System.Web.UI.Page.IsClientScriptBlockRegistered*> method. If the ECMAScript written in the code declaration block has not already been registered, as determined by <xref:System.Web.UI.Page.IsClientScriptBlockRegistered*>, then a <xref:System.Web.UI.Page.RegisterClientScriptBlock*> call is made.
 
@@ -2741,8 +2713,6 @@
 
 ## Remarks
  For an explanation of the difference between postbacks and callbacks, see [Implementing Client Callbacks Without Postbacks](https://learn.microsoft.com/previous-versions/aspnet/ms178208(v=vs.100)).
-
-
 
 ## Examples
  The following example shows how to test the value of the <xref:System.Web.UI.Page.IsPostBack> property when the page is loaded in order to determine whether the page is being rendered for the first time or is responding to a postback. If the page is being rendered for the first time, the code calls the <xref:System.Web.UI.Page.Validate*?displayProperty=nameWithType> method.
@@ -2862,8 +2832,6 @@
 
  The <xref:System.Web.UI.Page.IsStartupScriptRegistered*> method has been deprecated. Use the <xref:System.Web.UI.ClientScriptManager.IsStartupScriptRegistered*> method in the <xref:System.Web.UI.ClientScriptManager> class.
 
-
-
 ## Examples
  The following code example demonstrates the use of the <xref:System.Web.UI.Page.RegisterStartupScript*> method in conjunction with the <xref:System.Web.UI.Page.IsStartupScriptRegistered*> method. If the ECMAScript written in the code declaration block has not already been registered, as determined by <xref:System.Web.UI.Page.IsStartupScriptRegistered*>, then a <xref:System.Web.UI.Page.RegisterStartupScript*> call is made.
 
@@ -2913,8 +2881,6 @@
  For this property to return `true`, all validation server controls in the current validation group must validate successfully. You should check this property only after you have called the <xref:System.Web.UI.Page.Validate*?displayProperty=nameWithType> method, or set the `CausesValidation` property to `true` in the `OnServerClick` event handler for an ASP.NET server control that initiates form processing. These server controls include the <xref:System.Web.UI.WebControls.Button>, <xref:System.Web.UI.HtmlControls.HtmlButton>, <xref:System.Web.UI.HtmlControls.HtmlInputButton>, <xref:System.Web.UI.HtmlControls.HtmlInputImage>, <xref:System.Web.UI.WebControls.ImageButton>, and <xref:System.Web.UI.WebControls.LinkButton> classes.
 
  If you force validation of a validation group using the <xref:System.Web.UI.Page.Validate*> method, then all validation controls in the specified validation group must validate successfully as well.
-
-
 
 ## Examples
  The following code example demonstrates using the <xref:System.Web.UI.Page.IsValid> property to set up a conditional statement. If the property returns `true`, the `Text` property of the `lblOutput` control is set to "Page is valid!" Otherwise, it is set to "Some of the required fields are empty."
@@ -3380,8 +3346,6 @@ In most circumstances, do not set this property in code. The `LCID` attribute ca
 
  You can also set this property in the [@ Page](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/ydy4x04a(v=vs.100)) directive.
 
-
-
 ## Examples
  If you set the <xref:System.Web.UI.Page.MetaDescription> property of a page to "ASP.NET Overview", the following element will appear in the rendered HTML:
 
@@ -3434,8 +3398,6 @@ In most circumstances, do not set this property in code. The `LCID` attribute ca
  If there is no "keywords" `meta` element in the `head` element of the page markup, the `meta` element is added to the page when the page is rendered. If the page markup already has a "keywords" `meta` element, this property gets or sets the `content` attribute of the `meta` element.
 
  You can also set this property in the [@ Page](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/ydy4x04a(v=vs.100)) directive.
-
-
 
 ## Examples
  If you set the <xref:System.Web.UI.Page.MetaKeywords> property of a page to "HTML,CSS,XML,JavaScript", the following element will appear in the rendered HTML:
@@ -4064,8 +4026,6 @@ In most circumstances, do not set this property in code. The `LCID` attribute ca
 
  If the current page is being rendered as a result of a direct request (not a transfer or cross-post from another page), the <xref:System.Web.UI.Page.PreviousPage> property contains `null`.
 
-
-
 ## Examples
  The following example is in two parts. The first is an ASP.NET page that uses the <xref:System.Web.HttpServerUtility.Transfer*> method, exposed in the page model as `Server.Transfer("path")`. The second part is the target page, which uses the <xref:System.Web.UI.Page.PreviousPage> property to get the title of the first page.
 
@@ -4169,8 +4129,6 @@ In most circumstances, do not set this property in code. The `LCID` attribute ca
 ## Remarks
  The <xref:System.Web.UI.Page> object calls the <xref:System.Web.UI.Page.RaisePostBackEvent*> method when a postback occurs. This call occurs in the page life cycle after loading and change notification are complete but before prerendering occurs.
 
-
-
 ## Examples
  The following example uses the <xref:System.Web.UI.Page.RaisePostBackEvent*> method to notify ASP.NET that a post-back event is raised when a custom `userButton` server control is clicked.
 
@@ -4261,8 +4219,6 @@ In most circumstances, do not set this property in code. The `LCID` attribute ca
 
  The <xref:System.Web.UI.Page.RegisterAsyncTask*> method can be used with both synchronous and asynchronous pages.
 
-
-
 ## Examples
  The following code example demonstrates the use of the <xref:System.Web.UI.Page.AsyncTimeout> property with the <xref:System.Web.UI.Page.ExecuteRegisteredAsyncTasks*> and <xref:System.Web.UI.Page.RegisterAsyncTask*> methods. Note the use of beginning, ending, and time-out handlers. In the example, an artificial delay is introduced to demonstrate the situation of an asynchronous task exceeding the allotted time for the task as specified in the <xref:System.Web.UI.Page.AsyncTimeout> property. In a real-world scenario, an asynchronous task could be used to perform database calls or image generation, for example, and the time-out handler provides graceful degradation if the task is not performed in a specified amount of time.
 
@@ -4328,8 +4284,6 @@ In most circumstances, do not set this property in code. The `LCID` attribute ca
 > Remember to include HTML comment tags around your script so that it will not be rendered if the requesting browser does not support scripts.
 
  The <xref:System.Web.UI.Page.RegisterClientScriptBlock*> method has been deprecated. Use the <xref:System.Web.UI.ClientScriptManager.RegisterClientScriptBlock*> method in the <xref:System.Web.UI.ClientScriptManager> class instead.
-
-
 
 ## Examples
  The following code example demonstrates the use of the <xref:System.Web.UI.Page.RegisterClientScriptBlock*> method in conjunction with the <xref:System.Web.UI.Page.IsClientScriptBlockRegistered*> method. If the ECMAScript in the code declaration block has not already been registered, as determined by <xref:System.Web.UI.Page.IsClientScriptBlockRegistered*>, the <xref:System.Web.UI.Page.RegisterClientScriptBlock*> call is made.
@@ -4465,8 +4419,6 @@ In most circumstances, do not set this property in code. The `LCID` attribute ca
 ## Remarks
  Custom server controls that use control state must call the <xref:System.Web.UI.Page.RegisterRequiresControlState*> method on each request because registration for control state is not carried over from request to request during a postback event. It is recommended that registration occur in the <xref:System.Web.UI.Control.Init> event.
 
-
-
 ## Examples
  The following code example shows a custom server control calling the <xref:System.Web.UI.Page.RegisterRequiresControlState*> method.
 
@@ -4516,8 +4468,6 @@ In most circumstances, do not set this property in code. The `LCID` attribute ca
  The control to be registered must implement the <xref:System.Web.UI.IPostBackDataHandler> interface or an <xref:System.Web.HttpException> is raised. When implemented by a control, the <xref:System.Web.UI.IPostBackDataHandler> interface enables handling of post back data and raising of any post back data changed events. For more information on the server control event model, see [ASP.NET Web Forms Server Control Event Model](https://learn.microsoft.com/previous-versions/aspnet/y3bwdsh3(v=vs.100)).
 
  Register controls with the page at or before the `Page_PreRender` event of the page life cycle.
-
-
 
 ## Examples
  The following code example uses the <xref:System.Web.UI.Page.RegisterRequiresPostBack*> method to require a text box control, `myTextBox`, to be posted back before any code associated with the text box can execute. <xref:System.Web.UI.WebControls.TextBox> controls implement the <xref:System.Web.UI.IPostBackDataHandler> interface.
@@ -4572,8 +4522,6 @@ In most circumstances, do not set this property in code. The `LCID` attribute ca
 ## Remarks
  Only one server control can be registered per page request. The <xref:System.Web.UI.Page.RegisterRequiresRaiseEvent*> must be used when the control does not include its control ID in the form post data. Also, the control that is registered must implement the <xref:System.Web.UI.IPostBackEventHandler> interface.
 
-
-
 ## Examples
  The following code example uses the <xref:System.Web.UI.Page.RegisterRequiresRaiseEvent*> method to register a <xref:System.Web.UI.WebControls.Button> Web server control as requiring an event to be raised. After you have registered the first <xref:System.Web.UI.WebControls.Button> control, you can cause the second <xref:System.Web.UI.WebControls.Button> control declared in the code to post the results of the first button's click event to the page.
 
@@ -4611,8 +4559,6 @@ In most circumstances, do not set this property in code. The `LCID` attribute ca
  If you are developing a custom control that deals with potentially sensitive information, call the <xref:System.Web.UI.Page.RegisterRequiresViewStateEncryption*> method to register the control with the page and ensure view state for the control is encrypted.
 
  The entire page state will be encrypted if the <xref:System.Web.UI.Page.ViewStateEncryptionMode*> is set to <xref:System.Web.UI.ViewStateEncryptionMode.Auto> or <xref:System.Web.UI.ViewStateEncryptionMode.Always>.
-
-
 
 ## Examples
  The following code example demonstrates setting the view-state encryption mode for a <xref:System.Web.UI.Page> object and requesting encryption of the view state through <xref:System.Web.UI.Page.RegisterRequiresViewStateEncryption*>. In this example, view state will be encrypted when customer information is retrieved from a database.
@@ -4679,8 +4625,6 @@ In most circumstances, do not set this property in code. The `LCID` attribute ca
 
  The <xref:System.Web.UI.Page.RegisterStartupScript*> method has been deprecated. Use the <xref:System.Web.UI.ClientScriptManager.RegisterStartupScript*> method in the <xref:System.Web.UI.ClientScriptManager> class instead.
 
-
-
 ## Examples
  The following code example demonstrates the use of the <xref:System.Web.UI.Page.RegisterStartupScript*> method in conjunction with the <xref:System.Web.UI.Page.IsStartupScriptRegistered*> method. If the ECMAScript written in the code declaration block has not already been registered, as determined by the <xref:System.Web.UI.Page.IsStartupScriptRegistered*> method, then a <xref:System.Web.UI.Page.RegisterStartupScript*> call is made.
 
@@ -4726,8 +4670,6 @@ In most circumstances, do not set this property in code. The `LCID` attribute ca
 
 > [!NOTE]
 > Typically, only the <xref:System.Web.UI.HtmlControls.HtmlForm> server control for the page calls this method.
-
-
 
 ## Examples
  [!code-csharp[Page_RegisterViewStateHandler#1](~/snippets/csharp/VS_Snippets_WebNet/Page_RegisterViewStateHandler/CS/page_registerviewstatehandler.cs#1)]
@@ -4811,8 +4753,6 @@ In most circumstances, do not set this property in code. The `LCID` attribute ca
 
 ## Remarks
  The <xref:System.Web.HttpRequest> object contains information about the current HTTP request.
-
-
 
 ## Examples
  The following example demonstrates how to obtain the <xref:System.Web.HttpRequest.Headers*> collection from the <xref:System.Web.HttpRequest> object and write it to an ASP.NET page.
@@ -5148,8 +5088,6 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
 ## Remarks
  This property provides access to the frequently used <xref:System.Web.HttpServerUtility.HtmlEncode*> and <xref:System.Web.HttpServerUtility.MapPath*> methods, among others.
 
-
-
 ## Examples
  The following code example demonstrates how to access error information from the server by using the `Server` object. In particular, the example gets the requested URL from the `Request` object, the most recent error from the `Server` object (using the <xref:System.Web.HttpServerUtility.GetLastError*> method) and converts them both to strings that can be displayed by the client. Once the `message` variable is written to the client, the error is deleted using the <xref:System.Web.HttpServerUtility.ClearError*> method.
 
@@ -5196,8 +5134,6 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
 
 ## Remarks
  This property provides information about the current request's session. A `Session` object is maintained for each user that requests a page or document from an ASP.NET application. Variables stored in the `Session` object are not discarded when the user moves from page to page in the application; instead, these variables persist as long as the user is accessing pages in your application. For more information about session state, see [ASP.NET Session State Overview](https://learn.microsoft.com/previous-versions/aspnet/ms178581(v=vs.100)).
-
-
 
 ## Examples
  The following code example creates a `GetStyle` function that retrieves a key stored in the session state of the Web Forms page and converts its value to a string.
@@ -5251,8 +5187,6 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
 > [!NOTE]
 > The <xref:System.Web.UI.Page.SetFocus*> method will work only on browsers supporting ECMAScript version 1.3 or later.
 
-
-
 ## Examples
  The following code example sets the focus to the second text box on a Web page.
 
@@ -5304,8 +5238,6 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
 
 > [!NOTE]
 > The <xref:System.Web.UI.Page.SetFocus*> method will work only on browsers supporting ECMAScript version 1.3 or later.
-
-
 
 ## Examples
  The following code example sets the focus to the second text box on a Web page.
@@ -5533,8 +5465,6 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
 
  The specified theme must exist as either an application or a global theme. If the theme does not exist, an <xref:System.Web.HttpException> exception is thrown.
 
-
-
 ## Examples
  The following code example sets the <xref:System.Web.UI.Page.Theme> property to a name passed in the query string.
 
@@ -5635,8 +5565,6 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
  Tracing tracks and presents the execution details about a Web request. For trace data to be visible in a rendered page, you must enable tracing at the page or application level.
 
  Tracing on a page is disabled by default. To enable tracing for a page, use the [@ Page](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/ydy4x04a(v=vs.100)) directive `<% @ Page trace="true" %>`. To enable tracing for an entire application, you must enable it in the application's configuration file, Web.config, which resides in the root directory of the application. For more information, see [ASP.NET Tracing Overview](https://learn.microsoft.com/previous-versions/aspnet/bb386420(v=vs.100)).
-
-
 
 ## Examples
  The following code example demonstrates accessing the <xref:System.Web.TraceContext.IsEnabled?displayProperty=nameWithType> property and the <xref:System.Web.TraceContext.Write*?displayProperty=nameWithType> method through the <xref:System.Web.UI.Page.Trace> property. This code calls the <xref:System.Diagnostics.Trace.Write*> method only when tracing is enabled for the <xref:System.Web.UI.Page> object. If it is not enabled, this code will not run, which can help reduce overhead for your application.
@@ -6199,8 +6127,6 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
 
  This property uses the <xref:System.Web.HttpContext> object's <xref:System.Web.HttpContext.User> property to determine where the request originates.
 
-
-
 ## Examples
  The following code example uses the <xref:System.Web.UI.Page.User> property to access authentication and identity information for the current user. If the user is not authenticated, it redirects them to a login page.
 
@@ -6258,8 +6184,6 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
 > [!NOTE]
 > The behavior of page validation has changed. In ASP.NET 2.0, controls no longer call the <xref:System.Web.UI.Page.Validate?displayProperty=nameWithType> method; they use the <xref:System.Web.UI.Page.Validate(System.String)?displayProperty=nameWithType> method instead. If you use the <xref:System.Web.UI.Page.Validate?displayProperty=nameWithType> method on an ASP.NET 2.0 page, validation groups are ignored and all controls are validated.
 
-
-
 ## Examples
  The following code example calls the <xref:System.Web.UI.Page.Validate*> method on a page in a scenario with several different validation groups defined.
 
@@ -6310,8 +6234,6 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
  To disable validation for any button control on the page, set the button control's `CausesValidation` property to `false`.
 
  The <xref:System.Web.UI.Page.Validate*> method validates the specified validation group. After calling the <xref:System.Web.UI.Page.Validate*> method on a validation group, the <xref:System.Web.UI.Page.IsValid*> method will return `true` only if both the specified validation group and the validation group of the control that caused the page to be posted to the server are valid.
-
-
 
 ## Examples
  The following code example calls the <xref:System.Web.UI.Page.Validate*> method on a page in a scenario with several different validation groups defined.
@@ -6455,8 +6377,6 @@ int year = Convert.ToInt32(Page.RouteData.Values["year"])
  Server controls that post back or use client-side script will not work if they are not enclosed in the <xref:System.Web.UI.HtmlControls.HtmlForm> server control (<`form runat="server">`) tags. These controls can call this method when they render to provide a clear error message when they are not enclosed in the <xref:System.Web.UI.HtmlControls.HtmlForm> control.
 
  When you develop a custom server control, it is common to call this method when you override the `Render` method for any kind of input tag. This is particularly important if the input control calls <xref:System.Web.UI.Page.GetPostBackEventReference*>, or if it emits client script. A composite server control does not need to make this call.
-
-
 
 ## Examples
  The following code example overrides the <xref:System.Web.UI.Page.Render*?displayProperty=nameWithType> method of a custom server control. When this control writes its content to a page, it uses the <xref:System.Web.UI.Page.VerifyRenderingInServerForm*> method to make sure that the control appears between the opening and closing tags of an <xref:System.Web.UI.HtmlControls.HtmlForm> control.

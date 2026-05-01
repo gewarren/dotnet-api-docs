@@ -89,8 +89,6 @@
 
  The set of commands a service can process depends on its properties; for example, you can set the <xref:System.ServiceProcess.ServiceController.CanStop> property for a service to `false`. This setting renders the `Stop` command unavailable on that particular service; it prevents you from stopping the service from the SCM by disabling the necessary button. If you try to stop the service from your code, the system raises an error and displays the error message "Failed to stop `servicename`."
 
-
-
 ## Examples
  The following example demonstrates the use of the <xref:System.ServiceProcess.ServiceController> class to control the `SimpleService` service example.
 
@@ -447,8 +445,6 @@
 
  You cannot call <xref:System.ServiceProcess.ServiceController.Continue*> for the service until the service controller status is `Paused`.
 
-
-
 ## Examples
  The following example demonstrates the use of the <xref:System.ServiceProcess.ServiceController.Continue*> method to continue a paused service. This example is part of a larger example that is provided for the <xref:System.ServiceProcess.ServiceController> class.
 
@@ -505,8 +501,6 @@
 
 ## Remarks
  The <xref:System.ServiceProcess.ServiceController.DependentServices*> array represents the services that the system stops if your application calls <xref:System.ServiceProcess.ServiceController.Stop*> for this service.
-
-
 
 ## Examples
  The following example uses the <xref:System.ServiceProcess.ServiceController> class to display the set of services that are dependent on the Event Log service.
@@ -570,8 +564,6 @@
 
 ## Remarks
  You can set the <xref:System.ServiceProcess.ServiceController.DisplayName*> to an empty string (""), but setting the property to `null` throws an exception.
-
-
 
 ## Examples
  The following example uses the <xref:System.ServiceProcess.ServiceController> class to display the set of services that are dependent on the Event Log service.
@@ -701,8 +693,6 @@
 ## Remarks
  When you call <xref:System.ServiceProcess.ServiceController.ExecuteCommand*>, the status of the service does not change. If the service was started, the status remains `Running`. If the service was stopped, the status remains `Stopped`, and so on. To process the custom command, the service must override the <xref:System.ServiceProcess.ServiceBase.OnCustomCommand*> method and provide a handler for the command identified by the `command` parameter.
 
-
-
 ## Examples
  The following code example shows the use of the <xref:System.ServiceProcess.ServiceController.ExecuteCommand(System.Int32)?displayProperty=nameWithType> method to execute custom commands in the `SimpleService` service example.
 
@@ -757,8 +747,6 @@
 
 ## Remarks
  <xref:System.ServiceProcess.ServiceController.GetDevices*> returns only the device driver services from the local computer. To retrieve the non-device driver services or services that are not drivers, call the <xref:System.ServiceProcess.ServiceController.GetServices*> method. Together, the two methods provide access to all the services on a computer.
-
-
 
 ## Examples
  The following example uses the <xref:System.ServiceProcess.ServiceController> class to display the device driver services on the local computer.
@@ -857,8 +845,6 @@
 
 ## Remarks
  <xref:System.ServiceProcess.ServiceController.GetServices*> returns only the non-device driver services and the services that are not drivers from the local computer. To retrieve device driver services, call the <xref:System.ServiceProcess.ServiceController.GetDevices*> method. Together, the two methods provide access to all the services on a computer.
-
-
 
 ## Examples
  The following example uses the <xref:System.ServiceProcess.ServiceController> class to display the services that are running on the local computer.
@@ -1011,8 +997,6 @@
 ## Remarks
  You cannot call <xref:System.ServiceProcess.ServiceController.Continue*> for the service until the service controller status is `Paused`.
 
-
-
 ## Examples
  The following example demonstrates the use of the <xref:System.ServiceProcess.ServiceController.Pause*> method to pause a service. This example is part of a larger example that is provided for the <xref:System.ServiceProcess.ServiceController> class.
 
@@ -1059,8 +1043,6 @@
 
 ## Remarks
  The <xref:System.ServiceProcess.ServiceController.Refresh*> method causes the <xref:System.ServiceProcess.ServiceController.ServicesDependedOn*>, <xref:System.ServiceProcess.ServiceController.DependentServices*>, and <xref:System.ServiceProcess.ServiceController.Status*> properties to be reset to their current values when they are next referenced.
-
-
 
 ## Examples
  The following example demonstrates the use of the <xref:System.ServiceProcess.ServiceController.Refresh*> method to obtain the status of a service. The code instructs a service to pause, and then waits for the status to reflect the change. This example is part of a larger example that is provided for the <xref:System.ServiceProcess.ServiceController> class.
@@ -1226,8 +1208,6 @@
 ## Remarks
  If any service in the <xref:System.ServiceProcess.ServiceController.ServicesDependedOn*> array is not running, you will not be able to start this service.
 
-
-
 ## Examples
  The following example uses the <xref:System.ServiceProcess.ServiceController> class to display the set of services that the Messenger service is dependent on.
 
@@ -1283,8 +1263,6 @@
 ## Remarks
  The service type indicates how the service is used by the system. The value of the <xref:System.ServiceProcess.ServiceController.ServiceType> property represents a set of flags combined using the bitwise OR operator.
 
-
-
 ## Examples
  The following example uses the <xref:System.ServiceProcess.ServiceController> class to display the device driver services on the local computer.
 
@@ -1339,8 +1317,6 @@
 
 ## Remarks
  You cannot call <xref:System.ServiceProcess.ServiceController.Stop*> for the service until the service controller status is `Running`.
-
-
 
 ## Examples
  The following example uses the <xref:System.ServiceProcess.ServiceController> class to check whether the Alerter service is stopped. If the service is stopped, the example starts the service and waits until the service status is set to <xref:System.ServiceProcess.ServiceControllerStatus.Running>.
@@ -1487,8 +1463,6 @@
 ## Remarks
  The status indicates the current state of the service. The set of possible values includes several that indicate whether a state-changing command is pending.
 
-
-
 ## Examples
  The following example uses the <xref:System.ServiceProcess.ServiceController> class to check the current status of the Telnet service. If the service is stopped, the example starts the service. If the service is running, the example stops the service.
 
@@ -1535,8 +1509,6 @@
  If any services depend on this service for their operation, they will be stopped before this service is stopped. The <xref:System.ServiceProcess.ServiceController.DependentServices> property contains the set of services that depend on this one.
 
  If you stop a service that this service depends on, call the <xref:System.ServiceProcess.ServiceController.Stop*> method on this service within the <xref:System.ServiceProcess.ServiceController.Stop*> method of the parent service. The <xref:System.ServiceProcess.ServiceController.ServicesDependedOn> property contains the services that this service depends on.
-
-
 
 ## Examples
  The following example uses the <xref:System.ServiceProcess.ServiceController> class to check the current status of the Telnet service. If the service is stopped, the example starts the service. If the service is running, the example stops the service.
@@ -1638,8 +1610,6 @@ If any other services depend on this one, you need to either pass `true` for
 
 > [!NOTE]
 > The <xref:System.ServiceProcess.ServiceController.WaitForStatus*> method waits approximately 250 milliseconds between each status check.  <xref:System.ServiceProcess.ServiceController.WaitForStatus*> cannot detect the case of the observed service changing to the `desiredStatus` and then immediately to another status in that interval.
-
-
 
 ## Examples
  The following example uses the <xref:System.ServiceProcess.ServiceController> class to check whether the Alerter service is stopped. If the service is stopped, the example starts the service and waits until the service status is set to <xref:System.ServiceProcess.ServiceControllerStatus.Running>.

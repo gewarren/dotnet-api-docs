@@ -296,8 +296,6 @@ foreach(XmlSchema schema in schemaSet.Schemas())
 
  The previous two code examples are not equivalent. In the first example, if an invalid schema exists in `schemaSet1` and its <xref:System.Xml.Schema.XmlSchemaSet.IsCompiled> property is set to `false`, no schemas are added to `schemaSet`. In the second example, a number of schemas can be added to `schemaSet` before an invalid schema is encountered and an exception is thrown.
 
-
-
 ## Examples
  The following code example illustrates adding schemas to an <xref:System.Xml.Schema.XmlSchemaSet>, then adding the <xref:System.Xml.Schema.XmlSchemaSet> to a new <xref:System.Xml.Schema.XmlSchemaSet> using the <xref:System.Xml.Schema.XmlSchemaSet.Add*> method.
 
@@ -458,8 +456,6 @@ foreach(XmlSchema schema in schemaSet.Schemas())
 }
 ```
 
-
-
 ## Examples
  The following code example adds the `http://www.contoso.com/books.xsd` schema with a target namespace of `http://www.contoso.com/books` to the <xref:System.Xml.Schema.XmlSchemaSet>.
 
@@ -560,8 +556,6 @@ schemaSet.Add("http://www.contoso.com/books", "http://www.contoso.com/books.xsd"
 - The <xref:System.Xml.Schema.XmlSchemaSet.Add*> method of the <xref:System.Xml.Schema.XmlSchemaSet> has the ability to use the target namespace defined in a schema, rather than requiring the target namespace be specified as a parameter when the <xref:System.Xml.Schema.XmlSchemaSet.Add*> method is called. Specifying `null` or <xref:System.String.Empty?displayProperty=nameWithType> to the <xref:System.Xml.Schema.XmlSchemaSet.Add*> method instructs the <xref:System.Xml.Schema.XmlSchemaSet> to use the target namespace defined in the schema. For an example of this behavior, see the <xref:System.Xml.Schema.XmlSchemaSet.Add*> method.
 
  The remaining functionality of this method is identical to that of the <xref:System.Xml.Schema.XmlSchemaSet.Add*> method.
-
-
 
 ## Examples
  The following code example adds the books.xsd schema contained in the <xref:System.Xml.XmlTextReader> with a target namespace of `http://www.contoso.com/books` to the <xref:System.Xml.Schema.XmlSchemaSet>.
@@ -688,8 +682,6 @@ schemaSet.Add("http://www.contoso.com/books", new XmlTextReader("books.xsd");
 
 > [!NOTE]
 > You need to call the <xref:System.Xml.Schema.XmlSchemaSet.Reprocess*> method if you have changed a schema (or one of its includes/imports) after adding it to the <xref:System.Xml.Schema.XmlSchemaSet>. The <xref:System.Xml.Schema.XmlSchemaSet.Reprocess*> method will check the schema for structural validity according to the rules of W3C XML Schema. However, it will not perform a full validation check. It will also resolve references to internal and external schema components. Any imported or included schemas that are successfully retrieved are also added to the <xref:System.Xml.Schema.XmlSchemaSet>. Imported schemas are added as separate <xref:System.Xml.Schema.XmlSchema> objects while included schemas are made part of the including <xref:System.Xml.Schema.XmlSchema>. If the call to reprocess is successful, the <xref:System.Xml.Schema.XmlSchemaSet.IsCompiled> property is set to false.
-
-
 
 ## Examples
 
@@ -1132,8 +1124,6 @@ schemaSet.CopyTo(schemas, 0);
 ## Remarks
  The <xref:System.Xml.Schema.XmlSchemaSet.IsCompiled> property is not affected if schemas are edited while in the <xref:System.Xml.Schema.XmlSchemaSet>. Updates of the individual schemas in the <xref:System.Xml.Schema.XmlSchemaSet> are not tracked. As a result, the <xref:System.Xml.Schema.XmlSchemaSet.IsCompiled> property can be `true` even though one of the schemas contained in the <xref:System.Xml.Schema.XmlSchemaSet> has been altered, as long as no schemas were added or removed from the <xref:System.Xml.Schema.XmlSchemaSet>.
 
-
-
 ## Examples
  For an example of the <xref:System.Xml.Schema.XmlSchemaSet.IsCompiled> property, see the <xref:System.Xml.Schema.XmlSchemaSet.Reprocess*> method.
 
@@ -1252,8 +1242,6 @@ schemaSet.CopyTo(schemas, 0);
 ## Remarks
  Removing a schema from the <xref:System.Xml.Schema.XmlSchemaSet> sets the <xref:System.Xml.Schema.XmlSchemaSet.IsCompiled> property to `false`.
 
-
-
 ## Examples
  The following example illustrates adding multiple schemas to an <xref:System.Xml.Schema.XmlSchemaSet>, then removing one of the schemas using the <xref:System.Xml.Schema.XmlSchemaSet.Remove*> method.
 
@@ -1370,8 +1358,6 @@ ss.Compile();
 
  The <xref:System.Xml.Schema.XmlSchemaSet.RemoveRecursive*> method has no effect on the state of the <xref:System.Xml.Schema.XmlSchemaSet.IsCompiled> property.
 
-
-
 ## Examples
  The following code example illustrates adding multiple schemas to an <xref:System.Xml.Schema.XmlSchemaSet>, then removing one of the schemas and all the schemas it imports using the <xref:System.Xml.Schema.XmlSchemaSet.RemoveRecursive*> method.
 
@@ -1464,8 +1450,6 @@ foreach (XmlSchema schema in schemaSet.Schemas())
 
 > [!NOTE]
 > You need to call the <xref:System.Xml.Schema.XmlSchemaSet.Reprocess*> method if you have changed a schema (or one of its includes/imports) after adding it to the <xref:System.Xml.Schema.XmlSchemaSet>. The <xref:System.Xml.Schema.XmlSchemaSet.Reprocess*> method will check the schema for structural validity according to the rules of W3C XML Schema. However, it will not perform a full validation check. It will also resolve references to internal and external schema components. Any imported or included schemas that are successfully retrieved are also added to the <xref:System.Xml.Schema.XmlSchemaSet>. Imported schemas are added as separate <xref:System.Xml.Schema.XmlSchema> objects while included schemas are made part of the including <xref:System.Xml.Schema.XmlSchema>. If the call to reprocess is successful, the <xref:System.Xml.Schema.XmlSchemaSet.IsCompiled> property is set to false.
-
-
 
 ## Examples
  The following example illustrates reprocessing a schema added to the <xref:System.Xml.Schema.XmlSchemaSet>. After the <xref:System.Xml.Schema.XmlSchemaSet> is compiled using the <xref:System.Xml.Schema.XmlSchemaSet.Compile*> method, and the schema added to the <xref:System.Xml.Schema.XmlSchemaSet> is modified, the <xref:System.Xml.Schema.XmlSchemaSet.IsCompiled> property will be set to `true`, even though a schema in the <xref:System.Xml.Schema.XmlSchemaSet> has been modified. Calling the <xref:System.Xml.Schema.XmlSchemaSet.Reprocess*> method performs all the preprocessing performed by the <xref:System.Xml.Schema.XmlSchemaSet.Add*> method and sets the <xref:System.Xml.Schema.XmlSchemaSet.IsCompiled> property to `false`.
@@ -1561,8 +1545,6 @@ schemaSet.Reprocess(schema);
 > [!NOTE]
 > The <xref:System.Xml.Schema.XmlSchemaSet.Schemas*> method is the equivalent of the <xref:System.Xml.Schema.XmlSchemaCollection.GetEnumerator*> method of the obsolete <xref:System.Xml.Schema.XmlSchemaCollection>.
 
-
-
 ## Examples
  The following example illustrates how to iterate over all the schemas in the <xref:System.Xml.Schema.XmlSchemaSet>.
 
@@ -1654,8 +1636,6 @@ foreach (XmlSchema schema in schemaSet.Schemas())
 > [!NOTE]
 > The <xref:System.Xml.Schema.XmlSchemaSet.Schemas*> method is the equivalent of the <xref:System.Xml.Schema.XmlSchemaCollection.Item*> method of the obsolete <xref:System.Xml.Schema.XmlSchemaCollection>.
 
-
-
 ## Examples
  The following example illustrates how to iterate over all the schemas in the `http://www.contoso.com/books` namespace in the <xref:System.Xml.Schema.XmlSchemaSet>.
 
@@ -1729,8 +1709,6 @@ foreach (XmlSchema schema in schemaSet.Schemas("http://www.contoso.com/books"))
  Sets an event handler for receiving information about schema validation errors when the <xref:System.Xml.Schema.XmlSchemaSet.Add*> or <xref:System.Xml.Schema.XmlSchemaSet.Compile*> methods of the <xref:System.Xml.Schema.XmlSchemaSet> are called.
 
  If an event handler is not defined, an <xref:System.Xml.Schema.XmlSchemaException> is thrown on any validation errors where the <xref:System.Xml.Schema.XmlSeverityType> is <xref:System.Xml.Schema.XmlSeverityType.Error>. Exceptions are not thrown for validation errors with an <xref:System.Xml.Schema.XmlSeverityType> of <xref:System.Xml.Schema.XmlSeverityType.Warning>.
-
-
 
 ## Examples
  The following code example illustrates adding a <xref:System.Xml.Schema.XmlSchemaSet.ValidationEventHandler> to capture errors and warnings when validating an XML document against a schema.

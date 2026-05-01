@@ -308,8 +308,6 @@ public void WorldSoccerWinners ()
 
  An <xref:System.Speech.Recognition.SrgsGrammar.SrgsRule> object may also contain <xref:System.Speech.Recognition.SrgsGrammar.SrgsNameValueTag> and <xref:System.Speech.Recognition.SrgsGrammar.SrgsSemanticInterpretationTag> objects that add semantic values and semantic keys to the rule. The speech recognition engine will return the semantic information, as well as the recognized phrase, when it recognizes the phrase. See [Semantic Interpretation Markup](https://learn.microsoft.com/previous-versions/office/developer/speech-technologies/hh361595(v%3doffice.14)) for more information.
 
-
-
 ## Examples
  The following example creates a grammar that recognizes the phrase "A nation that has won the World Cup is" followed by the name of a country that has won the World Cup. After creating the <xref:System.Speech.Recognition.SrgsGrammar.SrgsRule> object `winnerRule` and giving it the string identifier `WorldCupWinner`, the example uses the <xref:System.Speech.Recognition.SrgsGrammar.SrgsRule.Add*> method to append the string  "A nation that has won the World Cup is" to the rule. The example then creates two additional rules, `ruleEurope` and  `ruleSAmerica`. Again using the <xref:System.Speech.Recognition.SrgsGrammar.SrgsRule.Add*> method, the example appends an <xref:System.Speech.Recognition.SrgsGrammar.SrgsOneOf> object to the `WorldCupWinner` rule that contains rule references to `ruleEurope` and `ruleSAmerica`.
 
@@ -625,8 +623,6 @@ document.Root = winnerRule;
  The default value for scope is `Private`. A private rule can only be activated for recognition by a rule reference from the root rule in its containing grammar or from another rule that is referenced from the root rule. A private rule cannot be referenced by an external grammar, unless the private rule is declared as the root rule of its containing grammar.
 
  If its scope is set to `Public`, an <xref:System.Speech.Recognition.SrgsGrammar.SrgsRule> object can be activated for recognition by a reference from a <xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef> object in the containing grammar or from a rule in an external grammar.
-
-
 
 ## Examples
  The following example creates a grammar that recognizes the phrase "A nation that has won the World Cup is" followed by the name of a country that has won the World Cup. It creates a public rule named `WorldCupWinner` and sets the scope of that rule to Public.

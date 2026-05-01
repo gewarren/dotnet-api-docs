@@ -61,8 +61,6 @@
 
  For more information about implementing asynchronous classes, see [Implementing the Event-based Asynchronous Pattern](/dotnet/standard/asynchronous-programming-patterns/implementing-the-event-based-asynchronous-pattern).
 
-
-
 ## Examples
  The following code example demonstrates using the <xref:System.ComponentModel.AsyncOperationManager> class to create a class that supports asynchronous operations for any application model. It shows how to implement a class that tests a number to determine whether it is prime. This calculation can be time consuming, so it is done on a separate thread. Progress reports, incremental results, and completion notifications are handled by the <xref:System.ComponentModel.AsyncOperation> class, which ensures that the client's event handlers are called on the proper thread or context.
 
@@ -143,8 +141,6 @@
  Your code should track every <xref:System.ComponentModel.AsyncOperation?displayProperty=nameWithType> returned by <xref:System.ComponentModel.AsyncOperationManager.CreateOperation*> and use the object in the corresponding underlying asynchronous operation to post updates and terminate the operation. This tracking can be as simple as passing the <xref:System.ComponentModel.AsyncOperation?displayProperty=nameWithType> as a parameter among delegates. In more sophisticated designs, your class can maintain a collection of <xref:System.ComponentModel.AsyncOperation?displayProperty=nameWithType> objects, adding objects when tasks are started and removing them when tasks are completed or canceled. This approach allows you to check for unique `userSuppliedState` parameter values, and is the method you should use when working with classes that support multiple concurrent invocations.
 
  For more information about implementing asynchronous classes, see [Implementing the Event-based Asynchronous Pattern](/dotnet/standard/asynchronous-programming-patterns/implementing-the-event-based-asynchronous-pattern).
-
-
 
 ## Examples
  The following code example demonstrates using the <xref:System.ComponentModel.AsyncOperationManager.CreateOperation*> method to create an <xref:System.ComponentModel.AsyncOperation?displayProperty=nameWithType> for tracking the duration of asynchronous operations. This code example is part of a larger example provided for the <xref:System.ComponentModel.AsyncOperationManager> class.

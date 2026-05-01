@@ -373,8 +373,6 @@ initial catalog="AdventureWorks;NewValue=Bad"
 ## Remarks
  This method allows developers using a <xref:System.Text.StringBuilder> to create a collection of key/value pairs to be able to take advantage of the features included in the <xref:System.Data.Common.DbConnectionStringBuilder> class when you add key/value pairs, without having to incur the overhead of creating and maintaining a <xref:System.Data.Common.DbConnectionStringBuilder> instance. The `AppendKeyValuePair` method formats the key and value correctly and adds the new string to the supplied <xref:System.Text.StringBuilder>.
 
-
-
 ## Examples
  If some process has created a connection string, but now an application must perform a simple modification to that connection string, it may be more efficient to just add the key/value pair using a <xref:System.Text.StringBuilder> object. Instead of creating a new <xref:System.Data.Common.DbConnectionStringBuilder>, developers can call the `AppendKeyValuePair` method, passing in a <xref:System.Text.StringBuilder> that contains the supplied connection string. The following procedure shows a simple example of this technique.
 
@@ -450,8 +448,6 @@ initial catalog="AdventureWorks;NewValue=Bad"
  This method allows developers using a <xref:System.Text.StringBuilder> to create a collection of key/value pairs to be able to take advantage of the features included in the <xref:System.Data.Common.DbConnectionStringBuilder> class when adding key/value pairs, without having to incur the overhead of creating and maintaining a <xref:System.Data.Common.DbConnectionStringBuilder> instance. The `AppendKeyValuePair` method formats the key and value correctly and adds the new string to the supplied <xref:System.Text.StringBuilder>.
 
  Although most data sources let you delimit fields by using quotation marks, ODBC does not--for ODBC connection strings, you must use curly braces ({}). In order to have the <xref:System.Data.Common.DbConnectionStringBuilder> use ODBC rules for delimiting fields, set the `useOdbcRules` parameter to `true`.
-
-
 
 ## Examples
  If some process has created a connection string, but now an application must perform a simple modification to that connection string, it might be more efficient to just add the key/value pair using a <xref:System.Text.StringBuilder> object. Instead of creating a new <xref:System.Data.Common.DbConnectionStringBuilder>, developers can call the `AppendKeyValuePair` method, passing in a <xref:System.Text.StringBuilder> that contains the supplied connection string. The following procedure shows a simple example of this technique, using ODBC rules for quoting values.
@@ -699,8 +695,6 @@ initial catalog="AdventureWorks;NewValue=Bad"
 
  The <xref:System.Data.Common.DbConnectionStringBuilder.ConnectionString> property of the <xref:System.Data.Common.DbConnectionStringBuilder> class acts generally as a mechanism for creating and parsing semicolon-delimited lists of key/value pairs separated with equal signs. It provides no validation or other support specific to connection strings. If you add items to the <xref:System.Data.Common.DbConnectionStringBuilder> collection, the <xref:System.Data.Common.DbConnectionStringBuilder.ConnectionString> property will reflect the changes. If you assign a value to the <xref:System.Data.Common.DbConnectionStringBuilder.ConnectionString> property, the <xref:System.Data.Common.DbConnectionStringBuilder> will try to parse the value, using the semicolon and equal-sign delimiters.
 
-
-
 ## Examples
  The following example demonstrates possible behaviors of the <xref:System.Data.Common.DbConnectionStringBuilder.ConnectionString> property. The example:
 
@@ -911,8 +905,6 @@ The collection contains the key "Data Source".
  Comparisons on key names are case insensitive; value comparisons are case sensitive.
 
  The <xref:System.Data.Common.DbConnectionStringBuilder.EquivalentTo*> method returns `true` if the key/value pairs are equal, regardless of their order. The connection behavior of the two connection strings are equivalent, because order is never significant within connection strings. However, different order may affect connection pooling behavior of connections based on these connection strings.
-
-
 
 ## Examples
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DbConnectionStringBuilder.EquivalentTo/CS/source.cs" id="Snippet1":::
@@ -1168,8 +1160,6 @@ builder2.EquivalentTo(builder3) = False
 ## Remarks
  When you set this property, if the specified key already exists in the dictionary, the value is replaced; otherwise, a new element is created.
 
-
-
 ## Examples
  The following console application creates a new <xref:System.Data.Common.DbConnectionStringBuilder> and adds key/value pairs to its connection string, using the <xref:System.Data.Common.DbConnectionStringBuilder.Item*> property.
 
@@ -1248,8 +1238,6 @@ builder2.EquivalentTo(builder3) = False
 
  The returned <xref:System.Collections.ICollection> is not a static copy; instead, the <xref:System.Collections.ICollection> refers back to the keys in the original <xref:System.Data.Common.DbConnectionStringBuilder>. Therefore, changes to the <xref:System.Data.Common.DbConnectionStringBuilder> are reflected in the <xref:System.Collections.ICollection>.
 
-
-
 ## Examples
  The following console application example creates a new <xref:System.Data.Common.DbConnectionStringBuilder>, and adds some keys. The code loops through the <xref:System.Collections.ICollection> returned by the <xref:System.Data.Common.DbConnectionStringBuilder.Keys> property displaying the key/value pairs, and then adds a new key. Because the <xref:System.Data.Common.DbConnectionStringBuilder.Keys> property returns a dynamic <xref:System.Collections.ICollection>, the second loop displays all the key/value pairs, including the newest item.
 
@@ -1312,8 +1300,6 @@ builder2.EquivalentTo(builder3) = False
 
 ## Remarks
  Because the <xref:System.Data.Common.DbConnectionStringBuilder.Remove*> method returns a value that indicates its success, it is not required to look for the key before trying to remove the key/value pair from the <xref:System.Data.Common.DbConnectionStringBuilder> instance.
-
-
 
 ## Examples
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DbConnectionStringBuilder.Remove/CS/source.cs" id="Snippet1":::
@@ -2854,8 +2840,6 @@ This member is an explicit interface member implementation. It can be used only 
 
 ## Remarks
  The <xref:System.Data.Common.DbConnectionStringBuilder.TryGetValue*> method lets developers safely retrieve a value from a <xref:System.Data.Common.DbConnectionStringBuilder> without needing to first call the <xref:System.Data.Common.DbConnectionStringBuilder.ContainsKey*> method. Because <xref:System.Data.Common.DbConnectionStringBuilder.TryGetValue*> does not raise an exception when you call it, passing in a nonexistent key, you do not have to look for a key before retrieving its value. Calling <xref:System.Data.Common.DbConnectionStringBuilder.TryGetValue*> with a nonexistent key will place the null value (`Nothing` in Visual Basic) in the `value` parameter.
-
-
 
 ## Examples
  The following example calls the <xref:System.Data.Common.DbConnectionStringBuilder.TryGetValue*> method, demonstrating several possible outcomes.

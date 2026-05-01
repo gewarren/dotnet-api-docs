@@ -102,8 +102,6 @@
 
  For an encoder or decoder that is able to save state information when encoding or decoding data that spans multiple blocks (such as string of 1 million characters that is encoded in 100,000-character segments), use the <xref:System.Text.UTF32Encoding.GetEncoder*> and <xref:System.Text.UTF32Encoding.GetDecoder*> properties, respectively.
 
-
-
 ## Examples
  The following example demonstrates the behavior of <xref:System.Text.UTF32Encoding> objects with and without error detection enabled. It creates a byte array whose last four bytes represent an invalid surrogate pair; the high surrogate U+D8FF is followed by an U+01FF, which is outside the range of low surrogates (0xDC00 through 0xDFFF). Without error detection, the UTF32 decoder uses replacement fallback to replace the invalid surrogate pair with REPLACEMENT CHARACTER (U+FFFD).
 
@@ -186,8 +184,6 @@
 
 > [!CAUTION]
 > For security reasons, you should enable error detection by calling the <xref:System.Text.UTF32Encoding.%23ctor(System.Boolean,System.Boolean,System.Boolean)> constructor and setting its `throwOnInvalidCharacters` argument to `true`.
-
-
 
 ## Examples
  The following example retrieves and displays the byte order mark for different <xref:System.Text.UTF32Encoding> instances.
@@ -394,8 +390,6 @@
 
 - Both objects use the same decoder fallback.
 
-
-
 ## Examples
  The following example creates <xref:System.Text.UTF32Encoding> objects using different parameter values and then checks them for equality.
 
@@ -476,8 +470,6 @@
  With error detection, an invalid sequence causes this method to throw a <xref:System.ArgumentException>. Without error detection, invalid sequences are ignored, and no exception is thrown.
 
  To ensure that the encoded bytes are decoded properly when they are saved as a file or as a stream, you can prefix a stream of encoded bytes with a preamble. Inserting the preamble at the beginning of a byte stream (such as at the beginning of a series of bytes to be written to a file) is the developer's responsibility, and the number of bytes in the preamble is not reflected in the value returned by the <xref:System.Text.UTF32Encoding.GetByteCount*> method.
-
-
 
 ## Examples
  The following example calls the <xref:System.Text.UnicodeEncoding.GetMaxByteCount*> and <xref:System.Text.UnicodeEncoding.GetByteCount(System.String)> methods to calculate the maximum and actual number of bytes required to encode a string. It also displays the actual number of bytes required to store a byte stream with a byte order mark.
@@ -652,8 +644,6 @@
  With error detection, an invalid sequence causes this method to throw a <xref:System.ArgumentException>. Without error detection, invalid sequences are ignored, and no exception is thrown.
 
  To ensure that the encoded bytes are decoded properly when they are saved as a file or a stream, you can prefix a stream of encoded bytes with a preamble. Inserting a preamble at the beginning of a byte stream (such as at the beginning of a series of bytes to be written to a file) is the developer's responsibility, and the number of bytes in the preamble Is not reflected in the value returned by the <xref:System.Text.UTF32Encoding.GetByteCount*> method.
-
-
 
 ## Examples
  The following example populates an array with a Latin uppercase and lowercase characters and calls the <xref:System.Text.UnicodeEncoding.GetByteCount(System.Char[],System.Int32,System.Int32)> method to determine the number of bytes needed to encode the Latin lowercase characters. It then displays this information along with the total number of bytes needed if a byte order mark is added. It compares this number with the value returned by the <xref:System.Text.UnicodeEncoding.GetMaxByteCount*> method, which indicates maximum number of bytes needed to encode the Latin lowercase characters. The following example populates an array with a combination of Greek and Cyrillic characters and calls the <xref:System.Text.UnicodeEncoding.GetByteCount(System.Char[],System.Int32,System.Int32)> method to determine the number of bytes needed to encode the Cyrillic characters. It then displays this information along with the total number of bytes needed if a byte order mark is added. It compares this number with the value returned by the <xref:System.Text.UnicodeEncoding.GetMaxByteCount*> method, which indicates maximum number of bytes needed to encode the Cyrillic characters.
@@ -1172,8 +1162,6 @@
 
  With error detection, an invalid sequence causes this method to throw a <xref:System.ArgumentException>. Without error detection, invalid sequences are ignored, and no exception is thrown.
 
-
-
 ## Examples
  The following example encodes a string into an array of bytes, and then decodes the bytes into an array of characters.
 
@@ -1384,8 +1372,6 @@
 
  Data to be converted, such as data read from a stream, might be available only in sequential blocks. In this case, or if the amount of data is so large that it needs to be divided into smaller blocks, the application uses the <xref:System.Text.Decoder> or the <xref:System.Text.Encoder> provided by the <xref:System.Text.UTF32Encoding.GetDecoder*> method or the <xref:System.Text.UTF32Encoding.GetEncoder*> method, respectively.
 
-
-
 ## Examples
  The following example encodes a string into an array of bytes, and then decodes the bytes into an array of characters.
 
@@ -1474,8 +1460,6 @@
 
  If error detection is enabled, that is, the `throwOnInvalidCharacters` parameter of the constructor was set to `true`, error detection is also enabled in the <xref:System.Text.Decoder> returned by this method. If error detection is enabled and an invalid sequence is encountered, the state of the decoder is undefined and processing must stop.
 
-
-
 ## Examples
  The following example uses an encoder and a decoder to encode a string into an array of bytes, and then decode the bytes into an array of characters.
 
@@ -1539,8 +1523,6 @@
  The <xref:System.Text.Encoder.GetBytes*?displayProperty=nameWithType> method converts sequential blocks of characters into sequential blocks of bytes, in a manner similar to the <xref:System.Text.UTF32Encoding.GetBytes*> method. However, a <xref:System.Text.Encoder> maintains state information between calls so it can correctly encode character sequences that span blocks. The <xref:System.Text.Encoder> also preserves trailing characters at the end of data blocks and uses the trailing characters in the next encoding operation. For example, a data block might end with an unmatched high-surrogate, and the matching low-surrogate might be in the next data block. Therefore, <xref:System.Text.UTF32Encoding.GetDecoder*> and <xref:System.Text.UTF32Encoding.GetEncoder*> are useful for network transmission and file operations, because those operations often deal with blocks of data instead of a complete data stream.
 
  If error detection is enabled, that is, the `throwOnInvalidCharacters` parameter of the constructor was set to `true`, error detection is also enabled in the <xref:System.Text.Encoder> returned by this method. If error detection is enabled and an invalid sequence is encountered, the state of the encoder is undefined and processing must stop.
-
-
 
 ## Examples
  The following example uses an encoder and a decoder to encode a string into an array of bytes, and then decode the bytes into an array of characters.
@@ -1914,8 +1896,6 @@
  If the range of bytes to be decoded includes the byte order mark (BOM), and the byte array was returned by a method of a non-BOM aware type, the character U+FFFE is included in the character array returned by this method. You can remove it by calling the <xref:System.String.TrimStart*?displayProperty=nameWithType> method.
 
  Data to be converted, such as data read from a stream, might be available only in sequential blocks. In this case, or if the amount of data is so large that it needs to be divided into smaller blocks, the application should use the <xref:System.Text.Decoder> or the <xref:System.Text.Encoder> provided by the <xref:System.Text.UTF32Encoding.GetDecoder*> method or the <xref:System.Text.UTF32Encoding.GetEncoder*> method, respectively.
-
-
 
 ## Examples
  The following example encodes a string into two arrays of bytes, one in little-endian order and the other in big-endian order. It then decodes the bytes back into a string.

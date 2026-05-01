@@ -165,8 +165,6 @@
 |<xref:System.Exception.InnerException*>|A null reference (`Nothing` in Visual Basic).|
 |<xref:System.Exception.Message*>|A system-supplied localized description.|
 
-
-
 ## Examples
  The following code example derives an `Exception` that uses a predefined message. The code demonstrates the use of the parameterless constructor for the derived class and the base `Exception` class.
 
@@ -234,8 +232,6 @@
 |--------------|-----------|
 |<xref:System.Exception.InnerException*>|A null reference (`Nothing` in Visual Basic).|
 |<xref:System.Exception.Message*>|The error message string.|
-
-
 
 ## Examples
  The following code example derives an `Exception` for a specific condition. The code demonstrates the use of the constructor that takes a caller-specified message as a parameter, for both the derived class and the base `Exception` class.
@@ -308,8 +304,6 @@
 
 ## Remarks
  This constructor is called during deserialization to reconstitute the exception object transmitted over a stream. For more information, see [XML and SOAP Serialization](/dotnet/standard/serialization/xml-and-soap-serialization).
-
-
 
 ## Examples
  The following code example defines a derived serializable `Exception` class. The code forces a divide-by-0 error and then creates an instance of the derived exception using the (<xref:System.Runtime.Serialization.SerializationInfo>, <xref:System.Runtime.Serialization.StreamingContext>) constructor. The code serializes the instance to a file, deserializes the file into a new exception, which it throws, and then catches and displays the exception's data.
@@ -386,8 +380,6 @@
 |--------------|-----------|
 |<xref:System.Exception.InnerException*>|The inner exception reference.|
 |<xref:System.Exception.Message*>|The error message string.|
-
-
 
 ## Examples
  The following code example derives an `Exception` for a specific condition. The code demonstrates the use of the constructor that takes a message and an inner exception as parameters, for both the derived class and the base `Exception` class.
@@ -522,8 +514,6 @@ The following example demonstrates how to add and retrieve information using the
 
  Use the `GetBaseException` method when you want to find the root cause of an exception but do not need information about exceptions that may have occurred between the current exception and the first exception.
 
-
-
 ## Examples
  The following code example defines two derived `Exception` classes. It forces an exception and then throws it again with each of the derived classes. The code shows the use of the `GetBaseException` method to retrieve the original exception.
 
@@ -605,8 +595,6 @@ The following example demonstrates how to add and retrieve information using the
 
 ## Remarks
  `GetObjectData` sets a <xref:System.Runtime.Serialization.SerializationInfo> with all the exception object data targeted for serialization. During deserialization, the exception is reconstituted from the `SerializationInfo` transmitted over the stream.
-
-
 
 ## Examples
  The following code example defines a derived serializable `Exception` class that implements `GetObjectData`, which makes minor changes to two properties and then calls the base class to perform the serialization. The example forces a divide-by-0 error and then creates an instance of the derived exception. The code serializes the instance to a file, deserializes the file into a new exception, which it throws, and then catches and displays the exception's data.
@@ -733,8 +721,6 @@ The following example demonstrates how to add and retrieve information using the
 
  "file:///C:/Applications/Bazzal/help.html#ErrorNum42"
 
-
-
 ## Examples
  The following code example throws an `Exception` that sets the `HelpLink` property in its constructor and then catches the exception and displays `HelpLink`.
 
@@ -801,8 +787,6 @@ The following example demonstrates how to add and retrieve information using the
  HRESULT is a 32-bit value, divided into three different fields: a severity code, a facility code, and an error code. The severity code indicates whether the return value represents information, warning, or error. The facility code identifies the area of the system responsible for the error. The error code is a unique number that is assigned to represent the exception. Each exception is mapped to a distinct HRESULT. When managed code throws an exception, the runtime passes the HRESULT to the COM client. When unmanaged code returns an error, the HRESULT is converted to an exception, which is then thrown by the runtime. For information about HRESULT values and their corresponding .NET Framework exceptions, see [How to: Map HRESULTs and Exceptions](/dotnet/framework/interop/how-to-map-hresults-and-exceptions). See [Common HRESULT Values](/windows/win32/seccrypto/common-hresult-values) in the Windows documentation for a list of the values you are most likely to encounter.
 
  Starting with the .NET Framework 4.5, the <xref:System.Exception.HResult> property's setter is protected, whereas its getter is public.  In previous versions of the .NET Framework, both getter and setter are protected.
-
-
 
 ## Examples
  The following code example defines a derived `Exception` class that sets the `HResult` property to a custom value in its constructor.
@@ -877,8 +861,6 @@ The following example demonstrates how to add and retrieve information using the
  Suppose that there is a function that reads a file and formats the data from that file. In this example, as the code tries to read the file, an <xref:System.IO.IOException> is thrown. The function catches the <xref:System.IO.IOException> and throws a <xref:System.IO.FileNotFoundException>. The <xref:System.IO.IOException> could be saved in the <xref:System.Exception.InnerException> property of the <xref:System.IO.FileNotFoundException>, enabling the code that catches the <xref:System.IO.FileNotFoundException> to examine the cause of the initial error.
 
  The <xref:System.Exception.InnerException> property, which holds a reference to the inner exception, is set upon initialization of the exception object.
-
-
 
 ## Examples
  The following example demonstrates throwing and catching an exception that references an inner exception.
@@ -1102,8 +1084,6 @@ The following code example throws and then catches an <xref:System.Exception> ex
 ## Remarks
  If the <xref:System.Exception.Source> property is not set explicitly, the runtime automatically sets it to the name of the assembly in which the exception originated.
 
-
-
 ## Examples
  The following example throws an `Exception` that sets the `Source` property in its constructor and then catches the exception and displays `Source`.
 
@@ -1180,8 +1160,6 @@ The following code example throws and then catches an <xref:System.Exception> ex
  The common language runtime (CLR) updates the stack trace whenever an exception is thrown in application code (by using the `throw` keyword). If the exception was rethrown in a method that is different than the method where it was originally thrown, the stack trace contains both the location in the method where the exception was originally thrown, and the location in the method where the exception was rethrown. If the exception is thrown, and later rethrown, in the same method, the stack trace only contains the location where the exception was rethrown and does not include the location where the exception was originally thrown.
 
  The <xref:System.Exception.StackTrace> property may not report as many method calls as expected because of code transformations, such as inlining, that occur during optimization.
-
-
 
 ## Examples
  The following code example throws an `Exception` and then catches it and displays a stack trace using the `StackTrace` property.
@@ -1262,8 +1240,6 @@ The following code example throws and then catches an <xref:System.Exception> ex
 > [!NOTE]
 > The <xref:System.Exception.TargetSite> property may not accurately report the name of the method in which an exception was thrown if the exception handler handles an exception across application domain boundaries.
 
-
-
 ## Examples
  The following code example throws an `Exception` and then catches it and displays the originating method using the `TargetSite` property.
 
@@ -1339,8 +1315,6 @@ The following code example throws and then catches an <xref:System.Exception> ex
  If there is no error message or if it is an empty string (""), then no error message is returned. The name of the inner exception and the stack trace are returned only if they are not `null`.
 
  This method overrides <xref:System.Object.ToString*?displayProperty=nameWithType>.
-
-
 
 ## Examples
  The following example causes an exception and displays the result of calling <xref:System.Exception.ToString*> on that exception. Note that the <xref:System.Exception.ToString*?displayProperty=nameWithType> method is called implicitly when the Exception class instance appears in the argument list of the <xref:System.Console.WriteLine*?displayProperty=nameWithType> method.

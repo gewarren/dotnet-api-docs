@@ -119,8 +119,6 @@
 ## Remarks
  Note that annotations are not part of the infoset; they are not persisted, or displayed by <xref:System.Xml.Linq.XNode.ToString*>. Also, if you import an XML Namespace into your VB project and call AddAnnotation with the SaveOptions.OmitDuplicateNamespaces enumeration value, then only one element will contain the XML Namespace attribute instead of every element. For more information, see [Removing duplicate namespaces in XML Literals](https://devblogs.microsoft.com/vbteam/removing-duplicate-namespaces-in-xml-literals-shyam-namboodiripad/).
 
-
-
 ## Examples
  The following example adds an annotation to an <xref:System.Xml.Linq.XElement>.
 
@@ -770,8 +768,6 @@ def
 
  When setting the base URI for an XML tree, LINQ to XML puts an annotation on the root of the tree. This property is a computed property, and navigates up the tree to find the base URI.
 
-
-
 ## Examples
  The following example loads the base URI and line information as it loads the file. It then prints the base URI and the line information.
 
@@ -906,8 +902,6 @@ PurchaseOrder       2    2
  Events are raised only when an XML tree is modified, not when it is constructed. This is because you have to add an event handler to an event before you can receive events, and you cannot add an event handler before you have a reference to an <xref:System.Xml.Linq.XObject>. You cannot get a reference to an <xref:System.Xml.Linq.XObject> before the XML tree is constructed. This means that during functional construction of an XML tree, you will not receive events.
 
  You should be careful when modifying an XML tree within one of these events, because doing this might lead to unexpected results. For example, if you receive a <xref:System.Xml.Linq.XObject.Changing> event, and while the event is being processed you remove the node from the tree, you might not receive the <xref:System.Xml.Linq.XObject.Changed> event. When an event is being processed, it is valid to modify an XML tree other than the one that contains the node that is receiving the event; it is even valid to modify the same tree provided the modifications do not affect the specific nodes on which the event was raised. However, if you modify the area of the tree that contains the node receiving the event, the events that you receive and the impact to the tree are undefined.
-
-
 
 ## Examples
  The following example adds an event handler to the root element of an XML tree. It then modifies the tree, causing LINQ to XML to raise some events.
@@ -1141,8 +1135,6 @@ Total:308
 
  You should be careful when modifying an XML tree within one of these events, because doing this might lead to unexpected results. For example, if you receive a <xref:System.Xml.Linq.XObject.Changing> event, and while the event is being processed you remove the node from the tree, you might not receive the <xref:System.Xml.Linq.XObject.Changed> event. When an event is being processed, it is valid to modify an XML tree other than the one that contains the node that is receiving the event; it is even valid to modify the same tree provided the modifications do not affect the specific nodes on which the event was raised. However, if you modify the area of the tree that contains the node receiving the event, the events that you receive and the impact to the tree are undefined.
 
-
-
 ## Examples
  The following example adds an event handler to the root element of an XML tree. It then modifies the tree, causing LINQ to XML to raise some events.
 
@@ -1349,8 +1341,6 @@ Console.WriteLine(documentOfChild.FirstNode)
 ## Remarks
  Because all classes that derive from <xref:System.Xml.Linq.XObject> contain a <xref:System.Xml.Linq.XObject.NodeType> property, you can write code that operates on collections of concrete subclass of <xref:System.Xml.Linq.XObject>. Your code can then test for the node type of each node in the collection.
 
-
-
 ## Examples
  The following example uses this method to retrieve the node type for a variety of nodes.
 
@@ -1475,8 +1465,6 @@ Text
 
 > [!NOTE]
 > This property returns the parent element, and as children nodes of an <xref:System.Xml.Linq.XDocument> have no parent element, this property returns `null` for them.
-
-
 
 ## Examples
  The following example uses this method.
@@ -1812,8 +1800,6 @@ Count after removing: 2
 
  This method is an explicit interface member implementation of a method in the <xref:System.Xml.IXmlLineInfo> interface, so in order to call this method, it is necessary to cast to <xref:System.Xml.IXmlLineInfo>.
 
-
-
 ## Examples
  This example loads a small XML tree from a file, setting the options to set base URI and retain line information. It then adds another element that does not have line information. It then prints the line information for each element in the tree.
 
@@ -1960,8 +1946,6 @@ Root                1    2
 
 ## Remarks
  This method is an explicit interface member implementation of a method in the <xref:System.Xml.IXmlLineInfo> interface, so in order to call this method, it is necessary to cast to <xref:System.Xml.IXmlLineInfo>.
-
-
 
 ## Examples
  This example loads a small XML tree from a file, setting the options to set base URI and retain line information. It then adds another element that does not have line information. It then prints the line information for each element in the tree.
@@ -2110,8 +2094,6 @@ Root                1    2
 
 ## Remarks
  This method is an explicit interface member implementation of a method in the <xref:System.Xml.IXmlLineInfo> interface, so in order to call this method, it is necessary to cast to <xref:System.Xml.IXmlLineInfo>.
-
-
 
 ## Examples
  This example loads a small XML tree from a file, setting the options to set base URI and retain line information. It then adds another element that does not have line information. It then prints the line information for each element in the tree.

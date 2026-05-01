@@ -39,8 +39,6 @@
 > [!NOTE]
 > The attributes for specifying connection point methods have only one required parameter, `displayName`, so it is possible to create the default connection point attribute without specifying an ID. In such cases, the <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint.DefaultID> field supplies a base value to use.
 
-
-
 ## Examples
  The following code example demonstrates the creation of a Web Parts connection that includes the required <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint> objects. Because the <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint> class is an abstract base class, instances of its child classes--<xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint> and <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint>--are the actual objects used to form a connection.
 
@@ -116,8 +114,6 @@
 
  You can change the default behavior concerning multiple connections by assigning different values to the <xref:System.Web.UI.WebControls.WebParts.ConnectionProviderAttribute.AllowsMultipleConnections?displayProperty=nameWithType> property (for providers) or the <xref:System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute.AllowsMultipleConnections?displayProperty=nameWithType> property (for consumers) on the two <xref:System.Attribute> classes used for connection attributes. If you enable consumer connection points to connect to multiple providers at the same time, your code must deal with any resulting synchronization issues.
 
-
-
 ## Examples
  The following code example demonstrates the use of the <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint.AllowsMultipleConnections> property on both <xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint> and <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint> objects. This code example shows only the Web page that contains the code to access the property; for the full code required to run the example, see the Example section of the <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint> class overview.
 
@@ -165,8 +161,6 @@
  The value of the <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint.ControlType> property is often the <xref:System.Web.UI.WebControls.WebParts.WebPart> type. However, because any type of user control or server control can participate in connections if it is properly enabled and placed in a <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase> zone, the <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint.ControlType> property can return one of these other server control types as well.
 
  When server controls that are not <xref:System.Web.UI.WebControls.WebParts.WebPart> controls are placed in a <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase> zone, they are wrapped with a <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> object at run time so they can function as <xref:System.Web.UI.WebControls.WebParts.WebPart> controls and participate in connections. But when such controls are involved in connections, the <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint.ControlType> property value does not return the <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> type; it returns the type of the <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> object's child control, which is the type of the server or user control.
-
-
 
 ## Examples
  The following code example demonstrates the use of the <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint.ControlType> property on both <xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint> and <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint> objects. This code example shows only the Web page that contains the code to access the property; for the full code required to run the example, see the Example section of the <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint> class overview.
@@ -285,8 +279,6 @@
 ## Remarks
  The <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint.GetEnabled*> method in the base <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint> class always returns `true`, but derived classes can override the method to return `true` or `false` at different times, based on the state of `control`.
 
-
-
 ## Examples
  The following code example demonstrates the use of the <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint.GetEnabled*> method on both <xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint> and <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint> objects. This code example shows only the Web page that contains the code to access the property; for the full code required to run the example, see the Example section of the <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint> class overview.
 
@@ -326,8 +318,6 @@
  When a developer declares a <xref:System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute> or a <xref:System.Web.UI.WebControls.WebParts.ConnectionProviderAttribute> attribute on a method in the source code of a control, so that the method can be used as a connection point, it is not required to declare the `ID` parameter for the connection point attribute. The only required attribute is the `displayName` parameter. A default ID is assigned to the connection point, using the value from the <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint.DefaultID> field.
 
  If there is only one method in a control being used as a connection point, it is unnecessary to specify an ID for the connection point. If there are multiple methods specified as connection points, you must specify an ID for each one; otherwise, an exception will be thrown. By assigning an ID to each connection point, you also make it possible to specify which connection point to use when you declare connections in Web pages or create them in code.
-
-
 
 ## Examples
  The following code example demonstrates the use of the <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint.ID> property on both <xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint> and <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint> objects. This code example shows only the Web page that contains the code to access the property; for the full code required to run the example, see the Example section of the <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint> class overview.
@@ -373,8 +363,6 @@
 
 ## Remarks
  The <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint.InterfaceType> property indicates what type of interface a connection point uses. This can help to determine whether two controls are compatible and able to form a connection. If the provider connection point's <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint.InterfaceType*> is different from the consumer connection point's <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint.InterfaceType*>, then the two controls are incompatible (meaning that they cannot be directly connected without a transformer), and a <xref:System.Web.UI.WebControls.WebParts.WebPartTransformer> object must be used to establish a connection.
-
-
 
 ## Examples
  The following code example demonstrates the use of the <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint.InterfaceType> property on both <xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint> and <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint> objects. This code example shows only the Web page that contains the code to access the property; for the full code required to run the example, see the Example section of the <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint> class overview.

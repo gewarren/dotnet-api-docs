@@ -92,8 +92,6 @@
 
 - The <xref:System.Web.UI.Design.ControlDesigner.CreatePlaceHolderDesignTimeHtml*> method.
 
-
-
 ## Examples
  The following code example demonstrates how to create a simple designer class that derives from the <xref:System.Web.UI.Design.ControlDesigner> class. This control designer supports a custom `TextControl` class and provides a command to change the text size of a control at design time. The control designer is associated with the control by specifying the control designer in a <xref:System.ComponentModel.DesignerAttribute> object declaration on the `TextControl` class. The key to persisting property changes from the control designer to the HTML markup is found in the `ToggleTextSize` method of the custom `ActionList` class.
 
@@ -245,8 +243,6 @@
 
 ## Remarks
  A complete Web server control includes not only the control, but also, possibly, a corresponding control designer class that is derived from the <xref:System.Web.UI.Design.ControlDesigner> class and a formatting class that is derived from the <xref:System.Web.UI.Design.DesignerAutoFormat> class. The <xref:System.Web.UI.Design.ControlDesigner.AutoFormats> property is a collection of instances of the <xref:System.Web.UI.Design.DesignerAutoFormat> class. For a working example of automatic formatting in Visual Studio 2005, see <xref:System.Web.UI.WebControls.Calendar>.
-
-
 
 ## Examples
  The following code example demonstrates how to implement the <xref:System.Web.UI.Design.ControlDesigner.AutoFormats> property in a custom control designer. The derived control designer implements the <xref:System.Web.UI.Design.ControlDesigner.AutoFormats> property by adding three instances of a custom automatic format that are derived from the <xref:System.Web.UI.Design.DesignerAutoFormat> class.
@@ -743,8 +739,6 @@
 
  The <xref:System.Web.UI.Design.ControlDesigner.GetDesignTimeHtml*> method is provided for a derived control designer, such as the <xref:System.Web.UI.Design.WebControls.GridViewDesigner> class, that must process the content for the region before calling the <xref:System.Web.UI.Design.ControlDesigner.GetDesignTimeHtml*> method.
 
-
-
 ## Examples
  The following code example shows how to create HTML markup using the <xref:System.Web.UI.Design.DesignerRegionCollection> collection.
 
@@ -828,8 +822,6 @@
 
  Classes deriving from the <xref:System.Web.UI.Design.ControlDesigner> class can support region-based editing on the design surface and override the <xref:System.Web.UI.Design.ControlDesigner.GetEditableDesignerRegionContent*> method to return the content for a specified region.
 
-
-
 ## Examples
  The following code example shows how to get a reference to the design host, and then use the reference to create a <xref:System.Web.UI.Design.ControlParser> object that creates the HTML markup for `region` and its contents.
 
@@ -868,8 +860,6 @@
 
 ## Remarks
  The default behavior of the <xref:System.Web.UI.Design.ControlDesigner.GetEmptyDesignTimeHtml*> method is to return a string that contains the name of the component. The <xref:System.Web.UI.Design.ControlDesigner.GetEmptyDesignTimeHtml*> method should be called in the implementation of the <xref:System.Web.UI.Design.ControlDesigner.GetDesignTimeHtml*> method when there is no design-time HTML markup.
-
-
 
 ## Examples
  The following code example demonstrates how to override the <xref:System.Web.UI.Design.ControlDesigner.GetDesignTimeHtml*> method in a custom control designer. If the `Text` property for the associated control is empty, the <xref:System.Web.UI.Design.ControlDesigner.GetDesignTimeHtml*> method calls <xref:System.Web.UI.Design.ControlDesigner.GetEmptyDesignTimeHtml*> method. Otherwise, the <xref:System.Web.UI.Design.ControlDesigner.GetDesignTimeHtml*> method creates and renders a `Hyperlink` control.
@@ -913,8 +903,6 @@
 
 ## Remarks
  The <xref:System.Web.UI.Design.ControlDesigner.GetErrorDesignTimeHtml*> method is typically called, if an exception is thrown in the <xref:System.Web.UI.Design.ControlDesigner.GetDesignTimeHtml*> method.
-
-
 
 ## Examples
  The following code example demonstrates how to generate design-time HTML markup for the control when an error occurs and call the <xref:System.Web.UI.Design.ControlDesigner.CreatePlaceHolderDesignTimeHtml*> method.
@@ -1201,8 +1189,6 @@
 
 - Verify that the associated control is of the right type.
 
-
-
 ## Examples
  The following code example demonstrates how to use a control class and a control designer class that override the <xref:System.Web.UI.Design.ControlDesigner.Initialize*> method to initialize internal variables.
 
@@ -1396,8 +1382,6 @@
 
  If the design host or the associated control throws a static `Canceled` exception field of a <xref:System.ComponentModel.Design.CheckoutException> exception, the transaction is canceled without invoking `callback`.
 
-
-
 ## Examples
  The following code example demonstrates how to create a simple composite control with a <xref:System.Web.UI.WebControls.Label> and a <xref:System.Web.UI.WebControls.TextBox> control, together with properties to set the label text, and also the <xref:System.Web.UI.WebControls.TextBox.Text*>, <xref:System.Web.UI.WebControls.WebControl.Width*>, and <xref:System.Web.UI.WebControls.WebControl.BackColor*> properties of the <xref:System.Web.UI.WebControls.TextBox> control. An associated control designer class creates three <xref:System.ComponentModel.Design.DesignerActionMethodItem> commands, each of which sets two properties on the control. By using the <xref:System.Web.UI.Design.ControlDesigner.InvokeTransactedChange*> method, you can use the undo functionality of the design host, such as Visual Studio 2005, to roll back each completed transaction as a unit.
 
@@ -1455,8 +1439,6 @@
 
  If the design host or associated control throws a static `Canceled` exception field of a <xref:System.ComponentModel.Design.CheckoutException> exception, the transaction is canceled without invoking `callback`.
 
-
-
 ## Examples
  For a code example, see <xref:System.Web.UI.Design.ControlDesigner.InvokeTransactedChange(System.ComponentModel.IComponent,System.Web.UI.Design.TransactedChangeCallback,System.Object,System.String)>.
 
@@ -1513,8 +1495,6 @@
  The implementation of the <xref:System.Web.UI.Design.ControlDesigner.InvokeTransactedChange*> method notifies the design host, which is represented by `serviceProvider`, that a change is occurring to the specified `member` (property or method) of the associated control and, if the change is not canceled by the design host, invokes the specified `callback` using the specified `context` as the argument, and then notifies the design host that the change has completed.
 
  If the design host or the associated control throws a static `Canceled` exception field of a <xref:System.ComponentModel.Design.CheckoutException> exception, the transaction is canceled without invoking `callback`.
-
-
 
 ## Examples
  For a code example, see <xref:System.Web.UI.Design.ControlDesigner.InvokeTransactedChange*>.
@@ -1826,8 +1806,6 @@
  The <xref:System.Web.UI.Design.ControlDesigner.OnClick*> method allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
 
  The default implementation of the <xref:System.Web.UI.Design.ControlDesigner.OnClick*> method returns without performing any processing.
-
-
 
 ## Examples
  The following code example shows how to use a handler for the <xref:System.Web.UI.Design.ControlDesigner.OnClick*> event in a clickable region of the control and use a <xref:System.Web.UI.Design.DesignerRegionMouseEventArgs> object to identify the region that is being clicked.
@@ -2258,8 +2236,6 @@
 ## Remarks
  Classes deriving from the <xref:System.Web.UI.Design.ControlDesigner> class can support region-based editing on the design surface and override the <xref:System.Web.UI.Design.ControlDesigner.SetEditableDesignerRegionContent*> method to set the content for a specified region.
 
-
-
 ## Examples
  The following code example shows how to get a reference to the design host, and then use the reference to create a <xref:System.Web.UI.Design.ControlParser> object that turns `content` into an instance of the <xref:System.Web.UI.ITemplate> interface and assigns the <xref:System.Web.UI.ITemplate> instance to the appropriate view.
 
@@ -2342,8 +2318,6 @@
 
 ## Remarks
  There are several flags that can be set. For example, use the <xref:System.Web.UI.Design.ControlDesigner.SetViewFlags*> method to set the <xref:System.Web.UI.Design.ViewFlags.DesignTimeHtmlRequiresLoadComplete> value of the current <xref:System.Web.UI.Design.ControlDesigner.ViewControl> property for the control designer, instead of the obsolete <xref:System.Web.UI.Design.ControlDesigner.DesignTimeHtmlRequiresLoadComplete> property.
-
-
 
 ## Examples
  The following code example shows how to use the <xref:System.Web.UI.Design.ControlDesigner.SetViewFlags*> method to indicate that the template is in editing mode.
@@ -2466,8 +2440,6 @@
 > [!NOTE]
 > If you are calling the <xref:System.ComponentModel.Design.IComponentChangeService.ComponentChanged> event, or using the <xref:System.ComponentModel.PropertyDescriptor> object to set properties, the <xref:System.ComponentModel.Design.IComponentChangeService> interface calls the <xref:System.Web.UI.Design.ControlDesigner.UpdateDesignTimeHtml*> method for you.
 
-
-
 ## Examples
  The following code example demonstrates how to respond to a `Click` event in a control designer to change the focus between regions in a multi-region control and use the <xref:System.Web.UI.Design.ControlDesigner.UpdateDesignTimeHtml*> method to update the appearance of the control in the design host.
 
@@ -2554,8 +2526,6 @@
  If the <xref:System.Web.UI.Design.ControlDesigner.UsePreviewControl> property is `false`, the <xref:System.Web.UI.Design.ControlDesigner.ViewControl> property returns an instance of the <xref:System.ComponentModel.Design.ComponentDesigner.Component> property for the control. Changes to the instance of the control are persisted.
 
  The <xref:System.Web.UI.Design.SupportsPreviewControlAttribute.SupportsPreviewControl*> setting in the <xref:System.Web.UI.Design.SupportsPreviewControlAttribute> object is used to set the value of the <xref:System.Web.UI.Design.ControlDesigner.UsePreviewControl> property. Therefore, the <xref:System.Web.UI.Design.SupportsPreviewControlAttribute.SupportsPreviewControl*> setting determines the type of control that is returned by the <xref:System.Web.UI.Design.ControlDesigner.ViewControl> property in the base <xref:System.Web.UI.Design.ControlDesigner> class. If the <xref:System.Web.UI.Design.SupportsPreviewControlAttribute> is not specified in the control designer declaration, the <xref:System.Web.UI.Design.ControlDesigner> object behavior is equivalent to specifying the <xref:System.Web.UI.Design.SupportsPreviewControlAttribute.SupportsPreviewControl> property as `false`.
-
-
 
 ## Examples
  The following code example demonstrates how to mark a control designer with the <xref:System.Web.UI.Design.SupportsPreviewControlAttribute> attribute. The code example derives a Web server control from the <xref:System.Web.UI.WebControls.Label> class and associates the control with a custom control designer implementation. The control designer class declaration is marked with the `SupportsPreviewControl` attribute set to `true`. The control designer overrides the <xref:System.Web.UI.Design.ControlDesigner.GetDesignTimeHtml*> method, and then displays the <xref:System.Web.UI.WebControls.Label.Text> property of the control in italic at design time.

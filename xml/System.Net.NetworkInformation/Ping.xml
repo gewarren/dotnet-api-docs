@@ -105,8 +105,6 @@
 
  You cannot use the same instance of the <xref:System.Net.NetworkInformation.Ping> class to generate multiple simultaneous ICMP Echo requests. Calling <xref:System.Net.NetworkInformation.Ping.Send*> while a <xref:System.Net.NetworkInformation.Ping.SendAsync*> call is in progress or calling <xref:System.Net.NetworkInformation.Ping.SendAsync*> multiple times before all previous calls have completed causes an <xref:System.InvalidOperationException>.
 
-
-
 ## Examples
  The following code example demonstrates using the <xref:System.Net.NetworkInformation.Ping> class synchronously.
 
@@ -369,8 +367,6 @@
 ## Remarks
  Applications use the <xref:System.Net.NetworkInformation.Ping.PingCompleted> event to get information about the completion status and data collected by a call to one of the <xref:System.Net.NetworkInformation.Ping.SendAsync*> methods. The <xref:System.Net.NetworkInformation.PingCompletedEventHandler> delegate provides the call back method invoked when <xref:System.Net.NetworkInformation.Ping.SendAsync*> raises this event.
 
-
-
 ## Examples
  The following code example demonstrates specifying a callback method for the <xref:System.Net.NetworkInformation.Ping.PingCompleted> event. The complete example is available in the <xref:System.Net.NetworkInformation.Ping> class overview.
 
@@ -448,8 +444,6 @@
 
  This overload uses default settings for packet fragmentation and packet forwarding. The packet that contains the ICMP echo message can be fragmented in transit if the total packet size exceeds the maximum packet size that can be transmitted by one of the routing nodes between the local and remote computers. To prevent fragmentation, use one of the <xref:System.Net.NetworkInformation.Ping.Send*> methods that takes an `options` parameter, and set the <xref:System.Net.NetworkInformation.PingOptions.DontFragment> property to `true`. When <xref:System.Net.NetworkInformation.PingOptions.DontFragment*> is `true` and the total packet size exceeds the maximum packet size that can be transmitted by one of the routing nodes between the local and remote computers, the ICMP echo request fails. When this happens, the <xref:System.Net.NetworkInformation.PingReply.Status*> is set to <xref:System.Net.NetworkInformation.IPStatus.PacketTooBig>. The packet or packet fragments (if fragmented) can be forwarded by routing nodes 128 times before being discarded. To change this setting, use a <xref:System.Net.NetworkInformation.Ping.Send*> overload that takes an `options` parameter, and set the <xref:System.Net.NetworkInformation.PingOptions.Ttl> property to the desired value. If the packet does not reach its destination after being forwarded the specified number of times, the packet is discarded and the ICMP echo request fails. When this happens, the <xref:System.Net.NetworkInformation.PingReply.Status*> is set to <xref:System.Net.NetworkInformation.IPStatus.TtlExpired>.
 
-
-
 ## Examples
  The following code example demonstrates calling this method.
 
@@ -513,8 +507,6 @@
  This method sends a 32 <xref:System.Byte> data buffer with the ICMP echo message. The method waits five seconds for an ICMP echo reply message. If it does not receive a reply in that time, the method returns and the <xref:System.Net.NetworkInformation.PingReply.Status> property is set to <xref:System.Net.NetworkInformation.IPStatus.TimedOut>.
 
  This overload uses default settings for packet fragmentation and packet forwarding. The packet that contains the ICMP echo message can be fragmented in transit if the total packet size exceeds the maximum packet size that can be transmitted by one of the routing nodes between the local and remote computers. To prevent fragmentation, use one of the <xref:System.Net.NetworkInformation.Ping.Send*> methods that takes an `options` parameter, and set the <xref:System.Net.NetworkInformation.PingOptions.DontFragment> property to `true`. When <xref:System.Net.NetworkInformation.PingOptions.DontFragment*> is `true` and the total packet size exceeds the maximum packet size that can be transmitted by one of the routing nodes between the local and remote computers, the ICMP echo request fails. When this happens, the <xref:System.Net.NetworkInformation.PingReply.Status*> is set to <xref:System.Net.NetworkInformation.IPStatus.PacketTooBig>. The packet or packet fragments (if fragmented) can be forwarded by routing nodes 128 times before being discarded. To change this setting, use a <xref:System.Net.NetworkInformation.Ping.Send*> overload that takes an `options` parameter, and set the <xref:System.Net.NetworkInformation.PingOptions.Ttl> property to the desired value. If the packet does not reach its destination after being forwarded the specified number of times, the packet is discarded and the ICMP echo request fails. When this happens, the <xref:System.Net.NetworkInformation.PingReply.Status*> is set to <xref:System.Net.NetworkInformation.IPStatus.TtlExpired>.
-
-
 
 ## Examples
  The following code example demonstrates calling this method.
@@ -587,8 +579,6 @@
 
  The packet or packet fragments can be forwarded by routing nodes 128 times before being discarded. To change this setting, use a <xref:System.Net.NetworkInformation.Ping.Send*> overload that takes an `options` parameter, and set the <xref:System.Net.NetworkInformation.PingOptions.Ttl> property to the desired value. If the packet does not reach its destination after being forwarded the specified number of times, the packet is discarded and the ICMP echo request fails. When this happens, the <xref:System.Net.NetworkInformation.PingReply.Status*> is set to <xref:System.Net.NetworkInformation.IPStatus.TtlExpired>.
 
-
-
 ## Examples
  For an example that demonstrates calling a <xref:System.Net.NetworkInformation.Ping.Send*> method, see the <xref:System.Net.NetworkInformation.Ping> class overview.
 
@@ -657,8 +647,6 @@
 > When specifying very small numbers for `timeout`, the Ping reply can be received even if `timeout` milliseconds have elapsed.
 
  This overload uses default settings for packet fragmentation and packet forwarding. The packet that contains the ICMP echo message can be fragmented in transit if the total packet size exceeds the maximum packet size that can be transmitted by one of the routing nodes between the local and remote computers. To prevent fragmentation, use one of the <xref:System.Net.NetworkInformation.Ping.Send*> methods that takes an `options` parameter, and set the <xref:System.Net.NetworkInformation.PingOptions.DontFragment> property to `true`. When <xref:System.Net.NetworkInformation.PingOptions.DontFragment*> is `true` and the total packet size exceeds the maximum packet size that can be transmitted by one of the routing nodes between the local and remote computers, the ICMP echo request fails. When this happens, the <xref:System.Net.NetworkInformation.PingReply.Status*> is set to <xref:System.Net.NetworkInformation.IPStatus.PacketTooBig>. The packet or packet fragments (if fragmented) can be forwarded by routing nodes 128 times before being discarded. To change this setting, use a <xref:System.Net.NetworkInformation.Ping.Send*> overload that takes an `options` parameter, and set the <xref:System.Net.NetworkInformation.PingOptions.Ttl> property to the desired value. If the packet does not reach its destination after being forwarded the specified number of times, the packet is discarded and the ICMP echo request fails. When this happens, the <xref:System.Net.NetworkInformation.PingReply.Status*> is set to <xref:System.Net.NetworkInformation.IPStatus.TtlExpired>.
-
-
 
 ## Examples
  For an example that demonstrates calling a <xref:System.Net.NetworkInformation.Ping.Send*> method, see the <xref:System.Net.NetworkInformation.Ping> class overview.
@@ -738,8 +726,6 @@
  This overload uses default settings for packet fragmentation and packet forwarding. The packet that contains the ICMP echo message can be fragmented in transit if the total packet size exceeds the maximum packet size that can be transmitted by one of the routing nodes between the local and remote computers. To prevent fragmentation, use one of the <xref:System.Net.NetworkInformation.Ping.Send*> methods that takes an `options` parameter, and set the <xref:System.Net.NetworkInformation.PingOptions.DontFragment> property to `true`. When <xref:System.Net.NetworkInformation.PingOptions.DontFragment*> is `true` and the total packet size exceeds the maximum packet size that can be transmitted by one of the routing nodes between the local and remote computers, the ICMP echo request fails. When this happens, the <xref:System.Net.NetworkInformation.PingReply.Status*> is set to <xref:System.Net.NetworkInformation.IPStatus.PacketTooBig>.
 
  The packet or packet fragments can be forwarded by routing nodes 128 times before being discarded. To change this setting, use a <xref:System.Net.NetworkInformation.Ping.Send*> overload that takes an `options` parameter, and set the <xref:System.Net.NetworkInformation.PingOptions.Ttl> property to the desired value. If the packet does not reach its destination after being forwarded the specified number of times, the packet is discarded and the ICMP echo request fails. When this happens, the <xref:System.Net.NetworkInformation.PingReply.Status*> is set to <xref:System.Net.NetworkInformation.IPStatus.TtlExpired>.
-
-
 
 ## Examples
  The following code example demonstrates how to call this method.
@@ -823,8 +809,6 @@
  This overload uses default settings for packet fragmentation and packet forwarding. The packet that contains the ICMP echo message can be fragmented in transit if the total packet size exceeds the maximum packet size that can be transmitted by one of the routing nodes between the local and remote computers. To prevent fragmentation, use one of the <xref:System.Net.NetworkInformation.Ping.Send*> methods that takes an `options` parameter, and set the <xref:System.Net.NetworkInformation.PingOptions.DontFragment> property to `true`. When <xref:System.Net.NetworkInformation.PingOptions.DontFragment*> is `true` and the total packet size exceeds the maximum packet size that can be transmitted by one of the routing nodes between the local and remote computers, the ICMP echo request fails. When this happens, the <xref:System.Net.NetworkInformation.PingReply.Status*> is set to <xref:System.Net.NetworkInformation.IPStatus.PacketTooBig>.
 
  The packet or packet fragments can be forwarded by routing nodes 128 times before being discarded. To change this setting, use a <xref:System.Net.NetworkInformation.Ping.Send*> overload that takes an `options` parameter, and set the <xref:System.Net.NetworkInformation.PingOptions.Ttl> property to the desired value. If the packet does not reach its destination after being forwarded the specified number of times, the packet is discarded and the ICMP echo request fails. When this happens, the <xref:System.Net.NetworkInformation.PingReply.Status*> is set to <xref:System.Net.NetworkInformation.IPStatus.TtlExpired>.
-
-
 
 ## Examples
  For an example that demonstrates how to call a <xref:System.Net.NetworkInformation.Ping.Send*> overload, see the <xref:System.Net.NetworkInformation.Ping> class overview.
@@ -914,8 +898,6 @@
  If the <xref:System.Net.NetworkInformation.PingOptions.DontFragment> property is `true` and the total packet size exceeds the maximum packet size that can be transmitted by one of the routing nodes between the local and remote computers, the ICMP echo request fails. When this happens, the <xref:System.Net.NetworkInformation.PingReply.Status*> is set to <xref:System.Net.NetworkInformation.IPStatus.PacketTooBig>.
 
  Use the <xref:System.Net.NetworkInformation.PingOptions.Ttl> property to specify the maximum number of times the ICMP echo message can be forwarded before reaching its destination. If the packet does not reach its destination after being forwarded the specified number of times, the packet is discarded and the ICMP echo request fails. When this happens, the <xref:System.Net.NetworkInformation.PingReply.Status*> is set to <xref:System.Net.NetworkInformation.IPStatus.TtlExpired>.
-
-
 
 ## Examples
  The following code example demonstrates how to call this method.
@@ -1064,8 +1046,6 @@
  If the <xref:System.Net.NetworkInformation.PingOptions.DontFragment> property is `true` and the total packet size exceeds the maximum packet size that can be transmitted by one of the routing nodes between the local and remote computers, the ICMP echo request fails. When this happens, the <xref:System.Net.NetworkInformation.PingReply.Status*> is set to <xref:System.Net.NetworkInformation.IPStatus.PacketTooBig>.
 
  Use the <xref:System.Net.NetworkInformation.PingOptions.Ttl> property to specify the maximum number of times the ICMP echo message can be forwarded before reaching its destination. If the packet does not reach its destination after being forwarded the specified number of times, the packet is discarded and the ICMP echo request fails. When this happens, the <xref:System.Net.NetworkInformation.PingReply.Status*> is set to <xref:System.Net.NetworkInformation.IPStatus.TtlExpired>.
-
-
 
 ## Examples
  The following code example demonstrates how to call this method.
@@ -1238,8 +1218,6 @@
 
  The packet or packet fragments can be forwarded by routing nodes 128 times before being discarded. To change this setting, use a <xref:System.Net.NetworkInformation.Ping.SendAsync*> overload that takes an `options` parameter, and set the <xref:System.Net.NetworkInformation.PingOptions.Ttl> property to the desired value. If the packet does not reach its destination after being forwarded the specified number of times, the packet is discarded and the ICMP echo request fails. When this happens, the <xref:System.Net.NetworkInformation.PingReply.Status*> is set to <xref:System.Net.NetworkInformation.IPStatus.TtlExpired>.
 
-
-
 ## Examples
  For a code example that demonstrates calling a <xref:System.Net.NetworkInformation.Ping.SendAsync*> method, see the <xref:System.Net.NetworkInformation.Ping> class overview.
 
@@ -1319,8 +1297,6 @@
  This overload uses default settings for packet fragmentation and packet forwarding. The packet that contains the ICMP echo message can be fragmented in transit if the total packet size exceeds the maximum packet size that can be transmitted by one of the routing nodes between the local and remote computers. To prevent fragmentation, use one of the <xref:System.Net.NetworkInformation.Ping.SendAsync*> methods that takes an `options` parameter, and set the <xref:System.Net.NetworkInformation.PingOptions.DontFragment> property to `true`. When <xref:System.Net.NetworkInformation.PingOptions.DontFragment*> is `true` and the total packet size exceeds the maximum packet size that can be transmitted by one of the routing nodes between the local and remote computers, the ICMP echo request fails. When this happens, the <xref:System.Net.NetworkInformation.PingReply.Status*> is set to <xref:System.Net.NetworkInformation.IPStatus.PacketTooBig>.
 
  The packet or packet fragments can be forwarded by routing nodes 128 times before being discarded. To change this setting, use a <xref:System.Net.NetworkInformation.Ping.SendAsync*> overload that takes an `options` parameter, and set the <xref:System.Net.NetworkInformation.PingOptions.Ttl> property to the desired value. If the packet does not reach its destination after being forwarded the specified number of times, the packet is discarded and the ICMP echo request fails. When this happens, the <xref:System.Net.NetworkInformation.PingReply.Status*> is set to <xref:System.Net.NetworkInformation.IPStatus.TtlExpired>.
-
-
 
 ## Examples
  For a code example that demonstrates calling the <xref:System.Net.NetworkInformation.Ping.SendAsync*> method, see the <xref:System.Net.NetworkInformation.Ping> class overview.
@@ -1403,8 +1379,6 @@
 > When specifying very small numbers for `timeout`, the Ping reply can be received even if `timeout` milliseconds have elapsed.
 
  This overload uses default settings for packet fragmentation and packet forwarding. The packet that contains the ICMP echo message can be fragmented in transit if the total packet size exceeds the maximum packet size that can be transmitted by one of the routing nodes between the local and remote computers. To prevent fragmentation, use one of the <xref:System.Net.NetworkInformation.Ping.SendAsync*> methods that takes an `options` parameter, and set the <xref:System.Net.NetworkInformation.PingOptions.DontFragment> property to `true`. When <xref:System.Net.NetworkInformation.PingOptions.DontFragment*> is `true` and the total packet size exceeds the maximum packet size that can be transmitted by one of the routing nodes between the local and remote computers, the ICMP echo request fails. When this happens, the <xref:System.Net.NetworkInformation.PingReply.Status*> is set to <xref:System.Net.NetworkInformation.IPStatus.PacketTooBig>. The packet or packet fragments (if fragmented) can be forwarded by routing nodes 128 times before being discarded. To change this setting, use a <xref:System.Net.NetworkInformation.Ping.SendAsync*> overload that takes an `options` parameter, and set the <xref:System.Net.NetworkInformation.PingOptions.Ttl> property to the desired value. If the packet does not reach its destination after being forwarded the specified number of times, the packet is discarded and the ICMP echo request fails. When this happens, the <xref:System.Net.NetworkInformation.PingReply.Status*> is set to <xref:System.Net.NetworkInformation.IPStatus.TtlExpired>.
-
-
 
 ## Examples
  For a code example that demonstrates calling a <xref:System.Net.NetworkInformation.Ping.SendAsync*> overload, see the <xref:System.Net.NetworkInformation.Ping> class overview.
@@ -1489,8 +1463,6 @@
 > When specifying very small numbers for `timeout`, the Ping reply can be received even if `timeout` milliseconds have elapsed.
 
  This overload uses default settings for packet fragmentation and packet forwarding. The packet that contains the ICMP echo message can be fragmented in transit if the total packet size exceeds the maximum packet size that can be transmitted by one of the routing nodes between the local and remote computers. To prevent fragmentation, use one of the <xref:System.Net.NetworkInformation.Ping.SendAsync*> methods that takes an `options` parameter, and set the <xref:System.Net.NetworkInformation.PingOptions.DontFragment> property to `true`. When <xref:System.Net.NetworkInformation.PingOptions.DontFragment*> is `true` and the total packet size exceeds the maximum packet size that can be transmitted by one of the routing nodes between the local and remote computers, the ICMP echo request fails. When this happens, the <xref:System.Net.NetworkInformation.PingReply.Status*> is set to <xref:System.Net.NetworkInformation.IPStatus.PacketTooBig>. The packet or packet fragments (if fragmented) can be forwarded by routing nodes 128 times before being discarded. To change this setting, use a <xref:System.Net.NetworkInformation.Ping.SendAsync*> overload that takes an `options` parameter, and set the <xref:System.Net.NetworkInformation.PingOptions.Ttl> property to the desired value. If the packet does not reach its destination after being forwarded the specified number of times, the packet is discarded and the ICMP echo request fails. When this happens, the <xref:System.Net.NetworkInformation.PingReply.Status*> is set to <xref:System.Net.NetworkInformation.IPStatus.TtlExpired>.
-
-
 
 ## Examples
  For a code example that demonstrates calling the <xref:System.Net.NetworkInformation.Ping.SendAsync*> method, see the <xref:System.Net.NetworkInformation.Ping> class overview.
@@ -1585,8 +1557,6 @@
 
  This overload uses default settings for packet fragmentation and packet forwarding. The packet that contains the ICMP echo message can be fragmented in transit if the total packet size exceeds the maximum packet size that can be transmitted by one of the routing nodes between the local and remote computers. To prevent fragmentation, use one of the <xref:System.Net.NetworkInformation.Ping.SendAsync*> methods that takes an `options` parameter, and set the <xref:System.Net.NetworkInformation.PingOptions.DontFragment> property to `true`. When <xref:System.Net.NetworkInformation.PingOptions.DontFragment*> is `true` and the total packet size exceeds the maximum packet size that can be transmitted by one of the routing nodes between the local and remote computers, the ICMP echo request fails. When this happens, the <xref:System.Net.NetworkInformation.PingReply.Status*> is set to <xref:System.Net.NetworkInformation.IPStatus.PacketTooBig>. The packet or packet fragments (if fragmented) can be forwarded by routing nodes 128 times before being discarded. To change this setting, use a <xref:System.Net.NetworkInformation.Ping.SendAsync*> overload that takes an `options` parameter, and set the <xref:System.Net.NetworkInformation.PingOptions.Ttl> property to the desired value. If the packet does not reach its destination after being forwarded the specified number of times, the packet is discarded and the ICMP echo request fails. When this happens, the <xref:System.Net.NetworkInformation.PingReply.Status*> is set to <xref:System.Net.NetworkInformation.IPStatus.TtlExpired>.
 
-
-
 ## Examples
  For a code example that demonstrates calling a <xref:System.Net.NetworkInformation.Ping.SendAsync*> overload, see the <xref:System.Net.NetworkInformation.Ping> class overview.
 
@@ -1680,8 +1650,6 @@
 > When specifying very small numbers for `timeout`, the Ping reply can be received even if `timeout` milliseconds have elapsed.
 
  This overload uses default settings for packet fragmentation and packet forwarding. The packet that contains the ICMP echo message can be fragmented in transit if the total packet size exceeds the maximum packet size that can be transmitted by one of the routing nodes between the local and remote computers. To prevent fragmentation, use one of the <xref:System.Net.NetworkInformation.Ping.SendAsync*> methods that takes an `options` parameter, and set the <xref:System.Net.NetworkInformation.PingOptions.DontFragment> property to `true`. When <xref:System.Net.NetworkInformation.PingOptions.DontFragment*> is `true` and the total packet size exceeds the maximum packet size that can be transmitted by one of the routing nodes between the local and remote computers, the ICMP echo request fails. When this happens, the <xref:System.Net.NetworkInformation.PingReply.Status*> is set to <xref:System.Net.NetworkInformation.IPStatus.PacketTooBig>. The packet or packet fragments (if fragmented) can be forwarded by routing nodes 128 times before being discarded. To change this setting, use a <xref:System.Net.NetworkInformation.Ping.SendAsync*> overload that takes an `options` parameter, and set the <xref:System.Net.NetworkInformation.PingOptions.Ttl> property to the desired value. If the packet does not reach its destination after being forwarded the specified number of times, the packet is discarded and the ICMP echo request fails. When this happens, the <xref:System.Net.NetworkInformation.PingReply.Status*> is set to <xref:System.Net.NetworkInformation.IPStatus.TtlExpired>.
-
-
 
 ## Examples
  The following code example demonstrates how to call a <xref:System.Net.NetworkInformation.Ping.SendAsync*> overload, see the <xref:System.Net.NetworkInformation.Ping> class overview.
@@ -1785,8 +1753,6 @@
  If the <xref:System.Net.NetworkInformation.PingOptions.DontFragment> property is `true` and the total packet size exceeds the maximum packet size that can be transmitted by one of the routing nodes between the local and remote computers, the ICMP echo request fails. When this happens, the <xref:System.Net.NetworkInformation.PingReply.Status*> is set to <xref:System.Net.NetworkInformation.IPStatus.PacketTooBig>.
 
  Use the <xref:System.Net.NetworkInformation.PingOptions.Ttl> property to specify the maximum number of times the ICMP echo message can be forwarded before reaching its destination. If the packet does not reach its destination after being forwarded the specified number of times, the packet is discarded and the ICMP echo request fails. When this happens, the <xref:System.Net.NetworkInformation.PingReply.Status*> is set to <xref:System.Net.NetworkInformation.IPStatus.TtlExpired>.
-
-
 
 ## Examples
  The following code example demonstrates how to call this method. For an implementation of the callback method, see the <xref:System.Net.NetworkInformation.Ping.SendAsync*> method overload example section.
@@ -1894,8 +1860,6 @@
  If the <xref:System.Net.NetworkInformation.PingOptions.DontFragment> property is `true` and the total packet size exceeds the maximum packet size that can be transmitted by one of the routing nodes between the local and remote computers, the ICMP echo request fails. When this happens, the <xref:System.Net.NetworkInformation.PingReply.Status*> is set to <xref:System.Net.NetworkInformation.IPStatus.PacketTooBig>.
 
  Use the <xref:System.Net.NetworkInformation.PingOptions.Ttl> property to specify the maximum number of times the ICMP echo message can be forwarded before reaching its destination. If the packet does not reach its destination after being forwarded the specified number of times, the packet is discarded and the ICMP echo request fails. When this happens, the <xref:System.Net.NetworkInformation.PingReply.Status*> is set to <xref:System.Net.NetworkInformation.IPStatus.TtlExpired>.
-
-
 
 ## Examples
  The following code example demonstrates how to call this method.

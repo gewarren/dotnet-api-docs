@@ -23,8 +23,6 @@
 
  To create a custom session-state container, create a class that implements the <xref:System.Web.SessionState.IHttpSessionState> interface. If you are creating your own custom session-state container, you must also replace the <xref:System.Web.SessionState.SessionStateModule> with your own custom module. Your custom module will create an instance of your custom session-state container and add it to the current <xref:System.Web.HttpContext> using the <xref:System.Web.SessionState.SessionStateUtility.AddHttpSessionStateToContext*> method. An example of a custom session-state module is included in the <xref:System.Web.SessionState.SessionStateUtility> class overview.
 
-
-
 ## Examples
  The following code example implements the <xref:System.Web.SessionState.IHttpSessionState> interface to create a new session-state container class named `MySessionState`.
 
@@ -60,8 +58,6 @@
 
 ## Remarks
  The <xref:System.Web.SessionState.IHttpSessionState.Abandon*> method is used to clear out session data and raise the **Session_OnEnd** event defined in the Global.asax file for the ASP.NET application.
-
-
 
 ## Examples
  The following code example implements the <xref:System.Web.SessionState.IHttpSessionState.Abandon*> method of the <xref:System.Web.SessionState.IHttpSessionState> interface. The code example duplicates the behavior of the <xref:System.Web.SessionState.HttpSessionStateContainer> class in that it adds an <xref:System.Web.SessionState.HttpSessionStateContainer.IsAbandoned> property that is set to `true` when the <xref:System.Web.SessionState.IHttpSessionState.Abandon*> method is called. The <xref:System.Web.SessionState.HttpSessionStateContainer.IsAbandoned> property is checked by the session-state module during the <xref:System.Web.HttpApplication.ReleaseRequestState> event to determine whether the session has been abandoned, and the session-state module clears out session data and executes the **Session_OnEnd** event.
@@ -137,8 +133,6 @@
 ## Remarks
  <xref:System.Web.SessionState.IHttpSessionState.Clear*> performs the same function as <xref:System.Web.SessionState.IHttpSessionState.RemoveAll*>.
 
-
-
 ## Examples
  The following code example implements the <xref:System.Web.SessionState.IHttpSessionState.Clear*> method of the <xref:System.Web.SessionState.IHttpSessionState> interface to delete all items from an internal session-state item collection.
 
@@ -177,8 +171,6 @@
 
  This <xref:System.Web.SessionState.IHttpSessionState.CodePage> property is provided for compatibility with earlier versions of ASP only. If you do not need to maintain backward compatibility with ASP pages, use the <xref:System.Text.Encoding.CodePage> property of the <xref:System.Web.HttpResponse.ContentEncoding> property instead.
 
-
-
 ## Examples
  The following code example implements the <xref:System.Web.SessionState.IHttpSessionState.CodePage> property of the <xref:System.Web.SessionState.IHttpSessionState> interface to get and set the encoding for the current response.
 
@@ -214,8 +206,6 @@
 
 ## Remarks
  The <xref:System.Web.SessionState.IHttpSessionState.CookieMode> property returns a <xref:System.Web.HttpCookieMode> enumeration value that is based on the value of the `cookieless` attribute of the <xref:System.Web.Configuration.SystemWebSectionGroup.SessionState*> configuration element. If the `cookieless` attribute is set to `true`, then the <xref:System.Web.SessionState.IHttpSessionState.CookieMode> property returns <xref:System.Web.HttpCookieMode.UseUri>; otherwise, the <xref:System.Web.SessionState.IHttpSessionState.CookieMode> property returns <xref:System.Web.HttpCookieMode.UseCookies>.
-
-
 
 ## Examples
  The following code example sets the `cookieless` attribute of the [sessionState Element (ASP.NET Settings Schema)](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/h6bb9cz9(v=vs.100)) element to `true` in the Web.config file to change the <xref:System.Web.SessionState.IHttpSessionState.CookieMode> property. For this sample application configuration, the <xref:System.Web.SessionState.IHttpSessionState.CookieMode> property would return <xref:System.Web.HttpCookieMode.UseUri>.
@@ -367,8 +357,6 @@
 ## Remarks
  For information on cookieless sessions, see [Session Identifiers](https://learn.microsoft.com/previous-versions/aspnet/ms178582(v=vs.100)).
 
-
-
 ## Examples
  The following code example implements the <xref:System.Web.SessionState.IHttpSessionState.IsCookieless> property of the <xref:System.Web.SessionState.IHttpSessionState> interface.
 
@@ -439,8 +427,6 @@
 
 ## Remarks
  Session state is set to read-only by setting the <xref:System.Web.Configuration.PagesSection.EnableSessionState*> page attribute to `ReadOnly`.
-
-
 
 ## Examples
  The following code example implements the <xref:System.Web.SessionState.IHttpSessionState.IsReadOnly> property of the <xref:System.Web.SessionState.IHttpSessionState> interface to return the value of an internal variable that was set in the constructor.
@@ -631,8 +617,6 @@
 
  ASP.NET does not store the locale identifier in session state. The <xref:System.Web.SessionState.IHttpSessionState.LCID> property calls the <xref:System.Globalization.CultureInfo.LCID*> to get and set the identifier.
 
-
-
 ## Examples
  The following code example implements the <xref:System.Web.SessionState.IHttpSessionState.LCID> property of the <xref:System.Web.SessionState.IHttpSessionState> interface to get and set the locale identifier for the current page.
 
@@ -668,8 +652,6 @@
 
 ## Remarks
  For information on different session-state modes, see [Session-State Modes](https://learn.microsoft.com/previous-versions/aspnet/ms178586(v=vs.100)).
-
-
 
 ## Examples
  The following code example implements the <xref:System.Web.SessionState.IHttpSessionState.Mode> property of the <xref:System.Web.SessionState.IHttpSessionState> interface.
@@ -742,8 +724,6 @@
 
 ## Remarks
  <xref:System.Web.SessionState.IHttpSessionState.RemoveAll*> performs the same function as <xref:System.Web.SessionState.IHttpSessionState.Clear*>.
-
-
 
 ## Examples
  The following code example implements the <xref:System.Web.SessionState.IHttpSessionState.RemoveAll*> method of the <xref:System.Web.SessionState.IHttpSessionState> interface to delete all items from an internal session-state item collection.
@@ -849,8 +829,6 @@
 
 ## Remarks
  `StaticObjects` is provided for compatibility with earlier versions of ASP.
-
-
 
 ## Examples
  The following code example implements the <xref:System.Web.SessionState.IHttpSessionState.StaticObjects> property of the <xref:System.Web.SessionState.IHttpSessionState> interface.

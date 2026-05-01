@@ -152,8 +152,6 @@
 ## Remarks
  This constructor is primarily used internally when making a deep copy of an XML tree.
 
-
-
 ## Examples
  This example demonstrates that creating a deep copy of an XML tree creates a copy, not a clone, of an attribute in the tree.
 
@@ -262,8 +260,6 @@ XElement root = new XElement(aw + "Root",
  These same approaches will work for Visual Basic, however XML literals provide a better approach for creating XML trees.
 
  The `value` parameter can be a <xref:System.String>, `double`, `float`, `decimal`, `bool`, <xref:System.DateTime>, or <xref:System.TimeSpan>. If the value is a <xref:System.DateTime> or <xref:System.TimeSpan>, the value of the attribute is formatted correctly per the W3C specifications.
-
-
 
 ## Examples
  The following example uses this constructor to create attributes. It passes strings as the first argument to the <xref:System.Xml.Linq.XAttribute> constructor, which are then implicitly converted to <xref:System.Xml.Linq.XName> objects. The attributes are added to an element.
@@ -428,8 +424,6 @@ Console.WriteLine(root)
 ## Remarks
  Technically, in XML, namespace declarations are not attributes proper. However, this distinction is not normally made by most XML programmers. Instead, because namespace declarations have exactly the same syntax as attributes, most XML programmers think of namespaces as attributes. To simplify the LINQ to XML programming interface, namespaces are represented in the XML tree as attributes. You can use this property to determine if a particular LINQ to XML attribute is really a namespace declaration.
 
-
-
 ## Examples
  The following example creates an attribute that is a namespace declaration and an attribute that is not. It then uses this property to display whether each attribute is a namespace declaration or not.
 
@@ -525,8 +519,6 @@ Next
 
 ## Remarks
  The expanded name returned by this property is in the form of `{namespace}localname`.
-
-
 
 ## Examples
  The following example creates an element with three attributes. It then uses this property to print out the name of each attribute. The example also shows creation of a new attribute using the name of an existing attribute.
@@ -648,8 +640,6 @@ Att2=new content
 
  If this attribute does not have a parent, or if there is no next attribute, then this property returns `null`.
 
-
-
 ## Examples
  The following example shows how to iterate through the attributes of an element using this property.
 
@@ -738,8 +728,6 @@ Att4="4"
 
 ## Remarks
  Because all classes that derive from <xref:System.Xml.Linq.XObject> contain a <xref:System.Xml.Linq.XObject.NodeType> property, you can write code that operates on collections of concrete subclass of <xref:System.Xml.Linq.XObject>. Your code can then test for the node type of each node in the collection.
-
-
 
 ## Examples
  The following example creates an attribute, and then displays the node type using this property.
@@ -2979,8 +2967,6 @@ value=1844674407370955161
 
  The <xref:System.Xml.Linq.XElement> class stores its attributes as a singly-linked list of <xref:System.Xml.Linq.XAttribute> objects. This means that the <xref:System.Xml.Linq.XAttribute.PreviousAttribute> property must traverse the list of attributes that belong to the element. Therefore, using this property might affect your performance.
 
-
-
 ## Examples
  The following example shows how to iterate through the attributes of an element using this property.
 
@@ -3073,8 +3059,6 @@ Att1="1"
 
  Alternatively, if you want to remove a set of attributes, it is recommended that you use the <xref:System.Xml.Linq.Extensions.Remove*?displayProperty=nameWithType> method. This method copies the attributes to a list, then iterates over the list, removing the attributes.
 
-
-
 ## Examples
  The following example creates an element with three attributes. It then removes one of the attributes.
 
@@ -3160,8 +3144,6 @@ Console.WriteLine(root)
  It is invalid to pass an instance of a class that derives from <xref:System.Xml.Linq.XObject>, such as <xref:System.Xml.Linq.XElement> or <xref:System.Xml.Linq.XAttribute>.
 
  This method will raise the <xref:System.Xml.Linq.XObject.Changed> and the <xref:System.Xml.Linq.XObject.Changing> events.
-
-
 
 ## Examples
  The following example creates an element with several attributes. It then changes the contents of one of the attributes.
@@ -3250,8 +3232,6 @@ Console.WriteLine(root)
 
 > [!WARNING]
 > When this method is called and <xref:System.Xml.Linq.XAttribute> contains control character, an exception is thrown with a message like: hexadecimal value 0x0B, is an invalid character.
-
-
 
 ## Examples
  The following example creates an element with several attributes. It then gets an attribute and displays it and its content by calling this method.

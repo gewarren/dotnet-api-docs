@@ -264,8 +264,6 @@ End Using
 
  When a new entity is attached, deferred loaders for any child collections (for example, `EntitySet` collections of entities from associated tables) are initialized. When <xref:System.Data.Linq.DataContext.SubmitChanges*> is called, members of the child collections are put into an `Unmodified` state. To update members of a child collection, you must explicitly call `Attach` and specify that entity.
 
-
-
 ## Examples
  :::code language="csharp" source="~/snippets/csharp/System.Data.Linq/TableTEntity/Attach/Program.cs" id="Snippet4":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_Data/DLinqNTier/vb/Module1.vb" id="Snippet4":::
@@ -377,8 +375,6 @@ End Using
  This method attaches all entities of a collection to the <xref:System.Data.Linq.DataContext> in either a *modified* or *unmodified* state. If attaching as modified, the entity must either declare a version member or must not participate in update conflict checking. If attaching as unmodified, the entity is assumed to represent the original value. After calling this method, the entity's fields can be modified with other information from the client before <xref:System.Data.Linq.DataContext.SubmitChanges*> is called. For more information, see [Data Retrieval and CUD Operations in N-Tier Applications (LINQ to SQL)](/dotnet/framework/data/adonet/sql/linq/data-retrieval-and-cud-operations-in-n-tier-applications).
 
  When a new entity is attached, deferred loaders for any child collections (for example, `EntitySet` collections of entities from associated tables) are initialized. When <xref:System.Data.Linq.DataContext.SubmitChanges*> is called, members of the child collections are put into an `Unmodified` state. To update members of a child collection, you must explicitly call `Attach` and specify that entity.
-
-
 
 ## Examples
  The following example shows how you can update an `Order` object on a different <xref:System.Data.Linq.DataContext> instance. The example assumes that you have a connection to a database and have made a LINQ to SQL file for it (in this case, the Northwind sample database).
@@ -529,8 +525,6 @@ db.SubmitChanges()
 
 > [!NOTE]
 > LINQ to SQL does not support or recognize cascade-delete operations. If you want to delete a row in a table that has constraints against it, you must either set the `ON DELETE CASCADE` rule in the foreign-key constraint in the database, or use your own code to first delete the child objects that prevent the parent object from being deleted. Otherwise, an exception is thrown.
-
-
 
 ## Examples
  :::code language="csharp" source="~/snippets/csharp/System.Data.Linq/TableTEntity/DeleteOnSubmit/program.cs" id="Snippet3":::
@@ -728,8 +722,6 @@ db.SubmitChanges()
 
 ## Remarks
  The added entity will not appear in query results from this table until after <xref:System.Data.Linq.DataContext.SubmitChanges*> has been called.
-
-
 
 ## Examples
  :::code language="csharp" source="~/snippets/csharp/System.Data.Linq/TableTEntity/DeleteOnSubmit/program.cs" id="Snippet1":::

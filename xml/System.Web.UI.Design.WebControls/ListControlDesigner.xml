@@ -61,8 +61,6 @@
 
 - The <xref:System.Web.UI.Design.WebControls.ListControlDesigner.PreFilterProperties*> method is used to remove additional properties from, add additional properties to, or shadow properties of the associated control that is derived from the <xref:System.Web.UI.WebControls.ListControl>.
 
-
-
 ## Examples
  This section provides two code examples. The first demonstrates how to derive a custom control designer.  The second demonstrates how to associate a derived control with a designer.
 
@@ -329,8 +327,6 @@
 ## Remarks
  If the associated control derived from the <xref:System.Web.UI.WebControls.ListControl> object is data-bound, the <xref:System.Web.UI.Design.WebControls.ListControlDesigner.GetDesignTimeHtml*> method clears the <xref:System.Web.UI.WebControls.ListControl.Items*> collection and adds a <xref:System.String> message indicating the control is data-bound. If the associated control is not data-bound and the <xref:System.Web.UI.WebControls.ListControl.Items*> collection is empty, the <xref:System.Web.UI.Design.WebControls.ListControlDesigner.GetDesignTimeHtml*> adds a <xref:System.String> message indicating the control is unbound. Then, the <xref:System.Web.UI.Design.WebControls.ListControlDesigner.GetDesignTimeHtml*> calls its base method to generate the markup.
 
-
-
 ## Examples
  The following code example overrides the <xref:System.Web.UI.Design.WebControls.ListControlDesigner.GetDesignTimeHtml*> method to customize the markup that is displayed for the associated control on a design surface. If the <xref:System.Web.UI.WebControls.WebControl.BackColor> property is not defined for the associated control, it is set to `Gainsboro`, and the control is displayed with that background color. After this is done, the base implementation of the <xref:System.Web.UI.Design.WebControls.ListControlDesigner.GetDesignTimeHtml*> method is called.
 
@@ -465,8 +461,6 @@
 
  The `component` parameter is the control, derived from the <xref:System.Web.UI.WebControls.ListControl>, that is associated with this designer or is a copy of that control.
 
-
-
 ## Examples
  The following code example overrides the <xref:System.Web.UI.Design.WebControls.ListControlDesigner.Initialize*> method in a designer derived from the <xref:System.Web.UI.Design.WebControls.ListControlDesigner> class to ensure that only instances of a control class named `SimpleRadioButtonList` are used by the custom designer.
 
@@ -554,8 +548,6 @@ Handles changes made to the component. This includes changes made in the propert
 ## Remarks
  The <xref:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.OnDataSourceChanged*> base method connects the associated control that is derived from the <xref:System.Web.UI.WebControls.ListControl> object to the current data source and, if that is different from the data source to which the control was connected, updates the design-time markup. The <xref:System.Web.UI.Design.WebControls.ListControlDesigner.OnDataSourceChanged*> method updates the design-time markup after connecting to the current data source.
 
-
-
 ## Examples
  The following code example overrides the <xref:System.Web.UI.Design.WebControls.ListControlDesigner.OnDataSourceChanged*> method in a class that inherits from the <xref:System.Web.UI.Design.WebControls.ListControlDesigner> class. When the data source that is associated with the designer class changes, the <xref:System.Web.UI.Design.WebControls.ListControlDesigner.OnDataSourceChanged*> method is called and this code sets a variable named `changedDataSource` to `true`.
 
@@ -606,8 +598,6 @@ Handles changes made to the component. This includes changes made in the propert
 
 ## Remarks
  The <xref:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.OnDataSourceChanged*> base method connects the associated control that is derived from the <xref:System.Web.UI.WebControls.ListControl> class to the current data source and, if that is different from the data source to which the control was connected, updates the design-time markup. The <xref:System.Web.UI.Design.WebControls.ListControlDesigner.OnDataSourceChanged*> method of the designer unconditionally updates the design-time markup after connecting to the current data source. The value of `forceUpdateView` is ignored.
-
-
 
 ## Examples
  The following code example overrides the <xref:System.Web.UI.Design.WebControls.ListControlDesigner.OnDataSourceChanged*> method in a class that inherits from the <xref:System.Web.UI.Design.WebControls.ListControlDesigner> class. When the data source that is associated with the designer class changes, the <xref:System.Web.UI.Design.WebControls.ListControlDesigner.OnDataSourceChanged*> is called and this code sets a variable named `changedDataSource` to `true`.

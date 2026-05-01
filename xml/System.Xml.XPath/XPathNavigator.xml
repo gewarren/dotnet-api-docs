@@ -281,8 +281,6 @@
 
  You can write more than one node to the writer. All nodes are appended to the end of the list of child nodes of the current node.
 
-
-
 ## Examples
  In the following example, a new `pages` child element is appended to the list of child elements of the first `book` element in the `contosoBooks.xml` file using the <xref:System.Xml.XmlWriter> object returned from the <xref:System.Xml.XPath.XPathNavigator.AppendChild*> method.
 
@@ -384,8 +382,6 @@
 - The <xref:System.Xml.XPath.XPathNavigator.AppendChild*> method is valid only when the <xref:System.Xml.XPath.XPathNavigator> is positioned on the root node or an element node.
 
 - The <xref:System.Xml.XPath.XPathNavigator.AppendChild*> method does not affect the position of the <xref:System.Xml.XPath.XPathNavigator>.
-
-
 
 ## Examples
  In the following example, a new `pages` child element is appended to the list of child elements of the first `book` element in the `contosoBooks.xml` file.
@@ -596,8 +592,6 @@
 
 - The <xref:System.Xml.XPath.XPathNavigator.AppendChild*> method does not affect the position of the <xref:System.Xml.XPath.XPathNavigator>.
 
-
-
 ## Examples
  In the following example, a new `pages` child element is appended to the list of child elements of the first `book` element in the `contosoBooks.xml` file using the node contained in the <xref:System.Xml.XPath.XPathNavigator> specified. The `http://www.contoso.com/books` namespace is specified so that the new child element is appended using the same namespace as the XML document.
 
@@ -722,8 +716,6 @@ navigator.AppendChildElement(navigator.Prefix, "pages", LookupNamespaceURI(navig
 - The <xref:System.Xml.XPath.XPathNavigator.AppendChildElement*> method is valid only when the <xref:System.Xml.XPath.XPathNavigator> is positioned on the root node or an element node.
 
 - The <xref:System.Xml.XPath.XPathNavigator.AppendChildElement*> method does not affect the position of the <xref:System.Xml.XPath.XPathNavigator>.
-
-
 
 ## Examples
  In the following example, a new `pages` child element is appended to the list of child elements of the first `book` element in the `contosoBooks.xml` file.
@@ -879,8 +871,6 @@ navigator.AppendChildElement(navigator.Prefix, "pages", LookupNamespaceURI(navig
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |<xref:System.Xml.XPath.XPathDocument>|`false`|
 |<xref:System.Xml.XmlDocument>|`true`|
-
-
 
 ## Examples
  The following example uses the <xref:System.Xml.XPath.XPathNavigator.CanEdit> property to display the <xref:System.Xml.XPath.XPathNavigator.CanEdit> values of the <xref:System.Xml.XPath.XPathDocument> and <xref:System.Xml.XmlDocument> classes.
@@ -1044,8 +1034,6 @@ navigator.AppendChildElement(navigator.Prefix, "pages", LookupNamespaceURI(navig
  The <xref:System.Xml.XPath.XPathNavigator.Clone*> method is especially useful in conjunction with the <xref:System.Xml.XPath.XPathNodeIterator>. An <xref:System.Xml.XPath.XPathNodeIterator> is used to iterate over a selected node set, and contains a <xref:System.Xml.XPath.XPathNodeIterator.Current> property which returns an <xref:System.Xml.XPath.XPathNavigator> positioned on the context node of the <xref:System.Xml.XPath.XPathNodeIterator>. However, the <xref:System.Xml.XPath.XPathNavigator> returned by the <xref:System.Xml.XPath.XPathNodeIterator.Current> property cannot be used to move away from the node set. Instead, you clone the returned <xref:System.Xml.XPath.XPathNavigator> and use the cloned navigator to do any additional moves.
 
  The cloned <xref:System.Xml.XPath.XPathNavigator> is not affected by subsequent changes to the original <xref:System.Xml.XPath.XPathNavigator>.
-
-
 
 ## Examples
  The following example gets all book titles authored by Herman Melville.
@@ -1422,8 +1410,6 @@ editor.CreateAttribute(navigator.Prefix, "attributeName", LookupNamespace(naviga
 
 - The <xref:System.Xml.XPath.XPathNavigator.CreateAttributes*> method does not affect the position of the <xref:System.Xml.XPath.XPathNavigator>.
 
-
-
 ## Examples
  In the following example, new `discount` and `currency` attributes are created on the `price` child element of the first `book` element in the `contosoBooks.xml` file using the <xref:System.Xml.XmlWriter> object returned from the <xref:System.Xml.XPath.XPathNavigator.CreateAttributes*> method.
 
@@ -1580,8 +1566,6 @@ editor.CreateAttribute(navigator.Prefix, "attributeName", LookupNamespace(naviga
 ## Remarks
  The <xref:System.Xml.XPath.XPathNavigator.DeleteRange*> method deletes a range of sibling nodes from the current node the <xref:System.Xml.XPath.XPathNavigator> is positioned on (inclusive) to the node specified by the <xref:System.Xml.XPath.XPathNavigator> parameter (inclusive). The <xref:System.Xml.XPath.XPathNavigator> is then positioned on its parent node.
 
-
-
 ## Examples
  In the following example, the first and second `book` elements of the `contosoBooks.xml` file are deleted using the <xref:System.Xml.XPath.XPathNavigator.DeleteRange*> method.
 
@@ -1684,8 +1668,6 @@ editor.CreateAttribute(navigator.Prefix, "attributeName", LookupNamespace(naviga
 - If the deleted node is a text node that is the content of a simple typed element, the element loses its type information. This means that when positioned on the element the <xref:System.Xml.XPath.XPathNavigator.XmlType>, <xref:System.Xml.XPath.XPathNavigator.ValueType> and <xref:System.Xml.XPath.XPathNavigator.TypedValue> properties have the values `null`, <xref:System.String> and <xref:System.String.Empty> respectively.
 
 - Deleted nodes are still accessible to <xref:System.Xml.XPath.XPathNavigator> objects positioned over them prior to deletion. However methods that attempt to move away from the deleted sub-tree fail. For example, the <xref:System.Xml.XPath.XPathNavigator.MoveToParent*> and <xref:System.Xml.XPath.XPathNavigator.MoveToPrevious*> methods always fail when the <xref:System.Xml.XPath.XPathNavigator> is positioned over the top most deleted node. This is because the deleted node is no longer connected to the XML document. Similarly the <xref:System.Xml.XPath.XPathNavigator.MoveToNext*> method always fails if the <xref:System.Xml.XPath.XPathNavigator> is positioned on the bottom-most deleted node.
-
-
 
 ## Examples
  In the following example the `price` element of the first `book` element of the `contosoBooks.xml` file is deleted using the <xref:System.Xml.XPath.XPathNavigator.DeleteSelf*> method. The position of the <xref:System.Xml.XPath.XPathNavigator> object after the `price` element is deleted is on the parent `book` element.
@@ -1800,8 +1782,6 @@ nav.Evaluate("Price/text()*10");
 > The XPath position() and last() functions, unless used as a predicate in a location step, require a reference to a node set in order to be evaluated. In this case, you must use the overload that takes an <xref:System.Xml.XPath.XPathNodeIterator> as an argument; otherwise, position() and last() return 0.
 
  This method has no effect on the state of the <xref:System.Xml.XPath.XPathNavigator>.
-
-
 
 ## Examples
  The following example evaluates an XPath expression and returns a <xref:System.Double>.
@@ -2035,8 +2015,6 @@ nav.Evaluate(expr);
 
  This method has no effect on the state of the <xref:System.Xml.XPath.XPathNavigator>.
 
-
-
 ## Examples
  The following example evaluates an XPath expression and returns a <xref:System.Double> using the <xref:System.Xml.XmlNamespaceManager> object specified to resolve namespace prefixes in the XPath expression.
 
@@ -2152,8 +2130,6 @@ nav.Evaluate(expr);
  Because the position() and last() functions work on the current node, you should not use the <xref:System.Xml.XPath.XPathNodeIterator.Current> property to move away from the selected node set. This could invalidate the state of the <xref:System.Xml.XPath.XPathNavigator>.
 
  This method has no effect on the state of the <xref:System.Xml.XPath.XPathNavigator>.
-
-
 
 ## Examples
  The following example evaluates an <xref:System.Xml.XPath.XPathExpression> and returns a <xref:System.Double> using the <xref:System.Xml.XPath.XPathNodeIterator.Current> node of the <xref:System.Xml.XPath.XPathNodeIterator> as the context node.
@@ -2572,8 +2548,6 @@ nav.Evaluate(expr);
 > [!NOTE]
 > The <xref:System.Xml.XPath.XPathNavigator.InnerXml> and <xref:System.Xml.XPath.XPathNavigator.OuterXml> properties are not very efficient. If performance is a priority, it is more efficient to use the node navigation methods of the <xref:System.Xml.XPath.XPathNavigator> to get values of child nodes.
 
-
-
 ## Examples
  The following example uses the <xref:System.Xml.XPath.XPathNavigator.InnerXml> property to display the contents of the first `book` element in the `contosoBooks.xml` file and its child nodes in the <xref:System.Xml.XPath.XPathNavigator>.
 
@@ -2680,8 +2654,6 @@ nav.Evaluate(expr);
 
 - The <xref:System.Xml.XPath.XPathNavigator.InsertAfter*> method does not affect the position of the <xref:System.Xml.XPath.XPathNavigator>.
 
-
-
 ## Examples
  In the following example a new `pages` element is inserted after the `price` child element of the first `book` element in the `contosoBooks.xml` file using the <xref:System.Xml.XmlWriter> object returned by the <xref:System.Xml.XPath.XPathNavigator.InsertAfter*> method.
 
@@ -2781,8 +2753,6 @@ nav.Evaluate(expr);
 - The <xref:System.Xml.XPath.XPathNavigator.InsertAfter*> method is valid only when the <xref:System.Xml.XPath.XPathNavigator> is positioned on an element, text, processing instruction, or comment node.
 
 - The <xref:System.Xml.XPath.XPathNavigator.InsertAfter*> method does not affect the position of the <xref:System.Xml.XPath.XPathNavigator>.
-
-
 
 ## Examples
  In the following example a new `pages` element is inserted after the `price` child element of the first `book` element in the `contosoBooks.xml` file.
@@ -2886,8 +2856,6 @@ nav.Evaluate(expr);
 
 - The <xref:System.Xml.XPath.XPathNavigator.InsertAfter*> method does not affect the position of the <xref:System.Xml.XPath.XPathNavigator>.
 
-
-
 ## Examples
  In the following example a new `pages` element is inserted after the `price` child element of the first `book` element in the `contosoBooks.xml` file using the <xref:System.Xml.XmlReader> object specified. The `http://www.contoso.com/books` namespace is specified so that the new sibling element is inserted using the same namespace as the XML document.
 
@@ -2990,8 +2958,6 @@ nav.Evaluate(expr);
 - The <xref:System.Xml.XPath.XPathNavigator.InsertAfter*> method is valid only when the <xref:System.Xml.XPath.XPathNavigator> is positioned on an element, text, processing instruction, or comment node.
 
 - The <xref:System.Xml.XPath.XPathNavigator.InsertAfter*> method does not affect the position of the <xref:System.Xml.XPath.XPathNavigator>.
-
-
 
 ## Examples
  In the following example a new `pages` element is inserted after the `price` child element of the first `book` element in the `contosoBooks.xml` file using the node contained in the <xref:System.Xml.XPath.XPathNavigator> object specified. The `http://www.contoso.com/books` namespace is specified so that the new sibling element is inserted using the same namespace as the XML document.
@@ -3101,8 +3067,6 @@ nav.Evaluate(expr);
 
 - The <xref:System.Xml.XPath.XPathNavigator.InsertBefore*> method does not affect the position of the <xref:System.Xml.XPath.XPathNavigator>.
 
-
-
 ## Examples
  In the following example a new `pages` element is inserted before the `price` child element of the first `book` element in the `contosoBooks.xml` file using the <xref:System.Xml.XmlWriter> object returned by the <xref:System.Xml.XPath.XPathNavigator.InsertBefore*> method.
 
@@ -3202,8 +3166,6 @@ nav.Evaluate(expr);
 - The <xref:System.Xml.XPath.XPathNavigator.InsertBefore*> method is valid only when the <xref:System.Xml.XPath.XPathNavigator> is positioned on an element, text, processing instruction, or comment node.
 
 - The <xref:System.Xml.XPath.XPathNavigator.InsertBefore*> method does not affect the position of the <xref:System.Xml.XPath.XPathNavigator>.
-
-
 
 ## Examples
  In the following example a new `pages` element is inserted before the `price` child element of the first `book` element in the `contosoBooks.xml` file.
@@ -3307,8 +3269,6 @@ nav.Evaluate(expr);
 
 - The <xref:System.Xml.XPath.XPathNavigator.InsertBefore*> method does not affect the position of the <xref:System.Xml.XPath.XPathNavigator>.
 
-
-
 ## Examples
  In the following example a new `pages` element is inserted before the `price` child element of the first `book` element in the `contosoBooks.xml` file using the <xref:System.Xml.XmlReader> object specified. The `http://www.contoso.com/books` namespace is specified so that the new sibling element is inserted using the same namespace as the XML document.
 
@@ -3411,8 +3371,6 @@ nav.Evaluate(expr);
 - The <xref:System.Xml.XPath.XPathNavigator.InsertBefore*> method is valid only when the <xref:System.Xml.XPath.XPathNavigator> is positioned on an element, text, processing instruction, or comment node.
 
 - The <xref:System.Xml.XPath.XPathNavigator.InsertBefore*> method does not affect the position of the <xref:System.Xml.XPath.XPathNavigator>.
-
-
 
 ## Examples
  In the following example a new `pages` element is inserted before the `price` child element of the first `book` element in the `contosoBooks.xml` file using the node contained in the <xref:System.Xml.XPath.XPathNavigator> object specified. The `http://www.contoso.com/books` namespace is specified so that the new sibling element is inserted using the same namespace as the XML document.
@@ -3537,8 +3495,6 @@ navigator.InsertElementAfter(navigator.Prefix, "pages", LookupNamespaceURI(navig
 
 - The <xref:System.Xml.XPath.XPathNavigator.InsertElementAfter*> method does not affect the position of the <xref:System.Xml.XPath.XPathNavigator>.
 
-
-
 ## Examples
  In the following example a new `pages` element is inserted after the `price` child element of the first `book` element in the `contosoBooks.xml` file.
 
@@ -3660,8 +3616,6 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
 - The <xref:System.Xml.XPath.XPathNavigator.InsertElementBefore*> method is valid only when the <xref:System.Xml.XPath.XPathNavigator> is positioned on an element, text, processing instruction, or comment node.
 
 - The <xref:System.Xml.XPath.XPathNavigator.InsertElementBefore*> method does not affect the position of the <xref:System.Xml.XPath.XPathNavigator>.
-
-
 
 ## Examples
  In the following example a new `pages` element is inserted before the `price` child element of the first `book` element in the `contosoBooks.xml` file.
@@ -4011,8 +3965,6 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
 |<xref:System.Xml.XPath.XPathNodeType.ProcessingInstruction>|The target of the processing instruction.|
 |All other <xref:System.Xml.XPath.XPathNodeType> nodes|<xref:System.String.Empty?displayProperty=nameWithType>.|
 
-
-
 ## Examples
  The following example iterates over the node tree recursively, and displays information about <xref:System.Xml.XPath.XPathNodeType.Element> and <xref:System.Xml.XPath.XPathNodeType.Text> nodes.
 
@@ -4120,8 +4072,6 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
 
 > [!NOTE]
 > The prefix to namespace URI mappings can change from node to node in an XML document. As a result, the value of the <xref:System.Xml.XPath.XPathNavigator.LookupNamespace*> method may not be consistent from one node to the next.
-
-
 
 ## Examples
  For an example of the <xref:System.Xml.XPath.XPathNavigator.LookupNamespace*> method, see the <xref:System.Xml.XPath.XPathNavigator.InsertElementAfter*> or <xref:System.Xml.XPath.XPathNavigator.InsertElementBefore*> methods.
@@ -4262,8 +4212,6 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
 ## Remarks
  This method has no affect on the state of the <xref:System.Xml.XPath.XPathNavigator>.
 
-
-
 ## Examples
  For an example of the <xref:System.Xml.XPath.XPathNavigator.Matches*> method, see the <xref:System.Xml.XPath.XPathNavigator.Matches*?displayProperty=nameWithType> method.
 
@@ -4326,8 +4274,6 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
 
 ## Remarks
  This method has no effect on the state of the <xref:System.Xml.XPath.XPathNavigator>. This method is identical to the <xref:System.Xml.XPath.XPathNavigator.Matches*?displayProperty=nameWithType> method, except that a <xref:System.Xml.XPath.XPathExpression> object containing the compiled XPath expression is specified, rather than an XPath expression <xref:System.String>.
-
-
 
 ## Examples
  The following example displays the titles of all novels.
@@ -4747,8 +4693,6 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
 
  After the <xref:System.Xml.XPath.XPathNavigator> is positioned on an attribute, you can call <xref:System.Xml.XPath.XPathNavigator.MoveToParent*> to move to the owner element.
 
-
-
 ## Examples
  The following example uses the <xref:System.Xml.XPath.XPathNavigator.MoveToFirstAttribute*> and <xref:System.Xml.XPath.XPathNavigator.MoveToNextAttribute*> methods to display all the attributes for each book in the `books.xml` file.
 
@@ -4844,8 +4788,6 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
 
 ## Remarks
  <xref:System.Xml.XPath.XPathNodeType.Root> and <xref:System.Xml.XPath.XPathNodeType.Element> are the only two <xref:System.Xml.XPath.XPathNodeType> values that can have children. This property always returns `false` for all other <xref:System.Xml.XPath.XPathNodeType> node types.
-
-
 
 ## Examples
  For an example of the <xref:System.Xml.XPath.XPathNavigator.MoveToFirstChild*> method, see the <xref:System.Xml.XPath.XPathNavigator.Clone*> method.
@@ -5095,8 +5037,6 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
 
 - If the <xref:System.Xml.XPath.XPathNavigator.MoveToFollowing*> method returns `false`, the position of the <xref:System.Xml.XPath.XPathNavigator> is unchanged.
 
-
-
 ## Examples
  In the following example, the <xref:System.Xml.XPath.XPathNavigator> is moved from the root of the `contosoBooks.xml` file to the following `bookstore` element.
 
@@ -5198,8 +5138,6 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
 
 ## Remarks
  If the <xref:System.Xml.XPath.XPathNavigator.MoveToFollowing*> method returns `false`, the position of the <xref:System.Xml.XPath.XPathNavigator> is unchanged.
-
-
 
 ## Examples
  In the following example, the <xref:System.Xml.XPath.XPathNavigator> is moved from the root of the `contosoBooks.xml` file to the first `price` element.
@@ -5306,8 +5244,6 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
 - The <xref:System.Xml.XPath.XPathNavigator.MoveToFollowing*> methods cannot be used to move to attribute or namespace nodes. If the <xref:System.Xml.XPath.XPathNavigator> boundary passed as a parameter is positioned over an attribute or namespace node, it is equivalent to the <xref:System.Xml.XPath.XPathNavigator> boundary parameter having been positioned on the first child node of its parent element. This ensures that the parent element of the attribute or namespace node that the <xref:System.Xml.XPath.XPathNavigator> boundary parameter is positioned on can be matched by this method.
 
 - If the <xref:System.Xml.XPath.XPathNavigator.MoveToFollowing*> method returns `false`, the position of the <xref:System.Xml.XPath.XPathNavigator> is unchanged.
-
-
 
 ## Examples
  In the following example, the <xref:System.Xml.XPath.XPathNavigator> is moved from the root of the `contosoBooks.xml` file to the following `price` element. A clone of the <xref:System.Xml.XPath.XPathNavigator> object is made using the <xref:System.Xml.XPath.XPathNavigator.Clone*> method. The cloned <xref:System.Xml.XPath.XPathNavigator>, positioned on the `price` element, will be used as a boundary. Changes in the position of the cloned <xref:System.Xml.XPath.XPathNavigator> do not affect the original <xref:System.Xml.XPath.XPathNavigator>. The original <xref:System.Xml.XPath.XPathNavigator> is moved back to the root of the `contosoBooks.xml` file using the <xref:System.Xml.XPath.XPathNavigator.MoveToRoot*> method. The title and first and last name of the author are retrieved using the <xref:System.Xml.XPath.XPathNavigator.MoveToFollowing*> method and an <xref:System.Xml.XPath.XPathNodeType> of <xref:System.Xml.XPath.XPathNodeType.Text>. The <xref:System.Xml.XPath.XPathNavigator.MoveToFollowing*> method will return true until the `price` element boundary is reached.
@@ -5421,8 +5357,6 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
 - The <xref:System.Xml.XPath.XPathNavigator.MoveToFollowing*> methods cannot be used to move to attribute or namespace nodes. If the <xref:System.Xml.XPath.XPathNavigator> boundary passed as a parameter is positioned over an attribute or namespace node, it is equivalent to the <xref:System.Xml.XPath.XPathNavigator> boundary parameter having been positioned on the first child node of its parent element. This ensures that the parent element of the attribute or namespace node that the <xref:System.Xml.XPath.XPathNavigator> boundary parameter is positioned on can be matched by this method.
 
 - If the <xref:System.Xml.XPath.XPathNavigator.MoveToFollowing*> method returns `false`, the position of the <xref:System.Xml.XPath.XPathNavigator> is unchanged.
-
-
 
 ## Examples
  In the following example, the <xref:System.Xml.XPath.XPathNavigator> is moved from the root of the `contosoBooks.xml` file to the following `book` element. A clone of the <xref:System.Xml.XPath.XPathNavigator> object is made using the <xref:System.Xml.XPath.XPathNavigator.Clone*> method and is moved from the `book` element to the following `first-name` element. The cloned <xref:System.Xml.XPath.XPathNavigator>, positioned on the `first-name` element, will be used as a boundary. Changes in the position of the cloned <xref:System.Xml.XPath.XPathNavigator> do not affect the original <xref:System.Xml.XPath.XPathNavigator>. The original <xref:System.Xml.XPath.XPathNavigator> then attempts to move to the following `price` element using the <xref:System.Xml.XPath.XPathNavigator.MoveToFollowing*> method with the boundary passed as a parameter. This move fails because the following `price` element is beyond the boundary. The original <xref:System.Xml.XPath.XPathNavigator> then attempts to move to the following `title` element which is before the boundary using the same method and succeeds.
@@ -5872,8 +5806,6 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
 
  After the <xref:System.Xml.XPath.XPathNavigator> is positioned on an attribute, you can call <xref:System.Xml.XPath.XPathNavigator.MoveToParent*> to move to the owner element.
 
-
-
 ## Examples
  The following example uses the <xref:System.Xml.XPath.XPathNavigator.MoveToFirstAttribute*> and <xref:System.Xml.XPath.XPathNavigator.MoveToNextAttribute*> methods to display all the attributes for each book in the `books.xml` file.
 
@@ -6134,8 +6066,6 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
 |<xref:System.Xml.XPath.XPathNodeType.Whitespace>|<xref:System.Xml.XPath.XPathNodeType.Element> or <xref:System.Xml.XPath.XPathNodeType.Root> node.|
 |<xref:System.Xml.XPath.XPathNodeType.SignificantWhitespace>|<xref:System.Xml.XPath.XPathNodeType.Element> or <xref:System.Xml.XPath.XPathNodeType.Root> node.|
 
-
-
 ## Examples
  For an example of the <xref:System.Xml.XPath.XPathNavigator.MoveToParent*> method, see the <xref:System.Xml.XPath.XPathNavigator.CreateAttribute*> method.
 
@@ -6246,8 +6176,6 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
 ## Remarks
  All nodes belong to one and only one document. Therefore, this method is always successful.
 
-
-
 ## Examples
  For an example of the <xref:System.Xml.XPath.XPathNavigator.MoveToRoot*> method, see the <xref:System.Xml.XPath.XPathNavigator.MoveToFollowing*> method.
 
@@ -6313,8 +6241,6 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
 |<xref:System.Xml.XPath.XPathNodeType.Namespace>|The prefix associated with the namespace URI. In the following namespace declaration, `xmlns:bk='urn:samples'`, the <xref:System.Xml.XPath.XPathNavigator.Name> property returns `bk`.|
 |<xref:System.Xml.XPath.XPathNodeType.ProcessingInstruction>|The target of the <xref:System.Xml.XPath.XPathNodeType.ProcessingInstruction>. In the following example, `<?xml-stylesheet type='text/xsl' href= 'books.xsl'?>`, the <xref:System.Xml.XPath.XPathNavigator.Name> property returns `xml-stylesheet`.|
 |All other <xref:System.Xml.XPath.XPathNodeType> nodes|<xref:System.String.Empty?displayProperty=nameWithType>.|
-
-
 
 ## Examples
  The following example iterates over the node tree recursively, and displays information about <xref:System.Xml.XPath.XPathNodeType.Element> and <xref:System.Xml.XPath.XPathNodeType.Text> nodes.
@@ -6411,8 +6337,6 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
  The <xref:System.Xml.XPath.XPathNavigator.NamespaceURI> property returns `urn:samples` for the node `<bk:book xmlns:bk='urn:samples'>`.
 
  Only <xref:System.Xml.XPath.XPathNodeType.Element> and <xref:System.Xml.XPath.XPathNodeType.Attribute><xref:System.Xml.XPath.XPathNodeType> nodes can have a namespace URI.
-
-
 
 ## Examples
  The following example iterates over the node tree recursively, and displays information about <xref:System.Xml.XPath.XPathNodeType.Element> and <xref:System.Xml.XPath.XPathNodeType.Text> nodes.
@@ -6564,8 +6488,6 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
 
 ## Remarks
  The <xref:System.Xml.XPath.XPathNavigator.NavigatorComparer> property allows <xref:System.Xml.XPath.XPathNavigator> objects to be compared on the basis of position rather than reference to the object. The <xref:System.Xml.XPath.XPathNavigator.ComparePosition*> and <xref:System.Object.Equals*> methods implemented by this class are based on the position of the <xref:System.Xml.XPath.XPathNavigator> objects passed as parameters. The <xref:System.Object.GetHashCode*> method implemented by this class uses the properties of the node such as its local name and namespace URI to create a hash code for the node.
-
-
 
 ## Examples
  The following example illustrates the use of the <xref:System.Xml.XPath.XPathNavigator.NavigatorComparer> property.
@@ -6751,8 +6673,6 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
 > [!NOTE]
 > The <xref:System.Xml.XPath.XPathNavigator.InnerXml> and <xref:System.Xml.XPath.XPathNavigator.OuterXml> properties are not very efficient. If performance is a priority, it is more efficient to use the node navigation methods of the <xref:System.Xml.XPath.XPathNavigator> to get values of child nodes.
 
-
-
 ## Examples
  The following example uses the <xref:System.Xml.XPath.XPathNavigator.OuterXml> property to display the contents of the first `book` element in the `contosoBooks.xml` file, its child nodes, and its opening and closing tags in the <xref:System.Xml.XPath.XPathNavigator>.
 
@@ -6842,8 +6762,6 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
 
 ## Remarks
  The <xref:System.Xml.XPath.XPathNavigator.Prefix> property gets the namespace prefix associated with the current node. For example, the <xref:System.Xml.XPath.XPathNavigator.Prefix> property returns `bk` for the `<bk:book>` element. If a prefix does not exist, or the <xref:System.Xml.XPath.XPathNodeType> of the current node is not <xref:System.Xml.XPath.XPathNodeType.Element> or <xref:System.Xml.XPath.XPathNodeType.Attribute>, the <xref:System.Xml.XPath.XPathNavigator.Prefix> property returns <xref:System.String.Empty?displayProperty=nameWithType>.
-
-
 
 ## Examples
  The following example iterates over the node tree recursively, and displays information about <xref:System.Xml.XPath.XPathNodeType.Element> and <xref:System.Xml.XPath.XPathNodeType.Text> nodes.
@@ -6952,8 +6870,6 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
 
 - The <xref:System.Xml.XPath.XPathNavigator.PrependChild*> method does not affect the position of the <xref:System.Xml.XPath.XPathNavigator>.
 
-
-
 ## Examples
  In the following example, a new `pages` child element is prepended to the beginning of the list of child elements of the first `book` element in the `contosoBooks.xml` file using the <xref:System.Xml.XmlWriter> object returned from the <xref:System.Xml.XPath.XPathNavigator.PrependChild*> method.
 
@@ -7055,8 +6971,6 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
 - The <xref:System.Xml.XPath.XPathNavigator.PrependChild*> method is valid only when the <xref:System.Xml.XPath.XPathNavigator> is positioned on an element node.
 
 - The <xref:System.Xml.XPath.XPathNavigator.PrependChild*> method does not affect the position of the <xref:System.Xml.XPath.XPathNavigator>.
-
-
 
 ## Examples
  In the following example, a new `pages` child element is prepended to the beginning of the list of child elements of the first `book` element in the `contosoBooks.xml` file.
@@ -7162,8 +7076,6 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
 
 - The <xref:System.Xml.XPath.XPathNavigator.PrependChild*> method does not affect the position of the <xref:System.Xml.XPath.XPathNavigator>.
 
-
-
 ## Examples
  In the following example, a new `pages` child element is prepended to the beginning of the list of child elements of the first `book` element in the `contosoBooks.xml` file using the <xref:System.Xml.XmlReader> object specified. The `http://www.contoso.com/books` namespace is specified so that the new child element is prepended using the same namespace as the XML document.
 
@@ -7268,8 +7180,6 @@ navigator.InsertElementBefore(navigator.Prefix, "pages", LookupNamespaceURI(navi
 - The <xref:System.Xml.XPath.XPathNavigator.PrependChild*> method is valid only when the <xref:System.Xml.XPath.XPathNavigator> is positioned on an element node.
 
 - The <xref:System.Xml.XPath.XPathNavigator.PrependChild*> method does not affect the position of the <xref:System.Xml.XPath.XPathNavigator>.
-
-
 
 ## Examples
  In the following example, a new `pages` child element is prepended to the beginning of the list of child elements of the first `book` element in the `contosoBooks.xml` file using the node contained in the <xref:System.Xml.XPath.XPathNavigator> object specified. The `http://www.contoso.com/books` namespace is specified so that the new child element is prepended using the same namespace as the XML document.
@@ -7396,8 +7306,6 @@ navigator.PrependChildElement(navigator.Prefix, "pages", LookupNamespaceURI(navi
 
 - The <xref:System.Xml.XPath.XPathNavigator.PrependChildElement*> method does not affect the position of the <xref:System.Xml.XPath.XPathNavigator>.
 
-
-
 ## Examples
  In the following example, a new `pages` child element is prepended to the beginning of the list of child elements of the first `book` element in the `contosoBooks.xml` file.
 
@@ -7502,8 +7410,6 @@ navigator.PrependChildElement(navigator.Prefix, "pages", LookupNamespaceURI(navi
 
  You can change this behavior by implementing a custom <xref:System.Xml.XmlResolver> that returns an <xref:System.Xml.XmlReader> with the desired <xref:System.Xml.XmlReaderSettings>.
 
-
-
 ## Examples
  The following example illustrates using the <xref:System.Xml.XPath.XPathNavigator.ReadSubtree*> method on the first `book` element of the `contosoBooks.xml` file.
 
@@ -7600,8 +7506,6 @@ navigator.PrependChildElement(navigator.Prefix, "pages", LookupNamespaceURI(navi
 
 > [!NOTE]
 > The replacement range is not inserted until the <xref:System.Xml.XmlWriter.Close*> method of the <xref:System.Xml.XmlWriter> object is called.
-
-
 
 ## Examples
  In the following example, the first and second `book` elements of the `contosoBooks.xml` file are replaced with a new empty `book` element using the <xref:System.Xml.XPath.XPathNavigator.ReplaceRange*> method.
@@ -7715,8 +7619,6 @@ navigator.PrependChildElement(navigator.Prefix, "pages", LookupNamespaceURI(navi
 
 - The <xref:System.Xml.XPath.XPathNavigator.ReplaceSelf*> method is not equivalent to the <xref:System.Xml.XPath.XPathNavigator.DeleteSelf*> method.
 
-
-
 ## Examples
  In the following example the `price` element in the `contosoBooks.xml` file is replaced by a new `pages` element.
 
@@ -7820,8 +7722,6 @@ navigator.PrependChildElement(navigator.Prefix, "pages", LookupNamespaceURI(navi
 - If the XML string contains multiple nodes, all nodes are added and the <xref:System.Xml.XPath.XPathNavigator> is positioned on the first node in the series of nodes.
 
 - The <xref:System.Xml.XPath.XPathNavigator.ReplaceSelf*> method is not equivalent to the <xref:System.Xml.XPath.XPathNavigator.DeleteSelf*> method.
-
-
 
 ## Examples
  In the following example the `price` element in the `contosoBooks.xml` file is replaced by a new `pages` element.
@@ -7927,8 +7827,6 @@ navigator.PrependChildElement(navigator.Prefix, "pages", LookupNamespaceURI(navi
 - If the XML string contains multiple nodes, all nodes are added and the <xref:System.Xml.XPath.XPathNavigator> is positioned on the first node in the series of nodes.
 
 - The <xref:System.Xml.XPath.XPathNavigator.ReplaceSelf*> method is not equivalent to the <xref:System.Xml.XPath.XPathNavigator.DeleteSelf*> method.
-
-
 
 ## Examples
  In the following example the `price` element in the `contosoBooks.xml` file is replaced by a new `pages` element.
@@ -8115,8 +8013,6 @@ while (iterator.MoveNext())
 
 - This method has no effect on the state of the <xref:System.Xml.XPath.XPathNavigator>.
 
-
-
 ## Examples
  The following example uses the <xref:System.Xml.XPath.XPathNavigator.Select*> method to select a node set.
 
@@ -8281,8 +8177,6 @@ XPathNodeIterator ni = nav.Select(expr);
 ```
 
  This method has no effect on the state of the <xref:System.Xml.XPath.XPathNavigator>.
-
-
 
 ## Examples
  The following example uses the <xref:System.Xml.XPath.XPathNavigator.Select*> method to select a node set.
@@ -8498,8 +8392,6 @@ XPathNodeIterator ni = nav.Select(expr);
 ## Remarks
  The <xref:System.Xml.XPath.XPathNavigator.SelectAncestors*> method has no effect on the state of the <xref:System.Xml.XPath.XPathNavigator>.
 
-
-
 ## Examples
  For an example of selecting ancestor nodes, see <xref:System.Xml.XPath.XPathNavigator.SelectAncestors*?displayProperty=nameWithType>.
 
@@ -8568,8 +8460,6 @@ XPathNodeIterator ni = nav.Select(expr);
  If <xref:System.String.Empty?displayProperty=nameWithType> is specified as the `name` parameter, all ancestor nodes that belong to the specified namespace URI are selected. If <xref:System.String.Empty?displayProperty=nameWithType> is specified as the `namespaceURI` parameter, all ancestor nodes with the specified local name that belong to no namespace are selected. If <xref:System.String.Empty?displayProperty=nameWithType> is specified as both the local name and namespace URI, all ancestor nodes that belong to no namespace are selected.
 
  The <xref:System.Xml.XPath.XPathNavigator.SelectAncestors*> method has no effect on the state of the <xref:System.Xml.XPath.XPathNavigator>.
-
-
 
 ## Examples
  The following example illustrates selecting ancestor, child, and descendant nodes.
@@ -8679,8 +8569,6 @@ XPathNodeIterator ni = nav.Select(expr);
 ## Remarks
  The <xref:System.Xml.XPath.XPathNavigator.SelectChildren*> method has no effect on the state of the <xref:System.Xml.XPath.XPathNavigator>.
 
-
-
 ## Examples
  For an example of selecting ancestor, child and descendant nodes, see <xref:System.Xml.XPath.XPathNavigator.SelectAncestors*>.
 
@@ -8747,8 +8635,6 @@ XPathNodeIterator ni = nav.Select(expr);
  If <xref:System.String.Empty?displayProperty=nameWithType> is specified as the `name` parameter, all child nodes that belong to the specified namespace URI are selected. If <xref:System.String.Empty?displayProperty=nameWithType> is specified as the `namespaceURI` parameter, all child nodes with the specified local name that belong to no namespace are selected. If both the local name and namespace URI parameters are <xref:System.String.Empty?displayProperty=nameWithType>, all child nodes that belong to no namespace are selected.
 
  The <xref:System.Xml.XPath.XPathNavigator.SelectChildren*> method has no effect on the state of the <xref:System.Xml.XPath.XPathNavigator>.
-
-
 
 ## Examples
  For an example of selecting ancestor, child and descendant nodes, see <xref:System.Xml.XPath.XPathNavigator.SelectAncestors*>.
@@ -8827,8 +8713,6 @@ XPathNodeIterator ni = nav.Select(expr);
 ## Remarks
  The <xref:System.Xml.XPath.XPathNavigator.SelectDescendants*> method has no effect on the state of the <xref:System.Xml.XPath.XPathNavigator>.
 
-
-
 ## Examples
  For an example of selecting ancestor, child and descendant nodes, see <xref:System.Xml.XPath.XPathNavigator.SelectAncestors*>.
 
@@ -8900,8 +8784,6 @@ XPathNodeIterator ni = nav.Select(expr);
  A descendant is a child or a child of a child and so on; thus the selected nodes will never contain attribute or namespace nodes.
 
  The <xref:System.Xml.XPath.XPathNavigator.SelectDescendants*> method has no effect on the state of the <xref:System.Xml.XPath.XPathNavigator>.
-
-
 
 ## Examples
  For an example of selecting ancestor, child, and descendant nodes, see <xref:System.Xml.XPath.XPathNavigator.SelectAncestors*>.
@@ -8982,8 +8864,6 @@ XPathNodeIterator ni = nav.Select(expr);
 
 ## Remarks
  The <xref:System.Xml.XPath.XPathNavigator.SelectSingleNode*> method selects the first node that matches the XPath query in the <xref:System.Xml.XPath.XPathNavigator> object.
-
-
 
 ## Examples
  The following example selects a single node from the <xref:System.Xml.XPath.XPathNavigator> based on the XPath query specified.
@@ -9086,8 +8966,6 @@ XPathNodeIterator ni = nav.Select(expr);
 
 ## Remarks
  The <xref:System.Xml.XPath.XPathNavigator.SelectSingleNode*> method selects the first node that matches the compiled XPath query contained in the <xref:System.Xml.XPath.XPathExpression> object in the <xref:System.Xml.XPath.XPathNavigator>.
-
-
 
 ## Examples
  The following example selects a single node from the <xref:System.Xml.XPath.XPathNavigator> based on the XPath query contained in the <xref:System.Xml.XPath.XPathExpression>.
@@ -9197,8 +9075,6 @@ XPathNodeIterator ni = nav.Select(expr);
 > [!NOTE]
 > In XPath all namespaces must be prefixed in a query. If an XML document uses a default namespace, you must still add a namespace prefix to the <xref:System.Xml.IXmlNamespaceResolver> object.
 
-
-
 ## Examples
  The following example selects a single node from the <xref:System.Xml.XPath.XPathNavigator> object based on the XPath query specified and uses the <xref:System.Xml.XmlNamespaceManager> object specified to resolve namespace prefixes in the XPath query.
 
@@ -9294,8 +9170,6 @@ XPathNodeIterator ni = nav.Select(expr);
  When an <xref:System.Xml.XmlDocument> object is created as the result of a schema validating <xref:System.Xml.XmlReader> object, the value specified to the <xref:System.Xml.XPath.XPathNavigator.SetTypedValue*> method is verified against the XML Schema Definition Language (XSD) schema for the XML document. If the value specified is invalid according to the schema for the XML document, an <xref:System.Xml.Schema.XmlSchemaException> is thrown.
 
  The <xref:System.Xml.XPath.XPathNavigator.SetTypedValue*> method is valid only when the <xref:System.Xml.XPath.XPathNavigator> is positioned on an element or attribute node.
-
-
 
 ## Examples
  In the following example, the <xref:System.Xml.XPath.XPathNavigator.SetTypedValue*> method is used to update all `price` elements in the `contosoBooks.xml` file using the <xref:System.Xml.XmlNamespaceManager> object to resolve namespace prefixes in the XPath expression.
@@ -9395,8 +9269,6 @@ XPathNodeIterator ni = nav.Select(expr);
 - If the <xref:System.Xml.XPath.XPathNavigator> is positioned on an element node with complex content (child elements), calling the <xref:System.Xml.XPath.XPathNavigator.SetValue*> method replaces the child elements with a text node containing the new string value.
 
 - The <xref:System.Xml.XPath.XPathNavigator.SetValue*> method cannot update the root node or namespace nodes.
-
-
 
 ## Examples
  In the following example, the <xref:System.Xml.XPath.XPathNavigator.SetValue*> method is used to update all `price` elements in the `contosoBooks.xml` file using the <xref:System.Xml.XmlNamespaceManager> object to resolve namespace prefixes in the XPath expression.
@@ -9854,8 +9726,6 @@ XPathNodeIterator ni = nav.Select(expr);
 
  However, if the <xref:System.Xml.XPath.XPathNavigator> does not have any schema or type information, the <xref:System.Xml.XPath.XPathNavigator.ValueAsBoolean> property attempts to convert the string value of the current node to a <xref:System.Boolean> value, according to the XPath 2.0 casting rules for `xs:boolean`.
 
-
-
 ## Examples
  In the following example, the value of each element in the `valueas.xml` file is returned using the <xref:System.Xml.XPath.XPathNavigator.ValueAsBoolean>, <xref:System.Xml.XPath.XPathNavigator.ValueAsDateTime>, <xref:System.Xml.XPath.XPathNavigator.ValueAsDouble>, <xref:System.Xml.XPath.XPathNavigator.ValueAsInt>, and <xref:System.Xml.XPath.XPathNavigator.ValueAsLong> properties.
 
@@ -9929,8 +9799,6 @@ XPathNodeIterator ni = nav.Select(expr);
 
  However, if the <xref:System.Xml.XPath.XPathNavigator> does not have any schema or type information, the <xref:System.Xml.XPath.XPathNavigator.ValueAsDateTime> property attempts to convert the string value of the current node to a <xref:System.DateTime> value, according to the XPath 2.0 casting rules for `xs:datetime`.
 
-
-
 ## Examples
  For an example of the <xref:System.Xml.XPath.XPathNavigator.ValueAsDateTime> property, see the <xref:System.Xml.XPath.XPathNavigator.ValueAsBoolean> property.
 
@@ -9989,8 +9857,6 @@ XPathNodeIterator ni = nav.Select(expr);
  If the <xref:System.Xml.XPath.XPathNavigator> has schema or type information (for example, from an <xref:System.Xml.XmlDocument> object initialized with an XML schema validating <xref:System.Xml.XmlReader>), and if the current node is defined as an XML Schema `xs:double` type, the <xref:System.Xml.XPath.XPathNavigator.ValueAsDouble> property returns the current node's value as an unboxed <xref:System.Double> object.
 
  However, if the <xref:System.Xml.XPath.XPathNavigator> does not have any schema or type information, the <xref:System.Xml.XPath.XPathNavigator.ValueAsDouble> property attempts to convert the string value of the current node to a <xref:System.Double> value, according to the XPath 2.0 casting rules for `xsd:double`.
-
-
 
 ## Examples
  For an example of the <xref:System.Xml.XPath.XPathNavigator.ValueAsDouble> property, see the <xref:System.Xml.XPath.XPathNavigator.ValueAsBoolean> property.
@@ -10051,8 +9917,6 @@ XPathNodeIterator ni = nav.Select(expr);
 
  However, if the <xref:System.Xml.XPath.XPathNavigator> does not have any schema or type information, the <xref:System.Xml.XPath.XPathNavigator.ValueAsInt> property attempts to convert the string value of the current node to a <xref:System.Int32> value, according to the XPath 2.0 casting rules for `xs:integer`.
 
-
-
 ## Examples
  For an example of the <xref:System.Xml.XPath.XPathNavigator.ValueAsInt> property, see the <xref:System.Xml.XPath.XPathNavigator.ValueAsBoolean> property.
 
@@ -10111,8 +9975,6 @@ XPathNodeIterator ni = nav.Select(expr);
  If the <xref:System.Xml.XPath.XPathNavigator> has schema or type information (for example, from an <xref:System.Xml.XmlDocument> object initialized with an XML schema validating <xref:System.Xml.XmlReader>), and if the current node is defined as an XML Schema `xs:integer` type, the <xref:System.Xml.XPath.XPathNavigator.ValueAsLong> property returns the current node's value as an unboxed <xref:System.Int64> object.
 
  However, if the <xref:System.Xml.XPath.XPathNavigator> does not have any schema or type information, the <xref:System.Xml.XPath.XPathNavigator.ValueAsLong> property attempts to convert the string value of the current node to a <xref:System.Int64> value, according to the XPath 2.0 casting rules for `xs:integer`.
-
-
 
 ## Examples
  For an example of the <xref:System.Xml.XPath.XPathNavigator.ValueAsLong> property, see the <xref:System.Xml.XPath.XPathNavigator.ValueAsBoolean> property.
@@ -10317,8 +10179,6 @@ XPathNodeIterator ni = nav.Select(expr);
 
 > [!NOTE]
 > The <xref:System.Xml.XPath.XPathNavigator.WriteSubtree*> method does not affect the position of the <xref:System.Xml.XPath.XPathNavigator>.
-
-
 
 ## Examples
  The following example illustrates using the <xref:System.Xml.XPath.XPathNavigator.WriteSubtree*> method on the first `book` element of the `contosoBooks.xml` file.

@@ -105,8 +105,6 @@
 > [!CAUTION]
 > You can use the <xref:System.Threading.ThreadPool.SetMinThreads*> method to increase the minimum number of threads. However, unnecessarily increasing these values can cause performance problems. If too many tasks start at the same time, all of them might appear to be slow. In most cases the thread pool will perform better with its own algorithm for allocating threads.
 
-
-
 ## Examples
  In the following example, the main application thread  queues a method named `ThreadProc` to execute on a thread pool thread, sleeps for one second, and then exits. The `ThreadProc` method simply displays a message.
 
@@ -373,8 +371,6 @@ If a thread pool implementation may have different types of work items, the coun
 
  If there are no available threads, additional thread pool requests remain queued until thread pool threads become available.
 
-
-
 ## Examples
  The following example displays the number of worker threads and I/O threads available when a simple app is started.
 
@@ -451,8 +447,6 @@ If a thread pool implementation may have different types of work items, the coun
 
  You can queue as many thread pool requests as system memory allows. If there are more requests than thread pool threads, the additional requests remain queued until thread pool threads become available.
 
-
-
 ## Examples
  The following code example shows how to retrieve a count of the maximum and available number of threads in the thread pool. A work item is queued that uses `FileStream` to asynchronously write to two files. The callback methods are timed to overlap. A worker thread handles the work item and, depending on the speed and number of processors on the computer, one or two completion port threads handle the write operations.
 
@@ -525,8 +519,6 @@ If a thread pool implementation may have different types of work items, the coun
 
 > [!NOTE]
 > When demand is low, the actual number of thread pool threads can fall below the minimum values.
-
-
 
 ## Examples
  The following example sets the minimum number of worker threads to four, and preserves the original value for the minimum number of asynchronous I/O completion threads.
@@ -1378,8 +1370,6 @@ The following example uses the <xref:System.Threading.ThreadPool.QueueUserWorkIt
 
 > [!CAUTION]
 > Using the <xref:System.Threading.ThreadPool.SetMinThreads*> method to increase the minimum number of threads can cause performance problems as described in the preceding text. In most cases, the thread pool will perform better with its own algorithm for allocating threads. Reducing the minimum to less than the number of processors can also hurt performance.
-
-
 
 ## Examples
  The following example sets the minimum number of worker threads to four, and preserves the original value for the minimum number of asynchronous I/O completion threads.

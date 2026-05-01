@@ -41,8 +41,6 @@
 
  If you implement your own site map provider, you can place the source file in the App_Code directory of your ASP.NET application, and then the assembly will be compiled automatically. You can also place your own site map provider in the Global Assembly Cache (GAC), and provide a fully-qualified reference to it in the Web.config file. For more information on compiler services, see [Working with Assemblies and the Global Assembly Cache](/dotnet/framework/app-domains/working-with-assemblies-and-the-gac).
 
-
-
 ## Examples
  The following code example demonstrates how to write a class that implements the abstract <xref:System.Web.SiteMapProvider> class. This example includes only a sample <xref:System.Web.SiteMapProvider> and a sample text file that works with it. To run the example you also need an entry in the Web.config file and an .aspx page. You can find these in the documentation for the <xref:System.Web.UI.WebControls.SiteMapDataSource.SiteMapProvider?displayProperty=nameWithType> property.
 
@@ -215,8 +213,6 @@ catalog.aspx,Online Catalog,Browse Our Many Great Items!,default.aspx
 
  If the currently requested page does not correspond with a <xref:System.Web.SiteMapNode>, `null` is returned. If security trimming is enabled and the user is not permitted to access the <xref:System.Web.SiteMapNode>, `null` is returned.
 
-
-
 ## Examples
  The following code example demonstrates how to implement the <xref:System.Web.SiteMapProvider.CurrentNode> property in a class that implements the abstract <xref:System.Web.SiteMapProvider> class.
 
@@ -315,8 +311,6 @@ catalog.aspx,Online Catalog,Browse Our Many Great Items!,default.aspx
  The URL provided can be a virtual or absolute URL. It might also be a URL that uses application-relative syntax, such as `~/apprelativedirectory`. Ensure that any implementation of the <xref:System.Web.SiteMapProvider.FindSiteMapNode*> method parse and handle application-relative syntax properly.
 
  The <xref:System.Web.XmlSiteMapProvider> class, which is the default site map provider for ASP.NET, uses the URL of a <xref:System.Web.SiteMapNode> object as a key in the various collections that the classes maintain. Therefore, if a <xref:System.Web.SiteMapNode> provides a URL, it must be unique within the scope of the site map provider. If no URL is provided, a unique identifier is generated to identify the <xref:System.Web.SiteMapNode>.
-
-
 
 ## Examples
  The following code example demonstrates how to implement the <xref:System.Web.SiteMapProvider.FindSiteMapNode*> method in a class that implements the abstract <xref:System.Web.SiteMapProvider> class. The `SimpleTextSiteMapProvider` uses a helper method, named `FindUrl`, to get the URL of the currently displayed page from the <xref:System.Web.HttpContext> object.
@@ -446,8 +440,6 @@ catalog.aspx,Online Catalog,Browse Our Many Great Items!,default.aspx
 
 ## Remarks
  Classes that derive from the <xref:System.Web.SiteMapProvider> class must implement the abstract <xref:System.Web.SiteMapProvider.GetChildNodes*> method.
-
-
 
 ## Examples
  The following code example demonstrates how to implement the <xref:System.Web.SiteMapProvider.GetChildNodes*> method in a class that implements the abstract <xref:System.Web.SiteMapProvider> class. The `SimpleTextSiteMapProvider` stores the hierarchical parent/child relationships in one <xref:System.Collections.Hashtable> object and all <xref:System.Web.SiteMapNode> objects in another. The <xref:System.Web.SiteMapProvider.GetChildNodes*> method performs a reverse-lookup using both <xref:System.Collections.ArrayList> objects.
@@ -699,8 +691,6 @@ Note: <see cref="M:System.Web.SiteMapProvider.GetParentNode(System.Web.SiteMapNo
 ## Remarks
  The <xref:System.Web.SiteMapProvider.GetRootNodeCore*> method enables a parent provider in a provider hierarchy to obtain a <xref:System.Web.SiteMapNode> object that acts as a frame of reference for building the provider hierarchy and the larger site map node hierarchy that is the sum of the site map data that each provider manages.
 
-
-
 ## Examples
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_WebNet/Urtue.Samples.Alexkr.SimpleTextSiteMapProvider_1/CS/simpletextsitemapprovider.cs" id="Snippet3":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/Urtue.Samples.Alexkr.SimpleTextSiteMapProvider_1/VB/simpletextsitemapprovider.vb" id="Snippet3":::
@@ -870,8 +860,6 @@ Note: <see cref="M:System.Web.SiteMapProvider.GetParentNode(System.Web.SiteMapNo
 
  Additional attributes, such as file names or connection strings, are read by the ASP.NET configuration system and passed to the <xref:System.Web.SiteMapProvider.Initialize*> method with its <xref:System.Collections.Specialized.NameValueCollection> parameter.
 
-
-
 ## Examples
  The following code example demonstrates how to override the <xref:System.Web.SiteMapProvider.Initialize*> method to prepare a Microsoft Access database connection.
 
@@ -986,8 +974,6 @@ Note: <see cref="M:System.Web.SiteMapProvider.GetParentNode(System.Web.SiteMapNo
 
 ## Remarks
  All classes that implement the abstract <xref:System.Web.SiteMapProvider> class can support the concept of a site map provider hierarchy. Any hierarchical relationships between providers are maintained outside the scope of a <xref:System.Web.SiteMapProviderCollection> collection by the providers themselves. For an example of a functional provider hierarchy, see <xref:System.Web.XmlSiteMapProvider>.
-
-
 
 ## Examples
  The following code example demonstrates how to implement the <xref:System.Web.SiteMapProvider.ParentProvider> property in a class that implements the abstract <xref:System.Web.SiteMapProvider> class.
@@ -1141,8 +1127,6 @@ Note: <see cref="M:System.Web.SiteMapProvider.GetParentNode(System.Web.SiteMapNo
 ## Remarks
  The default implementation calls the abstract <xref:System.Web.SiteMapProvider.GetRootNodeCore*> method.
 
-
-
 ## Examples
  The following code example demonstrates how to implement the <xref:System.Web.SiteMapProvider.RootNode> property in a class that implements the abstract <xref:System.Web.SiteMapProvider> class.
 
@@ -1184,8 +1168,6 @@ Note: <see cref="M:System.Web.SiteMapProvider.GetParentNode(System.Web.SiteMapNo
 
 ## Remarks
  All classes that implement the <xref:System.Web.SiteMapProvider> class can support the concept of a site map provider hierarchy. Any hierarchical relationships between providers are maintained outside the scope of a <xref:System.Web.SiteMapProviderCollection> collection by the providers themselves. For an example of a functional provider hierarchy, see <xref:System.Web.XmlSiteMapProvider>.
-
-
 
 ## Examples
  The following code example demonstrates how to implement the <xref:System.Web.SiteMapProvider.RootProvider> property in a class that implements the abstract <xref:System.Web.SiteMapProvider> class. The `SimpleTextSiteMapProvider` uses simple logic to determine whether the current provider is part of a provider hierarchy. If the provider is part of a hierarchy, it uses the <xref:System.Web.SiteMapProvider.RootProvider> property for the parent provider as its own. If the provider is not part of a hierarchy, the provider is its own root provider.

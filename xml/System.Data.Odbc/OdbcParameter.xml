@@ -88,8 +88,6 @@ OleDbDataReader reader = command.ExecuteReader();
 
  To resolve this problem, append a percentage ("%") wildcard character to the parameter value (`"a%"`), or use an SQL `=` comparison instead.
 
-
-
 ## Examples
  The following example creates multiple instances of <xref:System.Data.Odbc.OdbcParameter> through the <xref:System.Data.Odbc.OdbcParameterCollection> within the <xref:System.Data.Odbc.OdbcDataAdapter>. These parameters are used to select data from the data source and place the data in the <xref:System.Data.DataSet>. This example assumes that a <xref:System.Data.DataSet> and an <xref:System.Data.Odbc.OdbcDataAdapter> have already been created by using the appropriate schema, commands, and connection.
 
@@ -136,8 +134,6 @@ OleDbDataReader reader = command.ExecuteReader();
 
 ## Remarks
  The base constructor initializes all fields to their default values.
-
-
 
 ## Examples
  The following example creates an <xref:System.Data.Odbc.OdbcParameter> and sets some of its properties.
@@ -524,8 +520,6 @@ public void CreateOdbcParameter()
 > [!NOTE]
 >  <xref:System.Data.DbType.Object> is not supported by the Microsoft .NET Framework Data Provider for ODBC.
 
-
-
 ## Examples
  The following example calls a **Stored Procedure** with three parameters using the ODBC managed provider.
 
@@ -585,8 +579,6 @@ public void CreateOdbcParameter()
  If the <xref:System.Data.ParameterDirection> is `Output`, and execution of the associated <xref:System.Data.Odbc.OdbcCommand> does not return a value, the <xref:System.Data.Odbc.OdbcParameter> will contain a null value. Null values are handled using the <xref:System.DBNull> class.
 
  `Output`, `InputOut`, and `ReturnValue` parameters returned by calling <xref:System.Data.Odbc.OdbcCommand.ExecuteReader*> cannot be accessed until you call <xref:System.Data.Odbc.OdbcDataReader.Close*> or `Dispose` on the <xref:System.Data.Odbc.OdbcDataReader>.
-
-
 
 ## Examples
  The following example creates an <xref:System.Data.Odbc.OdbcParameter> and sets some of its properties.
@@ -671,8 +663,6 @@ public void CreateMyProc(OdbcConnection connection)
 
 ## Remarks
  Null values are handled using the <xref:System.DBNull> class.
-
-
 
 ## Examples
  The following example creates an <xref:System.Data.Odbc.OdbcParameter> and sets some of its properties.
@@ -876,8 +866,6 @@ public void CreateMyProc(OdbcConnection connection)
 > [!NOTE]
 > Use of this property to coerce data passed to the database is not supported. To round, truncate, or otherwise coerce data before passing it to the database, use the <xref:System.Math> class that is part of the `System` namespace prior to assigning a value to the parameter's `Value` property.
 
-
-
 ## Examples
  The following example creates an <xref:System.Data.Odbc.OdbcParameter> and sets some of its properties.
 
@@ -1026,8 +1014,6 @@ public void CreateOdbcParameter()
 > [!NOTE]
 >  .NET Framework data providers that are included with the .NET Framework version 1.0 do not verify the `scale` of <xref:System.Decimal> parameter values. This can cause modified data being inserted at the data source. If you are using .NET Framework version 1.0, validate the `scale` of `decimal` values before setting the parameter value. When you use .NET Framework version 1.1 or later versions, `scale` values that exceed the `decimal` parameter scale might only be truncated in scale, if that is the behavior of the underlying ODBC driver.
 
-
-
 ## Examples
  The following example creates an <xref:System.Data.Odbc.OdbcParameter> and sets some of its properties.
 
@@ -1110,8 +1096,6 @@ public void CreateOdbcParameter()
 
  For fixed-length data types, the value of `Size` is ignored. It can be retrieved for informational purposes, and returns the maximum amount of bytes the provider uses when transmitting the value of the parameter to the server.
 
-
-
 ## Examples
  The following example creates an <xref:System.Data.Odbc.OdbcParameter> and sets some of its properties.
 
@@ -1184,8 +1168,6 @@ public void CreateOdbcParameter()
  When <xref:System.Data.Odbc.OdbcParameter.SourceColumn*> is set to anything other than an empty string, the value of the parameter is retrieved from the column with the `SourceColumn` name. If <xref:System.Data.Odbc.OdbcParameter.Direction*> is set to `Input`, the value is taken from the <xref:System.Data.DataSet>. If `Direction` is set to `Output`, the value is taken from the data source. A `Direction` of `InputOutput` is a combination of both.
 
  For more information about how to use the <xref:System.Data.Odbc.OdbcParameter.SourceColumn> property, see [DataAdapter Parameters](/dotnet/framework/data/adonet/dataadapter-parameters) and [Updating Data Sources with DataAdapters](/dotnet/framework/data/adonet/updating-data-sources-with-dataadapters).
-
-
 
 ## Examples
  The following example creates an <xref:System.Data.Odbc.OdbcParameter> and sets some of its properties.
@@ -1303,8 +1285,6 @@ FieldName = @OriginalFieldName
  The `SourceVersion` is used by <xref:System.Data.Odbc.OdbcDataAdapter.UpdateCommand*> during an <xref:System.Data.Common.DbDataAdapter.Update*> operation to determine whether the parameter value is set to Current or Original. This allows primary keys to be updated.
 
  This property is set to the version of the <xref:System.Data.DataRow> used by either the `Item` property (`DataRow` indexer), or the <xref:System.Data.DataRow.GetChildRows*> method.
-
-
 
 ## Examples
  The following example creates an <xref:System.Data.Odbc.OdbcParameter> and sets some of its properties.
@@ -1460,8 +1440,6 @@ public void CreateOdbcParameter()
  Both the <xref:System.Data.Odbc.OdbcParameter.DbType*> and <xref:System.Data.Odbc.OdbcParameter.OdbcType*> properties can be inferred by setting <xref:System.Data.Odbc.OdbcParameter.Value*>. If applicable, the size, precision, and scale is also inferred from <xref:System.Data.Odbc.OdbcParameter.Value*> when the parameterized statement is executed. However, inferred values are not exposed to the user.
 
  The <xref:System.Data.Odbc.OdbcParameter.Value> property is overwritten by the `Update` method.
-
-
 
 ## Examples
  The following example creates an <xref:System.Data.Odbc.OdbcParameter> and sets some of its properties.

@@ -78,8 +78,6 @@
 > [!CAUTION]
 > By default, a named semaphore is not restricted to the user that created it. Other users may be able to open and use the semaphore, including interfering with the semaphore by acquiring the semaphore multiple times and not releasing it. To restrict access to specific users, you can use a constructor overload or <xref:System.Threading.SemaphoreAcl> and pass in a <xref:System.Security.AccessControl.SemaphoreSecurity> when creating the named semaphore. Avoid using named semaphores without access restrictions on systems that might have untrusted users running code.
 
-
-
 ## Examples
  The following code example creates a semaphore with a maximum count of three and an initial count of zero. The example starts five threads, which block waiting for the semaphore. The main thread uses the <xref:System.Threading.Semaphore.Release(System.Int32)> method overload to increase the semaphore count to its maximum, allowing three threads to enter the semaphore. Each thread uses the <xref:System.Threading.Thread.Sleep*?displayProperty=nameWithType> method to wait for one second, to simulate work, and then calls the <xref:System.Threading.Semaphore.Release> method overload to release the semaphore. Each time the semaphore is released, the previous semaphore count is displayed. Console messages track semaphore use. The simulated work interval is increased slightly for each thread, to make the output easier to read.
 
@@ -163,8 +161,6 @@
  This constructor initializes an unnamed semaphore. All threads that use an instance of such a semaphore must have references to the instance.
 
  If `initialCount` is less than `maximumCount`, the effect is the same as if the current thread had called <xref:System.Threading.WaitHandle.WaitOne*> (`maximumCount` minus `initialCount`) times. If you do not want to reserve any entries for the thread that creates the semaphore, use the same number for `maximumCount` and `initialCount`.
-
-
 
 ## Examples
  The following example creates a semaphore with a maximum count of three and an initial count of zero. The example starts five threads, which block waiting for the semaphore. The main thread uses the <xref:System.Threading.Semaphore.Release(System.Int32)> method overload to increase the semaphore count to its maximum, allowing three threads to enter the semaphore. Each thread uses the <xref:System.Threading.Thread.Sleep*?displayProperty=nameWithType> method to wait for one second, to simulate work, and then calls the <xref:System.Threading.Semaphore.Release> method overload to release the semaphore. Each time the semaphore is released, the previous semaphore count is displayed. Console messages track semaphore use. The simulated work interval is increased slightly for each thread, to make the output easier to read.
@@ -254,8 +250,6 @@
 
 > [!CAUTION]
 > By default, a named semaphore is not restricted to the user that created it. Other users may be able to open and use the semaphore, including interfering with the semaphore by acquiring the semaphore multiple times and not releasing it. To restrict access to specific users, you can use a constructor overload or <xref:System.Threading.SemaphoreAcl> and pass in a <xref:System.Security.AccessControl.SemaphoreSecurity> when creating the named semaphore. Avoid using named semaphores without access restrictions on systems that might have untrusted users running code.
-
-
 
 ## Examples
  The following code example demonstrates the cross-process behavior of a named semaphore. The example creates a named semaphore with a maximum count of five and an initial count of five. The program makes three calls to the <xref:System.Threading.WaitHandle.WaitOne*> method. Thus, if you run the compiled example from two command windows, the second copy will block on the third call to <xref:System.Threading.WaitHandle.WaitOne*>. Release one or more entries in the first copy of the program to unblock the second.
@@ -364,8 +358,6 @@ There was some other error. The `HResult` property might provide more informatio
 
 > [!CAUTION]
 > By default, a named semaphore is not restricted to the user that created it. Other users may be able to open and use the semaphore, including interfering with the semaphore by acquiring the semaphore multiple times and not releasing it. To restrict access to specific users, you can use a constructor overload or <xref:System.Threading.SemaphoreAcl> and pass in a <xref:System.Security.AccessControl.SemaphoreSecurity> when creating the named semaphore. Avoid using named semaphores without access restrictions on systems that might have untrusted users running code.
-
-
 
 ## Examples
  The following code example demonstrates the cross-process behavior of a named semaphore. The example creates a named semaphore with a maximum count of five and an initial count of two. That is, it reserves three entries for the thread that calls the constructor. If `createNew` is `false`, the program makes three calls to the <xref:System.Threading.WaitHandle.WaitOne*> method. Thus, if you run the compiled example from two command windows, the second copy will block on the third call to <xref:System.Threading.WaitHandle.WaitOne*>. Release one or more entries in the first copy of the program to unblock the second.
@@ -542,8 +534,6 @@ An object with the specified <paramref name="name" /> exists, but the specified 
 > [!CAUTION]
 > By default, a named semaphore is not restricted to the user that created it. Other users may be able to open and use the semaphore, including interfering with the semaphore by acquiring the semaphore multiple times and not releasing it. To restrict access to specific users, you can pass in a <xref:System.Security.AccessControl.SemaphoreSecurity> when creating the named semaphore. Avoid using named semaphores without access restrictions on systems that might have untrusted users running code.
 
-
-
 ## Examples
  The following code example demonstrates the cross-process behavior of a named semaphore with access control security. The example uses the <xref:System.Threading.Semaphore.OpenExisting(System.String)> method overload to test for the existence of a named semaphore. If the semaphore does not exist, it is created with a maximum count of two and with access control security that denies the current user the right to use the semaphore but grants the right to read and change permissions on the semaphore. If you run the compiled example from two command windows, the second copy will throw an access violation exception on the call to the <xref:System.Threading.Semaphore.OpenExisting(System.String)> method. The exception is caught, and the example uses the <xref:System.Threading.Semaphore.OpenExisting(System.String,System.Security.AccessControl.SemaphoreRights)> method overload to open the semaphore with the rights needed to read and change the permissions.
 
@@ -695,8 +685,6 @@ An object with the specified <paramref name="name" /> exists, but the specified 
 
  On a local semaphore, access control security is irrelevant. If the <xref:System.Threading.Semaphore> object does not represent a named system semaphore, this method returns a <xref:System.Security.AccessControl.SemaphoreSecurity> object that grants all rights to any user.
 
-
-
 ## Examples
  The following code example demonstrates the cross-process behavior of a named semaphore with access control security. The example uses the <xref:System.Threading.Semaphore.OpenExisting(System.String)> method overload to test for the existence of a named semaphore.
 
@@ -801,8 +789,6 @@ An object with the specified <paramref name="name" /> exists, but the specified 
 
  Specifying the <xref:System.Security.AccessControl.SemaphoreRights.Synchronize?displayProperty=nameWithType> flag allows a thread to enter the semaphore, and specifying the <xref:System.Security.AccessControl.SemaphoreRights.Modify?displayProperty=nameWithType> flag allows a thread to call the <xref:System.Threading.Semaphore.Release*> method.
 
-
-
 ## Examples
  The following code example demonstrates the cross-process behavior of a named semaphore with access control security. The example uses the <xref:System.Threading.Semaphore.OpenExisting(System.String)> method overload to test for the existence of a named semaphore.
 
@@ -882,8 +868,6 @@ There was some other error. The `HResult` property might provide more informatio
  The <xref:System.Threading.Semaphore.OpenExisting*> method tries to open an existing named semaphore. To create the system semaphore when it does not already exist, use one of the <xref:System.Threading.Semaphore.%23ctor*> constructors that has a `name` parameter.
 
  Multiple calls to this method that use the same value for `name` do not necessarily return the same <xref:System.Threading.Semaphore> object, even though the objects that are returned represent the same named system semaphore.
-
-
 
 ## Examples
  The following code example demonstrates the cross-process behavior of a named semaphore with access control security. The example uses the <xref:System.Threading.Semaphore.OpenExisting(System.String)> method overload to test for the existence of a named semaphore.
@@ -1065,8 +1049,6 @@ There was some other error. The `HResult` property might provide more informatio
 
  If the current <xref:System.Threading.Semaphore> object represents a named system semaphore, the user must have <xref:System.Security.AccessControl.SemaphoreRights.Modify?displayProperty=nameWithType> rights and the semaphore must have been opened with <xref:System.Security.AccessControl.SemaphoreRights.Modify?displayProperty=nameWithType> rights.
 
-
-
 ## Examples
  The following code example creates a semaphore with a maximum count of three and an initial count of zero. The example starts five threads, which block waiting for the semaphore. The main thread uses the <xref:System.Threading.Semaphore.Release(System.Int32)> method overload to increase the semaphore count to its maximum, allowing three threads to enter the semaphore. Each thread uses the <xref:System.Threading.Thread.Sleep*?displayProperty=nameWithType> method to wait for one second, to simulate work, and then calls the <xref:System.Threading.Semaphore.Release> method overload to release the semaphore.
 
@@ -1148,8 +1130,6 @@ There was some other error. The `HResult` property might provide more informatio
 
  If the current <xref:System.Threading.Semaphore> object represents a named system semaphore, the user must have <xref:System.Security.AccessControl.SemaphoreRights.Modify?displayProperty=nameWithType> rights and the semaphore must have been opened with <xref:System.Security.AccessControl.SemaphoreRights.Modify?displayProperty=nameWithType> rights.
 
-
-
 ## Examples
  The following code example creates a semaphore with a maximum count of three and an initial count of zero. The example starts five threads, which block waiting for the semaphore. The main thread uses the <xref:System.Threading.Semaphore.Release(System.Int32)> method overload to increase the semaphore count to its maximum, allowing three threads to enter the semaphore. Each thread uses the <xref:System.Threading.Thread.Sleep*?displayProperty=nameWithType> method to wait for one second, to simulate work, and then calls the <xref:System.Threading.Semaphore.Release> method overload to release the semaphore.
 
@@ -1208,8 +1188,6 @@ There was some other error. The `HResult` property might provide more informatio
  You can set access control security only on <xref:System.Threading.Semaphore> objects that represent named system semaphores.
 
  The user must have <xref:System.Security.AccessControl.SemaphoreRights.ChangePermissions?displayProperty=nameWithType> rights to call this method, and the semaphore must have been opened with <xref:System.Security.AccessControl.SemaphoreRights.ChangePermissions?displayProperty=nameWithType> rights.
-
-
 
 ## Examples
  The following code example demonstrates the cross-process behavior of a named semaphore with access control security. The example uses the <xref:System.Threading.Semaphore.OpenExisting(System.String)> method overload to test for the existence of a named semaphore.

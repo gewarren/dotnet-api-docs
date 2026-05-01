@@ -148,8 +148,6 @@
 
  For more information on assemblies, see the "Application Domains and Assemblies" section in the [Application Domains](/dotnet/framework/app-domains/application-domains) topic.
 
-
-
 ## Examples
  The following code example shows how to obtain the currently executing assembly, create an instance of a type contained in that assembly, and invoke one of the type's methods with late binding. For this purpose, the code example defines a class named `Example`, with a method named `SampleMethod`. The constructor of the class accepts an integer, which is used to compute the return value of the method.
 
@@ -385,8 +383,6 @@ In .NET 5 and later versions, for bundled assemblies, this property throws an ex
 
 - The type doesn't exist in the current <xref:System.Reflection.Assembly> instance.
 
-
-
 ## Examples
  The following example defines a `Person` class and calls the <xref:System.Reflection.Assembly.CreateInstance(System.String)> method to instantiate it.
 
@@ -495,8 +491,6 @@ In .NET 5 and later versions, for bundled assemblies, this property throws an ex
 - You haven't specified the fully qualified name of the type.
 
 - The type doesn't exist in the current <xref:System.Reflection.Assembly> instance.
-
-
 
 ## Examples
  The following example defines a `Person` class. It then calls the <xref:System.Reflection.Assembly.CreateInstance(System.String)> method to instantiate it, but because the casing of the `typeName` argument doesn't match that of the type's <xref:System.Type.FullName> property, the method returns `null`. When the example passes the same string to the <xref:System.Reflection.Assembly.CreateInstance(System.String,System.Boolean)> overload and specifies that the comparison should be case-insensitive, the `Person` class is found, and a `Person` object is successfully instantiated.
@@ -1174,8 +1168,6 @@ In .NET 5 and later versions, for bundled assemblies, this property throws an ex
 
  In the .NET Framework version 2.0, processor architecture is added to assembly identity, and can be specified as part of assembly name strings. However, it is not included in the string returned by the <xref:System.Reflection.Assembly.FullName> property, for compatibility reasons. See <xref:System.Reflection.AssemblyName.ProcessorArchitecture*?displayProperty=nameWithType>.
 
-
-
 ## Examples
  The following example retrieves the display name of the currently executing assembly, and the display name of the assembly that contains the <xref:System.Int32> type (`int` in C#, `Integer` in Visual Basic).
 
@@ -1247,8 +1239,6 @@ In .NET 5 and later versions, for bundled assemblies, this property throws an ex
  Calling this method is equivalent to retrieving the value of the  <xref:System.Type.Assembly?displayProperty=nameWithType> property. However, the <xref:System.Type.Assembly?displayProperty=nameWithType> property typically offers superior performance.
 
  In order to call this method, you must have a <xref:System.Type> object, which means that the assembly in which the class is defined must already be loaded.
-
-
 
 ## Examples
  The following example retrieves the assembly that contains the <xref:System.Int32> type and displays its name and file location.
@@ -1326,8 +1316,6 @@ In .NET 5 and later versions, for bundled assemblies, this property throws an ex
  When `M1` is not inlined, <xref:System.Reflection.Assembly.GetCallingAssembly*> returns `A2`. When `M1` is inlined, <xref:System.Reflection.Assembly.GetCallingAssembly*> returns `A3`. Similarly, when `M2` is not inlined, <xref:System.Reflection.Assembly.GetCallingAssembly*> returns `A2`. When `M2` is inlined, <xref:System.Reflection.Assembly.GetCallingAssembly*> returns `A3`.
 
  This effect also occurs when `M1` executes as a tail call from `M2`, or when `M2` executes as a tail call from `M3`. You can prevent the JIT compiler from inlining the method that calls <xref:System.Reflection.Assembly.GetCallingAssembly*>, by applying the <xref:System.Runtime.CompilerServices.MethodImplAttribute> attribute with the <xref:System.Runtime.CompilerServices.MethodImplOptions.NoInlining?displayProperty=nameWithType> flag, but there is no similar mechanism for preventing tail calls.
-
-
 
 ## Examples
  The following example gets the calling assembly of the current method.
@@ -1689,8 +1677,6 @@ In .NET 5 and later versions, for bundled assemblies, this property throws an ex
  :::code language="vb" source="~/snippets/visualbasic/System.Reflection/Assembly/GetExecutingAssembly/assembly1.vb" id="Snippet1":::
 
  To get the assembly that contains the method that called the currently executing code, use <xref:System.Reflection.Assembly.GetCallingAssembly*>.
-
-
 
 ## Examples
  The following example uses the <xref:System.Type.Assembly?displayProperty=nameWithType> property to get the currently executing assembly based on a type contained in that assembly. It also calls the <xref:System.Reflection.Assembly.GetExecutingAssembly*> method to show that it returns an <xref:System.Reflection.Assembly> object that represents the same assembly.
@@ -2679,8 +2665,6 @@ Note: In <see href="https://go.microsoft.com/fwlink/?LinkID=247912">.NET for Win
 
 > [!NOTE]
 > Modules must be emitted with file name extensions.
-
-
 
 ## Examples
  The following example displays the name of the module in the returned array that contains the assembly manifest.
@@ -4264,8 +4248,6 @@ To load the correct assembly, it's recommended to call the `Load` method by pass
  <xref:System.IO.FileLoadException> is thrown if `assemblyString` specifies the full assembly name, and the first assembly that matches the simple name has a different version, culture, or public key token. The loader does not continue probing for other assemblies that match the simple name.
 
  In the .NET Framework version 2.0, processor architecture is added to assembly identity, and can be specified as part of assembly name strings. For example, "ProcessorArchitecture=msil". However, the recommended way to specify an assembly name is to create an <xref:System.Reflection.AssemblyName> object and pass it to an appropriate overload of the <xref:System.Reflection.Assembly.Load*> method. See <xref:System.Reflection.AssemblyName.ProcessorArchitecture*?displayProperty=nameWithType>.
-
-
 
 ## Examples
  The following example loads an assembly given its fully qualified name, and lists all the types contained in the specified assembly. For information about how to obtain the fully qualified assembly name, see [Assembly Names](/dotnet/standard/assembly/names).

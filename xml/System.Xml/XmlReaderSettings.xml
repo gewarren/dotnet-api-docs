@@ -142,8 +142,6 @@ The following example creates an <xref:System.Xml.XmlReader> that uses an <xref:
 |<xref:System.Xml.XmlReaderSettings.ValidationType>|<xref:System.Xml.ValidationType.None>.|
 |<xref:System.Xml.XmlReaderSettings.XmlResolver>|A new <xref:System.Xml.XmlUrlResolver> object.|
 
-
-
 ## Examples
  The following creates a settings object that can be used to construct a reader that strips processing instructions, comments, and insignificant white space.
 
@@ -521,8 +519,6 @@ If the <xref:System.Xml.XmlReader> is processing text data, it always checks tha
 |An invalid name is encountered.|<xref:System.Xml.XmlException> is thrown.|<xref:System.Xml.XmlException> is thrown.|<xref:System.Xml.XmlException> is thrown.|
 |The `xml` prefix isn't matched to the http://www.w3.org/XML/1998/namespace URI.|<xref:System.Xml.XmlException> is thrown.|<xref:System.Xml.XmlException> is thrown.|<xref:System.Xml.XmlException> is thrown.|
 
-
-
 ## Examples
  The following example creates an <xref:System.Xml.XmlReader> object that reads an XML fragment.
 
@@ -649,8 +645,6 @@ The example uses the `itemDTD.xml` file as input.
 ## Remarks
  Setting this property to `true` can result in multiple contiguous text nodes being returned from the reader. This does not affect validation.
 
-
-
 ## Examples
  The following creates a settings object that can be used to construct a reader that strips processing instructions, comments, and insignificant white space.
 
@@ -715,8 +709,6 @@ The example uses the `itemDTD.xml` file as input.
 
 ## Remarks
  Setting this property to `true` can result in multiple contiguous text nodes being returned from the reader. This does not affect validation.
-
-
 
 ## Examples
  The following creates a settings object that can be used to construct a reader that strips processing instructions, comments, and insignificant white space.
@@ -784,8 +776,6 @@ The example uses the `itemDTD.xml` file as input.
  White space that is not considered to be significant includes spaces, tabs, and blank lines used to set apart the markup for greater readability. An example of this is white space in element content.
 
  This property setting does not affect white space between markup in a mixed content mode, or white space that occurs within the scope of an `xml:space='preserve'` attribute.
-
-
 
 ## Examples
  The following creates a settings object that can be used to construct a reader that strips processing instructions, comments, and insignificant white space.
@@ -971,8 +961,6 @@ The example uses the `itemDTD.xml` file as input.
 
  This property allows you to mitigate denial of service attacks where the attacker submits XML documents that attempt to exceed memory limits via expanding entities. By limiting the characters that result from expanded entities, you can detect the attack and recover reliably.
 
-
-
 ## Examples
  The following code sets this property, and then attempts to parse a document that contains an entity that expands to a size greater than the set limit. In a real world scenario, you would set this limit to a value large enough to handle valid documents, yet small enough to limit the threat from malicious documents.
 
@@ -1090,8 +1078,6 @@ There is an error in XML document (MaxCharactersFromEntities, ).
  If the reader attempts to read a document with a size that exceeds this property, an <xref:System.Xml.XmlException> will be thrown.
 
  This property allows you to mitigate denial of service attacks where the attacker submits extremely large XML documents. By limiting the size of a document, you can detect the attack and recover reliably.
-
-
 
 ## Examples
  The following code sets this property, and then attempts to parse a document larger than the limit. In a real world scenario, you would set this limit to a value large enough to handle valid documents, yet small enough to limit the threat from malicious documents.
@@ -1448,8 +1434,6 @@ The example uses the books.xsd file as an input.
 >
 > The <xref:System.Xml.Schema.XmlSchemaException.SourceUri> property of an <xref:System.Xml.Schema.XmlSchemaValidationException> returns the URI path to the schema file that caused the exception. The <xref:System.Xml.Schema.XmlSchemaException.SourceUri> property should not be exposed in untrusted scenarios.
 
-
-
 ## Examples
  The following example shows the settings to specify to create a reader that validates using an inline schema and that also displays validation warnings. The validation event handler uses the <xref:System.Xml.Schema.XmlSeverityType> enumeration to differentiate between warnings and errors.
 
@@ -1599,8 +1583,6 @@ The output is as follows:
 |`None`|The <xref:System.Xml.XmlReader> does not validate data, or perform any type assignment.|
 |`Schema`|Validation and type assignment is performed using an XML Schema definition language (XSD) schema. The reader accesses the XML Schema using the following:<br /><br /> -   Uses the <xref:System.Xml.XmlReaderSettings.Schemas> property to access the <xref:System.Xml.Schema.XmlSchemaSet> object associated with this reader.<br />-   Uses the in-line schema contained in the XML instance document. (The <xref:System.Xml.Schema.XmlSchemaValidationFlags.ProcessInlineSchema> option must be enabled.)<br />-   Uses the XML Schema specified by schema location hints (`xsi:schemaLocation` or `xsi:noNamespaceSchemaLocation` attribute) found in the XML instance document. (The <xref:System.Xml.Schema.XmlSchemaValidationFlags.ProcessSchemaLocation> option must be enabled.)|
 
-
-
 ## Examples
  The following example validates using a schema stored in the <xref:System.Xml.Schema.XmlSchemaSet>.
 
@@ -1683,8 +1665,6 @@ The output is as follows:
 > The <xref:System.Xml.Schema.XmlSchemaValidationFlags.ProcessInlineSchema> and <xref:System.Xml.Schema.XmlSchemaValidationFlags.ProcessSchemaLocation> validation flags of an <xref:System.Xml.XmlReaderSettings> object are not set by default. When these flags are set, the <xref:System.Xml.XmlReaderSettings.XmlResolver> of the <xref:System.Xml.XmlReaderSettings> object is used to resolve schema locations encountered in the instance document in the <xref:System.Xml.XmlReader>. If the <xref:System.Xml.XmlReaderSettings.XmlResolver> object is `null`, schema locations are not resolved even if the <xref:System.Xml.Schema.XmlSchemaValidationFlags.ProcessInlineSchema> and <xref:System.Xml.Schema.XmlSchemaValidationFlags.ProcessSchemaLocation> validation flags are set.
 >
 > Schemas added during validation add new types and can change the validation outcome of the document being validated. As a result, external schemas should only be resolved from trusted sources.
-
-
 
 ## Examples
  The following example creates an <xref:System.Xml.XmlReader> that uses an <xref:System.Xml.XmlSecureResolver> with default credentials.

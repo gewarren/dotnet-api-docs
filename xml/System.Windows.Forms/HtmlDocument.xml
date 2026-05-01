@@ -66,8 +66,6 @@
 > [!NOTE]
 > While most of the properties, methods, and events on <xref:System.Windows.Forms.HtmlDocument> have kept the same names as they have on the unmanaged DOM, some have been changed for consistency with the .NET Framework.
 
-
-
 ## Examples
  The following code example uses data from the Northwind database to create an `HTML TABLE` dynamically using <xref:System.Windows.Forms.HtmlDocument.CreateElement*>. The <xref:System.Windows.Forms.HtmlElement.AppendChild*> method is also used, first to add cells (`TD` elements) to rows (`TR` elements), then to add rows to the table, and finally to append the table to the end of the current document. The code example requires that your application has a <xref:System.Windows.Forms.WebBrowser> control named `WebBrowser1`. The code should be called after a document has been loaded.
 
@@ -202,8 +200,6 @@
  Some elements, such as `HEAD` and `TITLE`, will never have names associated with them. All other elements will have names only if the author of the HTML file assigned them. You can access elements without names by ID or index.
 
  You cannot add elements directly to the <xref:System.Windows.Forms.HtmlDocument.All*> collection, because all elements in an HTML file outside of the `HTML` tag must have a parent element. Use the <xref:System.Windows.Forms.HtmlElement.AppendChild*> method or the <xref:System.Windows.Forms.HtmlElement.InnerHtml> property on <xref:System.Windows.Forms.HtmlElement> to add new elements to the tree.
-
-
 
 ## Examples
  The following code example iterates through all of the elements in a document and sets `Enabled=True`, enabling any elements that may have been disabled by default to prevent user input while the document was loading. The code example requires that your application contains a <xref:System.Windows.Forms.WebBrowser> control named `WebBrowser1`.
@@ -347,8 +343,6 @@
 
  There is no equivalent `Head` property on <xref:System.Windows.Forms.HtmlDocument>. To obtain the `HEAD` element, use <xref:System.Windows.Forms.HtmlDocument.GetElementsByTagName*>.
 
-
-
 ## Examples
  The following code example creates a new `DIV` element and appends it to the bottom of the document using the <xref:System.Windows.Forms.HtmlElement.AppendChild*> method.
 
@@ -398,8 +392,6 @@
 ## Remarks
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
 
-
-
 ## Examples
  The following code example detects a click on the document, finds the element, and uses <xref:System.Windows.Forms.HtmlElement.ScrollIntoView*> to align the element with the top of the Web page.
 
@@ -448,8 +440,6 @@
 
 ## Remarks
  By default, if you right-click your mouse on a document or an element in a document, it will display a default context menu particular to the element. Use this event to cancel the display of the context menu and display one of your own.
-
-
 
 ## Examples
  The following code example captures the <xref:System.Windows.Forms.HtmlDocument.ContextMenuShowing> event and uses it to display a <xref:System.Windows.Forms.ContextMenuStrip>.
@@ -554,8 +544,6 @@
  This method will not affect the state of an existing document's source code when you use the <xref:System.Windows.Forms.WebBrowser> control's **View Source** context menu command or the <xref:System.Windows.Forms.WebBrowser.DocumentText*> and <xref:System.Windows.Forms.WebBrowser.DocumentStream*> properties of the <xref:System.Windows.Forms.WebBrowser> control.
 
  When you create new elements with <xref:System.Windows.Forms.HtmlDocument.CreateElement*>, you will not be able to set certain properties, such as `Name`. In cases where you need to set the Name attribute, assign them as HTML to the <xref:System.Windows.Forms.HtmlElement.InnerHtml> property of another object in the document.
-
-
 
 ## Examples
  The following code example uses data from the Northwind database to create an HTML table using <xref:System.Windows.Forms.HtmlDocument.CreateElement*>. The <xref:System.Windows.Forms.HtmlElement.AppendChild*> method is also used, first to add cells (`TD` elements) to rows (`TR` elements), then to add rows to the table, and finally to append the table to the end of the current document. The code example requires that your application has a <xref:System.Windows.Forms.WebBrowser> control called `WebBrowser1`.
@@ -963,8 +951,6 @@
 ## Remarks
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
 
-
-
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.HtmlDocument.Focusing> event. This report helps you to learn when the event occurs and can assist you in debugging.
 
@@ -1054,8 +1040,6 @@
 
  To add a new `FORM` to a document, you can either create a new `FORM` tag as a string, and assign it to the <xref:System.Windows.Forms.HtmlElement.InnerHtml> property of an element previously added to the HTML DOM; or you can use the <xref:System.Windows.Forms.HtmlDocument.CreateElement*> method, set its properties using <xref:System.Windows.Forms.HtmlElement.SetAttribute*>, and add it as a child of an existing element using <xref:System.Windows.Forms.HtmlElement.AppendChild*>.
 
-
-
 ## Examples
  The following code example iterates through all of the `Form` elements on a Web page and clears all user input, setting the forms back to their default values.
 
@@ -1105,8 +1089,6 @@
 ## Remarks
  If there are multiple elements in the document with the same ID value, <xref:System.Windows.Forms.HtmlDocument.GetElementById*> will return the first one it finds.
 
-
-
 ## Examples
  The following code example retrieves a named `TABLE` from a document, counts up the number of rows, and displays the result in the Web page. The code example requires that you have a <xref:System.Windows.Forms.WebBrowser> control in your project named `WebBrowser1`, and that you have loaded a Web page with a `TABLE` whose `ID` attribute is `Table1`.
 
@@ -1154,8 +1136,6 @@
 
 ## Remarks
  <xref:System.Windows.Forms.HtmlDocument.GetElementFromPoint*> uses client coordinates, in which the upper-left corner of the document is assigned the value (0,0). Client coordinates for the current position of the cursor can be obtained using the <xref:System.Windows.Forms.HtmlWindow.Position> property.
-
-
 
 ## Examples
  The following code example detects a click on the document, finds the element, and uses <xref:System.Windows.Forms.HtmlElement.ScrollIntoView*> to align the element with the top of the Web page.
@@ -1275,8 +1255,6 @@
  <xref:System.Windows.Forms.HtmlDocument.Images*> returns a collection of <xref:System.Windows.Forms.HtmlElement> objects. To access attributes, such as `ALT` and `SRC`, that are not directly exposed by <xref:System.Windows.Forms.HtmlElement>, use the <xref:System.Windows.Forms.HtmlElement.GetAttribute*> method.
 
  To add a new image to a document, either create a new `IMG` tag as a string, and assign it to the <xref:System.Windows.Forms.HtmlElement.InnerHtml> property of an element previously added to the HTML DOM; or use the <xref:System.Windows.Forms.HtmlDocument.CreateElement*> method, set its properties using <xref:System.Windows.Forms.HtmlElement.SetAttribute*>, and add it as a child of an existing element using <xref:System.Windows.Forms.HtmlElement.AppendChild*>.
-
-
 
 ## Examples
  The following code example examines the `ALT` attribute of all of the images in the document, and sets a default `ALT` attribute if a value is not already set.
@@ -1606,8 +1584,6 @@ window.alert("Name is " + name + "; address is " + address);
 ## Remarks
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
 
-
-
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.HtmlDocument.LosingFocus> event. This report helps you to learn when the event occurs and can assist you in debugging.
 
@@ -1661,8 +1637,6 @@ window.alert("Name is " + name + "; address is " + address);
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
 
-
-
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.HtmlDocument.MouseDown> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
 
@@ -1713,8 +1687,6 @@ window.alert("Name is " + name + "; address is " + address);
 
 ## Remarks
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.HtmlDocument.MouseLeave> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
@@ -1767,8 +1739,6 @@ window.alert("Name is " + name + "; address is " + address);
 ## Remarks
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
 
-
-
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.HtmlDocument.MouseMove> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
 
@@ -1820,8 +1790,6 @@ window.alert("Name is " + name + "; address is " + address);
 ## Remarks
  For more information about handling events, [Handling and Raising Events](/dotnet/standard/events/).
 
-
-
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.HtmlDocument.MouseOver> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
 
@@ -1872,8 +1840,6 @@ window.alert("Name is " + name + "; address is " + address);
 
 ## Remarks
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.HtmlDocument.MouseUp> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
@@ -2003,8 +1969,6 @@ window.alert("Name is " + name + "; address is " + address);
 
  <xref:System.Windows.Forms.HtmlDocument.OpenNew*> always creates a new document in the current window. To open a document in a new window, use the <xref:System.Windows.Forms.HtmlWindow.Open*> method on the <xref:System.Windows.Forms.HtmlWindow> class.
 
-
-
 ## Examples
  The following code example prepares the DOM for writing and writes a new document using the <xref:System.Windows.Forms.HtmlDocument.Write*> method.
 
@@ -2096,8 +2060,6 @@ window.alert("Name is " + name + "; address is " + address);
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
 
-
-
 ## Examples
  The following code example resets the status bar on a Windows Forms application when the `Stop` event has occurred. The code example requires that you have a <xref:System.Windows.Forms.StatusBar> control named `StatusBar1` in your application.
 
@@ -2141,8 +2103,6 @@ window.alert("Name is " + name + "; address is " + address);
  Use the <xref:System.Windows.Forms.HtmlDocument.Title> property to identify the document by way of a human-readable name.
 
  Changes to this property will also reflect in the <xref:System.Windows.Forms.WebBrowser.DocumentTitle> property of the <xref:System.Windows.Forms.WebBrowser> control.
-
-
 
 ## Examples
  The following code example creates an HTML hyperlink to the current document using the URL of the document as the link's location and the title of the document as the link text. The code example requires that your application has a <xref:System.Windows.Forms.WebBrowser> control named `WebBrowser1`.
@@ -2319,8 +2279,6 @@ window.alert("Name is " + name + "; address is " + address);
  All calls to <xref:System.Windows.Forms.HtmlDocument.Write*> should be preceded by a call to <xref:System.Windows.Forms.HtmlDocument.OpenNew*>, which will clear the current document and all of its variables. Your calls to <xref:System.Windows.Forms.HtmlDocument.Write*> will create a new HTML document in its place. To change only a specific portion of the document, obtain the appropriate <xref:System.Windows.Forms.HtmlElement> and set its <xref:System.Windows.Forms.HtmlElement.InnerHtml> property.
 
  It is recommended that you write an entire valid HTML document using the <xref:System.Windows.Forms.HtmlDocument.Write*> method, including `HTML` and `BODY` tags. However, if you write just HTML elements, the Document Object Model (DOM) will supply these elements for you.
-
-
 
 ## Examples
  The following code example opens a new <xref:System.Windows.Forms.HtmlDocument> and writes in a new HTML file.

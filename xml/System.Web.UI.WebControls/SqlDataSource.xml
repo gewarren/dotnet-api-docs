@@ -683,8 +683,6 @@ This section contains four code examples:
 
  The <xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand*> value can be an SQL string or the name of a stored procedure, if the data source supports stored procedures.
 
-
-
 ## Examples
  The following code example demonstrates how to create a <xref:System.Web.UI.WebControls.SqlDataSource> control using the <xref:System.Web.UI.WebControls.SqlDataSource.%23ctor*> constructor. The example is unusual in that the <xref:System.Web.UI.WebControls.SqlDataSource> control is being used not on a Web Forms page, but in the implementation of a middle-tier object as a simple way for a business object to interact with a database. The example uses a connection string that is stored in the Web.config file.
 
@@ -793,8 +791,6 @@ This section contains four code examples:
 > [!IMPORTANT]
 > When you are using client impersonation under Microsoft Windows authentication, the data is cached when the first user accesses the data. If another user requests the same data, the data is retrieved from the cache. The data is not retrieved by making another call to the database to verify the user's access to the data. If you expect more than one user to access the data, and you want each retrieval to the data to be verified by the security configurations for the database, do not use caching.
 
-
-
 ## Examples
  The following code example demonstrates how to retrieve data from the Northwind database in Microsoft SQL Server and display it in a <xref:System.Web.UI.WebControls.GridView> control, with data caching enabled. The <xref:System.Web.UI.WebControls.SqlDataSource.CacheDuration*> is set to 20 seconds and, because the <xref:System.Web.UI.WebControls.SqlDataSource.CacheExpirationPolicy> property is set to the <xref:System.Web.UI.DataSourceCacheExpiry.Absolute> value by default, users of this page will see fresh data every 20 seconds.
 
@@ -846,8 +842,6 @@ This section contains four code examples:
 
 > [!IMPORTANT]
 > When you are using client impersonation under Microsoft Windows authentication, the data is cached when the first user accesses the data. If another user requests the same data, the data is retrieved from the cache. The data is not retrieved by making another call to the database to verify the user's access to the data. If you expect more than one user to access the data, and you want each retrieval to the data to be verified by the security configurations for the database, do not use caching.
-
-
 
 ## Examples
  The following code example demonstrates how to retrieve data from the Northwind database in Microsoft SQL Server and display it in a <xref:System.Web.UI.WebControls.GridView> control, with data caching enabled. Because the <xref:System.Web.UI.WebControls.SqlDataSource.CacheExpirationPolicy> property is set to the <xref:System.Web.UI.DataSourceCacheExpiry.Sliding> value, users will not see fresh data even though the <xref:System.Web.UI.WebControls.SqlDataSource.CacheDuration*> value is 20 seconds. The cached data is refreshed only if there is no activity on the page for more than 20 seconds since the last page load.
@@ -1136,8 +1130,6 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
 
  The value of the <xref:System.Web.UI.WebControls.SqlDataSource.DataSourceMode> property is stored in view state.
 
-
-
 ## Examples
  The following code example demonstrates how to set the <xref:System.Web.UI.WebControls.SqlDataSource.DataSourceMode> property of the <xref:System.Web.UI.WebControls.SqlDataSource> control to the <xref:System.Web.UI.WebControls.SqlDataSourceMode.DataReader> value for a scenario with a <xref:System.Web.UI.WebControls.ListBox> control that requires no sorting, paging, nor filtering.
 
@@ -1184,8 +1176,6 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
  The <xref:System.Web.UI.WebControls.SqlDataSource.Delete*> method is provided for programmatic access to the `Delete` method. If the <xref:System.Web.UI.WebControls.SqlDataSource> control is associated with a data-bound control, the data-bound control automatically calls the **Delete** method.
 
  The <xref:System.Web.UI.WebControls.SqlDataSource.Delete*> method delegates to the <xref:System.Web.UI.WebControls.SqlDataSourceView.Delete*> method of the <xref:System.Web.UI.WebControls.SqlDataSourceView> object that is associated with the <xref:System.Web.UI.WebControls.SqlDataSource> control. To perform the operation, the <xref:System.Web.UI.WebControls.SqlDataSourceView> builds a <xref:System.Data.Common.DbCommand> object using the <xref:System.Web.UI.WebControls.SqlDataSource.DeleteCommand*> text and any associated <xref:System.Web.UI.WebControls.SqlDataSource.DeleteParameters*> values, and then executes the <xref:System.Data.Common.DbCommand> against the underlying database.
-
-
 
 ## Examples
  The following code example demonstrates how to set the <xref:System.Web.UI.WebControls.SqlDataSource.DeleteCommand*> text to delete an order from the Northwind database. Initially, data is retrieved from the Orders table and displayed in a <xref:System.Web.UI.WebControls.DropDownList> control. You must explicitly declare the <xref:System.Web.UI.WebControls.SqlDataSource.DeleteParameters> property and call the <xref:System.Web.UI.WebControls.SqlDataSource.Delete*> method when using data-bound controls, such as the <xref:System.Web.UI.WebControls.DropDownList> (unlike other controls, such as <xref:System.Web.UI.WebControls.GridView> and <xref:System.Web.UI.WebControls.DetailsView>, which automatically populate the parameters and call the <xref:System.Web.UI.WebControls.SqlDataSource.Delete*> method on a data source control). In this example, the <xref:System.Web.UI.WebControls.Button.OnClick*> event is delegated to the private `OnDelete` event handler, which explicitly calls the <xref:System.Web.UI.WebControls.SqlDataSource.Delete*> method of the <xref:System.Web.UI.WebControls.SqlDataSource> control.
@@ -1242,8 +1232,6 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
 
 > [!IMPORTANT]
 > For security purposes, the <xref:System.Web.UI.WebControls.SqlDataSource.DeleteCommand> property is not stored in view state. Because it is possible to decode the contents of view state on the client, storing sensitive information about the database structure in view state could result in an information disclosure vulnerability.
-
-
 
 ## Examples
  The following code example demonstrates how to set the <xref:System.Web.UI.WebControls.SqlDataSource.DeleteCommand*> text to delete an order from the Northwind database Orders table. Data is retrieved from the Orders table and displayed in a <xref:System.Web.UI.WebControls.GridView> control. The <xref:System.Web.UI.WebControls.GridView> renders a **Delete** button automatically when the <xref:System.Web.UI.WebControls.GridView.AutoGenerateDeleteButton> property is set to `true`. Additionally, when the **Delete** button is clicked, the <xref:System.Web.UI.WebControls.GridView> control automatically populates the <xref:System.Web.UI.WebControls.SqlDataSource.DeleteParameters*> collection and calls the <xref:System.Web.UI.WebControls.SqlDataSource.Delete*> method. Finally, because this code example deletes data, an event handler is added to attempt to back up the database to disk before the <xref:System.Web.UI.WebControls.SqlDataSource.Delete*> operation is performed.
@@ -1396,8 +1384,6 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
 > [!IMPORTANT]
 > Values are inserted into parameters without validation, which is a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Deleting> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
 
-
-
 ## Examples
  The following code example demonstrates how to set the <xref:System.Web.UI.WebControls.SqlDataSource.DeleteCommand*> text to delete an order from the Northwind database. Initially, data is retrieved from the Orders table and displayed in a <xref:System.Web.UI.WebControls.DropDownList> control. You must explicitly declare <xref:System.Web.UI.WebControls.SqlDataSource.DeleteParameters> property and call the <xref:System.Web.UI.WebControls.SqlDataSource.Delete*> method when using data-bound controls, such as <xref:System.Web.UI.WebControls.DropDownList> (unlike other controls, such as <xref:System.Web.UI.WebControls.GridView> and <xref:System.Web.UI.WebControls.DetailsView>, which automatically populate the parameters and call <xref:System.Web.UI.WebControls.SqlDataSource.Delete*> on a data source control). In this example, the <xref:System.Web.UI.WebControls.Button.OnClick*> event is delegated to the private `OnDelete` event handler, which explicitly calls the <xref:System.Web.UI.WebControls.SqlDataSource.Delete*> method of the <xref:System.Web.UI.WebControls.SqlDataSource> control.
 
@@ -1440,8 +1426,6 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
  The connection to the underlying data source is not yet open when the event handler delegate is called. Therefore, you cannot cancel the operation directly by calling the <xref:System.Data.Common.DbCommand.Cancel*> method on the <xref:System.Data.Common.DbCommand> object that is exposed by the <xref:System.Web.UI.WebControls.SqlDataSourceCommandEventArgs> object. You can, however, cancel the database operation by setting the <xref:System.ComponentModel.CancelEventArgs.Cancel> property of the <xref:System.Web.UI.WebControls.SqlDataSourceCommandEventArgs> object to `true`.
 
  For more information about how to handle events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example demonstrates how to handle the <xref:System.Web.UI.WebControls.SqlDataSource.Deleting> event that is raised before a <xref:System.Web.UI.WebControls.SqlDataSource.Delete*> operation occurs. Because this example deletes data from the Northwind database, an <xref:System.Web.UI.WebControls.SqlDataSourceView.OnDeleting*> handler is added to attempt to back up the database to disk before the <xref:System.Web.UI.WebControls.SqlDataSource.Delete*> operation is performed.
@@ -1497,8 +1481,6 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
 > [!IMPORTANT]
 > When you are using client impersonation under Microsoft Windows authentication, the data is cached when the first user accesses the data. If another user requests the same data, the data is retrieved from the cache. The data is not retrieved by making another call to the database to verify the user's access to the data. If you expect more than one user to access the data, and you want each retrieval to the data to be verified by the security configurations for the database, do not use caching.
 
-
-
 ## Examples
  The following code example demonstrates how to retrieve data from the Northwind database in Microsoft SQL Server and display it in a <xref:System.Web.UI.WebControls.GridView> control, with data caching enabled. The <xref:System.Web.UI.WebControls.SqlDataSource.EnableCaching> property is set to `true` and the <xref:System.Web.UI.WebControls.SqlDataSource.CacheDuration*> is set to 20 seconds. Because the <xref:System.Web.UI.WebControls.SqlDataSource.CacheExpirationPolicy> property is set to the <xref:System.Web.UI.DataSourceCacheExpiry.Absolute> field by default, users of this page will see fresh data every 20 seconds.
 
@@ -1552,8 +1534,6 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
  The <xref:System.Web.UI.WebControls.SqlDataSource> control supports filtering data only when in the <xref:System.Web.UI.WebControls.SqlDataSourceMode.DataSet> mode.
 
  The <xref:System.Web.UI.WebControls.SqlDataSource.FilterExpression> property delegates to the <xref:System.Web.UI.WebControls.SqlDataSourceView.FilterExpression> property of the <xref:System.Web.UI.WebControls.SqlDataSourceView> object that is associated with the <xref:System.Web.UI.WebControls.SqlDataSource> control.
-
-
 
 ## Examples
  The following code example demonstrates how to retrieve data from the Northwind database and filter it using a <xref:System.Web.UI.WebControls.SqlDataSource.FilterExpression*> string and the <xref:System.Web.UI.WebControls.SqlDataSource.FilterParameters*> collection. The <xref:System.Web.UI.WebControls.SqlDataSource.FilterExpression> property is applied any time the <xref:System.Web.UI.WebControls.SqlDataSource.Select*> method is executed to retrieve data. In this example, the <xref:System.Web.UI.WebControls.SqlDataSource.FilterExpression*> contains a placeholder for a filter parameter, which is contained in the <xref:System.Web.UI.WebControls.SqlDataSource.FilterParameters*> collection. In addition, the filter parameter is a <xref:System.Web.UI.WebControls.ControlParameter> object that is bound to the <xref:System.Web.UI.WebControls.ListControl.SelectedValue> property of the <xref:System.Web.UI.WebControls.DropDownList> control. Because the <xref:System.Web.UI.WebControls.DropDownList> control has its <xref:System.Web.UI.WebControls.ListControl.AutoPostBack> property set to `true`, any change in the selection for the <xref:System.Web.UI.WebControls.DropDownList> control causes the page to post information back to the server and the <xref:System.Web.UI.WebControls.GridView> control to rebind to the data source control with the new filter.
@@ -1656,8 +1636,6 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
 
 > [!IMPORTANT]
 > Values are inserted into parameters without validation, which is a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Filtering> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
-
-
 
 ## Examples
  The following code example demonstrates how to retrieve data from the Northwind database and filter it using the <xref:System.Web.UI.WebControls.SqlDataSource.FilterExpression*> and <xref:System.Web.UI.WebControls.SqlDataSource.FilterParameters*> properties. The <xref:System.Web.UI.WebControls.SqlDataSource.FilterExpression> property of the <xref:System.Web.UI.WebControls.SqlDataSource> control is applied anytime the <xref:System.Web.UI.WebControls.SqlDataSource.Select*> method is executed to retrieve data. In this example, the <xref:System.Web.UI.WebControls.SqlDataSource.FilterExpression> property contains a placeholder for a filter parameter, which is contained in the <xref:System.Web.UI.WebControls.SqlDataSource.FilterParameters*> collection. In addition, the filter parameter is a <xref:System.Web.UI.WebControls.ControlParameter> object that is bound to the <xref:System.Web.UI.WebControls.ListControl.SelectedValue> property of the <xref:System.Web.UI.WebControls.DropDownList> control. Because the <xref:System.Web.UI.WebControls.DropDownList> control has its <xref:System.Web.UI.WebControls.ListControl.AutoPostBack> property set to `true`, any change in the <xref:System.Web.UI.WebControls.DropDownList> selection causes the page to post information back to the server and the <xref:System.Web.UI.WebControls.GridView> control to rebind to the data source control with the new filter.
@@ -1814,8 +1792,6 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
 > [!IMPORTANT]
 > Values are inserted into parameters without validation, which is a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Filtering> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
 
-
-
 ## Examples
  The following code example demonstrates how to insert data into a database using the <xref:System.Web.UI.WebControls.SqlDataSource> control and a simple Web Forms page. The current data in the Data table is displayed in the <xref:System.Web.UI.WebControls.DropDownList> control. You can add new records by entering values in the <xref:System.Web.UI.WebControls.TextBox> controls, and then clicking the **Insert** button. When the **Insert** button is clicked, the specified values are inserted into the database, and then the <xref:System.Web.UI.WebControls.DropDownList> is refreshed.
 
@@ -1880,8 +1856,6 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
 
 > [!IMPORTANT]
 > Values are inserted into parameters without validation, which is a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Filtering> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
-
-
 
 ## Examples
  This section contains two code examples. The first code example demonstrates how to insert data into a database using the <xref:System.Web.UI.WebControls.SqlDataSource> control and a simple Web Forms page. The second code example demonstrates how to retrieve data from Microsoft SQL Server and display it in a <xref:System.Web.UI.WebControls.GridView> control and how to use a <xref:System.Web.UI.WebControls.DetailsView> control to see details of a selected row into the <xref:System.Web.UI.WebControls.GridView> control and as a form to insert new records.
@@ -1948,8 +1922,6 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
 ## Remarks
  The <xref:System.Web.UI.WebControls.SqlDataSource.InsertCommandType> property delegates to the <xref:System.Web.UI.WebControls.SqlDataSourceView.InsertCommandType> property of the <xref:System.Web.UI.WebControls.SqlDataSourceView> object that is associated with the <xref:System.Web.UI.WebControls.SqlDataSource> control.
 
-
-
 ## Examples
  The following code example demonstrates how to retrieve data from a Microsoft SQL Server database and display it in a <xref:System.Web.UI.WebControls.GridView> control. It also demonstrates how to use a <xref:System.Web.UI.WebControls.DetailsView> control to see details of a selected row in the <xref:System.Web.UI.WebControls.GridView> and as a form to insert new records.
 
@@ -1995,8 +1967,6 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
  Handle the <xref:System.Web.UI.WebControls.SqlDataSource.Inserted> event to examine the values of output parameters after an insert operation has completed. The output parameters are available from the <xref:System.Web.UI.WebControls.SqlDataSourceStatusEventArgs> object that is associated with the event.
 
  For more information about how to handle events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example demonstrates how to retrieve data from Microsoft SQL Server and display it in a <xref:System.Web.UI.WebControls.GridView> control and how to use a <xref:System.Web.UI.WebControls.DetailsView> control to see details of a selected row in the <xref:System.Web.UI.WebControls.GridView> and as a form to insert new records.
@@ -2049,8 +2019,6 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
  Handle the <xref:System.Web.UI.WebControls.SqlDataSource.Inserting> event to perform additional initialization operations that are specific to your application, to validate the values of parameters, or to change the parameter values before the <xref:System.Web.UI.WebControls.SqlDataSource> control performs the insert operation. The connection to the underlying data source is not yet open when the event handler delegate is called. Therefore, you cannot cancel the operation directly by calling the <xref:System.Data.Common.DbCommand.Cancel*> method on the <xref:System.Data.Common.DbCommand> object that is exposed by the <xref:System.Web.UI.WebControls.SqlDataSourceCommandEventArgs> property. You can, however, cancel the database operation by setting the <xref:System.ComponentModel.CancelEventArgs.Cancel> property of the <xref:System.Web.UI.WebControls.SqlDataSourceCommandEventArgs> object to `true`.
 
  For more information about how to handle events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example demonstrates how to retrieve data from Microsoft SQL Server and display it in a <xref:System.Web.UI.WebControls.GridView> control and how to use a <xref:System.Web.UI.WebControls.DetailsView> control to see details of a selected row in the <xref:System.Web.UI.WebControls.GridView> and as a form to insert new records.
@@ -2131,8 +2099,6 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
 
 > [!IMPORTANT]
 > Values are inserted into parameters without validation, which is a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Filtering> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
-
-
 
 ## Examples
  The following code example demonstrates how to insert data into a database using the <xref:System.Web.UI.WebControls.SqlDataSource> control and a simple Web Forms page. The current data in the Data table is displayed in the <xref:System.Web.UI.WebControls.DropDownList> control. You can add new records by entering values in the <xref:System.Web.UI.WebControls.TextBox> controls, and then clicking the **Insert** button. When the **Insert** button is clicked, the specified values are inserted into the database, and the <xref:System.Web.UI.WebControls.DropDownList> control is refreshed.
@@ -2320,8 +2286,6 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
 
  A list of available providers is specified in the `DbProviderFactories` subsection of the `system.data` section of the Machine.config file.
 
-
-
 ## Examples
  This section contains two code examples. The first code demonstrates how to connect to a SQL Server database using the default .NET Framework Data Provider for SQL Server for the <xref:System.Web.UI.WebControls.SqlDataSource> control, the <xref:System.Data.SqlClient?displayProperty=nameWithType>. The second code example demonstrates how to connect to an ODBC database using the .NET Framework Data Provider for ODBC, the <xref:System.Data.Odbc?displayProperty=nameWithType>.
 
@@ -2416,8 +2380,6 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
 > [!IMPORTANT]
 > Values are inserted into parameters without validation, which is a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Filtering> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
 
-
-
 ## Examples
  The following examples show how to programmatically call the <xref:System.Web.UI.WebControls.SqlDataSource.Select*> method and set values based on the result of the query. The following example shows the declarative code for the Web controls.
 
@@ -2482,8 +2444,6 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
 > [!IMPORTANT]
 > Values are inserted into parameters without validation, which is a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Filtering> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
 
-
-
 ## Examples
  This section contains two code examples. The first code example demonstrates how to set the <xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand*> text to a basic SQL query to retrieve data from an ODBC-compliant database and display it in a <xref:System.Web.UI.WebControls.GridView> control. The second code example demonstrates how to set the <xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand*> text to the name of a stored procedure and the <xref:System.Web.UI.WebControls.SqlDataSource.SelectCommandType> property to the <xref:System.Web.UI.WebControls.SqlDataSourceCommandType.StoredProcedure> value to retrieve data from a Microsoft SQL Server database and display it in a <xref:System.Web.UI.WebControls.DropDownList> control.
 
@@ -2539,8 +2499,6 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
 
 ## Remarks
  The <xref:System.Web.UI.WebControls.SqlDataSource.SelectCommandType> property delegates to the <xref:System.Web.UI.WebControls.SqlDataSourceView.SelectCommandType> property of the <xref:System.Web.UI.WebControls.SqlDataSourceView> object that is associated with the <xref:System.Web.UI.WebControls.SqlDataSource> control.
-
-
 
 ## Examples
  The following code example demonstrates how to set the <xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand*> text to the name of a stored procedure and the <xref:System.Web.UI.WebControls.SqlDataSource.SelectCommandType> property to the <xref:System.Web.UI.WebControls.SqlDataSourceCommandType.StoredProcedure> value, in order to retrieve data from a Microsoft SQL Server database and display it in a <xref:System.Web.UI.WebControls.DropDownList> control.
@@ -2685,8 +2643,6 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
 > [!IMPORTANT]
 > Values are inserted into parameters without validation, which is a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Selecting> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
 
-
-
 ## Examples
  The following code example demonstrates how to retrieve data from the Northwind database in Microsoft SQL Server by setting the <xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand> property to an SQL query. The SQL query is parameterized and the placeholder in the <xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand> property is matched to the <xref:System.Web.UI.WebControls.ControlParameter> object that is added to the <xref:System.Web.UI.WebControls.SqlDataSource.SelectParameters*> collection. The <xref:System.Web.UI.WebControls.DropDownList> control, which the <xref:System.Web.UI.WebControls.ControlParameter> is bound to, acts as a filter for what is displayed in the <xref:System.Web.UI.WebControls.ListBox> control.
 
@@ -2783,8 +2739,6 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
 > [!IMPORTANT]
 > When you are using client impersonation under Microsoft Windows authentication, the data is cached when the first user accesses the data. If another user requests the same data, the data is retrieved from the cache. The data is not retrieved by making another call to the database to verify the user's access to the data. If you expect more than one user to access the data, and you want each retrieval to the data to be verified by the security configurations for the database, do not use caching.
 
-
-
 ## Examples
  The following code example demonstrates how to create a SQL Server cache dependency and set the <xref:System.Web.UI.WebControls.SqlDataSource.SqlCacheDependency> property of a <xref:System.Web.UI.WebControls.SqlDataSource> control. In this example, the database is polled every 120 seconds. If the data in the Northwind Traders Employees table changes during that time, any data that is cached by the <xref:System.Web.UI.WebControls.SqlDataSource> control and displayed by the <xref:System.Web.UI.WebControls.GridView> control is refreshed by the <xref:System.Web.UI.WebControls.SqlDataSource> control the next time the database is polled.
 
@@ -2865,8 +2819,6 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
 > [!IMPORTANT]
 > Values are inserted into parameters without validation, which is a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Updating> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
 
-
-
 ## Examples
  This section contains two code examples. The first code example demonstrates how to use a <xref:System.Web.UI.WebControls.SqlDataSource> control to display data in a <xref:System.Web.UI.WebControls.DropDownList> control and update data when the **Submit** button is clicked. The second code example demonstrates how to display data that is retrieved from a Microsoft SQL Server database in a <xref:System.Web.UI.WebControls.DropDownList> control and update the record using a <xref:System.Web.UI.WebControls.TextBox> control.
 
@@ -2932,8 +2884,6 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
 
 > [!IMPORTANT]
 > Values are inserted into parameters without validation, which is a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Filtering> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
-
-
 
 ## Examples
  This section contains two code examples. The first code example demonstrates how to set the <xref:System.Web.UI.WebControls.SqlDataSource.UpdateCommand> property of the <xref:System.Web.UI.WebControls.SqlDataSource> control and update data in a Microsoft SQL Server database using the <xref:System.Web.UI.WebControls.GridView> control. The second code example demonstrates how to update data in an ODBC database using the <xref:System.Web.UI.WebControls.GridView> control.
@@ -3023,8 +2973,6 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
 
  For more information about how to handle events, see [Handling and Raising Events](/dotnet/standard/events/).
 
-
-
 ## Examples
  The following code example demonstrates how to display and update data that is retrieved from an ODBC database in a <xref:System.Web.UI.WebControls.GridView> control. After a record is successfully updated, the <xref:System.Web.UI.WebControls.SqlDataSource.Updated> event is handled by an event handler to perform a post-processing step where an email notification is sent.
 
@@ -3098,8 +3046,6 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
 > [!IMPORTANT]
 > Values are inserted into parameters without validation, which is a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Filtering> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
 
-
-
 ## Examples
  The following code example demonstrates how to use a <xref:System.Web.UI.WebControls.SqlDataSource> control to display data in a <xref:System.Web.UI.WebControls.DropDownList> control and update data when the **Submit** button is clicked. The <xref:System.Web.UI.WebControls.SqlDataSource.UpdateCommand*> is set with a parameterized SQL statement and two <xref:System.Web.UI.WebControls.ControlParameter> parameters are added to the <xref:System.Web.UI.WebControls.SqlDataSource.UpdateParameters*> collection. When the **Submit** button is clicked, the <xref:System.Web.UI.WebControls.Button.OnClick*> event is handled to call the <xref:System.Web.UI.WebControls.SqlDataSource.Update*> method explicitly.
 
@@ -3146,8 +3092,6 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
 
 > [!IMPORTANT]
 > Values are inserted into parameters without validation, which is a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Updating> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
-
-
 
 ## Examples
  The following code example demonstrates how to display data that is retrieved from a Microsoft SQL Server database in a <xref:System.Web.UI.WebControls.DropDownList> control and update the record using a <xref:System.Web.UI.WebControls.TextBox> control. The example shows how you can use a <xref:System.Data.Common.DbTransaction> object to add transaction context when using the <xref:System.Web.UI.WebControls.SqlDataSource> control to update data.

@@ -49,8 +49,6 @@
 
  For more information about how to use attributes, see [Attributes](/dotnet/standard/attributes/).
 
-
-
 ## Examples
  The following example shows how to apply <xref:System.Web.Script.Services.ScriptMethodAttribute> to the `GetXmlDocument` and `EchoStringAndDate` methods to specify which HTTP verb to use and to specify the response format.
 
@@ -125,8 +123,6 @@
 
  When the <xref:System.Web.Script.Services.ScriptMethodAttribute.ResponseFormat> property is set to `Xml`, the public fields and properties of the return type that have the <xref:System.Web.Script.Serialization.ScriptIgnoreAttribute> attribute applied will not be ignored. This is because they will be serialized by using the <xref:System.Xml.Serialization.XmlSerializer> object instead of the <xref:System.Web.Script.Serialization.JavaScriptSerializer> object. You must apply the <xref:System.Xml.Serialization.XmlIgnoreAttribute> attribute to make <xref:System.Xml.Serialization.XmlSerializer> ignore, or skip, those public fields and properties of the return type.
 
-
-
 ## Examples
  The following example shows how to apply the <xref:System.Web.Script.Services.ScriptMethodAttribute> attribute to a Web method with the <xref:System.Web.Script.Services.ScriptMethodAttribute.ResponseFormat> property set to `Xml`. The return value of the method will be serialized as XML and sent to the succeeded callback function as an object of type <xref:System.Xml.XmlDocument>. This code example is part of a larger example provided for the <xref:System.Web.Script.Services.ScriptMethodAttribute> class.
 
@@ -181,8 +177,6 @@
 > [!IMPORTANT]
 > Setting the <xref:System.Web.Script.Services.ScriptMethodAttribute.UseHttpGet> property to `true` might pose a security risk for your application if you are working with sensitive data or transactions. In GET requests, the message is encoded by the browser into the URL and is therefore an easier target for tampering.
 
-
-
 ## Examples
  The following example shows how to apply <xref:System.Web.Script.Services.ScriptMethodAttribute> to a Web method with the <xref:System.Web.Script.Services.ScriptMethodAttribute.UseHttpGet> property set to `true`. This code example is part of a larger example provided for the <xref:System.Web.Script.Services.ScriptMethodAttribute> class.
 
@@ -229,8 +223,6 @@
  When this property is set to `false`, all return types are serialized as XML, except string, which is interpreted as XML markup. If the value is `false`, and if the return type is a string, and if the string does not contain XML markup that corresponds to a well-formed XML document, the succeeded callback function will be invoked but the resulting serialized string will be `null`.
 
  The value of <xref:System.Web.Script.Services.ScriptMethodAttribute.XmlSerializeString*> is ignored when the <xref:System.Web.Script.Services.ScriptMethodAttribute.ResponseFormat> property is set to `Json`.
-
-
 
 ## Examples
  The following example shows how to apply <xref:System.Web.Script.Services.ScriptMethodAttribute> to a Web method with the <xref:System.Web.Script.Services.ScriptMethodAttribute.XmlSerializeString> property set to `true`. This code example is part of a larger example provided for the <xref:System.Web.Script.Services.ScriptMethodAttribute> class.

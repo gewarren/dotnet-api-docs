@@ -44,8 +44,6 @@
 > [!NOTE]
 > To avoid issues with graphics flickering when owner drawing, override the <xref:System.Windows.Forms.ListView> control and set the <xref:System.Windows.Forms.ListView.DoubleBuffered> property to `true`. This feature is available only on Windows XP and the Windows Server 2003 family when your application calls the <xref:System.Windows.Forms.Application.EnableVisualStyles*?displayProperty=nameWithType> method.
 
-
-
 ## Examples
  The following code example demonstrates how to provide custom drawing for a <xref:System.Windows.Forms.ListView> control. The <xref:System.Windows.Forms.ListView> control in the example has a gradient background. Subitems with negative values have a red foreground and a black background.
 
@@ -140,8 +138,6 @@
  The location specified by this property is relative to the upper left corner of the <xref:System.Windows.Forms.ListView> control.
 
  To retrieve the bounds for specific portions of a <xref:System.Windows.Forms.ListViewItem>, use the <xref:System.Windows.Forms.ListViewItem.GetBounds*?displayProperty=nameWithType> method.
-
-
 
 ## Examples
  The following code example demonstrates how to use the <xref:System.Windows.Forms.DrawListViewItemEventArgs.Bounds> property in an application that provides custom drawing for a <xref:System.Windows.Forms.ListView> control. In the example, a handler for the <xref:System.Windows.Forms.ListView.DrawItem?displayProperty=nameWithType> event draws the background for entire items. In all views except the details view, this handler also draws the foreground text. In the details view, the foreground text is drawn in the <xref:System.Windows.Forms.ListView.DrawSubItem?displayProperty=nameWithType> event.
@@ -244,8 +240,6 @@
 ## Remarks
  Set this property to `true` when the item does not require custom drawing. This is useful when you need to customize only certain items within the control, such as selected items.
 
-
-
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.ListView.DrawItem?displayProperty=nameWithType> event. This report helps you to learn when the event occurs and can assist you in debugging.
 
@@ -291,8 +285,6 @@
  Use this method to draw a standard focus rectangle around the item. The focus rectangle is normally drawn within the area specified by the <xref:System.Windows.Forms.DrawListViewItemEventArgs.Bounds> property. If the control is in the details view and the <xref:System.Windows.Forms.ListView.FullRowSelect?displayProperty=nameWithType> property value is `false`, however, the focus rectangle is drawn around the default text area for the first column of the item.
 
  The focus rectangle is drawn only when the item has focus, so you do not need to check the focus state of the item before you call this method.
-
-
 
 ## Examples
  The following code example demonstrates how to use the <xref:System.Windows.Forms.DrawListViewItemEventArgs.DrawFocusRectangle*> method in an application that provides custom drawing for a <xref:System.Windows.Forms.ListView> control. In the example, a handler for the <xref:System.Windows.Forms.ListView.DrawItem?displayProperty=nameWithType> event draws the background for entire items. In all views except the details view, this handler also draws the foreground text. In the details view, the foreground text is drawn in the <xref:System.Windows.Forms.ListView.DrawSubItem?displayProperty=nameWithType> event.
@@ -358,8 +350,6 @@
  Use this method to draw the item text using the current values of the <xref:System.Windows.Forms.ListViewItem.ForeColor*?displayProperty=nameWithType> and <xref:System.Windows.Forms.ListViewItem.Font*?displayProperty=nameWithType> properties. The text is drawn within the area specified by the <xref:System.Windows.Forms.DrawListViewItemEventArgs.Bounds> property. You can also draw the text manually using the <xref:System.Drawing.Graphics> retrieved through the <xref:System.Windows.Forms.DrawListViewItemEventArgs.Graphics> property.
 
  The <xref:System.Windows.Forms.DrawListViewItemEventArgs.DrawText*> method is most useful when the <xref:System.Windows.Forms.ListView.View?displayProperty=nameWithType> property is set to a value other than <xref:System.Windows.Forms.View.Details?displayProperty=nameWithType>. In the details view, this method draws the text for the <xref:System.Windows.Forms.ListViewItem>, but does not draw the text for subitems. Therefore, in the details view, it is generally more convenient to draw all of the <xref:System.Windows.Forms.ListView> text in a handler for the <xref:System.Windows.Forms.ListView.DrawSubItem?displayProperty=nameWithType> event.
-
-
 
 ## Examples
  The following code example demonstrates how to use the <xref:System.Windows.Forms.DrawListViewItemEventArgs.DrawText*> method in an application that provides custom drawing for a <xref:System.Windows.Forms.ListView> control. In the example, a handler for the <xref:System.Windows.Forms.ListView.DrawItem?displayProperty=nameWithType> event draws the background for entire items. In all views except the details view, this handler also draws the foreground text. In the details view, the foreground text is drawn in the <xref:System.Windows.Forms.ListView.DrawSubItem?displayProperty=nameWithType> event.
@@ -471,8 +461,6 @@
 ## Remarks
  The <xref:System.Drawing.Graphics> class provides properties and methods useful for drawing on the display device.
 
-
-
 ## Examples
  The following code example demonstrates how to use the <xref:System.Windows.Forms.DrawListViewItemEventArgs.Graphics> property in an application that provides custom drawing for a <xref:System.Windows.Forms.ListView> control. In the example, a handler for the <xref:System.Windows.Forms.ListView.DrawItem?displayProperty=nameWithType> event draws the background for entire items. In all views except the details view, this handler also draws the foreground text. In the details view, the foreground text is drawn in the <xref:System.Windows.Forms.ListView.DrawSubItem?displayProperty=nameWithType> event.
 
@@ -526,8 +514,6 @@
 
 ## Remarks
  Use this property to access the <xref:System.Windows.Forms.ListViewItem> to draw. This is useful when the <xref:System.Windows.Forms.DrawListViewItemEventArgs.State> property does not provide adequate information to meet your needs. The <xref:System.Windows.Forms.DrawListViewItemEventArgs.State> property provides only basic state information that you can use, for example, to determine whether an item is selected, checked, or focused. The <xref:System.Windows.Forms.DrawListViewItemEventArgs.Item> property, on the other hand, allows you to access all members of the <xref:System.Windows.Forms.ListViewItem>. You must access the item directly, for example, to draw the <xref:System.Windows.Forms.ListViewItem.Text*?displayProperty=nameWithType> value yourself rather than using the <xref:System.Windows.Forms.DrawListViewItemEventArgs.DrawText*> method.
-
-
 
 ## Examples
  The following code example demonstrates how to use the <xref:System.Windows.Forms.DrawListViewItemEventArgs.Item> property in an application that provides custom drawing for a <xref:System.Windows.Forms.ListView> control. In the example, a handler for the <xref:System.Windows.Forms.ListView.DrawItem?displayProperty=nameWithType> event draws the background for entire items. In all views except the details view, this handler also draws the foreground text. In the details view, the foreground text is drawn in the <xref:System.Windows.Forms.ListView.DrawSubItem?displayProperty=nameWithType> event.
@@ -636,8 +622,6 @@
 
 ## Remarks
  Use this property to check whether the <xref:System.Windows.Forms.ListViewItem> to draw is in a particular state. This property provides only basic state information about the item. You can use this property, for example, to determine whether an item is selected, checked, or focused. If you need to know more, retrieve the item through the <xref:System.Windows.Forms.DrawListViewItemEventArgs.Item> property and check its properties directly.
-
-
 
 ## Examples
  The following code example demonstrates how to use the <xref:System.Windows.Forms.DrawListViewItemEventArgs.State> property in an application that provides custom drawing for a <xref:System.Windows.Forms.ListView> control. In the example, a handler for the <xref:System.Windows.Forms.ListView.DrawItem?displayProperty=nameWithType> event draws the background for entire items. In all views except the details view, this handler also draws the foreground text. In the details view, the foreground text is drawn in the <xref:System.Windows.Forms.ListView.DrawSubItem?displayProperty=nameWithType> event.

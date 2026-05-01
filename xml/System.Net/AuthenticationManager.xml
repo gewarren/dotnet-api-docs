@@ -216,8 +216,6 @@
 
  The credential policy will be called only for requests that specify credentials or use a <xref:System.Net.WebProxy> object that specifies credentials.
 
-
-
 ## Examples
  The following code example demonstrates setting the credential policy.
 
@@ -288,8 +286,6 @@
 > When Kerberos authentication is performed through a proxy, both the proxy and the ultimate host name need to be resolved to an SPN. The proxy name resolution is protected by a timeout. Resolution of the ultimate host name to a SPN requires a DNS lookup, and there is no timeout associated directly with this operation. Therefore synchronous operations may take longer to timeout. To overcome this, add the ultimate host's URI prefix to the SPN cache prior to making requests to it.
 
  Version 3.5 SP1 now defaults to specifying the host name used in the request URL in the SPN in the NTLM (NT LAN Manager) authentication exchange when the <xref:System.Net.AuthenticationManager.CustomTargetNameDictionary> property is not set. The host name used in the request URL may be different from the Host header specified in the <xref:System.Net.HttpRequestHeader?displayProperty=nameWithType> in the client request. The host name used in the request URL may be different from the actual host name of the server, the machine name of the server, the computer's IP address, or the loopback address. In these cases, Windows will fail the authentication request. To address the issue, you may need to notify Windows that the host name used in the request URL in the client request ("contoso", for example) is actually an alternate name for the local computer.
-
-
 
 ## Examples
  The following code example demonstrates displaying the contents of the <xref:System.Net.AuthenticationManager.CustomTargetNameDictionary*>.
@@ -422,8 +418,6 @@
 ## Remarks
  The <xref:System.Net.AuthenticationManager.Register*> method adds authentication modules to the end of the list of modules called by the <xref:System.Net.AuthenticationManager.Authenticate*> method. Authentication modules are called in the order in which they were added to the list. If a module with the same <xref:System.Net.IAuthenticationModule.AuthenticationType*> is already registered, this method removes the registered module and adds `authenticationModule` to the end of the list.
 
-
-
 ## Examples
  The following example registers an authentication module with the authentication manager. For a complete example, refer to the <xref:System.Net.AuthenticationManager> class.
 
@@ -480,8 +474,6 @@
 
 ## Remarks
  The <xref:System.Net.AuthenticationManager.RegisteredModules> property provides an <xref:System.Collections.IEnumerator> instance that enables the list of registered authentication modules to be read. The <xref:System.Net.AuthenticationManager.Register*> method adds modules to the list, and the <xref:System.Net.AuthenticationManager.Unregister*> method removes modules from it.
-
-
 
 ## Examples
  The following example uses the <xref:System.Net.AuthenticationManager.RegisteredModules> property to get a list of authentication modules that are registered with the authentication manager. For a complete example, refer to the <xref:System.Net.AuthenticationManager> class.
@@ -551,8 +543,6 @@
 ## Remarks
  The <xref:System.Net.AuthenticationManager.Unregister*> method removes the specified authentication module from the list of authentication modules called by the <xref:System.Net.AuthenticationManager.Authenticate*> method. The module must have been added to the list using the <xref:System.Net.AuthenticationManager.Register*> method before it can be removed from the list.
 
-
-
 ## Examples
  The following example uses the <xref:System.Net.AuthenticationManager.Unregister*> method to remove the specified authentication module from the list of registered modules. For a complete example, refer to the <xref:System.Net.AuthenticationManager> class.
 
@@ -613,8 +603,6 @@
 
 ## Remarks
  The <xref:System.Net.AuthenticationManager.Unregister*> method removes the authentication module with the specified authentication scheme from the list of authentication modules called by the <xref:System.Net.AuthenticationManager.Authenticate*> method. The module must have been added to the list using the <xref:System.Net.AuthenticationManager.Register*> method before it can be removed from the list.
-
-
 
 ## Examples
  The following example uses the <xref:System.Net.AuthenticationManager.Unregister*> method to remove an authentication module with the specified authentication scheme from the list of registered modules.

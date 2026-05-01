@@ -406,8 +406,6 @@
 ## Remarks
  The <xref:System.Security.AccessControl.MutexSecurity.AddAccessRule*> method searches for rules with the same user or group and the same <xref:System.Security.AccessControl.AccessControlType> as `rule`. If none are found, `rule` is added. If a matching rule is found, the rights in `rule` are merged with the existing rule.
 
-
-
 ## Examples
  The following code example demonstrates the separation between <xref:System.Security.AccessControl.AccessControlType.Allow> rules and <xref:System.Security.AccessControl.AccessControlType.Deny> rules, and shows the combination of rights in compatible rules. The example creates a <xref:System.Security.AccessControl.MutexSecurity> object, adds rules that allow and deny various rights for the current user, and displays the resulting pair of rules. The example then allows new rights for the current user and displays the result, showing that the new rights are merged with the existing <xref:System.Security.AccessControl.AccessControlType.Allow> rule.
 
@@ -631,8 +629,6 @@
 > [!IMPORTANT]
 > Although you can specify inheritance and propagation flags for mutex access rules, by creating them with the <xref:System.Security.AccessControl.MutexSecurity.AccessRuleFactory*> method, this is not recommended. Inheritance and propagation have no meaning for named mutexes, and they make the maintenance of access rules more complicated.
 
-
-
 ## Examples
  The following code example demonstrates the use of the <xref:System.Security.AccessControl.MutexSecurity.RemoveAccessRule*> method to remove rights from an <xref:System.Security.AccessControl.AccessControlType.Allow> rule in a <xref:System.Security.AccessControl.MutexSecurity> object. It also shows that other rights in `rule` are ignored.
 
@@ -691,8 +687,6 @@
 
 ## Remarks
  The current <xref:System.Security.AccessControl.MutexSecurity> object is searched for rules that have the same user and the same <xref:System.Security.AccessControl.AccessControlType> value as `rule`. Any rights specified by `rule` are ignored when performing this search. If no matching rules are found, no action is taken.
-
-
 
 ## Examples
  The following code example shows that the <xref:System.Security.AccessControl.MutexSecurity.RemoveAccessRuleAll*> method removes all rules that match user and <xref:System.Security.AccessControl.AccessControlType>, ignoring rights.
@@ -755,8 +749,6 @@
 
 > [!IMPORTANT]
 > A rule represents one or more underlying access control entries (ACE), and these entries are split or combined as necessary when you modify the access security rules for a user. Thus, a rule might no longer exist in the specific form it had when it was added, and in that case the <xref:System.Security.AccessControl.MutexSecurity.RemoveAccessRuleSpecific*> method cannot remove it.
-
-
 
 ## Examples
  The following code example shows that the <xref:System.Security.AccessControl.MutexSecurity.RemoveAccessRuleSpecific*> method requires an exact match in order to remove a rule, and that rules to allow and deny rights are independent of each other.
@@ -969,8 +961,6 @@
 ## Remarks
  If there are no access rules whose user matches the specified rule, `rule` is added.
 
-
-
 ## Examples
  The following code example shows how the <xref:System.Security.AccessControl.MutexSecurity.ResetAccessRule*> method replaces all rules for the matching user with the rule specified for the match.
 
@@ -1031,8 +1021,6 @@
  If the specified rule has <xref:System.Security.AccessControl.AccessControlType.Allow>, the effect of this method is to remove all <xref:System.Security.AccessControl.AccessControlType.Allow> rules for the specified user, replacing them with the specified rule. If the specified rule has <xref:System.Security.AccessControl.AccessControlType.Deny>, all <xref:System.Security.AccessControl.AccessControlType.Deny> rules for the specified user are replaced with the specified rule.
 
  If there are no rules whose user and <xref:System.Security.AccessControl.AccessControlType> match the specified rule, `rule` is added.
-
-
 
 ## Examples
  The following code example shows how the <xref:System.Security.AccessControl.MutexSecurity.SetAccessRule*> method removes all rules that match both the user and the <xref:System.Security.AccessControl.AccessControlType> of `rule`, replacing them with `rule`.

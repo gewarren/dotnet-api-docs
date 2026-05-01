@@ -460,8 +460,6 @@
 
  You can also use the <xref:System.Web.UI.Page.Context?displayProperty=nameWithType> property to access the <xref:System.Web.HttpContext> object for the current HTTP request.
 
-
-
 ## Examples
  The following code example uses the <xref:System.Web.HttpContext.Current> property to access the <xref:System.Web.HttpContext.AddError*?displayProperty=nameWithType> and <xref:System.Web.HttpContext.ClearError*?displayProperty=nameWithType> methods and the <xref:System.Web.HttpContext.AllErrors?displayProperty=nameWithType> property. The example creates three custom exceptions using the <xref:System.Web.HttpContext.AddError*> method and uses the <xref:System.Web.HttpContext.AllErrors> property to load these exceptions to an array. It then writes the array to the containing page and uses the <xref:System.Web.HttpContext.ClearError*> method to clear all the errors from the <xref:System.Web.UI.Page.Context> property.
 
@@ -577,8 +575,6 @@ End Sub
  The <xref:System.Web.HttpContext.CurrentNotification> property is not intended to be set. Instead, it is set by IIS 7.0 during the processing of the request in the ASP.NET pipeline. Setting the <xref:System.Web.HttpContext.CurrentNotification> property will result in a compilation error.
 
  <xref:System.Web.HttpContext.CurrentNotification*> is introduced in the .NET Framework version 3.5.  For more information, see [Versions and Dependencies](/dotnet/framework/migration-guide/versions-and-dependencies).
-
-
 
 ## Examples
  The following example demonstrates how to use the <xref:System.Web.HttpContext.CurrentNotification> property to determine what event of the <xref:System.Web.HttpApplication> object that is handling the current request is being processed. In the example, the event handler handles several events of the <xref:System.Web.HttpApplication> object, and the <xref:System.Web.HttpContext.CurrentNotification> property determines what code is invoked for each event being handled.
@@ -1102,8 +1098,6 @@ End Sub
 
  <xref:System.Web.HttpContext.IsPostNotification*> is introduced in the .NET Framework version 3.5.  For more information, see [Versions and Dependencies](/dotnet/framework/migration-guide/versions-and-dependencies).
 
-
-
 ## Examples
  The following example demonstrates how to use the <xref:System.Web.HttpContext.IsPostNotification> property to determine when an event of the <xref:System.Web.HttpApplication> object has finished processing all the associated event handlers. The custom event handler in this example handles several events of the <xref:System.Web.HttpApplication> object, and the <xref:System.Web.HttpContext.IsPostNotification> property is used to determine what code is invoked after a specific event is handled.
 
@@ -1433,8 +1427,6 @@ End Sub
 
  If you want to enable a site to use URLs that are more user-friendly and are optimized for search engines, a more robust alternative is to use ASP.NET routing. For more information, see [ASP.NET Routing](https://learn.microsoft.com/previous-versions/aspnet/cc668201(v=vs.100)).
 
-
-
 ## Examples
  The following example shows how to use the <xref:System.Web.HttpContext.RewritePath*> method to enable a Web site to respond to URLs that do not reflect the file structure in the Web site. The first block of code is an ASP.NET Web page that is named RewritePath.aspx. It requires a query string. If the name of your site is WebSite1, the URL `http://localhost/WebSite1/RewritePath.aspx?page=1` displays "Page 1" in the browser. The block of code that follows the Web page is the `Application_BeginRequest` event handler in the Global.asax file. This code intercepts requests for URLs such as `http://localhost/WebSite1/page1` and converts them to the form that is required for RewritePath.aspx before they are processed. Therefore, the URL `http://localhost/WebSite1/page1` invokes RewritePath.aspx with the query-string parameter that displays "Page 1" in the browser. If a URL such as `http://localhost/WebSite1/page1` is received, an overload of <xref:System.Web.HttpContext.RewritePath*> is invoked that enables you to provide a value for the <xref:System.Web.HttpRequest.PathInfo> property as well as a query string parameter.
 
@@ -1487,8 +1479,6 @@ End Sub
 
  If you want to enable a site to use URLs that are more user-friendly and are optimized for search engines, a more robust alternative is to use ASP.NET routing. For more information, see [ASP.NET Routing](https://learn.microsoft.com/previous-versions/aspnet/cc668201(v=vs.100)).
 
-
-
 ## Examples
  For a code example, see the <xref:System.Web.HttpContext.RewritePath(System.String)> method overload.
 
@@ -1538,8 +1528,6 @@ End Sub
  URL rewriting is useful when you want to restructure the pages in your Web application, and you want to make sure that people who have bookmarked old URLs can still use them after you have moved pages. URL rewriting enables you to transparently forward requests to the new page location.
 
  If you want to enable a site to use URLs that are more user-friendly and are optimized for search engines, a more robust alternative is to use ASP.NET routing. For more information, see [ASP.NET Routing](https://learn.microsoft.com/previous-versions/aspnet/cc668201(v=vs.100)).
-
-
 
 ## Examples
  For a code example, including an example of this method overload, see the <xref:System.Web.HttpContext.RewritePath(System.String)> method overload.
@@ -1592,8 +1580,6 @@ End Sub
  URL rewriting is useful when you want to restructure the pages in your Web application, and you want to make sure that people who have bookmarked old URLs can still use them after you have moved pages. URL rewriting enables you to transparently forward requests to the new page location.
 
  If you want to enable a site to use URLs that are more user-friendly and are optimized for search engines, a more robust alternative is to use ASP.NET routing. For more information, see [ASP.NET Routing](https://learn.microsoft.com/previous-versions/aspnet/cc668201(v=vs.100)).
-
-
 
 ## Examples
  For a code example, see the <xref:System.Web.HttpContext.RewritePath(System.String)> method overload.
@@ -1665,8 +1651,6 @@ End Sub
  In order to use session state you have to enable it. For information about how to enable session state, see **Configuring Session State** in [ASP.NET Session State Overview](https://learn.microsoft.com/previous-versions/aspnet/ms178581(v=vs.100)).
 
  For information about how to save values in session state, see [How to: Save Values in Session State](https://learn.microsoft.com/previous-versions/aspnet/6ad7zeeb(v=vs.100)). For information about how to read values from session state, see [How to: Read Values from Session State](https://learn.microsoft.com/previous-versions/aspnet/03sekbw5(v=vs.100)).
-
-
 
 ## Examples
  The following examples show how to save values in session state and how to read values from session state.
@@ -1957,8 +1941,6 @@ firstName = DirectCast(context.Session("FirstName"), String)
  The <xref:System.Web.HttpContext.User> property provides programmatic access to the properties and methods of the <xref:System.Security.Principal.IPrincipal> interface.
 
  Because ASP.NET pages contain a default reference to the <xref:System.Web> namespace (which contains the <xref:System.Web.HttpContext> class), you can reference the members of <xref:System.Web.HttpContext> on an .aspx page without using the fully qualified class reference to <xref:System.Web.HttpContext>. For example, you can use `User.Identity.Name` to get the name of the user on whose behalf the current process is running. However, if you want to use the members of <xref:System.Security.Principal.IPrincipal> from an ASP.NET code-behind module, you must include a reference to the <xref:System.Web> namespace in the module and a fully qualified reference to both the currently active request/response context and the class in <xref:System.Web> that you want to use. For example, in a code-behind page you must specify the fully qualified name `HttpContext.Current.User.Identity.Name`.
-
-
 
 ## Examples
  The following example shows how to access properties of the current user through the <xref:System.Web.HttpContext.User> property. Those properties are used to set the title of the Web page.

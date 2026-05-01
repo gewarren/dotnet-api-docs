@@ -142,8 +142,6 @@
 
  Use a C# `try`…`finally` block (`Try`…`Finally` in Visual Basic) to ensure that you release the monitor, or use the C# `lock` statement (`SyncLock` statement in Visual Basic), which wraps the <xref:System.Threading.Monitor.Enter*> and <xref:System.Threading.Monitor.Exit*> methods in a `try`…`finally` block.
 
-
-
 ## Examples
  The following example demonstrates how to use the `Enter` method.
 
@@ -226,8 +224,6 @@
 
  <xref:System.Threading.Thread.Interrupt*> can interrupt threads that are waiting to enter a `Monitor` on an object. A <xref:System.Threading.ThreadInterruptedException> will be thrown.
 
-
-
 ## Examples
  The following code shows the basic pattern for using the <xref:System.Threading.Monitor.Enter(System.Object,System.Boolean@)> method overload. This overload always sets the value of the variable that is passed to the `ref` parameter (`ByRef` in Visual Basic) `lockTaken`, even if the method throws an exception, so the value of the variable is a reliable way to test whether the lock has to be released.
 
@@ -301,8 +297,6 @@
  The calling thread must own the lock on the `obj` parameter. If the calling thread owns the lock on the specified object, and has made an equal number of `Exit` and <xref:System.Threading.Monitor.Enter*> calls for the object, then the lock is released. If the calling thread has not invoked `Exit` as many times as `Enter`, the lock is not released.
 
  If the lock is released and other threads are in the ready queue for the object, one of the threads acquires the lock. If other threads are in the waiting queue waiting to acquire the lock, they are not automatically moved to the ready queue when the owner of the lock calls `Exit`. To move one or more waiting threads into the ready queue, call <xref:System.Threading.Monitor.Pulse*> or <xref:System.Threading.Monitor.PulseAll*> before invoking `Exit`.
-
-
 
 ## Examples
  The following example demonstrates how to use the `Exit` method.
@@ -640,8 +634,6 @@
  :::code language="csharp" source="~/snippets/csharp/System.Threading/Monitor/TryEnter/pattern1.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Threading/Monitor/TryEnter/pattern1.vb" id="Snippet1":::
 
-
-
 ## Examples
  The following code example demonstrates how to use the `TryEnter` method.
 
@@ -726,8 +718,6 @@
 
  :::code language="csharp" source="~/snippets/csharp/System.Threading/Monitor/TryEnter/pattern1.cs" id="Snippet2":::
  :::code language="vb" source="~/snippets/visualbasic/System.Threading/Monitor/TryEnter/pattern1.vb" id="Snippet2":::
-
-
 
 ## Examples
  The following code shows the basic pattern for using the <xref:System.Threading.Monitor.TryEnter(System.Object,System.Boolean@)> method overload. This overload always sets the value of the variable that is passed to the `ref` parameter (`ByRef` in Visual Basic) `lockTaken`, even if the method throws an exception, so the value of the variable is a reliable way to test whether the lock has to be released.
@@ -959,8 +949,6 @@
 
  :::code language="csharp" source="~/snippets/csharp/System.Threading/Monitor/TryEnter/pattern1.cs" id="Snippet4":::
  :::code language="vb" source="~/snippets/visualbasic/System.Threading/Monitor/TryEnter/pattern1.vb" id="Snippet4":::
-
-
 
 ## Examples
  The following code shows the basic pattern for using the <xref:System.Threading.Monitor.TryEnter(System.Object,System.Boolean@)> method overload. This overload always sets the value of the variable that is passed to the `ref` parameter (`ByRef` in Visual Basic) `lockTaken`, even if the method throws an exception, so the value of the variable is a reliable way to test whether the lock has to be released.

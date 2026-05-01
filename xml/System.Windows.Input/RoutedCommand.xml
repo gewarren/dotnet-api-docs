@@ -261,8 +261,6 @@
 
  The <xref:System.Windows.Input.CommandManager.PreviewCanExecute> and <xref:System.Windows.Input.CommandManager.PreviewExecuted> events are raised on the <xref:System.Windows.Input.ICommandSource.CommandTarget*>.  If the <xref:System.Windows.Input.ICommandSource.CommandTarget*> is not set on the <xref:System.Windows.Input.ICommandSource>, the <xref:System.Windows.Input.CommandManager.PreviewCanExecute> and <xref:System.Windows.Input.CommandManager.CanExecute> events are raised on the element with keyboard focus.
 
-
-
 ## Examples
  The following example is a <xref:System.Windows.Input.ICommand.CanExecuteChanged> event handler from a custom implementation of <xref:System.Windows.Input.ICommandSource>.
 
@@ -314,8 +312,6 @@
  The <xref:System.Windows.Input.RoutedCommand> listens for the <xref:System.Windows.Input.CommandManager.RequerySuggested> event, which is raised by the <xref:System.Windows.Input.CommandManager>. The <xref:System.Windows.Input.CommandManager.RequerySuggested> event is raised whenever conditions are met that may change the whether the command should execute, such as a change in keyboard focus.  When the command receives the <xref:System.Windows.Input.CommandManager.RequerySuggested> event, it raises the <xref:System.Windows.Input.RoutedCommand.CanExecuteChanged> event.  Generally, the command source will listen for this event and query the <xref:System.Windows.Input.RoutedCommand> by way of the <xref:System.Windows.Input.RoutedCommand.CanExecute*> method.  Most command sources will disable themselves if the command cannot be executed, as part of their command binding.  An example of this is when a <xref:System.Windows.Controls.MenuItem> grays itself out when the command cannot be executed.
 
  In some situations, the <xref:System.Windows.Input.CommandManager> is unaware of a change in conditions that alters the ability of a command to execute.  In these cases, you can force the <xref:System.Windows.Input.CommandManager> to raises the <xref:System.Windows.Input.CommandManager.RequerySuggested> event by calling the <xref:System.Windows.Input.CommandManager.InvalidateRequerySuggested*> method, this will in turn cause the <xref:System.Windows.Input.RoutedCommand> to raise the <xref:System.Windows.Input.RoutedCommand.CanExecuteChanged> event.
-
-
 
 ## Examples
  The following example is a <xref:System.Windows.Input.ICommand.CanExecuteChanged> event handler from a custom implementation of <xref:System.Windows.Input.ICommandSource>.
@@ -375,8 +371,6 @@
  The actual logic that executes the <xref:System.Windows.Input.RoutedCommand> is not contained in the <xref:System.Windows.Input.RoutedCommand.Execute*> methods.  <xref:System.Windows.Input.RoutedCommand.Execute*> raises the <xref:System.Windows.Input.CommandManager.PreviewExecuted> and <xref:System.Windows.Input.CommandManager.Executed> events, which tunnel and bubble through the element tree looking for an object with a <xref:System.Windows.Input.CommandBinding>.  If a <xref:System.Windows.Input.CommandBinding> for that <xref:System.Windows.Input.RoutedCommand> is found, then the <xref:System.Windows.Input.ExecutedRoutedEventHandler> attached to <xref:System.Windows.Input.CommandBinding> is called.  These handlers supply the programming logic that performs the <xref:System.Windows.Input.RoutedCommand>.
 
  The <xref:System.Windows.Input.CommandManager.PreviewExecuted> and <xref:System.Windows.Input.CommandManager.Executed> events are raised on the <xref:System.Windows.Input.ICommandSource.CommandTarget*>.  If the <xref:System.Windows.Input.ICommandSource.CommandTarget*> is not set on the <xref:System.Windows.Input.ICommandSource>, the <xref:System.Windows.Input.CommandManager.PreviewExecuted> and <xref:System.Windows.Input.CommandManager.Executed> events are raised on the element with keyboard focus.
-
-
 
 ## Examples
  The following example is from a custom implementation of <xref:System.Windows.Input.ICommandSource> sample.
@@ -602,8 +596,6 @@
 
 ## Remarks
  This member is an explicit interface member implementation. It can be used only when the <xref:System.Windows.Input.RoutedCommand> instance is cast to an <xref:System.Windows.Input.ICommand> interface.
-
-
 
 ## Examples
  See Also

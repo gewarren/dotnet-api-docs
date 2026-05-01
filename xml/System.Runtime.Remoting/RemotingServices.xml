@@ -91,8 +91,6 @@
 ## Remarks
  The returned proxy object points to an endpoint served by the specified well-known object. No messages are sent over the network until a method is called on the proxy.
 
-
-
 ## Examples
  The following code example demonstrates how to use the <xref:System.Runtime.Remoting.RemotingServices.Connect*> method to create a proxy to a well-known object.
 
@@ -242,8 +240,6 @@
 ## Remarks
  The current method is used in special cases by the server to forward the specified method call to another, possibly remote, object. This method can be called only when the caller is in the appropriate context.
 
-
-
 ## Examples
  The following code example demonstrates how to use the <xref:System.Runtime.Remoting.RemotingServices.ExecuteMessage*> method to forward method calls to remote objects.
 
@@ -335,8 +331,6 @@
 
 ## Remarks
  For the default lifetime service the returned object will be an object of type <xref:System.Runtime.Remoting.Lifetime.ILease>. If the `obj` parameter is `null`, the method returns `null`.
-
-
 
 ## Examples
  The following code example demonstrates how to use the <xref:System.Runtime.Remoting.RemotingServices.GetLifetimeService*> method to get a lifetime lease for the specified object.
@@ -523,8 +517,6 @@
 
  A <xref:System.Runtime.Remoting.ObjRef> contains information that describes the <xref:System.Type> and class of the object being marshaled, a URI that uniquely identifies the specific object instance, and communication related information about how to reach the remote application where the object is located.
 
-
-
 ## Examples
  The following code example demonstrates how to get a <xref:System.Runtime.Remoting.ObjRef> instance for the specified object.
 
@@ -623,8 +615,6 @@
 
 ## Remarks
  Because remoting identifies endpoints using URIs, the <xref:System.Runtime.Remoting.RemotingServices.GetServerTypeForUri*> method is very useful in the pluggable parts of the remoting infrastructure (for example, channel sinks, dynamic sinks, and context sinks) that use <xref:System.Runtime.Remoting.Messaging.IMessage> objects, because the current method will return the associated type object from the URI.
-
-
 
 ## Examples
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.RemotingServices/CPP/remotingservicessample.cpp" id="Snippet7":::
@@ -752,8 +742,6 @@
 ## Remarks
  For information about application domains, see [Application Domains](https://learn.microsoft.com/previous-versions/visualstudio/visual-studio-2008/cxk374d9(v=vs.90)).
 
-
-
 ## Examples
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Remoting/RemotingServices IsObject Snippets/CPP/class1.cpp" id="Snippet1":::
  :::code language="csharp" source="~/snippets/csharp/System.Runtime.Remoting/RemotingServices/IsObjectOutOfAppDomain/class1.cs" id="Snippet1":::
@@ -800,8 +788,6 @@
 
 ## Remarks
  A context is an ordered sequence of properties that define an environment for the objects that reside inside it. Contexts are created during the activation process for objects that are configured to require certain automatic services such synchronization, transactions, just-in-time activation, security, and so on. Multiple objects can live inside a context.
-
-
 
 ## Examples
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Remoting/RemotingServices IsObject Snippets/CPP/class1.cpp" id="Snippet1":::
@@ -851,8 +837,6 @@
  When a one-way method is called, the client does not wait for the server to finish processing the message. The client method returns to the application with no knowledge of whether or not the server will successfully process the message. Methods are marked as one way using the <xref:System.Runtime.Remoting.Messaging.OneWayAttribute>.
 
  One-way methods cannot have a return value or any out parameters.
-
-
 
 ## Examples
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.RemotingServices/CPP/remotingservicessample.cpp" id="Snippet2":::
@@ -907,8 +891,6 @@
  The transparent proxy is itself housed by an instance of a managed runtime class of type <xref:System.Runtime.Remoting.Proxies.RealProxy>. The <xref:System.Runtime.Remoting.Proxies.RealProxy> implements a part of the functionality needed to forward the operations from the transparent proxy. A proxy object inherits the associated semantics of managed objects such as garbage collection, support for members and methods, and can be extended to form new classes. Thus the proxy has a dual nature; on the one hand it needs to act as an object of the same class as the remote object (transparent proxy), and on the other it is a managed object itself.
 
  A proxy object can be used without regard to any remoting subdivisions within a <xref:System.AppDomain>. Applications need not distinguish between proxy references and object references. However, service providers dealing with issues such as activation, lifetime management, and transactions need to make such distinctions.
-
-
 
 ## Examples
  The following code example demonstrates the use of the <xref:System.Runtime.Remoting.RemotingServices.IsTransparentProxy*> method to determine whether an object is a proxy or a real object. For the complete example code, see the example for the <xref:System.Runtime.Remoting.Messaging.AsyncResult> class.
@@ -1076,8 +1058,6 @@
 
  You cannot associate a URI with a proxy for one of two reasons: either the URI was generated at the server side for the object it represents, or the object is well known, in which case the URI is known. For this reason, if the `Obj` parameter is a proxy, an exception will be thrown. For custom proxies this restriction is relaxed because the transparent proxy is treated as the server object.
 
-
-
 ## Examples
  The following code example demonstrates how to use the current <xref:System.Runtime.Remoting.RemotingServices.Marshal*> method to marshal a specified object.
 
@@ -1196,8 +1176,6 @@
 
  If the current application is listening on an HTTP port, then both the string specified in the `uri` parameter and the `uri` string appended onto the <xref:System.Guid> of the current <xref:System.AppDomain> route to the specified object. For example, if the application is listening on HTTP port 9000, then both `http://localhost:9000/objectUri`, and `http://localhost:9000/<appdomainguid>/objectUri` route to the object specified in the `obj` parameter.
 
-
-
 ## Examples
  The following code example demonstrates how to set the URI that will be used by the <xref:System.Runtime.Remoting.RemotingServices.Marshal*> method when marshaling the specified object.
 
@@ -1261,8 +1239,6 @@
  A <xref:System.Runtime.Remoting.ObjRef> is a serializable representation of an object used to transfer an object reference across an application domain boundary. Creating a <xref:System.Runtime.Remoting.ObjRef> for an object is known as marshaling. The <xref:System.Runtime.Remoting.ObjRef> can be transferred through a channel into another application domain (possibly on another process or computer). Once in the other application domain, the <xref:System.Runtime.Remoting.ObjRef> must be parsed to create a proxy for the object, generally connected to the real object. This operation is known as unmarshaling. During unmarshaling, the <xref:System.Runtime.Remoting.ObjRef> is parsed to extract the method information of the remote object and both the transparent proxy and <xref:System.Runtime.Remoting.Proxies.RealProxy> objects are created. The content of the parsed <xref:System.Runtime.Remoting.ObjRef> is added to the transparent proxy before the transparent proxy is registered with the common language runtime.
 
  A <xref:System.Runtime.Remoting.ObjRef> contains information that describes the <xref:System.Type> and class of the object being marshaled, a URI that uniquely identifies the specific object instance, and communication related information about how to reach the remoting subdivision where the object is located.
-
-
 
 ## Examples
  The following code example demonstrates how to unmarshal an object.

@@ -285,8 +285,6 @@
 
 - Its four components are equal to those of the current instance. Equality is determined by the default object equality comparer for each component.
 
-
-
 ## Examples
  The following example defines an array of <xref:System.Tuple`4> objects that provide data on temperatures at three times during a particular day. The <xref:System.Tuple`4.Equals(System.Object)> method is called to compare every <xref:System.Tuple`4> object with every other <xref:System.Tuple`4> object. The output illustrates that the <xref:System.Tuple`4.Equals(System.Object)> method returns `true` only when all four components of the <xref:System.Tuple`4> objects have equal values.
 
@@ -394,8 +392,6 @@
 
 - By retrieving the <xref:System.Type> object that represents the <xref:System.Tuple`4> object, and retrieving the first element from the array that is returned by its <xref:System.Type.GetGenericArguments*?displayProperty=nameWithType> method.
 
-
-
 ## Examples
  The following example defines an array of <xref:System.Tuple`4> objects whose components contain the name of a city, a month of the year, and the average high and low temperatures for that month. It then retrieves and displays the value of each component.
 
@@ -457,8 +453,6 @@
 - By calling the `GetType` method on the value that is returned by the <xref:System.Tuple`4.Item2> property.
 
 - By retrieving the <xref:System.Type> object that represents the <xref:System.Tuple`4> object, and retrieving the second element from the array that is returned by its <xref:System.Type.GetGenericArguments*?displayProperty=nameWithType> method.
-
-
 
 ## Examples
  The following example defines an array of <xref:System.Tuple`4> objects whose components contain the name of a city, a month of the year, and the average high and low temperatures for that month. It then retrieves and displays the value of each component.
@@ -522,8 +516,6 @@
 
 - By retrieving the <xref:System.Type> object that represents the <xref:System.Tuple`4> object, and retrieving the third element from the array that is returned by its <xref:System.Type.GetGenericArguments*?displayProperty=nameWithType> method.
 
-
-
 ## Examples
  The following example defines an array of <xref:System.Tuple`4> objects whose components contain the name of a city, a month of the year, and the average high and low temperatures for that month. It then retrieves and displays the value of each component.
 
@@ -585,8 +577,6 @@
 - By calling the `GetType` method on the value that is returned by the <xref:System.Tuple`4.Item4> property.
 
 - By retrieving the <xref:System.Type> object that represents the <xref:System.Tuple`4> object, and retrieving the fourth element from the array that is returned by its <xref:System.Type.GetGenericArguments*?displayProperty=nameWithType> method.
-
-
 
 ## Examples
  The following example defines an array of <xref:System.Tuple`4> objects whose components contain the name of a city, a month of the year, and the average high and low temperatures for that month. It then retrieves and displays the value of each component.
@@ -678,8 +668,6 @@
 > [!CAUTION]
 > The <xref:System.Tuple`4.System%23Collections%23IStructuralComparable%23CompareTo(System.Object,System.Collections.IComparer)> method is intended for use in sorting operations. It should not be used when the primary purpose of a comparison is to determine whether two objects are equal. To determine whether two objects are equal, call the <xref:System.Tuple`4.System%23Collections%23IStructuralEquatable%23Equals(System.Object,System.Collections.IEqualityComparer)> method.
 
-
-
 ## Examples
  The following example creates an array of <xref:System.Tuple`4> objects that contain statistical data about baseball pitchers. The data items include the name of the pitcher, the number of innings pitched, the pitcher's earned run average (the average number of runs a pitcher allows per game), and the number of hits the pitcher has given up. The example displays the component of each tuple in the array in unsorted order, sorts the array, and then calls <xref:System.Tuple`4.ToString*> to display the value of each tuple in sorted order. To sort the array, the example defines a generic `PitcherComparer` class that implements the <xref:System.Collections.IComparer> interface and sorts the <xref:System.Tuple`4> objects in ascending order by the value of their third component (the earned run average) rather than their first component. Note that the example does not directly call the <xref:System.Tuple`4.System%23Collections%23IStructuralComparable%23CompareTo(System.Object,System.Collections.IComparer)> method. This method is called implicitly by the <xref:System.Array.Sort(System.Array,System.Collections.IComparer)?displayProperty=nameWithType> method for each element in the array.
 
@@ -758,8 +746,6 @@
  This member is an explicit interface member implementation. It can be used only when the <xref:System.Tuple`4> instance is cast to an <xref:System.Collections.IStructuralEquatable> interface.
 
  The <xref:System.Collections.IEqualityComparer.Equals*?displayProperty=nameWithType> implementation is called only if `other` is not `null`, and if it can be successfully cast (in C#) or converted (in Visual Basic) to a <xref:System.Tuple`4> object whose components are of the same types as the current instance. The <xref:System.Tuple`4.System%23Collections%23IStructuralEquatable%23Equals(System.Object,System.Collections.IEqualityComparer)> method first passes the <xref:System.Tuple`4.Item1*> values of the <xref:System.Tuple`4> objects to be compared to the <xref:System.Collections.IEqualityComparer.Equals*?displayProperty=nameWithType> implementation. If this method call returns `true`, the method is called again and passed the <xref:System.Tuple`4.Item2*> values of the two <xref:System.Tuple`4> objects. If this method call returns `true` again, the method is called a third time and passed the <xref:System.Tuple`4.Item3*> values of the two <xref:System.Tuple`4> objects. If this method call returns `true` again, the method is called for the fourth and final time and passed the <xref:System.Tuple`4.Item4*> values of the two <xref:System.Tuple`4> objects.
-
-
 
 ## Examples
  The following example defines an `Item3And4Comparer` class that implements the <xref:System.Collections.IEqualityComparer> interface and changes the way in which <xref:System.Tuple`4> objects are evaluated for equality. The method always returns `true` when it is passed the <xref:System.Tuple`4.Item1*> and <xref:System.Tuple`4.Item2> property values of two <xref:System.Tuple`4> objects, and it calls the `obj.Equals` method to evaluate their <xref:System.Tuple`4.Item3> property values. It this method call returns `true`, it also calls the `obj.Equals` method to evaluate the tuples' <xref:System.Tuple`4.Item4> property values. As a result, the method tests for equality based only on the values of the <xref:System.Tuple`4.Item3*> and <xref:System.Tuple`4.Item4*> properties. The output illustrates the result for a data set of <xref:System.Tuple`4> objects that record the name of a U.S. city, the month of a year, and the average high and low temperature for that month.
@@ -912,8 +898,6 @@
 > The <xref:System.Tuple`4.System%23IComparable%23CompareTo*> method is intended for use in sorting operations. It should not be used when the primary purpose of a comparison is to determine whether two objects are equal. To determine whether two objects are equal, call the <xref:System.Tuple`4.Equals*> method.
 
  The <xref:System.Tuple`4.System%23IComparable%23CompareTo*> method uses the default object comparer to compare each component.
-
-
 
 ## Examples
  The following example creates an array of <xref:System.Tuple`4> objects whose components consist of a baseball pitcher's name, number of innings pitched, and number of hits and earned runs given up. It displays the components of each tuple in the array in unsorted order, sorts the array, and then calls <xref:System.Tuple`4.ToString*> to display each tuple in sorted order. The output shows that the array has been sorted by name, which is the first component. Note that the example does not directly call the <xref:System.Tuple`4.System%23IComparable%23CompareTo(System.Object)> method. This method is called implicitly by the <xref:System.Array.Sort(System.Array)> method for each element in the array.
@@ -1085,8 +1069,6 @@
 
 ## Remarks
  The string returned by this method takes the form (*Item1*, *Item2*, *Item3*, *Item4*), where *Item1*, *Item2*, *Item3*, and *Item4* represent the values of the <xref:System.Tuple`4.Item1*>, <xref:System.Tuple`4.Item2*>, <xref:System.Tuple`4.Item3*>, and <xref:System.Tuple`4.Item4*> properties, respectively. If any of the property values is `null`, it is represented as <xref:System.String.Empty?displayProperty=nameWithType>.
-
-
 
 ## Examples
  The following example illustrates the <xref:System.Tuple`4.ToString*> method. It displays the components of an array of 4-tuple objects that contain the name of a city, a month of the year, and the high and low average temperature for that month.

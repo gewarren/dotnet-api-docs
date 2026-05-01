@@ -110,8 +110,6 @@
 
  For an encoder or decoder that is able to save state information when encoding or decoding data that spans multiple blocks (such as string of 1 million characters that is encoded in 100,000-character segments), use the <xref:System.Text.UnicodeEncoding.GetEncoder*> and <xref:System.Text.UnicodeEncoding.GetDecoder*> properties, respectively.
 
-
-
 ## Examples
  The following example demonstrates how to encode a string of Unicode characters into a byte array by using a <xref:System.Text.UnicodeEncoding> object. The byte array is decoded into a string to demonstrate that there is no loss of data.
 
@@ -260,8 +258,6 @@
 
  The `byteOrderMark` parameter controls the operation of the <xref:System.Text.UnicodeEncoding.GetPreamble*> method. If `true`, the method returns a byte array containing the Unicode byte order mark (BOM) in UTF-16 format.  If `false`, it returns a zero-length byte array. However, setting `byteOrderMark` to `true` does not cause the <xref:System.Text.UnicodeEncoding.GetBytes*> method to prefix the BOM at the beginning of the byte array, nor does it cause the <xref:System.Text.UnicodeEncoding.GetByteCount*> method to include the number of bytes in the BOM in the byte count.
 
-
-
 ## Examples
  The following example demonstrates how to create a new <xref:System.Text.UnicodeEncoding> instance specifying whether to support little endian or big endian byte ordering and the Unicode byte order mark.
 
@@ -387,8 +383,6 @@
 ## Remarks
  The value of this field is a 32-bit signed constant with a value of 2.
 
-
-
 ## Examples
  The following example demonstrates how to return the value of <xref:System.Text.UnicodeEncoding.CharSize> and display it.
 
@@ -466,8 +460,6 @@
 - Both objects use the same encoder fallback.
 
 - Both objects use the same decoder fallback.
-
-
 
 ## Examples
  The following example demonstrates how to use the <xref:System.Text.UnicodeEncoding.Equals*> method to test whether the current <xref:System.Text.UnicodeEncoding> object is equal to a different <xref:System.Text.UnicodeEncoding> object. Five <xref:System.Text.UnicodeEncoding> objects are created and compared, and the results of the comparisons are displayed.
@@ -553,8 +545,6 @@
 
 > [!IMPORTANT]
 > To ensure that the encoded bytes are decoded properly when they are saved as a file or as a stream, you can prefix a stream of encoded bytes with a preamble. Inserting the preamble at the beginning of a byte stream (such as at the beginning of a series of bytes to be written to a file) is the developer's responsibility, and the number of bytes in the preamble is not reflected in the value returned by the <xref:System.Text.UnicodeEncoding.GetByteCount(System.String)> method.
-
-
 
 ## Examples
  The following example calls the <xref:System.Text.UnicodeEncoding.GetMaxByteCount*> and <xref:System.Text.UnicodeEncoding.GetByteCount(System.String)> methods to calculate the maximum and actual number of bytes required to encode a string. It also displays the actual number of bytes required to store a byte stream with a byte order mark.
@@ -735,8 +725,6 @@
  With error detection enabled, an invalid sequence causes this method to throw an <xref:System.ArgumentException>. Without error detection, invalid sequences are ignored, and no exception is thrown.
 
  To ensure that the encoded bytes are decoded properly when they are saved as a file or as a stream, you can prefix a stream of encoded bytes with a preamble. Inserting the preamble at the beginning of a byte stream (such as at the beginning of a series of bytes to be written to a file) is the developer's responsibility, and the number of bytes in the preamble Is not reflected in the value returned by the <xref:System.Text.UnicodeEncoding.GetByteCount(System.Char[],System.Int32,System.Int32)> method.
-
-
 
 ## Examples
  The following example populates an array with a Latin uppercase and lowercase characters and calls the <xref:System.Text.UnicodeEncoding.GetByteCount(System.Char[],System.Int32,System.Int32)> method to determine the number of bytes needed to encode the Latin lowercase characters. It then displays this information along with the total number of bytes needed if a byte order mark is added. It compares this number with the value returned by the <xref:System.Text.UnicodeEncoding.GetMaxByteCount*> method, which indicates maximum number of bytes needed to encode the Latin lowercase characters. The following example populates an array with a combination of Greek and Cyrillic characters and calls the <xref:System.Text.UnicodeEncoding.GetByteCount(System.Char[],System.Int32,System.Int32)> method to determine the number of bytes needed to encode the Cyrillic characters. It then displays this information along with the total number of bytes needed if a byte order mark is added. It compares this number with the value returned by the <xref:System.Text.UnicodeEncoding.GetMaxByteCount*> method, which indicates maximum number of bytes needed to encode the Cyrillic characters.
@@ -984,8 +972,6 @@
 
 > [!IMPORTANT]
 > To ensure that the encoded bytes are decoded properly when they are saved as a file or as a stream, you can prefix a stream of encoded bytes with a preamble. Inserting the preamble at the beginning of a byte stream (such as at the beginning of a series of bytes to be written to a file) is the developer's responsibility. The <xref:System.Text.UnicodeEncoding.GetBytes*> method does not prepend a preamble to the beginning of a sequence of encoded bytes.
-
-
 
 ## Examples
  The following example demonstrates how to use the <xref:System.Text.UnicodeEncoding.GetBytes*> method to encode a range of characters from a <xref:System.String> and store the encoded bytes in a range of elements in a byte array.
@@ -1300,8 +1286,6 @@
 
  With error detection, an invalid sequence causes this method to throw a <xref:System.ArgumentException>. Without error detection, invalid sequences are ignored, and no exception is thrown.
 
-
-
 ## Examples
  The following example demonstrates how to use the <xref:System.Text.UnicodeEncoding.GetCharCount*> method to return the number of characters produced by decoding a range of elements in a byte array using <xref:System.Text.UnicodeEncoding>.
 
@@ -1517,8 +1501,6 @@
 
  Data to be converted, such as data read from a stream, might be available only in sequential blocks. In this case, or if the amount of data is so large that it needs to be divided into smaller blocks, the application should use the <xref:System.Text.Decoder> or the <xref:System.Text.Encoder> provided by the <xref:System.Text.UnicodeEncoding.GetDecoder*> method or the <xref:System.Text.UnicodeEncoding.GetEncoder*> method, respectively.
 
-
-
 ## Examples
  The following example demonstrates how to use the <xref:System.Text.UnicodeEncoding.GetChars*> method to decode a range of elements in a byte array and store the result in a character array.
 
@@ -1609,8 +1591,6 @@
 
  If error detection is enabled, that is, the `throwOnInvalidBytes` parameter of the constructor is set to `true`, error detection is also enabled in the <xref:System.Text.Decoder> returned by this method. If error detection is enabled and an invalid sequence is encountered, the state of the decoder is undefined and processing must stop.
 
-
-
 ## Examples
  The following example uses an encoder and a decoder to encode a string into an array of bytes, and then decode the bytes into an array of characters.
 
@@ -1681,8 +1661,6 @@
  The <xref:System.Text.Encoder.GetBytes*?displayProperty=nameWithType> method converts sequential blocks of characters into sequential blocks of bytes in a manner similar to the <xref:System.Text.UnicodeEncoding.GetBytes*> method of this class. However, a <xref:System.Text.Encoder> object maintains state information between calls so that it can correctly encode character sequences that span blocks. The <xref:System.Text.Encoder> object also preserves trailing characters at the end of data blocks and uses the trailing characters in the next encoding operation. For example, a data block might end with an unmatched high surrogate, and the matching low surrogate might be in the next data block. Therefore, <xref:System.Text.UnicodeEncoding.GetDecoder*> and <xref:System.Text.UnicodeEncoding.GetEncoder*> are useful for network transmission and file operations, because those operations often deal with blocks of data instead of a complete data stream.
 
  If error detection is enabled, that is, the `throwOnInvalidBytes` parameter of the constructor is set to `true`, error detection is also enabled in the <xref:System.Text.Encoder> object returned by this method. If error detection is enabled and an invalid sequence is encountered, the state of the encoder is undefined and processing must stop.
-
-
 
 ## Examples
  The following example uses an encoder and a decoder to encode a string into an array of bytes, and then decode the bytes into an array of characters.
@@ -1805,8 +1783,6 @@
 > [!NOTE]
 >  `GetMaxByteCount(N)` is not necessarily the same value as `N* GetMaxByteCount(1)`.
 
-
-
 ## Examples
  The following example demonstrates how to use the <xref:System.Text.UnicodeEncoding.GetMaxByteCount*> method to return the maximum number of bytes required to encode a specified number of characters.
 
@@ -1890,8 +1866,6 @@
 
 > [!NOTE]
 >  `GetMaxCharCount(N)` is not necessarily the same value as `N* GetMaxCharCount(1)`.
-
-
 
 ## Examples
  The following example demonstrates how to use the <xref:System.Text.UnicodeEncoding.GetMaxCharCount*> method to return the maximum number of characters produced by decoding a specified number of bytes.
@@ -1987,8 +1961,6 @@
 > [!IMPORTANT]
 > To ensure that the encoded bytes are decoded properly, you should prefix the beginning of a stream of encoded bytes with a preamble. Note that the <xref:System.Text.UnicodeEncoding.GetBytes*> method does not prepend a BOM to a sequence of encoded bytes; supplying a BOM at the beginning of an appropriate byte stream is the developer's responsibility.
 
-
-
 ## Examples
  The following example demonstrates how to use the <xref:System.Text.UnicodeEncoding.GetPreamble*> method to retrieve the Unicode byte order mark in big endian or little endian byte order for an instance of a <xref:System.Text.UnicodeEncoding>.
 
@@ -2073,8 +2045,6 @@
  If the range of bytes to be decoded includes the byte order mark (BOM) and the byte array was returned by a method of a non-BOM aware type, the character U+FFFE is included in the character array returned by this method. You can remove it by calling the <xref:System.String.TrimStart*?displayProperty=nameWithType> method.
 
  Data to be converted, such as data read from a stream, might be available only in sequential blocks. In this case, or if the amount of data is so large that it needs to be divided into smaller blocks, the application should use the <xref:System.Text.Decoder> or the <xref:System.Text.Encoder> object provided by the <xref:System.Text.UnicodeEncoding.GetDecoder*> or the <xref:System.Text.UnicodeEncoding.GetEncoder*> method, respectively.
-
-
 
 ## Examples
  The following example initializes an array by calling the <xref:System.Text.UnicodeEncoding.GetByteCount*> method to determine exactly how many bytes are required for an encoded string and then adding the size of the byte order mark (BOM). The example then calls the <xref:System.Text.UnicodeEncoding.GetPreamble*> method to store the BOM to the array before calling the <xref:System.Text.Encoding.GetBytes*> method to store the encoded bytes to the array. The example then calls the <xref:System.Text.UnicodeEncoding.GetString*> method to decode the string.

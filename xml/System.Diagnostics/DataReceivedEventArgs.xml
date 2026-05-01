@@ -57,8 +57,6 @@
 ## Remarks
  To asynchronously collect the redirected <xref:System.Diagnostics.Process.StandardOutput*> or <xref:System.Diagnostics.Process.StandardError*> stream output of a process, you must create a method that handles the redirected stream output events. The event-handler method is called when the process writes to the redirected stream. The event delegate calls your event handler with an instance of <xref:System.Diagnostics.DataReceivedEventArgs>. The <xref:System.Diagnostics.DataReceivedEventArgs.Data> property contains the text line that the process wrote to the redirected stream.
 
-
-
 ## Examples
  The following code example illustrates how to perform asynchronous read operations on the redirected <xref:System.Diagnostics.Process.StandardOutput*> stream of the `sort` command. The `sort` command is a console application that reads and sorts text input.
 
@@ -130,8 +128,6 @@
  A line is defined as a sequence of characters followed by a line feed ("\n") or a carriage return immediately followed by a line feed ("\r\n"). The line characters are encoded using the default system ANSI code page. The <xref:System.Diagnostics.DataReceivedEventArgs.Data> property does not include the terminating carriage return or line feed.
 
  When the redirected stream is closed, a null line is sent to the event handler. Ensure your event handler checks the <xref:System.Diagnostics.DataReceivedEventArgs.Data> property appropriately before accessing it. For example, you can use the static method <xref:System.String.IsNullOrEmpty*?displayProperty=nameWithType> to validate the <xref:System.Diagnostics.DataReceivedEventArgs.Data> property in your event handler.
-
-
 
 ## Examples
  The following code example illustrates a simple event handler associated with the <xref:System.Diagnostics.Process.OutputDataReceived> event. The event handler receives text lines from the redirected <xref:System.Diagnostics.Process.StandardOutput*> stream, formats the text, and writes the text to the screen.

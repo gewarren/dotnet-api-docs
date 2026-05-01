@@ -151,8 +151,6 @@
 
  Use the <xref:System.Web.Routing.RouteCollection.GetReadLock*> method and the <xref:System.Web.Routing.RouteCollection.GetWriteLock*> method to make sure that you interact with the collection without conflicts from other processes.
 
-
-
 ## Examples
  The following example shows how to add a route to a <xref:System.Web.Routing.RouteCollection> object and assign a name to the route.
 
@@ -264,8 +262,6 @@
 - Public methods of the <xref:System.Web.Routing.RouteCollection> class such as <xref:System.Web.Routing.RouteCollection.GetVirtualPath*> and <xref:System.Web.Routing.RouteCollection.GetRouteData*> call <xref:System.Web.Routing.RouteCollection.GetReadLock*> internally. Therefore, you do not have to explicitly call <xref:System.Web.Routing.RouteCollection.GetReadLock*> when you call a public method of the <xref:System.Web.Routing.RouteCollection> class to retrieve data from the collection.
 
 - When the application is starting and is not yet processing requests, such as in the `Application_Start` event handler, only one thread is running. Because there are no other threads that might update the collection while you are reading it, you do not have to call <xref:System.Web.Routing.RouteCollection.GetReadLock*>.
-
-
 
 ## Examples
  The following example shows how to use the <xref:System.Web.Routing.RouteCollection.GetReadLock*> method when you retrieve a route while the application is running. The `Using` statement ensures that no matter what happens at run time when you read from the collection (whether the code completes normally or an exception is thrown) the lock will be safely released at the end of the `Using` code block.
@@ -418,8 +414,6 @@
 
  If you have to add a route when the application is running, you use the <xref:System.Web.Routing.RouteCollection.GetWriteLock*> method to guarantee thread safety. The write lock on the route collection is released when the <xref:System.IDisposable> object that is returned by this method is disposed.
 
-
-
 ## Examples
  The following example shows how to use the <xref:System.Web.Routing.RouteCollection.GetWriteLock*> method when you add a route while the application is running.
 
@@ -488,8 +482,6 @@
 
  ASP.NET routing automatically ignores requests when the URL matches a physical file, such as an image file. In some cases you might also want routing to ignore requests when there is no physical file. For example, the requests that ASP.NET automatically makes for .axd files should not be treated as route requests even though there is no physical file that corresponds to the .axd file-name extension.
 
-
-
 ## Examples
  The default template for MVC projects uses this method to exclude .axd files from routing, as shown in the following example:
 
@@ -534,8 +526,6 @@
  This method creates a route that is mapped to the <xref:System.Web.Routing.StopRoutingHandler> route handler. After you call this method, requests that match the specified URL pattern will not be processed as route requests.
 
  ASP.NET routing automatically ignores requests when the URL matches a physical file, such as an image file. In some cases you might also want routing to ignore requests when there is no physical file. For example, the requests that ASP.NET automatically makes for .axd files should not be treated as route requests even though there is no physical file that corresponds to the .axd file-name extension.
-
-
 
 ## Examples
  The following example shows how to use this method to ignore all URLs that have an .aspx extension. You might want to do this if you register a custom HTTP handler to handle all URLs for files that have the extension ".aspx". A single URL pattern that would match all .aspx requests would require two catchall parameters such as `{*path}.aspx/{*pathinfo}`. (This pattern would match any URL that ends in .aspx, including those that have query-string parameters.) However, routing allows only one catchall parameter at the end. As an alternative, you can specify a URL pattern that has a single catchall parameter that matches all URLs and then specify constraints that exclude everything that does not have the .aspx extension, as shown in the following example:
@@ -682,8 +672,6 @@ routes.Ignore("{*allaspx}", new {allaspx=@".*\.aspx(/.*)?"});
 ## Remarks
  This method is provided for coding convenience. It is equivalent to calling the <xref:System.Web.Routing.RouteCollection.Add*> method and passing a <xref:System.Web.Routing.Route> object that is created by using the <xref:System.Web.Routing.PageRouteHandler> class.
 
-
-
 ## Examples
  The following example shows how to define routes for a Web Forms application by using this method. The example shows a method named `RegisterRoutes` that is called from `Application_Start` in the Global.asax file. The method uses each overload of <xref:System.Web.Routing.RouteCollection.MapPageRoute*> to add a route to the application. For more information about how to define routes for Web Forms applications, see [How to: Define Routes for Web Forms Applications](https://msdn.microsoft.com/library/200fe812-d0a6-4531-b9b4-cfc4ee83a678).
 
@@ -735,8 +723,6 @@ routes.Ignore("{*allaspx}", new {allaspx=@".*\.aspx(/.*)?"});
 
 ## Remarks
  This method is provided for coding convenience. It is equivalent to calling the <xref:System.Web.Routing.RouteCollection.Add*> method and passing a <xref:System.Web.Routing.Route> object that is created by using the <xref:System.Web.Routing.PageRouteHandler> class.
-
-
 
 ## Examples
  The following example shows how to define a route by using this method. The first statement defines a route that does not have a name. The second statement defines a named route. This example is part of a larger example that is available in the <xref:System.Web.Routing.RouteCollection.MapPageRoute*> method overview.
@@ -791,8 +777,6 @@ routes.Ignore("{*allaspx}", new {allaspx=@".*\.aspx(/.*)?"});
 
 ## Remarks
  This method is provided for coding convenience. It is equivalent to calling the <xref:System.Web.Routing.RouteCollection.Add*> method and passing a <xref:System.Web.Routing.Route> object that is created by using the <xref:System.Web.Routing.PageRouteHandler> class.
-
-
 
 ## Examples
  The following example shows how to define a route by using this method. This example is part of a larger example that is available in the <xref:System.Web.Routing.RouteCollection.MapPageRoute*> method overview.
@@ -849,8 +833,6 @@ routes.Ignore("{*allaspx}", new {allaspx=@".*\.aspx(/.*)?"});
 
 ## Remarks
  This method is provided for coding convenience. It is equivalent to calling the <xref:System.Web.Routing.RouteCollection.Add*> method and passing a <xref:System.Web.Routing.Route> object that is created by using the <xref:System.Web.Routing.PageRouteHandler> class.
-
-
 
 ## Examples
  The following example shows how to define a route by using this method. This example is part of a larger example that is available in the <xref:System.Web.Routing.RouteCollection.MapPageRoute*> method overview.
@@ -910,8 +892,6 @@ routes.Ignore("{*allaspx}", new {allaspx=@".*\.aspx(/.*)?"});
 ## Remarks
  This method is provided for coding convenience. It is equivalent to calling the <xref:System.Web.Routing.RouteCollection.Add*> method and passing a <xref:System.Web.Routing.Route> object that is created by using the <xref:System.Web.Routing.PageRouteHandler> class.
 
-
-
 ## Examples
  The following example shows how to define a route by using this method. This example is part of a larger example that is available in the <xref:System.Web.Routing.RouteCollection.MapPageRoute*> method overview.
 
@@ -965,8 +945,6 @@ routes.Ignore("{*allaspx}", new {allaspx=@".*\.aspx(/.*)?"});
 
 ## Remarks
  This method is provided for coding convenience. It is equivalent to calling the <xref:System.Web.Routing.RouteCollection.Add*> method and passing a <xref:System.Web.Routing.Route> object that is created by using the <xref:System.Web.Routing.PageRouteHandler> class.
-
-
 
 ## Examples
  The following example shows how to define a route by using this method. This example is part of a larger example that is available in the <xref:System.Web.Routing.RouteCollection.MapPageRoute*> method overview.

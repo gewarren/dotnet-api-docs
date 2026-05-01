@@ -131,8 +131,6 @@
 
  To iterate through the members of the collection, you should use the collection iteration construct provided by your language (such as `foreach` in C# and `For Each`…`Next` in Visual Basic) instead of retrieving the enumerator that is returned by the <xref:System.Text.RegularExpressions.GroupCollection.GetEnumerator*> method. In addition, you can access individual numbered captured groups from the <xref:System.Text.RegularExpressions.GroupCollection.Item(System.Int32)> property (the indexer in C#), and you can access individual named captured groups from the <xref:System.Text.RegularExpressions.GroupCollection.Item(System.String)> property. Note that you can retrieve an array that contains the numbers and names of all capturing groups by calling the <xref:System.Text.RegularExpressions.Regex.GetGroupNumbers*?displayProperty=nameWithType> and <xref:System.Text.RegularExpressions.Regex.GetGroupNames*?displayProperty=nameWithType> methods, respectively. Both are instance methods and require that you instantiate a <xref:System.Text.RegularExpressions.Regex> object that represents the regular expression to be matched.
 
-
-
 ## Examples
  The following example uses a regular expression with capturing groups to extract information about trademarks and registered trademarks used in text. The regular expression pattern is `\b(\w+?)([\u00AE\u2122])`, which is interpreted as shown in the following table.
 
@@ -250,8 +248,6 @@
 
 > [!WARNING]
 > This member is not present in the Portable Class Library. If you are developing applications that target the Portable Class Library, use the <xref:System.Text.RegularExpressions.GroupCollection.System%23Collections%23ICollection%23CopyTo*?displayProperty=nameWithType> method instead.
-
-
 
 ## Examples
  The following example extracts each word from a sentence and captures it in a capturing group, The <xref:System.Text.RegularExpressions.GroupCollection.CopyTo*> method is then used to copy the elements in each match's <xref:System.Text.RegularExpressions.GroupCollection> object to an array that contains the capturing groups from all matches. The individual captured words are then displayed to the console.
@@ -642,8 +638,6 @@ A collection that is read-only does not allow the addition or removal of element
 
  If `groupnum` is not the index of a member of the collection, or if `groupnum` is the index of a capturing group that has not been matched in the input string, the method returns a <xref:System.Text.RegularExpressions.Group> object whose <xref:System.Text.RegularExpressions.Group.Success?displayProperty=nameWithType> property is `false` and whose `Group.Value` property is <xref:System.String.Empty?displayProperty=nameWithType>.
 
-
-
 ## Examples
  The following example defines a regular expression that consists of two numbered groups. The first group captures one or more consecutive digits. The second group matches a single character. Because the regular expression engine looks for zero or one occurrence of the first group, it does not always find a match even if the regular expression match is successful. The example then illustrates the result when the <xref:System.Text.RegularExpressions.GroupCollection.Item(System.Int32)> property is used to retrieve an unmatched group, a matched group, and a group that is not defined in the regular expression. The example defines a regular expression pattern `(\d+)*(\w)\2`, which is interpreted as shown in the following table.
 
@@ -720,8 +714,6 @@ A collection that is read-only does not allow the addition or removal of element
  You can retrieve the names of all the captured groups in a <xref:System.Text.RegularExpressions.Regex> object by calling the <xref:System.Text.RegularExpressions.Regex.GetGroupNames*?displayProperty=nameWithType> method. You can also map the numbers of capturing groups in a regular expression to their names by calling the <xref:System.Text.RegularExpressions.Regex.GroupNameFromNumber*?displayProperty=nameWithType> method. Individual names from the array can then be passed to the <xref:System.Text.RegularExpressions.GroupCollection.Item(System.String)> property to retrieve the captured string.
 
  If `groupname` is not the name of a capturing group in the collection, or if `groupname` is the name of a capturing group that has not been matched in the input string, the method returns a <xref:System.Text.RegularExpressions.Group> object whose <xref:System.Text.RegularExpressions.Group.Success?displayProperty=nameWithType> property is `false` and whose `Group.Value` property is <xref:System.String.Empty?displayProperty=nameWithType>.
-
-
 
 ## Examples
  The following example defines a regular expression that consists of two named groups. The first group, `numbers`, captures one or more consecutive digits. The second group, `letter`, matches a single character. Because the regular expression engine looks for zero or one occurrence of the pattern defined by the `numbers` group, the `numbers` group is not always present even if a match is successful. The example then illustrates the result when the <xref:System.Text.RegularExpressions.GroupCollection.Item(System.String)> property is used to retrieve an unmatched group, a matched group, and a group that is not defined in the regular expression. The example defines a regular expression pattern `(?<numbers>\d+)*(?<letter>\w)\k<letter>`, which is interpreted as shown in the following table.

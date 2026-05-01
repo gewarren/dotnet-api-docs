@@ -251,8 +251,6 @@ The code example uses the <xref:System.Reflection.MethodInfo> to invoke the <xre
 
  This property is read-only.
 
-
-
 ## Examples
  The following example displays the assembly name associated with the class and the fully qualified name of the type.
 
@@ -438,8 +436,6 @@ TopNamespace.Sub\+Namespace.ContainingClass+NestedClass, MyAssembly, Version=1.3
 
  If the current <xref:System.Type> represents a generic type parameter - that is, if the <xref:System.Type.IsGenericParameter> property returns `true` - the <xref:System.Reflection.TypeAttributes> value returned by this property is unspecified.
 
-
-
 ## Examples
  The following example uses the <xref:System.Type.Attributes> property.
 
@@ -521,8 +517,6 @@ TopNamespace.Sub\+Namespace.ContainingClass+NestedClass, MyAssembly, Version=1.3
 
  This property is read-only.
 
-
-
 ## Examples
  The following example demonstrates using the <xref:System.Type.BaseType> property.
 
@@ -596,8 +590,6 @@ TopNamespace.Sub\+Namespace.ContainingClass+NestedClass, MyAssembly, Version=1.3
  The <xref:System.Type.ContainsGenericParameters> property searches recursively for type parameters. For example, it returns `true` for an array whose elements are type `A<T>` (`A(Of T)` in Visual Basic), even though the array is not itself generic. Contrast this with the behavior of the <xref:System.Type.IsGenericType> property, which returns `false` for arrays.
 
  For a set of example classes and a table showing the values of the <xref:System.Type.ContainsGenericParameters> property, see <xref:System.Type.IsGenericType*>.
-
-
 
 ## Examples
  The following example defines a generic class with two type parameters and then defines a second generic class that derives from the first class. The derived class's base class has two type arguments: the first is <xref:System.Int32> and the second is a type parameter of the derived type. The example displays information about these generic classes, including the positions reported by the <xref:System.Type.GenericParameterPosition> property.
@@ -680,8 +672,6 @@ TopNamespace.Sub\+Namespace.ContainingClass+NestedClass, MyAssembly, Version=1.3
 > In the .NET Framework version 2.0, generic constructors are not supported.
 
  For a list of the invariant conditions for terms used in generic reflection, see the <xref:System.Type.IsGenericType> property remarks.
-
-
 
 ## Examples
  The following code example defines a class that has a generic method, assigns a type argument to the method, and invokes the resulting constructed generic method. It also displays information about the generic method definition and the constructed method. When displaying information about the type parameters of the generic method definition, in the `DisplayGenericMethodInfo` method, the example code shows the value of the <xref:System.Type.DeclaringMethod> property for the method's generic type parameter.
@@ -773,8 +763,6 @@ TopNamespace.Sub\+Namespace.ContainingClass+NestedClass, MyAssembly, Version=1.3
 
 - Getting the <xref:System.Type.DeclaringType> property on a type whose <xref:System.Type.IsGenericParameter> property is `false` throws an <xref:System.InvalidOperationException>.
 
-
-
 ## Examples
  This example displays the declaring type of a method in a derived class.
 
@@ -860,8 +848,6 @@ TopNamespace.Sub\+Namespace.ContainingClass+NestedClass, MyAssembly, Version=1.3
 |Int64|Single, Double|
 |Single|Double|
 |Non-reference|By-reference.|
-
-
 
 ## Examples
  The following example gets the default binder from the `DefaultBinder` property, and invokes a member of MyClass by passing the `DefaultBinder` value as a parameter to <xref:System.Type.InvokeMember*>.
@@ -1046,8 +1032,6 @@ TopNamespace.Sub\+Namespace.ContainingClass+NestedClass, MyAssembly, Version=1.3
 ## Remarks
  This method overrides <xref:System.Object.Equals*?displayProperty=nameWithType>. It casts `o` to an object of type <xref:System.Type> and calls the <xref:System.Type.Equals(System.Type)?displayProperty=nameWithType> method.
 
-
-
 ## Examples
  The following example uses <xref:System.Type.Equals(System.Object)> to compare various <xref:System.Type> object instances with various <xref:System.Object> instances.
 
@@ -1189,8 +1173,6 @@ TopNamespace.Sub\+Namespace.ContainingClass+NestedClass, MyAssembly, Version=1.3
 
  For example, the `Object` can be assigned the value of a field from `FieldAttributes` such as Public. In that case, when the `FilterAttribute` delegate is invoked, it will return `true` only if the method represented by the `MemberInfo` object is decorated with the public field attribute in metadata.
 
-
-
 ## Examples
  The following example gets the `FilterAttribute` delegate, passes it as a parameter to the <xref:System.Type.FindMembers*> method, and displays the specified members and their attributes.
 
@@ -1250,8 +1232,6 @@ TopNamespace.Sub\+Namespace.ContainingClass+NestedClass, MyAssembly, Version=1.3
 
  For example, the `Object` may be assigned the value "Byte*". In that case, when the `FilterName` delegate is invoked, it will return `true` only if the method represented by the `MemberInfo` object has a name that begins with "Byte".
 
-
-
 ## Examples
  The following code example gets the methods associated with the user-defined `Application` type.
 
@@ -1310,8 +1290,6 @@ TopNamespace.Sub\+Namespace.ContainingClass+NestedClass, MyAssembly, Version=1.3
  This field holds a reference to the delegate used by the <xref:System.Type.FindMembers*> method. The method encapsulated by this delegate takes two parameters: the first is a <xref:System.Reflection.MemberInfo> object and the second is an `Object`. The method determines whether the `MemberInfo` object matches the criteria specified by the `Object`. The `Object` is assigned a string value, which may include a trailing "*" wildcard character. Only wildcard end string matching is supported.
 
  For example, the `Object` may be assigned the value "ByTe*". In that case, when the `FilterName` delegate is invoked, it will return true only if the method represented by the `MemberInfo` object has a name that begins with "byte", ignoring case.
-
-
 
 ## Examples
  The following example gets the `MemberFilter` delegate, passes it as a parameter to the <xref:System.Type.FindMembers*> method, and displays the methods and their attributes of the `String` class that begin with the letter "c", disregarding the case.
@@ -1404,8 +1382,6 @@ TopNamespace.Sub\+Namespace.ContainingClass+NestedClass, MyAssembly, Version=1.3
 
 > [!NOTE]
 > <xref:System.Type.FindInterfaces*> can return generic interfaces, even on types that are not generic. For example, a nongeneric type might implement `IEnumerable<int>` (`IEnumerable(Of Integer)` in Visual Basic).
-
-
 
 ## Examples
  The following example finds the specified interface implemented or inherited by the specified type, and then displays the interface names.
@@ -1657,8 +1633,6 @@ The `filter` argument can be a custom delegate of type <xref:System.Reflection.M
 
  This property is read-only.
 
-
-
 ## Examples
  The following example displays the full name of the specified type.
 
@@ -1726,8 +1700,6 @@ The `filter` argument can be a custom delegate of type <xref:System.Reflection.M
  The value of this property contains flags that describe whether the current generic type parameter is covariant, and flags that describe any special constraints. Use the <xref:System.Reflection.GenericParameterAttributes.VarianceMask?displayProperty=nameWithType> value to select the covariance flags, and use the <xref:System.Reflection.GenericParameterAttributes.SpecialConstraintMask?displayProperty=nameWithType> value to select the constraint flags.
 
  For a list of the invariant conditions for terms used in generic reflection, see the <xref:System.Type.IsGenericType> property remarks.
-
-
 
 ## Examples
  The following code example defines a generic type `Test` with two type parameters that have different constraints. When the program executes, the constraints are examined using the <xref:System.Type.GenericParameterAttributes> property and the <xref:System.Type.GetGenericParameterConstraints*> method.
@@ -1811,8 +1783,6 @@ The `filter` argument can be a custom delegate of type <xref:System.Reflection.M
 
 > [!NOTE]
 > Calling the <xref:System.Type.GenericParameterPosition> property causes an exception if the current <xref:System.Type> does not represent a type parameter. When you examine the type arguments of an open constructed type, use the <xref:System.Type.IsGenericParameter> property to tell which are type parameters and which are types. The <xref:System.Type.IsGenericParameter> property returns `true` for a type parameter; you can then use the <xref:System.Type.GenericParameterPosition*> method to obtain its position and use the <xref:System.Type.DeclaringMethod*> and <xref:System.Type.DeclaringType*> properties to determine the generic method or type definition that defines it.
-
-
 
 ## Examples
  The following example defines a generic class with two type parameters and defines a second generic class that derives from the first class. The derived class's base class has two type arguments: the first is <xref:System.Int32>, and the second is a type parameter of the derived type. The example displays information about these generic classes, including the positions reported by the <xref:System.Type.GenericParameterPosition> property.
@@ -2925,8 +2895,6 @@ If the current <xref:System.Type> represents a generic type parameter, the <xref
 
  If the current <xref:System.Type> represents a type parameter in the definition of a generic type or generic method, this method searches the members of the class constraint, or the members of <xref:System.Object> if there is no class constraint.
 
-
-
 ## Examples
  The following example obtains the default member information of `MyClass` and displays the default members.
 
@@ -2996,8 +2964,6 @@ If the current <xref:System.Type> represents a generic type parameter, the <xref
 
 ## Remarks
  This method returns `null` for the <xref:System.Array> class.
-
-
 
 ## Examples
  The following example demonstrates using the `GetElementType` method.
@@ -3360,8 +3326,6 @@ If the current <xref:System.Type> represents a generic type parameter, the <xref
 
  If the current <xref:System.Type> represents a type parameter in the definition of a generic type or generic method, this method searches the events of the class constraint.
 
-
-
 ## Examples
  The following example creates an <xref:System.Reflection.EventInfo> object and gets the event for a button class for the specified event.
 
@@ -3471,8 +3435,6 @@ If the current <xref:System.Type> represents a generic type parameter, the <xref
  If the current <xref:System.Type> represents a constructed generic type, this method returns the <xref:System.Reflection.EventInfo> with the type parameters replaced by the appropriate type arguments.
 
  If the current <xref:System.Type> represents a type parameter in the definition of a generic type or generic method, this method searches the events of the class constraint.
-
-
 
 ## Examples
  The following code example uses the <xref:System.Type.GetEvent(System.String,System.Reflection.BindingFlags)> method to search a type for a public or non-public event named "Click" that is not `static` (`Shared` in Visual Basic).
@@ -3586,8 +3548,6 @@ If the current <xref:System.Type> represents a generic type parameter, the <xref
 
  If the current <xref:System.Type> represents a type parameter in the definition of a generic type or generic method, this method searches the events of the class constraint.
 
-
-
 ## Examples
  The following example obtains an array of <xref:System.Reflection.EventInfo> objects, gets all the events for a `Button` class, and displays the event names. To compile the Visual Basic example, use the following command line:
 
@@ -3691,8 +3651,6 @@ If the current <xref:System.Type> represents a generic type parameter, the <xref
 
  If the current <xref:System.Type> represents a type parameter in the definition of a generic type or generic method, this method searches the events of the class constraint.
 
-
-
 ## Examples
  The following example obtains an array of <xref:System.Reflection.EventInfo> objects that match the specified binding flags, gets all the events for a `Button` class, and displays the event names. To compile the Visual Basic example, use the following command line:
 
@@ -3791,8 +3749,6 @@ If the current <xref:System.Type> represents a generic type parameter, the <xref
  If the current <xref:System.Type> represents a constructed generic type, this method returns the <xref:System.Reflection.FieldInfo> with the type parameters replaced by the appropriate type arguments.
 
  If the current <xref:System.Type> represents a type parameter in the definition of a generic type or generic method, this method searches the fields of the class constraint.
-
-
 
 ## Examples
  The following example gets the `Type` object for the specified class, obtains the <xref:System.Reflection.FieldInfo> object for the field, and displays the value of the field.
@@ -3921,8 +3877,6 @@ If the current <xref:System.Type> represents a generic type parameter, the <xref
 
  If the current <xref:System.Type> represents a type parameter in the definition of a generic type or generic method, this method searches the fields of the class constraint.
 
-
-
 ## Examples
  The following example gets the `Type` object for the specified class, obtains the <xref:System.Reflection.FieldInfo> object for the field that matches the specified binding flags, and displays the value of the field.
 
@@ -4033,8 +3987,6 @@ If the current <xref:System.Type> represents a generic type parameter, the <xref
  If the current <xref:System.Type> represents a constructed generic type, this method returns the <xref:System.Reflection.FieldInfo> objects with the type parameters replaced by the appropriate type arguments.
 
  If the current <xref:System.Type> represents a type parameter in the definition of a generic type or generic method, this method searches the public fields of the class constraint.
-
-
 
 ## Examples
  The following example shows a use of the `GetFields()` method.
@@ -4324,8 +4276,6 @@ In .NET 6 and earlier versions, the <xref:System.Type.GetFields*> method does no
 
  For a list of the invariant conditions for terms used in generic reflection, see the <xref:System.Type.IsGenericType> property remarks.
 
-
-
 ## Examples
  The following code example uses the <xref:System.Type.GetGenericArguments*> method to display the type arguments of a constructed type and the type parameters of its generic type definition.
 
@@ -4390,8 +4340,6 @@ In .NET 6 and earlier versions, the <xref:System.Type.GetFields*> method does no
  Each constraint on a generic type parameter is expressed as a <xref:System.Type> object. Use the <xref:System.Type.IsClass> property to determine whether a constraint is the base class constraint; if the property returns `false`, the constraint is an interface constraint. If a type parameter has no class constraint and no interface constraints, an empty array is returned.
 
  For a list of the invariant conditions for terms used in generic reflection, see the <xref:System.Type.IsGenericType> property remarks.
-
-
 
 ## Examples
  The following code example defines a generic type `Test` with two type parameters that have different constraints. When the program executes, the constraints are examined using the <xref:System.Type.GenericParameterAttributes> property and the <xref:System.Type.GetGenericParameterConstraints*> method.
@@ -4547,8 +4495,6 @@ In .NET 6 and earlier versions, the <xref:System.Type.GetFields*> method does no
 ## Remarks
  This method overrides <xref:System.Object.GetHashCode*?displayProperty=nameWithType>.
 
-
-
 ## Examples
  The following example displays the hash code of the `System.Windows.Forms.Button` class.
 
@@ -4648,8 +4594,6 @@ In .NET 6 and earlier versions, the <xref:System.Type.GetFields*> method does no
 
 > [!NOTE]
 > For generic interfaces, the `name` parameter is the mangled name, ending with a grave accent (\`) and the number of type parameters. This is true for both generic interface definitions and constructed generic interfaces. For example, to find `IExample<T>` (`IExample(Of T)` in Visual Basic) or `IExample<string>` (`IExample(Of String)` in Visual Basic), search for ``"IExample`1"``.
-
-
 
 ## Examples
  The following code example uses the <xref:System.Type.GetInterface(System.String)> method to search the <xref:System.Collections.Hashtable> class for the <xref:System.Runtime.Serialization.IDeserializationCallback> interface, and lists the methods of the interface.
@@ -4753,8 +4697,6 @@ In .NET 6 and earlier versions, the <xref:System.Type.GetFields*> method does no
 > [!NOTE]
 > For generic interfaces, the `name` parameter is the mangled name, ending with a grave accent (\`) and the number of type parameters. This is true for both generic interface definitions and constructed generic interfaces. For example, to find `IExample<T>` (`IExample(Of T)` in Visual Basic) or `IExample<string>` (`IExample(Of String)` in Visual Basic), search for ``"IExample`1"``.
 
-
-
 ## Examples
  The following code example uses the <xref:System.Type.GetInterface(System.String,System.Boolean)> method to perform a case-insensitive search of the <xref:System.Collections.Hashtable> class for the <xref:System.Collections.IEnumerable> interface.
 
@@ -4840,8 +4782,6 @@ In .NET 6 and earlier versions, the <xref:System.Type.GetFields*> method does no
  The interface map denotes how an interface is mapped into the actual members on a class that implements that interface.
 
  If the current <xref:System.Type> represents a constructed generic type, type parameters are replaced by the appropriate type arguments in the elements of the <xref:System.Reflection.InterfaceMapping> returned by this method.
-
-
 
 ## Examples
  The following example calls the <xref:System.Type.GetInterfaceMap*> method to determine how the <xref:System.IFormatProvider> interface maps to <xref:System.Globalization.CultureInfo> methods, and how the <xref:System.IAppDomainSetup> interface maps to <xref:System.AppDomainSetup> properties. Note that, because the <xref:System.IAppDomainSetup> interface defines a set of properties, the returned <xref:System.Reflection.InterfaceMapping> object includes separate <xref:System.Reflection.MethodInfo> objects for a property's get and set accessors.
@@ -4936,8 +4876,6 @@ The current instance or <paramref name="interfaceType" /> argument is an open ge
  If the current <xref:System.Type> represents a constructed generic type, this method returns the <xref:System.Type> objects with the type parameters replaced by the appropriate type arguments.
 
  If the current <xref:System.Type> represents a type parameter in the definition of a generic type or generic method, this method searches the interface constraints and any interfaces inherited from class or interface constraints.
-
-
 
 ## Examples
  The following example gets the type of the specified class and displays all the interfaces that the type implements or inherits. To compile the Visual Basic example, use the following compiler commands:
@@ -5055,8 +4993,6 @@ The current instance or <paramref name="interfaceType" /> argument is an open ge
 
 > [!NOTE]
 > For generic methods, do not include the type arguments in `name`. For example, the C# code `GetMember("MyMethod<int>")` searches for a member with the text name "`MyMethod<int>`", rather than for a method named `MyMethod` that has one generic argument of type `int`.
-
-
 
 ## Examples
  The following example displays all the members of the `String` class that start with the letter C.
@@ -5177,8 +5113,6 @@ The current instance or <paramref name="interfaceType" /> argument is an open ge
 > [!NOTE]
 > For generic methods, do not include the type arguments in `name`. For example, the C# code `GetMember("MyMethod<int>")` searches for a member with the text name "`MyMethod<int>`", rather than for a method named `MyMethod` that has one generic argument of type `int`.
 
-
-
 ## Examples
  The following example displays all the public static members of the `myString` class that start with the letter C.
 
@@ -5297,8 +5231,6 @@ The current instance or <paramref name="interfaceType" /> argument is an open ge
 
 > [!NOTE]
 > For generic methods, do not include the type arguments in `name`. For example, the C# code `GetMember("MyMethod<int>")` searches for a member with the text name "`MyMethod<int>`", rather than for a method named `MyMethod` that has one generic argument of type `int`.
-
-
 
 ## Examples
  The following example displays all the methods of the `myString` class that start with the letter C.
@@ -5704,8 +5636,6 @@ This method can be used to find a constructed generic member given a member from
 > [!NOTE]
 > For generic methods, do not include the type arguments in `name`. For example, the C# code `GetMember("MyMethod<int>")` searches for a member with the text name "`MyMethod<int>`", rather than for a method named `MyMethod` that has one generic argument of type `int`.
 
-
-
 ## Examples
  The following example gets a method named `MethodA`.
 
@@ -5838,8 +5768,6 @@ This method can be used to find a constructed generic member given a member from
 > [!NOTE]
 > For generic methods, do not include the type arguments in `name`. For example, the C# code `GetMember("MyMethod<int>")` searches for a member with the text name "`MyMethod<int>`", rather than for a method named `MyMethod` that has one generic argument of type `int`.
 
-
-
 ## Examples
  The following example gets the method that matches the specified binding flags.
 
@@ -5943,8 +5871,6 @@ This method can be used to find a constructed generic member given a member from
 
 > [!NOTE]
 > The `name` parameter cannot include type arguments. For example, the C# code `GetMethod("MyGenericMethod<int>")` searches for a method with the text name "`MyGenericMethod<int>`", rather than for a method named `MyGenericMethod` that has one generic argument of type `int`. Instead, use `GetMethod("MyGenericMethod")` with the appropriate parameter in the `types` array.
-
-
 
 ## Examples
  The following example finds specific overloads of `MethodA`, specifying a variety of argument types.
@@ -6499,8 +6425,6 @@ One of the elements in the <paramref name="types" /> array is <see langword="nul
 > [!NOTE]
 > For generic methods, do not include the type arguments in `name`. For example, the C# code `GetMember("MyMethod<int>")` searches for a member with the text name "`MyMethod<int>`", rather than for a method named `MyMethod` that has one generic argument of type `int`.
 
-
-
 ## Examples
  The following example finds specific overloads of `MethodA`, specifying binding constraints and a variety of argument types.
 
@@ -6778,8 +6702,6 @@ One of the elements in the <paramref name="types" /> array is <see langword="nul
 
 > [!NOTE]
 > For generic methods, do not include the type arguments in `name`. For example, the C# code `GetMember("MyMethod<int>")` searches for a member with the text name "`MyMethod<int>`", rather than for a method named `MyMethod` that has one generic argument of type `int`.
-
-
 
 ## Examples
  The following example finds specific overloads of `MethodA`, specifying binding constraints, calling conventions, and a variety of argument types.
@@ -7682,8 +7604,6 @@ If the current <xref:System.Type> represents a type parameter in the definition 
 
  For information on nested generic types, and on constructing nested generic types from their generic type definitions, see <xref:System.Type.MakeGenericType*>.
 
-
-
 ## Examples
  The following example defines a nested class and a `struct` in `MyClass`, and then obtains objects of the nested types using the type of `MyClass`.
 
@@ -7783,8 +7703,6 @@ If the current <xref:System.Type> represents a type parameter in the definition 
 > If the current <xref:System.Type> represents a generic type defined in C#, Visual Basic, or C++, its nested types are all generic even if they have no generic parameters of their own. This is not necessarily true of nested types defined in dynamic assemblies or compiled with the [Ilasm.exe (IL Assembler)](/dotnet/framework/tools/ilasm-exe-il-assembler).
 
  For information on nested generic types, and on constructing nested generic types from their generic type definitions, see <xref:System.Type.MakeGenericType*>.
-
-
 
 ## Examples
  The following example creates two nested public classes and two nested protected classes, and displays information for classes that match the specified binding constraints.
@@ -7942,8 +7860,6 @@ If the current <xref:System.Type> represents a type parameter in the definition 
 
  If the current <xref:System.Type> represents a type parameter in the definition of a generic type or generic method, this method searches the properties of the class constraint.
 
-
-
 ## Examples
  The following example demonstrates the use of the `GetProperties` method.
 
@@ -8050,8 +7966,6 @@ In .NET 6 and earlier versions, the <xref:System.Type.GetProperties*> method doe
  If the current <xref:System.Type> represents a constructed generic type, this method returns the <xref:System.Reflection.PropertyInfo> objects with the type parameters replaced by the appropriate type arguments.
 
  If the current <xref:System.Type> represents a type parameter in the definition of a generic type or generic method, this method searches the properties of the class constraint.
-
-
 
 ## Examples
  The following example defines a class named `PropertyClass` that includes six properties: two are public, one is private, one is protected, one is internal (`Friend` in Visual Basic), and one is protected internal (`Protected Friend` in Visual Basic). It then displays some basic property information (the property name and type, whether it's read/write, and the visibility of its `get` and `set` accessors) for the properties that match the specified binding constraints.
@@ -9452,8 +9366,6 @@ Type.GetType("System.Collections.Generic.Dictionary`2[System.String,[MyType,MyAs
 |An assembly-qualified generic type with an assembly-qualified type argument|``Type.GetType("MyGenericType`1[[MyType,MyAssembly]],MyGenericTypeAssembly")``|
 |A generic type whose type argument is a generic type with two type arguments|``Type.GetType("MyGenericType`1[AnotherGenericType`2[MyType,AnotherType]]")``|
 
-
-
 ## Examples
  The following example retrieves the type of `System.Int32` and uses that type object to display the <xref:System.Type.FullName> property of `System.Int32`. If a type object refers to an assembly that does not exist, this example throws an exception.
 
@@ -10408,8 +10320,6 @@ Calling this method overload is the same as calling the <xref:System.Type.GetTyp
 
  The <xref:System.Type.GetTypeFromCLSID(System.Guid)> overload ignores any exception that may occur when instantiating a <xref:System.Type> object based on the `clsid` argument. Note that no exception is thrown if `clsid` is not found in the registry.
 
-
-
 ## Examples
  The following example uses the CLSID of the Microsoft Word [Application object](/office/vba/api/word.application) to retrieve a COM type that represents the Microsoft Word application. It then instantiates the type by calling the <xref:System.Activator.CreateInstance*?displayProperty=nameWithType> method, and closes it by calling the [Application.Quit](/office/vba/api/word.application.quit(method)) method.
 
@@ -10511,8 +10421,6 @@ Calling this method overload is the same as calling the <xref:System.Type.GetTyp
 
  Exceptions such as <xref:System.OutOfMemoryException> will be thrown when specifying `true` for `throwOnError`, but it will not fail for unregistered CLSIDs.
 
-
-
 ## Examples
  The following example uses the CLSID of the Microsoft Word [Application object](/office/vba/api/word.application) to retrieve a COM type that represents the Microsoft Word application. It then instantiates the type by calling the <xref:System.Activator.CreateInstance*?displayProperty=nameWithType> method, and closes it by calling the [Application.Quit](/office/vba/api/word.application.quit(method)) method. An exception is thrown if an error occurs while loading the type.
 
@@ -10604,8 +10512,6 @@ Calling this method overload is the same as calling the <xref:System.Type.GetTyp
 1.  Get a <xref:System.Type> object that represents the `__ComObject` that corresponds to the CLSID by calling the <xref:System.Type.GetTypeFromCLSID*> method.
 
 2.  Call the <xref:System.Activator.CreateInstance(System.Type)?displayProperty=nameWithType> method to instantiate the COM object.
-
-
 
 ## Examples
  The following example uses the CLSID of the Microsoft Word [Application object](/office/vba/api/word.application) to retrieve a COM type that represents the Microsoft Word application from a server named computer17.central.contoso.com. It then instantiates the type by calling the <xref:System.Activator.CreateInstance*?displayProperty=nameWithType> method, and closes it by calling the [Application.Quit](/office/vba/api/word.application.quit(method)) method.
@@ -10708,8 +10614,6 @@ Calling this method overload is the same as calling the <xref:System.Type.GetTyp
 
  Exceptions such as <xref:System.OutOfMemoryException> will be thrown when specifying `true` for `throwOnError`, but it will not fail for unregistered CLSIDs.
 
-
-
 ## Examples
  The following example uses the CLSID of the Microsoft Word [Application object](/office/vba/api/word.application) to retrieve a COM type that represents the Microsoft Word application from a server named computer17.central.contoso.com. It then instantiates the type by calling the <xref:System.Activator.CreateInstance*?displayProperty=nameWithType> method, and closes it by calling the [Application.Quit](/office/vba/api/word.application.quit(method)) method. An exception is thrown if an error occurs while loading the type.
 
@@ -10789,8 +10693,6 @@ Calling this method overload is the same as calling the <xref:System.Type.GetTyp
 
 ## Remarks
  The handles are valid only in the application domain in which they were obtained.
-
-
 
 ## Examples
  The following example uses the <xref:System.Type.GetTypeFromHandle*> method to get a <xref:System.Type> object from a <xref:System.RuntimeTypeHandle> provided by the <xref:System.Type.GetTypeHandle*> method.
@@ -10963,8 +10865,6 @@ Calling this method overload is the same as calling the <xref:System.Type.GetTyp
 ## Remarks
  This method is provided for COM support. Program IDs are not used in Microsoft .NET Framework because they have been superseded by the concept of namespace.
 
-
-
 ## Examples
  The following example retrieves a type by passing a ProgID, specifying whether to throw an exception if the ProgID is invalid. The example then displays the ClassID related to the ProgID, along with any applicable exception message.
 
@@ -11048,8 +10948,6 @@ Calling this method overload is the same as calling the <xref:System.Type.GetTyp
 
 ## Remarks
  This method is provided for COM support. Program IDs are not used in Microsoft .NET Framework because they have been superseded by the concept of namespace.
-
-
 
 ## Examples
  The following example retrieves a type by passing a ProgID and server name. The example then displays the ClassID related to the ProgID, or throws an exception if the ProgID or the server name is invalid.
@@ -11141,8 +11039,6 @@ Calling this method overload is the same as calling the <xref:System.Type.GetTyp
 ## Remarks
  This method is provided for COM support. Program IDs are not used in Microsoft .NET Framework because they have been superseded by the concept of namespace.
 
-
-
 ## Examples
  The following example retrieves a type by passing a ProgID and server name. The example then displays the ClassID related to the ProgID, specifying whether to throw an exception if the ProgID or the server name is invalid.
 
@@ -11207,8 +11103,6 @@ Calling this method overload is the same as calling the <xref:System.Type.GetTyp
 
 ## Remarks
  The handles are valid only in the application domain in which they were obtained.
-
-
 
 ## Examples
  The following example defines the class `MyClass1`, gets an instance of it, and retrieves the runtime handle of the object.
@@ -11343,8 +11237,6 @@ Calling this method overload is the same as calling the <xref:System.Type.GetTyp
 
  If the current <xref:System.Type> represents a generic type, or a type parameter in the definition of a generic type or generic method, this property always returns `false`.
 
-
-
 ## Examples
  The following example returns `true` or `false` depending on whether or not the object is an array, a reference type, or a pointer.
 
@@ -11408,8 +11300,6 @@ Calling this method overload is the same as calling the <xref:System.Type.GetTyp
 
 ## Remarks
  For example, Type.GetType("Int32[]").HasElementTypeImpl returns `true`, but Type.GetType("Int32").HasElementTypeImpl returns `false`. HasElementTypeImpl also returns `true` for "Int32*" and "Int32&".
-
-
 
 ## Examples
  The following example defines the class `MyTypeDelegator`, which overrides the `HasElementTypeImpl` method. The main class checks for the `HasElementType` property and displays the element type.
@@ -12210,8 +12100,6 @@ Calling this method overload is the same as calling the <xref:System.Type.GetTyp
 
  If the current <xref:System.Type> represents a type parameter in the definition of a generic type or generic method, this property always returns `false`.
 
-
-
 ## Examples
  The following example creates an array of <xref:System.Type> objects that represent the following types:contains type returns `true` if the specified object is `abstract`; otherwise, it returns `false`.
 
@@ -12288,8 +12176,6 @@ Calling this method overload is the same as calling the <xref:System.Type.GetTyp
  If the current <xref:System.Type> represents a generic type, this property pertains to the generic type definition from which the type was constructed. For example, if the current <xref:System.Type> represents `MyGenericType<int>` (`MyGenericType(Of Integer)` in Visual Basic), the value of this property is determined by `MyGenericType<T>`.
 
  If the current <xref:System.Type> represents a type parameter of a generic type, this property always returns `false`.
-
-
 
 ## Examples
  The following example gets the field information and checks for the `AnsiClass` attribute.
@@ -12375,8 +12261,6 @@ GetType(Array).IsAssignableFrom(type)
 
  This property is read-only.
 
-
-
 ## Examples
  The following example demonstrates using the <xref:System.Type.IsArray> property.
 
@@ -12435,8 +12319,6 @@ GetType(Array).IsAssignableFrom(type)
 
 ## Remarks
  An instance of the <xref:System.Array> class must return `false` because it's an object, not an array.
-
-
 
 ## Examples
  The following example overrides the `IsArrayImpl` method in the `MyTypeDelegator` class, checks if a variable is an array, and displays the result.
@@ -12549,8 +12431,6 @@ GetType(Array).IsAssignableFrom(type)
  :::code language="csharp" source="~/snippets/csharp/System/Type/IsAssignableFrom/isassignablefrom_ex1.cs" id="Snippet1":::
  :::code language="fsharp" source="~/snippets/fsharp/System/Type/IsAssignableFrom/isassignablefrom_ex1.fs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System/Type/IsAssignableFrom/isassignablefrom_ex1.vb" id="Snippet1":::
-
-
 
 ## Examples
  The following example demonstrates the `IsAssignableFrom` method using defined classes, integer arrays, and generics.
@@ -12745,8 +12625,6 @@ GetType(Array).IsAssignableFrom(type)
 
  If the current <xref:System.Type> represents a type parameter in the definition of a generic type or generic method, this property always returns `false`.
 
-
-
 ## Examples
  The following example creates an instance of the type and displays the <xref:System.Type.IsAutoLayout> property.
 
@@ -12817,8 +12695,6 @@ GetType(Array).IsAssignableFrom(type)
 
 ## Remarks
  To get to the actual type, dereference the type that was passed by reference, and then call <xref:System.Type.GetElementType*> on that type.
-
-
 
 ## Examples
  The following example demonstrates a use of the `IsByRef` property to check whether a specified type is passed by reference. The example defines the class `MyTypeDelegator`, which overrides the `HasElementTypeImpl` method. The main class checks for the `HasElementType` property and displays the element type.
@@ -12978,8 +12854,6 @@ Byref-like structures are declared using `ref struct` keyword in C#. An instance
  The <xref:System.Reflection.TypeAttributes.ClassSemanticsMask?displayProperty=nameWithType> enumeration value  distinguishes a type declaration as class or interface. However, both classes and value types are marked with the <xref:System.Reflection.TypeAttributes.Class?displayProperty=nameWithType> attribute. If you retrieve the value of a type's Attributes property and use the <xref:System.Reflection.TypeAttributes.ClassSemanticsMask?displayProperty=nameWithType> value to determine whether a type is a class instead of a value type, you must also call the <xref:System.Type.IsValueType> property. The example for the <xref:System.Reflection.TypeAttributes> enumeration contains additional information as well as anexample.
 
  This property is read-only.
-
-
 
 ## Examples
  The following example creates an instance of a type and indicates whether the type is a class.
@@ -13216,8 +13090,6 @@ Byref-like structures are declared using `ref struct` keyword in C#. An instance
 
  If the current <xref:System.Type> represents a type parameter in the definition of a generic type or generic method, this property always returns `false`.
 
-
-
 ## Examples
  The following example demonstrates the `IsContextful`, <xref:System.Type.IsMarshalByRef*>, and <xref:System.Type.IsPrimitive*> properties of the <xref:System.Type> class. It checks whether the given type can be hosted in the context, whether it can be marshaled by reference, and whether the type is a primitive data type.
 
@@ -13278,8 +13150,6 @@ Byref-like structures are declared using `ref struct` keyword in C#. An instance
  This method can be overridden by a derived class.
 
  A context intercepts calls to the class members and enforce policies that are applied to the class, such as synchronization.
-
-
 
 ## Examples
  The following example demonstrates a use of the `IsContextfulImpl` method.
@@ -13356,8 +13226,6 @@ Byref-like structures are declared using `ref struct` keyword in C#. An instance
  If the current <xref:System.Type> represents a type parameter in the definition of a generic type or generic method, this property always returns `false`.
 
  This property is read-only.
-
-
 
 ## Examples
  The following example demonstrates how to use the `IsEnum` property.
@@ -13543,8 +13411,6 @@ Byref-like structures are declared using `ref struct` keyword in C#. An instance
 
  If the current <xref:System.Type> represents a type parameter in the definition of a generic type or generic method, this property always returns `false`.
 
-
-
 ## Examples
  The following example creates an instance of a type and displays the value of its <xref:System.Type.IsExplicitLayout> property. It uses the `MySystemTime` class, which is also in the code example for <xref:System.Runtime.InteropServices.StructLayoutAttribute>.
 
@@ -13689,8 +13555,6 @@ Byref-like structures are declared using `ref struct` keyword in C#. An instance
 
  For a list of the invariant conditions for terms used in generic reflection, see the <xref:System.Type.IsGenericType> property remarks.
 
-
-
 ## Examples
  The following example uses the <xref:System.Type.IsGenericParameter> property to test for generic type parameters in a generic type.
 
@@ -13784,8 +13648,6 @@ Byref-like structures are declared using `ref struct` keyword in C#. An instance
 |The type of field `F`|<xref:System.Type.IsGenericType*> is `true`.<br /><br /> <xref:System.Type.IsGenericTypeDefinition*> is `false` because a type has been assigned to the type parameter of `G`. Note that this is equivalent to having called the <xref:System.Type.MakeGenericType*> method.<br /><br /> <xref:System.Type.ContainsGenericParameters*> is `true` because the type of field `F` has a type argument that is an open constructed type. The constructed type is open because its type argument (that is, `Base`) is a generic type definition. This illustrates the recursive nature of the <xref:System.Type.IsGenericType> property.|
 |The nested class `Nested`|<xref:System.Type.IsGenericType*> is `true`, even though the `Nested` class has no generic type parameters of its own, because it's nested in a generic type.<br /><br /> <xref:System.Type.IsGenericTypeDefinition*> is `true`. That is, you can call the <xref:System.Type.MakeGenericType*> method and supply the type parameter of the enclosing type, `Derived`.<br /><br /> <xref:System.Type.ContainsGenericParameters*> is `true` because the enclosing type, `Derived`, has generic type parameters. This illustrates the recursive nature of the <xref:System.Type.ContainsGenericParameters> property.|
 
-
-
 ## Examples
  The following code example displays the value of the <xref:System.Type.IsGenericType*>, <xref:System.Type.IsGenericTypeDefinition*>, <xref:System.Type.IsGenericParameter*>, and <xref:System.Type.ContainsGenericParameters*> properties for the types described in the Remarks section. For explanations of the property values, see the accompanying table in Remarks.
 
@@ -13849,8 +13711,6 @@ Byref-like structures are declared using `ref struct` keyword in C#. An instance
  Use the <xref:System.Type.IsGenericTypeDefinition> property to determine whether you can create new types from the current type. If the <xref:System.Type.IsGenericTypeDefinition> property returns `true`, you can call the <xref:System.Type.MakeGenericType*> method to create new generic types.
 
  For a list of the invariant conditions for terms used in generic reflection, see the <xref:System.Type.IsGenericType> property remarks.
-
-
 
 ## Examples
  The following example displays information about a type, including whether or not it's a generic type definition. Information is displayed for a constructed type, for its generic type definition, and for an ordinary type.
@@ -14030,8 +13890,6 @@ Byref-like structures are declared using `ref struct` keyword in C#. An instance
 > [!NOTE]
 > A constructed type is not an instance of its generic type definition. That is, `MyGenericList<int>` (`MyGenericList(Of Integer)` in Visual Basic) is not an instance of `MyGenericList<T>` (`MyGenericList(Of T)` in Visual Basic).
 
-
-
 ## Examples
  The following example demonstrates the use of the `IsInstanceOfType` method.
 
@@ -14101,8 +13959,6 @@ Byref-like structures are declared using `ref struct` keyword in C#. An instance
  If the current <xref:System.Type> represents a type parameter in the definition of a generic type or generic method, this property always returns `false`.
 
  This property is read-only.
-
-
 
 ## Examples
  The following example creates an interface, checks for the interface type, and indicates whether a class has the `IsInterface` property set.
@@ -14298,8 +14154,6 @@ Byref-like structures are declared using `ref struct` keyword in C#. An instance
 ## Remarks
  This method can be overridden by a derived class.
 
-
-
 ## Examples
  The following example determines whether the given type is marshaled by reference and displays the result.
 
@@ -14370,8 +14224,6 @@ Byref-like structures are declared using `ref struct` keyword in C#. An instance
 > [!NOTE]
 > The <xref:System.Reflection.TypeAttributes.VisibilityMask> enumeration member selects the visibility attributes for a type.
 
-
-
 ## Examples
  The following example creates an outer class with a number of nested classes that have various types of visibility. It then retrieves the value of a number of visibility-related <xref:System.Type> properties for the parent type and each of its nested types.
 
@@ -14438,8 +14290,6 @@ Byref-like structures are declared using `ref struct` keyword in C#. An instance
  If the current <xref:System.Type> represents a type parameter of a generic type, this property always returns `false`.
 
  <xref:System.Reflection.TypeAttributes.VisibilityMask?displayProperty=nameWithType> selects the visibility attributes.
-
-
 
 ## Examples
  The following example creates an outer class with a number of nested classes that have various types of visibility. It then retrieves the value of a number of visibility-related <xref:System.Type> properties for the parent type and each of its nested types.
@@ -14508,8 +14358,6 @@ Byref-like structures are declared using `ref struct` keyword in C#. An instance
 
  A <xref:System.Type> object's family is defined as all objects of the same <xref:System.Type> and of its subtypes.
 
-
-
 ## Examples
  The following example creates an outer class with a number of nested classes that have various types of visibility. It then retrieves the value of a number of visibility-related <xref:System.Type> properties for the parent type and each of its nested types.
 
@@ -14573,8 +14421,6 @@ Byref-like structures are declared using `ref struct` keyword in C#. An instance
  <xref:System.Reflection.TypeAttributes.VisibilityMask?displayProperty=nameWithType> selects the visibility attributes.
 
  A <xref:System.Type> object's family is defined as all objects of the exact same <xref:System.Type> and of its subtypes.
-
-
 
 ## Examples
  The following example creates an outer class with a number of nested classes that have various types of visibility. It then retrieves the value of a number of visibility-related <xref:System.Type> properties for the parent type and each of its nested types.
@@ -14642,8 +14488,6 @@ Byref-like structures are declared using `ref struct` keyword in C#. An instance
 
  A <xref:System.Type> object's family is defined as all objects of the exact same <xref:System.Type> and of its subtypes.
 
-
-
 ## Examples
  The following example creates an outer class with a number of nested classes that have various types of visibility. It then retrieves the value of a number of visibility-related <xref:System.Type> properties for the parent type and each of its nested types.
 
@@ -14705,8 +14549,6 @@ Byref-like structures are declared using `ref struct` keyword in C#. An instance
  If the current <xref:System.Type> represents a type parameter of a generic type, this property always returns `false`.
 
  <xref:System.Reflection.TypeAttributes.VisibilityMask?displayProperty=nameWithType> selects the visibility attributes.
-
-
 
 ## Examples
  The following example creates an outer class with a number of nested classes that have various types of visibility. It then retrieves the value of a number of visibility-related <xref:System.Type> properties for the parent type and each of its nested types.
@@ -14776,8 +14618,6 @@ Byref-like structures are declared using `ref struct` keyword in C#. An instance
 
  <xref:System.Reflection.TypeAttributes.VisibilityMask?displayProperty=nameWithType> selects the visibility attributes.
 
-
-
 ## Examples
  The following example creates an outer class with a number of nested classes that have various types of visibility. It then retrieves the value of a number of visibility-related <xref:System.Type> properties for the parent type and each of its nested types.
 
@@ -14839,8 +14679,6 @@ Byref-like structures are declared using `ref struct` keyword in C#. An instance
  Do not use this property with nested types; use the <xref:System.Type.IsNestedPublic> property instead.
 
  If the current <xref:System.Type> represents a type parameter of a generic type, this property returns `false`.
-
-
 
 ## Examples
  This example uses the `IsNotPublic` property to get the visibility of the type.
@@ -14925,8 +14763,6 @@ Byref-like structures are declared using `ref struct` keyword in C#. An instance
  If the current <xref:System.Type> represents a generic type, or a type parameter in the definition of a generic type or generic method, this property always returns `false`.
 
  This property is read-only.
-
-
 
 ## Examples
  The following example shows a use of the `IsPointer` property.
@@ -15036,8 +14872,6 @@ Byref-like structures are declared using `ref struct` keyword in C#. An instance
 
  If the current <xref:System.Type> represents a generic type, or a type parameter in the definition of a generic type or generic method, this property always returns `false`.
 
-
-
 ## Examples
  The following example demonstrates the <xref:System.Type.IsContextful*>, <xref:System.Type.IsMarshalByRef*>, and `IsPrimitive` properties of the <xref:System.Type> class. It checks whether the given type can be hosted in the context, whether it can be marshaled by reference, and whether the type is a primitive data type.
 
@@ -15108,8 +14942,6 @@ Byref-like structures are declared using `ref struct` keyword in C#. An instance
 
 ## Remarks
  The primitive types are <xref:System.Boolean>, <xref:System.Byte>, <xref:System.SByte>, <xref:System.Int16>, <xref:System.UInt16>, <xref:System.Int32>, <xref:System.UInt32>, <xref:System.Int64>, <xref:System.UInt64>, <xref:System.Char>, <xref:System.Double>, and <xref:System.Single>.
-
-
 
 ## Examples
  The following example determines whether the given type is a primitive type and displays the result.
@@ -15194,8 +15026,6 @@ Byref-like structures are declared using `ref struct` keyword in C#. An instance
 
  <xref:System.Reflection.TypeAttributes.VisibilityMask?displayProperty=nameWithType> selects the visibility attributes.
 
-
-
 ## Examples
  The following example creates an instance of `MyTestClass`, checks for the `IsPublic` property, and displays the result.
 
@@ -15258,8 +15088,6 @@ Byref-like structures are declared using `ref struct` keyword in C#. An instance
 
 ## Remarks
  If the current <xref:System.Type> represents a type parameter of a generic type, this property always returns `true`.
-
-
 
 ## Examples
  The following example creates an instance of a `sealed` class, checks for the `IsSealed` property, and displays the result.
@@ -15721,8 +15549,6 @@ A signature type is a restricted type that can be passed to the <xref:System.Typ
 
  This method can be overridden by a derived class.
 
-
-
 ## Examples
  The following example creates a class named `Class1` and a derived class named `DerivedC1`. It calls the <xref:System.Type.IsSubclassOf*> method to show that `DerivedC1` is a subclass of `Class1`.
 
@@ -15966,8 +15792,6 @@ A signature type is a restricted type that can be passed to the <xref:System.Typ
 
  This property is read-only.
 
-
-
 ## Examples
  The following example creates a variable of type `MyEnum`, checks for the `IsValueType` property, and displays the result.
 
@@ -16141,8 +15965,6 @@ If the value of this property is `true` for an array type, it can be used to cre
 
 ## Remarks
  Use this property to determine whether a type is part of the public interface of a component assembly.
-
-
 
 ## Examples
  The following code example tests two classes, only one of which is visible outside the assembly.
@@ -16390,8 +16212,6 @@ If the value of this property is `true` for an array type, it can be used to cre
  The <xref:System.Type.MakeByRefType*> method provides a way to generate `ref` types (`ByRef` in Visual Basic) for parameter lists.
 
  Using the syntax of Microsoft intermediate language (MSIL), if the current <xref:System.Type> object represents <xref:System.Int32>, this method returns a <xref:System.Type> object representing `Int32&`.
-
-
 
 ## Examples
  The following code example creates array, `ref` (`ByRef` in Visual Basic), and pointer types for the `Test` class.
@@ -16795,8 +16615,6 @@ The following example uses the <xref:System.Type.MakeGenericType*> method to cre
 
  Using the syntax of Microsoft intermediate language (MSIL), if the current <xref:System.Type> object represents <xref:System.Int32>, this method returns a <xref:System.Type> object representing `Int32*`.
 
-
-
 ## Examples
  The following code example creates array, `ref` (`ByRef` in Visual Basic), and pointer types for the `Test` class.
 
@@ -16868,8 +16686,6 @@ The following example uses the <xref:System.Type.MakeGenericType*> method to cre
 
  If the current <xref:System.Type> represents a type parameter in the definition of a generic type or generic method, this property always returns <xref:System.Reflection.MemberTypes.TypeInfo?displayProperty=nameWithType>.
 
-
-
 ## Examples
  The following code example shows the `MemberType` field as a parameter to the `GetMember` method:
 
@@ -16929,8 +16745,6 @@ The following example uses the <xref:System.Type.MakeGenericType*> method to cre
 
 ## Remarks
  Use the `Missing` field for invocation through reflection to obtain the default value of a parameter. If the `Missing` field is passed in for a parameter value and there is no default value for that parameter, an <xref:System.ArgumentException> is thrown.
-
-
 
 ## Examples
  The following code example shows the use of the `Missing` field to invoke a method with its default arguments.
@@ -17001,8 +16815,6 @@ The following example uses the <xref:System.Type.MakeGenericType*> method to cre
  If the current <xref:System.Type> represents a constructed generic type, this property returns the module in which the generic type definition was defined. For example, if you create an instance of `MyGenericStack<int>`, the <xref:System.Type.Module> property for the constructed type returns the module in which `MyGenericStack<T>` is defined.
 
  Similarly, if the current <xref:System.Type> represents a generic parameter `T`, this property returns the assembly that contains the generic type that defines `T`.
-
-
 
 ## Examples
  This following example demonstrates a use of the <xref:System.Type.Namespace*> and `Module` properties and the <xref:System.Type.ToString*> method of <xref:System.Type>.
@@ -17108,8 +16920,6 @@ The following example uses the <xref:System.Type.MakeGenericType*> method to cre
  If the current <xref:System.Type> represents a constructed generic type, this property returns the namespace that contains the generic type definition. Similarly, if the current <xref:System.Type> represents a generic parameter `T`, this property returns the namespace that contains the generic type definition that defines `T`.
 
  If the current <xref:System.Type> object represents a generic parameter and a generic type definition is not available, such as for a signature type returned by <xref:System.Type.MakeGenericMethodParameter*>, this property returns `null`.
-
-
 
 ## Examples
  This following example demonstrates a use of the `Namespace` and <xref:System.Type.Module*> properties and the <xref:System.Type.ToString*> method of <xref:System.Type>.
@@ -17288,8 +17098,6 @@ The following example uses the <xref:System.Type.MakeGenericType*> method to cre
 
 ## Remarks
  For <xref:System.Type> objects, the value of this property is always the same as the value of the <xref:System.Type.DeclaringType> property.
-
-
 
 ## Examples
  This example displays the reflected type of a nested class.
@@ -17483,8 +17291,6 @@ The following example uses the <xref:System.Type.MakeGenericType*> method to cre
 
 ## Remarks
  <xref:System.Runtime.InteropServices.StructLayoutAttribute> is not returned by the <xref:System.Reflection.MemberInfo.GetCustomAttributes*> method. Instead, use this property to get it.
-
-
 
 ## Examples
  The following code example first defines a class, a structure, and a structure with special layout attributes (the structures are nested within the class). The example then uses the <xref:System.Type.StructLayoutAttribute> property to obtain a <xref:System.Runtime.InteropServices.StructLayoutAttribute> for each type, and displays the properties of the attributes.
@@ -17752,8 +17558,6 @@ The following example uses the <xref:System.Type.MakeGenericType*> method to cre
 
  If the current <xref:System.Type> represents a generic type, the type and its type arguments are qualified by namespace and by nested type, but not by assembly. If the current <xref:System.Type> represents a type parameter in the definition of a generic type or generic method, this method returns the unqualified name of the type parameter.
 
-
-
 ## Examples
  This following example demonstrates a use of the <xref:System.Type.Namespace*> and <xref:System.Type.Module*> properties and the `ToString` method of <xref:System.Type>.
 
@@ -17826,8 +17630,6 @@ The following example uses the <xref:System.Type.MakeGenericType*> method to cre
 
 ## Remarks
  `TypeHandle` encapsulates a pointer to an internal data structure that represents the type. This handle is unique during the process lifetime. The handle is valid only in the application domain in which it was obtained.
-
-
 
 ## Examples
  The following example returns the handle of the corresponding type and passes the handle to a method that gets the type from the handle and displays it.

@@ -74,8 +74,6 @@
 
  The .NET Framework also supports custom formatting. This typically involves the creation of a formatting class that implements both <xref:System.IFormatProvider> and <xref:System.ICustomFormatter>. An instance of this class is then passed as a parameter to a method that performs a custom formatting operation, such as <xref:System.String.Format(System.IFormatProvider,System.String,System.Object%5B%5D)?displayProperty=nameWithType> The example provides an illustration of such a custom implementation that formats a number as a 12-digit account number.
 
-
-
 ## Examples
  The following example illustrates how an <xref:System.IFormatProvider> implementation can change the representation of a date and time value. In this case, a single date is displayed by using <xref:System.Globalization.CultureInfo> objects that represent four different cultures.
 
@@ -160,8 +158,6 @@
  For example, in the call to the <xref:System.Int32.ToString(System.IFormatProvider)?displayProperty=nameWithType> method, the method argument is an <xref:System.IFormatProvider> object that provides information about how the string representation of the current integer instance might be formatted. When the runtime executes the method, it calls the <xref:System.IFormatProvider> object's <xref:System.IFormatProvider.GetFormat*> method and passes it a <xref:System.Type> object that represents the <xref:System.Globalization.NumberFormatInfo> type. If the <xref:System.IFormatProvider> object can supply a <xref:System.Globalization.NumberFormatInfo> object, it returns that object. If it cannot supply an object of that type, it returns `null`.
 
  You can implement the <xref:System.IFormatProvider> interface and the <xref:System.IFormatProvider.GetFormat*> method in classes that provide custom formatting or parsing services. The <xref:System.IFormatProvider> implementation is then passed as an argument to any overload of a parsing or formatting method that has a parameter of type <xref:System.IFormatProvider>, such as <xref:System.String.Format(System.IFormatProvider,System.String,System.Object%5B%5D)?displayProperty=nameWithType>, <xref:System.Int32.ToString(System.String,System.IFormatProvider)?displayProperty=nameWithType>, or <xref:System.DateTime.Parse(System.String,System.IFormatProvider)?displayProperty=nameWithType>.
-
-
 
 ## Examples
  The following example illustrates the use of a class that implements the <xref:System.IFormatProvider> interface and the <xref:System.IFormatProvider.GetFormat*> method. The `AcctNumberFormat` class converts an <xref:System.Int64> value that represents an account number to a formatted 12-digit account number. Its `GetFormat` method returns a reference to itself if the `formatType` parameter refers to a class that implements <xref:System.ICustomFormatter>; otherwise, `GetFormat` returns `null`.

@@ -82,8 +82,6 @@
 
  To create a <xref:System.TimeZoneInfo.AdjustmentRule> object, call the `static` (`Shared` in Visual Basic) <xref:System.TimeZoneInfo.AdjustmentRule.CreateAdjustmentRule*?displayProperty=nameWithType> method. You can then supply an array of <xref:System.TimeZoneInfo.AdjustmentRule> objects to two of the overloads of the <xref:System.TimeZoneInfo.CreateCustomTimeZone*?displayProperty=nameWithType> method. To retrieve the adjustment rules of a particular time zone, call its <xref:System.TimeZoneInfo.GetAdjustmentRules*?displayProperty=nameWithType> method, which returns an array of <xref:System.TimeZoneInfo.AdjustmentRule> objects.
 
-
-
 ## Examples
  The following example retrieves all time zones defined on the local system and displays complete information about their adjustment rules.
 
@@ -259,8 +257,6 @@ dateVariable.Date
 > [!NOTE]
 > The `daylightDelta` parameter defines the difference between a time zone's standard time and its daylight saving time. It is not intended to define the time zone's standard time offset from Coordinated Universal Time (UTC). The <xref:System.TimeZoneInfo> class assumes that this offset from UTC is constant throughout the life of the time zone. To reflect a change in a time zone's offset from UTC that is not caused by the application of an adjustment rule, you must use the <xref:System.TimeZoneInfo.CreateCustomTimeZone*> method to create a new custom time zone.
 
-
-
 ## Examples
  The following example creates an alternate Central Standard Time zone and defines three adjustment rules for the periods 1976-1986, 1987-2006, and 2007 and beyond. These rules are added to a generic <xref:System.Collections.Generic.List`1> object whose elements are then copied to a <xref:System.TimeZoneInfo.AdjustmentRule> array. This array is then used in the call to the <xref:System.TimeZoneInfo.CreateCustomTimeZone(System.String,System.TimeSpan,System.String,System.String,System.String,System.TimeZoneInfo.AdjustmentRule%5B%5D)?displayProperty=nameWithType> method.
 
@@ -395,8 +391,6 @@ dateVariable.Date
 
  This means that, although time zone adjustment rules stored in the registry are useful for performing current time zone-related operations, they cannot be reliably used for retrieving historical time zone information. For information about defining a custom time zone with multiple adjustment rules that can be used in a historical time zone-aware application, see [How to: Create Time Zones with Adjustment Rules](/dotnet/standard/datetime/create-time-zones-with-adjustment-rules).
 
-
-
 ## Examples
  The following example displays information about all of the time zones defined in the local computer's system registry, including the starting and ending dates of their adjustment rules.
 
@@ -467,8 +461,6 @@ dateVariable.Date
 - Monday, January 01, 2007, to Friday, December 31, 9999.
 
  This means that, although time zone adjustment rules stored in the registry are useful for performing current time zone-related operations, they cannot be reliably used for retrieving historical time zone information. For information about defining a custom time zone with multiple adjustment rules that can be used in a historical time zone-aware application, see [How to: Create Time Zones with Adjustment Rules](/dotnet/standard/datetime/create-time-zones-with-adjustment-rules).
-
-
 
 ## Examples
  The following example displays information about all of the time zones defined in the local computer's system registry, including the starting and ending dates of their adjustment rules.
@@ -744,8 +736,6 @@ TimeZoneTime = BaseUtcOffset + DaylightDelta + UtcTime
 
 ## Remarks
  To determine whether two <xref:System.TimeZoneInfo.AdjustmentRule> objects are equal, the <xref:System.TimeZoneInfo.AdjustmentRule.Equals(System.TimeZoneInfo.AdjustmentRule)> method compares the member values of each object. Two adjustment rules are equal if they have the same effective dates, the same delta, and identical values for the <xref:System.TimeZoneInfo.TransitionTime> objects returned by their <xref:System.TimeZoneInfo.AdjustmentRule.DaylightTransitionStart*> and <xref:System.TimeZoneInfo.AdjustmentRule.DaylightTransitionEnd*> properties.
-
-
 
 ## Examples
  The following example calls the <xref:System.TimeZoneInfo.AdjustmentRule.Equals(System.TimeZoneInfo.AdjustmentRule)?displayProperty=nameWithType> method to compare the adjustment rules for Central Standard Time with those for Canada Central Standard Time and Mexico Standard Time.

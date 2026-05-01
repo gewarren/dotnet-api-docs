@@ -26,8 +26,6 @@
 
  SOAP extensions can be applied to either or both an XML Web service method created using ASP.NET or an XML Web service client. When a SOAP extension is applied to an XML Web service method, the <xref:System.Web.Services.Protocols.SoapExtension.ProcessMessage*> method receives an instance of <xref:System.Web.Services.Protocols.SoapServerMessage>, which derives from <xref:System.Web.Services.Protocols.SoapMessage>. Likewise, when a SOAP extension is applied to an XML Web service client, <xref:System.Web.Services.Protocols.SoapExtension.ProcessMessage*> receives an instance of <xref:System.Web.Services.Protocols.SoapClientMessage>.
 
-
-
 ## Examples
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Remoting/SoapMessage/CPP/SoapMessage.cpp" id="Snippet1":::
  :::code language="csharp" source="~/snippets/csharp/System.Web.Services.Protocols/SoapMessage/Overview/soapmessage.cs" id="Snippet1":::
@@ -62,8 +60,6 @@
 
 ## Remarks
  The <xref:System.Web.Services.Protocols.SoapMessage.Action> property can be accessed during any <xref:System.Web.Services.Protocols.SoapMessageStage>.
-
-
 
 ## Examples
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Remoting/SoapMessage/CPP/SoapMessage.cpp" id="Snippet2":::
@@ -134,8 +130,6 @@
  The <xref:System.Web.Services.Protocols.SoapMessage.ContentType> property can only be accessed in the <xref:System.Web.Services.Protocols.SoapMessageStage.BeforeSerialize> and <xref:System.Web.Services.Protocols.SoapMessageStage.BeforeDeserialize> stages; otherwise, an <xref:System.InvalidOperationException> is thrown.
 
  Use the <xref:System.Web.Services.Protocols.SoapMessage.ContentEncoding> property, instead of the <xref:System.Web.Services.Protocols.SoapMessage.ContentType> property to provide supplementary information about the encoding of a SOAP message.
-
-
 
 ## Examples
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Remoting/SoapMessage/CPP/SoapMessage.cpp" id="Snippet3":::
@@ -247,8 +241,6 @@
 
  <xref:System.Web.Services.Protocols.SoapMessage.EnsureStage*> can be called during any <xref:System.Web.Services.Protocols.SoapMessageStage>.
 
-
-
 ## Examples
  The following example asserts that the current <xref:System.Web.Services.Protocols.SoapMessageStage> is either <xref:System.Web.Services.Protocols.SoapMessageStage.BeforeSerialize> or <xref:System.Web.Services.Protocols.SoapMessageStage.BeforeDeserialize>; if it is not, an exception is thrown.
 
@@ -329,8 +321,6 @@
 
  In a <xref:System.Web.Services.Protocols.SoapClientMessage> the in parameters are available in the <xref:System.Web.Services.Protocols.SoapMessageStage.BeforeSerialize><xref:System.Web.Services.Protocols.SoapMessageStage>. In a <xref:System.Web.Services.Protocols.SoapServerMessage> the in parameters are available in the <xref:System.Web.Services.Protocols.SoapMessageStage.AfterDeserialize><xref:System.Web.Services.Protocols.SoapMessageStage>.
 
-
-
 ## Examples
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Remoting/SoapMessage/CPP/SoapMessage.cpp" id="Snippet6":::
  :::code language="csharp" source="~/snippets/csharp/System.Web.Services.Protocols/SoapMessage/Overview/soapmessage.cs" id="Snippet6":::
@@ -377,8 +367,6 @@
 
  In a <xref:System.Web.Services.Protocols.SoapClientMessage> the out parameters are available in the <xref:System.Web.Services.Protocols.SoapMessageStage.AfterDeserialize><xref:System.Web.Services.Protocols.SoapMessageStage>. In a <xref:System.Web.Services.Protocols.SoapServerMessage> the out parameters are available in the <xref:System.Web.Services.Protocols.SoapMessageStage.BeforeSerialize> of the <xref:System.Web.Services.Protocols.SoapMessageStage>.
 
-
-
 ## Examples
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Remoting/SoapMessage/CPP/SoapMessage.cpp" id="Snippet8":::
  :::code language="csharp" source="~/snippets/csharp/System.Web.Services.Protocols/SoapMessage/Overview/soapmessage.cs" id="Snippet8":::
@@ -418,8 +406,6 @@
  If a return value is not available, ASP.NET throws <xref:System.InvalidOperationException> when accessing the <xref:System.Web.Services.Protocols.SoapMessage.GetReturnValue> property.
 
  In a <xref:System.Web.Services.Protocols.SoapClientMessage> the return value is available when the <xref:System.Web.Services.Protocols.SoapMessageStage> value is <xref:System.Web.Services.Protocols.SoapMessageStage.AfterDeserialize>. In a <xref:System.Web.Services.Protocols.SoapServerMessage> the return value is available when <xref:System.Web.Services.Protocols.SoapMessageStage> value is <xref:System.Web.Services.Protocols.SoapMessageStage.BeforeSerialize>.
-
-
 
 ## Examples
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Remoting/SoapMessage/CPP/SoapMessage.cpp" id="Snippet9":::
@@ -493,8 +479,6 @@
 ## Remarks
  Although <xref:System.Web.Services.Protocols.SoapMessage.MethodInfo*> can be accessed during any <xref:System.Web.Services.Protocols.SoapMessageStage>, it only has data during <xref:System.Web.Services.Protocols.SoapMessageStage.AfterDeserialize> and <xref:System.Web.Services.Protocols.SoapMessageStage.BeforeSerialize>.
 
-
-
 ## Examples
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Remoting/SoapMessage/CPP/SoapMessage.cpp" id="Snippet7":::
  :::code language="csharp" source="~/snippets/csharp/System.Web.Services.Protocols/SoapMessage/Overview/soapmessage.cs" id="Snippet7":::
@@ -533,8 +517,6 @@
  See the <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.OneWay?displayProperty=nameWithType> property of <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute> or <xref:System.Web.Services.Protocols.SoapRpcMethodAttribute> for details about one-way XML Web service methods.
 
  The <xref:System.Web.Services.Protocols.SoapMessage.OneWay> property is accessible in all stages of <xref:System.Web.Services.Protocols.SoapMessageStage>.
-
-
 
 ## Examples
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Remoting/SoapMessage/CPP/SoapMessage.cpp" id="Snippet4":::
@@ -613,8 +595,6 @@
 ## Remarks
  The <xref:System.Web.Services.Protocols.SoapMessage.Stage> property can be accessed at any <xref:System.Web.Services.Protocols.SoapMessageStage>.
 
-
-
 ## Examples
  The following code example demonstrates how to determine the <xref:System.Web.Services.Protocols.SoapMessageStage> within the <xref:System.Web.Services.Protocols.SoapExtension.ProcessMessage*?displayProperty=nameWithType> method.
 
@@ -656,8 +636,6 @@
 
  For more information on modifying the data representing a SOAP request or SOAP response, see <xref:System.Web.Services.Protocols.SoapExtension.ChainStream*>.
 
-
-
 ## Examples
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Remoting/SoapMessage_Headers/CPP/SoapMessage_Headers.cpp" id="Snippet2":::
  :::code language="csharp" source="~/snippets/csharp/System.Web.Services.Protocols/SoapMessage/Stream/soapmessage_headers.cs" id="Snippet2":::
@@ -692,8 +670,6 @@
 
 ## Remarks
  The <xref:System.Web.Services.Protocols.SoapMessage.Url> property can be accessed during any <xref:System.Web.Services.Protocols.SoapMessageStage>.
-
-
 
 ## Examples
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Remoting/SoapMessage/CPP/SoapMessage.cpp" id="Snippet5":::

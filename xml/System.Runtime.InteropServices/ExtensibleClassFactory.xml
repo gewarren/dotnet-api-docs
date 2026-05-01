@@ -30,8 +30,6 @@
 ## Remarks
  The `ExtensibleClassFactory` allows users to specify a `delegate` that is called during construction of a runtime callable wrapper (RCW) that provides an instance of the underlying COM object. In effect, the callback acts as the class factory for the COM object wrapped by the RCW. Without the callback, the common language runtime creates the underlying COM object by calling `CoCreateInstance`. This callback provides an alternative way of activating the underlying object, such as with a COM moniker or by providing a singleton object. The <xref:System.Runtime.InteropServices.ExtensibleClassFactory.RegisterObjectCreationCallback*> method must be called in the `static` initializer of the class that is extending the RCW. Only one object creation callback is permitted per object type. When the extensible RCW is activated, the callback is registered. When the underlying COM object needs to be created, the callback is called to provide a reference to the object. The callback must return an `IUnknown` interface pointer for the base object.
 
-
-
 ## Examples
  Registers a `delegate` that will be called whenever an instance of a managed type that extends from an unmanaged type needs to allocate the aggregated unmanaged object. This `delegate` is expected to allocate and aggregate the unmanaged object and is called in place of a `CoCreateInstance`. This routine must be called in the context of the `static` initializer for the class for which the callbacks will be made.
 

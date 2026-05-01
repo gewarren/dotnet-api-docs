@@ -36,20 +36,18 @@
   <Docs>
     <summary>Specifies that a type, property, field, or method provides a particular export.</summary>
     <remarks>
-      <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
-  
+      <format type="text/markdown"><![CDATA[
+
+## Remarks
+
 In the attributed programming model, the ExportAttribute attribute declares that a part exports, or provides to the composition container, an object that fulfills a particular contract. During composition, parts with imports that have matching contracts have those dependencies filled by the exported object.
 
 The ExportAttribute attribute can apply to either an entire class, or a property, field, or method of a class. If it's applied to the entire class, an instance of the class is the exported object. If it's applied to a member of a class, the exported object will be the value of that member.
 
-Whether or not a contract matches is determined primarily by the contract name and the contract type. For more information, see the <xref:System.Composition.ImportAttribute> reference. 
+Whether or not a contract matches is determined primarily by the contract name and the contract type. For more information, see the <xref:System.Composition.ImportAttribute> reference.
 
-
-
-## Examples  
- The following example shows ExportAttribute being applied to three classes, and three imports that match them.  
+## Examples
+ The following example shows ExportAttribute being applied to three classes, and three imports that match them.
 
 ```csharp
 //Default export infers type and contract name from the
@@ -87,7 +85,7 @@ public class MyImporter2
     public MyExport2 importedMember { get; set; }
 }
 
-//Specifying a contract name should only be 
+//Specifying a contract name should only be
 //needed in rare cases. Usually, using metadata
 //is a better approach.
 [Export("MyContractName", typeof(MyInterface))]
@@ -104,7 +102,7 @@ public class MyImporter3
 }
 
 class Program
-{      
+{
 
     static void Main(string[] args)
     {
@@ -168,7 +166,7 @@ Public Class MyImporter2
     Public Property ImportedMember As MyExport2
 End Class
 
-'Specifying a contract name should only be 
+'Specifying a contract name should only be
 'needed in rare cases. Usually, using metadata
 'is a better approach.
 <Export("MyContractName", GetType(MyInterface))>
@@ -226,13 +224,13 @@ End Sub
       <Docs>
         <summary>Initializes a new instance of the <see cref="T:System.Composition.ExportAttribute" /> class, exporting the type or member marked with this attribute under the default contract name.</summary>
         <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
-  
+          <format type="text/markdown"><![CDATA[
+
+## Remarks
+
 Methods that are marked with this attribute must specify a contract name or a type by using either the <xref:System.ComponentModel.Composition.ExportAttribute.%23ctor(System.String)> or the <xref:System.ComponentModel.Composition.ExportAttribute.%23ctor(System.Type)> method.
 
-The contract name is compared by using the <xref:System.StringComparer.Ordinal> property to perform a case-sensitive, non-linguistic comparison. 
+The contract name is compared by using the <xref:System.StringComparer.Ordinal> property to perform a case-sensitive, non-linguistic comparison.
  ]]></format>
         </remarks>
       </Docs>
@@ -257,13 +255,13 @@ The contract name is compared by using the <xref:System.StringComparer.Ordinal> 
         <param name="contractName">The contract name that is used to export the type or member marked with this attribute, or <see langword="null" /> or an empty string ("") to use the default contract name.</param>
         <summary>Initializes a new instance of the <see cref="T:System.Composition.ExportAttribute" /> class, exporting the type or member marked with this attribute under the specified contract name.</summary>
         <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
+          <format type="text/markdown"><![CDATA[
+
+## Remarks
 
 Methods that are marked with this attribute must specify a contract name or a type by using either the <xref:System.ComponentModel.Composition.ExportAttribute.%23ctor(System.String)> or the <xref:System.ComponentModel.Composition.ExportAttribute.%23ctor(System.Type)> method.
 
-The contract name is compared by using the <xref:System.StringComparer.Ordinal> property to perform a case-sensitive, non-linguistic comparison. 
+The contract name is compared by using the <xref:System.StringComparer.Ordinal> property to perform a case-sensitive, non-linguistic comparison.
  ]]></format>
         </remarks>
       </Docs>
@@ -288,13 +286,13 @@ The contract name is compared by using the <xref:System.StringComparer.Ordinal> 
         <param name="contractType">A type from which to derive the contract name that is used to export the type or member marked with this attribute, or <see langword="null" /> to use the default contract name.</param>
         <summary>Initializes a new instance of the <see cref="T:System.Composition.ExportAttribute" /> class, exporting the type or member marked with this attribute under a contract name derived from the specified type.</summary>
         <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
-  
+          <format type="text/markdown"><![CDATA[
+
+## Remarks
+
 Methods that are marked with this attribute must specify a contract name or a type by using either the <xref:System.ComponentModel.Composition.ExportAttribute.%23ctor(System.String)> or the <xref:System.ComponentModel.Composition.ExportAttribute.%23ctor(System.Type)> method.
 
-The contract name is compared by using the <xref:System.StringComparer.Ordinal> property to perform a case-sensitive, non-linguistic comparison. 
+The contract name is compared by using the <xref:System.StringComparer.Ordinal> property to perform a case-sensitive, non-linguistic comparison.
  ]]></format>
         </remarks>
       </Docs>

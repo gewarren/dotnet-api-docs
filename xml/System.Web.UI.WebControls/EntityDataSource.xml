@@ -231,8 +231,6 @@
 
  If you set the <xref:System.Web.UI.WebControls.EntityDataSource.AutoGenerateOrderByClause> property to `true`, you should not explicitly assign a value to the <xref:System.Web.UI.WebControls.EntityDataSource.OrderBy> property.
 
-
-
 ## Examples
  The following example automatically generates the ORDER BY clause and uses the value of the `OrderByDropDownList` to set the value of the parameter.
 
@@ -572,8 +570,6 @@ AutoGenerateOrderByClause="True">
 
  If the <xref:System.Web.UI.WebControls.EntityDataSource.CommandText*> is set to a query that returns a projection of properties (for example, "`SELECT p.ProductID, p. Name FROM AdventureWorksEntities.Products AS p`"), a <xref:System.Data.Common.DbDataRecord> will be returned.
 
-
-
 ## Examples
  The following example uses the supplied Entity SQL command to returns a collection of Product objects.
 
@@ -717,8 +713,6 @@ AutoGenerateOrderByClause="True">
 ## Remarks
  Handle the <xref:System.Web.UI.WebControls.EntityDataSource.ContextCreating> event to supply your own <xref:System.Data.Objects.ObjectContext> instead of having a new <xref:System.Data.Objects.ObjectContext> created. If the <xref:System.Web.UI.WebControls.EntityDataSource.ContextCreating> event is not handled or the handler does not provide an <xref:System.Data.Objects.ObjectContext>, the <xref:System.Web.UI.WebControls.EntityDataSource> creates one according to its configuration. When an <xref:System.Data.Objects.ObjectContext> is provided to the <xref:System.Web.UI.WebControls.EntityDataSource.ContextCreating> event, the same instance is assigned to the `Context` property of the event object of successive events. For more information, see [Object Context Life-Cycle Management (EntityDataSource)](https://learn.microsoft.com/previous-versions/aspnet/cc668193(v=vs.100)). For more information about the object context, see [Identity Resolution, State Management, and Change Tracking](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896269(v=vs.100)).
 
-
-
 ## Examples
  The following example shows how to create an <xref:System.Data.Objects.ObjectContext> variable of the <xref:System.Web.UI.Page> object and assign it to the <xref:System.Web.UI.WebControls.EntityDataSourceContextCreatingEventArgs.Context> property of the <xref:System.Web.UI.WebControls.EntityDataSourceContextCreatingEventArgs> object.
 
@@ -769,8 +763,6 @@ public partial class _Default : System.Web.UI.Page
 
 ## Remarks
  Handle this event to prevent the <xref:System.Data.Objects.ObjectContext> used by the <xref:System.Web.UI.WebControls.EntityDataSource> control from being disposed of. Do this when you want to use a single <xref:System.Data.Objects.ObjectContext> instance in your page with several controls or instances of the <xref:System.Web.UI.WebControls.EntityDataSource> control. To prevent the <xref:System.Data.Objects.ObjectContext> from being disposed of, set the <xref:System.ComponentModel.CancelEventArgs.Cancel> property of the <xref:System.Web.UI.WebControls.EntityDataSourceContextDisposingEventArgs> object to `true`. For more information, see [Object Context Life-Cycle Management (EntityDataSource)](https://learn.microsoft.com/previous-versions/aspnet/cc668193(v=vs.100)). For more information about the object context, see [Identity Resolution, State Management, and Change Tracking](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896269(v=vs.100)).
-
-
 
 ## Examples
  To keep an existing <xref:System.Data.Objects.ObjectContext> instance member for future reference cancel the <xref:System.Web.UI.WebControls.EntityDataSource.ContextCreated> event as shown by the following code.
@@ -1484,8 +1476,6 @@ protected void EntityDataSource2_ContextDisposing(object sender,
 
  When the <xref:System.Web.UI.WebControls.EntityDataSource.Include> property is used to specify query paths, the properties of the related entities can only be used for read-only data-binding. If related objects are not explicitly included in the query path, the property descriptors are still available for data binding, but the properties themselves return null values. In this case, the related objects must be explicitly loaded to display their values. For more information, see [Loading Related Objects](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896272(v=vs.100)).
 
-
-
 ## Examples
  The following XML markup defines a query path that returns `SalesOrderHeader` objects related to the returned `Contact` object. With each `SalesOrderHeader`, the related `SalesOrderDetail` and `Address` objects are also returned.
 
@@ -1822,8 +1812,6 @@ ObjectQuery<SalesOrderHeader> onlineOrders =
 ## Remarks
  When the <xref:System.Web.UI.WebControls.EntityDataSource.AutoGenerateOrderByClause> property of the <xref:System.Web.UI.WebControls.EntityDataSource> control is set to `true`, the control automatically generates an ORDER BY clause from the parameter in the <xref:System.Web.UI.WebControls.ParameterCollection> assigned to the <xref:System.Web.UI.WebControls.EntityDataSource.OrderByParameters> property. This eliminates the need to explicitly assign an ORDER BY clause to the <xref:System.Web.UI.WebControls.EntityDataSource.OrderBy> property. The construction of the ORDER BY clause from the <xref:System.Web.UI.WebControls.EntityDataSource.OrderByParameters> property requires that the <xref:System.Web.UI.WebControls.Parameter.Name> property of the parameter in the collection identifies a single property of the item that is returned from the query.
 
-
-
 ## Examples
  The following example automatically generates the ORDER BY clause and uses the value of the `orderByDropDownList` to set the value of the parameter.
 
@@ -1943,8 +1931,6 @@ ObjectQuery<SalesOrderHeader> onlineOrders =
  <xref:System.Web.UI.WebControls.EntityDataSource.Select*> cannot be set if <xref:System.Web.UI.WebControls.EntityDataSource.EnableUpdate*>, <xref:System.Web.UI.WebControls.EntityDataSource.EnableDelete*>, or <xref:System.Web.UI.WebControls.EntityDataSource.EnableInsert*> is enabled.
 
  If the <xref:System.Web.UI.WebControls.EntityDataSource.Select*> is set to a query that returns a projection of properties (for example, `SELECT p.ProductID, p. Name FROM AdventureWorksEntities.Products AS p`), a <xref:System.Data.Common.DbDataRecord> will be returned.
-
-
 
 ## Examples
  The following XML markup uses the <xref:System.Web.UI.WebControls.EntityDataSource.Select> property to specify a projection with six of the properties of the Product type:
@@ -2399,8 +2385,6 @@ ObjectQuery<Product> products = context.Product
 
  To filter query results by equating an entity type property to an expression, see information about the <xref:System.Web.UI.WebControls.EntityDataSource.AutoGenerateWhereClause> property.
 
-
-
 ## Examples
  The XML markup in the following example, in an .aspx file, retrieves a value from a control and passes it as a parameter to the <xref:System.Web.UI.WebControls.EntityDataSource.Where> property.
 
@@ -2479,8 +2463,6 @@ ObjectQuery<SalesOrderHeader> onlineOrders =
  Like the <xref:System.Data.Objects.ObjectQuery`1.Where*> method of the <xref:System.Data.Objects.ObjectQuery`1> class, parameters can be passed to the predicate assigned to the <xref:System.Web.UI.WebControls.EntityDataSource.Where> property. The <xref:System.Web.UI.WebControls.EntityDataSource.WhereParameters> property of the <xref:System.Web.UI.WebControls.EntityDataSource> control specifies a <xref:System.Web.UI.WebControls.ParameterCollection> that contains the parameters to supply to the WHERE clause of the query. The <xref:System.Web.UI.WebControls.EntityDataSource.WhereParameters> property uses named arguments to refer to the parameters that are specified in the string that is supplied to the <xref:System.Web.UI.WebControls.EntityDataSource.Where> property.
 
  If the <xref:System.Web.UI.WebControls.EntityDataSource.WhereParameters> property is not set, no parameter substitution is made. All the parameter names in the WHERE clause preceded by the symbol "`@"` must have a matching name in the <xref:System.Web.UI.WebControls.ParameterCollection>. Null values are not allowed for parameters in a <xref:System.Web.UI.WebControls.ParameterCollection>.
-
-
 
 ## Examples
  The XML markup in the following example, in an .aspx file, retrieves a value from a control and passes it as a parameter to the <xref:System.Web.UI.WebControls.EntityDataSource.Where> property.

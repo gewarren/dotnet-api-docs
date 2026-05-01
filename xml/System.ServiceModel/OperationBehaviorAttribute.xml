@@ -47,8 +47,6 @@
 
 - The <xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode> property specifies when service objects are recycled during the method invocation process.
 
-
-
 ## Examples
  The following code example shows an operation that executes within a mandatory distributed transaction. The <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired> property indicates that the method executes under the caller's transaction and the <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete> property indicates that if no unhandled exceptions occur, the transaction commits automatically. If an unhandled exception does occur, the transaction is aborted.
 
@@ -170,8 +168,6 @@
 
  There may be specific scenarios when impersonation is not supported. For more information, see [Unsupported Scenarios](/dotnet/framework/wcf/feature-details/unsupported-scenarios).
 
-
-
 ## Examples
  The following service code example requires impersonation by setting the <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation> property to <xref:System.ServiceModel.ImpersonationOption.Required>.
 
@@ -235,8 +231,6 @@
  You can also use <xref:System.ServiceModel.OperationBehaviorAttribute> to configure a callback contract operation in a duplex client application. When used on a callback operation, the <xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode> property must be <xref:System.ServiceModel.ReleaseInstanceMode.None> or an <xref:System.InvalidOperationException> exception is thrown at runtime.
 
  In addition, it is important to realize that if the service is created by passing a service object to the <xref:System.ServiceModel.ServiceHost.%23ctor(System.Object,System.Uri[])?displayProperty=nameWithType> constructor, the value of this property is treated as if it were <xref:System.ServiceModel.ReleaseInstanceMode.None>.
-
-
 
 ## Examples
  The following example code shows the use of <xref:System.ServiceModel.ReleaseInstanceMode> to recycle service objects both before and after a call.
@@ -405,8 +399,6 @@
 
  Handled exceptions can be thrown in the course of the operation without automatically aborting the transaction. Only unhandled exceptions trigger an automatic abort.
 
-
-
 ## Examples
  The following code example shows an operation that executes within a mandatory distributed transaction. The <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired> property indicates that the operation executes under a transaction scope and the <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete> property indicates that if no unhandled exceptions occur, the transaction scope is completed automatically. If an unhandled exception does occur, the transaction is aborted.
 
@@ -460,8 +452,6 @@
 |True or False|False|Yes|A SOAP fault is returned for the transaction header.|
 |False|True|Yes|Method executes without a transaction.|
 |True|True|Yes|Method executes under the flowed transaction.|
-
-
 
 ## Examples
  The following code example shows an operation that executes within a mandatory distributed transaction. The <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired> property indicates that the operation executes under a transaction scope and the <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete> property indicates that if no unhandled exceptions occur, the transaction scope is completed automatically. If an unhandled exception does occur, the transaction is aborted.

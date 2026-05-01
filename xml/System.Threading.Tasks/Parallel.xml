@@ -144,8 +144,6 @@
 
  If `fromInclusive` is greater than or equal to `toExclusive`, the method returns immediately without performing any iterations.
 
-
-
 ## Examples
  The following example executes up to 100 iterations of a loop in parallel. Each iteration pauses for a random interval from 1 to 1,000 milliseconds. A randomly generated value determines on which iteration of the loop the <xref:System.Threading.Tasks.ParallelLoopState.Break*?displayProperty=nameWithType> method is called. As the output from the example shows, no iterations whose index is greater than the <xref:System.Threading.Tasks.ParallelLoopState.LowestBreakIteration?displayProperty=nameWithType> property value start after the call to the <xref:System.Threading.Tasks.ParallelLoopState.Break*?displayProperty=nameWithType> method.
 
@@ -214,8 +212,6 @@
  The `body` delegate is invoked once for each value in the iteration range (`fromInclusive`, `toExclusive`). It is provided with the iteration count (<xref:System.Int32>) as a parameter.
 
  If `fromInclusive` is greater than or equal to `toExclusive`, the method returns immediately without performing any iterations.
-
-
 
 ## Examples
  The following example uses the <xref:System.Threading.Tasks.Parallel.For*> method for 100 invocations of a delegate that generates random byte values and computes their sum.
@@ -481,8 +477,6 @@
 
  If `fromInclusive` is greater than or equal to `toExclusive`, then the method returns immediately without performing any iterations.
 
-
-
 ## Examples
  The following example shows how to cancel a parallel loop:
 
@@ -557,8 +551,6 @@
 
  If `fromInclusive` is greater than or equal to `toExclusive`, the method returns immediately without performing any iterations.
 
-
-
 ## Examples
  The following example shows how to use the <xref:System.Threading.Tasks.Parallel.For*?displayProperty=nameWithType> method with a <xref:System.Threading.Tasks.ParallelOptions> object:
 
@@ -632,8 +624,6 @@
  Supports 64-bit indexes. The `body` delegate is invoked once for each value in the iteration range (`fromInclusive`, `toExclusive`). It is provided with the iteration count (<xref:System.Int64>) as a parameter.
 
  If `fromInclusive` is greater than or equal to `toExclusive`, then the method returns immediately without performing any iterations.
-
-
 
 ## Examples
  The following example shows how to use <xref:System.Threading.Tasks.ParallelOptions> to specify a custom task scheduler:
@@ -905,8 +895,6 @@
  The <xref:System.Threading.Tasks.Parallel.For*?displayProperty=nameWithType> method may use more tasks than threads over the lifetime of its execution, as existing tasks complete and are replaced by new tasks. This gives the underlying <xref:System.Threading.Tasks.TaskScheduler> object the chance to add, change, or remove threads that service the loop.
 
  If `fromInclusive` is greater than or equal to `toExclusive`, then the method returns immediately without performing any iterations.
-
-
 
 ## Examples
  The following example uses thread-local variables to compute the sum of the results of many lengthy operations. This example limits the degree of parallelism to four.
@@ -1406,8 +1394,6 @@
 ## Remarks
  This overload is provided for scenarios where you want to override the default partitioning scheme. For example, small loop bodies might benefit from partitioning the range. The <xref:System.Threading.Tasks.Parallel.ForEach*?displayProperty=nameWithType> method expects custom partitioners to support dynamic partitioning. For more information, see [Custom Partitioners for PLINQ and TPL](/dotnet/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl) and [How to: Implement Dynamic Partitions](/dotnet/standard/parallel-programming/how-to-implement-dynamic-partitions).
 
-
-
 ## Examples
  The following example shows how to implement a range partitioner for use with <xref:System.Threading.Tasks.Parallel.ForEach*?displayProperty=nameWithType>:
 
@@ -1635,8 +1621,6 @@
 
 ## Remarks
  The `body` delegate is invoked once for each element in the `source` enumerable. It is provided with the current element as a parameter.
-
-
 
 ## Examples
  The following example uses the <xref:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})> method to count the number of vowels and non-white-space characters in a text file. In this case, the <xref:System.Threading.Tasks.ParallelLoopResult> value returned by the method is ignored. Note that, because operations can run in parallel, you must ensure that incrementing the counter variables is an atomic operation, and that multiple threads do not attempt to access the counter variables simultaneously. For this purpose, the example uses the `lock` statement (in C#) and the `SyncLock` statement (in Visual Basic).
@@ -2515,8 +2499,6 @@
 
  The <xref:System.Threading.Tasks.Parallel.ForEach*?displayProperty=nameWithType> method may use more tasks than threads over the lifetime of its execution, as existing tasks complete and are replaced by new tasks. This gives the underlying <xref:System.Threading.Tasks.TaskScheduler> object the chance to add, change, or remove threads that service the loop.
 
-
-
 ## Examples
  The following example shows how to use a <xref:System.Threading.Tasks.Parallel.ForEach*> method with local state:
 
@@ -3370,8 +3352,6 @@ The operation will execute at most <xref:System.Environment.ProcessorCount> oper
  No guarantees are made about the order in which the operations execute or whether they execute in parallel. This method does not return until each of the provided operations has completed, regardless of whether completion occurs due to normal or exceptional termination.
 
  For more information, see [How to: Use Parallel.Invoke to Execute Parallel Operations](/dotnet/standard/parallel-programming/how-to-use-parallel-invoke-to-execute-parallel-operations).
-
-
 
 ## Examples
  This example demonstrates how to use the <xref:System.Threading.Tasks.Parallel.Invoke*> method with other methods, anonymous delegates, and lambda expressions.

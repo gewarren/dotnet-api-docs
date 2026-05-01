@@ -54,8 +54,6 @@
 > [!NOTE]
 > A standalone application does not require an <xref:System.Windows.Application> object; it is possible to implement a custom `static` entry point method (`Main`) that opens a window without creating an instance of <xref:System.Windows.Application>. However, XAML browser applications (XBAPs) require an <xref:System.Windows.Application> object.
 
-
-
 ## Examples
  The following example shows how a standard application is defined using only markup:
 
@@ -166,8 +164,6 @@
 
  <xref:System.Windows.Application.Activated> is not raised for XAML browser applications (XBAPs).
 
-
-
 ## Examples
  The following example shows how to detect when a standalone application activates and deactivates.
 
@@ -268,8 +264,6 @@
 
  <xref:System.Windows.Application.Deactivated> is not raised for XAML browser applications (XBAPs).
 
-
-
 ## Examples
  The following example shows how to detect when a standalone application deactivates and activates.
 
@@ -340,8 +334,6 @@
  When you process an unhandled exception from <xref:System.Windows.Application.DispatcherUnhandledException>, and you don't want WPF to continue processing it, you need to set the <xref:System.Windows.Threading.DispatcherUnhandledExceptionEventArgs.Handled> property to `true`.
 
  Unlike the other events that <xref:System.Windows.Application> raises, <xref:System.Windows.Application.DispatcherUnhandledException> does not have a matching protected virtual implementation (OnDispatcherUnhandledException). Consequently, classes that derive from <xref:System.Windows.Application> must always register an event handler with <xref:System.Windows.Application.DispatcherUnhandledException> to process unhandled exceptions.
-
-
 
 ## Examples
  The following example shows how to process unhandled exceptions by handling the <xref:System.Windows.Application.DispatcherUnhandledException> event.
@@ -471,8 +463,6 @@ For more information about XBAP support, see [Frequently asked questions about W
 > If you call this method for a key that cannot be found, an exception is thrown. If you do not want to handle exceptions that result from calling <xref:System.Windows.Application.FindResource*>, call <xref:System.Windows.Application.TryFindResource*> instead; <xref:System.Windows.Application.TryFindResource*> returns a `null` reference when a requested resource cannot be found, and does not throw an exception.
 
  This method is thread safe and can be called from any thread.
-
-
 
 ## Examples
  The following example shows how to use <xref:System.Windows.Application.FindResource*> to find a resource, and to handle <xref:System.Windows.ResourceReferenceKeyNotFoundException> if the resource is not found.
@@ -956,8 +946,6 @@ For more information about XBAP support, see [Frequently asked questions about W
 > If the main window is a <xref:System.Windows.Navigation.NavigationWindow>, and you need specific access to <xref:System.Windows.Navigation.NavigationWindow> members, you will need to cast the value of <xref:System.Windows.Application.MainWindow*> to <xref:System.Windows.Navigation.NavigationWindow>.
 >
 > This property is available only from the thread that created the <xref:System.Windows.Application> object.
-
-
 
 ## Examples
  The following example shows how to find the main application window.
@@ -1553,8 +1541,6 @@ For more information about XBAP support, see [Frequently asked questions about W
 
  A type that derives from <xref:System.Windows.Application> may override <xref:System.Windows.Application.OnNavigationFailed*>. The overridden method must call <xref:System.Windows.Application.OnNavigationFailed*> in the base class if <xref:System.Windows.Application.NavigationFailed> needs to be raised.
 
-
-
 ## Examples
  <xref:System.Windows.Application.OnFragmentNavigation*>
 
@@ -1921,8 +1907,6 @@ For more information about XBAP support, see [Frequently asked questions about W
 
  <xref:System.Windows.Application.Resources*> is thread safe and is available from any thread.
 
-
-
 ## Examples
 This example illustrates how to use XAML together with application-scope resources to create a consistent visual appearance. The first example is from *App.xaml*; the second, from *MainWindow.xaml*.
 
@@ -1994,8 +1978,6 @@ This example illustrates how to use XAML together with application-scope resourc
 
  <xref:System.Windows.Application.Run*> can be called only from the thread that creates the <xref:System.Windows.Application> object. Also, <xref:System.Windows.Application.Run*> cannot be called from a XBAP.
 
-
-
 ## Examples
  The following example shows an application that uses a custom <xref:System.Windows.Application> and must therefore explicitly call <xref:System.Windows.Application.Run*>.
 
@@ -2061,8 +2043,6 @@ This example illustrates how to use XAML together with application-scope resourc
 
 - Programmatically, by handling <xref:System.Windows.Application.Startup>.
 
-
-
 ## Examples
  The following example shows an application with a manually-created static entry point method that instantiates <xref:System.Windows.Application>, before calling <xref:System.Windows.Application.Run*>.
 
@@ -2119,8 +2099,6 @@ This example illustrates how to use XAML together with application-scope resourc
  <xref:System.Windows.Application.SessionEnding> is raised only on the thread that creates the <xref:System.Windows.Application> object.
 
  <xref:System.Windows.Application.SessionEnding> is not raised for XAML browser applications (XBAPs).
-
-
 
 ## Examples
  The following example demonstrates how to handle the <xref:System.Windows.Application.SessionEnding> event and allow the user to cancel it.
@@ -2355,8 +2333,6 @@ This example illustrates how to use XAML together with application-scope resourc
 
  This property is available only from the thread that created the <xref:System.Windows.Application> object.
 
-
-
 ## Examples
  The following example shows how to configure <xref:System.Windows.Application.ShutdownMode*> to specify that an application must be closed explicitly.
 
@@ -2426,8 +2402,6 @@ This example illustrates how to use XAML together with application-scope resourc
 > If your application uses <xref:System.Net.AuthenticationManager.CredentialPolicy*> to specify a credential policy, you need to set <xref:System.Net.AuthenticationManager.CredentialPolicy*> after <xref:System.Windows.Application.Startup> is raised; otherwise, WPF sets it to a default internal policy directly after the <xref:System.Windows.Application.Startup> event has been raised.
 
  The command-line arguments that are passed to the <xref:System.Windows.Application.Startup> event handler are not the same as the URL query string parameters that are passed to an XAML browser application (XBAP).
-
-
 
 ## Examples
  The following example shows how to acquire and process command-line options from a standalone application. If the **/StartMinimized** command-line parameter was provided, the application opens the main window in a minimized state.
@@ -2634,8 +2608,6 @@ This example illustrates how to use XAML together with application-scope resourc
 
  This method is thread safe and can be called from any thread.
 
-
-
 ## Examples
  The following example shows how to use <xref:System.Windows.Application.TryFindResource*> to acquire a resource.
 
@@ -2686,8 +2658,6 @@ This example illustrates how to use XAML together with application-scope resourc
  By default, the first item added to the <xref:System.Windows.Application.Windows> property becomes the <xref:System.Windows.Application.MainWindow*>.
 
  This property is available only from the thread that created the <xref:System.Windows.Application> object.
-
-
 
 ## Examples
  The following example demonstrates how to enumerate the <xref:System.Windows.Application.Windows> property to build a top-level Windows menu, which is common to multiple-document interface (MDI) applications like Microsoft Excel, or multiple-instance Single Document Interface (SDI) applications like Microsoft Word.

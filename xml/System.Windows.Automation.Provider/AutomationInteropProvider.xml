@@ -58,8 +58,6 @@
 ## Remarks
  This field is typically used in the implementation of <xref:System.Windows.Automation.Provider.IRawElementProviderFragment.GetRuntimeId*> for elements in a fragment that are not directly hosted in a window.
 
-
-
 ## Examples
  The following example is an implementation of <xref:System.Windows.Automation.Provider.IRawElementProviderFragment.GetRuntimeId*?displayProperty=nameWithType> for a list item.
 
@@ -145,8 +143,6 @@
 
 ## Remarks
  The interface returned by this method can only be passed back to UI Automation. Attempting to call a method on the interface will raise an exception.
-
-
 
 ## Examples
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Automation/AutomationEventArgs/.ctor/ListFragment.cs" id="Snippet121":::
@@ -259,8 +255,6 @@
 ## Remarks
  Pattern events should not be raised just by a pattern implementation. For example, an <xref:System.Windows.Automation.InvokePatternIdentifiers.InvokedEvent> should be raised whenever the control is invoked, either through <xref:System.Windows.Automation.InvokePattern.Invoke*> or through mouse or keyboard input. In this way, clients can be informed about system events.
 
-
-
 ## Examples
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Automation/AutomationEventArgs/.ctor/ListFragment.cs" id="Snippet122":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_Wpf/UIAFragmentProvider_snip/VisualBasic/ListFragment.vb" id="Snippet122":::
@@ -355,8 +349,6 @@
  When a child element is removed, the runtime identifier of either the element, or of its container, is passed to the <xref:System.Windows.Automation.StructureChangedEventArgs> constructor. In the current version of UI Automation, however, there is no easy way for an instance of a provider to discover its runtime identifier. The <xref:System.Windows.Automation.Provider.IRawElementProviderFragment.GetRuntimeId*> method normally returns an array that contains <xref:System.Windows.Automation.Provider.AutomationInteropProvider.AppendRuntimeId>, a magic number that instructs the UI Automation system to create a unique identifer for every instance of the control. The raw value provided by <xref:System.Windows.Automation.Provider.IRawElementProviderFragment.GetRuntimeId*> should not be used in events, because it is meaningless to clients and cannot be used to identify a specific instance.
 
  Because of this limitation, events of type <xref:System.Windows.Automation.StructureChangeType.ChildAdded> and <xref:System.Windows.Automation.StructureChangeType.ChildRemoved> are not very useful. As an alternative, always use <xref:System.Windows.Automation.StructureChangeType.ChildrenBulkAdded> and <xref:System.Windows.Automation.StructureChangeType.ChildrenBulkRemoved>, passing 0 as the runtime identifer. You cannot use `null`, as this will raise an exception. Clients will be notified that a change has been made in the container (identified by the `sender` parameter passed to the <xref:System.Windows.Automation.StructureChangedEventHandler>), without specific notice of what children have been added or removed.
-
-
 
 ## Examples
  The following example shows how to raise an event when children are added to, or removed from, a custom list box.

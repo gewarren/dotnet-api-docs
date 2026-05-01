@@ -102,8 +102,6 @@
 
  For a list of common I/O tasks, see [Common I/O Tasks](/dotnet/standard/io/common-i-o-tasks).
 
-
-
 ## Examples
  The following example shows how to use a <xref:System.IO.StreamWriter> object to write a file that lists the directories on the C drive, and then uses a <xref:System.IO.StreamReader> object to read and display each directory name. A good practice is to use these objects in a `using` statement so that the unmanaged resources are correctly disposed. The `using` statement automatically calls <xref:System.IDisposable.Dispose*> on the object when the code that is using it has completed. The constructor used in this example is not supported for use in Windows Store Apps.
 
@@ -200,8 +198,6 @@
 
  For a list of common I/O tasks, see [Common I/O Tasks](/dotnet/standard/io/common-i-o-tasks).
 
-
-
 ## Examples
  The following code example demonstrates this constructor.
 
@@ -284,8 +280,6 @@
 > When you compile a set of characters with a particular cultural setting and retrieve those same characters with a different cultural setting, the characters might not be interpretable and could cause an exception to be thrown.
 
  For a list of common I/O tasks, see [Common I/O Tasks](/dotnet/standard/io/common-i-o-tasks).
-
-
 
 ## Examples
  The following code example demonstrates this constructor.
@@ -391,8 +385,6 @@
 
  For a list of common I/O tasks, see [Common I/O Tasks](/dotnet/standard/io/common-i-o-tasks).
 
-
-
 ## Examples
  The following example demonstrates this constructor.
 
@@ -479,8 +471,6 @@
 > When you compile a set of characters with a particular cultural setting and retrieve those same characters with a different cultural setting, the characters might not be interpretable, and could cause an exception to be thrown.
 
  For a list of common I/O tasks, see [Common I/O Tasks](/dotnet/standard/io/common-i-o-tasks).
-
-
 
 ## Examples
  The following code example demonstrates this constructor.
@@ -636,8 +626,6 @@
 
  For a list of common I/O tasks, see [Common I/O Tasks](/dotnet/standard/io/common-i-o-tasks).
 
-
-
 ## Examples
  The following example demonstrates this constructor.
 
@@ -736,8 +724,6 @@
 > When you compile a set of characters with a particular cultural setting and retrieve those same characters with a different cultural setting, the characters might not be interpretable, and could cause an exception to be thrown.
 
  For a list of common I/O tasks, see [Common I/O Tasks](/dotnet/standard/io/common-i-o-tasks).
-
-
 
 ## Examples
  The following example demonstrates this constructor.
@@ -898,8 +884,6 @@
 > [!CAUTION]
 > When you compile a set of characters with a particular cultural setting and retrieve those same characters with a different cultural setting, the characters might not be interpretable, and could cause an exception to be thrown.
 
-
-
 ## Examples
  The following example demonstrates this constructor.
 
@@ -997,8 +981,6 @@
 
  For a list of common I/O tasks, see [Common I/O Tasks](/dotnet/standard/io/common-i-o-tasks).
 
-
-
 ## Examples
  The following example demonstrates this constructor.
 
@@ -1089,8 +1071,6 @@
  For example, set `AutoFlush` to `true` when you are writing to a device where the user expects immediate feedback. `Console.Out` is one of these cases: The `StreamWriter` used internally for writing to `Console` flushes all its internal state except the encoder state after every call to <xref:System.IO.StreamWriter.Write*?displayProperty=nameWithType>.
 
  For a list of common I/O tasks, see [Common I/O Tasks](/dotnet/standard/io/common-i-o-tasks).
-
-
 
 ## Examples
  The following example shows the syntax for using the `AutoFlush` property.
@@ -1222,8 +1202,6 @@
  You must call <xref:System.IO.StreamWriter.Close*> to ensure that all data is correctly written out to the underlying stream. Following a call to <xref:System.IO.StreamWriter.Close*>, any operations on the <xref:System.IO.StreamWriter> might raise exceptions. If there is insufficient space on the disk, calling <xref:System.IO.StreamWriter.Close*> will raise an exception.
 
  Flushing the stream will not flush its underlying encoder unless you explicitly call <xref:System.IO.StreamWriter.Flush*> or <xref:System.IO.StreamWriter.Close*>. Setting <xref:System.IO.StreamWriter.AutoFlush*> to `true` means that data will be flushed from the buffer to the stream, but the encoder state will not be flushed. This allows the encoder to keep its state (partial characters) so that it can encode the next block of characters correctly. This scenario affects UTF8 and UTF7 where certain characters can only be encoded after the encoder receives the adjacent character or characters.
-
-
 
 ## Examples
  The following code example demonstrates the `Close` method.
@@ -1409,8 +1387,6 @@
  This property is necessary for some XML scenarios where a header must be written containing the encoding used by the <xref:System.IO.StreamWriter>. This allows the XML code to consume an arbitrary <xref:System.IO.StreamWriter> and generate the correct XML header.
 
  For a list of common I/O tasks, see [Common I/O Tasks](/dotnet/standard/io/common-i-o-tasks).
-
-
 
 ## Examples
  The following example retrieves the encoding of the specified <xref:System.IO.StreamWriter> instance.
@@ -1691,8 +1667,6 @@ For a list of common I/O tasks, see [Common I/O Tasks](/dotnet/standard/io/commo
  When the `StreamWriter.Write` methods are invoked on `Null`, the call simply returns, and no data is actually written to any backing store.
 
  For a list of common I/O tasks, see [Common I/O Tasks](/dotnet/standard/io/common-i-o-tasks).
-
-
 
 ## Examples
  The following example demonstrates a use of the `Null` field.
@@ -2272,8 +2246,6 @@ See <xref:System.IO.TextWriter.Write(System.String,System.Object[])> for a descr
  The characters are read from `buffer` beginning at `index` and continuing through `index` + (`count` - 1). All characters are written to the underlying stream unless the end of the underlying stream is reached prematurely. <xref:System.IO.StreamWriter.Flush*> is invoked automatically if <xref:System.IO.StreamWriter.AutoFlush*> is `true`.
 
  For a list of common I/O tasks, see [Common I/O Tasks](/dotnet/standard/io/common-i-o-tasks).
-
-
 
 ## Examples
  This example writes eight characters from a 13-element array to a file, beginning at the third element of the array.
@@ -3334,8 +3306,6 @@ See <xref:System.IO.TextWriter.WriteLine(System.String,System.Object,System.Obje
 ## Remarks
  The line terminator is defined by the <xref:System.IO.TextWriter.NewLine?displayProperty=nameWithType> property.
 
-
-
 ## Examples
  The following example shows how to write a single character (the letter "a") to a line in a text file, followed by another line that contains a single character (the letter "b"), by using the <xref:System.IO.StreamWriter.WriteLineAsync(System.Char)> method.
 
@@ -3559,8 +3529,6 @@ The line terminator is defined by the <xref:System.IO.TextWriter.CoreNewLine> fi
 
 ## Remarks
  The line terminator is defined by the <xref:System.IO.TextWriter.NewLine?displayProperty=nameWithType> property.
-
-
 
 ## Examples
  The following example shows how to write characters to two separate lines in a text file by using the <xref:System.IO.StreamWriter.WriteLineAsync(System.Char[],System.Int32,System.Int32)> method. The first line contains the first 11 characters from the string (the letters "First line" followed by a space). The second line contains the remaining characters from the string (the letters "and second line").

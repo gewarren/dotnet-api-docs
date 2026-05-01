@@ -53,8 +53,6 @@ To serialize an object, use the <xref:System.Web.Script.Serialization.JavaScript
 |<xref:System.Guid>|String representation of a GUID|
 |<xref:System.Uri>|String representation of the return value of <xref:System.Uri.GetComponents*>|
 
-
-
 ## Examples
  The first example provides a simple illustration of how to serialize and deserialize data objects. It requires a class named Person which is shown below.
 
@@ -231,8 +229,6 @@ To serialize an object, use the <xref:System.Web.Script.Serialization.JavaScript
 
  <xref:System.Web.Script.Serialization.JavaScriptSerializer.ConvertToType*> is intended to be used if you implement a class that derives from <xref:System.Web.Script.Serialization.JavaScriptConverter>. Converter code must be able to take a value that is in the dictionary that the serializer passes to it, and then convert that value to an instance of type `T`. Instead of re-implementing the custom conversion code to perform this task, you can call the <xref:System.Web.Script.Serialization.JavaScriptSerializer.ConvertToType*> method from the converter code.
 
-
-
 ## Examples
  The following example shows how to use the <xref:System.Web.Script.Serialization.JavaScriptSerializer.ConvertToType*> method to obtain a <xref:System.Web.UI.WebControls.ListItem> object from a value in the dictionary that is passed to the converter. This code example is part of a larger example provided for the <xref:System.Web.Script.Serialization.JavaScriptSerializer> class.
 
@@ -372,8 +368,6 @@ To serialize an object, use the <xref:System.Web.Script.Serialization.JavaScript
  The <xref:System.Web.Script.Serialization.JavaScriptSerializer.Deserialize*> method is equivalent to first using the <xref:System.Web.Script.Serialization.JavaScriptSerializer.DeserializeObject*> method to obtain an object graph and then trying to cast the result to type `T`.
 
  During deserialization, the serializer's current type resolver is referenced, which determines the managed type to use when converting elements that are nested inside arrays and dictionary types. As a result, the deserialization process iterates through all nested elements of `input`. For more information about type resolvers, see the <xref:System.Web.Script.Serialization.JavaScriptTypeResolver> class.
-
-
 
 ## Examples
 The following example provides a simple illustration of how to serialize and deserialize data objects.
@@ -609,8 +603,6 @@ It requires a class named `Person`, which is shown in the following example.
 
  For more information about custom converters, see the <xref:System.Web.Script.Serialization.JavaScriptConverter> class.
 
-
-
 ## Examples
  The following example shows how to register a custom converter with a <xref:System.Web.Script.Serialization.JavaScriptSerializer> instance. This code example is part of a larger example provided for the <xref:System.Web.Script.Serialization.JavaScriptSerializer> class.
 
@@ -668,8 +660,6 @@ It requires a class named `Person`, which is shown in the following example.
  When the <xref:System.Web.Script.Serialization.JavaScriptSerializer> instance is serializing a type for which a custom converter is registered, the serializer calls the <xref:System.Web.Script.Serialization.JavaScriptConverter.Serialize*> method to obtain the dictionary of name/value pairs that will be converted to a JSON string.
 
  The <xref:System.Web.Script.Serialization.JavaScriptSerializer.Serialize*> method can also throw exceptions if the object graph is too complex, or if registered instances of <xref:System.Web.Script.Serialization.JavaScriptConverter> have caused converter recursion.
-
-
 
 ## Examples
 The following example provides a simple illustration of how to serialize and deserialize data objects.

@@ -22,8 +22,6 @@
 > [!IMPORTANT]
 > You should not add types based on classes defined in the App_Code directory and then depend on the default binary serialization mechanism. App_Code-based artifacts are not consistently binary-serializable due to the fact that they can have their assembly names changed at random points in time.
 
-
-
 ## Examples
  The following code example demonstrates how to use the <xref:System.Web.UI.WebControls.WebParts.IPersonalizable> interface. The example consists of an .aspx page that references a Web Part control named `UrlListWebPart`. The following code is the .aspx file for the example.
 
@@ -72,8 +70,6 @@
 
  A control can reference its associated <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control and check the <xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.Scope> property to determine the current scope. The "dirty" state of a control's custom data should be appropriate for the current scope.
 
-
-
 ## Examples
  The following code example demonstrates use of the <xref:System.Web.UI.WebControls.WebParts.IPersonalizable.IsDirty> property. The first part of the example is the Web page that hosts a <xref:System.Web.UI.WebControls.WebParts.WebPart> control.
 
@@ -120,8 +116,6 @@
  This method is called on a control to allow it to load custom data into itself. It can also return a value that indicates whether a control's custom state must be written back to the underlying data store, regardless of whether any other personalization data on the page has changed. A control can set its own custom properties and carry out additional internal logic based on the values contained in the personalization dictionary. This method is called by the Web Parts control set while applying personalization data to a control.
 
  You should also be aware of the merge behavior of <xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.User>-scoped versus <xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared>-scoped properties contained in the <xref:System.Web.UI.WebControls.WebParts.PersonalizationDictionary> object. The `state` parameter contains a merged representation of custom data that was loaded from the underlying data store. In <xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared> scope, all the values that were previously added when the page itself was in <xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared> scope would be available. In <xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.User> scope, if a value associated with <xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.User> personalization scope had one value added when the page was in <xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared> scope, and a different value when the page was in <xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.User> scope, then the personalization infrastructure would only include the <xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.User>-scoped value (as opposed to the <xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared> scope value) within the `state` parameter.
-
-
 
 ## Examples
  The following code example demonstrates an implementation of the <xref:System.Web.UI.WebControls.WebParts.IPersonalizable.Load*> method in a custom <xref:System.Web.UI.WebControls.WebParts.WebPart> control. For the full code required to run this example, see the Example section in the <xref:System.Web.UI.WebControls.WebParts.IPersonalizable> class overview.
@@ -173,8 +167,6 @@
 
 > [!IMPORTANT]
 > You should not add types based on classes defined in the App_Code directory and then depend on the default binary serialization mechanism. App_Code-based artifacts are not consistently binary-serializable due to the fact that they can have their assembly names changed at random points in time.
-
-
 
 ## Examples
  The following code example demonstrates implementing the <xref:System.Web.UI.WebControls.WebParts.IPersonalizable.Save*> method in a custom <xref:System.Web.UI.WebControls.WebParts.WebPart> control. For the full code required to run this example, see the Example section in the <xref:System.Web.UI.WebControls.WebParts.IPersonalizable> class overview.

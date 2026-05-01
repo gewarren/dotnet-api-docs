@@ -199,8 +199,6 @@
 
  You typically use this method to provide the implementation of the "add" accessor for the Microsoft .NET event access pattern of a custom routed event.
 
-
-
 ## Examples
  The following example implements a handler invoked on the <xref:System.Windows.FrameworkElement.Initialized> event on a page that attaches a defined handler to one of the named elements on the page using `handledEventsToo` `true`. This handler would be invoked even if another element along the route marked the shared event data as handled before reaching the handling element in the route.
 
@@ -829,8 +827,6 @@
 
  To clear mouse capture from all elements, call <xref:System.Windows.Input.Mouse.Capture*?displayProperty=nameWithType> with the `element` parameter provided as `null`.
 
-
-
 ## Examples
  The following example captures the mouse or releases capture, based on whether the mouse is already captured by the element. Note that this example casts the prospective capture target element to the <xref:System.Windows.IInputElement> interface, and is thus initially calling the <xref:System.Windows.IInputElement.CaptureMouse*?displayProperty=nameWithType> method. Casting to <xref:System.Windows.IInputElement> is a technique that is useful if you are unsure whether the element you want to have capture the mouse is a <xref:System.Windows.UIElement> or a <xref:System.Windows.ContentElement>. The interface cast and the interface method call then calls the appropriate type-specific CaptureMouse implementation internally without requiring a trial cast to either <xref:System.Windows.UIElement> or <xref:System.Windows.ContentElement>. This same casting technique works for other members that <xref:System.Windows.IInputElement> defines, for instance many of the input-related events, and other input-related methods.
 
@@ -1390,8 +1386,6 @@
  If calling <xref:System.Windows.ContentElement.Focus*> returns `true`, <xref:System.Windows.ContentElement.IsKeyboardFocused*> and <xref:System.Windows.ContentElement.IsKeyboardFocusWithin*> are also `true`.
 
  If the related properties are not already `true`, when you call <xref:System.Windows.ContentElement.Focus*>, one or more of the following events are raised in the following order: <xref:System.Windows.ContentElement.PreviewLostKeyboardFocus>, <xref:System.Windows.ContentElement.PreviewGotKeyboardFocus> (source is the new focus target), <xref:System.Windows.ContentElement.IsKeyboardFocusedChanged>, <xref:System.Windows.ContentElement.IsKeyboardFocusWithinChanged>, <xref:System.Windows.ContentElement.LostKeyboardFocus>, <xref:System.Windows.ContentElement.GotKeyboardFocus> (source is the new focus target).
-
-
 
 ## Examples
  The following example is a page-loaded event handler that finds a specified named paragraph in the document and sets focus to it. Paragraphs are not focusable by default; this particular paragraph had a style applied (not shown) that used a style <xref:System.Windows.Setter> to make it focusable.
@@ -2436,8 +2430,6 @@ The default implementation of this property caches the value and also calculates
 |Identifier field|<xref:System.Windows.ContentElement.IsFocusedProperty>|
 |Metadata properties set to `true`|None|
 
-
-
 ## Examples
  The following example creates a style that makes a <xref:System.Windows.Documents.Paragraph> focusable by default and gives it a visual behavior when it receives focus.
 
@@ -2794,8 +2786,6 @@ The default implementation of this property caches the value and also calculates
 |-----------------------------------|--------------------------------------------------------|
 |Identifier field|<xref:System.Windows.ContentElement.IsMouseCapturedProperty>|
 |Metadata properties set to `true`|None|
-
-
 
 ## Examples
  The following example turns the mouse capture state on or off based on whether the mouse is already captured by the element.
@@ -3160,8 +3150,6 @@ The default implementation of this property caches the value and also calculates
 |-----------------------------------|--------------------------------------------------------|
 |Identifier field|<xref:System.Windows.ContentElement.IsMouseOverProperty>|
 |Metadata properties set to `true`|None|
-
-
 
 ## Examples
  The following example creates a style that includes a property setter that gives an alternate visual behavior when a <xref:System.Windows.Documents.Hyperlink> reports <xref:System.Windows.ContentElement.IsMouseOver*> `true`.
@@ -11931,8 +11919,6 @@ Note that by default a <xref:System.Windows.ContentElement.Focusable> is not foc
 
  <xref:System.Windows.RoutedEventArgs> is not just the state properties for the event; it also identifies which routed event to raise. This event-raising pattern and the routed event data both differ from common language runtime (CLR) events and data classes, which typically just contain properties that are related to the event.
 
-
-
 ## Examples
  The following example creates event data, appends the event identifier to the data, and then uses the event data instance to raise a custom routed event.
 
@@ -12005,8 +11991,6 @@ Note that by default a <xref:System.Windows.ContentElement.Focusable> is not foc
 
 ## Remarks
  If this element did not hold the capture, calling this method has no effect. Consider checking the value of <xref:System.Windows.ContentElement.IsMouseCaptured*> before you call this method.
-
-
 
 ## Examples
  The following handler captures or releases mouse capture according to mouse button states. The example shows how to use captured mouse movement for alternative purposes other than moving the mouse pointer in the UI.

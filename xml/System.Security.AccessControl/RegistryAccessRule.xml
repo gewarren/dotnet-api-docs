@@ -83,8 +83,6 @@
 
  <xref:System.Security.AccessControl.RegistryAccessRule> objects are immutable. Security for a registry key is modified using the methods of the <xref:System.Security.AccessControl.RegistrySecurity> class to add or remove rules; as you do this, the underlying access control entries are modified.
 
-
-
 ## Examples
  The following code example demonstrates access rules with inheritance and propagation. The example creates a <xref:System.Security.AccessControl.RegistrySecurity> object, then creates and adds two rules that have the <xref:System.Security.AccessControl.InheritanceFlags.ContainerInherit> flag. The first rule has no propagation flags, while the second has <xref:System.Security.AccessControl.PropagationFlags.NoPropagateInherit> and <xref:System.Security.AccessControl.PropagationFlags.InheritOnly>.
 
@@ -217,8 +215,6 @@
  This constructor specifies default propagation and inheritance. That is, <xref:System.Security.AccessControl.InheritanceFlags.None?displayProperty=nameWithType> and <xref:System.Security.AccessControl.PropagationFlags.None?displayProperty=nameWithType>.
 
  This constructor is equivalent to creating an <xref:System.Security.Principal.NTAccount> object, by passing `identity` to the <xref:System.Security.Principal.NTAccount.%23ctor(System.String)?displayProperty=nameWithType> constructor, and passing the newly created <xref:System.Security.Principal.NTAccount> object to the <xref:System.Security.AccessControl.RegistryAccessRule.%23ctor(System.Security.Principal.IdentityReference,System.Security.AccessControl.RegistryRights,System.Security.AccessControl.AccessControlType)> constructor.
-
-
 
 ## Examples
  The following code example creates registry access rules and adds them to a <xref:System.Security.AccessControl.RegistrySecurity> object, showing how rules that allow and deny rights remain separate, while compatible rules of the same kind are merged.
@@ -403,8 +399,6 @@
 > Although you can specify the <xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit?displayProperty=nameWithType> flag for `inheritanceFlags`, there is no point in doing so. For the purposes of access control, the name/value pairs in a subkey are not separate objects. The access rights to name/value pairs are controlled by the rights of the subkey. Furthermore, since all subkeys are containers (that is, they can contain other subkeys), they are not affected by the <xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit> flag. Finally, specifying the <xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit> flag needlessly complicates the maintenance of rules, because it interferes with the combination of otherwise compatible rules.
 
  This constructor is equivalent to creating an <xref:System.Security.Principal.NTAccount> object, by passing `identity` to the <xref:System.Security.Principal.NTAccount.%23ctor(System.String)?displayProperty=nameWithType> constructor, and passing the newly created <xref:System.Security.Principal.NTAccount> object to the <xref:System.Security.AccessControl.RegistryAccessRule.%23ctor(System.Security.Principal.IdentityReference,System.Security.AccessControl.RegistryRights,System.Security.AccessControl.InheritanceFlags,System.Security.AccessControl.PropagationFlags,System.Security.AccessControl.AccessControlType)> constructor.
-
-
 
 ## Examples
  The following code example demonstrates access rules with inheritance and propagation. The example creates a <xref:System.Security.AccessControl.RegistrySecurity> object, and then creates and adds two rules that have the <xref:System.Security.AccessControl.InheritanceFlags.ContainerInherit> flag. The first rule has no propagation flags, while the second has <xref:System.Security.AccessControl.PropagationFlags.NoPropagateInherit> and <xref:System.Security.AccessControl.PropagationFlags.InheritOnly>.

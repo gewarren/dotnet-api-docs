@@ -131,8 +131,6 @@
 
  For more information on other <xref:System.Web.UI.WebControls.WebParts.WebPartManager> methods that are accessible through the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.Internals> property, see the documentation for the <xref:System.Web.UI.WebControls.WebParts.WebPartManagerInternals> class.
 
-
-
 ## Examples
  The following code example demonstrates both declarative and programmatic use of the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control.
 
@@ -264,8 +262,6 @@
 > [!IMPORTANT]
 > You should always use the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.AddWebPart*> method, rather than the <xref:System.Web.UI.ControlCollection.Add*> method of the collection of controls referenced by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.Controls?displayProperty=nameWithType> property, to add <xref:System.Web.UI.WebControls.WebParts.WebPart> controls programmatically to the page, because using the <xref:System.Web.UI.ControlCollection.Add*> method throws an exception. To add a control that is not a <xref:System.Web.UI.WebControls.WebParts.WebPart> control (in other words, a server control that will be wrapped with a <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> control at run time), you should first call the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CreateWebPart*> method to create the control, and then call the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.AddWebPart*> method to add the control. For a demonstration of this approach, see the Example section.
 
-
-
 ## Examples
  The following code example demonstrates use of the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.AddWebPart*> method to add a server control programmatically to a page. The page markup contains an empty `<asp:webpartzone>` element, and an `<asp:webpartmanager>` element. The first time the **Add Calendar** button is clicked, the code in the event handler creates a <xref:System.Web.UI.WebControls.Calendar> control, and adds it to a zone as a <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> object, calling the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.AddWebPart*> method.
 
@@ -316,8 +312,6 @@
  The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.AuthorizeWebPart> event occurs whenever a <xref:System.Web.UI.WebControls.WebParts.WebPart> control is being added to a page. There are a number of common scenarios where a control can be added to a page. For a full description of these, see the Remarks section for the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.IsAuthorized*> method. When a control is added, it must be checked to see whether its <xref:System.Web.UI.WebControls.WebParts.WebPart.AuthorizationFilter> property has been set and, if so, whether the control is authorized to be added to the page.
 
  Developers can create event handlers for the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.AuthorizeWebPart> event, to provide filtering for controls. If a control's <xref:System.Web.UI.WebControls.WebParts.WebPart.AuthorizationFilter> property value does not meet the criteria in the event handler code, the control is not added to the page.
-
-
 
 ## Examples
  The following code example demonstrates how to set a custom event handler for the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.AuthorizeWebPart> event, which automatically overrides the default <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnAuthorizeWebPart*> method.
@@ -496,8 +490,6 @@
 
  When a page that contains Web Parts controls first loads, it is in <xref:System.Web.UI.WebControls.WebParts.WebPartManager.BrowseDisplayMode> (browse mode) by default. When users are simply browsing as they would on a normal Web page, the page remains in browse mode. If users want to personalize a page's layout, controls, appearance, or behavior, they must switch the page into one of the specialized display modes available through the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SupportedDisplayModes> property.
 
-
-
 ## Examples
  The following code example demonstrates how to work with the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.BrowseDisplayMode> field programmatically. The code populates a drop-down list with the supported display modes, which in this case are browse and design. Notice that, in the `Page_PreRender` method, the code checks whether the current <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisplayMode> property is set to <xref:System.Web.UI.WebControls.WebParts.WebPartManager.BrowseDisplayMode>. If so, `Label1` will be visible, and if not, `Label1` will be hidden.
 
@@ -597,8 +589,6 @@
  This method is used to connect `provider` and `consumer` when both controls have compatible connection point types, so that a <xref:System.Web.UI.WebControls.WebParts.WebPartTransformer> object is not needed. You might want to use this method to verify that two controls can be connected before calling <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectWebParts*> to create a programmatic connection.
 
  This overload uses the same implementation as the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CanConnectWebParts(System.Web.UI.WebControls.WebParts.WebPart,System.Web.UI.WebControls.WebParts.ProviderConnectionPoint,System.Web.UI.WebControls.WebParts.WebPart,System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint,System.Web.UI.WebControls.WebParts.WebPartTransformer)> method overload, with the only exception being that this overload does not require a transformer.
-
-
 
 ## Examples
  The following code example demonstrates how to use this method.
@@ -709,8 +699,6 @@
 
  When a user switches a page to catalog mode, the zone and all the server controls that were added to it become visible, and the user can select controls from the catalog to add to the page, or remove controls from the page. After the controls have been added to the page, they appear in normal browse mode and the page is updated.
 
-
-
 ## Examples
  The following code example demonstrates how to work with the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CatalogDisplayMode> field programmatically. The code populates a drop-down list with the supported display modes for the page, which in this case are browse, design, and catalog. The catalog mode is available because of the `<asp:CatalogZone>` element and its child elements in the Web page. Notice that, in the `Page_PreRender` method, the code checks whether the current <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisplayMode> property is set to <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CatalogDisplayMode>. If so, `Label1` will be visible, and if not, `Label1` will be hidden.
 
@@ -781,8 +769,6 @@
 
  If a page developer assigns an empty or null string value to this property, no warning message box will be shown when a user closes a <xref:System.Web.UI.WebControls.WebParts.WebPart> control that is a provider.
 
-
-
 ## Examples
  The following code example demonstrates how to use the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CloseProviderWarning> property to display a custom warning to users.
 
@@ -851,8 +837,6 @@
  On a page where <xref:System.Web.UI.WebControls.WebParts.WebPart> controls have been closed, if a developer declares an `<asp:catalogzone>` element, and within it adds an `<asp:pagecatalogpart>` element, it provides a simple user interface (UI) for users to restore closed controls to the page at run time. Users can switch the page into catalog display mode, and the closed controls will appear within the page catalog. Users can select closed controls and add them back to the page at whatever position they desire, and then the selected controls are restored to the page and rendered as normal.
 
  When the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CloseWebPart*> method is called, it raises several events: <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartClosing>, <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SelectedWebPartChanging> (if there are multiple controls), and <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsDisconnecting> (if there are connected controls). Normally developers can cancel these events, but in certain cases it is not possible to cancel them. For details, see the documentation for the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartClosing>, <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SelectedWebPartChanging>, and <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsDisconnecting> events.
-
-
 
 ## Examples
  The following code example demonstrates how to use the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CloseWebPart*> method.
@@ -925,8 +909,6 @@
 
  If you want to provide users with the ability to manage connections with the UI provided by the Web Parts control set, you must declare an `<asp:connectionszone>` element in the markup of a page. Unlike the elements for the other types of <xref:System.Web.UI.WebControls.WebParts.WebZone> zones, you do not need to add any other tags within this element; you simply declare the element by itself.
 
-
-
 ## Examples
  The following code example demonstrates the usage of the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectDisplayMode> mode.
 
@@ -994,8 +976,6 @@
 
 ## Remarks
  The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.Connections> property provides a way to access the current set of connections on a page. The collection itself is read-only, and developers who want to manipulate a specific connection from the collection should use <xref:System.Web.UI.WebControls.WebParts.WebPartManager> methods such as <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectWebParts*> and <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisconnectWebParts*>.
-
-
 
 ## Examples
  The following code example demonstrates declarative and programmatic use of the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control.
@@ -1173,8 +1153,6 @@
  This overload is used to connect controls when their connection points are sufficiently compatible that they can connect without using a <xref:System.Web.UI.WebControls.WebParts.WebPartTransformer> object. When this overload of the method is called, it simply passes the call to the other overloaded version of the method, and passes `null` for the parameter that requires a <xref:System.Web.UI.WebControls.WebParts.WebPartTransformer> object.
 
  When you attempt to connect two controls programmatically, you can use the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CanConnectWebParts*> method in a conditional check to determine whether the controls can be directly connected.
-
-
 
 ## Examples
  The following code example demonstrates how to use this method to create a connection programmatically. For the full code required to run the example, see the Example section of the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> class overview. From that example, you will need the source code for the user control that allows you to change display modes on the page, and the source code for the two custom <xref:System.Web.UI.WebControls.WebParts.WebPart> controls.
@@ -1425,8 +1403,6 @@
 
  When you add display modes by using the <xref:System.Web.UI.WebControls.WebParts.WebPartDisplayModeCollection.Add*> method, you should add them in the order that you want them to appear in any user interface (UI) controls (such as a <xref:System.Web.UI.WebControls.ListBox> control) that provide to users the possible display modes on a page.
 
-
-
 ## Examples
  The following code example demonstrates how to use the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CreateDisplayModes*> method.
 
@@ -1668,8 +1644,6 @@
 
  When you add a server control to a zone programmatically, a typical approach is to use the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CreateWebPart*> method to wrap the control with a <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> object, and then call the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.AddWebPart*> method to add the control to the collection of all <xref:System.Web.UI.WebControls.WebParts.WebPart> controls on the page, which is referenced by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebParts> property.
 
-
-
 ## Examples
  The following code example demonstrates use of the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CreateWebPart*> method. In the `Button2_Click method`, the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.CreateWebPart*> method is called to wrap a <xref:System.Web.UI.WebControls.Calendar> control with a <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> object before adding it to the zone.
 
@@ -1716,8 +1690,6 @@
 
 > [!NOTE]
 > The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DeleteWarning> property is not displayed in the case of static <xref:System.Web.UI.WebControls.WebParts.WebPart> controls and server controls. Static controls are server controls that are declared within a <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase> zone in the markup of a Web page. Because such controls are static, they cannot be deleted, so the delete warning message is never displayed in that case. Static controls can be closed by a user, but a closed control is added to the page catalog, from which it can be added back to the page by a user, whereas a deleted control can never be recovered.
-
-
 
 ## Examples
  The following code example demonstrates the use of the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DeleteWarning> property declaratively and programmatically.
@@ -1791,8 +1763,6 @@
 
  Only dynamic controls can be deleted. Dynamic controls are added to a page programmatically or by users adding controls from a catalog. Static controls are added to a page declaratively in the markup or persistence format. Because the declarative tags are permanently present in the markup, static controls can never be deleted, but they can be closed and reopened.
 
-
-
 ## Examples
  The following code example demonstrates how to use the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DeleteWebPart*> method. The first time the **Add Calendar** button is clicked, the code in the event handler creates a <xref:System.Web.UI.WebControls.Calendar> control, and adds it to a zone as a <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> object. Because the control is added programmatically, it is a dynamic control, and therefore it can be deleted. When a user clicks the **Delete Calendar** button, the code ensures that the control exists, and then deletes it by calling the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DeleteWebPart*> method.
 
@@ -1831,8 +1801,6 @@
  The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DesignDisplayMode> field references a custom <xref:System.Web.UI.WebControls.WebParts.WebPartDisplayMode> object that is created and contained by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control. Because this is a static object, you can refer to it directly through the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> class without needing an instance of the control.
 
  When a page that contains Web Parts controls first loads, it is in <xref:System.Web.UI.WebControls.WebParts.WebPartManager.BrowseDisplayMode> (browse mode) by default. When users want to change the layout of the page by moving controls to different zones or within the current zones, they must first switch the page to <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DesignDisplayMode> (design mode). In design mode, the user interface (UI) for the various zones appears, and users can then drag controls to change the layout.
-
-
 
 ## Examples
  The following code example demonstrates how to work with the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DesignDisplayMode> field programmatically. The code populates a drop-down list with the supported display modes for the page, which in this case are browse and design. Notice that, in the `Page_PreRender` method, the code checks whether the current <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisplayMode> property is set to <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DesignDisplayMode>. If so, `Label1` will be visible, and if not, `Label1` will be hidden.
@@ -1881,8 +1849,6 @@
  When the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisconnectWebPart*> method is called, it raises the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsDisconnecting> event. Normally this event can be cancelled, but in two cases it cannot be cancelled. One case occurs during requests to the page, when the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ActivateConnections*> method is called. If there is a conflict among existing connections, the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisconnectWebPart*> method will be invoked to close one of the conflicting connections, and in this instance the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsDisconnecting> event cannot be cancelled, because the conflict must be resolved.
 
  The other case occurs when a <xref:System.Web.UI.WebControls.WebParts.WebPart> or server control that is currently connected is either closed or deleted. In this case, because of the control is being removed from the page, its connection needs to be terminated as well, therefore by design it is not possible to cancel the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsDisconnecting> event to interrupt the process of ending a connection. For more information, see the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebPartsDisconnecting> event.
-
-
 
 ## Examples
  The following code example demonstrates how to use the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisconnectWebPart*> method. Using two custom <xref:System.Web.UI.WebControls.WebParts.WebPart> controls, the Web page enables you to create a connection between the controls by clicking a button, while another button enables you to disconnect the controls. If you close one of the controls while the page is in browse mode and the controls are connected, an override of the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisconnectWebPart*> method disconnects the closed control, ends the connection, and displays a message.
@@ -1950,8 +1916,6 @@
  This method is used to disconnect controls when you place an `<asp:connectionszone>` element in a Web page, to provide a user interface (UI) for managing connections. When a page is in connect display mode (<xref:System.Web.UI.WebControls.WebParts.WebPartManager.ConnectDisplayMode>), and a current connection exists, users can click a button that calls the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisconnectWebParts*> method to end the connection.
 
  You can also call the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisconnectWebParts*> method directly from your code, if you want to disconnect controls programmatically and without having to add an `<asp:connectionszone>` element to a page.
-
-
 
 ## Examples
  The following code example demonstrates how to use the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisconnectWebParts*> method. Using two custom <xref:System.Web.UI.WebControls.WebParts.WebPart> controls, the Web page enables you to create a connection between the controls by clicking a button, while another button enables you to disconnect the controls.
@@ -2051,8 +2015,6 @@
  The <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control also manages the display modes for pages that use Web Parts controls. Using the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisplayMode> property, the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control keeps a reference to the current display mode on a page. You can also use the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisplayMode> property to switch a page into different display modes. For an example of changing display modes on a page that uses Web Parts controls, see [Walkthrough: Changing Display Modes on a Web Parts Page](https://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0).
 
  As part of managing the display mode, the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control also provides events and event handlers relating to display modes, such as the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnDisplayModeChanged*> method and the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnDisplayModeChanging*> method. These methods provide a mechanism for customizing a page's behavior, and even for adding a custom display mode.
-
-
 
 ## Examples
  The following code example demonstrates programmatic use of the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisplayMode> property. After loading the page in a browser, you can use the buttons near the bottom of the page to switch display modes. The page is in browse mode by default when it loads. If you switch to design mode, you can drag the server controls from one zone to another, or arrange two controls within one zone. If you switch to edit mode, you can click the verbs menu in the header of either of the server controls, select **Edit**, and edit the control using the provided editing user interface (UI).
@@ -2181,8 +2143,6 @@
 
  Two of the provided display modes, browse and design, are always supported on a page. The other three display modes, edit, catalog, and connections, are supported only when a page has the corresponding type of zone necessary for a particular display mode to work. For example, if you page does not contain an <xref:System.Web.UI.WebControls.WebParts.EditorZone> zone, the edit display mode would appear in the collection referenced by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisplayModes> property, but would not appear in the collection referenced by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SupportedDisplayModes> property.
 
-
-
 ## Examples
  The following code example shows the programmatic use of the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisplayModes> property. The code uses this property to populate the list with all the display modes available in the Web Parts control set, even those that are not supported on the current page. In this case, the catalog and connect display modes are not supported, because their corresponding required zones are not on the page.
 
@@ -2266,8 +2226,6 @@
  When a page that contains Web Parts controls first loads, it is in <xref:System.Web.UI.WebControls.WebParts.WebPartManager.BrowseDisplayMode> (browse mode) by default. When users want to edit or modify a server control, they must first switch the page to <xref:System.Web.UI.WebControls.WebParts.WebPartManager.EditDisplayMode> (edit mode). Second, they must select a specific server control to edit, by clicking the edit verb on the verbs menu in that control's header. After the control is in edit mode, the editing user interface (UI) appears for editing the selected control.
 
  To enable edit mode on a page, the page must contain at least one <xref:System.Web.UI.WebControls.WebParts.EditorZone> zone that includes one or more of the provided editing controls, such as the <xref:System.Web.UI.WebControls.WebParts.LayoutEditorPart> control, or custom editing controls.
-
-
 
 ## Examples
  The following code example demonstrates how to work with the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.EditDisplayMode> field programmatically. The code populates a drop-down list with the supported display modes for the page, which in this case are browse, design, and edit. To support editing, an `<asp:EditorZone>` element is in the page. Notice that, in the `Page_PreRender` method, the code checks whether the current <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisplayMode> property is set to <xref:System.Web.UI.WebControls.WebParts.WebPartManager.EditDisplayMode>. If so, `Label1` will be visible, and if not, `Label1` will be hidden.
@@ -2482,8 +2440,6 @@
 
  The default message is displayed whenever users attempt to export. However, by assigning a value to the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ExportSensitiveDataWarning> property, you can provide a custom warning message.
 
-
-
 ## Examples
  The following code example demonstrates the declarative use of the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.ExportSensitiveDataWarning> property.
 
@@ -2632,8 +2588,6 @@
 
  A consumer must always have at least one connection point to be able to establish a connection. The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.GetConsumerConnectionPoints*> method checks a consumer control and retrieves a collection of all its connection points. If a <xref:System.Web.UI.WebControls.WebParts.WebPart> control has no connection points, the method returns an empty collection.
 
-
-
 ## Examples
  The following code example demonstrates how to use the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.GetConsumerConnectionPoints*> method.
 
@@ -2702,8 +2656,6 @@
  Some controls in the Web Parts control set, such as <xref:System.Web.UI.WebControls.WebParts.WebPart> controls, have a <xref:System.Web.UI.WebControls.WebParts.WebPart.WebPartManager> property that can retrieve a reference to the current <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control. Hence, when working with such controls, you should use this property to retrieve a reference.
 
  If you are coding in a context where you know the ID of the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control, such as writing code inline within a Web page, it is simplest and most efficient to refer directly to the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control by using its ID.
-
-
 
 ## Examples
  The following code example demonstrates how to use the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.GetCurrentWebPartManager*> method. The example has two parts: a custom server control, and a Web page that hosts the control.
@@ -2837,8 +2789,6 @@
 
  Often at run time, page developers might want to get a reference to the <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> control that contains one of the server controls in a zone. The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.GetGenericWebPart*> method enables them to retrieve a reference to the <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> control.
 
-
-
 ## Examples
  The following code example demonstrates the use of the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.GetGenericWebPart*> method. The code example contains a <xref:System.Web.UI.WebControls.Calendar> control declared within a <xref:System.Web.UI.WebControls.WebParts.WebPartZone> zone. The `Button1_Click` method first prints the ID of the <xref:System.Web.UI.WebControls.Calendar> control to a label, and then uses the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.GetGenericWebPart*> method to retrieve a reference to the <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> control that wraps the calendar. The ID of the <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> control, and the ID of its child control (which is the <xref:System.Web.UI.WebControls.Calendar> control), are both printed to a second label.
 
@@ -2883,8 +2833,6 @@
  A Web Parts connection always involves exactly two controls, one acting as the provider of data, the other acting as the consumer of data. Each control must have one or more methods that are defined as connection points. In the case of a provider control, its connection points are <xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint> objects.
 
  A provider must always have at least one connection point to be able to establish a connection. The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.GetProviderConnectionPoints*> method checks a provider control and retrieves a collection of all its connection points. Retrieving the provider connection points is a necessary step in forming a Web Parts connection.
-
-
 
 ## Examples
  The following code example demonstrates how to use the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.GetProviderConnectionPoints*> method.
@@ -3091,8 +3039,6 @@
 
  This method carries out the initial tasks of determining whether the control inherits from the <xref:System.Web.UI.WebControls.WebParts.WebPart> class or is a <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> control and, if so, what type of child control it contains. To finish the task of authorization, it calls the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.IsAuthorized(System.Type,System.String,System.String,System.Boolean)> overload method.
 
-
-
 ## Examples
  The following code example demonstrates how to call the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.IsAuthorized(System.Web.UI.WebControls.WebParts.WebPart)> method from your code to determine whether a control is authorized to be added to a page.
 
@@ -3173,8 +3119,6 @@
 
 ## Remarks
  The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.IsAuthorized(System.Type,System.String,System.String,System.Boolean)> overload method carries out the final steps in determining whether a control is authorized to be added to a page. The method ensures that `type` is a valid type, and that `path` has a value only if the control being checked is a user control. Then it calls the critical <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnAuthorizeWebPart*> method, which raises the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.AuthorizeWebPart> event.
-
-
 
 ## Examples
  The following code example demonstrates how to override the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.IsAuthorized*> method to determine whether a control is authorized to be added to a page.
@@ -3450,8 +3394,6 @@ else
 
 4.  The `zoneIndex` of every <xref:System.Web.UI.WebControls.WebParts.WebPart> control in both the origin and destination zones is reset to reflect the moved control.
 
-
-
 ## Examples
  The following code example demonstrates how to call the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.MoveWebPart*> method directly from code to move a <xref:System.Web.UI.WebControls.WebParts.WebPart> control from one zone to another.
 
@@ -3537,8 +3479,6 @@ else
  All your custom method has to do is check each <xref:System.Web.UI.WebControls.WebParts.WebPart> control for the filtering criteria and then, based on the results, assign a Boolean value to the <xref:System.Web.UI.WebControls.WebParts.WebPartAuthorizationEventArgs.IsAuthorized> property of the <xref:System.Web.UI.WebControls.WebParts.WebPartAuthorizationEventArgs> object to indicate whether the <xref:System.Web.UI.WebControls.WebParts.WebPart> control can be added. The code in the Example section demonstrates how to do this.
 
  The second option for where to place your filtering code is to inherit from the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> class, and override a method to check the filter criteria. The two methods you can override to do this are the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.IsAuthorized(System.Type,System.String,System.String,System.Boolean)?displayProperty=nameWithType> method or the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnAuthorizeWebPart*> method. Although either method would work, in most cases it is preferable to override the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.IsAuthorized*> method, because it provides you with greater programmatic control over the whole authorization process, whereas the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnAuthorizeWebPart*> method does only one specific task, which is to raise the event and check for a handler. For a code example of a custom <xref:System.Web.UI.WebControls.WebParts.WebPartManager> class that overrides the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.IsAuthorized*> method, see the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.IsAuthorized(System.Type,System.String,System.String,System.Boolean)?displayProperty=nameWithType> overload of the method.
-
-
 
 ## Examples
  The following code example demonstrates how to set a custom event handler for the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.AuthorizeWebPart> event, so that the handler can provide custom filtering code for the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnAuthorizeWebPart*> method. This example would be a typical way for a page developer to provide a filtering scenario and authorization of <xref:System.Web.UI.WebControls.WebParts.WebPart> controls to be added to a page.
@@ -4440,8 +4380,6 @@ protected void mgr1_AuthorizeWebPart(object sender,
 > [!NOTE]
 > For more information on Web Parts personalization, see [Web Parts Personalization Overview](https://learn.microsoft.com/previous-versions/aspnet/z36h8be9(v=vs.100)).
 
-
-
 ## Examples
  The following code example demonstrates how to use the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.Personalization> property programmatically.
 
@@ -4882,8 +4820,6 @@ protected void mgr1_AuthorizeWebPart(object sender,
 
  The collection referenced by this property contains all the static connections that exist on the page, whether they are created programmatically or specified with an `<asp:webpartconnection>` element in the page's markup.
 
-
-
 ## Examples
  The following code example demonstrates programmatic use of the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.StaticConnections> property.
 
@@ -4955,8 +4891,6 @@ protected void mgr1_AuthorizeWebPart(object sender,
 > [!NOTE]
 > The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SupportedDisplayModes> property differs from the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisplayModes> property, which references a collection containing all the display modes that are available to the current <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control, even those that are not supported on a particular page.
 
-
-
 ## Examples
  The following code example shows the programmatic use of the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.SupportedDisplayModes> property. The code uses this property to populate the list with only the display modes available in the current Web page.
 
@@ -5026,8 +4960,6 @@ protected void mgr1_AuthorizeWebPart(object sender,
 - Deleting a connection between two <xref:System.Web.UI.WebControls.WebParts.WebPart> controls, either programmatically or by using the connection UI.
 
  To access this property value, you must cast the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control instance to the <xref:System.Web.UI.WebControls.WebParts.IPersonalizable> interface; you can then read the <xref:System.Web.UI.WebControls.WebParts.IPersonalizable.IsDirty> property value.
-
-
 
 ## Examples
  The following code example demonstrates a simple usage of the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.System%23Web%23UI%23WebControls%23WebParts%23IPersonalizable%23IsDirty> property, to indicate some common page personalization instances that cause a <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control's personalization data to change.
@@ -5561,8 +5493,6 @@ protected void mgr1_AuthorizeWebPart(object sender,
 
  Any type of control that can be placed in a zone, whether a custom <xref:System.Web.UI.WebControls.WebParts.WebPart> control, a standard ASP.NET control, a user control, or a custom server control, can be treated as a <xref:System.Web.UI.WebControls.WebParts.WebPart> control at run time. When a control that is not a <xref:System.Web.UI.WebControls.WebParts.WebPart> control is placed in a <xref:System.Web.UI.WebControls.WebParts.WebPartZone> zone, at run time ASP.NET wraps the control with a <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> object, so that the control can behave as a true <xref:System.Web.UI.WebControls.WebParts.WebPart> control. Therefore, by using the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebParts> property, the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control can track any type of server control, regardless of whether it derives from the <xref:System.Web.UI.WebControls.WebParts.WebPart> class.
 
-
-
 ## Examples
  The following code example demonstrates how to use the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebParts> property programmatically to access individual <xref:System.Web.UI.WebControls.WebParts.WebPart> controls. Notice that in the declarative markup for the Web page, within the `<asp:webpartzone>` element there are two standard ASP.NET server controls. Although these do not inherit from the <xref:System.Web.UI.WebControls.WebParts.WebPart> class, because they are in a zone they will be wrapped with a <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> object at run time, and thus will be included in the collection referenced by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebParts> property. You could also add custom <xref:System.Web.UI.WebControls.WebParts.WebPart> controls, user controls, or custom server controls in this zone, and they would be handled the same way.
 
@@ -5761,8 +5691,6 @@ protected void mgr1_AuthorizeWebPart(object sender,
  The <xref:System.Web.UI.WebControls.WebParts.WebPartManager.Zones> property is used by the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control to track the <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase> zones on a Web page. Note that the property does not reference all types of zones; it references only zones that derive from the <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase> class, including <xref:System.Web.UI.WebControls.WebParts.WebPartZone> zones.
 
  Although the collection referenced by the property is read-only, you can use it to access the individual objects in the collection and work with them programmatically.
-
-
 
 ## Examples
  The following code example demonstrates how to use the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.Zones> property programmatically to access individual <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase> zone controls. Notice that in the declarative markup for the Web page, there are two `<asp:webpartzone>` elements, each containing a server control. In the `<script>` section of the page, the code uses the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.Zones> property to access the individual zones, listing all the zone IDs and then changing the background color on the second zone.

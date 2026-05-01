@@ -260,8 +260,6 @@
 
  For attached properties, the type of the metadata returned by this property will match the type given in the original <xref:System.Windows.DependencyProperty.RegisterAttached*> registration method.
 
-
-
 ## Examples
  :::code language="csharp" source="~/snippets/csharp/System.Windows/DependencyProperty/DefaultMetadata/XamlApp/page2.xaml.cs" id="Snippetdpgetmetadatasingle":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows/DependencyProperty/DefaultMetadata/page2.xaml.vb" id="Snippetdpgetmetadatasingle":::
@@ -360,8 +358,6 @@
 ## Remarks
  Specifying either the type or an object reference to use as type is necessary because the metadata can vary from the original registration due either to <xref:System.Windows.DependencyProperty.AddOwner*> or <xref:System.Windows.DependencyProperty.OverrideMetadata*> calls that alter the metadata of the dependency property as it exists on a type.
 
-
-
 ## Examples
  The following example gets metadata for a dependency property based on its type. The type is obtained by using a `typeof` operator.
 
@@ -410,8 +406,6 @@
 
  When you request property metadata based on an instance, you are really just passing the instance so that its type can be evaluated internally. Dependency property metadata does not vary per instance; it is always consistent for any given type-property combination.
 
-
-
 ## Examples
  The following example gets metadata for a dependency property based on a specific <xref:System.Windows.DependencyObject> instance.
 
@@ -457,8 +451,6 @@
 
 ## Remarks
  Specifying either the type or an object reference is necessary because the metadata of any given dependency property can vary from the original registration due either to <xref:System.Windows.DependencyProperty.AddOwner*> or <xref:System.Windows.DependencyProperty.OverrideMetadata*> calls that can refine the property metadata as it exists on a type.
-
-
 
 ## Examples
  The following example gets metadata for a dependency property based on its <xref:System.Windows.DependencyObjectType>.
@@ -545,8 +537,6 @@
 ## Remarks
  A value of `null` is a valid type for reference type dependency properties, or for a <xref:System.Nullable`1> dependency property, and would return `true` for these cases. In cases where the dependency property is neither a reference nor a <xref:System.Nullable`1> type, <xref:System.Windows.DependencyProperty.IsValidType*> will return `false` for a null value rather than raise an exception.
 
-
-
 ## Examples
  The following example uses <xref:System.Windows.DependencyProperty.IsValidType*> as a check before calling <xref:System.Windows.DependencyObject.SetValue*> on the dependency property.
 
@@ -598,8 +588,6 @@
 
  A null value is a valid value for reference type dependency properties, or for a <xref:System.Nullable`1> dependency property, and would return `true` for these cases. In cases where the dependency property is neither a reference nor a <xref:System.Nullable`1> type, <xref:System.Windows.DependencyProperty.IsValidType*> will return `false` for a null value rather than raise an exception.
 
-
-
 ## Examples
  The following example uses <xref:System.Windows.DependencyProperty.IsValidValue*> as a check before calling <xref:System.Windows.DependencyObject.SetValue*> on the dependency property.
 
@@ -650,8 +638,6 @@
 
 > [!IMPORTANT]
 > The <xref:System.Windows.DependencyProperty.Name*> of a dependency property must follow the convention of matching the name of its dependency property identifier minus the suffix "Property". For details, see [Custom Dependency Properties](/dotnet/framework/wpf/advanced/custom-dependency-properties).
-
-
 
 ## Examples
  The following example queries various characteristics of a dependency property identifier, including the <xref:System.Windows.DependencyProperty.Name*>.
@@ -809,8 +795,6 @@
 
  The <xref:System.Windows.DependencyProperty.OwnerType*> on any given <xref:System.Windows.DependencyProperty> is immutable, and cannot be `null` in a valid <xref:System.Windows.DependencyProperty>.
 
-
-
 ## Examples
  The following example gets the owner type based on a dependency property identifier `dp`, and then gets metadata on the owner type for that same identifier. This operation is actually equivalent to getting <xref:System.Windows.DependencyProperty.DefaultMetadata*> on `dp`.
 
@@ -859,8 +843,6 @@
 ## Remarks
  This property reports the type of the property's value as declared by the original property registration, through the `propertyType` parameter. Similar to the <xref:System.Windows.DependencyProperty.Name*>, the property type of a dependency property is immutable after registration.
 
-
-
 ## Examples
  The following example queries various characteristics of a dependency property identifier, including the <xref:System.Windows.DependencyProperty.PropertyType*>. The type name string of the <xref:System.Windows.DependencyProperty.PropertyType*> is obtained from the returned <xref:System.Type>.
 
@@ -907,8 +889,6 @@
  Read-only dependency properties require a <xref:System.Windows.DependencyPropertyKey> identifier rather than a <xref:System.Windows.DependencyProperty> identifier to perform metadata operations such as overriding the metadata or setting the value. If you obtained a collection of <xref:System.Windows.DependencyProperty> identifiers through a call to <xref:System.Windows.DependencyObject.GetLocalValueEnumerator*> or another API that exposes identifiers, check the <xref:System.Windows.DependencyProperty.ReadOnly*> value before attempting to call <xref:System.Windows.DependencyObject.SetValue*> or <xref:System.Windows.DependencyProperty.OverrideMetadata*> using that dependency property identifier as an input parameter, to verify that the dependency property that the identifier represents is not read-only. If the value of <xref:System.Windows.DependencyProperty.ReadOnly*> is `true` on a dependency property, there is no programmatic way to obtain a reference to the <xref:System.Windows.DependencyPropertyKey> identifier of that dependency property, from the metadata or from the <xref:System.Windows.DependencyProperty> identifier; the identifier must be available as a static field in order to call <xref:System.Windows.DependencyObject.SetValue(System.Windows.DependencyPropertyKey,System.Object)> against a read-only dependency property.
 
  When you create a custom dependency property, and register it as read-only, you should define only a get accessor for the CLR wrapper property. Otherwise, your class will have a confusing object model for the property wrapper as compared to the access to the backing dependency property. For details, see [Custom Dependency Properties](/dotnet/framework/wpf/advanced/custom-dependency-properties) or [Read-Only Dependency Properties](/dotnet/framework/wpf/advanced/read-only-dependency-properties).
-
-
 
 ## Examples
  The following example obtains the default metadata and the dependency property identifier properties from various dependency property fields, and uses the information to populate a table to implement a "metadata browser".
@@ -975,8 +955,6 @@
 
 ## Remarks
  For more information on dependency property registration, see <xref:System.Windows.DependencyProperty>.
-
-
 
 ## Examples
  :::code language="csharp" source="~/snippets/csharp/System.Windows/DependencyObject/Overview/Class1.cs" id="Snippetregister3param":::
@@ -1086,8 +1064,6 @@
 ## Remarks
  For more information on dependency property registration, see <xref:System.Windows.DependencyProperty>.
 
-
-
 ## Examples
  The following example registers a dependency property, including a validation callback (the callback definition is not shown; for details on the callback definition, see <xref:System.Windows.ValidateValueCallback>).
 
@@ -1156,8 +1132,6 @@
  An attached property is a property concept defined by Extensible Application Markup Language (XAML). WPF implements attached properties as dependency properties. Because the WPF attached properties are dependency properties, they can have metadata applied that can be used by the general property system for operations such as reporting layout characteristics. For more information, see [Attached Properties Overview](/dotnet/framework/wpf/advanced/attached-properties-overview).
 
  For more information on dependency property registration, see <xref:System.Windows.DependencyProperty>.
-
-
 
 ## Examples
  The following example registers an attached property on an abstract class using this <xref:System.Windows.DependencyProperty.RegisterAttached*> signature.
@@ -1278,8 +1252,6 @@
 
 ## Use RegisterAttached for Value-inheriting Dependency Properties
  One particular scenario for registering a dependency property with <xref:System.Windows.DependencyProperty.RegisterAttached*> instead of <xref:System.Windows.DependencyProperty.Register*> is to support property value inheritance. You should register value-inheriting dependency properties with <xref:System.Windows.DependencyProperty.RegisterAttached*> even if the class defines property wrapper accessors that expose the dependency property, and even if you do not intend to expose Get* and Set* static methods to provide true attached property support accessors.   Although property value inheritance might appear to work for nonattached dependency properties, the inheritance behavior for a nonattached property through certain element boundaries in the runtime tree is undefined. Registering the property as attached effectively makes the attached property a global property to the property system, and assures that property value inheritance works across all boundaries in an element tree. Always use <xref:System.Windows.DependencyProperty.RegisterAttached*> to register properties where you specify <xref:System.Windows.FrameworkPropertyMetadata.Inherits*> in the metadata. For more information, see [Property Value Inheritance](/dotnet/framework/wpf/advanced/property-value-inheritance).
-
-
 
 ## Examples
  The following example registers an attached property on an abstract class using this <xref:System.Windows.DependencyProperty.RegisterAttached*> signature. This attached property is an enumeration type property, and the registration adds a validation callback to verify that the provided value is a value of the enumeration.
@@ -1476,8 +1448,6 @@
  Read-only dependency properties are a fairly typical scenario both in the existing API and for customization scenarios, because other WPF features might require a dependency property even if that property is not intended to be settable by callers. You can use the value of a read-only dependency property as the basis for other property system operations that take a dependency property, such as basing a <xref:System.Windows.Trigger> on the dependency property in a style.
 
  For more information on dependency property registration, see <xref:System.Windows.DependencyProperty>.
-
-
 
 ## Examples
  The following example registers an `AquariumSize` dependency property as read-only. The example defines `AquariumSizeKey` as an internal key (so that other classes in the assembly could override metadata) and exposes the dependency property identifier based on that key as `AquariumSizeProperty`. Also, a wrapper is created for `AquariumSize`, with only a get accessor.

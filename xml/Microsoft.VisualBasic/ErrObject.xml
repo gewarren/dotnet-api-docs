@@ -42,8 +42,6 @@
 ## Remarks
  The `ErrObject` module supports the `Err` object. For more information, see <xref:Microsoft.VisualBasic.Information.Err*>.
 
-
-
 ## Examples
  This example uses the properties of the `Err` object in constructing an error-message dialog box. Notice what happens when you use the `Clear` method first: When you then generate a Visual Basic error with the `Raise` method, Visual Basic's default values become the properties of the `Err` object.
 
@@ -130,8 +128,6 @@ End If
     > [!NOTE]
     >  The `On Error Resume Next` construct may be preferable to `On Error GoTo` when handling errors generated during access to other objects. Checking `Err` after each interaction with an object removes ambiguity about which object was accessed by the code: You can be sure which object placed the error code in `Err.Number`, as well as which object originally generated the error (the object specified in `Err.Source`).
 
-
-
 ## Examples
  This example uses the `Err` object's `Clear` method to reset the numeric properties of the `Err` object to zero and its string properties to zero-length strings. Without the call to `Clear`, the second call to `MsgBox` would display the same error message.
 
@@ -181,8 +177,6 @@ End If
 
 ## Remarks
  The `Description` property setting consists of a short description of the error. Use this property to alert the user to an error that you cannot or do not want to handle. When generating a user-defined error, assign a short description of your error to the `Description` property. If the `Description` property is not filled in, and the value of the <xref:Microsoft.VisualBasic.ErrObject.Number> property corresponds to a Visual Basic run-time error, then the string returned by the <xref:Microsoft.VisualBasic.Conversion.ErrorToString*> function is set in the `Description` property when the error is generated.
-
-
 
 ## Examples
  This example assigns a user-defined message to the `Description` property of the `Err` object.
@@ -238,8 +232,6 @@ End If
 
 ## Remarks
  If Visual Basic encounters no line numbers, it returns 0.
-
-
 
 ## Examples
  This example uses the `Erl` property to indicate the line number.
@@ -298,8 +290,6 @@ End If
 ## Remarks
  The `GetException` function is available only from the `Err` object class. It works with the `Exception` property of the `Err` object to display the error that has occurred.
 
-
-
 ## Examples
  The following code displays the message assigned to the exception in the `Err` object:
 
@@ -350,8 +340,6 @@ End If
 > [!NOTE]
 > You should write routines in your application to handle typical errors. When programming with an object, you can use the object's Help file to improve the quality of your error handling, or to display a meaningful message to your user if the error is not recoverable.
 
-
-
 ## Examples
  This example uses the `HelpContext` property of the `Err` object to show the Visual Basic Help topic for the `Overflow` error.
 
@@ -401,8 +389,6 @@ End If
 
 > [!NOTE]
 > You should write routines in your application to handle typical errors. When programming with an object, you can use the object's Help file to improve the quality of your error handling, or to display a meaningful message to your user if the error is not recoverable.
-
-
 
 ## Examples
  This example uses the `HelpFile` property of the `Err` object to start the Help system. By default, the `HelpFile` property contains the name of the Visual Basic Help file.
@@ -521,8 +507,6 @@ End If
 
  :::code language="vb" source="~/snippets/visualbasic/Microsoft.VisualBasic/ErrObject/Clear/Class1.vb" id="Snippet13":::
 
-
-
 ## Examples
  This example illustrates a typical use of the `Number` property in an error-handling routine.
 
@@ -592,8 +576,6 @@ End If
 
  Because the `Err` object gives richer information than when you generate errors with the `Error` statement, `Raise` is useful for generating errors when writing class modules. For example, with the `Raise` method, the source that generated the error can be specified in the `Source` property, online Help for the error can be referenced, and so on.
 
-
-
 ## Examples
  This example uses the `Err` object's `Raise` method to generate an error within a function written in Visual Basic. The calling function can catch the error and report it to the user with a message box.
 
@@ -645,8 +627,6 @@ End If
  The `Source` property specifies a `String` expression representing the object that generated the error; the expression is usually the object's class name or process ID. Use the `Source` property to provide information when your code is unable to handle an error generated in an accessed object. For example, if you access Microsoft Excel and it generates a `Division by zero` error, Microsoft Excel sets `Err.Number` to its error code for that error and sets `Source` to "Excel.Application".
 
  When the application is generating an error from code, `Source` is your application's programmatic ID. Within a class, `Source` should contain a name having the form *project*.*class*. When an unexpected error occurs in your code, the `Source` property is automatically filled in. For errors in a module, `Source` contains the project name.
-
-
 
 ## Examples
  This example demonstrates the use of the `Source` property in a typical error-handling routine. When an error is raised from `Class1`, the string `"Class1"` is assigned to the `Source` property of the `Err` object. This string is then displayed in an informative message indicating the source and number of the error.

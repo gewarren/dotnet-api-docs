@@ -30,8 +30,6 @@
 > [!NOTE]
 > The <xref:System.Web.Caching.Cache> class is not intended for use outside of ASP.NET applications. It was designed and tested for use in ASP.NET to provide caching for Web applications. For other types of applications, such as console applications or Windows Forms applications, use the <xref:System.Runtime.Caching.ObjectCache> class.
 
-
-
 ## Examples
  The following example is a page that shows users the value assigned to an item in the cache, and then notifies them when the item is removed from the cache. It creates a `RemovedCallback` method, which has the signature of the `CacheItemRemovedCallback` delegate, to notify users when the cache item is removed, and it uses the <xref:System.Web.Caching.CacheItemRemovedReason> enumeration to tell them why it was removed. In addition, it uses the <xref:System.Web.Caching.Cache.Item*?displayProperty=nameWithType> property to add objects to the cache and retrieve the value of those objects. In the `AddItemToCache` method, it uses the <xref:System.Web.Caching.Cache.Add*?displayProperty=nameWithType> method to add an item to the cache. To use the `CacheItemRemovedCallback` delegate, you must add an item to the cache with this method or the <xref:System.Web.Caching.Cache.Insert*?displayProperty=nameWithType> method, so that ASP.NET can automatically make the proper method calls when the item is removed. The custom `RemoveItemFromCache` method uses the <xref:System.Web.Caching.Cache.Remove*?displayProperty=nameWithType> method to explicitly delete the item from the cache, causing the `RemovedCallback` method to be invoked.
 
@@ -121,8 +119,6 @@
 
  If you intend the cache item to expire after a certain amount of time has passed since the item was last accessed, you set the `slidingExpiration` parameter to the expiration interval, and the `absoluteExpiration` parameter to <xref:System.Web.Caching.Cache.NoAbsoluteExpiration>.
 
-
-
 ## Examples
  The following example creates an `AddItemToCache` method. When this method is called, it sets an `itemRemoved` property to `false` and registers an `onRemove` method with a new instance of the <xref:System.Web.Caching.CacheItemRemovedCallback> delegate. The delegate's signature is used in the `RemovedCallback` method. The `AddItemToCache` method then checks the value associated with the `Key1` key in the cache. If the value is `null`, the `Add` method places an item in the cache with a key of `Key1`, a value of `Value 1`, an absolute expiration of 60 seconds, and a high cache priority. It also uses the `onRemove` method as an argument. This allows the `RemovedCallback` method to be called when this item is removed from the cache.
 
@@ -168,8 +164,6 @@
 
 ## Remarks
  This property can be useful when monitoring your application's performance or when using ASP.NET tracing functionality.
-
-
 
 ## Examples
  The following example obtains the value of the `Count` property, converts it to a string, and assigns the string to the <xref:System.Web.UI.WebControls.Label.Text> property of a <xref:System.Web.UI.WebControls.Label> Web server control, `Label1`.
@@ -241,8 +235,6 @@
  The <xref:System.Web.Caching.Cache.EffectivePrivateBytesLimit> property returns the number of bytes that can be used by the application process. Once this limit is reached, the cache algorithm begins aggressively scavenging the cache.
 
  The <xref:System.Web.Caching.Cache.EffectivePrivateBytesLimit> property can be set with the `privateBytesLimit` attribute of the [cache Element for caching (ASP.NET Settings Schema)](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/ms228248(v=vs.100)) element in the application's configuration file. When the `privateBytesLimit` attribute is not set, the cache algorithm determines the maximum size of the cache, and the <xref:System.Web.Caching.Cache.EffectivePrivateBytesLimit> property contains the size chosen by the algorithm.
-
-
 
 ## Examples
  <xref:System.Web.Caching.Cache.EffectivePercentagePhysicalMemoryLimit*>
@@ -316,8 +308,6 @@
 ## Remarks
  Items can be added to or removed from the cache while this method is enumerating through the items.
 
-
-
 ## Examples
  The following example creates an <xref:System.Collections.IDictionaryEnumerator> object, `CacheEnum`, using the `GetEnumerator` method. The enumerator moves through the cache, converts the value of each cached item to a string, and then writes the values to a Web Forms page.
 
@@ -368,8 +358,6 @@
 ## Remarks
  This method will overwrite an existing cache item whose key matches the `key` parameter. The object added to the cache using this overload of the `Insert` method is inserted with no file or cache dependencies, a priority of <xref:System.Web.Caching.CacheItemPriority.Default>, a sliding expiration value of <xref:System.Web.Caching.Cache.NoSlidingExpiration>, and an absolute expiration value of <xref:System.Web.Caching.Cache.NoAbsoluteExpiration>.
 
-
-
 ## Examples
  The following example demonstrates how to insert an item into an application's cache.
 
@@ -414,8 +402,6 @@
 
 ## Remarks
  This method will overwrite an existing cache item whose key matches the `key` parameter. The object added to the cache using this overload of the `Insert` method is inserted with a priority of <xref:System.Web.Caching.CacheItemPriority.Default>, a sliding expiration value of <xref:System.Web.Caching.Cache.NoSlidingExpiration>, and an absolute expiration value of <xref:System.Web.Caching.Cache.NoAbsoluteExpiration>.
-
-
 
 ## Examples
  The following example demonstrates how to insert an item into an application's cache with a cache dependency on an XML configuration file.
@@ -467,8 +453,6 @@
  This method will overwrite an existing `Cache` item with the same `key` parameter.
 
  If the `slidingExpiration` parameter is set to <xref:System.Web.Caching.Cache.NoSlidingExpiration>, sliding expiration is disabled. If you set the `slidingExpiration` parameter to greater than <xref:System.TimeSpan.Zero>, the `absoluteExpiration` parameter is set to <xref:System.DateTime.Now*> plus the value contained in the `slidingExpiration` parameter. If the item is requested from the cache before the amount of time specified by the `absoluteExpiration` parameter, the item will be placed in the cache again, and `absoluteExpiration` will again be set to `DateTime.Now` plus the value contained in the `slidingExpiration` parameter. If the item is not requested from the cache before the date in the `absoluteExpiration` parameter, the item is removed from the cache. The item added to the cache using this overload of the insert method is inserted with a priority of <xref:System.Web.Caching.CacheItemPriority.Default>.
-
-
 
 ## Examples
  The following example demonstrates how to insert an item into an application's cache with an absolute expiration.
@@ -595,8 +579,6 @@
 
  If you intend the cache item to expire after a certain amount of time has passed since the last access to the item, you set the `slidingExpiration` parameter to the expiration interval, and the `absoluteExpiration` parameter to <xref:System.Web.Caching.Cache.NoAbsoluteExpiration>.
 
-
-
 ## Examples
  The following example demonstrates how to assign an item high priority when you insert it into your application's `Cache` object.
 
@@ -658,8 +640,6 @@
 ## Remarks
  You can use this property to retrieve the value of a specified cache item, or to add an item and a key for it to the cache. Adding a cache item using the <xref:System.Web.Caching.Cache.Item*> property is equivalent to calling the <xref:System.Web.Caching.Cache.Insert*?displayProperty=nameWithType> method.
 
-
-
 ## Examples
  The following example uses the `Item` property to retrieve the value of a cached object associated with the `Key1` key. It then uses the <xref:System.Web.HttpResponse.Write*?displayProperty=nameWithType> method to write the value and introductory text and the B HTML element to a Web Forms page.
 
@@ -701,8 +681,6 @@
 ## Remarks
  When used, this field sets the `absoluteExpiration` parameter equal to <xref:System.DateTime.MaxValue>, which is a constant representing the largest possible `DateTime` value, 12/31/9999 11:59:59 PM.
 
-
-
 ## Examples
  The following example demonstrates how to use the `NoAbsoluteExpiration` field to disable absolute expirations when inserting an item in the `Cache`.
 
@@ -739,8 +717,6 @@
 
 ## Remarks
  When used, this field sets the `slidingExpiration` parameter to the <xref:System.TimeSpan.Zero?displayProperty=nameWithType> field, which has a constant value of zero. The cached item expires in accordance with the `absoluteExpiration` parameter associated with the `Insert` or `Add` method call.
-
-
 
 ## Examples
  The following example demonstrates how to use the Insert method to add an item to the <xref:System.Web.Caching.Cache> object using the `NoSlidingExpiration` field.

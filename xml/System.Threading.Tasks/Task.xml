@@ -912,8 +912,6 @@ When an asynchronous method awaits a <xref:System.Threading.Tasks.Task> directly
 ## Remarks
  The returned <xref:System.Threading.Tasks.Task> will not be scheduled for execution until the current task has completed, whether it completes due to running to completion successfully, faulting due to an unhandled exception, or exiting out early due to being canceled.
 
-
-
 ## Examples
  The following example defines a task that populates an array with 100 random date and time values. It uses the <xref:System.Threading.Tasks.Task.ContinueWith(System.Action{System.Threading.Tasks.Task})> method to select the earliest and the latest date values once the array is fully populated.
 
@@ -1706,8 +1704,6 @@ End Sub
 
 ## Remarks
  The returned <xref:System.Threading.Tasks.Task`1> will not be scheduled for execution until the current task has completed, whether it completes due to running to completion successfully, faulting due to an unhandled exception, or exiting out early due to being canceled.
-
-
 
 ## Examples
  The following example shows how to use the ContinueWith method:
@@ -2615,8 +2611,6 @@ End Sub
 > [!NOTE]
 > The system clock that is used is the same clock used by [GetTickCount](/windows/win32/api/sysinfoapi/nf-sysinfoapi-gettickcount), which is not affected by changes made with [timeBeginPeriod](/windows/win32/api/timeapi/nf-timeapi-timebeginperiod) and [timeEndPeriod](/windows/win32/api/timeapi/nf-timeapi-timeendperiod).
 
-
-
 ## Examples
  The following example shows a simple use of the <xref:System.Threading.Tasks.Task.Delay*> method.
 
@@ -2687,8 +2681,6 @@ End Sub
 
 > [!NOTE]
 > The system clock that is used is the same clock used by [GetTickCount](/windows/win32/api/sysinfoapi/nf-sysinfoapi-gettickcount), which is not affected by changes made with [timeBeginPeriod](/windows/win32/api/timeapi/nf-timeapi-timebeginperiod) and [timeEndPeriod](/windows/win32/api/timeapi/nf-timeapi-timeendperiod).
-
-
 
 ## Examples
  The following example shows a simple use of the <xref:System.Threading.Tasks.Task.Delay*> method.
@@ -2843,8 +2835,6 @@ End Sub
 
 > [!NOTE]
 > The system clock that is used is the same clock used by [GetTickCount](/windows/win32/api/sysinfoapi/nf-sysinfoapi-gettickcount), which is not affected by changes made with [timeBeginPeriod](/windows/win32/api/timeapi/nf-timeapi-timebeginperiod) and [timeEndPeriod](/windows/win32/api/timeapi/nf-timeapi-timeendperiod).
-
-
 
 ## Examples
  The following example launches a task that includes a call to the <xref:System.Threading.Tasks.Task.Delay(System.TimeSpan,System.Threading.CancellationToken)> method with a 1.5 second delay. Before the delay interval elapses, the token is cancelled. The output from the example shows that, as a result, a <xref:System.Threading.Tasks.TaskCanceledException> is thrown, and the tasks' <xref:System.Threading.Tasks.Task.Status> property is set to <xref:System.Threading.Tasks.TaskStatus.Canceled>.
@@ -3444,8 +3434,6 @@ Task t Status: RanToCompletion, Result: 42
 ## Remarks
  This method creates a <xref:System.Threading.Tasks.Task`1> object whose <xref:System.Threading.Tasks.Task.Status> property is <xref:System.Threading.Tasks.TaskStatus.Faulted> and whose <xref:System.Threading.Tasks.Task.Exception> property contains `exception`. The method is commonly used when you immediately know that the work that a task performs will throw an exception before executing a longer code path. The example provides an illustration.
 
-
-
 ## Examples
  The following example is a command-line utility that calculates the number of bytes in the files in each directory whose name is passed as a command-line argument. Rather than executing a longer code path that instantiates a <xref:System.IO.FileInfo> object and retrieves the value of its <xref:System.IO.FileInfo.Length?displayProperty=nameWithType> property for each file in the directory, the example simply calls the <xref:System.Threading.Tasks.Task.FromException``1(System.Exception)> method to create a faulted task if a particular subdirectory does not exist.
 
@@ -3963,8 +3951,6 @@ This method is intended for compiler use rather than use directly in code.
 
  For information on handling exceptions thrown by task operations, see [Exception Handling](/dotnet/standard/parallel-programming/exception-handling-task-parallel-library).
 
-
-
 ## Examples
  The following example defines a `ShowThreadInfo` method  that displays the <xref:System.Threading.Thread.ManagedThreadId*?displayProperty=nameWithType> of the current thread. It is called directly from the application thread, and is called from the <xref:System.Action> delegate passed to the <xref:System.Threading.Tasks.Task.Run(System.Action)> method.
 
@@ -4121,8 +4107,6 @@ This method is intended for compiler use rather than use directly in code.
 - It uses the default task scheduler.
 
  For information on handling exceptions thrown by task operations, see [Exception Handling](/dotnet/standard/parallel-programming/exception-handling-task-parallel-library).
-
-
 
 ## Examples
  The following example calls the <xref:System.Threading.Tasks.Task.Run(System.Action,System.Threading.CancellationToken)> method to create a task that iterates the files in the C:\Windows\System32 directory. The lambda expression calls the <xref:System.Threading.Tasks.Parallel.ForEach*?displayProperty=nameWithType> method to add information about each  file to a <xref:System.Collections.Generic.List`1> object. Each detached nested task invoked by the <xref:System.Threading.Tasks.Parallel.ForEach*?displayProperty=nameWithType> loop checks the state of the cancellation token and, if cancellation is requested, calls the <xref:System.Threading.CancellationToken.ThrowIfCancellationRequested*?displayProperty=nameWithType> method. The <xref:System.Threading.CancellationToken.ThrowIfCancellationRequested*?displayProperty=nameWithType> method throws an <xref:System.OperationCanceledException> exception that is handled in a `catch` block when the calling thread calls the <xref:System.Threading.Tasks.Task.Wait*?displayProperty=nameWithType> method.
@@ -4360,8 +4344,6 @@ This method is intended for compiler use rather than use directly in code.
 
  For information on handling exceptions thrown by task operations, see [Exception Handling](/dotnet/standard/parallel-programming/exception-handling-task-parallel-library).
 
-
-
 ## Examples
  The following example counts the approximate number of words in text files that represent published books. Each task is responsible for opening a file, reading its entire contents asynchronously, and calculating the word count by using a regular expression. The <xref:System.Threading.Tasks.Task.WaitAll(System.Threading.Tasks.Task[])> method is called to ensure that all tasks have completed before  displaying the word count of each book to the console.
 
@@ -4533,8 +4515,6 @@ This method is intended for compiler use rather than use directly in code.
 
  For information on handling exceptions thrown by task operations, see [Exception Handling](/dotnet/standard/parallel-programming/exception-handling-task-parallel-library).
 
-
-
 ## Examples
  The following example creates 20 tasks that will loop until a counter is incremented to a value of 2 million. When the first 10 tasks reach 2 million, the cancellation token is cancelled, and any tasks whose counters have not reached 2 million are cancelled. The example shows possible output.
 
@@ -4621,8 +4601,6 @@ This method is intended for compiler use rather than use directly in code.
  Ordinarily, tasks are executed asynchronously on a thread pool thread and do not block the calling thread. Tasks executed by calling the <xref:System.Threading.Tasks.Task.RunSynchronously> method are associated with the current <xref:System.Threading.Tasks.TaskScheduler> and are run on the calling thread. If the target scheduler does not support running this task on the calling thread, the task will be scheduled for execution on the scheduler, and the calling thread will block until the task has completed execution. Even though the task runs synchronously, the calling thread should still call <xref:System.Threading.Tasks.Task.Wait*> to handle any exceptions that the task might throw.  For more information on exception handling, see [Exception Handling](/dotnet/standard/parallel-programming/exception-handling-task-parallel-library).
 
  Tasks executed by calling the <xref:System.Threading.Tasks.Task.RunSynchronously*> method are instantiated by calling a <xref:System.Threading.Tasks.Task> or <xref:System.Threading.Tasks.Task`1> class constructor. The task to be run synchronously must be in the <xref:System.Threading.Tasks.TaskStatus.Created> state. A task may be started and run only once. Any attempts to schedule a task a second time results in an exception.
-
-
 
 ## Examples
  The following example compares a task executed by calling the <xref:System.Threading.Tasks.Task.RunSynchronously*> method with one executed asynchronously. In both cases, the tasks execute identical lambda expressions that display the task ID and the ID of the thread on which the task is running. The task calculates the sum of the integers between 1 and 1,000,000. As the output from the example shows, the task executed by calling the <xref:System.Threading.Tasks.Task.RunSynchronously*> method runs on the application thread, while the asynchronous task does not.
@@ -4762,8 +4740,6 @@ This method is intended for compiler use rather than use directly in code.
 
  For information on handling exceptions thrown by task operations, see [Exception Handling](/dotnet/standard/parallel-programming/exception-handling-task-parallel-library).
 
-
-
 ## Examples
  The following example calls the <xref:System.Threading.Tasks.Task.%23ctor(System.Action)> constructor to instantiate a new <xref:System.Threading.Tasks.Task> object that displays its task ID and managed thread ID and then executes a loop. It then calls the <xref:System.Threading.Tasks.Task.Start*> method to execute the task.  Since this is a console app, the call to the <xref:System.Threading.Tasks.Task.Wait*> method is necessary to prevent the app from terminating before the task finishes execution.
 
@@ -4889,8 +4865,6 @@ This method is intended for compiler use rather than use directly in code.
  Retrieving the value of the <xref:System.Threading.Tasks.Task.Status?displayProperty=nameWithType> property does not block the calling thread until the task has completed.
 
  For more information and an example, see [Chaining Tasks by Using Continuation Tasks](/dotnet/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks) and [How to: Cancel a Task and Its Children](/dotnet/standard/parallel-programming/how-to-cancel-a-task-and-its-children).
-
-
 
 ## Examples
  The following example creates 20 tasks that will loop until a counter is incremented to a value of 2 million. When the first 10 tasks reach 2 million, the cancellation token is cancelled, and any tasks whose counters have not reached 2 million are cancelled. The example then examines the <xref:System.Threading.Tasks.Task.Status> property of each task to indicate whether it completed successfully or was cancelled. For those that completed, it displays the value returned by the task.
@@ -5151,8 +5125,6 @@ This member is an explicit interface member implementation. It can be used only 
 
 - The interval defined by `millisecondsTimeout` elapses. In this case, the current thread resumes execution and the method returns `false`.
 
-
-
 ## Examples
  The following example starts a task that generates five million random integers between 0 and 100 and computes their mean. The example uses the <xref:System.Threading.Tasks.Task.Wait(System.Int32)> method to wait for the application to complete within 150 milliseconds. If the application completes normally, the task displays the sum and mean of the random numbers that it has generated. If the timeout interval has elapsed, the example displays a message before it terminates.
 
@@ -5307,8 +5279,6 @@ This member is an explicit interface member implementation. It can be used only 
 
 - The interval defined by `timeout` elapses. In this case, the current thread resumes execution and the method returns `false`.
 
-
-
 ## Examples
  The following example starts a task that generates five million random integers between 0 and 100 and computes their mean. The example uses the <xref:System.Threading.Tasks.Task.Wait(System.TimeSpan)> method to wait for the application to complete within 150 milliseconds. If the application completes normally, the task displays the sum and mean of the random numbers that it has generated. If the timeout interval has elapsed, the example displays a message before it terminates.
 
@@ -5397,8 +5367,6 @@ This member is an explicit interface member implementation. It can be used only 
 
 > [!NOTE]
 > Canceling the `cancellationToken` cancellation token has no effect on the running task unless it has also been passed the cancellation token and is prepared to handle cancellation. Passing the `cancellationToken` object to this method simply allows the wait to be canceled based on some condition.
-
-
 
 ## Examples
  The following example calls the <xref:System.Threading.Tasks.Task.Wait(System.Int32,System.Threading.CancellationToken)> method to provide both a timeout value and a cancellation token that can end the wait for a task's completion. A new thread is started and executes the `CancelToken` method, which pauses and then calls the <xref:System.Threading.CancellationTokenSource.Cancel*?displayProperty=nameWithType> method to cancel the cancellation tokens. A task is then launched and delays for 5 seconds. The <xref:System.Threading.Tasks.Task.Wait*> method is then called to wait for the task's completion and is provided both a brief timeout value and a cancellation token.
@@ -6555,8 +6523,6 @@ An exception was thrown during
 
  If the supplied array/enumerable contains no tasks, the returned task will immediately transition to a <xref:System.Threading.Tasks.TaskStatus.RanToCompletion> state before it's returned to the caller.
 
-
-
 ## Examples
  The following example creates a set of tasks that ping the URLs in an array. The tasks are stored in a `List<Task>` collection that is passed to the <xref:System.Threading.Tasks.Task.WhenAll(System.Collections.Generic.IEnumerable{System.Threading.Tasks.Task})> method. After the call to the <xref:System.Threading.Tasks.Task.Wait*> method ensures that all threads have completed, the example examines the <xref:System.Threading.Tasks.Task.Status?displayProperty=nameWithType> property to determine whether any tasks have faulted.
 
@@ -6701,8 +6667,6 @@ An exception was thrown during
 
  If the supplied array/enumerable contains no tasks, the returned task will immediately transition to a <xref:System.Threading.Tasks.TaskStatus.RanToCompletion> state before it's returned to the caller.
 
-
-
 ## Examples
  The following example creates a set of tasks that ping the URLs in an array. The tasks are stored in a `List<Task>` collection that is converted to an array and passed to the <xref:System.Threading.Tasks.Task.WhenAll(System.Collections.Generic.IEnumerable{System.Threading.Tasks.Task})> method. After the call to the <xref:System.Threading.Tasks.Task.Wait*> method ensures that all threads have completed, the example examines the <xref:System.Threading.Tasks.Task.Status?displayProperty=nameWithType> property to determine whether any tasks have faulted.
 
@@ -6786,8 +6750,6 @@ An exception was thrown during
  If none of the tasks faulted and none of the tasks were canceled, the resulting task will end in the <xref:System.Threading.Tasks.TaskStatus.RanToCompletion> state.  The <xref:System.Threading.Tasks.Task`1.Result?displayProperty=nameWithType> property of the returned task will be set to an array containing all of the results of the supplied tasks in the same order as they were provided (e.g. if the input tasks array contained t1, t2, t3, the output task's <xref:System.Threading.Tasks.Task`1.Result?displayProperty=nameWithType> property will return an `TResult[]` where `arr[0] == t1.Result, arr[1] == t2.Result, and arr[2] == t3.Result)`.
 
  If the `tasks` argument contains no tasks, the returned task will immediately transition to a <xref:System.Threading.Tasks.TaskStatus.RanToCompletion> state before it's returned to the caller. The returned `TResult[]` will be an array of 0 elements.
-
-
 
 ## Examples
  The following example creates ten tasks, each of which instantiates a random number generator that creates 1,000 random numbers between 1 and 1,000 and computes their mean. The <xref:System.Threading.Tasks.Task.Delay(System.Int32)> method is used to delay instantiation of the random number generators so that they are not created with identical seed values. The call to the <xref:System.Threading.Tasks.Task.WhenAll*> method then returns an <xref:System.Int64> array that contains the mean computed by each task. These are then used to calculate the overall mean.
@@ -6954,8 +6916,6 @@ An exception was thrown during
  If none of the tasks faulted and none of the tasks were canceled, the resulting task will end in the <xref:System.Threading.Tasks.TaskStatus.RanToCompletion> state.  The <xref:System.Threading.Tasks.Task`1.Result*> of the returned task will be set to an array containing all of the results of the supplied tasks in the same order as they were provided (e.g. if the input tasks array contained t1, t2, t3, the output   task's <xref:System.Threading.Tasks.Task`1.Result*> will return an `TResult[]` where `arr[0] == t1.Result, arr[1] == t2.Result, and arr[2] == t3.Result)`.
 
  If the supplied array/enumerable contains no tasks, the returned task will immediately transition to a <xref:System.Threading.Tasks.TaskStatus.RanToCompletion> state before it's returned to the caller.  The returned `TResult[]` will be an array of 0 elements.
-
-
 
 ## Examples
  The following example creates ten tasks, each of which instantiates a random number generator that creates 1,000 random numbers between 1 and 1,000 and computes their mean. In this case, the ten individual tasks are stored in a `Task<Int64>` array.  The <xref:System.Threading.Tasks.Task.Delay(System.Int32)> method is used to delay instantiation of the random number generators so that they are not created with identical seed values. The call to the <xref:System.Threading.Tasks.Task.WhenAll*> method then returns an <xref:System.Int64> array that contains the mean computed by each task. These are then used to calculate the overall mean.

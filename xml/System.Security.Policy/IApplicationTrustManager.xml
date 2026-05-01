@@ -32,8 +32,6 @@
 
  In the .NET Framework 4 and later, there is only one trust manager, which can be a custom implementation of the <xref:System.Security.Policy.IApplicationTrustManager> interface. The default trust manager implementation prompts the user for permission to install the application and to elevate the permissions granted to the application. Other trust manager implementations might provide different user experiences. For example, an implementation might check an enterprise list for trusted applications instead of prompting the user for that information.
 
-
-
 ## Examples
  The following example shows a simple implementation of <xref:System.Security.Policy.IApplicationTrustManager>.
 
@@ -74,8 +72,6 @@
 
 ## Remarks
  The <xref:System.Security.Policy.IApplicationTrustManager.DetermineApplicationTrust*> method is called by the host to determine whether an application should be executed and which set of permissions it should be granted. <xref:System.Security.Policy.IApplicationTrustManager.DetermineApplicationTrust*> returns an <xref:System.Security.Policy.ApplicationTrust> object with a <xref:System.Security.Policy.ApplicationTrust.DefaultGrantSet> property that contains a permission set representing the permissions to be granted to each assembly executing within the context of the application. The granted permissions do not apply to assemblies in the global assembly cache. The <xref:System.Security.Policy.ApplicationTrust> object also has an <xref:System.Security.Policy.ApplicationTrust.IsApplicationTrustedToRun> property that the trust manager sets to indicate whether the application should be trusted. If the trust manager indicates that the application can be trusted, the host activates the application and grants its assemblies the set of permissions provided in the <xref:System.Security.Policy.ApplicationTrust> collection.
-
-
 
 ## Examples
  The following example shows an implementation of the <xref:System.Security.Policy.IApplicationTrustManager.DetermineApplicationTrust*> method for a custom trust manager. This code example is part of a larger example provided for the <xref:System.Security.Policy.IApplicationTrustManager> interface.

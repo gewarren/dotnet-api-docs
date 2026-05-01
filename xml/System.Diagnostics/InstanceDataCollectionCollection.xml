@@ -39,8 +39,6 @@
 ## Remarks
  The <xref:System.Diagnostics.InstanceDataCollectionCollection> class represents the collection returned from the <xref:System.Diagnostics.PerformanceCounterCategory.ReadCategory*> method. This collection contains all the counter and instance data. The collection contains an <xref:System.Diagnostics.InstanceDataCollection> object for each counter. Each <xref:System.Diagnostics.InstanceDataCollection> object contains the performance data for all counters for that instance. Thus, the data is indexed by counter name and then by instance name.
 
-
-
 ## Examples
  The following code example displays the instance data for a particular <xref:System.Diagnostics.PerformanceCounterCategory> on the local computer. It first displays a numbered list of <xref:System.Diagnostics.PerformanceCounterCategory> names. After the user enters the number of one of the categories, the example gets the <xref:System.Diagnostics.InstanceDataCollectionCollection> for that <xref:System.Diagnostics.PerformanceCounterCategory>. It then converts the collection returned by the <xref:System.Diagnostics.InstanceDataCollectionCollection.Values> property to an array of <xref:System.Diagnostics.InstanceDataCollection> objects. The example displays the instance data associated with each <xref:System.Diagnostics.InstanceData> of each <xref:System.Diagnostics.InstanceDataCollection>.
 
@@ -148,8 +146,6 @@
 
  Each <xref:System.Diagnostics.InstanceDataCollection> object in the collection contains the performance data for all counters for an instance. The data is indexed by counter name and then by instance name. <xref:System.Diagnostics.InstanceDataCollectionCollection.Contains*> returns `true` if there is an <xref:System.Diagnostics.InstanceDataCollection> object whose associated counter has the name specified by the `counterName` parameter.
 
-
-
 ## Examples
  The following code example accepts a <xref:System.Diagnostics.PerformanceCounter> category name and counter name from the command line. It gets the <xref:System.Diagnostics.InstanceDataCollectionCollection> for the <xref:System.Diagnostics.PerformanceCounterCategory> and then uses the <xref:System.Diagnostics.InstanceDataCollectionCollection.Contains*> method to determine if the specified counter exists. If the counter exists, the example gets the associated <xref:System.Diagnostics.InstanceDataCollection> and displays the instance names from the collection.
 
@@ -255,8 +251,6 @@
 
  Each <xref:System.Diagnostics.InstanceDataCollection> object in the collection contains the performance data for all counters for an instance. The data is indexed by counter name and then by instance name. The indexer uses the `counterName` parameter to step through the counters associated with this collection of instance data.
 
-
-
 ## Examples
  The following code example accepts a <xref:System.Diagnostics.PerformanceCounter> category name and counter name from the command line. It gets the <xref:System.Diagnostics.InstanceDataCollectionCollection> for the <xref:System.Diagnostics.PerformanceCounterCategory>. Then, if the <xref:System.Diagnostics.PerformanceCounter> exists, the example uses the <xref:System.Diagnostics.InstanceDataCollectionCollection.Item*> property (referenced as an indexer) to obtain the associated <xref:System.Diagnostics.InstanceDataCollection> and displays the instance names from the collection.
 
@@ -305,8 +299,6 @@
 
 ## Remarks
  Each software component creates keys for its objects and counters when it is installed and writes counter data while it is executing. You can access this data as you would access any other registry data. However, although you use the registry to collect performance data, the data is not stored in the registry database. Instead, the system collects the data from the appropriate system object managers.
-
-
 
 ## Examples
  The following code example uses the <xref:System.Diagnostics.InstanceDataCollectionCollection.Keys> property of an <xref:System.Diagnostics.InstanceDataCollectionCollection> to return a collection of counter names, which it converts to an array of <xref:System.String>. It generates an array of <xref:System.Diagnostics.InstanceDataCollection> objects using the <xref:System.Diagnostics.InstanceDataCollectionCollection.Values> property. For each element in the array of counter names, it displays the name and calls a function to process the associated <xref:System.Diagnostics.InstanceDataCollection>.

@@ -127,8 +127,6 @@
 
  If you need a stream with no backing store (also known as a bit bucket), use the <xref:System.IO.Stream.Null> field to retrieve an instance of a stream that is designed for this purpose.
 
-
-
 ## Examples
  The following example demonstrates how to use two <xref:System.IO.FileStream> objects to asynchronously copy the files from one directory to another directory. The <xref:System.IO.FileStream> class derives from the <xref:System.IO.Stream> class. Notice that the <xref:System.Web.UI.WebControls.Button.Click> event handler for the <xref:System.Windows.Controls.Button> control is marked with the `async` modifier because it calls an asynchronous method.
 
@@ -456,8 +454,6 @@
 ## Remarks
  If a class derived from <xref:System.IO.Stream> does not support reading, calls to the <xref:System.IO.Stream.Read*>, <xref:System.IO.Stream.ReadByte*>, and <xref:System.IO.Stream.BeginRead*> methods throw a <xref:System.NotSupportedException>.
 
-
-
 ## Examples
  The following is an example of using the `CanRead` property.
 
@@ -644,8 +640,6 @@
 ## Remarks
  If a class derived from <xref:System.IO.Stream> does not support writing, a call to <xref:System.IO.Stream.Write*>, <xref:System.IO.Stream.BeginWrite*>, or <xref:System.IO.Stream.WriteByte*> throws a <xref:System.NotSupportedException>. In such cases, <xref:System.IO.Stream.Flush*> is typically implemented as an empty method to ensure full compatibility with other <xref:System.IO.Stream> types since it's valid to flush a read-only stream.
 
-
-
 ## Examples
  The following is an example of using the `CanWrite` property.
 
@@ -783,8 +777,6 @@
 
 ## Remarks
  Copying begins at the current position in the current stream, and does not reset the position of the destination stream after the copy operation is complete.
-
-
 
 ## Examples
  The following example copies the contents of a <xref:System.IO.FileStream> to a <xref:System.IO.MemoryStream>.
@@ -2154,8 +2146,6 @@
  Implementations of this method read a maximum of `count` bytes from the current stream and store them in `buffer` beginning at `offset`. The current position within the stream is advanced by the number of bytes read; however, if an exception occurs, the current position within the stream remains unchanged. Implementations return the number of bytes read. If more than zero bytes are requested, the implementation will not complete the operation until at least one byte of data can be read (some implementations may similarly not complete until at least one byte is available even if zero bytes were requested, but no data will be consumed from the stream in such a case). <xref:System.IO.Stream.Read*> returns 0 only if zero bytes were requested or when there is no more data in the stream and no more is expected (such as a closed socket or end of file). An implementation is free to return fewer bytes than requested even if the end of the stream has not been reached.
 
  Use <xref:System.IO.BinaryReader> for reading primitive data types.
-
-
 
 ## Examples
  The following example shows how to use <xref:System.IO.Stream.Read*> to read a block of data.

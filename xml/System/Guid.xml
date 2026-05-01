@@ -317,8 +317,6 @@
 
  "{0xCA761232, 0xED42, 0x11CE, {0xBA, 0xCD, 0x00, 0xAA, 0x00, 0x57, 0xB2, 0x23}}"
 
-
-
 ## Examples
  The following example passes each string listed in the Remarks section to the <xref:System.Guid.%23ctor(System.String)> constructor.
 
@@ -497,8 +495,6 @@
 
 ## Remarks
  Specifying individual bytes in this manner can be used to circumvent byte order restrictions (big-endian or little-endian byte order) on particular types of computers.
-
-
 
 ## Examples
  The following example creates a GUID whose string representation is "0000000a-000b-000c-0001-020304050607".
@@ -717,8 +713,6 @@
 
  This method implements the <xref:System.IComparable`1?displayProperty=nameWithType> interface and performs slightly better than the <xref:System.Guid.CompareTo*?displayProperty=nameWithType> method because it does not have to convert the `value` parameter to a <xref:System.Guid> value.
 
-
-
 ## Examples
  The following example calls the <xref:System.Guid.CompareTo(System.Guid)> method to compare a GUID value with two similar GUID values.
 
@@ -814,8 +808,6 @@
  If two GUIDs have equal values for a component, the method compares the next component. When it finds a component whose values are unequal, it returns the result.
 
  Note that the final eight bytes appear in the string representation of a <xref:System.Guid> in reverse order, from low byte to high byte. For example, in the string representation of the <xref:System.Guid> value "01e75c83-c6f5-4192-b57e-7427cec5560d", the final eight bytes are "b57e-7427cec5560d."
-
-
 
 ## Examples
  The following example uses the <xref:System.Runtime.InteropServices.GuidAttribute> attribute to assign a GUID to a class. It retrieves the value of this GUID by calling the <xref:System.Attribute.GetCustomAttribute*?displayProperty=nameWithType> method and passing the <xref:System.Runtime.InteropServices.GuidAttribute.Value> property of the returned <xref:System.Runtime.InteropServices.GuidAttribute> object to the <xref:System.Guid.Parse*> method. Then it compares that GUID with an array of values.
@@ -2252,8 +2244,6 @@ Because the `provider` parameter is ignored, you cannot use it to provide a cust
  You can use the byte array returned by this method to round-trip a <xref:System.Guid> value by calling the <xref:System.Guid.%23ctor(System.Byte%5B%5D)> constructor.
 
  Note that the order of bytes in the returned byte array is different from the string representation of a <xref:System.Guid> value. The order of the beginning four-byte group and the next two two-byte groups is reversed, whereas the order of the last two-byte group and the closing six-byte group is the same. The example provides an illustration.
-
-
 
 ## Examples
  The following example calls the <xref:System.Guid.NewGuid*> method to create a <xref:System.Guid> value, and then calls the <xref:System.Guid.ToByteArray*> method to represent the <xref:System.Guid> value as a byte array. It then displays both values to the console. Finally, it instantiates a new <xref:System.Guid> value from the byte array and calls its <xref:System.Guid.Equals(System.Guid)> method to show that the two <xref:System.Guid> values are identical.

@@ -58,8 +58,6 @@
 
  When you validate an <xref:System.Xml.Linq.XDocument>, <xref:System.Xml.Linq.XElement>, or <xref:System.Xml.Linq.XAttribute>, you can also optionally populate the XML tree with the post-schema-validation infoset. PSVI information is added as an annotation of type <xref:System.Xml.Schema.XmlSchemaInfo?displayProperty=nameWithType>.
 
-
-
 ## Examples
  The XSD in [Sample XSD file: Customers and orders](/dotnet/standard/linq/sample-xsd-file-customers-orders) contains a schema that can be used to validate the XML document in [Sample XML file: Customers and orders](/dotnet/standard/linq/sample-xml-file-customers-orders). The following example loads the schema and the document, validates the document, changes the document so that the `xs:key` and `xs:keyref` relationship is not valid, and then attempts to validate again.
 
@@ -278,8 +276,6 @@ custOrd did not validate
  You use the <xref:System.Xml.Schema.IXmlSchemaInfo.SchemaElement> property to get a partial validation type (<xref:System.Xml.Schema.XmlSchemaElement>). You can use it to revalidate a sub-tree with an element at its root without validating an entire document.
 
  For an example of this property, see <xref:System.Xml.Schema.Extensions.Validate*>.
-
-
 
 ## Examples
  The following example populates the tree with a PSVI. After validation, it prints all elements and attributes in the tree that are invalid according to the PSVI.
@@ -546,8 +542,6 @@ Invalid Element /Root/Child1/GrandChild3
 ## Remarks
  This extension method validates that the <xref:System.Xml.Linq.XDocument> conforms to the schema content model in <xref:System.Xml.Schema.XmlSchemaSet>.
 
-
-
 ## Examples
  The following example creates an <xref:System.Xml.Schema.XmlSchemaSet>, then validates two <xref:System.Xml.Linq.XDocument> objects against the schema set. One of the documents is valid, the other is not.
 
@@ -752,8 +746,6 @@ doc2 did not validate
     -   If you get an <xref:System.Xml.Schema.XmlSchemaObject> for an <xref:System.Xml.Linq.XAttribute>, the type will be <xref:System.Xml.Schema.XmlSchemaAttribute>.
 
  After you have an instance of an <xref:System.Xml.Schema.XmlSchemaObject>, you can use this method to validate an attribute.
-
-
 
 ## Examples
 
@@ -973,8 +965,6 @@ lang did not validate
 1.  First, an annotation is added to all nodes in the tree to enable you to call <xref:System.Xml.Schema.Extensions.GetSchemaInfo*?displayProperty=nameWithType> or <xref:System.Xml.Schema.Extensions.GetSchemaInfo*?displayProperty=nameWithType> on an element or attribute in the tree.
 
 2.  Second, default elements and attributes defined in the XSD are added to the XML tree. By calling one of the <xref:System.Xml.Schema.Extensions.GetSchemaInfo*> methods, you can determine if a specific element or attribute was added from the XSD as a default element or attribute.
-
-
 
 ## Examples
  The following example contains an XSD that defines the `Child2` element with an `Att1` attribute with a default value. After successfully validating the document, the attribute with the default value is added to the XML tree. Note that the default attribute is not added to `doc2`, which does not validate against the schema.
@@ -1394,8 +1384,6 @@ Invalid Element /Root/Child1/GrandChild3
 
  After you have an instance of an <xref:System.Xml.Schema.XmlSchemaObject>, you can use this method to validate an sub-tree.
 
-
-
 ## Examples
 
 ```csharp
@@ -1626,8 +1614,6 @@ child1 did not validate
     -   If you get an <xref:System.Xml.Schema.XmlSchemaObject> for an <xref:System.Xml.Linq.XAttribute>, the type will be <xref:System.Xml.Schema.XmlSchemaAttribute>.
 
  After you have an instance of an <xref:System.Xml.Schema.XmlSchemaObject>, you can use this method to validate an attribute.
-
-
 
 ## Examples
 
@@ -1923,8 +1909,6 @@ Invalid Attribute /Root/@Lang
     -   If you get an <xref:System.Xml.Schema.XmlSchemaObject> for an <xref:System.Xml.Linq.XAttribute>, the type will be <xref:System.Xml.Schema.XmlSchemaAttribute>.
 
  After you have an instance of an <xref:System.Xml.Schema.XmlSchemaObject>, you can use this method to validate a sub-tree..
-
-
 
 ## Examples
 

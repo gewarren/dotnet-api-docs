@@ -45,8 +45,6 @@
 
  The <xref:System.Windows.Forms.DataGridView> control will share <xref:System.Windows.Forms.DataGridViewRow> objects across multiple data rows whenever possible to avoid performance penalties. Unless you are working with large amounts of data and experiencing performance issues, you can typically ignore row sharing. A shared row is indicated by an <xref:System.Windows.Forms.DataGridViewBand.Index> property value of -1. Some members of the <xref:System.Windows.Forms.DataGridViewRow> class cannot be used with shared rows, but you can unshare a row by accessing it through the <xref:System.Windows.Forms.DataGridViewRowCollection.Item*?displayProperty=nameWithType> property. Rows can also become unshared in other ways. To access a row without unsharing it, use the <xref:System.Windows.Forms.DataGridViewRowCollection.SharedRow*?displayProperty=nameWithType> method. When working with large amounts of data, you should be aware of how rows are shared and unshared to avoid performance penalties. For more information, see [Best Practices for Scaling the Windows Forms DataGridView Control](/dotnet/desktop/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control).
 
-
-
 ## Examples
  The following code example illustrates the use of this type. This example is part of a larger example available in [How to: Manipulate Rows in the Windows Forms DataGridView Control](/dotnet/desktop/winforms/controls/how-to-manipulate-rows-in-the-windows-forms-datagridview-control).
 
@@ -208,8 +206,6 @@
 ## Remarks
  The <xref:System.Windows.Forms.DataGridView> control internally calls the <xref:System.Windows.Forms.DataGridViewRow.AdjustRowHeaderBorderStyle*> method to determine the appearance of the borders for the row header cells. The <xref:System.Windows.Forms.DataGridView> control typically uses the value of the <xref:System.Windows.Forms.DataGridView.AdvancedRowHeadersBorderStyle> property for the `dataGridViewAdvancedBorderStyleInput` parameter.
 
-
-
 ## Examples
  The following code example demonstrates how to override the <xref:System.Windows.Forms.DataGridViewRow.AdjustRowHeaderBorderStyle*> method to customize the borders of the row header cells. This code example is part of a larger example provided for the <xref:System.Windows.Forms.DataGridViewAdvancedBorderStyle> class.
 
@@ -269,8 +265,6 @@
 ## Remarks
  If the row does not contain any cells when this property is accessed, a new empty <xref:System.Windows.Forms.DataGridViewCellCollection> will be created by a call to the <xref:System.Windows.Forms.DataGridViewRow.CreateCellsInstance*> method.
 
-
-
 ## Examples
  The following code example uses the <xref:System.Windows.Forms.DataGridViewRow.Cells> property to set the value of a cell in the row. This code example is part of a larger code example provided in [How to: Manipulate Rows in the Windows Forms DataGridView Control](/dotnet/desktop/winforms/controls/how-to-manipulate-rows-in-the-windows-forms-datagridview-control).
 
@@ -320,8 +314,6 @@
  The <xref:System.Windows.Forms.DataGridViewRow.Clone*> method copies the row and its property values, but does not copy the cell values that the row contains. For information about how to copy cell values when cloning a row, see the example section.
 
  Override the <xref:System.Windows.Forms.DataGridViewRow.Clone*> method whenever you derive from <xref:System.Windows.Forms.DataGridViewRow> and add new properties to the derived class.
-
-
 
 ## Examples
  The following example demonstrates how to use the <xref:System.Windows.Forms.DataGridViewRow.Clone*> method to copy a row, and then populate the copy with the cell values from the original row.
@@ -387,8 +379,6 @@
  Changing this property raises the <xref:System.Windows.Forms.DataGridView.RowContextMenuStripChanged> event on the owning <xref:System.Windows.Forms.DataGridView>, if one exists.
 
  If the current row is shared, use the <xref:System.Windows.Forms.DataGridViewRow.GetContextMenuStrip*> method rather than getting the value of this property.
-
-
 
 ## Examples
  The following code example demonstrates how to use the <xref:System.Windows.Forms.DataGridViewColumn.ContextMenuStrip?displayProperty=nameWithType> property, which is nearly identical to the <xref:System.Windows.Forms.DataGridViewRow.ContextMenuStrip> property of the <xref:System.Windows.Forms.DataGridViewRow> class. This code example is part of a larger code example provided in the <xref:System.Windows.Forms.DataGridViewColumn> class.
@@ -665,8 +655,6 @@
 ## Remarks
  Accessing data-bound objects directly through row objects is useful when you do not have direct access to the data source containing the objects. It is also convenient when you want to manipulate objects bound to selected rows or to rows passed as arguments to event handlers.
 
-
-
 ## Examples
  The following code example demonstrates how to use the <xref:System.Windows.Forms.DataGridViewRow.DataBoundItem*> property to access a business object bound to a row. This code example is part of a larger example provided in [How to: Access Objects Bound to Windows Forms DataGridView Rows](/dotnet/desktop/winforms/controls/how-to-access-objects-bound-to-windows-forms-datagridview-rows).
 
@@ -727,8 +715,6 @@
  For more information, see [Cell Styles in the Windows Forms DataGridView Control](/dotnet/desktop/winforms/controls/cell-styles-in-the-windows-forms-datagridview-control).
 
  When getting this property, a <xref:System.Windows.Forms.DataGridViewCellStyle> with default values will be created if the property has not already been accessed. This can cause a performance impact when getting this property for many rows. Whenever possible, use a single <xref:System.Windows.Forms.DataGridViewCellStyle> to set this property for multiple rows. For more information, see [Best Practices for Scaling the Windows Forms DataGridView Control](/dotnet/desktop/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control).
-
-
 
 ## Examples
  The following code example illustrates how to use this property in a <xref:System.Windows.Forms.DataGridView> control intended primarily for display. In this example, the visual appearance of the control is customized in several ways and the control is configured for limited interactivity. This example is part of a larger example available in the <xref:System.Windows.Forms.DataGridViewCellStyle> class overview.
@@ -825,8 +811,6 @@
 
 ## Remarks
  This property is useful to provide a visual boundary between frozen rows and rows that can scroll. The extra edge is part of the current row, although it will take on the foreground color of the associated <xref:System.Windows.Forms.DataGridView>. The extra edge does not extend the area in which users can double-click to automatically resize a row. To resize a row, the user must double-click on the boundary between the divider and the adjacent row.
-
-
 
 ## Examples
  The following code example modifies the height of a row's divider to provide emphasis.
@@ -1022,8 +1006,6 @@
 ## Remarks
  This property lets you keep one or several rows of important information in place when a user scrolls through the <xref:System.Windows.Forms.DataGridView>. All rows above the frozen row are also frozen.
 
-
-
 ## Examples
  The following code example demonstrates how to use the <xref:System.Windows.Forms.DataGridViewBand.Frozen?displayProperty=nameWithType> property, which is nearly identical to the <xref:System.Windows.Forms.DataGridViewRow.Frozen> property of the <xref:System.Windows.Forms.DataGridViewRow> class. This code example is part of a larger example provided for the <xref:System.Windows.Forms.DataGridViewBand> class.
 
@@ -1176,8 +1158,6 @@
 
  For more information about automatic sizing, see [Sizing Options in the Windows Forms DataGridView Control](/dotnet/desktop/winforms/controls/sizing-options-in-the-windows-forms-datagridview-control).
 
-
-
 ## Examples
  The following code example uses the <xref:System.Windows.Forms.DataGridViewRow.GetPreferredHeight*> method to determine the new padding for a row that has been resized. This code example is part of a larger example provided in [How to: Customize the Appearance of Rows in the Windows Forms DataGridView Control](/dotnet/desktop/winforms/controls/customize-the-appearance-of-rows-in-the-datagrid).
 
@@ -1298,8 +1278,6 @@
 ## Remarks
  The header cell of a row is typically used to display a row label. Users can also click the row header to select the row if the <xref:System.Windows.Forms.DataGridView.SelectionMode?displayProperty=nameWithType> property is set to <xref:System.Windows.Forms.DataGridViewSelectionMode.RowHeaderSelect?displayProperty=nameWithType>.
 
-
-
 ## Examples
  The following code example uses the <xref:System.Windows.Forms.DataGridViewRow.HeaderCell> property to label row headers.
 
@@ -1355,8 +1333,6 @@
 
 ## Remarks
  To set the minimum height for a row, use the <xref:System.Windows.Forms.DataGridViewRow.MinimumHeight> property.
-
-
 
 ## Examples
  The following code example uses the <xref:System.Windows.Forms.DataGridViewRow.Height> property to set the height of the first row. This code example is part of a larger code example provided in [How to: Manipulate Rows in the Windows Forms DataGridView Control](/dotnet/desktop/winforms/controls/how-to-manipulate-rows-in-the-windows-forms-datagridview-control).
@@ -1473,8 +1449,6 @@
 
  A row stops being the new row when data entry into the row begins.
 
-
-
 ## Examples
  The following code example uses the <xref:System.Windows.Forms.DataGridViewRow.IsNewRow> property to prevent attempts to set the label of the row for new records.
 
@@ -1529,8 +1503,6 @@
 
 ## Remarks
  The <xref:System.Windows.Forms.DataGridViewRow.MinimumHeight> property maintains the display of the row by setting a limit to how far the user can resize the row's height through the user interface (UI).
-
-
 
 ## Examples
  The following code example uses the <xref:System.Windows.Forms.DataGridViewRow.MinimumHeight> property to set the minimum height of the second row. This code example is part of a larger code example provided in [How to: Manipulate Rows in the Windows Forms DataGridView Control](/dotnet/desktop/winforms/controls/how-to-manipulate-rows-in-the-windows-forms-datagridview-control).
@@ -1800,8 +1772,6 @@
 
  Setting this property has no effect if the value of the <xref:System.Windows.Forms.DataGridView.ReadOnly?displayProperty=nameWithType> property is `true`.
 
-
-
 ## Examples
  The following code example demonstrates how to use the <xref:System.Windows.Forms.DataGridViewBand.ReadOnly?displayProperty=nameWithType> property, which is nearly identical to the <xref:System.Windows.Forms.DataGridViewRow.ReadOnly> property of the <xref:System.Windows.Forms.DataGridViewRow> class. This code example is part of a larger example provided for the <xref:System.Windows.Forms.DataGridViewBand> class.
 
@@ -1861,8 +1831,6 @@
 
  Because <xref:System.Windows.Forms.DataGridViewTriState.NotSet> restores the value inheritance, the <xref:System.Windows.Forms.DataGridViewRow.Resizable> property will never return a <xref:System.Windows.Forms.DataGridViewTriState.NotSet> value unless the row has not been added to a <xref:System.Windows.Forms.DataGridView> control. If you need to determine whether the <xref:System.Windows.Forms.DataGridViewRow.Resizable> property value of a row is inherited or has been specified explicitly, check its <xref:System.Windows.Forms.DataGridViewElement.State> property. If the <xref:System.Windows.Forms.DataGridViewElement.State*> value includes the <xref:System.Windows.Forms.DataGridViewElementStates.ResizableSet> flag, the <xref:System.Windows.Forms.DataGridViewRow.Resizable> property value is not inherited.
 
-
-
 ## Examples
  The following code example illustrates the use of this property.
 
@@ -1910,8 +1878,6 @@
 
 ## Remarks
  You cannot use this property with a shared row. For more information about shared rows, see [Best Practices for Scaling the Windows Forms DataGridView Control](/dotnet/desktop/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control).
-
-
 
 ## Examples
  The following code example illustrates the use of this property.
@@ -2112,8 +2078,6 @@
 
 ## Remarks
  Use this property to hide a row from view while keeping the row in the <xref:System.Windows.Forms.DataGridView>. To completely remove a row, use the <xref:System.Windows.Forms.DataGridViewRowCollection.Remove*?displayProperty=nameWithType> method.
-
-
 
 ## Examples
  The following code example demonstrates how to use the <xref:System.Windows.Forms.DataGridViewBand.Visible?displayProperty=nameWithType> property, which is nearly identical to the <xref:System.Windows.Forms.DataGridViewRow.Visible> property of the <xref:System.Windows.Forms.DataGridViewRow> class. This code example is part of a larger example provided for the <xref:System.Windows.Forms.DataGridViewBand> class.

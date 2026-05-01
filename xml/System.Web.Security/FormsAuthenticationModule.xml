@@ -32,8 +32,6 @@
 > [!NOTE]
 > In IIS 7.0, using the <xref:System.Web.Security.WindowsAuthenticationModule> with the <xref:System.Web.Security.FormsAuthenticationModule> is not supported. For more information about compatibility issues in Integrated modes, see [Moving an ASP.NET Application from IIS 6.0 to IIS 7.0](https://msdn.microsoft.com/library/76f9cc78-f978-4837-b1c8-51d642ec4847).
 
-
-
 ## Examples
  The following example uses the **FormsAuthentication_OnAuthenticate** event to set the <xref:System.Web.HttpContext.User> property of the current <xref:System.Web.HttpContext> to a custom <xref:System.Security.Principal.IPrincipal> object.
 
@@ -110,8 +108,6 @@
  You can use the <xref:System.Web.Security.FormsAuthenticationEventArgs><xref:System.Web.Security.FormsAuthenticationEventArgs.User> property supplied to the **FormsAuthentication_OnAuthenticate** event to set the <xref:System.Web.HttpContext.User> property of the current <xref:System.Web.HttpContext> to a custom <xref:System.Security.Principal.IPrincipal> object. If you do not specify a value for the <xref:System.Web.Security.FormsAuthenticationEventArgs.User> property during the **FormsAuthentication_OnAuthenticate** event, the identity supplied by the forms authentication ticket in the cookie or URL is used.
 
  The **FormsAuthentication_OnAuthenticate** event is only raised when the authentication mode is set to <xref:System.Web.Configuration.AuthenticationMode.Forms> in the [authentication Element (ASP.NET Settings Schema)](https://msdn.microsoft.com/library/27bc0ba9-f23a-45f3-ae42-dbe7916e3ee2) element of the application's configuration file and the <xref:System.Web.Security.FormsAuthenticationModule> is an active HTTP module for the application.
-
-
 
 ## Examples
  The following code example uses the **FormsAuthentication_OnAuthenticate** event to set the <xref:System.Web.HttpContext.User> property of the current <xref:System.Web.HttpContext> to a <xref:System.Security.Principal.GenericPrincipal> object that has a custom <xref:System.Security.Principal.IPrincipal.Identity*>.

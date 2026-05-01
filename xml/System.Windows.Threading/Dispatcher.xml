@@ -46,8 +46,6 @@
 
  Objects that derive from <xref:System.Windows.Freezable> are free-threaded when they are frozen.  For more information, see [Freezable Objects Overview](/dotnet/desktop/wpf/advanced/freezable-objects-overview).
 
-
-
 ## Examples
  The following example shows how to place an operation onto a <xref:System.Windows.Threading.Dispatcher>.  For the full source code of this example, see [Single-Threaded Application with Long-Running Calculation Sample](https://go.microsoft.com/fwlink/?LinkID=160038).
 
@@ -239,8 +237,6 @@
  In WPF, only the thread that created a <xref:System.Windows.Threading.DispatcherObject> may access that object.  For example, a background thread that is spun off from the main UI thread cannot update the contents of a <xref:System.Windows.Controls.Button> that was created on the UI thread.  In order for the background thread to access the Content property of the <xref:System.Windows.Controls.Button>, the background thread must delegate the work to the <xref:System.Windows.Threading.Dispatcher> associated with the UI thread.  This is accomplished by using either <xref:System.Windows.Threading.Dispatcher.Invoke*> or <xref:System.Windows.Threading.Dispatcher.BeginInvoke*>.  <xref:System.Windows.Threading.Dispatcher.Invoke*> is synchronous and <xref:System.Windows.Threading.Dispatcher.BeginInvoke*> is asynchronous.  The operation is added to the event queue of the <xref:System.Windows.Threading.Dispatcher> at the specified <xref:System.Windows.Threading.DispatcherPriority>.
 
  If <xref:System.Windows.Threading.Dispatcher.BeginInvoke*> is called on a <xref:System.Windows.Threading.Dispatcher> that has shut down, the status property of the returned <xref:System.Windows.Threading.DispatcherOperation> is set to <xref:System.Windows.Threading.DispatcherOperationStatus.Aborted>.
-
-
 
 ## Examples
  The following example shows how to place an operation onto a <xref:System.Windows.Threading.Dispatcher>.  For the full source code of this example, see [Single-Threaded Application with Long-Running Calculation Sample](https://go.microsoft.com/fwlink/?LinkID=160038).

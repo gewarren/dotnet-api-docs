@@ -278,8 +278,6 @@
 
  The <xref:System.Convert.ChangeType(System.Object,System.TypeCode)> method does not support the conversion of `value` to a custom type. To perform such a conversion, call the <xref:System.Convert.ChangeType(System.Object,System.Type)> method.
 
-
-
 ## Examples
  The following example illustrates how to use the <xref:System.Convert.ChangeType(System.Object,System.TypeCode)> method to change an <xref:System.Object> to the type specified by the <xref:System.TypeCode> parameter, if possible.
 
@@ -668,8 +666,6 @@
 > [!IMPORTANT]
 > The <xref:System.Convert.FromBase64CharArray*> method is designed to process a single character array that contains all the data to be decoded. To decode base-64 character data from a stream, use the <xref:System.Security.Cryptography.FromBase64Transform?displayProperty=nameWithType> class.
 
-
-
 ## Examples
  The following example demonstrates the use of the <xref:System.Convert.FromBase64CharArray(System.Char%5B%5D,System.Int32,System.Int32)> method to decode UUencoded (base-64) data and save it as binary output.
 
@@ -771,8 +767,6 @@
 
 > [!IMPORTANT]
 > The <xref:System.Convert.FromBase64String*> method is designed to process a single string that contains all the data to be decoded. To decode base-64 character data from a stream, use the <xref:System.Security.Cryptography.FromBase64Transform?displayProperty=nameWithType> class.
-
-
 
 ## Examples
  The following example uses the <xref:System.Convert.ToBase64String(System.Byte%5B%5D)> method to convert a byte array to a UUencoded (base-64) string, and then calls the <xref:System.Convert.FromBase64String(System.String)> method to restore the original byte array.
@@ -1190,8 +1184,6 @@
 > [!NOTE]
 >  <xref:System.DBNull.Value?displayProperty=nameWithType> is used to indicate a value that is missing. It is not equivalent to `null` or to <xref:System.String.Empty?displayProperty=nameWithType>. Therefore, code such as `Convert.IsDBNull(null)` in C# or `Convert.IsDBNull(Nothing)` in Visual Basic returns`false`.
 
-
-
 ## Examples
  The following example uses a <xref:System.Data.SqlClient.SqlDataReader> object to retrieve survey data from a database. It assigns each row's field values to an array, and then passes each array element to the <xref:System.Convert.IsDBNull*> method. If the method returns `true`, the example assigns the string "NA" to the array element. The array is then added to the <xref:System.Windows.Forms.DataGridView.Rows*> collection of a <xref:System.Windows.Forms.DataGridView?displayProperty=nameWithType> control.
 
@@ -1287,8 +1279,6 @@
 
 > [!IMPORTANT]
 > The <xref:System.Convert.ToBase64CharArray*> method is designed to process a single byte array that contains all the data to be encoded. To create a base-64 character array from a byte stream, use the <xref:System.Security.Cryptography.ToBase64Transform?displayProperty=nameWithType> class.
-
-
 
 ## Examples
  The following example demonstrates using the <xref:System.Convert.ToBase64CharArray*> method to UUencode (encode in base 64) a binary stream, then save the encoding to a file.
@@ -1396,8 +1386,6 @@
 
  If the `options` parameter is set to <xref:System.Base64FormattingOptions.InsertLineBreaks> and the output of the conversion is longer than 76 characters, a line break is inserted every 76 characters. A line break is defined as a carriage return character (U+000D) followed by a line feed character (U+000A). For more information, see RFC 2045, "Multipurpose Internet Mail Extensions", at [https://www.rfc-editor.org/](https://www.rfc-editor.org/).
 
-
-
 ## Examples
  The following example demonstrates the <xref:System.Convert.ToBase64CharArray*> method. The input is divided into groups of three bytes (24 bits) each. Consequently, each group consists of four 6-bit numbers where each number ranges from decimal 0 to 63. In this example, there are 85 3-byte groups with one byte remaining. The first group consists of the hexadecimal values 00, 01, and 02, which yield four 6-bit values equal to decimal 0, 0, 4, and 2. Those four values correspond to the base-64 digits "A", "A", "E", and "C" at the beginning of the output.
 
@@ -1503,8 +1491,6 @@
 
  Ordinarily, the <xref:System.Convert.ToBase64String*> method is not used to round-trip a UUEncoded (base-64 encoded) string.  That is, if you decode a string by calling the <xref:System.Convert.FromBase64String*> method, then encode the returned byte array by calling the <xref:System.Convert.ToBase64String*> method, the resulting string will not necessarily be identical to the original string. The string will round-trip only if the original string is a valid base-64 encoded string.
 
-
-
 ## Examples
  The following example uses the <xref:System.Convert.ToBase64String(System.Byte%5B%5D)> method to convert a byte array to a UUencoded (base-64) string, and then calls the <xref:System.Convert.FromBase64String(System.String)> method to restore the original byte array.
 
@@ -1592,8 +1578,6 @@
 > The <xref:System.Convert.ToBase64String*> method is designed to process a single byte array that contains all the data to be encoded. To encode data from a stream, use the <xref:System.Security.Cryptography.ToBase64Transform?displayProperty=nameWithType> class.
 
  If the `options` parameter is set to <xref:System.Base64FormattingOptions.InsertLineBreaks> and the output of the conversion is longer than 76 characters, a line break is inserted every 76 characters. A line break is defined as a carriage return character (U+000D) followed by a line feed character (U+000A). Because line breaks are considered white-space characters in a base-64 encoding, they are ignored when converting a base-64 encoded string back to a byte array. The line breaks are simply convenient when displaying the encoded string to a control or a device such as a console window. For more information, see RFC 2045, "Multipurpose Internet Mail Extensions", at [https://www.rfc-editor.org/](https://www.rfc-editor.org/).
-
-
 
 ## Examples
  The following example calls the <xref:System.Convert.ToBase64String(System.Byte%5B%5D,System.Base64FormattingOptions)?displayProperty=nameWithType> with a <xref:System.Base64FormattingOptions.InsertLineBreaks?displayProperty=nameWithType> argument to insert line breaks in the string that is produced by encoding a 100-element byte array.
@@ -1823,8 +1807,6 @@
 > The <xref:System.Convert.ToBase64String*> method is designed to process a single byte array that contains all the data to be encoded. To encode data from a stream, use the <xref:System.Security.Cryptography.ToBase64Transform?displayProperty=nameWithType> class.
 
  If the `options` parameter is set to <xref:System.Base64FormattingOptions.InsertLineBreaks> and the output of the conversion is longer than 76 characters, a line break is inserted every 76 characters. A line break is defined as a carriage return character (U+000D) followed by a line feed character (U+000A). For more information, see RFC 2045, "Multipurpose Internet Mail Extensions", at [https://www.rfc-editor.org/](https://www.rfc-editor.org/).
-
-
 
 ## Examples
  The following example demonstrates the <xref:System.Convert.ToBase64String*> method. The input is divided into groups of three bytes (24 bits) each. Consequently, each group consists of four 6-bit numbers where each number ranges from decimal 0 to 63. In this example, there are 85 3-byte groups with one byte remaining. The first group consists of the hexadecimal values 00, 01, and 02, which yield four 6-bit values equal to decimal 0, 0, 4, and 2. Those four values correspond to the base-64 digits "A", "A", "E", and "C" at the beginning of the output.
@@ -2702,8 +2684,6 @@
 
  If you prefer not to handle an exception if the conversion fails, you can call the <xref:System.Boolean.TryParse*?displayProperty=nameWithType> method instead. It returns a <xref:System.Boolean> value that indicates whether the conversion succeeded or failed.
 
-
-
 ## Examples
  The following example uses the <xref:System.Convert.ToBoolean(System.String)?displayProperty=nameWithType> method to convert various strings to Boolean values.
 
@@ -2996,8 +2976,6 @@
 
 ## Remarks
  `provider` enables the user to specify culture-specific conversion information about the contents of `value`. The base types ignore the `provider` parameter; however, the parameter may be used if `value` is a user-defined type that implements the <xref:System.IConvertible> interface.
-
-
 
 ## Examples
  The following example defines a class that implements <xref:System.IConvertible> and a class that implements <xref:System.IFormatProvider>. Objects of the class that implements <xref:System.IConvertible> hold an array of <xref:System.Double> values. An object of each class is passed to the <xref:System.Convert.ToBoolean(System.Object,System.IFormatProvider)> method. This method returns `true` if any of the non-discarded array values are non-zero. The <xref:System.IFormatProvider> object determines how elements are discarded for this calculation.
@@ -3721,8 +3699,6 @@
 ## Remarks
  If `value` is not `null`, this method wraps a call to the <xref:System.IConvertible.ToByte*?displayProperty=nameWithType> implementation of the underlying type of `value`.
 
-
-
 ## Examples
  The following example uses the <xref:System.Convert.ToByte(System.Object)> method to convert an array of objects to <xref:System.Byte> values.
 
@@ -4227,8 +4203,6 @@
 ## Remarks
  `provider` enables the user to specify culture-specific conversion information about the contents of `value`. The base types ignore `provider`; however, the parameter may be used if `value` is a user-defined type that implements the <xref:System.IConvertible> interface.
 
-
-
 ## Examples
  The following example defines a `ByteString` class that implements the <xref:System.IConvertible> interface. The class stores the string representation of a byte value along with a sign field, so that it is able to represent both signed and unsigned byte values.
 
@@ -4316,8 +4290,6 @@
 
  If you prefer not to handle an exception if the conversion fails, you can call the <xref:System.Byte.TryParse*?displayProperty=nameWithType> method instead. It returns a <xref:System.Boolean> value that indicates whether the conversion succeeded or failed.
 
-
-
 ## Examples
  The following example creates a custom <xref:System.Globalization.NumberFormatInfo> object that defines the positive sign as "pos" and the negative sign as "neg", which it uses in calls to the <xref:System.Convert.ToByte(System.String,System.IFormatProvider)> method. It then calls the <xref:System.Convert.ToByte(System.String,System.IFormatProvider)> method repeatedly to convert each element in a string array to a <xref:System.Byte> value.
 
@@ -4403,8 +4375,6 @@
  :::code language="csharp" source="~/snippets/csharp/System/Convert/ToByte/Conversion.cs" id="Snippet4":::
  :::code language="fsharp" source="~/snippets/fsharp/System/Convert/ToByte/Conversion.fs" id="Snippet4":::
  :::code language="vb" source="~/snippets/visualbasic/System/Convert/ToByte/Conversion.vb" id="Snippet4":::
-
-
 
 ## Examples
  The following example alternately attempts to interpret an array of strings as the representation of binary, octal, decimal, and hexadecimal values.
@@ -5018,8 +4988,6 @@
 ## Remarks
  If `value` is not `null`, this method wraps a call to the <xref:System.IConvertible.ToChar*?displayProperty=nameWithType> implementation of the underlying type of `value`.
 
-
-
 ## Examples
  The following example attempts to convert each element in an object array to a <xref:System.Char> value.
 
@@ -5218,8 +5186,6 @@
  `value` must be a string that contains a single character.
 
  If you prefer not to handle an exception if the conversion fails, you can call the <xref:System.Char.TryParse*?displayProperty=nameWithType> method instead. It returns a <xref:System.Boolean> value that indicates whether the conversion succeeded or failed.
-
-
 
 ## Examples
  The following example converts each element in a string array to a <xref:System.Char> value.
@@ -5506,8 +5472,6 @@
 
  `provider` enables the user to specify culture-specific conversion information about the contents of `value`. The base types ignore `provider`; however, the parameter may be used if `value` is a user-defined type that implements the <xref:System.IConvertible> interface.
 
-
-
 ## Examples
  The following example defines a class that implements <xref:System.IConvertible> and a class that implements <xref:System.IFormatProvider>. Objects of the class that implements <xref:System.IConvertible> hold an array of <xref:System.Double> values. An object of each class is passed to the `ToChar` method. This method returns a character whose Unicode value is the average of the array of <xref:System.Double> values, using the object that implements <xref:System.IFormatProvider> to determine how to calculate the average.
 
@@ -5595,8 +5559,6 @@
  `value` must be a string that contains a single character.
 
  If you prefer not to handle an exception if the conversion fails, you can call the <xref:System.Char.TryParse*?displayProperty=nameWithType> method instead. It returns a <xref:System.Boolean> value that indicates whether the conversion succeeded or failed.
-
-
 
 ## Examples
  The following example converts a string representation of a <xref:System.Char> value with the `ToChar` method, using an <xref:System.IFormatProvider> object that displays the type of the format provider for which it is called. The example shows that the format provider is not referenced.
@@ -6137,8 +6099,6 @@
 
  The return value is the result of invoking the <xref:System.IConvertible.ToDateTime*?displayProperty=nameWithType> method of the underlying type of `value`.
 
-
-
 ## Examples
  The following example calls the <xref:System.Convert.ToDateTime(System.Object)> method with a variety of <xref:System.Object> variables.
 
@@ -6325,8 +6285,6 @@
  This method tries to parse `value` completely and avoid throwing a <xref:System.FormatException>. It completes missing month, day, and year information with the current date. If `value` contains only a date and no time, this method assumes a time of midnight. Any leading, inner, or trailing white-space characters in `value` are ignored.
 
  If you prefer not to handle an exception if the conversion fails, you can call the <xref:System.DateTime.TryParse*?displayProperty=nameWithType> method instead. It returns a <xref:System.Boolean> value that indicates whether the conversion succeeded or failed.
-
-
 
 ## Examples
  The following example uses the <xref:System.Convert.ToDateTime*> method to convert various string representations of dates and times to <xref:System.DateTime> values.
@@ -6655,8 +6613,6 @@
  `provider` is an <xref:System.IFormatProvider> instance that obtains a <xref:System.Globalization.DateTimeFormatInfo> object. The <xref:System.Globalization.DateTimeFormatInfo> object provides culture-specific information about the format of `value`. If `provider` is `null`, the <xref:System.Globalization.DateTimeFormatInfo> for the current culture is used.
 
  If you prefer not to handle an exception if the conversion fails, you can call the <xref:System.DateTime.TryParse*?displayProperty=nameWithType> method instead. It returns a <xref:System.Boolean> value that indicates whether the conversion succeeded or failed.
-
-
 
 ## Examples
  The following example converts string representations of date values with the `ToDateTime` method, using an <xref:System.IFormatProvider> object.
@@ -7036,8 +6992,6 @@
  :::code language="fsharp" source="~/snippets/fsharp/System/Convert/ToDecimal/ToDecimal1.fs" id="Snippet2":::
  :::code language="vb" source="~/snippets/visualbasic/System/Convert/ToDecimal/ToDecimal1.vb" id="Snippet2":::
 
-
-
 ## Examples
  The following example converts a <xref:System.Double> value to a <xref:System.Decimal> value.
 
@@ -7301,8 +7255,6 @@
 ## Remarks
  The return value is the result of invoking the <xref:System.IConvertible.ToDecimal*?displayProperty=nameWithType> method of the underlying type of `value`.
 
-
-
 ## Examples
  The following example tries to convert each element in an object array to a <xref:System.Decimal> value.
 
@@ -7453,8 +7405,6 @@
  :::code language="csharp" source="~/snippets/csharp/System/Convert/ToDecimal/ToDecimal1.cs" id="Snippet1":::
  :::code language="fsharp" source="~/snippets/fsharp/System/Convert/ToDecimal/ToDecimal1.fs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System/Convert/ToDecimal/ToDecimal1.vb" id="Snippet1":::
-
-
 
 ## Examples
  The following example tries to convert each element in an array of <xref:System.Single> values to a <xref:System.Decimal> value.
@@ -7813,8 +7763,6 @@
 
  `provider` enables the user to specify culture-specific conversion information about the contents of `value`. The base types ignore `provider`; however, the parameter may be used if `value` is a user-defined type that implements the <xref:System.IConvertible> interface.
 
-
-
 ## Examples
  The following example defines a `Temperature` class that implements the <xref:System.IConvertible> interface.
 
@@ -7904,8 +7852,6 @@
  `provider` is an <xref:System.IFormatProvider> instance that obtains a <xref:System.Globalization.NumberFormatInfo> object. The <xref:System.Globalization.NumberFormatInfo> object provides culture-specific information about the format of `value`. If `provider` is `null`, the <xref:System.Globalization.NumberFormatInfo> for the current culture is used.
 
  If you prefer not to handle an exception if the conversion fails, you can call the <xref:System.Decimal.TryParse*?displayProperty=nameWithType> method instead. It returns a <xref:System.Boolean> value that indicates whether the conversion succeeded or failed.
-
-
 
 ## Examples
  The following example attempts to convert an array of strings to <xref:System.Decimal> values by using <xref:System.Globalization.NumberFormatInfo> objects that represent two different cultures.
@@ -8523,8 +8469,6 @@
 ## Remarks
  If `value` is not `null`, this method wraps a call to the <xref:System.IConvertible.ToDouble*?displayProperty=nameWithType> implementation of the underlying type of `value`.
 
-
-
 ## Examples
  The following example attempts to convert each value in an object array to a <xref:System.Double>.
 
@@ -8736,8 +8680,6 @@
  Using the <xref:System.Convert.ToDouble(System.String)> method is equivalent to passing `value` to the <xref:System.Double.Parse(System.String)?displayProperty=nameWithType> method. `value` is interpreted by using the formatting conventions of the current culture.
 
  If you prefer not to handle an exception if the conversion fails, you can call the <xref:System.Double.TryParse*?displayProperty=nameWithType> method instead. It returns a <xref:System.Boolean> value that indicates whether the conversion succeeded or failed.
-
-
 
 ## Examples
  The following example attempts to convert each element in an array of numeric strings to a <xref:System.Double>. The example's output is from a system whose current culture is en-US.
@@ -9023,8 +8965,6 @@
 
  The base types ignore `provider`; however, the parameter may be used if `value` is a user-defined type that implements the <xref:System.IConvertible> interface.
 
-
-
 ## Examples
  The following example defines a class that implements <xref:System.IConvertible> and a class that implements <xref:System.IFormatProvider>. Objects of the class that implements <xref:System.IConvertible> hold an array of <xref:System.Double> values. An object of each class is passed to the `ToDouble` method. This method returns an average of the array of <xref:System.Double> values, using the object that implements <xref:System.IFormatProvider> to determine how to calculate the average.
 
@@ -9103,8 +9043,6 @@
  `provider` is an <xref:System.IFormatProvider> instance that obtains a <xref:System.Globalization.NumberFormatInfo> object. The <xref:System.Globalization.NumberFormatInfo> object provides culture-specific information about the format of `value`. If `provider` is `null`, the <xref:System.Globalization.NumberFormatInfo> for the current culture is used.
 
  If you prefer not to handle an exception if the conversion fails, you can call the <xref:System.Double.TryParse*?displayProperty=nameWithType> method instead. It returns a <xref:System.Boolean> value that indicates whether the conversion succeeded or failed.
-
-
 
 ## Examples
  The following example converts string representations of <xref:System.Double> values with the `ToDouble` method, using an <xref:System.IFormatProvider> object.
@@ -10030,8 +9968,6 @@
 ## Remarks
  If `value` is not `null`, this method wraps a call to the <xref:System.IConvertible.ToInt16*?displayProperty=nameWithType> implementation of the underlying type of `value`.
 
-
-
 ## Examples
  The following example attempts to convert each element in an object array to a 16-bit signed integer.
 
@@ -10247,8 +10183,6 @@
  Using the <xref:System.Convert.ToInt16(System.String)> method is equivalent to passing `value` to the <xref:System.Int16.Parse(System.String)?displayProperty=nameWithType> method. `value` is interpreted by using the formatting conventions of the current culture.
 
  If you prefer not to handle an exception if the conversion fails, you can call the <xref:System.Int16.TryParse*?displayProperty=nameWithType> method instead. It returns a <xref:System.Boolean> value that indicates whether the conversion succeeded or failed.
-
-
 
 ## Examples
  The following example converts string representations of 16-bit integers with the `ToInt16` method, using default formatting.
@@ -10539,8 +10473,6 @@
 
  The base types ignore `provider`; however, the parameter may be used if `value` is a user-defined type that implements the <xref:System.IConvertible> interface.
 
-
-
 ## Examples
  The following example defines a class that implements <xref:System.IConvertible> and a class that implements <xref:System.IFormatProvider>. Objects of the class that implements <xref:System.IConvertible> hold an array of <xref:System.Double> values. An object of each class is passed to the `ToInt16` method. This method returns an average of the array of <xref:System.Double> values, using the object that implements <xref:System.IFormatProvider> to determine how to calculate the average.
 
@@ -10617,8 +10549,6 @@
  `provider` is an <xref:System.IFormatProvider> instance that obtains a <xref:System.Globalization.NumberFormatInfo> object. The <xref:System.Globalization.NumberFormatInfo> object provides culture-specific information about the format of `value`. If `provider` is `null`, the <xref:System.Globalization.NumberFormatInfo> for the current culture is used.
 
  If you prefer not to handle an exception if the conversion fails, you can call the <xref:System.Int16.TryParse*?displayProperty=nameWithType> method instead. It returns a <xref:System.Boolean> value that indicates whether the conversion succeeded or failed.
-
-
 
 ## Examples
  The following example converts string representations of 16-bit integers with the `ToInt16` method, using an <xref:System.IFormatProvider> object.
@@ -10705,8 +10635,6 @@
  :::code language="csharp" source="~/snippets/csharp/System/Convert/ToByte/Conversion.cs" id="Snippet6":::
  :::code language="fsharp" source="~/snippets/fsharp/System/Convert/ToByte/Conversion.fs" id="Snippet6":::
  :::code language="vb" source="~/snippets/visualbasic/System/Convert/ToByte/Conversion.vb" id="Snippet6":::
-
-
 
 ## Examples
  The following example attempts to interpret each element in a string array as a hexadecimal string and to convert it to a 16-bit signed integer.
@@ -10927,8 +10855,6 @@
 
 ## Remarks
  The <xref:System.Convert.ToInt32(System.Char)> method returns a 32-bit signed integer that represents the UTF-16 encoded code unit of the `value` argument. If `value` is not a low surrogate or a high surrogate, this return value also represents the Unicode code point of value.
-
-
 
 ## Examples
  The following example converts each element in an array of <xref:System.Char> values to an integer.
@@ -11369,8 +11295,6 @@
 ## Remarks
  If`value` is not `null`, this method wraps a call to the <xref:System.IConvertible.ToInt32*?displayProperty=nameWithType> implementation of the underlying type of `value`.
 
-
-
 ## Examples
  The following example attempts to convert each element in an object array to an integer.
 
@@ -11586,8 +11510,6 @@
  Using the <xref:System.Convert.ToInt32(System.String)> method is equivalent to passing `value` to the <xref:System.Int32.Parse(System.String)?displayProperty=nameWithType> method.`value` is interpreted by using the formatting conventions of the current culture.
 
  If you prefer not to handle an exception if the conversion fails, you can call the <xref:System.Int32.TryParse*?displayProperty=nameWithType> method instead. It returns a <xref:System.Boolean> value that indicates whether the conversion succeeded or failed.
-
-
 
 ## Examples
  The following example attempts to convert each element in a numeric string array to an integer.
@@ -11877,8 +11799,6 @@
 
  The base types ignore `provider`; however, the parameter may be used if `value` is a user-defined type that implements the <xref:System.IConvertible> interface.
 
-
-
 ## Examples
  The following example defines a class that implements <xref:System.IConvertible> and a class that implements <xref:System.IFormatProvider>. Objects of the class that implements <xref:System.IConvertible> hold an array of <xref:System.Double> values. An object of each class is passed to the `ToInt32` method. This method returns an average of the array of <xref:System.Double> values, using the object that implements <xref:System.IFormatProvider> to determine how to calculate the average.
 
@@ -11957,8 +11877,6 @@
  `provider` is an <xref:System.IFormatProvider> instance that obtains a <xref:System.Globalization.NumberFormatInfo> object. The <xref:System.Globalization.NumberFormatInfo> object provides culture-specific information about the format of `value`. If `provider` is `null`, the <xref:System.Globalization.NumberFormatInfo> for the current culture is used.
 
  If you prefer not to handle an exception if the conversion fails, you can call the <xref:System.Int32.TryParse*?displayProperty=nameWithType> method instead. It returns a <xref:System.Boolean> value that indicates whether the conversion succeeded or failed.
-
-
 
 ## Examples
  The following example defines a custom <xref:System.Globalization.NumberFormatInfo> object that recognizes the string "pos" as the positive sign and the string "neg" as the negative sign. It then attempts to convert each element of a numeric string array to an integer using both this provider and the <xref:System.Globalization.NumberFormatInfo> provider for the invariant culture.
@@ -12692,8 +12610,6 @@
 ## Remarks
  If `value` is not `null`, this method wraps a call to the <xref:System.IConvertible.ToInt64*?displayProperty=nameWithType> implementation of the underlying type of `value`.
 
-
-
 ## Examples
  The following example attempts to convert each element in an object array to a long integer.
 
@@ -12909,8 +12825,6 @@
  Using the <xref:System.Convert.ToInt64(System.String)> method is equivalent to passing `value` to the <xref:System.Int64.Parse(System.String)?displayProperty=nameWithType> method. `value` is interpreted by using the formatting conventions of the current culture.
 
  If you prefer not to handle an exception if the conversion fails, you can call the <xref:System.Int64.TryParse*?displayProperty=nameWithType> method instead. It returns a <xref:System.Boolean> value that indicates whether the conversion succeeded or failed.
-
-
 
 ## Examples
  The following example attempts to convert each element in an array of numeric strings to a long integer.
@@ -13198,8 +13112,6 @@
 
  The base types ignore `provider`; however, the parameter may be used if `value` is a user-defined type that implements the <xref:System.IConvertible> interface.
 
-
-
 ## Examples
  The following example defines a class that implements <xref:System.IConvertible> and a class that implements <xref:System.IFormatProvider>. Objects of the class that implements <xref:System.IConvertible> hold an array of <xref:System.Double> values. An object of each class is passed to the `ToInt64` method. This method returns an average of the array of <xref:System.Double> values, using the object that implements <xref:System.IFormatProvider> to determine how to calculate the average.
 
@@ -13282,8 +13194,6 @@
  `provider` is an `IFormatProvider` instance that obtains a <xref:System.Globalization.NumberFormatInfo> object. The `NumberFormatInfo` object provides culture-specific information about the format of `value`. If `provider` is `null`, the `NumberFormatInfo` for the current culture is used.
 
  If you prefer not to handle an exception if the conversion fails, you can call the <xref:System.Int64.TryParse*?displayProperty=nameWithType> method instead. It returns a <xref:System.Boolean> value that indicates whether the conversion succeeded or failed.
-
-
 
 ## Examples
  The following example defines a custom <xref:System.Globalization.NumberFormatInfo> object that recognizes the string "pos" as the positive sign and the string "neg" as the negative sign. It then attempts to convert each element of a numeric string array to an integer using both this provider and the <xref:System.Globalization.NumberFormatInfo> provider for the invariant culture.
@@ -14097,8 +14007,6 @@
 ## Remarks
  The return value is the result of invoking the <xref:System.IConvertible.ToSByte*?displayProperty=nameWithType> method of the underlying type of `value`.
 
-
-
 ## Examples
  The following example attempts to convert each element in an object array to a signed byte.
 
@@ -14316,8 +14224,6 @@
  Using the <xref:System.Convert.ToSByte(System.String)> method is equivalent to passing `value` to the <xref:System.SByte.Parse(System.String)?displayProperty=nameWithType> method. `value` is interpreted by using the formatting conventions of the current culture.
 
  If you prefer not to handle an exception if the conversion fails, you can call the <xref:System.SByte.TryParse*?displayProperty=nameWithType> method instead. It returns a <xref:System.Boolean> value that indicates whether the conversion succeeded or failed.
-
-
 
 ## Examples
  The following example converts string representations of <xref:System.SByte> values with the `ToSByte` method, using default formatting.
@@ -14614,8 +14520,6 @@
 
  The base types ignore `provider`; however, the parameter may be used if `value` is a user-defined type that implements the <xref:System.IConvertible> interface.
 
-
-
 ## Examples
  The following example defines a `ByteString` class that stores both signed and unsigned bytes as hexadecimal strings along with a field that indicates the sign of the byte. The `ByteString` class implements the <xref:System.IConvertible> interface. Its <xref:System.IConvertible.ToSByte*?displayProperty=nameWithType> method calls the <xref:System.SByte.Parse(System.String,System.IFormatProvider)> method to perform the conversion. If it fails, it throws an <xref:System.OverflowException>.
 
@@ -14716,8 +14620,6 @@
 
  If you prefer not to handle an exception if the conversion fails, you can call the <xref:System.SByte.TryParse*?displayProperty=nameWithType> method instead. It returns a <xref:System.Boolean> value that indicates whether the conversion succeeded or failed.
 
-
-
 ## Examples
  The following example converts string representations of <xref:System.SByte> values with the `ToSByte` method, using an <xref:System.IFormatProvider> object.
 
@@ -14811,8 +14713,6 @@
  :::code language="csharp" source="~/snippets/csharp/System/Convert/ToByte/Conversion.cs" id="Snippet10":::
  :::code language="fsharp" source="~/snippets/fsharp/System/Convert/ToByte/Conversion.fs" id="Snippet10":::
  :::code language="vb" source="~/snippets/visualbasic/System/Convert/ToByte/Conversion.vb" id="Snippet10":::
-
-
 
 ## Examples
  The following example attempts to interpret the elements in a string array as the binary, octal, and hexadecimal representation of numeric values in order to convert them to unsigned bytes.
@@ -15458,8 +15358,6 @@
 ## Remarks
  The return value is the result of invoking the <xref:System.IConvertible.ToSingle*?displayProperty=nameWithType> method of the underlying type of `value`.
 
-
-
 ## Examples
  The following example attempts to convert each element in an object array to a <xref:System.Single> value.
 
@@ -15661,8 +15559,6 @@
  Using the <xref:System.Convert.ToSingle(System.String)> method is equivalent to passing `value` to the <xref:System.Single.Parse(System.String)?displayProperty=nameWithType> method. `value` is interpreted by using the formatting conventions of the current culture.
 
  If you prefer not to handle an exception if the conversion fails, you can call the <xref:System.Single.TryParse*?displayProperty=nameWithType> method instead. It returns a <xref:System.Boolean> value that indicates whether the conversion succeeded or failed.
-
-
 
 ## Examples
  The following example attempts to convert each element in an array of numeric strings to a <xref:System.Single> value.
@@ -15948,8 +15844,6 @@
 
  The base types ignore `provider`; however, the parameter may be used if `value` is a user-defined type that implements the <xref:System.IConvertible> interface.
 
-
-
 ## Examples
  The following example defines a `Temperature` class that implements the <xref:System.IConvertible> interface. Its implementation of the <xref:System.IConvertible.ToSingle*?displayProperty=nameWithType> method returns the internal value of a private <xref:System.Single> variable that represents the temperature.
 
@@ -16035,8 +15929,6 @@
 
  If you prefer not to handle an exception if the conversion fails, you can call the <xref:System.Single.TryParse*?displayProperty=nameWithType> method instead. It returns a <xref:System.Boolean> value that indicates whether the conversion succeeded or failed.
 
-
-
 ## Examples
  The following example uses <xref:System.IFormatProvider> objects that represent the en-US and fr-FR cultures when it converts the elements in an array of numeric strings to <xref:System.Single> values.
 
@@ -16119,8 +16011,6 @@
 ## Remarks
  This implementation is identical to <xref:System.Boolean.ToString*?displayProperty=nameWithType>. It returns <xref:System.Boolean.TrueString?displayProperty=nameWithType> for `true` values and <xref:System.Boolean.FalseString?displayProperty=nameWithType> for `false` values.
 
-
-
 ## Examples
  The following example illustrates the conversion of a <xref:System.Boolean> to a <xref:System.String>, using `ToString`. It also illustrates that the string returned by the conversion equals either <xref:System.Boolean.TrueString?displayProperty=nameWithType> or <xref:System.Boolean.FalseString?displayProperty=nameWithType>.
 
@@ -16187,8 +16077,6 @@
 
 ## Remarks
  This implementation is identical to <xref:System.Byte.ToString?displayProperty=nameWithType>.
-
-
 
 ## Examples
  The following example converts each value in a <xref:System.Byte> array to a string.
@@ -16257,8 +16145,6 @@
 ## Remarks
  This implementation is identical to <xref:System.Char.ToString*?displayProperty=nameWithType>.
 
-
-
 ## Examples
  The following example converts a <xref:System.Char> to a <xref:System.String>.
 
@@ -16324,8 +16210,6 @@
 
 ## Remarks
  This implementation is identical to <xref:System.DateTime.ToString?displayProperty=nameWithType>. It uses the formatting conventions of the current culture and the "G" format specifier to convert a <xref:System.DateTime> value to its string representation.
-
-
 
 ## Examples
  The following example converts each element in an array of a <xref:System.DateTime> value to a <xref:System.String> value.
@@ -16393,8 +16277,6 @@
 ## Remarks
  This implementation is identical to <xref:System.Decimal.ToString?displayProperty=nameWithType>.
 
-
-
 ## Examples
  The following example converts a <xref:System.Decimal> to a <xref:System.String>.
 
@@ -16461,8 +16343,6 @@
 ## Remarks
  This implementation is identical to <xref:System.Double.ToString?displayProperty=nameWithType>.
 
-
-
 ## Examples
  The following example converts a <xref:System.Double> to a <xref:System.String>.
 
@@ -16528,8 +16408,6 @@
 
 ## Remarks
  This implementation is identical to <xref:System.Int16.ToString?displayProperty=nameWithType>.
-
-
 
 ## Examples
  The following example converts each element in an array of 16-bit integers to its equivalent string representation.
@@ -16663,8 +16541,6 @@
 ## Remarks
  This implementation is identical to <xref:System.Int64.ToString?displayProperty=nameWithType>.
 
-
-
 ## Examples
  The following example converts each element in a long integer array to its equivalent string representation.
 
@@ -16731,8 +16607,6 @@
 
 ## Remarks
  To convert `value` to its string representation, the method tries to call the <xref:System.IConvertible.ToString*?displayProperty=nameWithType> implementation of `value`. If `value` does not implement the <xref:System.IConvertible> interface, the method tries to call the <xref:System.IFormattable.ToString*?displayProperty=nameWithType> implementation of `value`. If value does not implement the <xref:System.IFormattable> interface, the method calls the `ToString` method of the underlying type of `value`.
-
-
 
 ## Examples
  The following example converts each element in an object array to its equivalent string representation.
@@ -16806,8 +16680,6 @@
 ## Remarks
  This implementation is identical to <xref:System.SByte.ToString?displayProperty=nameWithType>.
 
-
-
 ## Examples
  The following example converts each element in a signed byte array to its equivalent string representation.
 
@@ -16873,8 +16745,6 @@
 
 ## Remarks
  This implementation is identical to <xref:System.Single.ToString?displayProperty=nameWithType>.
-
-
 
 ## Examples
  The following example converts each element in an array of <xref:System.Single> values to its equivalent string representation.
@@ -17016,8 +16886,6 @@
 ## Remarks
  This implementation is identical to <xref:System.UInt16.ToString?displayProperty=nameWithType>.
 
-
-
 ## Examples
  The following example converts each element in an array of unsigned 16-bit integer values to its equivalent string representation.
 
@@ -17090,8 +16958,6 @@
 ## Remarks
  This implementation is identical to <xref:System.UInt32.ToString?displayProperty=nameWithType>.
 
-
-
 ## Examples
  The following example converts each element in an unsigned integer array to its equivalent string representation.
 
@@ -17163,8 +17029,6 @@
 
 ## Remarks
  This implementation is identical to <xref:System.UInt64.ToString?displayProperty=nameWithType>.
-
-
 
 ## Examples
  The following example converts each element in an unsigned long integer array to its equivalent string representation.
@@ -17242,8 +17106,6 @@
 ## Remarks
  This implementation is identical to <xref:System.Boolean.ToString*?displayProperty=nameWithType>. It returns <xref:System.Boolean.TrueString?displayProperty=nameWithType> for `true` values and <xref:System.Boolean.FalseString?displayProperty=nameWithType> for `false` values.
 
-
-
 ## Examples
  The following example converts a <xref:System.Boolean> value to a <xref:System.String> with the `ToString` method, using an <xref:System.IFormatProvider> object that displays the type of the format provider for which it is called. The example shows that the <xref:System.IFormatProvider> object is not referenced.
 
@@ -17320,8 +17182,6 @@
 ## Remarks
  This implementation is identical to <xref:System.Byte.ToString*?displayProperty=nameWithType>.
 
-
-
 ## Examples
  The following example converts each element in an unsigned byte array to its equivalent string representation using the formatting conventions of the en-US and fr-FR cultures. Because the "G" specifier by default outputs only decimal digits in a byte value's string representation, the `provider` parameter does not affect the formatting of the returned string.
 
@@ -17395,8 +17255,6 @@
 
 ## Remarks
  If `toBase` does not equal 10, the string that is returned by the <xref:System.Convert.ToString(System.Byte,System.Int32)?displayProperty=nameWithType> method represents `value` by its magnitude only. If the method is called to create a string that will later be converted back to a number, a corresponding method that assumes a magnitude-only numeric representation should be called to perform the conversion. Such methods include <xref:System.Convert.ToByte(System.String,System.Int32)?displayProperty=nameWithType> or <xref:System.Byte.Parse(System.String,System.Globalization.NumberStyles)?displayProperty=nameWithType>.
-
-
 
 ## Examples
  The following example converts each element in a byte array to its equivalent binary, hexadecimal, decimal, and hexadecimal string representations.
@@ -17477,8 +17335,6 @@
 ## Remarks
  This implementation is identical to <xref:System.Char.ToString?displayProperty=nameWithType>. The `provider` parameter is ignored.
 
-
-
 ## Examples
  The following example converts a <xref:System.Char> value to a <xref:System.String> with the `ToString` method, using an <xref:System.IFormatProvider> object that displays the type of the format provider for which it is called. The example shows that the <xref:System.IFormatProvider> object is not referenced.
 
@@ -17554,8 +17410,6 @@
 
 ## Remarks
  This implementation is identical to <xref:System.DateTime.ToString(System.IFormatProvider)?displayProperty=nameWithType>.
-
-
 
 ## Examples
  The following example converts a <xref:System.DateTime> value to its equivalent string representation in eight different cultures.
@@ -17633,8 +17487,6 @@
 ## Remarks
  This implementation is identical to <xref:System.Decimal.ToString(System.IFormatProvider)?displayProperty=nameWithType>.
 
-
-
 ## Examples
  The following example converts each element in an array of <xref:System.Decimal> values to its equivalent string representation in four different cultures.
 
@@ -17710,8 +17562,6 @@
 
 ## Remarks
  This implementation is identical to <xref:System.Double.ToString(System.IFormatProvider)?displayProperty=nameWithType>
-
-
 
 ## Examples
  The following example converts each element in an array of <xref:System.Double> values to its equivalent string representation in four different cultures.
@@ -17789,8 +17639,6 @@
 ## Remarks
  This implementation is identical to <xref:System.Int16.ToString(System.IFormatProvider)?displayProperty=nameWithType>.
 
-
-
 ## Examples
  The following example defines a custom <xref:System.Globalization.NumberFormatInfo> class that defines its negative sign as the string "~" and its positive sign as the string "!". It then calls the <xref:System.Convert.ToString(System.Int16,System.IFormatProvider)> method to convert each element in an array of 16-bit integers to its equivalent string representation. The conversion uses the invariant culture as well as the custom <xref:System.Globalization.NumberFormatInfo> object.
 
@@ -17864,8 +17712,6 @@
 
 ## Remarks
  If `value` is positive and `toBase` is 2, 8, or 16, the returned string uses sign-and-magnitude representation. If `value` is negative and `toBase` is 2, 8, or 16, the returned string uses two's complement representation. This means that the high-order bit of the high-order byte (bit 15) is interpreted as the sign bit. If the <xref:System.Convert.ToString(System.Int16,System.Int32)> method is called to create a string that will later be converted back to a number, a corresponding method that assumes a similar numeric representation should be called to perform the conversion. Such methods include <xref:System.Convert.ToInt16(System.String,System.Int32)?displayProperty=nameWithType> and <xref:System.Int16.Parse(System.String,System.Globalization.NumberStyles)?displayProperty=nameWithType>.
-
-
 
 ## Examples
  The following example converts each element in an array of 16-bit signed integers to its equivalent binary, octal, decimal, and hexadecimal string representations.
@@ -17946,8 +17792,6 @@
 ## Remarks
  This implementation is identical to <xref:System.Int32.ToString(System.IFormatProvider)?displayProperty=nameWithType>.
 
-
-
 ## Examples
  The following example defines a custom <xref:System.Globalization.NumberFormatInfo> class that defines its negative sign as the string "~" and its positive sign as the string "!". It then calls the <xref:System.Convert.ToString(System.Int32,System.IFormatProvider)> method to convert each element in an array of integers to its equivalent string representation. The conversion uses the invariant culture as well as the custom <xref:System.Globalization.NumberFormatInfo> object.
 
@@ -18021,8 +17865,6 @@
 
 ## Remarks
  If `value` is positive and `toBase` is 2, 8, or 16, the returned string uses sign-and-magnitude representation. If `value` is negative and `toBase` is 2, 8, or 16, the returned string uses two's complement representation. This means that the high-order bit of the highest-order byte (bit 31) is interpreted as the sign bit. If the <xref:System.Convert.ToString(System.Int32,System.Int32)> method is called to create a string that will later be converted back to a number, a corresponding method that assumes a similar numeric representation should be called to perform the conversion. Such methods include <xref:System.Convert.ToInt32(System.String,System.Int32)?displayProperty=nameWithType> and <xref:System.Int32.Parse(System.String,System.Globalization.NumberStyles)?displayProperty=nameWithType>.
-
-
 
 ## Examples
  The following example converts each element in an integer array to its string representation in binary, octal, decimal, and hexadecimal.
@@ -18103,8 +17945,6 @@
 ## Remarks
  This implementation is identical to <xref:System.Int64.ToString(System.IFormatProvider)?displayProperty=nameWithType>.
 
-
-
 ## Examples
  The following example defines a custom <xref:System.Globalization.NumberFormatInfo> class that defines its negative sign as the string "~" and its positive sign as the string "!". It then calls the <xref:System.Convert.ToString(System.Int64,System.IFormatProvider)> method to convert each element in a long integer array to its equivalent string representation. The conversion uses the invariant culture as well as the custom <xref:System.Globalization.NumberFormatInfo> object.
 
@@ -18179,8 +18019,6 @@
 ## Remarks
  If `value` is positive and `toBase` is not 10, the returned string uses sign-and-magnitude representation. If `value` is negative and `toBase` is not 10, the returned string uses two's complement representation. This means that the high-order bit of the highest-order byte (bit 63) is interpreted as the sign bit. If the <xref:System.Convert.ToString(System.Int64,System.Int32)> method is called to create a string that will later be converted back to a number, a corresponding method that assumes a similar numeric representation should be called to perform the conversion. Such methods include <xref:System.Convert.ToInt64(System.String,System.Int32)?displayProperty=nameWithType> and <xref:System.Int64.Parse(System.String,System.Globalization.NumberStyles)?displayProperty=nameWithType>.
 
-
-
 ## Examples
  The following example converts each element in a long integer array to its equivalent binary, hexadecimal, decimal, and hexadecimal string representations.
 
@@ -18254,8 +18092,6 @@
  If the `value` parameter implements the <xref:System.IConvertible> interface, the method calls the <xref:System.IConvertible.ToString(System.IFormatProvider)?displayProperty=nameWithType> implementation of `value`. Otherwise, if the `value` parameter implements the <xref:System.IFormattable> interface, the method calls its <xref:System.IFormattable.ToString(System.String,System.IFormatProvider)?displayProperty=nameWithType> implementation. If `value` implements neither interface, the method calls the `value` parameter's `ToString()` method, and the `provider` parameter is ignored.
 
  The `provider` parameter is used if the `value` parameter implements the <xref:System.IConvertible> or <xref:System.IFormattable> interface. The most common use of the `provider` parameter is to specify culture-specific information used in the conversion of `value`. For example, if the `value` parameter is a negative decimal number, the `provider` parameter can supply culture-specific information about the notation used for the negative sign and decimal separator. The second example in the next section illustrates a format provider that does not supply culture-sensitive formatting information.
-
-
 
 ## Examples
  The following example defines a `Temperature` class that overrides the <xref:System.Object.ToString*?displayProperty=nameWithType> method but does not implement the <xref:System.IConvertible> interface. The example illustrates how calls to the <xref:System.Convert.ToString(System.Object,System.IFormatProvider)?displayProperty=nameWithType> method, in turn, call the `Temperature.ToString` method.
@@ -18345,8 +18181,6 @@
 ## Remarks
  This implementation is identical to <xref:System.SByte.ToString(System.IFormatProvider)?displayProperty=nameWithType>.
 
-
-
 ## Examples
  The following example defines a custom <xref:System.Globalization.NumberFormatInfo> class that defines its negative sign as the string "~" and its positive sign as the string "!". It then calls the <xref:System.Convert.ToString(System.SByte,System.IFormatProvider)?displayProperty=nameWithType> method to convert each element in signed byte array to its equivalent string representation. The conversion uses the invariant culture as well as the custom <xref:System.Globalization.NumberFormatInfo> object.
 
@@ -18422,8 +18256,6 @@
 
 ## Remarks
  This implementation is identical to <xref:System.Single.ToString(System.IFormatProvider)?displayProperty=nameWithType>.
-
-
 
 ## Examples
  The following example converts each element in an array of <xref:System.Single> values to its equivalent string representation in four different cultures.
@@ -18577,8 +18409,6 @@
 ## Remarks
  This implementation is identical to <xref:System.UInt16.ToString(System.IFormatProvider)?displayProperty=nameWithType>.
 
-
-
 ## Examples
  The following example defines a custom <xref:System.Globalization.NumberFormatInfo> class that defines its negative sign as the string "~" and its positive sign as the string "!". It then calls the <xref:System.Convert.ToString(System.UInt16,System.IFormatProvider)> method to convert a 16-bit unsigned integer value to its equivalent string representation. The conversion uses both the invariant culture and the custom <xref:System.Globalization.NumberFormatInfo> object. The output indicates that this formatting information is not used, because by default the "G" format specifier does not include a positive sign with positive values.
 
@@ -18661,8 +18491,6 @@
 ## Remarks
  This implementation is identical to <xref:System.UInt32.ToString(System.IFormatProvider)?displayProperty=nameWithType>.
 
-
-
 ## Examples
  The following example defines a custom <xref:System.Globalization.NumberFormatInfo> class that defines its negative sign as the string "~" and its positive sign as the string "!". It then calls the <xref:System.Convert.ToString(System.UInt32,System.IFormatProvider)> method to convert an unsigned integer value to its equivalent string representation. The conversion uses both the invariant culture and the custom <xref:System.Globalization.NumberFormatInfo> object. The output indicates that this formatting information is not used, because by default the "G" format specifier does not include a positive sign with positive values.
 
@@ -18744,8 +18572,6 @@
 
 ## Remarks
  This implementation is identical to <xref:System.UInt64.ToString(System.IFormatProvider)?displayProperty=nameWithType>.
-
-
 
 ## Examples
  The following example defines a custom <xref:System.Globalization.NumberFormatInfo> class that defines its negative sign as the string "~" and its positive sign as the string "!". It then calls the <xref:System.Convert.ToString(System.UInt64,System.IFormatProvider)> method to convert an unsigned long integer value to its equivalent string representation. The conversion uses both the invariant culture and the custom <xref:System.Globalization.NumberFormatInfo> object. The output indicates that this formatting information is not used, because by default the "G" format specifier does not include a positive sign with positive values.
@@ -19455,8 +19281,6 @@
 ## Remarks
  The return value is the result of invoking the <xref:System.IConvertible.ToUInt16*?displayProperty=nameWithType> method of the underlying type of `value`.
 
-
-
 ## Examples
  The following example attempts to convert each element in an object array to an unsigned 16-bit integer.
 
@@ -19686,8 +19510,6 @@
  Using the <xref:System.Convert.ToUInt16(System.String)> method is equivalent to passing `value` to the <xref:System.UInt16.Parse(System.String)?displayProperty=nameWithType> method. `value` is interpreted by using the formatting conventions of the current culture.
 
  If you prefer not to handle an exception if the conversion fails, you can call the <xref:System.UInt16.TryParse*?displayProperty=nameWithType> method instead. It returns a <xref:System.Boolean> value that indicates whether the conversion succeeded or failed.
-
-
 
 ## Examples
  The following example attempts to convert each element in a numeric string array to a 16-bit unsigned integer.
@@ -19973,8 +19795,6 @@
 
  The base types ignore `provider`; however, the parameter may be used if `value` is a user-defined type that implements the <xref:System.IConvertible> interface.
 
-
-
 ## Examples
  The following example defines a `HexString` class that implements the <xref:System.IConvertible> interface and that is designed to hold the string representation of both 16-bit signed and 16-bit unsigned values. The class includes a `Sign` property that indicates the sign of its hexadecimal value.
 
@@ -20070,8 +19890,6 @@
 
  If you prefer not to handle an exception if the conversion fails, you can call the <xref:System.UInt16.TryParse*?displayProperty=nameWithType> method instead. It returns a <xref:System.Boolean> value that indicates whether the conversion succeeded or failed.
 
-
-
 ## Examples
  The following example defines a custom <xref:System.Globalization.NumberFormatInfo> object that recognizes the string "pos" as the positive sign and the string "neg" as the negative sign. It then attempts to convert each element of a numeric string array to an integer using both this provider and the <xref:System.Globalization.NumberFormatInfo> provider for the invariant culture.
 
@@ -20162,8 +19980,6 @@
  :::code language="csharp" source="~/snippets/csharp/System/Convert/ToByte/Conversion.cs" id="Snippet12":::
  :::code language="fsharp" source="~/snippets/fsharp/System/Convert/ToByte/Conversion.fs" id="Snippet12":::
  :::code language="vb" source="~/snippets/visualbasic/System/Convert/ToByte/Conversion.vb" id="Snippet12":::
-
-
 
 ## Examples
  The following example attempts to interpret each element in an array of numeric strings as a hexadecimal value and to convert it to an unsigned 16-bit integer.
@@ -20889,8 +20705,6 @@
 ## Remarks
  The return value is the result of invoking the <xref:System.IConvertible.ToUInt32*?displayProperty=nameWithType> method of the underlying type of `value`.
 
-
-
 ## Examples
  The following example attempts to convert each element in an object array to an unsigned integer.
 
@@ -21120,8 +20934,6 @@
  Using the <xref:System.Convert.ToUInt32(System.String)> method is equivalent to passing `value` to the <xref:System.UInt32.Parse(System.String)?displayProperty=nameWithType> method. `value` is interpreted by using the formatting conventions of the current culture.
 
  If you prefer not to handle an exception if the conversion fails, you can call the <xref:System.UInt32.TryParse*?displayProperty=nameWithType> method instead. It returns a <xref:System.Boolean> value that indicates whether the conversion succeeded or failed.
-
-
 
 ## Examples
  The following example interprets the elements in a string array as numeric strings and attempts to convert them to unsigned integers.
@@ -21405,8 +21217,6 @@
 
  The base types ignore `provider`; however, the parameter may be used if `value` is a user-defined type that implements the <xref:System.IConvertible> interface.
 
-
-
 ## Examples
  The following example defines a `HexString` class that implements the <xref:System.IConvertible> interface and that is designed to hold the string representation of both 32-bit signed and 32-bit unsigned values. The class includes a `Sign` property that indicates the sign of its hexadecimal value.
 
@@ -21502,8 +21312,6 @@
 
  If you prefer not to handle an exception if the conversion fails, you can call the <xref:System.UInt32.TryParse*?displayProperty=nameWithType> method instead. It returns a <xref:System.Boolean> value that indicates whether the conversion succeeded or failed.
 
-
-
 ## Examples
  The following example defines a custom <xref:System.Globalization.NumberFormatInfo> object that recognizes the string "pos" as the positive sign and the string "neg" as the negative sign. It then attempts to convert each element of a numeric string array to an integer using both this provider and the <xref:System.Globalization.NumberFormatInfo> provider for the invariant culture.
 
@@ -21594,8 +21402,6 @@
  :::code language="csharp" source="~/snippets/csharp/System/Convert/ToByte/Conversion.cs" id="Snippet14":::
  :::code language="fsharp" source="~/snippets/fsharp/System/Convert/ToByte/Conversion.fs" id="Snippet14":::
  :::code language="vb" source="~/snippets/visualbasic/System/Convert/ToByte/Conversion.vb" id="Snippet14":::
-
-
 
 ## Examples
  The following example attempts to interpret each element in an array of numeric strings as a hexadecimal value and to convert it to an unsigned integer.
@@ -22325,8 +22131,6 @@
 ## Remarks
  The return value is the result of invoking the <xref:System.IConvertible.ToUInt64*?displayProperty=nameWithType> method of the underlying type of `value`.
 
-
-
 ## Examples
  The following example attempts to convert each element in an object array to an unsigned long integer.
 
@@ -22556,8 +22360,6 @@
  Using the <xref:System.Convert.ToInt64(System.String)> method is equivalent to passing `value` to the <xref:System.Int64.Parse(System.String)?displayProperty=nameWithType> method. `value` is interpreted by using the formatting conventions of the current culture.
 
  If you prefer not to handle an exception if the conversion fails, you can call the <xref:System.UInt64.TryParse*?displayProperty=nameWithType> method instead. It returns a <xref:System.Boolean> value that indicates whether the conversion succeeded or failed.
-
-
 
 ## Examples
  The following example interprets the elements of a string array as numeric strings and attempts to convert them to unsigned long integers.
@@ -22839,8 +22641,6 @@
 
  The base types ignore `provider`; however, the parameter may be used if `value` is a user-defined type that implements the <xref:System.IConvertible> interface.
 
-
-
 ## Examples
  The following example defines a `HexString` class that implements the <xref:System.IConvertible> interface and that is designed to hold the string representation of both 64-bit signed and 64-bit unsigned values. The class includes a `Sign` property that indicates the sign of its hexadecimal value.
 
@@ -22936,8 +22736,6 @@
 
  If you prefer not to handle an exception if the conversion fails, you can call the <xref:System.UInt64.TryParse*?displayProperty=nameWithType> method instead. It returns a <xref:System.Boolean> value that indicates whether the conversion succeeded or failed.
 
-
-
 ## Examples
  The following example defines a custom <xref:System.Globalization.NumberFormatInfo> object that recognizes the string "pos" as the positive sign and the string "neg" as the negative sign. It then attempts to convert each element of a numeric string array to an unsigned long integer. The conversion uses both the custom provider and the <xref:System.Globalization.NumberFormatInfo> provider for the invariant culture.
 
@@ -23028,8 +22826,6 @@
  :::code language="csharp" source="~/snippets/csharp/System/Convert/ToByte/Conversion.cs" id="Snippet16":::
  :::code language="fsharp" source="~/snippets/fsharp/System/Convert/ToByte/Conversion.fs" id="Snippet16":::
  :::code language="vb" source="~/snippets/visualbasic/System/Convert/ToByte/Conversion.vb" id="Snippet16":::
-
-
 
 ## Examples
  The following example attempts to interpret each element in an array of numeric strings as a hexadecimal value and to convert it to an unsigned long integer.

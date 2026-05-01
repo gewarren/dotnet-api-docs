@@ -116,8 +116,6 @@
 
  For more information about recursion policy and its effects, see the <xref:System.Threading.LockRecursionPolicy> enumeration and the <xref:System.Threading.ReaderWriterLockSlim> class.
 
-
-
 ## Examples
  The following example shows a simple synchronized cache that holds strings with integer keys. An instance of <xref:System.Threading.ReaderWriterLockSlim> is used to synchronize access to the <xref:System.Collections.Generic.Dictionary`2> that serves as the inner cache. The parameterless constructor is used to create the lock.
 
@@ -199,8 +197,6 @@
 
  For more information about recursion policy and its effects, see the <xref:System.Threading.LockRecursionPolicy> enumeration and the <xref:System.Threading.ReaderWriterLockSlim> class.
 
-
-
 ## Examples
  The following example shows two exception scenarios, one that depends on the <xref:System.Threading.LockRecursionPolicy> setting and one that does not.
 
@@ -273,8 +269,6 @@
  A thread is counted only once, even if the lock allows recursion and the thread has entered read mode multiple times.
 
  Use this property only for debugging, profiling, and logging purposes, and not to control the behavior of an algorithm. The results can change as soon as they have been calculated. Therefore, it is not safe to make decisions based on this property.
-
-
 
 ## Examples
  The following example shows how to use the <xref:System.Threading.ReaderWriterLockSlim.CurrentReadCount> property to generate an event log entry if the number of threads in read mode exceeds a threshold.
@@ -417,8 +411,6 @@
 
  At most one thread can be in upgradeable mode while other threads are in read mode. If additional threads are waiting to enter upgradeable mode, and there are no threads waiting to enter write mode, threads that call the <xref:System.Threading.ReaderWriterLockSlim.EnterReadLock*> method enter read mode immediately and do not block.
 
-
-
 ## Examples
  The following example shows how to use the <xref:System.Threading.ReaderWriterLockSlim.EnterReadLock*> method to enter the lock in read mode. The method shown in the example retrieves the value associated with a key. If the key is not found, the exception thrown by the inner <xref:System.Collections.Generic.Dictionary`2> is allowed to terminate the method. A `finally` block is used to execute the <xref:System.Threading.ReaderWriterLockSlim.ExitReadLock*> method, ensuring that the caller exits read mode.
 
@@ -497,8 +489,6 @@
 
 > [!NOTE]
 > If a lock allows recursion, a thread that has entered the lock in upgradeable mode can enter upgradeable mode recursively, even if other threads are waiting to enter write mode.
-
-
 
 ## Examples
  The following example shows how to use the <xref:System.Threading.ReaderWriterLockSlim.EnterUpgradeableReadLock*> method to enter the lock in upgradeable mode. A `finally` block is used to execute the <xref:System.Threading.ReaderWriterLockSlim.ExitUpgradeableReadLock*> method, ensuring that the caller exits upgradeable mode.
@@ -581,8 +571,6 @@
 > [!NOTE]
 > If a lock allows recursion, a thread that has entered the lock in write mode can enter write mode recursively, even if other threads are waiting to enter write mode.
 
-
-
 ## Examples
  The following example shows how to use the <xref:System.Threading.ReaderWriterLockSlim.EnterWriteLock*> method to enter the lock in write mode. The method shown in the example adds a new key/value pair to the synchronized cache. If the key is already in the cache, the exception thrown by the inner <xref:System.Collections.Generic.Dictionary`2> is allowed to terminate the method. A `finally` block is used to execute the <xref:System.Threading.ReaderWriterLockSlim.ExitWriteLock*> method, ensuring that the caller exits write mode.
 
@@ -655,8 +643,6 @@
 
  Exiting the lock might signal other waiting threads.
 
-
-
 ## Examples
  The following example shows how to use a `finally` block to execute the <xref:System.Threading.ReaderWriterLockSlim.ExitReadLock*> method, ensuring that the caller exits read mode. The method shown in the example retrieves the value associated with a key. If the key is not found, the exception thrown by the inner <xref:System.Collections.Generic.Dictionary`2> is allowed to terminate the method. The <xref:System.Threading.ReaderWriterLockSlim.EnterReadLock*> method is used to enter read mode.
 
@@ -719,8 +705,6 @@
  This method is not sensitive to recursion order. For example, if a thread enters a lock in upgradeable mode and then enters the lock in write mode, the order in which the thread exits the two modes does not matter. If a lock allows recursion, a thread can enter the lock in write mode and then enter it recursively in upgradeable mode; the order in which the thread exits upgradeable mode and write mode does not matter.
 
  Exiting the lock might signal other waiting threads.
-
-
 
 ## Examples
  The following example shows how to use a `finally` block to execute the <xref:System.Threading.ReaderWriterLockSlim.ExitUpgradeableReadLock*> method, ensuring that the caller exits upgradeable mode.
@@ -791,8 +775,6 @@
 
  Exiting the lock might signal other waiting threads.
 
-
-
 ## Examples
  The following example shows how to use a `finally` block to execute the <xref:System.Threading.ReaderWriterLockSlim.ExitWriteLock*> method, ensuring that the caller exits write mode. The method shown in the example adds a new key/value pair to the synchronized cache. If the key is already in the cache, the exception thrown by the inner <xref:System.Collections.Generic.Dictionary`2> is allowed to terminate the method. The <xref:System.Threading.ReaderWriterLockSlim.EnterWriteLock*> method is used to enter the lock in write mode.
 
@@ -855,8 +837,6 @@
 ## Remarks
  This property is intended for use in asserts or for other debugging purposes. Do not use it to control the flow of program execution.
 
-
-
 ## Examples
  The following example shows how to use the <xref:System.Threading.ReaderWriterLockSlim.IsReadLockHeld> property to generate an assert if the current thread has entered read mode unexpectedly.
 
@@ -916,8 +896,6 @@
 ## Remarks
  This property is intended for use in asserts or for other debugging purposes. Do not use it to control the flow of program execution.
 
-
-
 ## Examples
  The following example shows how to use the <xref:System.Threading.ReaderWriterLockSlim.IsUpgradeableReadLockHeld> property to generate an assert if the current thread has entered upgradeable mode unexpectedly.
 
@@ -976,8 +954,6 @@
 
 ## Remarks
  This property is intended for use in asserts or for other debugging purposes. Do not use it to control the flow of program execution.
-
-
 
 ## Examples
  The following example shows how to use the <xref:System.Threading.ReaderWriterLockSlim.IsWriteLockHeld> property to generate an assert if the current thread has entered write mode unexpectedly.
@@ -1588,8 +1564,6 @@
 > [!NOTE]
 > If a lock allows recursion, a thread that has entered the lock in write mode can enter write mode recursively, even if other threads are waiting to enter write mode.
 
-
-
 ## Examples
  The following example shows how to use the <xref:System.Threading.ReaderWriterLockSlim.TryEnterWriteLock*> method to enter the lock in write mode, with a time-out. The method shown in the example adds a new key/value pair to the synchronized cache. If the specified time-out interval elapses before the thread enters the lock, the method returns `false`. The method returns `true` if the key/value pair is added.
 
@@ -1744,8 +1718,6 @@
 ## Remarks
  Use this property only for debugging, profiling, and logging purposes, and not to control the behavior of an algorithm. The results can change as soon as they have been calculated. Therefore, it is not safe to make decisions based on this property.
 
-
-
 ## Examples
  The following example shows how to use the <xref:System.Threading.ReaderWriterLockSlim.WaitingReadCount> property to generate an event log entry if the number of threads that are blocked, waiting to enter read mode, exceeds a threshold.
 
@@ -1810,8 +1782,6 @@
 ## Remarks
  Use this property only for debugging, profiling, and logging purposes, and not to control the behavior of an algorithm. The results can change as soon as they have been calculated. Therefore, it is not safe to make decisions based on this property.
 
-
-
 ## Examples
  The following example shows how to use the <xref:System.Threading.ReaderWriterLockSlim.WaitingUpgradeCount> property to generate an event log entry if the number of threads that are blocked, waiting to enter upgradeable mode, exceeds a threshold.
 
@@ -1875,8 +1845,6 @@
 
 ## Remarks
  Use this property only for debugging, profiling, and logging purposes, and not to control the behavior of an algorithm. The results can change as soon as they have been calculated. Therefore, it is not safe to make decisions based on this property.
-
-
 
 ## Examples
  The following example shows how to use the <xref:System.Threading.ReaderWriterLockSlim.WaitingWriteCount> property to generate an event log entry if the number of threads that are blocked, waiting to enter write mode, exceeds a threshold.

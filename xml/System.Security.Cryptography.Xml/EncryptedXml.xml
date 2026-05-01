@@ -60,8 +60,6 @@
 
 - Include an encrypted key in the `<EncryptedKey>` element. Both parties must agree on the key that decrypts the encrypted key before they exchange encrypted data. You can optionally include a name or location of the key that will decrypt the key in the `<EncryptedKey>` element.
 
-
-
 ## Examples
  The following code example demonstrates how to create a simple utility class that uses the <xref:System.Security.Cryptography.TripleDES> algorithm to encrypt an XML document.
 
@@ -170,8 +168,6 @@
 ## Remarks
  This is the parameterless constructor for the main class for XML encryption in the .NET Framework.
 
-
-
 ## Examples
  The following code example demonstrates how to encrypt an XML document using a symmetric key. This example does not include any key information in the encrypted XML document.
 
@@ -243,8 +239,6 @@
 
 ## Remarks
  Use this constructor to create an <xref:System.Security.Cryptography.Xml.EncryptedXml> object when you want to specify the XML document to encrypt. The `document` parameter comprises the XML elements that later form the encrypted XML.
-
-
 
 ## Examples
  The following code example demonstrates how to encrypt an XML document using a symmetric key. This example embeds a key name in the encrypted XML document that the decrypting method uses to find the appropriate decryption key.
@@ -366,8 +360,6 @@
 
  Use the <xref:System.Security.Cryptography.Xml.EncryptedXml.ClearKeyNameMappings*> method to clear the key name mappings table.
 
-
-
 ## Examples
  The following code example demonstrates how to encrypt an XML document using a symmetric key. This example embeds a key name in the encrypted XML document that the decrypting method uses to find the appropriate decryption key.
 
@@ -470,8 +462,6 @@
 
  Note that the <xref:System.Security.Cryptography.Xml.EncryptedXml.DecryptData*> method only decrypts top-level `<EncryptedData>` tags. In cases where one or more `<EncryptedData>` tags have been encrypted and are contained within higher level `<EncryptedData>` tags, you can call the <xref:System.Security.Cryptography.Xml.EncryptedXml.DecryptDocument*> method separately for each one. See the <xref:System.Security.Cryptography.Xml.EncryptedXml.DecryptDocument*> method for a code example.
 
-
-
 ## Examples
  The following code example demonstrates how to encrypt an XML document using a symmetric key. This example does not include any key information in the encrypted XML document.
 
@@ -540,8 +530,6 @@
 > The <xref:System.Security.Cryptography.Xml.EncryptedXml.DecryptDocument*> method decrypts only valid XML data. To decrypt arbitrary data, use the <xref:System.Security.Cryptography.Xml.EncryptedXml.DecryptData*> method.
 
  To use XML Encryption with X.509 certificates, you must have the Microsoft Enhanced Cryptographic Provider installed and the X.509 certificate must use the Enhanced Provider. If you do not have the Microsoft Enhanced Cryptographic Provider installed or the X.509 certificate does not use the Enhanced Provider, a <xref:System.Security.Cryptography.CryptographicException> with an "Unknown Error" will be thrown when you decrypt an XML document.
-
-
 
 ## Examples
  The following code example demonstrates how to encrypt an XML document using an asymmetric key. This example creates a symmetric session key to encrypt the document and then uses the asymmetric key to embed an encrypted version of the session key into the XML document.
@@ -925,8 +913,6 @@
 
  To use XML Encryption with X.509 certificates, you must have the Microsoft Enhanced Cryptographic Provider installed and the X.509 certificate must use the Enhanced Provider. If you do not have the Microsoft Enhanced Cryptographic Provider installed or the X.509 certificate does not use the Enhanced Provider, a <xref:System.Security.Cryptography.CryptographicException> with an "Unknown Error" will be thrown when you decrypt an XML document.
 
-
-
 ## Examples
  The following code example demonstrates how to encrypt an XML document using an X.509 certificate. This example creates a symmetric session key to encrypt the document and then uses the X.509 certificate to embed an encrypted version of the session key into the XML document.
 
@@ -997,8 +983,6 @@
  This method is a convenient way to encrypt the outer XML of an element using a key name. If you need more control over the encryption, so you can place the encrypted information into a `<CipherReference>` element or specify whether the entire XML element or just its contents should be encrypted, use the <xref:System.Security.Cryptography.Xml.EncryptedXml.EncryptData*> method overloads.
 
  For a list of all supported algorithms, see the list of constant fields associated with the <xref:System.Security.Cryptography.Xml.EncryptedXml> class.
-
-
 
 ## Examples
  The following code example demonstrates how to encrypt an XML document using a symmetric key.
@@ -1093,8 +1077,6 @@
 ## Remarks
  The returned byte array can be placed into a `<CipherValue>` element. This method assumes that the data specified in the `plaintext` parameter is a byte array that contains XML data.
 
-
-
 ## Examples
  The following code example demonstrates how to encrypt an XML document using a symmetric key. This example does not include any key information in the encrypted XML document.
 
@@ -1167,8 +1149,6 @@
 ## Remarks
  The returned byte array data is the value of the `<CipherValue>` element.
 
-
-
 ## Examples
  The following code example demonstrates how to encrypt an XML document using a symmetric key. This example does not include any key information in the encrypted XML document.
 
@@ -1196,8 +1176,6 @@
 
 ## Remarks
  Use the <xref:System.Security.Cryptography.Xml.EncryptedXml.EncryptKey*> method to encrypt the key that a recipient uses to decrypt an `<EncryptedData>` element. This method places the encrypted key within an `<EncryptedKey>` element.
-
-
 
 ## Examples
  The following code example demonstrates how to encrypt an XML document using an asymmetric key. This example creates a symmetric session key to encrypt the document and then uses the asymmetric key to embed an encrypted version of the session key into the XML document.
@@ -1310,8 +1288,6 @@
  Use the <xref:System.Security.Cryptography.Xml.EncryptedXml.EncryptKey*> method to encrypt the key that a recipient uses to decrypt an `<EncryptedData>` element. This method accepts a value for `rsa` that represents either the RSA PKCS#1 v1.5 algorithm or the RSA PKCS#1 type 2 algorithm (also called OAEP).
 
  Note that this method does not automatically place the encrypted key within an `<EncryptedKey>` element. You must manually create the `<EncryptedKey>` element within your document.
-
-
 
 ## Examples
  The following code example demonstrates how to encrypt an XML document using an asymmetric key. This example creates a symmetric session key to encrypt the document and then uses the asymmetric key to embed an encrypted version of the session key into the XML document.
@@ -1683,8 +1659,6 @@ The value of the <paramref name="symmetricAlgorithmUri" /> parameter is not a su
 ## Remarks
  The <xref:System.Security.Cryptography.Xml.EncryptedXml.ReplaceData*> method replaces an `<EncryptedData>` element with the value of the `decryptedData` parameter.
 
-
-
 ## Examples
  The following code example demonstrates how to encrypt an XML document using a symmetric key. This example does not include any key information in the encrypted XML document.
 
@@ -1744,8 +1718,6 @@ The value of the <paramref name="symmetricAlgorithmUri" /> parameter is not a su
 
 ## Remarks
  The <xref:System.Security.Cryptography.Xml.EncryptedXml.ReplaceElement*> method replaces the `inputElement` parameter with the value specified by the `encryptedData` parameter.
-
-
 
 ## Examples
  The following code example demonstrates how to encrypt an XML document using a symmetric key. This example does not include any key information in the encrypted XML document.
@@ -1919,8 +1891,6 @@ The value of the <paramref name="symmetricAlgorithmUri" /> parameter is not a su
 ## Remarks
  The value of the <xref:System.Security.Cryptography.Xml.EncryptedXml.XmlEncAES128Url> field is `http://www.w3.org/(2001/04/xmlenc#aes128-cbc)`.
 
-
-
 ## Examples
  The following code example demonstrates how to encrypt an XML document using a symmetric key. This example does not include any key information in the encrypted XML document.
 
@@ -2006,8 +1976,6 @@ The value of the <paramref name="symmetricAlgorithmUri" /> parameter is not a su
 
 ## Remarks
  The value of the <xref:System.Security.Cryptography.Xml.EncryptedXml.XmlEncAES192Url> field is `http://www.w3.org/(2001/04/xmlenc#aes192-cbc)`.
-
-
 
 ## Examples
  The following code example demonstrates how to encrypt an XML document using a symmetric key. This example does not include any key information in the encrypted XML document.
@@ -2095,8 +2063,6 @@ The value of the <paramref name="symmetricAlgorithmUri" /> parameter is not a su
 ## Remarks
  The value of the <xref:System.Security.Cryptography.Xml.EncryptedXml.XmlEncAES256Url> field is `http://www.w3.org/(2001/04/xmlenc#aes256-cbc)`.
 
-
-
 ## Examples
  The following code example demonstrates how to encrypt an XML document using a symmetric key. This example does not include any key information in the encrypted XML document.
 
@@ -2142,8 +2108,6 @@ The value of the <paramref name="symmetricAlgorithmUri" /> parameter is not a su
 
 ## Remarks
  The value of the <xref:System.Security.Cryptography.Xml.EncryptedXml.XmlEncDESUrl> field is `http://www.w3.org/(2001/04/xmlenc#des-cbc)`.
-
-
 
 ## Examples
  The following code example demonstrates how to encrypt an XML document using a symmetric key. This example does not include any key information in the encrypted XML document.
@@ -2230,8 +2194,6 @@ The value of the <paramref name="symmetricAlgorithmUri" /> parameter is not a su
 
 ## Remarks
  The value of the <xref:System.Security.Cryptography.Xml.EncryptedXml.XmlEncElementUrl> field is `http://www.w3.org/(2001/04/xmlenc#Element)`.
-
-
 
 ## Examples
  The following code example demonstrates how to encrypt an XML document using a symmetric key. This example does not include any key information in the encrypted XML document.
@@ -2358,8 +2320,6 @@ The value of the <paramref name="symmetricAlgorithmUri" /> parameter is not a su
 
 ## Remarks
  The value of the <xref:System.Security.Cryptography.Xml.EncryptedXml.XmlEncRSA15Url> field is `http://www.w3.org/(2001/04/xmlenc#rsa-1_5)`.
-
-
 
 ## Examples
  The following code example demonstrates how to encrypt an XML document using an asymmetric key. This example creates a symmetric session key to encrypt the document and then uses the asymmetric key to embed an encrypted version of the session key into the XML document.
@@ -2566,8 +2526,6 @@ The value of the <paramref name="symmetricAlgorithmUri" /> parameter is not a su
 
 ## Remarks
  The value of the <xref:System.Security.Cryptography.Xml.EncryptedXml.XmlEncTripleDESUrl> field is `http://www.w3.org/(2001/04/xmlenc#tripledes-cbc)`.
-
-
 
 ## Examples
  The following code example demonstrates how to encrypt an XML document using a symmetric key. This example does not include any key information in the encrypted XML document.

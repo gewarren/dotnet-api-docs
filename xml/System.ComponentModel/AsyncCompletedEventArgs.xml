@@ -64,8 +64,6 @@
 
  If the class supports multiple asynchronous methods, or multiple calls to the same asynchronous method, you can determine which task raised the *MethodName*`Completed` event by checking the value of the <xref:System.ComponentModel.AsyncCompletedEventArgs.UserState> property. Your code will need to track these tokens, known as task IDs, as their corresponding asynchronous tasks start and complete.
 
-
-
 ## Examples
  The following code example demonstrates using an <xref:System.ComponentModel.AsyncOperation> to track the lifetime of asynchronous operations. This code example is part of a larger example provided for the <xref:System.ComponentModel.AsyncOperationManager?displayProperty=nameWithType> class.
 
@@ -237,8 +235,6 @@
 
  The client application's event-handler delegate should check the <xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled> property before accessing any properties in a class derived from <xref:System.ComponentModel.AsyncCompletedEventArgs>; otherwise, the property will raise an <xref:System.InvalidOperationException> if the asynchronous operation was interrupted.
 
-
-
 ## Examples
  The following code example demonstrates the using an <xref:System.ComponentModel.AsyncOperation> to track the lifetime of asynchronous operations. This code example is part of a larger example provided for the <xref:System.ComponentModel.AsyncOperationManager?displayProperty=nameWithType> class.
 
@@ -311,8 +307,6 @@
  If an exception is raised during an asynchronous operation, the class will assign the exception to the <xref:System.ComponentModel.AsyncCompletedEventArgs.Error> property. The client application's event-handler delegate should check the <xref:System.ComponentModel.AsyncCompletedEventArgs.Error> property before accessing any properties in a class derived from <xref:System.ComponentModel.AsyncCompletedEventArgs>; otherwise, the property will raise a <xref:System.Reflection.TargetInvocationException> with its <xref:System.Exception.InnerException> property holding a reference to <xref:System.ComponentModel.AsyncCompletedEventArgs.Error*>.
 
  The value of the <xref:System.ComponentModel.AsyncCompletedEventArgs.Error> property is `null` if the operation was canceled.
-
-
 
 ## Examples
  The following code example demonstrates using an <xref:System.ComponentModel.AsyncOperation> to track the lifetime of asynchronous operations. This code example is part of a larger example provided for the <xref:System.ComponentModel.AsyncOperationManager?displayProperty=nameWithType> class.
@@ -447,8 +441,6 @@
  If a class supports multiple asynchronous methods, or multiple invocations of a single method, you can determine which task raised the *MethodName*`Completed` event by checking the value of the <xref:System.ComponentModel.AsyncCompletedEventArgs.UserState> property. Your code will need track these tokens, known as task IDs, as their corresponding asynchronous tasks start and complete.
 
  The value of this property is set during the original call to the asynchronous method that started the task.
-
-
 
 ## Examples
  The following code example demonstrates using an <xref:System.ComponentModel.AsyncOperation> to track the lifetime of asynchronous operations. This code example is part of a larger example provided for the <xref:System.ComponentModel.AsyncOperationManager?displayProperty=nameWithType> class.

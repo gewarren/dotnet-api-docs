@@ -65,8 +65,6 @@
 
  Your class should get an <xref:System.ComponentModel.AsyncOperation> object for each asynchronous task by calling <xref:System.ComponentModel.AsyncOperationManager.CreateOperation*?displayProperty=nameWithType> when each task starts. To allow the client to distinguish separate asynchronous tasks, <xref:System.ComponentModel.AsyncOperationManager.CreateOperation*?displayProperty=nameWithType> takes a parameter for a unique client-provided token, which becomes the <xref:System.ComponentModel.AsyncOperation.UserSuppliedState> property. It can then be used by client code to identify the particular asynchronous task that is raising progress or completion events.
 
-
-
 ## Examples
  The following code example demonstrates using an <xref:System.ComponentModel.AsyncOperation> object to track the lifetime of asynchronous operations. This code example is part of a larger example provided for the <xref:System.ComponentModel.AsyncOperationManager?displayProperty=nameWithType> class.
 
@@ -328,8 +326,6 @@ Note: Console applications do not synchronize the execution of <see cref="M:Syst
 
  The `arg` parameter is used to pass state information to the completion delegate `d`. You can use an <xref:System.ComponentModel.AsyncOperation> object, or an <xref:System.ComponentModel.AsyncCompletedEventArgs?displayProperty=nameWithType> object as the parameter value. Alternatively, if you want to provide additional state storage, you can use an instance of a class you derive from the <xref:System.ComponentModel.AsyncCompletedEventArgs?displayProperty=nameWithType> class.
 
-
-
 ## Examples
  The following code example demonstrates using the <xref:System.ComponentModel.AsyncOperation.PostOperationCompleted*> method to end the lifetime of an asynchronous operation. This code example is part of a larger example provided for the <xref:System.ComponentModel.AsyncOperationManager?displayProperty=nameWithType> class.
 
@@ -459,8 +455,6 @@ Note: Console applications do not synchronize the execution of <see cref="M:Syst
 
 > [!CAUTION]
 > Client code must be careful to provide a unique value for the <xref:System.ComponentModel.AsyncOperation.UserSuppliedState> property. Non-unique task IDs may cause your implementation to report progress and other events incorrectly. Your code should check for a non-unique task ID and raise an <xref:System.ArgumentException> if one is detected.
-
-
 
 ## Examples
  The following code example demonstrates using <xref:System.ComponentModel.AsyncOperation.UserSuppliedState*> to track the lifetime of asynchronous operations. This code example is part of a larger example provided for the <xref:System.ComponentModel.AsyncOperationManager?displayProperty=nameWithType> class.

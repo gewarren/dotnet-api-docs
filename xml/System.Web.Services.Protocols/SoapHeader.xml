@@ -44,8 +44,6 @@
 
 4.  Within the XML Web service method or XML Web service client code, access the <xref:System.Web.Services.Protocols.SoapHeaderAttribute.MemberName> property to process the data sent in the SOAP header.
 
-
-
 ## Examples
  The following `MyWebService` XML Web service defines the `MyHeader` SOAP header and requires it to be sent with any calls to the `MyWebMethod` XML Web service method. Additionally, `MyWebMethod` receives any SOAP headers other than the `MyHeader` SOAP header.
 
@@ -125,8 +123,6 @@
 
  For more information on the SOAP `actor` attribute, see the [SOAP](https://www.w3.org/TR/soap/) specification.
 
-
-
 ## Examples
  The following XML Web service client calls the `MyWebMethod` XML Web service method after creating a custom SOAP header of type `MyHeader` and setting the <xref:System.Web.Services.Protocols.SoapHeader.Actor> property to `http://www.contoso.com/MySoapHeaderHandler`.
 
@@ -174,8 +170,6 @@
 
 ## Remarks
  For SOAP headers defined by an XML Web service, ASP.NET assumes the XML Web service method properly processed the SOAP header by setting the initial value of <xref:System.Web.Services.Protocols.SoapHeader.DidUnderstand*> to `true`. For SOAP headers not defined by the XML Web service, the initial value is `false`. If ASP.NET detects SOAP headers passed to an XML Web service method with <xref:System.Web.Services.Protocols.SoapHeader.DidUnderstand*> set to `false` after the method returns, a <xref:System.Web.Services.Protocols.SoapHeaderException> is thrown back to the XML Web service client instead of the results from the XML Web service method.
-
-
 
 ## Examples
  The following `MyWebService` XML Web service defines the `MyHeader` SOAP header and requires it to be sent with any calls to the `MyWebMethod` XML Web service method. Additionally, the `MyWebMethod` receives any SOAP headers other than the `MyHeader` SOAP header. For SOAP headers that `MyWebMethod` can process, <xref:System.Web.Services.Protocols.SoapHeader.DidUnderstand*> is set to `true`.
@@ -228,8 +222,6 @@
 
 ## Remarks
  Do not use this property. Instead use the <xref:System.Web.Services.Protocols.SoapHeader.MustUnderstand> property.
-
-
 
 ## Examples
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Remoting/SoapHeader_EncodedMustUnderstand/CPP/soapheader_encodedmustunderstand.cpp" id="Snippet1":::
@@ -378,8 +370,6 @@
  Although both the <xref:System.Web.Services.Protocols.SoapHeader.EncodedMustUnderstand*> and <xref:System.Web.Services.Protocols.SoapHeader.MustUnderstand*> properties can be used to set the value of the `mustUnderstand` attribute within the SOAP header, the <xref:System.Web.Services.Protocols.SoapHeader.MustUnderstand> property allows you to set the attribute using a Boolean value.
 
  For details on adding SOAP headers to clients, see [Using SOAP Headers](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/77hkfhh8(v=vs.100)).
-
-
 
 ## Examples
  The following XML Web service client defines a custom SOAP header of type `MyHeader`, sets the <xref:System.Web.Services.Protocols.SoapHeader.MustUnderstand> property to `true`, and invokes the `MyWebMethod` XML Web service method. If the XML Web service method does not set the <xref:System.Web.Services.Protocols.SoapHeader.DidUnderstand> property of the `MyHeader` SOAP header to `true`, a <xref:System.Web.Services.Protocols.SoapHeaderException> is thrown.

@@ -177,8 +177,6 @@ The following code sample demonstrates how to build a type dynamically by using 
 > [!NOTE]
 > In the .NET Framework versions 1.0, 1.1, and 2.0, the declarative security attributes applied to a type by using this method are stored in the old XML metadata format.
 
-
-
 ## Examples
  The following example demonstrates the use of the `AddDeclarativeSecurity` method to add a security demand for <xref:System.Security.Permissions.SecurityPermission> with the <xref:System.Security.Permissions.SecurityPermissionFlag.ControlEvidence?displayProperty=nameWithType> flag to a dynamic type named `MyDynamicClass`, in an assembly named EmittedExample.dll. The example produces no console output; after you run it, you can use [Ildasm.exe (IL Disassembler)](/dotnet/framework/tools/ildasm-exe-il-disassembler) to examine EmittedExample.dll. In `MyDynamicClass`, open the `.class public auto ansi` statement to see the declarative permission.
 
@@ -575,8 +573,6 @@ See <xref:System.Reflection.AssemblyName> for a description of the format of the
 
  A type is created only once, no matter how many times the <xref:System.Reflection.Emit.TypeBuilder.CreateType*> method is called. All calls return the same <xref:System.Type> object.
 
-
-
 ## Examples
  The following code example shows how to define an event handler for the <xref:System.AppDomain.TypeResolve?displayProperty=nameWithType> event, in order to call the <xref:System.Reflection.Emit.TypeBuilder.CreateType*> method on a nested type during a <xref:System.Reflection.Emit.TypeBuilder.CreateType*> call on the enclosing type.
 
@@ -880,8 +876,6 @@ See <xref:System.Reflection.AssemblyName> for a description of the format of the
 
 - If you want a parameterless constructor that does something more than simply calling the parameterless constructor of the base class, or that calls another constructor of the base class, or that does something else entirely, you must use the <xref:System.Reflection.Emit.TypeBuilder.DefineConstructor*?displayProperty=nameWithType> method to create one, and provide your own implementation.
 
-
-
 ## Examples
  The following code sample demonstrates the use of `DefineConstructor` to set a constructor's particular signature and attributes on a dynamic type and return a corresponding <xref:System.Reflection.Emit.ConstructorBuilder> for MSIL population.
 
@@ -1116,8 +1110,6 @@ See <xref:System.Reflection.AssemblyName> for a description of the format of the
 - You have defined another constructor and you also want a parameterless constructor that simply calls the base class constructor.
 
 - You want to set the attributes on the parameterless constructor to something other than <xref:System.Reflection.MethodAttributes.PrivateScope>, <xref:System.Reflection.MethodAttributes.Public>, <xref:System.Reflection.MethodAttributes.HideBySig>, <xref:System.Reflection.MethodAttributes.SpecialName>, and <xref:System.Reflection.MethodAttributes.RTSpecialName>.
-
-
 
 ## Examples
  The following code sample demonstrates the use of `DefineConstructor` to set a constructor's particular signature and attributes on a dynamic type and return a corresponding <xref:System.Reflection.Emit.ConstructorBuilder> for MSIL population.
@@ -1538,8 +1530,6 @@ See <xref:System.Reflection.AssemblyName> for a description of the format of the
 ## Remarks
  Calling this method makes the current type a generic type. If the method is called again on the same type, an <xref:System.InvalidOperationException> is thrown.
 
-
-
 ## Examples
  The following code example creates a generic type with two type parameters and saves them in the assembly GenericEmitExample1.dll. You can use the [Ildasm.exe (IL Disassembler)](/dotnet/framework/tools/ildasm-exe-il-disassembler) to view the generated types. For a more detailed explanation of the steps involved in defining a dynamic generic type, see [How to: Define a Generic Type with Reflection Emit](/dotnet/framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit).
 
@@ -1768,8 +1758,6 @@ See <xref:System.Reflection.AssemblyName> for a description of the format of the
  Use this method overload when you do not know the method signature at the time you define the method. For example, the parameter types and return type of a generic method might be specified by the method's generic type parameters, which must be defined after the method has been added to the type. The parameters and return type of the method can be set later using the <xref:System.Reflection.Emit.MethodBuilder.SetSignature*?displayProperty=nameWithType> method.
 
  This method overload defines a method with <xref:System.Reflection.CallingConventions.Standard?displayProperty=nameWithType>. If you need to define a method without a signature, with a different calling convention, use the <xref:System.Reflection.Emit.TypeBuilder.DefineMethod(System.String,System.Reflection.MethodAttributes,System.Reflection.CallingConventions)> method overload.
-
-
 
 ## Examples
  The following code example defines a generic method named `DemoMethod` whose parameter type and return type are specified by its generic type parameters. The method is defined without a signature, using the standard calling convention. The <xref:System.Reflection.Emit.MethodBuilder.DefineGenericParameters*?displayProperty=nameWithType> method is used to make `DemoMethod` a generic method, and the newly defined type parameters are then used for the signature and return type.
@@ -3229,8 +3217,6 @@ See <xref:System.Reflection.AssemblyName> for a description of the format of the
 ## Remarks
  Some DLL import attributes (see the description of <xref:System.Runtime.InteropServices.DllImportAttribute>) cannot be specified as arguments to this method. For example, the DLL import attribute <xref:System.Reflection.MethodImplAttributes.PreserveSig?displayProperty=nameWithType> must be added after the `PInvoke` method is created, if the method returns a value. The example shows how to do this.
 
-
-
 ## Examples
  The following example demonstrates how to use the <xref:System.Reflection.Emit.TypeBuilder.DefinePInvokeMethod*> method to create a `PInvoke` method, and how to add the <xref:System.Reflection.MethodImplAttributes.PreserveSig?displayProperty=nameWithType> flag to the method implementation flags after you create the <xref:System.Reflection.Emit.MethodBuilder>, by using the <xref:System.Reflection.Emit.MethodBuilder.GetMethodImplementationFlags*?displayProperty=nameWithType> and <xref:System.Reflection.Emit.MethodBuilder.SetImplementationFlags*?displayProperty=nameWithType> methods.
 
@@ -3355,8 +3341,6 @@ See <xref:System.Reflection.AssemblyName> for a description of the format of the
 
 ## Remarks
  Some DLL import attributes (see the description of <xref:System.Runtime.InteropServices.DllImportAttribute>) cannot be specified as arguments to this method. For example, the DLL import attribute <xref:System.Reflection.MethodImplAttributes.PreserveSig?displayProperty=nameWithType> must be added after the `PInvoke` method is created, if the method returns a value. The example shows how to do this.
-
-
 
 ## Examples
  The following code example demonstrates how to use the <xref:System.Reflection.Emit.TypeBuilder.DefinePInvokeMethod*> method to create a `PInvoke` method, and how to add the <xref:System.Reflection.MethodImplAttributes.PreserveSig?displayProperty=nameWithType> flag to the method implementation flags after you create the <xref:System.Reflection.Emit.MethodBuilder>, by using the <xref:System.Reflection.Emit.MethodBuilder.GetMethodImplementationFlags*?displayProperty=nameWithType> and <xref:System.Reflection.Emit.MethodBuilder.SetImplementationFlags*?displayProperty=nameWithType> methods.
@@ -4254,8 +4238,6 @@ See <xref:System.Reflection.AssemblyName> for a description of the format of the
 ## Remarks
  The initializer created is always public.
 
-
-
 ## Examples
  The following code sample demonstrates how to create an initialization constructor using `DefineTypeInitializer`.
 
@@ -4353,8 +4335,6 @@ See <xref:System.Reflection.AssemblyName> for a description of the format of the
 
 ## Remarks
  The field that you create with this method will be `static`, even if you do not include `FieldAttributes.Static` in the `attributes` parameter.
-
-
 
 ## Examples
  The following code sample demonstrates the use of `DefineUninitializedData` to create an uninitialized data field in a dynamic type:
@@ -4715,8 +4695,6 @@ See <xref:System.Reflection.AssemblyName> for a description of the format of the
  The <xref:System.Reflection.Emit.TypeBuilder.GetConstructor*> method provides a way to get a <xref:System.Reflection.ConstructorInfo> object that represents a constructor of a constructed generic type whose generic type definition is represented by a <xref:System.Reflection.Emit.TypeBuilder> object.
 
  For example, suppose you have a <xref:System.Reflection.Emit.TypeBuilder> object that represents the type `G<T>` in C# syntax (`G(Of T)` in Visual Basic) and a <xref:System.Reflection.Emit.ConstructorBuilder> object that represents a constructor of `G<T>`. Suppose that `G<T>` has a generic method with type parameter `U` that creates an instance of the constructed type `G<U>`. In order to emit the code to create an instance of the constructed type, you need a <xref:System.Reflection.ConstructorInfo> object that represents the constructor of this constructed type - in other words, that creates an instance of `G<U>`. To do this, first call the <xref:System.Reflection.Emit.TypeBuilder.MakeGenericType*> method on the <xref:System.Reflection.Emit.TypeBuilder> object, specifying the <xref:System.Reflection.Emit.GenericTypeParameterBuilder> object that represents `U` as the type argument. Then call the <xref:System.Reflection.Emit.TypeBuilder.GetConstructor*> method with the return value of the <xref:System.Reflection.Emit.TypeBuilder.MakeGenericType*> method as parameter `type` and the <xref:System.Reflection.Emit.ConstructorBuilder> object that represents the constructor of `G<U>` as parameter `constructor`. The return value is the <xref:System.Reflection.ConstructorInfo> object you need to emit the function call. The code example demonstrates this scenario.
-
-
 
 ## Examples
  The following code example contains source code for a generic class named `Sample` that has a type parameter named `T`. The class has a field named `Field`, of type `T`, and a generic method named `GM` with its own type parameter, named `U`. Method `GM` creates an instance of `Sample`, substituting its own type parameter `U` for the type parameter of `Sample`, and stores its input parameter in `Field`. This source code is compiled but not used; you can view it with the [Ildasm.exe (IL Disassembler)](/dotnet/framework/tools/ildasm-exe-il-disassembler) and compare it to the code emitted by class `Example`.
@@ -5384,8 +5362,6 @@ See <xref:System.Reflection.AssemblyName> for a description of the format of the
 
  For example, suppose you have a <xref:System.Reflection.Emit.TypeBuilder> object that represents the type `G<T>` in C# syntax (`G(Of T)` in Visual Basic) and a <xref:System.Reflection.Emit.FieldBuilder> object that represents a field `public T F` in C# syntax (`Public F As T` in Visual Basic) that's defined by `G<T>`. Suppose that `G<T>` has a generic method with type parameter `U` that creates an instance of the constructed type `G<U>` and calls field `F` on that instance. In order to emit the function call, you need a <xref:System.Reflection.FieldInfo> object that represents `F` on the constructed type - in other words, that is of type `U` rather than type `T`. To do this, first call the <xref:System.Reflection.Emit.TypeBuilder.MakeGenericType*> method on the <xref:System.Reflection.Emit.TypeBuilder> object, specifying the <xref:System.Reflection.Emit.GenericTypeParameterBuilder> object that represents `U` as the type argument. Then call the <xref:System.Reflection.Emit.TypeBuilder.GetField*> method with the return value of the <xref:System.Reflection.Emit.TypeBuilder.MakeGenericType*> method as parameter `type` and the <xref:System.Reflection.Emit.FieldBuilder> object that represents `F` as parameter `field`. The return value is the <xref:System.Reflection.FieldInfo> object you need to emit the function call. The code example demonstrates this scenario.
 
-
-
 ## Examples
  The following code example contains source code for a generic class named Sample that has a type parameter named `T`. The class has a field named `Field`, of type `T`, and a generic method named `GM` with its own type parameter, named `U`. Method `GM` creates an instance of `Sample`, substituting its own type parameter `U` for the type parameter of `Sample`, and stores its input parameter in `Field`. This source code is compiled but not used; you can view it with the [Ildasm.exe (IL Disassembler)](/dotnet/framework/tools/ildasm-exe-il-disassembler) and compare it to the code emitted by class `Example`.
 
@@ -5984,8 +5960,6 @@ See <xref:System.Reflection.AssemblyName> for a description of the format of the
  The <xref:System.Reflection.Emit.TypeBuilder.GetMethod*> method provides a way to get a <xref:System.Reflection.MethodInfo> object that represents a method of a constructed generic type whose generic type definition is represented by a <xref:System.Reflection.Emit.TypeBuilder> object.
 
  For example, suppose you have a <xref:System.Reflection.Emit.TypeBuilder> object that represents the type `G<T>` in C# syntax (`G(Of T)` in Visual Basic) and a <xref:System.Reflection.Emit.MethodBuilder> object that represents a method `T M()` in C# syntax (`Function M() As T` in Visual Basic) that is defined by `G<T>`. Suppose that `G<T>` has a generic method with type parameter `U` that creates an instance of the constructed type `G<U>` and calls method `M` on that instance. In order to emit the function call, you need a <xref:System.Reflection.MethodInfo> object that represents `M` on the constructed type - in other words, that returns type `U` rather than type `T`. To do this, first call the <xref:System.Reflection.Emit.TypeBuilder.MakeGenericType*> method on the <xref:System.Reflection.Emit.TypeBuilder> object, specifying the <xref:System.Reflection.Emit.GenericTypeParameterBuilder> object that represents `U` as the type argument. Then call the <xref:System.Reflection.Emit.TypeBuilder.GetMethod*> method with the return value of the <xref:System.Reflection.Emit.TypeBuilder.MakeGenericType*> method as parameter `type` and the <xref:System.Reflection.Emit.MethodBuilder> object that represents `T M()` as parameter `method`. The return value is the <xref:System.Reflection.MethodInfo> object you need to emit the function call. The code example demonstrates a scenario similar to this.
-
-
 
 ## Examples
  The following code example contains source code for a generic class named `Sample` that has a type parameter named `T`. The class has a field named `Field`, of type `T`, and a generic method named `GM` with its own type parameter, named `U`. Method `GM` creates an instance of `Sample`, substituting its own type parameter `U` for the type parameter of `Sample`, and stores its input parameter in `Field`. This source code is compiled but not used; you can view it with the [Ildasm.exe (IL Disassembler)](/dotnet/framework/tools/ildasm-exe-il-disassembler) and compare it to the code emitted by class `Example`.
@@ -7831,8 +7805,6 @@ See <xref:System.Reflection.AssemblyName> for a description of the format of the
 ## Remarks
  The <xref:System.Reflection.Emit.TypeBuilder.MakeArrayType*> method provides a way to generate an array type with any possible element type, including generic types.
 
-
-
 ## Examples
  The following code example creates a dynamic module, an abstract type named `Sample`, and an abstract method named `TestMethod`. `TestMethod` takes a `ref` parameter (`ByRef` in Visual Basic) of type `Sample`, a pointer to type `Sample`, and an array of type `Sample`. It returns a two-dimensional array of type `Sample`. The code example saves the dynamic module to disk, so you can examine it with the [Ildasm.exe (IL Disassembler)](/dotnet/framework/tools/ildasm-exe-il-disassembler).
 
@@ -7899,8 +7871,6 @@ See <xref:System.Reflection.AssemblyName> for a description of the format of the
 ## Remarks
  The <xref:System.Reflection.Emit.TypeBuilder.MakeArrayType*> method provides a way to generate an array type with any possible element type, including generic types.
 
-
-
 ## Examples
  The following code example creates a dynamic module, an abstract type named `Sample`, and an abstract method named `TestMethod`. `TestMethod` takes a `ref` parameter (`ByRef` in Visual Basic) of type `Sample`, a pointer to type `Sample`, and an array of type `Sample`. It returns a two-dimensional array of type `Sample`. The code example saves the dynamic module to disk, so you can examine it with the [Ildasm.exe (IL Disassembler)](/dotnet/framework/tools/ildasm-exe-il-disassembler).
 
@@ -7962,8 +7932,6 @@ See <xref:System.Reflection.AssemblyName> for a description of the format of the
 
 > [!NOTE]
 > Using Microsoft intermediate language (MSIL) syntax, if the current <xref:System.Reflection.Emit.TypeBuilder> represents `MyType`, then the type returned by this method would be `MyType&`.
-
-
 
 ## Examples
  The following code example creates a dynamic module, an abstract type named `Sample`, and an abstract method named `TestMethod`. `TestMethod` takes a `ref` parameter (`ByRef` in Visual Basic) of type `Sample`, a pointer to type `Sample`, and an array of type `Sample`. It returns a two-dimensional array of type `Sample`. The code example saves the dynamic module to disk, so you can examine it with the [Ildasm.exe (IL Disassembler)](/dotnet/framework/tools/ildasm-exe-il-disassembler).
@@ -8118,8 +8086,6 @@ See <xref:System.Reflection.AssemblyName> for a description of the format of the
 
 > [!NOTE]
 > Using Microsoft intermediate language (MSIL) syntax, if the current <xref:System.Reflection.Emit.TypeBuilder> represents `MyType`, then the type returned by this method would be `MyType*`.
-
-
 
 ## Examples
  The following code example creates a dynamic module, an abstract type named `Sample`, and an abstract method named `TestMethod`. `TestMethod` takes a `ref` parameter (`ByRef` in Visual Basic) of type `Sample`, a pointer to type `Sample`, and an array of type `Sample`. It returns a two-dimensional array of type `Sample`. The code example saves the dynamic module to disk, so you can examine it with the [Ildasm.exe (IL Disassembler)](/dotnet/framework/tools/ildasm-exe-il-disassembler).

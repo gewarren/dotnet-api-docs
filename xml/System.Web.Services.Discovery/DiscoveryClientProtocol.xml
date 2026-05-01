@@ -28,8 +28,6 @@
 
  If programmatic access to XML Web services discovery is not needed, the Windows SDK ships the Web Services Discovery tool (Disco.exe) for discovering XML Web services within a command prompt. For more details, see [Web Services Discovery Tool (Disco.exe)](https://msdn.microsoft.com/library/acd88078-c581-42bc-94ca-6633e2851979).
 
-
-
 ## Examples
  The following code example is a Web Form demonstrating how to use the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol> class together with the other classes in the <xref:System.Web.Services.Discovery> namespace to programmatically invoke XML Web services discovery. The code example demonstrates using the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Discover*>, <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.DiscoverAny*>, <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Discover*>, <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll*>, <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveOneLevel*>, <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ReadAll*> and <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.WriteAll*> methods.
 
@@ -91,8 +89,6 @@
 ## Remarks
  The <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.AdditionalInformation> property primarily contains SOAP bindings, represented by the <xref:System.Web.Services.Discovery.SoapBinding> class, defined in the discovery document.
 
-
-
 ## Examples
  [!code-cpp[DiscoveryClientProtocol_AdditionalInformation#1](~/snippets/cpp/VS_Snippets_Remoting/DiscoveryClientProtocol_AdditionalInformation/CPP/discoveryclientprotocol_additionalinformation.cpp#1)]
  [!code-csharp[DiscoveryClientProtocol_AdditionalInformation#1](~/snippets/csharp/System.Web.Services.Discovery/DiscoveryClientProtocol/AdditionalInformation/discoveryclientprotocol_additionalinformation.cs#1)]
@@ -133,8 +129,6 @@
  The <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Discover*> method expects that the supplied URL is a discovery document. If the URL refers to a service description or an XML schema an exception is thrown. To discover an XML schema or a service description invoke the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.DiscoverAny*> method.
 
  If the supplied URL points to a valid discovery document, the discovery document at the supplied URL is added to the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Documents*> and <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.References*> collection. Additionally, references within the discovery document are added to the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.References*> collection, but not verified to point to valid discovery documents. To verify the references, point to valid discovery documents to invoke the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll*> or <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveOneLevel*> methods.
-
-
 
 ## Examples
  The following code example is a Web Form that populates a <xref:System.Web.UI.WebControls.DataGrid> with the details about the documents in the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Documents> property together with the references found in each document during XML Web services discovery. The `PopulateGrid` method fills the <xref:System.Web.UI.WebControls.DataGrid> with the results from a <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Discover*> invocation followed by a call to <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll*>.
@@ -180,8 +174,6 @@
 
  If the supplied URL points to a valid discovery document, XSD schema, or service description, the discovery document at the supplied URL is added to the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Documents*> and <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.References*> collections. When the supplied URL refers to an XSD schema or Service Description a <xref:System.Web.Services.Discovery.DiscoveryDocument> is created in memory and added to the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Documents*> and <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.References*> collections. Additionally, references within the discovery document are added to the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.References*> collection, but not verified to point to valid discovery documents. To verify that references point to valid discovery documents, invoke the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll*> or <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveOneLevel*> methods.
 
-
-
 ## Examples
  The following code example is a Web Form that populates a <xref:System.Web.UI.WebControls.DataGrid> with the details about the documents in the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Documents> property together with the references found in each document during an XML Web services discovery. The `PopulateGrid` method fills the <xref:System.Web.UI.WebControls.DataGrid> with the results from a <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.DiscoverAny*> invocation followed by a call to <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll*>.
 
@@ -219,8 +211,6 @@
 
 ## Remarks
  The <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Documents*> collection is populated during invocations to the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Discover*>, <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.DiscoverAny*>, <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll*> and <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveOneLevel*> methods. During invocations to the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Discover*> and <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.DiscoverAny*> methods, if the supplied URL is a valid discovery document, that document is added to the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Documents*> collection. During invocations to the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll*> and <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveOneLevel*> methods, valid discovery document references in the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.References*> collection are added to the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Documents*> collection.
-
-
 
 ## Examples
  The following code example is a Web Form that populates a <xref:System.Web.UI.WebControls.DataGrid> with the details about the documents in the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Documents> property discovered during XML Web services discovery. The `PopulateGrid` method fills the <xref:System.Web.UI.WebControls.DataGrid> with the results from a <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.DiscoverAny*> invocation followed by a call to <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll*>.
@@ -352,8 +342,6 @@
 ## Remarks
  The <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Errors*> collection is populated with exceptions that occurred during invocations to the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Discover*>, <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.DiscoverAny*>, <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll*>, and <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveOneLevel*> methods. The <xref:System.Web.Services.Discovery.DiscoveryExceptionDictionary> is cleared on invocation of these methods.
 
-
-
 ## Examples
  [!code-cpp[DiscoveryClientProtocol_Errors#1](~/snippets/cpp/VS_Snippets_Remoting/DiscoveryClientProtocol_Errors/CPP/discoveryclientprotocol_errors.cpp#1)]
  [!code-csharp[DiscoveryClientProtocol_Errors#1](~/snippets/csharp/System.Web.Services.Discovery/DiscoveryClientProtocol/Errors/discoveryclientprotocol_errors.cs#1)]
@@ -428,8 +416,6 @@
 
  The `topLevelFilename` parameter must include the fully qualified path if the file does not exist in the current directory.
 
-
-
 ## Examples
  The following code example is a Web Form that populates a <xref:System.Web.UI.WebControls.DataGrid> with the details about the documents and references found in an existing discovery map document using the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ReadAll*> method.
 
@@ -465,8 +451,6 @@
 
 ## Remarks
  The <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.References*> collection is populated during invocations to the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Discover*>, <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.DiscoverAny*>, <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll*> and <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveOneLevel*> methods. During invocations to the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Discover*> and <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.DiscoverAny*> methods, if the supplied URL is a valid discovery document, that document is added to the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.References*> collection together with references found in the discovery document. References added during invocations to the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Discover*> and <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.DiscoverAny*> methods are not necessarily valid discovery documents. During invocations to <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll*> and <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveOneLevel*> references within the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.References*> collection are verified as being valid discovery documents. If they are valid and contain references, they are also added to the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.References*> collection.
-
-
 
 ## Examples
  The following code example is a Web Form that populates a <xref:System.Web.UI.WebControls.DataGrid> with the details about the references in the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.References> property discovered during an XML Web services discovery. The `PopulateGrid` method fills the <xref:System.Web.UI.WebControls.DataGrid> with the references found in an invocation to <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.DiscoverAny*>.
@@ -509,8 +493,6 @@
 
  Errors occurring during the verification process done by <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll*> are not thrown at the time of occurrence, but rather collected and added to the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Errors> property.
 
-
-
 ## Examples
  The following code example is a Web Form that populates a <xref:System.Web.UI.WebControls.DataGrid> with the details about the documents in the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Documents> property together with the references found in each document during an XML Web services discovery. The `PopulateGrid` method fills the <xref:System.Web.UI.WebControls.DataGrid> with the results from a <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.DiscoverAny*> invocation followed by a call to <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll*>.
 
@@ -548,8 +530,6 @@
  <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveOneLevel*> resolves all valid references it finds and places them in the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Documents> property. Both <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll*> and <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveOneLevel*> download and verify XSD schemas and service descriptions in the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.References> property. However, the two methods differ in how they handle discovery documents. <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveOneLevel*> resolves all references in discovery documents within the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.References> property. If a discovery document contains references to other discovery documents, <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveOneLevel*> resolves just those discovery documents. Discovery documents found in those discovery documents nested one level deep are not resolved by <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveOneLevel*>; whereas <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll*> resolve them all. <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll*> continues to resolve references in nested discovery documents until there are no more references.
 
  Errors occurring during the verification process done by <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveOneLevel*> are not thrown at the time of occurrence, but rather collected and added to the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Errors> property.
-
-
 
 ## Examples
  The following code example is a Web Form that populates a <xref:System.Web.UI.WebControls.DataGrid> with the details about the documents in the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Documents> property together with the references found in each document during an XML Web services discovery. The `PopulateGrid` method fills the <xref:System.Web.UI.WebControls.DataGrid> with the results from a <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.DiscoverAny*> invocation followed by a call to <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveOneLevel*>.
@@ -594,8 +574,6 @@
  The file created with the name of the `topLevelFilename` parameter in the directory specified by the directory parameter contains a map of saved discovery documents, XML Schema Definition (XSD) schemas and service descriptions. This file can be read in using the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ReadAll*> method to populate the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.References*> and <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Documents*> properties. The format of the file is XML containing an serialized version of the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.DiscoveryClientResultsFile> class.
 
  If a file exists with the same name as the `topLevelFilename` parameter in the `directory` parameter, that file is overwritten by the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.WriteAll*> method. The `topLevelFilename` parameter must include the fully qualified path if the file does not exist in the current directory.
-
-
 
 ## Examples
  The following code example is a Web Form that writes the results of a Web Services discovery to disk by invoking the <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.WriteAll*> method after calls to <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.DiscoverAny*> and <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll*>.

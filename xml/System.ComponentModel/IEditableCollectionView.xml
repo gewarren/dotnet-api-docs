@@ -29,8 +29,6 @@
 
  The types <xref:System.Windows.Controls.ItemCollection>, <xref:System.Windows.Data.BindingListCollectionView>, and <xref:System.Windows.Data.ListCollectionView> are the types that ship with Windows Presentation Foundation (WPF) that inherit from <xref:System.Windows.Data.CollectionView>.  These types also implement the <xref:System.ComponentModel.IEditableCollectionView>, so you can edit a collection that uses one of those types.  <xref:System.Windows.Controls.ItemCollection>, in particular, is often used because the <xref:System.Windows.Controls.ItemsControl.Items?displayProperty=nameWithType> property is an <xref:System.Windows.Controls.ItemCollection>.
 
-
-
 ## Examples
  The following example shows how to add an item to a collection by using methods that are defined by <xref:System.ComponentModel.IEditableCollectionView>.  This application displays a list of items for sale and gives the user the option of adding, editing, or removing an item.  When the user adds or edits an item, a form prompts the user to enter a new item.  If the user submits the form, the item is committed to the collection.  If the user cancels the form, the item is discarded. For the entire sample, see [Changing a Collection by Using IEditableCollectionView Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Data%20Binding/EditingCollections).
 
@@ -73,8 +71,6 @@
 
 ## Remarks
  Calling <xref:System.ComponentModel.IEditableCollectionView.AddNew*> begins an add transaction.  You should call <xref:System.ComponentModel.IEditableCollectionView.CommitNew*> or <xref:System.ComponentModel.IEditableCollectionView.CancelNew*> to end the add transaction. A new item always appears in the collection view. Any filtering, sorting, or grouping that is applied to the view is applied to the new item when <xref:System.ComponentModel.IEditableCollectionView.CommitNew*> is called.
-
-
 
 ## Examples
  The following example creates a <xref:System.Windows.Window> that prompts the user to add a new item.  Then it calls <xref:System.ComponentModel.IEditableCollectionView.AddNew*> to create a new object and sets the <xref:System.Windows.FrameworkElement.DataContext*> of the <xref:System.Windows.Window> to that object. For the entire sample, see [Changing a Collection by Using IEditableCollectionView Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Data%20Binding/EditingCollections).
@@ -123,8 +119,6 @@
 
 - The <xref:System.ComponentModel.IEditableCollectionView> can create an object of the type that is in the collection.  For example, if the collection is of type <xref:System.Collections.ObjectModel.ObservableCollection`1>, the <xref:System.ComponentModel.IEditableCollectionView> must be able to create an object of type `T`.
 
-
-
 ## Examples
  The following example checks whether an item can be added to the collection.  If <xref:System.ComponentModel.IEditableCollectionView.CanAddNew*> is `false`, the example tells the user that an item cannot be added.  Otherwise, it shows a form that prompts the user to add a new item. For the entire sample, see [Changing a Collection by Using IEditableCollectionView Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Data%20Binding/EditingCollections) .
 
@@ -168,8 +162,6 @@
 ## Remarks
  <xref:System.ComponentModel.IEditableCollectionView.CanCancelEdit*> is `true` if the view supports the notion of "pending changes" on the currently edited item.   For example, a collection view might return `true` if the edited item implements <xref:System.ComponentModel.IEditableObject>, or if the view has information about the item's state that it can use to roll back changes. <xref:System.ComponentModel.IEditableCollectionView.CanCancelEdit*> is `false` if the view cannot revert changes on an object.  In that case, call <xref:System.ComponentModel.IEditableCollectionView.CancelEdit*> to cause the view to exit the edit state and provide logic to revert the changes on the object that was edited.
 
-
-
 ## Examples
  The following example gets <xref:System.ComponentModel.IEditableCollectionView.CanCancelEdit*> to check whether the original values of the edited item can be restored before it calls <xref:System.ComponentModel.IEditableCollectionView.CancelEdit*>.  If the values cannot be restored, you must supply additional logic to do so.  If they can be, the values are restored when the example calls <xref:System.ComponentModel.IEditableCollectionView.CancelEdit*>.   For the entire sample, see [Changing a Collection by Using IEditableCollectionView Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Data%20Binding/EditingCollections).
 
@@ -211,8 +203,6 @@
 
 ## Remarks
  <xref:System.ComponentModel.IEditableCollectionView.CancelEdit*> sets <xref:System.ComponentModel.IEditableCollectionView.CurrentEditItem*> to `null` and causes the collection view to exit the edit state.  If <xref:System.ComponentModel.IEditableCollectionView.CanCancelEdit*> is `true`, <xref:System.ComponentModel.IEditableCollectionView.CancelEdit*> also restores the original values of the edited object.
-
-
 
 ## Examples
  The following example gets <xref:System.ComponentModel.IEditableCollectionView.CanCancelEdit*> to check whether the original values of the edited item can be restored before it calls <xref:System.ComponentModel.IEditableCollectionView.CancelEdit*>.  If the values cannot be restored, you must supply additional logic to do so.  If they can be, the values are restored when the example calls <xref:System.ComponentModel.IEditableCollectionView.CancelEdit*>. For the entire sample, see [Changing a Collection by Using IEditableCollectionView Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Data%20Binding/EditingCollections).
@@ -296,8 +286,6 @@
 ## Remarks
  <xref:System.ComponentModel.IEditableCollectionView.CanRemove*> is `false` if the underlying collection is read-only.
 
-
-
 ## Examples
  The following example calls <xref:System.ComponentModel.IEditableCollectionView.CanRemove*> to check whether an item can be removed from the collection.  If an item can be removed, the example prompts the user to confirm the action and calls <xref:System.ComponentModel.IEditableCollectionView.Remove*> if the user clicks **Yes**. For the entire sample, see [Changing a Collection by Using IEditableCollectionView Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Data%20Binding/EditingCollections).
 
@@ -378,8 +366,6 @@
 
 ## Remarks
  Any filtering, sorting, or grouping that is applied to the <xref:System.Windows.Data.CollectionView> is applied to the new item when <xref:System.ComponentModel.IEditableCollectionView.CommitNew*> is called.
-
-
 
 ## Examples
  The following example displays a form that prompts the user to add a new item.  If the user submits the form, the example calls <xref:System.ComponentModel.IEditableCollectionView.CommitNew*> to add the item to the collection.  If the user cancels the form, the example calls <xref:System.ComponentModel.IEditableCollectionView.CancelNew*> to discard the item. For the entire sample, see [Changing a Collection by Using IEditableCollectionView Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Data%20Binding/EditingCollections).
@@ -628,8 +614,6 @@
 
 ## Remarks
  If `item` is not in the collection, <xref:System.ComponentModel.IEditableCollectionView.Remove*> does nothing.
-
-
 
 ## Examples
  The following example calls <xref:System.ComponentModel.IEditableCollectionView.CanRemove*> to check whether an item can be removed from the collection.  If an item can be removed, the example prompts the user to confirm the action and calls <xref:System.ComponentModel.IEditableCollectionView.Remove*> if the user clicks **Yes**. For the entire sample, see [Changing a Collection by Using IEditableCollectionView Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Data%20Binding/EditingCollections).

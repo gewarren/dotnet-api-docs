@@ -25,8 +25,6 @@
 
  `[ControlBuilderAttribute(typeof(ControlBuilderType))]`
 
-
-
 ## Examples
  The following code example creates a <xref:System.Web.UI.WebControls.Table> control whose attributes and content are defined at the time the table is built. The following is the command line to use to build the executable.
 
@@ -121,8 +119,6 @@ csc /t:library /out:myWebAppPath/Bin/cs_mycontrolbuilder.dll myControlBuilder.cs
 
  This method is called by the ASP.NET page framework during parsing and is not intended to be called directly in you code.
 
-
-
 ## Examples
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_WebNet/ControlBuilderSamples_1/CS/ctrlbuilder_1.cs" id="Snippet4":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/ControlBuilderSamples_1/VB/ctrlbuilder_1.vb" id="Snippet4":::
@@ -162,8 +158,6 @@ csc /t:library /out:myWebAppPath/Bin/cs_mycontrolbuilder.dll myControlBuilder.cs
 
 ## Remarks
  Override the <xref:System.Web.UI.ControlBuilder.AppendLiteralString*> method to control how literal content between the control's opening and closing tags is processed. Literal content can be any text that is passed by the browser to the server control. For example, any HTML elements and text, between their opening and closing tags, are literal content.
-
-
 
 ## Examples
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_WebNet/ControlBuilderSamples_1/CS/ctrlbuilder_1.cs" id="Snippet3":::
@@ -585,8 +579,6 @@ csc /t:library /out:myWebAppPath/Bin/cs_mycontrolbuilder.dll myControlBuilder.cs
 ## Remarks
  This method is called by the ASP.NET page framework during parsing and is not intended to be called directly in you code.
 
-
-
 ## Examples
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_WebNet/ControlBuilderSamples_1/CS/ctrlbuilder_1.cs" id="Snippet2":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/ControlBuilderSamples_1/VB/ctrlbuilder_1.vb" id="Snippet2":::
@@ -708,8 +700,6 @@ csc /t:library /out:myWebAppPath/Bin/cs_mycontrolbuilder.dll myControlBuilder.cs
 ## Remarks
  This method is called by the ASP.NET page framework during parsing and is not intended to be called directly in you code.
 
-
-
 ## Examples
  This example overrides the <xref:System.Web.UI.ControlBuilder.OnAppendToParentBuilder*> method to check the <xref:System.Web.UI.ControlBuilder.ControlType> property to determine what type of control this builder is applied to. If it is a `CustomTextBox`, the builder checks whether the value of the <xref:System.Web.UI.ControlBuilder.HasAspCode> property is included in the control. If so, an exception is thrown, if not the <xref:System.Web.UI.ControlBuilder.HasBody*> method is called.
 
@@ -749,8 +739,6 @@ csc /t:library /out:myWebAppPath/Bin/cs_mycontrolbuilder.dll myControlBuilder.cs
  A literal string refers to the text between the opening and closing tag of an HTML control. HTML encoding is when text is converted into a string representation that the browser will display rather than interpret as HTML. Characters such as the question mark (?), ampersand (&), slash mark (/), and spaces might be truncated or corrupted by some browsers, so those characters must be encoded when they appear in `a` tags or in query strings.
 
  The <xref:System.Web.UI.ControlBuilder.HtmlDecodeLiterals*> method is called by the ASP.NET page framework during parsing and is not intended to be called directly in you code.
-
-
 
 ## Examples
  The following example overrides the <xref:System.Web.UI.ControlBuilder.HtmlDecodeLiterals*> method to allow HTML decoding of literal strings in any control this builder is applied to.
@@ -982,8 +970,6 @@ csc /t:library /out:myWebAppPath/Bin/cs_mycontrolbuilder.dll myControlBuilder.cs
  The inner text is the text between the opening and closing tags of the control.
 
  This method is called by the ASP.NET page framework during parsing and is not intended to be called directly in you code.
-
-
 
 ## Examples
  The following example uses the <xref:System.Web.UI.ControlBuilder.InDesigner> property when the <xref:System.Web.UI.ControlBuilder.NeedsTagInnerText*> method is called. When a control has this builder attached to it, the <xref:System.Web.UI.ControlBuilder.NeedsTagInnerText*> determines whether the control is being accessed at design-time through a designer. The <xref:System.Web.UI.ControlBuilder.NeedsTagInnerText*> returns the value of the <xref:System.Web.UI.ControlBuilder.InDesigner> property, and then the <xref:System.Web.UI.ControlBuilder.SetTagInnerText*> method is called. If the <xref:System.Web.UI.ControlBuilder.InDesigner> property is set to `false`, an <xref:System.Exception> is thrown. Otherwise, the inner text of the control is returned on the <xref:System.Web.UI.ControlBuilder.SetTagInnerText*> call.
@@ -1242,8 +1228,6 @@ csc /t:library /out:myWebAppPath/Bin/cs_mycontrolbuilder.dll myControlBuilder.cs
 
 ## Remarks
  This method is called only if <xref:System.Web.UI.ControlBuilder.NeedsTagInnerText*> previously returned `true`.
-
-
 
 ## Examples
  The following example uses the <xref:System.Web.UI.ControlBuilder.InDesigner> property when the <xref:System.Web.UI.ControlBuilder.NeedsTagInnerText*> method is called. When a control has this builder attached to it, the <xref:System.Web.UI.ControlBuilder.NeedsTagInnerText*> determines whether the control is being accessed at design-time through a designer. The <xref:System.Web.UI.ControlBuilder.NeedsTagInnerText*> returns the value of the <xref:System.Web.UI.ControlBuilder.InDesigner> property, and then the <xref:System.Web.UI.ControlBuilder.SetTagInnerText*> method is called. If the <xref:System.Web.UI.ControlBuilder.InDesigner> property is set to `false`, an <xref:System.Exception> is thrown. Otherwise, the inner text of the control is returned on the <xref:System.Web.UI.ControlBuilder.SetTagInnerText*> call.

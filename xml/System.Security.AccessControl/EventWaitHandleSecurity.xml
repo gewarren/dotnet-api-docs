@@ -88,8 +88,6 @@
 
  Users with an investment in the security descriptor definition language (SDDL) can use the <xref:System.Security.AccessControl.ObjectSecurity.SetSecurityDescriptorSddlForm*> method to set access rules for a named wait handle, and the <xref:System.Security.AccessControl.ObjectSecurity.GetSecurityDescriptorSddlForm*> method to obtain a string that represents the access rules in SDDL format. This is not recommended for new development.
 
-
-
 ## Examples
  The following code example demonstrates the separation between <xref:System.Security.AccessControl.AccessControlType.Allow> rules and <xref:System.Security.AccessControl.AccessControlType.Deny> rules, and shows the combination of rights in compatible rules. The example creates an <xref:System.Security.AccessControl.EventWaitHandleSecurity> object, adds rules that allow and deny various rights for the current user, and displays the resulting pair of rules. The example then allows new rights for the current user and displays the result, showing that the new rights are merged with the existing <xref:System.Security.AccessControl.AccessControlType.Allow> rule.
 
@@ -345,8 +343,6 @@
 ## Remarks
  The <xref:System.Security.AccessControl.EventWaitHandleSecurity.AddAccessRule*> method searches for rules with the same user or group and the same <xref:System.Security.AccessControl.AccessControlType> as `rule`. If none are found, `rule` is added. If a matching rule is found, the rights in `rule` are merged with the existing rule.
 
-
-
 ## Examples
  The following code example demonstrates the separation between <xref:System.Security.AccessControl.AccessControlType.Allow> rules and <xref:System.Security.AccessControl.AccessControlType.Deny> rules, and shows the combination of rights in compatible rules. The example creates an <xref:System.Security.AccessControl.EventWaitHandleSecurity> object, adds rules that allow and deny various rights for the current user, and displays the resulting pair of rules. The example then allows new rights for the current user and displays the result, showing that the new rights are merged with the existing <xref:System.Security.AccessControl.AccessControlType.Allow> rule.
 
@@ -570,8 +566,6 @@
 > [!IMPORTANT]
 > Although you can specify inheritance and propagation flags for event access rules, by creating them with the <xref:System.Security.AccessControl.EventWaitHandleSecurity.AccessRuleFactory*> method, this is not recommended. Inheritance and propagation have no meaning for named events, and they make the maintenance of access rules more complicated.
 
-
-
 ## Examples
  The following code example demonstrates the use of the <xref:System.Security.AccessControl.EventWaitHandleSecurity.RemoveAccessRule*> method to remove rights from an <xref:System.Security.AccessControl.AccessControlType.Allow> rule in an <xref:System.Security.AccessControl.EventWaitHandleSecurity> object. It also shows that other rights in `rule` are ignored.
 
@@ -630,8 +624,6 @@
 
 ## Remarks
  The current <xref:System.Security.AccessControl.EventWaitHandleSecurity> is searched for rules that have the same user and the same <xref:System.Security.AccessControl.AccessControlType> value as `rule`. Any rights specified by `rule` are ignored when performing this search. All matching rules are removed. If no matching rules are found, no action is taken.
-
-
 
 ## Examples
  The following code example shows that the <xref:System.Security.AccessControl.EventWaitHandleSecurity.RemoveAccessRuleAll*> method removes all rules that match user and <xref:System.Security.AccessControl.AccessControlType>, ignoring rights.
@@ -694,8 +686,6 @@
 
 > [!IMPORTANT]
 > A rule represents one or more underlying access control entries (ACE), and these entries are split or combined as necessary when you modify the access security rules for a user. Thus, a rule might no longer exist in the specific form it had when it was added, and in that case the <xref:System.Security.AccessControl.EventWaitHandleSecurity.RemoveAccessRuleSpecific*> method cannot remove it.
-
-
 
 ## Examples
  The following code example shows that the <xref:System.Security.AccessControl.EventWaitHandleSecurity.RemoveAccessRuleSpecific*> method requires an exact match in order to remove a rule, and that rules to allow and deny rights are independent of each other.
@@ -908,8 +898,6 @@
 ## Remarks
  If there are no access rules whose user matches the specified rule, `rule` is added.
 
-
-
 ## Examples
  The following code example shows how the <xref:System.Security.AccessControl.EventWaitHandleSecurity.ResetAccessRule*> method replaces all rules for the matching user with the rule specified for the match.
 
@@ -970,8 +958,6 @@
  If the specified rule has <xref:System.Security.AccessControl.AccessControlType.Allow>, the effect of this method is to remove all <xref:System.Security.AccessControl.AccessControlType.Allow> rules for the specified user, replacing them with the specified rule. If the specified rule has <xref:System.Security.AccessControl.AccessControlType.Deny>, all <xref:System.Security.AccessControl.AccessControlType.Deny> rules for the specified user are replaced with the specified rule.
 
  If there are no rules whose user and <xref:System.Security.AccessControl.AccessControlType> match the specified rule, `rule` is added.
-
-
 
 ## Examples
  The following code example shows how the <xref:System.Security.AccessControl.EventWaitHandleSecurity.SetAccessRule*> method removes all rules that match both the user and the <xref:System.Security.AccessControl.AccessControlType> of `rule`, replacing them with `rule`.

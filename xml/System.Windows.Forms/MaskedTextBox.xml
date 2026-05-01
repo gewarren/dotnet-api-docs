@@ -112,8 +112,6 @@
 > [!CAUTION]
 > The <xref:System.Windows.Forms.MaskedTextBox> control does not support multiline configuration or undo functionality. However, while the members associated with these features have been retained for compatibility with the <xref:System.Windows.Forms.TextBoxBase> base class, their implementations perform no actions.
 
-
-
 ## Examples
  The following code example initializes the <xref:System.Windows.Forms.MaskedTextBox> to accept a date, and uses both the <xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected> and <xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted> events to alert the user to invalid input.
 
@@ -1313,8 +1311,6 @@
 
  This event is required to properly bind data to a <xref:System.Windows.Forms.MaskedTextBox> control.
 
-
-
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.MaskedTextBox.IsOverwriteModeChanged> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
 
@@ -1530,8 +1526,6 @@
 ## Remarks
  The <xref:System.Windows.Forms.MaskedTextBox.MaskChanged> event is raised after the value of the <xref:System.Windows.Forms.MaskedTextBox.Mask> property is changed. This event is also raised if the <xref:System.Windows.Forms.MaskedTextBox.MaskedTextProvider*> is indirectly altered by a member such as <xref:System.Windows.Forms.MaskedTextBox.Mask*>, <xref:System.Windows.Forms.MaskedTextBox.AllowPromptAsInput*>, <xref:System.Windows.Forms.MaskedTextBox.AsciiOnly*>, and <xref:System.Windows.Forms.MaskedTextBox.Culture*>.
 
-
-
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.MaskedTextBox.MaskChanged> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
 
@@ -1688,8 +1682,6 @@
 ## Remarks
  You can use the <xref:System.Windows.Forms.MaskedTextBox.MaskFull> property within the <xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected> event handler to determine if the user's input was rejected because there are no remaining inputs in the mask. To determine whether only required input elements have been entered, use the <xref:System.Windows.Forms.MaskedTextBox.MaskCompleted> property.
 
-
-
 ## Examples
  The following code example handles the <xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected> event, and uses a <xref:System.Windows.Forms.ToolTip> to alert the user if an attempt is made to enter data after all positions in the mask have been used.
 
@@ -1758,8 +1750,6 @@
  If a string was assigned to the control that causes <xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected> to occur, no part of the string will appear in <xref:System.Windows.Forms.MaskedTextBox>.
 
  The default handling for <xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected> will play a beep sound if the <xref:System.Windows.Forms.MaskedTextBox.BeepOnError> property is set to `true`. This event is often handled to implement custom error handling, for example, to move to the next user input control if the mask is full, or to display a custom error dialog box or ToolTip if the input character is invalid.
-
-
 
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
@@ -3049,8 +3039,6 @@
 
  <xref:System.Windows.Forms.MaskedTextBox> will raise the <xref:System.Windows.Forms.Control.TextChanged> event whenever the formatted text value changes. Different properties may or may not cause this value to change. For example, changing the <xref:System.Windows.Forms.MaskedTextBox.PasswordChar> property will not raise the <xref:System.Windows.Forms.Control.TextChanged> event, but changing the <xref:System.Windows.Forms.MaskedTextBox.Mask> property will.
 
-
-
 ## Examples
  The following code example demonstrates the use of the <xref:System.Windows.Forms.MaskedTextBox.Text> property.
 
@@ -3159,8 +3147,6 @@
 
 ## Remarks
  The <xref:System.Windows.Forms.MaskedTextBox.TextAlignChanged> event is raised after the <xref:System.Windows.Forms.MaskedTextBox.TextAlign> property is changed.
-
-
 
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.MaskedTextBox.TextAlignChanged> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
@@ -3366,8 +3352,6 @@
 5.  If the event is not canceled in step 3, the standard control validation event <xref:System.Windows.Forms.Control.Validated> is raised.
 
  If the <xref:System.Windows.Forms.TypeValidationEventArgs.Cancel> property is set to `true` in the <xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted> event handler, the event will be canceled and the <xref:System.Windows.Forms.MaskedTextBox> control retains focus, unless the subsequent <xref:System.Windows.Forms.Control.Validating> event sets its version of the <xref:System.ComponentModel.CancelEventArgs.Cancel?displayProperty=nameWithType> property back to `false`.
-
-
 
 ## Examples
  The following code example attempts to parse the user's input as a valid <xref:System.DateTime> object. If it fails, the <xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted> event handler displays an error message to the user. If the value is a valid <xref:System.DateTime>, the code verifies that the date supplied is not prior to today's date. This code example requires  that your Windows Forms project contains a <xref:System.Windows.Forms.MaskedTextBox> control named `MaskedTextBox1` and a <xref:System.Windows.Forms.ToolTip> control named `ToolTip1`.
@@ -3600,8 +3584,6 @@ maskedTextBox1.Mask = "99/99/9999";
  `public static Object Parse(string)`
 
  `public static Object Parse(string, IFormatProvider)`
-
-
 
 ## Examples
  The following code example attempts to parse the user's input as a valid <xref:System.DateTime>. If it fails, the <xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted> event handler displays an error message to the user. If the value is a valid <xref:System.DateTime>, the code performs an additional check to ensure that the date supplied is not prior to today's date. This code example requires that your Windows Forms project contains a <xref:System.Windows.Forms.MaskedTextBox> control named `MaskedTextBox1` and a <xref:System.Windows.Forms.ToolTip> control named `ToolTip1`.

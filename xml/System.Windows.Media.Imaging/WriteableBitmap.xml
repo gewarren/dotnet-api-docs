@@ -51,8 +51,6 @@
 
  When updates are sent to the rendering thread, the rendering thread copies the changed rectangles from the back buffer to the front buffer. The rendering system controls this exchange to avoid deadlocks and redraw artifacts, such as "tearing".
 
-
-
 ## Examples
  The following example demonstrates how a <xref:System.Windows.Media.Imaging.WriteableBitmap> can be used as the source of an <xref:System.Windows.Controls.Image> to draw pixels when the mouse moves.
 
@@ -212,8 +210,6 @@
  When you call this method multiple times, the changed areas are accumulated in a sufficient, but not necessarily minimal, representation. For efficiency, only the areas that are marked as dirty are guaranteed to be copied forward to the front buffer. However, any portion of the bitmap may be copied forward, so you must ensure that the entire back buffer is always valid.
 
  Call the <xref:System.Windows.Media.Imaging.WriteableBitmap.AddDirtyRect*> method only between calls to the <xref:System.Windows.Media.Imaging.WriteableBitmap.Lock*> and <xref:System.Windows.Media.Imaging.WriteableBitmap.Unlock*> methods, as described in the <xref:System.Windows.Media.Imaging.WriteableBitmap> class remarks.
-
-
 
 ## Examples
  The following code example shows how to specify the area of the back buffer that changed by using the <xref:System.Windows.Media.Imaging.WriteableBitmap.AddDirtyRect*> method.
@@ -664,8 +660,6 @@
 
  The UI thread can block when the render thread acquires a lock on the back buffer to copy it forward to the front buffer. If the latency from this block is too long, use the <xref:System.Windows.Media.Imaging.WriteableBitmap.TryLock*> method to wait for a short time and then unblock the UI thread to perform other tasks while the back buffer is locked.
 
-
-
 ## Examples
  The following code example shows how to reserve the back buffer by using the <xref:System.Windows.Media.Imaging.WriteableBitmap.Lock*> method.
 
@@ -766,8 +760,6 @@
 ## Remarks
  The <xref:System.Windows.Media.Imaging.WriteableBitmap.Unlock*> method decrements the lock count. When the lock count reaches 0, a render pass is requested if the <xref:System.Windows.Media.Imaging.WriteableBitmap.AddDirtyRect*> method has been called.
 
-
-
 ## Examples
  The following code example shows how to release the back buffer by using the <xref:System.Windows.Media.Imaging.WriteableBitmap.Unlock*> method.
 
@@ -838,8 +830,6 @@
 
 > [!NOTE]
 > In partial trust, use the <xref:System.Windows.Media.Imaging.WriteableBitmap.WritePixels(System.Windows.Int32Rect,System.Array,System.Int32,System.Int32,System.Int32)> overload.
-
-
 
 ## Examples
  The following code example shows how to update a pixel in the back buffer by using the <xref:System.Windows.Media.Imaging.WriteableBitmap.WritePixels*> method.

@@ -67,8 +67,6 @@
 
  Any data returned by the request, such as the list of file names returned for a <xref:System.Net.WebRequestMethods.Ftp.ListDirectory> request, is available in the stream returned by the <xref:System.Net.FtpWebResponse.GetResponseStream*> method. The length of the stream data can be obtained from the <xref:System.Net.FtpWebResponse.ContentLength> property.
 
-
-
 ## Examples
  The following code example sends a request to delete a file on an FTP server and displays the status message from the server's response to the request. For additional examples, see the members of the <xref:System.Net.WebRequestMethods.Ftp> and <xref:System.Net.FtpWebRequest> classes.
 
@@ -194,8 +192,6 @@
 > [!NOTE]
 > This member outputs trace information when you enable network tracing in your application. For more information, see [Network Tracing in the .NET Framework](/dotnet/framework/network-programming/network-tracing).
 
-
-
 ## Examples
  The following code example downloads data from a server, reads the data from the response stream, and then closes it.
 
@@ -256,8 +252,6 @@
  When a response stream is returned by the FTP server, the <xref:System.Net.FtpWebResponse.ContentLength> property contains the number of bytes in the stream. <xref:System.Net.FtpWebResponse.ContentLength*> returns −1 if no data was returned in the response or if the server did not send content length information. The return value is greater than or equal to zero if data was or should have been returned. For example, for requests that use the <xref:System.Net.WebRequestMethods.Ftp.ListDirectory> field, the <xref:System.Net.FtpWebResponse.ContentLength> property always returns −1. For requests that use the <xref:System.Net.WebRequestMethods.Ftp.UploadFile> method, the <xref:System.Net.FtpWebResponse.ContentLength> property is always zero. For requests that use the <xref:System.Net.WebRequestMethods.Ftp.DownloadFile> method, the property is greater than zero if the downloaded file contained data and is zero if it was empty.
 
  For requests that use the <xref:System.Net.WebRequestMethods.Ftp.GetFileSize> method, <xref:System.Net.FtpWebResponse.ContentLength*> returns the size of the specified file on the server.
-
-
 
 ## Examples
  The following code example downloads a file from on the specified FTP server. This property contains the number of bytes in the downloaded file.
@@ -364,8 +358,6 @@ This property is provided only for compatibility with other implementations of t
 ## Remarks
  The <xref:System.Net.FtpWebResponse.ExitMessage> property is not available until the connection to the server is closed or reused. If the <xref:System.Net.FtpWebRequest.KeepAlive> property is `true`, the connection used by this request is not closed, which prevents the server from sending an exit message.
 
-
-
 ## Examples
  The following code example displays the value of this property.
 
@@ -429,8 +421,6 @@ This property is provided only for compatibility with other implementations of t
  After reading the data, you must close the stream. The stream is automatically closed when you close the <xref:System.Net.FtpWebResponse> object that contains it.
 
  An exception is thrown unless the request method is <xref:System.Net.WebRequestMethods.Ftp.DownloadFile> or <xref:System.Net.WebRequestMethods.Ftp.ListDirectory>.
-
-
 
 ## Examples
  The following code example demonstrates getting the response stream for a <xref:System.Net.WebRequestMethods.Ftp.ListDirectory> request.
@@ -553,8 +543,6 @@ This property is provided only for compatibility with other implementations of t
 ## Remarks
  The <xref:System.Net.FtpWebResponse.LastModified> property returns the data requested by the <xref:System.Net.WebRequestMethods.Ftp.GetDateTimestamp> method. For requests sent using any other method, <xref:System.Net.FtpWebResponse.LastModified*> returns <xref:System.DateTime.MinValue>.
 
-
-
 ## Examples
  The following code example displays the date and time that a file on an FTP server was last modified.
 
@@ -622,8 +610,6 @@ This property is provided only for compatibility with other implementations of t
 
  For requests that use the <xref:System.Net.WebRequestMethods.Ftp.UploadFileWithUniqueName> method, <xref:System.Net.FtpWebResponse.ResponseUri*> returns the name of the file on the server.
 
-
-
 ## Examples
  The following code example displays the value of this property.
 
@@ -682,8 +668,6 @@ This property is provided only for compatibility with other implementations of t
 
 ## Remarks
  The value returned by the <xref:System.Net.FtpWebResponse.StatusCode> property is included in the <xref:System.Net.FtpWebResponse.StatusDescription> property. When you are downloading data, the value of <xref:System.Net.FtpWebResponse.StatusCode*> changes as status codes are returned by the FTP server. After you call the <xref:System.Net.FtpWebRequest.GetResponse*> method, <xref:System.Net.FtpWebResponse.StatusCode*> contains an intermediate status code. When you call the <xref:System.Net.FtpWebResponse.Close*> method, <xref:System.Net.FtpWebResponse.StatusCode*> contains the final status.
-
-
 
 ## Examples
  The following code example uploads a file to a server and displays the status.
@@ -744,8 +728,6 @@ This property is provided only for compatibility with other implementations of t
 
 ## Remarks
  The text returned by the <xref:System.Net.FtpWebResponse.StatusDescription> property includes the 3-digit <xref:System.Net.FtpWebResponse.StatusCode> property value. When downloading data, the value of <xref:System.Net.FtpWebResponse.StatusDescription*> changes as status codes are returned by the FTP server. After you call the <xref:System.Net.FtpWebRequest.GetResponse*> method, <xref:System.Net.FtpWebResponse.StatusDescription*> contains an intermediate status code. When you call the <xref:System.Net.FtpWebResponse.Close*> method, <xref:System.Net.FtpWebResponse.StatusDescription*> contains the final status.
-
-
 
 ## Examples
  The following code example sends a request to delete a file on an FTP server and displays the status message from the server's response to the request.
@@ -861,8 +843,6 @@ This property is provided only for compatibility with other implementations of t
 
 ## Remarks
  If the connection is being reused (the <xref:System.Net.FtpWebRequest.KeepAlive> property is set to `true`), the <xref:System.Net.FtpWebResponse.WelcomeMessage> property returns the first welcome message received with the connection.
-
-
 
 ## Examples
  The following code example displays the value of this property.

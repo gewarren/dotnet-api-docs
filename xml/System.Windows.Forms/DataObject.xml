@@ -79,8 +79,6 @@ The <xref:System.Windows.Forms.DataObject> class provides additional methods tha
 >
 > An object must be serializable for it to be put on the Clipboard. See <xref:System.Runtime.Serialization> for more information on serialization. If your target application requires a very specific data format, the headers added to the data in the serialization process may prevent the application from recognizing your data. To preserve your data format, add your data as a <xref:System.Byte> array to a <xref:System.IO.MemoryStream> and pass the <xref:System.IO.MemoryStream> to the <xref:System.Windows.Forms.DataObject.SetData*> method.
 
-
-
 ## Examples
  The following code example adds data in a <xref:System.Windows.Forms.DataObject>. First, a new <xref:System.Windows.Forms.DataObject> is created and a component is stored in it. Then, it checks to see if data in the appropriate type exists in the <xref:System.Windows.Forms.DataObject>. The result is displayed in a text box. This code requires that `textBox1` has been created.
 
@@ -183,8 +181,6 @@ The <xref:System.Windows.Forms.DataObject> class provides additional methods tha
 ## Remarks
 
 You can add data in any format to the <xref:System.Windows.Forms.DataObject> when you use this constructor, or you can add data as an <xref:System.Windows.Forms.IDataObject> to provide multiple formats at once. If you are familiar with COM programming, you can also add a data object that implements the COM `IDataObject` interface. For more information, see [IDataObject](/windows/win32/api/objidl/nn-objidl-idataobject).
-
-
 
 ## Examples
  The following code example creates a <xref:System.Windows.Forms.DataObject> that contains a string. The data is retrieved using its data format. The results are displayed in a text box. This code requires that `textBox1` has been created.
@@ -594,8 +590,6 @@ You can add data in any format to the <xref:System.Windows.Forms.DataObject> whe
 >
 > When `format` is <xref:System.Windows.Forms.DataFormats.Html>, this method returns a UTF-8 encoded string in applications that target .NET 4.5 or higher, and an ANSI encoded string in applications that target .NET 4.0 or lower.
 
-
-
 ## Examples
  The following code example retrieves the data stored in a <xref:System.Windows.Forms.DataObject>. First, a new <xref:System.Windows.Forms.DataObject> is created with text data. Then, the data is retrieved, specifying its format as a string, and displayed in a text box.
 
@@ -664,8 +658,6 @@ You can add data in any format to the <xref:System.Windows.Forms.DataObject> whe
 
 > [!NOTE]
 > Data can be converted to another format if it was stored specifying that conversion is allowed, and if the requested format is compatible with the stored format. For example, data stored as Unicode can be converted to text.
-
-
 
 ## Examples
  The following code example retrieves the data stored in a <xref:System.Windows.Forms.DataObject>. First, a new <xref:System.Windows.Forms.DataObject> is created with a component. Then, the data is retrieved, specifying its type. The type of the retrieved data is displayed in a text box.
@@ -743,8 +735,6 @@ You can add data in any format to the <xref:System.Windows.Forms.DataObject> whe
 > Data can be converted to another format if it was stored specifying that conversion is allowed, and if the requested format is compatible with the stored format. For example, data stored as Unicode can be converted to text.
 >
 > When `format` is <xref:System.Windows.Forms.DataFormats.Html>, this method returns a UTF-8 encoded string in applications that target .NET 4.5 or higher, and an ANSI encoded string in applications that target .NET 4.0 or lower.
-
-
 
 ## Examples
  The following code example retrieves the data stored in a <xref:System.Windows.Forms.DataObject>, using the `autoConvert` parameter to specify whether to convert the data format.
@@ -827,8 +817,6 @@ You can add data in any format to the <xref:System.Windows.Forms.DataObject> whe
 > [!NOTE]
 > If no data can be retrieved, no exception will be thrown. Instead, `false` will be returned.
 
-
-
 ## Examples
  The following code example determines whether data currently stored in this <xref:System.Windows.Forms.DataObject> is associated with, or can be converted to, a specified format. A new <xref:System.Windows.Forms.DataObject> is initialized with a string and its associated format specified as text.
 
@@ -890,8 +878,6 @@ You can add data in any format to the <xref:System.Windows.Forms.DataObject> whe
 
 > [!NOTE]
 > If no data can be retrieved, no exception will be thrown. Instead, `false` will be returned.
-
-
 
 ## Examples
  The following code example determines whether data of the specified type exists in a <xref:System.Windows.Forms.DataObject>, or whether the data can be converted to the specified type. The result is displayed in a text box. The code requires that `textBox1` has been created.
@@ -970,8 +956,6 @@ You can add data in any format to the <xref:System.Windows.Forms.DataObject> whe
 
 > [!NOTE]
 > If no data can be retrieved, no exception will be thrown. Instead, `false` will be returned.
-
-
 
 ## Examples
  The following code example determines whether data currently stored in the <xref:System.Windows.Forms.DataObject> is associated with a specified format. First, a new <xref:System.Windows.Forms.DataObject> is initialized with a string, specifying its format as text.
@@ -1094,8 +1078,6 @@ You can add data in any format to the <xref:System.Windows.Forms.DataObject> whe
 > [!NOTE]
 > Data can be converted to another format if it was stored specifying that conversion is allowed and if the requested format is compatible with the stored format. For example, data stored as Unicode can be converted to text.
 
-
-
 ## Examples
  The following code example queries a <xref:System.Windows.Forms.DataObject> for the formats associated with its data, and the formats that the data can be converted to. The resulting list is displayed in a text box. This code requires that `textBox1` has been created.
 
@@ -1154,8 +1136,6 @@ You can add data in any format to the <xref:System.Windows.Forms.DataObject> whe
 
 > [!NOTE]
 > Data can be converted to another format if it was stored specifying that conversion is allowed and if the requested format is compatible with the stored format. For example, data stored as Unicode can be converted to text.
-
-
 
 ## Examples
  The following code example queries a <xref:System.Windows.Forms.DataObject> for the formats associated with its data. The first query specifies the `autoConvert` parameter as `false`, so only the native format of the data is returned. The second query specifies the `autoConvert` parameter as `true`, so the list of formats includes the formats that the data can be converted to.
@@ -1479,8 +1459,6 @@ You can add data in any format to the <xref:System.Windows.Forms.DataObject> whe
 
  The <xref:System.Windows.Forms.DataObject.SetData(System.Object)> overload stores the `data` value in a format that it determines by calling the <xref:System.Object.GetType*?displayProperty=nameWithType> method. If `data` implements the <xref:System.Runtime.Serialization.ISerializable> interface, this overload also stores the value in the <xref:System.Windows.DataFormats.Serializable> format.
 
-
-
 ## Examples
  The following code example stores data in a <xref:System.Windows.Forms.DataObject>. First, a new <xref:System.Windows.Forms.DataObject> is created and a component is stored in it. Then, the data is retrieved by specifying the class. The result is displayed in a text box.
 
@@ -1551,8 +1529,6 @@ You can add data in any format to the <xref:System.Windows.Forms.DataObject> whe
  If you do not know the format of the target application, you can store data in multiple formats using this method.
 
  Data stored using this method can be converted to a compatible format when it is retrieved.
-
-
 
 ## Examples
  The following code example stores data in a <xref:System.Windows.Forms.DataObject>, specifying its format as Unicode.
@@ -1627,8 +1603,6 @@ You can add data in any format to the <xref:System.Windows.Forms.DataObject> whe
 
  Data stored using this method can be converted to a compatible format when it is retrieved.
 
-
-
 ## Examples
  The following code example stores data in a <xref:System.Windows.Forms.DataObject> using a <xref:System.Type> as the data format. The data is then retrieved by calling <xref:System.Windows.Forms.DataObject.GetData*> using the <xref:System.Type> to specify the data format. The result is displayed in a text box.
 
@@ -1701,8 +1675,6 @@ You can add data in any format to the <xref:System.Windows.Forms.DataObject> whe
 [!INCLUDE [untrusted-data-method-note](~/includes/untrusted-data-method-note.md)]
 
  If you do not know the format of the target application, you can store data in multiple formats using this method.
-
-
 
 ## Examples
  The following code example stores data in a <xref:System.Windows.Forms.DataObject> and specifies that the data can only be retrieved in its native format.

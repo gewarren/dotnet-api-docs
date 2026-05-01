@@ -56,8 +56,6 @@
 
  Data source controls are implemented as controls to enable declarative persistence and to optionally permit participation in state management. Data source controls have no visual rendering, and therefore do not support themes.
 
-
-
 ## Examples
  The following code example demonstrates how to extend the abstract <xref:System.Web.UI.HierarchicalDataSourceControl> class and the <xref:System.Web.UI.HierarchicalDataSourceView> class, and implement the <xref:System.Web.UI.IHierarchicalEnumerable> and <xref:System.Web.UI.IHierarchyData> interfaces to create a hierarchical data source control that retrieves file system information. The `FileSystemDataSource` control enables Web server controls to bind to <xref:System.IO.FileSystemInfo> objects and display basic file system information. The `FileSystemDataSource` class in the example provides the implementation of the <xref:System.Web.UI.HierarchicalDataSourceControl.GetHierarchicalView*> method, which retrieves a `FileSystemDataSourceView` object. The `FileSystemDataSourceView` object retrieves the data from the underlying data storage, in this case the file system information on the Web server. For security purposes, file system information is displayed only if the data source control is being used in a localhost, authenticated scenario, and only starts with the virtual directory that the Web Forms page using the data source control resides in. Finally, two classes that implement <xref:System.Web.UI.IHierarchicalEnumerable> and <xref:System.Web.UI.IHierarchyData> are provided to wrap the <xref:System.IO.FileSystemInfo> objects that `FileSystemDataSource` uses.
 
@@ -408,8 +406,6 @@
 
 ## Remarks
  This <xref:System.Web.UI.HierarchicalDataSourceControl.GetHierarchicalView*> method provides the default implementation for the <xref:System.Web.UI.HierarchicalDataSourceControl> class, which simply returns `null`. Classes that derive from the <xref:System.Web.UI.HierarchicalDataSourceControl> class override this method and provide an implementation to return a strongly typed view that derives from <xref:System.Web.UI.HierarchicalDataSourceView>.
-
-
 
 ## Examples
  The following code example demonstrates how to override the <xref:System.Web.UI.HierarchicalDataSourceControl.GetHierarchicalView*> method in a class that extends the <xref:System.Web.UI.HierarchicalDataSourceControl> class to return a strongly typed <xref:System.Web.UI.HierarchicalDataSourceView> object. This code example is part of a larger example provided for the <xref:System.Web.UI.HierarchicalDataSourceControl> class.

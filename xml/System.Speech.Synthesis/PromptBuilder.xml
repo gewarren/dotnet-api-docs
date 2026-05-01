@@ -147,8 +147,6 @@ public void MySimpleText ()
 
  Two-letter language codes such as "en" are also permitted.
 
-
-
 ## Examples
  The example that follows creates a <xref:System.Speech.Synthesis.PromptBuilder> instance and specifies its <xref:System.Speech.Synthesis.PromptBuilder.Culture*>.
 
@@ -368,8 +366,6 @@ public void SimpleConcatenation()
 ## Remarks
  A speech synthesis engine will generate a <xref:System.Speech.Synthesis.SpeechSynthesizer.BookmarkReached> event if it encounters a bookmark while speaking a prompt using any of the <xref:System.Speech.Synthesis.SpeechSynthesizer.Speak*>, <xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakAsync*>, <xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakSsml*>, or <xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakSsmlAsync*> methods.
 
-
-
 ## Examples
  The following example creates a prompt that includes two bookmarks and sends the output to a WAV file for playback. The handler for the <xref:System.Speech.Synthesis.SpeechSynthesizer.BookmarkReached> event writes the name of the bookmark and its position in the audio stream when the event was raised to the console.
 
@@ -468,8 +464,6 @@ namespace SampleSynthesis
 
 ## Remarks
  This method does not specify a duration for the break. The <xref:System.Speech.Synthesis.SpeechSynthesizer> will determine a duration value based on the linguistic context.
-
-
 
 ## Examples
  The following example builds a prompt containing two sentences separated by a break and speaks the prompt to the default audio device on the computer.
@@ -627,8 +621,6 @@ namespace SampleSynthesis
 
 ## Remarks
  A break can be used to control pauses or other prosodic boundaries between words. A break is optional. If a break is not present, the synthesizer determines the break between words depending on the linguistic context.
-
-
 
 ## Examples
  The following example builds a prompt containing two sentences separated by a break of 15,000,000 ticks (1.5 seconds), and speaks the prompt to the default audio device on the computer.
@@ -801,8 +793,6 @@ namespace SampleSynthesis
  The SSML file must be an XML-format file that conforms to the [Speech Synthesis Markup Language (SSML) Version 1.0](https://go.microsoft.com/fwlink/?LinkId=201763) specification.
 
  You can also append SSML markup as a string using <xref:System.Speech.Synthesis.PromptBuilder.AppendSsmlMarkup*>.
-
-
 
 ## Examples
  The example that follows creates a <xref:System.Speech.Synthesis.PromptBuilder> object and appends the contents of an SSML file using the <xref:System.Speech.Synthesis.PromptBuilder.AppendSsml*> method.
@@ -980,8 +970,6 @@ namespace SampleSynthesis
 
  You can also append SSML markup as a string using <xref:System.Speech.Synthesis.PromptBuilder.AppendSsmlMarkup*>.
 
-
-
 ## Examples
  The following example creates a <xref:System.Speech.Synthesis.PromptBuilder> object from an <xref:System.Xml.XmlReader> object that references a file containing Speech Synthesis Markup Language (SSML) markup.
 
@@ -1140,8 +1128,6 @@ builder.AppendSsmlMarkup("<say-as interpret-as = \"characters\"> chair </say-as>
 
 ## Remarks
  To append text that is formatted as SSML markup language, use <xref:System.Speech.Synthesis.PromptBuilder.AppendSsmlMarkup*>.
-
-
 
 ## Examples
  The example that follows creates a <xref:System.Speech.Synthesis.PromptBuilder> object and appends a text string using the <xref:System.Speech.Synthesis.PromptBuilder.AppendText*> method.
@@ -1322,8 +1308,6 @@ namespace SampleSynthesis
 ## Remarks
  The <xref:System.Speech.Synthesis.PromptVolume.Default> setting for <xref:System.Speech.Synthesis.PromptVolume> is full volume, which is the same as <xref:System.Speech.Synthesis.PromptVolume.ExtraLoud>. The other settings decrease the volume of speech output relative to full volume.
 
-
-
 ## Examples
  The following example uses the <xref:System.Speech.Synthesis.PromptBuilder.AppendText*> method to specify volume settings that the <xref:System.Speech.Synthesis.SpeechSynthesizer> should apply to speech output.
 
@@ -1400,8 +1384,6 @@ namespace SampleSynthesis
 ## Remarks
  This allows a document to contain both a spoken and a written form for a prompt. For example, the written form could be an acronym, such as SAPI, and the spoken form could be the expanded text for the acronym, in this case Speech Application Programming Interface.
 
-
-
 ## Examples
  The following example appends a text string ("Speech Synthesis Markup Language") and its alias ("SSML") to a <xref:System.Speech.Synthesis.PromptBuilder> object. The synthesizer will pronounce "S S M L".
 
@@ -1453,8 +1435,6 @@ alias.AppendTextWithAlias("Speech Synthesis Markup Language","SSML");
 
 ## Remarks
  The content type specified by `sayAs` can provide guidance to the speech synthesis engine about how to pronounce the contents of `textToSpeak`.
-
-
 
 ## Examples
 
@@ -1579,8 +1559,6 @@ namespace SampleSynthesis
  Some phones in the IPA alphabet have the same representations as letters in the Latin alphabet. In those cases, it is possible to type the Latin character and have the proper representation for a phone. Because the Latin characters as commonly used in text may represent several phones of the IPA phone set, simply typing the Latin character might not result in the precise IPA phone desired. Other phones of the IPA alphabet need to be represented in code as character references consisting of an ampersand (&), the number sign (#), and a Unicode number for the desired phone in hexadecimal or decimal, all followed by a semicolon (;). For example, a schwa (&\#x0259;) would be represented by `&#x0259;`.
 
  To add new or custom pronunciations for multiple words, for example to express regional dialects or to add proper names or vocabulary that is specific to an educational or medical discipline, build a lexicon and add it to the <xref:System.Speech.Synthesis.SpeechSynthesizer> using <xref:System.Speech.Synthesis.SpeechSynthesizer.AddLexicon*>.
-
-
 
 ## Examples
  The following example initializes a new instance of the <xref:System.Speech.Synthesis.PromptBuilder> class. It then appends the text string "My name is" to the instance. Finally, it appends a string containing the proper name "DuBois" and specifies the pronunciation of the name.
@@ -1874,8 +1852,6 @@ public void ProperName()
 ## Remarks
  Long prompts can be rendered more like human speech if they are broken into sentences and paragraphs.
 
-
-
 ## Examples
  The following example creates a <xref:System.Speech.Synthesis.PromptBuilder> object, appends content, and organizes the content into paragraphs and sentences.
 
@@ -2026,8 +2002,6 @@ namespace SampleSynthesis
 ## Remarks
  Long prompts can be rendered more like human speech if they are broken into sentences and paragraphs.
 
-
-
 ## Examples
  The following example creates a <xref:System.Speech.Synthesis.PromptBuilder> object, appends content, and organizes the content into paragraphs and sentences.
 
@@ -2163,8 +2137,6 @@ namespace SampleSynthesis
 > [!NOTE]
 > -   The speech synthesis engines in Windows do not support the emphasis parameter at this time. Setting values for the emphasis parameter will produce no audible change in the synthesized speech output.
 > -   The <xref:System.Speech.Synthesis.PromptVolume.Default> setting for <xref:System.Speech.Synthesis.PromptVolume> is full volume, which is the same as <xref:System.Speech.Synthesis.PromptVolume.ExtraLoud>. The other settings decrease the volume of speech output relative to full volume.
-
-
 
 ## Examples
  The following example creates a <xref:System.Speech.Synthesis.PromptBuilder> object and appends text strings. The example uses the <xref:System.Speech.Synthesis.PromptBuilder.StartStyle*> method to specify a slow speaking rate for the string being added, which enumerates the contents of an order.
@@ -2485,8 +2457,6 @@ namespace SampleSynthesis
 
 ## Remarks
  The <xref:System.Speech.Synthesis.PromptBuilder.ToXml*> method makes no attempt to format the returned SSML in any way.
-
-
 
 ## Examples
  The following example creates a <xref:System.Speech.Synthesis.PromptBuilder> object, appends text, and then writes the SSML equivalent of the prompt to the console before speaking the contents of the prompt.

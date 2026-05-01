@@ -90,8 +90,6 @@
 
  `BufferedStream` can be composed around certain types of streams. It provides implementations for reading and writing bytes to an underlying data source or repository. Use <xref:System.IO.BinaryReader> and <xref:System.IO.BinaryWriter> for reading and writing other data types. `BufferedStream` is designed to prevent the buffer from slowing down input and output when the buffer is not needed. If you always read and write for sizes greater than the internal buffer size, then `BufferedStream` might not even allocate the internal buffer. `BufferedStream` also buffers reads and writes in a shared buffer. It is assumed that you will almost always be doing a series of reads or writes, but rarely alternate between the two of them.
 
-
-
 ## Examples
  The following code examples show how to use the `BufferedStream` class over the `NetworkStream` class to increase the performance of certain I/O operations. Start the server on a remote computer before starting the client. Specify the remote computer name as a command-line argument when starting the client. Vary the `dataArraySize` and `streamBufferSize` constants to view their effect on performance.
 
@@ -242,8 +240,6 @@
 
 ## Remarks
  A shared read/write buffer is allocated the first time a `BufferedStream` object is initialized with this constructor. The shared buffer is not used if all reads and writes are greater than or equal to `bufferSize`.
-
-
 
 ## Examples
  This code example is part of a larger example provided for the <xref:System.IO.BufferedStream> class.
@@ -543,8 +539,6 @@
 
  If the stream is closed, this property returns `false`.
 
-
-
 ## Examples
  This code example is part of a larger example provided for the <xref:System.IO.BufferedStream> class.
 
@@ -614,8 +608,6 @@
  If a class derived from <xref:System.IO.Stream> does not support seeking, calls to <xref:System.IO.BufferedStream.Length*>, <xref:System.IO.BufferedStream.SetLength*>, <xref:System.IO.BufferedStream.Position*>, and <xref:System.IO.BufferedStream.Seek*> throw a <xref:System.NotSupportedException>.
 
  If the stream is closed, this property returns `false`.
-
-
 
 ## Examples
  This code example is part of a larger example provided for the <xref:System.IO.BufferedStream> class.
@@ -687,8 +679,6 @@
  If a class derived from <xref:System.IO.Stream> does not support writing, a call to <xref:System.IO.BufferedStream.SetLength*>, <xref:System.IO.BufferedStream.Write*>, or <xref:System.IO.BufferedStream.WriteByte*> throws a <xref:System.NotSupportedException>.
 
  If the stream is closed, this property returns `false`.
-
-
 
 ## Examples
  This code example is part of a larger example provided for the <xref:System.IO.BufferedStream> class.
@@ -1164,8 +1154,6 @@ Calling `DisposeAsync` allows the resources used by the <xref:System.IO.Buffered
 
  All the read and write methods of `BufferedStream` automatically maintain the buffer, so there is no need to invoke `Flush` when switching back and forth between reading and writing.
 
-
-
 ## Examples
  This code example is part of a larger example provided for the <xref:System.IO.BufferedStream> class.
 
@@ -1489,8 +1477,6 @@ Use <xref:System.IO.BinaryReader> for reading primitive data types.
  The `Read` method will return 0 only if the end of the stream is reached. In all other cases, `Read` always reads at least one byte from the stream before returning. By definition, if no data is available from the stream upon a call to `Read`, the `Read` method returns 0 (the end of the stream is reached automatically). An implementation is free to return fewer bytes than requested even if the end of the stream has not been reached.
 
  Use <xref:System.IO.BinaryReader> for reading primitive data types.
-
-
 
 ## Examples
  This code example is part of a larger example provided for the <xref:System.IO.BufferedStream> class.

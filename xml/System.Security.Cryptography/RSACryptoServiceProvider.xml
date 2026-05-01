@@ -317,8 +317,6 @@ If no key is loaded via the <xref:System.Security.Cryptography.RSACryptoServiceP
 
  To create a key that is compatible with strong-name signing using the <xref:System.Security.Cryptography.RSACryptoServiceProvider> class, you must create a <xref:System.Security.Cryptography.KeyNumber.Signature> key pair.
 
-
-
 ## Examples
  The following code example creates an <xref:System.Security.Cryptography.RSACryptoServiceProvider> object, generates a new key, and stores it in a key container.
 
@@ -400,8 +398,6 @@ If no key is loaded via the <xref:System.Security.Cryptography.RSACryptoServiceP
  If you create an <xref:System.Security.Cryptography.RSACryptoServiceProvider> object with the <xref:System.Security.Cryptography.KeyNumber.Exchange> value specified and then create another <xref:System.Security.Cryptography.RSACryptoServiceProvider> object with the <xref:System.Security.Cryptography.KeyNumber.Signature> value specified, both keys will be placed in a single container if both objects specify the same key container name.
 
  To create a key that is compatible with strong-name signing using the <xref:System.Security.Cryptography.RSACryptoServiceProvider> class, you must create a <xref:System.Security.Cryptography.KeyNumber.Signature> key pair.
-
-
 
 ## Examples
  The following code example creates a <xref:System.Security.Cryptography.RSACryptoServiceProvider>, generates a new key, and stores it in a key container.
@@ -485,8 +481,6 @@ If no key is loaded via the <xref:System.Security.Cryptography.RSACryptoServiceP
  Use the <xref:System.Security.Cryptography.RSACryptoServiceProvider.CspKeyContainerInfo> property to retrieve additional information about a cryptographic key pair.  The returned <xref:System.Security.Cryptography.CspKeyContainerInfo> object describes whether the key is exportable, and specifies the key container name, information about the provider, and other information.
 
  In cases where a random key is generated, a key container will not be created until you call a method that uses the key.  Some properties of the <xref:System.Security.Cryptography.CspKeyContainerInfo> object returned by the <xref:System.Security.Cryptography.DSACryptoServiceProvider.CspKeyContainerInfo> property will throw a <xref:System.Security.Cryptography.CryptographicException> if a key container has not been created.  To make sure that a key container has been created, call a method such as <xref:System.Security.Cryptography.RSACryptoServiceProvider.Encrypt*>, <xref:System.Security.Cryptography.RSACryptoServiceProvider.Decrypt*>, <xref:System.Security.Cryptography.RSACryptoServiceProvider.SignData*>, <xref:System.Security.Cryptography.DSACryptoServiceProvider.SignHash*>, and so on, before you call the <xref:System.Security.Cryptography.DSACryptoServiceProvider.CspKeyContainerInfo> property.
-
-
 
 ## Examples
  The following code example demonstrates how to call the <xref:System.Security.Cryptography.CspKeyContainerInfo> property.
@@ -575,8 +569,6 @@ If no key is loaded via the <xref:System.Security.Cryptography.RSACryptoServiceP
 
 ## Remarks
  Use <xref:System.Security.Cryptography.RSACryptoServiceProvider.Encrypt*> to encrypt data for decryption with this method.
-
-
 
 ## Examples
  The following code example encrypts and decrypts data.
@@ -867,8 +859,6 @@ If no key is loaded via the <xref:System.Security.Cryptography.RSACryptoServiceP
 |Direct Encryption (PKCS#1 v1.5)|Modulus size - 11. (11 bytes is the minimum padding possible.)|
 
  Use <xref:System.Security.Cryptography.RSACryptoServiceProvider.Decrypt*> to decrypt the results of this method.
-
-
 
 ## Examples
  The following code example initializes an <xref:System.Security.Cryptography.RSACryptoServiceProvider> object to the value of a public key (sent by another party), generates a session key using the <xref:System.Security.Cryptography.Aes> algorithm, and then encrypts the session key using the <xref:System.Security.Cryptography.RSACryptoServiceProvider> object.  Using this scheme, the session key could be sent back to the owner of the private RSA key and the two parties could use the session key to exchange encrypted data.
@@ -1744,8 +1734,6 @@ The supported RSA key sizes depend on the available cryptographic service provid
 
  The <xref:System.Security.Cryptography.RSACryptoServiceProvider.PersistKeyInCsp> property has no effect if the <xref:System.Security.Cryptography.RSACryptoServiceProvider> object is created with a `null` key container name.
 
-
-
 ## Examples
  The following code example creates an <xref:System.Security.Cryptography.RSACryptoServiceProvider> object and persists the key to a key container.
 
@@ -1948,8 +1936,6 @@ The supported RSA key sizes depend on the available cryptographic service provid
 
  The `halg` parameter can accept a <xref:System.String>, a <xref:System.Security.Cryptography.HashAlgorithm>, or a <xref:System.Type>.
 
-
-
 ## Examples
  The following code example signs and verifies data.
 
@@ -2025,8 +2011,6 @@ The supported RSA key sizes depend on the available cryptographic service provid
 
 ## Remarks
  The `halg` parameter can accept a <xref:System.String>, a <xref:System.Security.Cryptography.HashAlgorithm>, or a <xref:System.Type>.
-
-
 
 ## Examples
  The following code example signs and verifies data.
@@ -2115,8 +2099,6 @@ The supported RSA key sizes depend on the available cryptographic service provid
 - The OID value. The OID must be one recognized by the Crypto API.
 
  For example, you could use SignData(new byte[5], "1.3.14.3.2.26") or SignData(new byte[5], "sha1"), or SignData(new byte[5], "SHA1").
-
-
 
 ## Examples
  The following code example signs and verifies data.
@@ -2346,8 +2328,6 @@ The supported RSA key sizes depend on the available cryptographic service provid
 ## Remarks
  Setting this property to `true` is equivalent to passing the <xref:System.Security.Cryptography.CspProviderFlags.UseMachineKeyStore> flag to a <xref:System.Security.Cryptography.CspParameters> object. The <xref:System.Security.Cryptography.RSACryptoServiceProvider.UseMachineKeyStore> property applies to all code in the current application domain, whereas the <xref:System.Security.Cryptography.CspParameters> object applies only to classes that explicitly reference it. These settings are useful when impersonating or running under an account whose user profile is not loaded. Setting <xref:System.Security.Cryptography.RSACryptoServiceProvider.UseMachineKeyStore*> affects the key store location only if <xref:System.Security.Cryptography.RSACryptoServiceProvider> is initialized with no parameters.
 
-
-
 ## Examples
  The following code example creates an <xref:System.Security.Cryptography.RSACryptoServiceProvider> object and sets the static <xref:System.Security.Cryptography.RSACryptoServiceProvider.UseMachineKeyStore> property to use the machine key store instead of the user profile key store.
 
@@ -2435,8 +2415,6 @@ The supported RSA key sizes depend on the available cryptographic service provid
  This method verifies the <xref:System.Security.Cryptography.RSA> digital signature produced by the <xref:System.Security.Cryptography.RSACryptoServiceProvider.SignData*> method. The signature is verified by obtaining the hash value from the signature using the public key it was signed with, and comparing that value to the hash value of the provided data.
 
  The `halg` parameter can accept a <xref:System.String>, a <xref:System.Security.Cryptography.HashAlgorithm>, or a <xref:System.Type>.
-
-
 
 ## Examples
  The following example shows how to use the <xref:System.Security.Cryptography.RSACryptoServiceProvider.VerifyData*> method to verify a signature. This code example is part of a larger example provided for the <xref:System.Security.Cryptography.RSACryptoServiceProvider.SignHash*> method.

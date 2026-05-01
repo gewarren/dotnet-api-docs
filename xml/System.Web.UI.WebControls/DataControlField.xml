@@ -55,8 +55,6 @@
 
  The <xref:System.Web.UI.WebControls.DataControlField> class provides many properties that determine how user interface (UI) elements are presented in the data-bound control. Not every control uses every available data control field property when rendering a UI. For example, the <xref:System.Web.UI.WebControls.DetailsView> control, which displays the data control fields as rows, includes a header item for each data control field, but no footer item. Therefore, the <xref:System.Web.UI.WebControls.DataControlField.FooterText*> and <xref:System.Web.UI.WebControls.DataControlField.FooterStyle*> properties are ignored by the <xref:System.Web.UI.WebControls.DetailsView> control. The <xref:System.Web.UI.WebControls.GridView> control, however, uses the <xref:System.Web.UI.WebControls.DataControlField.FooterText*> and <xref:System.Web.UI.WebControls.DataControlField.FooterStyle*> properties if the <xref:System.Web.UI.WebControls.GridView.ShowFooter> property is set to `true`. Similarly, the data control field properties affect the presentation of UI elements depending on what the element is. The <xref:System.Web.UI.WebControls.DataControlField.ItemStyle> property is always applied to the field. If the type derived from <xref:System.Web.UI.WebControls.DataControlField> contains a control, as in the <xref:System.Web.UI.WebControls.ButtonField> or <xref:System.Web.UI.WebControls.CheckBoxField> classes, the <xref:System.Web.UI.WebControls.DataControlField.ControlStyle> property is applied to the field.
 
-
-
 ## Examples
  The following code example demonstrates how to use <xref:System.Web.UI.WebControls.BoundField> and <xref:System.Web.UI.WebControls.ButtonField> objects, which are derived from <xref:System.Web.UI.WebControls.DataControlField>, to display rows in a <xref:System.Web.UI.WebControls.DetailsView> control. The <xref:System.Web.UI.WebControls.DetailsView> control has the <xref:System.Web.UI.WebControls.DetailsView.AutoGenerateRows> property set to `false`, which enables it to display a subset of the data returned by the <xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand> property.
 
@@ -269,8 +267,6 @@
 
  This property does not affect all derived types. The <xref:System.Web.UI.WebControls.BoundField> control, which typically displays text data and contains only <xref:System.Web.UI.WebControls.TextBox> controls, is only affected by the <xref:System.Web.UI.WebControls.DataControlField.ControlStyle> property when in <xref:System.Web.UI.WebControls.DataControlRowState.Edit> state. Web server controls such as <xref:System.Web.UI.WebControls.ButtonField> and <xref:System.Web.UI.WebControls.CheckBoxField> might be affected by the <xref:System.Web.UI.WebControls.DataControlField.ControlStyle> property, depending on the specific configuration of the control object instances contained by the field. For example, the <xref:System.Web.UI.WebControls.ButtonField> control can be rendered as a <xref:System.Web.UI.WebControls.LinkButton>, <xref:System.Web.UI.WebControls.ImageButton>, or <xref:System.Web.UI.WebControls.Button> object. Although a <xref:System.Web.UI.WebControls.LinkButton> control is affected by `font` attributes of the specified <xref:System.Web.UI.WebControls.Style> object, a <xref:System.Web.UI.WebControls.Button> control is not.
 
-
-
 ## Examples
  The following code example demonstrates how to use <xref:System.Web.UI.WebControls.BoundField> and <xref:System.Web.UI.WebControls.ButtonField> objects, which are derived from <xref:System.Web.UI.WebControls.DataControlField>, to display rows in a <xref:System.Web.UI.WebControls.DetailsView> control. The <xref:System.Web.UI.WebControls.DataControlField.ControlStyle> property of the <xref:System.Web.UI.WebControls.ButtonField> object is set and governs how the <xref:System.Web.UI.WebControls.LinkButton> control contained by the field is displayed.
 
@@ -414,8 +410,6 @@
  The <xref:System.Web.UI.WebControls.DataControlField.ExtractValuesFromCell*> method is implemented by types derived from <xref:System.Web.UI.WebControls.DataControlField> to associate the current field with a value, if applicable. The field/value pair is stored in the `dictionary` collection that is passed to the method. The <xref:System.Web.UI.WebControls.DataControlField.ExtractValuesFromCell*> method is called by the `ExtractRowValues` method of data controls such as <xref:System.Web.UI.WebControls.DetailsView> and <xref:System.Web.UI.WebControls.GridView>.
 
  Call this method when you are writing a custom data-bound control that uses <xref:System.Web.UI.WebControls.DataControlFieldCell> objects to assemble a set of cells and their associated values. Implement this method when you are writing a class derived from <xref:System.Web.UI.WebControls.DataControlField> that displays user data or data-bound data. Not all derived types implement the <xref:System.Web.UI.WebControls.DataControlField.ExtractValuesFromCell*> method, because not all fields display user data. For example, the <xref:System.Web.UI.WebControls.ButtonField> control displays a button and has no user data.
-
-
 
 ## Examples
  The following code example demonstrates how to implement the <xref:System.Web.UI.WebControls.DataControlField.ExtractValuesFromCell*> method for a control that derives from the <xref:System.Web.UI.WebControls.DataControlField> class. The `RadioButtonField` class renders a data-bound radio button for every row in a <xref:System.Web.UI.WebControls.GridView> control. When the <xref:System.Web.UI.WebControls.DataControlField.ExtractValuesFromCell*> method is called, the method attempts to determine whether the current value of the <xref:System.Web.UI.WebControls.RadioButton> object contained in the cell is selected or cleared, and adds the value to the <xref:System.Collections.IDictionary> collection. This code example is part of a larger example provided for the <xref:System.Web.UI.WebControls.DataControlField> class.
@@ -566,8 +560,6 @@
 > [!NOTE]
 > If both the <xref:System.Web.UI.WebControls.DataControlField.HeaderText*> and <xref:System.Web.UI.WebControls.DataControlField.HeaderImageUrl*> properties are set, the <xref:System.Web.UI.WebControls.DataControlField.HeaderImageUrl> property has precedence.
 
-
-
 ## Examples
  The following code example demonstrates how to declaratively set the <xref:System.Web.UI.WebControls.DataControlField.HeaderImageUrl> property of a <xref:System.Web.UI.WebControls.ButtonField> column, which displays an image in the <xref:System.Web.UI.WebControls.GridView> control's column header instead of header text.
 
@@ -618,8 +610,6 @@
 
 ## Remarks
  The <xref:System.Web.UI.WebControls.DataControlField.HeaderStyle> property governs the appearance of any text displayed in the header item of a type derived from <xref:System.Web.UI.WebControls.DataControlField>. The most common application of the <xref:System.Web.UI.WebControls.DataControlField.HeaderStyle> property is to alter the style of the column headers in a <xref:System.Web.UI.WebControls.GridView> control.
-
-
 
 ## Examples
  The following code example demonstrates how to declaratively set the <xref:System.Web.UI.WebControls.DataControlField.HeaderStyle> property of a <xref:System.Web.UI.WebControls.HyperLinkField> column, which displays a yellow background color for the column header in the <xref:System.Web.UI.WebControls.GridView> control.
@@ -672,8 +662,6 @@
 > If both the <xref:System.Web.UI.WebControls.DataControlField.HeaderText*> and <xref:System.Web.UI.WebControls.DataControlField.HeaderImageUrl*> properties are set, the <xref:System.Web.UI.WebControls.DataControlField.HeaderImageUrl> property has precedence.
 
  The value of this property, when set, can be saved automatically to a resource file by using a designer tool. For more information, see <xref:System.ComponentModel.LocalizableAttribute> and [Globalization and Localization](https://learn.microsoft.com/previous-versions/aspnet/c6zyy3s9(v=vs.100)).
-
-
 
 ## Examples
  The following code example demonstrates how to declaratively set the <xref:System.Web.UI.WebControls.DataControlField.HeaderText*> properties of <xref:System.Web.UI.WebControls.BoundField> columns to display text in the column headers of a <xref:System.Web.UI.WebControls.GridView> control. This code example demonstrates a master-details scenario in which a <xref:System.Web.UI.WebControls.GridView> control is used to display a subset of data while the <xref:System.Web.UI.WebControls.DetailsView> control is used to display a larger set of data and insert new records. The example uses two <xref:System.Web.UI.WebControls.SqlDataSource> controls: one to populate the <xref:System.Web.UI.WebControls.GridView> control and one to populate the <xref:System.Web.UI.WebControls.DetailsView> control and insert data.
@@ -759,8 +747,6 @@
  Types derived from <xref:System.Web.UI.WebControls.DataControlField> implement the <xref:System.Web.UI.WebControls.DataControlField.InitializeCell*> method to add text and controls to a <xref:System.Web.UI.WebControls.DataControlFieldCell> object that belongs to a data control that uses tables to display a user interface (UI). These data controls create the complete table structure row by row when their respective `CreateChildControls` methods are called. The <xref:System.Web.UI.WebControls.DataControlField.InitializeCell*> method is called by the `InitializeRow` method of data controls such as <xref:System.Web.UI.WebControls.DetailsView> and <xref:System.Web.UI.WebControls.GridView>.
 
  Call this method when you are writing a custom data-bound control that uses <xref:System.Web.UI.WebControls.DataControlFieldCell> objects to initialize the cells of the table structure with data or controls. Implement this method when you are writing a class derived from <xref:System.Web.UI.WebControls.DataControlField>.
-
-
 
 ## Examples
  The following code example demonstrates how to implement the <xref:System.Web.UI.WebControls.DataControlField.InitializeCell*> method for a control that derives from the <xref:System.Web.UI.WebControls.DataControlField> class. The `RadioButtonField` class renders a data-bound radio button for every row in a <xref:System.Web.UI.WebControls.GridView> control. When the row is displaying data to a user and is not in edit mode, the <xref:System.Web.UI.WebControls.RadioButton> control is disabled. When the row is in edit mode, for example when the user chooses to update a row in the <xref:System.Web.UI.WebControls.GridView> control, the <xref:System.Web.UI.WebControls.RadioButton> control is rendered as enabled so that it can be clicked. This example uses bitwise AND operators, because the row state might be a combination of one or more <xref:System.Web.UI.WebControls.DataControlRowState> values.
@@ -886,8 +872,6 @@
 
 ## Remarks
  The <xref:System.Web.UI.WebControls.DataControlField.ItemStyle> property governs the appearance of any text data displayed by a type derived from <xref:System.Web.UI.WebControls.DataControlField>. For example, when you bind a <xref:System.Web.UI.WebControls.BoundField> control to text data, you can use the <xref:System.Web.UI.WebControls.DataControlField.ItemStyle> property to alter the appearance of the text that is displayed.
-
-
 
 ## Examples
  The following code example demonstrates how to declaratively set the <xref:System.Web.UI.WebControls.DataControlField.ItemStyle> property on the <xref:System.Web.UI.WebControls.BoundField> objects used to display `FirstName` and `LastName` data in a <xref:System.Web.UI.WebControls.DetailsView> control. The <xref:System.Web.UI.WebControls.DetailsView> control has the <xref:System.Web.UI.WebControls.DetailsView.AutoGenerateRows> property set to `false`, which enables it to display a subset of the data returned by the <xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand> property.
@@ -1091,8 +1075,6 @@
  The <xref:System.Web.UI.WebControls.DataControlField.OnFieldChanged*> method is called to raise a state change event when the <xref:System.Web.UI.WebControls.DataControlField.SortExpression> property is set.
 
  The value of the <xref:System.Web.UI.WebControls.DataControlField.SortExpression> property is stored in view state.
-
-
 
 ## Examples
  The following code example demonstrates how to use the <xref:System.Web.UI.WebControls.DataControlField.SortExpression> property to assign a sort expression to a data control field.
@@ -1492,8 +1474,6 @@ This member is an explicit interface member implementation. It can be used only 
  Use the <xref:System.Web.UI.WebControls.DataControlField.Visible> property to show or hide <xref:System.Web.UI.WebControls.DataControlField> objects in a data-bound control.
 
  If the <xref:System.Web.UI.WebControls.DataControlField.Visible> property is `false`, the data values are not displayed and do not make a round-trip to the client. If you want to round-trip the data for a field that is not visible, add the field name to the `DataKeyNames` property of the data-bound control.
-
-
 
 ## Examples
  The following code example demonstrates how to use <xref:System.Web.UI.WebControls.BoundField> and <xref:System.Web.UI.WebControls.ButtonField> objects, which are derived from <xref:System.Web.UI.WebControls.DataControlField>, to display rows in a <xref:System.Web.UI.WebControls.DetailsView> control. The <xref:System.Web.UI.WebControls.DataControlField.Visible> property of the <xref:System.Web.UI.WebControls.BoundField> object that displays the `EmployeeID` column is set to `false`, and the column is not rendered by the <xref:System.Web.UI.WebControls.DetailsView> control.

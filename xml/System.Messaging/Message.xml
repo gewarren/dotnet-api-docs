@@ -142,8 +142,6 @@
 |<xref:System.Messaging.Message.UseJournalQueue*>|`false`|
 |<xref:System.Messaging.Message.UseTracing*>|`false`|
 
-
-
 ## Examples
  The following code example sends two messages of different priorities to the queue, and retrieves them subsequently.
 
@@ -224,8 +222,6 @@
 |<xref:System.Messaging.Message.UseEncryption*>|`false`|
 |<xref:System.Messaging.Message.UseJournalQueue*>|`false`|
 |<xref:System.Messaging.Message.UseTracing*>|`false`|
-
-
 
 ## Examples
  The following code example creates a new queue, sends a message that contains an order to it, and then retrieves it.
@@ -368,8 +364,6 @@
 
  Message Queuing returns notification by sending acknowledgment messages to the <xref:System.Messaging.Message.AdministrationQueue> property specified by the original message. An acknowledgment message's <xref:System.Messaging.Message.Acknowledgment> property indicates the type of acknowledgment that it represents. For example, if an acknowledgment message was sent because a message did not reach the destination before the <xref:System.Messaging.Message.TimeToReachQueue*> interval expired, the <xref:System.Messaging.Message.Acknowledgment> property of the acknowledgment message would contain the value `ReachQueueTimeout`.
 
-
-
 ## Examples
  The following code example sends and receives a message containing an order to and from a queue. It specifically requests a positive acknowledgment when the original message reaches or is retrieved from the queue.
 
@@ -488,8 +482,6 @@
 
  When the <xref:System.Messaging.Message.AcknowledgeType> property has any value other than `None`, the sending application must specify the queue to use as the administration queue.
 
-
-
 ## Examples
  The following code example sends and receives a message containing an order to and from a queue. It specifically requests a positive acknowledgment when the original message reaches or is retrieved from the queue.
 
@@ -591,8 +583,6 @@
 ## Remarks
  The message's <xref:System.Messaging.Message.TimeToBeReceived> property indicates how quickly the message must be received from the destination queue. The <xref:System.Messaging.Message.TimeToBeReceived> property timer starts when the message is sent, not when the message arrives in the queue.
 
-
-
 ## Examples
  The following code example displays the value of a message's <xref:System.Messaging.Message.ArrivedTime> property.
 
@@ -654,8 +644,6 @@
 > [!CAUTION]
 > If a message is rejected, it is either sent to the dead-letter queue (if <xref:System.Messaging.Message.UseDeadLetterQueue*> is `true`), or it is ignored. You can request acknowledgments when a message fails to reach a queue. Otherwise, when <xref:System.Messaging.Message.UseDeadLetterQueue*> is `false` the message might be lost without warning.
 
-
-
 ## Examples
  The following code example gets and sets the value of a message's <xref:System.Messaging.Message.AttachSenderId> property.
 
@@ -711,8 +699,6 @@
  The <xref:System.Messaging.Message.Authenticated> property is used only by the application while it is interacting with the message and trying to determine if authentication was requested. If the message is in the queue, the message was authenticated. Conversely, if the <xref:System.Messaging.Message.Authenticated> property is `true`, the receiving Queue Manager authenticated the message when it received that message.
 
  You cannot determine if a message failed authentication by looking at its properties. Message Queuing discards messages that fail authentication before they are delivered to the queue. However, you can request that an acknowledgment message be sent if a delivery failure prevents the message from arriving in the queue.
-
-
 
 ## Examples
  The following code example displays the value of a message's <xref:System.Messaging.Message.Authenticated> property.
@@ -899,8 +885,6 @@
 > [!NOTE]
 > Attempting to set the body of a message to <xref:System.Decimal.MaxValue> will cause a <xref:System.OverflowException> when the `Send` method of the <xref:System.Messaging.MessageQueue> class is called and the <xref:System.Messaging.ActiveXMessageFormatter> is used.
 
-
-
 ## Examples
  The following code example sends two messages of different priorities to the queue, and retrieves them subsequently.
 
@@ -1051,8 +1035,6 @@ if (myObject is float) {
 }
 ```
 
-
-
 ## Examples
  The following code example displays the value of a message's <xref:System.Messaging.Message.BodyType> property.
 
@@ -1183,8 +1165,6 @@ if (myObject is float) {
 
  When your application sends a response message to the sending application, you can set the <xref:System.Messaging.Message.CorrelationId> property of the response message to the message identifier of the original message. The sending application can then match your response message to the message that was sent.
 
-
-
 ## Examples
  The following code example sends and receives a message that contains an order to and from a queue. It specifically requests a positive acknowledgment when the original message reaches or is retrieved from the queue.
 
@@ -1239,8 +1219,6 @@ if (myObject is float) {
 
 ## Remarks
  The <xref:System.Messaging.Message.DestinationQueue> property is most commonly used to determine the original destination of a message that arrived in a journal or dead-letter queue. Usually, you do not need to examine this property, because you typically retrieve the message from its destination queue.
-
-
 
 ## Examples
  The following code example displays the value of a message's <xref:System.Messaging.Message.DestinationQueue> property.
@@ -1636,8 +1614,6 @@ if (myObject is float) {
 
  You can also use the <xref:System.Messaging.Message.Id> property when sending a response message to a response queue. To include the identifier of the original message in a response message, set the <xref:System.Messaging.Message.CorrelationId> property of the response message to the <xref:System.Messaging.Message.Id> property of the original message. The application reading the response message can then use the correlation identifier of the response message to identify the original message.
 
-
-
 ## Examples
  The following code example sends and receives a message containing an order to and from a queue. It specifically requests a positive acknowledgment when the original message reaches or is retrieved from the queue.
 
@@ -1679,8 +1655,6 @@ if (myObject is float) {
 
 ## Remarks
  <xref:System.Messaging.Message.TimeToBeReceived*> and <xref:System.Messaging.Message.TimeToReachQueue*> require a value that specifies a time-out. For the former, the time-out is the maximum time allowed for a message to be received from the queue. For the latter, the time-out is the time allowed for a message to reach the queue. In both cases, you can specify the time-out as a number of seconds or use <xref:System.Messaging.Message.InfiniteTimeout> to indicate that no time-out exists.
-
-
 
 ## Examples
  The following code example demonstrates the use of the <xref:System.Messaging.Message.InfiniteTimeout> field.
@@ -1735,8 +1709,6 @@ if (myObject is float) {
  To verify transaction boundaries, you can use the <xref:System.Messaging.Message.IsFirstInTransaction> property along with two other properties: <xref:System.Messaging.Message.IsLastInTransaction*> and <xref:System.Messaging.Message.TransactionId*>. Use the former to check whether a message was the last message sent in the transaction, and use the latter to retrieve the identifier of the transaction.
 
  If only one message is sent in a transaction, the <xref:System.Messaging.Message.IsFirstInTransaction*> and <xref:System.Messaging.Message.IsLastInTransaction*> properties are both set to `true`.
-
-
 
 ## Examples
  The following code example displays the value of a message's <xref:System.Messaging.Message.IsFirstInTransaction> property.
@@ -1798,8 +1770,6 @@ if (myObject is float) {
 
  If only one message is sent in a transaction, the <xref:System.Messaging.Message.IsFirstInTransaction*> and <xref:System.Messaging.Message.IsLastInTransaction*> properties are both set to `true`.
 
-
-
 ## Examples
  The following code example displays the value of a message's <xref:System.Messaging.Message.IsLastInTransaction> property.
 
@@ -1858,8 +1828,6 @@ if (myObject is float) {
  You can use a message label for several purposes. For example, you can use it for display purposes or to selectively process messages based on the label value. The label does not need to be unique across messages.
 
  Message queue and message labels represent an application-defined value that can help identify the queue or message in human-readable terms. It is the responsibility of the application to interpret the label contents, which have no intrinsic meaning to the Message Queuing application.
-
-
 
 ## Examples
  The following code example gets and sets the value of a message's <xref:System.Messaging.Message.Label> property.
@@ -1961,8 +1929,6 @@ if (myObject is float) {
 
 -   `Report`, which Message Queuing generates whenever a report queue is defined at the source Queue Manager. When tracing is enabled, Message Queuing sends a report message to the Message Queuing report queue each time the original message enters or leaves a Message Queuing server.
 
-
-
 ## Examples
  The following code example displays the value of a message's <xref:System.Messaging.Message.MessageType> property.
 
@@ -2022,8 +1988,6 @@ if (myObject is float) {
  The <xref:System.Messaging.Message.Priority> property affects how Message Queuing handles the message both while it is en route and once it reaches its destination. Higher-priority messages are given preference during routing and inserted toward the front of the destination queue. Messages with the same priority are placed in the queue according to their arrival time.
 
  You can set a meaningful priority only for non-transactional messages. Message Queuing automatically sets the priority for transactional messages to `Lowest`, which causes transactional message priority to be ignored.
-
-
 
 ## Examples
  The following code example sends two messages of different priorities to the queue, and retrieves them subsequently.
@@ -2085,8 +2049,6 @@ if (myObject is float) {
 
  If the message is transactional, Message Queuing automatically treats the message as recoverable, regardless of the value of the <xref:System.Messaging.Message.Recoverable> property.
 
-
-
 ## Examples
  The following code example gets and sets the value of a message's <xref:System.Messaging.Message.Recoverable> property.
 
@@ -2139,8 +2101,6 @@ if (myObject is float) {
  The <xref:System.Messaging.Message.ResponseQueue> property identifies the queue that receives application-generated response messages, which the receiving application returns to the sending application. The sending application specifies response queues when the application sends its messages. Any available queue can be specified as a response queue.
 
  Messages returned to the response queue are application-specific. The application must define the contents of the messages as well as the action to take upon receipt of a message.
-
-
 
 ## Examples
  The following code example gets and sets the value of a message's <xref:System.Messaging.Message.ResponseQueue> property.
@@ -2333,8 +2293,6 @@ if (myObject is float) {
 
  The sending Queue Manager sets the <xref:System.Messaging.Message.SenderVersion> property when the message is sent.
 
-
-
 ## Examples
  The following code example displays the value of a message's <xref:System.Messaging.Message.SenderVersion> property.
 
@@ -2394,8 +2352,6 @@ if (myObject is float) {
 ## Remarks
  The <xref:System.Messaging.Message.SentTime> property is adjusted to the local time of the computer on which this instance of the <xref:System.Messaging.Message> class was created. This time zone could be different from those of the source and destination queues.
 
-
-
 ## Examples
  The following code example displays the value of a message's <xref:System.Messaging.Message.SentTime> property.
 
@@ -2445,8 +2401,6 @@ if (myObject is float) {
 
 ## Remarks
  The format of the <xref:System.Messaging.Message.SourceMachine> property does not include preceding two forward slashes (\\\\). For example, `myServer` is a valid <xref:System.Messaging.Message.SourceMachine*>.
-
-
 
 ## Examples
  The following code example displays the value of a message's <xref:System.Messaging.Message.SourceMachine> property.
@@ -2518,8 +2472,6 @@ if (myObject is float) {
  If the value specified by the <xref:System.Messaging.Message.TimeToBeReceived> property is less than the value specified by the <xref:System.Messaging.Message.TimeToReachQueue> property, <xref:System.Messaging.Message.TimeToBeReceived*> takes precedence.
 
  When several messages are sent in a single transaction, Message Queuing uses the <xref:System.Messaging.Message.TimeToBeReceived> property of the first message.
-
-
 
 ## Examples
  The following code example gets and sets the value of a message's <xref:System.Messaging.Message.TimeToBeReceived> property.
@@ -2639,8 +2591,6 @@ if (myObject is float) {
 
  You can use the <xref:System.Messaging.Message.TransactionId> property along with the <xref:System.Messaging.Message.IsFirstInTransaction*> and <xref:System.Messaging.Message.IsLastInTransaction*> properties to verify transaction boundaries.
 
-
-
 ## Examples
  The following code example displays the value of a message's <xref:System.Messaging.Message.TransactionId> property.
 
@@ -2701,8 +2651,6 @@ if (myObject is float) {
  A foreign queue exists in a queuing system other than Microsoft Message Queuing. Message Queuing communicates with such queues through a connector application.
 
  The connector application can use the transaction status queue to send acknowledgment messages back to the sending application. The transaction status queue should receive these acknowledgments even if the sending application does not request other acknowledgments.
-
-
 
 ## Examples
  The following code example displays the value of a message's <xref:System.Messaging.Message.TransactionStatusQueue> property.
@@ -2829,8 +2777,6 @@ if (myObject is float) {
 
  You do not create a journal or dead-letter queue. These are both system queues that Message Queuing generates.
 
-
-
 ## Examples
  The following code example gets and sets the value of a message's <xref:System.Messaging.Message.UseDeadLetterQueue> property.
 
@@ -2885,8 +2831,6 @@ if (myObject is float) {
  If a message is private, its body is encrypted before it is sent and decrypted when it is received. To send a private message, the sending application must specify that encryption be used and, optionally, the encryption algorithm.
 
  When sending private messages, your application does not need to perform the message encryption. Message Queuing can encrypt the message body for you if your application is sending messages within a Microsoft Windows 2000 enterprise, which has access to the directory service. When receiving private messages, the receiving Queue Manager always decrypts the message body.
-
-
 
 ## Examples
  The following code example gets and sets the value of a message's <xref:System.Messaging.Message.UseEncryption> property.
@@ -2947,8 +2891,6 @@ if (myObject is float) {
 
  You do not create a journal or dead-letter queue. These are both system queues that Message Queuing generates.
 
-
-
 ## Examples
  The following code example gets and sets the value of a message's <xref:System.Messaging.Message.UseJournalQueue> property.
 
@@ -3005,8 +2947,6 @@ if (myObject is float) {
  The <xref:System.Messaging.Message.UseTracing> property specifies whether to track the route of a message as it moves toward its destination queue. If `true`, a report message (generated by Message Queuing) is sent to a report queue each time the message passes through a Message Queuing routing server. The report queue is specified by the source Queue Manager. Report queues are not limited to report messages generated by Message Queuing; your application-generated messages can also be sent to report queues.
 
  Using tracing involves setting up Active Directory and specifying a report queue for the Message Queuing enterprise. The administrator configures these settings.
-
-
 
 ## Examples
  The following code example gets and sets the value of a message's <xref:System.Messaging.Message.UseTracing> property.

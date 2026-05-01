@@ -160,8 +160,6 @@ The following example uses the <xref:System.Reflection.Emit.MethodBuilder> class
 > [!NOTE]
 > In the .NET Framework versions 1.0, 1.1, and 2.0, the declarative security attributes applied to a method by using the <xref:System.Reflection.Emit.MethodBuilder.AddDeclarativeSecurity*> method are stored in the old XML metadata format. See Emitting Declarative Security Attributes.
 
-
-
 ## Examples
  The code sample below illustrates the contextual use of `AddDeclarativeSecurity` to require the caller of a method to have unrestricted permissions.
 
@@ -362,8 +360,6 @@ The following example uses the <xref:System.Reflection.Emit.MethodBuilder> class
 > [!NOTE]
 > This is currently not fully supported. The user cannot supply the location of token fix ups and exception handlers.
 
-
-
 ## Examples
  In the example provided below, a simple method that adds two integers is generated via opcode using `CreateMethodBody`.
 
@@ -503,8 +499,6 @@ The following example uses the <xref:System.Reflection.Emit.MethodBuilder> class
  By convention, a type parameter name is a single uppercase letter.
 
  For more information, see <xref:System.Reflection.MethodBase.IsGenericMethod*?displayProperty=nameWithType> and <xref:System.Reflection.MethodInfo.GetGenericMethodDefinition*?displayProperty=nameWithType>. For information on generic types, see <xref:System.Type.IsGenericType*?displayProperty=nameWithType>.
-
-
 
 ## Examples
  The following code example creates a dynamic type, `DemoType`, which contains the dynamic generic method `DemoMethod`. This method has two generic type parameters, one of which is used as a parameter, and the other as the return type.
@@ -1683,8 +1677,6 @@ The following example uses the <xref:System.Reflection.Emit.MethodBuilder> class
 ## Remarks
  A method is generic if it has type parameters. You can make a method generic by calling the <xref:System.Reflection.Emit.MethodBuilder.DefineGenericParameters*> method to add type parameters. This change cannot be reversed.
 
-
-
 ## Examples
  The following code example displays the status of a method. This code is part of a larger example provided for the <xref:System.Reflection.Emit.MethodBuilder.DefineGenericParameters*> method.
 
@@ -1740,8 +1732,6 @@ The following example uses the <xref:System.Reflection.Emit.MethodBuilder> class
 
 ## Remarks
  A <xref:System.Reflection.Emit.MethodBuilder> can only be used to create generic method definitions; it cannot be used to create a constructed generic method directly. However, a subclass of <xref:System.Reflection.Emit.MethodBuilder> might represent a constructed generic method.
-
-
 
 ## Examples
  The following code example displays the status of a method. This code is part of a larger example provided for the <xref:System.Reflection.Emit.MethodBuilder.DefineGenericParameters*> method.
@@ -1950,8 +1940,6 @@ The following example uses the <xref:System.Reflection.Emit.MethodBuilder> class
 
 ## Remarks
  When you are emitting dynamic code, you might need to emit a call to a method constructed from the generic method definition represented by a <xref:System.Reflection.Emit.MethodBuilder>, before the enclosing type has been completed. You can use the <xref:System.Reflection.Emit.MethodBuilder.MakeGenericMethod*> method to create a <xref:System.Reflection.MethodInfo> for such a constructed method, and use the <xref:System.Reflection.MethodInfo> in the emitted call.
-
-
 
 ## Examples
  The following code example creates a constructed method from an incomplete generic method definition in an incomplete type.
@@ -2603,8 +2591,6 @@ For information on how to format `binaryAttribute`, see the metadata specificati
 
 - When you set implementation flags, call the <xref:System.Reflection.Emit.MethodBuilder.GetMethodImplementationFlags*> method to retrieve the existing flags, use bitwise OR to add your flag, and then call the <xref:System.Reflection.Emit.MethodBuilder.SetImplementationFlags*> method.
 
-
-
 ## Examples
  The code sample below illustrates the contextual use of the `SetImplementationFlags` method to describe the implementation of MSIL in a method body.
 
@@ -2817,8 +2803,6 @@ For information on how to format `binaryAttribute`, see the metadata specificati
 
  Calling this method replaces any parameter types that were set using the <xref:System.Reflection.Emit.TypeBuilder.DefineMethod*?displayProperty=nameWithType> method.
 
-
-
 ## Examples
  The following code example uses the <xref:System.Reflection.Emit.MethodBuilder.DefineGenericParameters*> method to make a method generic. The <xref:System.Reflection.Emit.MethodBuilder.SetParameters*> method is used to give the method one parameter, whose type will be specified by the first generic type parameter. The <xref:System.Reflection.Emit.MethodBuilder.SetReturnType*> method is used to give the method a return type, specified by the second generic type parameter.
 
@@ -2891,8 +2875,6 @@ For information on how to format `binaryAttribute`, see the metadata specificati
  Use this method to set the return type of a generic method, when the return type is specified by one of the generic type parameters of the method. If the return type has optional or required custom modifiers, such as <xref:System.Runtime.CompilerServices.IsConst>, use the <xref:System.Reflection.Emit.MethodBuilder.SetSignature(System.Type,System.Type[],System.Type[],System.Type[],System.Type[][],System.Type[][])> method overload.
 
  Calling this method replaces a return type established using the <xref:System.Reflection.Emit.TypeBuilder.DefineMethod*?displayProperty=nameWithType> method.
-
-
 
 ## Examples
  The following code example uses the <xref:System.Reflection.Emit.MethodBuilder.DefineGenericParameters*> method to make a method generic. The <xref:System.Reflection.Emit.MethodBuilder.SetParameters*> method is used to give the method one parameter, whose type will be specified by the first generic type parameter. The <xref:System.Reflection.Emit.MethodBuilder.SetReturnType*> method is used to give the method a return type, specified by the second generic type parameter.
@@ -3013,8 +2995,6 @@ For information on how to format `binaryAttribute`, see the metadata specificati
  If neither the return type nor the parameter types have optional or required custom modifiers, such as <xref:Microsoft.VisualC.IsConstModifier>, you can use the <xref:System.Reflection.Emit.MethodBuilder.SetReturnType*> and <xref:System.Reflection.Emit.MethodBuilder.SetParameters*> methods.
 
  Calling this method replaces the parameters and return type established using the <xref:System.Reflection.Emit.TypeBuilder.DefineMethod*?displayProperty=nameWithType> method.
-
-
 
 ## Examples
  The following code example contains source code for a generic class named Sample that has a type parameter `T`. The class has a field named `Field`, of type `T`, and a generic method `GM` with its own type parameter, `U`. Method `GM` creates an instance of Sample, substituting its own type parameter `U` for the type parameter of Sample, and stores its input parameter in `Field`. This source code is compiled but not used; you can view it with the [Ildasm.exe (IL Disassembler)](/dotnet/framework/tools/ildasm-exe-il-disassembler), and compare it to the code emitted by class `Example`.
@@ -3144,8 +3124,6 @@ For information on how to format `binaryAttribute`, see the metadata specificati
 
 ## Remarks
  Unlike the metadata custom attribute, this custom attribute is associated with a symbol writer.
-
-
 
 ## Examples
  The code sample below illustrates the contextual usage of the `SetSymCustomAttribute` method to set the byte values for the name and key of a custom attribute attached to a method.

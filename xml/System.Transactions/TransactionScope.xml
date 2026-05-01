@@ -77,8 +77,6 @@
 
  If you modify the value of <xref:System.Transactions.Transaction.Current*> inside a scope, an exception is thrown when <xref:System.Transactions.TransactionScope.Dispose*> is called. However, at the end of the scope, the previous value is restored. In addition, if you call <xref:System.Transactions.TransactionScope.Dispose*> on <xref:System.Transactions.Transaction.Current*> inside a transaction scope that created the transaction, the transaction aborts at the end of the scope.
 
-
-
 ## Examples
  The following example demonstrates how to use the <xref:System.Transactions.TransactionScope> class to define a block of code to participate in a transaction.
 
@@ -781,8 +779,6 @@ When you use the `transactionOptions` parameter to specify an <xref:System.Trans
 
  The actual work of commit between the resources manager happens at the `End Using` statement if the <xref:System.Transactions.TransactionScope> object created the transaction. If it did not create the transaction, the commit occurs whenever <xref:System.Transactions.CommittableTransaction.Commit*> is called by the owner of the <xref:System.Transactions.CommittableTransaction> object. At that point the Transaction Manager calls the resource managers and informs them to either commit or rollback, based on whether this method was called on the <xref:System.Transactions.TransactionScope> object.
 
-
-
 ## Examples
  The following example demonstrates how to use the <xref:System.Transactions.TransactionScope> class to define a block of code to participate in a transaction.
 
@@ -847,8 +843,6 @@ When you use the `transactionOptions` parameter to specify an <xref:System.Trans
  Because this method blocks until the first phase of transaction processing is complete, you should be extremely careful when using this method in a Windows Form (WinForm) application, or a deadlock can occur. If you call this method inside one WinForm Control event (for example, clicking a button), and use the synchronous <xref:System.Windows.Forms.Control.Invoke*> method to direct the control to perform some UI tasks (for example, changing colors) in the middle of processing the transaction, a deadlock will happen. This is because the <xref:System.Windows.Forms.Control.Invoke*> method is synchronous and blocks the worker thread until the UI thread finishes its job. However, in our scenario, the UI thread is also waiting for the worker thread to commit the transaction. The result is that none is able to proceed and the scope waits indefinitely for the Commit to finish. You should use <xref:System.Windows.Forms.Control.BeginInvoke*> rather than <xref:System.Windows.Forms.Control.Invoke*> wherever possible, because it is asynchronous and thus less prone to deadlock.
 
  For more information on how this method is used, see the [Implementing An Implicit Transaction Using Transaction Scope](/dotnet/framework/data/transactions/implementing-an-implicit-transaction-using-transaction-scope) topic.
-
-
 
 ## Examples
  The following example demonstrates how to use the <xref:System.Transactions.TransactionScope> class to define a block of code to participate in a transaction.

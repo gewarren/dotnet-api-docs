@@ -80,8 +80,6 @@
 
  After invoking <xref:System.Data.DataRow.BeginEdit*> on a <xref:System.Data.DataRow>, any edited value becomes the `Proposed` value. Until either <xref:System.Data.DataRowView.CancelEdit*> or <xref:System.Data.DataRowView.EndEdit*> is invoked, the row has an `Original` and a `Proposed` version. If <xref:System.Data.DataRowView.CancelEdit*> is invoked, the proposed version is discarded, and the value reverts to `Original`. If <xref:System.Data.DataRowView.EndEdit*> is invoked, the <xref:System.Data.DataRowView> no longer has a `Proposed` version; instead, the proposed value becomes the current value. Default values are available only on rows that have columns with default values defined.
 
-
-
 ## Examples
  The following example uses the <xref:System.Data.DataRowView.RowVersion> property to determine the state of a row in the <xref:System.Data.DataRowView>. (See <xref:System.Data.DataView.RowFilter*> for another example using <xref:System.Data.DataRowView>.)
 
@@ -143,8 +141,6 @@
  Use <xref:System.Data.DataView.AddNew*> to add a <xref:System.Data.DataRowView>.
 
  The <xref:System.Data.DataRowView.BeginEdit*> method is identical to the <xref:System.Data.DataRow.BeginEdit*?displayProperty=nameWithType> method of the <xref:System.Data.DataRow>. After calling <xref:System.Data.DataRowView.BeginEdit*>, any changes made to the <xref:System.Data.DataRowView> can be rolled back by calling <xref:System.Data.DataRow.CancelEdit*>. Call the <xref:System.Data.DataRowView.BeginEdit*> method before allowing users to change row values. After values have been changed, you retrieve the new values by setting the <xref:System.Data.DataRowView.RowVersion*> to `DataRowVersion.Proposed`. Check the values with a business rule, and roll back the changes if needed by calling <xref:System.Data.DataRowView.CancelEdit*>, or call <xref:System.Data.DataRowView.EndEdit*> to accept the changes.
-
-
 
 ## Examples
  The following example edits a row in a <xref:System.Data.DataRowView>. calling the <xref:System.Data.DataRowView.BeginEdit*> before, and <xref:System.Data.DataRowView.EndEdit*> afterwards.
@@ -210,8 +206,6 @@
 
 ## Remarks
  After calling <xref:System.Data.DataRowView.CancelEdit*>, all changes to the row are rolled back. You can also roll back changes by calling <xref:System.Data.DataTable.RejectChanges*> on the parent <xref:System.Data.DataTable>.
-
-
 
 ## Examples
  The following example edits a row in a <xref:System.Data.DataView>. The <xref:System.Data.DataRowView.CancelEdit*> method is called to cancel the changes if the validation fails.
@@ -529,8 +523,6 @@
 
 > [!NOTE]
 > A <xref:System.Data.DataRowView> may be invalid when a `DataRow` is deleted from the underlying table. When the <xref:System.Data.DataRowView> becomes invalid, operations that access values associated with <xref:System.Data.DataRowView>, such as <xref:System.Data.DataRowView.Delete*>, throw an exception.
-
-
 
 ## Examples
  The following example uses the <xref:System.Data.DataRowView.Delete*> method on a row.
@@ -1082,8 +1074,6 @@ The <see cref="P:System.Data.DataRowView.DataView" /> doesn't allow edits and <s
 
 ## Remarks
  The <xref:System.Data.DataView.RowStateFilter> property specifies both <xref:System.Data.DataRowState> and <xref:System.Data.DataRowVersion> settings. For more information, see <xref:System.Data.DataRowState>, <xref:System.Data.DataRowVersion>, and <xref:System.Data.DataViewRowState>.
-
-
 
 ## Examples
  The following example uses the <xref:System.Data.DataRowView.RowVersion> property to display the <xref:System.Data.DataRowVersion>.

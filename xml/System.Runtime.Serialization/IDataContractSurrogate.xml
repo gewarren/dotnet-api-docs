@@ -24,8 +24,6 @@
 
  You can also use the <xref:System.Runtime.Serialization.IDataContractSurrogate> to affect the import and export of XML schemas when you are using the <xref:System.Runtime.Serialization.XsdDataContractExporter> and <xref:System.Runtime.Serialization.XsdDataContractImporter> classes. You can do so by assigning the <xref:System.Runtime.Serialization.IDataContractSurrogate> to the <xref:System.Runtime.Serialization.ExportOptions.DataContractSurrogate> property of the <xref:System.Runtime.Serialization.ExportOptions> class, or to the <xref:System.Runtime.Serialization.ImportOptions.DataContractSurrogate> property of the <xref:System.Runtime.Serialization.ImportOptions> class.  For more information, see [Schema Import and Export](/dotnet/framework/wcf/feature-details/schema-import-and-export).
 
-
-
 ## Examples
  The following example shows an implementation of the <xref:System.Runtime.Serialization.IDataContractSurrogate> interface. The code substitutes the serialization of the `Person` type for a `PersonSurrogated` class.
 
@@ -175,8 +173,6 @@
 ## Remarks
  In a simple implementation, use an if…then…else control structure to test whether the `obj` value is of the surrogated type. If so, transform it as necessary and return the substituted object. The substituted object can be a new instance or the same `obj` instance.
 
-
-
 ## Examples
  The following example shows an implementation of the <xref:System.Runtime.Serialization.IDataContractSurrogate.GetDeserializedObject*> method.
 
@@ -250,8 +246,6 @@
 ## Remarks
  This method must not return `null` because on deserialization the data will be cast to type <xref:System.Object> and an <xref:System.InvalidCastException> is thrown.
 
-
-
 ## Examples
  The following example shows an implementation of the <xref:System.Runtime.Serialization.IDataContractSurrogate.GetObjectToSerialize*> method.
 
@@ -294,8 +288,6 @@
 
 ## Remarks
  `Null` should be returned if a CLR type does not exist for representing the schema type. This will cause a new type to be generated during schema import.
-
-
 
 ## Examples
  The following example shows an implementation of the <xref:System.Runtime.Serialization.IDataContractSurrogate.GetReferencedTypeOnImport*> method.

@@ -66,8 +66,6 @@
 
  The <xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults> property can also be set using an application configuration file. For details, see <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults>.
 
-
-
 ## Examples
  The following code example demonstrates the <xref:System.ServiceModel.ServiceBehaviorAttribute> properties. The `BehaviorService` class uses the <xref:System.ServiceModel.ServiceBehaviorAttribute> attribute to indicate that:
 
@@ -301,8 +299,6 @@ public void MyMethod()
 
  There is an interaction of the <xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode> and other properties that can alter runtime behavior. For a complete description of these interactions, see [Sessions, Instancing, and Concurrency](/dotnet/framework/wcf/feature-details/sessions-instancing-and-concurrency).
 
-
-
 ## Examples
  The following code example demonstrates the different between using <xref:System.ServiceModel.ConcurrencyMode.Single>, <xref:System.ServiceModel.ConcurrencyMode.Reentrant>, and <xref:System.ServiceModel.ConcurrencyMode.Multiple>. This sample does not compile without a real implementation behind it, but does demonstrate the kind of threading guarantees that Windows Communication Foundation (WCF) makes and what that means for your operation code.
 
@@ -454,8 +450,6 @@ public void MyMethod()
 
  Regardless <xref:System.ServiceModel.ServiceBehaviorAttribute.IgnoreExtensionDataObject> setting, WCF always processes known data (both in and out) and does not throw exceptions when extra data comes in. You can also set this property using the [&lt;dataContractSerializer&gt;](/dotnet/framework/configure-apps/file-schema/wcf/datacontractserializer-element) element in an application configuration file.
 
-
-
 ## Examples
  The following example shows the use of <xref:System.ServiceModel.ServiceBehaviorAttribute.IgnoreExtensionDataObject> and an implementation of <xref:System.Runtime.Serialization.IExtensibleDataObject>. In this sample, with <xref:System.ServiceModel.ServiceBehaviorAttribute.IgnoreExtensionDataObject> set to `false`, the extra data that the client knows about is round-tripped back to the client.
 
@@ -584,8 +578,6 @@ public void MyMethod()
 > The <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode> property interacts with some other settings. For example, if the <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode> value is set to <xref:System.ServiceModel.InstanceContextMode.Single> the result is that your service can only process one message at a time unless you also set the <xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode> value to <xref:System.ServiceModel.ConcurrencyMode.Multiple>. This property also produces behavior in combination with the <xref:System.ServiceModel.ServiceContractAttribute.SessionMode?displayProperty=nameWithType> property. For details, see [Sessions, Instancing, and Concurrency](/dotnet/framework/wcf/feature-details/sessions-instancing-and-concurrency).
 
  For singleton lifetime behavior (for example, if the host application calls the <xref:System.ServiceModel.ServiceHost.%23ctor*> constructor and passes an object to use as the service), the service class must set <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode> to `Single`, or an exception is thrown at run time.
-
-
 
 ## Examples
  The following code example demonstrates the <xref:System.ServiceModel.ServiceBehaviorAttribute> properties. The `BehaviorService` class uses the <xref:System.ServiceModel.ServiceBehaviorAttribute> attribute to indicate that:
@@ -762,8 +754,6 @@ public void MyMethod()
  Note that you must explicitly set <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete> to `false` if there is an operation with <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired?displayProperty=nameWithType> set to true and you set <xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode> to <xref:System.ServiceModel.ConcurrencyMode.Reentrant>. Otherwise a validation exception is thrown because the default value of <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete> is `true`.
 
  In addition, it is important to realize that if the service is created by passing a service object to the <xref:System.ServiceModel.ServiceHost.%23ctor(System.Object,System.Uri[])?displayProperty=nameWithType> constructor, the value of this property is treated as if it were `false`.
-
-
 
 ## Examples
  The following code example sets the transaction isolation level to <xref:System.Transactions.IsolationLevel.ReadCommitted>, disables support for concurrent transactions, requires a flowed transaction from the operation call, and commits the transaction on the service automatically if no unhandled exception occurs.
@@ -1109,8 +1099,6 @@ public void MyMethod()
 
  This property can also be used to restrict the isolation level of incoming transactions flowed from a client.
 
-
-
 ## Examples
  The following code example sets the transaction isolation level to <xref:System.Transactions.IsolationLevel.ReadCommitted>, does not support concurrent transactions, requires a flowed transaction from the method call, and commits the transaction automatically if no unhandled exception occurs.
 
@@ -1156,8 +1144,6 @@ public void MyMethod()
 
 ## Remarks
  This value sets the <xref:System.ServiceModel.Dispatcher.ChannelDispatcher.TransactionTimeout?displayProperty=nameWithType> property. You can also set this property using the [&lt;serviceTimeouts&gt;](/dotnet/framework/configure-apps/file-schema/wcf/servicetimeouts) element in an application configuration file.
-
-
 
 ## Examples
  The following configuration file specifies a transaction timeout period of three minutes.

@@ -110,8 +110,6 @@
 > [!CAUTION]
 > Many of the members of the <xref:System.Windows.Forms.BindingSource> class operate on the underlying list represented by the <xref:System.Windows.Forms.BindingSource.List> property and simply refer their operation to the underlying list. Therefore, when the <xref:System.Windows.Forms.BindingSource> is bound to a custom implementation of <xref:System.Collections.IList>, the exact behavior of these members may differ from the behavior described in the class documentation. For example, the <xref:System.Windows.Forms.BindingSource.RemoveAt*> method calls <xref:System.Collections.IList.RemoveAt*?displayProperty=nameWithType>. The <xref:System.Windows.Forms.BindingSource> documentation describes the <xref:System.Windows.Forms.BindingSource.RemoveAt*> method with the understanding that the <xref:System.Collections.IList.RemoveAt*> method for the underlying <xref:System.Collections.IList> is correctly implemented.
 
-
-
 ## Examples
  The following code example demonstrates a <xref:System.Windows.Forms.ListBox> bound to a <xref:System.Windows.Forms.BindingSource>. The <xref:System.Windows.Forms.BindingSource> is bound to a <xref:System.ComponentModel.BindingList`1> that contains a list of fonts.
 
@@ -301,8 +299,6 @@
 
  This method raises the <xref:System.Windows.Forms.BindingSource.ListChanged> event.
 
-
-
 ## Examples
  The following code example how to use the <xref:System.Windows.Forms.BindingSource.Add*> method. To run this example, paste the code into a Windows Form, and call the `PopulateBindingSourceWithFonts` method from the form's constructor.
 
@@ -354,8 +350,6 @@
  The <xref:System.Windows.Forms.BindingSource.AddingNew> event occurs before a new object is added to the underlying list represented by the <xref:System.Windows.Forms.BindingSource.List> property. This event is fired after the <xref:System.Windows.Forms.BindingSource.AddNew*> method is called, but before the new item is created and added to the underlying list. By handling this event, the programmer can provide custom item creation and insertion behavior without being forced to derive from the <xref:System.Windows.Forms.BindingSource> class. This is accomplished in the event handler by setting the <xref:System.ComponentModel.AddingNewEventArgs.NewObject> property of the <xref:System.ComponentModel.AddingNewEventArgs?displayProperty=nameWithType> parameter to the new item. The new object created in the <xref:System.Windows.Forms.BindingSource.AddingNew> event must be of the same type as the type contained in the list or an exception will occur. You cannot set the <xref:System.ComponentModel.AddingNewEventArgs.NewObject> property when bound to a <xref:System.Data.DataView> or <xref:System.Data.DataTable> because you cannot add a new <xref:System.Data.DataRowView> to the list.
 
  For more information about supplying custom new item functionality, see the <xref:System.Windows.Forms.BindingSource.AddNew*> method. For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example uses a <xref:System.Windows.Forms.BindingSource> component to bind a list to a <xref:System.Windows.Forms.DataGridView> control. New items are added to the list by the <xref:System.Windows.Forms.BindingSource.AddingNew> event handler. This code example is part of a larger example provided in [How to: Customize Item Addition with the Windows Forms BindingSource](/dotnet/desktop/winforms/controls/how-to-customize-item-addition-with-the-windows-forms-bindingsource).
@@ -419,8 +413,6 @@
 3.  The new item is added immediately to the internal list unless the data source implements the <xref:System.ComponentModel.IEditableObject> interface. In this case, the new item is not committed until an explicit call to <xref:System.Windows.Forms.BindingSource.System%23ComponentModel%23ICancelAddNew%23EndNew*> is made or until a new list operation is initiated. Before it is committed, the new item can be rolled back by calling <xref:System.Windows.Forms.BindingSource.CancelEdit*>, in which case the new item is discarded.
 
  This method raises the <xref:System.Windows.Forms.BindingSource.ListChanged> event.
-
-
 
 ## Examples
  The following code example uses a <xref:System.Windows.Forms.BindingSource> component to bind a list to a <xref:System.Windows.Forms.DataGridView> control. New items are added to the list by the <xref:System.Windows.Forms.BindingSource.AddingNew> event handler. This code example is part of a larger example provided in [How to: Customize Item Addition with the Windows Forms BindingSource](/dotnet/desktop/winforms/controls/how-to-customize-item-addition-with-the-windows-forms-bindingsource).
@@ -540,8 +532,6 @@
  Setting this property raises the <xref:System.Windows.Forms.BindingSource.ListChanged> event with <xref:System.ComponentModel.ListChangedEventArgs.ListChangedType?displayProperty=nameWithType> set to <xref:System.ComponentModel.ListChangedType.Reset?displayProperty=nameWithType>.
 
  If you set the <xref:System.Windows.Forms.BindingSource.AllowNew> property to `true` and the underlying list type does not have a parameterless constructor, you must handle the <xref:System.Windows.Forms.BindingSource.AddingNew> event and create the appropriate type.
-
-
 
 ## Examples
  The following code example demonstrates using the <xref:System.Windows.Forms.BindingSource.AllowNew> property of the <xref:System.Windows.Forms.BindingSource> component to permit the user to add new items to the <xref:System.Windows.Forms.BindingSource> component's underlying list. Setting this property to `true` causes the bound <xref:System.Windows.Forms.DataGridView> control to display its row for new records.
@@ -752,8 +742,6 @@
  The <xref:System.Windows.Forms.BindingSource.BindingComplete> event occurs after all the clients, typically controls, have been bound to the current <xref:System.Windows.Forms.BindingSource>. The handler of this event can take the appropriate action based on the success, error, or exceptions in the binding process, by examining the <xref:System.Windows.Forms.BindingCompleteEventArgs.BindingCompleteState> property of the <xref:System.Windows.Forms.BindingCompleteEventArgs> parameter.
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example demonstrates handling the <xref:System.Windows.Forms.BindingSource.BindingComplete> event. To run this code, paste it into an empty code file.
@@ -998,8 +986,6 @@
 ## Remarks
  The <xref:System.Windows.Forms.BindingSource.Count> property gets the number of items in the underlying list represented by the <xref:System.Windows.Forms.BindingSource.List> property as modified by the value of the <xref:System.Windows.Forms.BindingSource.Filter> property.
 
-
-
 ## Examples
  The following code example demonstrates the <xref:System.Windows.Forms.BindingSource.List*>, <xref:System.Windows.Forms.BindingSource.RemoveAt*>, and <xref:System.Windows.Forms.BindingSource.Count*> members. To run this example, paste the code into a form that contains a <xref:System.Windows.Forms.BindingSource> named `BindingSource1`, two labels named `label1` and `label2`, and a button named `button1`. Associate the `button1_Click` method with the <xref:System.Windows.Forms.Control.Click> event for `button1`. Visual Basic users will need to add a reference to System.Data.dll.
 
@@ -1099,8 +1085,6 @@
  Use the <xref:System.Windows.Forms.BindingSource.Current> property to access the current item, but use the <xref:System.Windows.Forms.BindingSource.List> property to get the entire list. To determine the type of the current object, use the <xref:System.Object.GetType*>, or <xref:System.Object.ToString*> methods.
 
  To change the current item, set the <xref:System.Windows.Forms.BindingSource.Position> property to a new integral value, or use one of the navigation methods such as <xref:System.Windows.Forms.BindingSource.MoveNext*>.
-
-
 
 ## Examples
  The following code example demonstrates the <xref:System.Windows.Forms.BindingSource.Current> property. To run this example, paste the code into a form and call the `PopulateBindingSourceWithFonts` method from the form's <xref:System.Windows.Forms.Form.Load> event handling method.
@@ -1429,8 +1413,6 @@
 
  The <xref:System.Windows.Forms.BindingSource.DataSource> property is the default property for the <xref:System.Windows.Forms.BindingSource> class.
 
-
-
 ## Examples
  The following code example assigns a list of customers to the <xref:System.Windows.Forms.BindingSource.DataSource*> of a <xref:System.Windows.Forms.BindingSource> component. This code example is part of a larger example provided at [How to: Raise Change Notifications Using the BindingSource ResetItem Method](/dotnet/desktop/winforms/controls/how-to-raise-change-notifications-using-the-bindingsource-resetitem-method).
 
@@ -1634,8 +1616,6 @@
 
  The value of the <xref:System.Windows.Forms.BindingSource.Filter> property affects the value of the <xref:System.Windows.Forms.BindingSource.Count> property. Additionally, the <xref:System.Windows.Forms.BindingSource.Filter*> value will persist when the data source changes. To stop filtering the <xref:System.Windows.Forms.BindingSource.DataSource*>, call the <xref:System.Windows.Forms.BindingSource.RemoveFilter*> method.
 
-
-
 ## Examples
  The following example shows how to use the <xref:System.Windows.Forms.BindingSource.Filter> property with a <xref:System.Data.DataView>. To run this example, paste the code into a Windows Form and call `PopulateDataViewAndFilter` from the form's constructor or <xref:System.Windows.Forms.Form.Load> event-handling method. Your form should import the <xref:System.Xml> and <xref:System.IO> namespaces.
 
@@ -1703,8 +1683,6 @@
 
  This method simply refers the request to the underlying list's <xref:System.ComponentModel.IBindingList.Find*?displayProperty=nameWithType> method. For example, if the underlying data source is a <xref:System.Data.DataSet>, <xref:System.Data.DataTable>, or <xref:System.Data.DataView>, this method calls the <xref:System.Data.DataView.System%23ComponentModel%23IBindingList%23Find*?displayProperty=nameWithType> method. The behavior of <xref:System.ComponentModel.IBindingList.Find*?displayProperty=nameWithType>, such as the value returned if no matching item is found, depends on the implementation of the method in the underlying list.
 
-
-
 ## Examples
  The following code example demonstrates how to use the <xref:System.Windows.Forms.BindingSource.Find*> method. For the complete example see the class overview topic.
 
@@ -1761,8 +1739,6 @@
  The <xref:System.Windows.Forms.BindingSource.Find*> method can only be used when the underlying list is an <xref:System.ComponentModel.IBindingList> with searching implemented. This method simply refers the request to the underlying list's <xref:System.ComponentModel.IBindingList.Find*?displayProperty=nameWithType> method. For example, if the underlying data source is a <xref:System.Data.DataSet>, <xref:System.Data.DataTable>, or <xref:System.Data.DataView>, this method converts `propertyName` to a <xref:System.ComponentModel.PropertyDescriptor> and calls the <xref:System.Data.DataView.System%23ComponentModel%23IBindingList%23Find*> method. The behavior of <xref:System.Windows.Forms.BindingSource.Find*>, such as the value returned if no matching item is found, depends on the implementation of the method in the underlying list.
 
  The property name comparison is case-insensitive.
-
-
 
 ## Examples
  The following example shows how to use the <xref:System.Windows.Forms.BindingSource.Find*> method with a <xref:System.Data.DataView>. To run this example, paste the code into a Windows Form and call `PopulateDataViewAndFind` from the form's constructor or <xref:System.Windows.Forms.Form.Load> event-handling method. Your form should import the <xref:System.Xml> and <xref:System.IO> namespaces.
@@ -2383,8 +2359,6 @@
 
  If the type retrieved is the <xref:System.Collections.IList> interface, the underlying collection may be more complex, such as an <xref:System.Collections.ArrayList> or <xref:System.Data.DataView> class.
 
-
-
 ## Examples
  The following code example demonstrates the <xref:System.Windows.Forms.BindingSource.List*>, <xref:System.Windows.Forms.BindingSource.RemoveAt*>, and <xref:System.Windows.Forms.BindingSource.Count*> members. To run this example, paste the code into a form that contains a <xref:System.Windows.Forms.BindingSource> named `BindingSource1`, two labels named `label1` and `label2`, and a button named `button1`. Associate the `button1_Click` method with the <xref:System.Windows.Forms.Control.Click> event for `button1`. Visual Basic users will need to add a reference to System.Data.dll.
 
@@ -2433,8 +2407,6 @@
  The <xref:System.Windows.Forms.BindingSource.ListChanged> event occurs when there is a change to the membership or metadata of the underlying list represented by the <xref:System.Windows.Forms.BindingSource.List> property. For example, this event is raised when items are added, removed, or moved, or the <xref:System.Windows.Forms.BindingSource.DataSource*> or <xref:System.Windows.Forms.BindingSource.DataMember*> properties change. The values of the <xref:System.Windows.Forms.BindingSource.Sort*> and <xref:System.Windows.Forms.BindingSource.Filter*> properties will persist when this event occurs.
 
  This event can be completely suppressed by setting the <xref:System.Windows.Forms.BindingSource.RaiseListChangedEvents> property to `false`. For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example demonstrates handling the <xref:System.Windows.Forms.BindingSource.ListChanged> event of the <xref:System.Windows.Forms.BindingSource> component to detect when the <xref:System.Windows.Forms.BindingSource> component's underlying list is changed.
@@ -2490,8 +2462,6 @@
 
 ## Remarks
  Changes the current value of the <xref:System.Windows.Forms.BindingSource.Position> property to 0, the first item in the underlying data source.
-
-
 
 ## Examples
  The following code example demonstrates the <xref:System.Windows.Forms.BindingSource.MoveNext*>, <xref:System.Windows.Forms.BindingSource.MoveFirst*>, <xref:System.Windows.Forms.BindingSource.Current*>, and <xref:System.Windows.Forms.BindingSource.Position*> members. To run this example, paste the code into a form that imports the <xref:System.Drawing.Drawing2D> namespace and contains a <xref:System.Windows.Forms.BindingSource> named `BindingSource1` and a button named `button1`. Associate the `Form1_Load` and `Form1_Paint` methods with the <xref:System.Windows.Forms.Form.Load> and <xref:System.Windows.Forms.Control.Paint> events for the form, and associate the `button1_click` method with the <xref:System.Windows.Forms.Control.Click> event for `button1`. Visual Basic users will need to add a reference to System.Data.dll.
@@ -2585,8 +2555,6 @@
 
 ## Remarks
  Changes the current value of the <xref:System.Windows.Forms.BindingSource.Position> property to the next item in the underlying data source.
-
-
 
 ## Examples
  The following code example demonstrates the <xref:System.Windows.Forms.BindingSource.MoveNext*>, <xref:System.Windows.Forms.BindingSource.MoveFirst*>, <xref:System.Windows.Forms.BindingSource.Current*>, and <xref:System.Windows.Forms.BindingSource.Position*> members. To run this example, paste the code into a form that imports the <xref:System.Drawing.Drawing2D> namespace and contains a <xref:System.Windows.Forms.BindingSource> named `BindingSource1` and a button named `button1`. Associate the `Form1_Load` and `Form1_Paint` methods with the <xref:System.Windows.Forms.Form.Load> and <xref:System.Windows.Forms.Control.Paint> events for the form, and associate the `button1_click` method with the <xref:System.Windows.Forms.Control.Click> event for `button1`. Visual Basic users will need to add a reference to System.Data.dll.
@@ -3118,8 +3086,6 @@
 
  Changing the <xref:System.Windows.Forms.BindingSource.Position> property will adjust the <xref:System.Windows.Forms.BindingSource.Current> property likewise.
 
-
-
 ## Examples
  The following code example demonstrates the <xref:System.Windows.Forms.BindingSource.MoveNext*>, <xref:System.Windows.Forms.BindingSource.MoveFirst*>, <xref:System.Windows.Forms.BindingSource.Current*>, and <xref:System.Windows.Forms.BindingSource.Position*> members. To run this example, paste the code into a form that imports the <xref:System.Drawing.Drawing2D> namespace and contains a <xref:System.Windows.Forms.BindingSource> named `BindingSource1` and a button named `button1`. Associate the `Form1_Load` and `Form1_Paint` methods with the <xref:System.Windows.Forms.Form.Load> and <xref:System.Windows.Forms.Control.Paint> events for the form, and associate the `button1_click` method with the <xref:System.Windows.Forms.Control.Click> event for `button1`. Visual Basic users will need to add a reference to System.Data.dll.
 
@@ -3321,8 +3287,6 @@
  These two conditions can be tested with the <xref:System.Windows.Forms.BindingSource.IsFixedSize*> and <xref:System.Windows.Forms.BindingSource.IsReadOnly*> properties, respectively.
 
  This method raises the <xref:System.Windows.Forms.BindingSource.ListChanged> event.
-
-
 
 ## Examples
  The following code example demonstrates the <xref:System.Windows.Forms.BindingSource.List*>, <xref:System.Windows.Forms.BindingSource.RemoveAt*>, and <xref:System.Windows.Forms.BindingSource.Count*> members. To run this example, paste the code into a form that contains a <xref:System.Windows.Forms.BindingSource> named `BindingSource1`, two labels named `label1` and `label2`, and a button named `button1`. Associate the `button1_Click` method with the <xref:System.Windows.Forms.Control.Click> event for `button1`. Visual Basic users will need to add a reference to System.Data.dll.
@@ -3566,8 +3530,6 @@
 
  <xref:System.Windows.Forms.BindingSource.ResetBindings*> is automatically called whenever another member makes major changes to the data-binding, such as setting the <xref:System.Windows.Forms.BindingSource.DataSource*> or <xref:System.Windows.Forms.BindingSource.DataMember*> properties. However, the programmer can also call this method explicitly.
 
-
-
 ## Examples
  The following code example uses a <xref:System.Windows.Forms.BindingSource> component to bind an array list, which does not provide change notification. An item is removed from the list, and the bound controls are notified of the change by calling the <xref:System.Windows.Forms.BindingSource.ResetBindings*> method. This code example is part of a larger example provided in [How to: Reflect Data Source Updates in a Windows Forms Control with the BindingSource](/dotnet/desktop/winforms/controls/reflect-data-source-updates-in-a-wf-control-with-the-bindingsource).
 
@@ -3655,8 +3617,6 @@
  The <xref:System.Windows.Forms.BindingSource.ResetItem*> method notifies all controls bound to the item at the specified <xref:System.Windows.Forms.BindingSource.Position*> to refresh their values. The method does this by raising the <xref:System.Windows.Forms.BindingSource.ListChanged> event with <xref:System.ComponentModel.ListChangedEventArgs.ListChangedType?displayProperty=nameWithType> set to <xref:System.ComponentModel.ListChangedType.ItemChanged?displayProperty=nameWithType>.
 
  <xref:System.Windows.Forms.BindingSource.ResetItem*> is automatically called whenever changes are made to the value of an individual item. However, the programmer can also call this method explicitly.
-
-
 
 ## Examples
  The following code example uses a <xref:System.Windows.Forms.BindingSource> component to bind a list to a <xref:System.Windows.Forms.DataGridView> control. The list does not raise change notifications, so the <xref:System.Windows.Forms.BindingSource.ResetItem*> method on the <xref:System.Windows.Forms.BindingSource> is used to raise the <xref:System.Windows.Forms.BindingSource.ListChanged> event. This code example is part of a larger example provided in [How to: Raise Change Notifications Using the BindingSource ResetItem Method](/dotnet/desktop/winforms/controls/how-to-raise-change-notifications-using-the-bindingsource-resetitem-method).
@@ -3765,8 +3725,6 @@
 - If the list is of type <xref:System.ComponentModel.IBindingListView>, the <xref:System.ComponentModel.IBindingListView.SortDescriptions?displayProperty=nameWithType> property is set.
 
  The internal list's sort properties are only changed when the sort string is not `null`. The `get` accessor for this property will not retrieve the sort value of the internal list; instead, it will return the `set` accessor value. The value of the <xref:System.Windows.Forms.BindingSource.Sort> property will persist when the data source changes.
-
-
 
 ## Examples
  The following example shows how to use the <xref:System.Windows.Forms.BindingSource.Sort> property to perform basic sorting with a <xref:System.Data.DataView>. To run this example, paste the code into a Windows Form and call `PopulateDataViewAndSort` from the form's constructor or <xref:System.Windows.Forms.Form.Load> event-handling method. Your form should import the <xref:System.Xml> and <xref:System.IO> namespaces.
@@ -4115,8 +4073,6 @@ The <xref:System.ComponentModel.ListSortDescriptionCollection> is a read-only co
 
 ## Remarks
  If the data source is not an <xref:System.ComponentModel.IBindingList>, <xref:System.Windows.Forms.BindingSource.SupportsSearching*> always returns `false`.
-
-
 
 ## Examples
  The following code example demonstrates how to use the <xref:System.Windows.Forms.BindingSource.SupportsSearching*> member. For the complete example see the class overview topic.

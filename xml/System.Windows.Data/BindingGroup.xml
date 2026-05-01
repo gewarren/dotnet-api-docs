@@ -41,8 +41,6 @@
 
  A <xref:System.Windows.Data.BindingGroup> updates the sources of the binding at the same time instead of each binding being updated separately. When you call one of the methods to validate the data (<xref:System.Windows.Data.BindingGroup.ValidateWithoutUpdate*>, <xref:System.Windows.Data.BindingGroup.UpdateSources*>, or <xref:System.Windows.Data.BindingGroup.CommitEdit*>), the binding for each <xref:System.Windows.Controls.TextBox> in the example is validated and potentially updated. When a binding is part of a <xref:System.Windows.Data.BindingGroup>, the source of the binding is not updated until you call <xref:System.Windows.Data.BindingGroup.UpdateSources*> or <xref:System.Windows.Data.BindingGroup.CommitEdit*> on the <xref:System.Windows.Data.BindingGroup>, unless you explicitly set the <xref:System.Windows.Data.Binding.UpdateSourceTrigger> property.
 
-
-
 ## Examples
  The following examples create an application that prompts the user to enter the description and price of an item and the date that the offer expires. The application displays the current information for the item below the form. The user can submit or cancel the changes.
 
@@ -130,8 +128,6 @@
  If the sources in the <xref:System.Windows.Data.BindingGroup> support discarding pending changes, you can call <xref:System.Windows.Data.BindingGroup.BeginEdit*> to begin the edit transaction, call <xref:System.Windows.Data.BindingGroup.CommitEdit*> to save the pending changes, call <xref:System.Windows.Data.BindingGroup.CancelEdit*> to discard the pending changes.
 
  For each object in <xref:System.Windows.Data.BindingGroup.Items*> that implements <xref:System.ComponentModel.IEditableObject>, <xref:System.Windows.Data.BindingGroup.BeginEdit*> calls <xref:System.ComponentModel.IEditableObject.BeginEdit*?displayProperty=nameWithType>
-
-
 
 ## Examples
  The following example calls <xref:System.Windows.Data.BindingGroup.BeginEdit*> when a window loads to begin the edit transaction.
@@ -225,8 +221,6 @@
 
  For each object in <xref:System.Windows.Data.BindingGroup.Items*> that implements <xref:System.ComponentModel.IEditableObject>, <xref:System.Windows.Data.BindingGroup.CancelEdit*> calls <xref:System.ComponentModel.IEditableObject.CancelEdit*?displayProperty=nameWithType>
 
-
-
 ## Examples
  The following example calls <xref:System.Windows.Data.BindingGroup.CancelEdit*> to discard the pending changes and then calls <xref:System.Windows.Data.BindingGroup.BeginEdit*> to prepare the source to be re-edited.
 
@@ -310,8 +304,6 @@
 
  For each object in <xref:System.Windows.Data.BindingGroup.Items*> that implements <xref:System.ComponentModel.IEditableObject>, <xref:System.Windows.Data.BindingGroup.CommitEdit*> calls <xref:System.ComponentModel.IEditableObject.EndEdit*?displayProperty=nameWithType>
 
-
-
 ## Examples
  The following example calls <xref:System.Windows.Data.BindingGroup.CommitEdit*> to save the pending changes and then calls <xref:System.Windows.Data.BindingGroup.BeginEdit*> to prepare the source to be re-edited.
 
@@ -359,8 +351,6 @@
 
 ## Remarks
  Use this method in the <xref:System.Windows.Controls.ValidationRule.Validate*?displayProperty=nameWithType> method to get the value to be committed to the source. The type of the return value depends on the stage at which the <xref:System.Windows.Controls.ValidationRule> occurs. For example, if a <xref:System.Windows.Controls.TextBox> is data bound to a property of type integer and the <xref:System.Windows.Controls.ValidationRule> that calls <xref:System.Windows.Data.BindingGroup.GetValue(System.Object,System.String)> has its <xref:System.Windows.Controls.ValidationRule.ValidationStep*> set to <xref:System.Windows.Controls.ValidationStep.RawProposedValue>, the method returns a string. If the <xref:System.Windows.Controls.ValidationRule> has its <xref:System.Windows.Controls.ValidationRule.ValidationStep*> set to <xref:System.Windows.Controls.ValidationStep.ConvertedProposedValue>, the method returns whatever type that is returned by the binding's converter. In this example, <xref:System.Windows.Data.BindingGroup.GetValue(System.Object,System.String)> usually returns an integer.
-
-
 
 ## Examples
  The following example is part of an application that prompts the user to enter multiple customers and assign a sales representative to each customer. The application checks that the sales representative and the customer belong to the same region. The example shows the <xref:System.Windows.Controls.ValidationRule.Validate*> method, which uses the <xref:System.Windows.Data.BindingGroup.GetValue(System.Object,System.String)> method to get values that the customer entered.
@@ -466,8 +456,6 @@
 
  There can also be multiple objects in <xref:System.Windows.Data.BindingGroup.Items*> if the path of a Binding resolves to a nested property of the source. For example, suppose a <xref:System.Windows.Controls.TextBox> control's binding is a part of a <xref:System.Windows.Data.BindingGroup> and its <xref:System.Windows.FrameworkElement.DataContext*> is a `Customer` object, which has a property of type `Address`. If the <xref:System.Windows.Data.Binding.Path*> of the <xref:System.Windows.Data.Binding> is the `Address.ZipCode` property, the `Address` is added to the <xref:System.Windows.Data.BindingGroup.Items> property.
 
-
-
 ## Examples
  The following examples are part of an application that checks whether the user has set the properties of two objects to equal values. The first example creates two <xref:System.Windows.Controls.TextBox> controls, each of which are data bound to a different source. The binding of the first <xref:System.Windows.Controls.TextBox> gets its source, `object1`, from the <xref:System.Windows.FrameworkElement.DataContext*> of the <xref:System.Windows.Controls.TextBox> control's parent element (the <xref:System.Windows.Controls.StackPanel>). On the second <xref:System.Windows.Controls.TextBox>, the source of the binding is set to `object2`. The example also creates a <xref:System.Windows.Controls.Label> that displays validation errors.
 
@@ -526,8 +514,6 @@
  If <xref:System.Windows.Data.BindingGroup.Name*> is `null`, bindings that have a source that is the same object as the <xref:System.Windows.FrameworkElement.DataContext*> of the element that has the <xref:System.Windows.Data.BindingGroup> participate in the <xref:System.Windows.Data.BindingGroup>.
 
  You can include bindings that have a source that is different from the <xref:System.Windows.FrameworkElement.DataContext*> of the parent element that has the <xref:System.Windows.Data.BindingGroup> by setting <xref:System.Windows.Data.BindingGroup.Name*> of the <xref:System.Windows.Data.BindingGroup> and the <xref:System.Windows.Data.BindingBase.BindingGroupName> property of a binding to the same value. You can exclude bindings that have the same source as <xref:System.Windows.FrameworkElement.DataContext*> of the parent element that has the <xref:System.Windows.Data.BindingGroup> by setting <xref:System.Windows.Data.BindingGroup.Name*> of the <xref:System.Windows.Data.BindingGroup> and the <xref:System.Windows.Data.BindingBase.BindingGroupName> property of a binding to different values.
-
-
 
 ## Examples
  The following examples are part of an application that checks whether the user has set the properties of two objects to equal values. The first example creates two <xref:System.Windows.Controls.TextBox> controls, each of which are data bound to a different source. The binding of the first <xref:System.Windows.Controls.TextBox> is part of the <xref:System.Windows.Data.BindingGroup> because the <xref:System.Windows.Controls.TextBox> inherits the <xref:System.Windows.FrameworkElement.DataContext*> and <xref:System.Windows.Data.BindingGroup> from its parent <xref:System.Windows.Controls.StackPanel>.
@@ -588,8 +574,6 @@
 
 ## Remarks
  The <xref:System.Windows.Controls.Validation.Error?displayProperty=nameWithType> attached event occurs on the element that has the <xref:System.Windows.Data.BindingGroup>.
-
-
 
 ## Examples
  The following example creates a <xref:System.Windows.Data.BindingGroup> and sets <xref:System.Windows.Data.BindingGroup.NotifyOnValidationError*> to `true` so that the application can handle the <xref:System.Windows.Controls.Validation.Error?displayProperty=nameWithType> event when a <xref:System.Windows.Controls.ValidationRule> fails.
@@ -720,8 +704,6 @@
 
  Use this method in the <xref:System.Windows.Controls.ValidationRule.Validate*?displayProperty=nameWithType> method to get the value to be committed to the source. The type `value` depends on the stage at which the <xref:System.Windows.Controls.ValidationRule> occurs. For example, if a <xref:System.Windows.Controls.TextBox> is data bound to a property of type integer, `value` is a string if the <xref:System.Windows.Controls.ValidationRule> that calls <xref:System.Windows.Data.BindingGroup.TryGetValue*> has its <xref:System.Windows.Controls.ValidationRule.ValidationStep*> set to <xref:System.Windows.Controls.ValidationStep.RawProposedValue>. If the <xref:System.Windows.Controls.ValidationRule> has its <xref:System.Windows.Controls.ValidationRule.ValidationStep*> set to <xref:System.Windows.Controls.ValidationStep.ConvertedProposedValue>, the type of `value` is whatever type that is returned by the binding's converter. In this example, `value` is usually an integer.
 
-
-
 ## Examples
  The following example creates a custom <xref:System.Windows.Controls.ValidationRule> named `ValidateDateAndPrice`. In the <xref:System.Windows.Controls.ValidationRule.Validate*> method, the example uses the <xref:System.Windows.Data.BindingGroup.TryGetValue*> method and the <xref:System.Windows.Data.BindingGroup.Items> property to get the values the user entered into the form. Then the example checks that if an item is over 100 dollars, it will be available for at least seven days. This example is part of a larger example on the <xref:System.Windows.Data.BindingGroup> class
 
@@ -771,8 +753,6 @@
 
 ## Remarks
  This method updates the source if every <xref:System.Windows.Controls.ValidationRule> succeeds, but it does not cause the sources to commit the pending changes and end the edit transaction. That is, if the source object implements <xref:System.ComponentModel.IEditableObject>. Calling this method does not cause <xref:System.ComponentModel.IEditableObject.EndEdit*> to be called. Use the <xref:System.Windows.Data.BindingGroup.CommitEdit*> method to have the sources commit the pending changes.
-
-
 
 ## Examples
  The following example is part of an application that prompts the user to enter multiple customers and assign a sales representative to each customer. The application checks that the sales representative and the customer belong to the same region. The example calls <xref:System.Windows.Data.BindingGroup.UpdateSources*> to validate the bindings and save the values to the source if all the validation rules succeed.
@@ -929,8 +909,6 @@
 
 ## Remarks
  When a <xref:System.Windows.Controls.ValidationRule> is added to a <xref:System.Windows.Data.BindingGroup>, the <xref:System.Windows.Data.BindingGroup> is passed in as the first parameter of the <xref:System.Windows.Controls.ValidationRule.Validate*> method. You can get the proposed values of the object by using the <xref:System.Windows.Data.BindingGroup.TryGetValue*> or <xref:System.Windows.Data.BindingGroup.GetValue(System.Object,System.String)> method. You can get the objects that are the sources of the bindings from the <xref:System.Windows.Data.BindingGroup.Items> property.
-
-
 
 ## Examples
  The following example adds the custom <xref:System.Windows.Controls.ValidationRule>, `ValidateDateAndPrice`, to the <xref:System.Windows.Data.BindingGroup>.

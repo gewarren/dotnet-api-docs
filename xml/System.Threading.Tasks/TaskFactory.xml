@@ -583,8 +583,6 @@
 
  Exceptions thrown by tasks in the `tasks` array are not available to the continuation task through structured exception handling. You can determine which exceptions were thrown by examining the <xref:System.Threading.Tasks.Task.Exception?displayProperty=nameWithType> property of each task in the `tasks` array. To use structured exception handling to handle exceptions thrown by tasks in the `tasks` array, call the <xref:System.Threading.Tasks.Task.WaitAll(System.Threading.Tasks.Task[])?displayProperty=nameWithType> method.
 
-
-
 ## Examples
  The following example launches separate tasks that use a regular expression to count the number of words in a set of text files. The <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll*> method is used to launch a task that displays the total word count when all the antecedent tasks have completed.
 
@@ -5635,8 +5633,6 @@ The NotOn\* and OnlyOn\* <xref:System.Threading.Tasks.TaskContinuationOptions>, 
 
  Starting with the .NET Framework 4.5, you can use the <xref:System.Threading.Tasks.Task.Run(System.Action)?displayProperty=nameWithType> method as  a quick way to call <xref:System.Threading.Tasks.TaskFactory.StartNew(System.Action)> with default parameters. Note, however, that there is a difference in behavior between the two methods regarding : <xref:System.Threading.Tasks.Task.Run(System.Action)?displayProperty=nameWithType> by default does not allow child tasks started with the <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> option to attach to the current <xref:System.Threading.Tasks.Task> instance, whereas <xref:System.Threading.Tasks.TaskFactory.StartNew(System.Action)> does. For more information and code examples, see [Task.Run vs Task.Factory.StartNew](https://devblogs.microsoft.com/pfxteam/task-run-vs-task-factory-startnew/) in the Parallel Programming with .NET blog.
 
-
-
 ## Examples
  The following example uses the <xref:System.Threading.Tasks.TaskFactory.StartNew(System.Action)> method to repeatedly invoke an <xref:System.Action> delegate that generates a random number, interprets it as a Unicode code point, converts it to a UTF16-encoded code unit, and displays information about the resulting character or characters.
 
@@ -5706,8 +5702,6 @@ The NotOn\* and OnlyOn\* <xref:System.Threading.Tasks.TaskContinuationOptions>, 
  Calling `StartNew` is functionally equivalent to creating a Task using one of its constructors and then calling <xref:System.Threading.Tasks.Task.Start*> to schedule it for execution.
 
  Starting with the .NET Framework 4.5, you can use the <xref:System.Threading.Tasks.Task.Run(System.Action,System.Threading.CancellationToken)?displayProperty=nameWithType> method as  a quick way to call <xref:System.Threading.Tasks.TaskFactory.StartNew(System.Action,System.Threading.CancellationToken)> with default parameters. Note, however, that there is a difference in behavior between the two methods regarding : <xref:System.Threading.Tasks.Task.Run(System.Action,System.Threading.CancellationToken)?displayProperty=nameWithType> by default does not allow child tasks started with the <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> option to attach to the current <xref:System.Threading.Tasks.Task> instance, whereas <xref:System.Threading.Tasks.TaskFactory.StartNew(System.Action,System.Threading.CancellationToken)> does. For more information and code examples, see [Task.Run vs Task.Factory.StartNew](https://devblogs.microsoft.com/pfxteam/task-run-vs-task-factory-startnew/) in the Parallel Programming with .NET blog.
-
-
 
 ## Examples
  The following example calls the <xref:System.Threading.Tasks.TaskFactory.StartNew(System.Action,System.Threading.CancellationToken)> method to create a task that iterates the files in the C:\Windows\System32 directory. The lambda expression calls the <xref:System.Threading.Tasks.Parallel.ForEach*?displayProperty=nameWithType> method to add information about each  file to a <xref:System.Collections.Generic.List`1> object. Each detached nested task invoked by the <xref:System.Threading.Tasks.Parallel.ForEach*?displayProperty=nameWithType> loop checks the state of the cancellation token and, if cancellation is requested, calls the <xref:System.Threading.CancellationToken.ThrowIfCancellationRequested*?displayProperty=nameWithType> method. The <xref:System.Threading.CancellationToken.ThrowIfCancellationRequested*?displayProperty=nameWithType> method throws an <xref:System.OperationCanceledException> exception that is handled in a `catch` block when the calling thread calls the <xref:System.Threading.Tasks.Task.Wait*?displayProperty=nameWithType> method.
@@ -5863,8 +5857,6 @@ The NotOn\* and OnlyOn\* <xref:System.Threading.Tasks.TaskContinuationOptions>, 
 
  Starting with the .NET Framework 4.5, you can use the <xref:System.Threading.Tasks.Task.Run*> method with an <xref:System.Action> object as  a quick way to call <xref:System.Threading.Tasks.TaskFactory.StartNew*> with default parameters. For more information and code examples, see [Task.Run vs Task.Factory.StartNew](https://devblogs.microsoft.com/pfxteam/task-run-vs-task-factory-startnew/) in the Parallel Programming with .NET blog.
 
-
-
 ## Examples
  The following example defines an array of 6-letter words. Each word is then passed to an <xref:System.Action`1> delegate, which scrambles the word and displays the original word and its scrambled version.
 
@@ -5953,8 +5945,6 @@ The NotOn\* and OnlyOn\* <xref:System.Threading.Tasks.TaskContinuationOptions>, 
  Calling StartNew is functionally equivalent to creating a Task using one of its constructors and then calling <xref:System.Threading.Tasks.Task.Start*> to schedule it for execution.
 
  Starting with the .NET Framework 4.5, you can use the <xref:System.Threading.Tasks.Task.Run*> method with an <xref:System.Action> object as  a quick way to call <xref:System.Threading.Tasks.TaskFactory.StartNew*> with default parameters. For more information and code examples, see [Task.Run vs Task.Factory.StartNew](https://devblogs.microsoft.com/pfxteam/task-run-vs-task-factory-startnew/) in the Parallel Programming with .NET blog.
-
-
 
 ## Examples
  The following example defines an array of 6-letter words. Each word is then passed to an <xref:System.Action`1> delegate, which scrambles the word and displays the original word and its scrambled version.
@@ -6292,8 +6282,6 @@ The NotOn\* and OnlyOn\* <xref:System.Threading.Tasks.TaskContinuationOptions>, 
 
  Starting with the .NET Framework 4.5, you can call the <xref:System.Threading.Tasks.Task.Run``1(System.Func{``0})?displayProperty=nameWithType> method as a quick way to call <xref:System.Threading.Tasks.TaskFactory.StartNew*> with default parameters. Note, however, that there is a difference in behavior between the two methods regarding : <xref:System.Threading.Tasks.Task.Run``1(System.Func{``0})?displayProperty=nameWithType> by default does not allow child tasks started with the <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> option to attach to the current <xref:System.Threading.Tasks.Task`1> instance, whereas <xref:System.Threading.Tasks.TaskFactory.StartNew``1(System.Func{``0})> does. For more information and code examples, see the entry [Task.Run vs. Task.Factory.StartNew](https://devblogs.microsoft.com/pfxteam/task-run-vs-task-factory-startnew/) in the Parallel Programming with .NET blog.
 
-
-
 ## Examples
  The following example is a simple addition app that generates two random numbers and prompts the user to enter their sum. It then indicates whether the answer is correct or, if the user's response is not a valid number, prompts the user to re-enter a valid number. The <xref:System.Threading.Tasks.TaskFactory.StartNew*> is used to create the <xref:System.Threading.Tasks.Task`1> objects that return the random numbers to add.
 
@@ -6451,8 +6439,6 @@ The NotOn\* and OnlyOn\* <xref:System.Threading.Tasks.TaskContinuationOptions>, 
  Calling <xref:System.Threading.Tasks.TaskFactory.StartNew*> is functionally equivalent to creating a <xref:System.Threading.Tasks.Task`1> using one of its constructors and then calling <xref:System.Threading.Tasks.Task.Start*> to schedule it for execution.
 
  Starting with the .NET Framework 4.5, you can use the <xref:System.Threading.Tasks.Task.Run``1(System.Func{``0},System.Threading.CancellationToken)?displayProperty=nameWithType> method as a quick way to call <xref:System.Threading.Tasks.TaskFactory.StartNew``1(System.Func{``0},System.Threading.CancellationToken)> with default parameters. Note, however, that there is a difference in behavior between the two methods regarding : <xref:System.Threading.Tasks.Task.Run``1(System.Func{``0},System.Threading.CancellationToken)?displayProperty=nameWithType> by default does not allow child tasks started with the <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> option to attach to the current <xref:System.Threading.Tasks.Task`1> instance, whereas <xref:System.Threading.Tasks.TaskFactory.StartNew``1(System.Func{``0},System.Threading.CancellationToken)> does. For more information and code examples, see the entry [Task.Run vs. Task.Factory.StartNew](https://devblogs.microsoft.com/pfxteam/task-run-vs-task-factory-startnew/) in the Parallel Programming with .NET blog.
-
-
 
 ## Examples
  The following example uses two tasks to compute the Fibonacci sequence ending in F100 = F100-1 + F100-2 with seed values F1= 1, F2 = 1 and F1 = 0, F2= 1. Approximately half of the time, a cancellation token is set as the operations execute. The output from the example shows the result if the two tasks complete successfully and if the token is cancelled.

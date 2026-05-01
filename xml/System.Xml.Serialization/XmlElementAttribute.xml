@@ -120,8 +120,6 @@ public class Things{
 > [!NOTE]
 > You can use the word `XmlElement` in your code instead of the longer <xref:System.Xml.Serialization.XmlElementAttribute>.
 
-
-
 ## Examples
  The following example serializes a class named `Group` and applies the <xref:System.Xml.Serialization.XmlElementAttribute> to several of its members. The field named `Employees` returns an array of `Employee` objects. In this case, the <xref:System.Xml.Serialization.XmlElementAttribute> specifies that the resulting XML will not be nested (which is the default behavior of items in an array).
 
@@ -261,8 +259,6 @@ public class Things{
 ## Remarks
  By default, the <xref:System.Xml.Serialization.XmlSerializer> uses the member name as the XML element name when serializing a class instance. For example, a field named `Vehicle` generates an XML element named `Vehicle`. However if you need a different element, such as `Cars`, pass it in the `elementName` parameter.
 
-
-
 ## Examples
  The following example shows a simple class that contains a single field named `Vehicles`. The example applies the <xref:System.Xml.Serialization.XmlElementAttribute> to the field and includes the `elementName` parameter, thereby instructing the <xref:System.Xml.Serialization.XmlSerializer> to generate XML elements named "Cars" rather than "Vehicles".
 
@@ -325,8 +321,6 @@ public class Things{
 
 ## Remarks
  Use the `type` parameter to specify a type that is derived from a base class. For example, suppose a property named `MyAnimal` returns an `Animal` object. You want to enhance the object, so you create a new class named `Mammal` that inherits from the `Animal` class. To instruct the <xref:System.Xml.Serialization.XmlSerializer> to accept the `Mammal` class when it serializes the `MyAnimal` property, pass the <xref:System.Type> of the `Mammal` class to the constructor.
-
-
 
 ## Examples
  The following example serializes a class named `Orchestra` that contains a single field named `Instruments`, which returns an array of `Instrument` objects. A second class named `Brass` inherits from the `Instrument` class. The example applies the <xref:System.Xml.Serialization.XmlElementAttribute> to the `Instruments` field, and specifies the `Brass` type, allowing the `Instruments` field to accept `Brass` objects. The example also specifies the name of the XML element by setting the <xref:System.Xml.Serialization.XmlElementAttribute.ElementName> property.
@@ -394,8 +388,6 @@ public class Things{
  By default, the <xref:System.Xml.Serialization.XmlSerializer> uses the member name as the XML element name when serializing a class instance. For example, a field named `Vehicle` generates an XML element named `Vehicle`. However, if you need a different element, such as `Cars`, pass it in the `elementName` parameter.
 
  Use the `type` parameter to specify a type that is derived from a base class. For example, suppose a property named `MyAnimal` returns an `Animal` object. You want to enhance the object, so you create a new class named `Mammal` that inherits from the `Animal` class. To instruct the <xref:System.Xml.Serialization.XmlSerializer> to accept the `Mammal` class when it serializes the `MyAnimal` property, pass the <xref:System.Type> of the `Mammal` class to the constructor.
-
-
 
 ## Examples
  The following example serializes a class named `Orchestra` that contains a single field named `Instruments`, which returns an array of `Instrument` objects. A second class named `Brass` inherits from the `Instrument` class. The example applies the <xref:System.Xml.Serialization.XmlElementAttribute> to the `Instruments` field, and specifies the `Brass` type, allowing the `Instruments` field to accept `Brass` objects. The example also specifies the name of the XML element by setting the <xref:System.Xml.Serialization.XmlElementAttribute.ElementName> property.
@@ -528,8 +520,6 @@ public class Things{
 |unsignedLong|<xref:System.UInt64>|
 |unsignedShort|<xref:System.UInt16>|
 
-
-
 ## Examples
  The following example serializes a class named `Group` that contains a field named `ExtraInfo`, which returns an <xref:System.Collections.ArrayList>. The example applies two instances of the <xref:System.Xml.Serialization.XmlElementAttribute> to the field and specifies different <xref:System.Xml.Serialization.XmlElementAttribute.DataType> values for each instance. Each instance enables the <xref:System.Xml.Serialization.XmlSerializer> to serialize the specified types inserted into the array.
 
@@ -604,8 +594,6 @@ public class Things{
  Specify an <xref:System.Xml.Serialization.XmlArrayItemAttribute.ElementName> if you want the name of the generated XML element to differ from the member's identifier.
 
  You can set the same <xref:System.Xml.Serialization.XmlArrayAttribute.ElementName> value to more than one class member if the generated XML document uses XML namespaces to distinguish between the identically named members. For details on how to use namespaces and prefixed names in the XML document, see the <xref:System.Xml.Serialization.XmlSerializerNamespaces> class.
-
-
 
 ## Examples
  The following example sets the <xref:System.Xml.Serialization.XmlElementAttribute.ElementName> property of an <xref:System.Xml.Serialization.XmlElementAttribute> to a new value.
@@ -692,8 +680,6 @@ attributeFormDefault="unqualified"... >
 
  When the <xref:System.Xml.Serialization.XmlSerializer> reads the schema, the <xref:System.Xml.Serialization.XmlAttributeAttribute.Form> value for both the `Name` and `Number` is `XmlSchemaForm.None`, but the `Name` element is qualified, while the `Number` element is unqualified.
 
-
-
 ## Examples
  The following example sets the <xref:System.Xml.Serialization.XmlElementAttribute.Form> property to `XmlSchemaForm.Unqualified`.
 
@@ -773,8 +759,6 @@ attributeFormDefault="unqualified"... >
 
 > [!NOTE]
 > You cannot apply the <xref:System.Xml.Serialization.XmlElementAttribute.IsNullable> property to a member typed as a value type because a value type cannot contain `null`. Additionally, you cannot set this property to `false` for nullable value types. When such types are `null`, they will be serialized by setting `xsi:nil` to `true`.
-
-
 
 ## Examples
  The following example shows a field with the <xref:System.Xml.Serialization.XmlElementAttribute> applied to it, and the <xref:System.Xml.Serialization.XmlElementAttribute.IsNullable> property set to `false`.
@@ -983,8 +967,6 @@ attributeFormDefault="unqualified"... >
  Use the <xref:System.Xml.Serialization.XmlElementAttribute.Type> property to specify a derived type for a field or property.
 
  If a field or property returns an <xref:System.Collections.ArrayList>, you can apply multiple instances of the <xref:System.Xml.Serialization.XmlElementAttribute> to the member. For each instance, set the <xref:System.Xml.Serialization.XmlElementAttribute.Type> property to a type of object that can be inserted into the array.
-
-
 
 ## Examples
  The following example uses the <xref:System.Xml.Serialization.XmlElementAttribute.Type> property to specify a derived object for an <xref:System.Xml.Serialization.XmlElementAttribute>. The example also applies three instances of the <xref:System.Xml.Serialization.XmlElementAttribute> to a field that returns an <xref:System.Collections.ArrayList>. Each instance specifies a type allowed in the field.

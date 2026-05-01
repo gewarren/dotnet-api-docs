@@ -1123,8 +1123,6 @@ If `comparand` and the object in `location1` are equal by reference, then `value
 ## Remarks
  If `comparand` and the value in `location1` are equal, then `value` is stored in `location1`. Otherwise, no operation is performed. The compare and exchange operations are performed as an atomic operation. The return value of <xref:System.Threading.Interlocked.CompareExchange*> is the original value in `location1`, whether or not the exchange takes place.
 
-
-
 ## Examples
  The following code example demonstrates a thread-safe method that accumulates a running total of <xref:System.Single> values. Two threads add a series of <xref:System.Single> values using the thread-safe method and ordinary addition, and when the threads complete the totals are compared. On a dual-processor computer, there is a significant difference in the totals.
 
@@ -1491,8 +1489,6 @@ If `comparand` and the value in `location1` are equal by reference, then `value`
 
 ## Remarks
  This method handles an overflow condition by wrapping: If `location` = <xref:System.Int32.MinValue?displayProperty=nameWithType>, `location` - 1 = <xref:System.Int32.MaxValue?displayProperty=nameWithType>. No exception is thrown.
-
-
 
 ## Examples
  The following example determines how many random numbers that range from 0 to 1,000 are required to generate 1,000 random numbers with a midpoint value. To keep track of the number of midpoint values, a variable, `midpointCount`, is set equal to 1,000 and decremented each time the random number generator returns a midpoint value. Because three threads generate the random numbers, the <xref:System.Threading.Interlocked.Decrement(System.Int32@)> method is called to ensure that multiple threads don't update `midpointCount` concurrently. Note that a lock is also used to protect the random number generator, and that a <xref:System.Threading.CountdownEvent> object is used to ensure that the `Main` method doesn't finish execution before the three threads.
@@ -2526,8 +2522,6 @@ If `comparand` and the value in `location1` are equal by reference, then `value`
 
 ## Remarks
  This method handles an overflow condition by wrapping: if `location` = <xref:System.Int32.MaxValue?displayProperty=nameWithType>, `location` + 1 = <xref:System.Int32.MinValue?displayProperty=nameWithType>. No exception is thrown.
-
-
 
 ## Examples
  The following example determines how many random numbers that range from 0 to 1,000 are required to generate 1,000 random numbers with a midpoint value. To keep track of the number of midpoint values, a variable, `midpointCount`, is set equal to 0 and incremented each time the random number generator returns a midpoint value until it reaches 10,000. Because three threads generate the random numbers, the <xref:System.Threading.Interlocked.Increment(System.Int32@)> method is called to ensure that multiple threads don't update `midpointCount` concurrently. Note that a lock is also used to protect the random number generator, and that a <xref:System.Threading.CountdownEvent> object is used to ensure that the `Main` method doesn't finish execution before the three threads.

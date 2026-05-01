@@ -234,8 +234,6 @@
 
  The `cloneoption` parameter controls what kind of dependent transaction to create. If a dependent transaction is created with <xref:System.Transactions.DependentCloneOption.BlockCommitUntilComplete>, it blocks the commit process of the transaction until the transaction times out, or <xref:System.Transactions.DependentTransaction.Complete*> is called on the <xref:System.Transactions.DependentTransaction>. If it is created with <xref:System.Transactions.DependentCloneOption.RollbackIfNotComplete>, it automatically aborts the transaction if <xref:System.Transactions.CommittableTransaction.Commit*> is called before <xref:System.Transactions.DependentTransaction.Complete*> is called on the <xref:System.Transactions.DependentTransaction>.
 
-
-
 ## Examples
  The following example shows you how to create a dependent transaction.
 
@@ -637,8 +635,6 @@
  Volatile resource managers cannot recovery from failure to complete a transaction in which they were participating. To obtain a durable enlistment in a transaction, use the <xref:System.Transactions.Transaction.EnlistDurable*> method.
 
  Resource managers enlisted for participation in a transaction through this method receive two phase commit notifications that correspond to the methods defined on the <xref:System.Transactions.IEnlistmentNotification> interface.
-
-
 
 ## Examples
  The following example shows an implementation of <xref:System.Transactions.IEnlistmentNotification> interface, as well as enlisting the object as a participant in a transaction using the <xref:System.Transactions.Transaction.EnlistVolatile*> method.
@@ -1358,8 +1354,6 @@
  You can register for this event instead of using a volatile enlistment to get outcome information for transactions. The parameter passed to the <xref:System.Transactions.TransactionCompletedEventHandler> delegate is a <xref:System.Transactions.Transaction> instance. You can then query the <xref:System.Transactions.Transaction.TransactionInformation> property of the specific instance to get an instance of <xref:System.Transactions.TransactionInformation>, whose <xref:System.Transactions.TransactionInformation.Status> property contains the status of a transaction with either the <xref:System.Transactions.TransactionStatus.Committed> or <xref:System.Transactions.TransactionStatus.Aborted> value.
 
  **Caution** Signing up for this event negatively affects the performance of the transaction it is attached to.
-
-
 
 ## Examples
  The following sample shows how an application can obtain the outcome of a transaction by subscribing to the <xref:System.Transactions.Transaction.TransactionCompleted> event.

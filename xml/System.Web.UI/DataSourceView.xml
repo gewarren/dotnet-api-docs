@@ -28,8 +28,6 @@
 
  All <xref:System.Web.UI.DataSourceView> objects support data retrieval from the underlying data source using the <xref:System.Web.UI.DataSourceView.ExecuteSelect*> method. All views optionally support a basic set of operations, including operations such as <xref:System.Web.UI.DataSourceView.ExecuteInsert*>, <xref:System.Web.UI.DataSourceView.ExecuteUpdate*>, and <xref:System.Web.UI.DataSourceView.ExecuteDelete*>. A data-bound control can discover the capabilities of a data source control by retrieving an associated data source view using the <xref:System.Web.UI.DataSourceControl.GetView*> and <xref:System.Web.UI.DataSourceControl.GetViewNames*> methods, and by querying the view at design time or run time.
 
-
-
 ## Examples
  The following code example demonstrates how to extend the <xref:System.Web.UI.DataSourceView> class to create a strongly typed view class for a data source control. The `CsVDataSourceView` class defines the capabilities of the `CsvDataSource` data source control and provides an implementation for data-bound controls to use data stored in comma-separated value (.csv) files. For more information on the `CsvDataSource` data source control, see the <xref:System.Web.UI.DataSourceControl> class.
 
@@ -98,8 +96,6 @@
 ## Remarks
  The <xref:System.Web.UI.DataSourceView.CanDelete> property reflects not only a capability of the data source control, but also whether it is currently appropriate to perform an operation. For example, even though a data source view supports the <xref:System.Web.UI.DataSourceView.ExecuteDelete*> operation in general, if a required property or some other data is not set, the <xref:System.Web.UI.DataSourceView.CanDelete> property returns `false`, as a delete operation would fail.
 
-
-
 ## Examples
  The following code example demonstrates how to override the <xref:System.Web.UI.DataSourceView.CanDelete> property and the <xref:System.Web.UI.DataSourceView.ExecuteDelete*> method in a class that extends the <xref:System.Web.UI.DataSourceView> class. This code example is part of a larger example provided for the <xref:System.Web.UI.DataSourceView> class.
 
@@ -162,8 +158,6 @@
 
 ## Remarks
  The <xref:System.Web.UI.DataSourceView.CanInsert> property reflects not only a capability of the data source control, but also whether it is currently appropriate to perform an operation. For example, even though a data source control supports the <xref:System.Web.UI.DataSourceView.ExecuteInsert*> operation, if a required insert command or some other data is not set, the <xref:System.Web.UI.DataSourceView.CanInsert> property returns `false`, as an insert operation would fail.
-
-
 
 ## Examples
  The following code example demonstrates how to override the <xref:System.Web.UI.DataSourceView.CanInsert> property and the <xref:System.Web.UI.DataSourceView.ExecuteInsert*> method in a class that extends the <xref:System.Web.UI.DataSourceView> class. This code example is part of a larger example provided for the <xref:System.Web.UI.DataSourceView> class.
@@ -269,8 +263,6 @@
 ## Remarks
  A data-bound control can request sorting by adding the <xref:System.Web.UI.DataSourceCapabilities.Sort> field to the <xref:System.Web.UI.DataSourceSelectArguments> object passed to the <xref:System.Web.UI.DataSourceView.ExecuteSelect*> method. If a data-bound control requests sorting, but the <xref:System.Web.UI.DataSourceView.CanSort> property returns `false`, the data source view throws an exception.
 
-
-
 ## Examples
  The following code example demonstrates how to override the <xref:System.Web.UI.DataSourceView.CanSort> property in a class that extends the <xref:System.Web.UI.DataSourceView> class. This code example is part of a larger example provided for the <xref:System.Web.UI.DataSourceView> class.
 
@@ -308,8 +300,6 @@
 
 ## Remarks
  The <xref:System.Web.UI.DataSourceView.CanUpdate> property reflects not only a capability of the data source control, but also whether it is currently appropriate to perform an operation. For example, even though a data-bound control supports the <xref:System.Web.UI.DataSourceView.ExecuteUpdate*> operation, if a required update command or some other data is not set, the <xref:System.Web.UI.DataSourceView.CanUpdate> property returns `false`, as an update operation would fail.
-
-
 
 ## Examples
  The following code example demonstrates how to override the <xref:System.Web.UI.DataSourceView.CanUpdate> property and the <xref:System.Web.UI.DataSourceView.ExecuteUpdate*> method in a class that extends the <xref:System.Web.UI.DataSourceView> class. This code example is part of a larger example provided for the <xref:System.Web.UI.DataSourceView> class.
@@ -531,8 +521,6 @@
 > [!NOTE]
 > The <xref:System.Web.UI.DataSourceView> class's default implementation is to throw a <xref:System.NotSupportedException> exception. If you extend the <xref:System.Web.UI.DataSourceView> class, override the <xref:System.Web.UI.DataSourceView.ExecuteDelete*> method if your class supports deletion from the underlying data storage.
 
-
-
 ## Examples
  The following code example demonstrates how a class that extends the <xref:System.Web.UI.DataSourceView> class can override the <xref:System.Web.UI.DataSourceView.CanDelete> property and the <xref:System.Web.UI.DataSourceView.ExecuteDelete*> method. This code example is part of a larger example provided for the <xref:System.Web.UI.DataSourceView> class.
 
@@ -579,8 +567,6 @@
 > [!NOTE]
 > The <xref:System.Web.UI.DataSourceView> class's default implementation is to throw a <xref:System.NotSupportedException> exception. If you extend the <xref:System.Web.UI.DataSourceView> class, override the <xref:System.Web.UI.DataSourceView.ExecuteInsert*> method if your class supports insertion into the underlying data storage.
 
-
-
 ## Examples
  The following code example demonstrates how a class that extends the <xref:System.Web.UI.DataSourceView> class can override the <xref:System.Web.UI.DataSourceView.CanInsert> property and the <xref:System.Web.UI.DataSourceView.ExecuteInsert*> method. This code example is part of a larger example provided for the <xref:System.Web.UI.DataSourceView> class.
 
@@ -621,8 +607,6 @@
 
 ## Remarks
  The <xref:System.Web.UI.DataSourceView.ExecuteSelect*> method is called to retrieve data from the underlying data store and return it as an <xref:System.Collections.IEnumerable> object. All data source controls support data retrieval from their underlying data storage, even if other operations such as insertion and sorting are not supported. Because a data-bound control can request a list of data at any time as a result of a <xref:System.Web.UI.IDataSource.DataSourceChanged> event or a <xref:System.Web.UI.WebControls.BaseDataBoundControl.DataBind*> method call, the data retrieval must be performed on demand.
-
-
 
 ## Examples
  The following code example demonstrates how to override the <xref:System.Web.UI.DataSourceView.ExecuteSelect*> method in a class that extends the <xref:System.Web.UI.DataSourceView> class. The `CsvDataSourceView` opens a comma-separated value (.csv) file, parses it line by line, and creates a <xref:System.Data.DataTable> object and a <xref:System.Data.DataView> object to hold the data in memory. Finally, a sort expression is applied if one is supplied by the <xref:System.Web.UI.DataSourceSelectArguments> object, and the <xref:System.Data.DataView> object is returned as an <xref:System.Collections.IEnumerable> instance. This code example is part of a larger example provided for the <xref:System.Web.UI.DataSourceView> class.
@@ -672,8 +656,6 @@
 
 > [!NOTE]
 > The <xref:System.Web.UI.DataSourceView> class's default implementation is to throw a <xref:System.NotSupportedException> exception. If you extend the <xref:System.Web.UI.DataSourceView> class, override the <xref:System.Web.UI.DataSourceView.ExecuteUpdate*> method if your class supports updating data in the underlying data storage.
-
-
 
 ## Examples
  The following code example demonstrates how a class that extends the <xref:System.Web.UI.DataSourceView> class can override the <xref:System.Web.UI.DataSourceView.CanUpdate> property and the <xref:System.Web.UI.DataSourceView.ExecuteUpdate*> method. This code example is part of a larger example provided for the <xref:System.Web.UI.DataSourceView> class.

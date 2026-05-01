@@ -79,8 +79,6 @@
 > [!IMPORTANT]
 > Isolated storage is not available for Windows 8.x Store apps. Instead, use the application data classes in the `Windows.Storage` namespaces included in the Windows Runtime API to store local data and files. For more information, see [Application data](https://go.microsoft.com/fwlink/?LinkId=229175) in the Windows Dev Center.
 
-
-
 ## Examples
  The following code example illustrates how to create files and directories in an isolated store. First, a store that is isolated by user, domain, and assembly is retrieved and placed in the `isoStore` variable. The <xref:System.IO.IsolatedStorage.IsolatedStorageFile.CreateDirectory*> method is then called to create directories, and two instances of the <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream> class create files in these directories.
 
@@ -443,8 +441,6 @@
 ## Remarks
  The created directory initially contains no files. If the directory already exists, the <xref:System.IO.IsolatedStorage.IsolatedStorageFile.CreateDirectory*> method returns without creating a new directory. The [How to: Create Files and Directories in Isolated Storage](/dotnet/standard/io/how-to-create-files-and-directories-in-isolated-storage) example demonstrates the use of the <xref:System.IO.IsolatedStorage.IsolatedStorageFile.CreateDirectory*> method
 
-
-
 ## Examples
  The following code example demonstrates the <xref:System.IO.IsolatedStorage.IsolatedStorageFile.CreateDirectory*> method. For the complete context of this example, see the <xref:System.IO.IsolatedStorage.IsolatedStorageFile> overview.
 
@@ -659,8 +655,6 @@
 
  The [How to: Delete Files and Directories in Isolated Storage](/dotnet/standard/io/how-to-delete-files-and-directories-in-isolated-storage) example demonstrates the use of the <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteDirectory*> method.
 
-
-
 ## Examples
  :::code language="csharp" source="~/snippets/csharp/System.IO.IsolatedStorage/IsolatedStorageFile/Close/source.cs" id="Snippet8":::
  :::code language="vb" source="~/snippets/visualbasic/System.IO.IsolatedStorage/IsolatedStorageFile/Close/source.vb" id="Snippet8":::
@@ -728,8 +722,6 @@
  The deleted file cannot be recovered once deleted.
 
  The [How to: Delete Files and Directories in Isolated Storage](/dotnet/standard/io/how-to-delete-files-and-directories-in-isolated-storage) example demonstrates the use of the <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteFile*> method.
-
-
 
 ## Examples
  The following code example uses the <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteFile*> method to delete a number of files in isolated storage.
@@ -861,8 +853,6 @@
 
 > [!NOTE]
 > Always call Dispose before you release your last reference to the <xref:System.IO.IsolatedStorage.IsolatedStorageFile>. Otherwise, the resources the <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream> is using will not be freed until garbage collection calls the <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream> object's <xref:System.Object.Finalize*> method.
-
-
 
 ## Examples
  The following code example opens an isolated storage file, uses it to write information to a stream, closes the file, and then uses the <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Dispose*> method to release all resources.
@@ -1181,8 +1171,6 @@
 
  The [How to: Find Existing Files and Directories in Isolated Storage](/dotnet/standard/io/how-to-find-existing-files-and-directories-in-isolated-storage) example demonstrates the use of the <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetDirectoryNames*> method.
 
-
-
 ## Examples
  The following code example demonstrates the <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetDirectoryNames*> method. For the complete context of this example, see the <xref:System.IO.IsolatedStorage.IsolatedStorageFile> overview.
 
@@ -1389,8 +1377,6 @@
  For information about how to find directory names, see the <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetDirectoryNames*> method.
 
  The [How to: Find Existing Files and Directories in Isolated Storage](/dotnet/standard/io/how-to-find-existing-files-and-directories-in-isolated-storage) example demonstrates the use of the <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetFileNames*> method.
-
-
 
 ## Examples
  The following code example demonstrates the <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetFileNames*> method. For the complete context of this example, see the <xref:System.IO.IsolatedStorage.IsolatedStorageFile> overview.
@@ -1753,8 +1739,6 @@
 
 > [!NOTE]
 >  <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain*> will return an <xref:System.IO.IsolatedStorage.IsolatedStorageFile> object without a quota if the application domain into which the assembly is installed does not have <xref:System.Security.Permissions.IsolatedStorageFilePermission>. Later attempts to create an <xref:System.IO.IsolatedStorage.IsolatedStorageFile> object using the <xref:System.IO.IsolatedStorage.IsolatedStorageFile> object that does not have a quota will fail with an <xref:System.IO.IsolatedStorage.IsolatedStorageException>.
-
-
 
 ## Examples
  The following code example demonstrates the <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain*> method. For the complete context of this example, see the <xref:System.IO.IsolatedStorage.IsolatedStorageFile> overview.
@@ -2172,8 +2156,6 @@
 > [!NOTE]
 > If the `scope` parameter is <xref:System.IO.IsolatedStorage.IsolatedStorageScope.Domain> and the application domain in which the assembly is installed does not have <xref:System.Security.Permissions.IsolatedStorageFilePermission>, the <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore*> method will return an <xref:System.IO.IsolatedStorage.IsolatedStorageFile> object without a quota. Later attempts to create an <xref:System.IO.IsolatedStorage.IsolatedStorageFile> object using the <xref:System.IO.IsolatedStorage.IsolatedStorageFile> object that does not have a quota will fail with an <xref:System.IO.IsolatedStorage.IsolatedStorageException>.
 
-
-
 ## Examples
  The following code example demonstrates the <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore*> method. For the complete context of this example, see the <xref:System.IO.IsolatedStorage.IsolatedStorageFile> overview.
 
@@ -2258,8 +2240,6 @@
 
 > [!NOTE]
 > If the `scope` parameter is <xref:System.IO.IsolatedStorage.IsolatedStorageScope.Domain> and the application domain in which the assembly is installed does not have <xref:System.Security.Permissions.IsolatedStorageFilePermission>, the <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore*> method will return an <xref:System.IO.IsolatedStorage.IsolatedStorageFile> object without a quota. Later attempts to create an <xref:System.IO.IsolatedStorage.IsolatedStorageFile> object using the <xref:System.IO.IsolatedStorage.IsolatedStorageFile> object that does not have a quota will fail with an <xref:System.IO.IsolatedStorage.IsolatedStorageException>.
-
-
 
 ## Examples
  The following code example obtains storage based on publisher evidence.
@@ -2497,8 +2477,6 @@
 
 > [!NOTE]
 >  <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain*> will return an <xref:System.IO.IsolatedStorage.IsolatedStorageFile> object without a quota if the application domain in which the assembly is installed does not have <xref:System.Security.Permissions.IsolatedStorageFilePermission>. Later attempts to create an <xref:System.IO.IsolatedStorage.IsolatedStorageFile> object using the <xref:System.IO.IsolatedStorage.IsolatedStorageFile> object that does not have a quota will fail with an <xref:System.IO.IsolatedStorage.IsolatedStorageException>.
-
-
 
 ## Examples
  The following code example demonstrates the <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain*> method. For the complete context of this example, see the <xref:System.IO.IsolatedStorage.IsolatedStorageFile> overview.
@@ -3316,8 +3294,6 @@
 > This method irrevocably removes the entire scope and all contained directories and files.
 
  If any of the directories or files in the store are in use, the removal attempt for the store fails and the store is marked for removal. Any subsequent attempts to modify the store throw an <xref:System.IO.IsolatedStorage.IsolatedStorageException>.
-
-
 
 ## Examples
  The following code example uses the <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove*> method to delete the isolated storage file after its contents have been emptied. The [How to: Delete Stores in Isolated Storage](/dotnet/standard/io/how-to-delete-stores-in-isolated-storage) example also demonstrates the use of the <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove*> method.

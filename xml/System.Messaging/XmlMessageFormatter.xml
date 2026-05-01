@@ -44,8 +44,6 @@
 
  The format is used again in the reverse process when the utility generates a class based on the schema you distribute to describe your class data. The use of the utility and the XML schema it generates enables you to avoid redistributing.dll files every time you recompile a class after the implementation of your class has changed. As long as the schema does not change on the client or the server, other changes on either side do not affect the other.
 
-
-
 ## Examples
  The following code example includes three pieces of code: a server component, an order class, and client code. The order class can be used by the XSD.exe utility to generate schema that the server recognizes within incoming messages. The schema is an XML formatted file that describes the "shape" of the class. This schema can then be used on the client side to generate a client-specific order class that shares the same schema as the server class.
 
@@ -153,8 +151,6 @@
  The instance serialized in the message body must comply with one of the schemas represented in the type array. When you read the message using the <xref:System.Messaging.MessageQueue.Receive*> method, the method creates an object of the type that corresponds to the schema identified and reads the message body into it.
 
  Only one of the two properties needs to be set when reading from the queue, but you can set both. The set of types is the combined set from the two properties. The decision of which one to use is specific to your application. If the message body contains a type whose schema does not match any of the types in the array for either property, an exception will be thrown at read time.
-
-
 
 ## Examples
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Remoting/Message.Body/CPP/message_sendreceive.cpp" id="Snippet1":::
@@ -447,8 +443,6 @@ TargetTypes = new Type[]{typeof(MyClass)}
  When specifying <xref:System.Messaging.XmlMessageFormatter.TargetTypes*> rather than <xref:System.Messaging.XmlMessageFormatter.TargetTypeNames*>, type existence is checked at compile time rather than read time, reducing possibility for error.
 
  When using <xref:System.Messaging.XmlMessageFormatter.TargetTypes*>, you can add each object (for example, `MyClass`) to the list in a way demonstrated by the C# code `TargetTypes = new Type[]{typeof(MyClass), typeof (MyOtherClass)};`.
-
-
 
 ## Examples
  The following code example sends and receives a message that contains an order to and from a queue.

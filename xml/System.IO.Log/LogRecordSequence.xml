@@ -29,8 +29,6 @@
 ## Remarks
  The <xref:System.IO.Log.LogRecordSequence> class provides an implementation of the record sequence interface on top of a Common Log File System (CLFS) log. In addition to the standard record-oriented features, it provides a policy model for avoiding log-full conditions, and multiplexing of clients on the same physical file. It works with the <xref:System.IO.Log.LogStore> class, which provides an interface for directly manipulating and managing a CLFS log file. The relationship between the <xref:System.IO.Log.LogStore> class and the <xref:System.IO.Log.LogRecordSequence> class is similar to the relationship between a disk file and a <xref:System.IO.FileStream> object. The disk file provides the concrete storage, and has attributes such as length and last access time; while the <xref:System.IO.FileStream> object provides a view on the file that can be used to read from it and write to it. Similarly, the <xref:System.IO.Log.LogStore> class has attributes like a policy and a collection of disk extents; and the <xref:System.IO.Log.LogRecordSequence> class provides a record-oriented mechanism for reading and writing data.
 
-
-
 ## Examples
  This example shows how to use the <xref:System.IO.Log.LogRecordSequence> class:
 
@@ -259,8 +257,6 @@
 ## Remarks
  This constructor initializes a new <xref:System.IO.Log.LogRecordSequence> on a new <xref:System.IO.Log.LogStore> object that it opens with the specified path, mode, and access. The store is opened sharing the specified access.
 
-
-
 ## Examples
  This example shows how to use this <xref:System.IO.Log.LogRecordSequence> constructor:
 
@@ -459,8 +455,6 @@
 
  Note that calling this method is the same as setting a new base sequence number using the <xref:System.IO.Log.LogRecordSequence.WriteRestartArea*> method, except that no restart record is written to the log.
 
-
-
 ## Examples
  This example shows how to use the <xref:System.IO.Log.LogRecordSequence.AdvanceBaseSequenceNumber*> method with the <xref:System.IO.Log.LogRecordSequence.TailPinned> event to free up space in a log sequence.
 
@@ -564,8 +558,6 @@ void HandleTailPinned(object sender, TailPinnedEventArgs tailPinnedEventArgs)
  Data contained in the `data` parameter will be concatenated into a single byte array for appending as the record. However, no provision is made for splitting data back into array segments when the record is read.
 
  Normally, this method completes before the record has been written. To ensure that a record has been written, either specify the <xref:System.IO.Log.RecordAppendOptions.ForceFlush> flag using the `recordAppendOptions` parameter, or call the <xref:System.IO.Log.LogRecordSequence.Flush*> method.
-
-
 
 ## Examples
  The following example demonstrates how to use this method to append a log record to the sequence.
@@ -840,8 +832,6 @@ void HandleTailPinned(object sender, TailPinnedEventArgs tailPinnedEventArgs)
  Valid sequence numbers are greater than or equal to <xref:System.IO.Log.LogRecordSequence.BaseSequenceNumber*> and less than <xref:System.IO.Log.LogRecordSequence.LastSequenceNumber*>.
 
  The value of this property can be changed by calling the <xref:System.IO.Log.LogRecordSequence.WriteRestartArea*> method or <xref:System.IO.Log.LogRecordSequence.AdvanceBaseSequenceNumber*> method.
-
-
 
 ## Examples
  This example shows how to use the <xref:System.IO.Log.LogRecordSequence.BaseSequenceNumber*> member in a loop.
@@ -2070,8 +2060,6 @@ recordSequence.Append(undoRecordData, userSqn, previousSqn, RecordAppendOptions.
 ## Remarks
  This method returns an enumerable collection of records in the sequence. The order of the enumerated records depends on the value of the `logRecordEnum` parameter.
 
-
-
 ## Examples
  This example shows how to use <xref:System.IO.Log.LogRecordSequence.ReadLogRecords*> in a loop.
 
@@ -2244,8 +2232,6 @@ recordSequence.Append(undoRecordData, userSqn, previousSqn, RecordAppendOptions.
  The specified reservations are added to the provided reservation collection in an atomic operation with a record append operation. If the append fails, no space is reserved.
 
  Normally, this method may complete before the record has been written. To ensure that a record has been written, either specify the <xref:System.IO.Log.RecordAppendOptions.ForceFlush> flag using the `recordAppendOptions` parameter, or call the <xref:System.IO.Log.LogRecordSequence.Flush*> method.
-
-
 
 ## Examples
  The following example shows how to use this method to make reservations. Notice that this task can only be performed when using the CLFS-based <xref:System.IO.Log.LogRecordSequence> class.
@@ -2452,8 +2438,6 @@ recordSequence.Append(undoRecordData,    // If necessary …
 ## Remarks
  If the value of this property is `true`, and an <xref:System.IO.Log.LogRecordSequence.Append*> call fails because there is not enough space in the sequence, the record sequence will try to free space and retry the append.
 
-
-
 ## Examples
  This example shows how to use the <xref:System.IO.Log.LogRecordSequence.RetryAppend> property.
 
@@ -2550,8 +2534,6 @@ recordSequence.Append(undoRecordData,    // If necessary …
  The event can be fired at any time when the record sequence decides that it must free up space, for any reason. For example, the CLFS policy engine may decide to fire the event when it determines that the tails of two log clients sharing the same log file are too far apart. Freeing space can be done by either writing restart areas, or truncating the log and using the <xref:System.IO.Log.LogRecordSequence.AdvanceBaseSequenceNumber*> method to clear space. The code sample in the Example section demonstrates the second approach.
 
  You can also call the <xref:System.IO.Log.FileRecordSequence.WriteRestartArea*> method outside of the <xref:System.IO.Log.LogRecordSequence.TailPinned> event to free space. A restart area is similar to a checkpoint in other log processing systems. Calling this method indicates that the application considers all prior records before the restart area as fully completed, and usable for future record appends. Similar to any other records, the record written by this method requires actual free space in the log to function.
-
-
 
 ## Examples
  This example shows how to use the <xref:System.IO.Log.LogRecordSequence.TailPinned> event.

@@ -51,8 +51,6 @@
 ## Remarks
  A message consists of headers and a body. The headers are buffered and the body is streamed. Because the body is streamed, the user cannot pass the actual content of the body to a message. Instead the user must pass a class that knows how to write the body when asked to do so. This is done by passing a class derived from <xref:System.ServiceModel.Channels.BodyWriter> to the <xref:System.ServiceModel.Channels.Message>. A message calls the class derived from <xref:System.ServiceModel.Channels.BodyWriter> whenever it requires the body to be written using an <xref:System.Xml.XmlWriter>.
 
-
-
 ## Examples
  The following example shows how to derive a class from <xref:System.ServiceModel.Channels.BodyWriter>. This override takes in an array of strings and writes them to a <xref:System.Xml.XmlDictionaryWriter>.
 
@@ -182,8 +180,6 @@
 
 ## Remarks
  If <xref:System.ServiceModel.Channels.BodyWriter.IsBuffered> is `true` then the <xref:System.ServiceModel.Channels.BodyWriter> object is returned. If <xref:System.ServiceModel.Channels.BodyWriter.IsBuffered> is `false` then the contents of the <xref:System.ServiceModel.Channels.BodyWriter> up to `maxBufferSize` is returned. This also calls <xref:System.ServiceModel.Channels.BodyWriter.OnCreateBufferedCopy(System.Int32)> as an extensibility point.
-
-
 
 ## Examples
  The following sample shows how to create a buffered copy of an existing <xref:System.ServiceModel.Channels.BodyWriter> instance.
@@ -433,8 +429,6 @@
 ## Remarks
  This method must be implemented by classes derived from <xref:System.ServiceModel.Channels.BodyWriter>. This is the key method that writes the body. If the <xref:System.ServiceModel.Channels.BodyWriter> is buffered then this method is called only once.
 
-
-
 ## Examples
  The following example illustrates an override of the <xref:System.ServiceModel.Channels.BodyWriter.OnWriteBodyContents(System.Xml.XmlDictionaryWriter)> method.
 
@@ -484,8 +478,6 @@
 
 ## Remarks
  The default implementation of <xref:System.ServiceModel.Channels.BodyWriter.WriteBodyContents(System.Xml.XmlDictionaryWriter)> calls <xref:System.ServiceModel.Channels.BodyWriter.OnWriteBodyContents(System.Xml.XmlDictionaryWriter)>, so overriding <xref:System.ServiceModel.Channels.BodyWriter.OnWriteBodyContents(System.Xml.XmlDictionaryWriter)> provides the best point of extension.
-
-
 
 ## Examples
  The following sample shows how to call the <xref:System.ServiceModel.Channels.BodyWriter.WriteBodyContents(System.Xml.XmlDictionaryWriter)> method.

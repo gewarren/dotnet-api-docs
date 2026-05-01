@@ -66,8 +66,6 @@
 
  The **DefaultAuthentication_OnAuthenticate** event is raised after the <xref:System.Web.HttpApplication.AuthenticateRequest> event and before the <xref:System.Web.HttpApplication.AuthorizeRequest> event. If you have an `authorization` section that depends on the user name to deny or allow access to your application, modifying the <xref:System.Web.HttpContext.User> property of the current <xref:System.Web.HttpContext> can affect the behavior of your application. Be sure that the user name you set during the **DefaultAuthentication_OnAuthenticate** event is considered when you specify the `authorization` section in your configuration.
 
-
-
 ## Examples
  The following code example uses the **DefaultAuthentication_OnAuthenticate** event to test whether the <xref:System.Web.HttpContext.User> property of the current <xref:System.Web.HttpContext> is `null`. If the property is `null`, the example sets the <xref:System.Web.HttpContext.User> property of the current <xref:System.Web.HttpContext> to a <xref:System.Security.Principal.GenericPrincipal> object where the <xref:System.Security.Principal.GenericPrincipal.Identity> property of the <xref:System.Security.Principal.GenericPrincipal> object is a <xref:System.Security.Principal.GenericIdentity> object with a <xref:System.Security.Principal.GenericIdentity.Name> property value of "default".
 

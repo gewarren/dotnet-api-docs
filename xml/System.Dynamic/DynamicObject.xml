@@ -115,8 +115,6 @@ Dim sampleObject As Object = New SampleDynamicObject()
 >
 > If you have a more advanced scenario in which you need to define how dynamic objects participate in the interoperability protocol, or you need to manage DLR fast dynamic dispatch caching, create your own implementation of the <xref:System.Dynamic.IDynamicMetaObjectProvider> interface.
 
-
-
 ## Examples
  Assume that you want to provide alternative syntax for accessing values in a dictionary, so that instead of writing `sampleDictionary["Text"] = "Sample text"` (`sampleDictionary("Text") = "Sample text"` in Visual Basic), you can write `sampleDictionary.Text = "Sample text"`. Also, you want this syntax to be case-insensitive, so that `sampleDictionary.Text` is equivalent to `sampleDictionary.text`.
 
@@ -184,8 +182,6 @@ Dim sampleObject As Object = New SampleDynamicObject()
  In C#, to enable dynamic behavior for instances of the classes derived from the <xref:System.Dynamic.DynamicObject> class, you must use the `dynamic` keyword. For more information, see [Using Type dynamic](/dotnet/csharp/advanced-topics/interop/using-type-dynamic).
 
  In Visual Basic, dynamic operations are supported by late binding. For more information, see [Early and Late Binding (Visual Basic)](/dotnet/visual-basic/programming-guide/language-features/early-late-binding/).
-
-
 
 ## Examples
  The following code example demonstrates how to create an instance of classes that are derived from the <xref:System.Dynamic.DynamicObject> class.
@@ -416,8 +412,6 @@ Dim sampleObject As Object = New SampleDynamicObject()
 >
 > The `AndAlso` operation consists of the unary `IsFalse` operation and the binary `And` operation. The `And` operation is performed only if the result of the `IsFalse` operation is `false`.
 
-
-
 ## Examples
  Assume that you need a data structure to store textual and numeric representations of numbers, and you want to define basic mathematical operations such as addition and subtraction for such data.
 
@@ -511,8 +505,6 @@ Dim testExplicit1 = CTypeDynamic(Of String)(sampleObject)
 // Explicit conversion - second variant.
 Dim testExplicit2 = CTypeDynamic(sampleObject, GetType(String))
 ```
-
-
 
 ## Examples
  Assume that you need a data structure to store textual and numeric representations of numbers, and you want to define conversions of this data structure to strings and integers.
@@ -789,8 +781,6 @@ Dim testExplicit2 = CTypeDynamic(sampleObject, GetType(String))
 
  If this method is overridden, it is automatically invoked when you have an operation like `sampleObject[3]` in C# or `sampleObject(3)` in Visual Basic, where `sampleObject` is derived from the <xref:System.Dynamic.DynamicObject> class.
 
-
-
 ## Examples
  Assume that you want to create an object in which properties can be accessed either by names such as `Property0`, `Property1`, and so on, or by index, so that, for example, `sampleObject.Property0` is equivalent to `sampleObject[0]` in C# or `sampleObject(0)` in Visual Basic.
 
@@ -868,8 +858,6 @@ Dim testExplicit2 = CTypeDynamic(sampleObject, GetType(String))
  This method is called when you have statements like `Console.WriteLine(sampleObject.SampleProperty)`, where `sampleObject` is an instance of the class derived from the <xref:System.Dynamic.DynamicObject> class.
 
  You can also add your own members to classes derived from the `DynamicObject` class. If your class defines properties and also overrides the <xref:System.Dynamic.DynamicObject.TrySetMember*> method, the dynamic language runtime (DLR) first uses the language binder to look for a static definition of a property in the class. If there is no such property, the DLR calls the <xref:System.Dynamic.DynamicObject.TrySetMember*> method.
-
-
 
 ## Examples
  Assume that you want to provide alternative syntax for accessing values in a dictionary, so that instead of writing `sampleDictionary["Text"] = "Sample text"` (`sampleDictionary("Text") = "Sample text"` in Visual Basic), you can write `sampleDictionary.Text = "Sample text"`. Also, this syntax must be case-insensitive, so that `sampleDictionary.Text` is equivalent to `sampleDictionary.text`.
@@ -950,8 +938,6 @@ Dim testExplicit2 = CTypeDynamic(sampleObject, GetType(String))
  If this method is overridden, it is automatically invoked when you have an operation like `sampleObject(100)`, where `sampleObject` is derived from the <xref:System.Dynamic.DynamicObject> class.
 
  The operation for invoking an object is supported in C# but not in Visual Basic. The Visual Basic compiler never emits code to use this method, and the Visual Basic language does not support syntax like `sampleObject(100)`.
-
-
 
 ## Examples
  Assume that you need a data structure to store textual and numeric representations of numbers. You want to be able to specify the value for each property individually and also to be able to initialize all properties in a single statement.
@@ -1034,8 +1020,6 @@ Dim testExplicit2 = CTypeDynamic(sampleObject, GetType(String))
 
  This method does not support `ref` and `out` parameters. All parameters in the `args` array are passed by value.
 
-
-
 ## Examples
  Assume that you want to provide alternative syntax for accessing values in a dictionary, so that instead of writing `sampleDictionary["Text"] = "Sample text"` (`sampleDictionary("Text") = "Sample text"` in Visual Basic), you can write `sampleDictionary.Text = "Sample text"`. Also, you want to be able to call all the standard dictionary methods on this dictionary.
 
@@ -1114,8 +1098,6 @@ Dim testExplicit2 = CTypeDynamic(sampleObject, GetType(String))
 
  If this method is overridden, it is automatically invoked when you have an operation like `sampleObject[3] = 10` in C# or `sampleObject(3) = 10` in Visual Basic, where `sampleObject` is derived from the <xref:System.Dynamic.DynamicObject> class.
 
-
-
 ## Examples
  Assume that you want to create an object in which properties can be accessed either by names such as `Property0`, `Property1`, and so on, or by index, so that, for example, `sampleObject.Property0` is equivalent to `sampleObject[0]` in C# or `sampleObject(0)` in Visual Basic.
 
@@ -1193,8 +1175,6 @@ Dim testExplicit2 = CTypeDynamic(sampleObject, GetType(String))
  This method is called when you have statements like `sampleObject.SampleProperty = "Test"`, where `sampleObject` is an instance of the class that is derived from the <xref:System.Dynamic.DynamicObject> class.
 
  You can also add your own members to classes derived from the `DynamicObject` class. If your class defines properties and also overrides the <xref:System.Dynamic.DynamicObject.TrySetMember*> method, the dynamic language runtime (DLR) first uses the language binder to look for a static definition of a property in the class. If there is no such property, the DLR calls the <xref:System.Dynamic.DynamicObject.TrySetMember*> method.
-
-
 
 ## Examples
  Assume that you want to provide alternative syntax for accessing values in a dictionary, so that instead of writing `sampleDictionary["Text"] = "Sample text"` (`sampleDictionary("Text") = "Sample text"` in Visual Basic), you can write `sampleDictionary.Text = "Sample text"`. Also, this syntax must be case-insensitive, so that `sampleDictionary.Text` is equivalent to `sampleDictionary.text`.
@@ -1293,8 +1273,6 @@ Dim testExplicit2 = CTypeDynamic(sampleObject, GetType(String))
 > The `OrElse` operation consists of the unary `IsTrue` operation and the binary `Or` operation. The `Or` operation is performed only if the result of the `IsTrue` operation is `false`.
 >
 > The `AndAlso` operation consists of the unary `IsFalse` operation and the binary `And` operation. The `And` operation is performed only if the result of the `IsFalse` operation is `false`.
-
-
 
 ## Examples
  Assume that you need a data structure to store textual and numeric representations of numbers, and you want to define a mathematical negation operation for such data.

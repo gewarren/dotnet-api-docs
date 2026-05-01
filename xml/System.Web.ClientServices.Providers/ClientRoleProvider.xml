@@ -32,8 +32,6 @@
 
  You cannot use the <xref:System.Web.ClientServices.Providers.ClientRoleProvider> class to create or delete roles, or to modify the role membership of users. To create or modify role information, you must change the configuration of the role service on the server.
 
-
-
 ## Examples
  The following example code demonstrates how to use this property to programmatically set the roles service location.
 
@@ -274,8 +272,6 @@
 
  The service provider caches role information about the local file system to avoid unnecessary service calls. For more information, see the <xref:System.Web.ClientServices.Providers.ClientRoleProvider> class overview.
 
-
-
 ## Examples
  The following example code demonstrates how to use this method to determine whether the user login has expired before testing role membership. This code assumes that all valid users are associated with one or more roles. In this case, the <xref:System.Web.ClientServices.Providers.ClientRoleProvider.GetRolesForUser*> method will not return any roles for a previously-authenticated user whose login has expired. If the user login has expired, this code displays the login dialog box. Otherwise, it calls the <xref:System.Web.ClientServices.Providers.ClientRoleProvider.IsUserInRole*> method to determine whether the user is in the "manager" role. The restricted code is in a `PerformManagerTask` method, which is not provided.
 
@@ -417,8 +413,6 @@
  You can determine whether an authenticated user is in a particular role by calling the <xref:System.Security.Principal.IPrincipal.IsInRole*> method of the <xref:System.Security.Principal.IPrincipal> returned by the `static` <xref:System.Threading.Thread.CurrentPrincipal?displayProperty=nameWithType> property. For applications configured to use client application services, this property returns a <xref:System.Web.ClientServices.ClientRolePrincipal>. Because this class implements the <xref:System.Security.Principal.IPrincipal> interface, you do not need to reference it explicitly. The <xref:System.Web.ClientServices.ClientRolePrincipal.IsInRole*?displayProperty=nameWithType> method internally calls the <xref:System.Web.ClientServices.Providers.ClientRoleProvider.IsUserInRole*> method. The <xref:System.Web.ClientServices.Providers.ClientRoleProvider.IsUserInRole*> method uses the <xref:System.Web.ClientServices.Providers.ClientRoleProvider.GetRolesForUser*> method to determine whether the user indicated by `username` is in the role indicated by `roleName`.
 
  The service provider caches role information about the local file system to avoid unnecessary service calls. For more information, see the <xref:System.Web.ClientServices.Providers.ClientRoleProvider> class overview.
-
-
 
 ## Examples
  The following example code demonstrates how to access this method directly to determine whether the user is in a particular role. This code first tests whether the user login has expired. An explicit <xref:System.Web.ClientServices.Providers.ClientRoleProvider> reference is required to call the <xref:System.Web.ClientServices.Providers.ClientRoleProvider.GetRolesForUser*> method, so the same reference is used to call the <xref:System.Web.ClientServices.Providers.ClientRoleProvider.IsUserInRole*> method. If the user is in the "manager" role, this code calls a `PerformManagerTask` method, which is not provided.

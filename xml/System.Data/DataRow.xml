@@ -68,8 +68,6 @@
 
  You can delete a <xref:System.Data.DataRow> from the <xref:System.Data.DataRowCollection> by calling the <xref:System.Data.DataRowCollection.Remove*> method of the <xref:System.Data.DataRowCollection>, or by calling the <xref:System.Data.DataRow.Delete*> method of the <xref:System.Data.DataRow> object. The <xref:System.Data.DataRowCollection.Remove*> method removes the row from the collection. In contrast, <xref:System.Data.DataRow.Delete*> marks the <xref:System.Data.DataRow> for removal. The actual removal occurs when you call <xref:System.Data.DataRow.AcceptChanges*> method. By calling <xref:System.Data.DataRow.Delete*>, you can programmatically check which rows are marked for removal before actually deleting them. For more information, see [DataRow Deletion](/dotnet/framework/data/adonet/dataset-datatable-dataview/datarow-deletion).
 
-
-
 ## Examples
  The following example creates a new <xref:System.Data.DataRow> by calling the <xref:System.Data.DataTable.NewRow*> method of the <xref:System.Data.DataTable> object.
 
@@ -263,8 +261,6 @@
 > [!NOTE]
 > The <xref:System.Data.DataRow.BeginEdit*> method temporarily suspends <xref:System.Data.DataTable.RowChanging> events, but the `delete` operation does not.
 
-
-
 ## Examples
  The example creates a simple <xref:System.Data.DataTable> with one <xref:System.Data.DataColumn> and five <xref:System.Data.DataRow> objects, and a <xref:System.Data.UniqueConstraint>. A <xref:System.Data.DataTable.RowChanged> event handler is also added to monitor when the row's value is changing. After invoking <xref:System.Data.DataRow.BeginEdit*> on the existing rows, the constraint and event are temporarily disabled and the original and proposed values are printed. The <xref:System.Data.DataRow.BeginEdit*> is again invoked to set two rows to the same value. When <xref:System.Data.DataRow.EndEdit*> is called, the <xref:System.Data.UniqueConstraint> is enforced on the identical values.
 
@@ -335,8 +331,6 @@
 ## Remarks
  See the <xref:System.Data.DataRow.BeginEdit*> method for more information.
 
-
-
 ## Examples
  The following example edits the value of one column in the last row of a <xref:System.Windows.Forms.DataGrid> control. The example uses the <xref:System.Data.DataRow.BeginEdit*>, <xref:System.Data.DataRow.EndEdit*>, methods to edit the column's value and commit the change to the row.
 
@@ -404,8 +398,6 @@
  Set the <xref:System.Data.DataRow.RowError> property to set an error that applies to the whole row.
 
  To determine whether any errors exist for the columns collection, use the <xref:System.Data.DataRow.HasErrors*> method. Consequently, you can use the <xref:System.Data.DataRow.GetColumnsInError*> method to retrieve all the columns with errors.
-
-
 
 ## Examples
  The following example uses the <xref:System.Data.DataRow.HasErrors*> to look for errors. If the row has errors, the <xref:System.Data.DataRow.GetColumnsInError*> method returns the array of columns with errors that can then be resolved. The <xref:System.Data.DataRow.ClearErrors*> method is then called to clear all errors.
@@ -478,8 +470,6 @@
 > [!NOTE]
 > The <xref:System.Data.DataRow.BeginEdit*> method temporarily suspends <xref:System.Data.DataTable.RowChanging> events, but the delete operation does not.
 
-
-
 ## Examples
  The following example creates a simple <xref:System.Data.DataTable> with two columns and ten rows. After deleting several <xref:System.Data.DataRow> items with the <xref:System.Data.DataRow.Delete*> method, one of the rows is undeleted by invoking <xref:System.Data.DataRow.RejectChanges*>.
 
@@ -545,8 +535,6 @@
 
 ## Remarks
  When you set the property, an exception is generated if an exception occurs in the <xref:System.Data.DataTable.RowChanging> event.
-
-
 
 ## Examples
  The following example uses the <xref:System.Data.DataRow.EndEdit*> method to end the edit of a <xref:System.Data.DataRow> value if the validation function returns true.
@@ -636,8 +624,6 @@
 
 ## Remarks
  The <xref:System.Data.DataTable> also contains a collection of <xref:System.Data.DataRelation> objects that is returned by the <xref:System.Data.DataTable.ChildRelations> property.
-
-
 
 ## Examples
  The following example uses the <xref:System.Data.DataRow.GetChildRows*> to return the child <xref:System.Data.DataRow> objects for every child <xref:System.Data.DataRelation> in a <xref:System.Data.DataTable>. The value of each column in the row is then printed.
@@ -783,8 +769,6 @@
  Use the <xref:System.Data.DataRow.HasVersion*> property to determine whether the <xref:System.Data.DataRowVersion> that you want exists.
 
  If <xref:System.Data.DataRowVersion.Default> is specified, the version that is used depends on the <xref:System.Data.DataRow.RowState*> of the row on which `GetChildRows` is invoked. If the row on which `GetChildRows` is invoked has a `RowState` of `Modified`, `New`, or `Unchanged`, the <xref:System.Data.DataRowVersion.Current> version of the row is used for fetching related child rows with matching values in their Current versions. If the row on which `GetChildRows` is invoked has a `RowState` of `Deleted`, the <xref:System.Data.DataRowVersion.Original> version of the row is used for fetching related child rows with matching values in their original versions.
-
-
 
 ## Examples
  The following example uses the <xref:System.Data.DataRow.GetChildRows*> to return the child <xref:System.Data.DataRow> objects for every child <xref:System.Data.DataRelation> in a <xref:System.Data.DataTable>. The value of each column with the specified version in the row is then printed.
@@ -940,8 +924,6 @@
 
  To clear all errors for the columns collection, use the <xref:System.Data.DataRow.ClearErrors*> method.
 
-
-
 ## Examples
  The following example sets an error description for a specified <xref:System.Data.DataRow>.
 
@@ -1013,8 +995,6 @@
  To determine whether any errors exist for the columns collection, use the <xref:System.Data.DataRow.HasErrors*> method. Consequently, you can use the <xref:System.Data.DataRow.GetColumnsInError*> method to retrieve all the columns with errors.
 
  To clear all errors for the columns collection, use the <xref:System.Data.DataRow.ClearErrors*> method.
-
-
 
 ## Examples
  The following example sets an error description for a specified <xref:System.Data.DataRow>.
@@ -1088,8 +1068,6 @@
 
  To clear all errors for the columns collection, use the <xref:System.Data.DataRow.ClearErrors*> method.
 
-
-
 ## Examples
  The following example sets an error description for a specified <xref:System.Data.DataRow>.
 
@@ -1155,8 +1133,6 @@
  The <xref:System.Data.DataRow.GetColumnsInError*> lets you reduce the number of <xref:System.Data.DataColumn> objects that must be processed for errors by returning only those columns that have an error. Errors can be set to individual columns with the <xref:System.Data.DataRow.SetColumnError*> method. To further reduce the number of processing, examine the <xref:System.Data.DataRow.HasErrors> property of the <xref:System.Data.DataRow> class to determine whether a <xref:System.Data.DataRow> has errors before invoking <xref:System.Data.DataRow.GetColumnsInError*>.
 
  Use the <xref:System.Data.DataRow.ClearErrors*> method to clear all errors on the row. This includes the <xref:System.Data.DataRow.RowError*>.
-
-
 
 ## Examples
  The following example uses the <xref:System.Data.DataRow.HasErrors*> to look for errors. If the row has errors, the <xref:System.Data.DataRow.GetColumnsInError*> method returns the array of columns with errors that can then be resolved. The <xref:System.Data.DataRow.ClearErrors*> method is then called to clear all errors.
@@ -1236,8 +1212,6 @@
 
  The <xref:System.Data.DataTable> also contains a collection of <xref:System.Data.DataRelation> objects, returned by the <xref:System.Data.DataTable.ParentRelations> property.
 
-
-
 ## Examples
  The following example uses the <xref:System.Data.DataRow.GetParentRow*> to return the child <xref:System.Data.DataRow> objects for every child <xref:System.Data.DataRelation> in a <xref:System.Data.DataTable>. The value of each column in the row is then printed.
 
@@ -1313,8 +1287,6 @@
 
  The <xref:System.Data.DataTable> also contains a collection of <xref:System.Data.DataRelation> objects, returned by the <xref:System.Data.DataTable.ParentRelations> property.
 
-
-
 ## Examples
  The following example uses the <xref:System.Data.DataRow.GetParentRow*> to print a value from each parent row of each <xref:System.Data.DataRow> in a <xref:System.Data.DataTable>.
 
@@ -1383,8 +1355,6 @@
  The <xref:System.Data.DataTable> also contains a collection of <xref:System.Data.DataRelation> objects, returned by the <xref:System.Data.DataTable.ParentRelations> property.
 
  Use the <xref:System.Data.DataRow.HasVersion*> property to determine whether the <xref:System.Data.DataRowVersion> that you want exists.
-
-
 
 ## Examples
  The following example uses the <xref:System.Data.DataRow.GetParentRow*> to return the child <xref:System.Data.DataRow> objects for every child <xref:System.Data.DataRelation> in a <xref:System.Data.DataTable>. The value of each column in the row is then printed.
@@ -1466,8 +1436,6 @@
  The <xref:System.Data.DataTable> also contains a collection of <xref:System.Data.DataRelation> objects, returned by the <xref:System.Data.DataTable.ParentRelations> property.
 
  Use the <xref:System.Data.DataRow.HasVersion*> property to determine whether the <xref:System.Data.DataRowVersion> that you want exists.
-
-
 
 ## Examples
  The following example uses the <xref:System.Data.DataRow.GetParentRow*> to print a value from each parent row of each <xref:System.Data.DataRow> in a <xref:System.Data.DataTable>.
@@ -1551,8 +1519,6 @@
  In a <xref:System.Data.DataSet>, the collection of all parent <xref:System.Data.DataRelation> objects for the data set is returned by the <xref:System.Data.DataRow.GetParentRows*> method.
 
  The <xref:System.Data.DataTable> also contains a collection of <xref:System.Data.DataRelation> objects, returned by the <xref:System.Data.DataTable.ParentRelations> property.
-
-
 
 ## Examples
  The following example uses the <xref:System.Data.DataRow.GetParentRows*> to return the child <xref:System.Data.DataRow> objects for every child <xref:System.Data.DataRelation> in a <xref:System.Data.DataTable>. The value of each column in the row is then printed.
@@ -1700,8 +1666,6 @@
 
  Use the <xref:System.Data.DataRow.HasVersion*> property to determine whether the <xref:System.Data.DataRowVersion> that you want exists.
 
-
-
 ## Examples
  The following example uses the <xref:System.Data.DataRow.GetParentRows*> to return the child <xref:System.Data.DataRow> objects for every child <xref:System.Data.DataRelation> in a <xref:System.Data.DataTable>. The value of each column in the row is then printed.
 
@@ -1845,8 +1809,6 @@
 
  The <xref:System.Data.DataRow.ClearErrors*> method clears all errors for the row.
 
-
-
 ## Examples
  The following example uses the <xref:System.Data.DataRow.HasErrors*> to look for errors. If the row has errors, the <xref:System.Data.DataRow.GetColumnsInError*> method returns the array of columns with errors that can then be resolved. The <xref:System.Data.DataRow.ClearErrors*> method is then called to clear all errors.
 
@@ -1911,8 +1873,6 @@
 
 ## Remarks
  See the <xref:System.Data.DataRow.BeginEdit*> method for more information.
-
-
 
 ## Examples
  The following example uses the <xref:System.Data.DataRow.HasVersion*> method to determine whether the current value of a column and the proposed value are the same. If so, the edit is canceled. Otherwise, the <xref:System.Data.DataRow.AcceptChanges*> method is called to end the edit.
@@ -2232,8 +2192,6 @@
 
  If this is an immediate edit, see <xref:System.Data.DataRow.EndEdit*> for the exceptions that can be generated.
 
-
-
 ## Examples
  The following examples demonstrate the use of the <xref:System.Data.DataRow.Item*> property to get and set the value of a specific column index. The first example gets the value of the first column in any row that a user clicks in a <xref:System.Windows.Forms.DataGrid> control. The second sets a value passed as an argument to the method.
 
@@ -2298,8 +2256,6 @@
 
  If this is an edit, see <xref:System.Data.DataRow.EndEdit*> for the exceptions that can be generated.
 
-
-
 ## Examples
  The following examples demonstrate the use of the <xref:System.Data.DataRow.Item*> property to get and set the value of a specific column index. The first example gets the value of the first column in any row that a user clicks in a <xref:System.Windows.Forms.DataGrid> control.
 
@@ -2363,8 +2319,6 @@
  When you set the property, an exception is generated if an exception occurs in the <xref:System.Data.DataTable.ColumnChanging> event.
 
  If this is an immediate edit, see <xref:System.Data.DataRow.EndEdit*> for the exceptions that can be generated.
-
-
 
 ## Examples
  The following examples demonstrate the use of the <xref:System.Data.DataRow.Item*> property to get and set the value of a specific column index. The first example gets the value of the first column in any row that a user clicks in a <xref:System.Windows.Forms.DataGrid> control. The second sets a value passed as an argument to the method.
@@ -2434,8 +2388,6 @@
  When you set the property, an exception is generated if an exception occurs in the <xref:System.Data.DataTable.ColumnChanging> event.
 
  If this is an immediate edit, see <xref:System.Data.DataRow.EndEdit*> for the exceptions that can be generated.
-
-
 
 ## Examples
  The following example gets the current value of a clicked cell in the <xref:System.Windows.Forms.DataGrid> control.
@@ -2513,8 +2465,6 @@
 
  If this is an immediate edit, see <xref:System.Data.DataRow.EndEdit*> for the exceptions that can be generated.
 
-
-
 ## Examples
  The following example gets the current value of a column through the <xref:System.Data.DataRow.Item*> property of the <xref:System.Data.DataRow> object.
 
@@ -2582,8 +2532,6 @@
  When you set the property, an exception is generated if an exception occurs in the <xref:System.Data.DataTable.ColumnChanging> event.
 
  If this is an immediate edit, see <xref:System.Data.DataRow.EndEdit*> for the exceptions that can be generated.
-
-
 
 ## Examples
  The following example gets the current version of data at a clicked cell of a <xref:System.Windows.Forms.DataGrid> control.
@@ -2654,8 +2602,6 @@
 
  Users can generate exceptions in the <xref:System.Data.DataTable.ColumnChanging> event or the <xref:System.Data.DataTable.RowChanging> event.
 
-
-
 ## Examples
  The following examples show how to get and set values using the <xref:System.Data.DataRow.ItemArray> property.
 
@@ -2720,8 +2666,6 @@
 ## Remarks
  When you call the <xref:System.Data.DataRow.RejectChanges*> method, the <xref:System.Data.DataRow.CancelEdit*> method is implicitly called to cancel any edits. If <xref:System.Data.DataRow.RowState*> is deleted or modified, the row reverts to its previous values, and <xref:System.Data.DataRow.RowState*> becomes unchanged. If the <xref:System.Data.DataRow.RowState*> is added, the row is removed.
 
-
-
 ## Examples
  The following example creates a simple <xref:System.Data.DataTable> with 2 columns and 10 rows. After several <xref:System.Data.DataRow> items are deleted with the <xref:System.Data.DataRow.Delete*> method, one of the rows is undeleted by invoking <xref:System.Data.DataRow.RejectChanges*>.
 
@@ -2780,8 +2724,6 @@
 ## Remarks
  Uses the <xref:System.Data.DataRow.HasErrors> property to first determine whether a <xref:System.Data.DataRow> contains errors.
 
-
-
 ## Examples
  The following example sets error text for ten rows of a table displayed in a <xref:System.Windows.Forms.DataGrid> control.
 
@@ -2838,8 +2780,6 @@
 
 ## Remarks
  The value of the <xref:System.Data.DataRow.RowState*> depends on two factors: the kind of operation has been performed on the row, and whether <xref:System.Data.DataRow.AcceptChanges*> has been called on the <xref:System.Data.DataRow>.
-
-
 
 ## Examples
  The following example first creates a new <xref:System.Data.DataTable> with one column, and then creates a single <xref:System.Data.DataRow>. As the <xref:System.Data.DataRow> is created, added, modified, and deleted, its <xref:System.Data.DataRow.RowState*> is printed.
@@ -2990,8 +2930,6 @@
 
  To clear all errors for the columns collection, use the <xref:System.Data.DataRow.ClearErrors*> method.
 
-
-
 ## Examples
  The following example sets an error description for a specified <xref:System.Data.DataRow>.
 
@@ -3071,8 +3009,6 @@
  To clear all errors for the columns collection, use the <xref:System.Data.DataRow.ClearErrors*> method.
 
  To set error text that applies to a whole row, set the <xref:System.Data.DataRow.RowError> property.
-
-
 
 ## Examples
  The following example sets an error description for a specified <xref:System.Data.DataRow>.
@@ -3161,8 +3097,6 @@
  To determine whether any errors exist for the columns collection, use the <xref:System.Data.DataRow.HasErrors*> method.
 
  To clear all errors for the columns collection, use the <xref:System.Data.DataRow.ClearErrors*> method.
-
-
 
 ## Examples
  The following example sets an error description for a specified <xref:System.Data.DataRow>.
@@ -3444,8 +3378,6 @@
 
 ## Remarks
  A <xref:System.Data.DataRow> does not necessarily belong to any table's collection of rows. This behavior occurs when the <xref:System.Data.DataRow> has been created but not added to the <xref:System.Data.DataRowCollection>. If the <xref:System.Data.DataRow.RowState*> property returns `DataRowState.Detached`, the row is not in any collection.
-
-
 
 ## Examples
  The following example uses the <xref:System.Data.DataRow.Table> property to return a reference to the columns collection of the <xref:System.Data.DataTable>.

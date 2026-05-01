@@ -249,8 +249,6 @@ End Class
 
  Anonymous identification is used when there is a need to identify entities that are not authenticated and when authorization is required. For more information, see [anonymousIdentification Element (ASP.NET Settings Schema)](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/91ka2e6a(v=vs.100)).
 
-
-
 ## Examples
  The following example shows how to use the <xref:System.Web.HttpRequest.AnonymousID> property by handling the <xref:System.Web.Security.AnonymousIdentificationModule.Creating> event in the Global.asax file. This example has two parts:
 
@@ -301,8 +299,6 @@ End Class
 ## Remarks
  Use this property to construct a URL relative to the application root from a page or Web user control that is not in the root directory. This allows pages and shared controls that exist at different levels of a directory structure to use the same code to link to resources at fixed locations in the application.
 
-
-
 ## Examples
  The following example uses the <xref:System.IO.StreamWriter.Write*> method to HTML-encode and then write the value of the <xref:System.Web.HttpRequest.ApplicationPath> property to a text file. This code example is part of a larger example provided for the <xref:System.Web.HttpRequest> class. It assumes the existence of a <xref:System.IO.StreamWriter> object named `sw`.
 
@@ -344,8 +340,6 @@ End Class
 
 ## Remarks
  Use this property to provide URL information that will stay the same even if the application changes location. This allows the same URL-mapping code to be used in a test environment and in the final deployment environment, or to be used by copies of Web applications in different domains.
-
-
 
 ## Examples
  The following example uses the <xref:System.Web.HttpRequest.AppRelativeCurrentExecutionFilePath> property to set the URL of an <xref:System.Web.UI.WebControls.Image> control to an image in the same directory as the page. Run this page at different levels of a directory structure to see the resulting <xref:System.Web.HttpRequest.AppRelativeCurrentExecutionFilePath> property values.
@@ -504,8 +498,6 @@ End Class
 ## Remarks
  Default content encoding can be specified in the [globalization Element (ASP.NET Settings Schema)](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/hy4kkhe0(v=vs.100)) of a configuration file. If content encoding is also specified by the client, the default configuration settings are overridden.
 
-
-
 ## Examples
  The following code example assigns a value representing the description of the current HTTP encoding to a string variable.
 
@@ -627,8 +619,6 @@ End Class
 > [!NOTE]
 > After you add a cookie by using the <xref:System.Web.HttpResponse.Cookies*?displayProperty=nameWithType> collection, the cookie is immediately available in the <xref:System.Web.HttpRequest.Cookies*?displayProperty=nameWithType> collection, even if the response has not been sent to the client.
 
-
-
 ## Examples
  The following code example loops through all cookies sent by the client and sends the name, expiration date, security parameter, and values of each cookie to the HTTP output.
 
@@ -667,8 +657,6 @@ End Class
 
 ## Remarks
  <xref:System.Web.HttpRequest.CurrentExecutionFilePath*> returns the file path to the currently executing page handler. For redirect scenarios using <xref:System.Web.HttpServerUtility.Execute*> and <xref:System.Web.HttpServerUtility.Transfer*> methods this means that the <xref:System.Web.HttpRequest.CurrentExecutionFilePath> property returns the path to the page redirected to (child page). However, when the client is redirected to another page, the <xref:System.Web.HttpRequest.FilePath> property returns the path to the original page.
-
-
 
 ## Examples
  The following code example uses the <xref:System.Web.HttpUtility.HtmlEncode*> method to HTML-encode the value of the <xref:System.Web.HttpRequest.CurrentExecutionFilePath> property and the <xref:System.IO.TextWriter.WriteLine*> method to write the encoded value to the file. This code example is part of a larger example provided for the <xref:System.Web.HttpRequest> class.
@@ -732,8 +720,6 @@ End Class
 ## Remarks
  The <xref:System.Web.HttpRequest.FilePath> property does not include the <xref:System.Web.HttpRequest.PathInfo*> trailer. For example, for the URL `http://www.contoso.com/virdir/page.html/tail`, the <xref:System.Web.HttpRequest.FilePath*> value is /virdir/page.html.
 
-
-
 ## Examples
  The following code example uses the <xref:System.Web.HttpUtility.HtmlEncode*> method to HTML-encode the value of the <xref:System.Web.HttpRequest.FilePath> property and the <xref:System.IO.TextWriter.WriteLine*> method to write the encoded value to the file. This code example is part of a larger example provided for the <xref:System.Web.HttpRequest> class.
 
@@ -771,8 +757,6 @@ End Class
 
 ## Remarks
  The file collection is populated only when the HTTP request `Content-Type` value is "multipart/form-data".
-
-
 
 ## Examples
  The following code example displays the names of all files in the <xref:System.Web.HttpRequest.Files*> collection.
@@ -843,8 +827,6 @@ End Class
 
 ## Remarks
  The <xref:System.Web.HttpRequest.Form> property is populated when the HTTP request `Content-Type` value is either "application/x-www-form-urlencoded" or "multipart/form-data".
-
-
 
 ## Examples
  The following example shows how to read the values in the form collection posted from a browser. Each name/value pair in the collection represents a control in the form and its value.
@@ -1025,8 +1007,6 @@ End Class
 
 ## Remarks
  For a listing of all possible headers, see [Request Header Fields](https://go.microsoft.com/fwlink/?LinkId=73147) on the W3C Web site.
-
-
 
 ## Examples
  The following code example displays the names and values of all headers in the HTTP request.
@@ -1381,8 +1361,6 @@ End Class
 ## Remarks
  The <xref:System.Web.HttpRequest.LogonUserIdentity> property exposes the properties and methods of the <xref:System.Security.Principal.WindowsIdentity> object for the currently connected user to Microsoft Internet Information Services (IIS). The instance of the <xref:System.Security.Principal.WindowsIdentity> class that is exposed by <xref:System.Web.HttpRequest.LogonUserIdentity*> tracks the IIS request token and provides easy access to this token for the current HTTP request being processed inside of ASP.NET. An instance of the <xref:System.Security.Principal.WindowsIdentity> class is automatically created so it does not need to be constructed to in order to gain access to its methods and properties.
 
-
-
 ## Examples
  The following code example shows how to retrieve the <xref:System.Web.HttpRequest.LogonUserIdentity> property for the current user and write out the values of each item in a text file. Place this code on the ASP.NET page referenced by the form's `ACTION` attribute.
 
@@ -1461,8 +1439,6 @@ End Class
 
 > [!CAUTION]
 > The <xref:System.Web.HttpRequest.MapPath*> method potentially contains sensitive information about the hosting environment. The return value should not be displayed to users.
-
-
 
 ## Examples
  The following code example uses the <xref:System.Web.HttpRequest.MapPath*> method to convert a virtual path to a fully qualified physical path on the server. This example has two parts:
@@ -1592,8 +1568,6 @@ No <see cref="T:System.Web.HttpContext" /> object is defined for the request.</e
 
 4.  Server variables.
 
-
-
 ## Examples
  The following code example shows how to loop through the <xref:System.Web.HttpRequest.Params> property for a page and how to display each key/value pair.
 
@@ -1629,8 +1603,6 @@ No <see cref="T:System.Web.HttpContext" /> object is defined for the request.</e
 
 ## Remarks
  The <xref:System.Web.HttpRequest.Path*> is the concatenation of the <xref:System.Web.HttpRequest.FilePath*> and the <xref:System.Web.HttpRequest.PathInfo*> trailer. For example, for the URL `http://www.contoso.com/virdir/page.html/tail`, the <xref:System.Web.HttpRequest.Path*> is /virdir/page.html/tail.
-
-
 
 ## Examples
  The following code example uses the <xref:System.Web.HttpUtility.HtmlEncode*> method to HTML-encode the value of the <xref:System.Web.HttpRequest.Path> property and the <xref:System.IO.TextWriter.WriteLine*> method to write the encoded value to the file. This code example is part of a larger example provided for the <xref:System.Web.HttpRequest> class.
@@ -1669,8 +1641,6 @@ No <see cref="T:System.Web.HttpContext" /> object is defined for the request.</e
 
 ## Remarks
  For the URL `http://www.contoso.com/virdir/page.html/tail`, the <xref:System.Web.HttpRequest.PathInfo*> value is /tail.
-
-
 
 ## Examples
  The following code example determines whether the <xref:System.Web.HttpRequest.PathInfo> property contains an empty string. If it does, the <xref:System.IO.StreamWriter.Write*> method writes a string indicating this to a file. If it does not, the <xref:System.Web.HttpUtility.HtmlEncode*> method HTML-encodes the value of the <xref:System.Web.HttpRequest.PathInfo> property and the <xref:System.IO.TextWriter.WriteLine*> method writes the encoded value to the file. This code example is part of a larger example provided for the <xref:System.Web.HttpRequest> class.
@@ -1742,8 +1712,6 @@ No <see cref="T:System.Web.HttpContext" /> object is defined for the request.</e
 
 ## Remarks
  In redirect scenarios using <xref:System.Web.HttpServerUtility.Execute*> and <xref:System.Web.HttpServerUtility.Transfer*>, the <xref:System.Web.HttpRequest.PhysicalPath> property returns the path to the original page. To find the physical path of the currently executing page use the <xref:System.Web.HttpRequest.MapPath*> method with the input argument set as the <xref:System.Web.HttpRequest.CurrentExecutionFilePath> property.
-
-
 
 ## Examples
  The following code example uses the <xref:System.Web.HttpUtility.HtmlEncode*> method to HTML-encode the value of the <xref:System.Web.HttpRequest.PhysicalPath> property and the <xref:System.IO.TextWriter.WriteLine*> method to write the encoded value to the file. This code example is part of a larger example provided for the <xref:System.Web.HttpRequest> class.
@@ -1833,8 +1801,6 @@ Dim fullname2 As String = Request("fullname")
 
 ## Remarks
  The raw URL is defined as the part of the URL following the domain information. In the URL string `http://www.contoso.com/articles/recent.aspx`, the raw URL is /articles/recent.aspx. The raw URL includes the query string, if present.
-
-
 
 ## Examples
  The following code example uses the <xref:System.Web.HttpUtility.HtmlEncode*> method to HTML-encode the value of the <xref:System.Web.HttpRequest.RawUrl> property and the <xref:System.IO.TextWriter.WriteLine*> method to write the encoded value to the file. This code example is part of a larger example provided for the <xref:System.Web.HttpRequest> class.
@@ -1994,8 +1960,6 @@ Dim fullname2 As String = Request("fullname")
 ## Remarks
  Saving the request context to disk can be useful in debugging.
 
-
-
 ## Examples
  The following code example calls the <xref:System.Web.HttpRequest.SaveAs*> method when a page is loaded. The call specifies that the request be saved as a text file in a directory where the ASP.NET process identity has been granted write permissions, and that any header information included in the request is included in the file.
 
@@ -2032,8 +1996,6 @@ Dim fullname2 As String = Request("fullname")
 
 ## Remarks
  For a list of server variables supported by IIS, see [IIS Server Variables](https://go.microsoft.com/fwlink/?LinkId=52471).
-
-
 
 ## Examples
  The following code example displays the names and values of all named server variables.

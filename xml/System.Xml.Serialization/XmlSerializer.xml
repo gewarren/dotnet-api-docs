@@ -197,8 +197,6 @@ The following example contains two main classes: `PurchaseOrder` and `Test`. The
 ## Remarks
  Commonly, an application defines several classes that the <xref:System.Xml.Serialization.XmlSerializer> converts into a single XML-instance document. However, the <xref:System.Xml.Serialization.XmlSerializer> must know only one type--the type of the class that represents the XML root element. The <xref:System.Xml.Serialization.XmlSerializer> automatically serializes all subordinate class instances. Similarly, only the type of the XML root element is required for deserialization.
 
-
-
 ## Examples
  The following example constructs an <xref:System.Xml.Serialization.XmlSerializer> that serializes an object named `Widget`. The example sets various properties of the object before calling the <xref:System.Xml.Serialization.XmlSerializer.Serialize*> method.
 
@@ -274,8 +272,6 @@ The following example contains two main classes: `PurchaseOrder` and `Test`. The
 
 ## Remarks
  This constructor is used to create an <xref:System.Xml.Serialization.XmlSerializer> when you serialize an object into a SOAP message. To control the SOAP messages generated, use the special attributes (beginning with the word "Soap") found in the <xref:System.Xml.Serialization> namespace.
-
-
 
 ## Examples
  The following example serializes a class named `Group`. The serialization of the `GroupName`, `IgnoreThis` fields, and the members of the `GroupType` enumeration are overridden. In the `CreateOverrideSerializer` method, a <xref:System.Xml.Serialization.SoapAttributeOverrides> object is created, and for each overridden member or enumeration, a <xref:System.Xml.Serialization.SoapAttributes> object is created with the appropriate property set and added to the <xref:System.Xml.Serialization.SoapAttributeOverrides> object. An <xref:System.Xml.Serialization.XmlMapping> object is created using the <xref:System.Xml.Serialization.SoapAttributeOverrides> object, and that <xref:System.Xml.Serialization.XmlMapping> object is used to create the <xref:System.Xml.Serialization.XmlSerializer> that overrides the default serialization.
@@ -450,8 +446,6 @@ The following example contains two main classes: `PurchaseOrder` and `Test`. The
 
  You can also use the `extraTypes` parameter to specify types derived from a base class. For example, suppose a base class named `Phone` exists, and a class named `InternationalPhone` derives from it. Use the `extraTypes` parameter to specify the derived type as well.
 
-
-
 ## Examples
  The following example serializes an instance of a class that contains a public field that returns an array of objects. The `extraTypes` parameter of the <xref:System.Xml.Serialization.XmlSerializer> constructor specifies the types of the objects that can be serialized in the array.
 
@@ -536,8 +530,6 @@ The following example contains two main classes: `PurchaseOrder` and `Test`. The
 
 ## Remarks
  The `overrides` parameter can be used to control how fields and properties are encoded in XML. These settings override any attributes that already exist on the objects. This can be useful when the source code cannot be modified or multiple encodings are required for the same classes.
-
-
 
 ## Examples
  The following example serializes an instance of a class that is defined in a DLL and to do so, overrides the public members found in the DLL.
@@ -624,8 +616,6 @@ The following example contains two main classes: `PurchaseOrder` and `Test`. The
 
 ## Remarks
  The root element of an XML document encloses all the other elements. By default, the object specified by the `type` parameter is serialized as the root element. Properties, such as the XML element name of the root element, are taken from the `type` object. However, the `root` parameter allows you to replace the default object's information by specifying an <xref:System.Xml.Serialization.XmlRootAttribute>; the object allows you to set a different namespace, element name, and so on.
-
-
 
 ## Examples
  The following example constructs an <xref:System.Xml.Serialization.XmlSerializer> that uses an <xref:System.Xml.Serialization.XmlRootAttribute> that contains various properties of the XML root element, such as its namespace and element name.
@@ -1231,8 +1221,6 @@ The following example contains two main classes: `PurchaseOrder` and `Test`. The
 > [!NOTE]
 > The <xref:System.Xml.Serialization.XmlSerializer> cannot deserialize the following: arrays of <xref:System.Collections.ArrayList> and arrays of <xref:System.Collections.Generic.List`1>.
 
-
-
 ## Examples
  The following example deserializes an object using a <xref:System.IO.TextReader> object.
 
@@ -1376,8 +1364,6 @@ The following example contains two main classes: `PurchaseOrder` and `Test`. The
 
 > [!NOTE]
 > The <xref:System.Xml.Serialization.XmlSerializer> cannot deserialize the following: arrays of <xref:System.Collections.ArrayList> and arrays of <xref:System.Collections.Generic.List`1>.
-
-
 
 ## Examples
  The following example deserializes an object using an <xref:System.Xml.XmlReader>.
@@ -2389,8 +2375,6 @@ The following example uses the <xref:System.Xml.Serialization.XmlSerializer.From
 > [!NOTE]
 > The <xref:System.Xml.Serialization.XmlSerializer> cannot serialize the following: arrays of <xref:System.Collections.ArrayList> and arrays of <xref:System.Collections.Generic.List`1>.
 
-
-
 ## Examples
  The following example serializes an object using a <xref:System.IO.TextWriter>.
 
@@ -2548,8 +2532,6 @@ The following example uses the <xref:System.Xml.Serialization.XmlSerializer.From
 > [!NOTE]
 > The <xref:System.Xml.Serialization.XmlSerializer> cannot serialize the following: arrays of <xref:System.Collections.ArrayList> and arrays of <xref:System.Collections.Generic.List`1>.
 
-
-
 ## Examples
  The following example serializes an object using an <xref:System.Xml.XmlWriter>.
 
@@ -2657,8 +2639,6 @@ The following example uses the <xref:System.Xml.Serialization.XmlSerializer.From
 
 > [!NOTE]
 > The <xref:System.Xml.Serialization.XmlSerializer> cannot serialize the following: arrays of <xref:System.Collections.ArrayList> and arrays of <xref:System.Collections.Generic.List`1>.
-
-
 
 ## Examples
  The following example serializes an object with a <xref:System.IO.Stream> object. The example also creates an <xref:System.Xml.Serialization.XmlSerializerNamespaces> and adds two namespaces to the object. The class that defines the serialized object is also attributed with <xref:System.Xml.Serialization.XmlElementAttribute> attributes to specify the namespace for each element.
@@ -3107,8 +3087,6 @@ The following example uses the <xref:System.Xml.Serialization.XmlSerializer.From
 
  If the instance of the class being deserialized contains a field that returns an array of <xref:System.Xml.XmlAttribute> objects and an <xref:System.Xml.Serialization.XmlAnyAttributeAttribute> has been applied to the field, the <xref:System.Xml.Serialization.XmlSerializer.UnknownAttribute> event does not occur. Instead, all unknown XML attributes are collected into the array.
 
-
-
 ## Examples
  The following example prints information about any unknown attributes encountered while deserializing an XML document.
 
@@ -3178,8 +3156,6 @@ The following example uses the <xref:System.Xml.Serialization.XmlSerializer.From
 
 > [!NOTE]
 > If the <xref:System.Xml.Serialization.XmlAnyElementAttribute> is applied to a field that returns an array of <xref:System.Xml.XmlElement> objects, all unknown elements are collected in the array. In that case, the <xref:System.Xml.Serialization.XmlSerializer.UnknownElement> event does not occur.
-
-
 
 ## Examples
  The following example deserializes a class named `Group` from a file named UnknownElements.xml. Whenever an element is found in the file that has no corresponding member in the class, the <xref:System.Xml.Serialization.XmlSerializer.UnknownElement> event occurs. To try the example, paste the following XML code into a file named UnknownElements.xml.
@@ -3256,8 +3232,6 @@ The following example uses the <xref:System.Xml.Serialization.XmlSerializer.From
 
 ## Remarks
  By default, after calling the <xref:System.Xml.Serialization.XmlSerializer.Deserialize*> method, the <xref:System.Xml.Serialization.XmlSerializer> ignores XML nodes of unknown types. However, you can use this event to handle such node types.
-
-
 
 ## Examples
  The following example prints the type of any encountered unknown node.
@@ -3342,8 +3316,6 @@ The following example uses the <xref:System.Xml.Serialization.XmlSerializer.From
  The <xref:System.Xml.Serialization.XmlSerializer.UnreferencedObject> event occur when there is a type definition found in the document, but no parameter in the main body references it. When the event occurs, you can retrieve the XML type of the unreferenced object by examining the <xref:System.Xml.Serialization.UnreferencedObjectEventArgs.UnreferencedObject> property of the <xref:System.Xml.Serialization.UnreferencedObjectEventArgs> class. The XML ID of the object is returned by the <xref:System.Xml.Serialization.UnreferencedObjectEventArgs.UnreferencedId> property.
 
  The <xref:System.Xml.Serialization.XmlSerializer.UnreferencedObject> event should not be confused with the <xref:System.Xml.Serialization.XmlSerializer.UnknownElement> and <xref:System.Xml.Serialization.XmlSerializer.UnknownNode> events, which occur when there is no class member that corresponds to the XML node or element type.
-
-
 
 ## Examples
  The following example adds an <xref:System.Xml.Serialization.UnreferencedObjectEventHandler> to an <xref:System.Xml.Serialization.XmlSerializer>. The event is handled by the `Serializer``_``UnreferencedObject` method. To run the example, cut and paste the following XML into a file named "UnrefObj.xml".

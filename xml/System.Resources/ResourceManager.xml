@@ -394,8 +394,6 @@
 
  The <xref:System.Resources.ResourceManager.BaseName> property value is the same as the string passed to the <xref:System.Resources.ResourceManager.%23ctor(System.String,System.Reflection.Assembly)> or <xref:System.Resources.ResourceManager.%23ctor(System.String,System.Reflection.Assembly,System.Type)> constructor when instantiating a <xref:System.Resources.ResourceManager> instance.
 
-
-
 ## Examples
  You can determine the names of embedded .resources files by compiling and running the following utility. This is a console app that accepts the name of a main assembly or satellite assembly as a command-line parameter. It displays the strings that should be provided as the `baseName` parameter of the <xref:System.Resources.ResourceManager.%23ctor(System.String,System.Reflection.Assembly)> or <xref:System.Resources.ResourceManager.%23ctor(System.String,System.Reflection.Assembly,System.Type)> constructor so that the resource manager can correctly identify the resource.
 
@@ -905,8 +903,6 @@
 ## Remarks
  The resource set that is returned represents the resources that are localized for the specified culture. If the resources have not been localized for that culture and `tryParents` is `true`, <xref:System.Resources.ResourceManager.GetResourceSet*> uses resource fallback rules to load an appropriate resource. If `tryParents` is `false` and a culture-specific resource set cannot be found, the method returns `null`. For more information about resource fallback, see "The Resource Fallback Process" section in the [Packaging and Deploying Resources](/dotnet/framework/resources/packaging-and-deploying-resources-in-desktop-apps) article.
 
-
-
 ## Examples
  The following example calls the <xref:System.Resources.ResourceManager.GetResourceSet*> method to retrieve culture-specific resources for the French (France) culture. It then enumerates all of the resources in the resource set. It contains the source code for an executable named ShowNumbers.exe. The example includes two text files that contain the names of numbers. The first, NumberResources.txt, contains the names of numbers from one to ten in the English language:
 
@@ -1122,8 +1118,6 @@ If you change the value of the `createIfNotExists` argument to `false`, the meth
  The returned resource is localized for the UI culture of the current thread, which is defined by the <xref:System.Globalization.CultureInfo.CurrentUICulture?displayProperty=nameWithType> property. If the resource is not localized for that culture, the resource manager uses fallback rules to load an appropriate resource. If no usable set of localized resources is found, the <xref:System.Resources.ResourceManager> falls back on the default culture's resources. If a resource set for the default culture is not found, the method throws a <xref:System.Resources.MissingManifestResourceException> exception or, if the resource set is expected to reside in a satellite assembly, a <xref:System.Resources.MissingSatelliteAssemblyException> exception. If the resource manager can load an appropriate resource set but cannot find a resource named `name`, the method returns `null`.
 
  The <xref:System.Resources.ResourceManager.IgnoreCase> property determines whether the comparison of `name` with the names of resources is case-insensitive (the default) or case-sensitive.
-
-
 
 ## Examples
  The following example uses the <xref:System.Resources.ResourceManager.GetStream(System.String)> method to retrieve a bitmap that is used in an app's opening splash window. The following source code from a file named CreateResources.cs (for C#) or CreateResources.vb (for Visual Basic) generates a .resx file named AppResources.resx that contains the serialized image. In this case, the image is loaded from a file named SplashScreen.jpg; you can modify the file name to substitute your own image.

@@ -448,8 +448,6 @@
 ## Remarks
  You must call the <xref:System.Windows.Forms.Control.ControlAccessibleObject.NotifyClients*?displayProperty=nameWithType> method for each <xref:System.Windows.Forms.AccessibleEvents> the accessibility client applications are to be notified of. The <xref:System.Windows.Forms.Control.ControlAccessibleObject.NotifyClients*> method is typically called when a property is set or from within an event handler. For example, you might call the <xref:System.Windows.Forms.Control.ControlAccessibleObject.NotifyClients*> method and pass in an <xref:System.Windows.Forms.AccessibleEvents> value of `Hide` from within the event handler for the <xref:System.Windows.Forms.Control.VisibleChanged?displayProperty=nameWithType> event.
 
-
-
 ## Examples
  The following code example demonstrates the creation of an accessibility-aware chart control, using the <xref:System.Windows.Forms.AccessibleObject> and <xref:System.Windows.Forms.Control.ControlAccessibleObject> classes to expose accessible information. The control plots two curves along with a legend. The `ChartControlAccessibleObject` class, which derives from `ControlAccessibleObject`, is used in the <xref:System.Windows.Forms.Control.CreateAccessibilityInstance*> method to provide custom accessible information for the chart control. Since the chart legend is not an actual <xref:System.Windows.Forms.Control> -based control, but instead is drawn by the chart control, it does not any built-in accessible information. Because of this, the `ChartControlAccessibleObject` class overrides the <xref:System.Windows.Forms.AccessibleObject.GetChild*> method to return the `CurveLegendAccessibleObject` that represents accessible information for each part of the legend. When an accessible-aware application uses this control, the control can provide the necessary accessible information.
 
@@ -689,8 +687,6 @@
 
  For more information about properties of accessible objects, see [Content of Descriptive Properties](/windows/win32/winauto/content-of-descriptive-properties).
 
-
-
 ## Examples
  The following code example creates an instance of a <xref:System.Windows.Forms.CheckBox> derived class, `MyCheckBox`, assigns it an <xref:System.Drawing.Image> to its <xref:System.Windows.Forms.ButtonBase.Image> property and sets the <xref:System.Windows.Forms.Control.AccessibleName*> and <xref:System.Windows.Forms.Control.AccessibleDescription*> properties, because the <xref:System.Windows.Forms.Control.Text> property is `null`. This example requires that you have a <xref:System.Windows.Forms.Form> named `MyForm`.
 
@@ -751,8 +747,6 @@
  The <xref:System.Windows.Forms.Control.AccessibleName> property is a label that briefly describes and identifies the object within its container, such as the text in a <xref:System.Windows.Forms.Button>, the name of a <xref:System.Windows.Forms.MenuItem>, or a label displayed next to a <xref:System.Windows.Forms.TextBox> control.
 
  For more information about properties of accessible objects, see the "[Content of Descriptive Properties](/windows/win32/winauto/content-of-descriptive-properties).
-
-
 
 ## Examples
  The following code example creates an instance of a <xref:System.Windows.Forms.CheckBox> derived class, `MyCheckBox`, assigns it an <xref:System.Drawing.Image> to its <xref:System.Windows.Forms.ButtonBase.Image> property and sets the <xref:System.Windows.Forms.Control.AccessibleName*> and <xref:System.Windows.Forms.Control.AccessibleDescription*> properties since the <xref:System.Windows.Forms.Control.Text> property is `null`. This example requires that you have a <xref:System.Windows.Forms.Form> named `MyForm`.
@@ -932,8 +926,6 @@
 
 > [!NOTE]
 > The <xref:System.Windows.Forms.Control.Anchor*> and <xref:System.Windows.Forms.Control.Dock*> properties are mutually exclusive. Only one can be set at a time, and the last one set takes precedence.
-
-
 
 ## Examples
  The following code example adds a <xref:System.Windows.Forms.Button> to a form and sets some of its common properties. The example anchors the button to the bottom-right corner of the form so it keeps its relative position as the form is resized. Next it sets the <xref:System.Windows.Forms.Control.BackgroundImage*> and resizes the button to the same size as the <xref:System.Drawing.Image>. The example then sets the <xref:System.Windows.Forms.Control.TabStop*> to `true` and sets the <xref:System.Windows.Forms.Control.TabIndex> property. Lastly, it adds an event handler to handle the <xref:System.Windows.Forms.Control.Click> event of the button. This example requires that you have an <xref:System.Windows.Forms.ImageList> named `imageList1`.
@@ -1145,8 +1137,6 @@
 
  The <xref:System.Windows.Forms.Control.BackColor> property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a <xref:System.Windows.Forms.Button> will have the same <xref:System.Windows.Forms.Control.BackColor*> as its parent <xref:System.Windows.Forms.Form> by default. For more information about ambient properties, see the <xref:System.Windows.Forms.AmbientProperties> class or the <xref:System.Windows.Forms.Control> class overview.
 
-
-
 ## Examples
  The following code example sets the <xref:System.Windows.Forms.Control.BackColor*> and <xref:System.Windows.Forms.Control.ForeColor*> of the controls to the default system colors. The code recursively calls itself if the control has any child controls. This code example requires that you have a <xref:System.Windows.Forms.Form> with at least one child control; however, a child container control, like a <xref:System.Windows.Forms.Panel> or <xref:System.Windows.Forms.GroupBox>, with its own child control(s) would better demonstrate the recursion.
 
@@ -1197,8 +1187,6 @@
  This event is raised if the <xref:System.Windows.Forms.Control.BackColor> property is changed by either a programmatic modification or user interaction.
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example is an event handler that is executed when the <xref:System.Windows.Forms.Control.Text> property value changes. The <xref:System.Windows.Forms.Control> class has several methods with the name pattern *PropertyName*`Changed` that are raised when the corresponding *PropertyName* value changes (*PropertyName* represents the name of the corresponding property).
@@ -1266,8 +1254,6 @@
 >
 > This property is not supported on child controls whose <xref:System.Windows.Forms.Form.RightToLeftLayout> property is `true`.
 
-
-
 ## Examples
  The following code example adds a <xref:System.Windows.Forms.Button> to a form and sets some of its common properties. The example anchors the button to the bottom-right corner of the form so it keeps its relative position as the form is resized. Next it sets the <xref:System.Windows.Forms.Control.BackgroundImage*> and resizes the button to the same size as the <xref:System.Drawing.Image>. The example then sets the <xref:System.Windows.Forms.Control.TabStop*> to `true` and sets the <xref:System.Windows.Forms.Control.TabIndex> property. Lastly, it adds an event handler to handle the <xref:System.Windows.Forms.Control.Click> event of the button. This example requires that you have an <xref:System.Windows.Forms.ImageList> named `imageList1`.
 
@@ -1322,8 +1308,6 @@
  This event is raised if the <xref:System.Windows.Forms.Control.BackgroundImage> property is changed by either a programmatic modification or user interaction.
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example is an event handler that is executed when the <xref:System.Windows.Forms.Control.Text> property value changes. The <xref:System.Windows.Forms.Control> class has several methods with the name pattern *PropertyName*`Changed` that are raised when the corresponding *PropertyName* value changes (*PropertyName* represents the name of the corresponding property).
@@ -1431,8 +1415,6 @@
  This event is raised if the <xref:System.Windows.Forms.Control.BackgroundImageLayout> property changes either programmatically or by user interaction.
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.Control.BackgroundImageLayoutChanged> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
@@ -1551,8 +1533,6 @@
 > [!NOTE]
 > An exception might be thrown if the thread that should process the message is no longer active.
 
-
-
 ## Examples
  The following code example demonstrates a use of the <xref:System.Windows.Forms.Control.BeginInvoke*> method.
 
@@ -1641,8 +1621,6 @@
 > [!NOTE]
 > An exception might be thrown if the thread that should process the message is no longer active.
 
-
-
 ## Examples
  The following code example demonstrates a use of the <xref:System.Windows.Forms.Control.BeginInvoke*> method.
 
@@ -1721,8 +1699,6 @@
 
  For more information about creating a new <xref:System.Windows.Forms.BindingContext> and assigning it to the <xref:System.Windows.Forms.Control.BindingContext> property, see the <xref:System.Windows.Forms.BindingContext.%23ctor*>.
 
-
-
 ## Examples
  The following code example creates four <xref:System.Windows.Forms.Binding> objects to bind five controls, a <xref:System.Windows.Forms.DateTimePicker> and four <xref:System.Windows.Forms.TextBox> controls, to several data sources. The <xref:System.Windows.Forms.BindingContext> is then used to get the <xref:System.Windows.Forms.BindingManagerBase> for each data source.
 
@@ -1776,8 +1752,6 @@
  This event is raised if the <xref:System.Windows.Forms.Control.BindingContext> property is changed is changed by either a programmatic modification or user interaction.
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example adds an <xref:System.EventHandler> delegate to the <xref:System.Windows.Forms.Control.BindingContextChanged> event of a <xref:System.Windows.Forms.TextBox> control.
@@ -1843,8 +1817,6 @@
 
  The <xref:System.Windows.Forms.Control.Bottom> property is a read-only property. You can manipulate this property value by changing the value of the <xref:System.Windows.Forms.Control.Top*> or <xref:System.Windows.Forms.Control.Height*> properties or calling the <xref:System.Windows.Forms.Control.SetBounds*>, <xref:System.Windows.Forms.Control.SetBoundsCore*>, <xref:System.Windows.Forms.Control.UpdateBounds*>, or <xref:System.Windows.Forms.Control.SetClientSizeCore*> methods.
 
-
-
 ## Examples
  The following code example uses the <xref:System.Windows.Forms.Control.Bottom> property to define the lower limit of a <xref:System.Windows.Forms.TextBox> control relative to the client area of the container.
 
@@ -1905,8 +1877,6 @@
 ## Remarks
  The bounds of the control include the nonclient elements such as scroll bars, borders, title bars, and menus. The <xref:System.Windows.Forms.Control.SetBoundsCore*> method is called to set the <xref:System.Windows.Forms.Control.Bounds> property. The <xref:System.Windows.Forms.Control.Bounds> property is not always changed through its `set` method so you should override the <xref:System.Windows.Forms.Control.SetBoundsCore*> method to ensure that your code is executed when the <xref:System.Windows.Forms.Control.Bounds> property is set.
 
-
-
 ## Examples
  The following code example creates three <xref:System.Windows.Forms.Button> controls on a form and sets their size and location by using the various size-related and location-related properties. This example requires that you have a <xref:System.Windows.Forms.Form> that has a width and height of at least 300 pixels.
 
@@ -1954,8 +1924,6 @@
 
 ## Remarks
  The control is moved to the front of the z-order. If the control is a child of another control, the child control is moved to the front of the z-order. <xref:System.Windows.Forms.Control.BringToFront*> does not make a control a top-level control, and it does not raise the <xref:System.Windows.Forms.Control.Paint> event.
-
-
 
 ## Examples
  The following code example ensures that a <xref:System.Windows.Forms.Label> is visible by calling its <xref:System.Windows.Forms.Control.BringToFront*> method. This example requires that you have a <xref:System.Windows.Forms.Form> with a <xref:System.Windows.Forms.Panel> named `panel1`, and a <xref:System.Windows.Forms.Label> named `label1`.
@@ -2060,8 +2028,6 @@
 
 ## Remarks
  In order for a control to receive input focus, the control must have a handle assigned to it, and the <xref:System.Windows.Forms.Control.Visible*> and <xref:System.Windows.Forms.Control.Enabled*> properties must both be set to `true` for both the control and all its parent controls, and the control must be a form or the control's outermost parent must be a form.
-
-
 
 ## Examples
  The following code example sets focus to the specified <xref:System.Windows.Forms.Control>, if it can receive focus.
@@ -2191,8 +2157,6 @@
 
 -   <xref:System.Windows.Forms.LinkLabel> (when there is no link present in the control)
 
-
-
 ## Examples
  The following code example selects the specified <xref:System.Windows.Forms.Control>, if it is selectable.
 
@@ -2265,8 +2229,6 @@
 
  When the mouse is captured, shortcut keys should not work.
 
-
-
 ## Examples
  The following code example demonstrates the <xref:System.Windows.Forms.Control.Capture> property. To run this example paste the following code in a form containing a <xref:System.Windows.Forms.Label> named label1 and two <xref:System.Windows.Forms.ListBox> controls named listbox1 and listbox2. Ensure the form and controls' <xref:System.Windows.Forms.Control.MouseDown> event is associated with the method in this example.
 
@@ -2324,8 +2286,6 @@
  If the <xref:System.Windows.Forms.Control.CausesValidation> property is set to `false`, the <xref:System.Windows.Forms.Control.Validating> and <xref:System.Windows.Forms.Control.Validated> events are suppressed.
 
  The <xref:System.Windows.Forms.Control.CausesValidation> property value is typically set to `false` for controls such as a Help button.
-
-
 
 ## Examples
  The following code example uses the derived class <xref:System.Windows.Forms.TextBox> and validates an email address that the user enters. If the email address is not in the standard format (containing "@" and "."), the validation fails, an <xref:System.Windows.Forms.ErrorProvider> icon is displayed, and the event is canceled. One of the buttons on the form has its <xref:System.Windows.Forms.Control.CausesValidation> property set to `false`. Clicking or setting focus to this button does not trigger validation. This example requires that a <xref:System.Windows.Forms.TextBox>, an <xref:System.Windows.Forms.ErrorProvider> control, and a <xref:System.Windows.Forms.Button> have been created on a form.
@@ -2413,8 +2373,6 @@
 
 ## Remarks
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.Control.ChangeUICues> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
@@ -2618,8 +2576,6 @@ The following table lists Windows Forms controls and which event (<xref:System.W
 
  For more information about drawing on controls, see [Rendering a Windows Forms Control](/dotnet/desktop/winforms/controls/rendering-a-windows-forms-control).
 
-
-
 ## Examples
  The following code example enables auto-scrolling for a form, resizes the form, and ensures that a button remains visible after the form is resized. This example requires that you have a <xref:System.Windows.Forms.Form> with a <xref:System.Windows.Forms.Button> named `button2` on it.
 
@@ -2687,8 +2643,6 @@ The following table lists Windows Forms controls and which event (<xref:System.W
 > [!NOTE]
 > You cannot bind application settings to this property. For more information on application settings, see [Application Settings Overview](/dotnet/desktop/winforms/advanced/application-settings-overview).
 
-
-
 ## Examples
  The following code example resizes the specified control so the control will accommodate its formatted text. The formatted text is the <xref:System.Windows.Forms.Control.Text> property with the control's assigned <xref:System.Windows.Forms.Control.Font*> applied to the text. The `AutoSizeControl` method in this example also has a `textPadding` parameter that represents the padding to apply to all edges of the control. To make the padding appear equal, align the text with the <xref:System.Drawing.ContentAlignment.MiddleCenter?displayProperty=nameWithType> value, if your control supports it.
 
@@ -2733,8 +2687,6 @@ The following table lists Windows Forms controls and which event (<xref:System.W
 
 ## Remarks
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.Control.ClientSizeChanged> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
@@ -2809,8 +2761,6 @@ The following table lists Windows Forms controls and which event (<xref:System.W
 
 > [!NOTE]
 > It is strongly recommended that you provide the company name, product name, and product version for your app.
-
-
 
 ## Examples
  The following code example displays information about the application in a <xref:System.Windows.Forms.Label> contained by a <xref:System.Windows.Forms.Form>. This example requires that the <xref:System.Windows.Forms.Control.CompanyName*>, <xref:System.Windows.Forms.Control.ProductName*> and <xref:System.Windows.Forms.Control.ProductVersion*> have been set.
@@ -2992,8 +2942,6 @@ The following table lists Windows Forms controls and which event (<xref:System.W
 ## Remarks
  Use a shortcut menus to give context-specific menu options to users when they right-click on the control.
 
-
-
 ## Examples
  The following code example displays the <xref:System.Windows.Forms.ContextMenu> assigned to a <xref:System.Windows.Forms.TreeView> when the right mouse button is clicked and released. This code requires that you have a <xref:System.Windows.Forms.Form> with a <xref:System.Windows.Forms.TreeView> on it. It is also required that the <xref:System.Windows.Forms.TreeView> has a <xref:System.Windows.Forms.ContextMenu> assigned to its <xref:System.Windows.Forms.Control.ContextMenu> property.
 
@@ -3060,8 +3008,6 @@ The following table lists Windows Forms controls and which event (<xref:System.W
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
 
-
-
 ## Examples
  The following code example displays a message when a change occurs to the shortcut menu.
 
@@ -3115,8 +3061,6 @@ The following table lists Windows Forms controls and which event (<xref:System.W
 ## Remarks
  If a <xref:System.Windows.Forms.ContextMenu> has also been assigned to the control, the <xref:System.Windows.Forms.ContextMenu> takes precedence over the <xref:System.Windows.Forms.ContextMenuStrip>.
 
-
-
 ## Examples
  The following code example demonstrates how to add three <xref:System.Windows.Forms.ToolStripMenuItem> objects to a <xref:System.Windows.Forms.ContextMenuStrip>. In addition it demonstrates setting the <xref:System.Windows.Forms.Control.ContextMenuStrip> property of the form.
 
@@ -3158,8 +3102,6 @@ The following table lists Windows Forms controls and which event (<xref:System.W
 
 ## Remarks
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.Control.ContextMenuStripChanged> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
@@ -3219,8 +3161,6 @@ The following table lists Windows Forms controls and which event (<xref:System.W
 
 ## Remarks
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example uses <xref:System.Windows.Forms.Control.ControlAdded> to add a control to a form and displays the name of the added control in a <xref:System.Windows.Forms.MessageBox>.
@@ -3282,8 +3222,6 @@ The following table lists Windows Forms controls and which event (<xref:System.W
 
 ## Remarks
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example uses <xref:System.Windows.Forms.Control.ControlRemoved> to remove a control from a form and displays the name of the removed control in a <xref:System.Windows.Forms.MessageBox>.
@@ -3352,8 +3290,6 @@ The following table lists Windows Forms controls and which event (<xref:System.W
 
  Use the <xref:System.Windows.Forms.Control.Controls> property to iterate through all controls of a form, including nested controls. Use the <xref:System.Windows.Forms.Control.GetNextControl*> method to retrieve the previous or next child control in the tab order. Use the <xref:System.Windows.Forms.ContainerControl.ActiveControl> property to get or set the active control of a container control.
 
-
-
 ## Examples
  The following code example removes a <xref:System.Windows.Forms.Control> from the <xref:System.Windows.Forms.Control.ControlCollection> of the derived class <xref:System.Windows.Forms.Panel> if it is a member of the collection. The example requires that you have created a <xref:System.Windows.Forms.Panel>, a <xref:System.Windows.Forms.Button>, and at least one <xref:System.Windows.Forms.RadioButton> control on a <xref:System.Windows.Forms.Form>. The <xref:System.Windows.Forms.RadioButton> control(s) are added to the <xref:System.Windows.Forms.Panel> control, and the <xref:System.Windows.Forms.Panel> control added to the <xref:System.Windows.Forms.Form>. When the button is clicked, the radio button named `removeButton` is removed from the <xref:System.Windows.Forms.Control.ControlCollection>.
 
@@ -3411,8 +3347,6 @@ The following table lists Windows Forms controls and which event (<xref:System.W
 
 > [!NOTE]
 > To get or set the <xref:System.Windows.Forms.Control.AccessibilityObject> property, you must add a reference to the `Accessibility` assembly installed with the .NET Framework.
-
-
 
 ## Examples
  The following code example demonstrates the creation of an accessibility-aware chart control, using the <xref:System.Windows.Forms.AccessibleObject> and <xref:System.Windows.Forms.Control.ControlAccessibleObject> classes to expose accessible information. The control plots two curves along with a legend. The `ChartControlAccessibleObject` class, which derives from `ControlAccessibleObject`, is used in the <xref:System.Windows.Forms.Control.CreateAccessibilityInstance*> method to provide custom accessible information for the chart control. Since the chart legend is not an actual <xref:System.Windows.Forms.Control> -based control, but instead is drawn by the chart control, it does not any built-in accessible information. Because of this, the `ChartControlAccessibleObject` class overrides the <xref:System.Windows.Forms.AccessibleObject.GetChild*> method to return the `CurveLegendAccessibleObject` that represents accessible information for each part of the legend. When an accessible-aware application uses this control, the control can provide the necessary accessible information.
@@ -3616,8 +3550,6 @@ The following table lists Windows Forms controls and which event (<xref:System.W
 > [!NOTE]
 > In addition to the <xref:System.Windows.Forms.Control.InvokeRequired> property, there are four methods on a control that are thread safe: <xref:System.Windows.Forms.Control.Invoke*>, <xref:System.Windows.Forms.Control.BeginInvoke*>, <xref:System.Windows.Forms.Control.EndInvoke*>, and <xref:System.Windows.Forms.Control.CreateGraphics*> if the handle for the control has already been created. Calling <xref:System.Windows.Forms.Control.CreateGraphics*> before the control's handle has been created on a background thread can cause illegal cross thread calls. For all other method calls, you should use one of the invoke methods to marshal the call to the control's thread.
 
-
-
 ## Examples
  The following code example resizes the specified control so the control will accommodate its formatted text. The formatted text is the <xref:System.Windows.Forms.Control.Text> property with the control's assigned <xref:System.Windows.Forms.Control.Font*> applied to the text. The `AutoSizeControl` method in this example also has a `textPadding` parameter that represents the padding to apply to all edges of the control. To make the padding appear equal, align the text with the `MiddleCenter` value of <xref:System.Drawing.ContentAlignment?displayProperty=nameWithType> if your control supports it.
 
@@ -3725,8 +3657,6 @@ The following table lists Windows Forms controls and which event (<xref:System.W
 ## Remarks
  The <xref:System.Windows.Forms.Control.CreateParams> property should not be overridden and used to adjust the properties of your derived control. Properties such as the <xref:System.Windows.Forms.CreateParams.Caption*?displayProperty=nameWithType>, <xref:System.Windows.Forms.CreateParams.Width*?displayProperty=nameWithType>, and <xref:System.Windows.Forms.CreateParams.Height*?displayProperty=nameWithType> should be set by the corresponding properties in your control such as <xref:System.Windows.Forms.Control.Text*?displayProperty=nameWithType>, <xref:System.Windows.Forms.Control.Width*?displayProperty=nameWithType> and <xref:System.Windows.Forms.Control.Height*?displayProperty=nameWithType>. The <xref:System.Windows.Forms.CreateParams> should only be extended when you are wrapping a standard Windows control class or to set styles not provided by the Windows Forms namespace. For more information about creating control parameters, see the `CreateWindow` and `CreateWindowEx` functions and the [CREATESTRUCT](/windows/win32/api/winuser/ns-winuser-createstructa) structure documentation.
 
-
-
 ## Examples
  The following code example extends the <xref:System.Windows.Forms.Control.CreateParams> property of a <xref:System.Windows.Forms.Button> derived class. The <xref:System.Windows.Forms.CreateParams.Style?displayProperty=nameWithType> property is changed, which causes the button to display an <xref:System.Drawing.Icon> rather than an <xref:System.Drawing.Image>. This example requires that you have a class that inherits from the <xref:System.Windows.Forms.Button> class.
 
@@ -3796,8 +3726,6 @@ The following table lists Windows Forms controls and which event (<xref:System.W
 
  The <xref:System.Windows.Forms.Control.Cursor> property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a <xref:System.Windows.Forms.Button> will have the same <xref:System.Windows.Forms.Control.BackColor*> as its parent <xref:System.Windows.Forms.Form> by default. For more information about ambient properties, see the <xref:System.Windows.Forms.AmbientProperties> class or the <xref:System.Windows.Forms.Control> class overview.
 
-
-
 ## Examples
  The following code example fills a <xref:System.Windows.Forms.ComboBox> with the user's available logical drives. The example also sets the combo box's <xref:System.Windows.Forms.Cursor> property so the <xref:System.Windows.Forms.Cursors.Hand*?displayProperty=nameWithType> cursor is displayed when the mouse pointer is over the drop-down button. This code requires that you have a <xref:System.Windows.Forms.Form> with a <xref:System.Windows.Forms.ComboBox> on it.
 
@@ -3848,8 +3776,6 @@ The following table lists Windows Forms controls and which event (<xref:System.W
  This event is raised if the <xref:System.Windows.Forms.Control.Cursor> property is changed by either a programmatic modification or user interaction.
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example demonstrates changing the mouse cursor using the <xref:System.Windows.Forms.Control.Cursor?displayProperty=nameWithType> property, the <xref:System.Windows.Forms.Cursor> class, and the <xref:System.Windows.Forms.Cursors> class. The example creates a form that contains a <xref:System.Windows.Forms.ComboBox> control, a <xref:System.Windows.Forms.Panel> control, and a <xref:System.Windows.Forms.ListView> control. The <xref:System.Windows.Forms.ComboBox> contains all cursors provided by the <xref:System.Windows.Forms.Cursors> class. When the user selects a mouse cursor in the <xref:System.Windows.Forms.ComboBox>, the <xref:System.Windows.Forms.Control.Cursor?displayProperty=nameWithType> property is set to the selected cursor, which updates the cursor for the <xref:System.Windows.Forms.Panel>. The <xref:System.Windows.Forms.ListView> is updated every time the <xref:System.Windows.Forms.Control.CursorChanged?displayProperty=nameWithType> event occurs.
@@ -3918,8 +3844,6 @@ The following table lists Windows Forms controls and which event (<xref:System.W
 
 ## Remarks
  Use the <xref:System.Windows.Forms.Control.DataBindings> property to access the <xref:System.Windows.Forms.ControlBindingsCollection>. By adding <xref:System.Windows.Forms.Binding> objects to the collection, you can bind any property of a control to the property of an object.
-
-
 
 ## Examples
  The following code example adds <xref:System.Windows.Forms.Binding> objects to the <xref:System.Windows.Forms.ControlBindingsCollection> of five controls: four <xref:System.Windows.Forms.TextBox> controls and a <xref:System.Windows.Forms.DateTimePicker> control. The <xref:System.Windows.Forms.ControlBindingsCollection> is accessed through the <xref:System.Windows.Forms.Control.DataBindings> property of the <xref:System.Windows.Forms.Control> class.
@@ -4038,8 +3962,6 @@ The following table lists Windows Forms controls and which event (<xref:System.W
 ## Remarks
  This is the default <xref:System.Windows.Forms.Control.BackColor> property value of a generic top-level control. Derived classes can have different defaults.
 
-
-
 ## Examples
  The following code example demonstrates how to use the <xref:System.Windows.Forms.Control.DefaultBackColor*>, <xref:System.Windows.Forms.Control.DefaultFont*>, and <xref:System.Windows.Forms.Control.DefaultForeColor*> members. To run the example, paste the following code in a form containing a <xref:System.Windows.Forms.ListBox> called ListBox1. Call the `Populate_ListBox` method in the form's constructor or <xref:System.Windows.Forms.Form.Load> event-handling method.
 
@@ -4145,8 +4067,6 @@ The following table lists Windows Forms controls and which event (<xref:System.W
 
  If the previous fonts are not installed, the default font is Tahoma, 8 point. If Tahoma, 8 point, is not installed, <xref:System.Windows.Forms.Control.DefaultFont*> returns the value of the <xref:System.Drawing.FontFamily.GenericSansSerif> property
 
-
-
 ## Examples
  The following code example demonstrates how to use the <xref:System.Windows.Forms.Control.DefaultBackColor*>, <xref:System.Windows.Forms.Control.DefaultFont*>, and <xref:System.Windows.Forms.Control.DefaultForeColor*> members. To run the example, paste the following code in a form containing a <xref:System.Windows.Forms.ListBox> called ListBox1. Call the `Populate_ListBox` method in the form's constructor or <xref:System.Windows.Forms.Form.Load> event-handling method.
 
@@ -4193,8 +4113,6 @@ The following table lists Windows Forms controls and which event (<xref:System.W
 
 ## Remarks
  This is the default <xref:System.Windows.Forms.Control.ForeColor> property value of a nonparented control. Derived classes can have different defaults.
-
-
 
 ## Examples
  The following code example demonstrates how to use the <xref:System.Windows.Forms.Control.DefaultBackColor*>, <xref:System.Windows.Forms.Control.DefaultFont*>, and <xref:System.Windows.Forms.Control.DefaultForeColor*> members. To run the example, paste the following code in a form containing a <xref:System.Windows.Forms.ListBox> called ListBox1. Call the `Populate_ListBox` method in the form's constructor or <xref:System.Windows.Forms.Form.Load> event-handling method.
@@ -4244,8 +4162,6 @@ The following table lists Windows Forms controls and which event (<xref:System.W
  An Input Method Editor (IME) is a program that enables users to enter complex characters and symbols, such as Japanese Kanji characters, by using a standard keyboard.
 
  As implemented in the <xref:System.Windows.Forms.Control> class, this property always returns the <xref:System.Windows.Forms.ImeMode.Inherit?displayProperty=nameWithType> value. The <xref:System.Windows.Forms.ImeMode.Inherit> value specifies that the IME mode is inherited from the parent control.
-
-
 
 ## Examples
  The following code example overrides the <xref:System.Windows.Forms.Control.DefaultImeMode> property to turn off the Input Method Editor.
@@ -4447,8 +4363,6 @@ The following table lists Windows Forms controls and which event (<xref:System.W
 
 > [!NOTE]
 > On Windows Server 2003 systems, the size of a <xref:System.Windows.Forms.Form> is restricted by the maximum pixel width and height of the monitor.
-
-
 
 ## Examples
  The following code example overrides the <xref:System.Windows.Forms.Control.DefaultSize> property, and makes the default size of the form 500 pixels square.
@@ -4825,8 +4739,6 @@ The following table lists Windows Forms controls and which event (<xref:System.W
 > [!NOTE]
 > The <xref:System.Windows.Forms.Control.Anchor*> and <xref:System.Windows.Forms.Control.Dock*> properties are mutually exclusive. Only one can be set at a time, and the last one set takes precedence.
 
-
-
 ## Examples
  The following code example creates a <xref:System.Windows.Forms.GroupBox> and sets some of its common properties. The example creates a <xref:System.Windows.Forms.TextBox> and sets its <xref:System.Windows.Forms.Control.Location*> within the group box. Next, it sets the <xref:System.Windows.Forms.Control.Text> property of the group box, and docks the group box to the top of the form. Lastly, it disables the group box by setting the <xref:System.Windows.Forms.Control.Enabled> property to `false`, which causes all controls contained within the group box to be disabled.
 
@@ -4880,8 +4792,6 @@ The following table lists Windows Forms controls and which event (<xref:System.W
  This event is raised if the <xref:System.Windows.Forms.Control.Dock> property is changed by either a programmatic modification or user interaction.
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example is an event handler that is executed when the <xref:System.Windows.Forms.Control.Text> property value changes. The <xref:System.Windows.Forms.Control> class has several methods with the name pattern *PropertyName*`Changed` that are raised when the corresponding *PropertyName* value changes(*PropertyName* represents the name of the corresponding property).
@@ -4981,8 +4891,6 @@ The following table lists Windows Forms controls and which event (<xref:System.W
 - IndexOutOfRangeException
 
 - AccessViolationException
-
-
 
 ## Examples
  The following code example demonstrates a drag-and-drop operation between two <xref:System.Windows.Forms.ListBox> controls. The example calls the <xref:System.Windows.Forms.Control.DoDragDrop*> method when the drag action starts. The drag action starts if the mouse has moved more than <xref:System.Windows.Forms.SystemInformation.DragSize*?displayProperty=nameWithType> from the mouse location during the <xref:System.Windows.Forms.Control.MouseDown> event. The <xref:System.Windows.Forms.ListBox.IndexFromPoint*> method is used to determine the index of the item to drag during the `MouseDown` event.
@@ -5229,8 +5137,6 @@ The following table lists Windows Forms controls and which event (<xref:System.W
 > The following events are not raised for the <xref:System.Windows.Forms.TabControl> class unless there is at least one <xref:System.Windows.Forms.TabPage> in the <xref:System.Windows.Forms.TabControl.TabPages*?displayProperty=nameWithType> collection: <xref:System.Windows.Forms.Control.Click>, <xref:System.Windows.Forms.Control.DoubleClick>, <xref:System.Windows.Forms.Control.MouseDown>, <xref:System.Windows.Forms.Control.MouseUp>, <xref:System.Windows.Forms.Control.MouseHover>, <xref:System.Windows.Forms.Control.MouseEnter>, <xref:System.Windows.Forms.Control.MouseLeave> and <xref:System.Windows.Forms.Control.MouseMove>. If there is at least one <xref:System.Windows.Forms.TabPage> in the collection, and the user interacts with the tab control's header (where the <xref:System.Windows.Forms.TabPage> names appear), the <xref:System.Windows.Forms.TabControl> raises the appropriate event. However, if the user interaction is within the client area of the tab page, the <xref:System.Windows.Forms.TabPage> raises the appropriate event.
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example uses the <xref:System.Windows.Forms.Control.DoubleClick> event of a <xref:System.Windows.Forms.ListBox> to load text files listed in the <xref:System.Windows.Forms.ListBox> into a <xref:System.Windows.Forms.TextBox> control.
@@ -5646,8 +5552,6 @@ Point clientPoint = targetControl.PointToClient(new Point(de.X, de.Y));
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
 
-
-
 ## Examples
  The following code example demonstrates a drag-and-drop operation between two <xref:System.Windows.Forms.ListBox> controls. The example calls the <xref:System.Windows.Forms.Control.DoDragDrop*> method when the drag action starts. The drag action starts if the mouse has moved more than <xref:System.Windows.Forms.SystemInformation.DragSize*?displayProperty=nameWithType> from the mouse location during the <xref:System.Windows.Forms.Control.MouseDown> event. The <xref:System.Windows.Forms.ListBox.IndexFromPoint*> method is used to determine the index of the item to drag during the `MouseDown` event.
 
@@ -5727,8 +5631,6 @@ Point clientPoint = targetControl.PointToClient(new Point(de.X, de.Y));
 - If the value of <xref:System.Windows.Forms.DragAction> is `Cancel`, the <xref:System.Windows.Forms.Control.DragLeave> event is raised.
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example demonstrates a drag-and-drop operation between two <xref:System.Windows.Forms.ListBox> controls. The example calls the <xref:System.Windows.Forms.Control.DoDragDrop*> method when the drag action starts. The drag action starts if the mouse has moved more than <xref:System.Windows.Forms.SystemInformation.DragSize*?displayProperty=nameWithType> from the mouse location during the <xref:System.Windows.Forms.Control.MouseDown> event. The <xref:System.Windows.Forms.ListBox.IndexFromPoint*> method is used to determine the index of the item to drag during the `MouseDown` event.
@@ -5814,8 +5716,6 @@ Point clientPoint = targetControl.PointToClient(new Point(de.X, de.Y));
     >  Point clientPoint = targetControl.PointToClient(new Point(de.X, de.Y));
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example demonstrates a drag-and-drop operation between two <xref:System.Windows.Forms.ListBox> controls. The example calls the <xref:System.Windows.Forms.Control.DoDragDrop*> method when the drag action starts. The drag action starts if the mouse has moved more than <xref:System.Windows.Forms.SystemInformation.DragSize*?displayProperty=nameWithType> from the mouse location during the <xref:System.Windows.Forms.Control.MouseDown> event. The <xref:System.Windows.Forms.ListBox.IndexFromPoint*> method is used to determine the index of the item to drag during the `MouseDown` event.
@@ -5943,8 +5843,6 @@ Point clientPoint = targetControl.PointToClient(new Point(de.X, de.Y));
 > [!NOTE]
 > When a scrollable control is disabled, the scroll bars are also disabled. For example, a disabled multiline textbox is unable to scroll to display all the lines of text.
 
-
-
 ## Examples
  The following code example creates a <xref:System.Windows.Forms.GroupBox> and sets some of its common properties. The example creates a <xref:System.Windows.Forms.TextBox> and sets its <xref:System.Windows.Forms.Control.Location*> within the group box. Next, it sets the <xref:System.Windows.Forms.Control.Text> property of the group box, and docks the group box to the top of the form. Lastly, it disables the group box by setting the <xref:System.Windows.Forms.Control.Enabled> property to `false`, which causes all controls contained within the group box to be disabled.
 
@@ -5991,8 +5889,6 @@ Point clientPoint = targetControl.PointToClient(new Point(de.X, de.Y));
  This event is raised if the <xref:System.Windows.Forms.Control.Enabled> property is changed by either a programmatic modification or user interaction.
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example uses two <xref:System.Windows.Forms.RadioButton> controls to demonstrate the <xref:System.Windows.Forms.Control.EnabledChanged> event. Clicking one button changes the value of the <xref:System.Windows.Forms.Control.Enabled> property of the other button to `false` and displays a <xref:System.Windows.Forms.MessageBox>.
@@ -6134,8 +6030,6 @@ Point clientPoint = targetControl.PointToClient(new Point(de.X, de.Y));
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
 
-
-
 ## Examples
  The following code example uses the <xref:System.Windows.Forms.Control.Enter> event to change the foreground and background colors of a <xref:System.Windows.Forms.TextBox> under particular conditions.
 
@@ -6188,8 +6082,6 @@ Point clientPoint = targetControl.PointToClient(new Point(de.X, de.Y));
 
 ## Remarks
  The control's <xref:System.Windows.Forms.Control.Parent> property value might not be the same as the <xref:System.Windows.Forms.Form> returned by <xref:System.Windows.Forms.Control.FindForm*> method. For example, if a <xref:System.Windows.Forms.RadioButton> control is contained within a <xref:System.Windows.Forms.GroupBox> control, and the <xref:System.Windows.Forms.GroupBox> is on a <xref:System.Windows.Forms.Form>, the <xref:System.Windows.Forms.RadioButton> control's <xref:System.Windows.Forms.Control.Parent*> is the <xref:System.Windows.Forms.GroupBox> and the <xref:System.Windows.Forms.GroupBox> control's <xref:System.Windows.Forms.Control.Parent*> is the <xref:System.Windows.Forms.Form>.
-
-
 
 ## Examples
  The following code example finds the form that contains the specified button.
@@ -6265,8 +6157,6 @@ Point clientPoint = targetControl.PointToClient(new Point(de.X, de.Y));
 
 > [!NOTE]
 >  <xref:System.Windows.Forms.Control.Focus*> is a low-level method intended primarily for custom control authors. Instead, application programmers should use the <xref:System.Windows.Forms.Control.Select*> method or the <xref:System.Windows.Forms.ContainerControl.ActiveControl> property for child controls, or the <xref:System.Windows.Forms.Form.Activate*> method for forms.
-
-
 
 ## Examples
  The following code example sets focus to the specified <xref:System.Windows.Forms.Control>, if it can receive focus.
@@ -6414,8 +6304,6 @@ MyControl.Font = New Font(MyControl.Font, _
     MyControl.Font.Style Or FontStyle.Bold)
 ```
 
-
-
 ## Examples
  The following code example displays a <xref:System.Windows.Forms.FontDialog> to the user and changes the <xref:System.Drawing.Font> of a <xref:System.Windows.Forms.DateTimePicker> control. This example requires that you have a <xref:System.Windows.Forms.Form> with <xref:System.Windows.Forms.Button> and a <xref:System.Windows.Forms.DateTimePicker> on it.
 
@@ -6467,8 +6355,6 @@ MyControl.Font = New Font(MyControl.Font, _
  This event is raised if the <xref:System.Windows.Forms.Control.Font> property is changed by either a programmatic modification or through interaction.
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example demonstrates the <xref:System.Windows.Forms.Control.FontChanged> event.
@@ -6562,8 +6448,6 @@ MyControl.Font = New Font(MyControl.Font, _
 ## Remarks
  The <xref:System.Windows.Forms.Control.ForeColor> property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a <xref:System.Windows.Forms.Button> will have the same <xref:System.Windows.Forms.Control.BackColor*> as its parent <xref:System.Windows.Forms.Form> by default. For more information about ambient properties, see the <xref:System.Windows.Forms.AmbientProperties> class or the <xref:System.Windows.Forms.Control> class overview.
 
-
-
 ## Examples
  The following code example sets the <xref:System.Windows.Forms.Control.BackColor*> and <xref:System.Windows.Forms.Control.ForeColor*> of the controls to the default system colors. The code recursively calls itself if the control has any child controls. This code example requires that you have a <xref:System.Windows.Forms.Form> with at least one child control; however, a child container control, like a <xref:System.Windows.Forms.Panel> or <xref:System.Windows.Forms.GroupBox>, with its own child control(s) would better demonstrate the recursion.
 
@@ -6615,8 +6499,6 @@ MyControl.Font = New Font(MyControl.Font, _
  This event is raised if the <xref:System.Windows.Forms.Control.ForeColor> property is changed by either a programmatic modification or through interaction.
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example is an event handler that is executed when the <xref:System.Windows.Forms.Control.Text> property value changes. The <xref:System.Windows.Forms.Control> class has several methods with the name pattern *PropertyName*`Changed` that are raised when the corresponding *PropertyName* value changes (*PropertyName* represents the name of the corresponding property).
@@ -7112,8 +6994,6 @@ MyControl.Font = New Font(MyControl.Font, _
 ## Remarks
  Control style bit flags are used to categorize supported behavior. A control can enable a style by calling the <xref:System.Windows.Forms.Control.SetStyle*> method and passing in the appropriate <xref:System.Windows.Forms.ControlStyles> bit and the Boolean value to set the bit to. To determine the value assigned to a specified <xref:System.Windows.Forms.ControlStyles> bit, use the <xref:System.Windows.Forms.Control.GetStyle*> method and pass in the <xref:System.Windows.Forms.ControlStyles> member to evaluate.
 
-
-
 ## Examples
  The following code example returns the value of the double-buffering related style bits for a <xref:System.Windows.Forms.Form>. This example returns `true` only if all the style bits are set to `true`.
 
@@ -7220,8 +7100,6 @@ MyControl.Font = New Font(MyControl.Font, _
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
 
-
-
 ## Examples
  The following code example demonstrates a drag-and-drop operation between two <xref:System.Windows.Forms.ListBox> controls. The example calls the <xref:System.Windows.Forms.Control.DoDragDrop*> method when the drag action starts. The drag action starts if the mouse has moved more than <xref:System.Windows.Forms.SystemInformation.DragSize*?displayProperty=nameWithType> from the mouse location during the <xref:System.Windows.Forms.Control.MouseDown> event. The <xref:System.Windows.Forms.ListBox.IndexFromPoint*> method is used to determine the index of the item to drag during the `MouseDown` event.
 
@@ -7320,8 +7198,6 @@ MyControl.Font = New Font(MyControl.Font, _
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
 
-
-
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.Control.GotFocus> event. This report helps you to learn when the event occurs and can assist you in debugging.
 
@@ -7389,8 +7265,6 @@ MyControl.Font = New Font(MyControl.Font, _
 ## Remarks
  The value of the <xref:System.Windows.Forms.Control.Handle> property is a Windows `HWND`. If the handle has not yet been created, referencing this property will force the handle to be created.
 
-
-
 ## Examples
  The following code example demonstrates using the <xref:System.Windows.Forms.ControlPaint.DrawFocusRectangle*?displayProperty=nameWithType> and the <xref:System.Windows.Forms.Control.Handle> property. To run the example paste the following code in a form. Add two buttons named `Button1` and `Button2` to the form and ensure all events are connected to their event handlers.
 
@@ -7455,8 +7329,6 @@ MyControl.Font = New Font(MyControl.Font, _
  A handle is created when the <xref:System.Windows.Forms.Control> is displayed for the first time. For example, if a <xref:System.Windows.Forms.Control> is created that has <xref:System.Windows.Forms.Control.Visible*> set to `false`, the <xref:System.Windows.Forms.Control.HandleCreated> event will not be raised until <xref:System.Windows.Forms.Control.Visible*> is set to `true`.
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.Control.HandleCreated> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
@@ -7524,8 +7396,6 @@ MyControl.Font = New Font(MyControl.Font, _
  During the <xref:System.Windows.Forms.Control.HandleDestroyed> event, the control is still a valid Windows control and the <xref:System.Windows.Forms.Control.Handle*> can be recreated by calling the <xref:System.Windows.Forms.Control.RecreateHandle*> method.
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.Control.HandleDestroyed> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
@@ -7597,8 +7467,6 @@ MyControl.Font = New Font(MyControl.Font, _
 ## Remarks
  If the <xref:System.Windows.Forms.Control.Controls*> collection has a <xref:System.Windows.Forms.Layout.ArrangedElementCollection.Count*> greater than zero, the <xref:System.Windows.Forms.Control.HasChildren> property will return `true`. Accessing the <xref:System.Windows.Forms.Control.HasChildren> property does not force the creation of a <xref:System.Windows.Forms.Control.ControlCollection> if the control has no children, so referencing this property can provide a performance benefit when walking a tree of controls.
 
-
-
 ## Examples
  The following code example sets the <xref:System.Windows.Forms.Control.BackColor*> and <xref:System.Windows.Forms.Control.ForeColor*> of the controls to the default system colors. The code recursively calls itself if the control has any child controls. This code example requires that you have a <xref:System.Windows.Forms.Form> with at least one child control; however, a child container control, like a <xref:System.Windows.Forms.Panel> or <xref:System.Windows.Forms.GroupBox>, with its own child control(s) would better demonstrate the recursion.
 
@@ -7665,8 +7533,6 @@ MyControl.Font = New Font(MyControl.Font, _
 > [!NOTE]
 > The minimum height for the derived control <xref:System.Windows.Forms.Splitter> is one pixel. The default height for the <xref:System.Windows.Forms.Splitter> control is three pixels. Setting the height of the <xref:System.Windows.Forms.Splitter> control to a value less than one will reset the property value to the default height.
 
-
-
 ## Examples
  The following code example creates three <xref:System.Windows.Forms.Button> controls on a form and sets their size and location by using the various size-related and location-related properties. This example requires that you have a <xref:System.Windows.Forms.Form> that has a width and height of at least 300 pixels.
 
@@ -7715,8 +7581,6 @@ MyControl.Font = New Font(MyControl.Font, _
  The <xref:System.Windows.Forms.Control.HelpRequested> event is commonly raised when the user presses the F1 key or an associated context-sensitive help button is clicked.
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example demonstrates handling the <xref:System.Windows.Forms.Control.HelpRequested> event to display custom Help content on a form containing four address fields. The <xref:System.Windows.Forms.Control.HelpRequested> event is raised either by pressing the F1 key with the focus in an address field, or by the using the context-sensitive Help button and clicking the Help cursor on an address field. The <xref:System.Windows.Forms.HelpEventArgs.Handled> property is set to true to indicate that the `HelpRequested` event is handled. The example also demonstrates storing the Help text in the <xref:System.Windows.Forms.Control.Tag?displayProperty=nameWithType> property.
@@ -7770,8 +7634,6 @@ MyControl.Font = New Font(MyControl.Font, _
 
 ## Remarks
  Hiding the control is equivalent to setting the <xref:System.Windows.Forms.Control.Visible> property to `false`. After the <xref:System.Windows.Forms.Control.Hide*> method is called, the <xref:System.Windows.Forms.Control.Visible> property returns a value of `false` until the <xref:System.Windows.Forms.Control.Show*> method is called.
-
-
 
 ## Examples
  The following code example hides a button if the CTRL key is pressed when the button is clicked. This example requires that you have a <xref:System.Windows.Forms.Button> named `button1` on a <xref:System.Windows.Forms.Form>.
@@ -7918,8 +7780,6 @@ MyControl.Font = New Font(MyControl.Font, _
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
 
-
-
 ## Examples
  The following code example is an event handler that is executed when the <xref:System.Windows.Forms.Control.Text> property value changes. The <xref:System.Windows.Forms.Control> class has several methods with the name pattern *PropertyName*`Changed` that are raised when the corresponding *PropertyName* value changes (*PropertyName* represents the name of the corresponding property).
 
@@ -8035,8 +7895,6 @@ MyControl.Font = New Font(MyControl.Font, _
 
 ## Remarks
  Calling the <xref:System.Windows.Forms.Control.Invalidate*> method does not force a synchronous paint; to force a synchronous paint, call the <xref:System.Windows.Forms.Control.Update*> method after calling the <xref:System.Windows.Forms.Control.Invalidate*> method. When this method is called with no parameters, the entire client area is added to the update region.
-
-
 
 ## Examples
  The following code example enables the user to drag an image or image file onto the form, and have it be displayed at the point on it is dropped. The <xref:System.Windows.Forms.Control.OnPaint*> method is overridden to repaint the image each time the form is painted; otherwise the image would only persist until the next repainting. The <xref:System.Windows.Forms.Control.DragEnter> event-handling method determines the type of data being dragged into the form and provides the appropriate feedback. The <xref:System.Windows.Forms.Control.DragDrop> event-handling method displays the image on the form, if an <xref:System.Drawing.Image> can be created from the data. Because the <xref:System.Windows.Forms.DragEventArgs.X*?displayProperty=nameWithType> and <xref:System.Windows.Forms.DragEventArgs.Y*?displayProperty=nameWithType> values are screen coordinates, the example uses the <xref:System.Windows.Forms.Control.PointToClient*> method to convert them to client coordinates.
@@ -8325,8 +8183,6 @@ MyControl.Font = New Font(MyControl.Font, _
 ## Remarks
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
 
-
-
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.Control.Invalidated> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
 
@@ -8432,8 +8288,6 @@ MyControl.Font = New Font(MyControl.Font, _
 > [!NOTE]
 > An exception might be thrown if the thread that should process the message is no longer active.
 
-
-
 ## Examples
  The following code example shows controls that contain a delegate. The delegate encapsulates a method that adds items to the list box, and this method is executed on the thread that owns the underlying handle of the form. When the user clicks on the button, `Invoke` runs the delegate.
 
@@ -8518,8 +8372,6 @@ MyControl.Font = New Font(MyControl.Font, _
 
 > [!NOTE]
 > An exception might be thrown if the thread that should process the message is no longer active.
-
-
 
 ## Examples
  The following code example shows controls that contain a delegate. The delegate encapsulates a method that adds items to the list box, and this method is executed on the thread that owns the underlying handle of the form, using the specified arguments. When the user clicks on the button, `Invoke` runs the delegate.
@@ -9374,8 +9226,6 @@ MyControl.Font = New Font(MyControl.Font, _
 ## Remarks
  Call the <xref:System.Windows.Forms.Control.IsInputKey*> method to determine whether the key specified by the `keyData` parameter is an input key that the control wants. This method is called during window message preprocessing to determine whether the specified input key should be preprocessed or sent directly to the control. If <xref:System.Windows.Forms.Control.IsInputKey*> returns `true`, the specified key is sent directly to the control. If <xref:System.Windows.Forms.Control.IsInputKey*> returns `false`, the specified key is preprocessed and only sent to the control if it is not consumed by the preprocessing phase. Keys that are preprocessed include the TAB, RETURN, ESC, and the UP ARROW, DOWN ARROW, LEFT ARROW, and RIGHT ARROW keys.
 
-
-
 ## Examples
  The following code example shows you how to override the <xref:System.Windows.Forms.Control.IsInputKey*> method for a <xref:System.Windows.Forms.TextBox> control. In this example, the `TabTextBox` class handles the TAB key. When the `TabTextBox` has the focus and the user presses the TAB key four spaces are added at the text insertion point, replacing any selected text. By default, the <xref:System.Windows.Forms.TextBox> control handles the TAB key by moving the input focus to the next control. In this case, the keypress never reaches the <xref:System.Windows.Forms.Control.OnKeyDown*> method override. To prevent this default behavior, the <xref:System.Windows.Forms.Control.IsInputKey*> method override returns `true` when the user presses the TAB key. For all other keypresses, the <xref:System.Windows.Forms.Control.IsInputKey*> method override returns the result of calling the base-class version of the method.
 
@@ -9532,8 +9382,6 @@ The following code example displays a message box indicating whether the specifi
 ## Remarks
  The mnemonic character is the character immediately following the first instance of "&" in a <xref:System.String>.
 
-
-
 ## Examples
  The following code example demonstrates an extension of the button class that overrides the <xref:System.Windows.Forms.Control.ProcessMnemonic*> method to exhibit custom behavior. The example also demonstrates the use of the <xref:System.Windows.Forms.Control.CanSelect*> and <xref:System.Windows.Forms.Control.IsMnemonic*> properties. To run this example paste the following code after a form class, in the same file. Add a button of type `MnemonicButton` to the form.
 
@@ -9588,8 +9436,6 @@ The following code example displays a message box indicating whether the specifi
  To handle keyboard events only at the form level and not enable other controls to receive keyboard events, set the <xref:System.Windows.Forms.KeyPressEventArgs.Handled?displayProperty=nameWithType> property in your form's <xref:System.Windows.Forms.Control.KeyPress> event-handling method to `true`. Certain keys, such as the TAB, RETURN, ESC, and arrow keys are handled by controls automatically. To have these keys raise the <xref:System.Windows.Forms.Control.KeyDown> event, you must override the <xref:System.Windows.Forms.Control.IsInputKey*> method in each control on your form. The code for the override of the <xref:System.Windows.Forms.Control.IsInputKey*> would need to determine if one of the special keys is pressed and return a value of `true`. Instead of overriding the <xref:System.Windows.Forms.Control.IsInputKey*> method, you can handle the <xref:System.Windows.Forms.Control.PreviewKeyDown> event and set the <xref:System.Windows.Forms.PreviewKeyDownEventArgs.IsInputKey> property to `true`. For a code example, see the <xref:System.Windows.Forms.Control.PreviewKeyDown> event.
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example uses the <xref:System.Windows.Forms.Control.KeyDown> event to determine the type of character entered into the control.
@@ -9659,8 +9505,6 @@ The following code example displays a message box indicating whether the specifi
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
 
-
-
 ## Examples
  The following code example uses the <xref:System.Windows.Forms.Control.KeyPress> event to prevent characters from entering the control.
 
@@ -9726,8 +9570,6 @@ The following code example displays a message box indicating whether the specifi
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
 
-
-
 ## Examples
  The following code example uses the <xref:System.Windows.Forms.Control.KeyUp> event with the <xref:System.Windows.Forms.Help> class to display pop-up style help to the user.
 
@@ -9782,8 +9624,6 @@ The following code example displays a message box indicating whether the specifi
  The <xref:System.Windows.Forms.Control.Layout> event occurs when child controls are added or removed, when the bounds of the control changes, and when other changes occur that can affect the layout of the control. The layout event can be suppressed using the <xref:System.Windows.Forms.Control.SuspendLayout*> and <xref:System.Windows.Forms.Control.ResumeLayout*> methods. Suspending layout enables you to perform multiple actions on a control without having to perform a layout for each change. For example, if you resize and move a control, each operation would raise a <xref:System.Windows.Forms.Control.Layout> event.
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example centers a <xref:System.Windows.Forms.Form> on the screen in the <xref:System.Windows.Forms.Control.Layout> event. This will keep the form centered as the user resizes it. This example requires that you have created a <xref:System.Windows.Forms.Form> control.
@@ -9933,8 +9773,6 @@ The following code example displays a message box indicating whether the specifi
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
 
-
-
 ## Examples
  The following code example uses the <xref:System.Windows.Forms.Control.Leave> event to reset a control to its former state.
 
@@ -10001,8 +9839,6 @@ The following code example displays a message box indicating whether the specifi
 
  Changes made to the <xref:System.Windows.Forms.Control.Width*> and <xref:System.Windows.Forms.Control.Left> property values cause the <xref:System.Windows.Forms.Control.Right> property value of the control to change.
 
-
-
 ## Examples
  The following code example creates three <xref:System.Windows.Forms.Button> controls on a form and sets their size and location by using the various size-related and location-related properties. This example requires that you have a <xref:System.Windows.Forms.Form> that has a width and height of at least 300 pixels.
 
@@ -10057,8 +9893,6 @@ The following code example displays a message box indicating whether the specifi
 
  If the <xref:System.Windows.Forms.Control> is a <xref:System.Windows.Forms.Form>, the <xref:System.Windows.Forms.Control.Location> property value represents the upper-left corner of the <xref:System.Windows.Forms.Form> in screen coordinates.
 
-
-
 ## Examples
  The following code example creates a <xref:System.Windows.Forms.GroupBox> and sets some of its common properties. The example creates a <xref:System.Windows.Forms.TextBox> and sets its <xref:System.Windows.Forms.Control.Location*> within the group box. Next, it sets the <xref:System.Windows.Forms.Control.Text> property of the group box, and docks the group box to the top of the form. Lastly, it disables the group box by setting the <xref:System.Windows.Forms.Control.Enabled> property to `false`, which causes all controls contained within the group box to be disabled.
 
@@ -10106,8 +9940,6 @@ The following code example displays a message box indicating whether the specifi
  This event is raised if the <xref:System.Windows.Forms.Control.Location> property is changed by either a programmatic modification or through interaction.
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example raises the <xref:System.Windows.Forms.Control.LocationChanged> event on a <xref:System.Windows.Forms.StatusStrip> when the form is resized.
@@ -10266,8 +10098,6 @@ The following code example displays a message box indicating whether the specifi
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
 
-
-
 ## Examples
  The following code example demonstrates validating the text for TextBox1. It also demonstrates handling the <xref:System.Windows.Forms.Control.LostFocus> event by setting the <xref:System.Windows.Forms.FileDialog.InitialDirectory?displayProperty=nameWithType> property to the text in TextBox1. The code example used the <xref:System.Windows.Forms.ErrorProvider.GetError*?displayProperty=nameWithType> method to check for an error before opening the file dialog box. To run this example, paste the following code into a form containing a <xref:System.Windows.Forms.TextBox> named `TextBox1`, an <xref:System.Windows.Forms.OpenFileDialog> named `OpenFileDialog1`, a <xref:System.Windows.Forms.Button> named `Button1`, and an <xref:System.Windows.Forms.ErrorProvider> named `ErrorProvider1`. Ensure all events are associated with their event handlers.
 
@@ -10359,8 +10189,6 @@ The following code example displays a message box indicating whether the specifi
 
 ## Remarks
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.Control.MarginChanged> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
@@ -10573,8 +10401,6 @@ The following code example displays a message box indicating whether the specifi
 
  Mouse operations can include clicking and holding the mouse on a form or a control, or performing a mouse drag operation. If you have to detect when a form or a control loses mouse capture for these and related unexpected scenarios, you can use the <xref:System.Windows.Forms.Control.MouseCaptureChanged> event.
 
-
-
 ## Examples
  The following code example demonstrates the <xref:System.Windows.Forms.Control.MouseCaptureChanged> event for a <xref:System.Windows.Forms.Button> control.
 
@@ -10647,8 +10473,6 @@ The following code example displays a message box indicating whether the specifi
 >  <xref:System.Windows.Forms.Control.Click> events are logically higher-level events of a control. They are often raised by other actions, such as pressing the ENTER key when the control has focus.
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.Control.MouseClick> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
@@ -10725,8 +10549,6 @@ The following code example displays a message box indicating whether the specifi
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
 
-
-
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.Control.MouseDoubleClick> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
 
@@ -10792,8 +10614,6 @@ The following code example displays a message box indicating whether the specifi
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
 
-
-
 ## Examples
  The following code example demonstrates using different mouse events to draw the path of the mouse on a <xref:System.Windows.Forms.Panel>. A line segment is added to the <xref:System.Drawing.Drawing2D.GraphicsPath> for each <xref:System.Windows.Forms.Control.MouseMove> and <xref:System.Windows.Forms.Control.MouseDown> events that occur. To update the graphics, the <xref:System.Windows.Forms.Control.Invalidate*> method is called for the <xref:System.Windows.Forms.Panel> on each `MouseDown` and `MouseUp` event. In addition, the graphic path is scrolled up or down when the <xref:System.Windows.Forms.Control.MouseWheel> event occurs. Additional mouse events, like <xref:System.Windows.Forms.Control.MouseHover>, are identified on screen as well. Also displayed on the screen is additional information about the mouse from the <xref:System.Windows.Forms.SystemInformation> class.
 
@@ -10856,8 +10676,6 @@ The following code example displays a message box indicating whether the specifi
 > The following events are not raised for the <xref:System.Windows.Forms.TabControl> class unless there is at least one <xref:System.Windows.Forms.TabPage> in the <xref:System.Windows.Forms.TabControl.TabPages*?displayProperty=nameWithType> collection: <xref:System.Windows.Forms.Control.Click>, <xref:System.Windows.Forms.Control.DoubleClick>, <xref:System.Windows.Forms.Control.MouseDown>, <xref:System.Windows.Forms.Control.MouseUp>, <xref:System.Windows.Forms.Control.MouseHover>, <xref:System.Windows.Forms.Control.MouseEnter>, <xref:System.Windows.Forms.Control.MouseLeave> and <xref:System.Windows.Forms.Control.MouseMove>. If there is at least one <xref:System.Windows.Forms.TabPage> in the collection, and the user interacts with the tab control's header (where the <xref:System.Windows.Forms.TabPage> names appear), the <xref:System.Windows.Forms.TabControl> raises the appropriate event. However, if the user interaction is within the client area of the tab page, the <xref:System.Windows.Forms.TabPage> raises the appropriate event.
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example demonstrates using different mouse events to draw the path of the mouse on a <xref:System.Windows.Forms.Panel>. A line segment is added to the <xref:System.Drawing.Drawing2D.GraphicsPath> for each <xref:System.Windows.Forms.Control.MouseMove> and <xref:System.Windows.Forms.Control.MouseDown> events that occur. To update the graphics, the <xref:System.Windows.Forms.Control.Invalidate*> method is called for the <xref:System.Windows.Forms.Panel> on each `MouseDown` and `MouseUp` event. In addition, the graphic path is scrolled up or down when the <xref:System.Windows.Forms.Control.MouseWheel> event occurs. Additional mouse events, like <xref:System.Windows.Forms.Control.MouseHover>, are identified on screen as well. Also displayed on the screen is additional information about the mouse from the <xref:System.Windows.Forms.SystemInformation> class.
@@ -10926,8 +10744,6 @@ The following code example displays a message box indicating whether the specifi
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
 
-
-
 ## Examples
  The following code example demonstrates using different mouse events to draw the path of the mouse on a <xref:System.Windows.Forms.Panel>. A line segment is added to the <xref:System.Drawing.Drawing2D.GraphicsPath> for each <xref:System.Windows.Forms.Control.MouseMove> and <xref:System.Windows.Forms.Control.MouseDown> events that occur. To update the graphics, the <xref:System.Windows.Forms.Control.Invalidate*> method is called for the <xref:System.Windows.Forms.Panel> on each `MouseDown` and `MouseUp` event. In addition, the graphic path is scrolled up or down when the <xref:System.Windows.Forms.Control.MouseWheel> event occurs. Additional mouse events, like <xref:System.Windows.Forms.Control.MouseHover>, are identified on screen as well. Also displayed on the screen is additional information about the mouse from the <xref:System.Windows.Forms.SystemInformation> class.
 
@@ -10989,8 +10805,6 @@ The following code example displays a message box indicating whether the specifi
 > The following events are not raised for the <xref:System.Windows.Forms.TabControl> class unless there is at least one <xref:System.Windows.Forms.TabPage> in the <xref:System.Windows.Forms.TabControl.TabPages*?displayProperty=nameWithType> collection: <xref:System.Windows.Forms.Control.Click>, <xref:System.Windows.Forms.Control.DoubleClick>, <xref:System.Windows.Forms.Control.MouseDown>, <xref:System.Windows.Forms.Control.MouseUp>, <xref:System.Windows.Forms.Control.MouseHover>, <xref:System.Windows.Forms.Control.MouseEnter>, <xref:System.Windows.Forms.Control.MouseLeave> and <xref:System.Windows.Forms.Control.MouseMove>. If there is at least one <xref:System.Windows.Forms.TabPage> in the collection, and the user interacts with the tab control's header (where the <xref:System.Windows.Forms.TabPage> names appear), the <xref:System.Windows.Forms.TabControl> raises the appropriate event. However, if the user interaction is within the client area of the tab page, the <xref:System.Windows.Forms.TabPage> raises the appropriate event.
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example demonstrates using different mouse events to draw the path of the mouse on a <xref:System.Windows.Forms.Panel>. A line segment is added to the <xref:System.Drawing.Drawing2D.GraphicsPath> for each <xref:System.Windows.Forms.Control.MouseMove> and <xref:System.Windows.Forms.Control.MouseDown> events that occur. To update the graphics, the <xref:System.Windows.Forms.Control.Invalidate*> method is called for the <xref:System.Windows.Forms.Panel> on each `MouseDown` and `MouseUp` event. In addition, the graphic path is scrolled up or down when the <xref:System.Windows.Forms.Control.MouseWheel> event occurs. Additional mouse events, like <xref:System.Windows.Forms.Control.MouseHover>, are identified on screen as well. Also displayed on the screen is additional information about the mouse from the <xref:System.Windows.Forms.SystemInformation> class.
@@ -11055,8 +10869,6 @@ The following code example displays a message box indicating whether the specifi
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
 
-
-
 ## Examples
  The following code example demonstrates using different mouse events to draw the path of the mouse on a <xref:System.Windows.Forms.Panel>. A line segment is added to the <xref:System.Drawing.Drawing2D.GraphicsPath> for each <xref:System.Windows.Forms.Control.MouseMove> and <xref:System.Windows.Forms.Control.MouseDown> events that occur. To update the graphics, the <xref:System.Windows.Forms.Control.Invalidate*> method is called for the <xref:System.Windows.Forms.Panel> on each `MouseDown` and `MouseUp` event. In addition, the graphic path is scrolled up or down when the <xref:System.Windows.Forms.Control.MouseWheel> event occurs. Additional mouse events, like <xref:System.Windows.Forms.Control.MouseHover>, are identified on screen as well. Also displayed on the screen is additional information about the mouse from the <xref:System.Windows.Forms.SystemInformation> class.
 
@@ -11104,8 +10916,6 @@ The following code example displays a message box indicating whether the specifi
  The <xref:System.Windows.Forms.Control.MousePosition> property returns a <xref:System.Drawing.Point> that represents the mouse cursor position at the time the property was referenced. The coordinates indicate the position on the screen, not relative to the control, and are returned regardless of whether the cursor is positioned over the control. The coordinates of the upper-left corner of the screen are 0,0.
 
  The <xref:System.Windows.Forms.Control.MousePosition> property is identical to the <xref:System.Windows.Forms.Cursor.Position?displayProperty=nameWithType> property.
-
-
 
 ## Examples
  The following code example puts a <xref:System.Windows.Forms.TreeNode> label into an editable state when the user presses ALT+E while the mouse cursor is over the tree node. After the user is done editing the label, the labels cannot be edited again until the ALT+E key combination is pressed again. This example requires that you have a <xref:System.Windows.Forms.TreeView> on a <xref:System.Windows.Forms.Form>. The tree view should also have at least one <xref:System.Windows.Forms.TreeNode> in its <xref:System.Windows.Forms.TreeView.Nodes*> collection.
@@ -11167,8 +10977,6 @@ The following code example displays a message box indicating whether the specifi
 > The following events are not raised for the <xref:System.Windows.Forms.TabControl> class unless there is at least one <xref:System.Windows.Forms.TabPage> in the <xref:System.Windows.Forms.TabControl.TabPages*?displayProperty=nameWithType> collection: <xref:System.Windows.Forms.Control.Click>, <xref:System.Windows.Forms.Control.DoubleClick>, <xref:System.Windows.Forms.Control.MouseDown>, <xref:System.Windows.Forms.Control.MouseUp>, <xref:System.Windows.Forms.Control.MouseHover>, <xref:System.Windows.Forms.Control.MouseEnter>, <xref:System.Windows.Forms.Control.MouseLeave> and <xref:System.Windows.Forms.Control.MouseMove>. If there is at least one <xref:System.Windows.Forms.TabPage> in the collection, and the user interacts with the tab control's header (where the <xref:System.Windows.Forms.TabPage> names appear), the <xref:System.Windows.Forms.TabControl> raises the appropriate event. However, if the user interaction is within the client area of the tab page, the <xref:System.Windows.Forms.TabPage> raises the appropriate event.
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example demonstrates using different mouse events to draw the path of the mouse on a <xref:System.Windows.Forms.Panel>. A line segment is added to the <xref:System.Drawing.Drawing2D.GraphicsPath> for each <xref:System.Windows.Forms.Control.MouseMove> and <xref:System.Windows.Forms.Control.MouseDown> events that occur. To update the graphics, the <xref:System.Windows.Forms.Control.Invalidate*> method is called for the <xref:System.Windows.Forms.Panel> on each `MouseDown` and `MouseUp` event. In addition, the graphic path is scrolled up or down when the <xref:System.Windows.Forms.Control.MouseWheel> event occurs. Additional mouse events, like <xref:System.Windows.Forms.Control.MouseHover>, are identified on screen as well. Also displayed on the screen is additional information about the mouse from the <xref:System.Windows.Forms.SystemInformation> class.
@@ -11242,8 +11050,6 @@ The following code example displays a message box indicating whether the specifi
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
 
-
-
 ## Examples
  The following code example demonstrates using different mouse events to draw the path of the mouse on a <xref:System.Windows.Forms.Panel>. A line segment is added to the <xref:System.Drawing.Drawing2D.GraphicsPath> for each <xref:System.Windows.Forms.Control.MouseMove> and <xref:System.Windows.Forms.Control.MouseDown> events that occur. To update the graphics, the <xref:System.Windows.Forms.Control.Invalidate*> method is called for the <xref:System.Windows.Forms.Panel> on each `MouseDown` and `MouseUp` event. In addition, the graphic path is scrolled up or down when the <xref:System.Windows.Forms.Control.MouseWheel> event occurs. Additional mouse events, like <xref:System.Windows.Forms.Control.MouseHover>, are identified on screen as well. Also displayed on the screen is additional information about the mouse from the <xref:System.Windows.Forms.SystemInformation> class.
 
@@ -11289,8 +11095,6 @@ The following code example displays a message box indicating whether the specifi
 
 ## Remarks
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example uses the <xref:System.Windows.Forms.Control.Move> event to display the location of the form in screen coordinates on the caption bar of the form.
@@ -11486,8 +11290,6 @@ The following code example displays a message box indicating whether the specifi
 
  The <xref:System.Windows.Forms.Control.OnBackColorChanged*> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
 
-
-
 ## Examples
  The following code example is an event-raising method that is executed when the <xref:System.Windows.Forms.Control.Text> property value changes. The <xref:System.Windows.Forms.Control> class has several methods with the name pattern `On`*PropertyName*`Changed` that raise the corresponding *PropertyName*`Changed` event when the *PropertyName* value changes (*PropertyName* represents the name of the corresponding property).
 
@@ -11549,8 +11351,6 @@ The following code example displays a message box indicating whether the specifi
  Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](/dotnet/standard/events/).
 
  The <xref:System.Windows.Forms.Control.OnBackgroundImageChanged*> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
-
-
 
 ## Examples
  The following code example is an event-raising method that is executed when the <xref:System.Windows.Forms.Control.Text> property value changes. The <xref:System.Windows.Forms.Control> class has several methods with the name pattern `On`*PropertyName*`Changed` that raise the corresponding *PropertyName*`Changed` event when the *PropertyName* value changes (*PropertyName* represents the name of the corresponding property).
@@ -11719,8 +11519,6 @@ The following code example displays a message box indicating whether the specifi
 
  The <xref:System.Windows.Forms.Control.OnCausesValidationChanged*> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
 
-
-
 ## Examples
  The following code example is an event-raising method that is executed when the <xref:System.Windows.Forms.Control.Text> property value changes. The <xref:System.Windows.Forms.Control> class has several methods with the name pattern `On`*PropertyName*`Changed` that raise the corresponding *PropertyName*`Changed` event when the *PropertyName* value changes (*PropertyName* represents the name of the corresponding property).
 
@@ -11835,8 +11633,6 @@ The following code example displays a message box indicating whether the specifi
  Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](/dotnet/standard/events/).
 
  The <xref:System.Windows.Forms.Control.OnClick*> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
-
-
 
 ## Examples
  The following code example demonstrates overriding the <xref:System.Windows.Forms.Control.OnClick*> method in a derived class. To run the example, paste the following code after a form class, in the same file. Add a textbox of type `SingleClickTextBox` to the form.
@@ -11964,8 +11760,6 @@ The following code example displays a message box indicating whether the specifi
 
  The <xref:System.Windows.Forms.Control.OnContextMenuChanged*> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
 
-
-
 ## Examples
  The following code example is an event-raising method that is executed when the <xref:System.Windows.Forms.Control.Text> property value changes. The <xref:System.Windows.Forms.Control> class has several methods with the name pattern `On`*PropertyName*`Changed` that raise the corresponding *PropertyName*`Changed` event when the *PropertyName* value changes (*PropertyName* represents the name of the corresponding property).
 
@@ -12080,8 +11874,6 @@ The following code example displays a message box indicating whether the specifi
 
  The <xref:System.Windows.Forms.Control.OnControlAdded*> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
 
-
-
 ## Examples
  The following code example uses <xref:System.Windows.Forms.Control.ControlAdded> to add a control to a form and displays the name of the added control in a <xref:System.Windows.Forms.MessageBox>.
 
@@ -12142,8 +11934,6 @@ The following code example displays a message box indicating whether the specifi
  Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](/dotnet/standard/events/).
 
  The <xref:System.Windows.Forms.Control.OnControlRemoved*> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
-
-
 
 ## Examples
  The following code example uses <xref:System.Windows.Forms.Control.ControlRemoved> to remove a control from a form and displays the name of the removed control in a <xref:System.Windows.Forms.MessageBox>.
@@ -12253,8 +12043,6 @@ The following code example displays a message box indicating whether the specifi
 
  The <xref:System.Windows.Forms.Control.OnCursorChanged*> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
 
-
-
 ## Examples
  The following code example is an event-raising method that is executed when the <xref:System.Windows.Forms.Control.Text> property value changes. The <xref:System.Windows.Forms.Control> class has several methods with the name pattern `On`*PropertyName*`Changed` that raise the corresponding *PropertyName*`Changed` event when the *PropertyName* value changes (*PropertyName* represents the name of the corresponding property).
 
@@ -12351,8 +12139,6 @@ The following code example displays a message box indicating whether the specifi
 
  The <xref:System.Windows.Forms.Control.OnDockChanged*> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
 
-
-
 ## Examples
  The following code example is an event-raising method that is executed when the <xref:System.Windows.Forms.Control.Text> property value changes. The <xref:System.Windows.Forms.Control> class has several methods with the name pattern `On`*PropertyName*`Changed` that raise the corresponding *PropertyName*`Changed` event when the *PropertyName* value changes (*PropertyName* represents the name of the corresponding property).
 
@@ -12414,8 +12200,6 @@ The following code example displays a message box indicating whether the specifi
  Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](/dotnet/standard/events/).
 
  The <xref:System.Windows.Forms.Control.OnDoubleClick*> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
-
-
 
 ## Examples
  The following code example uses the <xref:System.Windows.Forms.Control.DoubleClick> event of a <xref:System.Windows.Forms.ListBox> to load text files listed in the <xref:System.Windows.Forms.ListBox> into a <xref:System.Windows.Forms.TextBox> control.
@@ -12823,8 +12607,6 @@ The following code example displays a message box indicating whether the specifi
 
  The <xref:System.Windows.Forms.Control.OnEnter*> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
 
-
-
 ## Examples
  The following code example uses the <xref:System.Windows.Forms.Control.Enter> event to change the foreground and background colors of a <xref:System.Windows.Forms.TextBox> under particular conditions.
 
@@ -12883,8 +12665,6 @@ The following code example displays a message box indicating whether the specifi
  Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](/dotnet/standard/events/).
 
  The <xref:System.Windows.Forms.Control.OnFontChanged*> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
-
-
 
 ## Examples
  The following code example is an event-raising method that is executed when the <xref:System.Windows.Forms.Control.Text> property value changes. The <xref:System.Windows.Forms.Control> class has several methods with the name pattern `On`*PropertyName*`Changed` that raise the corresponding *PropertyName*`Changed` event when the *PropertyName* value changes (*PropertyName* represents the name of the corresponding property).
@@ -12946,8 +12726,6 @@ The following code example displays a message box indicating whether the specifi
  Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](/dotnet/standard/events/).
 
  The <xref:System.Windows.Forms.Control.OnForeColorChanged*> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
-
-
 
 ## Examples
  The following code example is an event-raising method that is executed when the <xref:System.Windows.Forms.Control.Text> property value changes. The <xref:System.Windows.Forms.Control> class has several methods with the name pattern `On`*PropertyName*`Changed` that raise the corresponding *PropertyName*`Changed` event when the *PropertyName* value changes (*PropertyName* represents the name of the corresponding property).
@@ -13283,8 +13061,6 @@ The following code example displays a message box indicating whether the specifi
 
  The <xref:System.Windows.Forms.Control.OnImeModeChanged*> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
 
-
-
 ## Examples
  The following code example is an event-raising method that is executed when the <xref:System.Windows.Forms.Control.Text> property value changes. The <xref:System.Windows.Forms.Control> class has several methods with the name pattern `On`*PropertyName*`Changed` that raise the corresponding *PropertyName*`Changed` event when the *PropertyName* value changes (*PropertyName* represents the name of the corresponding property).
 
@@ -13399,8 +13175,6 @@ The following code example displays a message box indicating whether the specifi
 
  The <xref:System.Windows.Forms.Control.OnKeyDown*> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
 
-
-
 ## Examples
  The following code example uses the <xref:System.Windows.Forms.Control.KeyDown> event to determine the type of character entered into the control.
 
@@ -13460,8 +13234,6 @@ The following code example displays a message box indicating whether the specifi
 
  The <xref:System.Windows.Forms.Control.OnKeyPress*> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
 
-
-
 ## Examples
  The following code example uses the <xref:System.Windows.Forms.Control.KeyPress> event to prevent characters from entering the control.
 
@@ -13520,8 +13292,6 @@ The following code example displays a message box indicating whether the specifi
  Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](/dotnet/standard/events/).
 
  The <xref:System.Windows.Forms.Control.OnKeyUp*> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
-
-
 
 ## Examples
  The following code example uses the <xref:System.Windows.Forms.Control.KeyUp> event with the <xref:System.Windows.Forms.Help> class to display pop-up style help to the user.
@@ -13638,8 +13408,6 @@ The following code example displays a message box indicating whether the specifi
 
  The <xref:System.Windows.Forms.Control.OnLeave*> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
 
-
-
 ## Examples
  The following code example uses the <xref:System.Windows.Forms.Control.Leave> event to reset a control to its former state.
 
@@ -13698,8 +13466,6 @@ The following code example displays a message box indicating whether the specifi
  Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](/dotnet/standard/events/).
 
  The <xref:System.Windows.Forms.Control.OnLocationChanged*> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
-
-
 
 ## Examples
  The following code example is an event-raising method that is executed when the <xref:System.Windows.Forms.Control.Text> property value changes. The <xref:System.Windows.Forms.Control> class has several methods with the name pattern `On`*PropertyName*`Changed` that raise the corresponding *PropertyName* `Changed` event when the *PropertyName* value changes (*PropertyName* represents the name of the corresponding property).
@@ -14115,8 +13881,6 @@ The following code example displays a message box indicating whether the specifi
 
  The <xref:System.Windows.Forms.Control.OnMouseHover*> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
 
-
-
 ## Examples
  The following code example demonstrates how to override the <xref:System.Windows.Forms.Control.OnMouseHover*> and <xref:System.Windows.Forms.Control.OnMouseMove*> methods in a derived class. To run the example, paste the following code in a new form and paste this class, forming the same file, after the form. Add a button of type `FunButton` to the form.
 
@@ -14229,8 +13993,6 @@ The following code example displays a message box indicating whether the specifi
  Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](/dotnet/standard/events/).
 
  The <xref:System.Windows.Forms.Control.OnMouseMove*> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
-
-
 
 ## Examples
  The following code example demonstrates how to override the <xref:System.Windows.Forms.Control.OnMouseHover*> and <xref:System.Windows.Forms.Control.OnMouseMove*> methods in a derived class. To run the example, paste the following code in a new form and paste this class, forming the same file, after the form. Add a button of type `FunButton` to the form.
@@ -14398,8 +14160,6 @@ The following code example displays a message box indicating whether the specifi
 
  The <xref:System.Windows.Forms.Control.OnMove*> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
 
-
-
 ## Examples
  The following code example uses the <xref:System.Windows.Forms.Control.Move> event to display the location of the form in screen coordinates on the caption bar of the form.
 
@@ -14552,8 +14312,6 @@ The following code example displays a message box indicating whether the specifi
 
  The <xref:System.Windows.Forms.Control.OnPaint*> method also enables derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
 
-
-
 ## Examples
  The following code example enables the user to drag an image or image file onto the form, and have it be displayed at the point on which it is dropped. The <xref:System.Windows.Forms.Control.OnPaint*> method is overridden to repaint the image each time the form is painted; otherwise the image would only persist until the next repainting. The <xref:System.Windows.Forms.Control.DragEnter> event-handling method determines the type of data being dragged into the form and provides the appropriate feedback. The <xref:System.Windows.Forms.Control.DragDrop> event-handling method displays the image on the form, if an <xref:System.Drawing.Image> can be created from the data. Because the <xref:System.Windows.Forms.DragEventArgs.X*?displayProperty=nameWithType> and <xref:System.Windows.Forms.DragEventArgs.Y*?displayProperty=nameWithType> values are screen coordinates, the example uses the <xref:System.Windows.Forms.Control.PointToClient*> method to convert them to client coordinates.
 
@@ -14667,8 +14425,6 @@ The following code example displays a message box indicating whether the specifi
 
  The <xref:System.Windows.Forms.Control.OnParentBackColorChanged*> method also enables derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
 
-
-
 ## Examples
  The following code example is an event-raising method that is executed when the <xref:System.Windows.Forms.Control.Text> property value changes. The <xref:System.Windows.Forms.Control> class has several methods with the name pattern `On`*PropertyName*`Changed` that raise the corresponding *PropertyName*`Changed` event when the *PropertyName* value changes (*PropertyName* represents the name of the corresponding property).
 
@@ -14734,8 +14490,6 @@ The following code example displays a message box indicating whether the specifi
 
  The <xref:System.Windows.Forms.Control.OnParentBackgroundImageChanged*> method also enables derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
 
-
-
 ## Examples
  The following code example is an event-raising method that is executed when the <xref:System.Windows.Forms.Control.Text> property value changes. The <xref:System.Windows.Forms.Control> class has several methods with the name pattern `On`*PropertyName*`Changed` that raise the corresponding *PropertyName*`Changed` event when the *PropertyName* value changes (*PropertyName* represents the name of the corresponding property).
 
@@ -14797,8 +14551,6 @@ The following code example displays a message box indicating whether the specifi
 
  The <xref:System.Windows.Forms.Control.OnParentBindingContextChanged*> method also enables derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
 
-
-
 ## Examples
  The following code example is an event-raising method that is executed when the <xref:System.Windows.Forms.Control.Text> property value changes. The <xref:System.Windows.Forms.Control> class has several methods with the name pattern `On`*PropertyName*`Changed` that raise the corresponding *PropertyName*`Changed` event when the *PropertyName* value changes (*PropertyName* represents the name of the corresponding property).
 
@@ -14859,8 +14611,6 @@ The following code example displays a message box indicating whether the specifi
  Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](/dotnet/standard/events/).
 
  The <xref:System.Windows.Forms.Control.OnParentChanged*> method also enables derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
-
-
 
 ## Examples
  The following code example is an event-raising method that is executed when the <xref:System.Windows.Forms.Control.Text> property value changes. The <xref:System.Windows.Forms.Control> class has several methods with the name pattern `On`*PropertyName*`Changed` that raise the corresponding *PropertyName*`Changed` event when the *PropertyName* value changes (*PropertyName* represents the name of the corresponding property).
@@ -15007,8 +14757,6 @@ The following code example displays a message box indicating whether the specifi
 
  The <xref:System.Windows.Forms.Control.OnParentEnabledChanged*> method also enables derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
 
-
-
 ## Examples
  The following code example is an event-raising method that is executed when the <xref:System.Windows.Forms.Control.Text> property value changes. The <xref:System.Windows.Forms.Control> class has several methods with the name pattern `On`*PropertyName*`Changed` that raise the corresponding *PropertyName*`Changed` event when the *PropertyName* value changes (*PropertyName* represents the name of the corresponding property).
 
@@ -15069,8 +14817,6 @@ The following code example displays a message box indicating whether the specifi
  Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](/dotnet/standard/events/).
 
  The <xref:System.Windows.Forms.Control.OnParentFontChanged*> method also enables derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
-
-
 
 ## Examples
  The following code example is an event-raising method that is executed when the <xref:System.Windows.Forms.Control.Text> property value changes. The <xref:System.Windows.Forms.Control> class has several methods with the name pattern `On`*PropertyName*`Changed` that raise the corresponding *PropertyName*`Changed` event when the *PropertyName* value changes (*PropertyName* represents the name of the corresponding property).
@@ -15133,8 +14879,6 @@ The following code example displays a message box indicating whether the specifi
 
  The <xref:System.Windows.Forms.Control.OnParentForeColorChanged*> method also enables derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
 
-
-
 ## Examples
  The following code example is an event-raising method that is executed when the <xref:System.Windows.Forms.Control.Text> property value changes. The <xref:System.Windows.Forms.Control> class has several methods with the name pattern `On`*PropertyName*`Changed` that raise the corresponding *PropertyName*`Changed` event when the *PropertyName* value changes (*PropertyName* represents the name of the corresponding property).
 
@@ -15196,8 +14940,6 @@ The following code example displays a message box indicating whether the specifi
 
  The <xref:System.Windows.Forms.Control.OnParentRightToLeftChanged*> method also enables derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
 
-
-
 ## Examples
  The following code example is an event-raising method that is executed when the <xref:System.Windows.Forms.Control.Text> property value changes. The <xref:System.Windows.Forms.Control> class has several methods with the name pattern `On`*PropertyName*`Changed` that raise the corresponding *PropertyName*`Changed` event when the *PropertyName* value changes (*PropertyName* represents the name of the corresponding property).
 
@@ -15258,8 +15000,6 @@ The following code example displays a message box indicating whether the specifi
  Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](/dotnet/standard/events/).
 
  The <xref:System.Windows.Forms.Control.OnParentVisibleChanged*> method also enables derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
-
-
 
 ## Examples
  The following code example is an event-raising method that is executed when the <xref:System.Windows.Forms.Control.Text> property value changes. The <xref:System.Windows.Forms.Control> class has several methods with the name pattern `On`*PropertyName*`Changed` that raise the corresponding *PropertyName*`Changed` event when the *PropertyName* value changes (*PropertyName* represents the name of the corresponding property).
@@ -15578,8 +15318,6 @@ The following code example displays a message box indicating whether the specifi
 
  The <xref:System.Windows.Forms.Control.OnRightToLeftChanged*> method also enables derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
 
-
-
 ## Examples
  The following code example is an event-raising method that is executed when the <xref:System.Windows.Forms.Control.Text> property value changes. The <xref:System.Windows.Forms.Control> class has several methods with the name pattern `On`*PropertyName*`Changed` that raise the corresponding *PropertyName*`Changed` event when the *PropertyName* value changes (*PropertyName* represents the name of the corresponding property).
 
@@ -15852,8 +15590,6 @@ The following code example displays a message box indicating whether the specifi
 
  The <xref:System.Windows.Forms.Control.OnTabStopChanged*> method also enables derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
 
-
-
 ## Examples
  The following code example is an event-raising method that is executed when the <xref:System.Windows.Forms.Control.Text> property value changes. The <xref:System.Windows.Forms.Control> class has several methods with the name pattern `On`*PropertyName*`Changed` that raise the corresponding *PropertyName*`Changed` event when the *PropertyName* value changes (*PropertyName* represents the name of the corresponding property).
 
@@ -15914,8 +15650,6 @@ The following code example displays a message box indicating whether the specifi
  Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](/dotnet/standard/events/).
 
  The <xref:System.Windows.Forms.Control.OnTextChanged*> method also enables derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
-
-
 
 ## Examples
  The following code example changes the <xref:System.Windows.Forms.Control.ForeColor*> of a <xref:System.Windows.Forms.TextBox> derived class displaying currency data. The example converts the text to a decimal number and changes the <xref:System.Windows.Forms.Control.ForeColor*> to <xref:System.Drawing.Color.Red*?displayProperty=nameWithType> if the number is negative and to <xref:System.Drawing.Color.Black*?displayProperty=nameWithType> if the number is positive. This example requires that you have a class that derives from the <xref:System.Windows.Forms.TextBox> class.
@@ -16080,8 +15814,6 @@ The following code example displays a message box indicating whether the specifi
 
  The <xref:System.Windows.Forms.Control.OnVisibleChanged*> method also enables derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
 
-
-
 ## Examples
  The following code example is an event-raising method that is executed when the <xref:System.Windows.Forms.Control.Text> property value changes. The <xref:System.Windows.Forms.Control> class has several methods with the name pattern `On`*PropertyName*`Changed` that raise the corresponding *PropertyName*`Changed` event when the *PropertyName* value changes (*PropertyName* represents the name of the corresponding property).
 
@@ -16220,8 +15952,6 @@ The following code example displays a message box indicating whether the specifi
 ## Remarks
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
 
-
-
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.Control.PaddingChanged> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
 
@@ -16270,8 +16000,6 @@ The following code example displays a message box indicating whether the specifi
  When creating a new custom control or an inherited control with a different visual appearance, you must provide code to render the control by overriding the <xref:System.Windows.Forms.Control.OnPaint*> method. For more information, see [Overriding the OnPaint Method](/dotnet/desktop/winforms/controls/overriding-the-onpaint-method) and [Custom Control Painting and Rendering](/dotnet/desktop/winforms/controls/custom-control-painting-and-rendering).
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example creates a <xref:System.Windows.Forms.PictureBox> control on the form and uses the <xref:System.Windows.Forms.Control.Paint> event to draw to it.
@@ -16332,8 +16060,6 @@ The following code example displays a message box indicating whether the specifi
 
 ## Remarks
  Setting the <xref:System.Windows.Forms.Control.Parent> property value to `null` removes the control from the <xref:System.Windows.Forms.Control.ControlCollection> of its current parent control.
-
-
 
 ## Examples
  The following code example uses the <xref:System.Windows.Forms.Control.Parent> property and the <xref:System.Windows.Forms.Control.FindForm*> method to set properties on the parent control of a button and its form.
@@ -16445,8 +16171,6 @@ The following code example displays a message box indicating whether the specifi
 
  The <xref:System.Windows.Forms.LayoutEventArgs.AffectedControl*> and <xref:System.Windows.Forms.LayoutEventArgs.AffectedProperty*> properties of the <xref:System.Windows.Forms.LayoutEventArgs> created are set to `null` if no values were provided when the <xref:System.Windows.Forms.Control.PerformLayout*> method was called.
 
-
-
 ## Examples
  The following code example demonstrates how to use the <xref:System.Windows.Forms.Control.PerformLayout*> method. It also demonstrates ways in which the <xref:System.Windows.Forms.Control.Layout> event is raised. In this example, the `Click` event handler for `Button1` explicitly calls <xref:System.Windows.Forms.Control.PerformLayout*>. The `Click` event handler for `Button2` implicitly calls <xref:System.Windows.Forms.Control.PerformLayout*>. <xref:System.Windows.Forms.Control.PerformLayout*> is also called when the form is loaded. `Button3` returns the control to the state it was in when loaded. In each case, the <xref:System.Windows.Forms.Control.Layout> event is raised.
 
@@ -16513,8 +16237,6 @@ The following code example displays a message box indicating whether the specifi
  If the <xref:System.Windows.Forms.Control.SuspendLayout*> method was called before calling the <xref:System.Windows.Forms.Control.PerformLayout*> method, the <xref:System.Windows.Forms.Control.Layout> event is suppressed.
 
  The `affectedControl` and `affectedProperty` parameters can both be set to `null`. Doing so causes the <xref:System.Windows.Forms.LayoutEventArgs.AffectedControl*> and <xref:System.Windows.Forms.LayoutEventArgs.AffectedProperty*> properties of the <xref:System.Windows.Forms.LayoutEventArgs> created to be set to `null`.
-
-
 
 ## Examples
  The following code example demonstrates how to use the <xref:System.Windows.Forms.Control.PerformLayout*> method. It also demonstrates ways in which the <xref:System.Windows.Forms.Control.Layout> event is raised. In this example, the `Click` event handler for `Button1` explicitly calls <xref:System.Windows.Forms.Control.PerformLayout*>. The `Click` event handler for `Button2` implicitly calls <xref:System.Windows.Forms.Control.PerformLayout*>. <xref:System.Windows.Forms.Control.PerformLayout*> is also called when the form is loaded. `Button3` returns the control to the state it was in when loaded. In each case, the <xref:System.Windows.Forms.Control.Layout> event is raised.
@@ -16791,8 +16513,6 @@ The following code example displays a message box indicating whether the specifi
  Some key presses, such as the TAB, RETURN, ESC, and arrow keys, are typically ignored by some controls because they are not considered input key presses. For example, by default, a <xref:System.Windows.Controls.Button> control ignores the arrow keys. Pressing the arrow keys typically causes the focus to move to the previous or next control. The arrow keys are considered navigation keys and pressing these keys typically do not raise the <xref:System.Windows.Forms.Control.KeyDown> event for a <xref:System.Windows.Controls.Button>. However, pressing the arrow keys for a <xref:System.Windows.Controls.Button> does raise the <xref:System.Windows.Forms.Control.PreviewKeyDown> event. By handling the <xref:System.Windows.Forms.Control.PreviewKeyDown> event for a <xref:System.Windows.Controls.Button> and setting the <xref:System.Windows.Forms.PreviewKeyDownEventArgs.IsInputKey> property to `true`, you can raise the <xref:System.Windows.Forms.Control.KeyDown> event when the arrow keys are pressed. However, if you handle the arrow keys, the focus will no longer move to the previous or next control.
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example demonstrates a <xref:System.Windows.Forms.Button> that includes a <xref:System.Windows.Forms.ContextMenuStrip>. When the <xref:System.Windows.Forms.Button> has the focus and you press the UP ARROW or DOWN ARROW keys, the <xref:System.Windows.Forms.ContextMenuStrip> appears. The <xref:System.Windows.Forms.Control.PreviewKeyDown> event handler detects when the UP ARROW or DOWN ARROW keys are pressed and sets the <xref:System.Windows.Forms.PreviewKeyDownEventArgs.IsInputKey> property to `true`. This raises the <xref:System.Windows.Forms.Control.KeyDown> event so that you can display the <xref:System.Windows.Forms.ContextMenuStrip>. You should not put any logic in the <xref:System.Windows.Forms.Control.PreviewKeyDown> event handler, other than to set the <xref:System.Windows.Forms.PreviewKeyDownEventArgs.IsInputKey> property. Instead, you should put your logic in the <xref:System.Windows.Forms.Control.KeyDown> event handler.
@@ -17136,8 +16856,6 @@ if (CanSelect && IsMnemonic(charCode, MyControl.Text) {
 
  This default implementation of the <xref:System.Windows.Forms.Control.ProcessMnemonic*> method simply returns `false` to indicate that the control has no mnemonic.
 
-
-
 ## Examples
  The following code example demonstrates an extension of the button class that overrides the <xref:System.Windows.Forms.Control.ProcessMnemonic*> method to exhibit custom behavior. The example also demonstrates the use of the <xref:System.Windows.Forms.Control.CanSelect*> and <xref:System.Windows.Forms.Control.IsMnemonic*> properties. To run this example paste the following code after a form class, in the same file. Add a button of type `MnemonicButton` to the form.
 
@@ -17209,8 +16927,6 @@ if (CanSelect && IsMnemonic(charCode, MyControl.Text) {
 > [!NOTE]
 > It is strongly recommended that you provide the company name, product name, and product version. Providing this information enables the use of Windows Forms features such as <xref:System.Windows.Forms.Application.UserAppDataPath*?displayProperty=nameWithType> that make it easier to write applications that comply with the "Certified for Windows" program.
 
-
-
 ## Examples
  The following code example displays information about the application in a <xref:System.Windows.Forms.Label> contained by a <xref:System.Windows.Forms.Form>. This example requires that the <xref:System.Windows.Forms.Control.CompanyName*>, <xref:System.Windows.Forms.Control.ProductName*> and <xref:System.Windows.Forms.Control.ProductVersion*> have been set.
 
@@ -17280,8 +16996,6 @@ if (CanSelect && IsMnemonic(charCode, MyControl.Text) {
 
 > [!NOTE]
 > It is strongly recommended that you provide the company name, product name, and product version. Providing this information enables the use of Windows Forms features such as <xref:System.Windows.Forms.Application.UserAppDataPath*?displayProperty=nameWithType> that make it easier to write applications that comply with the "Certified for Windows" program.
-
-
 
 ## Examples
  The following code example displays information about the application in a <xref:System.Windows.Forms.Label> contained by a <xref:System.Windows.Forms.Form>. This example requires that the <xref:System.Windows.Forms.Control.CompanyName*>, <xref:System.Windows.Forms.Control.ProductName*> and <xref:System.Windows.Forms.Control.ProductVersion*> have been set.
@@ -17356,8 +17070,6 @@ if (CanSelect && IsMnemonic(charCode, MyControl.Text) {
 
 ## Remarks
  You should use the <xref:System.Windows.Forms.HelpProvider> class to enable users to invoke help on your accessible object by pressing the F1 key. Using the <xref:System.Windows.Forms.HelpProvider> provides you with complete information in the <xref:System.Windows.Forms.QueryAccessibilityHelpEventArgs>. For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example demonstrates the creation of an accessibility-aware chart control, using the <xref:System.Windows.Forms.AccessibleObject> and <xref:System.Windows.Forms.Control.ControlAccessibleObject> classes to expose accessible information. The control plots two curves along with a legend. The `ChartControlAccessibleObject` class, which derives from `ControlAccessibleObject`, is used in the <xref:System.Windows.Forms.Control.CreateAccessibilityInstance*> method to provide custom accessible information for the chart control. Since the chart legend is not an actual <xref:System.Windows.Forms.Control> -based control, but instead is drawn by the chart control, it does not any built-in accessible information. Because of this, the `ChartControlAccessibleObject` class overrides the <xref:System.Windows.Forms.AccessibleObject.GetChild*> method to return the `CurveLegendAccessibleObject` that represents accessible information for each part of the legend. When an accessible-aware application uses this control, the control can provide the necessary accessible information.
@@ -17434,8 +17146,6 @@ if (CanSelect && IsMnemonic(charCode, MyControl.Text) {
  By default, the <xref:System.Windows.Forms.Control.QueryContinueDrag> event sets <xref:System.Windows.Forms.QueryContinueDragEventArgs.Action*> to `Cancel` in <xref:System.Windows.Forms.DragAction> if the ESC key was pressed and sets <xref:System.Windows.Forms.QueryContinueDragEventArgs.Action*> to `Drop` in <xref:System.Windows.Forms.DragAction> if the left, middle, or right mouse button is pressed.
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  This code excerpt demonstrates using the <xref:System.Windows.Forms.Control.QueryContinueDrag> event to cancel the drag-and-drop operation if the drag operation moves outside the bounds of the form. See the <xref:System.Windows.Forms.Control.DoDragDrop*> method for the complete code example.
@@ -17967,8 +17677,6 @@ if (CanSelect && IsMnemonic(charCode, MyControl.Text) {
 > [!NOTE]
 > The collection of pixels contained with the region can be noncontiguous.
 
-
-
 ## Examples
  The following code example demonstrates how to use the <xref:System.Windows.Forms.Control.Region> property by creating a round button. To run the example, paste the following code in a form containing a button called `roundButton`. This example requires that the <xref:System.Windows.Forms.Control.Paint> event is connected to the event handler defined in the example.
 
@@ -18013,8 +17721,6 @@ if (CanSelect && IsMnemonic(charCode, MyControl.Text) {
 
 ## Remarks
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.Control.RegionChanged> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
@@ -18546,8 +18252,6 @@ if (CanSelect && IsMnemonic(charCode, MyControl.Text) {
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
 
-
-
 ## Examples
  The following code example handles the <xref:System.Windows.Forms.Control.Resize> event of a <xref:System.Windows.Forms.Form>. When the form is resized, the event handler ensures that the form stays square (its <xref:System.Windows.Forms.Control.Height*> and <xref:System.Windows.Forms.Control.Width*> remain equal). To run this example, make sure and associate this event-handling method with the form's <xref:System.Windows.Forms.Control.Resize> event.
 
@@ -18669,8 +18373,6 @@ if (CanSelect && IsMnemonic(charCode, MyControl.Text) {
 
  There must be no pending calls to <xref:System.Windows.Forms.Control.SuspendLayout*> for <xref:System.Windows.Forms.Control.ResumeLayout*> to be successfully called.
 
-
-
 ## Examples
  The following code example adds two buttons to a form. The example transactions the addition of the buttons by using the <xref:System.Windows.Forms.Control.SuspendLayout*> and <xref:System.Windows.Forms.Control.ResumeLayout*> methods.
 
@@ -18788,8 +18490,6 @@ if (CanSelect && IsMnemonic(charCode, MyControl.Text) {
  The value of the <xref:System.Windows.Forms.Control.Right> property is equal to the sum of the <xref:System.Windows.Forms.Control.Left> property value and the <xref:System.Windows.Forms.Control.Width> property value.
 
  The <xref:System.Windows.Forms.Control.Right> property is read-only. You can change this property value indirectly by changing the value of the <xref:System.Windows.Forms.Control.Left*> or <xref:System.Windows.Forms.Control.Width*> properties or calling the <xref:System.Windows.Forms.Control.SetBounds*>, <xref:System.Windows.Forms.Control.SetBoundsCore*>, <xref:System.Windows.Forms.Control.UpdateBounds*>, or <xref:System.Windows.Forms.Control.SetClientSizeCore*> methods.
-
-
 
 ## Examples
  The following code example creates three <xref:System.Windows.Forms.Button> controls on a form and sets their size and location by using the various size-related and location-related properties. This example requires that you have a <xref:System.Windows.Forms.Form> that has a width and height of at least 300 pixels.
@@ -18921,8 +18621,6 @@ if (CanSelect && IsMnemonic(charCode, MyControl.Text) {
  This event is raised if the <xref:System.Windows.Forms.Control.RightToLeft> property is changed by either a programmatic modification or user interaction.
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example is an event handler that is executed when the <xref:System.Windows.Forms.Control.Text> property value changes. The <xref:System.Windows.Forms.Control> class has several methods with the name pattern *PropertyName*`Changed` that are raised when the corresponding *PropertyName* value changes (*PropertyName* represents the name of the corresponding property).
@@ -19555,8 +19253,6 @@ if (CanSelect && IsMnemonic(charCode, MyControl.Text) {
 ## Remarks
  If the control is top level, this will not scale the control's location. This does not scale children or the size of automatically sized controls. You can omit scaling in any direction by changing the value of the `specified` parameter.
 
-
-
 ## Examples
  <xref:System.Windows.Forms.BoundsSpecified>
 
@@ -19829,8 +19525,6 @@ The following code example selects the specified <xref:System.Windows.Forms.Cont
 
  If the <xref:System.Windows.Forms.Control.CausesValidation> property is set to `false`, the <xref:System.Windows.Forms.Control.Validating> and <xref:System.Windows.Forms.Control.Validated> events are suppressed.
 
-
-
 ## Examples
  The following code exampleshows the <xref:System.Windows.Forms.Control.SelectNextControl*> method being used in a form that has some controls. Each time that you click the form, the next control is activated. The <xref:System.Windows.Forms.ContainerControl.ActiveControl> property gets the currently active control in the container control.
 
@@ -20080,8 +19774,6 @@ The following code example selects the specified <xref:System.Windows.Forms.Cont
 > [!NOTE]
 > On Windows Server 2003 systems, the size of a <xref:System.Windows.Forms.Form> is restricted by the maximum pixel width and height of the monitor.
 
-
-
 ## Examples
  The following code example overrides the <xref:System.Windows.Forms.Control.SetBoundsCore*> method to ensure that the control remains a fixed size. This example requires that you have a class that is either directly or indirectly derived from the <xref:System.Windows.Forms.Control> class.
 
@@ -20144,8 +19836,6 @@ The following code example selects the specified <xref:System.Windows.Forms.Cont
  The client area starts at the (0, 0) location and extends to the (`x`, `y`) location.
 
  Typically, you should not set the <xref:System.Windows.Forms.Control.ClientSize*> of the control.
-
-
 
 ## Examples
  The following code example overrides the <xref:System.Windows.Forms.Control.SetClientSizeCore*> method to ensure that the control remains square. This example requires that you have a class that is either directly or indirectly derived from the <xref:System.Windows.Forms.Control> class.
@@ -20211,8 +19901,6 @@ The following code example selects the specified <xref:System.Windows.Forms.Cont
 
 > [!CAUTION]
 > Setting the control style bits can substantially change the behavior of the control. Review the <xref:System.Windows.Forms.ControlStyles> enumeration documentation to understand the effects of changing the control style bits before calling the <xref:System.Windows.Forms.Control.SetStyle*> method.
-
-
 
 ## Examples
  The following code example enables double-buffering on a <xref:System.Windows.Forms.Form> and updates the styles to reflect the changes.
@@ -20354,8 +20042,6 @@ The following code example selects the specified <xref:System.Windows.Forms.Cont
 
 ## Remarks
  Showing the control is equivalent to setting the <xref:System.Windows.Forms.Control.Visible> property to `true`. After the <xref:System.Windows.Forms.Control.Show*> method is called, the <xref:System.Windows.Forms.Control.Visible> property returns a value of `true` until the <xref:System.Windows.Forms.Control.Hide*> method is called.
-
-
 
 ## Examples
  The following code example displays an about dialog box and temporarily draws a blue square on its surface. This example requires that you have defined a class that derives from <xref:System.Windows.Forms.Form> named `AboutDialog`.
@@ -20578,8 +20264,6 @@ The following code example selects the specified <xref:System.Windows.Forms.Cont
 > [!NOTE]
 > On Windows Server 2003 systems, the size of a <xref:System.Windows.Forms.Form> is restricted by the maximum pixel width and height of the monitor.
 
-
-
 ## Examples
  The following code example adds a <xref:System.Windows.Forms.Button> to a form and sets some of its common properties. The example anchors the button to the bottom-right corner of the form so it keeps its relative position as the form is resized. Next it sets the <xref:System.Windows.Forms.Control.BackgroundImage*> and resizes the button to the same size as the <xref:System.Drawing.Image>. The example then sets the <xref:System.Windows.Forms.Control.TabStop*> to `true` and sets the <xref:System.Windows.Forms.Control.TabIndex> property. Lastly, it adds an event handler to handle the <xref:System.Windows.Forms.Control.Click> event of the button. This example requires that you have an <xref:System.Windows.Forms.ImageList> named `imageList1`.
 
@@ -20628,8 +20312,6 @@ The following code example selects the specified <xref:System.Windows.Forms.Cont
  This event is raised if the <xref:System.Windows.Forms.Control.Size> property is changed by either a programmatic modification or user interaction.
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example demonstrates the <xref:System.Windows.Forms.Control.SizeChanged> event. An instance of a <xref:System.Windows.Forms.Button> control has been provided that can be scaled both horizontally and vertically. A <xref:System.Windows.Forms.NumericUpDown> instance provides the horizontal and vertical scale value. The <xref:System.Windows.Forms.Button> instance named **OK** is used to set the scale values for the <xref:System.Windows.Forms.Button> control instance. Whenever the size of the control changes, the event handler associated with the <xref:System.Windows.Forms.Control.SizeChanged> event of the control is called. This event handler displays a message box indicating that the size of the control has changed.
@@ -20721,8 +20403,6 @@ The following code example selects the specified <xref:System.Windows.Forms.Cont
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
 
-
-
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.Control.StyleChanged> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
 
@@ -20777,8 +20457,6 @@ The following code example selects the specified <xref:System.Windows.Forms.Cont
 
 > [!NOTE]
 > When adding several controls to a parent control, it is recommended that you call the <xref:System.Windows.Forms.Control.SuspendLayout*> method before initializing the controls to be added. After adding the controls to the parent control, call the <xref:System.Windows.Forms.Control.ResumeLayout*> method. This will increase the performance of applications with many controls.
-
-
 
 ## Examples
  The following code example adds two buttons to a form. The example transactions the addition of the buttons by using the <xref:System.Windows.Forms.Control.SuspendLayout*> and <xref:System.Windows.Forms.Control.ResumeLayout*> methods.
@@ -20996,8 +20674,6 @@ The following code example selects the specified <xref:System.Windows.Forms.Cont
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
 
-
-
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.Control.SystemColorsChanged> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
 
@@ -21057,8 +20733,6 @@ The following code example selects the specified <xref:System.Windows.Forms.Cont
 
  For a control to be included in the tab order, its <xref:System.Windows.Forms.Control.TabStop> property must be set to `true`.
 
-
-
 ## Examples
  The following code example adds a <xref:System.Windows.Forms.Button> to a form and sets some of its common properties. The example anchors the button to the bottom-right corner of the form so it keeps its relative position as the form is resized. Next it sets the <xref:System.Windows.Forms.Control.BackgroundImage*> and resizes the button to the same size as the <xref:System.Drawing.Image>. The example then sets the <xref:System.Windows.Forms.Control.TabStop*> to `true` and sets the <xref:System.Windows.Forms.Control.TabIndex> property. Lastly, it adds an event handler to handle the <xref:System.Windows.Forms.Control.Click> event of the button. This example requires that you have an <xref:System.Windows.Forms.ImageList> named `imageList1`.
 
@@ -21106,8 +20780,6 @@ The following code example selects the specified <xref:System.Windows.Forms.Cont
  This event is raised if the <xref:System.Windows.Forms.Control.TabIndex> property is changed by either a programmatic modification or user interaction.
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.Control.TabIndexChanged> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
@@ -21220,8 +20892,6 @@ Note: This property will always return <see langword="true" /> for an instance o
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
 
-
-
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.Control.TabStopChanged> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
 
@@ -21290,8 +20960,6 @@ Note: This property will always return <see langword="true" /> for an instance o
 
  A common use for the <xref:System.Windows.Forms.Control.Tag> property is to store data that is closely associated with the control. For example, if you have a control that displays information about a customer, you might store a <xref:System.Data.DataSet> that contains the customer's order history in that control's <xref:System.Windows.Forms.Control.Tag> property so the data can be accessed quickly.
 
-
-
 ## Examples
  The following code example displays a form and stores a `Customer` in its <xref:System.Windows.Forms.Control.Tag> property. This example requires that you have defined a class that derives from <xref:System.Windows.Forms.Form> named `CustomerForm` and that you have defined a `Customer`.
 
@@ -21355,8 +21023,6 @@ Note: This property will always return <see langword="true" /> for an instance o
 ## Remarks
  The <xref:System.Windows.Forms.Control.Text> property of the control is used differently by each derived class. For example the <xref:System.Windows.Forms.Control.Text> property of a <xref:System.Windows.Forms.Form> is displayed in the title bar at the top of the form, is fairly small in character count, and usually displays the application or document name. However, the <xref:System.Windows.Forms.Control.Text> property of a <xref:System.Windows.Forms.RichTextBox> can be large and can include numerous nonvisual characters used to format the text. For example, the text displayed in a <xref:System.Windows.Forms.RichTextBox> can be formatted by adjusting the <xref:System.Drawing.Font> properties, or by the addition of spaces or tab characters to align the text.
 
-
-
 ## Examples
  The following code example creates a <xref:System.Windows.Forms.GroupBox> and sets some of its common properties. The example creates a <xref:System.Windows.Forms.TextBox> and sets its <xref:System.Windows.Forms.Control.Location*> within the group box. Next, it sets the <xref:System.Windows.Forms.Control.Text> property of the group box, and docks the group box to the top of the form. Lastly, it disables the group box by setting the <xref:System.Windows.Forms.Control.Enabled> property to `false`, which causes all controls contained within the group box to be disabled.
 
@@ -21406,8 +21072,6 @@ Note: This property will always return <see langword="true" /> for an instance o
  This event is raised if the <xref:System.Windows.Forms.Control.Text> property is changed by either a programmatic modification or user interaction.
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example changes the <xref:System.Windows.Forms.Control.ForeColor*> of a <xref:System.Windows.Forms.TextBox> displaying currency data. The example converts the text to a decimal number and changes the <xref:System.Windows.Forms.Control.ForeColor*> to <xref:System.Drawing.Color.Red*?displayProperty=nameWithType> if the number is negative and to <xref:System.Drawing.Color.Black*?displayProperty=nameWithType> if the number is positive. This example requires that you have a <xref:System.Windows.Forms.Form> that contains a <xref:System.Windows.Forms.TextBox>.
@@ -21474,8 +21138,6 @@ Note: This property will always return <see langword="true" /> for an instance o
  The <xref:System.Windows.Forms.Control.Top> property value is equivalent to the <xref:System.Drawing.Point.Y?displayProperty=nameWithType> property of the <xref:System.Windows.Forms.Control.Location> property value of the control.
 
  Changes made to the <xref:System.Windows.Forms.Control.Height*> and <xref:System.Windows.Forms.Control.Top> property values cause the <xref:System.Windows.Forms.Control.Bottom> property value of the control to change.
-
-
 
 ## Examples
  The following code example creates three <xref:System.Windows.Forms.Button> controls on a form and sets their size and location by using the various size-related and location-related properties. This example requires that you have a <xref:System.Windows.Forms.Form> that has a width and height of at least 300 pixels.
@@ -21806,8 +21468,6 @@ Note: This property will always return <see langword="true" /> for an instance o
 
  The <xref:System.Windows.Forms.Control.UpdateStyles*> method has no effect if the <xref:System.Windows.Forms.Control.IsHandleCreated> property value is `false`.
 
-
-
 ## Examples
  The following code example enables double-buffering on a <xref:System.Windows.Forms.Form> and updates the styles to reflect the changes.
 
@@ -21987,8 +21647,6 @@ Note: This property will always return <see langword="true" /> for an instance o
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
 
-
-
 ## Examples
  The following code example uses the derived class <xref:System.Windows.Forms.TextBox> and validates an email address that the user enters. If the email address is not in the standard format (containing "@" and "."), the validation fails, an <xref:System.Windows.Forms.ErrorProvider> icon is displayed, and the event is canceled. This example requires that a <xref:System.Windows.Forms.TextBox> and <xref:System.Windows.Forms.ErrorProvider> control have been created on a form.
 
@@ -22070,8 +21728,6 @@ Note: This property will always return <see langword="true" /> for an instance o
 > Do not attempt to set focus from within the <xref:System.Windows.Forms.Control.Enter>, <xref:System.Windows.Forms.Control.GotFocus>, <xref:System.Windows.Forms.Control.Leave>, <xref:System.Windows.Forms.Control.LostFocus>, <xref:System.Windows.Forms.Control.Validating>, or <xref:System.Windows.Forms.Control.Validated> event handlers. Doing so can cause your application or the operating system to stop responding. For more information, see the `WM_KILLFOCUS` topic in the "Keyboard Input Reference" section, and the "Message Deadlocks" section of the [About Messages and Message Queues](/windows/win32/winmsg/about-messages-and-message-queues) article.
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following code example uses the derived class <xref:System.Windows.Forms.TextBox> and validates an email address that the user enters. If the email address is not in the standard format (containing "@" and "."), the validation fails, an <xref:System.Windows.Forms.ErrorProvider> icon is displayed, and the event is canceled. This example requires that a <xref:System.Windows.Forms.TextBox> and <xref:System.Windows.Forms.ErrorProvider> control have been created on a form.
@@ -22190,8 +21846,6 @@ If you set `Visible` to `true`:
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
 
-
-
 ## Examples
  The following code example raises the <xref:System.Windows.Forms.Control.VisibleChanged> event when the <xref:System.Windows.Forms.Control.Visible> property value of the <xref:System.Windows.Forms.Label> control has changed.
 
@@ -22255,8 +21909,6 @@ If you set `Visible` to `true`:
 
 ## Remarks
  Changes made to the <xref:System.Windows.Forms.Control.Width*> and <xref:System.Windows.Forms.Control.Left> property values cause the <xref:System.Windows.Forms.Control.Right> property value of the control to change.
-
-
 
 ## Examples
  The following code example creates three <xref:System.Windows.Forms.Button> controls on a form and sets their size and location by using the various size-related and location-related properties. This example requires that you have a <xref:System.Windows.Forms.Form> that has a width and height of at least 300 pixels.
@@ -22365,8 +22017,6 @@ If you set `Visible` to `true`:
  All messages are sent to the <xref:System.Windows.Forms.Control.WndProc*> method after getting filtered through the <xref:System.Windows.Forms.Control.PreProcessMessage*> method.
 
  The <xref:System.Windows.Forms.Control.WndProc*> method corresponds exactly to the Windows `WindowProc` function. For more information about processing Windows messages, see the [WindowProc function](https://go.microsoft.com/fwlink/?LinkId=181565).
-
-
 
 ## Examples
  The following code example demonstrates overriding the <xref:System.Windows.Forms.Control.WndProc*> method to handle operating system messages identified in the <xref:System.Windows.Forms.Message> structure. The [WM_ACTIVATEAPP](/windows/win32/winmsg/wm-activateapp) operating system message is handled in this example to know when another application is becoming active. See the following topics to understand the available <xref:System.Windows.Forms.Message.Msg*?displayProperty=nameWithType>, <xref:System.Windows.Forms.Message.LParam*?displayProperty=nameWithType>, and <xref:System.Windows.Forms.Message.WParam*?displayProperty=nameWithType> values. Actual constant values can be found in the Windows.h header file.

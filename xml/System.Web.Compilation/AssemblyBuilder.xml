@@ -32,8 +32,6 @@
 
  After each <xref:System.Web.Compilation.BuildProvider> object contributes source code using the appropriate <xref:System.Web.Compilation.AssemblyBuilder> methods, the ASP.NET build environment uses the <xref:System.Web.Compilation.AssemblyBuilder> class to compile the collected source code into an assembly.
 
-
-
 ## Examples
  The following code example illustrates a simple build provider implementation, inheriting from the abstract <xref:System.Web.Compilation.BuildProvider> base class. The build provider overrides the <xref:System.Web.Compilation.BuildProvider.CodeCompilerType*>, <xref:System.Web.Compilation.BuildProvider.GetGeneratedType*>, and <xref:System.Web.Compilation.BuildProvider.GenerateCode*> members of the base class.
 
@@ -202,8 +200,6 @@
  Typically, a build provider <xref:System.Web.Compilation.BuildProvider.GenerateCode*> method implementation reads the <xref:System.Web.Compilation.BuildProvider.VirtualPath> property, parses the contents, and then adds the generated source code to the specified <xref:System.Web.Compilation.AssemblyBuilder> object. The build provider uses the <xref:System.Web.Compilation.AssemblyBuilder.CreateCodeFile*> method to add source code as a physical file to the assembly. Alternately, the build provider can use the <xref:System.Web.Compilation.AssemblyBuilder.AddCodeCompileUnit*> method to add source code as a CodeDOM graph to the assembly.
 
  After calling <xref:System.Web.Compilation.AssemblyBuilder.CreateCodeFile*>, the build provider writes the source file contents using the returned <xref:System.IO.TextWriter> object. After writing the source file, the <xref:System.Web.Compilation.BuildProvider> object must use the <xref:System.IO.TextWriter.Close*> method to close the <xref:System.IO.TextWriter> object and free associated system resources.
-
-
 
 ## Examples
  The following code example illustrates a simple build provider implementation, inheriting from the abstract <xref:System.Web.Compilation.BuildProvider> base class. The build provider overrides the <xref:System.Web.Compilation.BuildProvider.CodeCompilerType*>, <xref:System.Web.Compilation.BuildProvider.GetGeneratedType*>, and <xref:System.Web.Compilation.BuildProvider.GenerateCode*> members of the base class.

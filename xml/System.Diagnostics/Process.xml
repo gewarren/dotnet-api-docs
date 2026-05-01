@@ -285,8 +285,6 @@ On macOS, the following properties return 0:
 |13|<xref:System.Diagnostics.ProcessPriorityClass.High>|
 |24|<xref:System.Diagnostics.ProcessPriorityClass.RealTime>|
 
-
-
 ## Examples
  The following example starts an instance of Notepad. The example then retrieves and displays various properties of the associated process. The example detects when the process exits, and displays the process's exit code.
 
@@ -377,8 +375,6 @@ On macOS, the following properties return 0:
 
 > [!NOTE]
 > You cannot mix asynchronous and synchronous read operations on a redirected stream. Once the redirected stream of a <xref:System.Diagnostics.Process> is opened in either asynchronous or synchronous mode, all further read operations on that stream must be in the same mode. For example, do not follow <xref:System.Diagnostics.Process.BeginErrorReadLine*> with a call to <xref:System.IO.StreamReader.ReadLine*> on the <xref:System.Diagnostics.Process.StandardError*> stream, or vice versa. However, you can read two different streams in different modes. For example, you can call <xref:System.Diagnostics.Process.BeginErrorReadLine*> and then call <xref:System.IO.StreamReader.ReadLine*> for the <xref:System.Diagnostics.Process.StandardOutput*> stream.
-
-
 
 ## Examples
  The following example uses the `net view` command to list the available network resources on a remote computer. The user supplies the target computer name as a command-line argument. The user can also supply a file name for error output. The example collects the output of the net command, waits for the process to finish, and then writes the output results to the console. If the user supplies the optional error file, the example writes errors to the file.
@@ -476,8 +472,6 @@ On macOS, the following properties return 0:
 
 > [!NOTE]
 > You cannot mix asynchronous and synchronous read operations on a redirected stream. Once the redirected stream of a <xref:System.Diagnostics.Process> is opened in either asynchronous or synchronous mode, all further read operations on that stream must be in the same mode. For example, do not follow <xref:System.Diagnostics.Process.BeginOutputReadLine*> with a call to <xref:System.IO.StreamReader.ReadLine*> on the <xref:System.Diagnostics.Process.StandardOutput*> stream, or vice versa. However, you can read two different streams in different modes. For example, you can call <xref:System.Diagnostics.Process.BeginOutputReadLine*> and then call <xref:System.IO.StreamReader.ReadLine*> for the <xref:System.Diagnostics.Process.StandardError*> stream.
-
-
 
 ## Examples
  The following example illustrates how to perform asynchronous read operations on the redirected <xref:System.Diagnostics.Process.StandardOutput*> stream of the `sort` command. The `sort` command is a console application that reads and sorts text input.
@@ -580,8 +574,6 @@ process.BeginErrorReadLine();
 > [!NOTE]
 > You cannot mix asynchronous and synchronous read operations on the redirected <xref:System.Diagnostics.Process.StandardError*> stream. Once the redirected stream of a <xref:System.Diagnostics.Process> is opened in either asynchronous or synchronous mode, all further read operations on that stream must be in the same mode. If you cancel an asynchronous read operation on <xref:System.Diagnostics.Process.StandardError*> and then need to read from the stream again, you must use <xref:System.Diagnostics.Process.BeginErrorReadLine*> to resume asynchronous read operations. Do not follow <xref:System.Diagnostics.Process.CancelErrorRead*> with a call to the synchronous read methods of <xref:System.Diagnostics.Process.StandardError*> such as <xref:System.IO.StreamReader.Read*>, <xref:System.IO.StreamReader.ReadLine*>, or <xref:System.IO.StreamReader.ReadToEnd*>.
 
-
-
 ## Examples
  The following example starts the `nmake` command with user supplied arguments. The error and output streams are read asynchronously; the collected text lines are displayed to the console as well as written to a log file. If the command output exceeds a specified number of lines, the asynchronous read operations are canceled.
 
@@ -673,8 +665,6 @@ process.BeginOutputReadLine();
 > [!NOTE]
 > You cannot mix asynchronous and synchronous read operations on the redirected <xref:System.Diagnostics.Process.StandardOutput*> stream. Once the redirected stream of a <xref:System.Diagnostics.Process> is opened in either asynchronous or synchronous mode, all further read operations on that stream must be in the same mode. If you cancel an asynchronous read operation on <xref:System.Diagnostics.Process.StandardOutput*> and then need to read from the stream again, you must use <xref:System.Diagnostics.Process.BeginOutputReadLine*> to resume asynchronous read operations. Do not follow <xref:System.Diagnostics.Process.CancelOutputRead*> with a call to the synchronous read methods of <xref:System.Diagnostics.Process.StandardOutput*> such as <xref:System.IO.StreamReader.Read*>, <xref:System.IO.StreamReader.ReadLine*>, or <xref:System.IO.StreamReader.ReadToEnd*>.
 
-
-
 ## Examples
  The following example starts the `nmake` command with user supplied arguments. The error and output streams are read asynchronously; the collected text lines are displayed to the console as well as written to a log file. If the command output exceeds a specified number of lines, the asynchronous read operations are canceled.
 
@@ -740,8 +730,6 @@ process.BeginOutputReadLine();
 > [!NOTE]
 > The <xref:System.Diagnostics.Process.Dispose*> method calls <xref:System.Diagnostics.Process.Close*>. Placing the <xref:System.Diagnostics.Process> object in a `using` block disposes of resources without the need to call <xref:System.Diagnostics.Process.Close*>.
 
-
-
 ## Examples
  The following example starts an instance of Notepad. It then retrieves the physical memory usage of the associated process at 2-second intervals for a maximum of 10 seconds. The example detects whether the process exits before 10 seconds have elapsed. The example closes the process if it is still running after 10 seconds.
 
@@ -803,8 +791,6 @@ process.BeginOutputReadLine();
  Data edited by the process or resources allocated to the process can be lost if you call <xref:System.Diagnostics.Process.Kill*>. <xref:System.Diagnostics.Process.Kill*> causes an abnormal process termination, and should be used only when necessary. <xref:System.Diagnostics.Process.CloseMainWindow*> enables an orderly termination of the process and closes all windows, so it is preferable for applications with an interface. If <xref:System.Diagnostics.Process.CloseMainWindow*> fails, you can use <xref:System.Diagnostics.Process.Kill*> to terminate the process. <xref:System.Diagnostics.Process.Kill*> is the only way to terminate processes that do not have graphical interfaces.
 
  You can call <xref:System.Diagnostics.Process.Kill*> and <xref:System.Diagnostics.Process.CloseMainWindow*> only for processes that are running on the local computer. You cannot cause processes on remote computers to exit. You can only view information for processes running on remote computers.
-
-
 
 ## Examples
  The following example starts an instance of Notepad. It then retrieves the physical memory usage of the associated process at 2 second intervals for a maximum of 10 seconds. The example detects whether the process exits before 10 seconds have elapsed. The example closes the process if it is still running after 10 seconds.
@@ -1114,8 +1100,6 @@ The following code example creates a process that prints a file. It sets the <xr
 > [!NOTE]
 > The application that is processing the asynchronous output should call the <xref:System.Diagnostics.Process.WaitForExit> method to ensure that the output buffer has been flushed. Note that specifying a timeout by using the <xref:System.Diagnostics.Process.WaitForExit(System.Int32)> overload does *not* ensure the output buffer has been flushed.
 
-
-
 ## Examples
  The following example uses the `net view` command to list the available network resources on a remote computer. The user supplies the target computer name as a command-line argument. The user can also supply a file name for error output. The example collects the output of the net command, waits for the process to finish, and then writes the output results to the console. If the user supplies the optional error file, the example writes errors to the file.
 
@@ -1205,8 +1189,6 @@ The following code example creates a process that prints a file. It sets the <xr
 
  There are two ways of being notified when the associated process exits: synchronously and asynchronously. Synchronous notification relies on calling the <xref:System.Diagnostics.Process.WaitForExit*> method to pause the processing of your application until the associated component exits. Asynchronous notification relies on the <xref:System.Diagnostics.Process.Exited> event. When using asynchronous notification, <xref:System.Diagnostics.Process.EnableRaisingEvents*> must be set to `true` for the <xref:System.Diagnostics.Process> component to receive notification that the process has exited.
 
-
-
 ## Examples
  The following example starts an instance of Notepad. The example then retrieves and displays various properties of the associated process. The example detects when the process exits, and displays the process's exit code.
 
@@ -1293,8 +1275,6 @@ The following code example creates a process that prints a file. It sets the <xr
 
  For more information about the use of the <xref:System.Diagnostics.Process.Exited> event in Windows Forms applications, see the <xref:System.Diagnostics.Process.SynchronizingObject> property.
 
-
-
 ## Examples
  The following code example creates a process that prints a file. It raises the <xref:System.Diagnostics.Process.Exited> event when the process exits because the <xref:System.Diagnostics.Process.EnableRaisingEvents> property was set when the process was created. The <xref:System.Diagnostics.Process.Exited> event handler displays process information.
 
@@ -1366,8 +1346,6 @@ The following code example creates a process that prints a file. It sets the <xr
 ## Remarks
  If the process has not terminated, attempting to retrieve the <xref:System.Diagnostics.Process.ExitTime> property throws an exception. Use <xref:System.Diagnostics.Process.HasExited*> before getting the <xref:System.Diagnostics.Process.ExitTime> property to determine whether the associated process has terminated.
 
-
-
 ## Examples
  The following code example creates a process that prints a file. The process raises the <xref:System.Diagnostics.Process.Exited> event when it exits, and the event handler displays the <xref:System.Diagnostics.Process.ExitTime> property and other process information.
 
@@ -1430,8 +1408,6 @@ The following code example creates a process that prints a file. It sets the <xr
  Use this method to create a new <xref:System.Diagnostics.Process> instance and associate it with the process resource on the local computer.
 
  Like the similar <xref:System.Diagnostics.Process.GetProcessById*>, <xref:System.Diagnostics.Process.GetProcessesByName*>, and <xref:System.Diagnostics.Process.GetProcesses*> methods, <xref:System.Diagnostics.Process.GetCurrentProcess*> associates an existing resource with a new <xref:System.Diagnostics.Process> component.
-
-
 
 ## Examples
  The following example retrieves information of the current process, processes running on the local computer, all instances of Notepad running on the local computer, and a specific process on the local computer. It then retrieves information for the same processes on a remote computer.
@@ -1693,8 +1669,6 @@ The following code example creates a process that prints a file. It sets the <xr
 > [!NOTE]
 > Multiple Windows services can be loaded within the same instance of the Service Host process (svchost.exe). GetProcesses does not identify those individual services; for that, see <xref:System.ServiceProcess.ServiceController.GetServices*>.
 
-
-
 ## Examples
  The following example retrieves information of the current process, processes running on the local computer, all instances of Notepad running on the local computer, and a specific process on the local computer. It then retrieves information for the same processes on a remote computer.
 
@@ -1780,8 +1754,6 @@ The following code example creates a process that prints a file. It sets the <xr
 
 > [!NOTE]
 > Multiple Windows services can be loaded within the same instance of the Service Host process (svchost.exe). GetProcesses does not identify those individual services; for that, see <xref:System.ServiceProcess.ServiceController.GetServices*>.
-
-
 
 ## Examples
  The following example retrieves information of the current process, processes running on the local computer, all instances of Notepad running on the local computer, and a specific process on the local computer. It then retrieves information for the same processes on a remote computer.
@@ -1893,8 +1865,6 @@ The following code example creates a process that prints a file. It sets the <xr
 
  Although a process <xref:System.Diagnostics.Process.Id*> is unique to a single process resource on the system, multiple processes on the local computer can be running the application specified by the `processName` parameter. Therefore, <xref:System.Diagnostics.Process.GetProcessById*> returns one process at most, but <xref:System.Diagnostics.Process.GetProcessesByName*> returns an array containing all the associated processes. If you need to manipulate the process using standard API calls, you can query each of these processes in turn for its identifier. You cannot access process resources through the process name alone but, once you have retrieved an array of <xref:System.Diagnostics.Process> components that have been associated with the process resources, you can start, terminate, and otherwise manipulate the system resources.
 
-
-
 ## Examples
  The following example retrieves information of the current process, processes running on the local computer, all instances of Notepad running on the local computer, and a specific process on the local computer. It then retrieves information for the same processes on a remote computer.
 
@@ -1992,8 +1962,6 @@ The following code example creates a process that prints a file. It sets the <xr
  You can use this overload to get processes on the local computer as well as on a remote computer. Use "." to specify the local computer. Another overload exists that uses the local computer by default.
 
  You can access processes on remote computers only to view information, such as statistics, about the processes. You cannot close, terminate (using <xref:System.Diagnostics.Process.Kill*>), or start processes on remote computers.
-
-
 
 ## Examples
  The following example retrieves information of the current process, processes running on the local computer, all instances of Notepad running on the local computer, and a specific process on the local computer. It then retrieves information for the same processes on a remote computer.
@@ -2230,8 +2198,6 @@ There are problems accessing the performance counter APIs used to get process in
 > [!NOTE]
 > When standard output has been redirected to asynchronous event handlers, it is possible that output processing will not have completed when this property returns `true`. To ensure that asynchronous event handling has been completed, call the <xref:System.Diagnostics.Process.WaitForExit> overload that takes no parameter before checking <xref:System.Diagnostics.Process.HasExited*>.
 
-
-
 ## Examples
  The following example starts an instance of Notepad. It then retrieves the physical memory usage of the associated process at 2 second intervals for a maximum of 10 seconds. The example detects whether the process exits before 10 seconds have elapsed. The example closes the process if it is still running after 10 seconds.
 
@@ -2312,8 +2278,6 @@ There are problems accessing the performance counter APIs used to get process in
  Process identifiers can be reused by the system. The <xref:System.Diagnostics.Process.Id> property value is unique only while the associated process is running. After the process has terminated, the system can reuse the <xref:System.Diagnostics.Process.Id> property value for an unrelated process.
 
  Because the identifier is unique on the system, you can pass it to other threads as an alternative to passing a <xref:System.Diagnostics.Process> instance. This action can save system resources yet guarantee that the process is correctly identified.
-
-
 
 ## Examples
  The following example demonstrates how to obtain the <xref:System.Diagnostics.Process.Id*> for all running instances of an application. The code creates a new instance of Notepad, lists all the instances of Notepad, and then allows the user to enter the <xref:System.Diagnostics.Process.Id*> number to remove a specific instance.
@@ -2619,8 +2583,6 @@ The calling process is a member of the associated process's descendant tree.</ex
 > [!NOTE]
 > When the associated process is executing on the local machine, this property returns a period (".") for the machine name. You should use the <xref:System.Environment.MachineName?displayProperty=nameWithType> property to get the correct machine name.
 
-
-
 ## Examples
  To use the following example you must first start at least one instance of Notepad on a remote computer. The example requests the name of the remote computer on which Notepad is running, and then displays the respective <xref:System.Diagnostics.Process.ProcessName*>, <xref:System.Diagnostics.Process.Id*>, and <xref:System.Diagnostics.Process.MachineName*> properties for each instance.
 
@@ -2844,8 +2806,6 @@ If no main module is found, it could be because the process hasn't finished load
 
 > [!NOTE]
 > The main window is the window that currently has the focus; note that this might not be the primary window for the process. You must use the <xref:System.Diagnostics.Process.Refresh*> method to refresh the <xref:System.Diagnostics.Process> object to get the most up to date main window handle if it has changed.
-
-
 
 ## Examples
  The following example starts an instance of Notepad and retrieves the caption of the main window of the process.
@@ -3286,8 +3246,6 @@ If no main module is found, it could be because the process hasn't finished load
 
  This property can be used to monitor memory usage on computers with 32-bit processors or 64-bit processors. The property value is equivalent to the **Pool Nonpaged Bytes** performance counter for the process.
 
-
-
 ## Examples
  The following code example starts an instance of the Notepad application. The example then retrieves and displays various properties of the associated process. The example detects when the process exits, and displays its exit code and peak memory statistics.
 
@@ -3352,8 +3310,6 @@ If no main module is found, it could be because the process hasn't finished load
 > If you are using the Visual Studio environment, an event handler delegate (AddOnExited) and an event-handling method (Process1_Exited) are created for you when you drag a <xref:System.Diagnostics.Process> component onto a form and double-click the icon. The code you create to run when the <xref:System.Diagnostics.Process.Exited> event occurs is entered into the Process1_Exited procedure. You do not need to create the <xref:System.Diagnostics.Process.OnExited*> member, because it is implemented for you.
 
  Raising an event invokes the event handler through a delegate. For an overview, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following example shows how to use the <xref:System.Diagnostics.Process.OnExited*> method in a derived class.
@@ -3431,8 +3387,6 @@ If no main module is found, it could be because the process hasn't finished load
 
 > [!NOTE]
 > The application that is processing the asynchronous output should call the <xref:System.Diagnostics.Process.WaitForExit*> method to ensure that the output buffer has been flushed.
-
-
 
 ## Examples
  The following example illustrates how to perform asynchronous read operations on the redirected <xref:System.Diagnostics.Process.StandardOutput*> stream of the `ipconfig` command.
@@ -3580,8 +3534,6 @@ If no main module is found, it could be because the process hasn't finished load
 
  This property can be used to monitor memory usage on computers with 32-bit processors or 64-bit processors. The property value is equivalent to the **Page File Bytes** performance counter for the process.
 
-
-
 ## Examples
  The following code example starts an instance of the Notepad application, and then retrieves and displays various properties of the associated process. The example detects when the process exits, and displays its exit code and peak memory statistics.
 
@@ -3720,8 +3672,6 @@ If no main module is found, it could be because the process hasn't finished load
  The value returned by this property value represents the current size of pageable system memory used by the process, in bytes. System memory is the physical memory used by the operating system, and is divided into paged and nonpaged pools. When pageable memory is not in use, it can be transferred to the virtual memory paging file on disk. To obtain the size of the application memory used by the process, use the <xref:System.Diagnostics.Process.PagedMemorySize64> property.
 
  This property can be used to monitor memory usage on computers with 32-bit processors or 64-bit processors. The property value is equivalent to the **Pool Paged Bytes** performance counter for the process.
-
-
 
 ## Examples
  The following code example starts an instance of the Notepad application. The example then retrieves and displays various properties of the associated process. The example detects when the process exits, and displays its exit code and peak memory statistics.
@@ -3862,8 +3812,6 @@ If no main module is found, it could be because the process hasn't finished load
 
  This property can be used to monitor memory usage on computers with 32-bit processors or 64-bit processors. The property value is equivalent to the **Page File Bytes Peak** performance counter for the process.
 
-
-
 ## Examples
  The following code example starts an instance of the Notepad application. The example then retrieves and displays various properties of the associated process. The example detects when the process exits, and displays its exit code and peak memory statistics.
 
@@ -4001,8 +3949,6 @@ If no main module is found, it could be because the process hasn't finished load
  The value returned by this property represents the maximum size of virtual memory used by the process since it started, in bytes. The operating system maps the virtual address space for each process either to pages loaded in physical memory, or to pages stored in the virtual memory paging file on disk.
 
  This property can be used to monitor memory usage on computers with 32-bit processors or 64-bit processors. The property value is equivalent to the **Virtual Bytes Peak** performance counter for the process.
-
-
 
 ## Examples
  The following code example starts an instance of the Notepad application. The example then retrieves and displays various properties of the associated process. The example detects when the process exits, and displays its exit code and peak memory statistics.
@@ -4155,8 +4101,6 @@ If no main module is found, it could be because the process hasn't finished load
  The working set includes both shared and private data. The shared data includes the pages that contain all the instructions that the process executes, including instructions from the process modules and the system libraries.
 
  This property can be used to monitor memory usage on computers with 32-bit processors or 64-bit processors. The property value is equivalent to the **Working Set Peak** performance counter for the process.
-
-
 
 ## Examples
  The following code example starts an instance of the Notepad application. The example then retrieves and displays various properties of the associated process. The example detects when the process exits, and displays its exit code and peak memory statistics.
@@ -4313,8 +4257,6 @@ If no main module is found, it could be because the process hasn't finished load
 |13|<xref:System.Diagnostics.ProcessPriorityClass.High>|
 |24|<xref:System.Diagnostics.ProcessPriorityClass.RealTime>|
 
-
-
 ## Examples
  The following example starts an instance of Notepad. The example then retrieves and displays various properties of the associated process. The example detects when the process exits, and displays the process's exit code.
 
@@ -4461,8 +4403,6 @@ If no main module is found, it could be because the process hasn't finished load
  The value returned by this property represents the most recently refreshed size of memory used by the process, in bytes, that cannot be shared with other processes. To get the most up to date size, you need to call <xref:System.Diagnostics.Process.Refresh> method first.
 
  This property can be used to monitor memory usage on computers with 32-bit processors or 64-bit processors. The property value is equivalent to the **Private Bytes** performance counter for the process.
-
-
 
 ## Examples
  The following code example starts an instance of the Notepad application. The example then retrieves and displays various properties of the associated process. The example detects when the process exits, and displays its exit code and peak memory statistics.
@@ -4768,8 +4708,6 @@ If no main module is found, it could be because the process hasn't finished load
 
  When a <xref:System.Diagnostics.Process> component is associated with a process resource, the property values of the <xref:System.Diagnostics.Process> are immediately populated according to the status of the associated process. If the information about the associated process subsequently changes, those changes are not reflected in the <xref:System.Diagnostics.Process> component's cached values. The <xref:System.Diagnostics.Process> component is a snapshot of the process resource at the time they are associated. To view the current values for the associated process, call the <xref:System.Diagnostics.Process.Refresh*> method.
 
-
-
 ## Examples
  The following example starts an instance of Notepad. It then retrieves the physical memory usage of the associated process at 2 second intervals for a maximum of 10 seconds. The example detects whether the process exits before 10 seconds have elapsed. The example closes the process if it is still running after 10 seconds.
 
@@ -4840,8 +4778,6 @@ If no main module is found, it could be because the process hasn't finished load
  If a process has a user interface, the <xref:System.Diagnostics.Process.Responding> property contacts the user interface to determine whether the process is responding to user input. If the interface does not respond immediately, the <xref:System.Diagnostics.Process.Responding> property returns `false`. Use this property to determine whether the interface of the associated process has stopped responding.
 
  If the process does not have a <xref:System.Diagnostics.Process.MainWindowHandle*>, this property returns `true`.
-
-
 
 ## Examples
  The following example starts an instance of Notepad. The example then retrieves and displays various properties of the associated process. The example detects when the process exits, and displays the process's exit code.
@@ -5071,8 +5007,6 @@ You can use asynchronous read operations to avoid these dependencies and their d
 > [!NOTE]
 > You cannot mix asynchronous and synchronous read operations on a redirected stream. Once the redirected stream of a <xref:System.Diagnostics.Process> is opened in either asynchronous or synchronous mode, all further read operations on that stream must be in the same mode. For example, do not follow <xref:System.Diagnostics.Process.BeginErrorReadLine*> with a call to <xref:System.IO.StreamReader.ReadLine*> on the <xref:System.Diagnostics.Process.StandardError*> stream, or vice versa. However, you can read two different streams in different modes. For example, you can call <xref:System.Diagnostics.Process.BeginOutputReadLine*> and then call <xref:System.IO.StreamReader.ReadLine*> for the <xref:System.Diagnostics.Process.StandardError*> stream.
 
-
-
 ## Examples
  The following example uses the `net use` command together with a user supplied argument to map a network resource. It then reads the standard error stream of the net command and writes it to console.
 
@@ -5154,8 +5088,6 @@ You can use asynchronous read operations to avoid these dependencies and their d
 
 > [!NOTE]
 > To use <xref:System.Diagnostics.Process.StandardInput*>, you must set <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute*?displayProperty=nameWithType> to `false`, and you must set <xref:System.Diagnostics.ProcessStartInfo.RedirectStandardInput*?displayProperty=nameWithType> to `true`. Otherwise, writing to the <xref:System.Diagnostics.Process.StandardInput*> stream throws an exception.
-
-
 
 ## Examples
  The following example illustrates how to redirect the <xref:System.Diagnostics.Process.StandardInput*> stream of a process. The example starts the `sort` command with redirected input. It then prompts the user for text, and passes that to the `sort` process by means of the redirected <xref:System.Diagnostics.Process.StandardInput*> stream. The `sort` results are displayed to the user on the console.
@@ -5262,8 +5194,6 @@ There is a similar issue when you read all text from both the standard output an
 
 > [!NOTE]
 > You cannot mix asynchronous and synchronous read operations on a redirected stream. Once the redirected stream of a <xref:System.Diagnostics.Process> is opened in either asynchronous or synchronous mode, all further read operations on that stream must be in the same mode. For example, do not follow <xref:System.Diagnostics.Process.BeginOutputReadLine*> with a call to <xref:System.IO.StreamReader.ReadLine*> on the <xref:System.Diagnostics.Process.StandardOutput*> stream, or vice versa. However, you can read two different streams in different modes. For example, you can call <xref:System.Diagnostics.Process.BeginOutputReadLine*> and then call <xref:System.IO.StreamReader.ReadLine*> for the <xref:System.Diagnostics.Process.StandardError*> stream.
-
-
 
 ## Examples
  The following example runs the ipconfig.exe command and redirects its standard output to the example's console window.
@@ -5379,8 +5309,6 @@ There is a similar issue when you read all text from both the standard output an
  Whenever you use <xref:System.Diagnostics.Process.Start*> to start a process, you might need to close it or you risk losing system resources. Close processes using <xref:System.Diagnostics.Process.CloseMainWindow*> or <xref:System.Diagnostics.Process.Kill*>. You can check whether a process has already been closed by using its <xref:System.Diagnostics.Process.HasExited> property.
 
  A note about apartment states in managed threads is necessary here. When <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute*> is `true` on the process component's <xref:System.Diagnostics.Process.StartInfo> property, make sure you have set a threading model on your application by setting the attribute `[STAThread]` on the `main()` method. Otherwise, a managed thread can be in an `unknown` state or put in the `MTA` state, the latter of which conflicts with <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute*> being `true`. Some methods require that the apartment state not be `unknown`. If the state is not explicitly set, when the application encounters such a method, it defaults to `MTA`, and once set, the apartment state cannot be changed. However, `MTA` causes an exception to be thrown when the operating system shell is managing the thread.
-
-
 
 ## Examples
  The following example uses an instance of the <xref:System.Diagnostics.Process> class to start a process.
@@ -5500,8 +5428,6 @@ The <see cref="P:System.Diagnostics.ProcessStartInfo.UseShellExecute" /> member 
  Whenever you use <xref:System.Diagnostics.Process.Start*> to start a process, you might need to close it or you risk losing system resources. Close processes using <xref:System.Diagnostics.Process.CloseMainWindow*> or <xref:System.Diagnostics.Process.Kill*>. You can check whether a process has already been closed by using its <xref:System.Diagnostics.Process.HasExited> property.
 
  A note about apartment states in managed threads is necessary here. When <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute*> is `true` on the `startInfo` parameter, make sure you have set a threading model on your application by setting the attribute `[STAThread]` on the `main()` method. Otherwise, a managed thread can be in an `unknown` state or put in the `MTA` state, the latter of which conflicts with <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute*> being `true`. Some methods require that the apartment state not be `unknown`. If the state is not explicitly set, when the application encounters such a method, it defaults to `MTA`, and once set, the apartment state cannot be changed. However, `MTA` causes an exception to be thrown when the operating system shell is managing the thread.
-
-
 
 ## Examples
  The following example first spawns an instance of Internet Explorer and displays the contents of the Favorites folder in the browser. It then starts some other instances of Internet Explorer and displays some specific pages or sites. Finally it starts Internet Explorer with the window being minimized while navigating to a specific site.
@@ -5629,8 +5555,6 @@ The <see cref="P:System.Diagnostics.ProcessStartInfo.UseShellExecute" /> member 
  Whenever you use <xref:System.Diagnostics.Process.Start*> to start a process, you might need to close it or you risk losing system resources. Close processes using <xref:System.Diagnostics.Process.CloseMainWindow*> or <xref:System.Diagnostics.Process.Kill*>. You can check whether a process has already been closed by using its <xref:System.Diagnostics.Process.HasExited> property.
 
  A note about apartment states in managed threads is necessary here. When <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute*> is `true` on the process component's <xref:System.Diagnostics.Process.StartInfo> property, make sure you have set a threading model on your application by setting the attribute `[STAThread]` on the `main()` method. Otherwise, a managed thread can be in an `unknown` state or put in the `MTA` state, the latter of which conflicts with <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute*> being `true`. Some methods require that the apartment state not be `unknown`. If the state is not explicitly set, when the application encounters such a method, it defaults to `MTA`, and once set, the apartment state cannot be changed. However, `MTA` causes an exception to be thrown when the operating system shell is managing the thread.
-
-
 
 ## Examples
  The following example first spawns an instance of Internet Explorer and displays the contents of the Favorites folder in the browser. It then starts some other instances of Internet Explorer and displays some specific pages or sites. Finally it starts Internet Explorer with the window being minimized while navigating to a specific site.
@@ -5807,8 +5731,6 @@ The file specified in the <paramref name="fileName" /> could not be found.</exce
 
  A note about apartment states in managed threads is necessary here. When <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute*> is `true` on the process component's <xref:System.Diagnostics.Process.StartInfo> property, make sure you have set a threading model on your application by setting the attribute `[STAThread]` on the `main()` method. Otherwise, a managed thread can be in an `unknown` state or put in the `MTA` state, the latter of which conflicts with <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute*> being `true`. Some methods require that the apartment state not be `unknown`. If the state is not explicitly set, when the application encounters such a method, it defaults to `MTA`, and once set, the apartment state cannot be changed. However, `MTA` causes an exception to be thrown when the operating system shell is managing the thread.
 
-
-
 ## Examples
  The following example first spawns an instance of Internet Explorer and displays the contents of the Favorites folder in the browser. It then starts some other instances of Internet Explorer and displays some specific pages or sites. Finally it starts Internet Explorer with the window being minimized while navigating to a specific site.
 
@@ -5924,8 +5846,6 @@ The file specified in the <paramref name="fileName" /> could not be found.
 > The file name must represent an executable file in the <xref:System.Diagnostics.Process.Start*> overloads that have `userName`, `password`, and `domain` parameters.
 
  Whenever you use <xref:System.Diagnostics.Process.Start*> to start a process, you might need to close it or you risk losing system resources. Close processes using <xref:System.Diagnostics.Process.CloseMainWindow*> or <xref:System.Diagnostics.Process.Kill*>. You can check whether a process has already been closed by using its <xref:System.Diagnostics.Process.HasExited> property.
-
-
 
 ## Examples
  The following code example shows the use of this overload to start an executable file and also demonstrates the throwing of a <xref:System.ComponentModel.Win32Exception> when an attempt is made to start an application associated with a nonexecutable file.
@@ -6286,8 +6206,6 @@ The file specified in the <paramref name="fileName" /> could not be found.
  :::code language="vb" source="~/snippets/visualbasic/System.Diagnostics/Process/SynchronizingObject/remarks.vb" id="Snippet2":::
 
  Typically, this property is set when the component is placed inside a control or form, because those components are bound to a specific thread.
-
-
 
 ## Examples
  :::code language="csharp" source="~/snippets/csharp/System.Diagnostics/Process/SynchronizingObject/process_synchronizingobject.cs" id="Snippet1":::
@@ -6714,8 +6632,6 @@ The file specified in the <paramref name="fileName" /> could not be found.
 
  This property can be used to monitor memory usage on computers with 32-bit processors or 64-bit processors. The property value is equivalent to the **Virtual Bytes** performance counter for the process.
 
-
-
 ## Examples
  The following code example starts an instance of the Notepad application. The example then retrieves and displays various properties of the associated process. The example detects when the process exits, and displays its exit code and peak memory statistics.
 
@@ -6796,8 +6712,6 @@ The file specified in the <paramref name="fileName" /> could not be found.
  When an associated process exits (that is, when it is shut down by the operation system through a normal or abnormal termination), the system stores administrative information about the process and returns to the component that had called <xref:System.Diagnostics.Process.WaitForExit>. The <xref:System.Diagnostics.Process> component can then access the information, which includes the <xref:System.Diagnostics.Process.ExitTime*>, by using the <xref:System.Diagnostics.Process.Handle*> to the exited process.
 
  Because the associated process has exited, the <xref:System.Diagnostics.Process.Handle> property of the component no longer points to an existing process resource. Instead, the handle can be used only to access the operating system's information about the process resource. The system is aware of handles to exited processes that have not been released by <xref:System.Diagnostics.Process> components, so it keeps the <xref:System.Diagnostics.Process.ExitTime*> and <xref:System.Diagnostics.Process.Handle*> information in memory until the <xref:System.Diagnostics.Process> component specifically frees the resources. For this reason, any time you call <xref:System.Diagnostics.Process.Start*> for a <xref:System.Diagnostics.Process> instance, call <xref:System.Diagnostics.Process.Close*> when the associated process has terminated and you no longer need any administrative information about it. <xref:System.Diagnostics.Process.Close*> frees the memory allocated to the exited process.
-
-
 
 ## Examples
  See the Remarks section of the <xref:System.Diagnostics.Process.StandardError> property reference page.
@@ -6884,8 +6798,6 @@ The file specified in the <paramref name="fileName" /> could not be found.
  When an associated process exits (is shut down by the operating system through a normal or abnormal termination), the system stores administrative information about the process and returns to the component that had called <xref:System.Diagnostics.Process.WaitForExit(System.Int32)>. The <xref:System.Diagnostics.Process> component can then access the information, which includes the <xref:System.Diagnostics.Process.ExitTime*>, by using the <xref:System.Diagnostics.Process.Handle*> to the exited process.
 
  Because the associated process has exited, the <xref:System.Diagnostics.Process.Handle> property of the component no longer points to an existing process resource. Instead, the handle can be used only to access the operating system's information about the process resource. The system is aware of handles to exited processes that have not been released by <xref:System.Diagnostics.Process> components, so it keeps the <xref:System.Diagnostics.Process.ExitTime*> and <xref:System.Diagnostics.Process.Handle*> information in memory until the <xref:System.Diagnostics.Process> component specifically frees the resources. For this reason, any time you call <xref:System.Diagnostics.Process.Start*> for a <xref:System.Diagnostics.Process> instance, call <xref:System.Diagnostics.Process.Close*> when the associated process has terminated and you no longer need any administrative information about it. <xref:System.Diagnostics.Process.Close*> frees the memory allocated to the exited process.
-
-
 
 ## Examples
  See the code example for the <xref:System.Diagnostics.Process.ExitCode> property.
@@ -7357,8 +7269,6 @@ No process is associated with this <see cref="T:System.Diagnostics.Process" /> o
  The working set includes both shared and private data. The shared data includes the pages that contain all the instructions that the process executes, including instructions in the process modules and the system libraries.
 
  This property can be used to monitor memory usage on computers with 32-bit processors or 64-bit processors. The property value is equivalent to the **Working Set** performance counter for the process.
-
-
 
 ## Examples
  The following code example starts an instance of the Notepad application. The example then retrieves and displays various properties of the associated process. The example detects when the process exits, and displays its exit code and peak memory statistics.

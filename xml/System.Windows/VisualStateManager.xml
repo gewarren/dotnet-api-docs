@@ -34,8 +34,6 @@
 
  If you want to implement your own logic for transitioning between states, you must inherit from <xref:System.Windows.VisualStateManager>, override the <xref:System.Windows.VisualStateManager.GoToStateCore*> method, and set the <xref:System.Windows.VisualStateManager.CustomVisualStateManager*?displayProperty=nameWithType> attached property on the control that uses the custom logic.
 
-
-
 ## Examples
  The following example creates a <xref:System.Windows.Shapes.Rectangle> and adds a <xref:System.Windows.VisualStateGroup> named `CommonStates` to the `VisualStateManager.VisualStatesGroups` attached property. The example defines the `MouseOver` and `Normal` <xref:System.Windows.VisualState> objects in the `CommonStates` <xref:System.Windows.VisualStateGroup>. When the user moves the mouse pointer over the <xref:System.Windows.Shapes.Rectangle>, it changes from red to green over one half second. When the user moves the mouse away from the rectangle, the <xref:System.Windows.Controls.Grid> immediately changes back to red. Note that the `Normal` state does not define a <xref:System.Windows.Media.Animation.Storyboard>. A <xref:System.Windows.Media.Animation.Storyboard> is not required because when the <xref:System.Windows.Shapes.Rectangle> transitions from the `MouseOver` state to the `Normal` state, the <xref:System.Windows.Media.Animation.Storyboard> for `MouseOver` is stopped and the <xref:System.Windows.Media.SolidColorBrush.Color> property for the <xref:System.Windows.Media.SolidColorBrush> returns to red.
 
@@ -248,8 +246,6 @@
 ## Remarks
  Call the <xref:System.Windows.VisualStateManager.GoToElementState*> method to change states on an element outside of a <xref:System.Windows.Controls.ControlTemplate> (for example, if you use a <xref:System.Windows.VisualStateManager> in a <xref:System.Windows.DataTemplate> or <xref:System.Windows.Window>). Call the <xref:System.Windows.VisualStateManager.GoToState*> method if you are changing states in a control that uses the <xref:System.Windows.VisualStateManager> in its <xref:System.Windows.Controls.ControlTemplate>.
 
-
-
 ## Examples
  The following example creates an application that prompts the user to guess a number between 1 and 100.  When the user enters a number, the application indicates whether the guess is too high, too low, or correct.  The following XAML creates the user interface for the application and defines 4 states: `TooLow`, `TooHigh`, `Correct`, and `Guessing`. When the application begins, it is in the `Guessing` state. .
 
@@ -310,8 +306,6 @@
 
 ## Remarks
  Call the <xref:System.Windows.VisualStateManager.GoToState*> method if you are changing states in a control that uses the <xref:System.Windows.VisualStateManager> in its <xref:System.Windows.Controls.ControlTemplate>. Call the <xref:System.Windows.VisualStateManager.GoToElementState*> method to change states on an element outside of a <xref:System.Windows.Controls.ControlTemplate> (for example, if you use a <xref:System.Windows.VisualStateManager> in a <xref:System.Windows.Controls.UserControl> or in a single element).
-
-
 
 ## Examples
  The following example demonstrates a control that uses the <xref:System.Windows.VisualStateManager.GoToState*> method to transition between states. For the entire example, see [Creating a Control That Has a Customizable Appearance](/dotnet/framework/wpf/controls/creating-a-control-that-has-a-customizable-appearance).

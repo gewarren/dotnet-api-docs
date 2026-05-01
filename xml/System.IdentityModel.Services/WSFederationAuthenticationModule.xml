@@ -98,8 +98,6 @@
 
  Once configured, the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> raises events at various stages of processing an HTTP request. ASP.NET developers can handle these events in the global.asax file.
 
-
-
 ## Examples
  :::code language="csharp" source="~/snippets/csharp/System.IdentityModel.Services/WSFederationAuthenticationModule/Overview/global.asax.cs" id="Snippet1":::
 
@@ -184,8 +182,6 @@
 > The <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider> event can be used to modify the URL or cancel the redirect.
 
  To handle this event in an ASP.NET application, create a method named `WSFederationAuthentication_AuthorizationFailed` in the global.asax file.
-
-
 
 ## Examples
  :::code language="csharp" source="~/snippets/csharp/System.IdentityModel.Services/WSFederationAuthenticationModule/Overview/global.asax.cs" id="Snippet7":::
@@ -1509,8 +1505,6 @@
 
  To handle this event in an ASP.NET application, create a method called `WSFederationAuthentication_RedirectingToIdentityProvider` in the global.asax file.
 
-
-
 ## Examples
  The following code shows how to add a handler for the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider> event in the `Application_Init` event in the global.asax file. The code is taken from the `FederationForWebApps` sample. For more information about this sample, see [WIF Code Sample Index](/previous-versions/dotnet/framework/windows-identity-foundation/wif-code-sample-index).
 
@@ -1759,8 +1753,6 @@
 
  This event is raised from inside the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnAuthenticateRequest*> event-handler delegate when processing a WS-Federation sign-in response message ("wsignin1.0") received from the security token service (STS). It is raised just after a security token has been deserialized from the wresult or the wresultptr parameter in the sign-in response message, but before the security token is validated.
 
-
-
 ## Examples
  :::code language="csharp" source="~/snippets/csharp/System.IdentityModel.Services/WSFederationAuthenticationModule/Overview/global.asax.cs" id="Snippet6":::
 
@@ -1794,8 +1786,6 @@
  You can add an event handler to modify the principal created while processing a WS-Federation sign-in response message from a security token service (STS) before it is used to create the session token. In the event handler, you can access the principal through the <xref:System.IdentityModel.Services.SecurityTokenValidatedEventArgs.ClaimsPrincipal> property. The <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SecurityTokenValidated> event is a cancelable event, you can set the <xref:System.ComponentModel.CancelEventArgs.Cancel> property to `true` in an event handler to terminate processing of the WS-Federation sign-in response message.
 
  This event is raised from inside the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnAuthenticateRequest*> event-handler delegate when processing a WS-Federation sign-in response message ("wsignin1.0") received from the security token service (STS). It is raised just after the security token that was deserialized from the wresult or the wresultptr parameter in the sign-in response message has been validated, and before the session security token is created.
-
-
 
 ## Examples
  :::code language="csharp" source="~/snippets/csharp/System.IdentityModel.Services/WSFederationAuthenticationModule/Overview/global.asax.cs" id="Snippet5":::
@@ -1832,8 +1822,6 @@
 
 > [!IMPORTANT]
 > To operate sessions in reference mode, Microsoft recommends providing a handler for the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SessionSecurityTokenCreated?displayProperty=nameWithType> event in the global.asax.cs file and setting the <xref:System.IdentityModel.Tokens.SessionSecurityToken.IsReferenceMode?displayProperty=nameWithType> property on the token passed in the <xref:System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs.SessionToken?displayProperty=nameWithType> property. This will ensure that the session token operates in reference mode for every request and is favored over merely setting the <xref:System.IdentityModel.Services.SessionAuthenticationModule.IsReferenceMode?displayProperty=nameWithType> property on the Session Authentication Module.
-
-
 
 ## Examples
  :::code language="csharp" source="~/snippets/csharp/System.IdentityModel.Services/WSFederationAuthenticationModule/Overview/global.asax.cs" id="Snippet4":::
@@ -1906,8 +1894,6 @@
 
 ## Remarks
  If the request is posted to the login page, a control on the page will raise this event, not this module.
-
-
 
 ## Examples
  :::code language="csharp" source="~/snippets/csharp/System.IdentityModel.Services/WSFederationAuthenticationModule/Overview/global.asax.cs" id="Snippet3":::

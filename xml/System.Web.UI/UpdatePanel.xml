@@ -165,8 +165,6 @@
 </asp:UpdatePanel>
 ```
 
-
-
 ## Examples
  The following examples show various uses of the <xref:System.Web.UI.UpdatePanel> control.
 
@@ -220,8 +218,6 @@
 
 ## Remarks
  Use this constructor to initialize a new instance of the <xref:System.Web.UI.UpdatePanel> class. To dynamically add an <xref:System.Web.UI.UpdatePanel> control to a page, create a new <xref:System.Web.UI.UpdatePanel> instance and then add child controls to the control object that is exposed by the instance's <xref:System.Web.UI.UpdatePanel.ContentTemplateContainer> property.
-
-
 
 ## Examples
  The following example shows how to dynamically create an <xref:System.Web.UI.UpdatePanel> control and add it to a page. When you click the button inside the <xref:System.Web.UI.UpdatePanel> control, the message is refreshed with the date and time. Child controls are added by using the <xref:System.Web.UI.UpdatePanel.ContentTemplateContainer> property.
@@ -414,8 +410,6 @@
 ## Remarks
  The <xref:System.Web.UI.UpdatePanel.ContentTemplateContainer> property enables you to programmatically add child controls to the <xref:System.Web.UI.UpdatePanel> control without having to define a custom template that inherits from the <xref:System.Web.UI.ITemplate> interface. If you are adding content to the <xref:System.Web.UI.UpdatePanel> control declaratively or through a designer, you should add content to the <xref:System.Web.UI.UpdatePanel.ContentTemplate> property by using a `<ContentTemplate>` element.
 
-
-
 ## Examples
  The following example shows how to programmatically specify the <xref:System.Web.UI.UpdatePanel.ContentTemplateContainer> property of an <xref:System.Web.UI.UpdatePanel> control. The <xref:System.Web.UI.WebControls.Label.Text> property of a <xref:System.Web.UI.WebControls.Label> control is set when `Button1` is clicked.
 
@@ -483,8 +477,6 @@
 
 ## Remarks
  This method is intended for use by control developers who want to extend the <xref:System.Web.UI.UpdatePanel> control. For example, in derived classes, you can provide a different root control that acts as a container for your <xref:System.Web.UI.UpdatePanel> control's content. The default implementation returns a <xref:System.Web.UI.Control> object.
-
-
 
 ## Examples
  The following example shows how to override the <xref:System.Web.UI.UpdatePanel.CreateContentTemplateContainer*> method in a custom <xref:System.Web.UI.UpdatePanel> control to always render the `<fieldset>` and `<legend>` elements for the panel's content. The custom <xref:System.Web.UI.UpdatePanel> control defines a public property named `GroupingText` that is a string literal inside the `<legend>` element.
@@ -859,8 +851,6 @@
 ## Remarks
  If the <xref:System.Web.UI.UpdatePanel.RenderMode> property is set to <xref:System.Web.UI.UpdatePanelRenderMode.Inline>, the content of an <xref:System.Web.UI.UpdatePanel> control is rendered inside an HTML `<span>` element. If the <xref:System.Web.UI.UpdatePanel.RenderMode> property is set to <xref:System.Web.UI.UpdatePanelRenderMode.Block>, it is rendered inside an HTML `<div>` element.
 
-
-
 ## Examples
  The following example shows how to set the <xref:System.Web.UI.UpdatePanel.RenderMode> property declaratively. The <xref:System.Web.UI.UpdatePanel> control named `UpdatePanel1` is rendered in an HTML `<span>` element. If the <xref:System.Web.UI.UpdatePanel.RenderMode> property were set to <xref:System.Web.UI.UpdatePanelRenderMode.Block>, the resulting paragraph would appear disjointed because of the way in which the HTML `<div>` element is rendered.
 
@@ -1068,8 +1058,6 @@
 
  If the <xref:System.Web.UI.UpdatePanel.ContentTemplate> property is not defined for the <xref:System.Web.UI.UpdatePanel> control, no updates of the panel will occur.
 
-
-
 ## Examples
  The following example uses the <xref:System.Web.UI.UpdatePanel.Update*> method to update the content of an <xref:System.Web.UI.UpdatePanel> control when more than five seconds have elapsed since the last update.
 
@@ -1139,8 +1127,6 @@
     -   The postback is caused by a control defined as a trigger by using the <xref:System.Web.UI.UpdatePanel.Triggers> property of the <xref:System.Web.UI.UpdatePanel> control. In this scenario, the control explicitly triggers an update of the panel content. The control can be either inside or outside the <xref:System.Web.UI.UpdatePanel> control that defines the trigger.
 
     -   The <xref:System.Web.UI.UpdatePanel.ChildrenAsTriggers> property is set to `true` and a child control of the <xref:System.Web.UI.UpdatePanel> control causes a postback. A child control of a nested <xref:System.Web.UI.UpdatePanel> control does not cause an update to the outer <xref:System.Web.UI.UpdatePanel> control unless it is explicitly defined as a trigger.
-
-
 
 ## Examples
  The following example declares two <xref:System.Web.UI.UpdatePanel> controls. In the first panel, the <xref:System.Web.UI.UpdatePanel.UpdateMode> property is set to <xref:System.Web.UI.UpdatePanelUpdateMode.Conditional>. In the second panel, <xref:System.Web.UI.UpdatePanel.UpdateMode*> is set to <xref:System.Web.UI.UpdatePanelUpdateMode.Always>. A button outside both panels is registered as an asynchronous postback control by calling the <xref:System.Web.UI.ScriptManager.RegisterAsyncPostBackControl*> method of the <xref:System.Web.UI.ScriptManager> control. In the button's `Click` event handler, the <xref:System.Web.UI.UpdatePanel.Update*> method of the first panel is called if more than five seconds have elapsed since its last update. In this scenario, the panel's content is updated only if the last panel refresh was more than five seconds ago. The content of the second panel is always updated.

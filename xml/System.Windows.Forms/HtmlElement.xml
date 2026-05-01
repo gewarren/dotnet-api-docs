@@ -43,8 +43,6 @@
 
  Any HTML document can be modified at run time. You can create new <xref:System.Windows.Forms.HtmlElement> objects with the <xref:System.Windows.Forms.HtmlDocument.CreateElement*> method of <xref:System.Windows.Forms.HtmlDocument>, and add them to another element using the <xref:System.Windows.Forms.HtmlElement.AppendChild*> or <xref:System.Windows.Forms.HtmlElement.InsertAdjacentElement*> methods. You can also create the elements as HTML tags and assign them to an existing element's <xref:System.Windows.Forms.HtmlElement.InnerHtml> property.
 
-
-
 ## Examples
  The following code example shows how to examine an arbitrary HTML document and derive a string describing the HTML elements, with indentation and level numbers used to indicate how deeply nested the elements are in the document. This code example requires that your application hosts a <xref:System.Windows.Forms.WebBrowser> control named `WebBrowser1`.
 
@@ -151,8 +149,6 @@
 
  Any additions made to a document at run-time using <xref:System.Windows.Forms.HtmlElement.AppendChild*> will not be persisted when you call the <xref:System.Windows.Forms.WebBrowser.ShowSaveAsDialog*> method on the <xref:System.Windows.Forms.WebBrowser> control.
 
-
-
 ## Examples
  The following code example creates a new hyperlink using the <xref:System.Windows.Forms.HtmlDocument.CreateElement*> method and adds it to end of a page using `AppendChild` on the `BODY` element. The example requires that your application contains a <xref:System.Windows.Forms.WebBrowser> control named `WebBrowser1`.
 
@@ -244,8 +240,6 @@
 ## Remarks
  Some elements, such as `IMG` and `SCRIPT`, cannot have any children. Use this property before you call <xref:System.Windows.Forms.HtmlElement.AppendChild*> or <xref:System.Windows.Forms.HtmlElement.InsertAdjacentElement*> on an arbitrary element.
 
-
-
 ## Examples
  The following code example handles the <xref:System.Windows.Forms.HtmlElement.Click> event on <xref:System.Windows.Forms.HtmlDocument>. If an element was not previous selected using a mouse click, the code assigns the element to a private class variable named `MoveElement`. If an element was selected, the code attempts to append it to the element that was just clicked. This code example requires that your application hosts a <xref:System.Windows.Forms.WebBrowser> control named `WebBrowser1`, and that you have already added an event handler for the <xref:System.Windows.Forms.HtmlElement.Click> event on <xref:System.Windows.Forms.HtmlDocument>.
 
@@ -300,8 +294,6 @@
 
  If <xref:System.Windows.Forms.HtmlElement.CanHaveChildren*> is `false`, `Children` will always be empty.
 
-
-
 ## Examples
  The following code example examines an arbitrary HTML document and derive a string describing the elements, with indentation and level numbers used to indicate how deeply nested the elements are in the document. It does this by searching the `Children` collection of all elements recursively, starting with the HTML element at the top of the document. This code example requires that your application has a <xref:System.Windows.Forms.WebBrowser> control named `WebBrowser1`.
 
@@ -349,8 +341,6 @@
 
  If the user clicks on an element that does not currently have input focus, the <xref:System.Windows.Forms.HtmlElement.Click> event will occur after the <xref:System.Windows.Forms.HtmlElement.Focusing> event, but before the <xref:System.Windows.Forms.HtmlElement.LostFocus> event for that element.
 
-
-
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.HtmlElement.Click> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
 
@@ -395,8 +385,6 @@
 
 ## Remarks
  <xref:System.Windows.Forms.HtmlElement.ClientRectangle*> will return position data only for elements that have been assigned an explicit height and width, or elements that use absolute positioning. A document is absolutely positioned if its position style is set to `absolute`, after which it can be positioned at any coordinate on the HTML page.
-
-
 
 ## Examples
  Assume you have loaded the following HTML page into a hosted instance of the <xref:System.Windows.Forms.WebBrowser> control.
@@ -594,8 +582,6 @@
 
  A <xref:System.Windows.Forms.HtmlElement.DoubleClick> event on an element will also occur on that element's parent elements and on the <xref:System.Windows.Forms.HtmlDocument> class itself, unless you set the <xref:System.Windows.Forms.HtmlElementEventArgs.BubbleEvent> property of the <xref:System.Windows.Forms.HtmlElementEventArgs> class to `true`.
 
-
-
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.HtmlElement.DoubleClick> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
 
@@ -696,8 +682,6 @@
 
  A <xref:System.Windows.Forms.HtmlElement.DragEnd> event on an element will also occur on that element's parent elements and on the <xref:System.Windows.Forms.HtmlDocument> class itself, unless you set the <xref:System.Windows.Forms.HtmlElementEventArgs.BubbleEvent> property of the <xref:System.Windows.Forms.HtmlElementEventArgs> class to `true`.
 
-
-
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.HtmlElement.DragEnd> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
 
@@ -785,8 +769,6 @@
  You can cancel the default action for a <xref:System.Windows.Forms.HtmlElement.DragOver> event on an element by setting the <xref:System.Windows.Forms.HtmlElementEventArgs.ReturnValue> property of the <xref:System.Windows.Forms.HtmlElementEventArgs> class to `true`.
 
  A <xref:System.Windows.Forms.HtmlElement.DragOver> event on an element will also occur on that element's parent elements and on the <xref:System.Windows.Forms.HtmlDocument> class itself, unless you set the <xref:System.Windows.Forms.HtmlElementEventArgs.BubbleEvent> property of the <xref:System.Windows.Forms.HtmlElementEventArgs> class to `true`.
-
-
 
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.HtmlElement.DragOver> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
@@ -987,8 +969,6 @@
 
  A <xref:System.Windows.Forms.HtmlElement.Focusing> event on an element will also occur on that element's parents and on the <xref:System.Windows.Forms.HtmlDocument> class itself, unless you set the <xref:System.Windows.Forms.HtmlElementEventArgs.BubbleEvent> property of the <xref:System.Windows.Forms.HtmlElementEventArgs> class to `true`.
 
-
-
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.HtmlElement.Focusing> event. This report helps you to learn when the event occurs and can assist you in debugging.
 
@@ -1039,8 +1019,6 @@
  An attribute in HTML is any valid name/value pair for that element. <xref:System.Windows.Forms.HtmlElement> exposes only those attributes that are common to all elements, leaving out those that only apply to certain types of elements; `SRC` is a predefined attribute for the `IMG` tag, for example, but not for the `DIV` tag. Use <xref:System.Windows.Forms.HtmlElement.GetAttribute*> and <xref:System.Windows.Forms.HtmlElement.SetAttribute*> to manipulate attributes not exposed on the managed Document Object Model (DOM).
 
  <xref:System.Windows.Forms.HtmlElement.GetAttribute*> and <xref:System.Windows.Forms.HtmlElement.SetAttribute*> are case-insensitive.
-
-
 
 ## Examples
  The following code example retrieves all of the `META` tags within an HTML document, using <xref:System.Windows.Forms.HtmlElement.GetAttribute*> to find the `META` tag with the name `Description`. The example requires that your application has a <xref:System.Windows.Forms.WebBrowser> control named `WebBrowser1`.
@@ -1149,8 +1127,6 @@
 
 ## Remarks
  You can neither cancel this event's default behavior, nor prevent it from bubbling. To remove focus from an element, call <xref:System.Windows.Forms.HtmlElement.Focus*> on a different element from within the <xref:System.Windows.Forms.HtmlElement.GotFocus> event.
-
-
 
 ## Examples
  Save the following HTML code into a file, and load the file into a <xref:System.Windows.Forms.WebBrowser> control in a Windows Forms project.
@@ -1320,8 +1296,6 @@
 
  Assigning a value to <xref:System.Windows.Forms.HtmlElement.InnerText*> will destroy any child elements that belong to the element.
 
-
-
 ## Examples
  The following code creates a new hyperlink using <xref:System.Windows.Forms.HtmlDocument.CreateElement*>, and assigns text to the link using the <xref:System.Windows.Forms.HtmlElement.InnerText> property.
 
@@ -1382,8 +1356,6 @@
  Do not call this method until after the <xref:System.Windows.Forms.WebBrowser.DocumentCompleted> event on the <xref:System.Windows.Forms.WebBrowser> control has occurred. Calling this method before then can result in an exception, as the document will not have finished loading.
 
  Whether a value of <xref:System.Windows.Forms.HtmlElementInsertionOrientation> is valid will depend on the type of the element. For example, <xref:System.Windows.Forms.HtmlElementInsertionOrientation.AfterBegin> is valid if the element is a `DIV`, but not if it is a `SCRIPT` or `IMG` element, neither of which can contain child elements.
-
-
 
 ## Examples
  The following code example inserts a `DIV` element into the top of every page that users view outside of the ADatum.com server. The example requires that your form contains a <xref:System.Windows.Forms.WebBrowser> control named `WebBrowser1`. Your sample must also import the namespace <xref:System.Text.RegularExpressions>.
@@ -1502,8 +1474,6 @@
 ## Remarks
  This method can be used to call methods from the Document Object Model (DOM) that do not have equivalents in managed code. All arguments supplied to <xref:System.Windows.Forms.HtmlElement.InvokeMember*> will be converted to Win32 `VARIANT` data types before they are passed to the named scripting function.
 
-
-
 ## Examples
  The following code example gets a `TABLE` called `dataTable` and uses the unexposed `moveRow` method to move a row from the end of the table to the beginning.
 
@@ -1549,8 +1519,6 @@
  You can cancel the default action for a <xref:System.Windows.Forms.HtmlElement.KeyDown> event on an element by setting the <xref:System.Windows.Forms.HtmlElementEventArgs.ReturnValue> property of the <xref:System.Windows.Forms.HtmlElementEventArgs> class to `true`.
 
  A <xref:System.Windows.Forms.HtmlElement.KeyDown> event on an element will also occur on that element's parent elements and on the <xref:System.Windows.Forms.HtmlDocument> class itself, unless you set the <xref:System.Windows.Forms.HtmlElementEventArgs.BubbleEvent> property of the <xref:System.Windows.Forms.HtmlElementEventArgs> class to `true`.
-
-
 
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.HtmlElement.KeyDown> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
@@ -1601,8 +1569,6 @@
 
  A <xref:System.Windows.Forms.HtmlElement.KeyPress> event on an element will also occur on that element's parent elements and on the <xref:System.Windows.Forms.HtmlDocument> class itself, unless you set the <xref:System.Windows.Forms.HtmlElementEventArgs.BubbleEvent> property of the <xref:System.Windows.Forms.HtmlElementEventArgs> class to `true`.
 
-
-
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.HtmlElement.KeyPress> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
 
@@ -1651,8 +1617,6 @@
  You cannot cancel this event.
 
  A <xref:System.Windows.Forms.HtmlElement.KeyUp> event on an element will also occur on that element's parent elements and on the <xref:System.Windows.Forms.HtmlDocument> class itself, unless you set the <xref:System.Windows.Forms.HtmlElementEventArgs.BubbleEvent> property of the <xref:System.Windows.Forms.HtmlElementEventArgs> class to `true`.
-
-
 
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.HtmlElement.KeyUp> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
@@ -1744,8 +1708,6 @@
 
  An <xref:System.Windows.Forms.HtmlElement.LostFocus> event on an element will also occur on that element's parents and on the <xref:System.Windows.Forms.HtmlDocument> class itself, unless you set the <xref:System.Windows.Forms.HtmlElementEventArgs.BubbleEvent> property of the <xref:System.Windows.Forms.HtmlElementEventArgs> class to `true`.
 
-
-
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.HtmlElement.LostFocus> event. This report helps you to learn when the event occurs and can assist you in debugging.
 
@@ -1792,8 +1754,6 @@
  You can cancel the default action for a <xref:System.Windows.Forms.HtmlElement.MouseDown> event on an element by setting the <xref:System.Windows.Forms.HtmlElementEventArgs.ReturnValue> property of the <xref:System.Windows.Forms.HtmlElementEventArgs> class to `true`.
 
  A <xref:System.Windows.Forms.HtmlElement.MouseDown> event on an element will also occur on that element's parent elements and on the <xref:System.Windows.Forms.HtmlDocument> class itself, unless you set the <xref:System.Windows.Forms.HtmlElementEventArgs.BubbleEvent> property of the <xref:System.Windows.Forms.HtmlElementEventArgs> class to `true`.
-
-
 
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.HtmlElement.MouseDown> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
@@ -1924,8 +1884,6 @@
 
  A <xref:System.Windows.Forms.HtmlElement.MouseMove> event on an element will also occur on that element's parent elements and on the <xref:System.Windows.Forms.HtmlDocument> class itself, unless you set the <xref:System.Windows.Forms.HtmlElementEventArgs.BubbleEvent> property of the <xref:System.Windows.Forms.HtmlElementEventArgs> class to `true`.
 
-
-
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.HtmlElement.MouseMove> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
 
@@ -1973,8 +1931,6 @@
 
  A <xref:System.Windows.Forms.HtmlElement.MouseOver> event on an element will also occur on that element's parent elements and on the <xref:System.Windows.Forms.HtmlDocument> class itself, unless you set the <xref:System.Windows.Forms.HtmlElementEventArgs.BubbleEvent> property of the <xref:System.Windows.Forms.HtmlElementEventArgs> class to `true`.
 
-
-
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.HtmlElement.MouseOver> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
 
@@ -2021,8 +1977,6 @@
  You can cancel the default action for a <xref:System.Windows.Forms.HtmlElement.MouseUp> event on an element by setting the <xref:System.Windows.Forms.HtmlElementEventArgs.ReturnValue> property of the <xref:System.Windows.Forms.HtmlElementEventArgs> class to `true`.
 
  A <xref:System.Windows.Forms.HtmlElement.MouseUp> event on an element will also occur on that element's parent elements and on the <xref:System.Windows.Forms.HtmlDocument> class itself, unless you set the <xref:System.Windows.Forms.HtmlElementEventArgs.BubbleEvent> property of the <xref:System.Windows.Forms.HtmlElementEventArgs> class to `true`.
-
-
 
 ## Examples
  The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.HtmlElement.MouseUp> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
@@ -2167,8 +2121,6 @@
 
  For more information about element positioning in HTML, see [About Element Positioning](https://msdn.microsoft.com/library/ms533005.aspx).
 
-
-
 ## Examples
  The following code example shows how <xref:System.Windows.Forms.HtmlElement.OffsetParent*> and <xref:System.Windows.Forms.HtmlElement.OffsetRectangle*> differ for `span1`, `span2` and `span3`:
 
@@ -2243,8 +2195,6 @@
 - Absolute positioning, in which the element is given a fixed coordinate position relative to the upper-left corner of the document.
 
  For more information about element positioning in HTML, see [About Element Positioning](https://msdn.microsoft.com/library/ms533005.aspx).
-
-
 
 ## Examples
  The following code example shows how <xref:System.Windows.Forms.HtmlElement.OffsetParent*> and <xref:System.Windows.Forms.HtmlElement.OffsetRectangle*> differ for `span1`, `span2` and `span3`:
@@ -2544,8 +2494,6 @@
 
  The <xref:System.Windows.Forms.HtmlElement.Parent> property of the HTML element (the top of an HTML document) points back to itself. If you call <xref:System.Windows.Forms.HtmlElement.Parent*> inside a loop, verify that the loop's break condition compares the type of the current element and the type of the `Parent` property, or else your code may execute an infinite loop.
 
-
-
 ## Examples
  The following code example finds all of the `IMG` tags in a document, and uses the <xref:System.Windows.Forms.HtmlElement.Parent> property to test whether the `IMG` is hyperlinked to another page; if it is, the code assigns the URL to the `ALT` attribute of the `IMG` tag, so that users can mouse over the image to see where it will take them.
 
@@ -2837,8 +2785,6 @@
 
  To set the `class` attribute on an <xref:System.Windows.Forms.HtmlElement> , you must refer to the attribute as `className` when specifying the first argument to <xref:System.Windows.Forms.HtmlElement.SetAttribute*>
 
-
-
 ## Examples
  The following code example adds a new `IMG` element to the current document, using <xref:System.Windows.Forms.HtmlElement.SetAttribute*> to set the `SRC` attribute for the image.
 
@@ -2976,8 +2922,6 @@
 
 ## Remarks
  Many elements in the HTML Document Object Model have attributes, properties, and methods that are unique to those elements; such as the `HREF` attribute on the `A` element, or the `Submit` method on `FORM`. Use <xref:System.Windows.Forms.HtmlElement.TagName*> when you have an element of a potentially arbitrary type, and need to perform a type-specific operation.
-
-
 
 ## Examples
  The following code example finds all of the `IMG` tags in a document, and uses the `TagName` property to test whether the `IMG` is hyperlinked to another page; if it is, the code assigns the URL to the `ALT` attribute of the `IMG` tag, so that users can mouse over the image to see where it will take them.

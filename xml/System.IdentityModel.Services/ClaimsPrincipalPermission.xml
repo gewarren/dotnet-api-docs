@@ -48,8 +48,6 @@
 
  In the case of a <xref:System.IdentityModel.Services.ClaimsPrincipalPermission> that contains multiple resource-action pairs, the <xref:System.Security.Claims.ClaimsAuthorizationManager.CheckAccess*?displayProperty=nameWithType> method is invoked for each of the resource-action pairs contained in the permission.  For the call to <xref:System.IdentityModel.Services.ClaimsPrincipalPermission.Demand*> to succeed, the active principal must be authorized for all of the resource-action pairs contained in the permission.
 
-
-
 ## Examples
  The following example shows how to protect a resource by using the <xref:System.IdentityModel.Services.ClaimsPrincipalPermission.Demand*> method, the <xref:System.IdentityModel.Services.ClaimsPrincipalPermission.CheckAccess*> method, or a <xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute> declaration. In each case, the configured <xref:System.Security.Claims.ClaimsAuthorizationManager> is invoked to evaluate the current principal against the specified resource and action. If the current principal is not authorized for the specified action on the specified resource, a <xref:System.Security.SecurityException> is thrown; otherwise, execution proceeds.
 
@@ -160,8 +158,6 @@
 
  The <xref:System.Security.Claims.ClaimsAuthorizationManager.CheckAccess*?displayProperty=nameWithType> method of the configured claims authorization manager is invoked with an <xref:System.Security.Claims.AuthorizationContext> composed of the active principal (<xref:System.Threading.Thread.CurrentPrincipal>), the resource, and the action.
 
-
-
 ## Examples
  The following example shows how to protect a resource by using the <xref:System.IdentityModel.Services.ClaimsPrincipalPermission.CheckAccess*> method. The configured claims authorization manager is invoked to evaluate the current principal against the specified resource and action. If the current principal is not authorized for the specified action on the specified resource, a <xref:System.Security.SecurityException> is thrown; otherwise, execution proceeds.
 
@@ -238,8 +234,6 @@
  Although the constructor only takes a single resource and action, <xref:System.IdentityModel.Services.ClaimsPrincipalPermission> objects can be combined through the <xref:System.IdentityModel.Services.ClaimsPrincipalPermission.Union*> and <xref:System.IdentityModel.Services.ClaimsPrincipalPermission.Intersect*> methods. The permission created through these methods may contain multiple resource-action pairs.
 
  The <xref:System.IdentityModel.Services.ClaimsPrincipalPermission.Demand*> method invokes the <xref:System.Security.Claims.ClaimsAuthorizationManager.CheckAccess*?displayProperty=nameWithType> method of the configured claims authorization manager with an <xref:System.Security.Claims.AuthorizationContext> composed of the active principal (<xref:System.Threading.Thread.CurrentPrincipal>), the resource, and the action for each of the resource-action pairs contained in the permission. For the <xref:System.IdentityModel.Services.ClaimsPrincipalPermission.Demand*> to succeed the active principal must be authorized for all of the resource-action pairs that are contained in the permission.
-
-
 
 ## Examples
  The following example shows how to protect a resource by using the <xref:System.IdentityModel.Services.ClaimsPrincipalPermission.Demand*> method. The configured claims authorization manager is invoked to evaluate the current principal against the specified resource and action. If the current principal is not authorized for the specified action on the specified resource, a <xref:System.Security.SecurityException> is thrown; otherwise, execution proceeds.

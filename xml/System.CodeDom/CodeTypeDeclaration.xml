@@ -61,8 +61,6 @@
 
  You can build a class or a structure implementation in one complete declaration, or spread the implementation across multiple declarations. The <xref:System.CodeDom.CodeTypeDeclaration.IsPartial> property indicates whether the type declaration is complete or partial. Not all code generators support partial type declarations, so you should test for this support by calling the <xref:System.CodeDom.Compiler.ICodeGenerator.Supports*> method with the flag <xref:System.CodeDom.Compiler.GeneratorSupport.PartialTypes>.
 
-
-
 ## Examples
  This example demonstrates using a <xref:System.CodeDom.CodeTypeDeclaration> to declare a type.
 
@@ -399,8 +397,6 @@ Implements Interface1
  When supplying a class or structure implementation across multiple declarations, set the <xref:System.CodeDom.CodeTypeDeclaration.IsPartial> property to `true` for the initial declaration and all supplemental declarations. The initial declaration must fully specify the type signature, including access modifiers, inherited types, and implemented interfaces. The supplementary declarations do not need to re-specify the type signature. A compiler error typically results if you redefine the type signature in a supplementary declaration.
 
  Visual Studio 2005 uses partial types to separate user-generated code from designer code. In Visual Basic Windows Application projects, the user code is placed in a partial class that is not qualified by the `Partial` keyword; the designer-provided code appears in the partial class that has the `Partial` keyword. In C#, both the user code and designer code appear in partial classes identified by the `partial` keyword.
-
-
 
 ## Examples
  This example demonstrates using a <xref:System.CodeDom.CodeTypeDeclaration> to supply a class implementation across multiple declarations. The example builds the initial class declaration statement and sets the <xref:System.CodeDom.CodeTypeDeclaration.IsPartial> property to `true`.

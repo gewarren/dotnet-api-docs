@@ -227,8 +227,6 @@
 
  You typically use this method to provide the implementation of the "add" accessor for the Microsoft .NET event access pattern of a custom routed event.
 
-
-
 ## Examples
  The following example implements a handler invoked on the <xref:System.Windows.FrameworkElement.Initialized> event on a page that attaches a defined handler to one of the named elements on the page using `handledEventsToo` `true`. This handler would be invoked even if another element along the route marked the shared event data as handled before reaching the handling element in the route.
 
@@ -322,8 +320,6 @@
 |-----------------------------------|--------------------------------------------------------|
 |Identifier field|<xref:System.Windows.UIElement.AllowDropProperty>|
 |Metadata properties set to `true`|None|
-
-
 
 ## Examples
  The following markup example sets the <xref:System.Windows.UIElement.AllowDrop> property `true` using an attribute on a <xref:System.Windows.Controls.TextBox>, as well as setting some other related properties that in aggregate enable that <xref:System.Windows.Controls.TextBox> to be the target of a multiline text data object when it is dragged in. For the complete sample, see [Load a Dropped File Sample](https://msdn.microsoft.com/library/be90d645-dd61-4f53-93bb-87902d086ef7).
@@ -424,8 +420,6 @@
 
 ## Remarks
  To remove an animation from a property, specify the identifier for that property as `dp` and specify `clock` as `null`. This removes the animation and the animated property is set to its base value. However, the originally associated animation clock is not stopped. Any other animations assigned to that clock will continue to run.
-
-
 
 ## Examples
  In the following example, a <xref:System.Windows.Shapes.Rectangle> `myAnimatedRectangle` has a particular timing animation applied to it by calling <xref:System.Windows.UIElement.ApplyAnimationClock*> .
@@ -812,8 +806,6 @@
 > [!NOTE]
 > Overriding this method is only appropriate if you are deriving at the WPF core-level, and you are not using the WPF framework-level layout system and <xref:System.Windows.FrameworkElement> derived class, because <xref:System.Windows.FrameworkElement> seals <xref:System.Windows.FrameworkElement.ArrangeCore*>. If you are using the WPF framework-level layout system, the appropriate method to override for class-specific layout arrange behavior is <xref:System.Windows.FrameworkElement.ArrangeOverride*>.
 
-
-
 ## Examples
  <xref:System.Windows.UIElement.ArrangeCore*> implementations should call the base implementation to return a size, then call the <xref:System.Windows.UIElement.Arrange*> method of each visible child element, and reconcile the sizes returned by these <xref:System.Windows.UIElement.Arrange*> calls with the size of the base implementation. The logic for the reconciliation aspect of a <xref:System.Windows.UIElement.ArrangeCore*> implementation might vary, depending on the layout characteristics of your element. In the following example template, `VisualChildren` is a hypothetical property that your element might define to help enumerate its content; <xref:System.Windows.UIElement> does not define content collections at this level, the WPF framework-level architecture defers content behavior to derived elements such as specific controls or control base classes.
 
@@ -888,8 +880,6 @@
 
  If the entire `animation` value is `null`, all animations are removed from the property and the property value reverts to its base value. However, the originally associated animation timeline is not stopped. Any other animations assigned to that timeline will continue to run.
 
-
-
 ## Examples
  The following example creates an animation, assigns it, and then calls <xref:System.Windows.UIElement.BeginAnimation*> to start it.
 
@@ -945,8 +935,6 @@
  If the <xref:System.Windows.Media.Animation.Timeline.BeginTime*> for `animation` is `null`, then any current animations are removed and the current value of the property is held.
 
  If the entire `animation` value is `null`, all animations are removed from the property and the property value reverts to its base value. However, the originally associated animation timeline is not stopped. Any other animations assigned to that timeline will continue to run.
-
-
 
 ## Examples
  The following example implements a handler that obtains an existing animation from a resource and then calls <xref:System.Windows.UIElement.BeginAnimation*> with a specified handoff behavior.
@@ -1230,8 +1218,6 @@
 
  To clear mouse capture from all elements, call <xref:System.Windows.Input.Mouse.Capture*?displayProperty=nameWithType> with the `element` parameter provided as `null`.
 
-
-
 ## Examples
  The following example implements a pair of handlers for mouse and key input combination that capture (and uncapture) the mouse and enable a special mouse mode for viewing a 3D model.
 
@@ -1378,8 +1364,6 @@
 |-----------------------------------|--------------------------------------------------------|
 |Identifier field|<xref:System.Windows.UIElement.ClipProperty>|
 |Metadata properties set to `true`|None|
-
-
 
 ## Examples
  This example shows how to define a framework element's <xref:System.Windows.UIElement.Clip*> region. To define a clip, use a <xref:System.Windows.Media.Geometry> (for example, an <xref:System.Windows.Media.EllipseGeometry> to set the element's <xref:System.Windows.UIElement.Clip> property. Only the area that is within the region of the geometry will be visible.
@@ -1577,8 +1561,6 @@ Image with an Elliptical Clip Region
  *oneOrMoreCommandBindings*
  One or more <xref:System.Windows.Input.CommandBinding> elements. Each of these should have a <xref:System.Windows.Input.CommandBinding.Command*> attribute set to a known command, and attributes set for the <xref:System.Windows.Input.CommandBinding.CanExecute> and <xref:System.Windows.Input.CommandBinding.Executed> handler implementations. For more information see <xref:System.Windows.Input.CommandBinding>.
 
-
-
 ## Examples
  The following example adds a <xref:System.Windows.Input.CommandBinding> to a window using markup. Note that in XAML, the <xref:System.Windows.Input.CommandBindingCollection> is not declared in the markup as an element; the collection object is inferred by the type that the property takes, and you populate the property element with one or more <xref:System.Windows.Input.CommandBinding> elements:
 
@@ -1629,8 +1611,6 @@ Image with an Elliptical Clip Region
  The value returned by this property will only be a valid measurement if the value of the <xref:System.Windows.UIElement.IsMeasureValid> property is `true`.
 
  <xref:System.Windows.UIElement.DesiredSize*> is typically checked as one of the measurement factors when you implement layout behavior overrides such as <xref:System.Windows.FrameworkElement.ArrangeOverride*>, <xref:System.Windows.FrameworkElement.MeasureOverride*>, or <xref:System.Windows.UIElement.OnRender*> (in the <xref:System.Windows.UIElement.OnRender*> case, you might check <xref:System.Windows.UIElement.RenderSize*> instead, but this depends on your implementation). Depending on the scenario, <xref:System.Windows.UIElement.DesiredSize*> might be fully respected by your implementation logic, constraints on <xref:System.Windows.UIElement.DesiredSize*> might be applied, and such constraints might also change other characteristics of either the parent element or child element. For example, a control that supports scrollable regions (but chooses not to derive from the WPF framework-level controls that already enable scrollable regions) could compare available size to <xref:System.Windows.UIElement.DesiredSize*>. The control could then set an internal state that enabled scrollbars in the UI for that control. Or, <xref:System.Windows.UIElement.DesiredSize*> could potentially also be ignored in certain scenarios.
-
-
 
 ## Examples
  The following example shows <xref:System.Windows.UIElement.DesiredSize*> as part of a <xref:System.Windows.FrameworkElement.MeasureOverride*> implementation. Notice how <xref:System.Windows.UIElement.Measure*> is called immediately prior to obtaining <xref:System.Windows.UIElement.DesiredSize*>. This assures that <xref:System.Windows.UIElement.DesiredSize*> holds a legitimate value.
@@ -2037,8 +2017,6 @@ Image with an Elliptical Clip Region
 |Identifier field|<xref:System.Windows.UIElement.EffectProperty>|
 |Metadata properties set to `true`|None|
 
-
-
 ## Examples
  The following XAML shows how to assign a custom <xref:System.Windows.Media.Effects.ShaderEffect> to the <xref:System.Windows.UIElement.Effect> property.
 
@@ -2313,8 +2291,6 @@ For this call to be successful, some other element in the application needed to 
 
 ## Remarks
  If no animations are attached to the property, then the <xref:System.Windows.UIElement.GetAnimationBaseValue*> return value is always identical to the <xref:System.Windows.DependencyObject.GetValue*> return value. If there are animations attached, then all possible animation derived values including the start and stop values are ignored, and the property value is determined based on all other possible inputs. For more information, see [Dependency Property Value Precedence](/dotnet/framework/wpf/advanced/dependency-property-value-precedence).
-
-
 
 ## Examples
  The following example implements a handler that reports the base value of an animated <xref:System.Windows.FrameworkElement.Width> property on a <xref:System.Windows.Controls.Button>, as well as the base value of a transform.
@@ -3164,8 +3140,6 @@ For this call to be successful, some other element in the application needed to 
  *oneOrMoreInputBindings*
  One or more <xref:System.Windows.Input.InputBinding> elements (typically the <xref:System.Windows.Input.KeyBinding> or <xref:System.Windows.Input.MouseBinding> derived classes). Each of these is expected to have a <xref:System.Windows.Input.InputBinding.Command*> and <xref:System.Windows.Input.InputBinding.Gesture*> attribute set.
 
-
-
 ## Examples
  The following example populates this property on a <xref:System.Windows.Window>, with a single <xref:System.Windows.Input.KeyBinding>.
 
@@ -3421,8 +3395,6 @@ For this call to be successful, some other element in the application needed to 
 |Identifier field|<xref:System.Windows.UIElement.IsEnabledProperty>|
 |Metadata properties set to `true`|None|
 
-
-
 ## Examples
  The following example shows a handler on one button that when executed will set <xref:System.Windows.UIElement.IsEnabled*> `false` on another named button `b1`.
 
@@ -3576,8 +3548,6 @@ For this call to be successful, some other element in the application needed to 
 |-----------------------------------|--------------------------------------------------------|
 |Identifier field|<xref:System.Windows.UIElement.IsFocusedProperty>|
 |Metadata properties set to `true`|None|
-
-
 
 ## Examples
  The following example is a code handler that changes the background of a control when it is focused.
@@ -4041,8 +4011,6 @@ For this call to be successful, some other element in the application needed to 
 ## Remarks
  Set this property to true if you want the <xref:System.Windows.UIElement> to receive the <xref:System.Windows.UIElement.ManipulationStarting>, <xref:System.Windows.UIElement.ManipulationStarted>, <xref:System.Windows.UIElement.ManipulationDelta>, <xref:System.Windows.UIElement.ManipulationInertiaStarting>, <xref:System.Windows.UIElement.ManipulationBoundaryFeedback>, and <xref:System.Windows.UIElement.ManipulationCompleted> events. For more information about manipulations, see the [Input Overview](/dotnet/framework/wpf/advanced/input-overview).  For an example of an application that responds to manipulations, see [Walkthrough: Creating Your First Touch Application](/dotnet/framework/wpf/advanced/walkthrough-creating-your-first-touch-application).
 
-
-
 ## Examples
  The following example creates an application that has a red Rectangle.  The <xref:System.Windows.UIElement.IsManipulationEnabled> property of the Rectangle is set to true and the application's window subscribes to the <xref:System.Windows.UIElement.ManipulationStarting>, <xref:System.Windows.UIElement.ManipulationDelta>, and <xref:System.Windows.UIElement.ManipulationInertiaStarting> events. This example is part of a larger example in [Walkthrough: Creating Your First Touch Application](/dotnet/framework/wpf/advanced/walkthrough-creating-your-first-touch-application).
 
@@ -4162,8 +4130,6 @@ For this call to be successful, some other element in the application needed to 
 |-----------------------------------|--------------------------------------------------------|
 |Identifier field|<xref:System.Windows.UIElement.IsMouseCapturedProperty>|
 |Metadata properties set to `true`|None|
-
-
 
 ## Examples
  The following example turns the mouse capture state on or off based on whether the mouse is already captured for the element.
@@ -4536,8 +4502,6 @@ For this call to be successful, some other element in the application needed to 
 |-----------------------------------|--------------------------------------------------------|
 |Identifier field|<xref:System.Windows.UIElement.IsMouseOverProperty>|
 |Metadata properties set to `true`|None|
-
-
 
 ## Examples
  The following example references this property as the property type of a <xref:System.Windows.Trigger>, part of a \<Style.Triggers> block. If the mouse is over the control, the control text turns blue and the cursor becomes a hand.
@@ -5970,8 +5934,6 @@ For this call to be successful, some other element in the application needed to 
 |Routing strategy|Bubbling|
 |Delegate|<xref:System.EventHandler`1> of type <xref:System.Windows.Input.ManipulationDeltaEventArgs>.|
 
-
-
 ## Examples
  The following example shows an event handler for the <xref:System.Windows.UIElement.ManipulationDelta> event. The example uses the <xref:System.Windows.Input.ManipulationDeltaEventArgs.DeltaManipulation> property to move, resize, and rotate a <xref:System.Windows.Shapes.Rectangle>.  The example also checks whether the <xref:System.Windows.UIElement.ManipulationDelta> event occurred during inertia and whether the rectangle is touching the edge of a window.  If those cases are true, the application stops the manipulation to prevent the rectangle from leaving the visible area of the application. This example is part of a larger example in [Walkthrough: Creating Your First Touch Application](/dotnet/framework/wpf/advanced/walkthrough-creating-your-first-touch-application).
 
@@ -6051,8 +6013,6 @@ For this call to be successful, some other element in the application needed to 
 |Identifier field|<xref:System.Windows.UIElement.ManipulationInertiaStartingEvent>|
 |Routing strategy|Bubbling|
 |Delegate|<xref:System.EventHandler`1> of type <xref:System.Windows.Input.ManipulationInertiaStartingEventArgs>.|
-
-
 
 ## Examples
  The following example shows the <xref:System.Windows.UIElement.ManipulationInertiaStarting> event handler and sets the desired deceleration for translation, expansion, and rotation that is used during inertia. This example is part of a larger example in [Walkthrough: Creating Your First Touch Application](/dotnet/framework/wpf/advanced/walkthrough-creating-your-first-touch-application).
@@ -6220,8 +6180,6 @@ For this call to be successful, some other element in the application needed to 
 |Routing strategy|Bubbling|
 |Delegate|<xref:System.EventHandler`1> of type <xref:System.Windows.Input.ManipulationStartingEventArgs>.|
 
-
-
 ## Examples
  The following example shows the event handler for the <xref:System.Windows.UIElement.ManipulationStarting> event and sets the <xref:System.Windows.Input.ManipulationStartingEventArgs.ManipulationContainer*> to the parent element that receives the manipulation events so that the coordinates of the manipulation are relative to the parent element.  This example is part of a larger example in [Walkthrough: Creating Your First Touch Application](/dotnet/framework/wpf/advanced/walkthrough-creating-your-first-touch-application).
 
@@ -6348,8 +6306,6 @@ For this call to be successful, some other element in the application needed to 
  It is more common to derive an element from <xref:System.Windows.FrameworkElement> rather than <xref:System.Windows.UIElement>. If you are deriving from <xref:System.Windows.FrameworkElement>, note that an override of <xref:System.Windows.UIElement.MeasureCore*> on <xref:System.Windows.FrameworkElement> seals the <xref:System.Windows.UIElement.MeasureCore*> method. Therefore, you only override <xref:System.Windows.UIElement.MeasureCore*> as a means to alter layout measure characteristics if you derive from <xref:System.Windows.UIElement> through an inheritance that does not include <xref:System.Windows.FrameworkElement>. This might be the case if you are attempting to build your own implementation on the WPF core-level. Otherwise, if you are deriving from <xref:System.Windows.FrameworkElement>, then the implementation template for Measure behavior is the <xref:System.Windows.FrameworkElement> implementation of .<xref:System.Windows.FrameworkElement.MeasureOverride*>.
 
  A parent element with child elements must call <xref:System.Windows.UIElement.Measure*> on each child, otherwise these child elements are not sized or arranged and will effectively disappear from layout.
-
-
 
 ## Examples
  A typical override of <xref:System.Windows.UIElement.MeasureCore*> follows this approximate pattern (there is not a built-in collection called `VisualChildren`; `VisualChildren` is a placeholder that represents whatever child collection your element maintains).
@@ -10692,8 +10648,6 @@ For this call to be successful, some other element in the application needed to 
 ## Remarks
  This method has no default implementation in the <xref:System.Windows.UIElement> class.
 
-
-
 ## Examples
  The following code example shows a possible implementation for a panel derived class.
 
@@ -11597,8 +11551,6 @@ For this call to be successful, some other element in the application needed to 
 |-----------------------------------|--------------------------------------------------------|
 |Identifier field|<xref:System.Windows.UIElement.OpacityMaskProperty>|
 |Metadata properties set to `true`|None|
-
-
 
 ## Examples
  The following markup example shows an <xref:System.Windows.Media.ImageBrush> opacity mask applied to another <xref:System.Windows.Controls.Image>.
@@ -14709,8 +14661,6 @@ For this call to be successful, some other element in the application needed to 
 
  <xref:System.Windows.RoutedEventArgs> is not just the state properties for the event; it also identifies which routed event to raise. This event-raising pattern and the routed event data both differ from common language runtime (CLR) events and data classes, which typically just contain properties that are related to the event.
 
-
-
 ## Examples
  The following example creates event data, appends the event identifier to the data, and then uses the event data instance to raise a custom routed event.
 
@@ -14783,8 +14733,6 @@ For this call to be successful, some other element in the application needed to 
 
 ## Remarks
  If this element did not hold the capture, calling this method has no effect. Consider checking the value of <xref:System.Windows.UIElement.IsMouseCaptured*> before you call this method.
-
-
 
 ## Examples
  The following example is the parallel to the example given for <xref:System.Windows.UIElement.CaptureMouse*>: it handles mouse button up to release mouse capture and re-enable moving the mouse.
@@ -14918,8 +14866,6 @@ For this call to be successful, some other element in the application needed to 
  Neither `routedEvent` nor `handler` may be `null`. Attempting to provide either value as `null` will raise an exception.
 
  This method ignores the `handledEventsToo` parameter information, which is provided if the handler was first added with the <xref:System.Windows.UIElement.AddHandler(System.Windows.RoutedEvent,System.Delegate,System.Boolean)> signature that enables handling of already-handled events. Either type of handler is removed.
-
-
 
 ## Examples
  The following example uses <xref:System.Windows.UIElement.RemoveHandler*> as part of an event wrapper definition.
@@ -15100,8 +15046,6 @@ For this call to be successful, some other element in the application needed to 
 |-----------------------------------|--------------------------------------------------------|
 |Identifier field|<xref:System.Windows.UIElement.RenderTransformOriginProperty>|
 |Metadata properties set to `true`|None|
-
-
 
 ## Examples
  The following example builds up elements in code, applies a <xref:System.Windows.UIElement.RenderTransformOrigin*>, and then applies a  <xref:System.Windows.UIElement.RenderTransform*>.
@@ -16198,8 +16142,6 @@ For this call to be successful, some other element in the application needed to 
 
  For information on creating custom plug-ins that can receive and interpret stylus input, see [Intercepting Input from the Stylus](/dotnet/framework/wpf/advanced/intercepting-input-from-the-stylus).
 
-
-
 ## Examples
  The following example creates a <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> instance and adds it to the <xref:System.Windows.UIElement.StylusPlugIns*> collection for a custom ink handling control.
 
@@ -17182,8 +17124,6 @@ For this call to be successful, some other element in the application needed to 
 |-----------------------------------|--------------------------------------------------------|
 |Identifier field|<xref:System.Windows.UIElement.VisibilityProperty>|
 |Metadata properties set to `true`|None|
-
-
 
 ## Examples
  The following example implements a handler that references two different named buttons that are intended to be a mutually exclusive pair in the user interface. Prior to running the actual program logic associated with the button, the button itself is set to be <xref:System.Windows.Visibility.Hidden?displayProperty=nameWithType>, and the other button in the pair is set to <xref:System.Windows.Visibility.Visible?displayProperty=nameWithType>.

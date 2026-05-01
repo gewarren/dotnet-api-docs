@@ -58,8 +58,6 @@
 
  Classes that implement <xref:System.Data.IDbCommand> must implement all its members, and typically define additional members to add provider-specific functionality. For example, the <xref:System.Data.IDbCommand> interface defines the <xref:System.Data.IDbCommand.ExecuteNonQuery*> method. In turn, the <xref:System.Data.SqlClient.SqlCommand> class inherits this method, and also defines the <xref:System.Data.SqlClient.SqlCommand.ExecuteXmlReader*> method.
 
-
-
 ## Examples
  The following example creates instances of the derived classes, <xref:System.Data.SqlClient.SqlConnection>, <xref:System.Data.SqlClient.SqlCommand>, and <xref:System.Data.SqlClient.SqlDataReader>. The example reads through the data, writing it to the console. Finally, the example closes the <xref:System.Data.SqlClient.SqlDataReader>, then the <xref:System.Data.SqlClient.SqlConnection>.
 
@@ -196,8 +194,6 @@
 
 ## Remarks
  When the <xref:System.Data.IDbCommand.CommandType> property is set to `StoredProcedure`, set the <xref:System.Data.IDbCommand.CommandText> property to the name of the stored procedure. The user may be required to use escape character syntax if the stored procedure name contains any special characters. The command will call this stored procedure when you call one of the Execute methods.
-
-
 
 ## Examples
  The following example creates an instance of a derived class, <xref:System.Data.OleDb.OleDbCommand> and sets some of its properties.
@@ -470,8 +466,6 @@
 
  For UPDATE, INSERT, and DELETE statements, the return value is the number of rows affected by the command. For all other types of statements, the return value is -1.
 
-
-
 ## Examples
  The following example creates an instance of the derived class, <xref:System.Data.OleDb.OleDbCommand>, and then executes it. To accomplish this, the method is passed a string that is a SQL SELECT statement and a string to use to connect to the data source.
 
@@ -659,8 +653,6 @@ Int32 count = (int) ExecuteScalar();
 
  If the first column of the first row in the result set is not found, a null reference (`Nothing` in Visual Basic) is returned. If the value in the database is `null`, the query returns `DBNull.Value`.
 
-
-
 ## Examples
  The following example creates an instance of the derived class, <xref:System.Data.SqlClient.SqlCommand>, and then executes it using <xref:System.Data.SqlClient.SqlCommand.ExecuteScalar*>. The example is passed a string that is a Transact-SQL statement that returns an aggregate result, and a string to use to connect to the data source.
 
@@ -770,8 +762,6 @@ Int32 count = (int) ExecuteScalar();
 
 ## Remarks
  If the <xref:System.Data.IDbCommand.CommandType> property is set to `TableDirect`, <xref:System.Data.IDbCommand.Prepare*> does nothing. If <xref:System.Data.IDbCommand.CommandType*> is set to `StoredProcedure`, the call to <xref:System.Data.IDbCommand.Prepare*> should succeed, although it may result in a no-op. The server automatically caches plans for reuse as necessary; therefore, there is no need to call this method directly in your client application.
-
-
 
 ## Examples
  The following example creates an instance of the derived class, <xref:System.Data.OleDb.OleDbCommand>, and opens the connection. The example then prepares a stored procedure on the data source by passing a string that is a SQL Select statement and a string to use to connect to the data source.

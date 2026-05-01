@@ -130,8 +130,6 @@
 
  The transparent proxy is housed by an instance of a managed runtime class <xref:System.Runtime.Remoting.Proxies.RealProxy>. The <xref:System.Runtime.Remoting.Proxies.RealProxy> implements a part of the functionality that is needed to forward the operations from the transparent proxy. Note that a proxy object inherits the associated semantics of managed objects such as garbage collection and support for fields and methods, and can be extended to form new classes. The proxy has a dual nature: it acts as an object of the same class as the remote object (transparent proxy), and is a managed object itself.
 
-
-
 ## Examples
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Remoting/CustomProxy_Attribute_RealProxy/CPP/customproxy_sample.cpp" id="Snippet10":::
  :::code language="csharp" source="~/snippets/csharp/System.Runtime.Remoting.Proxies/ProxyAttribute/Overview/customproxy_sample.cs" id="Snippet10":::
@@ -331,8 +329,6 @@
 
  If the proxy is requested not for marshaling but for communication with unmanaged objects in the current process, then a [COM Callable Wrapper](/dotnet/framework/interop/com-callable-wrapper) (CCW), which can be used in the current process for communication through COM, is returned.
 
-
-
 ## Examples
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Remoting/RealProxy_Sample/CPP/realproxy_sample.cpp" id="Snippet2":::
  :::code language="csharp" source="~/snippets/csharp/System.Runtime.Remoting.Proxies/RealProxy/GetCOMIUnknown/realproxy_sample.cs" id="Snippet2":::
@@ -462,8 +458,6 @@
 ## Remarks
  The stub data is used by custom proxy users to decide what to do with an incoming method call. For example, the stub data might be information about the server's context that you can use to determine whether to execute the call locally, or send it through the remoting infrastructure.
 
-
-
 ## Examples
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Remoting/CustomProxy_Attribute_RealProxy/CPP/customproxy_sample.cpp" id="Snippet9":::
  :::code language="csharp" source="~/snippets/csharp/System.Runtime.Remoting.Proxies/ProxyAttribute/Overview/customproxy_sample.cs" id="Snippet9":::
@@ -585,8 +579,6 @@
 ## Remarks
  If the `ctorMsg` parameter is `null`, then the <xref:System.Runtime.Remoting.Proxies.RealProxy.InitializeServerObject*> method calls the parameterless constructor for the new instance of the remote object that is represented by the current <xref:System.Runtime.Remoting.Proxies.RealProxy>.
 
-
-
 ## Examples
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Remoting/CustomProxy_Attribute_RealProxy/CPP/customproxy_sample.cpp" id="Snippet5":::
  :::code language="csharp" source="~/snippets/csharp/System.Runtime.Remoting.Proxies/ProxyAttribute/Overview/customproxy_sample.cs" id="Snippet5":::
@@ -629,8 +621,6 @@
 
  The <xref:System.Runtime.Remoting.Messaging.IMessage> parameter provides a dictionary through the <xref:System.Runtime.Remoting.Messaging.IMessage.Properties?displayProperty=nameWithType> property. The dictionary contains name/value pairs of information about the method call, such as the name of the method called and its parameters.
 
-
-
 ## Examples
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Remoting/CustomProxy_Attribute_RealProxy/CPP/customproxy_sample.cpp" id="Snippet4":::
  :::code language="csharp" source="~/snippets/csharp/System.Runtime.Remoting.Proxies/ProxyAttribute/Overview/customproxy_sample.cs" id="Snippet4":::
@@ -670,8 +660,6 @@
  When an unmanaged proxy attempts to communicate with the common language runtime through COM, the runtime resolves the remote object that is represented by the unmanaged proxy. If the remote object is managed and also resides in a common language environment, then instead of communicating with it through distributed COM, the object is sent to the current process.
 
  If the remote object is not derived from <xref:System.MarshalByRefObject>, then it is serialized and copied to the current location. If it is derived from <xref:System.MarshalByRefObject>, then it returns a transparent proxy, and the remoting infrastructure caches the unmanaged proxy (the `IUnknown` interface) in the transparent proxy for future use.
-
-
 
 ## Examples
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Remoting/RealProxy_Sample/CPP/realproxy_sample.cpp" id="Snippet3":::
@@ -719,8 +707,6 @@
 ## Remarks
  The stub data is used by custom proxy users to decide what to do with an incoming method call. For example, the stub data might be information about the server's context that you can use to determine whether to execute the call locally, or send it through the remoting infrastructure.
 
-
-
 ## Examples
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Remoting/CustomProxy_Attribute_RealProxy/CPP/customproxy_sample.cpp" id="Snippet3":::
  :::code language="csharp" source="~/snippets/csharp/System.Runtime.Remoting.Proxies/ProxyAttribute/Overview/customproxy_sample.cs" id="Snippet3":::
@@ -762,8 +748,6 @@
  The <xref:System.Runtime.Remoting.Proxies.RealProxy.SupportsInterface*> method allows the current proxy instance to implement additional COM interfaces on behalf of the server object that the current instance represents. The current method generates the requested interface and returns a pointer to it. The types of COM interfaces that can be generated by this method depend on the proxy type, which in turn might depend on the type of the server object that the current proxy instance represents.
 
  For more information, see <xref:System.Runtime.Remoting.Proxies.ProxyAttribute>.
-
-
 
 ## Examples
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Remoting/RealProxy_Sample/CPP/realproxy_sample.cpp" id="Snippet1":::

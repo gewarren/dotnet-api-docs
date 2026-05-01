@@ -48,8 +48,6 @@
 
  Design-time editable regions are not supported in the <xref:System.Web.UI.WebControls.DetailsView> control, so the <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.GetEditableDesignerRegionContent*> and <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.SetEditableDesignerRegionContent*> methods have no functionality.
 
-
-
 ## Examples
  The following code example shows how to extend the <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner> class to change the appearance of controls that are derived from the <xref:System.Web.UI.WebControls.DetailsView> control at design time.
 
@@ -237,8 +235,6 @@
 ## Remarks
  First, the <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.GetDesignTimeHtml> method sets the <xref:System.Web.UI.WebControls.DetailsView.AutoGenerateRows> property of the <xref:System.Web.UI.WebControls.DetailsView> control to `true`, if the <xref:System.Web.UI.WebControls.DetailsView.Fields*> collection is empty. The <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.GetDesignTimeHtml*> then sets the <xref:System.Web.UI.WebControls.DetailsView.DataKeyNames*> collection of the <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.GetDesignTimeHtml*> control to an empty <xref:System.String> array if the schema of the data source cannot be obtained. It refreshes the <xref:System.ComponentModel.TypeDescriptor> object to force the <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.PreFilterProperties*> method to be called. It then calls the base method to generate the markup.
 
-
-
 ## Examples
  The following code example shows how to override the <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.GetDesignTimeHtml*> method in a class inherited from the <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner> class to change the appearance of the <xref:System.Web.UI.WebControls.DetailsView> control at design time. The example adds a new first row to the grid to contain the <xref:System.Web.UI.WebControls.DetailsView.Caption> property, if the <xref:System.Web.UI.WebControls.DetailsView.Caption*> is defined. If the <xref:System.Web.UI.WebControls.WebControl.BorderStyle> property of the control that is derived from <xref:System.Web.UI.WebControls.DetailsView> is the <xref:System.Web.UI.WebControls.BorderStyle.NotSet> or <xref:System.Web.UI.WebControls.BorderStyle.None> value, the <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.GetDesignTimeHtml*> draws a blue dashed border around the control to make its extent more visible. It does not change the run-time appearance of the control.
 
@@ -286,8 +282,6 @@
  The <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.GetDesignTimeHtml*?displayProperty=nameWithType> method calls the <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.GetDesignTimeHtml*?displayProperty=nameWithType> method to generate the markup for the design-time rendering of the <xref:System.Web.UI.WebControls.DetailsView> control. The <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.GetDesignTimeHtml*?displayProperty=nameWithType> method also populates `regions` with a <xref:System.Web.UI.Design.DesignerRegion> object for each clickable or selectable region of the design-time rendering.
 
  For the <xref:System.Web.UI.WebControls.DetailsView>, the first cell in each row is selectable; all the cells in the rows are clickable.
-
-
 
 ## Examples
  The following code example shows how to override the <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.GetDesignTimeHtml*> method in a class that is inherited from the <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner> class to change the appearance of the <xref:System.Web.UI.WebControls.DetailsView> control at design time. The example adds a new first row to the grid to contain the <xref:System.Web.UI.WebControls.DetailsView.Caption> property, if the <xref:System.Web.UI.WebControls.DetailsView.Caption*> is defined. If the <xref:System.Web.UI.WebControls.WebControl.BorderStyle> property of the control that is derived from the <xref:System.Web.UI.WebControls.DetailsView> is the <xref:System.Web.UI.WebControls.BorderStyle.NotSet> or <xref:System.Web.UI.WebControls.BorderStyle.None> value, the <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.GetDesignTimeHtml*> draws a blue dashed border around the control to make its extent more visible. It does not change the run-time appearance of the control.
@@ -476,8 +470,6 @@
 
  For the <xref:System.Web.UI.WebControls.DetailsView> control, the <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.PreFilterProperties*> method sets the <xref:System.ComponentModel.BrowsableAttribute> object of the <xref:System.Web.UI.WebControls.DetailsView.Fields> property to `false` when the control is in template mode. This ensures that a column that is in template mode cannot be deleted using the `Fields` dialog box.
 
-
-
 ## Examples
  The following code example shows how to override the <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.PreFilterProperties*> method in a class that is inherited from the <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner> class to change the `Properties` grid of the <xref:System.Web.UI.WebControls.DetailsView> control at design time. The example makes the <xref:System.Web.UI.Control.NamingContainer> property visible in the `Properties` grid.
 
@@ -522,8 +514,6 @@
 
 ## Remarks
  The <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.SampleRowCount> property always returns the number `2`. This causes two page links to be displayed in the pager row of the <xref:System.Web.UI.WebControls.DetailsView> control at design time.
-
-
 
 ## Examples
  The following code example shows how to override the <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner.SampleRowCount> property in a class inherited from the <xref:System.Web.UI.Design.WebControls.DetailsViewDesigner> class to change the number of page links appearing in the pager row of the <xref:System.Web.UI.WebControls.DetailsView> control at design time. The example causes five page links to be displayed.

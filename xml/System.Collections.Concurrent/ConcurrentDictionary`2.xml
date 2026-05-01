@@ -137,8 +137,6 @@
 
  All these operations are atomic and are thread-safe with regards to all other operations on the <xref:System.Collections.Concurrent.ConcurrentDictionary`2> class. The only exceptions are the methods that accept a delegate, that is, <xref:System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate*> and <xref:System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd*>. For modifications and write operations to the dictionary, <xref:System.Collections.Concurrent.ConcurrentDictionary`2> uses fine-grained locking to ensure thread safety. (Read operations on the dictionary are performed in a lock-free manner.) However, delegates for these methods are called outside the locks to avoid the problems that can arise from executing unknown code under a lock. Therefore, the code executed by these delegates is not subject to the atomicity of the operation.
 
-
-
 ## Examples
  The following example shows how to construct a <xref:System.Collections.Concurrent.ConcurrentDictionary`2> object.
 
@@ -2752,8 +2750,6 @@ This member is an explicit interface member implementation. It can be used only 
 
 ## Remarks
  This method returns `false` if the key already exists. Use the <xref:System.Collections.Concurrent.ConcurrentDictionary`2.TryUpdate*> or <xref:System.Collections.Concurrent.ConcurrentDictionary`2.AddOrUpdate*> method to update the value in case a key already exists.
-
-
 
 ## Examples
  The following example shows how to call the <xref:System.Collections.Concurrent.ConcurrentDictionary`2.TryAdd*?displayProperty=nameWithType> method:

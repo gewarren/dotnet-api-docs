@@ -28,8 +28,6 @@
 
  You can retrieve a reference to the current <xref:System.Web.ClientServices.Providers.ClientWindowsAuthenticationMembershipProvider> instance through the `static` <xref:System.Web.Security.Membership.Provider?displayProperty=nameWithType> property. You can use the membership provider reference to call the <xref:System.Web.ClientServices.Providers.ClientWindowsAuthenticationMembershipProvider.ValidateUser*?displayProperty=nameWithType> method directly. Additionally, you will need the membership provider reference to call the <xref:System.Web.ClientServices.Providers.ClientWindowsAuthenticationMembershipProvider.Logout*> method, which is not available in the <xref:System.Web.Security.MembershipProvider> base class.
 
-
-
 ## Examples
  The following example code demonstrates how to use this method to authenticate a user by using Windows authentication. In this example, the value of the `static` <xref:System.Web.Security.Membership.Provider?displayProperty=nameWithType> property is cast to a <xref:System.Web.ClientServices.Providers.ClientWindowsAuthenticationMembershipProvider> instance. This makes sure that a <xref:System.NullReferenceException> will be thrown if you accidentally test this code by using another membership provider.
 
@@ -581,8 +579,6 @@
 ## Remarks
  For users authenticated through client application services, the `static` <xref:System.Threading.Thread.CurrentPrincipal?displayProperty=nameWithType> property is set to a <xref:System.Web.ClientServices.ClientRolePrincipal> object that enables access to the configured role service. The <xref:System.Web.ClientServices.Providers.ClientWindowsAuthenticationMembershipProvider.Logout*> method resets the <xref:System.Threading.Thread.CurrentPrincipal> property to a <xref:System.Security.Principal.WindowsPrincipal> object that contains the current <xref:System.Security.Principal.WindowsIdentity>. After you call this method, you can no longer retrieve roles for the user through the <xref:System.Web.ClientServices.Providers.ClientRoleProvider> class. To reauthenticate the current user, call the <xref:System.Web.ClientServices.Providers.ClientWindowsAuthenticationMembershipProvider.ValidateUser*?displayProperty=nameWithType> method.
 
-
-
 ## Examples
  The following example code demonstrates how to use this method to log out the user.
 
@@ -950,8 +946,6 @@
 
 ## Remarks
  When you configure your application to use the <xref:System.Web.ClientServices.Providers.ClientWindowsAuthenticationMembershipProvider> class, the `static` <xref:System.Web.Security.Membership.ValidateUser*?displayProperty=nameWithType> method will use this method for its implementation. The <xref:System.Web.ClientServices.Providers.ClientWindowsAuthenticationMembershipProvider.ValidateUser*?displayProperty=nameWithType> method automatically authenticates the current user and sets the `static` <xref:System.Threading.Thread.CurrentPrincipal?displayProperty=nameWithType> property to a <xref:System.Web.ClientServices.ClientRolePrincipal> object that contains the current <xref:System.Security.Principal.WindowsIdentity>. If a <xref:System.Web.ClientServices.Providers.ClientRoleProvider> is configured for your application, you can use the <xref:System.Web.ClientServices.ClientRolePrincipal> object to retrieve user role information from the roles service.
-
-
 
 ## Examples
  The following example code demonstrates how to use this method to authenticate a user by using Windows authentication.

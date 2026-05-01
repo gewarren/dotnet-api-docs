@@ -240,8 +240,6 @@
 
  It is assumed that the `TextReader` is already set to the correct encoding. This is used by clients that have already read some things from the stream in a multi-part MIME scenario.
 
-
-
 ## Examples
  The following example loads an XML string into the `XmlTextReader` object using the <xref:System.IO.StringReader> class.
 
@@ -323,8 +321,6 @@ Stream s=(Stream)resolver.GetEntity(myUri, null, typeof(Stream));
 // Construct a reader using the Stream object.
 XmlTextReader reader = new XmlTextReader(s);
 ```
-
-
 
 ## Examples
  The following example reads an XML file and displays each of the nodes.
@@ -1012,8 +1008,6 @@ XmlTextReader reader = new XmlTextReader(s);
 |Attribute|The value of an attribute (the part inside the quotes).|
 |Document|The contents of an entire XML document. This enforces document level rules.|
 
-
-
 ## Examples
  The following example parses an XML fragment. It uses the `XmlParserContext` and its <xref:System.Xml.XmlNamespaceManager> to handle namespace resolution.
 
@@ -1079,8 +1073,6 @@ XmlTextReader reader = new XmlTextReader(s);
 
  This property is relevant to `Element`, `DocumentType` and `XmlDeclaration` nodes only. (Other node types do not have attributes.)
 
-
-
 ## Examples
  The following example displays all attributes on the current node.
 
@@ -1141,8 +1133,6 @@ XmlTextReader reader = new XmlTextReader(s);
 > We recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create*?displayProperty=nameWithType> method to take advantage of new functionality.
 
  A networked XML document is comprised of chunks of data aggregated using various W3C standard inclusion mechanisms and therefore contains nodes that come from different places. DTD entities are an example of this, but this is not limited to DTDs. The base URI tells you where these nodes came from. If there is no base URI for the nodes being returned (for example, they were parsed from an in-memory string), `String.Empty` is returned.
-
-
 
 ## Examples
  The following example displays the base URI for each of the nodes.
@@ -1421,8 +1411,6 @@ XmlTextReader reader = new XmlTextReader(s);
 
 > [!NOTE]
 > We recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create*?displayProperty=nameWithType> method to take advantage of new functionality.
-
-
 
 ## Examples
  The following example displays each node including its depth, line number, and line position.
@@ -1815,8 +1803,6 @@ XmlTextReader reader = new XmlTextReader(s);
 
  If the reader is positioned on a `DocumentType` node, this method can be used to get the PUBLIC and SYSTEM literals, for example, `reader.GetAttribute("PUBLIC")`
 
-
-
 ## Examples
  The following example gets the value of the ISBN attribute.
 
@@ -2037,8 +2023,6 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
 
  After calling this method, <xref:System.Xml.XmlTextReader.EOF> is set to `true`.
 
-
-
 ## Examples
  The following example reads the first part of an XML document and then uses `GetRemainder` to complete reading the document using a second reader.
 
@@ -2172,8 +2156,6 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
 |`Whitespace`|The white space between markup.|
 |`XmlDeclaration`|The content of the declaration.|
 
-
-
 ## Examples
  The following example displays the value for every node that can have a value.
 
@@ -2300,8 +2282,6 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
  A corresponding `EndElement` node is not generated for empty elements.
 
  `IsEmptyElement` simply reports whether or not the element in the source document had an end element tag.
-
-
 
 ## Examples
  The following example displays the text content of each element.
@@ -2477,8 +2457,6 @@ If the reader is positioned on a `DocumentType` node, this method can be used to
 
  Combined with <xref:System.Xml.XmlTextReader.LinePosition>, a value of `1,1` indicates the start of the document.
 
-
-
 ## Examples
  The following example displays each node including its depth, line number, and line position.
 
@@ -2553,8 +2531,6 @@ abc<tag/>
 
  Combined with <xref:System.Xml.XmlTextReader.LineNumber>, a value of `1,1` indicates the start of the document.
 
-
-
 ## Examples
  The following example displays each node including its depth, line number, and line position.
 
@@ -2614,8 +2590,6 @@ abc<tag/>
 
 > [!NOTE]
 > We recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create*?displayProperty=nameWithType> method to take advantage of new functionality.
-
-
 
 ## Examples
  The following example displays the local name of each node, and, if they exist, the prefix and namespace URI.
@@ -2775,8 +2749,6 @@ abc<tag/>
 
 > [!NOTE]
 > We recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create*?displayProperty=nameWithType> method to take advantage of new functionality.
-
-
 
 ## Examples
  The following example displays all attributes on the current node.
@@ -2969,8 +2941,6 @@ abc<tag/>
 
  Use this method to return to an element after navigating through its attributes. This method moves the reader to one of the following node types: `Element`, `DocumentType`, or `XmlDeclaration`.
 
-
-
 ## Examples
  The following example displays all attributes on the current node.
 
@@ -3030,8 +3000,6 @@ abc<tag/>
 
 > [!NOTE]
 > We recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create*?displayProperty=nameWithType> method to take advantage of new functionality.
-
-
 
 ## Examples
  The following example gets the value of the first attribute of the root node.
@@ -3098,8 +3066,6 @@ abc<tag/>
 > We recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create*?displayProperty=nameWithType> method to take advantage of new functionality.
 
  If the current node is an element node, this method is equivalent to <xref:System.Xml.XmlTextReader.MoveToFirstAttribute*>. If `MoveToNextAttribute` returns `true`, the reader moves to the next attribute; otherwise, the position of the reader does not change.
-
-
 
 ## Examples
  The following example displays all attributes on the current node.
@@ -3178,8 +3144,6 @@ abc<tag/>
 
 > [!NOTE]
 > We recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create*?displayProperty=nameWithType> method to take advantage of new functionality.
-
-
 
 ## Examples
  The following example reads an XML file and displays each of the nodes.
@@ -3303,8 +3267,6 @@ abc<tag/>
 
  This property is relevant to `Element` and `Attribute` nodes only.
 
-
-
 ## Examples
  The following example displays the local name of each node, and, if they exist, the prefix and namespace URI.
 
@@ -3424,8 +3386,6 @@ abc<tag/>
 
  This property never returns the following `XmlNodeType` types: `Document`, `DocumentFragment`, `Entity`, `EndEntity`, or `Notation`.
 
-
-
 ## Examples
  The following example reads an XML file and displays each of the nodes.
 
@@ -3512,8 +3472,6 @@ abc<tag/>
 
  Refer to the W3C XML 1.0 recommendation for further discussion on normalization.
 
-
-
 ## Examples
  The following example shows reader behavior with normalization turned on and then off.
 
@@ -3572,8 +3530,6 @@ abc<tag/>
 
 > [!NOTE]
 > We recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create*?displayProperty=nameWithType> method to take advantage of new functionality.
-
-
 
 ## Examples
  The following example displays the local name of each node, and, if they exist, the prefix and namespace URI.
@@ -3764,8 +3720,6 @@ abc<tag/>
 
  This method requires at least four bytes from the data stream in order to begin parsing. If fewer than four bytes are returned and there is no more data in the stream, the method will fail. If there is more data in the stream, the method will block parsing until receipt of the fourth byte.
 
-
-
 ## Examples
  The following example reads an XML file and displays each node.
 
@@ -3838,8 +3792,6 @@ abc<tag/>
 
  Use this method after calling `MoveToAttribute` to read through the text or entity reference nodes that make up the attribute value. The <xref:System.Xml.XmlReader.Depth> of the attribute value nodes is one plus the depth of the attribute node; it increments and decrements by one when you step into and out of general entity references.
 
-
-
 ## Examples
  The following example reads an attribute with text and entity nodes.
 
@@ -3907,8 +3859,6 @@ abc<tag/>
 > We recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create*?displayProperty=nameWithType> method to take advantage of new functionality.
 
  Like <xref:System.Xml.XmlTextReader.ReadChars*>, this method can be called successively to read large streams of embedded text. It decodes Base64 content and returns the decoded binary bytes (for example, an inline Base64 encoded GIF image) into the buffer. See RFC 1521. (You can obtain RFCs from the [Request for Comments Web site](https://www.rfc-editor.org).)
-
-
 
 ## Examples
  The following example reads a file containing Base64 and BinHex data.
@@ -3986,8 +3936,6 @@ abc<tag/>
 > We recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create*?displayProperty=nameWithType> method to take advantage of new functionality.
 
  Like <xref:System.Xml.XmlTextReader.ReadChars*>, this method can be called successively to read large streams of embedded text. It decodes `BinHex` content and returns the decoded binary bytes (for example, an inline `BinHex` encoded GIF image) into the buffer.
-
-
 
 ## Examples
  The following example reads a file containing `Base64` and `BinHex` data.
@@ -4107,8 +4055,6 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
  }
 }
 ```
-
-
 
 ## Examples
  The following example reads in XML using `ReadChars`.
@@ -4354,8 +4300,6 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
 
  If you call <xref:System.Xml.XmlTextReader.Read*> before all of the element content is consumed, the reader may behave as if the first content was consumed and then the <xref:System.Xml.XmlTextReader.Read*> method was called. This means that the reader reads all the text until the end element is encountered. It then reads the end tag node, reads the next node, and then positions itself on the next subsequent node.
 
-
-
 ## Examples
  See <xref:System.Xml.XmlReader.ReadElementContentAsBase64*?displayProperty=nameWithType> to see an example using this method.
 
@@ -4434,8 +4378,6 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
  If the `count` value is higher than the number of bytes in the document, or if it is equal to the number of bytes in the document, the <xref:System.Xml.XmlTextReader> reads all the remaining bytes in the document and returns the number of bytes read. The next <xref:System.Xml.XmlTextReader> method call returns a zero and moves the reader to the node following the <xref:System.Xml.XmlNodeType.EndElement>.
 
  If you call <xref:System.Xml.XmlTextReader.Read*> before all of the element content is consumed, the reader may behave as if the first content was consumed and then the <xref:System.Xml.XmlTextReader.Read*> method was called. This means that the reader reads all the text until the end element is encountered. It then reads the end tag node, reads the next node, and then positions itself on the next subsequent node.
-
-
 
 ## Examples
  See <xref:System.Xml.XmlReader.ReadElementContentAsBinHex*?displayProperty=nameWithType> to see an example using this method.
@@ -4556,8 +4498,6 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
 
  If positioned on a text node, `ReadString` performs the same concatenation from the text node to the element end tag. If the reader is positioned on an attribute text node, `ReadString` has the same functionality as if the reader were position on the element start tag. It returns all the concatenated element text nodes.
 
-
-
 ## Examples
  The following example displays the text content of each element.
 
@@ -4636,8 +4576,6 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
 -   <xref:System.Xml.XmlTextReader.XmlResolver>
 
 -   <xref:System.Xml.XmlTextReader.WhitespaceHandling>
-
-
 
 ## Examples
  The following example parses two XML documents in a single stream.
@@ -5081,8 +5019,6 @@ This member is an explicit interface member implementation. It can be used only 
 > [!NOTE]
 > We recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create*?displayProperty=nameWithType> method to take advantage of new functionality.
 
-
-
 ## Examples
  The following example reads an XML file and displays each node.
 
@@ -5148,8 +5084,6 @@ This member is an explicit interface member implementation. It can be used only 
  This property can be changed at any time and takes effect on the next read operation.
 
  Because the `XmlTextReader` does not have DTD information available to it, `SignificantWhitespace` nodes are only returned within an `xml:space='preserve'` scope.
-
-
 
 ## Examples
  The following example reads an XML fragment.
@@ -5220,8 +5154,6 @@ This member is an explicit interface member implementation. It can be used only 
  \</root>
 
  When the reader is positioned on the `name` element, you can use this property to find that it is in the scope of a US English `xml:lang` attribute.
-
-
 
 ## Examples
  The following example displays the `xml:lang` value for each of the nodes.
@@ -5300,8 +5232,6 @@ This member is an explicit interface member implementation. It can be used only 
 
  `Semi-trusted code:` The `XmlResolver` property is set to `null`. External resources are not resolved.
 
-
-
 ## Examples
  The following example uses the `XmlResolver` property to specify the credentials necessary to access the networked file.
 
@@ -5363,8 +5293,6 @@ This member is an explicit interface member implementation. It can be used only 
 
 > [!NOTE]
 > We recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create*?displayProperty=nameWithType> method to take advantage of new functionality.
-
-
 
 ## Examples
  The following example parses a file and returns significant white space if an `xml:space='preserve'` scope is found.

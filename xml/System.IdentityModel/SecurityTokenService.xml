@@ -34,8 +34,6 @@
 
  An STS is configured through the <xref:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration> class.
 
-
-
 ## Examples
  The code examples that are used in the <xref:System.IdentityModel.SecurityTokenService> topics are taken from the `Custom Token` sample. This sample provides custom classes that enable processing of Simple Web Tokens (SWT) and it includes an implementation of a passive STS that is capable of serving an SWT token. For an example of how to implement an active STS, you can see the `Federation Metadata` sample. For information about these samples and other samples available for WIF and about where to download them, see [WIF Code Sample Index](/previous-versions/dotnet/framework/windows-identity-foundation/wif-code-sample-index). The following code shows the implementation of a passive STS using the <xref:System.IdentityModel.SecurityTokenService> class.
 
@@ -649,8 +647,6 @@
 
 -   **Which claim values should be assigned to the claims in the response?** For an Identity Provider (IP-STS) this typically means using one or more claims in the requestor's <xref:System.Security.Claims.ClaimsPrincipal> (provided by the `principal` parameter) to access a store (or other entity) to return values for the required claim types. For a Federation Provider (R-STS) this typically means performing some kind of processing on the requestor's incoming claims to fulfill the request; perhaps performing filtering or transformation on some claims presented by the requestor, while passing others through unmodified. Of course, as in the case of deciding which claims to include in the response, the details and logic of how to determine the values of these claims is up to your implementation.
 
-
-
 ## Examples
  The code example that is used in this topic is taken from the `Custom Token` sample. This sample provides custom classes that enable processing of Simple Web Tokens (SWT) and it includes an implementation of a passive STS that is capable of serving an SWT token. For an example of how to implement an active STS, you can see the `Federation Metadata` sample. For information about these samples and other samples available for WIF and about where to download them, see [WIF Code Sample Index](/previous-versions/dotnet/framework/windows-identity-foundation/wif-code-sample-index). The following code shows how to override the <xref:System.IdentityModel.SecurityTokenService.GetOutputClaimsIdentity*> method to return claims for your STS. In this example, the Request Security Token (RST) message is ignored and a collection of claims based on the user as authenticated at the STS is returned.
 
@@ -828,8 +824,6 @@
     >  By default, the <xref:System.IdentityModel.Scope.TokenEncryptionRequired> and <xref:System.IdentityModel.Scope.SymmetricKeyEncryptionRequired> properties are set `true` to prevent the STS from issuing tokens that are not secure. It is recommended that these properties never be set to `false` in a production environment.
 
 - Determine the address to which the response should be returned. Set either the <xref:System.IdentityModel.Scope.AppliesToAddress> or <xref:System.IdentityModel.Scope.ReplyToAddress> property accordingly.
-
-
 
 ## Examples
  The code example that is used in this topic is taken from the `Custom Token` sample. This sample provides custom classes that enable processing of Simple Web Tokens (SWT) and it includes an implementation of a passive STS that is capable of serving an SWT token. For an example of how to implement an active STS, you can see the `Federation Metadata` sample. For information about these samples and other samples available for WIF and about where to download them, see [WIF Code Sample Index](/previous-versions/dotnet/framework/windows-identity-foundation/wif-code-sample-index).

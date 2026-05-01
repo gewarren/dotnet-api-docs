@@ -167,8 +167,6 @@
 > [!NOTE]
 > The actual encoding of the character is application-specific. For example, Order\_x0020\_Details becomes Order Details. Even escaped characters that are invalid in XML names will be recognized and decoded.
 
-
-
 ## Examples
  The following example encodes and decodes names.
 
@@ -241,8 +239,6 @@
  For example, if you passed this method the invalid name a:b, it returns a\_x003a\_b, which is a valid local name.
 
  If `name` is `null` or <xref:System.String.Empty?displayProperty=fullName>, the method returns the same value.
-
-
 
 ## Examples
  The following example encodes and decodes names.
@@ -320,8 +316,6 @@
  The underscore character does not need to be escaped unless it is followed by a character sequence that together with the underscore can be misinterpreted as an escape sequence when decoding the name. For example, Order\_Details is not encoded, but Order\_x0020\_ is encoded as Order\_x005f\_x0020\_. No shortforms are allowed. For example, the forms \_x20\_ and \_\_ are not generated.
 
  This method guarantees the name is valid according to the XML specification. It allows colons in any position, which means the name may still be invalid according to the [W3C Namespace Specification](https://www.w3.org/TR/REC-xml-names/). To guarantee it is a valid namespace qualified name use <xref:System.Xml.XmlConvert.EncodeLocalName*> for the prefix and local name parts and join the result with a colon.
-
-
 
 ## Examples
  The following example encodes and decodes names.
@@ -1277,8 +1271,6 @@
 
  When more than seven digits are specified for fractional seconds, the value is rounded. For example, 00000004 becomes 0000000 and 00000005 becomes 0000001.
 
-
-
 ## Examples
  The following example demonstrates how to read a string from an XML file and use the <xref:System.Xml.XmlConvert.ToDateTimeOffset*> method to convert the string to a <xref:System.DateTimeOffset> type. The input string is validated against the specified format before being converted.
 
@@ -1368,8 +1360,6 @@
  If the offset specified within the input string will cause an overflow in the deserialized representation of the DateTimeOffset, a FormatException is thrown.
 
  When more than seven digits are specified for fractional seconds, the value is rounded. For example, 00000004 becomes 0000000 and 00000005 becomes 0000001.
-
-
 
 ## Examples
  The following example demonstrates how to read a string from an XML file and use the <xref:System.Xml.XmlConvert.ToDateTimeOffset*> method to convert the string to a <xref:System.DateTimeOffset> type. The input string must validate against one of the specified formats before being converted.
@@ -1501,8 +1491,6 @@
 
 ## Remarks
  If `s` is INF or -INF, this method returns Double.PositiveInfinity or Double.NegativeInfinity respectively.
-
-
 
 ## Examples
  The following example uses `ToDouble` and <xref:System.Xml.XmlConvert.ToDateTime*> to read strongly typed data.
@@ -2251,8 +2239,6 @@
 
 ## Remarks
  If `value` is Double.PositiveInfinity or Double.NegativeInfinity, this method returns the string INF or -INF respectively.
-
-
 
 ## Examples
  The following example, converts data types to string and then writes the information out to the console.
@@ -3277,8 +3263,6 @@ catch(Exception e)
 }
 ```
 
-
-
 ## Examples
  The following example uses the `VerifyName` method to write an element name.
 
@@ -3615,8 +3599,6 @@ catch(Exception e) {
 
  If any of the characters are not valid whitespace characters, an `XmlException` is thrown with information about the first invalid character encountered.
 
-
-
 ## Examples
  The following example uses the <xref:System.Xml.XmlConvert.VerifyWhitespace*> method to detect the presence of an invalid character in a value assigned to the start element.
 
@@ -3679,8 +3661,6 @@ catch(Exception e) {
  No other values than the passed in argument should be returned. See [XML 1.0 spec (fourth edition)](https://go.microsoft.com/fwlink/?LinkID=147985) production [2] `Char` for details on the allowed characters.
 
  If the parameter is null, an `ArgumentNullException` will be thrown. If any of the characters are not valid xml characters, an `XmlException` is thrown with information on the first invalid character encountered.
-
-
 
 ## Examples
  The following example uses the <xref:System.Xml.XmlConvert.VerifyXmlChars*> method used to detect an illegal character in the start element.

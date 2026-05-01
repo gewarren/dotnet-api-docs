@@ -229,8 +229,6 @@ For more information about this API, see [Supplemental API remarks for Regex](/d
 
  This constructor instantiates a regular expression object that attempts a case-sensitive match of any alphabetical characters defined in `pattern`. For a case-insensitive match, use the <xref:System.Text.RegularExpressions.Regex.%23ctor(System.String,System.Text.RegularExpressions.RegexOptions)?displayProperty=nameWithType> constructor.
 
-
-
 ## Examples
  The following example illustrates how to use this constructor to instantiate a regular expression that matches any word that begins with the letters "a" or "t".
 
@@ -377,8 +375,6 @@ For more information about this API, see [Supplemental API remarks for Regex](/d
 
  A <xref:System.Text.RegularExpressions.Regex> object is immutable, which means that it can be used only for the match parameters you define when you create it. However, it can be used any number of times without being recompiled.
 
-
-
 ## Examples
  The following example illustrates how to use this constructor to instantiate a regular expression that matches any word that begins with the letters "a" or "t".
 
@@ -479,8 +475,6 @@ For more information about this API, see [Supplemental API remarks for Regex](/d
 - The length and complexity of the regular expression pattern. Longer and more complex regular expressions require more time than shorter and simpler ones.
 
 - The expected machine load. Processing takes more time on systems that have high CPU and memory utilization.
-
-
 
 ## Examples
  The following example calls the <xref:System.Text.RegularExpressions.Regex.%23ctor(System.String,System.Text.RegularExpressions.RegexOptions,System.TimeSpan)> constructor to instantiate a <xref:System.Text.RegularExpressions.Regex> object with a time-out value of one second. The regular expression pattern `(a+)+$`, which matches one or more sequences of one or more "a" characters at the end of a line, is subject to excessive backtracking. If a <xref:System.Text.RegularExpressions.RegexMatchTimeoutException> is thrown, the example increases the time-out value up to the maximum value of three seconds. Otherwise, it abandons the attempt to match the pattern.
@@ -983,8 +977,6 @@ For more information about this API, see [Supplemental API remarks for Regex](/d
 
  Ordinarily, the code that instantiates and uses the compiled regular expression is found in an assembly or application that is separate from the code that creates the assembly.
 
-
-
 ## Examples
  The following example creates an assembly named RegexLib.dll. The assembly includes two compiled regular expressions. The first, `Utilities.RegularExpressions.DuplicatedString`, matches two identical contiguous words. The second, `Utilities.RegularExpressions.EmailAddress`, checks whether a string has the correct format to be an email address.
 
@@ -1106,8 +1098,6 @@ For more information about this API, see [Supplemental API remarks for Regex](/d
 5.  Instantiate a <xref:System.Reflection.Emit.CustomAttributeBuilder> object by passing its constructor the <xref:System.Reflection.ConstructorInfo> object retrieved in step 3 and the <xref:System.Object> array created in step 4.
 
  You can then pass an array of these <xref:System.Reflection.Emit.CustomAttributeBuilder> objects instead of the `attributes` parameter to the <xref:System.Text.RegularExpressions.Regex.CompileToAssembly(System.Text.RegularExpressions.RegexCompilationInfo[],System.Reflection.AssemblyName,System.Reflection.Emit.CustomAttributeBuilder[])?displayProperty=nameWithType> method.
-
-
 
 ## Examples
  The following example creates an assembly named RegexLib.dll and applies the <xref:System.Reflection.AssemblyTitleAttribute> attribute to it. The assembly includes two compiled regular expressions. The first, `Utilities.RegularExpressions.DuplicatedString`, matches two identical contiguous words. The second, `Utilities.RegularExpressions.EmailAddress`, checks whether a string has the correct format to be an email address.
@@ -2349,8 +2339,6 @@ Each match won't actually happen until <xref:System.Text.RegularExpressions.Rege
 
  While the <xref:System.Text.RegularExpressions.Regex.Escape*> method escapes the straight opening bracket ([) and opening brace ({) characters, it does not escape their corresponding closing characters (] and }). In most cases, escaping these is not necessary. If a closing bracket or brace is not preceded by its corresponding opening character, the regular expression engine interprets it literally. If an opening bracket or brace is interpreted as a metacharacter, the regular expression engine interprets the first corresponding closing character as a metacharacter. If this is not the desired behavior, the closing bracket or brace should be escaped by explicitly prepending the backslash (\\) character. For an illustration, see the Example section.
 
-
-
 ## Examples
  The following example extracts comments from text. It assumes that the comments are delimited by a begin comment symbol and an end comment symbol that is selected by the user. Because the comment symbols are to be interpreted literally, they are passed to the <xref:System.Text.RegularExpressions.Regex.Escape*> method to ensure that they cannot be misinterpreted as metacharacters. In addition, the example explicitly checks whether the end comment symbol entered by the user is a closing bracket (]) or brace (}). If it is, a backslash character (\\) is prepended to the bracket or brace so that it is interpreted literally. Note that the example also uses the <xref:System.Text.RegularExpressions.Match.Groups*?displayProperty=nameWithType> collection to display the comment only, rather than the comment together with its opening and closing comment symbols.
 
@@ -2497,8 +2485,6 @@ Allows an <see cref="T:System.Object" /> to attempt to free resources and perfor
 
  You can use the <xref:System.Array.Length> property on the array returned by this method to determine the number of groups in a regular expression.
 
-
-
 ## Examples
  The following example defines a general-purpose `ShowMatches` method that displays the names of regular expression groups and their matched text.
 
@@ -2575,8 +2561,6 @@ Allows an <see cref="T:System.Object" /> to attempt to free resources and perfor
  Both unnamed and named capturing groups can be accessed by number. Unnamed groups are numbered from left to right starting with 1. (The capturing group in index 0 (zero) represents the match as a whole.)  Named groups are then numbered from left to right starting with a number that is one greater than the number of unnamed capturing groups.
 
  Referencing a group by its number instead of by string name can provide faster access.
-
-
 
 ## Examples
  The following example defines a regular expression, `\b((?<word>\w+)\s*)+(?<end>[.?!])`, that matches a sentence. The regular expression includes three capturing groups: an unnamed group that captures an individual word along with a space character that may follow it; a group named `word` that captures the individual words in the sentence; and a group named `end` that captures the punctuation that ends the sentence. The example calls the <xref:System.Text.RegularExpressions.Regex.GetGroupNumbers*> method to get the numbers of all capturing groups, and then displays their captured string. In addition, the <xref:System.Text.RegularExpressions.Regex.GroupNameFromNumber*> method is used to indicate whether a particular numbered group corresponds to a named group.
@@ -2657,8 +2641,6 @@ Allows an <see cref="T:System.Object" /> to attempt to free resources and perfor
  If `i` is the number of a named group, the method returns the name of the group. If `i` is the number of an unnamed group, the method returns the string representation of the number. For example, if `i` is 1, the method returns "1". If `i` is not the number of a capturing group, the method returns <xref:System.String.Empty?displayProperty=nameWithType>.
 
  If a pattern match is found, the value returned by this method can then be used to retrieve the <xref:System.Text.RegularExpressions.Group> object that represents the captured group from the <xref:System.Text.RegularExpressions.GroupCollection.Item*?displayProperty=nameWithType> property. The <xref:System.Text.RegularExpressions.GroupCollection> object is returned by the <xref:System.Text.RegularExpressions.Match.Groups?displayProperty=nameWithType> property.
-
-
 
 ## Examples
  The following example defines a regular expression pattern that matches an address line containing a U.S. city name, state name, and zip code. The example uses the <xref:System.Text.RegularExpressions.Regex.GroupNameFromNumber*> method to retrieve the names of capturing groups. It then uses these names to retrieve the corresponding captured groups for matches.
@@ -3033,8 +3015,6 @@ Allows an <see cref="T:System.Object" /> to attempt to free resources and perfor
 
  The <xref:System.Text.RegularExpressions.RegexMatchTimeoutException> exception is thrown if the execution time of the matching operation exceeds the time-out interval specified by the <xref:System.Text.RegularExpressions.Regex.%23ctor(System.String,System.Text.RegularExpressions.RegexOptions,System.TimeSpan)?displayProperty=nameWithType> constructor. If you do not set a time-out interval when you call the constructor, the exception is thrown if the operation exceeds any time-out value established for the application domain in which the <xref:System.Text.RegularExpressions.Regex> object is created. If no time-out is defined in the <xref:System.Text.RegularExpressions.Regex> constructor call or in the application domain's properties, or if the time-out value is <xref:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout?displayProperty=nameWithType>, no exception is thrown.
 
-
-
 ## Examples
  The following example illustrates the use of the <xref:System.Text.RegularExpressions.Regex.IsMatch(System.String)> method to determine whether a string is a valid part number. The regular expression assumes that the part number has a specific format that consists of three sets of characters separated by hyphens. The first set, which contains four characters, must consist of an alphanumeric character followed by two numeric characters followed by an alphanumeric character. The second set, which consists of three characters, must be numeric. The third set, which consists of four characters, must have three numeric characters followed by an alphanumeric character.
 
@@ -3325,8 +3305,6 @@ For more details about `startat`, see the Remarks section of <xref:System.Text.R
 
  The <xref:System.Text.RegularExpressions.RegexMatchTimeoutException> exception is thrown if the execution time of the matching operation exceeds the time-out interval specified for the application domain in which the method is called. If no time-out is defined in the application domain's properties, or if the time-out value is <xref:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout?displayProperty=nameWithType>, no exception is thrown.
 
-
-
 ## Examples
  The following example illustrates the use of the <xref:System.Text.RegularExpressions.Regex.IsMatch(System.String,System.String)> method to determine whether a string is a valid part number. The regular expression assumes that the part number has a specific format that consists of three sets of characters separated by hyphens. The first set, which contains four characters, must consist of an alphanumeric character followed by two numeric characters followed by an alphanumeric character. The second set, which consists of three characters, must be numeric. The third set, which consists of four characters, must have three numeric characters followed by an alphanumeric character.
 
@@ -3492,8 +3470,6 @@ For more details about `startat`, see the Remarks section of <xref:System.Text.R
  The `pattern` parameter consists of regular expression language elements that symbolically describe the string to match. For more information about regular expressions, see [.NET Regular Expressions](/dotnet/standard/base-types/regular-expressions) and [Regular Expression Language - Quick Reference](/dotnet/standard/base-types/regular-expression-language-quick-reference).
 
  The <xref:System.Text.RegularExpressions.RegexMatchTimeoutException> exception is thrown if the execution time of the matching operation exceeds the time-out interval specified for the application domain in which the method is called. If no time-out is defined in the application domain's properties, or if the time-out value is <xref:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout?displayProperty=nameWithType>, no exception is thrown.
-
-
 
 ## Examples
  The following example illustrates the use of the <xref:System.Text.RegularExpressions.Regex.IsMatch(System.String,System.String)> method to determine whether a string is a valid part number. The regular expression assumes that the part number has a specific format that consists of three sets of characters separated by hyphens. The first set, which contains four characters, must consist of an alphanumeric character followed by two numeric characters followed by an alphanumeric character. The second set, which consists of three characters, must be numeric. The third set, which consists of four characters, must have three numeric characters followed by an alphanumeric character.
@@ -3674,8 +3650,6 @@ For more details about `startat`, see the Remarks section of <xref:System.Text.R
 
  The `matchTimeout` parameter specifies how long a pattern matching method should try to find a match before it times out. Setting a time-out interval prevents regular expressions that rely on excessive backtracking from appearing to stop responding when they process input that contains near matches. For more information, see [Best Practices for Regular Expressions](/dotnet/standard/base-types/best-practices) and [Backtracking](/dotnet/standard/base-types/backtracking-in-regular-expressions). If no match is found in that time interval, the method throws a <xref:System.Text.RegularExpressions.RegexMatchTimeoutException> exception. `matchTimeout` overrides any default time-out value defined for the application domain in which the method executes.
 
-
-
 ## Examples
  The following example illustrates the use of the <xref:System.Text.RegularExpressions.Regex.IsMatch(System.String,System.String,System.Text.RegularExpressions.RegexOptions,System.TimeSpan)> method to determine whether a string is a valid part number. The regular expression assumes that the part number has a specific format that consists of three sets of characters separated by hyphens. The first set, which contains four characters, must consist of an alphanumeric character followed by two numeric characters followed by an alphanumeric character. The second set, which consists of three characters, must be numeric. The third set, which consists of four characters, must have three numeric characters followed by an alphanumeric character. Matching the regular expression pattern should involve minimal searching through the input string, so the method sets a time-out interval of 500 milliseconds.
 
@@ -3806,8 +3780,6 @@ For more details about `startat`, see the Remarks section of <xref:System.Text.R
  This method returns the first substring in `input` that matches the regular expression pattern. You can retrieve subsequent matches by repeatedly calling the returned <xref:System.Text.RegularExpressions.Match> object's <xref:System.Text.RegularExpressions.Match.NextMatch*?displayProperty=nameWithType> method. You can also retrieve all matches in a single method call by calling the <xref:System.Text.RegularExpressions.Regex.Matches(System.String)?displayProperty=nameWithType> method.
 
  The <xref:System.Text.RegularExpressions.RegexMatchTimeoutException> exception is thrown if the execution time of the matching operation exceeds the time-out interval specified by the <xref:System.Text.RegularExpressions.Regex.%23ctor(System.String,System.Text.RegularExpressions.RegexOptions,System.TimeSpan)?displayProperty=nameWithType> constructor. If you do not set a time-out interval when you call the constructor, the exception is thrown if the operation exceeds any time-out value established for the application domain in which the <xref:System.Text.RegularExpressions.Regex> object is created. If no time-out is defined in the <xref:System.Text.RegularExpressions.Regex> constructor call or in the application domain's properties, or if the time-out value is <xref:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout?displayProperty=nameWithType>, no exception is thrown.
-
-
 
 ## Examples
  The following example finds regular expression pattern matches in a string, then lists the matched groups, captures, and capture positions.
@@ -3962,8 +3934,6 @@ For more details about `startat`, see the Remarks section of <xref:System.Text.R
  This method returns the first substring in `input` that matches the regular expression pattern. You can retrieve subsequent matches by repeatedly calling the returned <xref:System.Text.RegularExpressions.Match> object's <xref:System.Text.RegularExpressions.Match.NextMatch*?displayProperty=nameWithType> method. You can also retrieve all matches in a single method call by calling the <xref:System.Text.RegularExpressions.Regex.Matches(System.String,System.String)?displayProperty=nameWithType> method.
 
  The <xref:System.Text.RegularExpressions.RegexMatchTimeoutException> exception is thrown if the execution time of the matching operation exceeds the time-out interval specified for the application domain in which the method is called. If no time-out is defined in the application domain's properties, or if the time-out value is <xref:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout?displayProperty=nameWithType>, no exception is thrown.
-
-
 
 ## Examples
  The following example calls the <xref:System.Text.RegularExpressions.Regex.Match(System.String,System.String)> method to find the first word that contains at least one `z` character, and then calls the <xref:System.Text.RegularExpressions.Match.NextMatch*?displayProperty=nameWithType> method to find any additional matches.
@@ -4155,8 +4125,6 @@ For more details about `startat`, see the Remarks section of <xref:System.Text.R
  This method returns the first substring found in `input` that matches the regular expression pattern. You can retrieve subsequent matches by repeatedly calling the returned <xref:System.Text.RegularExpressions.Match> object's <xref:System.Text.RegularExpressions.Match.NextMatch*> method. You can also retrieve all matches in a single method call by calling the <xref:System.Text.RegularExpressions.Regex.Matches(System.String,System.String,System.Text.RegularExpressions.RegexOptions)?displayProperty=nameWithType> method.
 
  The <xref:System.Text.RegularExpressions.RegexMatchTimeoutException> exception is thrown if the execution time of the matching operation exceeds the time-out interval specified for the application domain in which the method is called. If no time-out is defined in the application domain's properties, or if the time-out value is <xref:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout?displayProperty=nameWithType>, no exception is thrown.
-
-
 
 ## Examples
  The following example defines a regular expression that matches words beginning with the letter "a". It uses the <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType> option to ensure that the regular expression locates words beginning with both an uppercase "a" and a lowercase "a".
@@ -4460,8 +4428,6 @@ For more details about `startat`, see the Remarks section of <xref:System.Text.R
 
  Because of its lazy evaluation, calling the <xref:System.Text.RegularExpressions.Regex.Matches(System.String,System.Int32)> method does not throw a <xref:System.Text.RegularExpressions.RegexMatchTimeoutException> exception. However, the exception is thrown when an operation is performed on the <xref:System.Text.RegularExpressions.MatchCollection> object returned by this method, if the <xref:System.Text.RegularExpressions.Regex.MatchTimeout> property is not <xref:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout?displayProperty=nameWithType> and a matching operation exceeds the time-out interval.
 
-
-
 ## Examples
  The following example uses the <xref:System.Text.RegularExpressions.Regex.Match(System.String)> method to find the first word in a sentence that ends in "es", and then calls the <xref:System.Text.RegularExpressions.Regex.Matches(System.String,System.Int32)> method to identify any additional words that end in "es".
 
@@ -4558,8 +4524,6 @@ For more details about `startat`, see the Remarks section of <xref:System.Text.R
  The <xref:System.Text.RegularExpressions.Regex.Matches*> method uses lazy evaluation to populate the returned <xref:System.Text.RegularExpressions.MatchCollection> object. Accessing members of this collection such as <xref:System.Text.RegularExpressions.MatchCollection.Count*?displayProperty=nameWithType> and <xref:System.Text.RegularExpressions.MatchCollection.CopyTo*?displayProperty=nameWithType> causes the collection to be populated immediately. To take advantage of lazy evaluation, you should iterate the collection by using a construct such as `foreach` in C# and `For Each`...`Next` in Visual Basic.
 
  Because of its lazy evaluation, calling the <xref:System.Text.RegularExpressions.Regex.Matches(System.String,System.String)> method does not throw a <xref:System.Text.RegularExpressions.RegexMatchTimeoutException> exception. However, the exception is thrown when an operation is performed on the <xref:System.Text.RegularExpressions.MatchCollection> object returned by this method, if a time-out interval is defined by the "REGEX_DEFAULT_MATCH_TIMEOUT" property of the current application domain and a matching operation exceeds this time-out interval.
-
-
 
 ## Examples
  The following example uses the <xref:System.Text.RegularExpressions.Regex.Matches(System.String,System.String)> method to identify any word in a sentence that ends in "es".
@@ -4661,8 +4625,6 @@ For more details about `startat`, see the Remarks section of <xref:System.Text.R
  The <xref:System.Text.RegularExpressions.Regex.Matches*> method uses lazy evaluation to populate the returned <xref:System.Text.RegularExpressions.MatchCollection> object. Accessing members of this collection such as <xref:System.Text.RegularExpressions.MatchCollection.Count*?displayProperty=nameWithType> and <xref:System.Text.RegularExpressions.MatchCollection.CopyTo*?displayProperty=nameWithType> causes the collection to be populated immediately. To take advantage of lazy evaluation, you should iterate the collection by using a construct such as `foreach` in C# and `For Each`...`Next` in Visual Basic.
 
  Because of its lazy evaluation, calling the <xref:System.Text.RegularExpressions.Regex.Matches(System.String,System.String)> method does not throw a <xref:System.Text.RegularExpressions.RegexMatchTimeoutException> exception. However, the exception is thrown when an operation is performed on the <xref:System.Text.RegularExpressions.MatchCollection> object returned by this method, if a time-out interval is defined by the "REGEX_DEFAULT_MATCH_TIMEOUT" property of the current application domain and a matching operation exceeds this time-out interval.
-
-
 
 ## Examples
  The following example calls the <xref:System.Text.RegularExpressions.Regex.Matches(System.String,System.String)> method to identify any word in a sentence that ends in "es", and then calls the <xref:System.Text.RegularExpressions.Regex.Matches(System.String,System.String,System.Text.RegularExpressions.RegexOptions)> method to perform a case-insensitive comparison of the pattern with the input string. As the output shows, the two methods return different results.
@@ -4766,8 +4728,6 @@ For more details about `startat`, see the Remarks section of <xref:System.Text.R
  The <xref:System.Text.RegularExpressions.Regex.Matches*> method uses lazy evaluation to populate the returned <xref:System.Text.RegularExpressions.MatchCollection> object. Accessing members of this collection such as <xref:System.Text.RegularExpressions.MatchCollection.Count*?displayProperty=nameWithType> and <xref:System.Text.RegularExpressions.MatchCollection.CopyTo*?displayProperty=nameWithType> causes the collection to be populated immediately. To take advantage of lazy evaluation, you should iterate the collection by using a construct such as `foreach` in C# and `For Each`...`Next` in Visual Basic.
 
  Because of its lazy evaluation, calling the <xref:System.Text.RegularExpressions.Regex.Matches*> method does not throw a <xref:System.Text.RegularExpressions.RegexMatchTimeoutException> exception. However, an exception is thrown when an operation is performed on the <xref:System.Text.RegularExpressions.MatchCollection> object returned by this method, if a matching operation exceeds this time-out interval specified by the`matchTimeout` parameter.
-
-
 
 ## Examples
  The following example calls the <xref:System.Text.RegularExpressions.Regex.Matches(System.String,System.String,System.Text.RegularExpressions.RegexOptions,System.TimeSpan)> method to perform a case-sensitive comparison that matches any word in a sentence that ends in "es". It then calls the <xref:System.Text.RegularExpressions.Regex.Matches(System.String,System.String,System.Text.RegularExpressions.RegexOptions,System.TimeSpan)> method to perform a case-insensitive comparison of the pattern with the input string. In both cases, the time-out interval is set to one second. As the output shows, the two methods return different results.
@@ -5065,8 +5025,6 @@ For more details about `startat`, see the Remarks section of <xref:System.Text.R
 
  Because the method returns `input` unchanged if there is no match, you can use the <xref:System.Object.ReferenceEquals*?displayProperty=nameWithType> method to determine whether the method has made any replacements to the input string.
 
-
-
 ## Examples
  The following example defines a regular expression, `\s+`, that matches one or more white-space characters. The replacement string, " ", replaces them with a single space character.
 
@@ -5176,8 +5134,6 @@ For more details about `startat`, see the Remarks section of <xref:System.Text.R
 
  Because the method returns `input` unchanged if there is no match, you can use the <xref:System.Object.ReferenceEquals*?displayProperty=nameWithType> method to determine whether the method has made any replacements to the input string.
 
-
-
 ## Examples
  The following code example displays an original string, matches each word in the original string, converts the first character of each match to uppercase, then displays the converted string.
 
@@ -5259,8 +5215,6 @@ For more details about `startat`, see the Remarks section of <xref:System.Text.R
  The <xref:System.Text.RegularExpressions.RegexMatchTimeoutException> exception is thrown if the execution time of the replacement operation exceeds the time-out interval specified by the <xref:System.Text.RegularExpressions.Regex.%23ctor(System.String,System.Text.RegularExpressions.RegexOptions,System.TimeSpan)?displayProperty=nameWithType> constructor. If you do not set a time-out interval when you call the constructor, the exception is thrown if the operation exceeds any time-out value established for the application domain in which the <xref:System.Text.RegularExpressions.Regex> object is created. If no time-out is defined in the <xref:System.Text.RegularExpressions.Regex> constructor call or in the application domain's properties, or if the time-out value is <xref:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout?displayProperty=nameWithType>, no exception is thrown
 
  Because the method returns `input` unchanged if there is no match, you can use the <xref:System.Object.ReferenceEquals*?displayProperty=nameWithType> method to determine whether the method has made any replacements to the input string.
-
-
 
 ## Examples
  The following example replaces the first five occurrences of duplicated characters with a single character. The regular expression pattern `(\w)\1` matches consecutive occurrences of a single character and assigns the first occurrence to the first capturing group. The replacement pattern `$1` replaces the entire match with the first captured group.
@@ -5351,8 +5305,6 @@ For more details about `startat`, see the Remarks section of <xref:System.Text.R
  The <xref:System.Text.RegularExpressions.RegexMatchTimeoutException> exception is thrown if the execution time of the replacement operation exceeds the time-out interval specified for the application domain in which the method is called. If no time-out is defined in the application domain's properties, or if the time-out value is <xref:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout?displayProperty=nameWithType>, no exception is thrown.
 
  Because the method returns `input` unchanged if there is no match, you can use the <xref:System.Object.ReferenceEquals*?displayProperty=nameWithType> method to determine whether the method has made any replacements to the input string.
-
-
 
 ## Examples
  The following example defines a regular expression, `\s+`, that matches one or more white-space characters. The replacement string, " ", replaces them with a single space character.
@@ -5480,8 +5432,6 @@ For more details about `startat`, see the Remarks section of <xref:System.Text.R
 
  Because the method returns `input` unchanged if there is no match, you can use the <xref:System.Object.ReferenceEquals*?displayProperty=nameWithType> method to determine whether the method has made any replacements to the input string.
 
-
-
 ## Examples
  The following example uses a regular expression to extract the individual words from a string, and then uses a <xref:System.Text.RegularExpressions.MatchEvaluator> delegate to call a method named `WordScramble` that scrambles the individual letters in the word. To do this, the `WordScramble` method creates an array that contains the characters in the match. It also creates a parallel array that it populates with random floating-point numbers. The arrays are sorted by calling the <xref:System.Array.Sort``2(``0[],``1[],System.Collections.Generic.IComparer{``0})?displayProperty=nameWithType> method, and the sorted array is provided as an argument to a <xref:System.String> class constructor. This newly created string is then returned by the `WordScramble` method. The regular expression pattern `\w+` matches one or more word characters; the regular expression engine will continue to add characters to the match until it encounters a non-word character, such as a white-space character.
 
@@ -5580,8 +5530,6 @@ For more details about `startat`, see the Remarks section of <xref:System.Text.R
 
  Because the method returns `input` unchanged if there is no match, you can use the <xref:System.Object.ReferenceEquals*?displayProperty=nameWithType> method to determine whether the method has made any replacements to the input string.
 
-
-
 ## Examples
  The following example uses a regular expression to deliberately misspell half of the words in a list. It uses the regular expression `\w*(ie|ei)\w*` to match words that include the characters "ie" or "ei". It passes the first half of the matching words to the `ReverseLetter` method, which, in turn, uses the <xref:System.Text.RegularExpressions.Regex.Replace(System.String,System.String,System.String,System.Text.RegularExpressions.RegexOptions)> method to reverse "i" and "e" in the matched string. The remaining words remain unchanged.
 
@@ -5677,8 +5625,6 @@ For more details about `startat`, see the Remarks section of <xref:System.Text.R
  The <xref:System.Text.RegularExpressions.RegexMatchTimeoutException> exception is thrown if the execution time of the replacement operation exceeds the time-out interval specified by the <xref:System.Text.RegularExpressions.Regex.%23ctor(System.String,System.Text.RegularExpressions.RegexOptions,System.TimeSpan)?displayProperty=nameWithType> constructor. If you do not set a time-out interval when you call the constructor, the exception is thrown if the operation exceeds any time-out value established for the application domain in which the <xref:System.Text.RegularExpressions.Regex> object is created. If no time-out is defined in the <xref:System.Text.RegularExpressions.Regex> constructor call or in the application domain's properties, or if the time-out value is <xref:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout?displayProperty=nameWithType>, no exception is thrown
 
  Because the method returns `input` unchanged if there is no match, you can use the <xref:System.Object.ReferenceEquals*?displayProperty=nameWithType> method to determine whether the method has made any replacements to the input string.
-
-
 
 ## Examples
  The following example double-spaces all but the first line of a string. It defines a regular expression pattern, `^.*$`, that matches a line of text, calls the <xref:System.Text.RegularExpressions.Regex.Match(System.String)> method to match the first line of the string, and uses the `Match.Index` and `Match.Count` properties to determine the starting position of the second line.
@@ -5783,8 +5729,6 @@ For more details about `startat`, see the Remarks section of <xref:System.Text.R
  The <xref:System.Text.RegularExpressions.RegexMatchTimeoutException> exception is thrown if the execution time of the replacement operation exceeds the time-out interval specified for the application domain in which the method is called. If no time-out is defined in the application domain's properties, or if the time-out value is <xref:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout?displayProperty=nameWithType>, no exception is thrown.
 
  Because the method returns `input` unchanged if there is no match, you can use the <xref:System.Object.ReferenceEquals*?displayProperty=nameWithType> method to determine whether the method has made any replacements to the input string.
-
-
 
 ## Examples
  The following example uses the <xref:System.Text.RegularExpressions.Regex.Replace(System.String,System.String,System.String,System.Text.RegularExpressions.RegexOptions)> method to replace the local machine and drive names in a UNC path with a local file path. The regular expression uses the <xref:System.Environment.MachineName?displayProperty=nameWithType> property to include the name of the local computer, and the <xref:System.Environment.GetLogicalDrives*?displayProperty=nameWithType> method to include the names of the logical drives. All regular expression string comparisons are case-insensitive. To run the example successfully, you should replace the literal string "MyMachine" with your local machine name.
@@ -5913,8 +5857,6 @@ For more details about `startat`, see the Remarks section of <xref:System.Text.R
  The <xref:System.Text.RegularExpressions.RegexMatchTimeoutException> exception is thrown if the execution time of the replacement operation exceeds the time-out interval specified for the application domain in which the method is called. If no time-out is defined in the application domain's properties, or if the time-out value is <xref:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout?displayProperty=nameWithType>, no exception is thrown.
 
  Because the method returns `input` unchanged if there is no match, you can use the <xref:System.Object.ReferenceEquals*?displayProperty=nameWithType> method to determine whether the method has made any replacements to the input string.
-
-
 
 ## Examples
  The following example uses a regular expression to extract the individual words from a string, and then uses a <xref:System.Text.RegularExpressions.MatchEvaluator> delegate to call a method named `WordScramble` that scrambles the individual letters in the word. To do this, the `WordScramble` method creates an array that contains the characters in the match. It also creates a parallel array that it populates with random floating-point numbers. The arrays are sorted by calling the <xref:System.Array.Sort``2(``0[],``1[],System.Collections.Generic.IComparer{``0})?displayProperty=nameWithType> method, and the sorted array is provided as an argument to a <xref:System.String> class constructor. This newly created string is then returned by the `WordScramble` method. The regular expression pattern `\w+` matches one or more word characters; the regular expression engine will continue to add characters to the match until it encounters a non-word character, such as a white-space character. The call to the <xref:System.Text.RegularExpressions.Regex.Replace(System.String,System.String,System.Text.RegularExpressions.MatchEvaluator,System.Text.RegularExpressions.RegexOptions)> method includes the <xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace?displayProperty=nameWithType> option so that the comment in the regular expression pattern `\w+  # Matches all the characters in a word.` is ignored by the regular expression engine.
@@ -6105,8 +6047,6 @@ For more details about `startat`, see the Remarks section of <xref:System.Text.R
 
  Because the method returns `input` unchanged if there is no match, you can use the <xref:System.Object.ReferenceEquals*?displayProperty=nameWithType> method to determine whether the method has made any replacements to the input string.
 
-
-
 ## Examples
  The following example uses the <xref:System.Text.RegularExpressions.Regex.Replace(System.String,System.String,System.String,System.Text.RegularExpressions.RegexOptions,System.TimeSpan)> method to replace the local machine and drive names in a UNC path with a local file path. The regular expression uses the <xref:System.Environment.MachineName?displayProperty=nameWithType> property to include the name of the local computer and the <xref:System.Environment.GetLogicalDrives*?displayProperty=nameWithType> method to include the names of the logical drives. All regular expression string comparisons are case-insensitive, and any single replacement operation times out if a match cannot be found in 0.5 second. To run the example successfully, you should replace the literal string "MyMachine" with your local machine name.
 
@@ -6246,8 +6186,6 @@ For more details about `startat`, see the Remarks section of <xref:System.Text.R
  The `matchTimeout` parameter specifies how long a pattern matching method should try to find a match before it times out. Setting a time-out interval prevents regular expressions that rely on excessive backtracking from appearing to "stop responding when they process input that contains near matches. For more information, see [Best Practices for Regular Expressions](/dotnet/standard/base-types/best-practices) and [Backtracking](/dotnet/standard/base-types/backtracking-in-regular-expressions). If no match is found in that time interval, the method throws a <xref:System.Text.RegularExpressions.RegexMatchTimeoutException> exception. `matchTimeout` overrides any default time-out value defined for the application domain in which the method executes.
 
  Because the method returns `input` unchanged if there is no match, you can use the <xref:System.Object.ReferenceEquals*?displayProperty=nameWithType> method to determine whether the method has made any replacements to the input string.
-
-
 
 ## Examples
  The following example uses a regular expression to extract the individual words from a string, and then uses a <xref:System.Text.RegularExpressions.MatchEvaluator> delegate to call a method named `WordScramble` that scrambles the individual letters in the word. To do this, the `WordScramble` method creates an array that contains the characters in the match. It also creates a parallel array that it populates with random floating-point numbers. The arrays are sorted by calling the <xref:System.Array.Sort``2(``0[],``1[],System.Collections.Generic.IComparer{``0})?displayProperty=nameWithType> method, and the sorted array is provided as an argument to a <xref:System.String> class constructor. This newly created string is then returned by the `WordScramble` method. The regular expression pattern `\w+` matches one or more word characters; the regular expression engine will continue to add characters to the match until it encounters a non-word character, such as a white-space character. The call to the <xref:System.Text.RegularExpressions.Regex.Replace(System.String,System.String,System.Text.RegularExpressions.MatchEvaluator,System.Text.RegularExpressions.RegexOptions)> method includes the <xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace?displayProperty=nameWithType> option so that the comment in the regular expression pattern `\w+  # Matches all the characters in a word.` is ignored by the regular expression engine.

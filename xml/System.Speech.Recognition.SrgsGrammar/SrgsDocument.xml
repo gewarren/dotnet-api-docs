@@ -93,8 +93,6 @@
 ## Remarks
  This constructor creates an empty <xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument> instance. To build a grammar within an empty <xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument> instance, add instances of classes that represent SRGS elements, such as <xref:System.Speech.Recognition.SrgsGrammar.SrgsRule>, <xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef>, <xref:System.Speech.Recognition.SrgsGrammar.SrgsOneOf>, and <xref:System.Speech.Recognition.SrgsGrammar.SrgsItem>.
 
-
-
 ## Examples
  The following example creates an <xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument> object and then creates a public rule named `winnerRule`. It then creates an <xref:System.Speech.Recognition.SrgsGrammar.SrgsItem> that consists of the string "A nation that has won the World Cup is:", and adds this item to the <xref:System.Speech.Recognition.SrgsGrammar.SrgsRule.Elements> property of the rule. The example then creates two more rules (`ruleEurope` and `ruleSAmerica`), each of which is an <xref:System.Speech.Recognition.SrgsGrammar.SrgsOneOf> object that contains three <xref:System.Speech.Recognition.SrgsGrammar.SrgsItem> objects. After that, another <xref:System.Speech.Recognition.SrgsGrammar.SrgsOneOf> object is created that contains <xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef> objects that refer to `ruleEurope` and `ruleSAmerica`. The new <xref:System.Speech.Recognition.SrgsGrammar.SrgsOneOf> object is then added to the <xref:System.Speech.Recognition.SrgsGrammar.SrgsRule.Elements> property of `winnerRule`. After this, all three rules (`winnerRule`, `ruleEurope`, and `ruleSAmerica`) are added to the <xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument.Rules> property of <xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>. Finally, the three rules are compiled into a binary representation of the grammar.
 
@@ -220,8 +218,6 @@ SrgsDocument document = new SrgsDocument(builder);
 
 ## Remarks
  This constructor adds the specified rule to the <xref:System.Speech.Recognition.SrgsGrammar.SrgsRulesCollection> of the <xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument> object and sets it as the <xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument.Root*> rule for the grammar.
-
-
 
 ## Examples
  The following example creates two rules (`chooseCities` and `destCities`) for choosing origin and destination cities for a flight. The example initializes the <xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument> instance using the `chooseCities` rule as an argument. The example writes the contents  of the rules collection and the name of the root rule to the console.
@@ -662,8 +658,6 @@ if (File.Exists(srgsDocumentFile))
 
  You can also set the root rule for an <xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument> object by using an <xref:System.Speech.Recognition.SrgsGrammar.SrgsRule> object as the argument to the <xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument> constructor.
 
-
-
 ## Examples
  The following example creates a rule named `winnerRule`, and then creates an <xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument> object named `document`. The example then calls the <xref:System.Speech.Recognition.SrgsGrammar.SrgsRulesCollection.Add*> method to add the rule to the document. Finally, the example sets the document's <xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument.Root> property to `winnerRule`, thereby making it the `root rule` for the grammar defined by the <xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument> object.
 
@@ -707,8 +701,6 @@ document.Root = winnerRule;
 
 ## Remarks
  You can add <xref:System.Speech.Recognition.SrgsGrammar.SrgsRule> objects to the <xref:System.Speech.Recognition.SrgsGrammar.SrgsRulesCollection> by using the <xref:System.Speech.Recognition.SrgsGrammar.SrgsRulesCollection.Add*> method on the <xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument.Rules> property. If you initialize an <xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument> object and specify an <xref:System.Speech.Recognition.SrgsGrammar.SrgsRule> object as the argument, the <xref:System.Speech.Recognition.SrgsGrammar.SrgsRule> is automatically added to the <xref:System.Speech.Recognition.SrgsGrammar.SrgsRulesCollection> for the <xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>.
-
-
 
 ## Examples
  The following example creates a grammar that recognizes the phrase "A nation that has won the World Cup is" followed by the name of a country/region that has won the World Cup. The example creates an <xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument> object, and then creates a public rule named `winnerRule`. After adding a string to the rule `winnerRule`, the example creates two more rules (`ruleEurope` and `ruleSAmerica`), each containing a list of countries/regions. Using the <xref:System.Speech.Recognition.SrgsGrammar.SrgsRulesCollection.Add*> method, the example adds all three rules (`winnerRule`, `ruleEurope`, and `ruleSAmerica`) to the <xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument.Rules> property of the <xref:System.Speech.Recognition.SrgsGrammar.SrgsDocument>.

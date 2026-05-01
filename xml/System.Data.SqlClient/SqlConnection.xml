@@ -105,8 +105,6 @@ using (SqlConnection connection = new SqlConnection(connectionString))
 > [!CAUTION]
 > You can force TCP instead of shared memory. You can do that by prefixing tcp: to the server name in the connection string or you can use localhost.
 
-
-
 ## Examples
  The following example creates a <xref:System.Data.SqlClient.SqlCommand> and a <xref:System.Data.SqlClient.SqlConnection>. The <xref:System.Data.SqlClient.SqlConnection> is opened and set as the <xref:System.Data.SqlClient.SqlCommand.Connection*> for the <xref:System.Data.SqlClient.SqlCommand>. The example then calls <xref:System.Data.SqlClient.SqlCommand.ExecuteNonQuery*>. To accomplish this, the <xref:System.Data.SqlClient.SqlCommand.ExecuteNonQuery*> is passed a SqlConnection and a query string that is a Transact-SQL INSERT statement. The connection is closed automatically when the code exits the using block.
 
@@ -170,8 +168,6 @@ using (SqlConnection connection = new SqlConnection(connectionString))
 
  You can change the value for these properties only by using the <xref:System.Data.SqlClient.SqlConnection.ConnectionString> property. The <xref:System.Data.SqlClient.SqlConnectionStringBuilder> class provides functionality for creating and managing the contents of connection strings.
 
-
-
 ## Examples
  The following example creates and opens a <xref:System.Data.SqlClient.SqlConnection>.
 
@@ -228,8 +224,6 @@ using (SqlConnection connection = new SqlConnection(connectionString))
 |<xref:System.Data.SqlClient.SqlConnection.DataSource*>|empty string ("")|
 
  You can change the value for these properties only by using the <xref:System.Data.SqlClient.SqlConnection.ConnectionString> property. The <xref:System.Data.SqlClient.SqlConnection> class provides functionality for creating and managing the contents of connection strings.
-
-
 
 ## Examples
  The following example creates and opens a <xref:System.Data.SqlClient.SqlConnection>.
@@ -403,8 +397,6 @@ using (SqlConnection connection = new SqlConnection(connectionString))
 > When your query returns a large amount of data and calls `BeginTransaction`, a <xref:System.Data.SqlClient.SqlException> is thrown because SQL Server does not allow parallel transactions when using MARS. To avoid this problem, always associate a transaction with the command, the connection, or both before any readers are open.
 
  For more information on SQL Server transactions, see [Transactions (Transact-SQL)](/sql/t-sql/language-elements/transactions-transact-sql).
-
-
 
 ## Examples
  The following example creates a <xref:System.Data.SqlClient.SqlConnection> and a <xref:System.Data.SqlClient.SqlTransaction>. It also demonstrates how to use the <xref:System.Data.SqlClient.SqlConnection.BeginTransaction*>, a <xref:System.Data.SqlClient.SqlTransaction.Commit*>, and <xref:System.Data.SqlClient.SqlTransaction.Rollback*> methods.
@@ -1334,8 +1326,6 @@ The <xref:System.Data.SqlClient.SqlConnection.ConnectionString*> is similar to a
 ## Remarks
  You can set the amount of time a connection waits to time out by using the `Connect Timeout` or `Connection Timeout` keywords in the connection string. A value of 0 indicates no limit, and should be avoided in a <xref:System.Data.SqlClient.SqlConnection.ConnectionString*> because an attempt to connect waits indefinitely.
 
-
-
 ## Examples
  The following example creates a <xref:System.Data.SqlClient.SqlConnection> and sets the `Connection Timeout` to 30 seconds in the connection string. The code opens the connection and displays the <xref:System.Data.SqlClient.SqlConnection.ConnectionTimeout> property in the console window.
 
@@ -1534,8 +1524,6 @@ The <xref:System.Data.SqlClient.SqlConnection.ConnectionString*> is similar to a
 ## Remarks
  The <xref:System.Data.SqlClient.SqlConnection.Database> property updates dynamically. If you change the current database using a Transact-SQL statement or the <xref:System.Data.SqlClient.SqlConnection.ChangeDatabase*> method, an informational message is sent and the property is updated automatically.
 
-
-
 ## Examples
  The following example creates a <xref:System.Data.SqlClient.SqlConnection> and displays some of its read-only properties.
 
@@ -1602,8 +1590,6 @@ The <xref:System.Data.SqlClient.SqlConnection.ConnectionString*> is similar to a
 
 > [!NOTE]
 > The <xref:System.Data.SqlClient.SqlConnection.DataSource> property returns `null` if the connection string for the <xref:System.Data.SqlClient.SqlConnection> is "context connection=true".
-
-
 
 ## Examples
  The following example creates a <xref:System.Data.SqlClient.SqlConnection> and displays some of its read-only properties.
@@ -2277,8 +2263,6 @@ class Program {
 > [!NOTE]
 > The .NET Framework Data Provider for SQL Server requires the Security permission with "Allows calls to unmanaged assemblies" enabled (<xref:System.Security.Permissions.SecurityPermission> with <xref:System.Security.Permissions.SecurityPermissionFlag> set to `UnmanagedCode`) to open a <xref:System.Data.SqlClient.SqlConnection> with SQL Debugging enabled.
 
-
-
 ## Examples
  The following example creates a <xref:System.Data.SqlClient.SqlConnection>, opens it, and displays some of its properties. The connection is automatically closed at the end of the `using` block.
 
@@ -2404,8 +2388,6 @@ class Program {
  <xref:System.Data.SqlClient.SqlConnection.PacketSize*> may be a value in the range of 512 and 32767 bytes. An exception is generated if the value is outside this range.
 
  Setting the default value to a number greater than 8000 will cause the packets to use the MultiPage allocator on the instance of SQL Server instead of the much more efficient SinglePage allocator, reducing the overall scalability of the SQL Server. For more information on how SQL Server uses memory, see [Memory Management Architecture Guide](/sql/relational-databases/memory-management-architecture-guide).
-
-
 
 ## Examples
  The following example creates a <xref:System.Data.SqlClient.SqlConnection>, including setting the `Packet Size` to 512 in the connection string. It displays the <xref:System.Data.SqlClient.SqlConnection.PacketSize*> and <xref:System.Data.SqlClient.SqlConnection.ServerVersion*> properties in the console window.
@@ -2592,8 +2574,6 @@ SqlConnection.RegisterColumnEncryptionKeyStoreProviders(customKeyStoreProviders)
  The version is of the form *##.##.####*, where the first two digits are the major version, the next two digits are the minor version, and the last four digits are the release version. The string is of the form *major.minor.build*, where major and minor are exactly two digits and build is exactly four digits.
 
  <xref:System.Data.SqlClient.SqlConnection.ServerVersion*> was called while the returned Task was not completed and the connection was not opened after a call to <xref:System.Data.SqlClient.SqlConnection.OpenAsync*>.
-
-
 
 ## Examples
  The following example creates a <xref:System.Data.SqlClient.SqlConnection> and displays the <xref:System.Data.SqlClient.SqlConnection.ServerVersion> property.
@@ -2932,8 +2912,6 @@ Once the transaction has completed, you must explicitly commit or roll back the 
 
 ## Remarks
  The string typically contains the network name of the client. The <xref:System.Data.SqlClient.SqlConnection.WorkstationId> property corresponds to the `Workstation ID` connection string property.
-
-
 
 ## Examples
  The following example creates a <xref:System.Data.SqlClient.SqlConnection> and displays the <xref:System.Data.SqlClient.SqlConnection.WorkstationId> property.

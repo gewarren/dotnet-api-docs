@@ -83,8 +83,6 @@
 
 - From an existing <xref:System.Windows.Documents.TextPointer>: <xref:System.Windows.Documents.TextPointer.DocumentStart*>, <xref:System.Windows.Documents.TextPointer.DocumentEnd*>, <xref:System.Windows.Documents.TextPointer.GetNextInsertionPosition*>, and <xref:System.Windows.Documents.TextPointer.GetPositionAtOffset*>.
 
-
-
 ## Examples
  The following example demonstrates how to use a <xref:System.Windows.Documents.TextPointer> to find a position just inside of the first <xref:System.Windows.Documents.Run> element in a specified text container.
 
@@ -138,8 +136,6 @@
 
 ## Remarks
  A value of -1 indicates that the position specified by the current <xref:System.Windows.Documents.TextPointer> precedes the position specified by `position`.  A value of 0 indicates that the indicated positions are equal.  A value of positive +1 indicates that the position specified by the current <xref:System.Windows.Documents.TextPointer> follows the position specified by `position`.
-
-
 
 ## Examples
  The following example demonstrates a use for this method.  In the example, the <xref:System.Windows.Documents.TextPointer.CompareTo*> method is used in conjunction with the <xref:System.Windows.Documents.TextPointer.GetInsertionPosition*> method to test whether a specified <xref:System.Windows.Documents.TextElement> is empty.
@@ -403,8 +399,6 @@
 
  It is possible that no valid insertion position exists relative to the position pointed to by a <xref:System.Windows.Documents.TextPointer>.  This can happen if the referenced content is structurally incomplete, as in an empty table or list.  In such cases, this method simply returns a <xref:System.Windows.Documents.TextPointer> to the same position as the <xref:System.Windows.Documents.TextPointer> from which this method was called.  This method always returns a valid <xref:System.Windows.Documents.TextPointer>.
 
-
-
 ## Examples
  This example shows how to use the <xref:System.Windows.Documents.TextPointer.GetInsertionPosition*> method to check whether a specified <xref:System.Windows.Documents.TextElement> is empty of printable content.
 
@@ -555,8 +549,6 @@
 
  If the next symbol is categorized as <xref:System.Windows.Documents.TextPointerContext.Text>, then the <xref:System.Windows.Documents.TextPointer> returned by this method is advanced past the text to the next non-text symbol (that is, the next position where the <xref:System.Windows.Documents.TextPointerContext> is not <xref:System.Windows.Documents.TextPointerContext.Text>).  The exact symbol count crossed can be calculated in advance by calling the <xref:System.Windows.Documents.TextPointer.GetTextRunLength*> method.
 
-
-
 ## Examples
  The following example demonstrates a use for this method.  The example uses the <xref:System.Windows.Documents.TextPointer.GetNextContextPosition*> method in conjunction with the <xref:System.Windows.Documents.TextPointer.GetPointerContext*> method to traverse and extract the symbols in a specified <xref:System.Windows.Documents.TextElement>.
 
@@ -604,8 +596,6 @@
 
 ## Remarks
  An *insertion position* is a position where new content may be added without breaking any semantic rules for the associated content.  In practice, an insertion position is anywhere in content where a caret may be positioned.  An example of a valid <xref:System.Windows.Documents.TextPointer> position that is not an insertion position is the position between two adjacent <xref:System.Windows.Documents.Paragraph> tags (that is, between the closing tag of the preceding paragraph and the opening tag of the next paragraph).
-
-
 
 ## Examples
  The following example demonstrates a use for this method. The example uses the <xref:System.Windows.Documents.TextPointer.GetNextInsertionPosition*> method to traverse content element boundaries in order to count the number of <xref:System.Windows.Documents.Paragraph> elements present between two specified <xref:System.Windows.Documents.TextPointer> instances.
@@ -659,8 +649,6 @@
 - A <xref:System.Windows.UIElement> element contained in an <xref:System.Windows.Documents.InlineUIContainer> or <xref:System.Windows.Documents.BlockUIContainer>.  Note that such a <xref:System.Windows.UIElement> is always counted as exactly one symbol; any additional content or elements contained by the <xref:System.Windows.UIElement> are not counted as symbols.
 
 - A 16-bit Unicode character inside of a text <xref:System.Windows.Documents.Run> element.
-
-
 
 ## Examples
  The following example demonstrates a use for this method. The example uses the <xref:System.Windows.Documents.TextPointer.GetOffsetToPosition*> method to find the offsets for two <xref:System.Windows.Documents.TextPointer> instances, and then uses this information to save and restore the selection in a <xref:System.Windows.Controls.RichTextBox>.  The example assumes that the contents of the <xref:System.Windows.Controls.RichTextBox> have not changed between a selection save and a selection restore.
@@ -770,8 +758,6 @@
 
 - A 16-bit Unicode character inside of a text <xref:System.Windows.Documents.Run> element.
 
-
-
 ## Examples
  The following example demonstrates a use for this method. The example uses the <xref:System.Windows.Documents.TextPointer.GetPositionAtOffset*> method to implement a pair of methods, one to calculate the offset to a specified position relative to any hosting paragraph, and the other to return a <xref:System.Windows.Documents.TextPointer> to a specified offset in a specified paragraph.
 
@@ -876,8 +862,6 @@
 
 ## Remarks
  This method returns only uninterrupted runs of text.  Nothing is returned if any symbol type other than <xref:System.Windows.Documents.TextPointerContext.Text> is adjacent to the current <xref:System.Windows.Documents.TextPointer> in the specified direction.  Similarly, text is returned only up to the next non-text symbol.
-
-
 
 ## Examples
  The following example demonstrates a use for this method. The example uses the <xref:System.Windows.Documents.TextPointer.GetTextInRun*> method to implement a simple text extractor.  The method returns a string concatenation of all text between two specified <xref:System.Windows.Documents.TextPointer> instances.
@@ -1255,8 +1239,6 @@
 
 ## Remarks
  Most operations that involve multiple <xref:System.Windows.Documents.TextPointer> instances are only valid if the instances in question indicate positions that are in the same text container scope.  For example the <xref:System.Windows.Documents.TextPointer.CompareTo*> and <xref:System.Windows.Documents.TextPointer.GetOffsetToPosition*> methods cannot be used with a <xref:System.Windows.Documents.TextPointer> to a position outside of the text container associated with the current position.  Use this method to verify that a specified <xref:System.Windows.Documents.TextPointer> is compatible with the current position for such operations.
-
-
 
 ## Examples
  The following example demonstrates a use for this method.  The example uses the <xref:System.Windows.Documents.TextPointer.IsInSameDocument*> method to check whether a specified <xref:System.Windows.Documents.TextPointer> is positioned between two other specified <xref:System.Windows.Documents.TextPointer> instances in a situation when there is no guarantee that all three positions belong to the same text container.

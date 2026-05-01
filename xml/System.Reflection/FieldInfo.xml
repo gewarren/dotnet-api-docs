@@ -101,8 +101,6 @@
 
  Fields are variables defined in the class. <xref:System.Reflection.FieldInfo> provides access to the metadata for a field within a class and provides dynamic set and get functionality for the field. The class is not loaded into memory until invoke or get is called on the object.
 
-
-
 ## Examples
  The following example uses the <xref:System.Type.GetFields*?displayProperty=nameWithType> method to get the field-related information from the <xref:System.Reflection.FieldInfo> class, and then displays field attributes.
 
@@ -214,8 +212,6 @@
  All members have a set of attributes, which are defined in relation to the specific type of member. `FieldAttributes` informs the user whether this field is the private field, a static field, and so on.
 
  To get the `Attributes` property, first get the class `Type`. From the `Type`, get the `FieldInfo`. From the `FieldInfo`, get the `Attributes`.
-
-
 
 ## Examples
  The following code example builds three fields and displays their field attributes. A `FieldAttributes` value can contain more than one attribute, such as both `Public` and `Literal`, as shown in the third field.
@@ -335,8 +331,6 @@
 ## Remarks
  The handles are valid only in the appdomain in which they were obtained.
 
-
-
 ## Examples
  The following example retrieves MyClass.MyField field information and displays the field associated with the field handle.
 
@@ -402,8 +396,6 @@
  The type is some primitive data type, such as `String`, `Boolean`, or `GUID`.
 
  To get the `FieldType` property, first get the class `Type`. From the `Type`, get the `FieldInfo`. From the `FieldInfo`, get the `FieldType` value.
-
-
 
 ## Examples
  The following example creates a field, gets its type and <xref:System.Reflection.FieldInfo>, and displays its <xref:System.Reflection.FieldInfo.FieldType*>.
@@ -489,8 +481,6 @@
 ## Remarks
  Handles are valid only in the application domain in which they were obtained.
 
-
-
 ## Examples
  The following code example uses the <xref:System.Type.GetFields*?displayProperty=nameWithType> method to get <xref:System.Reflection.FieldInfo> objects for the fields of a type, gets a <xref:System.RuntimeFieldHandle> structure for each field, and then retrieves the <xref:System.Reflection.FieldInfo> objects from the handles using this overload of the <xref:System.Reflection.FieldInfo.GetFieldFromHandle*> method.
 
@@ -574,8 +564,6 @@
  Implementations are compatible in some cases. For example, a single implementation is shared by all types that are constructed from a particular generic type definition by using reference types for the generic type arguments. For example, `MyType<string>`, `MyType<object>`, and `MyType<ArrayList>` all share the same implementation. In this situation, the <xref:System.Reflection.FieldInfo> object that is returned represents a field on the type that `declaringType` specifies, regardless of the original source of `handle`. This practice is not recommended, because it works only if the generic type arguments of the constructed type are reference types.
 
  If a generic argument is a value type, the runtime type handle of the constructed type is not compatible with runtime field handles from constructions that have a reference type in the same generic parameter position, or that have a different value type in that position. In that case, the only way to use the <xref:System.Reflection.FieldInfo.GetFieldFromHandle(System.RuntimeFieldHandle,System.RuntimeTypeHandle)?displayProperty=nameWithType> overload is to ensure that `declaringType` is the runtime type handle for the constructed type that `handle` belongs to.
-
-
 
 ## Examples
  The following example shows how to retrieve <xref:System.Reflection.FieldInfo> objects for fields on constructed generic classes. The example defines the generic type `Test<T>` (`Test(Of T)` in Visual Basic) with a single field named `TestField`, of type `T`. The example gets the <xref:System.RuntimeFieldHandle> and <xref:System.RuntimeTypeHandle> for the case where `T` is <xref:System.String>, and demonstrates the following:
@@ -1400,8 +1388,6 @@ Note: In <see href="https://go.microsoft.com/fwlink/?LinkID=247912">.NET for Win
 
  The `IsInitOnly` property is set when the <xref:System.Reflection.FieldAttributes.InitOnly?displayProperty=nameWithType> attribute is set.
 
-
-
 ## Examples
  In the following example, two fields are created. The second field is read-only, having no set accessor, and `IsInitOnly` is set to `true`.
 
@@ -1543,8 +1529,6 @@ Myfieldb - B readonly field, IsInitOnly = True
 ## Remarks
  The `IsNotSerialized` property returns `true` when the field is marked with the `FieldAttributes.NotSerialized` flag. When this flag is set on a field, it indicates that the field does not have to be serialized when the type is remoted.
 
-
-
 ## Examples
  The following example gets the field information of the fields of MyClass, determines if the fields can be serialized, and displays the results.
 
@@ -1675,8 +1659,6 @@ Myfieldb - B readonly field, IsInitOnly = True
 
  To get the `IsPrivate` property, first get the class `Type`. From the `Type`, get the `FieldInfo`. From the `FieldInfo`, get the `IsPrivate` property. To access a non-public field, set the `BindingFlags` to `NonPublic`, and either `Static` or `Instance` in the `GetField` method.
 
-
-
 ## Examples
  The following example returns a value indicating whether or not the field of the class is private.
 
@@ -1747,8 +1729,6 @@ Myfieldb - B readonly field, IsInitOnly = True
  The `IsPublic` property is set when the `FieldAttributes.Public` attribute is set.
 
  To get the `IsPublic` property, first get the class `Type`. From the `Type`, get the `FieldInfo`. From the `FieldInfo`, get the `IsPublic` property. If the field is other than public, it is protected and cannot be readily accessed. To access a nonpublic field, set the `BindingFlags` to `NonPublic`, specify either `BindingFlags.Instance` or `BindingFlags.Static`, and use this for the `GetField` method.
-
-
 
 ## Examples
  The following example returns a value indicating whether or not the field of the class is public or private.
@@ -2015,8 +1995,6 @@ Myfieldb - B readonly field, IsInitOnly = True
 ## Remarks
  Names that begin with or contain an underscore character (_), property accessors, and operator overloading methods are examples of names that might require special treatment by some compilers.
 
-
-
 ## Examples
  The following example returns a value indicating whether or not the fields in the class contain a SpecialName attribute.
 
@@ -2086,8 +2064,6 @@ Myfieldb - B readonly field, IsInitOnly = True
  The `IsStatic` property is set when the `FieldAttributes.Static` attribute is set.
 
  To get the `IsStatic` property, first get the class `Type`. From the `Type`, get the `FieldInfo`. From the `FieldInfo`, get the `IsStatic` property. To access a non-public field, set the `BindingFlags` to `NonPublic` in the `GetField` method and set the accessibility to `Instance` or `Static`.
-
-
 
 ## Examples
  The following example determines whether the specified field is static and displays the result.
@@ -2163,8 +2139,6 @@ Myfieldb - B static field; IsStatic - True
 
 ## Remarks
  This property overrides <xref:System.Reflection.MemberInfo.MemberType*>. Therefore, when you examine a set of <xref:System.Reflection.MemberInfo> objects - for example, the array returned by <xref:System.Type.GetMembers*> - the <xref:System.Reflection.MemberInfo.MemberType> property returns <xref:System.Reflection.MemberTypes.Field?displayProperty=nameWithType> only when a given member is a field.
-
-
 
 ## Examples
  The following example determines whether the specified member is a field and displays the result.

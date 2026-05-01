@@ -31,8 +31,6 @@
 
  You can add the SAM to the ASP.NET pipeline in a configuration file by adding it to the HTTP modules under either the `<system.webServer>` element for IIS version 7 and later or under the `<system.web>` element for versions prior to IIS 7. The cookie handler used by the SAM can be configured with the [&lt;cookieHandler&gt;](/dotnet/framework/configure-apps/file-schema/windows-identity-foundation/cookiehandler) element.
 
-
-
 ## Examples
  :::code language="csharp" source="~/snippets/csharp/System.IdentityModel.Services/SessionAuthenticationModule/Overview/global.asax.cs" id="Snippet1":::
 
@@ -640,8 +638,6 @@
 
  In an event handler, you can access the token through the <xref:System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs.SessionToken?displayProperty=nameWithType> property. After modifying the token, you can ensure that it is written back to the cookie by setting the <xref:System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs.WriteSessionCookie?displayProperty=nameWithType> property to `true`. Unlike, the <xref:System.IdentityModel.Services.SessionAuthenticationModule.SessionSecurityTokenCreated> event, <xref:System.IdentityModel.Services.SessionAuthenticationModule.SessionSecurityTokenCreated> is not a cancelable event.
 
-
-
 ## Examples
  The following code shows a handler for the <xref:System.IdentityModel.Services.SessionAuthenticationModule.SessionSecurityTokenCreated> event implemented in the global.asax.cs file of an ASP.NET web application. You must also add the handler to the event. A more complete example is shown in the <xref:System.IdentityModel.Services.SessionAuthenticationModule> overview topic.
 
@@ -678,8 +674,6 @@
  You can use this event to modify properties of the session token before it is passed further along the pipeline and is used to authenticate the entity making the request (user). One of the most common scenarios involves modifying the session expiration time (accessible through the <xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidTo?displayProperty=nameWithType> property) to override the session expiration time set in configuration through the `lifetime` attribute of the [&lt;sessionTokenRequirement&gt;](/dotnet/framework/configure-apps/file-schema/windows-identity-foundation/sessiontokenrequirement) element. By modifying this property on each request, you can implement a sliding session; that is, a session in which the lifetime is extended each time the user accesses the site.
 
  In an event handler, you can access the token through the <xref:System.IdentityModel.Services.SessionSecurityTokenReceivedEventArgs.SessionToken?displayProperty=nameWithType> property. After modifying the token, you can ensure that it is written back to the cookie by setting the <xref:System.IdentityModel.Services.SessionSecurityTokenReceivedEventArgs.ReissueCookie?displayProperty=nameWithType> to `true`. Finally, the <xref:System.IdentityModel.Services.SessionAuthenticationModule.SessionSecurityTokenReceived> event is a cancelable event, and you can set the <xref:System.ComponentModel.CancelEventArgs.Cancel> property of the <xref:System.IdentityModel.Services.SessionSecurityTokenReceivedEventArgs> to abort further processing of the request.
-
-
 
 ## Examples
  The following code shows a handler for the <xref:System.IdentityModel.Services.SessionAuthenticationModule.SessionSecurityTokenReceived> event implemented in the global.asax.cs file of an ASP.NET web application. You must also add the handler to the event. A more complete example is shown in the <xref:System.IdentityModel.Services.SessionAuthenticationModule> overview topic.
@@ -749,8 +743,6 @@
 
  This event is not guaranteed to be called for every session. For example, the cookies may be deleted at the client-side, in which case, this event would never be raised because there is no server-side event for deleting the session.
 
-
-
 ## Examples
  The following code shows a handler for the <xref:System.IdentityModel.Services.SessionAuthenticationModule.SignedOut> event implemented in the global.asax.cs file of an ASP.NET web application. You must also add the handler to the event. A more complete example is shown in the <xref:System.IdentityModel.Services.SessionAuthenticationModule> overview topic.
 
@@ -786,8 +778,6 @@
 
  This event is not guaranteed to be called for every session. For example, the cookies may be deleted at the client-side, in which case, this event would never be raised because there is no server-side event for deleting the session.
 
-
-
 ## Examples
  The following code shows a handler for the <xref:System.IdentityModel.Services.SessionAuthenticationModule.SigningOut> event implemented in the global.asax.cs file of an ASP.NET web application. You must also add the handler to the event. A more complete example is shown in the <xref:System.IdentityModel.Services.SessionAuthenticationModule> overview topic.
 
@@ -822,8 +812,6 @@
  Invokes the <xref:System.IdentityModel.Services.SessionAuthenticationModule.OnSigningOut*>, <xref:System.IdentityModel.Services.SessionAuthenticationModule.DeleteSessionTokenCookie*>, and <xref:System.IdentityModel.Services.SessionAuthenticationModule.OnSignedOut*> methods to perform sign-out. If an exception occurs, the <xref:System.IdentityModel.Services.SessionAuthenticationModule.OnSignOutError*> method is invoked to raise the <xref:System.IdentityModel.Services.SessionAuthenticationModule.SignOutError> event. You can set the <xref:System.ComponentModel.CancelEventArgs.Cancel> property of the <xref:System.IdentityModel.Services.ErrorEventArgs> object passed into the event handler for this event to cancel the sign-out and prevent the exception from being propagated to the client.
 
  You can override this method to add application-specific behavior.
-
-
 
 ## Examples
  The following code shows code for invoking the <xref:System.IdentityModel.Services.SessionAuthenticationModule.SignOut*> method from a SignOut.aspx page (SignOut.aspx.cs) in an ASP.NET web application. A more complete example is shown in the <xref:System.IdentityModel.Services.SessionAuthenticationModule> overview topic.
@@ -861,8 +849,6 @@
  In an event handler, you can get the exception that resulted in the event being raised from the <xref:System.IdentityModel.Services.ErrorEventArgs.Exception?displayProperty=nameWithType> property. You can cancel further processing of the exception, which has the result of not propagating the exception to the client, by setting the <xref:System.ComponentModel.CancelEventArgs.Cancel> property of the <xref:System.IdentityModel.Services.ErrorEventArgs> to `true`.
 
  This event is not guaranteed to be called for every session. For example, the cookies may be deleted at the client-side, in which case, this event would never be raised because there is no server-side event for deleting the session.
-
-
 
 ## Examples
  The following code shows a handler for the <xref:System.IdentityModel.Services.SessionAuthenticationModule.SignOutError> event implemented in the global.asax.cs file of an ASP.NET web application. You must also add the handler to the event. A more complete example is shown in the <xref:System.IdentityModel.Services.SessionAuthenticationModule> overview topic.
