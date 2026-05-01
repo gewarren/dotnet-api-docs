@@ -70,7 +70,7 @@ The <xref:System.Collections.IDictionary> interface is the base interface for no
 
  Each element is a key/value pair stored in a <xref:System.Collections.DictionaryEntry> object.
 
- Each pair must have a unique key. Implementations can vary in whether they allow the key to be null.  The value can be null and does not have to be unique. The <xref:System.Collections.IDictionary> interface allows the contained keys and values to be enumerated, but it does not imply any particular sort order.
+ Each pair must have a unique key. Implementations can vary in whether they allow the key to be null. The value can be null and does not have to be unique. The <xref:System.Collections.IDictionary> interface allows the contained keys and values to be enumerated, but it does not imply any particular sort order.
 
  <xref:System.Collections.IDictionary> implementations fall into three categories: read-only, fixed-size, variable-size. A read-only <xref:System.Collections.IDictionary> object cannot be modified. A fixed-size <xref:System.Collections.IDictionary> object does not allow the addition or removal of elements, but does allow the modification of existing elements. A variable-size <xref:System.Collections.IDictionary> object allows the addition, removal, and modification of elements.
 
@@ -359,11 +359,11 @@ The following code example demonstrates how to implement the <xref:System.Collec
 
 ## Remarks
 
- The `foreach` statement of the C# language (`for each` in Visual Basic) hides the complexity of the enumerators.  Therefore, using `foreach` is recommended instead of directly manipulating the enumerator.
+ The `foreach` statement of the C# language (`for each` in Visual Basic) hides the complexity of the enumerators. Therefore, using `foreach` is recommended instead of directly manipulating the enumerator.
 
  Enumerators can be used to read the data in the collection, but they cannot be used to modify the underlying collection.
 
- Initially, the enumerator is positioned before the first element in the collection. <xref:System.Collections.IEnumerator.Reset*> also brings the enumerator back to this position.  At this position, the <xref:System.Collections.IEnumerator.Current> property is undefined. Therefore, you must call <xref:System.Collections.IEnumerator.MoveNext*> to advance the enumerator to the first element of the collection before reading the value of <xref:System.Collections.IEnumerator.Current*>.
+ Initially, the enumerator is positioned before the first element in the collection. <xref:System.Collections.IEnumerator.Reset*> also brings the enumerator back to this position. At this position, the <xref:System.Collections.IEnumerator.Current> property is undefined. Therefore, you must call <xref:System.Collections.IEnumerator.MoveNext*> to advance the enumerator to the first element of the collection before reading the value of <xref:System.Collections.IEnumerator.Current*>.
 
  <xref:System.Collections.IEnumerator.Current*> returns the same object until either <xref:System.Collections.IEnumerator.MoveNext*> or <xref:System.Collections.IEnumerator.Reset*> is called. <xref:System.Collections.IEnumerator.MoveNext*> sets <xref:System.Collections.IEnumerator.Current*> to the next element.
 
@@ -371,7 +371,7 @@ The following code example demonstrates how to implement the <xref:System.Collec
 
  An enumerator remains valid as long as the collection remains unchanged. If changes are made to the collection, such as adding, modifying, or deleting elements, the enumerator is irrecoverably invalidated and its behavior is undefined.
 
- The enumerator does not have exclusive access to the collection; therefore, enumerating through a collection is intrinsically not a thread-safe procedure.  To guarantee thread safety during enumeration, you can lock the collection during the entire enumeration.  To allow the collection to be accessed by multiple threads for reading and writing, you must implement your own synchronization.
+ The enumerator does not have exclusive access to the collection; therefore, enumerating through a collection is intrinsically not a thread-safe procedure. To guarantee thread safety during enumeration, you can lock the collection during the entire enumeration. To allow the collection to be accessed by multiple threads for reading and writing, you must implement your own synchronization.
 
  ]]></format>
         </remarks>

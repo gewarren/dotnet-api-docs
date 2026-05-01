@@ -621,11 +621,11 @@ The following code example enumerates the elements of a <xref:System.Collections
 
 ## Remarks
 
-The `foreach` statement of the C# language (`for each` in Visual Basic) hides the complexity of the enumerators.  Therefore, using `foreach` is recommended, instead of directly manipulating the enumerator.
+The `foreach` statement of the C# language (`for each` in Visual Basic) hides the complexity of the enumerators. Therefore, using `foreach` is recommended, instead of directly manipulating the enumerator.
 
  Enumerators can be used to read the data in the collection, but they cannot be used to modify the underlying collection.
 
- Initially, the enumerator is positioned before the first element in the collection. <xref:System.Collections.IEnumerator.Reset*> also brings the enumerator back to this position.  At this position, <xref:System.Collections.IEnumerator.Current*> is undefined. Therefore, you must call <xref:System.Collections.IEnumerator.MoveNext*> to advance the enumerator to the first element of the collection before reading the value of <xref:System.Collections.IEnumerator.Current*>.
+ Initially, the enumerator is positioned before the first element in the collection. <xref:System.Collections.IEnumerator.Reset*> also brings the enumerator back to this position. At this position, <xref:System.Collections.IEnumerator.Current*> is undefined. Therefore, you must call <xref:System.Collections.IEnumerator.MoveNext*> to advance the enumerator to the first element of the collection before reading the value of <xref:System.Collections.IEnumerator.Current*>.
 
  <xref:System.Collections.IEnumerator.Current*> returns the same object until either <xref:System.Collections.IEnumerator.MoveNext*> or <xref:System.Collections.IEnumerator.Reset*> is called. <xref:System.Collections.IEnumerator.MoveNext*> sets <xref:System.Collections.IEnumerator.Current*> to the next element.
 
@@ -633,7 +633,7 @@ The `foreach` statement of the C# language (`for each` in Visual Basic) hides th
 
  An enumerator remains valid as long as the collection remains unchanged. If changes are made to the collection, such as adding, modifying, or deleting elements, the enumerator is irrecoverably invalidated and its behavior is undefined.
 
- The enumerator does not have exclusive access to the collection; therefore, enumerating through a collection is intrinsically not a thread-safe procedure.  To guarantee thread safety during enumeration, you can lock the collection during the entire enumeration.  To allow the collection to be accessed by multiple threads for reading and writing, you must implement your own synchronization.
+ The enumerator does not have exclusive access to the collection; therefore, enumerating through a collection is intrinsically not a thread-safe procedure. To guarantee thread safety during enumeration, you can lock the collection during the entire enumeration. To allow the collection to be accessed by multiple threads for reading and writing, you must implement your own synchronization.
 
  This method is an O(1) operation.
 

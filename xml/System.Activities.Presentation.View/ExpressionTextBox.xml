@@ -46,19 +46,19 @@ In Visual Studio, the <xref:System.Activities.Presentation.View.ExpressionTextBo
 
  **ExpressionTextBlock** works in the following manner when you edit an expression.
 
-1.  When you click on an **ExpressionTextBox**, an <xref:System.Activities.Presentation.View.IExpressionEditorInstance> object is created and a hostable editor session is instantiated in Visual Studio.
+1. When you click on an **ExpressionTextBox**, an <xref:System.Activities.Presentation.View.IExpressionEditorInstance> object is created and a hostable editor session is instantiated in Visual Studio.
 
-2.  When you type inside a hostable editor, note that the features have two sorts of availability.
+2. When you type inside a hostable editor, note that the features have two sorts of availability.
 
-    1.  IntelliSense, completion and colorization support is available immediately.
+    1. IntelliSense, completion and colorization support is available immediately.
 
-    2.  Validation is called in the background and is available only after a short interval of time elapses. Then, if your expression is invalid, the hosted compiler reports the error and the red error icon displays to the right of your expression.
+    2. Validation is called in the background and is available only after a short interval of time elapses. Then, if your expression is invalid, the hosted compiler reports the error and the red error icon displays to the right of your expression.
 
-3.  Press the **Enter** key when the **ExpressionTextBox** has the focus to insert new lines in the <xref:System.Activities.Presentation.View.IExpressionEditorInstance> object. This causes a line commit to occur inside the hostable editor, which triggers a pretty listing and the display of squiggles.
+3. Press the **Enter** key when the **ExpressionTextBox** has the focus to insert new lines in the <xref:System.Activities.Presentation.View.IExpressionEditorInstance> object. This causes a line commit to occur inside the hostable editor, which triggers a pretty listing and the display of squiggles.
 
-4.  The editor instance is destroyed when the **ExpressionTextBox** loses the focus, and the display reverts to a **TextBlock**. If you are on the designer surface or in the property grid, the change to the model item is committed and all <xref:System.Activities.Presentation.View.ExpressionTextBox> controls displaying that same expression are synchronized. However, if you are in a dialog box, the change to the model item is not committed until you click OK. When the model item is committed, <xref:System.Activities.Validation.ActivityValidationServices.Validate*> is invoked and the entire workflow is validated.
+4. The editor instance is destroyed when the **ExpressionTextBox** loses the focus, and the display reverts to a **TextBlock**. If you are on the designer surface or in the property grid, the change to the model item is committed and all <xref:System.Activities.Presentation.View.ExpressionTextBox> controls displaying that same expression are synchronized. However, if you are in a dialog box, the change to the model item is not committed until you click OK. When the model item is committed, <xref:System.Activities.Validation.ActivityValidationServices.Validate*> is invoked and the entire workflow is validated.
 
-5.  When you click on the **ExpressionTextBox** again, a new editor instance is created. In the hostable editor, pretty listing, colorization, and squiggling occurs before you begin editing.
+5. When you click on the **ExpressionTextBox** again, a new editor instance is created. In the hostable editor, pretty listing, colorization, and squiggling occurs before you begin editing.
 
  To bind the expression text box to **OwnerActivity**, use <xref:System.Activities.Presentation.Converters.ModelPropertyEntryToModelItemConverter> to set the data context correctly. The following code sample demonstrates setting the data context correctly for binding to **OwnerActivity**.
 

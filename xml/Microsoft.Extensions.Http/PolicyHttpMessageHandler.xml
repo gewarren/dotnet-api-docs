@@ -50,7 +50,7 @@
             by using the generic methods on <see cref="T:Polly.Policy" /> such as <see cref="M:Polly.Policy.TimeoutAsync``1(System.Int32)" />.
             </para>
       <para>
-            To adapt an existing non-generic <see cref="T:Polly.IAsyncPolicy" />, use code like the following that converts a 
+            To adapt an existing non-generic <see cref="T:Polly.IAsyncPolicy" />, use code like the following that converts a
             non-generic <c>IAsyncPolicy policy</c> to <see cref="T:Polly.IAsyncPolicy`1" />:
             <code lang="csharp">
             policy.AsAsyncPolicy&lt;HttpResponseMessage&gt;()
@@ -64,7 +64,7 @@
             </para>
       <para>
             Take care when using policies such as Retry or Timeout together as HttpClient provides its own timeout via
-            <see cref="P:System.Net.Http.HttpClient.Timeout" />.  When combining Retry and Timeout, <see cref="P:System.Net.Http.HttpClient.Timeout" /> will act as a
+            <see cref="P:System.Net.Http.HttpClient.Timeout" />. When combining Retry and Timeout, <see cref="P:System.Net.Http.HttpClient.Timeout" /> will act as a
             timeout across all tries; a Polly Timeout policy can be configured after a Retry policy in the configuration sequence,
             to provide a timeout-per-try.
             </para>
