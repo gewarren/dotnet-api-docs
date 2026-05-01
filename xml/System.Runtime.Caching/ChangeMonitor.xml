@@ -193,12 +193,12 @@ Note: This automatic call to the dispose method during the event firing only occ
  The internal implementation of the <xref:System.Runtime.Caching.ChangeMonitor.OnChanged*> method automatically calls the <xref:System.Runtime.Caching.ChangeMonitor.Dispose*> method after it calls a callback that is registered through the <xref:System.Runtime.Caching.ChangeMonitor.NotifyOnChanged*> method.
 
 > [!NOTE]
->  This automatic dispose during the event firing only occurs if the initialization of the <xref:System.Runtime.Caching.ChangeMonitor> instance previously completed.
+> This automatic dispose during the event firing only occurs if the initialization of the <xref:System.Runtime.Caching.ChangeMonitor> instance previously completed.
 
  When a derived change monitor's constructor calls the <xref:System.Runtime.Caching.ChangeMonitor.InitializationComplete*> method, if the state of the change monitor has already changed (that is, the state that is monitored has already changed when the constructor was still active) then <xref:System.Runtime.Caching.ChangeMonitor.InitializationComplete*> method will automatically dispose the change monitor.
 
 > [!NOTE]
->  Users should not call the <xref:System.Runtime.Caching.ChangeMonitor.Dispose*> method. However, you cannot prevent users from calling the method. Therefore, if they do, the <xref:System.Runtime.Caching.ChangeMonitor.OnChanged*> method is invoked. In that case, the cache entry is notified as if the dependency has changed.
+> Users should not call the <xref:System.Runtime.Caching.ChangeMonitor.Dispose*> method. However, you cannot prevent users from calling the method. Therefore, if they do, the <xref:System.Runtime.Caching.ChangeMonitor.OnChanged*> method is invoked. In that case, the cache entry is notified as if the dependency has changed.
 
  To prevent derived classes from overriding <xref:System.Runtime.Caching.ChangeMonitor.Dispose*> method, the method is not an explicit interface implementation.
 
@@ -275,7 +275,7 @@ Note: This automatic call to the dispose method during the event firing only occ
  The value is set to `true` when a dependency change occurs (that is, when the <xref:System.Runtime.Caching.ChangeMonitor.OnChanged*> method is called). After the <xref:System.Runtime.Caching.ChangeMonitor.OnChanged*> method is called by the derived class, the value of the <xref:System.Runtime.Caching.ChangeMonitor.HasChanged> property will be `true`, regardless of whether a <xref:System.Runtime.Caching.OnChangedCallback> instance has been notified by a call to the <xref:System.Runtime.Caching.ChangeMonitor.NotifyOnChanged*> method.
 
 > [!NOTE]
->  Callers can check the <xref:System.Runtime.Caching.ChangeMonitor.HasChanged> property to see whether a dependency has changed. However, in a multi-threaded environment, a simpler and more maintainable approach is to insert data into a cache implementation without checking the <xref:System.Runtime.Caching.ChangeMonitor.HasChanged> property. Cache implementations must check the <xref:System.Runtime.Caching.ChangeMonitor.HasChanged> property for you and must not perform an insert or set operation if one or more associated dependencies have already changed.
+> Callers can check the <xref:System.Runtime.Caching.ChangeMonitor.HasChanged> property to see whether a dependency has changed. However, in a multi-threaded environment, a simpler and more maintainable approach is to insert data into a cache implementation without checking the <xref:System.Runtime.Caching.ChangeMonitor.HasChanged> property. Cache implementations must check the <xref:System.Runtime.Caching.ChangeMonitor.HasChanged> property for you and must not perform an insert or set operation if one or more associated dependencies have already changed.
 
  ]]></format>
         </remarks>
@@ -378,7 +378,7 @@ Note: This automatic call to the dispose method during the event firing only occ
  Because the <xref:System.Runtime.Caching.OnChangedCallback> delegate includes an optional state parameter, a concrete change monitor implementation can pass optional state information. The cache implementer determines whether an explicit dependency on the type of state that a custom change monitor passes as part of the callback can be taken.
 
 > [!NOTE]
->  The base cache extensibility API has no requirement for explicit dependency on the type of state.
+> The base cache extensibility API has no requirement for explicit dependency on the type of state.
 
  The implementation of the <xref:System.Runtime.Caching.ChangeMonitor.NotifyOnChanged*> method automatically determines whether the state of the monitor has already changed at the time <xref:System.Runtime.Caching.ChangeMonitor.NotifyOnChanged*> method is called. If the <xref:System.Runtime.Caching.ChangeMonitor.HasChanged> property is `true`, then the method automatically calls the <xref:System.Runtime.Caching.OnChangedCallback> event handler, that was registered, through the <xref:System.Runtime.Caching.ChangeMonitor.OnChanged*> method. This occurs because it is possible that from the time a cache implementation creates a change monitor, to the time a cache implementation gets the monitor and wires itself up to it, the underlying monitored state has changed. If the state has already changed then the object that is passed to the <xref:System.Runtime.Caching.ChangeMonitor.OnChanged*> method is `null`.
 

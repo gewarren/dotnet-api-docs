@@ -60,7 +60,7 @@
  The information expressed by a <xref:System.ServiceModel.ServiceContractAttribute> and its interface is loosely related to the Web Services Description Language (WSDL) `<portType>` element. A service contract is used on the service side to specify what the service's endpoint exposes to callers. It is also used on the client side to specify the contract of the endpoint with which the client communicates and, in the case of duplex contracts, to specify the callback contract (using the <xref:System.ServiceModel.ServiceContractAttribute.CallbackContract> property) that the client must implement in order to participate in a duplex conversation.
 
 > [!NOTE]
->  An interface or class that is decorated with <xref:System.ServiceModel.ServiceContractAttribute> must also have at least one method marked with the <xref:System.ServiceModel.OperationContractAttribute> attribute to expose any functionality. See the Examples section for a code example of the simplest use of the two attributes to define and implement a service.
+> An interface or class that is decorated with <xref:System.ServiceModel.ServiceContractAttribute> must also have at least one method marked with the <xref:System.ServiceModel.OperationContractAttribute> attribute to expose any functionality. See the Examples section for a code example of the simplest use of the two attributes to define and implement a service.
 
  Use the <xref:System.ServiceModel.ServiceContractAttribute> properties to modify the service contract.
 
@@ -210,7 +210,7 @@
  Specify an interface in the <xref:System.ServiceModel.ServiceContractAttribute.CallbackContract> property that represents the required opposite contract in a two-way (or duplex) message exchange. This enables client applications to listen for inbound operation calls that the server-side service application can send independently of client activity. Callback contracts that have one-way operations represent calls from the service that the client can handle.
 
 > [!NOTE]
->  The <xref:System.ServiceModel.ServiceContractAttribute> attribute is ignored on callback contracts. To configure runtime behavior of callback objects, use the <xref:System.ServiceModel.CallbackBehaviorAttribute?displayProperty=nameWithType>.
+> The <xref:System.ServiceModel.ServiceContractAttribute> attribute is ignored on callback contracts. To configure runtime behavior of callback objects, use the <xref:System.ServiceModel.CallbackBehaviorAttribute?displayProperty=nameWithType>.
 
 
 
@@ -545,7 +545,7 @@
  For more information about sessions and service instances, see [Using Sessions](/dotnet/framework/wcf/using-sessions) and [Sessions, Instancing, and Concurrency](/dotnet/framework/wcf/feature-details/sessions-instancing-and-concurrency).
 
 > [!NOTE]
->  A channel that supports sessions supports the default association of a service instance with a particular session. However, different session implementations support different features in addition to session-based instancing control. WCF provides four types of sessions that you can use to provide sessionful application behavior; each type of session provides additional behavior specific to the type of session it is.
+> A channel that supports sessions supports the default association of a service instance with a particular session. However, different session implementations support different features in addition to session-based instancing control. WCF provides four types of sessions that you can use to provide sessionful application behavior; each type of session provides additional behavior specific to the type of session it is.
 
 1.  The <xref:System.ServiceModel.Channels.SecurityBindingElement?displayProperty=nameWithType> supports security sessions, in which both ends of communication have agreed upon an encryption and/or digital signature process; all messages are correlated with that specific secure conversation. For more information, see [Securing Services](/dotnet/framework/wcf/securing-services). For example, the <xref:System.ServiceModel.WSHttpBinding?displayProperty=nameWithType>, which contains support for both security sessions and reliable sessions, by default uses only a secure session which encrypts and digitally signs messages.
 

@@ -78,7 +78,7 @@
  You can use the `sc create` command to install services that target modern .NET, or use `InstallUtil.exe` to install services that target .NET Framework.
 
 > [!NOTE]
->  You can specify a log other than the Application event log to receive notification of service calls, but neither the <xref:System.ServiceProcess.ServiceBase.AutoLog*> nor the <xref:System.ServiceProcess.ServiceBase.EventLog> property can write to a custom log. Set <xref:System.ServiceProcess.ServiceBase.AutoLog*> to `false` if you do not want to use automatic logging.
+> You can specify a log other than the Application event log to receive notification of service calls, but neither the <xref:System.ServiceProcess.ServiceBase.AutoLog*> nor the <xref:System.ServiceProcess.ServiceBase.EventLog> property can write to a custom log. Set <xref:System.ServiceProcess.ServiceBase.AutoLog*> to `false` if you do not want to use automatic logging.
 
  ]]></format>
     </remarks>
@@ -122,7 +122,7 @@
  If the executable contains multiple services, calling Start on one service causes the constructors to be called for all services in the executable, but only the specified service is started. Destructors for the services are run together when all services have been stopped, not individually when each service is stopped.
 
 > [!NOTE]
->  If you override the base class constructor, you should explicitly call it in the constructor of your derived class.
+> If you override the base class constructor, you should explicitly call it in the constructor of your derived class.
 
  ]]></format>
         </remarks>
@@ -176,7 +176,7 @@
  To report information to a custom event log rather than the Application log, set <xref:System.ServiceProcess.ServiceBase.AutoLog*> to `false` and write instructions within the command-handling methods <xref:System.ServiceProcess.ServiceBase.OnContinue*>, <xref:System.ServiceProcess.ServiceBase.OnPause*>, or <xref:System.ServiceProcess.ServiceBase.OnStop*> to post to the appropriate log.
 
 > [!NOTE]
->  The <xref:System.ServiceProcess.ServiceBase.ServiceName*>, which supplies the source string for the event log, must be set before the service attempts to write to the event log. Trying to access the event log before the source name is set throws an exception.
+> The <xref:System.ServiceProcess.ServiceBase.ServiceName*>, which supplies the source string for the event log, must be set before the service attempts to write to the event log. Trying to access the event log before the source name is set throws an exception.
 
  ]]></format>
         </remarks>
@@ -373,7 +373,7 @@
  If <xref:System.ServiceProcess.ServiceBase.CanShutdown*> is `true`, the service is notified when the system is shutting down. At shutdown, the <xref:System.ServiceProcess.ServiceBase.OnShutdown*> method is called if it has been implemented in your derived class.
 
 > [!NOTE]
->  Only the system should cause the <xref:System.ServiceProcess.ServiceBase.OnShutdown*> method to execute; the service can call it, but this is not recommended.
+> Only the system should cause the <xref:System.ServiceProcess.ServiceBase.OnShutdown*> method to execute; the service can call it, but this is not recommended.
 
  ]]></format>
         </remarks>
@@ -469,7 +469,7 @@
  Call <xref:System.ServiceProcess.ServiceBase.Dispose*> in your derived class (and through it, in the <xref:System.ServiceProcess.ServiceBase> class) when you are finished using the derived class. The <xref:System.ServiceProcess.ServiceBase.Dispose*> method leaves the derived class in an unusable state. After calling <xref:System.ServiceProcess.ServiceBase.Dispose*>, you must release all references to the derived class and <xref:System.ServiceProcess.ServiceBase> so the memory they were occupying can be reclaimed by garbage collection.
 
 > [!NOTE]
->  Always call <xref:System.ServiceProcess.ServiceBase.Dispose*> before you release your last reference to the class derived from <xref:System.ServiceProcess.ServiceBase>. Otherwise, the resources <xref:System.ServiceProcess.ServiceBase> and the derived class are using will not be freed until garbage collection calls the objects' destructors.
+> Always call <xref:System.ServiceProcess.ServiceBase.Dispose*> before you release your last reference to the class derived from <xref:System.ServiceProcess.ServiceBase>. Otherwise, the resources <xref:System.ServiceProcess.ServiceBase> and the derived class are using will not be freed until garbage collection calls the objects' destructors.
 
  <xref:System.ServiceProcess.ServiceBase.OnStop*> is often implemented to process the code in <xref:System.ServiceProcess.ServiceBase.OnPause*>, combined with a call to <xref:System.ServiceProcess.ServiceBase.Dispose*>. If you choose to do this in your derived class, it is customary to implement <xref:System.ServiceProcess.ServiceBase.OnStart*> to allocate whatever <xref:System.ServiceProcess.ServiceBase.Dispose*> released.
 
@@ -924,7 +924,7 @@
  Use <xref:System.ServiceProcess.ServiceBase.OnStart*> to specify the processing that occurs when the service receives a Start command. <xref:System.ServiceProcess.ServiceBase.OnStart*> is the method in which you specify the behavior of the service. <xref:System.ServiceProcess.ServiceBase.OnStart*> can take arguments as a way to pass data, but this usage is rare.
 
 > [!CAUTION]
->  Do not use the constructor to perform processing that should be in <xref:System.ServiceProcess.ServiceBase.OnStart*>. Use <xref:System.ServiceProcess.ServiceBase.OnStart*> to handle all initialization of your service. The constructor is called when the application's executable runs, not when the service runs. The executable runs before <xref:System.ServiceProcess.ServiceBase.OnStart*>. When you continue, for example, the constructor is not called again because the SCM already holds the object in memory. If <xref:System.ServiceProcess.ServiceBase.OnStop*> releases resources allocated in the constructor rather than in <xref:System.ServiceProcess.ServiceBase.OnStart*>, the needed resources would not be created again the second time the service is called.
+> Do not use the constructor to perform processing that should be in <xref:System.ServiceProcess.ServiceBase.OnStart*>. Use <xref:System.ServiceProcess.ServiceBase.OnStart*> to handle all initialization of your service. The constructor is called when the application's executable runs, not when the service runs. The executable runs before <xref:System.ServiceProcess.ServiceBase.OnStart*>. When you continue, for example, the constructor is not called again because the SCM already holds the object in memory. If <xref:System.ServiceProcess.ServiceBase.OnStop*> releases resources allocated in the constructor rather than in <xref:System.ServiceProcess.ServiceBase.OnStart*>, the needed resources would not be created again the second time the service is called.
 
  Services can be set to start automatically when the computer reboots by setting the <xref:System.ServiceProcess.ServiceInstaller.StartType*> on the service's installer to <xref:System.ServiceProcess.ServiceStartMode.Automatic>. In such a situation, <xref:System.ServiceProcess.ServiceBase.OnStart*> would be called at system startup.
 

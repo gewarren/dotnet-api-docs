@@ -37,12 +37,12 @@
  Implement the <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError*> method to ensure error-related behaviors, including error logging, assuring a fail fast, shutting down the application, and so on.
 
 > [!NOTE]
->  Because the <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError*> method can be called from many different places there are no guarantees made about which thread the method is called on. Do not depend on <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError*> method being called on the operation thread.
+> Because the <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError*> method can be called from many different places there are no guarantees made about which thread the method is called on. Do not depend on <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError*> method being called on the operation thread.
 
  All <xref:System.ServiceModel.Dispatcher.IErrorHandler.ProvideFault*> implementations are called first, prior to sending a response message. When all <xref:System.ServiceModel.Dispatcher.IErrorHandler.ProvideFault*> implementations have been called and return, and if `fault` is non-`null`, it is sent back to the client according to the operation contract. If `fault` is `null` after all implementations have been called, the response message is controlled by the <xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults?displayProperty=nameWithType> property value.
 
 > [!NOTE]
->  Exceptions can occur after all <xref:System.ServiceModel.Dispatcher.IErrorHandler.ProvideFault*> implementations are called and a response message is handed to the channel. If a channel exception occurs (for example, difficulty serializing the message) <xref:System.ServiceModel.Dispatcher.IErrorHandler> objects are notified. In this case, you should still make sure that your development environment catches and displays such exceptions to you or makes use of tracing to discover the problem. For more information about tracing, see [Using Tracing to Troubleshoot Your Application](/dotnet/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application).
+> Exceptions can occur after all <xref:System.ServiceModel.Dispatcher.IErrorHandler.ProvideFault*> implementations are called and a response message is handed to the channel. If a channel exception occurs (for example, difficulty serializing the message) <xref:System.ServiceModel.Dispatcher.IErrorHandler> objects are notified. In this case, you should still make sure that your development environment catches and displays such exceptions to you or makes use of tracing to discover the problem. For more information about tracing, see [Using Tracing to Troubleshoot Your Application](/dotnet/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application).
 
  After the response message has been sent, all <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError*> implementations are called in the same order.
 
@@ -112,7 +112,7 @@
  Use the <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError*> method to implement error-related behaviors such as error logging, system notifications, shutting down the application, and so on, and return a value that specifies whether the exception has been handled appropriately.
 
 > [!NOTE]
->  Because the <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError*> method can be called from many different places there are no guarantees made about which thread the method is called on. Do not depend on <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError*> method being called on the operation thread.
+> Because the <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError*> method can be called from many different places there are no guarantees made about which thread the method is called on. Do not depend on <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError*> method being called on the operation thread.
 
  All <xref:System.ServiceModel.Dispatcher.IErrorHandler> implementations are called. By default (when the return value is `false`), if there is an exception, the dispatcher aborts any session and aborts the <xref:System.ServiceModel.InstanceContext> if the <xref:System.ServiceModel.InstanceContextMode> is anything other than <xref:System.ServiceModel.InstanceContextMode.Single>.  The exception is then considered unhandled and any state is considered corrupt.
 
@@ -184,10 +184,10 @@
  Implement the <xref:System.ServiceModel.Dispatcher.IErrorHandler.ProvideFault*> method to create a custom fault message that is returned to the client.  The <xref:System.ServiceModel.Dispatcher.IErrorHandler.ProvideFault*> method will always be called for exceptions that leave operations, except when the WCF runtime recognizes the exception as especially fatal and rethrows the exception itself. When all <xref:System.ServiceModel.Dispatcher.IErrorHandler.ProvideFault*> implementations have been called, the fault message is sent back to the client (if `fault` is non-`null`). If the `fault` parameter is `null` the default fault is sent to the client.
 
 > [!NOTE]
->  The inbound message that caused the processing error is available during this method from the <xref:System.ServiceModel.OperationContext.RequestContext?displayProperty=nameWithType> property.
+> The inbound message that caused the processing error is available during this method from the <xref:System.ServiceModel.OperationContext.RequestContext?displayProperty=nameWithType> property.
 
 > [!NOTE]
->  Because the <xref:System.ServiceModel.Dispatcher.IErrorHandler.ProvideFault*> method can be called from many different places there are no guarantees made about which thread the method is called on. Do not depend on <xref:System.ServiceModel.Dispatcher.IErrorHandler.ProvideFault*> method being called on the operation thread.
+> Because the <xref:System.ServiceModel.Dispatcher.IErrorHandler.ProvideFault*> method can be called from many different places there are no guarantees made about which thread the method is called on. Do not depend on <xref:System.ServiceModel.Dispatcher.IErrorHandler.ProvideFault*> method being called on the operation thread.
 
 
 

@@ -166,7 +166,7 @@
  If the <xref:System.Security.CodeAccessPermission.Assert*> method has been called higher on the stack, the data should not be cached without capturing the corresponding security context. Otherwise, sensitive data that is obtained under an <xref:System.Security.CodeAccessPermission.Assert*> may become available to code that is no longer be running with that <xref:System.Security.CodeAccessPermission.Assert*> in place.
 
 > [!IMPORTANT]
->  The return value is reliable only when it is `false`, which means that the thread is guaranteed not to require a security context capture. The method may return true when a security context capture is not necessary, to avoid security vulnerabilities.
+> The return value is reliable only when it is `false`, which means that the thread is guaranteed not to require a security context capture. The method may return true when a security context capture is not necessary, to avoid security vulnerabilities.
 
  <xref:System.Security.SecurityManager.CurrentThreadRequiresSecurityContextCapture*> is security-critical because its main use is to avoid unnecessary security context captures, which indicates that the code using it is security-sensitive and must be audited.
 
@@ -215,9 +215,9 @@
 ## Remarks
 
 > [!NOTE]
->  In the .NET Framework 4, the host evidence in `evidence` must contain <xref:System.Security.Policy.Zone?displayProperty=nameWithType> evidence.
+> In the .NET Framework 4, the host evidence in `evidence` must contain <xref:System.Security.Policy.Zone?displayProperty=nameWithType> evidence.
 >
->  The following table shows the permission sets that are returned for each zone.
+> The following table shows the permission sets that are returned for each zone.
 
 | Zone                                           | Permission set  |
 |------------------------------------------------|-----------------|
@@ -289,7 +289,7 @@
  The recommended alternative to this method is to use the URL and Zone evidence for the executing assembly to call <xref:System.Security.SecurityManager.ResolvePolicy*> for each evidence type. The permission sets returned from the <xref:System.Security.SecurityManager.ResolvePolicy*> calls identify the permissions granted to the executing assembly based on its zone and URL of origin.
 
 > [!NOTE]
->  This member makes a link demand for the ECMA public key, which is not a valid cryptographic key but a pseudo key. Within the .NET Framework the link demand for the ECMA pseudo key is automatically converted to a link demand for the Microsoft public key. The security exception is based on the Microsoft public key, not the ECMA pseudo key.
+> This member makes a link demand for the ECMA public key, which is not a valid cryptographic key but a pseudo key. Within the .NET Framework the link demand for the ECMA pseudo key is automatically converted to a link demand for the Microsoft public key. The security exception is based on the Microsoft public key, not the ECMA pseudo key.
 
  ]]></format>
         </remarks>
@@ -1060,7 +1060,7 @@
  <xref:System.Security.SecurityManager.SecurityEnabled*> provides a way for administrators to disable code access security. When code access security is disabled, all code access demands succeed. Effectively, this grants all code `FullTrust`. Disabling code access security bypasses the security system so that code might perform slightly better than the equivalent security policy granting `FullTrust` to all code. This property does not disable role-based security; therefore, <xref:System.Security.Permissions.PrincipalPermission> demands are not affected.
 
 > [!CAUTION]
->  Disabling code access security makes the system vulnerable to attacks by malicious code such as viruses and worms. Disabling code access security does not automatically block managed code from running in any way. It only causes managed code to run without restriction by the code access security system, and should only be done with the most extreme caution. Turning off security to gain extra performance should only be done when other security measures have been taken to help protect system security. Examples of other security precautions include disconnecting from public networks, physically securing computers, and so on.
+> Disabling code access security makes the system vulnerable to attacks by malicious code such as viruses and worms. Disabling code access security does not automatically block managed code from running in any way. It only causes managed code to run without restriction by the code access security system, and should only be done with the most extreme caution. Turning off security to gain extra performance should only be done when other security measures have been taken to help protect system security. Examples of other security precautions include disconnecting from public networks, physically securing computers, and so on.
 
  A change to this property is not persisted in the registry until <xref:System.Security.SecurityManager.SavePolicy*> is called. New processes will not be affected by the change until it is persisted in the registry. Changing the value of this property in a running process does not necessarily change the state in the expected manner. To ensure changes have taken effect, you must call <xref:System.Security.SecurityManager.SavePolicy*> and start a new process.
 

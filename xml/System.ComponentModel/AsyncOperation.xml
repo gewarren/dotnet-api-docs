@@ -458,7 +458,7 @@ Note: Console applications do not synchronize the execution of <see cref="M:Syst
  If your class supports multiple asynchronous methods or multiple invocations of a single asynchronous method, clients will need a way to determine which asynchronous task is raising events. Your `MethodNameAsync` method should take a parameter of type <xref:System.Object> that will act as a task ID. You will use this task ID when you call the <xref:System.ComponentModel.AsyncOperationManager.CreateOperation*?displayProperty=nameWithType>, method and this will associate the client's task ID with a particular invocation of your asynchronous operation. This task ID is made available to your implementation through the <xref:System.ComponentModel.AsyncOperation.UserSuppliedState> property.
 
 > [!CAUTION]
->  Client code must be careful to provide a unique value for the <xref:System.ComponentModel.AsyncOperation.UserSuppliedState> property. Non-unique task IDs may cause your implementation to report progress and other events incorrectly. Your code should check for a non-unique task ID and raise an <xref:System.ArgumentException> if one is detected.
+> Client code must be careful to provide a unique value for the <xref:System.ComponentModel.AsyncOperation.UserSuppliedState> property. Non-unique task IDs may cause your implementation to report progress and other events incorrectly. Your code should check for a non-unique task ID and raise an <xref:System.ArgumentException> if one is detected.
 
 
 

@@ -90,7 +90,7 @@
  If you are performing only one directory-related action, it might be more efficient to use a static <xref:System.IO.Directory> method rather than a corresponding <xref:System.IO.DirectoryInfo> instance method. Most <xref:System.IO.Directory> methods require the path to the directory that you are manipulating.
 
 > [!NOTE]
->  In members that accept a string `path` parameter, that path must be well-formed or an exception is raised. For example, if a path is fully qualified but begins with a space (" c:\temp"), the path string isn't trimmed, so the path is considered malformed and an exception is raised. In addition, a path or a combination of paths cannot be fully qualified twice. For example, "c:\temp c:\windows" also raises an exception. Ensure that your paths are well-formed when using methods that accept a path string. For more information see <xref:System.IO.Path>.
+> In members that accept a string `path` parameter, that path must be well-formed or an exception is raised. For example, if a path is fully qualified but begins with a space (" c:\temp"), the path string isn't trimmed, so the path is considered malformed and an exception is raised. In addition, a path or a combination of paths cannot be fully qualified twice. For example, "c:\temp c:\windows" also raises an exception. Ensure that your paths are well-formed when using methods that accept a path string. For more information see <xref:System.IO.Path>.
 
  In members that accept a path, the path can refer to a file or a directory. You can use a full path, a relative path, or a Universal Naming Convention (UNC) path for a server and share name. For example, all the following are acceptable paths:
 
@@ -1679,12 +1679,12 @@ The returned collection is not cached. Each call to the <xref:System.Collections
  Characters other than the wildcard are literal characters. For example, the `searchPattern` string "\*t" searches for all names in `path` ending with the letter "t". The `searchPattern` string "s\*" searches for all names in `path` beginning with the letter "s".
 
 > [!NOTE]
->  When you use the asterisk wildcard character in a `searchPattern` such as "\*.txt", the number of characters in the specified extension affects the search as follows:
+> When you use the asterisk wildcard character in a `searchPattern` such as "\*.txt", the number of characters in the specified extension affects the search as follows:
 >
 > -   If the specified extension is exactly three characters long, the method returns files with extensions that begin with the specified extension. For example, "\*.xls" returns both "book.xls" and "book.xlsx".
 > -   In all other cases, the method returns files that exactly match the specified extension. For example, "\*.ai" returns "file.ai" but not "file.aif".
 >
->  When you use the question mark wildcard character, this method returns only files that match the specified file extension. For example, given two files, "file1.txt" and "file1.txtother", in a directory, a search pattern of "file?.txt" returns just the first file, whereas a search pattern of "file\*.txt" returns both files.
+> When you use the question mark wildcard character, this method returns only files that match the specified file extension. For example, given two files, "file1.txt" and "file1.txtother", in a directory, a search pattern of "file?.txt" returns just the first file, whereas a search pattern of "file\*.txt" returns both files.
 
  `searchPattern` cannot end in two periods ("..") or contain two periods ("..") followed by <xref:System.IO.Path.DirectorySeparatorChar> or <xref:System.IO.Path.AltDirectorySeparatorChar>, nor can it contain any invalid characters. You can query for invalid characters by using the <xref:System.IO.Path.GetInvalidPathChars*> method.
 
@@ -1775,12 +1775,12 @@ The returned collection is not cached. Each call to the <xref:System.Collections
  Characters other than the wildcard are literal characters. For example, the `searchPattern` string "\*t" searches for all names in `path` ending with the letter "t". The `searchPattern` string "s\*" searches for all names in `path` beginning with the letter "s".
 
 > [!NOTE]
->  When you use the asterisk wildcard character in a `searchPattern` such as "\*.txt", the number of characters in the specified extension affects the search as follows:
+> When you use the asterisk wildcard character in a `searchPattern` such as "\*.txt", the number of characters in the specified extension affects the search as follows:
 >
 > -   If the specified extension is exactly three characters long, the method returns files with extensions that begin with the specified extension. For example, "\*.xls" returns both "book.xls" and "book.xlsx".
 > -   In all other cases, the method returns files that exactly match the specified extension. For example, "\*.ai" returns "file.ai" but not "file.aif".
 >
->  When you use the question mark wildcard character, this method returns only files that match the specified file extension. For example, given two files, "file1.txt" and "file1.txtother", in a directory, a search pattern of "file?.txt" returns just the first file, whereas a search pattern of "file\*.txt" returns both files.
+> When you use the question mark wildcard character, this method returns only files that match the specified file extension. For example, given two files, "file1.txt" and "file1.txtother", in a directory, a search pattern of "file?.txt" returns just the first file, whereas a search pattern of "file\*.txt" returns both files.
 
  `searchPattern` cannot end in two periods ("..") or contain two periods ("..") followed by <xref:System.IO.Path.DirectorySeparatorChar> or <xref:System.IO.Path.AltDirectorySeparatorChar>, nor can it contain any invalid characters. You can query for invalid characters by using the <xref:System.IO.Path.GetInvalidPathChars*> method.
 
@@ -1876,12 +1876,12 @@ The returned collection is not cached. Each call to the <xref:System.Collections
  Characters other than the wildcard are literal characters. For example, the `searchPattern` string "\*t" searches for all names in `path` ending with the letter "t". The `searchPattern` string "s\*" searches for all names in `path` beginning with the letter "s".
 
 > [!NOTE]
->  When you use the asterisk wildcard character in a `searchPattern` such as "\*.txt", the number of characters in the specified extension affects the search as follows:
+> When you use the asterisk wildcard character in a `searchPattern` such as "\*.txt", the number of characters in the specified extension affects the search as follows:
 >
 > -   If the specified extension is exactly three characters long, the method returns files with extensions that begin with the specified extension. For example, "\*.xls" returns both "book.xls" and "book.xlsx".
 > -   In all other cases, the method returns files that exactly match the specified extension. For example, "\*.ai" returns "file.ai" but not "file.aif".
 >
->  When you use the question mark wildcard character, this method returns only files that match the specified file extension. For example, given two files, "file1.txt" and "file1.txtother", in a directory, a search pattern of "file?.txt" returns just the first file, whereas a search pattern of "file\*.txt" returns both files.
+> When you use the question mark wildcard character, this method returns only files that match the specified file extension. For example, given two files, "file1.txt" and "file1.txtother", in a directory, a search pattern of "file?.txt" returns just the first file, whereas a search pattern of "file\*.txt" returns both files.
 
  `searchPattern` cannot end in two periods ("..") or contain two periods ("..") followed by <xref:System.IO.Path.DirectorySeparatorChar> or <xref:System.IO.Path.AltDirectorySeparatorChar>, nor can it contain any invalid characters. You can query for invalid characters by using the <xref:System.IO.Path.GetInvalidPathChars*> method.
 
@@ -2197,7 +2197,7 @@ The returned collection is not cached. Each call to the <xref:System.Collections
 ## Remarks
 
 > [!NOTE]
->  This method may return an inaccurate value, because it uses native functions whose values may not be continuously updated by the operating system.
+> This method may return an inaccurate value, because it uses native functions whose values may not be continuously updated by the operating system.
 
  This method is equivalent to <xref:System.IO.File.GetCreationTime*?displayProperty=nameWithType>.
 
@@ -2291,7 +2291,7 @@ The returned collection is not cached. Each call to the <xref:System.Collections
 ## Remarks
 
 > [!NOTE]
->  This method may return an inaccurate value, because it uses native functions whose values may not be continuously updated by the operating system.
+> This method may return an inaccurate value, because it uses native functions whose values may not be continuously updated by the operating system.
 
  If the directory described in the `path` parameter does not exist, this method returns 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC).
 
@@ -3470,12 +3470,12 @@ The returned collection is not cached. Each call to the <xref:System.Collections
  `searchPattern` cannot end in two periods ("..") or contain two periods ("..") followed by <xref:System.IO.Path.DirectorySeparatorChar> or <xref:System.IO.Path.AltDirectorySeparatorChar>, nor can it contain any invalid characters. You can query for invalid characters by using the <xref:System.IO.Path.GetInvalidPathChars*> method.
 
 > [!NOTE]
->  When you use the asterisk wildcard character in a `searchPattern` such as "\*.txt", the number of characters in the specified extension affects the search as follows:
+> When you use the asterisk wildcard character in a `searchPattern` such as "\*.txt", the number of characters in the specified extension affects the search as follows:
 >
 > -   If the specified extension is exactly three characters long, the method returns files with extensions that begin with the specified extension. For example, "\*.xls" returns both "book.xls" and "book.xlsx".
 > -   In all other cases, the method returns files that exactly match the specified extension. For example, "\*.ai" returns "file.ai" but not "file.aif".
 >
->  When you use the question mark wildcard character, this method returns only files that match the specified file extension. For example, given two files, "file1.txt" and "file1.txtother", in a directory, a search pattern of "file?.txt" returns just the first file, whereas a search pattern of "file\*.txt" returns both files.
+> When you use the question mark wildcard character, this method returns only files that match the specified file extension. For example, given two files, "file1.txt" and "file1.txtother", in a directory, a search pattern of "file?.txt" returns just the first file, whereas a search pattern of "file\*.txt" returns both files.
 
  The `path` parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see <xref:System.IO.Directory.GetCurrentDirectory*>.
 
@@ -3575,12 +3575,12 @@ The returned collection is not cached. Each call to the <xref:System.Collections
  `searchPattern` cannot end in two periods ("..") or contain two periods ("..") followed by <xref:System.IO.Path.DirectorySeparatorChar> or <xref:System.IO.Path.AltDirectorySeparatorChar>, nor can it contain any invalid characters. You can query for invalid characters by using the <xref:System.IO.Path.GetInvalidPathChars*> method.
 
 > [!NOTE]
->  When you use the asterisk wildcard character in a `searchPattern` such as "\*.txt", the number of characters in the specified extension affects the search as follows:
+> When you use the asterisk wildcard character in a `searchPattern` such as "\*.txt", the number of characters in the specified extension affects the search as follows:
 >
 > -   If the specified extension is exactly three characters long, the method returns files with extensions that begin with the specified extension. For example, "\*.xls" returns both "book.xls" and "book.xlsx".
 > -   In all other cases, the method returns files that exactly match the specified extension. For example, "\*.ai" returns "file.ai" but not "file.aif".
 >
->  When you use the question mark wildcard character, this method returns only files that match the specified file extension. For example, given two files, "file1.txt" and "file1.txtother", in a directory, a search pattern of "file?.txt" returns just the first file, whereas a search pattern of "file\*.txt" returns both files.
+> When you use the question mark wildcard character, this method returns only files that match the specified file extension. For example, given two files, "file1.txt" and "file1.txtother", in a directory, a search pattern of "file?.txt" returns just the first file, whereas a search pattern of "file\*.txt" returns both files.
 
  The `path` parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see <xref:System.IO.Directory.GetCurrentDirectory*>.
 
@@ -3672,12 +3672,12 @@ The returned collection is not cached. Each call to the <xref:System.Collections
  `searchPattern` cannot end in two periods ("..") or contain two periods ("..") followed by <xref:System.IO.Path.DirectorySeparatorChar> or <xref:System.IO.Path.AltDirectorySeparatorChar>, nor can it contain any invalid characters. You can query for invalid characters by using the <xref:System.IO.Path.GetInvalidPathChars*> method.
 
 > [!NOTE]
->  When you use the asterisk wildcard character in a `searchPattern` such as "\*.txt", the number of characters in the specified extension affects the search as follows:
+> When you use the asterisk wildcard character in a `searchPattern` such as "\*.txt", the number of characters in the specified extension affects the search as follows:
 >
 > -   If the specified extension is exactly three characters long, the method returns files with extensions that begin with the specified extension. For example, "\*.xls" returns both "book.xls" and "book.xlsx".
 > -   In all other cases, the method returns files that exactly match the specified extension. For example, "\*.ai" returns "file.ai" but not "file.aif".
 >
->  When you use the question mark wildcard character, this method returns only files that match the specified file extension. For example, given two files, "file1.txt" and "file1.txtother", in a directory, a search pattern of "file?.txt" returns just the first file, whereas a search pattern of "file\*.txt" returns both files.
+> When you use the question mark wildcard character, this method returns only files that match the specified file extension. For example, given two files, "file1.txt" and "file1.txtother", in a directory, a search pattern of "file?.txt" returns just the first file, whereas a search pattern of "file\*.txt" returns both files.
 
  The <xref:System.IO.Directory.EnumerateFileSystemEntries*> and <xref:System.IO.Directory.GetFileSystemEntries*> methods differ as follows: When you use <xref:System.IO.Directory.EnumerateFileSystemEntries*>, you can start enumerating the collection of entries before the whole collection is returned; when you use <xref:System.IO.Directory.GetFileSystemEntries*>, you must wait for the whole array of entries to be returned before you can access the array. Therefore, when you are working with many files and directories, <xref:System.IO.Directory.EnumerateFileSystemEntries*> can be more efficient.
 
@@ -3768,7 +3768,7 @@ The returned collection is not cached. Each call to the <xref:System.Collections
 ## Remarks
 
 > [!NOTE]
->  This method may return an inaccurate value, because it uses native functions whose values may not be continuously updated by the operating system.
+> This method may return an inaccurate value, because it uses native functions whose values may not be continuously updated by the operating system.
 
  This method is identical to <xref:System.IO.File.GetLastAccessTime*?displayProperty=nameWithType>.
 
@@ -3863,7 +3863,7 @@ The returned collection is not cached. Each call to the <xref:System.Collections
 ## Remarks
 
 > [!NOTE]
->  This method may return an inaccurate value, because it uses native functions whose values may not be continuously updated by the operating system.
+> This method may return an inaccurate value, because it uses native functions whose values may not be continuously updated by the operating system.
 
  If the directory described in the `path` parameter does not exist, this method returns 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC).
 
@@ -3952,7 +3952,7 @@ The returned collection is not cached. Each call to the <xref:System.Collections
 ## Remarks
 
 > [!NOTE]
->  This method may return an inaccurate value, because it uses native functions whose values may not be continuously updated by the operating system.
+> This method may return an inaccurate value, because it uses native functions whose values may not be continuously updated by the operating system.
 
  If the directory described in the `path` parameter does not exist, this method returns 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC), adjusted to local time.
 
@@ -4044,7 +4044,7 @@ The returned collection is not cached. Each call to the <xref:System.Collections
 ## Remarks
 
 > [!NOTE]
->  This method may return an inaccurate value, because it uses native functions whose values may not be continuously updated by the operating system.
+> This method may return an inaccurate value, because it uses native functions whose values may not be continuously updated by the operating system.
 
  If the directory described in the `path` parameter does not exist, this method returns 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC).
 

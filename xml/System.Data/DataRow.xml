@@ -261,7 +261,7 @@
  To see if the row contains an original or proposed value, call the <xref:System.Data.DataRow.HasVersion*> method.
 
 > [!NOTE]
->  The <xref:System.Data.DataRow.BeginEdit*> method temporarily suspends <xref:System.Data.DataTable.RowChanging> events, but the `delete` operation does not.
+> The <xref:System.Data.DataRow.BeginEdit*> method temporarily suspends <xref:System.Data.DataTable.RowChanging> events, but the `delete` operation does not.
 
 
 
@@ -476,7 +476,7 @@
  A deleted row can be undeleted by invoking <xref:System.Data.DataRow.RejectChanges*>.
 
 > [!NOTE]
->  The <xref:System.Data.DataRow.BeginEdit*> method temporarily suspends <xref:System.Data.DataTable.RowChanging> events, but the delete operation does not.
+> The <xref:System.Data.DataRow.BeginEdit*> method temporarily suspends <xref:System.Data.DataTable.RowChanging> events, but the delete operation does not.
 
 
 
@@ -2503,7 +2503,7 @@
  You can only create or update a row after you call the <xref:System.Data.DataRow.BeginEdit*> method; similarly, the <xref:System.Data.DataRow.EndEdit*> method must be called to commit the edit. After you call the <xref:System.Data.DataRow.EndEdit*> method, and before you call the <xref:System.Data.DataRow.AcceptChanges*> method, internal representations of the original and new proposed values are stored. Therefore, until you call the <xref:System.Data.DataRow.AcceptChanges*>, you can use the `version` argument to specify which version of a column's value you need, either the `DataRowVersion.Original` or `DataRowVersion.Proposed`. However, as soon as you call the <xref:System.Data.DataRow.AcceptChanges*> method, the version of the column reverts to `DataRowVersion.Original`. If the row is new, you can also pass `DataRowVersion.Default` for the parameter to retrieve the column's default value. When passing `DataRowVersion.Current`, the property returns the current value, whatever its version may be.
 
 > [!NOTE]
->  The <xref:System.Data.DataRow.BeginEdit*> method is called implicitly when you change the value of a data-bound control or when a <xref:System.Data.DataRow> object is added to the <xref:System.Data.DataRowCollection>; the <xref:System.Data.DataRow.EndEdit*> method is called implicitly when you call the following methods: the <xref:System.Data.DataRow.AcceptChanges*> method of the <xref:System.Data.DataRow> object, the <xref:System.Data.DataTable.AcceptChanges*> method of the <xref:System.Data.DataTable> object, or the <xref:System.Data.DataRow.CancelEdit*> method.
+> The <xref:System.Data.DataRow.BeginEdit*> method is called implicitly when you change the value of a data-bound control or when a <xref:System.Data.DataRow> object is added to the <xref:System.Data.DataRowCollection>; the <xref:System.Data.DataRow.EndEdit*> method is called implicitly when you call the following methods: the <xref:System.Data.DataRow.AcceptChanges*> method of the <xref:System.Data.DataRow> object, the <xref:System.Data.DataTable.AcceptChanges*> method of the <xref:System.Data.DataTable> object, or the <xref:System.Data.DataRow.CancelEdit*> method.
 
  By contrast, the <xref:System.Data.DataRowVersion> enumeration `Current` returns the version of the data after the <xref:System.Data.DataRow.EndEdit*> method has been called.
 

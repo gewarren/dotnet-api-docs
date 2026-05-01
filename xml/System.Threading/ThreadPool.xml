@@ -81,10 +81,10 @@
      where `state` is an object that contains data to be used by the delegate. The actual data can be passed to the delegate by calling the <xref:System.Threading.ThreadPool.QueueUserWorkItem(System.Threading.WaitCallback,System.Object)> method.
 
 > [!NOTE]
->  The threads in the managed thread pool are background threads. That is, their <xref:System.Threading.Thread.IsBackground*> properties are `true`. This means that a <xref:System.Threading.ThreadPool> thread will not keep an application running after all foreground threads have exited.
+> The threads in the managed thread pool are background threads. That is, their <xref:System.Threading.Thread.IsBackground*> properties are `true`. This means that a <xref:System.Threading.ThreadPool> thread will not keep an application running after all foreground threads have exited.
 
 > [!IMPORTANT]
->  When the thread pool reuses a thread, it does not clear the data in thread local storage or in fields that are marked with the <xref:System.ThreadStaticAttribute> attribute. Therefore, when a method examines thread local storage or fields that are marked with the <xref:System.ThreadStaticAttribute> attribute, the values it finds might be left over from an earlier use of the thread pool thread.
+> When the thread pool reuses a thread, it does not clear the data in thread local storage or in fields that are marked with the <xref:System.ThreadStaticAttribute> attribute. Therefore, when a method examines thread local storage or fields that are marked with the <xref:System.ThreadStaticAttribute> attribute, the values it finds might be left over from an earlier use of the thread pool thread.
 
  You can also queue work items that are not related to a wait operation to the thread pool. To request that a work item be handled by a thread in the thread pool, call the <xref:System.Threading.ThreadPool.QueueUserWorkItem*> method. This method takes as a parameter a reference to the method or delegate that will be called by the thread selected from the thread pool. There is no way to cancel a work item after it has been queued.
 
@@ -93,17 +93,17 @@
  There is one thread pool per process. Beginning with the .NET Framework 4, the default size of the thread pool for a process depends on several factors, such as the size of the virtual address space. A process can call the <xref:System.Threading.ThreadPool.GetMaxThreads*> method to determine the number of threads. The number of threads in the thread pool can be changed by using the <xref:System.Threading.ThreadPool.SetMaxThreads*> method. Each thread uses the default stack size and runs at the default priority.
 
 > [!NOTE]
->  Unmanaged code that hosts the .NET Framework can change the size of the thread pool by using the `CorSetMaxThreads` function, defined in the mscoree.h file.
+> Unmanaged code that hosts the .NET Framework can change the size of the thread pool by using the `CorSetMaxThreads` function, defined in the mscoree.h file.
 
  The thread pool provides new worker threads or I/O completion threads on demand until it reaches the maximum for each category. When a maximum is reached, the thread pool can create additional threads in that category or wait until some tasks complete. Beginning with the .NET Framework 4, the thread pool creates and destroys worker threads in order to optimize throughput, which is defined as the number of tasks that complete per unit of time. Too few threads might not make optimal use of available resources, whereas too many threads could increase resource contention.
 
 > [!NOTE]
->  When demand is low, the actual number of thread pool threads can fall below the minimum values.
+> When demand is low, the actual number of thread pool threads can fall below the minimum values.
 
  You can use the <xref:System.Threading.ThreadPool.GetMinThreads*> method to obtain these minimum values.
 
 > [!CAUTION]
->  You can use the <xref:System.Threading.ThreadPool.SetMinThreads*> method to increase the minimum number of threads. However, unnecessarily increasing these values can cause performance problems. If too many tasks start at the same time, all of them might appear to be slow. In most cases the thread pool will perform better with its own algorithm for allocating threads.
+> You can use the <xref:System.Threading.ThreadPool.SetMinThreads*> method to increase the minimum number of threads. However, unnecessarily increasing these values can cause performance problems. If too many tasks start at the same time, all of them might appear to be slow. In most cases the thread pool will perform better with its own algorithm for allocating threads.
 
 
 
@@ -524,7 +524,7 @@ If a thread pool implementation may have different types of work items, the coun
  The thread pool provides new worker threads or I/O completion threads on demand until it reaches the minimum for each category. By default, the minimum number of threads is set to the number of processors on a system. When the minimum is reached, the thread pool can create additional threads in that category or wait until some tasks complete. Beginning with the .NET Framework 4, the thread pool creates and destroys threads in order to optimize throughput, which is defined as the number of tasks that complete per unit of time. Too few threads might not make optimal use of available resources, whereas too many threads could increase resource contention.
 
 > [!NOTE]
->  When demand is low, the actual number of thread pool threads can fall below the minimum values.
+> When demand is low, the actual number of thread pool threads can fall below the minimum values.
 
 
 
@@ -900,7 +900,7 @@ The following example uses the <xref:System.Threading.ThreadPool.QueueUserWorkIt
  The <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject*> method checks the current state of the specified object's <xref:System.Threading.WaitHandle>. If the object's state is unsignaled, the method registers a wait operation. The wait operation is performed by a thread from the thread pool. The delegate is executed by a worker thread when the object's state becomes signaled or the time-out interval elapses. If the `timeOutInterval` parameter is not 0 (zero) and the `executeOnlyOnce` parameter is `false`, the timer is reset every time the event is signaled or the time-out interval elapses.
 
 > [!IMPORTANT]
->  Using a <xref:System.Threading.Mutex> for `waitObject` does not provide mutual exclusion for the callbacks because the underlying Windows API uses the default `WT_EXECUTEDEFAULT` flag, so each callback is dispatched on a separate thread pool thread. Instead of a <xref:System.Threading.Mutex>, use a <xref:System.Threading.Semaphore> with a maximum count of 1.
+> Using a <xref:System.Threading.Mutex> for `waitObject` does not provide mutual exclusion for the callbacks because the underlying Windows API uses the default `WT_EXECUTEDEFAULT` flag, so each callback is dispatched on a separate thread pool thread. Instead of a <xref:System.Threading.Mutex>, use a <xref:System.Threading.Semaphore> with a maximum count of 1.
 
  To cancel the wait operation, call the <xref:System.Threading.RegisteredWaitHandle.Unregister*?displayProperty=nameWithType> method.
 
@@ -999,7 +999,7 @@ The following example uses the <xref:System.Threading.ThreadPool.QueueUserWorkIt
  The <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject*> method checks the current state of the specified object's <xref:System.Threading.WaitHandle>. If the object's state is unsignaled, the method registers a wait operation. The wait operation is performed by a thread from the thread pool. The delegate is executed by a worker thread when the object's state becomes signaled or the time-out interval elapses. If the `timeOutInterval` parameter is not 0 (zero) and the `executeOnlyOnce` parameter is `false`, the timer is reset every time the event is signaled or the time-out interval elapses.
 
 > [!IMPORTANT]
->  Using a <xref:System.Threading.Mutex> for `waitObject` does not provide mutual exclusion for the callbacks because the underlying Windows API uses the default `WT_EXECUTEDEFAULT` flag, so each callback is dispatched on a separate thread pool thread. Instead of a <xref:System.Threading.Mutex>, use a <xref:System.Threading.Semaphore> with a maximum count of 1.
+> Using a <xref:System.Threading.Mutex> for `waitObject` does not provide mutual exclusion for the callbacks because the underlying Windows API uses the default `WT_EXECUTEDEFAULT` flag, so each callback is dispatched on a separate thread pool thread. Instead of a <xref:System.Threading.Mutex>, use a <xref:System.Threading.Semaphore> with a maximum count of 1.
 
  To cancel the wait operation, call the <xref:System.Threading.RegisteredWaitHandle.Unregister*?displayProperty=nameWithType> method.
 
@@ -1098,7 +1098,7 @@ The following example uses the <xref:System.Threading.ThreadPool.QueueUserWorkIt
  The <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject*> method checks the current state of the specified object's <xref:System.Threading.WaitHandle>. If the object's state is unsignaled, the method registers a wait operation. The wait operation is performed by a thread from the thread pool. The delegate is executed by a worker thread when the object's state becomes signaled or the time-out interval elapses. If the `timeOutInterval` parameter is not 0 (zero) and the `executeOnlyOnce` parameter is `false`, the timer is reset every time the event is signaled or the time-out interval elapses.
 
 > [!IMPORTANT]
->  Using a <xref:System.Threading.Mutex> for `waitObject` does not provide mutual exclusion for the callbacks because the underlying Windows API uses the default `WT_EXECUTEDEFAULT` flag, so each callback is dispatched on a separate thread pool thread. Instead of a <xref:System.Threading.Mutex>, use a <xref:System.Threading.Semaphore> with a maximum count of 1.
+> Using a <xref:System.Threading.Mutex> for `waitObject` does not provide mutual exclusion for the callbacks because the underlying Windows API uses the default `WT_EXECUTEDEFAULT` flag, so each callback is dispatched on a separate thread pool thread. Instead of a <xref:System.Threading.Mutex>, use a <xref:System.Threading.Semaphore> with a maximum count of 1.
 
  To cancel the wait operation, call the <xref:System.Threading.RegisteredWaitHandle.Unregister*?displayProperty=nameWithType> method.
 
@@ -1202,7 +1202,7 @@ The following example uses the <xref:System.Threading.ThreadPool.QueueUserWorkIt
  The <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject*> method checks the current state of the specified object's <xref:System.Threading.WaitHandle>. If the object's state is unsignaled, the method registers a wait operation. The wait operation is performed by a thread from the thread pool. The delegate is executed by a worker thread when the object's state becomes signaled or the time-out interval elapses. If the `timeOutInterval` parameter is not 0 (zero) and the `executeOnlyOnce` parameter is `false`, the timer is reset every time the event is signaled or the time-out interval elapses.
 
 > [!IMPORTANT]
->  Using a <xref:System.Threading.Mutex> for `waitObject` does not provide mutual exclusion for the callbacks because the underlying Windows API uses the default `WT_EXECUTEDEFAULT` flag, so each callback is dispatched on a separate thread pool thread. Instead of a <xref:System.Threading.Mutex>, use a <xref:System.Threading.Semaphore> with a maximum count of 1.
+> Using a <xref:System.Threading.Mutex> for `waitObject` does not provide mutual exclusion for the callbacks because the underlying Windows API uses the default `WT_EXECUTEDEFAULT` flag, so each callback is dispatched on a separate thread pool thread. Instead of a <xref:System.Threading.Mutex>, use a <xref:System.Threading.Semaphore> with a maximum count of 1.
 
  To cancel the wait operation, call the <xref:System.Threading.RegisteredWaitHandle.Unregister*?displayProperty=nameWithType> method.
 
@@ -1294,7 +1294,7 @@ The following example uses the <xref:System.Threading.ThreadPool.QueueUserWorkIt
  Setting the thread pool size too large can cause performance problems. If too many threads are executing at the same time, the task switching overhead becomes a significant factor.
 
 > [!NOTE]
->  The thread pool may have upper limits for the maximum thread counts (such as `short.MaxValue`, depending on the implementation). The argument values are capped to the upper limit, so even when the method returns `true`, the actual maximum thread counts may be lower than requested.
+> The thread pool may have upper limits for the maximum thread counts (such as `short.MaxValue`, depending on the implementation). The argument values are capped to the upper limit, so even when the method returns `true`, the actual maximum thread counts may be lower than requested.
 
  ]]></format>
         </remarks>
@@ -1499,7 +1499,7 @@ If a thread pool implementation may have different types of threads, the count i
  For information about using native Win32 overlapped I/O, see the <xref:System.Threading.Overlapped> class, the <xref:System.Threading.NativeOverlapped> structure, and the `OVERLAPPED` structure in the Win32 Platform SDK.
 
 > [!CAUTION]
->  Using the <xref:System.Threading.ThreadPool.UnsafeQueueNativeOverlapped*> method could inadvertently open up a security hole. Code access security bases its permission checks on the permissions of all the callers on the stack. When work is queued on a thread pool thread using <xref:System.Threading.ThreadPool.UnsafeQueueNativeOverlapped*>, the stack of the thread pool thread does not have the context of the actual callers. Malicious code might be able exploit this to avoid permission checks.
+> Using the <xref:System.Threading.ThreadPool.UnsafeQueueNativeOverlapped*> method could inadvertently open up a security hole. Code access security bases its permission checks on the permissions of all the callers on the stack. When work is queued on a thread pool thread using <xref:System.Threading.ThreadPool.UnsafeQueueNativeOverlapped*>, the stack of the thread pool thread does not have the context of the actual callers. Malicious code might be able exploit this to avoid permission checks.
 
  ]]></format>
         </remarks>
@@ -1624,7 +1624,7 @@ The thread pool will invoke the work item's <xref:System.Threading.IThreadPoolWo
  Unlike the <xref:System.Threading.ThreadPool.QueueUserWorkItem*> method, <xref:System.Threading.ThreadPool.UnsafeQueueUserWorkItem*> does not propagate the calling stack to the worker thread. This allows code to lose the calling stack and thereby to elevate its security privileges.
 
 > [!CAUTION]
->  Using <xref:System.Threading.ThreadPool.UnsafeQueueUserWorkItem*> could inadvertently open up a security hole. Code access security bases its permission checks on the permissions of all the callers on the stack. When work is queued on a thread pool thread using <xref:System.Threading.ThreadPool.UnsafeQueueUserWorkItem*>, the stack of the thread pool thread will not have the context of the actual callers. Malicious code might be able exploit this to avoid permission checks.
+> Using <xref:System.Threading.ThreadPool.UnsafeQueueUserWorkItem*> could inadvertently open up a security hole. Code access security bases its permission checks on the permissions of all the callers on the stack. When work is queued on a thread pool thread using <xref:System.Threading.ThreadPool.UnsafeQueueUserWorkItem*>, the stack of the thread pool thread will not have the context of the actual callers. Malicious code might be able exploit this to avoid permission checks.
 
  ]]></format>
         </remarks>
@@ -1779,7 +1779,7 @@ The thread pool will invoke the work item's <xref:System.Threading.IThreadPoolWo
  Unlike the <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject*> method, <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*> does not propagate the calling stack to the worker thread. This allows code to lose the calling stack and thereby to elevate its security privileges.
 
 > [!CAUTION]
->  Using <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*> could inadvertently open up a security hole. Code access security bases its permission checks on the permissions of all the callers on the stack. When work is queued on a thread pool thread using <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*>, the stack of the thread pool thread will not have the context of the actual callers. Malicious code might be able exploit this to avoid permission checks.
+> Using <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*> could inadvertently open up a security hole. Code access security bases its permission checks on the permissions of all the callers on the stack. When work is queued on a thread pool thread using <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*>, the stack of the thread pool thread will not have the context of the actual callers. Malicious code might be able exploit this to avoid permission checks.
 
  Using a <xref:System.Threading.Mutex> for `waitObject` does not provide mutual exclusion for the callbacks because the underlying Windows API uses the default `WT_EXECUTEDEFAULT` flag, so each callback is dispatched on a separate thread pool thread.
 
@@ -1869,7 +1869,7 @@ The thread pool will invoke the work item's <xref:System.Threading.IThreadPoolWo
  Unlike the <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject*> method, <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*> does not propagate the calling stack to the worker thread. This allows code to lose the calling stack and thereby to elevate its security privileges.
 
 > [!CAUTION]
->  Using <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*> could inadvertently open up a security hole. Code access security bases its permission checks on the permissions of all the callers on the stack. When work is queued on a thread pool thread using <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*>, the stack of the thread pool thread will not have the context of the actual callers. Malicious code might be able exploit this to avoid permission checks.
+> Using <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*> could inadvertently open up a security hole. Code access security bases its permission checks on the permissions of all the callers on the stack. When work is queued on a thread pool thread using <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*>, the stack of the thread pool thread will not have the context of the actual callers. Malicious code might be able exploit this to avoid permission checks.
 
  Using a <xref:System.Threading.Mutex> for `waitObject` does not provide mutual exclusion for the callbacks because the underlying Windows API uses the default `WT_EXECUTEDEFAULT` flag, so each callback is dispatched on a separate thread pool thread.
 
@@ -1959,7 +1959,7 @@ The thread pool will invoke the work item's <xref:System.Threading.IThreadPoolWo
  Unlike the <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject*> method, <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*> does not propagate the calling stack to the worker thread. This allows code to lose the calling stack and thereby to elevate its security privileges.
 
 > [!CAUTION]
->  Using <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*> could inadvertently open up a security hole. Code access security bases its permission checks on the permissions of all the callers on the stack. When work is queued on a thread pool thread using <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*>, the stack of the thread pool thread will not have the context of the actual callers. Malicious code might be able exploit this to avoid permission checks.
+> Using <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*> could inadvertently open up a security hole. Code access security bases its permission checks on the permissions of all the callers on the stack. When work is queued on a thread pool thread using <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*>, the stack of the thread pool thread will not have the context of the actual callers. Malicious code might be able exploit this to avoid permission checks.
 
  Using a <xref:System.Threading.Mutex> for `waitObject` does not provide mutual exclusion for the callbacks because the underlying Windows API uses the default `WT_EXECUTEDEFAULT` flag, so each callback is dispatched on a separate thread pool thread.
 
@@ -2054,7 +2054,7 @@ The thread pool will invoke the work item's <xref:System.Threading.IThreadPoolWo
  Unlike the <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject*> method, <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*> does not propagate the calling stack to the worker thread. This allows code to lose the calling stack and thereby to elevate its security privileges.
 
 > [!CAUTION]
->  Using <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*> could inadvertently open up a security hole. Code access security bases its permission checks on the permissions of all the callers on the stack. When work is queued on a thread pool thread using <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*>, the stack of the thread pool thread will not have the context of the actual callers. Malicious code might be able exploit this to avoid permission checks.
+> Using <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*> could inadvertently open up a security hole. Code access security bases its permission checks on the permissions of all the callers on the stack. When work is queued on a thread pool thread using <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*>, the stack of the thread pool thread will not have the context of the actual callers. Malicious code might be able exploit this to avoid permission checks.
 
  Using a <xref:System.Threading.Mutex> for `waitObject` does not provide mutual exclusion for the callbacks because the underlying Windows API uses the default `WT_EXECUTEDEFAULT` flag, so each callback is dispatched on a separate thread pool thread.
 

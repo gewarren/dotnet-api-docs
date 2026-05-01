@@ -139,7 +139,7 @@ The following example uses several GC methods to get generation and memory infor
  In more complicated scenarios, where the unmanaged memory allocation changes substantially during the lifetime of the managed object, you can call the <xref:System.GC.AddMemoryPressure*> and <xref:System.GC.RemoveMemoryPressure*> methods to communicate these incremental changes to the runtime.
 
 > [!CAUTION]
->  You must ensure that you remove exactly the amount of pressure you add. Failing to do so can adversely affect the performance of the system in applications that run for long periods of time.
+> You must ensure that you remove exactly the amount of pressure you add. Failing to do so can adversely affect the performance of the system in applications that run for long periods of time.
 
  ]]></format>
         </remarks>
@@ -1755,7 +1755,7 @@ The following example demonstrates the use of the <xref:System.GC.GetGeneration*
  In more complicated scenarios, where the unmanaged memory allocation changes substantially during the lifetime of the managed object, you can call the <xref:System.GC.AddMemoryPressure*> and <xref:System.GC.RemoveMemoryPressure*> methods to communicate these incremental changes to the runtime.
 
 > [!CAUTION]
->  You must ensure that you remove exactly the amount of pressure you add. Failing to do so can adversely affect the performance of the system in applications that run for long periods of time.
+> You must ensure that you remove exactly the amount of pressure you add. Failing to do so can adversely affect the performance of the system in applications that run for long periods of time.
 
  ]]></format>
         </remarks>
@@ -1949,7 +1949,7 @@ If `obj` does not have a finalizer or the GC has already signaled the finalizer 
 ## Remarks
 
 > [!IMPORTANT]
->  You cannot nest calls to the <xref:System.GC.TryStartNoGCRegion*> method, and you should only call the <xref:System.GC.EndNoGCRegion*> method if the runtime is currently in no GC region latency mode. In other words, you should not call <xref:System.GC.TryStartNoGCRegion*> multiple times (after the first method call, subsequent calls will not succeed), and you should not expect calls to <xref:System.GC.EndNoGCRegion*> to succeed just because the first call to <xref:System.GC.TryStartNoGCRegion*> succeeded.
+> You cannot nest calls to the <xref:System.GC.TryStartNoGCRegion*> method, and you should only call the <xref:System.GC.EndNoGCRegion*> method if the runtime is currently in no GC region latency mode. In other words, you should not call <xref:System.GC.TryStartNoGCRegion*> multiple times (after the first method call, subsequent calls will not succeed), and you should not expect calls to <xref:System.GC.EndNoGCRegion*> to succeed just because the first call to <xref:System.GC.TryStartNoGCRegion*> succeeded.
 
  ]]></format>
         </remarks>
@@ -2013,7 +2013,7 @@ If `obj` does not have a finalizer or the GC has already signaled the finalizer 
  `totalSize` must be large enough to handle all memory allocations that occur in the critical path. This includes allocations by the app, as well as allocations that the runtime makes on the app's behalf.
 
 > [!IMPORTANT]
->  You cannot nest calls to the <xref:System.GC.TryStartNoGCRegion*> method, and you should only call the <xref:System.GC.EndNoGCRegion*> method if the runtime is currently in no GC region latency mode. In other words, you should not call <xref:System.GC.TryStartNoGCRegion*> multiple times (after the first method call, subsequent calls will not succeed), and you should not expect calls to <xref:System.GC.EndNoGCRegion*> to succeed just because the first call to <xref:System.GC.TryStartNoGCRegion*> succeeded.
+> You cannot nest calls to the <xref:System.GC.TryStartNoGCRegion*> method, and you should only call the <xref:System.GC.EndNoGCRegion*> method if the runtime is currently in no GC region latency mode. In other words, you should not call <xref:System.GC.TryStartNoGCRegion*> multiple times (after the first method call, subsequent calls will not succeed), and you should not expect calls to <xref:System.GC.EndNoGCRegion*> to succeed just because the first call to <xref:System.GC.TryStartNoGCRegion*> succeeded.
 
  You exit the no GC region latency mode by calling the <xref:System.GC.EndNoGCRegion*> method.
 
@@ -2089,7 +2089,7 @@ If `obj` does not have a finalizer or the GC has already signaled the finalizer 
  Setting `disallowFullBlockingGC` to `true` to prevent a full blocking garbage collection if not enough memory is initially available is most useful in load balancing scenarios: one system can call this method and report itself as ready to accept requests if it returns `true`, and have the load balancer redirect requests to other systems if it returns `false`. It can then do a full blocking garbage collection when it's not handling requests by calling the <xref:System.GC.Collect(System.Int32,System.GCCollectionMode,System.Boolean,System.Boolean)> method.
 
 > [!IMPORTANT]
->  You cannot nest calls to the <xref:System.GC.TryStartNoGCRegion*> method, and you should only call the <xref:System.GC.EndNoGCRegion*> method if the runtime is currently in no GC region latency mode. In other words, you should not call <xref:System.GC.TryStartNoGCRegion*> multiple times (after the first method call, subsequent calls will not succeed), and you should not expect calls to <xref:System.GC.EndNoGCRegion*> to succeed just because the first call to <xref:System.GC.TryStartNoGCRegion*> succeeded.
+> You cannot nest calls to the <xref:System.GC.TryStartNoGCRegion*> method, and you should only call the <xref:System.GC.EndNoGCRegion*> method if the runtime is currently in no GC region latency mode. In other words, you should not call <xref:System.GC.TryStartNoGCRegion*> multiple times (after the first method call, subsequent calls will not succeed), and you should not expect calls to <xref:System.GC.EndNoGCRegion*> to succeed just because the first call to <xref:System.GC.TryStartNoGCRegion*> succeeded.
 
  You exit the no GC region latency mode by calling the <xref:System.GC.EndNoGCRegion*> method.
 
@@ -2162,7 +2162,7 @@ If `obj` does not have a finalizer or the GC has already signaled the finalizer 
  `lohSize` must be large enough to handle all memory allocations that occur in the critical path for the LOH, and `totalSize` - `lohSize` must be large enough to handle all memory allocations that occur in the critical path for the SOH. This includes allocations by the app, as well as allocations that the runtime makes on the app's behalf.
 
 > [!IMPORTANT]
->  You cannot nest calls to the <xref:System.GC.TryStartNoGCRegion*> method, and you should only call the <xref:System.GC.EndNoGCRegion*> method if the runtime is currently in no GC region latency mode. In other words, you should not call <xref:System.GC.TryStartNoGCRegion*> multiple times (after the first method call, subsequent calls will not succeed), and you should not expect calls to <xref:System.GC.EndNoGCRegion*> to succeed just because the first call to <xref:System.GC.TryStartNoGCRegion*> succeeded.
+> You cannot nest calls to the <xref:System.GC.TryStartNoGCRegion*> method, and you should only call the <xref:System.GC.EndNoGCRegion*> method if the runtime is currently in no GC region latency mode. In other words, you should not call <xref:System.GC.TryStartNoGCRegion*> multiple times (after the first method call, subsequent calls will not succeed), and you should not expect calls to <xref:System.GC.EndNoGCRegion*> to succeed just because the first call to <xref:System.GC.TryStartNoGCRegion*> succeeded.
 
  You exit the no GC region latency mode by calling the <xref:System.GC.EndNoGCRegion*> method.
 
@@ -2240,7 +2240,7 @@ If `obj` does not have a finalizer or the GC has already signaled the finalizer 
  Setting `disallowFullBlockingGC` to `true` to prevent a full blocking garbage collection if not enough memory is initially available is most useful in load balancing scenarios: one system can call this method and report itself as ready to accept requests if it returns `true`, and have the load balancer redirect requests to other systems if it returns `false`. It can then do a full blocking garbage collection when it's not handling requests by calling the <xref:System.GC.Collect(System.Int32,System.GCCollectionMode,System.Boolean,System.Boolean)> method.
 
 > [!IMPORTANT]
->  You cannot nest calls to the <xref:System.GC.TryStartNoGCRegion*> method, and you should only call the <xref:System.GC.EndNoGCRegion*> method if the runtime is currently in no GC region latency mode. In other words, you should not call <xref:System.GC.TryStartNoGCRegion*> multiple times (after the first method call, subsequent calls will not succeed), and you should not expect calls to <xref:System.GC.EndNoGCRegion*> to succeed just because the first call to <xref:System.GC.TryStartNoGCRegion*> succeeded.
+> You cannot nest calls to the <xref:System.GC.TryStartNoGCRegion*> method, and you should only call the <xref:System.GC.EndNoGCRegion*> method if the runtime is currently in no GC region latency mode. In other words, you should not call <xref:System.GC.TryStartNoGCRegion*> multiple times (after the first method call, subsequent calls will not succeed), and you should not expect calls to <xref:System.GC.EndNoGCRegion*> to succeed just because the first call to <xref:System.GC.TryStartNoGCRegion*> succeeded.
 
  You exit the no GC region latency mode by calling the <xref:System.GC.EndNoGCRegion*> method.
 

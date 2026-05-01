@@ -107,7 +107,7 @@
 - Serializing a time zone for later retrieval.
 
 > [!NOTE]
->  An instance of the <xref:System.TimeZoneInfo> class is immutable. Once an object has been instantiated, its values cannot be modified.
+> An instance of the <xref:System.TimeZoneInfo> class is immutable. Once an object has been instantiated, its values cannot be modified.
 
  You cannot instantiate a <xref:System.TimeZoneInfo> object using the `new` keyword. Instead, you must call one of the static members of the <xref:System.TimeZoneInfo> class shown in the following table.
 
@@ -180,7 +180,7 @@
  The <xref:System.TimeZoneInfo.BaseUtcOffset*> value is represented as a whole number of minutes. It cannot include a fractional number of minutes.
 
 > [!NOTE]
->  Because <xref:System.TimeZoneInfo.BaseUtcOffset*> is a property of the <xref:System.TimeZoneInfo> object rather than the <xref:System.TimeZoneInfo.AdjustmentRule> object, the <xref:System.TimeZoneInfo> class applies a single offset from UTC to all of a time zone's adjustments. To reflect a time zone that has modified its offset from UTC, you must create a new time zone using the <xref:System.TimeZoneInfo.CreateCustomTimeZone*> method.
+> Because <xref:System.TimeZoneInfo.BaseUtcOffset*> is a property of the <xref:System.TimeZoneInfo> object rather than the <xref:System.TimeZoneInfo.AdjustmentRule> object, the <xref:System.TimeZoneInfo> class applies a single offset from UTC to all of a time zone's adjustments. To reflect a time zone that has modified its offset from UTC, you must create a new time zone using the <xref:System.TimeZoneInfo.CreateCustomTimeZone*> method.
 
  The <xref:System.TimeZoneInfo.BaseUtcOffset> property differs from the <xref:System.TimeZoneInfo.GetUtcOffset*> method in the following ways:
 
@@ -987,7 +987,7 @@
  If `dateTime` corresponds to an ambiguous local time, this method assumes that it is standard local time. If `dateTime` corresponds to an invalid local time, the method throws an <xref:System.ArgumentException>.
 
 > [!NOTE]
->  If the current computer's local time zone includes multiple adjustment rules, this overload of the <xref:System.TimeZoneInfo.ConvertTimeToUtc*> method can return results that differ from the <xref:System.TimeZone.ToUniversalTime*?displayProperty=nameWithType> and <xref:System.DateTime.ToUniversalTime*?displayProperty=nameWithType> methods. <xref:System.TimeZone.ToUniversalTime*?displayProperty=nameWithType> always applies the current adjustment rule to time zone conversion, whether or not `dateTime` lies within its date range. And when executing on .NET Framework 3.5, <xref:System.DateTime.ToUniversalTime*?displayProperty=nameWithType> also applies the current adjustment rule to time zone conversion, whether or not `dateTime` lies within its date range.
+> If the current computer's local time zone includes multiple adjustment rules, this overload of the <xref:System.TimeZoneInfo.ConvertTimeToUtc*> method can return results that differ from the <xref:System.TimeZone.ToUniversalTime*?displayProperty=nameWithType> and <xref:System.DateTime.ToUniversalTime*?displayProperty=nameWithType> methods. <xref:System.TimeZone.ToUniversalTime*?displayProperty=nameWithType> always applies the current adjustment rule to time zone conversion, whether or not `dateTime` lies within its date range. And when executing on .NET Framework 3.5, <xref:System.DateTime.ToUniversalTime*?displayProperty=nameWithType> also applies the current adjustment rule to time zone conversion, whether or not `dateTime` lies within its date range.
 
  If the UTC equivalent of `dateTime` is earlier than <xref:System.DateTime.MinValue?displayProperty=nameWithType> or later that <xref:System.DateTime.MaxValue?displayProperty=nameWithType>, this method returns <xref:System.DateTime.MinValue> or <xref:System.DateTime.MaxValue>, respectively.
 
@@ -2347,7 +2347,7 @@ The following example uses the <xref:System.TimeZoneInfo.FindSystemTimeZoneById*
  The <xref:System.TimeZoneInfo.GetSystemTimeZones*> method retrieves all available time zone information from the subkeys of the registry's HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Time Zones key on Windows systems and from the [ICU Library](https://unicode-org.github.io/icu/userguide/datetime/timezone/) on Linux and macOS. If it is unable to successfully retrieve and parse values for particular string properties of individual <xref:System.TimeZoneInfo> objects, this method sets their value to an empty string ("").
 
 > [!IMPORTANT]
->  The <xref:System.TimeZoneInfo.GetSystemTimeZones*> method returns a collection of <xref:System.TimeZoneInfo> objects only for time zones defined in the Windows registry or the ICU library. It does not include time zones created using the overloads of the <xref:System.TimeZoneInfo.CreateCustomTimeZone*> method. These are accessible only through the object reference returned by the time zone creation method.
+> The <xref:System.TimeZoneInfo.GetSystemTimeZones*> method returns a collection of <xref:System.TimeZoneInfo> objects only for time zones defined in the Windows registry or the ICU library. It does not include time zones created using the overloads of the <xref:System.TimeZoneInfo.CreateCustomTimeZone*> method. These are accessible only through the object reference returned by the time zone creation method.
 
  The collection returned by this method is sorted by UTC offset and, for time zones that have the same UTC offset, by the display name using the current culture. For information about the display name, see <xref:System.TimeZoneInfo.DisplayName*>.
 
@@ -3193,7 +3193,7 @@ The time zone identifier is a key string that uniquely identifies a particular t
  The local time zone is the time zone on the computer where the code is executing.
 
 > [!IMPORTANT]
->  You should always access the local time zone through the <xref:System.TimeZoneInfo.Local?displayProperty=nameWithType> property rather than assigning the local time zone to a <xref:System.TimeZoneInfo> object variable. This prevents the <xref:System.TimeZoneInfo> object variable from being invalidated by a call to the <xref:System.TimeZoneInfo.ClearCachedData*> method.
+> You should always access the local time zone through the <xref:System.TimeZoneInfo.Local?displayProperty=nameWithType> property rather than assigning the local time zone to a <xref:System.TimeZoneInfo> object variable. This prevents the <xref:System.TimeZoneInfo> object variable from being invalidated by a call to the <xref:System.TimeZoneInfo.ClearCachedData*> method.
 
  On Windows systems, the <xref:System.TimeZoneInfo> object returned by the <xref:System.TimeZoneInfo.Local?displayProperty=nameWithType> property reflects the setting of the **Automatically adjust clock for Daylight Saving Time** checkbox in the Control Panel **Date and Time** application. If the checkbox is unchecked, the cached copy of the local time zone contains no daylight saving time information. This means that:
 
@@ -3902,7 +3902,7 @@ If the application is running on a Windows OS version that lacks the ICU library
  This is a built-in object; information about this <xref:System.TimeZoneInfo> object is not retrieved from the registry on Windows systems and from the [ICU Library](https://unicode-org.github.io/icu/userguide/datetime/timezone/) on Linux and macOS.
 
 > [!IMPORTANT]
->  You should always access the Coordinated Universal Time (UTC) zone through the <xref:System.TimeZoneInfo.Utc?displayProperty=nameWithType> property rather than assigning the UTC time zone to a <xref:System.TimeZoneInfo> object variable. This prevents the <xref:System.TimeZoneInfo> object variable from being invalidated by a call to the <xref:System.TimeZoneInfo.ClearCachedData*> method.
+> You should always access the Coordinated Universal Time (UTC) zone through the <xref:System.TimeZoneInfo.Utc?displayProperty=nameWithType> property rather than assigning the UTC time zone to a <xref:System.TimeZoneInfo> object variable. This prevents the <xref:System.TimeZoneInfo> object variable from being invalidated by a call to the <xref:System.TimeZoneInfo.ClearCachedData*> method.
 
  Coordinated Universal Time was previously known as Greenwich Mean Time (GMT).
 

@@ -66,12 +66,12 @@
  The data contract model is an "opt-in" model. Applying the <xref:System.Runtime.Serialization.DataMemberAttribute> to a field or property explicitly specifies that the member value will be serialized. In contrast, the <xref:System.Xml.Serialization.XmlSerializer> serializes all public fields and properties of a type.
 
 > [!CAUTION]
->  You can apply the <xref:System.Runtime.Serialization.DataMemberAttribute> to private fields or properties. Be aware that the data returned by the member (even if it's private) will be serialized and deserialized, and thus can be viewed or intercepted by a malicious user or process.
+> You can apply the <xref:System.Runtime.Serialization.DataMemberAttribute> to private fields or properties. Be aware that the data returned by the member (even if it's private) will be serialized and deserialized, and thus can be viewed or intercepted by a malicious user or process.
 
  By default, the CLR member name is used as the name of the data member. By setting the <xref:System.Runtime.Serialization.DataMemberAttribute.Name> property, you can customize the name of the data member. This can be used to provide a name that may not be allowed as a CLR member name. When mapping to XML using the <xref:System.Runtime.Serialization.DataContractSerializer>, this name is used as the name of the schema element in a type.
 
 > [!NOTE]
->  Properties to which the <xref:System.Runtime.Serialization.DataMemberAttribute> attribute has been applied must have both `get` and `set` fields. They cannot be `get`-only or `set`-only. To serialize a property that should remain `get`-only by design (for example, a property that returns a collection), consider applying the <xref:System.Runtime.Serialization.DataMemberAttribute> to the backing field instead.
+> Properties to which the <xref:System.Runtime.Serialization.DataMemberAttribute> attribute has been applied must have both `get` and `set` fields. They cannot be `get`-only or `set`-only. To serialize a property that should remain `get`-only by design (for example, a property that returns a collection), consider applying the <xref:System.Runtime.Serialization.DataMemberAttribute> to the backing field instead.
 
  For more information about data contracts and data members, see [Using Data Contracts](/dotnet/framework/wcf/feature-details/using-data-contracts). For more information about member names, see [Data Member Default Values](/dotnet/framework/wcf/feature-details/data-member-default-values).
 
@@ -179,7 +179,7 @@
  In the .NET Framework, types have a concept of default values. For example, for any reference type the default value is `null`, and for an integer type it is 0. It is occasionally desirable to omit a data member from the serialized data when it is set to its default value. To do this, set the <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue> property to `false` (it is `true` by default).
 
 > [!NOTE]
->  Setting the <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue> property to `false` is not a recommended practice. It should only be done if there is a specific need to do so (such as for interoperability or to reduce data size).
+> Setting the <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue> property to `false` is not a recommended practice. It should only be done if there is a specific need to do so (such as for interoperability or to reduce data size).
 
 
 

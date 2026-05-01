@@ -60,7 +60,7 @@
 |<xref:System.Transactions.IEnlistmentNotification.InDoubt*>|This method of an enlisted object is used as a callback by the Transaction Manager during the second phase of a transaction if the transaction is in doubt.|
 
 > [!NOTE]
->  You should be aware that notifications might not be sent sequentially, or in a particular order.
+> You should be aware that notifications might not be sent sequentially, or in a particular order.
 
 
 
@@ -182,7 +182,7 @@
  As <xref:System.Transactions.IEnlistmentNotification.InDoubt*> is considered to be a final state for a transaction, you should not call <xref:System.Transactions.IEnlistmentNotification.Commit*> or <xref:System.Transactions.IEnlistmentNotification.Rollback*> after calling <xref:System.Transactions.IEnlistmentNotification.InDoubt*>.
 
 > [!NOTE]
->  Your implementation of this method for the volatile resource should perform whatever recovery or containment operation it understands on the affected data.  It must also call the <xref:System.Transactions.Enlistment.Done*> method on the on the `enlistment` parameter when it has finished its work.
+> Your implementation of this method for the volatile resource should perform whatever recovery or containment operation it understands on the affected data.  It must also call the <xref:System.Transactions.Enlistment.Done*> method on the on the `enlistment` parameter when it has finished its work.
 
  If the resource manager has enlisted durably, but does not respond by calling <xref:System.Transactions.Enlistment.Done*> method, the transaction manager is unsure that the resource manager has received the <xref:System.Transactions.IEnlistmentNotification.InDoubt*> call. As such, the transaction manager keeps waiting for a response, and maintains information relevant to this transaction.  If <xref:System.Transactions.Enlistment.Done*> is never called, this piece of information is kept around indefinitely in memory or in a system-wide resource. This results in resources not being able to be reclaimed. In the case of a distributed transaction, this could eventually fill the MSDTC log, which halts the MSDTC process. In the case of a transaction managed by <xref:System.Transactions>, this results in a gradual and continual increase in the memory consumption of the resource manager's process. Therefore, it is crucial that you call the <xref:System.Transactions.Enlistment.Done*> method once your resource manager is done with your prepare work.
 

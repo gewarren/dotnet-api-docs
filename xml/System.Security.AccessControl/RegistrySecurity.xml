@@ -67,7 +67,7 @@
  This mirrors the underlying Windows security system, in which each securable object has at most one discretionary access control list (DACL) that controls access to the secured object, and at most one system access control list (SACL) that specifies which access attempts are audited. The DACL and SACL are ordered lists of access control entries (ACE) that specify access and auditing for users and groups. A <xref:System.Security.AccessControl.RegistryAccessRule> or <xref:System.Security.AccessControl.RegistryAuditRule> object might represent more than one ACE.
 
 > [!NOTE]
->  Windows access control security can only be applied to registry keys. It cannot be applied to individual key/value pairs stored in a key.
+> Windows access control security can only be applied to registry keys. It cannot be applied to individual key/value pairs stored in a key.
 
  The <xref:System.Security.AccessControl.RegistrySecurity>, <xref:System.Security.AccessControl.RegistryAccessRule>, and <xref:System.Security.AccessControl.RegistryAuditRule> classes hide the implementation details of ACLs and ACEs. They allow you to ignore the seventeen different ACE types and the complexity of correctly maintaining inheritance and propagation of access rights. These objects are also designed to prevent the following common access control errors:
 
@@ -92,7 +92,7 @@
  To modify Windows access control security for a registry key, use the <xref:Microsoft.Win32.RegistryKey.GetAccessControl*?displayProperty=nameWithType> method to get the <xref:System.Security.AccessControl.RegistrySecurity> object. Modify the security object by adding and removing rules, and then use the <xref:Microsoft.Win32.RegistryKey.SetAccessControl*?displayProperty=nameWithType> method to reattach it.
 
 > [!IMPORTANT]
->  Changes you make to a <xref:System.Security.AccessControl.RegistrySecurity> object do not affect the access levels of the registry key until you call the <xref:Microsoft.Win32.RegistryKey.SetAccessControl*?displayProperty=nameWithType> method to assign the altered security object to the registry key.
+> Changes you make to a <xref:System.Security.AccessControl.RegistrySecurity> object do not affect the access levels of the registry key until you call the <xref:Microsoft.Win32.RegistryKey.SetAccessControl*?displayProperty=nameWithType> method to assign the altered security object to the registry key.
 
  To copy access control security from one registry key to another, use the <xref:Microsoft.Win32.RegistryKey.GetAccessControl*?displayProperty=nameWithType> method to get a <xref:System.Security.AccessControl.RegistrySecurity> object representing the access and audit rules for the first registry key, and then use the <xref:Microsoft.Win32.RegistryKey.SetAccessControl*?displayProperty=nameWithType> method to assign those rules to the second registry key. You can also assign the rules to a second registry key with an <xref:Microsoft.Win32.RegistryKey.OpenSubKey*?displayProperty=nameWithType> or <xref:Microsoft.Win32.RegistryKey.CreateSubKey*?displayProperty=nameWithType> method that takes a <xref:System.Security.AccessControl.RegistrySecurity> object parameter.
 
@@ -112,7 +112,7 @@
  The example code then calls the <xref:System.Security.AccessControl.RegistrySecurity.AddAccessRule*> method to merge the <xref:System.Security.AccessControl.RegistryRights.SetValue> right back into the rule in the <xref:System.Security.AccessControl.RegistrySecurity> object.
 
 > [!NOTE]
->  This example does not attach the security object to a <xref:Microsoft.Win32.RegistryKey> object. The second example in this section attaches a security object, and so do the examples in <xref:Microsoft.Win32.RegistryKey.GetAccessControl*?displayProperty=nameWithType> and <xref:Microsoft.Win32.RegistryKey.SetAccessControl*?displayProperty=nameWithType>.
+> This example does not attach the security object to a <xref:Microsoft.Win32.RegistryKey> object. The second example in this section attaches a security object, and so do the examples in <xref:Microsoft.Win32.RegistryKey.GetAccessControl*?displayProperty=nameWithType> and <xref:Microsoft.Win32.RegistryKey.SetAccessControl*?displayProperty=nameWithType>.
 
  :::code language="csharp" source="~/snippets/csharp/System.Security.AccessControl/RegistrySecurity/Overview/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Security.AccessControl/RegistrySecurity/Overview/source.vb" id="Snippet1":::
@@ -275,17 +275,17 @@
  The recommended way to create access control rules is to use the constructors of the <xref:System.Security.AccessControl.RegistryAccessRule> class.
 
 > [!NOTE]
->  Although you can specify the <xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit?displayProperty=nameWithType> flag, there is no point in doing so. For the purposes of access control, the name/value pairs in a subkey are not separate objects. The access rights to name/value pairs are controlled by the rights of the subkey. Furthermore, since all subkeys are containers (that is, they can contain other subkeys), they are not affected by the <xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit> flag. Finally, specifying the <xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit> flag needlessly complicates the maintenance of rules, because it interferes with the normal combination of compatible rules.
+> Although you can specify the <xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit?displayProperty=nameWithType> flag, there is no point in doing so. For the purposes of access control, the name/value pairs in a subkey are not separate objects. The access rights to name/value pairs are controlled by the rights of the subkey. Furthermore, since all subkeys are containers (that is, they can contain other subkeys), they are not affected by the <xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit> flag. Finally, specifying the <xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit> flag needlessly complicates the maintenance of rules, because it interferes with the normal combination of compatible rules.
 
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">
           <paramref name="accessMask" />, <paramref name="inheritanceFlags" />, <paramref name="propagationFlags" />, or <paramref name="type" /> specifies an invalid value.</exception>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="identityReference" /> is <see langword="null" />.  
-  
- -or-  
-  
+          <paramref name="identityReference" /> is <see langword="null" />.
+
+ -or-
+
  <paramref name="accessMask" /> is zero.</exception>
         <exception cref="T:System.ArgumentException">
           <paramref name="identityReference" /> is neither of type <see cref="T:System.Security.Principal.SecurityIdentifier" />, nor of a type such as <see cref="T:System.Security.Principal.NTAccount" /> that can be converted to type <see cref="T:System.Security.Principal.SecurityIdentifier" />.</exception>
@@ -394,7 +394,7 @@
  The following code example creates registry access rules and adds them to a <xref:System.Security.AccessControl.RegistrySecurity> object, showing how rules that allow and deny rights remain separate, while compatible rules of the same kind are merged.
 
 > [!NOTE]
->  This example does not attach the security object to a <xref:Microsoft.Win32.RegistryKey> object. Examples that attach security objects can be found in <xref:Microsoft.Win32.RegistryKey.GetAccessControl*?displayProperty=nameWithType> and <xref:Microsoft.Win32.RegistryKey.SetAccessControl*?displayProperty=nameWithType>.
+> This example does not attach the security object to a <xref:Microsoft.Win32.RegistryKey> object. Examples that attach security objects can be found in <xref:Microsoft.Win32.RegistryKey.GetAccessControl*?displayProperty=nameWithType> and <xref:Microsoft.Win32.RegistryKey.SetAccessControl*?displayProperty=nameWithType>.
 
  A code example that demonstrates inheritance and propagation flags can be found in the <xref:System.Security.AccessControl.RegistryAccessRule> class.
 
@@ -515,17 +515,17 @@
  The recommended way to create audit rules is to use the constructors of the <xref:System.Security.AccessControl.RegistryAuditRule> class.
 
 > [!NOTE]
->  Although you can specify the <xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit?displayProperty=nameWithType> flag, there is no point in doing so. For the purposes of audit control, the name/value pairs in a subkey are not separate objects. The audit rights to name/value pairs are controlled by the rights of the subkey. Furthermore, since all subkeys are containers (that is, they can contain other subkeys), they are not affected by the <xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit> flag. Finally, specifying the <xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit> flag needlessly complicates the maintenance of rules, because it interferes with the normal combination of compatible rules.
+> Although you can specify the <xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit?displayProperty=nameWithType> flag, there is no point in doing so. For the purposes of audit control, the name/value pairs in a subkey are not separate objects. The audit rights to name/value pairs are controlled by the rights of the subkey. Furthermore, since all subkeys are containers (that is, they can contain other subkeys), they are not affected by the <xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit> flag. Finally, specifying the <xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit> flag needlessly complicates the maintenance of rules, because it interferes with the normal combination of compatible rules.
 
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">
           <paramref name="accessMask" />, <paramref name="inheritanceFlags" />, <paramref name="propagationFlags" />, or <paramref name="flags" /> specifies an invalid value.</exception>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="identityReference" /> is <see langword="null" />.  
-  
- -or-  
-  
+          <paramref name="identityReference" /> is <see langword="null" />.
+
+ -or-
+
  <paramref name="accessMask" /> is zero.</exception>
         <exception cref="T:System.ArgumentException">
           <paramref name="identityReference" /> is neither of type <see cref="T:System.Security.Principal.SecurityIdentifier" />, nor of a type such as <see cref="T:System.Security.Principal.NTAccount" /> that can be converted to type <see cref="T:System.Security.Principal.SecurityIdentifier" />.</exception>
@@ -634,7 +634,7 @@
  The example code then calls the <xref:System.Security.AccessControl.RegistrySecurity.RemoveAccessRule*> method to merge the <xref:System.Security.AccessControl.RegistryRights.SetValue> right back into the rule in the <xref:System.Security.AccessControl.RegistrySecurity> object.
 
 > [!NOTE]
->  This example does not attach the security object to a <xref:Microsoft.Win32.RegistryKey> object. The second example in this section attaches a security object, and so do the examples in <xref:Microsoft.Win32.RegistryKey.GetAccessControl*?displayProperty=nameWithType><xref:Microsoft.Win32.RegistryKey.SetAccessControl*?displayProperty=nameWithType>.
+> This example does not attach the security object to a <xref:Microsoft.Win32.RegistryKey> object. The second example in this section attaches a security object, and so do the examples in <xref:Microsoft.Win32.RegistryKey.GetAccessControl*?displayProperty=nameWithType><xref:Microsoft.Win32.RegistryKey.SetAccessControl*?displayProperty=nameWithType>.
 
  :::code language="csharp" source="~/snippets/csharp/System.Security.AccessControl/RegistrySecurity/Overview/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Security.AccessControl/RegistrySecurity/Overview/source.vb" id="Snippet1":::
@@ -700,7 +700,7 @@
  The example creates a <xref:System.Security.AccessControl.RegistrySecurity> object and adds rules that allow and deny various rights for the current user, with different inheritance and propagation flags. The example then creates a new rule that allows the current user to take ownership, and passes that rule to the <xref:System.Security.AccessControl.RegistrySecurity.RemoveAccessRuleAll*> method to remove the two rules that allow access.
 
 > [!NOTE]
->  This example does not attach the security object to a <xref:Microsoft.Win32.RegistryKey> object. See the <xref:Microsoft.Win32.RegistryKey.GetAccessControl*?displayProperty=nameWithType> method and the <xref:Microsoft.Win32.RegistryKey.SetAccessControl*?displayProperty=nameWithType> method.
+> This example does not attach the security object to a <xref:Microsoft.Win32.RegistryKey> object. See the <xref:Microsoft.Win32.RegistryKey.GetAccessControl*?displayProperty=nameWithType> method and the <xref:Microsoft.Win32.RegistryKey.SetAccessControl*?displayProperty=nameWithType> method.
 
  :::code language="csharp" source="~/snippets/csharp/System.Security.AccessControl/RegistrySecurity/RemoveAccessRuleAll/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Security.AccessControl/RegistrySecurity/RemoveAccessRuleAll/source.vb" id="Snippet1":::
@@ -757,7 +757,7 @@
  The rule is removed only if it exactly matches `rule` in all details, including flags. Other rules with the same user and <xref:System.Security.AccessControl.AccessControlType> are not affected.
 
 > [!IMPORTANT]
->  A rule represents one or more underlying access control entries (ACE), and these entries are split or combined as necessary when you modify the access security rules for a user. Thus, a rule might no longer exist in the specific form it had when it was added, and in that case the <xref:System.Security.AccessControl.RegistrySecurity.RemoveAccessRuleSpecific*> method cannot remove it.
+> A rule represents one or more underlying access control entries (ACE), and these entries are split or combined as necessary when you modify the access security rules for a user. Thus, a rule might no longer exist in the specific form it had when it was added, and in that case the <xref:System.Security.AccessControl.RegistrySecurity.RemoveAccessRuleSpecific*> method cannot remove it.
 
 
 
@@ -767,7 +767,7 @@
  The example creates two rules that allow different rights. The rules have compatible inheritance and propagation flags, so when the second rule is added it merges with the first. The example calls the <xref:System.Security.AccessControl.RegistrySecurity.RemoveAccessRuleSpecific*> method, specifying the first rule, but because the rules are merged there is no rule that matches. The example then calls the <xref:System.Security.AccessControl.RegistrySecurity.RemoveAccessRule*> method to the remove the second rule from the merged rule, and finally calls the <xref:System.Security.AccessControl.RegistrySecurity.RemoveAccessRuleSpecific*> method to remove the first rule.
 
 > [!NOTE]
->  This example does not attach the security object to a <xref:Microsoft.Win32.RegistryKey> object. See the <xref:Microsoft.Win32.RegistryKey.GetAccessControl*?displayProperty=nameWithType> method and the <xref:Microsoft.Win32.RegistryKey.SetAccessControl*?displayProperty=nameWithType> method.
+> This example does not attach the security object to a <xref:Microsoft.Win32.RegistryKey> object. See the <xref:Microsoft.Win32.RegistryKey.GetAccessControl*?displayProperty=nameWithType> method and the <xref:Microsoft.Win32.RegistryKey.SetAccessControl*?displayProperty=nameWithType> method.
 
  :::code language="csharp" source="~/snippets/csharp/System.Security.AccessControl/RegistrySecurity/RemoveAccessRuleSpecific/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Security.AccessControl/RegistrySecurity/RemoveAccessRuleSpecific/source.vb" id="Snippet1":::
@@ -928,7 +928,7 @@
  The rule is removed only if it exactly matches `rule` in all details, including flags. Other audit rules for the same user are not affected.
 
 > [!IMPORTANT]
->  A rule represents one or more underlying access control entries (ACE), and these entries are split or combined as necessary when you modify the audit security rules for a user. Thus, a rule might no longer exist in the specific form it had when it was added, and in that case the <xref:System.Security.AccessControl.RegistrySecurity.RemoveAuditRuleSpecific*> method cannot remove it.
+> A rule represents one or more underlying access control entries (ACE), and these entries are split or combined as necessary when you modify the audit security rules for a user. Thus, a rule might no longer exist in the specific form it had when it was added, and in that case the <xref:System.Security.AccessControl.RegistrySecurity.RemoveAuditRuleSpecific*> method cannot remove it.
 
  ]]></format>
         </remarks>
@@ -989,7 +989,7 @@
  The example creates a <xref:System.Security.AccessControl.RegistrySecurity> object and adds rules that allow and deny various rights for the current user, with different inheritance and propagation flags. The example then creates a new rule that allows the current user only to read the key, and uses the <xref:System.Security.AccessControl.RegistrySecurity.ResetAccessRule*> method to remove the all rules for the user and replace them with the new rule.
 
 > [!NOTE]
->  This example does not attach the security object to a <xref:Microsoft.Win32.RegistryKey> object. See the <xref:Microsoft.Win32.RegistryKey.GetAccessControl*?displayProperty=nameWithType> method and the <xref:Microsoft.Win32.RegistryKey.SetAccessControl*?displayProperty=nameWithType> method.
+> This example does not attach the security object to a <xref:Microsoft.Win32.RegistryKey> object. See the <xref:Microsoft.Win32.RegistryKey.GetAccessControl*?displayProperty=nameWithType> method and the <xref:Microsoft.Win32.RegistryKey.SetAccessControl*?displayProperty=nameWithType> method.
 
  :::code language="csharp" source="~/snippets/csharp/System.Security.AccessControl/RegistrySecurity/ResetAccessRule/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Security.AccessControl/RegistrySecurity/ResetAccessRule/source.vb" id="Snippet1":::
@@ -1053,7 +1053,7 @@
  The example creates a <xref:System.Security.AccessControl.RegistrySecurity> object and adds rules that allow and deny various rights for the current user, with different inheritance and propagation flags. The example then creates a new rule that allows the current user only to read the key, and uses the <xref:System.Security.AccessControl.RegistrySecurity.SetAccessRule*> method to remove the two rules that allow access and to replace them with the new rule. The rule that denies access is not affected.
 
 > [!NOTE]
->  This example does not attach the security object to a <xref:Microsoft.Win32.RegistryKey> object. See the <xref:Microsoft.Win32.RegistryKey.GetAccessControl*?displayProperty=nameWithType> method and the <xref:Microsoft.Win32.RegistryKey.SetAccessControl*?displayProperty=nameWithType> method.
+> This example does not attach the security object to a <xref:Microsoft.Win32.RegistryKey> object. See the <xref:Microsoft.Win32.RegistryKey.GetAccessControl*?displayProperty=nameWithType> method and the <xref:Microsoft.Win32.RegistryKey.SetAccessControl*?displayProperty=nameWithType> method.
 
  :::code language="csharp" source="~/snippets/csharp/System.Security.AccessControl/RegistrySecurity/SetAccessRule/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Security.AccessControl/RegistrySecurity/SetAccessRule/source.vb" id="Snippet1":::

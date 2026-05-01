@@ -33,7 +33,7 @@ aspnet_regsql.exe -A p
  The machine configuration contains a default <xref:System.Web.Profile.SqlProfileProvider> instance named AspNetSqlProvider that connects to the SQL Server on the local machine. You can use this instance of the provider, or specify your own in the Web.config file for your ASP.NET application.
 
 > [!NOTE]
->  If the profile provider is configured with a connection string that uses integrated security, the process account of the ASP.NET application must have rights to connect to the SQL Server database.
+> If the profile provider is configured with a connection string that uses integrated security, the process account of the ASP.NET application must have rights to connect to the SQL Server database.
 
 
 
@@ -159,7 +159,7 @@ aspnet_regsql.exe -A p
  If a value is not specified for the `applicationName` attribute in the configuration file for the Web application, then the <xref:System.Web.Hosting.HostingEnvironment.ApplicationVirtualPath*> value is used for ASP.NET applications. For non-ASP.NET applications, the default value is the <xref:System.Diagnostics.ProcessModule.ModuleName*> value without the file extension.
 
 > [!CAUTION]
->  Because a single default profile provider instance is used for all of the requests served by an <xref:System.Web.HttpApplication> object, you can have multiple requests executing concurrently and attempting to set the <xref:System.Web.Profile.SqlProfileProvider.ApplicationName> property value. The <xref:System.Web.Profile.SqlProfileProvider.ApplicationName> property is not thread safe for multiple writes, and changing the <xref:System.Web.Profile.SqlProfileProvider.ApplicationName> property value can result in unexpected behavior for multiple users of an application. It is recommended that you avoid writing code that allows users to set the <xref:System.Web.Profile.SqlProfileProvider.ApplicationName> property unless you must. An example of an application where setting the <xref:System.Web.Profile.SqlProfileProvider.ApplicationName> property may be required is an administrative application that manages profile data for multiple applications. Such an application should be a single-user application and not a Web application.
+> Because a single default profile provider instance is used for all of the requests served by an <xref:System.Web.HttpApplication> object, you can have multiple requests executing concurrently and attempting to set the <xref:System.Web.Profile.SqlProfileProvider.ApplicationName> property value. The <xref:System.Web.Profile.SqlProfileProvider.ApplicationName> property is not thread safe for multiple writes, and changing the <xref:System.Web.Profile.SqlProfileProvider.ApplicationName> property value can result in unexpected behavior for multiple users of an application. It is recommended that you avoid writing code that allows users to set the <xref:System.Web.Profile.SqlProfileProvider.ApplicationName> property unless you must. An example of an application where setting the <xref:System.Web.Profile.SqlProfileProvider.ApplicationName> property may be required is an administrative application that manages profile data for multiple applications. Such an application should be a single-user application and not a Web application.
 
 
 

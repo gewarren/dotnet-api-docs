@@ -74,7 +74,7 @@
 -   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOutError>: Raised if an exception occurs during sign-out. You can cancel sign-out and prevent the exception from being returned to the caller.
 
 > [!NOTE]
->  The sign-out events are not raised when signing out at the STS by calling the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.FederatedSignOut*> method.
+> The sign-out events are not raised when signing out at the STS by calling the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.FederatedSignOut*> method.
 
  There are two ways of signing in to an STS using WSFAM. The first is by enabling passive redirects through the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.PassiveRedirectEnabled> property. In this case, when authorization fails on a requested resource, rather than returning a `401:Access Denied` response to the client, WSFAM builds a WS-Federation sign-in request message from its properties and redirects the client to the STS to retrieve a security token. The second way is to explicitly redirect the client to the STS by calling the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignIn*> method from a web page or custom control in your application. The <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignIn*> method also uses the properties of the WSFAM to construct the sign-in request.
 
@@ -181,7 +181,7 @@
  You can set the <xref:System.IdentityModel.Services.AuthorizationFailedEventArgs.RedirectToIdentityProvider?displayProperty=nameWithType> property to control whether the request is redirected to the identity provider. The framework initializes this property to `false` if the user has already been authenticated. In this case, setting the property to `true` may cause a circular loop with the STS.
 
 > [!NOTE]
->  The <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider> event can be used to modify the URL or cancel the redirect.
+> The <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider> event can be used to modify the URL or cancel the redirect.
 
  To handle this event in an ASP.NET application, create a method named `WSFederationAuthentication_AuthorizationFailed` in the global.asax file.
 
@@ -395,7 +395,7 @@
  None of the sign-out events: <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SigningOut>, <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignedOut>, or <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOutError> are raised by this method. To delete the session without sending a sign-out request message to the STS, call one of the overloaded <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut*> methods.
 
 > [!NOTE]
->  To perform passive sign-out by using the session token, the module relies on a value that was stored in the <xref:System.IdentityModel.Tokens.SessionSecurityToken.Context?displayProperty=nameWithType> property during sign-in, for more information, see the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.GetSessionTokenContext*> method.
+> To perform passive sign-out by using the session token, the module relies on a value that was stored in the <xref:System.IdentityModel.Tokens.SessionSecurityToken.Context?displayProperty=nameWithType> property during sign-in, for more information, see the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.GetSessionTokenContext*> method.
 
  ]]></format>
         </remarks>
@@ -891,7 +891,7 @@
 |<xref:System.Web.HttpApplication.PostAuthenticateRequest?displayProperty=nameWithType>|<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnPostAuthenticateRequest*>|
 
 > [!NOTE]
->  The module properties, such as <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer> , are initialized from the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.InitializePropertiesFromConfiguration*> method.
+> The module properties, such as <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer> , are initialized from the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.InitializePropertiesFromConfiguration*> method.
 
  ]]></format>
         </remarks>
@@ -1377,7 +1377,7 @@
  The module will not initiate WS-Federation protocol redirects when this mode is not enabled. If this property is `true`, the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer> property must be set to the URL of the Security Token Service (STS) to which the caller should be redirected.
 
 > [!WARNING]
->  Application code can issue WS-Federation sign-in requests explicitly by using the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignIn*> method, regardless of the value of the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.PassiveRedirectEnabled> property.
+> Application code can issue WS-Federation sign-in requests explicitly by using the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignIn*> method, regardless of the value of the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.PassiveRedirectEnabled> property.
 
  ]]></format>
         </remarks>
@@ -1831,7 +1831,7 @@
  This event is raised from inside the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnAuthenticateRequest*> event-handler delegate when processing a WS-Federation sign-in response message ("wsignin1.0") received from the security token service (STS). It is raised just after the security token that was deserialized from the wresult or the wresultptr parameter in the sign-in response message has been validated, and before the claims principal is set on the <xref:System.Threading.Thread.CurrentPrincipal?displayProperty=nameWithType> (and on the <xref:System.Web.HttpContext.User> property of <xref:System.Web.HttpContext.Current?displayProperty=nameWithType>).
 
 > [!IMPORTANT]
->  To operate sessions in reference mode, Microsoft recommends providing a handler for the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SessionSecurityTokenCreated?displayProperty=nameWithType> event in the global.asax.cs file and setting the <xref:System.IdentityModel.Tokens.SessionSecurityToken.IsReferenceMode?displayProperty=nameWithType> property on the token passed in the <xref:System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs.SessionToken?displayProperty=nameWithType> property. This will ensure that the session token operates in reference mode for every request and is favored over merely setting the <xref:System.IdentityModel.Services.SessionAuthenticationModule.IsReferenceMode?displayProperty=nameWithType> property on the Session Authentication Module.
+> To operate sessions in reference mode, Microsoft recommends providing a handler for the <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SessionSecurityTokenCreated?displayProperty=nameWithType> event in the global.asax.cs file and setting the <xref:System.IdentityModel.Tokens.SessionSecurityToken.IsReferenceMode?displayProperty=nameWithType> property on the token passed in the <xref:System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs.SessionToken?displayProperty=nameWithType> property. This will ensure that the session token operates in reference mode for every request and is favored over merely setting the <xref:System.IdentityModel.Services.SessionAuthenticationModule.IsReferenceMode?displayProperty=nameWithType> property on the Session Authentication Module.
 
 
 

@@ -78,7 +78,7 @@
  This class implements the <xref:System.IAppDomainSetup> interface.
 
 > [!CAUTION]
->  The default value for the <xref:System.AppDomainSetup.DisallowCodeDownload> property is false. This setting is unsafe for services. To help prevent services from downloading partially trusted code, set this property to true
+> The default value for the <xref:System.AppDomainSetup.DisallowCodeDownload> property is false. This setting is unsafe for services. To help prevent services from downloading partially trusted code, set this property to true
 
  ]]></format>
     </remarks>
@@ -503,7 +503,7 @@
  The following example demonstrates how to use the <xref:System.AppDomainSetup.ApplicationBase> property to set the location where the assembly loader begins probing for assemblies to load into a new application domain.
 
 > [!NOTE]
->  You must ensure that the folder you specify exists.
+> You must ensure that the folder you specify exists.
 
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_CLR/ADApplicationBase/CPP/adapplicationbase.cpp" id="Snippet1":::
  :::code language="csharp" source="~/snippets/csharp/System/AppDomain/CurrentDomain/adapplicationbase.cs" id="Snippet1":::
@@ -820,7 +820,7 @@
  The <xref:System.AppDomainSetup.DisallowCodeDownload> property is designed to be used by services and server applications where downloading code from an intranet or the Internet is not part of the application scenario.
 
 > [!CAUTION]
->  The default value for the <xref:System.AppDomainSetup.DisallowCodeDownload> property is `false`. This setting is unsafe for services. To help prevent services from downloading partially trusted code, set this property to `true`.
+> The default value for the <xref:System.AppDomainSetup.DisallowCodeDownload> property is `false`. This setting is unsafe for services. To help prevent services from downloading partially trusted code, set this property to `true`.
 
  ]]></format>
         </remarks>
@@ -913,7 +913,7 @@
  When you assign a path to the <xref:System.AppDomainSetup.DynamicBase> property, an additional subdirectory is added; the name of this subdirectory is the hash code of the value assigned to the <xref:System.AppDomainSetup.ApplicationName> property. Thus, the base directory subsequently returned by this property is always different from the value assigned.
 
 > [!IMPORTANT]
->  Assigning a value to this property does not create any directories. The directories must be created or verified by the code that uses them.
+> Assigning a value to this property does not create any directories. The directories must be created or verified by the code that uses them.
 
  The dynamic directory is a subdirectory of <xref:System.AppDomainSetup.DynamicBase*>. Its simple name is the value returned by the <xref:System.AppDomainSetup.ApplicationName> property, so its format is *original path*\\*hash code*\\*application name*.
 
@@ -923,7 +923,7 @@
  The example creates an <xref:System.AppDomainSetup> object and sets its <xref:System.AppDomainSetup.ApplicationName> property to "Example" and its <xref:System.AppDomainSetup.DynamicBase> property to "C:\DynamicAssemblyDir". The example then displays the <xref:System.AppDomainSetup.DynamicBase> property, to show that the hash code of the application name has been appended as a subdirectory of the path that was originally assigned.
 
 > [!NOTE]
->  The base directory in this example is intended to be outside the probing path for the example application. Be sure to compile the example in a different location. Delete the base directory and all its subdirectories each time you run the example.
+> The base directory in this example is intended to be outside the probing path for the example application. Be sure to compile the example in a different location. Delete the base directory and all its subdirectories each time you run the example.
 
  The example creates a new application domain using the <xref:System.AppDomainSetup> object. The example then creates the dynamic directory if it does not already exist. Although the example uses the application domain's <xref:System.AppDomain.DynamicDirectory?displayProperty=nameWithType> property to get the name of the dynamic directory, it could just as easily create the directory beforehand by concatenating the original path, the hash code of the application name, and the application name.
 
@@ -976,7 +976,7 @@
  The <xref:System.AppDomainSetup.SetConfigurationBytes*> method provides a way to override the configuration information of an application that creates a new application domain. The configuration file information in `value` overrides the configuration file information for the application. For example, when the Example.exe application creates a new application domain, it can override the configuration information originally obtained from Example.exe.config file.
 
 > [!IMPORTANT]
->  Some consumers of configuration file information do not use the information stored by the <xref:System.AppDomainSetup.SetConfigurationBytes*> method. The runtime does not enforce this. To ensure that all configuration file information is overridden in a new application domain, use the <xref:System.AppDomainSetup.ConfigurationFile> property to specify a configuration file. The <xref:System.AppDomainSetup.SetConfigurationBytes*> method does affect assembly binding.
+> Some consumers of configuration file information do not use the information stored by the <xref:System.AppDomainSetup.SetConfigurationBytes*> method. The runtime does not enforce this. To ensure that all configuration file information is overridden in a new application domain, use the <xref:System.AppDomainSetup.ConfigurationFile> property to specify a configuration file. The <xref:System.AppDomainSetup.SetConfigurationBytes*> method does affect assembly binding.
 
  The XML in `value` is the same as the XML in a normal configuration file, except that it is stored as a <xref:System.Byte> array.
 
@@ -1098,10 +1098,10 @@
  The host of a sandboxed application domain allows code in the application domain to use assemblies with conditional APTCA attributes by creating an array that contains the simple name and public key of each assembly, and assigning the array to this property. For example, an element of the array might look like the following: "MyAssembly, PublicKey=0024000004800000940000000602000000240000525341310004000001000100db2ad5e5fedc67ea526ff72ad426ef68e08e241d296c499eedfec6648dcc62b1a12f72be5833a45bbec481b68415b08a5fbc9f9ef247b523dd72bbea65bb532784ddc5c704544bd2f1c2d46fdbe41e4f949e76f9947357b2d5cf8ca9f970701bbd6e8ab64ad31b20ad0be9b56dae4f6b83332b92a2a3b8ea2804c40efbc0b6b9".
 
 > [!IMPORTANT]
->  If you are using a subclass of <xref:System.AppDomainManager>, and the assembly that defines it depends on assemblies that are marked with the conditional APTCA attribute, you must include those assemblies in the list that you pass to the <xref:System.AppDomainSetup.PartialTrustVisibleAssemblies> property of the <xref:System.AppDomainSetup> you use to create application domains. Otherwise the assemblies that are marked with the conditional APTCA attribute will be disabled.
+> If you are using a subclass of <xref:System.AppDomainManager>, and the assembly that defines it depends on assemblies that are marked with the conditional APTCA attribute, you must include those assemblies in the list that you pass to the <xref:System.AppDomainSetup.PartialTrustVisibleAssemblies> property of the <xref:System.AppDomainSetup> you use to create application domains. Otherwise the assemblies that are marked with the conditional APTCA attribute will be disabled.
 
 > [!NOTE]
->  When you are debugging an application that is running in a sandboxed application domain, some <xref:System.Security.SecurityException> messages can be misleading. For example, a message might state that one of your fully trusted assemblies has only limited permissions, when the real cause of the problem is that a security demand that exceeds the grant set of the sandboxed application domain has propagated to the boundary of the sandboxed application domain and failed.
+> When you are debugging an application that is running in a sandboxed application domain, some <xref:System.Security.SecurityException> messages can be misleading. For example, a message might state that one of your fully trusted assemblies has only limited permissions, when the real cause of the problem is that a security demand that exceeds the grant set of the sandboxed application domain has propagated to the boundary of the sandboxed application domain and failed.
 
  ]]></format>
         </remarks>
@@ -1323,7 +1323,7 @@
  The <xref:System.AppDomainSetup.SetConfigurationBytes*> method provides a way to replace the configuration information of an application that creates a new application domain. The configuration file information in `value` replaces the configuration file information for the application. For example, when the Example.exe application creates a new application domain, it can replace the configuration information originally obtained from the Example.exe.config file.
 
 > [!IMPORTANT]
->  Some consumers of configuration file information do not use the information stored by the <xref:System.AppDomainSetup.SetConfigurationBytes*> method. The runtime does not enforce this. To ensure that all configuration file information is replaced in a new application domain, use the <xref:System.AppDomainSetup.ConfigurationFile> property to specify a configuration file. The <xref:System.AppDomainSetup.SetConfigurationBytes*> method does affect assembly binding.
+> Some consumers of configuration file information do not use the information stored by the <xref:System.AppDomainSetup.SetConfigurationBytes*> method. The runtime does not enforce this. To ensure that all configuration file information is replaced in a new application domain, use the <xref:System.AppDomainSetup.ConfigurationFile> property to specify a configuration file. The <xref:System.AppDomainSetup.SetConfigurationBytes*> method does affect assembly binding.
 
  The XML in `value` is the same as the XML in a normal configuration file, except that it is stored as a <xref:System.Byte> array.
 
@@ -1445,7 +1445,7 @@
  If you don't assign a string to the <xref:System.AppDomainSetup.ShadowCopyDirectories> property, or if you set this property to `null`, all assemblies in the directories specified by the <xref:System.AppDomainSetup.ApplicationBase*> and <xref:System.AppDomainSetup.PrivateBinPath*> properties are shadow copied.
 
 > [!IMPORTANT]
->  Directory paths must not contain semicolons, because the semicolon is the delimiter character. There is no escape character for semicolons.
+> Directory paths must not contain semicolons, because the semicolon is the delimiter character. There is no escape character for semicolons.
 
  When shadow copying is in effect, assembly files are copied to another location before the assemblies are loaded. The original assembly file is not locked, so it can be updated. For more information on shadow copying, see [Shadow Copying Assemblies](/dotnet/framework/app-domains/shadow-copy-assemblies).
 

@@ -123,14 +123,14 @@
  You can use the <xref:System.Web.UI.WebControls.Wizard.MoveTo*> method or the <xref:System.Web.UI.WebControls.Wizard.ActiveStepIndex> property to dynamically change the step that is currently displayed in the <xref:System.Web.UI.WebControls.Wizard> control.
 
 > [!NOTE]
->  If you programmatically add a <xref:System.Web.UI.WebControls.WizardStep> in the `Page_Load` event handler, you must add the navigation to that step prior to the page loading.
+> If you programmatically add a <xref:System.Web.UI.WebControls.WizardStep> in the `Page_Load` event handler, you must add the navigation to that step prior to the page loading.
 
 <a name="wizard_appearance"></a>
 ## Wizard Appearance
  The appearance of the <xref:System.Web.UI.WebControls.Wizard> control is fully customizable through templates, skins, and style settings. For example, you can use the <xref:System.Web.UI.WebControls.Wizard.HeaderTemplate*>, <xref:System.Web.UI.WebControls.Wizard.SideBarTemplate*>, <xref:System.Web.UI.WebControls.Wizard.StartNavigationTemplate*>, <xref:System.Web.UI.WebControls.Wizard.FinishNavigationTemplate*>, and <xref:System.Web.UI.WebControls.Wizard.StepNavigationTemplate*> properties to customize the interface of the <xref:System.Web.UI.WebControls.Wizard> control.
 
 > [!NOTE]
->  Setting the <xref:System.Web.UI.WebControls.Wizard.FinishNavigationTemplate*>, <xref:System.Web.UI.WebControls.Wizard.DisplaySideBar*>, <xref:System.Web.UI.WebControls.Wizard.HeaderTemplate*>, <xref:System.Web.UI.WebControls.Wizard.SideBarTemplate*>, <xref:System.Web.UI.WebControls.Wizard.StartNavigationTemplate*>, or <xref:System.Web.UI.WebControls.Wizard.StepNavigationTemplate> property recreates the child controls of the <xref:System.Web.UI.WebControls.Wizard> control. As a result, the view state for the child controls is lost in the process. To avoid this situation, explicitly maintain the control state of the <xref:System.Web.UI.WebControls.Wizard> control's child controls explicitly, or avoid putting controls inside of templates.
+> Setting the <xref:System.Web.UI.WebControls.Wizard.FinishNavigationTemplate*>, <xref:System.Web.UI.WebControls.Wizard.DisplaySideBar*>, <xref:System.Web.UI.WebControls.Wizard.HeaderTemplate*>, <xref:System.Web.UI.WebControls.Wizard.SideBarTemplate*>, <xref:System.Web.UI.WebControls.Wizard.StartNavigationTemplate*>, or <xref:System.Web.UI.WebControls.Wizard.StepNavigationTemplate> property recreates the child controls of the <xref:System.Web.UI.WebControls.Wizard> control. As a result, the view state for the child controls is lost in the process. To avoid this situation, explicitly maintain the control state of the <xref:System.Web.UI.WebControls.Wizard> control's child controls explicitly, or avoid putting controls inside of templates.
 
  Note that the <xref:System.Web.UI.WebControls.Wizard> control does not support special Microsoft Internet Explorer rendering for non-standard or quirks mode. To get the best Internet Explorer rendering using the <xref:System.Web.UI.WebControls.Wizard> control, use the XHTML doc type, which is added by default in Visual Web Developer and Visual Studio.
 
@@ -299,7 +299,7 @@
  The following code example demonstrates how to define a <xref:System.Web.UI.WebControls.Wizard> control to collect a user's name and address, with the option to enter a separate shipping address. If the user does not select **SeparateShippingCheckBox**, thereby issuing a request to add a separate shipping address, the <xref:System.Web.UI.WebControls.Wizard> control moves directly from `Step2` to `Finish`. On the `Finish` step, the user has the option to return to the beginning of the <xref:System.Web.UI.WebControls.Wizard> control by clicking **GoBackButton**; however, it takes the user to `Step2` because the <xref:System.Web.UI.WebControls.WizardStepBase.AllowReturn> property for `Step1` is set to `false`.
 
 > [!IMPORTANT]
->  This example has a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
+> This example has a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
 
  :::code language="aspx-csharp" source="~/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.Wizard/CS/wizardclasscs.aspx" id="Snippet1":::
  :::code language="aspx-vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.Wizard/VB/wizardclassvb.aspx" id="Snippet1":::
@@ -474,7 +474,7 @@
  The <xref:System.Web.UI.WebControls.Wizard.ActiveStepIndex> property provides the zero-based index of the <xref:System.Web.UI.WebControls.WizardStepBase> object that is currently displayed in the <xref:System.Web.UI.WebControls.Wizard> control. You can programmatically set the <xref:System.Web.UI.WebControls.Wizard.ActiveStepIndex> property to control which step is displayed to the user at run time.
 
 > [!NOTE]
->  If you are using Microsoft Visual Studio 2005, note that the <xref:System.Web.UI.WebControls.Wizard.ActiveStepIndex*> is persisted in Source view. If you change the <xref:System.Web.UI.WebControls.Wizard.WizardSteps> property in Design view by clicking the sidebar buttons, and you then run the page, the first step of the `Wizard` control might not be shown because the <xref:System.Web.UI.WebControls.Wizard.ActiveStepIndex*> might be pointing to a different step.
+> If you are using Microsoft Visual Studio 2005, note that the <xref:System.Web.UI.WebControls.Wizard.ActiveStepIndex*> is persisted in Source view. If you change the <xref:System.Web.UI.WebControls.Wizard.WizardSteps> property in Design view by clicking the sidebar buttons, and you then run the page, the first step of the `Wizard` control might not be shown because the <xref:System.Web.UI.WebControls.Wizard.ActiveStepIndex*> might be pointing to a different step.
 
  If you set the value of <xref:System.Web.UI.WebControls.Wizard.ActiveStepIndex*> to -1 to support a wizard with no steps by default, the following behavior occurs:
 
@@ -1660,7 +1660,7 @@
  The custom content for the template is contained within the <xref:System.Web.UI.WebControls.Wizard.FinishNavigationTemplate*> object. You can add custom content to the <xref:System.Web.UI.WebControls.Wizard.FinishNavigationTemplate*> object either by using template-editing mode in design view or by defining the <xref:System.Web.UI.WebControls.Wizard.FinishNavigationTemplate*> object inline using `FinishNavigationTemplate` tags. The content can be as simple as plain text or more complex (embedding other controls in the template, for example).
 
 > [!NOTE]
->  The <xref:System.Web.UI.WebControls.Wizard.FinishNavigationTemplate*> object that is contained in the <xref:System.Web.UI.WebControls.Wizard.FinishNavigationTemplate> property must contain two <xref:System.Web.UI.WebControls.IButtonControl> controls, one with its <xref:System.Web.UI.WebControls.IButtonControl.CommandName> property set to "MoveComplete" and the other with its <xref:System.Web.UI.WebControls.IButtonControl.CommandName> property set to "MovePrevious", to enable the navigation feature.
+> The <xref:System.Web.UI.WebControls.Wizard.FinishNavigationTemplate*> object that is contained in the <xref:System.Web.UI.WebControls.Wizard.FinishNavigationTemplate> property must contain two <xref:System.Web.UI.WebControls.IButtonControl> controls, one with its <xref:System.Web.UI.WebControls.IButtonControl.CommandName> property set to "MoveComplete" and the other with its <xref:System.Web.UI.WebControls.IButtonControl.CommandName> property set to "MovePrevious", to enable the navigation feature.
 
  To access a control that is defined in a template programmatically, use the <xref:System.Web.UI.WebControls.CompositeControl.Controls*> collection of the <xref:System.Web.UI.WebControls.Wizard> object. You can also use the <xref:System.Web.UI.Control.FindControl*> method of the <xref:System.Web.UI.WebControls.Wizard> object to find the control, if the control has an <xref:System.Web.UI.Control.ID> property specified.
 
@@ -1670,7 +1670,7 @@
  The following code example demonstrates how to use the <xref:System.Web.UI.WebControls.Wizard.FinishNavigationTemplate> property to create a custom template for the navigation area of the <xref:System.Web.UI.WebControls.WizardStepType.Finish> step for the <xref:System.Web.UI.WebControls.Wizard> control.
 
 > [!IMPORTANT]
->  This example has a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
+> This example has a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
 
  :::code language="aspx-csharp" source="~/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.WizardFinishNavigationTemplate/CS/wizardfinishnavigationtemplatecs.aspx" id="Snippet1":::
  :::code language="aspx-vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.WizardFinishNavigationTemplate/VB/wizardfinishnavigationtemplatevb.aspx" id="Snippet1":::
@@ -2176,7 +2176,7 @@
  To control the style of the header area, use the <xref:System.Web.UI.WebControls.Wizard.HeaderStyle> property. Alternatively, you can define your own custom UI for the header row by setting the <xref:System.Web.UI.WebControls.Wizard.HeaderTemplate> property instead of the <xref:System.Web.UI.WebControls.Wizard.HeaderText> property.
 
 > [!NOTE]
->  If both the <xref:System.Web.UI.WebControls.Wizard.HeaderText*> and <xref:System.Web.UI.WebControls.Wizard.HeaderTemplate*> properties are defined, the <xref:System.Web.UI.WebControls.Wizard.HeaderText> property has no effect.
+> If both the <xref:System.Web.UI.WebControls.Wizard.HeaderText*> and <xref:System.Web.UI.WebControls.Wizard.HeaderTemplate*> properties are defined, the <xref:System.Web.UI.WebControls.Wizard.HeaderText> property has no effect.
 
  The value of this property, when set, can be saved automatically to a resource file by using a designer tool. For more information, see <xref:System.ComponentModel.LocalizableAttribute> and [Globalization and Localization](https://learn.microsoft.com/previous-versions/aspnet/c6zyy3s9(v=vs.100)).
 
@@ -2242,7 +2242,7 @@
  You can use the <xref:System.Web.UI.WebControls.Wizard.LayoutTemplate> property to define a custom user interface (UI) for the <xref:System.Web.UI.WebControls.Wizard> control. To specify a layout template, add a `LayoutTemplate` element inside the <xref:System.Web.UI.WebControls.Wizard> control markup. Inside the `LayoutTemplate` element, add placeholders for the components of the <xref:System.Web.UI.WebControls.Wizard> control. Placeholders for the navigation, sidebar, and wizard-step sections of the <xref:System.Web.UI.WebControls.Wizard> control are required in the `LayoutTemplate` element.
 
 > [!NOTE]
->  You can modify the layout template in **Source** view. Editing the layout template in **Design** view is not supported.
+> You can modify the layout template in **Source** view. Editing the layout template in **Design** view is not supported.
 
 
 
@@ -3016,7 +3016,7 @@
  The <xref:System.Web.UI.WebControls.Wizard.SideBarButtonClick> event is raised when a button on the sidebar area is clicked.
 
 > [!NOTE]
->  The <xref:System.Web.UI.WebControls.Wizard.SideBarButtonClick> event does not raise an event if a <xref:System.Web.UI.WebControls.Button> control with the <xref:System.Web.UI.WebControls.Button.CommandName> property set to `Move` is outside of the <xref:System.Web.UI.WebControls.DataList> control's sidebar list for the <xref:System.Web.UI.WebControls.Wizard.SideBarTemplate*> object.
+> The <xref:System.Web.UI.WebControls.Wizard.SideBarButtonClick> event does not raise an event if a <xref:System.Web.UI.WebControls.Button> control with the <xref:System.Web.UI.WebControls.Button.CommandName> property set to `Move` is outside of the <xref:System.Web.UI.WebControls.DataList> control's sidebar list for the <xref:System.Web.UI.WebControls.Wizard.SideBarTemplate*> object.
 
  Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](/dotnet/standard/events/).
 
@@ -3201,7 +3201,7 @@
  The <xref:System.Web.UI.WebControls.Wizard.SideBarButtonClick> event is raised when a button in the sidebar area on the <xref:System.Web.UI.WebControls.Wizard> control is clicked. Use the <xref:System.Web.UI.WebControls.Wizard.SideBarButtonClick> event to provide additional processing when a button in the sidebar area is clicked.
 
 > [!NOTE]
->  The <xref:System.Web.UI.WebControls.Wizard.SideBarButtonClick> event does not raise an event if a <xref:System.Web.UI.WebControls.Button> control with the <xref:System.Web.UI.WebControls.Button.CommandName> property set to `Move` is outside of the <xref:System.Web.UI.WebControls.DataList> control's sidebar list for the <xref:System.Web.UI.WebControls.Wizard.SideBarTemplate*> object.
+> The <xref:System.Web.UI.WebControls.Wizard.SideBarButtonClick> event does not raise an event if a <xref:System.Web.UI.WebControls.Button> control with the <xref:System.Web.UI.WebControls.Button.CommandName> property set to `Move` is outside of the <xref:System.Web.UI.WebControls.DataList> control's sidebar list for the <xref:System.Web.UI.WebControls.Wizard.SideBarTemplate*> object.
 
  For more information about how to handle events, see [Handling and Raising Events](/dotnet/standard/events/).
 
@@ -3400,7 +3400,7 @@
  The style settings for the <xref:System.Web.UI.WebControls.Wizard.SideBarStyle> property are merged with the style settings for the <xref:System.Web.UI.WebControls.Wizard> control. Any settings that are applied in the <xref:System.Web.UI.WebControls.Wizard.SideBarStyle> property override the corresponding settings in the properties of the <xref:System.Web.UI.WebControls.Wizard> control.
 
 > [!NOTE]
->  The height property for <xref:System.Web.UI.WebControls.Wizard.SideBarStyle*> is ignored if the height is set to less than the height of the wizard. Values set for <xref:System.Web.UI.WebControls.Wizard.NavigationStyle*> height and <xref:System.Web.UI.WebControls.Wizard.HeaderStyle*> height add to the total height of the wizard. For example, if the Wizard height is set to 500px and <xref:System.Web.UI.WebControls.Wizard.NavigationStyle*> height or <xref:System.Web.UI.WebControls.Wizard.HeaderStyle*> height is set to 50px or 10%, then the total wizard height is 550px.
+> The height property for <xref:System.Web.UI.WebControls.Wizard.SideBarStyle*> is ignored if the height is set to less than the height of the wizard. Values set for <xref:System.Web.UI.WebControls.Wizard.NavigationStyle*> height and <xref:System.Web.UI.WebControls.Wizard.HeaderStyle*> height add to the total height of the wizard. For example, if the Wizard height is set to 500px and <xref:System.Web.UI.WebControls.Wizard.NavigationStyle*> height or <xref:System.Web.UI.WebControls.Wizard.HeaderStyle*> height is set to 50px or 10%, then the total wizard height is 550px.
 
  The following <xref:System.Web.UI.WebControls.Wizard> style properties are overridden by <xref:System.Web.UI.WebControls.Wizard.SideBarStyle*> settings:
 
@@ -3479,7 +3479,7 @@
  The custom content for the template is contained within the <xref:System.Web.UI.WebControls.Wizard.SideBarTemplate*> object. You can add custom content to the <xref:System.Web.UI.WebControls.Wizard.SideBarTemplate*> object either by using template-editing mode in design view or by defining the <xref:System.Web.UI.WebControls.Wizard.SideBarTemplate*> object inline using `SideBarTemplate` tags. The content can be as simple as plain text or more complex (embedding other controls in the template, for example).
 
 > [!NOTE]
->  The <xref:System.Web.UI.WebControls.Wizard.SideBarTemplate*> object must contain a <xref:System.Web.UI.WebControls.DataList> control or <xref:System.Web.UI.WebControls.ListView> control whose <xref:System.Web.UI.Control.ID> property is set to `"SideBarList"` to enable the sidebar navigation feature. Also, the `"SideBarList"` on the <xref:System.Web.UI.WebControls.DataList> or <xref:System.Web.UI.WebControls.ListView> control must contain an <xref:System.Web.UI.WebControls.IButtonControl> control.
+> The <xref:System.Web.UI.WebControls.Wizard.SideBarTemplate*> object must contain a <xref:System.Web.UI.WebControls.DataList> control or <xref:System.Web.UI.WebControls.ListView> control whose <xref:System.Web.UI.Control.ID> property is set to `"SideBarList"` to enable the sidebar navigation feature. Also, the `"SideBarList"` on the <xref:System.Web.UI.WebControls.DataList> or <xref:System.Web.UI.WebControls.ListView> control must contain an <xref:System.Web.UI.WebControls.IButtonControl> control.
 
  To access a control that is defined in a template programmatically, use the <xref:System.Web.UI.WebControls.CompositeControl.Controls*> collection of the <xref:System.Web.UI.WebControls.Wizard> object. You can also use the <xref:System.Web.UI.Control.FindControl*> method of the <xref:System.Web.UI.WebControls.Wizard> object to find the control, if the control has an <xref:System.Web.UI.Control.ID> property specified.
 
@@ -3543,7 +3543,7 @@
  Use the <xref:System.Web.UI.WebControls.Wizard.SkipLinkText> property to specify the alternate text for a hidden image that is read by screen readers to provide the ability to skip the content  for a sidebar area. The text that you specify provides assistive technology devices with a description of the hidden image that can be used to make the control more accessible.
 
 > [!NOTE]
->  If the <xref:System.Web.UI.WebControls.Wizard.DisplaySideBar> property is set to `false`, the <xref:System.Web.UI.WebControls.Wizard.SkipLinkText> property does not create a hidden image with alternate text.
+> If the <xref:System.Web.UI.WebControls.Wizard.DisplaySideBar> property is set to `false`, the <xref:System.Web.UI.WebControls.Wizard.SkipLinkText> property does not create a hidden image with alternate text.
 
  The value of this property, when set, can be saved automatically to a resource file by using a designer tool. For more information, see <xref:System.ComponentModel.LocalizableAttribute> and [Globalization and Localization](https://learn.microsoft.com/previous-versions/aspnet/c6zyy3s9(v=vs.100)).
 
@@ -3602,7 +3602,7 @@
  The custom content for the template is contained within the <xref:System.Web.UI.WebControls.Wizard.StartNavigationTemplate*> object. You can add custom content to the <xref:System.Web.UI.WebControls.Wizard.StartNavigationTemplate*> object either by using template-editing mode in design view or by defining the <xref:System.Web.UI.WebControls.Wizard.StartNavigationTemplate*> object inline using `StartNavigationTemplate` tags. The content can be as simple as plain text or more complex (embedding other controls in the template, for example).
 
 > [!NOTE]
->  The <xref:System.Web.UI.WebControls.Wizard.StartNavigationTemplate*> object that is contained in the <xref:System.Web.UI.WebControls.Wizard.StartNavigationTemplate> property must contain an <xref:System.Web.UI.WebControls.IButtonControl> control with the <xref:System.Web.UI.WebControls.IButtonControl.CommandName> property set to `"MoveNext"` to enable the navigation feature.
+> The <xref:System.Web.UI.WebControls.Wizard.StartNavigationTemplate*> object that is contained in the <xref:System.Web.UI.WebControls.Wizard.StartNavigationTemplate> property must contain an <xref:System.Web.UI.WebControls.IButtonControl> control with the <xref:System.Web.UI.WebControls.IButtonControl.CommandName> property set to `"MoveNext"` to enable the navigation feature.
 
  To access a control that is defined in a template programmatically, use the <xref:System.Web.UI.WebControls.CompositeControl.Controls*> collection of the <xref:System.Web.UI.WebControls.Wizard> object. You can also use the <xref:System.Web.UI.Control.FindControl*> method of the <xref:System.Web.UI.WebControls.Wizard> object to find the control, if the control has an <xref:System.Web.UI.Control.ID> property specified.
 
@@ -3886,7 +3886,7 @@
  The custom content for the template is contained within the <xref:System.Web.UI.WebControls.Wizard.StepNavigationTemplate*> object. You can add custom content to the <xref:System.Web.UI.WebControls.Wizard.StepNavigationTemplate*> object either by using template-editing mode in design view or by defining the <xref:System.Web.UI.WebControls.Wizard.StepNavigationTemplate*> object inline using `StepNavigationTemplate` tags. The content can be as simple as plain text or more complex (embedding other controls in the template, for example).
 
 > [!NOTE]
->  The <xref:System.Web.UI.WebControls.Wizard.StepNavigationTemplate*> object that is contained in the <xref:System.Web.UI.WebControls.Wizard.StepNavigationTemplate> property must contain two <xref:System.Web.UI.WebControls.IButtonControl> controls, one with its <xref:System.Web.UI.WebControls.IButtonControl.CommandName> property set to `"MoveNext"` and one with its <xref:System.Web.UI.WebControls.IButtonControl.CommandName> property set to `"MovePrevious"`, to enable the navigation feature.
+> The <xref:System.Web.UI.WebControls.Wizard.StepNavigationTemplate*> object that is contained in the <xref:System.Web.UI.WebControls.Wizard.StepNavigationTemplate> property must contain two <xref:System.Web.UI.WebControls.IButtonControl> controls, one with its <xref:System.Web.UI.WebControls.IButtonControl.CommandName> property set to `"MoveNext"` and one with its <xref:System.Web.UI.WebControls.IButtonControl.CommandName> property set to `"MovePrevious"`, to enable the navigation feature.
 
  To access a control that is defined in a template programmatically, use the <xref:System.Web.UI.WebControls.CompositeControl.Controls*> collection of the <xref:System.Web.UI.WebControls.Wizard> object. You can also use the <xref:System.Web.UI.Control.FindControl*> method of the <xref:System.Web.UI.WebControls.Wizard> object to find the control, if the control has an <xref:System.Web.UI.Control.ID> property specified.
 
@@ -4535,7 +4535,7 @@
  The <xref:System.Web.UI.WebControls.Wizard.WizardSteps> property returns a collection of <xref:System.Web.UI.WebControls.WizardStepBase> objects that make up the <xref:System.Web.UI.WebControls.Wizard> control. You can use the <xref:System.Web.UI.WebControls.Wizard.WizardSteps*> collection to access the <xref:System.Web.UI.WebControls.WizardStepBase> objects that are contained in the <xref:System.Web.UI.WebControls.Wizard> control programmatically. Use the <xref:System.Web.UI.WebControls.WizardStepCollection.Add*>, <xref:System.Web.UI.WebControls.WizardStepCollection.Remove*>, <xref:System.Web.UI.WebControls.WizardStepCollection.Clear*>, and <xref:System.Web.UI.WebControls.WizardStepCollection.Insert*> methods to manipulate the <xref:System.Web.UI.WebControls.WizardStepBase> objects in the collection programmatically.
 
 > [!NOTE]
->  If you are using Microsoft Visual Studio 2005, note that the <xref:System.Web.UI.WebControls.Wizard.ActiveStepIndex*> is persisted in Source view. If you change the <xref:System.Web.UI.WebControls.Wizard.WizardSteps> property in Design view by clicking the sidebar buttons, and you then run the page, the first step of the `Wizard` control might not be shown because the <xref:System.Web.UI.WebControls.Wizard.ActiveStepIndex*> might be pointing to a different step.
+> If you are using Microsoft Visual Studio 2005, note that the <xref:System.Web.UI.WebControls.Wizard.ActiveStepIndex*> is persisted in Source view. If you change the <xref:System.Web.UI.WebControls.Wizard.WizardSteps> property in Design view by clicking the sidebar buttons, and you then run the page, the first step of the `Wizard` control might not be shown because the <xref:System.Web.UI.WebControls.Wizard.ActiveStepIndex*> might be pointing to a different step.
 
  If the <xref:System.Web.UI.WebControls.Wizard> control contains multiple <xref:System.Web.UI.WebControls.WizardStepCollection> collections, the collections will be merged.
 

@@ -89,7 +89,7 @@
  The SQL queries and commands that you use in the <xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand*>, <xref:System.Web.UI.WebControls.SqlDataSource.UpdateCommand*>, <xref:System.Web.UI.WebControls.SqlDataSource.InsertCommand*>, and <xref:System.Web.UI.WebControls.SqlDataSource.DeleteCommand*> properties can be parameterized. This means that the query or command can use placeholders instead of literal values and bind the placeholders to application or user-defined variables. You can bind parameters in SQL queries to Session variables, values that are passed on the query string for a Web Forms page, the property values of other server controls, and more. For more information about how to use parameters in SQL queries with the <xref:System.Web.UI.WebControls.SqlDataSource>, see [Using Parameters with Data Source Controls for Filtering](https://learn.microsoft.com/previous-versions/aspnet/xt50s8kz(v=vs.100)) and [Using Parameters with the SqlDataSource Control](https://learn.microsoft.com/previous-versions/aspnet/z72eefad(v=vs.100)).
 
 > [!NOTE]
->  By default, if one of the parameters is `null` when you execute a `Select` command, no data will be returned and no exception will be thrown. You can change this behavior by setting the <xref:System.Web.UI.WebControls.SqlDataSource.CancelSelectOnNullParameter> property to `false`.
+> By default, if one of the parameters is `null` when you execute a `Select` command, no data will be returned and no exception will be thrown. You can change this behavior by setting the <xref:System.Web.UI.WebControls.SqlDataSource.CancelSelectOnNullParameter> property to `false`.
 
 <a name="data_provider"></a>
 ## Data Provider
@@ -601,7 +601,7 @@ This section contains four code examples:
  The following code example demonstrates a common display and update scenario with the <xref:System.Web.UI.WebControls.DropDownList> and <xref:System.Web.UI.WebControls.TextBox> controls. The <xref:System.Web.UI.WebControls.DropDownList> control does not automatically add update parameters to the <xref:System.Web.UI.WebControls.SqlDataSource.UpdateParameters*> collection nor call the <xref:System.Web.UI.WebControls.SqlDataSource.Update*> method, so you must do so. The update parameters are specified declaratively and you can add an event handler to perform the <xref:System.Web.UI.WebControls.SqlDataSource.Update*> operation when an event is raised.
 
 > [!IMPORTANT]
->  This example includes a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
+> This example includes a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
 
  :::code language="aspx-csharp" source="~/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_8sql/CS/sql8cs.aspx" id="Snippet1":::
  :::code language="aspx-vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_8sql/VB/sql8vb.aspx" id="Snippet1":::
@@ -791,7 +791,7 @@ This section contains four code examples:
  The <xref:System.Web.UI.WebControls.SqlDataSource> control can cache data only when it is in <xref:System.Web.UI.WebControls.SqlDataSourceMode.DataSet> mode. A <xref:System.NotSupportedException> exception is thrown by the <xref:System.Web.UI.WebControls.SqlDataSource.Select*> method, if the <xref:System.Web.UI.WebControls.SqlDataSource> control is set to the <xref:System.Web.UI.WebControls.SqlDataSourceMode.DataReader> value and caching is also enabled.
 
 > [!IMPORTANT]
->  When you are using client impersonation under Microsoft Windows authentication, the data is cached when the first user accesses the data. If another user requests the same data, the data is retrieved from the cache. The data is not retrieved by making another call to the database to verify the user's access to the data. If you expect more than one user to access the data, and you want each retrieval to the data to be verified by the security configurations for the database, do not use caching.
+> When you are using client impersonation under Microsoft Windows authentication, the data is cached when the first user accesses the data. If another user requests the same data, the data is retrieved from the cache. The data is not retrieved by making another call to the database to verify the user's access to the data. If you expect more than one user to access the data, and you want each retrieval to the data to be verified by the security configurations for the database, do not use caching.
 
 
 
@@ -845,7 +845,7 @@ This section contains four code examples:
  The <xref:System.Web.UI.WebControls.SqlDataSource> control can cache data only when in the <xref:System.Web.UI.WebControls.SqlDataSourceMode.DataSet> mode. A <xref:System.NotSupportedException> exception is thrown by the <xref:System.Web.UI.WebControls.SqlDataSource.Select*> method, if the <xref:System.Web.UI.WebControls.SqlDataSource> control is set to the <xref:System.Web.UI.WebControls.SqlDataSourceMode.DataReader> value and caching is also enabled.
 
 > [!IMPORTANT]
->  When you are using client impersonation under Microsoft Windows authentication, the data is cached when the first user accesses the data. If another user requests the same data, the data is retrieved from the cache. The data is not retrieved by making another call to the database to verify the user's access to the data. If you expect more than one user to access the data, and you want each retrieval to the data to be verified by the security configurations for the database, do not use caching.
+> When you are using client impersonation under Microsoft Windows authentication, the data is cached when the first user accesses the data. If another user requests the same data, the data is retrieved from the cache. The data is not retrieved by making another call to the database to verify the user's access to the data. If you expect more than one user to access the data, and you want each retrieval to the data to be verified by the security configurations for the database, do not use caching.
 
 
 
@@ -901,7 +901,7 @@ This section contains four code examples:
  A unique cache entry is created for every combination of the <xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand*>, <xref:System.Web.UI.WebControls.SqlDataSource.ConnectionString*>, and <xref:System.Web.UI.WebControls.SqlDataSource.SelectParameters*> properties. Multiple <xref:System.Web.UI.WebControls.SqlDataSource> controls can use the same cache entries in scenarios where the controls load the same data from the same underlying database.
 
 > [!IMPORTANT]
->  When you are using client impersonation under Microsoft Windows authentication, the data is cached when the first user accesses the data. If another user requests the same data, the data is retrieved from the cache. The data is not retrieved by making another call to the database to verify the user's access to the data. If you expect more than one user to access the data, and you want each retrieval to the data to be verified by the security configurations for the database, do not use caching.
+> When you are using client impersonation under Microsoft Windows authentication, the data is cached when the first user accesses the data. If another user requests the same data, the data is retrieved from the cache. The data is not retrieved by making another call to the database to verify the user's access to the data. If you expect more than one user to access the data, and you want each retrieval to the data to be verified by the security configurations for the database, do not use caching.
 
  ]]></format>
         </remarks>
@@ -1038,7 +1038,7 @@ This section contains four code examples:
  If you change the <xref:System.Web.UI.WebControls.SqlDataSource.ConnectionString> property, the <xref:System.Web.UI.IDataSource.DataSourceChanged> event is raised, causing any controls that are bound to the <xref:System.Web.UI.WebControls.SqlDataSource> control to rebind.
 
 > [!IMPORTANT]
->  For information about storing a connection string, see [How To: Secure Connection Strings when Using Data Source Controls](https://learn.microsoft.com/previous-versions/aspnet/ms178372(v=vs.100)).
+> For information about storing a connection string, see [How To: Secure Connection Strings when Using Data Source Controls](https://learn.microsoft.com/previous-versions/aspnet/ms178372(v=vs.100)).
 
 ## Examples
 
@@ -1241,7 +1241,7 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
  The <xref:System.Web.UI.WebControls.SqlDataSource.DeleteCommand> property delegates to the <xref:System.Web.UI.WebControls.SqlDataSourceView.DeleteCommand> property of the <xref:System.Web.UI.WebControls.SqlDataSourceView> object that is associated with the <xref:System.Web.UI.WebControls.SqlDataSource> control.
 
 > [!IMPORTANT]
->  For security purposes, the <xref:System.Web.UI.WebControls.SqlDataSource.DeleteCommand> property is not stored in view state. Because it is possible to decode the contents of view state on the client, storing sensitive information about the database structure in view state could result in an information disclosure vulnerability.
+> For security purposes, the <xref:System.Web.UI.WebControls.SqlDataSource.DeleteCommand> property is not stored in view state. Because it is possible to decode the contents of view state on the client, storing sensitive information about the database structure in view state could result in an information disclosure vulnerability.
 
 
 
@@ -1385,7 +1385,7 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
  If the <xref:System.Web.UI.WebControls.SqlDataSource.DeleteCommand> property contains a parameterized SQL query, the <xref:System.Web.UI.WebControls.SqlDataSource.DeleteParameters*> collection contains any <xref:System.Web.UI.WebControls.Parameter> objects that correspond to the parameter placeholders in the SQL string.
 
 > [!NOTE]
->  Make sure that no <xref:System.Web.UI.WebControls.BoundField> controls in the data-bound control that you bind to the <xref:System.Web.UI.WebControls.SqlDataSource> control have names that match any parameter names in the <xref:System.Web.UI.WebControls.SqlDataSource.DeleteParameters*> collection. Parameters that have the same name as bound fields are excluded from the SQL command, and a "parameter was not supplied" error might result.
+> Make sure that no <xref:System.Web.UI.WebControls.BoundField> controls in the data-bound control that you bind to the <xref:System.Web.UI.WebControls.SqlDataSource> control have names that match any parameter names in the <xref:System.Web.UI.WebControls.SqlDataSource.DeleteParameters*> collection. Parameters that have the same name as bound fields are excluded from the SQL command, and a "parameter was not supplied" error might result.
 
  If the <xref:System.Web.UI.WebControls.SqlDataSource.ConflictDetection> property is set to the <xref:System.Web.UI.ConflictOptions.CompareAllValues> value, the parameters are created for both the old and new values of the data. The parameters for the old values are named according to the <xref:System.Web.UI.WebControls.SqlDataSource.OldValuesParameterFormatString> property.
 
@@ -1394,7 +1394,7 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
  The <xref:System.Web.UI.WebControls.SqlDataSource.DeleteParameters> property retrieves the <xref:System.Web.UI.WebControls.SqlDataSourceView.DeleteParameters> property that is contained by the <xref:System.Web.UI.WebControls.SqlDataSourceView> object that is associated with the <xref:System.Web.UI.WebControls.SqlDataSource> control.
 
 > [!IMPORTANT]
->  Values are inserted into parameters without validation, which is a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Deleting> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
+> Values are inserted into parameters without validation, which is a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Deleting> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
 
 
 
@@ -1495,7 +1495,7 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
  The <xref:System.Web.UI.WebControls.SqlDataSource> control automatically caches data when the <xref:System.Web.UI.WebControls.SqlDataSource.EnableCaching> property is set to `true` and the <xref:System.Web.UI.WebControls.SqlDataSource.CacheDuration> property is set to a value greater than 0, which indicates the number of seconds that the cache stores data before retrieving a fresh set.
 
 > [!IMPORTANT]
->  When you are using client impersonation under Microsoft Windows authentication, the data is cached when the first user accesses the data. If another user requests the same data, the data is retrieved from the cache. The data is not retrieved by making another call to the database to verify the user's access to the data. If you expect more than one user to access the data, and you want each retrieval to the data to be verified by the security configurations for the database, do not use caching.
+> When you are using client impersonation under Microsoft Windows authentication, the data is cached when the first user accesses the data. If another user requests the same data, the data is retrieved from the cache. The data is not retrieved by making another call to the database to verify the user's access to the data. If you expect more than one user to access the data, and you want each retrieval to the data to be verified by the security configurations for the database, do not use caching.
 
 
 
@@ -1655,7 +1655,7 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
  The <xref:System.Web.UI.WebControls.SqlDataSource.FilterParameters> property retrieves the <xref:System.Web.UI.WebControls.SqlDataSourceView.FilterParameters> property that is contained by the <xref:System.Web.UI.WebControls.SqlDataSourceView> object that is associated with the <xref:System.Web.UI.WebControls.SqlDataSource> control.
 
 > [!IMPORTANT]
->  Values are inserted into parameters without validation, which is a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Filtering> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
+> Values are inserted into parameters without validation, which is a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Filtering> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
 
 
 
@@ -1812,7 +1812,7 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
  The <xref:System.Web.UI.WebControls.SqlDataSource.Insert*> method delegates to the <xref:System.Web.UI.WebControls.SqlDataSourceView.Insert*> method of the <xref:System.Web.UI.WebControls.SqlDataSourceView> object that is associated with the <xref:System.Web.UI.WebControls.SqlDataSource> control.
 
 > [!IMPORTANT]
->  Values are inserted into parameters without validation, which is a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Filtering> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
+> Values are inserted into parameters without validation, which is a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Filtering> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
 
 
 
@@ -1820,10 +1820,10 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
  The following code example demonstrates how to insert data into a database using the <xref:System.Web.UI.WebControls.SqlDataSource> control and a simple Web Forms page. The current data in the Data table is displayed in the <xref:System.Web.UI.WebControls.DropDownList> control. You can add new records by entering values in the <xref:System.Web.UI.WebControls.TextBox> controls, and then clicking the **Insert** button. When the **Insert** button is clicked, the specified values are inserted into the database, and then the <xref:System.Web.UI.WebControls.DropDownList> is refreshed.
 
 > [!IMPORTANT]
->  This example includes a text box that accepts user input, which is a potential security threat and values are inserted into parameters without validation, which is also a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Inserting> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
+> This example includes a text box that accepts user input, which is a potential security threat and values are inserted into parameters without validation, which is also a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Inserting> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
 
 > [!NOTE]
->  This example shows how to use declarative syntax for data access. For information about how to access data by using code instead of markup, see [Accessing data in Visual Studio](/visualstudio/data-tools/accessing-data-in-visual-studio).
+> This example shows how to use declarative syntax for data access. For information about how to access data by using code instead of markup, see [Accessing data in Visual Studio](/visualstudio/data-tools/accessing-data-in-visual-studio).
 
  :::code language="aspx-csharp" source="~/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_24sql/CS/sql24cs.aspx" id="Snippet1":::
  :::code language="aspx-vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_24sql/VB/sql24vb.aspx" id="Snippet1":::
@@ -1876,10 +1876,10 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
  This property delegates to the <xref:System.Web.UI.WebControls.SqlDataSourceView.InsertCommand> property of the <xref:System.Web.UI.WebControls.SqlDataSourceView> that is associated with the <xref:System.Web.UI.WebControls.SqlDataSource> control.
 
 > [!IMPORTANT]
->  For security purposes, the <xref:System.Web.UI.WebControls.SqlDataSource.InsertCommand> property is not stored is view state. Because it is possible to decode the contents of view state on the client, storing sensitive information about the database structure in view state could result in an information disclosure vulnerability.
+> For security purposes, the <xref:System.Web.UI.WebControls.SqlDataSource.InsertCommand> property is not stored is view state. Because it is possible to decode the contents of view state on the client, storing sensitive information about the database structure in view state could result in an information disclosure vulnerability.
 
 > [!IMPORTANT]
->  Values are inserted into parameters without validation, which is a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Filtering> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
+> Values are inserted into parameters without validation, which is a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Filtering> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
 
 
 
@@ -1887,12 +1887,12 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
  This section contains two code examples. The first code example demonstrates how to insert data into a database using the <xref:System.Web.UI.WebControls.SqlDataSource> control and a simple Web Forms page. The second code example demonstrates how to retrieve data from Microsoft SQL Server and display it in a <xref:System.Web.UI.WebControls.GridView> control and how to use a <xref:System.Web.UI.WebControls.DetailsView> control to see details of a selected row into the <xref:System.Web.UI.WebControls.GridView> control and as a form to insert new records.
 
 > [!NOTE]
->  These examples show how to use declarative syntax for data access. For information about how to access data by using code instead of markup, see [Accessing data in Visual Studio](/visualstudio/data-tools/accessing-data-in-visual-studio).
+> These examples show how to use declarative syntax for data access. For information about how to access data by using code instead of markup, see [Accessing data in Visual Studio](/visualstudio/data-tools/accessing-data-in-visual-studio).
 
  The following code example demonstrates how to insert data into a database using the <xref:System.Web.UI.WebControls.SqlDataSource> control and a simple Web Forms page. The current data in the Data table is displayed in the <xref:System.Web.UI.WebControls.DropDownList> control. You can add new records by entering values into the <xref:System.Web.UI.WebControls.TextBox> controls, and then clicking the **Insert** button. When the **Insert** button is clicked, the specified values are inserted into the database, and the <xref:System.Web.UI.WebControls.DropDownList> control is refreshed.
 
 > [!IMPORTANT]
->  This example includes a text box that accepts user input, which is a potential security threat, and values are inserted into parameters without validation, which is also a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Inserting> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
+> This example includes a text box that accepts user input, which is a potential security threat, and values are inserted into parameters without validation, which is also a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Inserting> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
 
  :::code language="aspx-csharp" source="~/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_24sql/CS/sql24cs.aspx" id="Snippet1":::
  :::code language="aspx-vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_24sql/VB/sql24vb.aspx" id="Snippet1":::
@@ -2002,7 +2002,7 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
  The following code example demonstrates how to retrieve data from Microsoft SQL Server and display it in a <xref:System.Web.UI.WebControls.GridView> control and how to use a <xref:System.Web.UI.WebControls.DetailsView> control to see details of a selected row in the <xref:System.Web.UI.WebControls.GridView> and as a form to insert new records.
 
 > [!NOTE]
->  This example shows how to use declarative syntax for data access. For information about how to access data by using code instead of markup, see [Accessing data in Visual Studio](/visualstudio/data-tools/accessing-data-in-visual-studio).
+> This example shows how to use declarative syntax for data access. For information about how to access data by using code instead of markup, see [Accessing data in Visual Studio](/visualstudio/data-tools/accessing-data-in-visual-studio).
 
  Initially, the data is displayed in the <xref:System.Web.UI.WebControls.GridView> control, and the selected row of the <xref:System.Web.UI.WebControls.GridView> is also displayed in the <xref:System.Web.UI.WebControls.DetailsView> control. The <xref:System.Web.UI.WebControls.GridView> and <xref:System.Web.UI.WebControls.DetailsView> controls use different data source controls; the one that is associated with the <xref:System.Web.UI.WebControls.DetailsView> has the <xref:System.Web.UI.WebControls.SqlDataSource.FilterExpression*> and <xref:System.Web.UI.WebControls.SqlDataSource.FilterParameters*> properties, which ensures that the selected row of the <xref:System.Web.UI.WebControls.GridView> is displayed.
 
@@ -2056,7 +2056,7 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
  The following code example demonstrates how to retrieve data from Microsoft SQL Server and display it in a <xref:System.Web.UI.WebControls.GridView> control and how to use a <xref:System.Web.UI.WebControls.DetailsView> control to see details of a selected row in the <xref:System.Web.UI.WebControls.GridView> and as a form to insert new records.
 
 > [!NOTE]
->  This example shows how to use declarative syntax for data access. For information about how to access data by using code instead of markup, see [Accessing data in Visual Studio](/visualstudio/data-tools/accessing-data-in-visual-studio).
+> This example shows how to use declarative syntax for data access. For information about how to access data by using code instead of markup, see [Accessing data in Visual Studio](/visualstudio/data-tools/accessing-data-in-visual-studio).
 
  Initially, the data is displayed in the <xref:System.Web.UI.WebControls.GridView> control, and the selected row of the <xref:System.Web.UI.WebControls.GridView> is also displayed in the <xref:System.Web.UI.WebControls.DetailsView> control. The <xref:System.Web.UI.WebControls.GridView> and <xref:System.Web.UI.WebControls.DetailsView> controls use different data source controls; the one that is associated with the <xref:System.Web.UI.WebControls.DetailsView> has the <xref:System.Web.UI.WebControls.SqlDataSource.FilterExpression*> and <xref:System.Web.UI.WebControls.SqlDataSource.FilterParameters*> properties, which ensures that the selected row of the <xref:System.Web.UI.WebControls.GridView> is displayed.
 
@@ -2130,7 +2130,7 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
  Depending on the ADO.NET provider, the order of the parameters in the <xref:System.Web.UI.WebControls.SqlDataSource.InsertParameters*> collection might be important. The <xref:System.Data.OleDb?displayProperty=nameWithType> and <xref:System.Data.Odbc?displayProperty=nameWithType> providers associate the parameters in the collection according to the order that the parameters appear in the parameterized SQL query. The <xref:System.Data.SqlClient?displayProperty=nameWithType> provider, which is the default ADO.NET provider for the <xref:System.Web.UI.WebControls.SqlDataSource> control, associates the parameters in the collection by matching the name of the parameter with a placeholder alias in the SQL query. For more information about parameterized SQL queries and commands, see [Using Parameters with the SqlDataSource Control](https://learn.microsoft.com/previous-versions/aspnet/z72eefad(v=vs.100)).
 
 > [!IMPORTANT]
->  Values are inserted into parameters without validation, which is a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Filtering> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
+> Values are inserted into parameters without validation, which is a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Filtering> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
 
 
 
@@ -2138,10 +2138,10 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
  The following code example demonstrates how to insert data into a database using the <xref:System.Web.UI.WebControls.SqlDataSource> control and a simple Web Forms page. The current data in the Data table is displayed in the <xref:System.Web.UI.WebControls.DropDownList> control. You can add new records by entering values in the <xref:System.Web.UI.WebControls.TextBox> controls, and then clicking the **Insert** button. When the **Insert** button is clicked, the specified values are inserted into the database, and the <xref:System.Web.UI.WebControls.DropDownList> control is refreshed.
 
 > [!IMPORTANT]
->  This example includes a text box that accepts user input, which is a potential security threat, and values are inserted into parameters without validation, which is also a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Inserting> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
+> This example includes a text box that accepts user input, which is a potential security threat, and values are inserted into parameters without validation, which is also a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Inserting> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
 
 > [!NOTE]
->  This example shows how to use declarative syntax for data access. For information about how to access data by using code instead of markup, see [Accessing data in Visual Studio](/visualstudio/data-tools/accessing-data-in-visual-studio).
+> This example shows how to use declarative syntax for data access. For information about how to access data by using code instead of markup, see [Accessing data in Visual Studio](/visualstudio/data-tools/accessing-data-in-visual-studio).
 
  :::code language="aspx-csharp" source="~/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_24sql/CS/sql24cs.aspx" id="Snippet1":::
  :::code language="aspx-vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_24sql/VB/sql24vb.aspx" id="Snippet1":::
@@ -2407,14 +2407,14 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
  If the <xref:System.Web.UI.WebControls.SqlDataSource.DataSourceMode> property is set to <xref:System.Web.UI.WebControls.SqlDataSourceMode.DataSet?displayProperty=nameWithType> and caching is enabled, the <xref:System.Web.UI.WebControls.SqlDataSource> object retrieves data from and saves data to the cache during the <xref:System.Web.UI.WebControls.SqlDataSource.Select*> operation. The cache is created, discarded, or refreshed based on the caching behavior that is specified by the combination of the <xref:System.Web.UI.WebControls.SqlDataSource.CacheDuration*> and <xref:System.Web.UI.WebControls.SqlDataSource.CacheExpirationPolicy*> properties.
 
 > [!IMPORTANT]
->  When you are using client impersonation under Microsoft Windows authentication, the data is cached when the first user accesses the data. If another user requests the same data, the data is retrieved from the cache. The data is not retrieved by making another call to the database to verify the user's access to the data. If you expect more than one user to access the data, and you want each retrieval of data to be verified by the security configurations for the database, do not use caching.
+> When you are using client impersonation under Microsoft Windows authentication, the data is cached when the first user accesses the data. If another user requests the same data, the data is retrieved from the cache. The data is not retrieved by making another call to the database to verify the user's access to the data. If you expect more than one user to access the data, and you want each retrieval of data to be verified by the security configurations for the database, do not use caching.
 
  If the <xref:System.Web.UI.WebControls.SqlDataSource.DataSourceMode> property is set to <xref:System.Web.UI.WebControls.SqlDataSourceMode.DataSet?displayProperty=nameWithType> and a <xref:System.Web.UI.WebControls.SqlDataSource.FilterExpression> property has been specified, the filter expression is evaluated with any supplied <xref:System.Web.UI.WebControls.SqlDataSource.FilterParameters*> properties and the resulting filter is applied to the list of data during the <xref:System.Web.UI.WebControls.SqlDataSource.Select*> operation.
 
  The <xref:System.Web.UI.WebControls.SqlDataSource.Select*> method delegates to the <xref:System.Web.UI.WebControls.SqlDataSourceView.Select*> method of the <xref:System.Web.UI.WebControls.SqlDataSourceView> object that is associated with the <xref:System.Web.UI.WebControls.SqlDataSource> control. To perform a data retrieval operation, the <xref:System.Web.UI.WebControls.SqlDataSourceView> builds a <xref:System.Data.Common.DbCommand> object by using the <xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand*> text and any associated <xref:System.Web.UI.WebControls.SqlDataSource.SelectParameters*> values, and then executes the <xref:System.Data.Common.DbCommand> against the underlying database.
 
 > [!IMPORTANT]
->  Values are inserted into parameters without validation, which is a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Filtering> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
+> Values are inserted into parameters without validation, which is a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Filtering> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
 
 
 
@@ -2477,10 +2477,10 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
  The <xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand> property delegates to the <xref:System.Web.UI.WebControls.SqlDataSourceView.SelectCommand> property of the <xref:System.Web.UI.WebControls.SqlDataSourceView> object that is associated with the <xref:System.Web.UI.WebControls.SqlDataSource> control.
 
 > [!IMPORTANT]
->  For security purposes, the <xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand> property is not stored is view state. Because it is possible to decode the contents of view state on the client, storing sensitive information about the database structure in view state could result in an information disclosure vulnerability.
+> For security purposes, the <xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand> property is not stored is view state. Because it is possible to decode the contents of view state on the client, storing sensitive information about the database structure in view state could result in an information disclosure vulnerability.
 
 > [!IMPORTANT]
->  Values are inserted into parameters without validation, which is a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Filtering> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
+> Values are inserted into parameters without validation, which is a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Filtering> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
 
 
 
@@ -2683,7 +2683,7 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
  The <xref:System.Web.UI.WebControls.SqlDataSource.SelectParameters> property retrieves the <xref:System.Web.UI.WebControls.SqlDataSourceView.SelectParameters> property that is contained by the <xref:System.Web.UI.WebControls.SqlDataSourceView> object that is associated with the <xref:System.Web.UI.WebControls.SqlDataSource> control.
 
 > [!IMPORTANT]
->  Values are inserted into parameters without validation, which is a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Selecting> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
+> Values are inserted into parameters without validation, which is a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Selecting> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
 
 
 
@@ -2693,7 +2693,7 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
  For information about other types of parameters you can use, see the <xref:System.Web.UI.WebControls.Parameter> class overview.
 
 > [!NOTE]
->  Because the parameter is used in a WHERE clause, the use of the <xref:System.Web.UI.WebControls.SqlDataSource.SelectParameters> property in the code example is functionally equivalent to using the <xref:System.Web.UI.WebControls.SqlDataSource.FilterExpression*> and <xref:System.Web.UI.WebControls.SqlDataSource.FilterParameters*> properties.
+> Because the parameter is used in a WHERE clause, the use of the <xref:System.Web.UI.WebControls.SqlDataSource.SelectParameters> property in the code example is functionally equivalent to using the <xref:System.Web.UI.WebControls.SqlDataSource.FilterExpression*> and <xref:System.Web.UI.WebControls.SqlDataSource.FilterParameters*> properties.
 
  :::code language="aspx-csharp" source="~/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_2sql/CS/sql2cs.aspx" id="Snippet1":::
  :::code language="aspx-vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_2sql/VB/sql2vb.aspx" id="Snippet1":::
@@ -2781,7 +2781,7 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
  The <xref:System.Web.UI.WebControls.SqlDataSource.SqlCacheDependency*> string identifies databases and tables according to the same format that is used by the `@ Page` directive, where the first part of the string is a connection string to a Microsoft SQL Server database, followed by a colon delimiter, and finally the name of the database table (for example, `"connectionstring1:table1"`). If the <xref:System.Web.UI.WebControls.SqlDataSource.SqlCacheDependency> property depends on more than one table, the connection string-and-table name pairs are separated by semicolons (for example, `"connectionstring1:table1";connectionstring2:table2"`).
 
 > [!IMPORTANT]
->  When you are using client impersonation under Microsoft Windows authentication, the data is cached when the first user accesses the data. If another user requests the same data, the data is retrieved from the cache. The data is not retrieved by making another call to the database to verify the user's access to the data. If you expect more than one user to access the data, and you want each retrieval to the data to be verified by the security configurations for the database, do not use caching.
+> When you are using client impersonation under Microsoft Windows authentication, the data is cached when the first user accesses the data. If another user requests the same data, the data is retrieved from the cache. The data is not retrieved by making another call to the database to verify the user's access to the data. If you expect more than one user to access the data, and you want each retrieval to the data to be verified by the security configurations for the database, do not use caching.
 
 
 
@@ -2863,7 +2863,7 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
  The <xref:System.Web.UI.WebControls.SqlDataSource.Update*> method delegates to the <xref:System.Web.UI.WebControls.SqlDataSourceView.Update*> method of the <xref:System.Web.UI.WebControls.SqlDataSourceView> object that is associated with the <xref:System.Web.UI.WebControls.SqlDataSource> control. To perform an update operation, the <xref:System.Web.UI.WebControls.SqlDataSourceView> builds a <xref:System.Data.Common.DbCommand> object using the <xref:System.Web.UI.WebControls.SqlDataSource.UpdateCommand*> text and any associated <xref:System.Web.UI.WebControls.SqlDataSource.UpdateParameters*> properties, and then executes the <xref:System.Data.Common.DbCommand> object against the underlying database.
 
 > [!IMPORTANT]
->  Values are inserted into parameters without validation, which is a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Updating> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
+> Values are inserted into parameters without validation, which is a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Updating> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
 
 
 
@@ -2928,10 +2928,10 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
  The <xref:System.Web.UI.WebControls.SqlDataSource.UpdateCommand> property delegates to the <xref:System.Web.UI.WebControls.SqlDataSourceView.UpdateCommand> property of the <xref:System.Web.UI.WebControls.SqlDataSourceView> object that is associated with the <xref:System.Web.UI.WebControls.SqlDataSource> control.
 
 > [!IMPORTANT]
->  For security purposes, the <xref:System.Web.UI.WebControls.SqlDataSource.UpdateCommand> property is not stored is view state. Because it is possible to decode the contents of view state on the client, storing sensitive information about the database structure in view state could result in an information disclosure vulnerability.
+> For security purposes, the <xref:System.Web.UI.WebControls.SqlDataSource.UpdateCommand> property is not stored is view state. Because it is possible to decode the contents of view state on the client, storing sensitive information about the database structure in view state could result in an information disclosure vulnerability.
 
 > [!IMPORTANT]
->  Values are inserted into parameters without validation, which is a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Filtering> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
+> Values are inserted into parameters without validation, which is a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Filtering> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
 
 
 
@@ -3096,7 +3096,7 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
  The <xref:System.Web.UI.WebControls.SqlDataSource.UpdateParameters> property retrieves the <xref:System.Web.UI.WebControls.SqlDataSourceView.UpdateParameters> property that is contained by the <xref:System.Web.UI.WebControls.SqlDataSourceView> object that is associated with the <xref:System.Web.UI.WebControls.SqlDataSource> control.
 
 > [!IMPORTANT]
->  Values are inserted into parameters without validation, which is a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Filtering> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
+> Values are inserted into parameters without validation, which is a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Filtering> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
 
 
 
@@ -3104,7 +3104,7 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
  The following code example demonstrates how to use a <xref:System.Web.UI.WebControls.SqlDataSource> control to display data in a <xref:System.Web.UI.WebControls.DropDownList> control and update data when the **Submit** button is clicked. The <xref:System.Web.UI.WebControls.SqlDataSource.UpdateCommand*> is set with a parameterized SQL statement and two <xref:System.Web.UI.WebControls.ControlParameter> parameters are added to the <xref:System.Web.UI.WebControls.SqlDataSource.UpdateParameters*> collection. When the **Submit** button is clicked, the <xref:System.Web.UI.WebControls.Button.OnClick*> event is handled to call the <xref:System.Web.UI.WebControls.SqlDataSource.Update*> method explicitly.
 
 > [!IMPORTANT]
->  This example includes a text box that accepts user input, which is a potential security threat, and values are inserted into parameters without validation, which is also a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Inserting> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
+> This example includes a text box that accepts user input, which is a potential security threat, and values are inserted into parameters without validation, which is also a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Inserting> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
 
  :::code language="aspx-csharp" source="~/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_8sql/CS/sql8cs.aspx" id="Snippet1":::
  :::code language="aspx-vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_8sql/VB/sql8vb.aspx" id="Snippet1":::
@@ -3145,7 +3145,7 @@ The following code example demonstrates how to set the <xref:System.Web.UI.WebCo
  For more information about how to handle events, see [Handling and Raising Events](/dotnet/standard/events/).
 
 > [!IMPORTANT]
->  Values are inserted into parameters without validation, which is a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Updating> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
+> Values are inserted into parameters without validation, which is a potential security threat. Use the <xref:System.Web.UI.WebControls.SqlDataSource.Updating> event to validate parameter values before executing the query. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
 
 
 

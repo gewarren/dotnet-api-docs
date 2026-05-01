@@ -320,12 +320,12 @@ There is currently a limitation in Windows Forms that prevents all classes deriv
  The auto-scroll margin is the distance between any child controls and the edges of the scrollable parent control. The <xref:System.Windows.Forms.ScrollableControl.AutoScrollMargin*> size is added to the size of any child controls contained in the scrollable control to determine whether or not scroll bars are needed. The <xref:System.Windows.Forms.ScrollableControl.AutoScrollMargin> property is evaluated when the parent scrollable control is resized or the individual child controls are brought into view, and is used to determine if scroll bars must be displayed. Docked controls are excluded from the calculations that determine if scroll bars must be displayed.
 
 > [!NOTE]
->  If a docked control's <xref:System.Windows.Forms.Control.Dock> property is set to <xref:System.Windows.Forms.DockStyle.Fill?displayProperty=nameWithType>, the control fills the parent scrollable control and the docked control is ignored when using the <xref:System.Windows.Forms.ScrollableControl.AutoScrollMargin*> to determine whether scroll bars are needed.
+> If a docked control's <xref:System.Windows.Forms.Control.Dock> property is set to <xref:System.Windows.Forms.DockStyle.Fill?displayProperty=nameWithType>, the control fills the parent scrollable control and the docked control is ignored when using the <xref:System.Windows.Forms.ScrollableControl.AutoScrollMargin*> to determine whether scroll bars are needed.
 
  If the distance from the edge of a child control to the parent scrollable control is less than the value assigned to the <xref:System.Windows.Forms.ScrollableControl.AutoScrollMargin> property and the <xref:System.Windows.Forms.ScrollableControl.AutoScroll> property is set to `true`, the appropriate scroll bar is displayed.
 
 > [!NOTE]
->  We recommend, when docking controls within a scrollable control, that you add a child scrollable control, such as a <xref:System.Windows.Forms.Panel>, to contain any other controls that might require scrolling. You should add the child <xref:System.Windows.Forms.Panel> control to the scrollable control and its <xref:System.Windows.Forms.Control.Dock> property set to <xref:System.Windows.Forms.DockStyle.Fill?displayProperty=nameWithType> and its <xref:System.Windows.Forms.ScrollableControl.AutoScroll> property set to `true`. You should set the <xref:System.Windows.Forms.ScrollableControl.AutoScroll> property of the parent scrollable control to `false`.
+> We recommend, when docking controls within a scrollable control, that you add a child scrollable control, such as a <xref:System.Windows.Forms.Panel>, to contain any other controls that might require scrolling. You should add the child <xref:System.Windows.Forms.Panel> control to the scrollable control and its <xref:System.Windows.Forms.Control.Dock> property set to <xref:System.Windows.Forms.DockStyle.Fill?displayProperty=nameWithType> and its <xref:System.Windows.Forms.ScrollableControl.AutoScroll> property set to `true`. You should set the <xref:System.Windows.Forms.ScrollableControl.AutoScroll> property of the parent scrollable control to `false`.
 
 
 
@@ -445,7 +445,7 @@ There is currently a limitation in Windows Forms that prevents all classes deriv
  When adding controls programmatically to a form, use the <xref:System.Windows.Forms.ScrollableControl.AutoScrollPosition> property to position the control either inside or outside of the current viewable scroll area.
 
 > [!NOTE]
->  The <xref:System.Drawing.Point.X*> and <xref:System.Drawing.Point.Y*> coordinate values retrieved are negative if the control has scrolled away from its starting position (0,0). When you set this property, you must always assign positive <xref:System.Drawing.Point.X*> and <xref:System.Drawing.Point.Y*> values to set the scroll position relative to the starting position. For example, if you have a horizontal scroll bar and you set x and y to 200, you move the scroll 200 pixels to the right; if you then set x and y to 100, the scroll appears to jump the left by 100 pixels, because you are setting it 100 pixels away from the starting position. In the first case, <xref:System.Windows.Forms.ScrollableControl.AutoScrollPosition*> returns {-200, 0}; in the second case, it returns {-100,0}.
+> The <xref:System.Drawing.Point.X*> and <xref:System.Drawing.Point.Y*> coordinate values retrieved are negative if the control has scrolled away from its starting position (0,0). When you set this property, you must always assign positive <xref:System.Drawing.Point.X*> and <xref:System.Drawing.Point.Y*> values to set the scroll position relative to the starting position. For example, if you have a horizontal scroll bar and you set x and y to 200, you move the scroll 200 pixels to the right; if you then set x and y to 100, the scroll appears to jump the left by 100 pixels, because you are setting it 100 pixels away from the starting position. In the first case, <xref:System.Windows.Forms.ScrollableControl.AutoScrollPosition*> returns {-200, 0}; in the second case, it returns {-100,0}.
 
  To detect when <xref:System.Windows.Forms.ScrollableControl.AutoScrollPosition*> changes, create an event handler for the <xref:System.Windows.Forms.Control.Paint> event, save the old position value in a private variable, and compare the new value to the old value on subsequent <xref:System.Windows.Forms.Control.Paint> events.
 
@@ -1568,7 +1568,7 @@ There is currently a limitation in Windows Forms that prevents all classes deriv
  The margin sets the width and height of the border around each control. This margin is used to determine when scroll bars are needed on the container and where to scroll to when a control is selected.
 
 > [!NOTE]
->  If a negative number is passed in as the `x` or `y` values, the value will be reset to 0.
+> If a negative number is passed in as the `x` or `y` values, the value will be reset to 0.
 
 
 

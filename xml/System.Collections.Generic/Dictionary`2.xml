@@ -137,14 +137,14 @@
  The <xref:System.Collections.Generic.Dictionary`2> generic class provides a mapping from a set of keys to a set of values. Each addition to the dictionary consists of a value and its associated key. Retrieving a value by using its key is very fast, close to O(1), because the <xref:System.Collections.Generic.Dictionary`2> class is implemented as a hash table.
 
 > [!NOTE]
->  The speed of retrieval depends on the quality of the hashing algorithm of the type specified for `TKey`.
+> The speed of retrieval depends on the quality of the hashing algorithm of the type specified for `TKey`.
 
  As long as an object is used as a key in the <xref:System.Collections.Generic.Dictionary`2>, it must not change in any way that affects its hash value. Every key in a <xref:System.Collections.Generic.Dictionary`2> must be unique according to the dictionary's equality comparer. A key cannot be `null`, but a value can be, if its type `TValue` is a reference type.
 
  <xref:System.Collections.Generic.Dictionary`2> requires an equality implementation to determine whether keys are equal. You can specify an implementation of the <xref:System.Collections.Generic.IEqualityComparer`1> generic interface by using a constructor that accepts a `comparer` parameter; if you do not specify an implementation, the default generic equality comparer <xref:System.Collections.Generic.EqualityComparer`1.Default*?displayProperty=nameWithType> is used. If type `TKey` implements the <xref:System.IEquatable`1?displayProperty=nameWithType> generic interface, the default equality comparer uses that implementation.
 
 > [!NOTE]
->  For example, you can use the case-insensitive string comparers provided by the <xref:System.StringComparer> class to create dictionaries with case-insensitive string keys.
+> For example, you can use the case-insensitive string comparers provided by the <xref:System.StringComparer> class to create dictionaries with case-insensitive string keys.
 
  The capacity of a <xref:System.Collections.Generic.Dictionary`2> is the number of elements the <xref:System.Collections.Generic.Dictionary`2> can hold. As elements are added to a <xref:System.Collections.Generic.Dictionary`2>, the capacity is automatically increased as required by reallocating the internal array.
 
@@ -161,7 +161,7 @@
  The `foreach` statement is a wrapper around the enumerator, which allows only reading from the collection, not writing to it.
 
 > [!NOTE]
->  Because keys can be inherited and their behavior changed, their absolute uniqueness cannot be guaranteed by comparisons using the <xref:System.Type.Equals*> method.
+> Because keys can be inherited and their behavior changed, their absolute uniqueness cannot be guaranteed by comparisons using the <xref:System.Type.Equals*> method.
 
 
 
@@ -250,7 +250,7 @@
  <xref:System.Collections.Generic.Dictionary`2> requires an equality implementation to determine whether keys are equal. This constructor uses the default generic equality comparer, <xref:System.Collections.Generic.EqualityComparer`1.Default*?displayProperty=nameWithType>. If type `TKey` implements the <xref:System.IEquatable`1?displayProperty=nameWithType> generic interface, the default equality comparer uses that implementation. Alternatively, you can specify an implementation of the <xref:System.Collections.Generic.IEqualityComparer`1> generic interface by using a constructor that accepts a `comparer` parameter.
 
 > [!NOTE]
->  If you can estimate the size of the collection, using a constructor that specifies the initial capacity eliminates the need to perform a number of resizing operations while adding elements to the <xref:System.Collections.Generic.Dictionary`2>.
+> If you can estimate the size of the collection, using a constructor that specifies the initial capacity eliminates the need to perform a number of resizing operations while adding elements to the <xref:System.Collections.Generic.Dictionary`2>.
 
  This constructor is an O(1) operation.
 
@@ -452,7 +452,7 @@
  <xref:System.Collections.Generic.Dictionary`2> requires an equality implementation to determine whether keys are equal. If `comparer` is `null`, this constructor uses the default generic equality comparer, <xref:System.Collections.Generic.EqualityComparer`1.Default*?displayProperty=nameWithType>. If type `TKey` implements the <xref:System.IEquatable`1?displayProperty=nameWithType> generic interface, the default equality comparer uses that implementation.
 
 > [!NOTE]
->  If you can estimate the size of the collection, using a constructor that specifies the initial capacity eliminates the need to perform a number of resizing operations while adding elements to the <xref:System.Collections.Generic.Dictionary`2>.
+> If you can estimate the size of the collection, using a constructor that specifies the initial capacity eliminates the need to perform a number of resizing operations while adding elements to the <xref:System.Collections.Generic.Dictionary`2>.
 
  This constructor is an O(1) operation.
 
@@ -606,7 +606,7 @@
  Every key in a <xref:System.Collections.Generic.Dictionary`2> must be unique according to the specified comparer; likewise, every key in the source `dictionary` must also be unique according to the specified comparer.
 
 > [!NOTE]
->  For example, duplicate keys can occur if `comparer` is one of the case-insensitive string comparers provided by the <xref:System.StringComparer> class and `dictionary` does not use a case-insensitive comparer key.
+> For example, duplicate keys can occur if `comparer` is one of the case-insensitive string comparers provided by the <xref:System.StringComparer> class and `dictionary` does not use a case-insensitive comparer key.
 
  The initial capacity of the new <xref:System.Collections.Generic.Dictionary`2> is large enough to contain all the elements in `dictionary`.
 
@@ -620,7 +620,7 @@
  The following code example shows how to use the <xref:System.Collections.Generic.Dictionary`2.%23ctor(System.Collections.Generic.IDictionary%7B`0,`1%7D,System.Collections.Generic.IEqualityComparer%7B`0%7D)> constructor to initialize a <xref:System.Collections.Generic.Dictionary`2> with case-insensitive sorted content from another dictionary. The code example creates a <xref:System.Collections.Generic.SortedDictionary`2> with a case-insensitive comparer and populates it with data in random order, then passes the <xref:System.Collections.Generic.SortedDictionary`2> to the <xref:System.Collections.Generic.Dictionary`2.%23ctor(System.Collections.Generic.IDictionary%7B`0,`1%7D,System.Collections.Generic.IEqualityComparer%7B`0%7D)> constructor, along with a case-insensitive equality comparer, creating a <xref:System.Collections.Generic.Dictionary`2> that is sorted. This is useful if you need to build a sorted dictionary that at some point becomes static; copying the data from a <xref:System.Collections.Generic.SortedDictionary`2> to a <xref:System.Collections.Generic.Dictionary`2> improves retrieval speed.
 
 > [!NOTE]
->  When you create a new dictionary with a case-insensitive comparer and populate it with entries from a dictionary that uses a case-sensitive comparer, as in this example, an exception occurs if the input dictionary has keys that differ only by case.
+> When you create a new dictionary with a case-insensitive comparer and populate it with entries from a dictionary that uses a case-sensitive comparer, as in this example, an exception occurs if the input dictionary has keys that differ only by case.
 
  :::code language="csharp" source="~/snippets/csharp/System.Collections.Generic/DictionaryTKey,TValue/.ctor/source1.cs" id="Snippet1":::
  :::code language="fsharp" source="~/snippets/fsharp/System.Collections.Generic/DictionaryTKey,TValue/.ctor/source1.fs" id="Snippet1":::
@@ -2394,7 +2394,7 @@
  Each element copied from a <xref:System.Collections.Generic.Dictionary`2> is a <xref:System.Collections.Generic.KeyValuePair`2> structure representing a value and its key.
 
 > [!NOTE]
->  If the type of the source <xref:System.Collections.ICollection> cannot be cast automatically to the type of the destination `array`, the nongeneric implementations of <xref:System.Collections.ICollection.CopyTo*?displayProperty=nameWithType> throw an <xref:System.InvalidCastException>, whereas the generic implementations throw an <xref:System.ArgumentException>.
+> If the type of the source <xref:System.Collections.ICollection> cannot be cast automatically to the type of the destination `array`, the nongeneric implementations of <xref:System.Collections.ICollection.CopyTo*?displayProperty=nameWithType> throw an <xref:System.InvalidCastException>, whereas the generic implementations throw an <xref:System.ArgumentException>.
 
  This method is an O(`n`) operation, where `n` is <xref:System.Collections.Generic.Dictionary`2.Count*>.
 

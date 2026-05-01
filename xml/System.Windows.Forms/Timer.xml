@@ -53,7 +53,7 @@
  This class provides methods to set the interval, and to start and stop the timer.
 
 > [!NOTE]
->  The Windows Forms Timer component is single-threaded, and is limited to an accuracy of 55 milliseconds. If you require a multithreaded timer with greater accuracy, use the <xref:System.Timers.Timer> class in the <xref:System.Timers> namespace.
+> The Windows Forms Timer component is single-threaded, and is limited to an accuracy of 55 milliseconds. If you require a multithreaded timer with greater accuracy, use the <xref:System.Timers.Timer> class in the <xref:System.Timers> namespace.
 
 
 
@@ -192,7 +192,7 @@
  Call <xref:System.Windows.Forms.Timer.Dispose*> when you are finished using the timer. The <xref:System.Windows.Forms.Timer.Dispose*> method leaves the timer in an unusable state. After you call <xref:System.Windows.Forms.Timer.Dispose*>, you must release all references to the timer so the memory it was occupying can be reclaimed by garbage collection.
 
 > [!NOTE]
->  Always call <xref:System.Windows.Forms.Timer.Dispose*> before you release your last reference to the timer. Otherwise, the resources the timer is using will not be freed until garbage collection calls the destructor of the timer object.
+> Always call <xref:System.Windows.Forms.Timer.Dispose*> before you release your last reference to the timer. Otherwise, the resources the timer is using will not be freed until garbage collection calls the destructor of the timer object.
 
  ]]></format>
         </remarks>
@@ -449,7 +449,7 @@
  Calling <xref:System.Windows.Forms.Timer.Start*> after you have disabled a <xref:System.Windows.Forms.Timer> by calling <xref:System.Windows.Forms.Timer.Stop*> will cause the <xref:System.Windows.Forms.Timer> to restart the interrupted interval. If your <xref:System.Windows.Forms.Timer> is set for a 5000-millisecond interval, and you call <xref:System.Windows.Forms.Timer.Stop*> at around 3000 milliseconds, calling <xref:System.Windows.Forms.Timer.Start*> will cause the <xref:System.Windows.Forms.Timer> to wait 5000 milliseconds before raising the <xref:System.Windows.Forms.Timer.Tick> event.
 
 > [!NOTE]
->  Calling Stop on any <xref:System.Windows.Forms.Timer> within a Windows Forms application can cause messages from other <xref:System.Windows.Forms.Timer> components in the application to be processed immediately, because all <xref:System.Windows.Forms.Timer> components operate on the main application thread. If you have two <xref:System.Windows.Forms.Timer> components, one set to 700 milliseconds and one set to 500 milliseconds, and you call <xref:System.Windows.Forms.Timer.Stop*> on the first <xref:System.Windows.Forms.Timer>, your application may receive an event callback for the second component first. If this proves problematic, consider using the <xref:System.Threading.Timer> class in the <xref:System.Threading> namespace instead.
+> Calling Stop on any <xref:System.Windows.Forms.Timer> within a Windows Forms application can cause messages from other <xref:System.Windows.Forms.Timer> components in the application to be processed immediately, because all <xref:System.Windows.Forms.Timer> components operate on the main application thread. If you have two <xref:System.Windows.Forms.Timer> components, one set to 700 milliseconds and one set to 500 milliseconds, and you call <xref:System.Windows.Forms.Timer.Stop*> on the first <xref:System.Windows.Forms.Timer>, your application may receive an event callback for the second component first. If this proves problematic, consider using the <xref:System.Threading.Timer> class in the <xref:System.Threading> namespace instead.
 
 
 

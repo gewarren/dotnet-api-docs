@@ -80,10 +80,10 @@
  The <xref:System.Timers.Timer?displayProperty=nameWithType> component raises the <xref:System.Timers.Timer.Elapsed> event, based on the value (in milliseconds) of the <xref:System.Timers.Timer.Interval> property. You can handle this event to perform the processing you need. For example, suppose that you have an online sales application that continuously posts sales orders to a database. The service that compiles the instructions for shipping operates on a batch of orders rather than processing each order individually. You could use a <xref:System.Timers.Timer> to start the batch processing every 30 minutes.
 
 > [!IMPORTANT]
->  The System.Timers.Timer class has the same resolution as the system clock. This means that the <xref:System.Timers.Timer.Elapsed> event will fire at an interval defined by the resolution of the system clock if the <xref:System.Timers.Timer.Interval> property is less than the resolution of the system clock. For more information, see the <xref:System.Timers.Timer.Interval> property.
+> The System.Timers.Timer class has the same resolution as the system clock. This means that the <xref:System.Timers.Timer.Elapsed> event will fire at an interval defined by the resolution of the system clock if the <xref:System.Timers.Timer.Interval> property is less than the resolution of the system clock. For more information, see the <xref:System.Timers.Timer.Interval> property.
 
 > [!NOTE]
->  The system clock that is used is the same clock used by [GetTickCount](/windows/win32/api/sysinfoapi/nf-sysinfoapi-gettickcount), which is not affected by changes made with [timeBeginPeriod](/windows/win32/api/timeapi/nf-timeapi-timebeginperiod) and [timeEndPeriod](/windows/win32/api/timeapi/nf-timeapi-timeendperiod).
+> The system clock that is used is the same clock used by [GetTickCount](/windows/win32/api/sysinfoapi/nf-sysinfoapi-gettickcount), which is not affected by changes made with [timeBeginPeriod](/windows/win32/api/timeapi/nf-timeapi-timebeginperiod) and [timeEndPeriod](/windows/win32/api/timeapi/nf-timeapi-timeendperiod).
 
  When <xref:System.Timers.Timer.AutoReset*> is set to `false`, a <xref:System.Timers.Timer?displayProperty=nameWithType> object raises the <xref:System.Timers.Timer.Elapsed> event only once, after the first <xref:System.Timers.Timer.Interval*> has elapsed. To keep raising the <xref:System.Timers.Timer.Elapsed> event regularly at the interval defined by the <xref:System.Timers.Timer.Interval*>, set <xref:System.Timers.Timer.AutoReset*> to `true`, which is the default value.
 
@@ -96,7 +96,7 @@
  If the <xref:System.Timers.Timer.SynchronizingObject> property is `null`, the <xref:System.Timers.Timer.Elapsed> event is raised on a <xref:System.Threading.ThreadPool> thread. If processing of the <xref:System.Timers.Timer.Elapsed> event lasts longer than <xref:System.Timers.Timer.Interval*>, the event might be raised again on another <xref:System.Threading.ThreadPool> thread. In this situation, the event handler should be reentrant.
 
 > [!NOTE]
->  The event-handling method might run on one thread at the same time that another thread calls the <xref:System.Timers.Timer.Stop*> method or sets the <xref:System.Timers.Timer.Enabled> property to `false`. This might result in the <xref:System.Timers.Timer.Elapsed> event being raised after the timer is stopped. The example code for the <xref:System.Timers.Timer.Stop*> method shows one way to avoid this race condition.
+> The event-handling method might run on one thread at the same time that another thread calls the <xref:System.Timers.Timer.Stop*> method or sets the <xref:System.Timers.Timer.Enabled> property to `false`. This might result in the <xref:System.Timers.Timer.Elapsed> event being raised after the timer is stopped. The example code for the <xref:System.Timers.Timer.Stop*> method shows one way to avoid this race condition.
 
  Even if <xref:System.Timers.Timer.SynchronizingObject*> is not `null`, <xref:System.Timers.Timer.Elapsed> events can occur after the <xref:System.Timers.Timer.Dispose*> or <xref:System.Timers.Timer.Stop*> method has been called or after the <xref:System.Timers.Timer.Enabled> property has been set to `false`, because the signal to raise the <xref:System.Timers.Timer.Elapsed> event is always queued for execution on a thread pool thread. One way to resolve this race condition is to set a flag that tells the event handler for the <xref:System.Timers.Timer.Elapsed> event to ignore subsequent events.
 
@@ -588,7 +588,7 @@
  If the <xref:System.Timers.Timer.SynchronizingObject> property is `null`,the <xref:System.Timers.Timer.Elapsed> event is raised on a <xref:System.Threading.ThreadPool> thread. If the processing of the <xref:System.Timers.Timer.Elapsed> event lasts longer than <xref:System.Timers.Timer.Interval*>, the event might be raised again on another <xref:System.Threading.ThreadPool> thread. In this situation, the event handler should be reentrant.
 
 > [!NOTE]
->  The event-handling method might run on one thread at the same time that another thread calls the <xref:System.Timers.Timer.Stop*> method or sets the <xref:System.Timers.Timer.Enabled> property to `false`. This might result in the <xref:System.Timers.Timer.Elapsed> event being raised after the timer is stopped. The example code for the <xref:System.Timers.Timer.Stop*> method shows one way to avoid this race condition.
+> The event-handling method might run on one thread at the same time that another thread calls the <xref:System.Timers.Timer.Stop*> method or sets the <xref:System.Timers.Timer.Enabled> property to `false`. This might result in the <xref:System.Timers.Timer.Elapsed> event being raised after the timer is stopped. The example code for the <xref:System.Timers.Timer.Stop*> method shows one way to avoid this race condition.
 
  Even if <xref:System.Timers.Timer.SynchronizingObject*> is not `null`, <xref:System.Timers.Timer.Elapsed> events can occur after the <xref:System.Timers.Timer.Dispose*> or <xref:System.Timers.Timer.Stop*> method has been called or after the <xref:System.Timers.Timer.Enabled> property has been set to `false`, because the signal to raise the <xref:System.Timers.Timer.Elapsed> event is always queued for execution on a thread pool thread. One way to resolve this race condition is to set a flag that tells the event handler for the <xref:System.Timers.Timer.Elapsed> event to ignore subsequent events.
 
@@ -676,14 +676,14 @@
  Setting <xref:System.Timers.Timer.Enabled*> to `true` is the same as calling <xref:System.Timers.Timer.Start*>, while setting <xref:System.Timers.Timer.Enabled*> to `false` is the same as calling <xref:System.Timers.Timer.Stop*>.
 
 > [!NOTE]
->  The signal to raise the <xref:System.Timers.Timer.Elapsed> event is always queued for execution on a <xref:System.Threading.ThreadPool> thread. This might result in the <xref:System.Timers.Timer.Elapsed> event being raised after the <xref:System.Timers.Timer.Enabled> property is set to `false`. The code example for the <xref:System.Timers.Timer.Stop*> method shows one way to work around this race condition.
+> The signal to raise the <xref:System.Timers.Timer.Elapsed> event is always queued for execution on a <xref:System.Threading.ThreadPool> thread. This might result in the <xref:System.Timers.Timer.Elapsed> event being raised after the <xref:System.Timers.Timer.Enabled> property is set to `false`. The code example for the <xref:System.Timers.Timer.Stop*> method shows one way to work around this race condition.
 
  If <xref:System.Timers.Timer.Enabled*> is set to `true` and <xref:System.Timers.Timer.AutoReset*> is set to `false`, the <xref:System.Timers.Timer> raises the <xref:System.Timers.Timer.Elapsed> event only once, the first time the interval elapses.
 
  If the interval is set after the <xref:System.Timers.Timer> has started, the count is reset. For example, if you set the interval to 5 seconds and then set the <xref:System.Timers.Timer.Enabled> property to `true`, the count starts at the time <xref:System.Timers.Timer.Enabled*> is set. If you reset the interval to 10 seconds when count is 3 seconds, the <xref:System.Timers.Timer.Elapsed> event is raised for the first time 13 seconds after <xref:System.Timers.Timer.Enabled*> was set to `true`.
 
 > [!NOTE]
->  Some visual designers, such as those in Microsoft Visual Studio, set the <xref:System.Timers.Timer.Enabled> property to `true` when inserting a new <xref:System.Timers.Timer>.
+> Some visual designers, such as those in Microsoft Visual Studio, set the <xref:System.Timers.Timer.Enabled> property to `true` when inserting a new <xref:System.Timers.Timer>.
 
 ## Examples
  The following example instantiates a <xref:System.Timers.Timer> object that fires its <xref:System.Timers.Timer.Elapsed?displayProperty=nameWithType> event every two seconds (2000 milliseconds), sets up an event handler for the event, and starts the timer. The event handler displays the value of the <xref:System.Timers.ElapsedEventArgs.SignalTime?displayProperty=nameWithType> property each time it is raised.
@@ -830,7 +830,7 @@
  You use the <xref:System.Timers.Timer.Interval> property to determine the frequency at which the <xref:System.Timers.Timer.Elapsed> event is fired. Because the <xref:System.Timers.Timer> class depends on the system clock, it has the same resolution as the system clock. This means that the <xref:System.Timers.Timer.Elapsed> event will fire at an interval defined by the resolution of the system clock if the <xref:System.Timers.Timer.Interval> property is less than the resolution of the system clock. The following example sets the <xref:System.Timers.Timer.Interval> property to 5 milliseconds. When run on a Windows system whose system clock has a resolution of approximately 15 milliseconds, the event fires approximately every 15 milliseconds rather than every 5 milliseconds.
 
 > [!NOTE]
->  The system clock that is used is the same clock used by [GetTickCount](/windows/win32/api/sysinfoapi/nf-sysinfoapi-gettickcount), which is not affected by changes made with [timeBeginPeriod](/windows/win32/api/timeapi/nf-timeapi-timebeginperiod) and [timeEndPeriod](/windows/win32/api/timeapi/nf-timeapi-timeendperiod).
+> The system clock that is used is the same clock used by [GetTickCount](/windows/win32/api/sysinfoapi/nf-sysinfoapi-gettickcount), which is not affected by changes made with [timeBeginPeriod](/windows/win32/api/timeapi/nf-timeapi-timebeginperiod) and [timeEndPeriod](/windows/win32/api/timeapi/nf-timeapi-timeendperiod).
 
  :::code language="csharp" source="~/snippets/csharp/System.Timers/Timer/Interval/interval2.cs" id="Snippet1":::
  :::code language="fsharp" source="~/snippets/fsharp/System.Timers/Timer/Interval/interval2.fs" id="Snippet1":::
@@ -843,7 +843,7 @@
  If <xref:System.Timers.Timer.Enabled*> is set to `true` and <xref:System.Timers.Timer.AutoReset*> is set to `false`, the <xref:System.Timers.Timer> raises the <xref:System.Timers.Timer.Elapsed> event only once, the first time the interval elapses. <xref:System.Timers.Timer.Enabled*> is then set to `false`.
 
 > [!NOTE]
->  If <xref:System.Timers.Timer.Enabled*> and <xref:System.Timers.Timer.AutoReset*> are both set to `false`, and the timer has previously been enabled, setting the <xref:System.Timers.Timer.Interval> property causes the <xref:System.Timers.Timer.Elapsed> event to be raised once, as if the <xref:System.Timers.Timer.Enabled> property had been set to `true`. To set the interval without raising the event, you can temporarily set the <xref:System.Timers.Timer.Enabled> property to `true`, set the <xref:System.Timers.Timer.Interval> property to the desired time interval, and then immediately set the <xref:System.Timers.Timer.Enabled> property back to `false`.
+> If <xref:System.Timers.Timer.Enabled*> and <xref:System.Timers.Timer.AutoReset*> are both set to `false`, and the timer has previously been enabled, setting the <xref:System.Timers.Timer.Interval> property causes the <xref:System.Timers.Timer.Elapsed> event to be raised once, as if the <xref:System.Timers.Timer.Enabled> property had been set to `true`. To set the interval without raising the event, you can temporarily set the <xref:System.Timers.Timer.Enabled> property to `true`, set the <xref:System.Timers.Timer.Interval> property to the desired time interval, and then immediately set the <xref:System.Timers.Timer.Enabled> property back to `false`.
 
 
 
@@ -970,7 +970,7 @@
  You can also start timing by setting <xref:System.Timers.Timer.Enabled*> to `true`.
 
 > [!NOTE]
->  If <xref:System.Timers.Timer.AutoReset*> is `false`, the <xref:System.Timers.Timer.Start*> method must be called in order to start the count again.
+> If <xref:System.Timers.Timer.AutoReset*> is `false`, the <xref:System.Timers.Timer.Start*> method must be called in order to start the count again.
 
  A call to the <xref:System.Timers.Timer.Start*> method when the timer is enabled has no effect.
 
@@ -1131,7 +1131,7 @@
  When the <xref:System.Timers.Timer.Elapsed> event is handled by a visual Windows Forms component, such as a button, accessing the component through the system-thread pool might result in an exception or just might not work. Avoid this effect by setting <xref:System.Timers.Timer.SynchronizingObject*> to a Windows Forms component, which causes the method that handles the <xref:System.Timers.Timer.Elapsed> event to be called on the same thread that the component was created on.
 
 > [!NOTE]
->  Even if the <xref:System.Timers.Timer.SynchronizingObject> property is not `null`, <xref:System.Timers.Timer.Elapsed> events can occur after the <xref:System.Timers.Timer.Dispose*> or <xref:System.Timers.Timer.Stop*> method has been called or after the <xref:System.Timers.Timer.Enabled> property has been set to `false`, because the signal to raise the <xref:System.Timers.Timer.Elapsed> event is always queued for execution on a thread pool thread. One way to resolve this race condition is to set a flag that tells the event handler for the <xref:System.Timers.Timer.Elapsed> event to ignore subsequent events.
+> Even if the <xref:System.Timers.Timer.SynchronizingObject> property is not `null`, <xref:System.Timers.Timer.Elapsed> events can occur after the <xref:System.Timers.Timer.Dispose*> or <xref:System.Timers.Timer.Stop*> method has been called or after the <xref:System.Timers.Timer.Enabled> property has been set to `false`, because the signal to raise the <xref:System.Timers.Timer.Elapsed> event is always queued for execution on a thread pool thread. One way to resolve this race condition is to set a flag that tells the event handler for the <xref:System.Timers.Timer.Elapsed> event to ignore subsequent events.
 
  If the <xref:System.Timers.Timer> is used inside Visual Studio in a Windows Forms designer, <xref:System.Timers.Timer.SynchronizingObject*> is automatically set to the control that contains the <xref:System.Timers.Timer>. For example, if you place a <xref:System.Timers.Timer> on a designer for `Form1` (which inherits from <xref:System.Windows.Forms.Form>), the <xref:System.Timers.Timer.SynchronizingObject> property of <xref:System.Timers.Timer> is set to the instance of `Form1`.
 

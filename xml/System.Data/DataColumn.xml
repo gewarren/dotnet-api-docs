@@ -1229,7 +1229,7 @@
  If <xref:System.Data.DataColumn.AutoIncrement*> is set to `true` before setting the <xref:System.Data.DataColumn.DataType> property, and you try to set the type to anything except an integer type, an exception is generated.
 
 > [!NOTE]
->  A column of data type `Byte[]` requires special treatment in certain cases since, unlike the base .NET Framework data types, it is a reference data type. If a column of data type `Byte[]` is used as a <xref:System.Data.DataTable.PrimaryKey*>, or as a <xref:System.Data.DataView.Sort*> or <xref:System.Data.DataView.RowFilter*> key for a <xref:System.Data.DataView>, any change to the column value must involve assigning the `Byte[]` column value to a separately instantiated `Byte[]` object. This assignment is required to trigger the update of the internal indexes used by sorting, filtering, and primary key operations. This is illustrated by the following example:
+> A column of data type `Byte[]` requires special treatment in certain cases since, unlike the base .NET Framework data types, it is a reference data type. If a column of data type `Byte[]` is used as a <xref:System.Data.DataTable.PrimaryKey*>, or as a <xref:System.Data.DataView.Sort*> or <xref:System.Data.DataView.RowFilter*> key for a <xref:System.Data.DataView>, any change to the column value must involve assigning the `Byte[]` column value to a separately instantiated `Byte[]` object. This assignment is required to trigger the update of the internal indexes used by sorting, filtering, and primary key operations. This is illustrated by the following example:
 
 ```csharp
 byte[] columnValue = (byte[])myDataTable.Rows[0][0];
@@ -1239,7 +1239,7 @@ myDataTable.Rows[0][0] = newValue;
 ```
 
 > [!NOTE]
->  Although it is possible to define a column as data type other than the base .NET Framework data types and `Byte[]`, such a column will be treated as a user-defined type, subject to the following usage restrictions. (For more information on user-defined types, see [Creating and Using User-Defined Types](/previous-versions/9a81d32x(v=vs.85)))
+> Although it is possible to define a column as data type other than the base .NET Framework data types and `Byte[]`, such a column will be treated as a user-defined type, subject to the following usage restrictions. (For more information on user-defined types, see [Creating and Using User-Defined Types](/previous-versions/9a81d32x(v=vs.85)))
 
 - The column cannot be part of a <xref:System.Data.DataView.RowFilter*> or <xref:System.Data.DataTable.Select*> expression.
 

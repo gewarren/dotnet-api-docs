@@ -169,7 +169,7 @@
  ASP.NET queues requests when there are not enough free threads to process them.
 
 > [!NOTE]
->  When the number of requests queued exceeds the limit imposed by this setting, incoming requests will be rejected with a "503 - Server Too Busy" error.
+> When the number of requests queued exceeds the limit imposed by this setting, incoming requests will be rejected with a "503 - Server Too Busy" error.
 
 
 
@@ -284,7 +284,7 @@
  You can address the problem caused by some antivirus applications, when writing information back to the scanned files, by setting the <xref:System.Web.Configuration.HttpRuntimeSection.DelayNotificationTimeout> property.
 
 > [!NOTE]
->  The problem occurs because file changes caused by antivirus scanning cannot be distinguished from the ones made by the user. The end result is the restart of the application whose files are being scanned.
+> The problem occurs because file changes caused by antivirus scanning cannot be distinguished from the ones made by the user. The end result is the restart of the application whose files are being scanned.
 
 
 
@@ -380,12 +380,12 @@
  This encoding can help to avoid injection attacks that exploit an application that echoes untrusted data contained by the header.
 
 > [!NOTE]
->  This property does not apply to the status line itself (status code and status description), but should apply to other headers. Although [&lt;httpRuntime&gt;](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/e1f13641(v=vs.100)) can be set at any level, this property is only applicable at the machine and application level.
+> This property does not apply to the status line itself (status code and status description), but should apply to other headers. Although [&lt;httpRuntime&gt;](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/e1f13641(v=vs.100)) can be set at any level, this property is only applicable at the machine and application level.
 
  When this property is `true`, which is the default, the `\r` or `\n` characters found in a response header are encoded to `%0d` and `%0a`. This defeats header-injection attacks by making the injected material part of the same header line. This might break the response but should not open attack vectors against the client. Echoing back untrusted data is never a good idea in any situation, though.
 
 > [!IMPORTANT]
->  HTTP header continuations rely on headers spanning multiple lines and require new lines in them. If you need to use header continuations, you need to set the <xref:System.Web.Configuration.HttpRuntimeSection.EnableHeaderChecking> property to `false`. Because there is a performance impact from looking at headers, if you are certain you are already doing the right checks, turning off this feature can improve the performance of your application. Before you disable this feature, be sure you are already taking the right precautions in this area.
+> HTTP header continuations rely on headers spanning multiple lines and require new lines in them. If you need to use header continuations, you need to set the <xref:System.Web.Configuration.HttpRuntimeSection.EnableHeaderChecking> property to `false`. Because there is a performance impact from looking at headers, if you are certain you are already doing the right checks, turning off this feature can improve the performance of your application. Before you disable this feature, be sure you are already taking the right precautions in this area.
 
 
 
@@ -441,7 +441,7 @@
 - The request must not require any authentication.
 
 > [!NOTE]
->  This property is relevant only when Internet Information Services (IIS) version 6.0 or later is installed.
+> This property is relevant only when Internet Information Services (IIS) version 6.0 or later is installed.
 
 
 
@@ -754,7 +754,7 @@
  The value of the <xref:System.Web.Configuration.HttpRuntimeSection.MaxUrlLength> property can be any integer, zero or greater.
 
 > [!NOTE]
->  Extremely small values can make a Web site unusable.
+> Extremely small values can make a Web site unusable.
 
  If the length of the request URL (which is the value of the <xref:System.Web.HttpRequest.Path> property) exceeds the configured size limit, ASP.NET returns an HTTP 400 (Bad Request) status code
 
@@ -800,7 +800,7 @@
  A suggested value for the <xref:System.Web.Configuration.HttpRuntimeSection.MaxWaitChangeNotification> property would exceed the length of time to complete a copy during the deployment process.
 
 > [!NOTE]
->  The content might appear cached if you view it immediately after a copy-and-deploy process. This is typical behavior. The changes take effect when the wait period that you specified has elapsed.
+> The content might appear cached if you view it immediately after a copy-and-deploy process. This is typical behavior. The changes take effect when the wait period that you specified has elapsed.
 
 
 
@@ -851,7 +851,7 @@
  The <xref:System.Web.Configuration.HttpRuntimeSection.MinFreeThreads> property defines the minimum number of free threads to execute a request. If a sufficient number of threads are not available, the request will remain queued and periodic checks for thread availability will continue until the required amount of threads are present. The default value is `8`.
 
 > [!NOTE]
->  ASP.NET keeps this many threads free for requests that require additional threads to complete their processing.
+> ASP.NET keeps this many threads free for requests that require additional threads to complete their processing.
 
 
 
@@ -1369,7 +1369,7 @@
  The <xref:System.Web.Configuration.HttpRuntimeSection.UseFullyQualifiedRedirectUrl> property indicates whether client-side redirects are fully qualified (in the form `http://server/path`) or whether relative redirects are instead sent to the client.
 
 > [!NOTE]
->  Some browsers might have problems loading pages in cookieless sessions when this value is `false`.
+> Some browsers might have problems loading pages in cookieless sessions when this value is `false`.
 
 
 
@@ -1419,7 +1419,7 @@
  A suggested value for <xref:System.Web.Configuration.HttpRuntimeSection.WaitChangeNotification*> would exceed the length of time to complete a copy during the deployment process.
 
 > [!NOTE]
->  The content might appear cached if you view it immediately after a copy and deploy process. This is typical behavior. The changes take effect when the wait period that you specified has elapsed.
+> The content might appear cached if you view it immediately after a copy and deploy process. This is typical behavior. The changes take effect when the wait period that you specified has elapsed.
 
 
 

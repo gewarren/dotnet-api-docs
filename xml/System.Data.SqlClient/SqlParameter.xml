@@ -71,7 +71,7 @@
  Parameter names are not case sensitive.
 
 > [!NOTE]
->  Nameless, also called ordinal, parameters are not supported by the .NET Framework Data Provider for SQL Server.
+> Nameless, also called ordinal, parameters are not supported by the .NET Framework Data Provider for SQL Server.
 
  For more information, along with additional sample code demonstrating how to use parameters, see [Commands and Parameters](/dotnet/framework/data/adonet/commands-and-parameters).
 
@@ -1051,10 +1051,10 @@ static void CreateSqlParameterLocaleId(){
  You do not need to specify values for the <xref:System.Data.SqlClient.SqlParameter.Precision*> and <xref:System.Data.SqlClient.SqlParameter.Scale*> properties for input parameters, as they can be inferred from the parameter value. `Precision` and `Scale` are required for output parameters and for scenarios where you need to specify complete metadata for a parameter without indicating a value, such as specifying a null value with a specific precision and scale.
 
 > [!NOTE]
->  Use of this property to coerce data passed to the database is not supported. To round, truncate, or otherwise coerce data before passing it to the database, use the <xref:System.Math> class that is part of the `System` namespace prior to assigning a value to the parameter's `Value` property.
+> Use of this property to coerce data passed to the database is not supported. To round, truncate, or otherwise coerce data before passing it to the database, use the <xref:System.Math> class that is part of the `System` namespace prior to assigning a value to the parameter's `Value` property.
 
 > [!NOTE]
->  Microsoft .NET Framework data providers that are included with the .NET Framework version 1.0 do not verify the <xref:System.Data.SqlClient.SqlParameter.Precision*> or <xref:System.Data.SqlClient.SqlParameter.Scale*> of <xref:System.Decimal> parameter values. This can cause truncated data being inserted at the data source. If you are using .NET Framework version 1.0, validate the <xref:System.Data.SqlClient.SqlParameter.Precision*> and <xref:System.Data.SqlClient.SqlParameter.Scale*> of <xref:System.Decimal> values before setting the parameter value. When you use .NET Framework version 1.1 or a later version, an exception is thrown if a <xref:System.Decimal> parameter value is set with an invalid <xref:System.Data.SqlClient.SqlParameter.Precision*>. <xref:System.Data.SqlClient.SqlParameter.Scale*> values that exceed the <xref:System.Decimal> parameter scale are still truncated.
+> Microsoft .NET Framework data providers that are included with the .NET Framework version 1.0 do not verify the <xref:System.Data.SqlClient.SqlParameter.Precision*> or <xref:System.Data.SqlClient.SqlParameter.Scale*> of <xref:System.Decimal> parameter values. This can cause truncated data being inserted at the data source. If you are using .NET Framework version 1.0, validate the <xref:System.Data.SqlClient.SqlParameter.Precision*> and <xref:System.Data.SqlClient.SqlParameter.Scale*> of <xref:System.Decimal> values before setting the parameter value. When you use .NET Framework version 1.1 or a later version, an exception is thrown if a <xref:System.Decimal> parameter value is set with an invalid <xref:System.Data.SqlClient.SqlParameter.Precision*>. <xref:System.Data.SqlClient.SqlParameter.Scale*> values that exceed the <xref:System.Decimal> parameter scale are still truncated.
 
 
 
@@ -1207,14 +1207,14 @@ static void CreateSqlParameterLocaleId(){
  The <xref:System.Data.SqlClient.SqlParameter.Scale> property is used by parameters that have a <xref:System.Data.SqlDbType> of `Decimal`, `DateTime2`, `DateTimeOffset`, or `Time`.
 
 > [!WARNING]
->  Data may be truncated if the <xref:System.Data.SqlClient.SqlParameter.Scale> property is not explicitly specified and the data on the server does not fit in scale 0 (the default).
->  For the `DateTime2` type, scale 0 (the default) will be passed as datetime2(7). There is currently no way to send a parameter as datetime2(0). Scales 1-7 work as expected.
+> Data may be truncated if the <xref:System.Data.SqlClient.SqlParameter.Scale> property is not explicitly specified and the data on the server does not fit in scale 0 (the default).
+> For the `DateTime2` type, scale 0 (the default) will be passed as datetime2(7). There is currently no way to send a parameter as datetime2(0). Scales 1-7 work as expected.
 > This problem applies to `DateTimeOffset` and `Time` as well.
 
  You do not need to specify values for the <xref:System.Data.SqlClient.SqlParameter.Precision*> and <xref:System.Data.SqlClient.SqlParameter.Scale*> properties for input parameters, as they can be inferred from the parameter value. `Precision` and `Scale` are required for output parameters and for scenarios where you need to specify complete metadata for a parameter without indicating a value, such as specifying a null value with a specific precision and scale.
 
 > [!NOTE]
->  Use of this property to coerce data passed to the database is not supported. To round, truncate, or otherwise coerce data before passing it to the database, use the <xref:System.Math> class that is part of the `System` namespace prior to assigning a value to the parameter's `Value` property.
+> Use of this property to coerce data passed to the database is not supported. To round, truncate, or otherwise coerce data before passing it to the database, use the <xref:System.Math> class that is part of the `System` namespace prior to assigning a value to the parameter's `Value` property.
 
 > [!NOTE]
 >  .NET Framework data providers that are included with the .NET Framework version 1.0 do not verify the <xref:System.Data.SqlClient.SqlParameter.Precision*> or <xref:System.Data.SqlClient.SqlParameter.Scale*> of <xref:System.Decimal> parameter values. This can cause truncated data to be inserted at the data source. If you are using .NET Framework version 1.0, validate the <xref:System.Data.SqlClient.SqlParameter.Precision*> and <xref:System.Data.SqlClient.SqlParameter> of <xref:System.Decimal> values before setting the parameter value. <xref:System.Data.SqlClient.SqlParameter.Scale*> values that exceed the <xref:System.Decimal> parameter scale are still truncated.

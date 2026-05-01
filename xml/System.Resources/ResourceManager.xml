@@ -324,12 +324,12 @@
  The individual culture-specific resource files should be contained in satellite assemblies, and the default culture's resource file should be contained in the main assembly. A satellite assembly is assumed to contain resources for a single culture specified in that assembly's manifest, and is loaded as necessary.
 
 > [!NOTE]
->  To retrieve resources from .resources files directly instead of retrieving them from assemblies, you must call the <xref:System.Resources.ResourceManager.CreateFileBasedResourceManager*> method instead to instantiate a <xref:System.Resources.ResourceManager> object.
+> To retrieve resources from .resources files directly instead of retrieving them from assemblies, you must call the <xref:System.Resources.ResourceManager.CreateFileBasedResourceManager*> method instead to instantiate a <xref:System.Resources.ResourceManager> object.
 
  If the resource file identified by `baseName` cannot be found in `assembly`, the method instantiates a <xref:System.Resources.ResourceManager> object, but the attempt to retrieve a specific resource throws an exception, typically <xref:System.Resources.MissingManifestResourceException>. For information about diagnosing the cause of the exception, see the "Handling the MissingManifestResourceException Exception" section of the <xref:System.Resources.ResourceManager> class topic.
 
 > [!NOTE]
->  The `usingResourceSet` parameter is used to support your own resource format, and will commonly be `null`. This is different from the constructor that takes a <xref:System.Type> only.
+> The `usingResourceSet` parameter is used to support your own resource format, and will commonly be `null`. This is different from the constructor that takes a <xref:System.Type> only.
 
  ]]></format>
         </remarks>
@@ -390,7 +390,7 @@
  The <xref:System.Resources.ResourceManager.BaseName> property reflects the fully qualified namespace name and the root resource name of a resource file, without its culture or file name extension. For example, if an app's default resource file is named `SampleApps.StringResources.resources`, the value of the <xref:System.Resources.ResourceManager.BaseName> property  is "SampleApps.StringResources". If an app's default resource file is named `SampleApps.StringResources.en-US.resources` and is embedded in a satellite assembly, the value of the <xref:System.Resources.ResourceManager.BaseName> property is still "SampleApps.StringResources".
 
 > [!IMPORTANT]
->  The <xref:System.Resources.ResourceManager.BaseName> property value of a resource file that is compiled and embedded from the command line does not include a namespace name unless you explicitly include one when compiling the file. On the other hand, the <xref:System.Resources.ResourceManager.BaseName> property value of a resource file that is compiled and embedded within the Visual Studio environment typically does include the default namespace name.
+> The <xref:System.Resources.ResourceManager.BaseName> property value of a resource file that is compiled and embedded from the command line does not include a namespace name unless you explicitly include one when compiling the file. On the other hand, the <xref:System.Resources.ResourceManager.BaseName> property value of a resource file that is compiled and embedded within the Visual Studio environment typically does include the default namespace name.
 
  The <xref:System.Resources.ResourceManager.BaseName> property value is the same as the string passed to the <xref:System.Resources.ResourceManager.%23ctor(System.String,System.Reflection.Assembly)> or <xref:System.Resources.ResourceManager.%23ctor(System.String,System.Reflection.Assembly,System.Type)> constructor when instantiating a <xref:System.Resources.ResourceManager> instance.
 
@@ -515,7 +515,7 @@
  This method lets you specify a <xref:System.Resources.ResourceSet> implementation. If you do not want a specific <xref:System.Resources.ResourceSet> implementation, but would like to use a custom resource file format, you should derive from the <xref:System.Resources.ResourceSet> class, override the <xref:System.Resources.ResourceSet.GetDefaultReader*> and <xref:System.Resources.ResourceSet.GetDefaultWriter*> methods, and pass that type to this constructor.
 
 > [!CAUTION]
->  Using standalone .resources files in an ASP.NET app will break XCOPY deployment, because the resources remain locked until they are explicitly released by the <xref:System.Resources.ResourceManager.ReleaseAllResources*> method. If you want to deploy resources with your ASP.NET apps, compile your .resources files into satellite assemblies.
+> Using standalone .resources files in an ASP.NET app will break XCOPY deployment, because the resources remain locked until they are explicitly released by the <xref:System.Resources.ResourceManager.ReleaseAllResources*> method. If you want to deploy resources with your ASP.NET apps, compile your .resources files into satellite assemblies.
 
  ]]></format>
         </remarks>
@@ -1483,7 +1483,7 @@ csc GetStream.cs /resource:AppResources.resources
  For example, the Turkish alphabet has two versions of the character I: one with a dot and one without a dot. In Turkish, the character I (Unicode 0049) is considered the uppercase version of a different character ı (Unicode 0131). The character i (Unicode 0069) is considered the lowercase version of yet another character İ (Unicode 0130). According to these casing rules, a case-insensitive string comparison of the characters i (Unicode 0069) and I (Unicode 0049) should fail for the culture "tr-TR" (Turkish in Turkey). However, because the comparison is conducted by using the casing rules of the invariant culture if <xref:System.Resources.ResourceManager.IgnoreCase*> is `true`, this comparison succeeds.
 
 > [!NOTE]
->  For performance reasons, it is best to always specify the correct case for your resource names. Setting <xref:System.Resources.ResourceManager.IgnoreCase*> to `true` can cause a significant increase in working set and a significant decline in performance.
+> For performance reasons, it is best to always specify the correct case for your resource names. Setting <xref:System.Resources.ResourceManager.IgnoreCase*> to `true` can cause a significant increase in working set and a significant decline in performance.
 
  ]]></format>
         </remarks>
@@ -1727,12 +1727,12 @@ csc GetStream.cs /resource:AppResources.resources
  This method will shrink the working set in a running app. Any future resource lookups on this <xref:System.Resources.ResourceManager> object will be as expensive as the first lookup, because the resource manager will have to search and load resources again. This can be useful in some complex threading scenarios, where creating a new <xref:System.Resources.ResourceManager> object is the appropriate behavior.
 
 > [!NOTE]
->  Starting with the .NET Framework version 2.0, the <xref:System.Resources.ResourceManager.ReleaseAllResources*> method is not thread safe with respect to <xref:System.Resources.ResourceManager.GetObject*>, <xref:System.Resources.ResourceManager.GetString*>, and <xref:System.Resources.ResourceManager.GetStream*> operations. The advantage of this change is a performance improvement for multiple threads that access resources. However, if you call the <xref:System.Resources.ResourceManager.ReleaseAllResources*> method in one thread while simultaneously getting a resource in another thread, the get operation can throw an <xref:System.ObjectDisposedException> exception.
+> Starting with the .NET Framework version 2.0, the <xref:System.Resources.ResourceManager.ReleaseAllResources*> method is not thread safe with respect to <xref:System.Resources.ResourceManager.GetObject*>, <xref:System.Resources.ResourceManager.GetString*>, and <xref:System.Resources.ResourceManager.GetStream*> operations. The advantage of this change is a performance improvement for multiple threads that access resources. However, if you call the <xref:System.Resources.ResourceManager.ReleaseAllResources*> method in one thread while simultaneously getting a resource in another thread, the get operation can throw an <xref:System.ObjectDisposedException> exception.
 
  You can also use this method in situations where the managed instances for the resources created by the current resource manager have to be released deterministically, without waiting for the resource manager to go completely out of scope and be garbage collected.
 
 > [!NOTE]
->  Calling this method does not unload satellite assemblies. To unload satellite assemblies, use the <xref:System.AppDomain.Unload*> method .
+> Calling this method does not unload satellite assemblies. To unload satellite assemblies, use the <xref:System.AppDomain.Unload*> method .
 
  ]]></format>
         </remarks>

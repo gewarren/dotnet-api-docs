@@ -133,7 +133,7 @@
  `None` matches only the unauthenticated principal (<xref:System.Security.Permissions.PrincipalPermissionAttribute.Name*> is the empty string (""), no <xref:System.Security.Permissions.PrincipalPermissionAttribute.Role*>, <xref:System.Security.Permissions.PrincipalPermissionAttribute.Authenticated*> is `false`). `Unrestricted` matches all principals (<xref:System.Security.Permissions.PrincipalPermissionAttribute.Name*> is `null`, <xref:System.Security.Permissions.PrincipalPermissionAttribute.Role*> is `null`).
 
 > [!NOTE]
->  This constructor is included for consistency with the design of other permissions, but is not useful in practice.
+> This constructor is included for consistency with the design of other permissions, but is not useful in practice.
 
  ]]></format>
         </remarks>
@@ -331,7 +331,7 @@
  This method acts against the principal attached to the calling thread.
 
 > [!IMPORTANT]
->  Prior to calling the <xref:System.Security.Permissions.PrincipalPermission.Demand*> method, it is necessary to set the current application domain's principal policy to the enumeration value <xref:System.Security.Principal.PrincipalPolicy.WindowsPrincipal>. By default the principal policy is set to <xref:System.Security.Principal.PrincipalPolicy.UnauthenticatedPrincipal>. If you do not set the principal policy to <xref:System.Security.Principal.PrincipalPolicy.WindowsPrincipal>, a demand for principal permission will fail. The following code should be executed before the demand for principal permission occurs:
+> Prior to calling the <xref:System.Security.Permissions.PrincipalPermission.Demand*> method, it is necessary to set the current application domain's principal policy to the enumeration value <xref:System.Security.Principal.PrincipalPolicy.WindowsPrincipal>. By default the principal policy is set to <xref:System.Security.Principal.PrincipalPolicy.UnauthenticatedPrincipal>. If you do not set the principal policy to <xref:System.Security.Principal.PrincipalPolicy.WindowsPrincipal>, a demand for principal permission will fail. The following code should be executed before the demand for principal permission occurs:
 >
 >  `AppDomain.CurrentDomain.SetPrincipalPolicy(PrincipalPolicy.WindowsPrincipal).`
 

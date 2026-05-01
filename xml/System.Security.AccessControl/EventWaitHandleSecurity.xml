@@ -57,7 +57,7 @@
  This mirrors the underlying Windows security system, in which each securable object has at most one discretionary access control list (DACL) that controls access to the secured object, and at most one system access control list (SACL) that specifies which access attempts are audited. The DACL and SACL are ordered lists of access control entries (ACE) that specify access and auditing for users and groups. An <xref:System.Security.AccessControl.EventWaitHandleAccessRule> or <xref:System.Security.AccessControl.EventWaitHandleAuditRule> object might represent more than one ACE.
 
 > [!NOTE]
->  An <xref:System.Threading.EventWaitHandle> object can represent a local wait handle or a named system wait handle. Windows access control security is meaningful only for named system wait handles.
+> An <xref:System.Threading.EventWaitHandle> object can represent a local wait handle or a named system wait handle. Windows access control security is meaningful only for named system wait handles.
 
  The <xref:System.Security.AccessControl.EventWaitHandleSecurity>, <xref:System.Security.AccessControl.EventWaitHandleAccessRule>, and <xref:System.Security.AccessControl.EventWaitHandleAuditRule> classes hide the implementation details of ACLs and ACEs. They allow you to ignore the seventeen different ACE types and the complexity of correctly maintaining inheritance and propagation of access rights. These objects are also designed to prevent the following common access control errors:
 
@@ -82,7 +82,7 @@
  To modify Windows access control security for a named wait handle, use the <xref:System.Threading.EventWaitHandle.GetAccessControl*?displayProperty=nameWithType> method to get the <xref:System.Security.AccessControl.EventWaitHandleSecurity> object. Modify the security object by adding and removing rules, and then use the <xref:System.Threading.EventWaitHandle.SetAccessControl*?displayProperty=nameWithType> method to reattach it.
 
 > [!IMPORTANT]
->  Changes you make to an <xref:System.Security.AccessControl.EventWaitHandleSecurity> object do not affect the access levels of the named wait handle until you call the <xref:System.Threading.EventWaitHandle.SetAccessControl*?displayProperty=nameWithType> method to assign the altered security object to the named wait handle.
+> Changes you make to an <xref:System.Security.AccessControl.EventWaitHandleSecurity> object do not affect the access levels of the named wait handle until you call the <xref:System.Threading.EventWaitHandle.SetAccessControl*?displayProperty=nameWithType> method to assign the altered security object to the named wait handle.
 
  To copy access control security from one wait handle to another, use the <xref:System.Threading.EventWaitHandle.GetAccessControl*?displayProperty=nameWithType> method to get an <xref:System.Security.AccessControl.EventWaitHandleSecurity> object representing the access and audit rules for the first wait handle, and then use the <xref:System.Threading.EventWaitHandle.SetAccessControl*?displayProperty=nameWithType> method, or a constructor that accepts an <xref:System.Security.AccessControl.EventWaitHandleSecurity> object, to assign those rules to the second wait handle.
 
@@ -94,7 +94,7 @@
  The following code example demonstrates the separation between <xref:System.Security.AccessControl.AccessControlType.Allow> rules and <xref:System.Security.AccessControl.AccessControlType.Deny> rules, and shows the combination of rights in compatible rules. The example creates an <xref:System.Security.AccessControl.EventWaitHandleSecurity> object, adds rules that allow and deny various rights for the current user, and displays the resulting pair of rules. The example then allows new rights for the current user and displays the result, showing that the new rights are merged with the existing <xref:System.Security.AccessControl.AccessControlType.Allow> rule.
 
 > [!NOTE]
->  This example does not attach the security object to a <xref:System.Threading.EventWaitHandle> object. Examples that attach security objects can be found in <xref:System.Threading.EventWaitHandle.GetAccessControl*?displayProperty=nameWithType> and <xref:System.Threading.EventWaitHandle.SetAccessControl*?displayProperty=nameWithType>.
+> This example does not attach the security object to a <xref:System.Threading.EventWaitHandle> object. Examples that attach security objects can be found in <xref:System.Threading.EventWaitHandle.GetAccessControl*?displayProperty=nameWithType> and <xref:System.Threading.EventWaitHandle.SetAccessControl*?displayProperty=nameWithType>.
 
  :::code language="csharp" source="~/snippets/csharp/System.Security.AccessControl/EventWaitHandleAccessRule/Overview/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Security.AccessControl/EventWaitHandleAccessRule/Overview/source.vb" id="Snippet1":::
@@ -244,7 +244,7 @@
  The recommended way to create access control rules is to use the constructors of the <xref:System.Security.AccessControl.EventWaitHandleAccessRule> class.
 
 > [!NOTE]
->  Although inheritance and propagation flags are meaningless for named events, it is still possible to specify them. This is not recommended, because it needlessly complicates the maintenance of rules, for example by interfering with the combination of rules that would otherwise be compatible.
+> Although inheritance and propagation flags are meaningless for named events, it is still possible to specify them. This is not recommended, because it needlessly complicates the maintenance of rules, for example by interfering with the combination of rules that would otherwise be compatible.
 
  ]]></format>
         </remarks>
@@ -351,7 +351,7 @@
  The following code example demonstrates the separation between <xref:System.Security.AccessControl.AccessControlType.Allow> rules and <xref:System.Security.AccessControl.AccessControlType.Deny> rules, and shows the combination of rights in compatible rules. The example creates an <xref:System.Security.AccessControl.EventWaitHandleSecurity> object, adds rules that allow and deny various rights for the current user, and displays the resulting pair of rules. The example then allows new rights for the current user and displays the result, showing that the new rights are merged with the existing <xref:System.Security.AccessControl.AccessControlType.Allow> rule.
 
 > [!NOTE]
->  This example does not attach the security object to a <xref:System.Threading.EventWaitHandle> object. Examples that attach security objects can be found in <xref:System.Threading.EventWaitHandle.GetAccessControl*?displayProperty=nameWithType> and <xref:System.Threading.EventWaitHandle.SetAccessControl*?displayProperty=nameWithType>.
+> This example does not attach the security object to a <xref:System.Threading.EventWaitHandle> object. Examples that attach security objects can be found in <xref:System.Threading.EventWaitHandle.GetAccessControl*?displayProperty=nameWithType> and <xref:System.Threading.EventWaitHandle.SetAccessControl*?displayProperty=nameWithType>.
 
  :::code language="csharp" source="~/snippets/csharp/System.Security.AccessControl/EventWaitHandleAccessRule/Overview/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Security.AccessControl/EventWaitHandleAccessRule/Overview/source.vb" id="Snippet1":::
@@ -464,7 +464,7 @@
  The recommended way to create audit rules is to use the constructors of the <xref:System.Security.AccessControl.EventWaitHandleAuditRule> class.
 
 > [!NOTE]
->  Although inheritance and propagation flags are meaningless for named events, it is still possible to specify them. This is not recommended, because it needlessly complicates the maintenance of rules, for example by interfering with the combination of rules that would otherwise be compatible.
+> Although inheritance and propagation flags are meaningless for named events, it is still possible to specify them. This is not recommended, because it needlessly complicates the maintenance of rules, for example by interfering with the combination of rules that would otherwise be compatible.
 
  ]]></format>
         </remarks>
@@ -568,7 +568,7 @@
  The current <xref:System.Security.AccessControl.EventWaitHandleSecurity> is searched for a rule that has the same user and the same <xref:System.Security.AccessControl.AccessControlType> value as `rule`. If no such rule is found, no action is taken, and the method returns `false`. If matching rules are found, their inheritance and compatibility flags are checked for compatibility with the flags specified in `rule`. If no compatible rule is found, no action is taken, and the method returns `false`. If a rule with compatible flags is found, the rights specified in `rule` are removed from the compatible rule, and the method returns `true`. If `rule` specifies rights not contained in the compatible rule, no action is taken with respect to those rights. If all rights are removed from the compatible rule, the entire rule is removed from the current <xref:System.Security.AccessControl.EventWaitHandleSecurity> object.
 
 > [!IMPORTANT]
->  Although you can specify inheritance and propagation flags for event access rules, by creating them with the <xref:System.Security.AccessControl.EventWaitHandleSecurity.AccessRuleFactory*> method, this is not recommended. Inheritance and propagation have no meaning for named events, and they make the maintenance of access rules more complicated.
+> Although you can specify inheritance and propagation flags for event access rules, by creating them with the <xref:System.Security.AccessControl.EventWaitHandleSecurity.AccessRuleFactory*> method, this is not recommended. Inheritance and propagation have no meaning for named events, and they make the maintenance of access rules more complicated.
 
 
 
@@ -578,7 +578,7 @@
  The example creates an <xref:System.Security.AccessControl.EventWaitHandleSecurity> object and adds rules that allow and deny various rights for the current user. The rights allowed include <xref:System.Security.AccessControl.EventWaitHandleRights.Modify>, <xref:System.Security.AccessControl.EventWaitHandleRights.ReadPermissions>, and <xref:System.Security.AccessControl.EventWaitHandleRights.Synchronize>. The example then creates a new rule for the current user, including <xref:System.Security.AccessControl.EventWaitHandleRights.ReadPermissions> and <xref:System.Security.AccessControl.EventWaitHandleRights.TakeOwnership> rights, and uses that rule with the <xref:System.Security.AccessControl.EventWaitHandleSecurity.RemoveAccessRule*> method to remove <xref:System.Security.AccessControl.EventWaitHandleRights.ReadPermissions> from the <xref:System.Security.AccessControl.AccessControlType.Allow> rule in the <xref:System.Security.AccessControl.EventWaitHandleSecurity> object. The <xref:System.Security.AccessControl.EventWaitHandleRights.TakeOwnership> right in `rule` is ignored.
 
 > [!NOTE]
->  This example does not attach the security object to a <xref:System.Threading.EventWaitHandle> object. Examples that attach security objects can be found in <xref:System.Threading.EventWaitHandle.GetAccessControl*?displayProperty=nameWithType> and <xref:System.Threading.EventWaitHandle.SetAccessControl*?displayProperty=nameWithType>.
+> This example does not attach the security object to a <xref:System.Threading.EventWaitHandle> object. Examples that attach security objects can be found in <xref:System.Threading.EventWaitHandle.GetAccessControl*?displayProperty=nameWithType> and <xref:System.Threading.EventWaitHandle.SetAccessControl*?displayProperty=nameWithType>.
 
  :::code language="csharp" source="~/snippets/csharp/System.Security.AccessControl/EventWaitHandleSecurity/RemoveAccessRule/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Security.AccessControl/EventWaitHandleSecurity/RemoveAccessRule/source.vb" id="Snippet1":::
@@ -639,7 +639,7 @@
  The example creates an <xref:System.Security.AccessControl.EventWaitHandleSecurity> object, adds rules that allow and deny various rights for the current user, and then merges additional rights into the <xref:System.Security.AccessControl.AccessControlType.Allow> rule. The example then creates a new rule that allows the current user to take ownership, and uses that rule to remove the <xref:System.Security.AccessControl.AccessControlType.Allow> rule from the <xref:System.Security.AccessControl.EventWaitHandleSecurity> object.
 
 > [!NOTE]
->  This example does not attach the security object to a <xref:System.Threading.EventWaitHandle> object. Examples that attach security objects can be found in <xref:System.Threading.EventWaitHandle.GetAccessControl*?displayProperty=nameWithType> and <xref:System.Threading.EventWaitHandle.SetAccessControl*?displayProperty=nameWithType>.
+> This example does not attach the security object to a <xref:System.Threading.EventWaitHandle> object. Examples that attach security objects can be found in <xref:System.Threading.EventWaitHandle.GetAccessControl*?displayProperty=nameWithType> and <xref:System.Threading.EventWaitHandle.SetAccessControl*?displayProperty=nameWithType>.
 
  :::code language="csharp" source="~/snippets/csharp/System.Security.AccessControl/EventWaitHandleSecurity/RemoveAccessRuleAll/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Security.AccessControl/EventWaitHandleSecurity/RemoveAccessRuleAll/source.vb" id="Snippet1":::
@@ -693,7 +693,7 @@
  The rule is removed only if it exactly matches `rule` in all details, including flags. Other rules with the same user and <xref:System.Security.AccessControl.AccessControlType> are not affected.
 
 > [!IMPORTANT]
->  A rule represents one or more underlying access control entries (ACE), and these entries are split or combined as necessary when you modify the access security rules for a user. Thus, a rule might no longer exist in the specific form it had when it was added, and in that case the <xref:System.Security.AccessControl.EventWaitHandleSecurity.RemoveAccessRuleSpecific*> method cannot remove it.
+> A rule represents one or more underlying access control entries (ACE), and these entries are split or combined as necessary when you modify the access security rules for a user. Thus, a rule might no longer exist in the specific form it had when it was added, and in that case the <xref:System.Security.AccessControl.EventWaitHandleSecurity.RemoveAccessRuleSpecific*> method cannot remove it.
 
 
 
@@ -703,7 +703,7 @@
  The example creates an <xref:System.Security.AccessControl.EventWaitHandleSecurity> object, adds rules that allow and deny various rights for the current user, and then merges additional rights into the <xref:System.Security.AccessControl.AccessControlType.Allow> access rule. The example then passes the original <xref:System.Security.AccessControl.AccessControlType.Allow> rule to the <xref:System.Security.AccessControl.EventWaitHandleSecurity.RemoveAccessRuleSpecific*> method, and displays the results, showing that nothing is deleted. The example then constructs a rule that matches the <xref:System.Security.AccessControl.AccessControlType.Allow> rule in the <xref:System.Security.AccessControl.EventWaitHandleSecurity> object, and successfully uses the <xref:System.Security.AccessControl.EventWaitHandleSecurity.RemoveAccessRuleSpecific*> method to remove the rule.
 
 > [!NOTE]
->  This example does not attach the security object to a <xref:System.Threading.EventWaitHandle> object. Examples that attach security objects can be found in <xref:System.Threading.EventWaitHandle.GetAccessControl*?displayProperty=nameWithType> and <xref:System.Threading.EventWaitHandle.SetAccessControl*?displayProperty=nameWithType>.
+> This example does not attach the security object to a <xref:System.Threading.EventWaitHandle> object. Examples that attach security objects can be found in <xref:System.Threading.EventWaitHandle.GetAccessControl*?displayProperty=nameWithType> and <xref:System.Threading.EventWaitHandle.SetAccessControl*?displayProperty=nameWithType>.
 
  :::code language="csharp" source="~/snippets/csharp/System.Security.AccessControl/EventWaitHandleSecurity/RemoveAccessRuleSpecific/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Security.AccessControl/EventWaitHandleSecurity/RemoveAccessRuleSpecific/source.vb" id="Snippet1":::
@@ -759,7 +759,7 @@
  The current <xref:System.Security.AccessControl.EventWaitHandleSecurity> is searched for an audit rule that has the same user as `rule`. If no such rule is found, no action is taken, and the method returns `false`. If matching rules are found, their inheritance and compatibility flags are checked for compatibility with the flags specified in `rule`. If no compatible rule is found, no action is taken, and the method returns `false`. If a rule with compatible flags is found, the rights specified in `rule` are removed from the compatible rule, and the method returns `true`. If `rule` specifies rights not contained in the compatible rule, no action is taken with respect to those rights. If all rights are removed from the compatible rule, the entire rule is removed from the current <xref:System.Security.AccessControl.EventWaitHandleSecurity> object.
 
 > [!IMPORTANT]
->  Although you can specify inheritance and propagation flags for event audit rules, by creating them with the <xref:System.Security.AccessControl.EventWaitHandleSecurity.AuditRuleFactory*> method, this is not recommended. Inheritance and propagation have no meaning for named events, and they make the maintenance of audit rules more complicated.
+> Although you can specify inheritance and propagation flags for event audit rules, by creating them with the <xref:System.Security.AccessControl.EventWaitHandleSecurity.AuditRuleFactory*> method, this is not recommended. Inheritance and propagation have no meaning for named events, and they make the maintenance of audit rules more complicated.
 
  ]]></format>
         </remarks>
@@ -858,7 +858,7 @@
  The rule is removed only if it exactly matches `rule` in all details, including flags. Other audit rules for the same user are not affected.
 
 > [!IMPORTANT]
->  A rule represents one or more underlying access control entries (ACE), and these entries are split or combined as necessary when you modify the audit security rules for a user. Thus, a rule might no longer exist in the specific form it had when it was added, and in that case the <xref:System.Security.AccessControl.EventWaitHandleSecurity.RemoveAuditRuleSpecific*> method cannot remove it.
+> A rule represents one or more underlying access control entries (ACE), and these entries are split or combined as necessary when you modify the audit security rules for a user. Thus, a rule might no longer exist in the specific form it had when it was added, and in that case the <xref:System.Security.AccessControl.EventWaitHandleSecurity.RemoveAuditRuleSpecific*> method cannot remove it.
 
  ]]></format>
         </remarks>
@@ -916,7 +916,7 @@
  The example creates an <xref:System.Security.AccessControl.EventWaitHandleSecurity> object and adds rules that allow and deny various rights for the current user. The example then creates a new rule that allows the current user full control, and uses the <xref:System.Security.AccessControl.EventWaitHandleSecurity.ResetAccessRule*> method to replace both of the existing rules with the new rule.
 
 > [!NOTE]
->  This example does not attach the security object to a <xref:System.Threading.EventWaitHandle> object. Examples that attach security objects can be found in <xref:System.Threading.EventWaitHandle.GetAccessControl*?displayProperty=nameWithType> and <xref:System.Threading.EventWaitHandle.SetAccessControl*?displayProperty=nameWithType>.
+> This example does not attach the security object to a <xref:System.Threading.EventWaitHandle> object. Examples that attach security objects can be found in <xref:System.Threading.EventWaitHandle.GetAccessControl*?displayProperty=nameWithType> and <xref:System.Threading.EventWaitHandle.SetAccessControl*?displayProperty=nameWithType>.
 
  :::code language="csharp" source="~/snippets/csharp/System.Security.AccessControl/EventWaitHandleSecurity/ResetAccessRule/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Security.AccessControl/EventWaitHandleSecurity/ResetAccessRule/source.vb" id="Snippet1":::
@@ -979,7 +979,7 @@
  The example creates an <xref:System.Security.AccessControl.EventWaitHandleSecurity> object and adds rules that allow and deny various rights for the current user. The example then creates a new rule that allows the current user full control, and uses the <xref:System.Security.AccessControl.EventWaitHandleSecurity.SetAccessRule*> method to replace the existing <xref:System.Security.AccessControl.AccessControlType.Allow> rule with the new rule. The rule that denies access is not affected.
 
 > [!NOTE]
->  This example does not attach the security object to a <xref:System.Threading.EventWaitHandle> object. Examples that attach security objects can be found in <xref:System.Threading.EventWaitHandle.GetAccessControl*?displayProperty=nameWithType> and <xref:System.Threading.EventWaitHandle.SetAccessControl*?displayProperty=nameWithType>.
+> This example does not attach the security object to a <xref:System.Threading.EventWaitHandle> object. Examples that attach security objects can be found in <xref:System.Threading.EventWaitHandle.GetAccessControl*?displayProperty=nameWithType> and <xref:System.Threading.EventWaitHandle.SetAccessControl*?displayProperty=nameWithType>.
 
  :::code language="csharp" source="~/snippets/csharp/System.Security.AccessControl/EventWaitHandleSecurity/SetAccessRule/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Security.AccessControl/EventWaitHandleSecurity/SetAccessRule/source.vb" id="Snippet1":::

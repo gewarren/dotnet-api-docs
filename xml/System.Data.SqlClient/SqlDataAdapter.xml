@@ -80,7 +80,7 @@
  <xref:System.Data.SqlClient.SqlDataAdapter> is used in conjunction with <xref:System.Data.SqlClient.SqlConnection> and <xref:System.Data.SqlClient.SqlCommand> to increase performance when connecting to a SQL Server database.
 
 > [!NOTE]
->  If you are using SQL Server stored procedures to edit or delete data using a `DataAdapter`, make sure that you do not use SET NOCOUNT ON in the stored procedure definition. This causes the rows affected count returned to be zero, which the `DataAdapter` interprets as a concurrency conflict. In this event, a <xref:System.Data.DBConcurrencyException> will be thrown.
+> If you are using SQL Server stored procedures to edit or delete data using a `DataAdapter`, make sure that you do not use SET NOCOUNT ON in the stored procedure definition. This causes the rows affected count returned to be zero, which the `DataAdapter` interprets as a concurrency conflict. In this event, a <xref:System.Data.DBConcurrencyException> will be thrown.
 
  The <xref:System.Data.SqlClient.SqlDataAdapter> also includes the <xref:System.Data.SqlClient.SqlDataAdapter.SelectCommand*>, <xref:System.Data.SqlClient.SqlDataAdapter.InsertCommand*>, <xref:System.Data.SqlClient.SqlDataAdapter.DeleteCommand*>, <xref:System.Data.SqlClient.SqlDataAdapter.UpdateCommand*>, and <xref:System.Data.Common.DataAdapter.TableMappings*> properties to facilitate the loading and updating of data.
 
@@ -91,7 +91,7 @@
  For every column that you propagate to the data source on <xref:System.Data.Common.DbDataAdapter.Update*>, a parameter should be added to the `InsertCommand`, `UpdateCommand`, or `DeleteCommand`. The <xref:System.Data.Common.DbParameter.SourceColumn> property of the <xref:System.Data.Common.DbParameter> object should be set to the name of the column. This setting indicates that the value of the parameter is not set manually, but is taken from the particular column in the currently processed row.
 
 > [!NOTE]
->  An <xref:System.InvalidOperationException> will occur if the <xref:System.Data.Common.DbDataAdapter.Fill*> method is called and the table contains a user-defined type that is not available on the client computer. For more information, see [CLR User-Defined Types](/sql/relational-databases/clr-integration-database-objects-user-defined-types/clr-user-defined-types).
+> An <xref:System.InvalidOperationException> will occur if the <xref:System.Data.Common.DbDataAdapter.Fill*> method is called and the table contains a user-defined type that is not available on the client computer. For more information, see [CLR User-Defined Types](/sql/relational-databases/clr-integration-database-objects-user-defined-types/clr-user-defined-types).
 
 
 
@@ -1355,7 +1355,7 @@
  When <xref:System.Data.SqlClient.SqlDataAdapter.UpdateCommand*> is assigned to a previously created <xref:System.Data.SqlClient.SqlCommand>, the <xref:System.Data.SqlClient.SqlCommand> is not cloned. The <xref:System.Data.SqlClient.SqlDataAdapter.UpdateCommand*> maintains a reference to the previously created <xref:System.Data.SqlClient.SqlCommand> object.
 
 > [!NOTE]
->  If execution of this command returns rows, the updated rows may be merged with the <xref:System.Data.DataSet> depending on how you set the **UpdatedRowSource** property of the <xref:System.Data.SqlClient.SqlCommand> object.
+> If execution of this command returns rows, the updated rows may be merged with the <xref:System.Data.DataSet> depending on how you set the **UpdatedRowSource** property of the <xref:System.Data.SqlClient.SqlCommand> object.
 
  For every column that you propagate to the data source on <xref:System.Data.Common.DbDataAdapter.Update*>, a parameter should be added to `InsertCommand`, `UpdateCommand`, or `DeleteCommand`.
 

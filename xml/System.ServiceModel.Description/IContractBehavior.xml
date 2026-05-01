@@ -62,14 +62,14 @@
  <xref:System.ServiceModel.Description.IContractBehavior> objects can make use of any of these methods, but often only one is important; in such cases, the unused methods can return without any value.
 
 > [!NOTE]
->  All of the <xref:System.ServiceModel.Description.IContractBehavior> methods pass <xref:System.ServiceModel.Description.ContractDescription?displayProperty=nameWithType> and <xref:System.ServiceModel.Description.ServiceEndpoint?displayProperty=nameWithType> as parameters. These parameters are for examination; if you modify the objects the execution behavior is undefined.
+> All of the <xref:System.ServiceModel.Description.IContractBehavior> methods pass <xref:System.ServiceModel.Description.ContractDescription?displayProperty=nameWithType> and <xref:System.ServiceModel.Description.ServiceEndpoint?displayProperty=nameWithType> as parameters. These parameters are for examination; if you modify the objects the execution behavior is undefined.
 
  <xref:System.ServiceModel.Description.IContractBehavior> types can be used on either the service or the client, or both. To perform a customization task on the service, the <xref:System.ServiceModel.Description.IContractBehavior> object must be added to the <xref:System.ServiceModel.Description.ContractDescription.Behaviors> property prior to the construction of the service runtime, which occurs when the <xref:System.ServiceModel.ICommunicationObject.Open*?displayProperty=nameWithType> method is called on the <xref:System.ServiceModel.ServiceHost?displayProperty=nameWithType> object. There are two ways to do this.
 
  The first method is to programmatically add the custom contract behavior to the <xref:System.ServiceModel.Description.ContractDescription.Behaviors> property prior to the point when the <xref:System.ServiceModel.ICommunicationObject.Open*?displayProperty=nameWithType> method is called on the <xref:System.ServiceModel.ServiceHost?displayProperty=nameWithType> object. When applied this way, the behavior is applied for all messages flowing through that contract on any endpoint.
 
 > [!NOTE]
->  The behavior is applied to all contracts of the same type. For example, if you programmatically add the same contract type to more than one endpoint, the behavior modifies all endpoints that refer to the same contract object.
+> The behavior is applied to all contracts of the same type. For example, if you programmatically add the same contract type to more than one endpoint, the behavior modifies all endpoints that refer to the same contract object.
 
  The second method is to create a custom attribute that implements <xref:System.ServiceModel.Description.IContractBehavior> and apply that to:
 

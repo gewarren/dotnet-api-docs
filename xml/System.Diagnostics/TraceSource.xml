@@ -96,19 +96,19 @@ In .NET Framework apps, trace output from <xref:System.Diagnostics.TraceSource> 
  <xref:System.Diagnostics.TraceSource> defines tracing methods but does not actually provide any specific mechanism for generating and storing tracing data. The tracing data is produced by trace listeners, which are plug-ins that can be loaded by trace sources.
 
 > [!NOTE]
->  You should not call the tracing methods during finalization. Doing so can result in an <xref:System.ObjectDisposedException> being thrown.
+> You should not call the tracing methods during finalization. Doing so can result in an <xref:System.ObjectDisposedException> being thrown.
 
  You can customize the tracing output's target by adding or removing <xref:System.Diagnostics.TraceListener> instances to or from the collection stored in the <xref:System.Diagnostics.TraceSource.Listeners?displayProperty=nameWithType> property. By default, trace output is produced using an instance of the <xref:System.Diagnostics.DefaultTraceListener> class.
 
 The preceding .NET Framework app configuration file example demonstrates removing the <xref:System.Diagnostics.DefaultTraceListener> and adding a <xref:System.Diagnostics.ConsoleTraceListener> to produce the trace output for the trace source. For more information, see [\<listeners>](/dotnet/framework/configure-apps/file-schema/trace-debug/listeners-element-for-source) and [\<sharedListeners>](/dotnet/framework/configure-apps/file-schema/trace-debug/sharedlisteners-element).
 
 > [!NOTE]
->  Adding a trace listener to the <xref:System.Diagnostics.TraceSource.Listeners*> collection can cause an exception to be thrown while tracing, if a resource used by the trace listener is not available. The conditions and the exception thrown depend on the trace listener and cannot be enumerated in this topic. It may be useful to place calls to the <xref:System.Diagnostics.TraceSource> methods in `try`/`catch` blocks to detect and handle any exceptions from trace listeners.
+> Adding a trace listener to the <xref:System.Diagnostics.TraceSource.Listeners*> collection can cause an exception to be thrown while tracing, if a resource used by the trace listener is not available. The conditions and the exception thrown depend on the trace listener and cannot be enumerated in this topic. It may be useful to place calls to the <xref:System.Diagnostics.TraceSource> methods in `try`/`catch` blocks to detect and handle any exceptions from trace listeners.
 
  The <xref:System.Diagnostics.SourceSwitch> class provides the means to dynamically control the tracing output. For .NET Framework apps, the preceding configuration file example shows how you can turn off tracing from a trace source and control the level at which tracing occurs. You can modify the value of the source switch without recompiling your application. For information on using the configuration file to set a switch, see <xref:System.Diagnostics.Switch> and [How to: Create, Initialize and Configure Trace Switches](/dotnet/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches).
 
 > [!NOTE]
->  If you modify a configuration file while an application is executing, the application must be stopped and restarted or the <xref:System.Diagnostics.Trace.Refresh*> method must be called before the new settings take effect.
+> If you modify a configuration file while an application is executing, the application must be stopped and restarted or the <xref:System.Diagnostics.Trace.Refresh*> method must be called before the new settings take effect.
 
  The <xref:System.Diagnostics.TraceEventType> enumeration is used to define the event type of the trace message. Trace filters use the <xref:System.Diagnostics.TraceEventType> to determine if a trace listener should produce the trace message.
 
@@ -198,7 +198,7 @@ The preceding .NET Framework app configuration file example demonstrates removin
  The source name is used to identify traces. It is used by a <xref:System.Diagnostics.SourceFilter> to determine whether a trace listener should produce the trace. The recommended practice is to use the name of the application for the source name.
 
 > [!NOTE]
->  It is not necessary to create a new <xref:System.Diagnostics.TraceSource> instance for each trace request. Create one <xref:System.Diagnostics.TraceSource> instance and use it for all trace requests for the application.
+> It is not necessary to create a new <xref:System.Diagnostics.TraceSource> instance for each trace request. Create one <xref:System.Diagnostics.TraceSource> instance and use it for all trace requests for the application.
 
 
 
@@ -264,7 +264,7 @@ The preceding .NET Framework app configuration file example demonstrates removin
  The source name is used to identify traces. It can be used by a <xref:System.Diagnostics.SourceSwitch> to determine if tracing is to occur and by a <xref:System.Diagnostics.SourceFilter> to determine whether to produce the trace. The default source level is used by an <xref:System.Diagnostics.EventTypeFilter> to determine if tracing is to occur based on the source level of the message to be traced.
 
 > [!NOTE]
->  It is not necessary to create a new <xref:System.Diagnostics.TraceSource> instance for each trace request. Create one <xref:System.Diagnostics.TraceSource> instance and use it for all trace requests for the application.
+> It is not necessary to create a new <xref:System.Diagnostics.TraceSource> instance for each trace request. Create one <xref:System.Diagnostics.TraceSource> instance and use it for all trace requests for the application.
 
  ]]></format>
         </remarks>
@@ -836,7 +836,7 @@ You can refer to the trace source by using the `name` attribute in the configura
  The <xref:System.Diagnostics.TraceSource.TraceData*> method calls the <xref:System.Diagnostics.SourceSwitch.ShouldTrace*?displayProperty=nameWithType> method of the <xref:System.Diagnostics.SourceSwitch> object returned by the <xref:System.Diagnostics.TraceSource.Switch> property. If <xref:System.Diagnostics.SourceSwitch.ShouldTrace*> returns `true`, <xref:System.Diagnostics.TraceSource.TraceData*> calls the corresponding <xref:System.Diagnostics.TraceListener.TraceData*> method on all listeners. Otherwise, <xref:System.Diagnostics.TraceSource.TraceData*> returns without calling the listeners' methods.
 
 > [!NOTE]
->  The <xref:System.Diagnostics.EventLogTraceListener> object is limited to a maximum `id` value of 65,535. If the `id` value specified is greater than 65,535, the <xref:System.Diagnostics.EventLogTraceListener> object uses 65,535.
+> The <xref:System.Diagnostics.EventLogTraceListener> object is limited to a maximum `id` value of 65,535. If the `id` value specified is greater than 65,535, the <xref:System.Diagnostics.EventLogTraceListener> object uses 65,535.
 
 
 
@@ -920,7 +920,7 @@ You can refer to the trace source by using the `name` attribute in the configura
  The <xref:System.Diagnostics.TraceSource.TraceData*> method calls the <xref:System.Diagnostics.SourceSwitch.ShouldTrace*> method of the <xref:System.Diagnostics.SourceSwitch> object returned by the <xref:System.Diagnostics.TraceSource.Switch> property. If <xref:System.Diagnostics.SourceSwitch.ShouldTrace*> returns `true`, <xref:System.Diagnostics.TraceSource.TraceData*> calls the corresponding <xref:System.Diagnostics.TraceListener.TraceData*> method on all listeners. Otherwise, <xref:System.Diagnostics.TraceSource.TraceData*> returns without calling the listeners' methods.
 
 > [!NOTE]
->  The <xref:System.Diagnostics.EventLogTraceListener> object is limited to a maximum `id` value of 65,535. If the `id` value specified is greater than 65,535, the <xref:System.Diagnostics.EventLogTraceListener> object uses 65,535.
+> The <xref:System.Diagnostics.EventLogTraceListener> object is limited to a maximum `id` value of 65,535. If the `id` value specified is greater than 65,535, the <xref:System.Diagnostics.EventLogTraceListener> object uses 65,535.
 
  ]]></format>
         </remarks>
@@ -998,7 +998,7 @@ You can refer to the trace source by using the `name` attribute in the configura
  The trace content is listener specific. If the method is not overridden by the listener implementation, the default output is the name of the trace source, its numeric identity, and the event type.  Additional trace content is dependent upon the listener's <xref:System.Diagnostics.TraceListener.TraceOutputOptions> property value.
 
 > [!NOTE]
->  The <xref:System.Diagnostics.EventLogTraceListener> object is limited to a maximum `id` value of 65,535. If the `id` value specified is greater than 65,535, the <xref:System.Diagnostics.EventLogTraceListener> uses 65,535.
+> The <xref:System.Diagnostics.EventLogTraceListener> object is limited to a maximum `id` value of 65,535. If the `id` value specified is greater than 65,535, the <xref:System.Diagnostics.EventLogTraceListener> uses 65,535.
 
 
 
@@ -1077,7 +1077,7 @@ You can refer to the trace source by using the `name` attribute in the configura
  The trace content is listener specific. If the method is not overridden by the listener implementation, the default output is the name of the trace source, its numeric identity, the event type, and the message.  Additional trace content is dependent upon the listener's <xref:System.Diagnostics.TraceListener.TraceOutputOptions> property value.
 
 > [!NOTE]
->  The <xref:System.Diagnostics.EventLogTraceListener> object is limited to a maximum `id` value of 65,535. If the `id` value specified is greater than 65,535, the <xref:System.Diagnostics.EventLogTraceListener> object uses 65,535.
+> The <xref:System.Diagnostics.EventLogTraceListener> object is limited to a maximum `id` value of 65,535. If the `id` value specified is greater than 65,535, the <xref:System.Diagnostics.EventLogTraceListener> object uses 65,535.
 
 
 
@@ -1175,7 +1175,7 @@ You can refer to the trace source by using the `name` attribute in the configura
  The trace content is listener specific. The default <xref:System.Diagnostics.TraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String,System.Object[])> method writes the source name, event type, and numeric identity in the trace header, then calls the <xref:System.String.Format(System.IFormatProvider,System.String,System.Object[])?displayProperty=nameWithType> method, passing the `format` string and `args` array and using the <xref:System.Globalization.CultureInfo.InvariantCulture?displayProperty=nameWithType> property to format the string as the message output.
 
 > [!NOTE]
->  The <xref:System.Diagnostics.EventLogTraceListener> object is limited to a maximum `id` value of 65,535. If the `id` value specified is greater than 65,535, the <xref:System.Diagnostics.EventLogTraceListener> object uses 65,535.
+> The <xref:System.Diagnostics.EventLogTraceListener> object is limited to a maximum `id` value of 65,535. If the `id` value specified is greater than 65,535, the <xref:System.Diagnostics.EventLogTraceListener> object uses 65,535.
 
 
 

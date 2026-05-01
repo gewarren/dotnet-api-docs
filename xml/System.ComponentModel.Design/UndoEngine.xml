@@ -64,7 +64,7 @@
  With these features, <xref:System.ComponentModel.Design.UndoEngine> can fabricate any undo units it needs automatically.
 
 > [!NOTE]
->  Do not change property values directly. The <xref:System.ComponentModel.Design.UndoEngine> class requires you to use the appropriate <xref:System.ComponentModel.TypeDescriptor> to change property values.
+> Do not change property values directly. The <xref:System.ComponentModel.Design.UndoEngine> class requires you to use the appropriate <xref:System.ComponentModel.TypeDescriptor> to change property values.
 
  <xref:System.ComponentModel.Design.UndoEngine> monitors for change notifications to create undo units, and the units themselves consist of serialized object states. The following table shows the services that must be available when <xref:System.ComponentModel.Design.UndoEngine> is created.
 
@@ -75,7 +75,7 @@
 |<xref:System.ComponentModel.Design.IDesignerHost>|Used to track transactions.|
 
 > [!NOTE]
->  Because the <xref:System.ComponentModel.Design.UndoEngine> class requires <xref:System.ComponentModel.Design.Serialization.ComponentSerializationService> and <xref:System.ComponentModel.Design.IComponentChangeService>, it is available only at design time.
+> Because the <xref:System.ComponentModel.Design.UndoEngine> class requires <xref:System.ComponentModel.Design.Serialization.ComponentSerializationService> and <xref:System.ComponentModel.Design.IComponentChangeService>, it is available only at design time.
 
  The undo engine tracks transactions and creates a single undo unit that encompasses a transaction. As a result, the undo engine has control over the duration of an undoable action. Also, because transactions can be named, undoable actions inherit their names from the current transaction. If no transaction is available and a change is reported, the undo engine creates an undo name based on the type of change (for example, "Change property 'Text'").
 

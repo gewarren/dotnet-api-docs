@@ -95,7 +95,7 @@
  In addition to <xref:System.ComponentModel.ISite>, the site also implements the following interfaces.
 
 > [!CAUTION]
->  Check for the existence of these interfaces, rather than use indiscriminate casting, because other site implementations may not implement them.
+> Check for the existence of these interfaces, rather than use indiscriminate casting, because other site implementations may not implement them.
 
 |Service|Description|
 |-------------|-----------------|
@@ -240,7 +240,7 @@
  When you use the <xref:System.ComponentModel.Design.DesignSurface.%23ctor*> constructor, it creates a simple designer loader that, in turn, creates a component of the given type and then ends the loading process. This is a straightforward way to create a designer, under the assumption that all saving of state will be done externally. Internally, this calls <xref:System.ComponentModel.Design.DesignSurface.BeginLoad*> and passes the root component type.
 
 > [!NOTE]
->  The <xref:System.ComponentModel.Design.DesignSurface.%23ctor*> overload is not affected by <xref:System.Windows.Forms.Design.DesignerOptions>. The <xref:System.Windows.Forms.Design.DesignerOptions> must be in the service container before the design surface loads. If you need access to <xref:System.Windows.Forms.Design.DesignerOptions>, call the empty constructor, add the <xref:System.Windows.Forms.Design.DesignerOptions> to the <xref:System.ComponentModel.Design.DesignSurface.ServiceContainer*> and call <xref:System.ComponentModel.Design.DesignSurface.BeginLoad*> with `rootComponentType`.
+> The <xref:System.ComponentModel.Design.DesignSurface.%23ctor*> overload is not affected by <xref:System.Windows.Forms.Design.DesignerOptions>. The <xref:System.Windows.Forms.Design.DesignerOptions> must be in the service container before the design surface loads. If you need access to <xref:System.Windows.Forms.Design.DesignerOptions>, call the empty constructor, add the <xref:System.Windows.Forms.Design.DesignerOptions> to the <xref:System.ComponentModel.Design.DesignSurface.ServiceContainer*> and call <xref:System.ComponentModel.Design.DesignSurface.BeginLoad*> with `rootComponentType`.
 
  ]]></format>
         </remarks>
@@ -404,7 +404,7 @@
  After <xref:System.ComponentModel.Design.DesignSurface.BeginLoad*> is called, you can immediately obtain the view for the designer, because designer loaders must provide at least the root component when loading asynchronously.
 
 > [!NOTE]
->  The <xref:System.ComponentModel.Design.DesignSurface.BeginLoad*> method creates an instance of the component type and initializes a designer for this instance. The <xref:System.ComponentModel.Design.DesignSurface.Loaded> event is raised before this method returns.
+> The <xref:System.ComponentModel.Design.DesignSurface.BeginLoad*> method creates an instance of the component type and initializes a designer for this instance. The <xref:System.ComponentModel.Design.DesignSurface.Loaded> event is raised before this method returns.
 
  ]]></format>
         </remarks>
@@ -787,12 +787,12 @@
  The public <xref:System.ComponentModel.Design.DesignSurface.Dispose*> method follows the standard <xref:System.IDisposable> pattern. Calling this method destroys the design surface. The protected version of this method is `virtual` and follows the normal <xref:System.IDisposable> pattern.
 
 > [!NOTE]
->  Because <xref:System.ComponentModel.Design.DesignSurface> does not have any native code to clean up, it does not have a finalizer that calls <xref:System.ComponentModel.Design.DesignSurface.Dispose(System.Boolean)>. If you need to call <xref:System.ComponentModel.Design.DesignSurface.Dispose(System.Boolean)>, you must add a finalizer yourself.
+> Because <xref:System.ComponentModel.Design.DesignSurface> does not have any native code to clean up, it does not have a finalizer that calls <xref:System.ComponentModel.Design.DesignSurface.Dispose(System.Boolean)>. If you need to call <xref:System.ComponentModel.Design.DesignSurface.Dispose(System.Boolean)>, you must add a finalizer yourself.
 
  Call <xref:System.ComponentModel.Design.DesignSurface.Dispose*> when you are finished using the <xref:System.ComponentModel.Design.DesignSurface>. The <xref:System.ComponentModel.Design.DesignSurface.Dispose*> method leaves the <xref:System.ComponentModel.Design.DesignSurface> in an unusable state. After calling <xref:System.ComponentModel.Design.DesignSurface.Dispose*>, you must release all references to the <xref:System.ComponentModel.Design.DesignSurface> so the garbage collector can reclaim the memory that the <xref:System.ComponentModel.Design.DesignSurface> was occupying. For more information, see [Cleaning Up Unmanaged Resources](/dotnet/standard/garbage-collection/unmanaged) and [Implementing a Dispose Method](/dotnet/standard/garbage-collection/implementing-dispose).
 
 > [!NOTE]
->  Always call <xref:System.ComponentModel.Design.DesignSurface.Dispose*> before you release your last reference to the <xref:System.ComponentModel.Design.DesignSurface>. Otherwise, the resources it is using will not be freed until the garbage collector calls the <xref:System.ComponentModel.Design.DesignSurface> object's `Finalize` method.
+> Always call <xref:System.ComponentModel.Design.DesignSurface.Dispose*> before you release your last reference to the <xref:System.ComponentModel.Design.DesignSurface>. Otherwise, the resources it is using will not be freed until the garbage collector calls the <xref:System.ComponentModel.Design.DesignSurface> object's `Finalize` method.
 
  ]]></format>
         </remarks>
@@ -839,7 +839,7 @@
  The public <xref:System.ComponentModel.Design.DesignSurface.Dispose> method follows the standard <xref:System.IDisposable> pattern. Calling this method destroys the design surface. The protected version of this method is `virtual` and follows the normal <xref:System.IDisposable> pattern.
 
 > [!NOTE]
->  Because <xref:System.ComponentModel.Design.DesignSurface> does not have any native code to clean up, it does not have a finalizer that calls <xref:System.ComponentModel.Design.DesignSurface.Dispose*>. If you need to call <xref:System.ComponentModel.Design.DesignSurface.Dispose*>, you must add a finalizer yourself.
+> Because <xref:System.ComponentModel.Design.DesignSurface> does not have any native code to clean up, it does not have a finalizer that calls <xref:System.ComponentModel.Design.DesignSurface.Dispose*>. If you need to call <xref:System.ComponentModel.Design.DesignSurface.Dispose*>, you must add a finalizer yourself.
 
  This method is called by the public `Dispose()` method and the <xref:System.Object.Finalize> method, if it has been overridden. `Dispose()` invokes this method with the `disposing` parameter set to `true`. `Finalize` invokes this method with `disposing` set to `false`.
 
@@ -1167,7 +1167,7 @@
  The <xref:System.ComponentModel.Design.LoadedEventArgs> object can be used to determine if loading succeeded, and it can also provide a list of errors that occurred during the load.
 
 > [!NOTE]
->  Errors can occur for successful loads as well, provided that the serialization system can tolerate errors.
+> Errors can occur for successful loads as well, provided that the serialization system can tolerate errors.
 
  ]]></format>
         </remarks>

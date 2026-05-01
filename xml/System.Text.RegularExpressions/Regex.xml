@@ -2345,7 +2345,7 @@ Each match won't actually happen until <xref:System.Text.RegularExpressions.Rege
  In a regular expression that is defined by using static text, characters that are to be interpreted literally rather than as metacharacters can be escaped by preceding them with a backslash symbol (\\) as well as by calling the <xref:System.Text.RegularExpressions.Regex.Escape*> method. In a regular expression that is defined dynamically using characters that are not known at design time, calling the <xref:System.Text.RegularExpressions.Regex.Escape*> method is particularly important to ensure that the regular expression engine interprets individual characters as literals rather than as metacharacters.
 
 > [!NOTE]
->  If a regular expression pattern includes either the number sign (#) or literal white-space characters, they must be escaped if input text is parsed with the <xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace?displayProperty=nameWithType> option enabled.
+> If a regular expression pattern includes either the number sign (#) or literal white-space characters, they must be escaped if input text is parsed with the <xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace?displayProperty=nameWithType> option enabled.
 
  While the <xref:System.Text.RegularExpressions.Regex.Escape*> method escapes the straight opening bracket ([) and opening brace ({) characters, it does not escape their corresponding closing characters (] and }). In most cases, escaping these is not necessary. If a closing bracket or brace is not preceded by its corresponding opening character, the regular expression engine interprets it literally. If an opening bracket or brace is interpreted as a metacharacter, the regular expression engine interprets the first corresponding closing character as a metacharacter. If this is not the desired behavior, the closing bracket or brace should be escaped by explicitly prepending the backslash (\\) character. For an illustration, see the Example section.
 
@@ -2797,9 +2797,9 @@ Allows an <see cref="T:System.Object" /> to attempt to free resources and perfor
  The <xref:System.Text.RegularExpressions.Regex.%23ctor(System.String,System.Text.RegularExpressions.RegexOptions,System.TimeSpan)> class constructor and a number of static matching methods use the <xref:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout> constant to indicate that the attempt to find a pattern match should not time out.
 
 > [!WARNING]
->  Setting the regular expression engine's time-out value to <xref:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout> can cause regular expressions that rely on excessive backtracking to appear to stop responding when processing text that nearly matches the regular expression pattern. If you disable time-outs, you should ensure that your regular expression does not rely on excessive backtracking and that it handles text that nearly matches the regular expression pattern.
+> Setting the regular expression engine's time-out value to <xref:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout> can cause regular expressions that rely on excessive backtracking to appear to stop responding when processing text that nearly matches the regular expression pattern. If you disable time-outs, you should ensure that your regular expression does not rely on excessive backtracking and that it handles text that nearly matches the regular expression pattern.
 >
->  For more information about handling backtracking, see [Backtracking](/dotnet/standard/base-types/backtracking-in-regular-expressions).
+> For more information about handling backtracking, see [Backtracking](/dotnet/standard/base-types/backtracking-in-regular-expressions).
 
  The <xref:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout> constant can be supplied as the value of the `matchTimeout` argument of the following members:
 
@@ -5059,7 +5059,7 @@ For more details about `startat`, see the Remarks section of <xref:System.Text.R
  The `replacement` parameter specifies the string that is to replace each match in `input`. `replacement` can consist of any combination of literal text and [substitutions](/dotnet/standard/base-types/substitutions-in-regular-expressions). For example, the replacement pattern `a*${test}b` inserts the string "a*" followed by the substring that is matched by the `test` capturing group, if any, followed by the string "b". The * character is not recognized as a metacharacter within a replacement pattern.
 
 > [!NOTE]
->  Substitutions are the only regular expression language elements that are recognized in a replacement pattern. All other regular expression language elements, including [character escapes](/dotnet/standard/base-types/character-escapes-in-regular-expressions), are allowed in regular expression patterns only and are not recognized in replacement patterns.
+> Substitutions are the only regular expression language elements that are recognized in a replacement pattern. All other regular expression language elements, including [character escapes](/dotnet/standard/base-types/character-escapes-in-regular-expressions), are allowed in regular expression patterns only and are not recognized in replacement patterns.
 
  The <xref:System.Text.RegularExpressions.RegexMatchTimeoutException> exception is thrown if the execution time of the replacement operation exceeds the time-out interval specified by the <xref:System.Text.RegularExpressions.Regex.%23ctor(System.String,System.Text.RegularExpressions.RegexOptions,System.TimeSpan)?displayProperty=nameWithType> constructor. If you do not set a time-out interval when you call the constructor, the exception is thrown if the operation exceeds any time-out value established for the application domain in which the <xref:System.Text.RegularExpressions.Regex> object is created. If no time-out is defined in the <xref:System.Text.RegularExpressions.Regex> constructor call or in the application domain's properties, or if the time-out value is <xref:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout?displayProperty=nameWithType>, no exception is thrown
 
@@ -5254,7 +5254,7 @@ For more details about `startat`, see the Remarks section of <xref:System.Text.R
  The `replacement` parameter specifies the string that is to replace the first `count` matches in `input`. `replacement` can consist of any combination of literal text and [substitutions](/dotnet/standard/base-types/substitutions-in-regular-expressions). For example, the replacement pattern `a*${test}b` inserts the string "a*" followed by the substring that is matched by the `test` capturing group, if any, followed by the string "b". The * character is not recognized as a metacharacter within a replacement pattern.
 
 > [!NOTE]
->  Substitutions are the only regular expression language elements that are recognized in a replacement pattern. All other regular expression language elements, including [character escapes](/dotnet/standard/base-types/character-escapes-in-regular-expressions), are allowed in regular expression patterns only and are not recognized in replacement patterns.
+> Substitutions are the only regular expression language elements that are recognized in a replacement pattern. All other regular expression language elements, including [character escapes](/dotnet/standard/base-types/character-escapes-in-regular-expressions), are allowed in regular expression patterns only and are not recognized in replacement patterns.
 
  The <xref:System.Text.RegularExpressions.RegexMatchTimeoutException> exception is thrown if the execution time of the replacement operation exceeds the time-out interval specified by the <xref:System.Text.RegularExpressions.Regex.%23ctor(System.String,System.Text.RegularExpressions.RegexOptions,System.TimeSpan)?displayProperty=nameWithType> constructor. If you do not set a time-out interval when you call the constructor, the exception is thrown if the operation exceeds any time-out value established for the application domain in which the <xref:System.Text.RegularExpressions.Regex> object is created. If no time-out is defined in the <xref:System.Text.RegularExpressions.Regex> constructor call or in the application domain's properties, or if the time-out value is <xref:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout?displayProperty=nameWithType>, no exception is thrown
 
@@ -5346,7 +5346,7 @@ For more details about `startat`, see the Remarks section of <xref:System.Text.R
  The `replacement` parameter specifies the string that is to replace each match in `input`. `replacement` can consist of any combination of literal text and [substitutions](/dotnet/standard/base-types/substitutions-in-regular-expressions). For example, the replacement pattern `a*${test}b` inserts the string "a*" followed by the substring that is matched by the `test` capturing group, if any, followed by the string "b". The * character is not recognized as a metacharacter within a replacement pattern.
 
 > [!NOTE]
->  Substitutions are the only regular expression language elements that are recognized in a replacement pattern. All other regular expression language elements, including [character escapes](/dotnet/standard/base-types/character-escapes-in-regular-expressions), are allowed in regular expression patterns only and are not recognized in replacement patterns.
+> Substitutions are the only regular expression language elements that are recognized in a replacement pattern. All other regular expression language elements, including [character escapes](/dotnet/standard/base-types/character-escapes-in-regular-expressions), are allowed in regular expression patterns only and are not recognized in replacement patterns.
 
  The <xref:System.Text.RegularExpressions.RegexMatchTimeoutException> exception is thrown if the execution time of the replacement operation exceeds the time-out interval specified for the application domain in which the method is called. If no time-out is defined in the application domain's properties, or if the time-out value is <xref:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout?displayProperty=nameWithType>, no exception is thrown.
 
@@ -5672,7 +5672,7 @@ For more details about `startat`, see the Remarks section of <xref:System.Text.R
  The `replacement` parameter specifies the string that is to replace each match in `input`. `replacement` can consist of any combination of literal text and [substitutions](/dotnet/standard/base-types/substitutions-in-regular-expressions). For example, the replacement pattern `a*${test}b` inserts the string "a*" followed by the substring that is matched by the `test` capturing group, if any, followed by the string "b". The * character is not recognized as a metacharacter within a replacement pattern.
 
 > [!NOTE]
->  Substitutions are the only regular expression language elements that are recognized in a replacement pattern. All other regular expression language elements, including [character escapes](/dotnet/standard/base-types/character-escapes-in-regular-expressions), are allowed in regular expression patterns only and are not recognized in replacement patterns.
+> Substitutions are the only regular expression language elements that are recognized in a replacement pattern. All other regular expression language elements, including [character escapes](/dotnet/standard/base-types/character-escapes-in-regular-expressions), are allowed in regular expression patterns only and are not recognized in replacement patterns.
 
  The <xref:System.Text.RegularExpressions.RegexMatchTimeoutException> exception is thrown if the execution time of the replacement operation exceeds the time-out interval specified by the <xref:System.Text.RegularExpressions.Regex.%23ctor(System.String,System.Text.RegularExpressions.RegexOptions,System.TimeSpan)?displayProperty=nameWithType> constructor. If you do not set a time-out interval when you call the constructor, the exception is thrown if the operation exceeds any time-out value established for the application domain in which the <xref:System.Text.RegularExpressions.Regex> object is created. If no time-out is defined in the <xref:System.Text.RegularExpressions.Regex> constructor call or in the application domain's properties, or if the time-out value is <xref:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout?displayProperty=nameWithType>, no exception is thrown
 
@@ -5778,7 +5778,7 @@ For more details about `startat`, see the Remarks section of <xref:System.Text.R
  The `replacement` parameter specifies the string that is to replace each match in `input`. `replacement` can consist of any combination of literal text and [substitutions](/dotnet/standard/base-types/substitutions-in-regular-expressions). For example, the replacement pattern `a*${test}b` inserts the string "a*" followed by the substring that is matched by the `test` capturing group, if any, followed by the string "b". The * character is not recognized as a metacharacter within a replacement pattern.
 
 > [!NOTE]
->  Substitutions are the only regular expression language elements that are recognized in a replacement pattern. All other regular expression language elements, including [character escapes](/dotnet/standard/base-types/character-escapes-in-regular-expressions), are allowed in regular expression patterns only and are not recognized in replacement patterns.
+> Substitutions are the only regular expression language elements that are recognized in a replacement pattern. All other regular expression language elements, including [character escapes](/dotnet/standard/base-types/character-escapes-in-regular-expressions), are allowed in regular expression patterns only and are not recognized in replacement patterns.
 
  The <xref:System.Text.RegularExpressions.RegexMatchTimeoutException> exception is thrown if the execution time of the replacement operation exceeds the time-out interval specified for the application domain in which the method is called. If no time-out is defined in the application domain's properties, or if the time-out value is <xref:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout?displayProperty=nameWithType>, no exception is thrown.
 
@@ -6099,7 +6099,7 @@ For more details about `startat`, see the Remarks section of <xref:System.Text.R
  The `replacement` parameter specifies the string that is to replace each match in `input`. `replacement` can consist of any combination of literal text and [substitutions](/dotnet/standard/base-types/substitutions-in-regular-expressions). For example, the replacement pattern `a*${test}b` inserts the string "a*" followed by the substring that is matched by the `test` capturing group, if any, followed by the string "b". The * character is not recognized as a metacharacter within a replacement pattern.
 
 > [!NOTE]
->  Substitutions are the only regular expression language elements that are recognized in a replacement pattern. All other regular expression language elements, including [character escapes](/dotnet/standard/base-types/character-escapes-in-regular-expressions), are allowed in regular expression patterns only and are not recognized in replacement patterns.
+> Substitutions are the only regular expression language elements that are recognized in a replacement pattern. All other regular expression language elements, including [character escapes](/dotnet/standard/base-types/character-escapes-in-regular-expressions), are allowed in regular expression patterns only and are not recognized in replacement patterns.
 
  The `matchTimeout` parameter specifies how long a pattern matching method should try to find a match before it times out. Setting a time-out interval prevents regular expressions that rely on excessive backtracking from appearing to stop responding when they process input that contains near matches. For more information, see [Best Practices for Regular Expressions](/dotnet/standard/base-types/best-practices) and [Backtracking](/dotnet/standard/base-types/backtracking-in-regular-expressions). If no match is found in that time interval, the method throws a <xref:System.Text.RegularExpressions.RegexMatchTimeoutException> exception. `matchTimeout` overrides any default time-out value defined for the application domain in which the method executes.
 
@@ -6636,7 +6636,7 @@ If the regular expression pattern includes multiple sets of capturing parenthese
  The `pattern` parameter consists of regular expression language elements that symbolically describe the string to match. For more information about regular expressions, see [.NET Regular Expressions](/dotnet/standard/base-types/regular-expressions) and [Regular Expression Language - Quick Reference](/dotnet/standard/base-types/regular-expression-language-quick-reference).
 
 > [!IMPORTANT]
->  Compiled regular expressions used in calls to static <xref:System.Text.RegularExpressions.Regex.Split*> methods are automatically cached. To manage the lifetime of compiled regular expressions yourself, use the instance <xref:System.Text.RegularExpressions.Regex.Split*> methods.
+> Compiled regular expressions used in calls to static <xref:System.Text.RegularExpressions.Regex.Split*> methods are automatically cached. To manage the lifetime of compiled regular expressions yourself, use the instance <xref:System.Text.RegularExpressions.Regex.Split*> methods.
 
  If multiple matches are adjacent to one another, an empty string is inserted into the array. For example, splitting a string on a single hyphen causes the returned array to include an empty string in the position where two adjacent hyphens are found, as the following code shows.
 
@@ -6833,7 +6833,7 @@ For more details about `startat`, see the Remarks section of <xref:System.Text.R
  The `pattern` parameter consists of regular expression language elements that symbolically describe the string to match. For more information about regular expressions, see [.NET Regular Expressions](/dotnet/standard/base-types/regular-expressions) and [Regular Expression Language - Quick Reference](/dotnet/standard/base-types/regular-expression-language-quick-reference).
 
 > [!IMPORTANT]
->  Compiled regular expressions used in calls to static <xref:System.Text.RegularExpressions.Regex.Split*> methods are automatically cached. To manage the lifetime of compiled regular expressions yourself, use the instance <xref:System.Text.RegularExpressions.Regex.Split*> methods.
+> Compiled regular expressions used in calls to static <xref:System.Text.RegularExpressions.Regex.Split*> methods are automatically cached. To manage the lifetime of compiled regular expressions yourself, use the instance <xref:System.Text.RegularExpressions.Regex.Split*> methods.
 
  If multiple matches are adjacent to one another, an empty string is inserted into the array. For example, splitting a string on a single hyphen causes the returned array to include an empty string in the position where two adjacent hyphens are found.
 
@@ -6934,7 +6934,7 @@ For more details about `startat`, see the Remarks section of <xref:System.Text.R
  The `pattern` parameter consists of regular expression language elements that symbolically describe the string to match. For more information about regular expressions, see [.NET Regular Expressions](/dotnet/standard/base-types/regular-expressions) and [Regular Expression Language - Quick Reference](/dotnet/standard/base-types/regular-expression-language-quick-reference).
 
 > [!IMPORTANT]
->  Compiled regular expressions used in calls to static <xref:System.Text.RegularExpressions.Regex.Split*> methods are automatically cached. To manage the lifetime of compiled regular expressions yourself, use the instance <xref:System.Text.RegularExpressions.Regex.Split*> methods.
+> Compiled regular expressions used in calls to static <xref:System.Text.RegularExpressions.Regex.Split*> methods are automatically cached. To manage the lifetime of compiled regular expressions yourself, use the instance <xref:System.Text.RegularExpressions.Regex.Split*> methods.
 
  If multiple matches are adjacent to one another, an empty string is inserted into the array. For example, splitting a string on a single hyphen causes the returned array to include an empty string in the position where two adjacent hyphens are found.
 

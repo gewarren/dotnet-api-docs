@@ -2249,7 +2249,7 @@ This method returns 0 if the value of current object is equal to <xref:System.Nu
  If the `left` and `right` parameters are non-zero numbers, the method always returns at least a value of 1 because all numbers can be divided by 1. If either parameter is zero, the method returns the absolute value of the non-zero parameter. If both values are zero, the method returns zero.
 
 > [!NOTE]
->  Computing the greatest common divisor of very large values of `left` and `right` can be a very time-consuming operation.
+> Computing the greatest common divisor of very large values of `left` and `right` can be a very time-consuming operation.
 
  The value returned by the <xref:System.Numerics.BigInteger.GreatestCommonDivisor*> method is always positive (including zero) regardless of the sign of the `left` and `right` parameters.
 
@@ -7565,7 +7565,7 @@ For <xref:System.Numerics.IFloatingPointIeee754`1> this method matches the IEEE 
  :::code language="vb" source="~/snippets/visualbasic/System.Numerics/BigInteger/op_BitwiseAnd/Operator1.vb" id="Snippet29":::
 
 > [!NOTE]
->  Unlike the bitwise left-shift operation with integer primitives, the <xref:System.Numerics.BigInteger.op_LeftShift*> method preserves the sign of the original <xref:System.Numerics.BigInteger> value.
+> Unlike the bitwise left-shift operation with integer primitives, the <xref:System.Numerics.BigInteger.op_LeftShift*> method preserves the sign of the original <xref:System.Numerics.BigInteger> value.
 
  Languages that do not support custom operators can perform a bitwise left-shift operation by multiplying `value` by `BigInteger.Pow(2, shift)`. The following example shows that the results are identical to the results of using this operator.
 
@@ -8850,12 +8850,12 @@ This operation performs an unsigned (otherwise known as a logical) right shift o
 |*digits*|A sequence of digits ranging from 0 to 9. Any leading zeros are ignored.|
 
 > [!NOTE]
->  The string specified by the `value` parameter is interpreted by using the <xref:System.Globalization.NumberStyles.Integer?displayProperty=nameWithType> style. It cannot contain any group separators or decimal separator, and it cannot have a decimal portion.
+> The string specified by the `value` parameter is interpreted by using the <xref:System.Globalization.NumberStyles.Integer?displayProperty=nameWithType> style. It cannot contain any group separators or decimal separator, and it cannot have a decimal portion.
 
  The `value` parameter is parsed by using the formatting information in a <xref:System.Globalization.NumberFormatInfo?displayProperty=nameWithType> object that is initialized for the current system culture. For more information, see <xref:System.Globalization.NumberFormatInfo.CurrentInfo*?displayProperty=nameWithType>. To parse a string by using the formatting information of a specific culture, use the <xref:System.Numerics.BigInteger.Parse(System.String,System.IFormatProvider)> method.
 
 > [!IMPORTANT]
->  If you use the <xref:System.Numerics.BigInteger.Parse*> method to round-trip the string representation of a <xref:System.Numerics.BigInteger> value that was output by the <xref:System.Numerics.BigInteger.ToString*> method, you should use the <xref:System.Numerics.BigInteger.ToString(System.String)?displayProperty=nameWithType> method with the "R" format specifier to generate the string representation of the <xref:System.Numerics.BigInteger> value. Otherwise, the string representation of the <xref:System.Numerics.BigInteger> preserves only the 50 most significant digits of the original value, and data may be lost when you use the <xref:System.Numerics.BigInteger.Parse*> method to restore the <xref:System.Numerics.BigInteger> value.
+> If you use the <xref:System.Numerics.BigInteger.Parse*> method to round-trip the string representation of a <xref:System.Numerics.BigInteger> value that was output by the <xref:System.Numerics.BigInteger.ToString*> method, you should use the <xref:System.Numerics.BigInteger.ToString(System.String)?displayProperty=nameWithType> method with the "R" format specifier to generate the string representation of the <xref:System.Numerics.BigInteger> value. Otherwise, the string representation of the <xref:System.Numerics.BigInteger> preserves only the 50 most significant digits of the original value, and data may be lost when you use the <xref:System.Numerics.BigInteger.Parse*> method to restore the <xref:System.Numerics.BigInteger> value.
 
 
 
@@ -9060,12 +9060,12 @@ This operation performs an unsigned (otherwise known as a logical) right shift o
 |<xref:System.Globalization.NumberStyles.Any>|All elements. However, `value` cannot represent a hexadecimal number.|
 
 > [!IMPORTANT]
->  If you use the <xref:System.Numerics.BigInteger.Parse*> method to round-trip the string representation of a <xref:System.Numerics.BigInteger> value that was output by the <xref:System.Numerics.BigInteger.ToString*> method, you should use the <xref:System.Numerics.BigInteger.ToString(System.String)?displayProperty=nameWithType> method with the "R" format specifier to generate the string representation of the <xref:System.Numerics.BigInteger> value. Otherwise, the string representation of the <xref:System.Numerics.BigInteger> preserves only the 50 most significant digits of the original value, and data may be lost when you use the <xref:System.Numerics.BigInteger.Parse*> method to restore the <xref:System.Numerics.BigInteger> value.
+> If you use the <xref:System.Numerics.BigInteger.Parse*> method to round-trip the string representation of a <xref:System.Numerics.BigInteger> value that was output by the <xref:System.Numerics.BigInteger.ToString*> method, you should use the <xref:System.Numerics.BigInteger.ToString(System.String)?displayProperty=nameWithType> method with the "R" format specifier to generate the string representation of the <xref:System.Numerics.BigInteger> value. Otherwise, the string representation of the <xref:System.Numerics.BigInteger> preserves only the 50 most significant digits of the original value, and data may be lost when you use the <xref:System.Numerics.BigInteger.Parse*> method to restore the <xref:System.Numerics.BigInteger> value.
 
  Unlike the other <xref:System.Globalization.NumberStyles> values, which allow for, but do not require, the presence of particular style elements in `value`, the <xref:System.Globalization.NumberStyles.AllowHexSpecifier?displayProperty=nameWithType> style value means that the individual numeric characters in `value` are always interpreted as hexadecimal characters. Valid hexadecimal characters are 0-9, A-F, and a-f. The only other flags that can be combined with the `style` parameter are <xref:System.Globalization.NumberStyles.AllowLeadingWhite?displayProperty=nameWithType> and <xref:System.Globalization.NumberStyles.AllowTrailingWhite?displayProperty=nameWithType>. (The <xref:System.Globalization.NumberStyles> enumeration includes a composite number style, <xref:System.Globalization.NumberStyles.HexNumber>, that includes both white-space flags.)
 
 > [!NOTE]
->  If `value` is the string representation of a hexadecimal number, it cannot be preceded by any decoration (such as `0x` or `&h`) that differentiates it as a hexadecimal number. This causes the conversion to fail.
+> If `value` is the string representation of a hexadecimal number, it cannot be preceded by any decoration (such as `0x` or `&h`) that differentiates it as a hexadecimal number. This causes the conversion to fail.
 
  If `value` is a hexadecimal string, the <xref:System.Numerics.BigInteger.Parse(System.String,System.Globalization.NumberStyles)> method interprets `value` as a negative number stored by using two's complement representation if its first two hexadecimal digits are greater than or equal to `0x80`. In other words, the method interprets the highest-order bit of the first byte in `value` as the sign bit. To make sure that a hexadecimal string is correctly interpreted as a positive number, the first digit in `value` must have a value of zero. For example, the method interprets `0x80` as a negative value, but it interprets either `0x080` or `0x0080` as a positive value. The following example illustrates the difference between hexadecimal strings that represent negative and positive values.
 
@@ -9172,10 +9172,10 @@ This operation performs an unsigned (otherwise known as a logical) right shift o
 |*digits*|A sequence of digits ranging from 0 to 9. Any leading zeros are ignored.|
 
 > [!NOTE]
->  The string specified by the `value` parameter is interpreted using the <xref:System.Globalization.NumberStyles.Integer?displayProperty=nameWithType> style. It cannot contain any group separators or decimal separator, and it cannot have a decimal portion.
+> The string specified by the `value` parameter is interpreted using the <xref:System.Globalization.NumberStyles.Integer?displayProperty=nameWithType> style. It cannot contain any group separators or decimal separator, and it cannot have a decimal portion.
 
 > [!IMPORTANT]
->  If you use the <xref:System.Numerics.BigInteger.Parse*> method to round-trip the string representation of a <xref:System.Numerics.BigInteger> value that was output by the <xref:System.Numerics.BigInteger.ToString*> method, you should use the <xref:System.Numerics.BigInteger.ToString(System.String)?displayProperty=nameWithType> method with the "R" format specifier to generate the string representation of the <xref:System.Numerics.BigInteger> value. Otherwise, the string representation of the <xref:System.Numerics.BigInteger> preserves only the 50 most significant digits of the original value, and data may be lost when you use the <xref:System.Numerics.BigInteger.Parse*> method to restore the <xref:System.Numerics.BigInteger> value.
+> If you use the <xref:System.Numerics.BigInteger.Parse*> method to round-trip the string representation of a <xref:System.Numerics.BigInteger> value that was output by the <xref:System.Numerics.BigInteger.ToString*> method, you should use the <xref:System.Numerics.BigInteger.ToString(System.String)?displayProperty=nameWithType> method with the "R" format specifier to generate the string representation of the <xref:System.Numerics.BigInteger> value. Otherwise, the string representation of the <xref:System.Numerics.BigInteger> preserves only the 50 most significant digits of the original value, and data may be lost when you use the <xref:System.Numerics.BigInteger.Parse*> method to restore the <xref:System.Numerics.BigInteger> value.
 
  The `provider` parameter is an <xref:System.IFormatProvider> implementation whose <xref:System.IFormatProvider.GetFormat*> method returns a <xref:System.Globalization.NumberFormatInfo> object that provides culture-specific formatting information. When the <xref:System.Numerics.BigInteger.Parse(System.String,System.IFormatProvider)> method is invoked, it calls the `provider` parameter's <xref:System.IFormatProvider.GetFormat*> method and passes it a <xref:System.Type> object that represents the <xref:System.Globalization.NumberFormatInfo> type. The <xref:System.IFormatProvider.GetFormat*> method then returns the <xref:System.Globalization.NumberFormatInfo> object that provides information about the format of the `value` parameter. There are three ways to use the `provider` parameter to supply custom formatting information to the parse operation:
 
@@ -9500,12 +9500,12 @@ If `provider` is `null`, the <xref:System.Globalization.NumberFormatInfo> object
 |<xref:System.Globalization.NumberStyles.Any>|All elements. However, `value` cannot represent a hexadecimal number.|
 
 > [!IMPORTANT]
->  If you use the <xref:System.Numerics.BigInteger.Parse*> method to round-trip the string representation of a <xref:System.Numerics.BigInteger> value that was output by the <xref:System.Numerics.BigInteger.ToString*> method, you should use the <xref:System.Numerics.BigInteger.ToString(System.String)?displayProperty=nameWithType> method with the "R" format specifier to generate the string representation of the <xref:System.Numerics.BigInteger> value. Otherwise, the string representation of the <xref:System.Numerics.BigInteger> preserves only the 50 most significant digits of the original value, and data may be lost when you use the <xref:System.Numerics.BigInteger.Parse*> method to restore the <xref:System.Numerics.BigInteger> value.
+> If you use the <xref:System.Numerics.BigInteger.Parse*> method to round-trip the string representation of a <xref:System.Numerics.BigInteger> value that was output by the <xref:System.Numerics.BigInteger.ToString*> method, you should use the <xref:System.Numerics.BigInteger.ToString(System.String)?displayProperty=nameWithType> method with the "R" format specifier to generate the string representation of the <xref:System.Numerics.BigInteger> value. Otherwise, the string representation of the <xref:System.Numerics.BigInteger> preserves only the 50 most significant digits of the original value, and data may be lost when you use the <xref:System.Numerics.BigInteger.Parse*> method to restore the <xref:System.Numerics.BigInteger> value.
 
  Unlike the other <xref:System.Globalization.NumberStyles> values, which allow for but do not require the presence of particular style elements in `value`, the <xref:System.Globalization.NumberStyles.AllowHexSpecifier?displayProperty=nameWithType> style value means that the individual numeric characters in `value` are always interpreted as hexadecimal characters. Valid hexadecimal characters are 0-9, A-F, and a-f. The only other flags that can be combined with the `style` parameter are <xref:System.Globalization.NumberStyles.AllowLeadingWhite?displayProperty=nameWithType> and <xref:System.Globalization.NumberStyles.AllowTrailingWhite?displayProperty=nameWithType>. (The <xref:System.Globalization.NumberStyles> enumeration includes a composite number style, <xref:System.Globalization.NumberStyles.HexNumber>, that includes both white-space flags.)
 
 > [!NOTE]
->  If `value` is the string representation of a hexadecimal number, it cannot be preceded by any decoration (such as `0x` or `&h`) that differentiates it as a hexadecimal number. This causes the conversion to fail.
+> If `value` is the string representation of a hexadecimal number, it cannot be preceded by any decoration (such as `0x` or `&h`) that differentiates it as a hexadecimal number. This causes the conversion to fail.
 
  If `value` is a hexadecimal string, the <xref:System.Numerics.BigInteger.Parse(System.String,System.Globalization.NumberStyles)> method interprets `value` as a negative number stored by using two's complement representation if its first two hexadecimal digits are greater than or equal to `0x80`. In other words, the method interprets the highest-order bit of the first byte in `value` as the sign bit. To make sure that a hexadecimal string is correctly interpreted as a positive number, the first digit in `value` must have a value of zero. For example, the method interprets `0x80` as a negative value, but it interprets either `0x080` or `0x0080` as a positive value. The following example illustrates the difference between hexadecimal strings that represent negative and positive values.
 
@@ -11521,7 +11521,7 @@ The following example calls the <xref:System.Numerics.BigInteger.CompareTo(Syste
  You can round-trip a <xref:System.Numerics.BigInteger> value by storing it to a byte array and then restoring it using the <xref:System.Numerics.BigInteger.%23ctor(System.Byte%5B%5D)> constructor.
 
 > [!CAUTION]
->  If your code modifies the value of individual bytes in the array returned by this method before it restores the value, you must make sure that you do not unintentionally change the sign bit. For example, if your modifications increase a positive value so that the highest-order bit in the last element of the byte array becomes set, you can add a new byte whose value is zero to the end of the array.
+> If your code modifies the value of individual bytes in the array returned by this method before it restores the value, you must make sure that you do not unintentionally change the sign bit. For example, if your modifications increase a positive value so that the highest-order bit in the last element of the byte array becomes set, you can add a new byte whose value is zero to the end of the array.
 
 
 
@@ -12273,7 +12273,7 @@ The integer value `33022` can be exported in four different arrays:
 |*digits*|A sequence of decimal digits ranging from 0 to 9.|
 
 > [!NOTE]
->  The string specified by the `value` parameter cannot contain any group separators or decimal separator, and it cannot have a decimal portion.
+> The string specified by the `value` parameter cannot contain any group separators or decimal separator, and it cannot have a decimal portion.
 
  The `value` parameter is interpreted by using the <xref:System.Globalization.NumberStyles.Integer?displayProperty=nameWithType> style. In addition to the decimal digits, only leading and trailing spaces with a leading sign are allowed. To explicitly define the style elements with the culture-specific formatting information that can be present in `value`, call the <xref:System.Numerics.BigInteger.TryParse(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.Numerics.BigInteger@)> method.
 
@@ -12716,12 +12716,12 @@ If `provider` is `null`, the <xref:System.Globalization.NumberFormatInfo> object
 |<xref:System.Globalization.NumberStyles.Any>|All elements. However, `value` cannot represent a hexadecimal number.|
 
 > [!IMPORTANT]
->  If you use the <xref:System.Numerics.BigInteger.TryParse*> method to round-trip the string representation of a <xref:System.Numerics.BigInteger> value that was output by the <xref:System.Numerics.BigInteger.ToString*> method, you should use the <xref:System.Numerics.BigInteger.ToString(System.String)?displayProperty=nameWithType> method with the "R" format specifier to generate the string representation of the <xref:System.Numerics.BigInteger> value. Otherwise, the string representation of the <xref:System.Numerics.BigInteger> preserves only the 50 most significant digits of the original value, and data may be lost when you use the <xref:System.Numerics.BigInteger.TryParse*> method to restore the <xref:System.Numerics.BigInteger> value.
+> If you use the <xref:System.Numerics.BigInteger.TryParse*> method to round-trip the string representation of a <xref:System.Numerics.BigInteger> value that was output by the <xref:System.Numerics.BigInteger.ToString*> method, you should use the <xref:System.Numerics.BigInteger.ToString(System.String)?displayProperty=nameWithType> method with the "R" format specifier to generate the string representation of the <xref:System.Numerics.BigInteger> value. Otherwise, the string representation of the <xref:System.Numerics.BigInteger> preserves only the 50 most significant digits of the original value, and data may be lost when you use the <xref:System.Numerics.BigInteger.TryParse*> method to restore the <xref:System.Numerics.BigInteger> value.
 
  If the <xref:System.Globalization.NumberStyles.AllowHexSpecifier?displayProperty=nameWithType> flag is used, `value` must be a hexadecimal value. The only other flags that can be present in `style` are <xref:System.Globalization.NumberStyles.AllowLeadingWhite?displayProperty=nameWithType> and <xref:System.Globalization.NumberStyles.AllowTrailingWhite?displayProperty=nameWithType>. (The <xref:System.Globalization.NumberStyles> enumeration has a composite style, <xref:System.Globalization.NumberStyles.HexNumber>, that includes both white-space flags.)
 
 > [!NOTE]
->  If `value` is the string representation of a hexadecimal number, it cannot be preceded by any decoration (such as `0x` or `&h`) that differentiates it as a hexadecimal number. This causes the conversion to fail.
+> If `value` is the string representation of a hexadecimal number, it cannot be preceded by any decoration (such as `0x` or `&h`) that differentiates it as a hexadecimal number. This causes the conversion to fail.
 
  If `value` is a hexadecimal string, the <xref:System.Numerics.BigInteger.TryParse(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.Numerics.BigInteger@)> method interprets `value` as a negative number stored by using two's complement representation if its first two hexadecimal digits are greater than or equal to `0x80`. In other words, the method interprets the highest-order bit of the first byte in `value` as the sign bit. To make sure that a hexadecimal string is correctly interpreted as a positive number, the first digit in `value` must have a value of zero. For example, the method interprets `0x80` as a negative value, but it interprets either `0x080` or `0x0080` as a positive value. The following example illustrates the difference between hexadecimal strings that represent negative and positive values.
 

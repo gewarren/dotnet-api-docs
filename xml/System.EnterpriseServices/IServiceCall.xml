@@ -61,7 +61,7 @@
  The batch work that is run in this method runs in the context and thread apartment of the activity created by the call to <xref:System.EnterpriseServices.Activity>. The batch work in this method is run by a call to either <xref:System.EnterpriseServices.Activity.SynchronousCall*?displayProperty=nameWithType> or <xref:System.EnterpriseServices.Activity.AsynchronousCall*?displayProperty=nameWithType>.
 
 > [!CAUTION]
->  You must ensure that this method is thread safe in situations where the activity object created by <xref:System.EnterpriseServices.Activity> is not created with a synchronized context, because in such situations many calls to <xref:System.EnterpriseServices.IServiceCall.OnCall*> can run at the same time.
+> You must ensure that this method is thread safe in situations where the activity object created by <xref:System.EnterpriseServices.Activity> is not created with a synchronized context, because in such situations many calls to <xref:System.EnterpriseServices.IServiceCall.OnCall*> can run at the same time.
 
  To achieve the best performance from the system, the context configuration of the activity created by <xref:System.EnterpriseServices.Activity> should be matched to the batch work performed by the <xref:System.EnterpriseServices.IServiceCall.OnCall*> method. For example, if the batch work in the <xref:System.EnterpriseServices.IServiceCall.OnCall*> method uses poolable objects, the activity created by <xref:System.EnterpriseServices.Activity> should be configured to use the multithreaded apartment (MTA).
 

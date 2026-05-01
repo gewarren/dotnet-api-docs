@@ -84,10 +84,10 @@
  The <xref:System.ServiceModel.OperationContractAttribute.IsOneWay> property indicates that a method does not return any value at all, including an empty underlying response message. This type of method is useful for notifications or event-style communication. Methods of this kind cannot return a reply message so the method's declaration must return `void`.
 
 > [!IMPORTANT]
->  When programmatically retrieving the information store in this attribute, use the <xref:System.ServiceModel.Description.ContractDescription> class instead of reflection.
+> When programmatically retrieving the information store in this attribute, use the <xref:System.ServiceModel.Description.ContractDescription> class instead of reflection.
 
 > [!NOTE]
->  If the <xref:System.ServiceModel.OperationContractAttribute.IsOneWay> property is set to `false`, (the default), even methods that return `void` are two-way methods at the underlying message level. In this case, the infrastructure creates and sends an empty message to indicate to the caller that the method has returned. Using this approach enables the application and the infrastructure to send error information (such as a SOAP fault) back to the client. Setting <xref:System.ServiceModel.OperationContractAttribute.IsOneWay> to `true` is the only way to prevent the creation and dispatch of a reply message. For more information, see [One-Way Services](/dotnet/framework/wcf/feature-details/one-way-services).
+> If the <xref:System.ServiceModel.OperationContractAttribute.IsOneWay> property is set to `false`, (the default), even methods that return `void` are two-way methods at the underlying message level. In this case, the infrastructure creates and sends an empty message to indicate to the caller that the method has returned. Using this approach enables the application and the infrastructure to send error information (such as a SOAP fault) back to the client. Setting <xref:System.ServiceModel.OperationContractAttribute.IsOneWay> to `true` is the only way to prevent the creation and dispatch of a reply message. For more information, see [One-Way Services](/dotnet/framework/wcf/feature-details/one-way-services).
 
  The <xref:System.ServiceModel.OperationContractAttribute.Action> and <xref:System.ServiceModel.OperationContractAttribute.ReplyAction> properties can be used not only to modify the default action of SOAP messages but also to create handlers for unrecognized messages or to disable adding actions for direct message programming. Use the <xref:System.ServiceModel.OperationContractAttribute.IsInitiating> property to prevent clients from calling a particular service operation prior to other operations. Use the <xref:System.ServiceModel.OperationContractAttribute.IsTerminating> property to have WCF close the channel after clients call a particular service operation. For more information, see [Using Sessions](/dotnet/framework/wcf/using-sessions).
 
@@ -217,7 +217,7 @@ public class OneAndTwoWay
 - The service operation can take only a <xref:System.ServiceModel.Channels.Message> object and return nothing (that is, return `void`).
 
 > [!NOTE]
->  A service contract can have only one service operation with the <xref:System.ServiceModel.OperationContractAttribute.Action> property set to "*". Any group of service contracts hosted at the same listenUri that a service class implements can have many service operations with the <xref:System.ServiceModel.OperationContractAttribute.Action> property set to "\*" when the <xref:System.ServiceModel.OperationContractAttribute.IsInitiating> property is set to `false`. However, only one of those service operations can have the <xref:System.ServiceModel.OperationContractAttribute.Action> property set to "\*" and the <xref:System.ServiceModel.OperationContractAttribute.IsInitiating> property set to true. For more details, see <xref:System.ServiceModel.OperationContractAttribute.IsInitiating>.
+> A service contract can have only one service operation with the <xref:System.ServiceModel.OperationContractAttribute.Action> property set to "*". Any group of service contracts hosted at the same listenUri that a service class implements can have many service operations with the <xref:System.ServiceModel.OperationContractAttribute.Action> property set to "\*" when the <xref:System.ServiceModel.OperationContractAttribute.IsInitiating> property is set to `false`. However, only one of those service operations can have the <xref:System.ServiceModel.OperationContractAttribute.Action> property set to "\*" and the <xref:System.ServiceModel.OperationContractAttribute.IsInitiating> property set to true. For more details, see <xref:System.ServiceModel.OperationContractAttribute.IsInitiating>.
 
 
 
@@ -289,7 +289,7 @@ public class OneAndTwoWay
  Client contracts can use the <xref:System.ServiceModel.OperationContractAttribute.AsyncPattern> property to indicate an asynchronous method pair that the client can use to invoke the operation asynchronously. Typically, client applications use the [ServiceModel Metadata Utility Tool (Svcutil.exe)](/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe) tool and the `/async` option to generate a `Begin`\<*methodName*> and `End`\<*methodName*> method pair that the client can use to invoke the operation asynchronously.
 
 > [!NOTE]
->  If a service operation has both an asynchronous and a synchronous version, the default behavior on the service is to invoke the synchronous version.
+> If a service operation has both an asynchronous and a synchronous version, the default behavior on the service is to invoke the synchronous version.
 
 
 
@@ -410,14 +410,14 @@ public interface IAddTwoNumbers
  The <xref:System.ServiceModel.OperationContractAttribute.IsInitiating> property controls whether an operation can be the first operation called when a session is created.
 
 > [!NOTE]
->  The value of <xref:System.ServiceModel.ServiceContractAttribute.SessionMode?displayProperty=nameWithType> must be either <xref:System.ServiceModel.SessionMode.Allowed> or <xref:System.ServiceModel.SessionMode.Required> and the binding used must require or allow sessions for the <xref:System.ServiceModel.OperationContractAttribute.IsInitiating> property to work properly.
+> The value of <xref:System.ServiceModel.ServiceContractAttribute.SessionMode?displayProperty=nameWithType> must be either <xref:System.ServiceModel.SessionMode.Allowed> or <xref:System.ServiceModel.SessionMode.Required> and the binding used must require or allow sessions for the <xref:System.ServiceModel.OperationContractAttribute.IsInitiating> property to work properly.
 
  The default is `true`, which means that an operation can be the first one called on a channel. Subsequent calls to the initiating method have no effect, other than to call the method. No other sessions are created. If the contract does not make use of a session, setting <xref:System.ServiceModel.OperationContractAttribute.IsInitiating> to `false` is ignored.
 
  Typically, you set <xref:System.ServiceModel.OperationContractAttribute.IsInitiating> to `false` to force clients to call another method on the service before they can invoke this one. For example, if your service has a series of operations that depend on an order ID number, you can set <xref:System.ServiceModel.OperationContractAttribute.IsInitiating> to `true` for a `GetOrderId` service operation and set all remaining service operations to `false`. This ensures that each new client obtains an order ID prior to using the other methods exposed by the service.
 
 > [!NOTE]
->  There is an interaction between <xref:System.ServiceModel.OperationContractAttribute.IsInitiating> and the <xref:System.ServiceModel.OperationContractAttribute.Action> property. A service contract can have only one service operation with the <xref:System.ServiceModel.OperationContractAttribute.Action> property set to "*". Any group of service contracts hosted at the same listen URI that a service class implements can have many service operations with the <xref:System.ServiceModel.OperationContractAttribute.Action> property set to "\*" when the <xref:System.ServiceModel.OperationContractAttribute.IsInitiating> property is set to `false`. However, only one of those service methods can have the <xref:System.ServiceModel.OperationContractAttribute.Action> property set to "\*" and the <xref:System.ServiceModel.OperationContractAttribute.IsInitiating> property set to `true`.
+> There is an interaction between <xref:System.ServiceModel.OperationContractAttribute.IsInitiating> and the <xref:System.ServiceModel.OperationContractAttribute.Action> property. A service contract can have only one service operation with the <xref:System.ServiceModel.OperationContractAttribute.Action> property set to "*". Any group of service contracts hosted at the same listen URI that a service class implements can have many service operations with the <xref:System.ServiceModel.OperationContractAttribute.Action> property set to "\*" when the <xref:System.ServiceModel.OperationContractAttribute.IsInitiating> property is set to `false`. However, only one of those service methods can have the <xref:System.ServiceModel.OperationContractAttribute.Action> property set to "\*" and the <xref:System.ServiceModel.OperationContractAttribute.IsInitiating> property set to `true`.
 
  If a service receives a message for a non-initiating operation, the service returns an ActionNotSupported SOAP fault. The client experiences this as an <xref:System.ServiceModel.FaultException>. If a client calls a non-initiating operation first, the client runtime throws an <xref:System.InvalidOperationException?displayProperty=nameWithType>.
 
@@ -615,7 +615,7 @@ public class OneAndTwoWay
  For more information about using this property with sessions, see [Using Sessions](/dotnet/framework/wcf/using-sessions).
 
 > [!NOTE]
->  If a caller is listening for the <xref:System.ServiceModel.OperationContext.OperationCompleted?displayProperty=nameWithType> event for an <xref:System.ServiceModel.OperationContractAttribute.IsTerminating?displayProperty=nameWithType> operation, it is possible to block when the response is received. The proper way to handle this is to schedule work on another thread when <xref:System.ServiceModel.OperationContext.OperationCompleted> is raised and then immediately return from that event handler.
+> If a caller is listening for the <xref:System.ServiceModel.OperationContext.OperationCompleted?displayProperty=nameWithType> event for an <xref:System.ServiceModel.OperationContractAttribute.IsTerminating?displayProperty=nameWithType> operation, it is possible to block when the response is received. The proper way to handle this is to schedule work on another thread when <xref:System.ServiceModel.OperationContext.OperationCompleted> is raised and then immediately return from that event handler.
 
 
 

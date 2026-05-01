@@ -28,7 +28,7 @@
  One instance of this class is created per application domain, and it remains valid as long as the application domain remains active. Information about an instance of this class is available through the `Cache` property of the <xref:System.Web.HttpContext> object or the `Cache` property of the <xref:System.Web.UI.Page> object.
 
 > [!NOTE]
->  The <xref:System.Web.Caching.Cache> class is not intended for use outside of ASP.NET applications. It was designed and tested for use in ASP.NET to provide caching for Web applications. For other types of applications, such as console applications or Windows Forms applications, use the <xref:System.Runtime.Caching.ObjectCache> class.
+> The <xref:System.Web.Caching.Cache> class is not intended for use outside of ASP.NET applications. It was designed and tested for use in ASP.NET to provide caching for Web applications. For other types of applications, such as console applications or Windows Forms applications, use the <xref:System.Runtime.Caching.ObjectCache> class.
 
 
 
@@ -36,7 +36,7 @@
  The following example is a page that shows users the value assigned to an item in the cache, and then notifies them when the item is removed from the cache. It creates a `RemovedCallback` method, which has the signature of the `CacheItemRemovedCallback` delegate, to notify users when the cache item is removed, and it uses the <xref:System.Web.Caching.CacheItemRemovedReason> enumeration to tell them why it was removed. In addition, it uses the <xref:System.Web.Caching.Cache.Item*?displayProperty=nameWithType> property to add objects to the cache and retrieve the value of those objects. In the `AddItemToCache` method, it uses the <xref:System.Web.Caching.Cache.Add*?displayProperty=nameWithType> method to add an item to the cache. To use the `CacheItemRemovedCallback` delegate, you must add an item to the cache with this method or the <xref:System.Web.Caching.Cache.Insert*?displayProperty=nameWithType> method, so that ASP.NET can automatically make the proper method calls when the item is removed. The custom `RemoveItemFromCache` method uses the <xref:System.Web.Caching.Cache.Remove*?displayProperty=nameWithType> method to explicitly delete the item from the cache, causing the `RemovedCallback` method to be invoked.
 
 > [!NOTE]
->  The instance of Cache that is accessed by the snippet below is a member of the <xref:System.Web.UI.Page> object that this sample inherits.
+> The instance of Cache that is accessed by the snippet below is a member of the <xref:System.Web.UI.Page> object that this sample inherits.
 
  [!code-aspx-csharp[System.Web.Caching Examples#1](~/snippets/csharp/VS_Snippets_WebNet/System.Web.Caching Examples/CS/cachecs.aspx#1)]
  [!code-aspx-vb[System.Web.Caching Examples#1](~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Caching Examples/VB/cachevb.aspx#1)]
@@ -127,7 +127,7 @@
  The following example creates an `AddItemToCache` method. When this method is called, it sets an `itemRemoved` property to `false` and registers an `onRemove` method with a new instance of the <xref:System.Web.Caching.CacheItemRemovedCallback> delegate. The delegate's signature is used in the `RemovedCallback` method. The `AddItemToCache` method then checks the value associated with the `Key1` key in the cache. If the value is `null`, the `Add` method places an item in the cache with a key of `Key1`, a value of `Value 1`, an absolute expiration of 60 seconds, and a high cache priority. It also uses the `onRemove` method as an argument. This allows the `RemovedCallback` method to be called when this item is removed from the cache.
 
 > [!NOTE]
->  For examples of how to use the <xref:System.Web.Caching.CacheDependency> class and the <xref:System.Web.Caching.CacheItemRemovedCallback> delegate, see [Caching Application Data](https://learn.microsoft.com/previous-versions/aspnet/6hbbsfk6(v=vs.100)).
+> For examples of how to use the <xref:System.Web.Caching.CacheDependency> class and the <xref:System.Web.Caching.CacheItemRemovedCallback> delegate, see [Caching Application Data](https://learn.microsoft.com/previous-versions/aspnet/6hbbsfk6(v=vs.100)).
 
  [!code-csharp[System.Web.Caching Examples#3](~/snippets/csharp/VS_Snippets_WebNet/System.Web.Caching Examples/CS/cachecs.aspx#3)]
  [!code-vb[System.Web.Caching Examples#3](~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Caching Examples/VB/cachevb.aspx#3)]
@@ -474,7 +474,7 @@
  The following example demonstrates how to insert an item into an application's cache with an absolute expiration.
 
 > [!NOTE]
->  Since this form of the `Insert` method supports cache dependencies, if the item has no dependencies, you must declare the `dependency` parameter as `null` (`Nothing` in Visual Basic) in the comma-delimited list of parameters.
+> Since this form of the `Insert` method supports cache dependencies, if the item has no dependencies, you must declare the `dependency` parameter as `null` (`Nothing` in Visual Basic) in the comma-delimited list of parameters.
 
  [!code-csharp[Classic Cache.Insert2 Example#1](~/snippets/csharp/VS_Snippets_WebNet/Classic Cache.Insert2 Example/CS/source.cs#1)]
  [!code-vb[Classic Cache.Insert2 Example#1](~/snippets/visualbasic/VS_Snippets_WebNet/Classic Cache.Insert2 Example/VB/source.vb#1)]
@@ -601,7 +601,7 @@
  The following example demonstrates how to assign an item high priority when you insert it into your application's `Cache` object.
 
 > [!NOTE]
->  For more information about how to use this method with the <xref:System.Web.Caching.CacheItemRemovedCallback> delegate, see [How to: Notify an Application When an Item Is Removed from the Cache](https://learn.microsoft.com/previous-versions/aspnet/7kxdx246(v=vs.100)).
+> For more information about how to use this method with the <xref:System.Web.Caching.CacheItemRemovedCallback> delegate, see [How to: Notify an Application When an Item Is Removed from the Cache](https://learn.microsoft.com/previous-versions/aspnet/7kxdx246(v=vs.100)).
 
  [!code-csharp[Classic Cache.Insert3 Example#1](~/snippets/csharp/VS_Snippets_WebNet/Classic Cache.Insert3 Example/CS/source.cs#1)]
  [!code-vb[Classic Cache.Insert3 Example#1](~/snippets/visualbasic/VS_Snippets_WebNet/Classic Cache.Insert3 Example/VB/source.vb#1)]

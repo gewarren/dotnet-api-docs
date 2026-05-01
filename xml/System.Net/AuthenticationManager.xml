@@ -282,10 +282,10 @@
  To add an SPN value to this dictionary, use the <xref:System.Uri.AbsoluteUri*> of the <xref:System.Net.WebRequest.RequestUri*> as the key. Internally, the key is truncated to include the <xref:System.Uri.Scheme*>, <xref:System.Uri.Host*>, and the <xref:System.Uri.Port*> if it is not the default port.
 
 > [!NOTE]
->  Accessing the methods and properties of the <xref:System.Net.AuthenticationManager.CustomTargetNameDictionary*> requires unrestricted <xref:System.Net.WebPermission>.
+> Accessing the methods and properties of the <xref:System.Net.AuthenticationManager.CustomTargetNameDictionary*> requires unrestricted <xref:System.Net.WebPermission>.
 
 > [!NOTE]
->  When Kerberos authentication is performed through a proxy, both the proxy and the ultimate host name need to be resolved to an SPN. The proxy name resolution is protected by a timeout. Resolution of the ultimate host name to a SPN requires a DNS lookup, and there is no timeout associated directly with this operation. Therefore synchronous operations may take longer to timeout. To overcome this, add the ultimate host's URI prefix to the SPN cache prior to making requests to it.
+> When Kerberos authentication is performed through a proxy, both the proxy and the ultimate host name need to be resolved to an SPN. The proxy name resolution is protected by a timeout. Resolution of the ultimate host name to a SPN requires a DNS lookup, and there is no timeout associated directly with this operation. Therefore synchronous operations may take longer to timeout. To overcome this, add the ultimate host's URI prefix to the SPN cache prior to making requests to it.
 
  Version 3.5 SP1 now defaults to specifying the host name used in the request URL in the SPN in the NTLM (NT LAN Manager) authentication exchange when the <xref:System.Net.AuthenticationManager.CustomTargetNameDictionary> property is not set. The host name used in the request URL may be different from the Host header specified in the <xref:System.Net.HttpRequestHeader?displayProperty=nameWithType> in the client request. The host name used in the request URL may be different from the actual host name of the server, the machine name of the server, the computer's IP address, or the loopback address. In these cases, Windows will fail the authentication request. To address the issue, you may need to notify Windows that the host name used in the request URL in the client request ("contoso", for example) is actually an alternate name for the local computer.
 

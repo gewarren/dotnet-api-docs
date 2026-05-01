@@ -39,7 +39,7 @@
  The <xref:System.Web.Configuration.TrustSection.HostSecurityPolicyResolverType*> attribute in the `trust` element indicates the custom <xref:System.Web.Hosting.HostSecurityPolicyResolver> object that will be loaded by ASP.NET. If the attribute is set to an empty string, the application uses the ASP.NET default logic for determining the permissions for the assembly. The <xref:System.Web.Hosting.HostSecurityPolicyResolver> type attribute cannot be set to a null value.
 
 > [!IMPORTANT]
->  The assembly that contains a derived <xref:System.Web.Hosting.HostSecurityPolicyResolver> type must run with full trust, because the custom type provides information that ASP.NET can use to elevate assemblies to full trust. In general, you should deploy a custom policy resolver type in the global assembly cache, where it will run with full trust.
+> The assembly that contains a derived <xref:System.Web.Hosting.HostSecurityPolicyResolver> type must run with full trust, because the custom type provides information that ASP.NET can use to elevate assemblies to full trust. In general, you should deploy a custom policy resolver type in the global assembly cache, where it will run with full trust.
 
  When you implement this class, you must override the <xref:System.Web.Hosting.HostSecurityPolicyResolver.ResolvePolicy*> method. Depending on the <xref:System.Security.Policy.Evidence> instance that is passed as a parameter, the method returns an enumeration value that indicates the security policy to apply to the assembly. The set of available security policies is determined by the <xref:System.Web.Hosting.HostSecurityPolicyResults> enumeration.
 

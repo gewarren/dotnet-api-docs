@@ -68,7 +68,7 @@
  The <xref:System.Windows.Forms.WebBrowser> control lets you host Web pages and other browser-enabled documents in your Windows Forms applications. You can use the <xref:System.Windows.Forms.WebBrowser> control, for example, to provide integrated HTML-based user assistance or Web browsing capabilities in your application. Additionally, you can use the <xref:System.Windows.Forms.WebBrowser> control to add your existing Web-based controls to your Windows Forms client applications.
 
 > [!IMPORTANT]
->  The <xref:System.Windows.Forms.WebBrowser> control is resource-intensive. To ensure that all resources are released in a timely fashion, call the <xref:System.ComponentModel.Component.Dispose> method when you're finished using the control. You must call the <xref:System.ComponentModel.Component.Dispose> method on the same thread that attached the events, which should always be the message or user-interface (UI) thread.
+> The <xref:System.Windows.Forms.WebBrowser> control is resource-intensive. To ensure that all resources are released in a timely fashion, call the <xref:System.ComponentModel.Component.Dispose> method when you're finished using the control. You must call the <xref:System.ComponentModel.Component.Dispose> method on the same thread that attached the events, which should always be the message or user-interface (UI) thread.
 
  The <xref:System.Windows.Forms.WebBrowser> control cannot be used by partially trusted code. For more information, see [Using Libraries from Partially Trusted Code](/dotnet/framework/misc/using-libraries-from-partially-trusted-code).
 
@@ -237,7 +237,7 @@
  You can disable other standard browser features by setting the <xref:System.Windows.Forms.WebBrowser.WebBrowserShortcutsEnabled*> and <xref:System.Windows.Forms.WebBrowser.IsWebBrowserContextMenuEnabled*> properties to `false`.
 
 > [!NOTE]
->  This property is not related to the <xref:System.Windows.Forms.Control.AllowDrop?displayProperty=nameWithType> property and does not cause drag-and-drop events such as the <xref:System.Windows.Forms.Control.DragDrop?displayProperty=nameWithType> event to occur for the control.
+> This property is not related to the <xref:System.Windows.Forms.Control.AllowDrop?displayProperty=nameWithType> property and does not cause drag-and-drop events such as the <xref:System.Windows.Forms.Control.DragDrop?displayProperty=nameWithType> event to occur for the control.
 
 
 
@@ -655,7 +655,7 @@
  To use this feature, implement classes that inherit from the <xref:System.Windows.Forms.WebBrowser> and <xref:System.Windows.Forms.WebBrowser.WebBrowserSite> classes. The unmanaged `WebBrowser` ActiveX control uses the protected <xref:System.Windows.Forms.WebBrowser.CreateWebBrowserSiteBase*> method to retrieve extensibility interfaces implemented by the <xref:System.Windows.Forms.WebBrowser.WebBrowserSite> class. Override the <xref:System.Windows.Forms.WebBrowser.CreateWebBrowserSiteBase*> method to return an instance of your own class that inherits from the <xref:System.Windows.Forms.WebBrowser.WebBrowserSite> class. The <xref:System.Windows.Forms.WebBrowser.WebBrowserSite> class provides default implementations of the OLE `IDocHostUIHandler` interface. You can provide your own implementation of this interface or implement any other `WebBrowser` ActiveX control interface in order to customize the behavior of the control.
 
 > [!NOTE]
->  If you provide your own implementation for any `IDocHostUIHandler` members, you must implement all the members of that interface.
+> If you provide your own implementation for any `IDocHostUIHandler` members, you must implement all the members of that interface.
 
  ]]></format>
         </remarks>
@@ -1000,7 +1000,7 @@
  Use this property to load a Web page into the <xref:System.Windows.Forms.WebBrowser> control from a <xref:System.IO.Stream> object. You can use this property, for example, to load Web pages from a database or resource file. When you set this property, the <xref:System.Windows.Forms.WebBrowser> control automatically navigates to the about:blank URL before loading the specified text. This means that the <xref:System.Windows.Forms.WebBrowser.Navigating>, <xref:System.Windows.Forms.WebBrowser.Navigated>, and <xref:System.Windows.Forms.WebBrowser.DocumentCompleted> events occur when you set this property, and the value of the <xref:System.Windows.Forms.WebBrowser.Url> property is no longer meaningful.
 
 > [!NOTE]
->  This property contains the contents of the current document, even if another document has been requested. If you set the value of this property and then immediately retrieve it again, the value retrieved may be different than the value set if the <xref:System.Windows.Forms.WebBrowser> control has not had time to load the new content. You can retrieve the new value in a <xref:System.Windows.Forms.WebBrowser.DocumentCompleted> event handler.
+> This property contains the contents of the current document, even if another document has been requested. If you set the value of this property and then immediately retrieve it again, the value retrieved may be different than the value set if the <xref:System.Windows.Forms.WebBrowser> control has not had time to load the new content. You can retrieve the new value in a <xref:System.Windows.Forms.WebBrowser.DocumentCompleted> event handler.
 
  To access the contents of a Web page as a string, use the <xref:System.Windows.Forms.WebBrowser.DocumentText> property. You can also access the page contents using the HTML document object model (DOM) through the <xref:System.Windows.Forms.WebBrowser.Document> property.
 
@@ -1062,7 +1062,7 @@
  Use this property when you want to manipulate the contents of an HTML page displayed in the <xref:System.Windows.Forms.WebBrowser> control using string processing tools. You can use this property, for example, to load pages from a database or to analyze pages using regular expressions. When you set this property, the <xref:System.Windows.Forms.WebBrowser> control automatically navigates to the about:blank URL before loading the specified text. This means that the <xref:System.Windows.Forms.WebBrowser.Navigating>, <xref:System.Windows.Forms.WebBrowser.Navigated>, and <xref:System.Windows.Forms.WebBrowser.DocumentCompleted> events occur when you set this property, and the value of the <xref:System.Windows.Forms.WebBrowser.Url> property is no longer meaningful.
 
 > [!NOTE]
->  This property contains the text of the current document, even if another document has been requested. If you set the value of this property and then immediately retrieve it again, the value retrieved may be different than the value set if the <xref:System.Windows.Forms.WebBrowser> control has not had time to load the new content. You can retrieve the new value in a <xref:System.Windows.Forms.WebBrowser.DocumentCompleted> event handler. Alternatively, you can block the thread until the document is loaded by calling the <xref:System.Threading.Thread.Sleep*?displayProperty=nameWithType> method in a loop until the <xref:System.Windows.Forms.WebBrowser.DocumentText> property returns the value that you originally set it to.
+> This property contains the text of the current document, even if another document has been requested. If you set the value of this property and then immediately retrieve it again, the value retrieved may be different than the value set if the <xref:System.Windows.Forms.WebBrowser> control has not had time to load the new content. You can retrieve the new value in a <xref:System.Windows.Forms.WebBrowser.DocumentCompleted> event handler. Alternatively, you can block the thread until the document is loaded by calling the <xref:System.Threading.Thread.Sleep*?displayProperty=nameWithType> method in a loop until the <xref:System.Windows.Forms.WebBrowser.DocumentText> property returns the value that you originally set it to.
 
  To access the contents of a Web page as a <xref:System.IO.Stream>, use the <xref:System.Windows.Forms.WebBrowser.DocumentStream> property. You can also access the page contents using the HTML document object model (DOM) through the <xref:System.Windows.Forms.WebBrowser.Document> property.
 
@@ -3383,7 +3383,7 @@
  The <xref:System.Windows.Forms.WebBrowser> control stores Web pages from recently visited sites in a cache on the local hard disk. Each page can specify an expiration date indicating how long it will remain in the cache. When the control navigates to a page, it saves time by displaying a cached version, if one is available, rather than downloading the page again. The <xref:System.Windows.Forms.WebBrowser.Refresh*> method forces the <xref:System.Windows.Forms.WebBrowser> control to reload the current page by downloading it, ensuring that the control displays the latest version. You can use this method to implement a **Refresh** button similar to the one in Internet Explorer.
 
 > [!NOTE]
->  A document refresh simply reloads the current page, so the <xref:System.Windows.Forms.WebBrowser.Navigating>, <xref:System.Windows.Forms.WebBrowser.Navigated>, and <xref:System.Windows.Forms.WebBrowser.DocumentCompleted> events do not occur when you call the <xref:System.Windows.Forms.WebBrowser.Refresh*> method.
+> A document refresh simply reloads the current page, so the <xref:System.Windows.Forms.WebBrowser.Navigating>, <xref:System.Windows.Forms.WebBrowser.Navigated>, and <xref:System.Windows.Forms.WebBrowser.DocumentCompleted> events do not occur when you call the <xref:System.Windows.Forms.WebBrowser.Refresh*> method.
 
 ## Examples
  The following code example demonstrates how to use the <xref:System.Windows.Forms.WebBrowser.Refresh*> method to implement a **Refresh** button for the <xref:System.Windows.Forms.WebBrowser> control similar to the one in Internet Explorer. This example requires that your form contains a <xref:System.Windows.Forms.WebBrowser> control called `webBrowser1` and a <xref:System.Windows.Forms.Button> control called `ButtonRefresh`.
@@ -3439,7 +3439,7 @@
  The <xref:System.Windows.Forms.WebBrowser> control stores recently visited Web pages in a cache on the local hard disk. Each page can specify an expiration date indicating how long it will remain in the cache. When the control navigates to a page, it saves time by displaying a cached version, if one is available, rather than downloading the page again. The <xref:System.Windows.Forms.WebBrowser.Refresh*> method forces the <xref:System.Windows.Forms.WebBrowser> control to reload the current page. The type of reload depends on the <xref:System.Windows.Forms.WebBrowserRefreshOption> value specified. If you call the <xref:System.Windows.Forms.WebBrowser.Refresh*> method with the <xref:System.Windows.Forms.WebBrowserRefreshOption.Completely?displayProperty=nameWithType> value, the latest version of the document is downloaded. If you use the <xref:System.Windows.Forms.WebBrowserRefreshOption.IfExpired?displayProperty=nameWithType> value, the latest version is downloaded only if the current document has expired. If you use the <xref:System.Windows.Forms.WebBrowserRefreshOption.Normal?displayProperty=nameWithType> value, the server sends a copy of the document stored in its own cache.
 
 > [!NOTE]
->  A document refresh simply reloads the current page, so the <xref:System.Windows.Forms.WebBrowser.Navigating>, <xref:System.Windows.Forms.WebBrowser.Navigated>, and <xref:System.Windows.Forms.WebBrowser.DocumentCompleted> events do not occur when you call the <xref:System.Windows.Forms.WebBrowser.Refresh*> method.
+> A document refresh simply reloads the current page, so the <xref:System.Windows.Forms.WebBrowser.Navigating>, <xref:System.Windows.Forms.WebBrowser.Navigated>, and <xref:System.Windows.Forms.WebBrowser.DocumentCompleted> events do not occur when you call the <xref:System.Windows.Forms.WebBrowser.Refresh*> method.
 
  ]]></format>
         </remarks>
@@ -3490,7 +3490,7 @@
  Set this property to `false` to debug Web pages that you display in the <xref:System.Windows.Forms.WebBrowser> control. This is useful when you use the control to add Web-based controls and scripting code to your application. It is less useful when you use the control as a generic browser. When you have finished debugging your application, set this property to `true` to suppress script errors.
 
 > [!NOTE]
->  When <xref:System.Windows.Forms.WebBrowser.ScriptErrorsSuppressed*> is set to `true`, the <xref:System.Windows.Forms.WebBrowser> control hides all its dialog boxes that originate from the underlying ActiveX control, not just script errors. Occasionally you might need to suppress script errors while displaying dialog boxes such as those used for browser security settings and user login. In this case, set <xref:System.Windows.Forms.WebBrowser.ScriptErrorsSuppressed*> to `false` and suppress script errors in a handler for the <xref:System.Windows.Forms.HtmlWindow.Error?displayProperty=nameWithType> event. For more information, see the code example in this topic.
+> When <xref:System.Windows.Forms.WebBrowser.ScriptErrorsSuppressed*> is set to `true`, the <xref:System.Windows.Forms.WebBrowser> control hides all its dialog boxes that originate from the underlying ActiveX control, not just script errors. Occasionally you might need to suppress script errors while displaying dialog boxes such as those used for browser security settings and user login. In this case, set <xref:System.Windows.Forms.WebBrowser.ScriptErrorsSuppressed*> to `false` and suppress script errors in a handler for the <xref:System.Windows.Forms.HtmlWindow.Error?displayProperty=nameWithType> event. For more information, see the code example in this topic.
 
 
 
@@ -3764,7 +3764,7 @@
  You can use this method to implement a **Save As** menu item similar to the one on the Internet Explorer **File** menu. The dialog box that appears when this method is called depends on the document type currently loaded.
 
 > [!NOTE]
->  This method allows users to save only the contents of the document as it was originally loaded. Any modifications made to the document at run time through the <xref:System.Windows.Forms.WebBrowser.Document> property are not persisted. For information on retrieving the run-time modifications, see [How to: Access the HTML Source in the Managed HTML Document Object Model](/dotnet/desktop/winforms/controls/how-to-access-the-html-source-in-the-managed-html-document-object-model).
+> This method allows users to save only the contents of the document as it was originally loaded. Any modifications made to the document at run time through the <xref:System.Windows.Forms.WebBrowser.Document> property are not persisted. For information on retrieving the run-time modifications, see [How to: Access the HTML Source in the Managed HTML Document Object Model](/dotnet/desktop/winforms/controls/how-to-access-the-html-source-in-the-managed-html-document-object-model).
 
 ## Examples
  The following code example demonstrates how to use the <xref:System.Windows.Forms.WebBrowser.ShowSaveAsDialog*> method to implement a **Save As** menu option that is similar to the one on the Internet Explorer **File** menu. This example requires that your form contains a menu with a menu item called `MenuItemFileSaveAs` and a <xref:System.Windows.Forms.WebBrowser> control called `webBrowser1`.
@@ -4005,7 +4005,7 @@
  The <xref:System.Windows.Forms.WebBrowser> control stores Web pages from recently visited sites in a cache on the local hard disk. Each page can specify an expiration date indicating how long it will remain in the cache. When the control navigates to a page, it saves time by displaying a cached version, if one is available, rather than downloading the page again. Use the <xref:System.Windows.Forms.WebBrowser.Refresh*> method to force the <xref:System.Windows.Forms.WebBrowser> control to reload the current page by downloading it, ensuring that the control displays the latest version.
 
 > [!NOTE]
->  This property contains the URL of the current document, even if another document has been requested. If you set the value of this property and then immediately retrieve it again, the value retrieved may be different than the value set if the <xref:System.Windows.Forms.WebBrowser> control has not had time to load the new document. You can retrieve the new value in a <xref:System.Windows.Forms.WebBrowser.DocumentCompleted> event handler.
+> This property contains the URL of the current document, even if another document has been requested. If you set the value of this property and then immediately retrieve it again, the value retrieved may be different than the value set if the <xref:System.Windows.Forms.WebBrowser> control has not had time to load the new document. You can retrieve the new value in a <xref:System.Windows.Forms.WebBrowser.DocumentCompleted> event handler.
 
 ## Examples
  The following code example demonstrates how to use the <xref:System.Windows.Forms.WebBrowser.Url> property to implement an address bar for the <xref:System.Windows.Forms.WebBrowser> control. This example requires that your form contains a <xref:System.Windows.Forms.WebBrowser> control called `webBrowser1`, a <xref:System.Windows.Forms.TextBox> control called `TextBoxAddress`, and a <xref:System.Windows.Forms.Button> control called `ButtonGo`. When you type a URL into the text box and press ENTER or click the **Go** button, the <xref:System.Windows.Forms.WebBrowser> control navigates to the URL specified. When you navigate by clicking a hyperlink, the text box automatically updates to display the current URL.

@@ -939,7 +939,7 @@
  When an application pool and its associated worker processes are being shut down by IIS, for example when an application pool has reached a scheduled recycle interval, IIS notifies the ASP.NET runtime that the application is shutting down and the worker process for the application pool stops listening for new requests. Applications that use long-running requests, for example [SignalR](https://go.microsoft.com/fwlink/?LinkID=285432) applications, can listen for the <xref:System.Web.Hosting.HostingEnvironment.StopListening> event and gracefully shut down their long-running operations when IIS has initiated the shutdown of an application pool and its associated worker processes.
 
 > [!WARNING]
->  There are several design considerations that a developer must consider when implementing the <xref:System.Web.Hosting.HostingEnvironment.StopListening> event:
+> There are several design considerations that a developer must consider when implementing the <xref:System.Web.Hosting.HostingEnvironment.StopListening> event:
 >
 > 1. The <xref:System.Web.Hosting.HostingEnvironment.StopListening> event is only available for applications that are configured to use the IIS integrated pipeline.
 > 2. Developers must not throw errors from their <xref:System.Web.Hosting.HostingEnvironment.StopListening> implementations; throwing errors will have unpredictable results.

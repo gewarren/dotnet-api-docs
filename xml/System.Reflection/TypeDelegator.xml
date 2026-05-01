@@ -75,7 +75,7 @@
  <xref:System.Reflection.TypeDelegator> derives from <xref:System.Type?displayProperty=nameWithType> and implements most of the properties and methods of <xref:System.Type>. For each member it implements, <xref:System.Reflection.TypeDelegator> automatically delegates to the corresponding member of an internal <xref:System.Type> object, which is supplied as an argument to the constructor. This internal <xref:System.Type> object is exposed to deriving classes by the `protected` <xref:System.Reflection.TypeDelegator.typeImpl> field.
 
 > [!NOTE]
->  Some members of <xref:System.Reflection.TypeDelegator> have implementations even though the members themselves are simply inherited from <xref:System.Type>. In these cases, the implementation is provided by an overridden `protected` method that has a name that ends in "Impl". For example, the implementation for all overloads of the <xref:System.Reflection.TypeDelegator.GetMethods*> method is supplied by the overridden <xref:System.Reflection.TypeDelegator.GetMethodImpl*> method. The implementation for inherited properties such as <xref:System.Type.IsPublic*> and <xref:System.Type.IsNestedAssembly*> is provided by the overridden <xref:System.Reflection.TypeDelegator.GetAttributeFlagsImpl*> method.
+> Some members of <xref:System.Reflection.TypeDelegator> have implementations even though the members themselves are simply inherited from <xref:System.Type>. In these cases, the implementation is provided by an overridden `protected` method that has a name that ends in "Impl". For example, the implementation for all overloads of the <xref:System.Reflection.TypeDelegator.GetMethods*> method is supplied by the overridden <xref:System.Reflection.TypeDelegator.GetMethodImpl*> method. The implementation for inherited properties such as <xref:System.Type.IsPublic*> and <xref:System.Type.IsNestedAssembly*> is provided by the overridden <xref:System.Reflection.TypeDelegator.GetAttributeFlagsImpl*> method.
 
  Deriving classes can provide a public constructor that takes a <xref:System.Type> object as its parameter and simply passes that object to the <xref:System.Reflection.TypeDelegator.%23ctor(System.Type)> constructor, or can set the internal <xref:System.Type> object in some other way.
 
@@ -2099,7 +2099,7 @@ This method can be used to find a constructed generic member given a member from
  After the method is selected, it will be invoked. Accessibility is checked at that point. The search may control which set of methods are searched based upon the accessibility attribute associated with the method. The <xref:System.Reflection.Binder.BindToMethod*?displayProperty=nameWithType> method is responsible for selecting the method to be invoked. The default binder selects the most specific match.
 
 > [!NOTE]
->  Access restrictions are ignored for fully trusted code. That is, private constructors, methods, fields, and properties can be accessed and invoked using reflection whenever the code is fully trusted.
+> Access restrictions are ignored for fully trusted code. That is, private constructors, methods, fields, and properties can be accessed and invoked using reflection whenever the code is fully trusted.
 
  Currently, `InvokeMember` performs the Microsoft .NET Framework reflection semantics for every type of object.
 

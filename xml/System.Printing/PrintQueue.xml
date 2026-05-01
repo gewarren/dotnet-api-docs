@@ -31,7 +31,7 @@
  Some properties of the <xref:System.Printing.PrintQueue> object represent characteristics of the print queue utility that runs on the computer, but others represent features or states of the printer itself. For example, <xref:System.Printing.PrintQueue.NumberOfJobs*> is a characteristic of the print queue, but <xref:System.Printing.PrintQueue.Location*> is a property of the printer. Many of the properties of the printer, such as whether it needs user attention, need to be passed, by means of the <xref:System.Printing.PrintQueue.Refresh*> method, from the printer itself to the <xref:System.Printing.PrintQueue> object. This should be done before the corresponding property (<xref:System.Printing.PrintQueue.NeedUserIntervention*>) is read by your program. Similarly, when your program changes the values of one or more properties of a <xref:System.Printing.PrintQueue> object, the change must be written to the actual print queue utility on the computer. Do this with the <xref:System.Printing.PrintQueue.Commit*> method.
 
 > [!CAUTION]
->  Classes within the <xref:System.Printing> namespace are not supported for use within a Windows service or ASP.NET application or service. Attempting to use these classes from within one of these application types may produce unexpected problems, such as diminished service performance and run-time exceptions.
+> Classes within the <xref:System.Printing> namespace are not supported for use within a Windows service or ASP.NET application or service. Attempting to use these classes from within one of these application types may produce unexpected problems, such as diminished service performance and run-time exceptions.
 
  If you want to print from a Windows Forms application, see the <xref:System.Drawing.Printing> namespace.
 
@@ -489,7 +489,7 @@
  After the <xref:System.Printing.PrintQueue.AddJob*> method has been called, you must write a <xref:System.Byte> array to the <xref:System.Printing.PrintSystemJobInfo.JobStream> property of the <xref:System.Printing.PrintSystemJobInfo> that is returned by <xref:System.Printing.PrintQueue.AddJob*> or no print job is created. This array is what prints if the printer is working and is not paused.
 
 > [!CAUTION]
->  If the <xref:System.Printing.PrintSystemJobInfo.JobStream*> is not closed with <xref:System.IO.Stream.Close*> before the end of the thread in which <xref:System.Printing.PrintQueue.AddJob*> is called, then an <xref:System.InvalidOperationException> is thrown when that thread ends because the spooler thread cannot gain control over the <xref:System.IO.Stream> object.
+> If the <xref:System.Printing.PrintSystemJobInfo.JobStream*> is not closed with <xref:System.IO.Stream.Close*> before the end of the thread in which <xref:System.Printing.PrintQueue.AddJob*> is called, then an <xref:System.InvalidOperationException> is thrown when that thread ends because the spooler thread cannot gain control over the <xref:System.IO.Stream> object.
 
  In the print queue's graphical user interface (GUI), the job has the name "Print System Document". To give the job a different name, use the <xref:System.Printing.PrintQueue.AddJob(System.String)> overload.
 
@@ -552,7 +552,7 @@
  After the <xref:System.Printing.PrintQueue.AddJob*> method has been called, you must write a <xref:System.Byte> array to the <xref:System.Printing.PrintSystemJobInfo.JobStream> property of the <xref:System.Printing.PrintSystemJobInfo> that is returned by <xref:System.Printing.PrintQueue.AddJob*> or no print job is created. This array is what prints if the printer is working and is not paused.
 
 > [!CAUTION]
->  If the <xref:System.Printing.PrintSystemJobInfo.JobStream*> is not closed with <xref:System.IO.Stream.Close*> before the end of the thread in which <xref:System.Printing.PrintQueue.AddJob*> is called, then an <xref:System.InvalidOperationException> is thrown when that thread ends because the spooler thread cannot gain control over the <xref:System.IO.Stream> object.
+> If the <xref:System.Printing.PrintSystemJobInfo.JobStream*> is not closed with <xref:System.IO.Stream.Close*> before the end of the thread in which <xref:System.Printing.PrintQueue.AddJob*> is called, then an <xref:System.InvalidOperationException> is thrown when that thread ends because the spooler thread cannot gain control over the <xref:System.IO.Stream> object.
 
  Other ways to print in Windows Presentation Foundation (WPF) include the <xref:System.Windows.Controls.PrintDialog.PrintDocument*?displayProperty=nameWithType> method, which can be used with or without opening the dialog, and the many <xref:System.Windows.Xps.XpsDocumentWriter.Write*> and <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync*> methods of the <xref:System.Windows.Xps.XpsDocumentWriter>.
 
@@ -669,7 +669,7 @@
 - If you need your `Main` thread's apartment state to be <xref:System.Threading.ApartmentState.MTA>, you can house the call to <xref:System.Printing.PrintQueue.AddJob(System.String,System.String,System.Boolean)> in a separate thread whose apartment state is set to <xref:System.Threading.ApartmentState.STA> with <xref:System.Threading.Thread.SetApartmentState*>. The example below illustrates this second technique.
 
 > [!NOTE]
->  You cannot apply the <xref:System.STAThreadAttribute> to any method except `Main` and you cannot use <xref:System.Threading.Thread.SetApartmentState*> for the `Main` thread.
+> You cannot apply the <xref:System.STAThreadAttribute> to any method except `Main` and you cannot use <xref:System.Threading.Thread.SetApartmentState*> for the `Main` thread.
 
  Other ways to print in Windows Presentation Foundation (WPF) include the <xref:System.Windows.Controls.PrintDialog.PrintDocument*?displayProperty=nameWithType> method, which can be used with or without opening the dialog, and the many <xref:System.Windows.Xps.XpsDocumentWriter.Write*> and <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync*> methods of the <xref:System.Windows.Xps.XpsDocumentWriter>.
 

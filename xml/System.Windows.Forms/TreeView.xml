@@ -89,12 +89,12 @@
  Tree nodes can optionally display check boxes. To display the check boxes, set the <xref:System.Windows.Forms.TreeView.CheckBoxes> property of the <xref:System.Windows.Forms.TreeView> to `true`. The <xref:System.Windows.Forms.TreeNode.Checked> property is set to `true` for tree nodes that are in a checked state.
 
 > [!NOTE]
->  Setting the <xref:System.Windows.Forms.TreeNode.Checked?displayProperty=nameWithType> property from within the <xref:System.Windows.Forms.TreeView.BeforeCheck> or <xref:System.Windows.Forms.TreeView.AfterCheck> event causes the event to be raised multiple times and can result in unexpected behavior. For example, you might set the <xref:System.Windows.Forms.TreeNode.Checked> property in the event handler when you are recursively updating the child nodes so that the user does not have to expand and check each one individually. To prevent the event from being raised multiple times, add logic to your event handler that only executes your recursive code if the <xref:System.Windows.Forms.TreeViewEventArgs.Action> property of the <xref:System.Windows.Forms.TreeViewEventArgs> is not set to <xref:System.Windows.Forms.TreeViewAction.Unknown?displayProperty=nameWithType>. For an example of how to do this, see the Example section of the <xref:System.Windows.Forms.TreeView.AfterCheck> or <xref:System.Windows.Forms.TreeView.BeforeCheck> events.
+> Setting the <xref:System.Windows.Forms.TreeNode.Checked?displayProperty=nameWithType> property from within the <xref:System.Windows.Forms.TreeView.BeforeCheck> or <xref:System.Windows.Forms.TreeView.AfterCheck> event causes the event to be raised multiple times and can result in unexpected behavior. For example, you might set the <xref:System.Windows.Forms.TreeNode.Checked> property in the event handler when you are recursively updating the child nodes so that the user does not have to expand and check each one individually. To prevent the event from being raised multiple times, add logic to your event handler that only executes your recursive code if the <xref:System.Windows.Forms.TreeViewEventArgs.Action> property of the <xref:System.Windows.Forms.TreeViewEventArgs> is not set to <xref:System.Windows.Forms.TreeViewAction.Unknown?displayProperty=nameWithType>. For an example of how to do this, see the Example section of the <xref:System.Windows.Forms.TreeView.AfterCheck> or <xref:System.Windows.Forms.TreeView.BeforeCheck> events.
 
  You can change the appearance of the <xref:System.Windows.Forms.TreeView> control by setting some of its display and style properties. Setting <xref:System.Windows.Forms.TreeView.ShowPlusMinus*> to `true` displays a plus-sign or minus-sign button next to each <xref:System.Windows.Forms.TreeNode> that can be expanded or collapsed, respectively. Setting the <xref:System.Windows.Forms.TreeView.ShowRootLines> property to `true` causes the <xref:System.Windows.Forms.TreeView> to display lines that join all the root tree nodes together. You can display lines that connect child tree nodes to their root node by setting the <xref:System.Windows.Forms.TreeView.ShowLines> property to `true`. Setting the <xref:System.Windows.Forms.TreeView.HotTracking> property to `true` changes the appearance of the tree node labels as the mouse pointer passes over them. When hot-tracked, the tree node labels take on the appearance of a hyperlink. You can also completely customize the appearance of the <xref:System.Windows.Forms.TreeView> control. To do this, set the <xref:System.Windows.Forms.TreeView.DrawMode> property to a value other than <xref:System.Windows.Forms.TreeViewDrawMode.Normal?displayProperty=nameWithType> and handle the <xref:System.Windows.Forms.TreeView.DrawNode> event.
 
 > [!NOTE]
->  When setting the <xref:System.Windows.Forms.TreeView.CheckBoxes*>, <xref:System.Windows.Forms.TreeView.Scrollable*>, <xref:System.Windows.Forms.TreeView.ImageIndex*>, and <xref:System.Windows.Forms.TreeView.SelectedImageIndex*> properties at run time, the <xref:System.Windows.Forms.TreeView> handle is recreated (see <xref:System.Windows.Forms.Control.RecreateHandle*?displayProperty=nameWithType>) to update the control's appearance. This causes all tree nodes to be collapsed, except for the selected <xref:System.Windows.Forms.TreeNode>.
+> When setting the <xref:System.Windows.Forms.TreeView.CheckBoxes*>, <xref:System.Windows.Forms.TreeView.Scrollable*>, <xref:System.Windows.Forms.TreeView.ImageIndex*>, and <xref:System.Windows.Forms.TreeView.SelectedImageIndex*> properties at run time, the <xref:System.Windows.Forms.TreeView> handle is recreated (see <xref:System.Windows.Forms.Control.RecreateHandle*?displayProperty=nameWithType>) to update the control's appearance. This causes all tree nodes to be collapsed, except for the selected <xref:System.Windows.Forms.TreeNode>.
 
 
 
@@ -645,7 +645,7 @@
 ## Remarks
 
 > [!NOTE]
->  Setting the <xref:System.Windows.Forms.TreeNode.Checked?displayProperty=nameWithType> property from within the <xref:System.Windows.Forms.TreeView.BeforeCheck> or <xref:System.Windows.Forms.TreeView.AfterCheck> event causes the event to be raised multiple times and can result in unexpected behavior. For example, you might set the <xref:System.Windows.Forms.TreeNode.Checked> property in the event handler when you are recursively updating the child nodes, so that the user does not have to expand and check each one individually. To prevent the event from being raised multiple times, add logic to your event handler that only executes your recursive code if the <xref:System.Windows.Forms.TreeViewEventArgs.Action> property of the <xref:System.Windows.Forms.TreeViewEventArgs> is not set to <xref:System.Windows.Forms.TreeViewAction.Unknown?displayProperty=nameWithType>.
+> Setting the <xref:System.Windows.Forms.TreeNode.Checked?displayProperty=nameWithType> property from within the <xref:System.Windows.Forms.TreeView.BeforeCheck> or <xref:System.Windows.Forms.TreeView.AfterCheck> event causes the event to be raised multiple times and can result in unexpected behavior. For example, you might set the <xref:System.Windows.Forms.TreeNode.Checked> property in the event handler when you are recursively updating the child nodes, so that the user does not have to expand and check each one individually. To prevent the event from being raised multiple times, add logic to your event handler that only executes your recursive code if the <xref:System.Windows.Forms.TreeViewEventArgs.Action> property of the <xref:System.Windows.Forms.TreeViewEventArgs> is not set to <xref:System.Windows.Forms.TreeViewAction.Unknown?displayProperty=nameWithType>.
 
  For more information about how to handle events, see [Handling and Raising Events](/dotnet/standard/events/).
 
@@ -1028,7 +1028,7 @@
  When the <xref:System.Windows.Forms.TreeView.CheckBoxes> property of a <xref:System.Windows.Forms.TreeView> is set to `true`, and the <xref:System.Windows.Forms.TreeView.StateImageList> property is set, each <xref:System.Windows.Forms.TreeNode> that is contained in the <xref:System.Windows.Forms.TreeView> displays the first and second images from the <xref:System.Windows.Forms.TreeView.StateImageList*> to indicate an unchecked or checked state, respectively. However, the displayed images may be different if the following situation occurs: If the <xref:System.Windows.Forms.TreeView.SelectedImageIndex*> of the node is set to a value other than 0 or 1, and the <xref:System.Windows.Forms.TreeView.CheckBoxes> property of the parent <xref:System.Windows.Forms.TreeView> is set to `false`, the <xref:System.Windows.Forms.TreeView.SelectedImageIndex*> will not automatically reset to -1 to indicate it is not set. In this case, the state image at the indicated index position is shown. If <xref:System.Windows.Forms.TreeView.CheckBoxes*> is set to `true` again, the first and second images of the <xref:System.Windows.Forms.TreeView.StateImageList*> are shown to indicate a checked or unchecked state, respectively.
 
 > [!NOTE]
->  When setting the <xref:System.Windows.Forms.TreeView.CheckBoxes> property at run time, the <xref:System.Windows.Forms.TreeView> handle is recreated (see <xref:System.Windows.Forms.Control.RecreateHandle*?displayProperty=nameWithType>) to update the control's appearance. This causes all tree nodes to be collapsed, with the exception of the selected <xref:System.Windows.Forms.TreeNode>.
+> When setting the <xref:System.Windows.Forms.TreeView.CheckBoxes> property at run time, the <xref:System.Windows.Forms.TreeView> handle is recreated (see <xref:System.Windows.Forms.Control.RecreateHandle*?displayProperty=nameWithType>) to update the control's appearance. This causes all tree nodes to be collapsed, with the exception of the selected <xref:System.Windows.Forms.TreeNode>.
 
 
 
@@ -1080,7 +1080,7 @@
  The <xref:System.Windows.Forms.TreeView.CollapseAll*> method collapses all the <xref:System.Windows.Forms.TreeNode> objects, which includes all the child tree nodes, that are in the <xref:System.Windows.Forms.TreeView> control.
 
 > [!NOTE]
->  The state of a <xref:System.Windows.Forms.TreeNode> persists. For example, suppose that you call the <xref:System.Windows.Forms.TreeNode.Expand*> method for a root tree node. If the child tree nodes were not previously collapsed, they will appear in their previously-expanded state. Calling the <xref:System.Windows.Forms.TreeView.CollapseAll*> method ensures that all the tree nodes appear in the collapsed state.
+> The state of a <xref:System.Windows.Forms.TreeNode> persists. For example, suppose that you call the <xref:System.Windows.Forms.TreeNode.Expand*> method for a root tree node. If the child tree nodes were not previously collapsed, they will appear in their previously-expanded state. Calling the <xref:System.Windows.Forms.TreeView.CollapseAll*> method ensures that all the tree nodes appear in the collapsed state.
 
 
 
@@ -1530,7 +1530,7 @@
  The <xref:System.Windows.Forms.TreeView.ExpandAll*> method expands all the <xref:System.Windows.Forms.TreeNode> objects, which includes all the child tree nodes, that are in the <xref:System.Windows.Forms.TreeView> control.
 
 > [!NOTE]
->  The state of a <xref:System.Windows.Forms.TreeNode> persists. For example, suppose that you call the <xref:System.Windows.Forms.TreeNode.ExpandAll*> method, and then the individual root tree nodes are collapsed. The child tree nodes have not been collapsed, and will appear in their previously-expanded state when the root tree nodes are expanded again. Calling the <xref:System.Windows.Forms.TreeView.CollapseAll*> method ensures that all the tree nodes appear in the collapsed state.
+> The state of a <xref:System.Windows.Forms.TreeNode> persists. For example, suppose that you call the <xref:System.Windows.Forms.TreeNode.ExpandAll*> method, and then the individual root tree nodes are collapsed. The child tree nodes have not been collapsed, and will appear in their previously-expanded state when the root tree nodes are expanded again. Calling the <xref:System.Windows.Forms.TreeView.CollapseAll*> method ensures that all the tree nodes appear in the collapsed state.
 
 
 
@@ -1876,7 +1876,7 @@
  When this property is set to `false`, selected nodes in the <xref:System.Windows.Forms.TreeView> control remain highlighted in a different color than the current selection color when the <xref:System.Windows.Forms.TreeView> control loses focus. You can use this property to keep items that are selected by the user visible when the user clicks a different control on the form or moves to a different window.
 
 > [!NOTE]
->  If you are concerned with the accessibility of your applications, it is recommended that you set the <xref:System.Windows.Forms.TreeView.HideSelection> property to `false`.
+> If you are concerned with the accessibility of your applications, it is recommended that you set the <xref:System.Windows.Forms.TreeView.HideSelection> property to `false`.
 
 
 
@@ -2033,7 +2033,7 @@
  If the <xref:System.Windows.Forms.TreeView.CheckBoxes> property is set to `true`, the <xref:System.Windows.Forms.TreeView.HotTracking> property has no effect.
 
 > [!NOTE]
->  When the <xref:System.Windows.Forms.TreeView.HotTracking> property is set to `true`, each tree node label takes on the appearance of a hyperlink as the mouse pointer passes over it. The <xref:System.Drawing.FontStyle.Underline> font style is applied to the <xref:System.Drawing.Font> and the <xref:System.Windows.Forms.Control.ForeColor*> is set to blue to make the label appear as a link. The appearance is not controlled by the Internet settings of the user's operating system.
+> When the <xref:System.Windows.Forms.TreeView.HotTracking> property is set to `true`, each tree node label takes on the appearance of a hyperlink as the mouse pointer passes over it. The <xref:System.Drawing.FontStyle.Underline> font style is applied to the <xref:System.Drawing.Font> and the <xref:System.Windows.Forms.Control.ForeColor*> is set to blue to make the label appear as a link. The appearance is not controlled by the Internet settings of the user's operating system.
 
 
 
@@ -2129,7 +2129,7 @@
 If you set the <xref:System.Windows.Forms.TreeView.ImageKey> property, the <xref:System.Windows.Forms.TreeView.ImageIndex> property is automatically set to -1. Alternatively, if you set the <xref:System.Windows.Forms.TreeView.ImageIndex> property, the <xref:System.Windows.Forms.TreeView.ImageKey*> is automatically set to an empty string ("").
 
 > [!NOTE]
->  When setting the <xref:System.Windows.Forms.TreeView.ImageIndex> property at run time, the <xref:System.Windows.Forms.TreeView> handle is recreated (see <xref:System.Windows.Forms.Control.RecreateHandle*?displayProperty=nameWithType>) to update the control's appearance. This causes all tree nodes to be collapsed, with the exception of the selected <xref:System.Windows.Forms.TreeNode>.
+> When setting the <xref:System.Windows.Forms.TreeView.ImageIndex> property at run time, the <xref:System.Windows.Forms.TreeView> handle is recreated (see <xref:System.Windows.Forms.Control.RecreateHandle*?displayProperty=nameWithType>) to update the control's appearance. This causes all tree nodes to be collapsed, with the exception of the selected <xref:System.Windows.Forms.TreeNode>.
 
 
 
@@ -4267,7 +4267,7 @@ If you set the <xref:System.Windows.Forms.TreeView.ImageKey> property, the <xref
  If this property is set to `true`, scroll bars are displayed on the <xref:System.Windows.Forms.TreeView> when any <xref:System.Windows.Forms.TreeNode> is located outside the control's client region.
 
 > [!NOTE]
->  When setting the <xref:System.Windows.Forms.TreeView.Scrollable> property at run time, the <xref:System.Windows.Forms.TreeView> handle is recreated (see <xref:System.Windows.Forms.Control.RecreateHandle*?displayProperty=nameWithType>) to update the control's appearance. This causes all tree nodes to be collapsed, with the exception of the selected <xref:System.Windows.Forms.TreeNode>.
+> When setting the <xref:System.Windows.Forms.TreeView.Scrollable> property at run time, the <xref:System.Windows.Forms.TreeView> handle is recreated (see <xref:System.Windows.Forms.Control.RecreateHandle*?displayProperty=nameWithType>) to update the control's appearance. This causes all tree nodes to be collapsed, with the exception of the selected <xref:System.Windows.Forms.TreeNode>.
 
 
 
@@ -4354,7 +4354,7 @@ If you set the <xref:System.Windows.Forms.TreeView.ImageKey> property, the <xref
  The <xref:System.Windows.Forms.TreeView.SelectedImageIndex*> value is the index of an <xref:System.Drawing.Image> stored in the <xref:System.Windows.Forms.ImageList> assigned to the <xref:System.Windows.Forms.TreeView.ImageList> property.
 
 > [!NOTE]
->  When setting the <xref:System.Windows.Forms.TreeView.SelectedImageIndex> property at run time, the <xref:System.Windows.Forms.TreeView> handle is recreated (see <xref:System.Windows.Forms.Control.RecreateHandle*?displayProperty=nameWithType>) to update the control's appearance. This causes all tree nodes to be collapsed, except for the selected <xref:System.Windows.Forms.TreeNode>.
+> When setting the <xref:System.Windows.Forms.TreeView.SelectedImageIndex> property at run time, the <xref:System.Windows.Forms.TreeView> handle is recreated (see <xref:System.Windows.Forms.Control.RecreateHandle*?displayProperty=nameWithType>) to update the control's appearance. This causes all tree nodes to be collapsed, except for the selected <xref:System.Windows.Forms.TreeNode>.
 
 <xref:System.Windows.Forms.TreeView.SelectedImageKey*> and <xref:System.Windows.Forms.TreeView.SelectedImageIndex*> are mutually exclusive, meaning if one is set, the other is set to an invalid value and ignored.
 If you set the <xref:System.Windows.Forms.TreeView.SelectedImageKey> property, the <xref:System.Windows.Forms.TreeView.SelectedImageIndex> property is automatically set to -1. Alternatively, if you set the <xref:System.Windows.Forms.TreeView.SelectedImageIndex> property, the <xref:System.Windows.Forms.TreeView.SelectedImageKey*> is automatically set to an empty string ("").
@@ -4760,7 +4760,7 @@ If you set the <xref:System.Windows.Forms.TreeView.SelectedImageKey> property, t
  This method reapplies the default sort, which is alphabetical by node text, or a custom sort specified by the <xref:System.Windows.Forms.TreeView.TreeViewNodeSorter> property. You can use this method if the text of existing nodes is changed or nodes are moved by the user, and you want to sort the items again.
 
 > [!NOTE]
->  The default sorter uses the <xref:System.Globalization.CompareInfo.Compare*> method based on the <xref:System.Windows.Forms.Application.CurrentCulture*> specified by the application. This means that <xref:System.Windows.Forms.TreeNode> objects with equal value are kept in the order in which they were added to the <xref:System.Windows.Forms.TreeView> control. This behavior may be different if a custom sort is applied.
+> The default sorter uses the <xref:System.Globalization.CompareInfo.Compare*> method based on the <xref:System.Windows.Forms.Application.CurrentCulture*> specified by the application. This means that <xref:System.Windows.Forms.TreeNode> objects with equal value are kept in the order in which they were added to the <xref:System.Windows.Forms.TreeView> control. This behavior may be different if a custom sort is applied.
 
  ]]></format>
         </remarks>
@@ -4815,7 +4815,7 @@ If you set the <xref:System.Windows.Forms.TreeView.SelectedImageKey> property, t
  When <xref:System.Windows.Forms.TreeView.Sorted*> is set to `true`, the <xref:System.Windows.Forms.TreeNode> objects are sorted in alphabetical order by their <xref:System.Windows.Forms.TreeNode.Text> property values. You should always use <xref:System.Windows.Forms.TreeView.BeginUpdate*> and <xref:System.Windows.Forms.TreeView.EndUpdate*> to maintain performance when you add a large quantity of items to a sorted <xref:System.Windows.Forms.TreeView>. When the text of an existing node is changed, you must call <xref:System.Windows.Forms.TreeView.Sort*> to resort the items.
 
 > [!NOTE]
->  The default sorter uses the <xref:System.Globalization.CompareInfo.Compare*> method based on the <xref:System.Windows.Forms.Application.CurrentCulture*> specified by the application. This means that <xref:System.Windows.Forms.TreeNode> objects with equal value are kept in the order in which they were added to the <xref:System.Windows.Forms.TreeView> control.
+> The default sorter uses the <xref:System.Globalization.CompareInfo.Compare*> method based on the <xref:System.Windows.Forms.Application.CurrentCulture*> specified by the application. This means that <xref:System.Windows.Forms.TreeNode> objects with equal value are kept in the order in which they were added to the <xref:System.Windows.Forms.TreeView> control.
 
  ]]></format>
         </remarks>
@@ -5032,7 +5032,7 @@ If you set the <xref:System.Windows.Forms.TreeView.SelectedImageKey> property, t
  Initially, the <xref:System.Windows.Forms.TreeView.TopNode*> returns the first root tree node, which is located at the top of the <xref:System.Windows.Forms.TreeView>. However, if the user has scrolled the contents, another tree node might be at the top.
 
 > [!NOTE]
->  Setting this property has no effect when the <xref:System.Windows.Forms.TreeView.Scrollable> property value is `false`.
+> Setting this property has no effect when the <xref:System.Windows.Forms.TreeView.Scrollable> property value is `false`.
 
 
 
@@ -5133,7 +5133,7 @@ If you set the <xref:System.Windows.Forms.TreeView.SelectedImageKey> property, t
  If a <xref:System.Windows.Forms.TreeNode> label is changed, you can call the <xref:System.Windows.Forms.TreeView.Sort*> method to sort the items again with the custom sorter specified by the <xref:System.Windows.Forms.TreeView.TreeViewNodeSorter> property.
 
 > [!NOTE]
->  The default sorter uses the <xref:System.Globalization.CompareInfo.Compare*> method based on the <xref:System.Windows.Forms.Application.CurrentCulture*> specified by the application. This means that <xref:System.Windows.Forms.TreeNode> objects with equal value are kept in the order in which they were added to the <xref:System.Windows.Forms.TreeView> control. This behavior may be different if a custom sort is applied.
+> The default sorter uses the <xref:System.Globalization.CompareInfo.Compare*> method based on the <xref:System.Windows.Forms.Application.CurrentCulture*> specified by the application. This means that <xref:System.Windows.Forms.TreeNode> objects with equal value are kept in the order in which they were added to the <xref:System.Windows.Forms.TreeView> control. This behavior may be different if a custom sort is applied.
 
 
 
