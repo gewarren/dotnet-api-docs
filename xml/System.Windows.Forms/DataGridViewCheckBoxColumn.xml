@@ -49,7 +49,8 @@ The <xref:System.Windows.Forms.DataGridViewCheckBoxColumn> class is a specialize
  Typically, check box cell values are intended either for storage, like any other data, or for performing bulk operations. If you want to respond immediately when users click a check box cell, you can handle the <xref:System.Windows.Forms.DataGridView.CellContentClick?displayProperty=nameWithType> event, but this event occurs before the cell value is updated. If you need the new value at the time of the click, one option is to calculate what the expected value will be based on the current value. Another approach is to commit the change immediately, and handle the <xref:System.Windows.Forms.DataGridView.CellValueChanged?displayProperty=nameWithType> event to respond to it. To commit the change when the cell is clicked, you must handle the <xref:System.Windows.Forms.DataGridView.CurrentCellDirtyStateChanged?displayProperty=nameWithType> event. In the handler, if the current cell is a check box cell, call the <xref:System.Windows.Forms.DataGridView.CommitEdit*?displayProperty=nameWithType> method and pass in the <xref:System.Windows.Forms.DataGridViewDataErrorContexts.Commit> value.
 
 ## Examples
- The following code example demonstrates how to use a <xref:System.Windows.Forms.DataGridViewCheckBoxColumn> to mark which employees are out of the office. This example is part of a larger example available in the <xref:System.Windows.Forms.DataGridViewComboBoxColumn> class overview topic.
+
+The following code example demonstrates how to use a <xref:System.Windows.Forms.DataGridViewCheckBoxColumn> to mark which employees are out of the office. This example is part of a larger example available in the <xref:System.Windows.Forms.DataGridViewComboBoxColumn> class overview topic.
 
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CPP/employees.cpp" id="Snippet20":::
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Forms/DataGridView/CellContentClick/employees.cs" id="Snippet20":::
@@ -224,7 +225,8 @@ The constructors for the <xref:System.Windows.Forms.DataGridViewCheckBoxColumn> 
 > Changing the properties of the cell template will not immediately affect the user interface (UI) of the column's existing cells. These changes are only apparent after the column is regenerated (for example, by sorting the column or through a call to the <xref:System.Windows.Forms.DataGridView.InvalidateColumn*?displayProperty=nameWithType> method).
 
 ## Examples
- The following code example demonstrates how to use a <xref:System.Windows.Forms.DataGridViewCheckBoxColumn> to mark which employees are out of the office. The cell template is used to apply the same color to all cells in the check box column. This example is part of a larger example available in the <xref:System.Windows.Forms.DataGridViewComboBoxColumn> class overview topic.
+
+The following code example demonstrates how to use a <xref:System.Windows.Forms.DataGridViewCheckBoxColumn> to mark which employees are out of the office. The cell template is used to apply the same color to all cells in the check box column. This example is part of a larger example available in the <xref:System.Windows.Forms.DataGridViewComboBoxColumn> class overview topic.
 
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CPP/employees.cpp" id="Snippet20":::
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Forms/DataGridView/CellContentClick/employees.cs" id="Snippet20":::
@@ -293,7 +295,8 @@ The default <xref:System.Windows.Forms.DataGridViewCellStyle> returned by this p
  If the <xref:System.Windows.Forms.DataGridViewCellStyle.NullValue> property of the object returned by the <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.DefaultCellStyle> property has a value of `false`, changing the <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.ThreeState> property value to `true` automatically sets <xref:System.Windows.Forms.DataGridViewCellStyle.NullValue*> to <xref:System.Windows.Forms.CheckState.Indeterminate>. If <xref:System.Windows.Forms.DataGridViewCellStyle.NullValue*> has a value of <xref:System.Windows.Forms.CheckState.Indeterminate>, changing the <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.ThreeState> property value to `false` automatically sets <xref:System.Windows.Forms.DataGridViewCellStyle.NullValue*> to `false`.
 
 ## Examples
- The following code example demonstrates the use of this property.
+
+The following code example demonstrates the use of this property.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Forms/DataGridViewButtonColumn/DefaultCellStyle/changecolumnalignment.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Forms/DataGridViewButtonColumn/DefaultCellStyle/changecolumnalignment.vb" id="Snippet1":::
@@ -365,7 +368,8 @@ The <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.FalseValue*>, <xref:Sy
  Getting or setting this property gets or sets the <xref:System.Windows.Forms.DataGridViewCheckBoxCell.FalseValue> property of the cell object returned by the <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.CellTemplate> property. Setting this property also sets the <xref:System.Windows.Forms.DataGridViewCheckBoxCell.FalseValue> property of every cell in the column and refreshes the column display. To override the specified value for individual cells, set the cell values after you set the column value.
 
 ## Examples
- The following code example uses a <xref:System.Windows.Forms.DataGridViewCheckBoxColumn> to track the status of office lighting. The <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.FalseValue> property associates "turnedOff" with `false`, the <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.TrueValue> property associates "turnedOn" with `true`, and the <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.IndeterminateValue> property associates "unknown" to indeterminate.
+
+The following code example uses a <xref:System.Windows.Forms.DataGridViewCheckBoxColumn> to track the status of office lighting. The <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.FalseValue> property associates "turnedOff" with `false`, the <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.TrueValue> property associates "turnedOn" with `true`, and the <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.IndeterminateValue> property associates "unknown" to indeterminate.
 
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox/cpp/trivaluevirtualcheckbox.cpp" id="Snippet0":::
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Forms/DataGridViewCheckBoxCell/FalseValue/trivaluevirtualcheckbox.cs" id="Snippet0":::
@@ -437,7 +441,8 @@ To display the check box cells using visual styles, set this property to <xref:S
  Getting or setting this property gets or sets the <xref:System.Windows.Forms.DataGridViewCheckBoxCell.FlatStyle> property of the cell object returned by the <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.CellTemplate> property. Setting this property also sets the <xref:System.Windows.Forms.DataGridViewCheckBoxCell.FlatStyle> property of every cell in the column and refreshes the column display. To override the specified value for individual cells, set the cell values after you set the column value.
 
 ## Examples
- The following code example demonstrates how to use a <xref:System.Windows.Forms.DataGridViewCheckBoxColumn> to mark which employees are out of the office. This example is part of a larger example available in the <xref:System.Windows.Forms.DataGridViewComboBoxColumn> class overview topic.
+
+The following code example demonstrates how to use a <xref:System.Windows.Forms.DataGridViewCheckBoxColumn> to mark which employees are out of the office. This example is part of a larger example available in the <xref:System.Windows.Forms.DataGridViewComboBoxColumn> class overview topic.
 
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CPP/employees.cpp" id="Snippet20":::
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Forms/DataGridView/CellContentClick/employees.cs" id="Snippet20":::
@@ -513,7 +518,8 @@ The <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.FalseValue*>, <xref:Sy
  Getting or setting this property gets or sets the <xref:System.Windows.Forms.DataGridViewCheckBoxCell.IndeterminateValue> property of the cell object returned by the <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.CellTemplate> property. Setting this property also sets the <xref:System.Windows.Forms.DataGridViewCheckBoxCell.IndeterminateValue> property of every cell in the column and refreshes the column display. To override the specified value for individual cells, set the cell values after you set the column value.
 
 ## Examples
- The following code example uses a <xref:System.Windows.Forms.DataGridViewCheckBoxColumn> to track the status of office lighting. The <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.FalseValue> property associates "turnedOff" with `false`, the <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.TrueValue> property associates "turnedOn" with `true`, and the <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.IndeterminateValue> property associates "unknown" to indeterminate.
+
+The following code example uses a <xref:System.Windows.Forms.DataGridViewCheckBoxColumn> to track the status of office lighting. The <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.FalseValue> property associates "turnedOff" with `false`, the <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.TrueValue> property associates "turnedOn" with `true`, and the <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.IndeterminateValue> property associates "unknown" to indeterminate.
 
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox/cpp/trivaluevirtualcheckbox.cpp" id="Snippet0":::
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Forms/DataGridViewCheckBoxCell/FalseValue/trivaluevirtualcheckbox.cs" id="Snippet0":::
@@ -588,7 +594,8 @@ The indeterminate state can be useful, for example, when you do not want to set 
  If the <xref:System.Windows.Forms.DataGridViewCellStyle.NullValue> property of the object returned by the <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.DefaultCellStyle> property has a value of `false`, changing the <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.ThreeState> property value to `true` automatically sets <xref:System.Windows.Forms.DataGridViewCellStyle.NullValue*> to <xref:System.Windows.Forms.CheckState.Indeterminate>. If <xref:System.Windows.Forms.DataGridViewCellStyle.NullValue*> has a value of <xref:System.Windows.Forms.CheckState.Indeterminate>, changing the <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.ThreeState> property value to `false` automatically sets <xref:System.Windows.Forms.DataGridViewCellStyle.NullValue*> to `false`.
 
 ## Examples
- The following code example uses a <xref:System.Windows.Forms.DataGridViewCheckBoxColumn> to track the status of office lighting. The <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.FalseValue> property associates "turnedOff" with `false`, the <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.TrueValue> property associates "turnedOn" with `true`, and the <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.IndeterminateValue> property associates "unknown" to indeterminate.
+
+The following code example uses a <xref:System.Windows.Forms.DataGridViewCheckBoxColumn> to track the status of office lighting. The <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.FalseValue> property associates "turnedOff" with `false`, the <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.TrueValue> property associates "turnedOn" with `true`, and the <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.IndeterminateValue> property associates "unknown" to indeterminate.
 
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox/cpp/trivaluevirtualcheckbox.cpp" id="Snippet0":::
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Forms/DataGridViewCheckBoxCell/FalseValue/trivaluevirtualcheckbox.cs" id="Snippet0":::
@@ -696,7 +703,8 @@ The <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.FalseValue*>, <xref:Sy
  Getting or setting this property gets or sets the <xref:System.Windows.Forms.DataGridViewCheckBoxCell.TrueValue> property of the cell object returned by the <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.CellTemplate> property. Setting this property also sets the <xref:System.Windows.Forms.DataGridViewCheckBoxCell.TrueValue> property of every cell in the column and refreshes the column display. To override the specified value for individual cells, set the cell values after you set the column value.
 
 ## Examples
- The following code example uses a <xref:System.Windows.Forms.DataGridViewCheckBoxColumn> to track the status of office lighting. The <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.FalseValue> property associates "turnedOff" with `false`, the <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.TrueValue> property associates "turnedOn" with `true`, and the <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.IndeterminateValue> property associates "unknown" to indeterminate.
+
+The following code example uses a <xref:System.Windows.Forms.DataGridViewCheckBoxColumn> to track the status of office lighting. The <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.FalseValue> property associates "turnedOff" with `false`, the <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.TrueValue> property associates "turnedOn" with `true`, and the <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.IndeterminateValue> property associates "unknown" to indeterminate.
 
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewTrinaryVirtualCheckBox/cpp/trivaluevirtualcheckbox.cpp" id="Snippet0":::
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Forms/DataGridViewCheckBoxCell/FalseValue/trivaluevirtualcheckbox.cs" id="Snippet0":::

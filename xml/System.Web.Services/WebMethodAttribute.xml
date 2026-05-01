@@ -32,7 +32,8 @@
 Methods within a class that have this attribute set are called XML Web service methods. The method and class must be public and running inside an ASP.NET Web application.
 
 ## Examples
- In the example below the method `GetMachineName` can be remotely called across the Web, because it has a <xref:System.Web.Services.WebMethodAttribute>. `GetUserName` cannot be called remotely, because it does not have a <xref:System.Web.Services.WebMethodAttribute>, even though it is `public`.
+
+In the example below the method `GetMachineName` can be remotely called across the Web, because it has a <xref:System.Web.Services.WebMethodAttribute>. `GetUserName` cannot be called remotely, because it does not have a <xref:System.Web.Services.WebMethodAttribute>, even though it is `public`.
 
  :::code language="aspx-csharp" source="~/snippets/csharp/System.Web.Services/WebMethodAttribute/Overview/sourcecs.asmx":::
  :::code language="aspx-vb" source="~/snippets/visualbasic/VS_Snippets_Remoting/Classic WebMethodAttribute Example/VB/sourcevb.asmx":::
@@ -274,7 +275,8 @@ Setting <xref:System.Web.Services.WebMethodAttribute.BufferResponse*> to `true`,
  When <xref:System.Web.Services.WebMethodAttribute.BufferResponse*> is `false`, SOAP extensions are disabled for the XML Web service method.
 
 ## Examples
- The following code example sets the <xref:System.Web.Services.WebMethodAttribute.BufferResponse> property to `false` and handles the streaming of a text file back to the client. The code example demonstrates how to stream a large piece of data back to the client using a class that implements the <xref:System.Collections.IEnumerable> interface.
+
+The following code example sets the <xref:System.Web.Services.WebMethodAttribute.BufferResponse> property to `false` and handles the streaming of a text file back to the client. The code example demonstrates how to stream a large piece of data back to the client using a class that implements the <xref:System.Collections.IEnumerable> interface.
 
  :::code language="aspx-csharp" source="~/snippets/csharp/System.Web.Services/WebMethodAttribute/BufferResponse/sourcecs.asmx":::
  :::code language="aspx-vb" source="~/snippets/visualbasic/VS_Snippets_Remoting/Classic WebMethodAttribute.BufferResponse Example/VB/sourcevb.asmx":::
@@ -317,7 +319,8 @@ When caching is enabled requests and responses are held in memory on the server 
  In addition, HTTP indicates that a user agent (the browser or calling application) should be able to override server caching by setting the "Cache-Control" to "no-cache". ASP.NET applications, therefore, ignore cached results when they find a "no-cache" header.
 
 ## Examples
- The following example places the result of the call to the `ServiceUsage` XML Web service method in the cache for 60 seconds. Any time an XML Web service client executes the `ServiceUsage` XML Web service method during that time, the same result is returned.
+
+The following example places the result of the call to the `ServiceUsage` XML Web service method in the cache for 60 seconds. Any time an XML Web service client executes the `ServiceUsage` XML Web service method during that time, the same result is returned.
 
  :::code language="aspx-csharp" source="~/snippets/csharp/System.Web.Services/WebMethodAttribute/CacheDuration/sourcecs.asmx":::
  :::code language="aspx-vb" source="~/snippets/visualbasic/VS_Snippets_Remoting/Classic WebMethodAttribute.CacheDuration Example/VB/sourcevb.asmx":::
@@ -354,7 +357,8 @@ When caching is enabled requests and responses are held in memory on the server 
 The descriptive message is displayed to prospective consumers of the XML Web service when description documents for the XML Web service are generated, such as the Service Description and the Service help page.
 
 ## Examples
- In the example below, the string `Obtains the Server Computer Name` is used to describe the XML Web service method in the Service Description and Service help page for the XML Web service.
+
+In the example below, the string `Obtains the Server Computer Name` is used to describe the XML Web service method in the Service Description and Service help page for the XML Web service.
 
  :::code language="aspx-csharp" source="~/snippets/csharp/System.Web.Services/WebMethodAttribute/Description/sourcecs.asmx":::
  :::code language="aspx-vb" source="~/snippets/visualbasic/VS_Snippets_Remoting/Classic WebMethodAttribute.Description Example/VB/sourcevb.asmx":::
@@ -395,7 +399,8 @@ In order to store session state in the ASP.NET <xref:System.Web.SessionState.Htt
  An XML Web service client is uniquely identified by an HTTP cookie returned by an XML Web service. In order for an XML Web service to maintain session state for a client, the client must persist the cookie. Clients can receive the HTTP cookie by creating a new instance of <xref:System.Net.CookieContainer> and assigning that to the <xref:System.Web.Services.Protocols.HttpWebClientProtocol.CookieContainer> property of the proxy class before calling the XML Web service method. If you need to maintain session state beyond when the proxy class instance goes out of scope, the client must persist the HTTP cookie between calls to the XML Web service. For instance, a Web Forms client can persist the HTTP cookie by saving the <xref:System.Net.CookieContainer> in its own session state. Because not all XML Web services use session state and thus clients are not always required to use the <xref:System.Web.Services.Protocols.HttpWebClientProtocol.CookieContainer> property of a client proxy, the documentation for the XML Web service should state whether session state is used.
 
 ## Examples
- The example below uses session state to determine how many times a particular session accesses the XML Web service method `SessionHitCounter`.
+
+The example below uses session state to determine how many times a particular session accesses the XML Web service method `SessionHitCounter`.
 
  :::code language="aspx-csharp" source="~/snippets/csharp/System.Web.Services/WebMethodAttribute/EnableSession/sourcecs.asmx":::
  :::code language="aspx-vb" source="~/snippets/visualbasic/VS_Snippets_Remoting/Classic WebMethodAttribute.EnableSession Example/VB/sourcevb.asmx":::
@@ -444,7 +449,8 @@ The <xref:System.Web.Services.WebMethodAttribute.MessageName> property can be us
  If a new XML Web service method with the same name but different parameters is added after clients are calling the original method, a different message name should be specified for the new method but the original message name should be left as is to ensure compatibility with existing clients.
 
 ## Examples
- In the example below, <xref:System.Web.Services.WebMethodAttribute.MessageName*> is used to disambiguate the two `Add` methods.
+
+In the example below, <xref:System.Web.Services.WebMethodAttribute.MessageName*> is used to disambiguate the two `Add` methods.
 
  :::code language="aspx-csharp" source="~/snippets/csharp/System.Web.Services/WebMethodAttribute/MessageName/sourcecs.asmx":::
  :::code language="aspx-vb" source="~/snippets/visualbasic/VS_Snippets_Remoting/Classic WebMethodAttribute.MessageName Example/VB/sourcevb.asmx":::
@@ -492,7 +498,8 @@ XML Web service methods can only participate as the root object in a transaction
  If an exception is thrown from or not caught by an XML Web service method, the transaction is automatically aborted. If no exceptions occur the transaction is automatically committed unless the method explicitly calls `SetAbort`.
 
 ## Examples
- The example below begins a new transaction when the `Transfer` method is called.
+
+The example below begins a new transaction when the `Transfer` method is called.
 
  :::code language="aspx-csharp" source="~/snippets/csharp/System.Web.Services/WebMethodAttribute/TransactionOption/sourcecs.asmx":::
  :::code language="aspx-vb" source="~/snippets/visualbasic/VS_Snippets_Remoting/Classic WebMethodAttribute.TransactionOption Example/VB/sourcevb.asmx":::

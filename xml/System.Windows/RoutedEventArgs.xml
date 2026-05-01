@@ -144,7 +144,8 @@ When using this overloaded constructor, unspecified properties of the new <xref:
  Null values for <xref:System.Windows.RoutedEventArgs.Source*> and <xref:System.Windows.RoutedEventArgs.OriginalSource*> only mean that this <xref:System.Windows.RoutedEventArgs> makes no attempt to specify the source. When this instance is used in a call to <xref:System.Windows.UIElement.RaiseEvent*>, the  <xref:System.Windows.RoutedEventArgs.Source*> and <xref:System.Windows.RoutedEventArgs.OriginalSource*> values are populated based on the element that raised the event and are passed on to listeners through the routing.
 
 ## Examples
- The following example constructs a new <xref:System.Windows.RoutedEventArgs> for use in a call to <xref:System.Windows.UIElement.RaiseEvent*>.
+
+The following example constructs a new <xref:System.Windows.RoutedEventArgs> for use in a call to <xref:System.Windows.UIElement.RaiseEvent*>.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows/RoutedEventArgs/.ctor/class1.cs" id="Snippetraiseevent":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_Wpf/RoutedEventCustom/VB/SDKSampleLibrary/Class1.vb" id="Snippetraiseevent":::
@@ -252,7 +253,8 @@ Marking the event handled will limit the visibility of the routed event to liste
  In very rare circumstances it is appropriate to handle events where  <xref:System.Windows.RoutedEventArgs.Handled*> is marked `true`, and modify the event arguments by changing <xref:System.Windows.RoutedEventArgs.Handled*> to `false`. This can be necessary in certain areas of input events of controls, such as key handling of <xref:System.Windows.UIElement.KeyDown> versus <xref:System.Windows.UIElement.TextInput> where low level and high level input events compete for the handling, and each is attempting to work with a different routing strategy.
 
 ## Examples
- The following example implements an event handler that marks the event handled.
+
+The following example implements an event handler that marks the event handled.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows/EventManager/RegisterClassHandler/class1.cs" id="Snippetonstarclasshandler":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_Wpf/ClassHandling/visualbasic/sdksamplelibrary/class1.vb" id="Snippetonstarclasshandler":::
@@ -300,7 +302,8 @@ Marking the event handled will limit the visibility of the routed event to liste
 The base implementation incorporates reflection to determine the right handler for any case where the handler is not literally <xref:System.Windows.RoutedEventHandler>, and this reflection step does have some performance consequences. Invocations can be made more efficient by not relying on reflection. This is the scenario that motivates this method being available for any routed event arguments class that choose to override it. Implementations should not call the base for this method, because your implementation should already be responsible for invoking the type safe handlers.
 
 ## Examples
- The following is pseudocode that illustrates a basic pattern that can be used for implementation. Here, `MyRoutedEventHandler` is a subclass of <xref:System.Windows.RoutedEventHandler>.
+
+The following is pseudocode that illustrates a basic pattern that can be used for implementation. Here, `MyRoutedEventHandler` is a subclass of <xref:System.Windows.RoutedEventHandler>.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows/ComponentResourceKey/.ctor/corepseudocode.cs" id="Snippetroutedeventargs":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows/ComponentResourceKey/.ctor/corepseudocode.vb" id="Snippetroutedeventargs":::
@@ -442,7 +445,8 @@ You cannot set this value on a <xref:System.Windows.RoutedEventArgs> that has al
  The value of <xref:System.Windows.RoutedEventArgs.RoutedEvent*> cannot be `null` at any time.
 
 ## Examples
- The following example creates new routed event data with an initial constructor and then sets the <xref:System.Windows.RoutedEventArgs.RoutedEvent> property as a subsequent operation. You must have <xref:System.Windows.RoutedEventArgs.RoutedEvent*> set prior to raising the routed event.
+
+The following example creates new routed event data with an initial constructor and then sets the <xref:System.Windows.RoutedEventArgs.RoutedEvent> property as a subsequent operation. You must have <xref:System.Windows.RoutedEventArgs.RoutedEvent*> set prior to raising the routed event.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows/RoutedEventArgs/RoutedEvent/ColorPicker.cs" id="Snippetroutedeventargsroutedevent":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows/RoutedEventArgs/RoutedEvent/colorpicker.vb" id="Snippetroutedeventargsroutedevent":::

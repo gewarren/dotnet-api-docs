@@ -735,7 +735,8 @@ The <xref:System.Web.UI.WebControls.ObjectDataSource> control supports data cach
  The cache is regulated by a combination of the duration and the <xref:System.Web.UI.WebControls.ObjectDataSource.CacheExpirationPolicy*> setting. If the <xref:System.Web.UI.WebControls.ObjectDataSource.CacheExpirationPolicy> property is set to the <xref:System.Web.UI.DataSourceCacheExpiry.Absolute> value, the <xref:System.Web.UI.WebControls.ObjectDataSource> caches data on the first call to the <xref:System.Web.UI.WebControls.ObjectDataSource.Select*> method and holds it in memory for, at most, the amount of time that is specified by the <xref:System.Web.UI.WebControls.ObjectDataSource.CacheDuration> property. The data might be released before the duration time, if the memory is needed. The cache is then refreshed during the next call to the <xref:System.Web.UI.WebControls.ObjectDataSource.Select*> method. If the <xref:System.Web.UI.WebControls.ObjectDataSource.CacheExpirationPolicy> property is set to <xref:System.Web.UI.DataSourceCacheExpiry.Sliding> value, the data source control caches data on the first call to the <xref:System.Web.UI.WebControls.ObjectDataSource.Select*> method, but resets the time window for which it holds the cache on each subsequent call to the <xref:System.Web.UI.WebControls.ObjectDataSource.Select*> method. The cache expires if there is no activity for a time that is equal to the <xref:System.Web.UI.WebControls.ObjectDataSource.CacheDuration> property since the last call to the <xref:System.Web.UI.WebControls.ObjectDataSource.Select*> method.
 
 ## Examples
- This section contains two code examples. The first code example demonstrates how an <xref:System.Web.UI.WebControls.ObjectDataSource> object supports caching. The second code example demonstrates how to implement a wrapper method that returns a <xref:System.Data.DataSet> object to enable caching with an <xref:System.Web.UI.WebControls.ObjectDataSource> object.
+
+This section contains two code examples. The first code example demonstrates how an <xref:System.Web.UI.WebControls.ObjectDataSource> object supports caching. The second code example demonstrates how to implement a wrapper method that returns a <xref:System.Data.DataSet> object to enable caching with an <xref:System.Web.UI.WebControls.ObjectDataSource> object.
 
  The following code example demonstrates how an <xref:System.Web.UI.WebControls.ObjectDataSource> control supports caching. To enable caching, you must implement the method that retrieves data, which is identified by the <xref:System.Web.UI.WebControls.ObjectDataSource.SelectMethod> property, to return the data as a <xref:System.Data.DataSet> object. In this example, the <xref:System.Web.UI.WebControls.ObjectDataSource.EnableCaching> property is set to `true`, and the <xref:System.Web.UI.WebControls.ObjectDataSource.CacheDuration*> and <xref:System.Web.UI.WebControls.ObjectDataSource.CacheExpirationPolicy*> properties are set. The <xref:System.Web.UI.WebControls.ObjectDataSource> caches data that is returned by the <xref:System.Web.UI.WebControls.ObjectDataSource.SelectMethod> property for 30 seconds.
 
@@ -795,7 +796,8 @@ The <xref:System.Web.UI.WebControls.ObjectDataSource> control supports data cach
  The cache is regulated by a combination of the duration and the <xref:System.Web.UI.WebControls.ObjectDataSource.CacheExpirationPolicy*> setting. If the <xref:System.Web.UI.WebControls.ObjectDataSource.CacheExpirationPolicy> property is set to the <xref:System.Web.UI.DataSourceCacheExpiry.Absolute> value, the <xref:System.Web.UI.WebControls.ObjectDataSource> caches data on the first call to the <xref:System.Web.UI.WebControls.ObjectDataSource.Select*> method and holds it in memory for, at most, the amount of time that is specified by the <xref:System.Web.UI.WebControls.ObjectDataSource.CacheDuration> property. The data might be released before the duration time, if the memory is needed. The cache is then refreshed during the next call to the <xref:System.Web.UI.WebControls.ObjectDataSource.Select*> method. If the <xref:System.Web.UI.WebControls.ObjectDataSource.CacheExpirationPolicy> property is set to the <xref:System.Web.UI.DataSourceCacheExpiry.Sliding> value, the data source control caches data on the first call to the <xref:System.Web.UI.WebControls.ObjectDataSource.Select*> method, but resets the time window for which it holds the cache for each subsequent call to the <xref:System.Web.UI.WebControls.ObjectDataSource.Select*> method. The cache expires if there is no activity for a time that is equal to the <xref:System.Web.UI.WebControls.ObjectDataSource.CacheDuration> property since the last call to the <xref:System.Web.UI.WebControls.ObjectDataSource.Select*> method.
 
 ## Examples
- This section contains two code examples. The first code example demonstrates how an <xref:System.Web.UI.WebControls.ObjectDataSource> object supports filtering and caching. The second code example demonstrates how to implement a wrapper method that returns a <xref:System.Data.DataSet> object to enable caching and filtering with an <xref:System.Web.UI.WebControls.ObjectDataSource> object.
+
+This section contains two code examples. The first code example demonstrates how an <xref:System.Web.UI.WebControls.ObjectDataSource> object supports filtering and caching. The second code example demonstrates how to implement a wrapper method that returns a <xref:System.Data.DataSet> object to enable caching and filtering with an <xref:System.Web.UI.WebControls.ObjectDataSource> object.
 
  The following code example demonstrates how an <xref:System.Web.UI.WebControls.ObjectDataSource> control supports filtering and caching. To enable filtering and caching, you must implement the method that retrieves data, which is identified by the <xref:System.Web.UI.WebControls.ObjectDataSource.SelectMethod> property, to return the data as a <xref:System.Data.DataSet> object. In this example, caching is enabled because the `EmployeeLogic` object returns data as a <xref:System.Data.DataSet>, the <xref:System.Web.UI.WebControls.ObjectDataSource.EnableCaching> property is set to `true`, and the <xref:System.Web.UI.WebControls.ObjectDataSource.CacheDuration*> and <xref:System.Web.UI.WebControls.ObjectDataSource.CacheExpirationPolicy*> properties are set. The <xref:System.Web.UI.WebControls.ObjectDataSource> caches data that is returned by the <xref:System.Web.UI.WebControls.ObjectDataSource.SelectMethod> property for 30 seconds.
 
@@ -859,7 +861,8 @@ The <xref:System.Web.UI.WebControls.ObjectDataSource.CacheKeyDependency> propert
  A unique cache entry is created for every combination of the <xref:System.Web.UI.WebControls.ObjectDataSource.CacheDuration*>, <xref:System.Web.UI.WebControls.ObjectDataSource.CacheExpirationPolicy*>, <xref:System.Web.UI.WebControls.ObjectDataSource.TypeName*>, <xref:System.Web.UI.WebControls.ObjectDataSource.SelectMethod*>, and <xref:System.Web.UI.WebControls.ObjectDataSource.SelectParameters*> properties. Multiple <xref:System.Web.UI.WebControls.ObjectDataSource> controls can use the same cache entries in scenarios where they load data using the same type, method, and parameters.
 
 ## Examples
- The following three examples show a Web page, a code-behind page class, and a data-access class that retrieve records from the Employees table in the Northwind database.
+
+The following three examples show a Web page, a code-behind page class, and a data-access class that retrieve records from the Employees table in the Northwind database.
 
  The first example shows a Web page that contains two <xref:System.Web.UI.WebControls.ObjectDataSource> controls, a <xref:System.Web.UI.WebControls.DropDownList> control, and a <xref:System.Web.UI.WebControls.DetailsView> control. The first <xref:System.Web.UI.WebControls.ObjectDataSource> control and the <xref:System.Web.UI.WebControls.DropDownList> control are used to retrieve and display employee names from the database. The second <xref:System.Web.UI.WebControls.ObjectDataSource> control and the <xref:System.Web.UI.WebControls.DetailsView> control are used to retrieve and display the employee record that is selected by the user.
 
@@ -1013,7 +1016,8 @@ Instead of specifying several parameters that are passed to the <xref:System.Web
  The <xref:System.Web.UI.WebControls.ObjectDataSource.DataObjectTypeName> property delegates to the <xref:System.Web.UI.WebControls.ObjectDataSourceView.DataObjectTypeName> property of the <xref:System.Web.UI.WebControls.ObjectDataSourceView> that is associated with the <xref:System.Web.UI.WebControls.ObjectDataSource> control.
 
 ## Examples
- The section contains two code examples. The first code example demonstrates how to implement a type that combines all parameter values into one object, using the <xref:System.Web.UI.WebControls.ObjectDataSource.DataObjectTypeName> property. The second code example shows the Web page that uses the two classes that are used in the first code example.
+
+The section contains two code examples. The first code example demonstrates how to implement a type that combines all parameter values into one object, using the <xref:System.Web.UI.WebControls.ObjectDataSource.DataObjectTypeName> property. The second code example shows the Web page that uses the two classes that are used in the first code example.
 
  The following code example demonstrates how to implement a type that combines all parameter values into one object, using the <xref:System.Web.UI.WebControls.ObjectDataSource.DataObjectTypeName> property. The select method of the `AggregateData` class returns a <xref:System.Data.DataTable> object with two columns named `Name` and `Number`. Similarly, the `NewData` class defines two read/write properties, `Name` and `Number`. The `Insert` method of the `AggregateData` class takes one parameter of type `NewData`. The `TypeName` property of the <xref:System.Web.UI.WebControls.ObjectDataSource> is set to `AggregateData` and the <xref:System.Web.UI.WebControls.ObjectDataSource.DataObjectTypeName> property is set to `NewData`.
 
@@ -1106,7 +1110,8 @@ Handle the <xref:System.Web.UI.WebControls.ObjectDataSource.Deleted> event to ex
  For more information about how to handle events, see [Handling and Raising Events](/dotnet/standard/events/).
 
 ## Examples
- This section contains two code examples. The first code example demonstrates how to use an <xref:System.Web.UI.WebControls.ObjectDataSource> object with a business object and a <xref:System.Web.UI.WebControls.GridView> control to delete data. The second code example shows the `EmployeeLogic` class that is used in the first code example.
+
+This section contains two code examples. The first code example demonstrates how to use an <xref:System.Web.UI.WebControls.ObjectDataSource> object with a business object and a <xref:System.Web.UI.WebControls.GridView> control to delete data. The second code example shows the `EmployeeLogic` class that is used in the first code example.
 
  The following code example demonstrates how to use an <xref:System.Web.UI.WebControls.ObjectDataSource> control with a business object and a <xref:System.Web.UI.WebControls.GridView> control to delete data. Initially, the <xref:System.Web.UI.WebControls.GridView> control displays a set of all employees, using the method that is specified by the <xref:System.Web.UI.WebControls.ObjectDataSource.SelectMethod> property to retrieve the data from the `EmployeeLogic` object. Because the <xref:System.Web.UI.WebControls.GridView.AutoGenerateDeleteButton> property is set to `true`, the <xref:System.Web.UI.WebControls.GridView> control automatically displays a **Delete** button.
 
@@ -1188,7 +1193,8 @@ The business object is assumed to delete data one record at a time, rather than 
  If the <xref:System.Web.UI.WebControls.ObjectDataSource.DataObjectTypeName> property is set, the method is resolved in a different way. The <xref:System.Web.UI.WebControls.ObjectDataSource> looks for a method with the name that is specified in the <xref:System.Web.UI.WebControls.ObjectDataSource.DeleteMethod> property that takes one parameter of the type that is specified in the <xref:System.Web.UI.WebControls.ObjectDataSource.DataObjectTypeName> property. In this case, the name of the parameter does not matter.
 
 ## Examples
- This section contains two code examples. The first code example demonstrates how to use an <xref:System.Web.UI.WebControls.ObjectDataSource> object with a business object and a <xref:System.Web.UI.WebControls.GridView> control to delete data. The second code example shows the `EmployeeLogic` class that is used in the first code example.
+
+This section contains two code examples. The first code example demonstrates how to use an <xref:System.Web.UI.WebControls.ObjectDataSource> object with a business object and a <xref:System.Web.UI.WebControls.GridView> control to delete data. The second code example shows the `EmployeeLogic` class that is used in the first code example.
 
  The following code example demonstrates how to use an <xref:System.Web.UI.WebControls.ObjectDataSource> control with a business object and a <xref:System.Web.UI.WebControls.GridView> control to delete data. Initially, the <xref:System.Web.UI.WebControls.GridView> control displays a set of all employees, using the method that is specified by the <xref:System.Web.UI.WebControls.ObjectDataSource.SelectMethod> property to retrieve the data from the `EmployeeLogic` object. Because the <xref:System.Web.UI.WebControls.GridView.AutoGenerateDeleteButton> property is set to `true`, the <xref:System.Web.UI.WebControls.GridView> control automatically displays a **Delete** button.
 
@@ -1265,7 +1271,8 @@ The names and types of the parameters that are contained in the <xref:System.Web
  For more information about parameter merging, object lifetime, and method resolution, see <xref:System.Web.UI.WebControls.ObjectDataSource.DeleteMethod*>.
 
 ## Examples
- This section contains two code examples. The first code example demonstrates how to use an <xref:System.Web.UI.WebControls.ObjectDataSource> object with a business object and a <xref:System.Web.UI.WebControls.GridView> control to delete data. The second code example shows the `EmployeeLogic` class that is used in the first code example.
+
+This section contains two code examples. The first code example demonstrates how to use an <xref:System.Web.UI.WebControls.ObjectDataSource> object with a business object and a <xref:System.Web.UI.WebControls.GridView> control to delete data. The second code example shows the `EmployeeLogic` class that is used in the first code example.
 
  The following code example demonstrates how to use the <xref:System.Web.UI.WebControls.ObjectDataSource.DeleteParameters> property of the <xref:System.Web.UI.WebControls.ObjectDataSource> control with a business object and a <xref:System.Web.UI.WebControls.GridView> control to delete data. Initially, the <xref:System.Web.UI.WebControls.GridView> control displays a set of all employees, using the method that is specified by the <xref:System.Web.UI.WebControls.ObjectDataSource.SelectMethod> property to retrieve the data from the `EmployeeLogic` object. Because the <xref:System.Web.UI.WebControls.GridView.AutoGenerateDeleteButton> property is set to `true`, the <xref:System.Web.UI.WebControls.GridView> control automatically displays a **Delete** button.
 
@@ -1320,7 +1327,8 @@ Handle the <xref:System.Web.UI.WebControls.ObjectDataSource.Deleting> event to p
  For more information about how to handle events, see [Handling and Raising Events](/dotnet/standard/events/).
 
 ## Examples
- This section contains two code examples. The first code example demonstrates how to use an <xref:System.Web.UI.WebControls.ObjectDataSource> object with a business object and a <xref:System.Web.UI.WebControls.GridView> control to delete data. The second code example shows the `EmployeeLogic` class that is used in the first code example.
+
+This section contains two code examples. The first code example demonstrates how to use an <xref:System.Web.UI.WebControls.ObjectDataSource> object with a business object and a <xref:System.Web.UI.WebControls.GridView> control to delete data. The second code example shows the `EmployeeLogic` class that is used in the first code example.
 
  The following code example demonstrates how to use an <xref:System.Web.UI.WebControls.ObjectDataSource> control with a business object and a <xref:System.Web.UI.WebControls.GridView> control to delete data. Initially, the <xref:System.Web.UI.WebControls.GridView> control displays a set of all employees, using the method that is specified by the <xref:System.Web.UI.WebControls.ObjectDataSource.SelectMethod> property to retrieve the data from the `EmployeeLogic` object. Because the <xref:System.Web.UI.WebControls.GridView.AutoGenerateDeleteButton> property is set to `true`, the <xref:System.Web.UI.WebControls.GridView> control automatically displays a **Delete** button.
 
@@ -1381,7 +1389,8 @@ The <xref:System.Web.UI.WebControls.ObjectDataSource> control supports data cach
  The <xref:System.Web.UI.WebControls.ObjectDataSource> control automatically caches data when the <xref:System.Web.UI.WebControls.ObjectDataSource.EnableCaching> property is set to `true` and the <xref:System.Web.UI.WebControls.ObjectDataSource.CacheDuration> property is set to a value greater than 0, which indicates the number of seconds that the cache stores data before the cache entry is discarded. A value of 0 indicates an infinitely long cache.
 
 ## Examples
- The following three examples show a Web page, a code-behind page class, and a data-access class that retrieve records from the Employees table in the Northwind database.
+
+The following three examples show a Web page, a code-behind page class, and a data-access class that retrieve records from the Employees table in the Northwind database.
 
  The first example shows a Web page that contains two <xref:System.Web.UI.WebControls.ObjectDataSource> controls, a <xref:System.Web.UI.WebControls.DropDownList> control, and a <xref:System.Web.UI.WebControls.DetailsView> control. The first <xref:System.Web.UI.WebControls.ObjectDataSource> control and the <xref:System.Web.UI.WebControls.DropDownList> control are used to retrieve and display employee names from the database. The second <xref:System.Web.UI.WebControls.ObjectDataSource> control and the <xref:System.Web.UI.WebControls.DetailsView> control are used to retrieve and display the employee record that is selected by the user.
 
@@ -1448,7 +1457,8 @@ Paging by the <xref:System.Web.UI.WebControls.ObjectDataSource> control is handl
  The <xref:System.Web.UI.WebControls.ObjectDataSource.EnablePaging> property delegates to the <xref:System.Web.UI.WebControls.ObjectDataSourceView.EnablePaging> property of the <xref:System.Web.UI.WebControls.ObjectDataSourceView> object.
 
 ## Examples
- The following three examples show a Web page, a code-behind page class, and a data-access class that enable the user to pick how many records are displayed in the page.
+
+The following three examples show a Web page, a code-behind page class, and a data-access class that enable the user to pick how many records are displayed in the page.
 
  The Web page contains an <xref:System.Web.UI.WebControls.ObjectDataSource> control whose <xref:System.Web.UI.WebControls.ObjectDataSource.EnablePaging> property is set to `true`. The <xref:System.Web.UI.WebControls.ObjectDataSource.SelectCountMethod> property is set to the name of a method that returns the total number of records in the query. The <xref:System.Web.UI.WebControls.ObjectDataSource.MaximumRowsParameterName> property and the <xref:System.Web.UI.WebControls.ObjectDataSource.StartRowIndexParameterName> property are set to the names of the parameters that are used in the Select method. The page also contains a <xref:System.Web.UI.WebControls.DropDownList> control.
 
@@ -1519,7 +1529,8 @@ The <xref:System.Web.UI.WebControls.ObjectDataSource> control supports filtering
 > You should validate any filter parameter value that you receive from the client. The runtime simply substitutes the parameter value into the filter expression and applies it to the <xref:System.Data.DataSet> or <xref:System.Data.DataTable> object that is returned by the <xref:System.Web.UI.WebControls.ObjectDataSource.Select*> method. If you are using the <xref:System.Web.UI.WebControls.ObjectDataSource.FilterExpression> property as a security measure to limit the number of items that are returned, you must validate the parameter values before the filtering occurs.
 
 ## Examples
- The following code example demonstrates how to display filtered data using an <xref:System.Web.UI.WebControls.ObjectDataSource> control to retrieve data from a middle-tier business object and a <xref:System.Web.UI.WebControls.GridView> control to display the results. The <xref:System.Web.UI.WebControls.ObjectDataSource> control can filter data only when the method that retrieves the data retrieves it as a <xref:System.Data.DataSet> or <xref:System.Data.DataTable> object. For this reason, the <xref:System.Web.UI.WebControls.ObjectDataSource.SelectMethod> property identifies a business object method that retrieves data as a <xref:System.Data.DataSet>.
+
+The following code example demonstrates how to display filtered data using an <xref:System.Web.UI.WebControls.ObjectDataSource> control to retrieve data from a middle-tier business object and a <xref:System.Web.UI.WebControls.GridView> control to display the results. The <xref:System.Web.UI.WebControls.ObjectDataSource> control can filter data only when the method that retrieves the data retrieves it as a <xref:System.Data.DataSet> or <xref:System.Data.DataTable> object. For this reason, the <xref:System.Web.UI.WebControls.ObjectDataSource.SelectMethod> property identifies a business object method that retrieves data as a <xref:System.Data.DataSet>.
 
  The code example consists of a <xref:System.Web.UI.WebControls.TextBox> control, a <xref:System.Web.UI.WebControls.GridView> control, the <xref:System.Web.UI.WebControls.ObjectDataSource> control, and a **Submit** button. By default, the <xref:System.Web.UI.WebControls.TextBox> is populated with the name of one of the Northwind Traders employees. The <xref:System.Web.UI.WebControls.GridView> displays information about the employee that is identified by the name in the <xref:System.Web.UI.WebControls.TextBox>. To retrieve data on another employee, enter the full name of the employee in the <xref:System.Web.UI.WebControls.TextBox>, and then click the **Submit** button.
 
@@ -1648,7 +1659,8 @@ The <xref:System.Web.UI.WebControls.ObjectDataSource> control supports filtering
  The <xref:System.Web.UI.WebControls.ObjectDataSource.FilterParameters> property retrieves the <xref:System.Web.UI.WebControls.ObjectDataSourceView.FilterParameters> property that is contained by the <xref:System.Web.UI.WebControls.ObjectDataSourceView> object that is associated with the <xref:System.Web.UI.WebControls.ObjectDataSource> control.
 
 ## Examples
- This section contains two code examples. The first code example demonstrates how to display filtered data using an <xref:System.Web.UI.WebControls.ObjectDataSource> object to retrieve data from a middle-tier business object and a <xref:System.Web.UI.WebControls.GridView> control to display the results. The second code example provides an example of a middle-tier business object that is used in the first code example.
+
+This section contains two code examples. The first code example demonstrates how to display filtered data using an <xref:System.Web.UI.WebControls.ObjectDataSource> object to retrieve data from a middle-tier business object and a <xref:System.Web.UI.WebControls.GridView> control to display the results. The second code example provides an example of a middle-tier business object that is used in the first code example.
 
  The following code example demonstrates how to display filtered data using an <xref:System.Web.UI.WebControls.ObjectDataSource> control to retrieve data from a middle-tier business object and a <xref:System.Web.UI.WebControls.GridView> control to display the results. The <xref:System.Web.UI.WebControls.ObjectDataSource> control can filter data only when the method that retrieves the data retrieves it as a <xref:System.Data.DataSet> or <xref:System.Data.DataTable> object. For this reason, the <xref:System.Web.UI.WebControls.ObjectDataSource.SelectMethod> property identifies a business object method that retrieves data as a <xref:System.Data.DataSet>.
 
@@ -1872,7 +1884,8 @@ Handle the <xref:System.Web.UI.WebControls.ObjectDataSource.Inserting> event to 
  For more information about how to handle events, see [Handling and Raising Events](/dotnet/standard/events/).
 
 ## Examples
- This section contains two code examples. The first code example demonstrates how to use an <xref:System.Web.UI.WebControls.ObjectDataSource> object with a business object and a <xref:System.Web.UI.WebControls.DetailsView> control to insert data. The second code example provides an example of the middle-tier business object that is used in the first code example.
+
+This section contains two code examples. The first code example demonstrates how to use an <xref:System.Web.UI.WebControls.ObjectDataSource> object with a business object and a <xref:System.Web.UI.WebControls.DetailsView> control to insert data. The second code example provides an example of the middle-tier business object that is used in the first code example.
 
  The following code example demonstrates how to use an <xref:System.Web.UI.WebControls.ObjectDataSource> control with a business object and a <xref:System.Web.UI.WebControls.DetailsView> control to insert data. Initially, the <xref:System.Web.UI.WebControls.DetailsView> displays a new `NorthwindEmployee` record, along with an automatically generated **Insert** button. After you enter data into the fields of the <xref:System.Web.UI.WebControls.DetailsView> control, click the **Insert** button. The <xref:System.Web.UI.WebControls.ObjectDataSource.InsertMethod> property identifies which method performs the insert operation.
 
@@ -1962,7 +1975,8 @@ The business object is assumed to insert data one record at a time, rather than 
  If the <xref:System.Web.UI.WebControls.ObjectDataSource.DataObjectTypeName> property is set, the method is resolved in a different way. The <xref:System.Web.UI.WebControls.ObjectDataSource> looks for a method with the name that is specified in the <xref:System.Web.UI.WebControls.ObjectDataSource.InsertMethod> property that takes one parameter of the type that is specified in the <xref:System.Web.UI.WebControls.ObjectDataSource.DataObjectTypeName> property. In this case, the name of the parameter does not matter.
 
 ## Examples
- This section contains two code examples. The first code example demonstrates how to use an <xref:System.Web.UI.WebControls.ObjectDataSource> object with a business object and a <xref:System.Web.UI.WebControls.DetailsView> control to insert data. The second code example provides an example of the middle-tier business object that is used in the first code example.
+
+This section contains two code examples. The first code example demonstrates how to use an <xref:System.Web.UI.WebControls.ObjectDataSource> object with a business object and a <xref:System.Web.UI.WebControls.DetailsView> control to insert data. The second code example provides an example of the middle-tier business object that is used in the first code example.
 
  The following code example demonstrates how to use an <xref:System.Web.UI.WebControls.ObjectDataSource> control with a business object and a <xref:System.Web.UI.WebControls.DetailsView> control to insert data. Initially, the <xref:System.Web.UI.WebControls.DetailsView> displays a new `NorthwindEmployee` record, along with an automatically generated **Insert** button. After you enter data into the fields of the <xref:System.Web.UI.WebControls.DetailsView> control, click the **Insert** button. The <xref:System.Web.UI.WebControls.ObjectDataSource.InsertMethod> property identifies which method performs the insert operation.
 
@@ -2047,7 +2061,8 @@ The names and types of the parameters that are contained in the <xref:System.Web
  For more information about parameter merging, object lifetime, and method resolution, see <xref:System.Web.UI.WebControls.ObjectDataSource.InsertMethod*>.
 
 ## Examples
- This section contains two code examples. The first code example demonstrates how to use an <xref:System.Web.UI.WebControls.ObjectDataSource> object with a business object and a <xref:System.Web.UI.WebControls.DetailsView> control to insert data. The second code example provides an example implementation of the `Insert` method that is used in the first code example.
+
+This section contains two code examples. The first code example demonstrates how to use an <xref:System.Web.UI.WebControls.ObjectDataSource> object with a business object and a <xref:System.Web.UI.WebControls.DetailsView> control to insert data. The second code example provides an example implementation of the `Insert` method that is used in the first code example.
 
  The following code example demonstrates how to use an <xref:System.Web.UI.WebControls.ObjectDataSource> control with a business object and a <xref:System.Web.UI.WebControls.DetailsView> control to insert data. Initially, the <xref:System.Web.UI.WebControls.DetailsView> displays text boxes in which you can enter data for a new `NorthwindEmployee` record, along with an automatically generated **Insert** button. After you enter data into the fields of the <xref:System.Web.UI.WebControls.DetailsView> control, click the **Insert** button. The <xref:System.Web.UI.WebControls.ObjectDataSource.InsertMethod> property identifies which method performs the insert operation.
 
@@ -2153,7 +2168,8 @@ The <xref:System.Web.UI.WebControls.ObjectDataSource.MaximumRowsParameterName> p
  The <xref:System.Web.UI.WebControls.ObjectDataSource.MaximumRowsParameterName> property delegates to the <xref:System.Web.UI.WebControls.ObjectDataSourceView.MaximumRowsParameterName> property of the <xref:System.Web.UI.WebControls.ObjectDataSourceView> object that is associated with the <xref:System.Web.UI.WebControls.ObjectDataSource> control.
 
 ## Examples
- The following three examples show a Web page, a code-behind page class, and a data-access class that enable the user to pick how many records are displayed in the page.
+
+The following three examples show a Web page, a code-behind page class, and a data-access class that enable the user to pick how many records are displayed in the page.
 
  The Web page contains an <xref:System.Web.UI.WebControls.ObjectDataSource> control whose <xref:System.Web.UI.WebControls.ObjectDataSource.EnablePaging> property is set to `true`. The <xref:System.Web.UI.WebControls.ObjectDataSource.SelectCountMethod> property is set to the name of a method that returns the total number of records in the query. The <xref:System.Web.UI.WebControls.ObjectDataSource.MaximumRowsParameterName> property and the <xref:System.Web.UI.WebControls.ObjectDataSource.StartRowIndexParameterName> property are set to the names of the parameters that are used in the Select method. The page also contains a <xref:System.Web.UI.WebControls.DropDownList> control.
 
@@ -2249,7 +2265,8 @@ If the method that is identified to perform the data operation is `static` (`Sha
  For more information about how to handle events, see [Handling and Raising Events](/dotnet/standard/events/).
 
 ## Examples
- This section contains two code examples. The first code example demonstrates how to use an <xref:System.Web.UI.WebControls.ObjectDataSource> object with a business object and a <xref:System.Web.UI.WebControls.GridView> control to display information. The second code example provides the middle-tier business object that is used in the first code example.
+
+This section contains two code examples. The first code example demonstrates how to use an <xref:System.Web.UI.WebControls.ObjectDataSource> object with a business object and a <xref:System.Web.UI.WebControls.GridView> control to display information. The second code example provides the middle-tier business object that is used in the first code example.
 
  The following code example demonstrates how to use an <xref:System.Web.UI.WebControls.ObjectDataSource> control with a business object and a <xref:System.Web.UI.WebControls.GridView> control to display information. You might work with a business object that is very expensive to create (in terms of time or resources) for every data operation your Web page performs. One way to work with an expensive object might be to create an instance of it once, and then cache it for subsequent operations instead of creating and destroying it for every data operation.
 
@@ -2307,7 +2324,8 @@ The <xref:System.Web.UI.WebControls.ObjectDataSource.ObjectDisposing> event is a
  For more information about how to handle events, see [Handling and Raising Events](/dotnet/standard/events/).
 
 ## Examples
- This section contains two code examples. The first code example demonstrates how to use an <xref:System.Web.UI.WebControls.ObjectDataSource> object with a business object and a <xref:System.Web.UI.WebControls.GridView> control to display information. The second code example provides the middle-tier business object that is used in the first code example.
+
+This section contains two code examples. The first code example demonstrates how to use an <xref:System.Web.UI.WebControls.ObjectDataSource> object with a business object and a <xref:System.Web.UI.WebControls.GridView> control to display information. The second code example provides the middle-tier business object that is used in the first code example.
 
  The following code example demonstrates how to use an <xref:System.Web.UI.WebControls.ObjectDataSource> control with a business object and a <xref:System.Web.UI.WebControls.GridView> control to display information. You might work with a business object that is very expensive to create (in terms of time or resources) for every data operation your Web page performs. One way to work with an expensive object might be to create an instance of it once, and then cache it for subsequent operations instead of creating and destroying it for every data operation. This example demonstrates this pattern. You can handle the <xref:System.Web.UI.WebControls.ObjectDataSource.ObjectCreating> event to check the cache for an object first, and only create an instance of it, if one is not already cached. Then, handle the <xref:System.Web.UI.WebControls.ObjectDataSource.ObjectDisposing> event to cache the business object for future use, instead of destroying it. In this code example, the <xref:System.ComponentModel.CancelEventArgs.Cancel?displayProperty=nameWithType> property of the <xref:System.Web.UI.WebControls.ObjectDataSourceDisposingEventArgs> object is set to `true` to direct the <xref:System.Web.UI.WebControls.ObjectDataSource> to not call the <xref:System.IDisposable.Dispose*> method on the object.
 
@@ -2542,7 +2560,8 @@ The specified method might have any method signature, but it must return or be d
  When the <xref:System.Web.UI.WebControls.ObjectDataSource> control is associated with a data-bound control, such as the <xref:System.Web.UI.WebControls.GridView> control, it is not necessary to call the <xref:System.Web.UI.WebControls.ObjectDataSource.Select*> method from page code. The <xref:System.Web.UI.WebControls.ObjectDataSource.Select*> method is invoked directly by the data-bound control instead.
 
 ## Examples
- For a code example, see <xref:System.Web.UI.WebControls.ObjectDataSource>.
+
+For a code example, see <xref:System.Web.UI.WebControls.ObjectDataSource>.
 
  ]]></format>
         </remarks>
@@ -2588,7 +2607,8 @@ The <xref:System.Web.UI.WebControls.ObjectDataSource.SelectCountMethod> property
  The <xref:System.Web.UI.WebControls.ObjectDataSource.SelectCountMethod> property delegates to the <xref:System.Web.UI.WebControls.ObjectDataSourceView.SelectCountMethod> property of the <xref:System.Web.UI.WebControls.ObjectDataSourceView> object that is associated with the <xref:System.Web.UI.WebControls.ObjectDataSource> control. For information about how paging is supported by the <xref:System.Web.UI.WebControls.ObjectDataSource> control, see <xref:System.Web.UI.WebControls.ObjectDataSource.EnablePaging*>.
 
 ## Examples
- The following three examples show a Web page, a code-behind page class, and a data-access class that enable the user to pick how many records are displayed in the page.
+
+The following three examples show a Web page, a code-behind page class, and a data-access class that enable the user to pick how many records are displayed in the page.
 
  The Web page contains an <xref:System.Web.UI.WebControls.ObjectDataSource> control whose <xref:System.Web.UI.WebControls.ObjectDataSource.EnablePaging> property is set to `true`. The <xref:System.Web.UI.WebControls.ObjectDataSource.SelectCountMethod> property is set to the name of a method that returns the total number of records in the query. The <xref:System.Web.UI.WebControls.ObjectDataSource.MaximumRowsParameterName> property and the <xref:System.Web.UI.WebControls.ObjectDataSource.StartRowIndexParameterName> property are set to the names of the parameters that are used in the Select method. The page also contains a <xref:System.Web.UI.WebControls.DropDownList> control.
 
@@ -2644,7 +2664,8 @@ Handle the <xref:System.Web.UI.WebControls.ObjectDataSource.Selected> event to e
  For more information about how to handle events, see [Handling and Raising Events](/dotnet/standard/events/).
 
 ## Examples
- The following three examples show a Web page, a code-behind page class, and a data-access class that enable a user to retrieve and update records in the Employees table in the Northwind database.
+
+The following three examples show a Web page, a code-behind page class, and a data-access class that enable a user to retrieve and update records in the Employees table in the Northwind database.
 
  The first example shows a Web page that contains two <xref:System.Web.UI.WebControls.ObjectDataSource> controls, a <xref:System.Web.UI.WebControls.DropDownList> control, and a <xref:System.Web.UI.WebControls.DetailsView> control. The first <xref:System.Web.UI.WebControls.ObjectDataSource> control and the <xref:System.Web.UI.WebControls.DropDownList> control are used to retrieve and display employee names from the database. The second <xref:System.Web.UI.WebControls.ObjectDataSource> control and the <xref:System.Web.UI.WebControls.DetailsView> control are used to retrieve, display, and modify the data from the employee record that is selected by the user.
 
@@ -2777,7 +2798,8 @@ The specified method can have any method signature, but it must return one of th
  If the <xref:System.Web.UI.WebControls.ObjectDataSource.DataObjectTypeName> property is set, the method is resolved in a different way. The <xref:System.Web.UI.WebControls.ObjectDataSource> looks for a method with the name that is specified in the <xref:System.Web.UI.WebControls.ObjectDataSource.SelectMethod> property that takes one parameter of the type that is specified in the <xref:System.Web.UI.WebControls.ObjectDataSource.DataObjectTypeName> property. In this case, the name of the parameter does not matter.
 
 ## Examples
- The following code example demonstrates how a <xref:System.Web.UI.WebControls.GridView> control can display data using an <xref:System.Web.UI.WebControls.ObjectDataSource> control on a Web Forms page. The <xref:System.Web.UI.WebControls.ObjectDataSource> identifies a partially or fully qualified class name with its <xref:System.Web.UI.WebControls.ObjectDataSource.TypeName> property and a method that is called to retrieve data with its <xref:System.Web.UI.WebControls.ObjectDataSource.SelectMethod> property. At run time, the object is created and the method is called using reflection. The <xref:System.Web.UI.WebControls.GridView> control enumerates through the <xref:System.Collections.IEnumerable> collection that is returned by the method that is specified by the <xref:System.Web.UI.WebControls.ObjectDataSource.SelectMethod> property, and displays the data.
+
+The following code example demonstrates how a <xref:System.Web.UI.WebControls.GridView> control can display data using an <xref:System.Web.UI.WebControls.ObjectDataSource> control on a Web Forms page. The <xref:System.Web.UI.WebControls.ObjectDataSource> identifies a partially or fully qualified class name with its <xref:System.Web.UI.WebControls.ObjectDataSource.TypeName> property and a method that is called to retrieve data with its <xref:System.Web.UI.WebControls.ObjectDataSource.SelectMethod> property. At run time, the object is created and the method is called using reflection. The <xref:System.Web.UI.WebControls.GridView> control enumerates through the <xref:System.Collections.IEnumerable> collection that is returned by the method that is specified by the <xref:System.Web.UI.WebControls.ObjectDataSource.SelectMethod> property, and displays the data.
 
  :::code language="aspx-csharp" source="~/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_1/CS/objds1cs.aspx" id="Snippet1":::
  :::code language="aspx-vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_1/VB/objds1vb.aspx" id="Snippet1":::
@@ -2850,7 +2872,8 @@ The <xref:System.Web.UI.WebControls.ObjectDataSource.SelectParameters> property 
 > In the code for the <xref:System.Web.UI.WebControls.ObjectDataSource.Selecting> event handler or in the method that is specified by the <xref:System.Web.UI.WebControls.ObjectDataSource.SelectMethod> property, make sure that you validate any parameter value that is received from the client.
 
 ## Examples
- The following code example demonstrates how to retrieve a single data record using an <xref:System.Web.UI.WebControls.ObjectDataSource> control and display it in a <xref:System.Web.UI.WebControls.DetailsView> control. The <xref:System.Web.UI.WebControls.ObjectDataSource> control retrieves a specific employee record by calling the `GetEmployee` method of the `EmployeeLogic` class. The `GetEmployee` method requires an employee ID parameter. The <xref:System.Web.UI.WebControls.ObjectDataSource> control uses a `QueryStringParameter` element in markup to create a <xref:System.Web.UI.WebControls.QueryStringParameter> object that will retrieve the value of a specified query-string parameter from the URL and pass it to the `GetEmployee` method.
+
+The following code example demonstrates how to retrieve a single data record using an <xref:System.Web.UI.WebControls.ObjectDataSource> control and display it in a <xref:System.Web.UI.WebControls.DetailsView> control. The <xref:System.Web.UI.WebControls.ObjectDataSource> control retrieves a specific employee record by calling the `GetEmployee` method of the `EmployeeLogic` class. The `GetEmployee` method requires an employee ID parameter. The <xref:System.Web.UI.WebControls.ObjectDataSource> control uses a `QueryStringParameter` element in markup to create a <xref:System.Web.UI.WebControls.QueryStringParameter> object that will retrieve the value of a specified query-string parameter from the URL and pass it to the `GetEmployee` method.
 
  Other parameter classes can be used to retrieve values from other sources, such as control properties, form fields, cookies, ASP.NET profile data, or session state. You can also use a parameter object that is defined in markup in order to pass a hard-coded value to the select method. For more information about parameter classes that are available, see [Using Parameters with Data Source Controls for Filtering](https://learn.microsoft.com/previous-versions/aspnet/xt50s8kz(v=vs.100)).
 
@@ -2911,7 +2934,8 @@ The <xref:System.Web.UI.WebControls.ObjectDataSource.SortParameterName> property
  The <xref:System.Web.UI.WebControls.ObjectDataSource.SortParameterName> property delegates to the <xref:System.Web.UI.WebControls.ObjectDataSourceView.SortParameterName> property of the <xref:System.Web.UI.WebControls.ObjectDataSourceView> object that is associated with the <xref:System.Web.UI.WebControls.ObjectDataSource> control.
 
 ## Examples
- This section contains two code examples. The first code example demonstrates how to implement a type that supports sorting. The second code example demonstrates how to implement a sort expression.
+
+This section contains two code examples. The first code example demonstrates how to implement a type that supports sorting. The second code example demonstrates how to implement a sort expression.
 
  The following code example demonstrates how to implement a type that supports sorting. The `SelectMethod` of the `SortingData` class takes a parameter, `sortExpression`. The string that is passed to `SelectMethod` is used for the <xref:System.Data.DataView.Sort> property of the <xref:System.Data.DataView> object that is returned by `SelectMethod`.
 
@@ -2971,7 +2995,8 @@ The <xref:System.Web.UI.WebControls.ObjectDataSource> control supports an option
  To support notification, you must write the cache logic in the implementation of your <xref:System.Web.UI.WebControls.ObjectDataSource.SelectMethod> property and handle the construction of the <xref:System.Web.Caching.SqlCacheDependency> object in your code.
 
 ## Examples
- This section contains two code examples. The first code example demonstrates how to create a SQL Server cache dependency and set the <xref:System.Web.UI.WebControls.ObjectDataSource.SqlCacheDependency> property of a <xref:System.Web.UI.WebControls.ObjectDataSource> object. The second code example demonstrates how to implement a wrapper method that returns a <xref:System.Data.DataSet> object to enable caching and filtering with an <xref:System.Web.UI.WebControls.ObjectDataSource> object.
+
+This section contains two code examples. The first code example demonstrates how to create a SQL Server cache dependency and set the <xref:System.Web.UI.WebControls.ObjectDataSource.SqlCacheDependency> property of a <xref:System.Web.UI.WebControls.ObjectDataSource> object. The second code example demonstrates how to implement a wrapper method that returns a <xref:System.Data.DataSet> object to enable caching and filtering with an <xref:System.Web.UI.WebControls.ObjectDataSource> object.
 
  The following code example demonstrates how to create a SQL Server cache dependency and set the <xref:System.Web.UI.WebControls.ObjectDataSource.SqlCacheDependency> property of a <xref:System.Web.UI.WebControls.ObjectDataSource> control. In this example, the database is polled every 120 seconds. If the data in the Northwind Traders Employees table changes during that time, any data that is cached by the <xref:System.Web.UI.WebControls.ObjectDataSource> control and displayed by the <xref:System.Web.UI.WebControls.GridView> control is expired and a new set of data is retrieved on the next request for the page.
 
@@ -3026,7 +3051,8 @@ The <xref:System.Web.UI.WebControls.ObjectDataSource.StartRowIndexParameterName>
  The <xref:System.Web.UI.WebControls.ObjectDataSource.StartRowIndexParameterName> property delegates to the <xref:System.Web.UI.WebControls.ObjectDataSourceView.StartRowIndexParameterName> property of the <xref:System.Web.UI.WebControls.ObjectDataSourceView> object that is associated with the <xref:System.Web.UI.WebControls.ObjectDataSource> control.
 
 ## Examples
- The following three examples show a Web page, a code-behind page class, and a data-access class that enable the user to pick how many records are displayed in the page.
+
+The following three examples show a Web page, a code-behind page class, and a data-access class that enable the user to pick how many records are displayed in the page.
 
  The Web page contains an <xref:System.Web.UI.WebControls.ObjectDataSource> control whose <xref:System.Web.UI.WebControls.ObjectDataSource.EnablePaging> property is set to `true`. The <xref:System.Web.UI.WebControls.ObjectDataSource.SelectCountMethod> property is set to the name of a method that returns the total number of records in the query. The <xref:System.Web.UI.WebControls.ObjectDataSource.MaximumRowsParameterName> property and the <xref:System.Web.UI.WebControls.ObjectDataSource.StartRowIndexParameterName> property are set to the names of the parameters that are used in the Select method. The page also contains a <xref:System.Web.UI.WebControls.DropDownList> control.
 
@@ -3124,7 +3150,8 @@ To create an instance of the object that the <xref:System.Web.UI.WebControls.Obj
  The type must have a parameterless constructor, unless you handle the <xref:System.Web.UI.WebControls.ObjectDataSource.ObjectCreating> event to create an instance of it yourself. An instance of the type is created for each call to the <xref:System.Web.UI.WebControls.ObjectDataSource.Select*>, <xref:System.Web.UI.WebControls.ObjectDataSource.Update*>, <xref:System.Web.UI.WebControls.ObjectDataSource.Insert*>, and <xref:System.Web.UI.WebControls.ObjectDataSource.Delete*> methods, if the methods on the type are member methods. An instance is not created if the methods are `static` (`Shared` in Visual Basic). If the type implements the <xref:System.IDisposable> interface, the <xref:System.IDisposable.Dispose*> method is called before the object is destroyed.
 
 ## Examples
- The following code example demonstrates how a <xref:System.Web.UI.WebControls.GridView> control can display data by using an <xref:System.Web.UI.WebControls.ObjectDataSource> control on a Web Forms page. The <xref:System.Web.UI.WebControls.ObjectDataSource> identifies a partially or fully qualified class name with its <xref:System.Web.UI.WebControls.ObjectDataSource.TypeName> property and a method that is called to retrieve data with its <xref:System.Web.UI.WebControls.ObjectDataSource.SelectMethod> property. At run time, the object is created and the method is called using reflection. The <xref:System.Web.UI.WebControls.GridView> control enumerates through the <xref:System.Collections.IEnumerable> collection that is returned by the <xref:System.Web.UI.WebControls.ObjectDataSource.SelectMethod> property, and displays the data.
+
+The following code example demonstrates how a <xref:System.Web.UI.WebControls.GridView> control can display data by using an <xref:System.Web.UI.WebControls.ObjectDataSource> control on a Web Forms page. The <xref:System.Web.UI.WebControls.ObjectDataSource> identifies a partially or fully qualified class name with its <xref:System.Web.UI.WebControls.ObjectDataSource.TypeName> property and a method that is called to retrieve data with its <xref:System.Web.UI.WebControls.ObjectDataSource.SelectMethod> property. At run time, the object is created and the method is called using reflection. The <xref:System.Web.UI.WebControls.GridView> control enumerates through the <xref:System.Collections.IEnumerable> collection that is returned by the <xref:System.Web.UI.WebControls.ObjectDataSource.SelectMethod> property, and displays the data.
 
  :::code language="aspx-csharp" source="~/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_1/CS/objds1cs.aspx" id="Snippet1":::
  :::code language="aspx-vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_1/VB/objds1vb.aspx" id="Snippet1":::
@@ -3181,7 +3208,8 @@ The business object is assumed to update data one record at a time, rather than 
  When the <xref:System.Web.UI.WebControls.ObjectDataSource> control is associated with a data-bound control, such as the <xref:System.Web.UI.WebControls.GridView> control, it is not necessary to call the <xref:System.Web.UI.WebControls.ObjectDataSource.Update*> method from page code. The <xref:System.Web.UI.WebControls.ObjectDataSource.Update*> method is invoked directly by the data-bound control instead.
 
 ## Examples
- This section contains two code examples. The first code example demonstrates how to use a <xref:System.Web.UI.WebControls.DropDownList> control, <xref:System.Web.UI.WebControls.TextBox> controls, and several <xref:System.Web.UI.WebControls.ObjectDataSource> objects to update data. The second code example shows the `EmployeeLogic` class that is used in the first code example.
+
+This section contains two code examples. The first code example demonstrates how to use a <xref:System.Web.UI.WebControls.DropDownList> control, <xref:System.Web.UI.WebControls.TextBox> controls, and several <xref:System.Web.UI.WebControls.ObjectDataSource> objects to update data. The second code example shows the `EmployeeLogic` class that is used in the first code example.
 
  The following code example demonstrates how to use a <xref:System.Web.UI.WebControls.DropDownList> control, <xref:System.Web.UI.WebControls.TextBox> controls, and several <xref:System.Web.UI.WebControls.ObjectDataSource> controls to update data. The <xref:System.Web.UI.WebControls.DropDownList> displays the name of a Northwind employee, while the <xref:System.Web.UI.WebControls.TextBox> controls are used to enter and update address information. Because the <xref:System.Web.UI.WebControls.ObjectDataSource.UpdateParameters*> collection contains a <xref:System.Web.UI.WebControls.ControlParameter> object that is bound to the selected value of the <xref:System.Web.UI.WebControls.DropDownList>, the button that raises the <xref:System.Web.UI.WebControls.ObjectDataSource.Update*> operation is enabled only after an employee is selected.
 
@@ -3304,7 +3332,8 @@ The <xref:System.Web.UI.WebControls.ObjectDataSource> control assumes that the m
  If the <xref:System.Web.UI.WebControls.ObjectDataSource.DataObjectTypeName> property is set, the method is resolved in a different way. The <xref:System.Web.UI.WebControls.ObjectDataSource> looks for a method with the name that is specified in the <xref:System.Web.UI.WebControls.ObjectDataSource.UpdateMethod> property that takes one parameter of the type that is specified in the <xref:System.Web.UI.WebControls.ObjectDataSource.DataObjectTypeName> property. In this case, the name of the parameter does not matter.
 
 ## Examples
- The following three examples show a Web page, a code-behind page class, and a data-access class that enable a user to retrieve and update records in the Employees table in the Northwind database.
+
+The following three examples show a Web page, a code-behind page class, and a data-access class that enable a user to retrieve and update records in the Employees table in the Northwind database.
 
  The first example shows a Web page that contains two <xref:System.Web.UI.WebControls.ObjectDataSource> controls, a <xref:System.Web.UI.WebControls.DropDownList> control, and a <xref:System.Web.UI.WebControls.DetailsView> control. The first <xref:System.Web.UI.WebControls.ObjectDataSource> control and the <xref:System.Web.UI.WebControls.DropDownList> control are used to retrieve and display employee names from the database. The second <xref:System.Web.UI.WebControls.ObjectDataSource> control and the <xref:System.Web.UI.WebControls.DetailsView> control are used to retrieve, display, and modify the data from the employee record that is selected by the user.
 
@@ -3387,7 +3416,8 @@ The names and types of the parameters that are contained in the <xref:System.Web
 > You should validate any parameter value that you receive from the client. The runtime simply substitutes the parameter value into the <xref:System.Web.UI.WebControls.ObjectDataSource.UpdateMethod> property.
 
 ## Examples
- This section contains two code examples. The first code example demonstrates how to use a <xref:System.Web.UI.WebControls.DropDownList> control, <xref:System.Web.UI.WebControls.TextBox> controls, and several <xref:System.Web.UI.WebControls.ObjectDataSource> objects to update data. The second code example shows the `EmployeeLogic` class that is used in the first code example.
+
+This section contains two code examples. The first code example demonstrates how to use a <xref:System.Web.UI.WebControls.DropDownList> control, <xref:System.Web.UI.WebControls.TextBox> controls, and several <xref:System.Web.UI.WebControls.ObjectDataSource> objects to update data. The second code example shows the `EmployeeLogic` class that is used in the first code example.
 
  The following code example demonstrates how to use a <xref:System.Web.UI.WebControls.DropDownList> control, <xref:System.Web.UI.WebControls.TextBox> controls, and several <xref:System.Web.UI.WebControls.ObjectDataSource> controls to update data. The <xref:System.Web.UI.WebControls.DropDownList> displays the name of a Northwind employee, while the <xref:System.Web.UI.WebControls.TextBox> controls are used to enter and update address information. Because the <xref:System.Web.UI.WebControls.ObjectDataSource.UpdateParameters*> collection contains a <xref:System.Web.UI.WebControls.ControlParameter> that is bound to the selected value of the <xref:System.Web.UI.WebControls.DropDownList>, the button that raises the <xref:System.Web.UI.WebControls.ObjectDataSource.Update*> operation is enabled only after an employee is selected.
 
@@ -3439,7 +3469,8 @@ Handle the <xref:System.Web.UI.WebControls.ObjectDataSource.Updating> event to p
  For more information about how to handle events, see [Handling and Raising Events](/dotnet/standard/events/).
 
 ## Examples
- The following three examples show a Web page, a code-behind page class, and a data-access class that enable a user to retrieve and update records in the Employees table in the Northwind database.
+
+The following three examples show a Web page, a code-behind page class, and a data-access class that enable a user to retrieve and update records in the Employees table in the Northwind database.
 
  The first example shows a Web page that contains two <xref:System.Web.UI.WebControls.ObjectDataSource> controls, a <xref:System.Web.UI.WebControls.DropDownList> control, and a <xref:System.Web.UI.WebControls.DetailsView> control. The first <xref:System.Web.UI.WebControls.ObjectDataSource> control and the <xref:System.Web.UI.WebControls.DropDownList> control are used to retrieve and display employee names from the database. The second <xref:System.Web.UI.WebControls.ObjectDataSource> control and the <xref:System.Web.UI.WebControls.DetailsView> control are used to retrieve, display, and modify the data from the employee record that is selected by the user.
 

@@ -30,7 +30,8 @@ The <xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs> object is pas
  By default, the <xref:System.Web.UI.WebControls.LinqDataSource> control stores the original values from the data source in view state on the Web page, except those whose <xref:System.Data.Linq.Mapping.ColumnAttribute> attribute is marked as `UpdateCheck.Never`. LINQ to SQL automatically checks the integrity of the data before updating the data. It does this by comparing the current values in the data source with the original values stored in view state. LINQ to SQL raises an exception if the values in the data source have changed. You can perform additional data validation by creating a handler for the <xref:System.Web.UI.WebControls.LinqDataSource.Updating> event.
 
 ## Examples
- The following example shows an event handler for the <xref:System.Web.UI.WebControls.LinqDataSource.Updating> event. The example shows how to compare properties from the <xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.OriginalObject> property and the <xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.NewObject> property to determine whether the value in the `Category` property has changed. If so, the `CategoryChanged` property of the object in the <xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.NewObject> property is set to `true`.
+
+The following example shows an event handler for the <xref:System.Web.UI.WebControls.LinqDataSource.Updating> event. The example shows how to compare properties from the <xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.OriginalObject> property and the <xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.NewObject> property to determine whether the value in the `Category` property has changed. If so, the `CategoryChanged` property of the object in the <xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.NewObject> property is set to `true`.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.LinqDataSource.Updating/cs/Default.aspx.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.LinqDataSource.Updating/vb/Default.aspx.vb" id="Snippet1":::
@@ -173,7 +174,8 @@ protected void LinqDataSource_Updating(object sender,
 If a validation exception is raised before the update operation is performed, the exception is stored in the <xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.Exception> property. In an event handler for the <xref:System.Web.UI.WebControls.LinqDataSource.Updating> event, you can retrieve the exception through the <xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.Exception> property.
 
 ## Examples
- The following example shows an event handler for the <xref:System.Web.UI.WebControls.LinqDataSource.Updating> event. It displays any validation exception messages by using a <xref:System.Web.UI.WebControls.Label> control.
+
+The following example shows an event handler for the <xref:System.Web.UI.WebControls.LinqDataSource.Updating> event. It displays any validation exception messages by using a <xref:System.Web.UI.WebControls.Label> control.
 
 ```vb
 Protected Sub LinqDataSource_Updating(ByVal sender As Object, _
@@ -248,7 +250,8 @@ protected void LinqDataSource_Updating(object sender,
 You can create an event handler for the <xref:System.Web.UI.WebControls.LinqDataSource.Updating> event to examine validation exceptions that occurred before the update operation. If you handle the exception and do not want it to be thrown again, set the <xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.ExceptionHandled> property to `true`. If you do not set the <xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.ExceptionHandled> property to `true`, the exception will be propagated to the next event handler in the call stack.
 
 ## Examples
- The following example shows an event handler for the <xref:System.Web.UI.WebControls.LinqDataSource.Updating> event. It displays any validation exception messages by using a <xref:System.Web.UI.WebControls.Label> control.
+
+The following example shows an event handler for the <xref:System.Web.UI.WebControls.LinqDataSource.Updating> event. It displays any validation exception messages by using a <xref:System.Web.UI.WebControls.Label> control.
 
 ```vb
 Protected Sub LinqDataSource_Updating(ByVal sender As Object, _
@@ -318,7 +321,8 @@ protected void LinqDataSource_Updating(object sender,
 Create an event handler for the <xref:System.Web.UI.WebControls.LinqDataSource.Updating> event and retrieve the <xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.NewObject> property to validate the data. You can also change the data or cancel the update operation.
 
 ## Examples
- The following example shows an event handler for the <xref:System.Web.UI.WebControls.LinqDataSource.Updating> event. The example shows how to compare properties from the <xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.OriginalObject> property and the <xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.NewObject> property to determine whether the value in the `Category` property has changed. If so, the `CategoryChanged` property of the object in the <xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.NewObject> property is set to `true`.
+
+The following example shows an event handler for the <xref:System.Web.UI.WebControls.LinqDataSource.Updating> event. The example shows how to compare properties from the <xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.OriginalObject> property and the <xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.NewObject> property to determine whether the value in the `Category` property has changed. If so, the `CategoryChanged` property of the object in the <xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.NewObject> property is set to `true`.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.LinqDataSource.Updating/cs/Default.aspx.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.LinqDataSource.Updating/vb/Default.aspx.vb" id="Snippet1":::
@@ -368,7 +372,8 @@ You can use the <xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.Or
  If the <xref:System.Data.Linq.Mapping.ColumnAttribute.UpdateCheck> property is set to `Never` and the value is not displayed in a data-bound control, the value is not stored in the Web page. In that case, it cannot be assigned to the <xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.OriginalObject> property.
 
 ## Examples
- The following example shows an event handler for the <xref:System.Web.UI.WebControls.LinqDataSource.Updating> event. The example shows how to compare properties from the <xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.OriginalObject> property and the <xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.NewObject> property to determine whether the value in the `Category` property has changed. If so, the `CategoryChanged` property of the object in the <xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.NewObject> property is set to `true`.
+
+The following example shows an event handler for the <xref:System.Web.UI.WebControls.LinqDataSource.Updating> event. The example shows how to compare properties from the <xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.OriginalObject> property and the <xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.NewObject> property to determine whether the value in the `Category` property has changed. If so, the `CategoryChanged` property of the object in the <xref:System.Web.UI.WebControls.LinqDataSourceUpdateEventArgs.NewObject> property is set to `true`.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.LinqDataSource.Updating/cs/Default.aspx.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.LinqDataSource.Updating/vb/Default.aspx.vb" id="Snippet1":::

@@ -42,7 +42,8 @@ The <xref:System.Web.UI.StateManagedCollection> class is the base class for all 
 >  <xref:System.Web.UI.StateManagedCollection> stores assembly-qualified type names of the collection items in view state. A site visitor could decode the view state and retrieve the type name. If this scenario creates a security concern in your Web site, you can manually encrypt the type name before placing it in the view state.
 
 ## Examples
- The following code example demonstrates how to derive a strongly typed collection class from <xref:System.Web.UI.StateManagedCollection> to contain <xref:System.Web.UI.IStateManager> objects. In this example, the `CycleCollection` is derived to contain instances of the abstract `Cycle` class, which can be either `Bicycle` or `Tricycle` objects. The `Cycle` class implements the <xref:System.Web.UI.IStateManager> interface because it stores the value of the `CycleColor` property in view state.
+
+The following code example demonstrates how to derive a strongly typed collection class from <xref:System.Web.UI.StateManagedCollection> to contain <xref:System.Web.UI.IStateManager> objects. In this example, the `CycleCollection` is derived to contain instances of the abstract `Cycle` class, which can be either `Bicycle` or `Tricycle` objects. The `Cycle` class implements the <xref:System.Web.UI.IStateManager> interface because it stores the value of the `CycleColor` property in view state.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_WebNet/Samples.AspNet.CycleCollection/CS/statemanagedcollectionsample.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/Samples.AspNet.CycleCollection/VB/statemanagedcollectionsample.vb" id="Snippet1":::
@@ -218,7 +219,8 @@ The specified array must be of a compatible type.
 The <xref:System.Web.UI.StateManagedCollection.CreateKnownType*> method is called internally by the <xref:System.Web.UI.StateManagedCollection> collection in its implementation of the <xref:System.Web.UI.StateManagedCollection.System%23Web%23UI%23IStateManager%23LoadViewState*?displayProperty=nameWithType> method. Derived collections override the <xref:System.Web.UI.StateManagedCollection.CreateKnownType*> method to return a default instance of the <xref:System.Web.UI.IStateManager> type identified by the provided `index`, which maps to one of the types returned by the <xref:System.Web.UI.StateManagedCollection.GetKnownTypes*> method.
 
 ## Examples
- The following code example demonstrates how a strongly typed <xref:System.Web.UI.StateManagedCollection> class implements the <xref:System.Web.UI.StateManagedCollection.CreateKnownType*> method. The `CycleCollection` implementation of <xref:System.Web.UI.StateManagedCollection.CreateKnownType*> returns the default instance of either a `Bicycle` or `Tricycle` object, depending on the index passed. This code example is part of a larger example provided for the <xref:System.Web.UI.StateManagedCollection> class.
+
+The following code example demonstrates how a strongly typed <xref:System.Web.UI.StateManagedCollection> class implements the <xref:System.Web.UI.StateManagedCollection.CreateKnownType*> method. The `CycleCollection` implementation of <xref:System.Web.UI.StateManagedCollection.CreateKnownType*> returns the default instance of either a `Bicycle` or `Tricycle` object, depending on the index passed. This code example is part of a larger example provided for the <xref:System.Web.UI.StateManagedCollection> class.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_WebNet/Samples.AspNet.CycleCollection/CS/statemanagedcollectionsample.cs" id="Snippet2":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/Samples.AspNet.CycleCollection/VB/statemanagedcollectionsample.vb" id="Snippet2":::
@@ -281,7 +283,8 @@ The <xref:System.Web.UI.StateManagedCollection.CreateKnownType*> method is calle
 The <xref:System.Web.UI.StateManagedCollection.GetKnownTypes*> method is called internally by the <xref:System.Web.UI.StateManagedCollection> collection in its implementation of the <xref:System.Web.UI.StateManagedCollection.System%23Web%23UI%23IStateManager%23SaveViewState*> method. Derived collections override the <xref:System.Web.UI.StateManagedCollection.GetKnownTypes*> method to return an array of <xref:System.Type> objects that represent the types the collection can contain.
 
 ## Examples
- The following code example demonstrates how a strongly typed <xref:System.Web.UI.StateManagedCollection> class implements the <xref:System.Web.UI.StateManagedCollection.GetKnownTypes*> method. The `CycleCollection` implementation of <xref:System.Web.UI.StateManagedCollection.GetKnownTypes*> returns a <xref:System.Type> array of known types, including `Bicycle` and `Tricycle` types. This code example is part of a larger example provided for the <xref:System.Web.UI.StateManagedCollection> class.
+
+The following code example demonstrates how a strongly typed <xref:System.Web.UI.StateManagedCollection> class implements the <xref:System.Web.UI.StateManagedCollection.GetKnownTypes*> method. The `CycleCollection` implementation of <xref:System.Web.UI.StateManagedCollection.GetKnownTypes*> returns a <xref:System.Type> array of known types, including `Bicycle` and `Tricycle` types. This code example is part of a larger example provided for the <xref:System.Web.UI.StateManagedCollection> class.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_WebNet/Samples.AspNet.CycleCollection/CS/statemanagedcollectionsample.cs" id="Snippet2":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/Samples.AspNet.CycleCollection/VB/statemanagedcollectionsample.vb" id="Snippet2":::
@@ -610,7 +613,8 @@ The <xref:System.Web.UI.StateManagedCollection.SetDirty*> method forces the <xre
 The <xref:System.Web.UI.StateManagedCollection.SetDirtyObject*> method is called internally by the <xref:System.Web.UI.StateManagedCollection.System%23Web%23UI%23IStateManager%23SaveViewState*>, <xref:System.Web.UI.StateManagedCollection.System%23Collections%23IList%23Add*>, and <xref:System.Web.UI.StateManagedCollection.System%23Collections%23IList%23Insert*> methods.
 
 ## Examples
- The following code example demonstrates how a strongly typed <xref:System.Web.UI.StateManagedCollection> class implements the abstract <xref:System.Web.UI.StateManagedCollection.SetDirtyObject*> method. The `CycleCollection` uses a <xref:System.Web.UI.StateBag> object to store its view-state information, and simply delegates the call to the <xref:System.Web.UI.StateBag.SetDirty*> method of the <xref:System.Web.UI.StateBag> object. This code example is part of a larger example provided for the <xref:System.Web.UI.StateManagedCollection> class.
+
+The following code example demonstrates how a strongly typed <xref:System.Web.UI.StateManagedCollection> class implements the abstract <xref:System.Web.UI.StateManagedCollection.SetDirtyObject*> method. The `CycleCollection` uses a <xref:System.Web.UI.StateBag> object to store its view-state information, and simply delegates the call to the <xref:System.Web.UI.StateBag.SetDirty*> method of the <xref:System.Web.UI.StateBag> object. This code example is part of a larger example provided for the <xref:System.Web.UI.StateManagedCollection> class.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_WebNet/Samples.AspNet.CycleCollection/CS/statemanagedcollectionsample.cs" id="Snippet2":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/Samples.AspNet.CycleCollection/VB/statemanagedcollectionsample.vb" id="Snippet2":::
