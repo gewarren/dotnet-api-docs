@@ -20,7 +20,8 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- By adding an event handler delegate to handle the <xref:System.Web.UI.WebControls.SqlDataSource.Updating>, <xref:System.Web.UI.WebControls.SqlDataSource.Inserting>, or <xref:System.Web.UI.WebControls.SqlDataSource.Deleting> events, you can perform any additional preprocessing required or cancel the database command entirely.
+
+By adding an event handler delegate to handle the <xref:System.Web.UI.WebControls.SqlDataSource.Updating>, <xref:System.Web.UI.WebControls.SqlDataSource.Inserting>, or <xref:System.Web.UI.WebControls.SqlDataSource.Deleting> events, you can perform any additional preprocessing required or cancel the database command entirely.
 
  Because the <xref:System.Web.UI.WebControls.SqlDataSourceCommandEventArgs> class is derived from the <xref:System.ComponentModel.CancelEventArgs> class, you can cancel a pending <xref:System.Web.UI.WebControls.SqlDataSource> database command by setting the <xref:System.ComponentModel.CancelEventArgs.Cancel> property to `true`. You can examine and manipulate the <xref:System.Data.Common.DbCommand.CommandText*>, <xref:System.Data.Common.DbCommand.Parameters*> collection, and other command properties prior to running the command by accessing the <xref:System.Data.Common.DbCommand> object exposed by the <xref:System.Web.UI.WebControls.SqlDataSourceCommandEventArgs.Command> property.
 
@@ -108,7 +109,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- You can handle the <xref:System.Web.UI.WebControls.SqlDataSource.Updating>, <xref:System.Web.UI.WebControls.SqlDataSource.Inserting>, or <xref:System.Web.UI.WebControls.SqlDataSource.Deleting> event to examine and manipulate the properties of the <xref:System.Data.Common.DbCommand> before it is run by the <xref:System.Web.UI.WebControls.SqlDataSource> control. The connection to the underlying data source is not yet open when the event handler delegate is called. Therefore, you cannot cancel the database operation by calling the <xref:System.Data.Common.DbCommand.Cancel*> method on the <xref:System.Data.Common.DbCommand> object directly. However, you can cancel the database operation by setting the <xref:System.ComponentModel.CancelEventArgs.Cancel> property of the <xref:System.Web.UI.WebControls.SqlDataSourceCommandEventArgs> to `true`.
+
+You can handle the <xref:System.Web.UI.WebControls.SqlDataSource.Updating>, <xref:System.Web.UI.WebControls.SqlDataSource.Inserting>, or <xref:System.Web.UI.WebControls.SqlDataSource.Deleting> event to examine and manipulate the properties of the <xref:System.Data.Common.DbCommand> before it is run by the <xref:System.Web.UI.WebControls.SqlDataSource> control. The connection to the underlying data source is not yet open when the event handler delegate is called. Therefore, you cannot cancel the database operation by calling the <xref:System.Data.Common.DbCommand.Cancel*> method on the <xref:System.Data.Common.DbCommand> object directly. However, you can cancel the database operation by setting the <xref:System.ComponentModel.CancelEventArgs.Cancel> property of the <xref:System.Web.UI.WebControls.SqlDataSourceCommandEventArgs> to `true`.
 
 ## Examples
  The following code example demonstrates how to retrieve data from Microsoft SQL Server and display it in a <xref:System.Web.UI.WebControls.GridView> control, and how to use a <xref:System.Web.UI.WebControls.DetailsView> control to see details of a selected row in the <xref:System.Web.UI.WebControls.GridView> and as a form to insert new records.
