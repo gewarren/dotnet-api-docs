@@ -20,7 +20,7 @@
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Control adapters are components that override certain <xref:System.Web.UI.Control> class methods and events in its execution lifecycle to allow browser or markup-specific handling. The .NET Framework maps a single derived control adapter to a <xref:System.Web.UI.Control> object for each client request.
+ Control adapters are components that override certain <xref:System.Web.UI.Control> class methods and events in its execution lifecycle to allow browser or markup-specific handling. .NET Framework maps a single derived control adapter to a <xref:System.Web.UI.Control> object for each client request.
 
  An adapter modifies a control for a specific browser or class of browsers or acts as an arbitrary filter on some capability. Typically the adapter is defined by the markup language that the browser uses (for example, XHTML or HTML 3.2). Much of the adaptability in rendering behavior can be encapsulated in the specialized classes that derive from the <xref:System.Web.UI.HtmlTextWriter> class. Therefore, it is likely that a single adapter can be used for a number of browser class behaviors or that inclusion of the adaptability in the <xref:System.Web.UI.HtmlTextWriter> classes could make the use of a control adapter unnecessary.
 
@@ -46,7 +46,7 @@
 
  The <xref:System.Web.UI.Adapters.ControlAdapter.OnInit*>, <xref:System.Web.UI.Adapters.ControlAdapter.OnLoad*>, <xref:System.Web.UI.Adapters.ControlAdapter.OnPreRender*>, and <xref:System.Web.UI.Adapters.ControlAdapter.OnUnload*> base methods call back on the corresponding <xref:System.Web.UI.Control> class methods. Thus, any of these <xref:System.Web.UI.Adapters.ControlAdapter> methods that are overridden must call their base methods; otherwise, the event associated with the <xref:System.Web.UI.Control> class method will not be raised.
 
- Controls and adapters optionally implement the <xref:System.Web.UI.IPostBackDataHandler> and <xref:System.Web.UI.IPostBackEventHandler> interfaces. The .NET Framework determines whether an adapter exists and whether the adapter implements these interfaces. If it does, the adapter should override the <xref:System.Web.UI.IPostBackDataHandler.LoadPostData*>, <xref:System.Web.UI.IPostBackDataHandler.RaisePostDataChangedEvent*>, and <xref:System.Web.UI.IPostBackEventHandler.RaisePostBackEvent*> methods, as necessary. If the postback data is not recognized in the adapter, it must call back on the control to process it. Subsequent event handlers also must call back on the control.
+ Controls and adapters optionally implement the <xref:System.Web.UI.IPostBackDataHandler> and <xref:System.Web.UI.IPostBackEventHandler> interfaces. .NET Framework determines whether an adapter exists and whether the adapter implements these interfaces. If it does, the adapter should override the <xref:System.Web.UI.IPostBackDataHandler.LoadPostData*>, <xref:System.Web.UI.IPostBackDataHandler.RaisePostDataChangedEvent*>, and <xref:System.Web.UI.IPostBackEventHandler.RaisePostBackEvent*> methods, as necessary. If the postback data is not recognized in the adapter, it must call back on the control to process it. Subsequent event handlers also must call back on the control.
 
  ]]></format>
     </remarks>
