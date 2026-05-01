@@ -32,13 +32,13 @@
 
  Each control has explicit mappings to adapters through the .browser definition files. Thus, any access to the <xref:System.Web.UI.Control.Adapter?displayProperty=nameWithType> property uses the <xref:System.Web.HttpBrowserCapabilities> object extracted from the browser definition files to perform the lookup for the mapping of the adapter to control.
 
- During processing, the .NET Framework intercepts calls to the overridable methods of a control that could be target-specific. If a control adapter is attached, the .NET Framework calls the associated adapter methods.
+ During processing, .NET Framework intercepts calls to the overridable methods of a control that could be target-specific. If a control adapter is attached, .NET Framework calls the associated adapter methods.
 
  The adapter performs rendering for the control through the <xref:System.Web.UI.Adapters.ControlAdapter.Render*> method. If overridden, <xref:System.Web.UI.Adapters.ControlAdapter.Render*> potentially should not call the base class implementation because that performs a call back on the <xref:System.Web.UI.Control.Render*?displayProperty=nameWithType> method. This might cause the rendering to occur twice, once by the adapter and once by the control.
 
  The <xref:System.Web.UI.Adapters.ControlAdapter.Render*> base method calls back on the <xref:System.Web.UI.Control.Render*?displayProperty=nameWithType> method of the control. Thus, if you override <xref:System.Web.UI.Adapters.ControlAdapter.Render*>, you should not call the base class implementation unless the rendering you implement is in addition to that provided by <xref:System.Web.UI.Control.Render*?displayProperty=nameWithType> of the control.
 
- You must ensure that the .NET Framework performs interception for adapters of the child controls. You can do this by calling the <xref:System.Web.UI.Adapters.ControlAdapter.RenderChildren*> base method, which calls the <xref:System.Web.UI.Control.RenderChildren*?displayProperty=nameWithType> method of the control, from your <xref:System.Web.UI.Adapters.ControlAdapter.Render*> override.
+ You must ensure that .NET Framework performs interception for adapters of the child controls. You can do this by calling the <xref:System.Web.UI.Adapters.ControlAdapter.RenderChildren*> base method, which calls the <xref:System.Web.UI.Control.RenderChildren*?displayProperty=nameWithType> method of the control, from your <xref:System.Web.UI.Adapters.ControlAdapter.Render*> override.
 
  The <xref:System.Web.UI.Adapters.ControlAdapter.BeginRender*> and <xref:System.Web.UI.Adapters.ControlAdapter.EndRender*> methods are called by the control immediately before and after (respectively) the control calls the <xref:System.Web.UI.Adapters.ControlAdapter.Render*> method. If pre- and post-rendering are the only browser-specific processing tasks required, using <xref:System.Web.UI.Adapters.ControlAdapter.BeginRender*> and <xref:System.Web.UI.Adapters.ControlAdapter.EndRender*> might make it unnecessary to override <xref:System.Web.UI.Adapters.ControlAdapter.Render*>. The default behavior of the <xref:System.Web.UI.Adapters.ControlAdapter.BeginRender*> and <xref:System.Web.UI.Adapters.ControlAdapter.EndRender*> methods is to call the corresponding methods of the <xref:System.Web.UI.HtmlTextWriter>.
 
@@ -217,7 +217,7 @@ The following code example shows how to use the <xref:System.Web.UI.Adapters.Con
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When a derived control adapter is attached to a control, the .NET Framework calls certain adapter members instead of the control members.
+ When a derived control adapter is attached to a control, .NET Framework calls certain adapter members instead of the control members.
 
 ## Examples
 

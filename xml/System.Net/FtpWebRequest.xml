@@ -60,7 +60,7 @@
 
  To obtain an instance of <xref:System.Net.FtpWebRequest>, use the <xref:System.Net.WebRequest.Create*> method. You can also use the <xref:System.Net.WebClient> class to upload and download information from an FTP server. Using either of these approaches, when you specify a network resource that uses the FTP scheme (for example, `"ftp://contoso.com"`) the <xref:System.Net.FtpWebRequest> class provides the ability to programmatically interact with FTP servers.
 
- The URI may be relative or absolute. If the URI is of the form `"ftp://contoso.com/%2fpath"` (%2f is an escaped '/'), then the URI is absolute, and the current directory is `/path`. If, however, the URI is of the form `"ftp://contoso.com/path"`, first the .NET Framework logs into the FTP server (using the user name and password set by the <xref:System.Net.FtpWebRequest.Credentials> property), then the current directory is set to `<UserLoginDirectory>/path`.
+ The URI may be relative or absolute. If the URI is of the form `"ftp://contoso.com/%2fpath"` (%2f is an escaped '/'), then the URI is absolute, and the current directory is `/path`. If, however, the URI is of the form `"ftp://contoso.com/path"`, first .NET Framework logs into the FTP server (using the user name and password set by the <xref:System.Net.FtpWebRequest.Credentials> property), then the current directory is set to `<UserLoginDirectory>/path`.
 
  You must have a valid user name and password for the server or the server must allow anonymous logon. You can specify the credentials used to connect to the server by setting the <xref:System.Net.FtpWebRequest.Credentials> property or you can include them in the <xref:System.Uri.UserInfo*> portion of the URI passed to the <xref:System.Net.WebRequest.Create*> method. If you include <xref:System.Uri.UserInfo*> information in the URI, the <xref:System.Net.FtpWebRequest.Credentials> property is set to a new network credential with the specified user name and password information.
 
@@ -400,7 +400,7 @@ The following code example demonstrates ending an asynchronous operation to get 
  Client certificates are used to authenticate the client during the initial SSL connection negotiation. For more information, see <xref:System.Net.FtpWebRequest.EnableSsl*>.
 
 > [!NOTE]
-> .NET Framework caches SSL sessions as they are created and attempts to reuse a cached session for a new request, if possible. When attempting to reuse an SSL session, the .NET Framework uses the first element of <xref:System.Net.HttpWebRequest.ClientCertificates*> (if there is one), or tries to reuse an anonymous session if <xref:System.Net.HttpWebRequest.ClientCertificates*> is empty.
+> .NET Framework caches SSL sessions as they are created and attempts to reuse a cached session for a new request, if possible. When attempting to reuse an SSL session, .NET Framework uses the first element of <xref:System.Net.HttpWebRequest.ClientCertificates*> (if there is one), or tries to reuse an anonymous session if <xref:System.Net.HttpWebRequest.ClientCertificates*> is empty.
 
  ]]></format>
         </remarks>
