@@ -95,7 +95,8 @@
  For more information and code examples see [Cancellation in Managed Threads](/dotnet/standard/threading/cancellation-in-managed-threads).
 
 ## Examples
- The following example uses a random number generator to emulate a data collection application that reads 10 integral values from eleven different instruments. A value of zero indicates that the measurement has failed for one instrument, in which case the operation should be cancelled and no overall mean should be computed.
+
+The following example uses a random number generator to emulate a data collection application that reads 10 integral values from eleven different instruments. A value of zero indicates that the measurement has failed for one instrument, in which case the operation should be cancelled and no overall mean should be computed.
 
 To handle the possible cancellation of the operation, the example instantiates a <xref:System.Threading.CancellationTokenSource> object that generates a cancellation token that's passed to a <xref:System.Threading.Tasks.TaskFactory> object. In turn, the <xref:System.Threading.Tasks.TaskFactory> object passes the cancellation token to each of the tasks responsible for collecting readings for a particular instrument. The <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll``2(System.Threading.Tasks.Task{``0}[],System.Func{System.Threading.Tasks.Task{``0}[],``1},System.Threading.CancellationToken)?displayProperty=nameWithType> method is called to ensure that the mean is computed only after all readings have been gathered successfully. If a task has not completed because it was cancelled, the <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll*?displayProperty=nameWithType> method throws an exception.
 
@@ -486,7 +487,8 @@ Two cancellation tokens are equal if any one of the following conditions is true
  If this property is `true`, it only guarantees that cancellation has been requested. It does not guarantee that every registered handler has finished executing, nor that cancellation requests have finished propagating to all registered handlers. Additional synchronization may be required, particularly in situations where related objects are being canceled concurrently.
 
 ## Examples
- The following is a simple example that executes a server process until the <xref:System.Threading.CancellationToken.IsCancellationRequested> property returns `true`.
+
+The following is a simple example that executes a server process until the <xref:System.Threading.CancellationToken.IsCancellationRequested> property returns `true`.
 
  :::code language="csharp" source="~/snippets/csharp/System.Threading/CancellationToken/IsCancellationRequested/cancellation.cs" id="Snippet12":::
  :::code language="vb" source="~/snippets/visualbasic/System.Threading/CancellationToken/IsCancellationRequested/cancelthreads.vb" id="Snippet12":::

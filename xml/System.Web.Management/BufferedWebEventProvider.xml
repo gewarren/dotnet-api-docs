@@ -28,7 +28,8 @@
 > In most cases you will be able to use the ASP.NET health-monitoring types as implemented, and you will control the health-monitoring system by specifying values in the `healthMonitoring` configuration section. You can also derive from the health-monitoring types to create your own custom events and providers. For an example of creating a custom provider, see [How to: Implement the Health Monitoring Custom Provider Example](https://learn.microsoft.com/previous-versions/ms178718(v=vs.140)).
 
 ## Examples
- The following code example shows how to derive from the <xref:System.Web.Management.BufferedWebEventProvider> class to create a custom provider that writes the configured events to a local file for which appropriate access rights must be granted.
+
+The following code example shows how to derive from the <xref:System.Web.Management.BufferedWebEventProvider> class to create a custom provider that writes the configured events to a local file for which appropriate access rights must be granted.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.BufferedWebEventProvider/CS/bufferedwebeventprovider.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.BufferedWebEventProvider/VB/bufferedwebeventprovider.vb" id="Snippet1":::
@@ -105,7 +106,8 @@
  This constructor is used internally by the ASP.NET health-monitoring system. You will never use it to instantiate a <xref:System.Web.Management.TraceWebEventProvider> object, but you can call this constructor when implementing your own provider type that inherits from this class.
 
 ## Examples
- The following code example shows how to use this constructor in a custom event provider.
+
+The following code example shows how to use this constructor in a custom event provider.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.BufferedWebEventProvider/CS/bufferedwebeventprovider.cs" id="Snippet8":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.BufferedWebEventProvider/VB/bufferedwebeventprovider.vb" id="Snippet8":::
@@ -154,7 +156,8 @@
 ```
 
 ## Examples
- The following code example shows how to use the <xref:System.Web.Management.BufferedWebEventProvider.BufferMode> property.
+
+The following code example shows how to use the <xref:System.Web.Management.BufferedWebEventProvider.BufferMode> property.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.BufferedWebEventProvider/CS/bufferedwebeventprovider.cs" id="Snippet4":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.BufferedWebEventProvider/VB/bufferedwebeventprovider.vb" id="Snippet4":::
@@ -189,7 +192,8 @@
  When this method is called, all the events in the buffer are immediately moved from the buffer to the log, regardless of how much time has elapsed since last write or how many events are in the buffer. The time of the last write is reset to the time of the flushing action.
 
 ## Examples
- The following code example shows how to use the <xref:System.Web.Management.BufferedWebEventProvider.Flush*> method.
+
+The following code example shows how to use the <xref:System.Web.Management.BufferedWebEventProvider.Flush*> method.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.BufferedWebEventProvider/CS/bufferedwebeventprovider.cs" id="Snippet9":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.BufferedWebEventProvider/VB/bufferedwebeventprovider.vb" id="Snippet9":::
@@ -229,7 +233,8 @@
  ASP.NET calls the <xref:System.Web.Management.BufferedWebEventProvider.Initialize*> method after calling the <xref:System.Web.Management.BufferedWebEventProvider.%23ctor*> constructor. This method is called to initialize the <xref:System.Web.Management.BufferedWebEventProvider> with the configuration settings and name specified in the configuration file.
 
 ## Examples
- The following code example shows how to use the <xref:System.Web.Management.BufferedWebEventProvider.Initialize*> method.
+
+The following code example shows how to use the <xref:System.Web.Management.BufferedWebEventProvider.Initialize*> method.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.BufferedWebEventProvider/CS/bufferedwebeventprovider.cs" id="Snippet2":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.BufferedWebEventProvider/VB/bufferedwebeventprovider.vb" id="Snippet2":::
@@ -267,7 +272,8 @@
  This is the method that ASP.NET health monitoring calls to start the processing of the event. If buffering is enabled, the event information is buffered; otherwise, it is dispatched to the current logging mechanism.
 
 ## Examples
- The following code example shows how to implement the <xref:System.Web.Management.BufferedWebEventProvider.ProcessEvent*> method.
+
+The following code example shows how to implement the <xref:System.Web.Management.BufferedWebEventProvider.ProcessEvent*> method.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.BufferedWebEventProvider/CS/bufferedwebeventprovider.cs" id="Snippet5":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.BufferedWebEventProvider/VB/bufferedwebeventprovider.vb" id="Snippet5":::
@@ -305,7 +311,8 @@
  The <xref:System.Web.Management.BufferedWebEventProvider.ProcessEventFlush*> method processes the messages that have been buffered. ASP.NET health monitoring calls the method when the flushing of the buffer is required. The intervals at which flushing is required is determined by the parameter value of the `bufferMode` attribute in the `providers` element in the `healthMonitoring` configuration section.
 
 ## Examples
- The following code example shows how to implement the <xref:System.Web.Management.BufferedWebEventProvider.ProcessEventFlush*> method.
+
+The following code example shows how to implement the <xref:System.Web.Management.BufferedWebEventProvider.ProcessEventFlush*> method.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.BufferedWebEventProvider/CS/bufferedwebeventprovider.cs" id="Snippet6":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.BufferedWebEventProvider/VB/bufferedwebeventprovider.vb" id="Snippet6":::
@@ -376,7 +383,8 @@
  The <xref:System.Web.Management.BufferedWebEventProvider.UseBuffering> property contains the value defined by the `buffer` attribute in the `providers` element of the `healthMonitoring` section.
 
 ## Examples
- The following code example shows how to use the <xref:System.Web.Management.BufferedWebEventProvider.UseBuffering> property.
+
+The following code example shows how to use the <xref:System.Web.Management.BufferedWebEventProvider.UseBuffering> property.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.BufferedWebEventProvider/CS/bufferedwebeventprovider.cs" id="Snippet3":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.BufferedWebEventProvider/VB/bufferedwebeventprovider.vb" id="Snippet3":::

@@ -25,7 +25,8 @@
  This is one of the system-provided bindings provided by Windows Communication Foundation (WCF). The recommended procedure is to define the binding using configuration values and not to use a code-based approach, except in certain advanced scenarios where configuration values must be set as a service is initialized.
 
 ## Examples
- The following example shows how to configure a service to use the <xref:System.ServiceModel.NetMsmqBinding> binding.
+
+The following example shows how to configure a service to use the <xref:System.ServiceModel.NetMsmqBinding> binding.
 
  First, the configuration file.
 
@@ -96,7 +97,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Examples
- The following code shows how to construct the <xref:System.ServiceModel.NetMsmqBinding> with a security mode.
+
+The following code shows how to construct the <xref:System.ServiceModel.NetMsmqBinding> with a security mode.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_CFX/s_uenetmsmqbinding/cs/snippets.cs" id="Snippet8":::
 
@@ -131,7 +133,8 @@
  This name overwrites any configuration name at runtime that was assigned to the `NetMsmqBinding` element in a configuration file.
 
 ## Examples
- The following code shows how to instantiate an instance of <xref:System.ServiceModel.NetMsmqBinding> class.
+
+The following code shows how to instantiate an instance of <xref:System.ServiceModel.NetMsmqBinding> class.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_CFX/s_uenetmsmqbinding/cs/service.cs" id="Snippet1":::
 
@@ -166,7 +169,8 @@
  The order of the binding elements is important. It reflects the order in which the protocol and transport channels are constructed and stacked. This collection of binding elements is a new collection and can be modified and then used to create a <xref:System.ServiceModel.Channels.CustomBinding>.
 
 ## Examples
- The following code creates a `NetMsmqBinding` and calls `CreateBindingElements`, and then prints out the name of each binding element in the `BindingElements` collection.
+
+The following code creates a `NetMsmqBinding` and calls `CreateBindingElements`, and then prints out the name of each binding element in the `BindingElements` collection.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_CFX/s_uenetmsmqbinding/cs/snippets.cs" id="Snippet3":::
 
@@ -197,7 +201,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Examples
- The following code shows how to get the <xref:System.ServiceModel.NetMsmqBinding.EnvelopeVersion>.
+
+The following code shows how to get the <xref:System.ServiceModel.NetMsmqBinding.EnvelopeVersion>.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_CFX/s_uenetmsmqbinding/cs/snippets.cs" id="Snippet9":::
 
@@ -237,7 +242,8 @@
  The <xref:System.ServiceModel.Channels.BufferManager> minimizes the cost of using buffers by using a buffer pool. Buffers are required to process messages by the service when they come out of the channel. If there is not sufficient memory in the buffer pool to process the message load, the <xref:System.ServiceModel.Channels.BufferManager> must allocate additional memory from the CLR heap, which increases the garbage collection overhead. Extensive allocation from the CLR garbage heap is an indication that the buffer pool size is too small and that performance can be improved with a larger allocation by increasing the <xref:System.ServiceModel.HttpBindingBase.MaxBufferPoolSize> limit.
 
 ## Examples
- The following code shows how to set the <xref:System.ServiceModel.NetMsmqBinding.MaxBufferPoolSize> property.
+
+The following code shows how to set the <xref:System.ServiceModel.NetMsmqBinding.MaxBufferPoolSize> property.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_CFX/s_uenetmsmqbinding/cs/snippets.cs" id="Snippet4":::
 
@@ -277,7 +283,8 @@
  Message Queuing (MSMQ) does not support Active Directory addressing when using SOAP Reliable Messaging Protocol, so do not set <xref:System.ServiceModel.NetMsmqBinding.QueueTransferProtocol> to <xref:System.ServiceModel.QueueTransferProtocol.Srmp> or <xref:System.ServiceModel.QueueTransferProtocol.SrmpSecure> when <xref:System.ServiceModel.NetMsmqBinding.UseActiveDirectory> is set to `true`.
 
 ## Examples
- The following code shows how to set the <xref:System.ServiceModel.NetMsmqBinding.QueueTransferProtocol> property.
+
+The following code shows how to set the <xref:System.ServiceModel.NetMsmqBinding.QueueTransferProtocol> property.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_CFX/s_uenetmsmqbinding/cs/snippets.cs" id="Snippet5":::
 
@@ -311,7 +318,8 @@
  The <xref:System.Xml.XmlDictionaryReaderQuotas> object defines constraints on the complexity of SOAP messages that can be processed by endpoints configured with a binding. These constraints include `maxArrayLength`, `maxBytesPerRead`, `maxDepth`, `maxNameTableCharCount`, and `maxStringContentLength`. These values aid in the prevention of denial of service attacks. For more information, see <xref:System.Xml.XmlDictionaryReaderQuotas>.
 
 ## Examples
- The following code shows how to set the <xref:System.Xml.XmlDictionaryReaderQuotas> property.
+
+The following code shows how to set the <xref:System.Xml.XmlDictionaryReaderQuotas> property.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_CFX/s_uenetmsmqbinding/cs/snippets.cs" id="Snippet2":::
 
@@ -360,7 +368,8 @@
  <xref:System.ServiceModel.NetMsmqSecurity> is an encapsulation of both Message Queuing (MSMQ) transport and SOAP security. It specifies whether transport or SOAP security is enabled and, if so, what authentication mode and protection levels are in use.
 
 ## Examples
- The following code shows how to get the <xref:System.ServiceModel.NetMsmqSecurity> object.
+
+The following code shows how to get the <xref:System.ServiceModel.NetMsmqSecurity> object.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_CFX/s_uenetmsmqbinding/cs/snippets.cs" id="Snippet7":::
 
@@ -461,7 +470,8 @@
  By default, the Windows Communication Foundation (WCF) queued transport converts the URI of a message queue to a direct format name. By setting the <xref:System.ServiceModel.NetMsmqBinding.UseActiveDirectory> property to `true`, an application can specify that the queued transport should resolve the queue name using Active Directory rather than DNS, NetBIOS, or IP.
 
 ## Examples
- The following code shows how to set the <xref:System.ServiceModel.NetMsmqBinding.UseActiveDirectory> property.
+
+The following code shows how to set the <xref:System.ServiceModel.NetMsmqBinding.UseActiveDirectory> property.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_CFX/s_uenetmsmqbinding/cs/snippets.cs" id="Snippet6":::
 

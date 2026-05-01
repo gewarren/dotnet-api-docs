@@ -48,7 +48,8 @@ The <xref:System.Windows.Threading.Dispatcher> maintains a prioritized queue of 
  Objects that derive from <xref:System.Windows.Freezable> are free-threaded when they are frozen.  For more information, see [Freezable Objects Overview](/dotnet/desktop/wpf/advanced/freezable-objects-overview).
 
 ## Examples
- The following example shows how to place an operation onto a <xref:System.Windows.Threading.Dispatcher>.  For the full source code of this example, see [Single-Threaded Application with Long-Running Calculation Sample](https://go.microsoft.com/fwlink/?LinkID=160038).
+
+The following example shows how to place an operation onto a <xref:System.Windows.Threading.Dispatcher>.  For the full source code of this example, see [Single-Threaded Application with Long-Running Calculation Sample](https://go.microsoft.com/fwlink/?LinkID=160038).
 
  First, a delegate is created that accepts no arguments.
 
@@ -243,7 +244,8 @@ If multiple <xref:System.Windows.Threading.Dispatcher.BeginInvoke*> calls are ma
  If <xref:System.Windows.Threading.Dispatcher.BeginInvoke*> is called on a <xref:System.Windows.Threading.Dispatcher> that has shut down, the status property of the returned <xref:System.Windows.Threading.DispatcherOperation> is set to <xref:System.Windows.Threading.DispatcherOperationStatus.Aborted>.
 
 ## Examples
- The following example shows how to place an operation onto a <xref:System.Windows.Threading.Dispatcher>.  For the full source code of this example, see [Single-Threaded Application with Long-Running Calculation Sample](https://go.microsoft.com/fwlink/?LinkID=160038).
+
+The following example shows how to place an operation onto a <xref:System.Windows.Threading.Dispatcher>.  For the full source code of this example, see [Single-Threaded Application with Long-Running Calculation Sample](https://go.microsoft.com/fwlink/?LinkID=160038).
 
  First, a delegate is created that accepts no arguments.
 
@@ -411,7 +413,8 @@ The <xref:System.Windows.Threading.DispatcherOperation> object returned by <xref
  If <xref:System.Windows.Threading.Dispatcher.BeginInvoke*> is called on a <xref:System.Windows.Threading.Dispatcher> that has shut down, the status property of the returned <xref:System.Windows.Threading.DispatcherOperation> is set to <xref:System.Windows.Threading.DispatcherOperationStatus.Aborted>.
 
 ## Examples
- The following example shows how to place an operation onto a <xref:System.Windows.Threading.Dispatcher>.
+
+The following example shows how to place an operation onto a <xref:System.Windows.Threading.Dispatcher>.
 
  First, a delegate is created that accepts one argument, in this case a string.
 
@@ -620,7 +623,8 @@ Only the <xref:System.Windows.Threading.Dispatcher> that a <xref:System.Windows.
  The difference between <xref:System.Windows.Threading.Dispatcher.CheckAccess*> and <xref:System.Windows.Threading.Dispatcher.VerifyAccess*> is <xref:System.Windows.Threading.Dispatcher.CheckAccess*> returns a Boolean indicating whether the calling thread has access to the <xref:System.Windows.Threading.Dispatcher> and <xref:System.Windows.Threading.Dispatcher.VerifyAccess*> throws an exception.
 
 ## Examples
- The following example uses <xref:System.Windows.Threading.Dispatcher.CheckAccess*> to determine whether a thread has access to a <xref:System.Windows.Controls.Button>.  The <xref:System.Windows.Threading.Dispatcher.CheckAccess*> method on the <xref:System.Windows.Threading.Dispatcher> associated with the <xref:System.Windows.Controls.Button> is called to verify access to the thread.  If the calling thread has access to the <xref:System.Windows.Threading.Dispatcher>, the <xref:System.Windows.Controls.Button> is updated by accessing the members of the <xref:System.Windows.Controls.Button>; otherwise, a delegate, which accepts a <xref:System.Windows.Controls.Button> as an argument, is placed onto the <xref:System.Windows.Threading.Dispatcher>.  The <xref:System.Windows.Threading.Dispatcher> will delegate the work of updating the <xref:System.Windows.Controls.Button>.
+
+The following example uses <xref:System.Windows.Threading.Dispatcher.CheckAccess*> to determine whether a thread has access to a <xref:System.Windows.Controls.Button>.  The <xref:System.Windows.Threading.Dispatcher.CheckAccess*> method on the <xref:System.Windows.Threading.Dispatcher> associated with the <xref:System.Windows.Controls.Button> is called to verify access to the thread.  If the calling thread has access to the <xref:System.Windows.Threading.Dispatcher>, the <xref:System.Windows.Controls.Button> is updated by accessing the members of the <xref:System.Windows.Controls.Button>; otherwise, a delegate, which accepts a <xref:System.Windows.Controls.Button> as an argument, is placed onto the <xref:System.Windows.Threading.Dispatcher>.  The <xref:System.Windows.Threading.Dispatcher> will delegate the work of updating the <xref:System.Windows.Controls.Button>.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Threading/Dispatcher/CheckAccess/Window1.xaml.cs" id="Snippetdispatcheraccesscheckaccess":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Threading/Dispatcher/CheckAccess/window1.xaml.vb" id="Snippetdispatcheraccesscheckaccess":::
@@ -714,7 +718,8 @@ Disabling dispatcher processing is an advanced method that is intended to elimin
  <xref:System.Windows.Threading.Dispatcher.DisableProcessing*> can only be called on the thread the <xref:System.Windows.Threading.Dispatcher> is associated with.
 
 ## Examples
- The following example shows how to disable dispatcher processing and re-enable dispatcher processing.  <xref:System.Windows.Threading.Dispatcher.DisableProcessing*> is called in a **using** statement.  <xref:System.Windows.Threading.Dispatcher.DisableProcessing*> returns a <xref:System.Windows.Threading.DispatcherProcessingDisabled> structure that is used as the object to be disposed when the **using** block finishes.  When <xref:System.Windows.Threading.DispatcherProcessingDisabled.Dispose*> is called on the <xref:System.Windows.Threading.DispatcherProcessingDisabled> structure, dispatcher processing is re-enabled.
+
+The following example shows how to disable dispatcher processing and re-enable dispatcher processing.  <xref:System.Windows.Threading.Dispatcher.DisableProcessing*> is called in a **using** statement.  <xref:System.Windows.Threading.Dispatcher.DisableProcessing*> returns a <xref:System.Windows.Threading.DispatcherProcessingDisabled> structure that is used as the object to be disposed when the **using** block finishes.  When <xref:System.Windows.Threading.DispatcherProcessingDisabled.Dispose*> is called on the <xref:System.Windows.Threading.DispatcherProcessingDisabled> structure, dispatcher processing is re-enabled.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Threading/Dispatcher/DisableProcessing/Window1.xaml.cs" id="Snippetdispatcherdisableprocessing":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Threading/Dispatcher/DisableProcessing/window1.xaml.vb" id="Snippetdispatcherdisableprocessing":::
@@ -967,7 +972,8 @@ In WPF, only the thread that created a <xref:System.Windows.Threading.Dispatcher
  <xref:System.Windows.Threading.Dispatcher.Invoke*> is a synchronous operation; therefore, control will not return to the calling object until after the callback returns.
 
 ## Examples
- The following example places a delegate onto a <xref:System.Windows.Threading.Dispatcher> at <xref:System.Windows.Threading.DispatcherPriority.Normal> using <xref:System.Windows.Threading.Dispatcher.Invoke*>.
+
+The following example places a delegate onto a <xref:System.Windows.Threading.Dispatcher> at <xref:System.Windows.Threading.DispatcherPriority.Normal> using <xref:System.Windows.Threading.Dispatcher.Invoke*>.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Threading/Dispatcher/Invoke/Window1.xaml.cs" id="Snippetsystemtimerdispatcherinvoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Threading/Dispatcher/Invoke/window1.xaml.vb" id="Snippetsystemtimerdispatcherinvoke":::
@@ -1152,7 +1158,8 @@ In WPF, only the thread that created a <xref:System.Windows.Threading.Dispatcher
  <xref:System.Windows.Threading.Dispatcher.Invoke*> is a synchronous operation; therefore, control will not return to the calling object until after the callback returns.
 
 ## Examples
- The following example places a delegate onto a <xref:System.Windows.Threading.Dispatcher> at <xref:System.Windows.Threading.DispatcherPriority.Normal> using <xref:System.Windows.Threading.Dispatcher.Invoke*>.
+
+The following example places a delegate onto a <xref:System.Windows.Threading.Dispatcher> at <xref:System.Windows.Threading.DispatcherPriority.Normal> using <xref:System.Windows.Threading.Dispatcher.Invoke*>.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Threading/Dispatcher/Invoke/Window1.xaml.cs" id="Snippetsystemtimerdispatcherinvoke":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Threading/Dispatcher/Invoke/window1.xaml.vb" id="Snippetsystemtimerdispatcherinvoke":::
@@ -2312,7 +2319,8 @@ A <xref:System.Windows.Threading.DispatcherFrame> represents a loop that process
  <xref:System.Windows.Threading.DispatcherFrame> allows for the <xref:System.Windows.Threading.DispatcherFrame.Continue> property to be set explicitly and it respects the <xref:System.Windows.Threading.Dispatcher.HasShutdownStarted> property on the <xref:System.Windows.Threading.Dispatcher>.  This means when the <xref:System.Windows.Threading.Dispatcher> starts to shut down, frames that use the default <xref:System.Windows.Threading.DispatcherFrame> implementation will exit, which enables all nested frames to exit.
 
 ## Examples
- The following example shows how to use a <xref:System.Windows.Threading.DispatcherFrame> to achieve similar results as the Windows Forms <xref:System.Windows.Forms.Application.DoEvents*> method.
+
+The following example shows how to use a <xref:System.Windows.Threading.DispatcherFrame> to achieve similar results as the Windows Forms <xref:System.Windows.Forms.Application.DoEvents*> method.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Threading/Dispatcher/DisableProcessing/Window1.xaml.cs" id="Snippetdispatcherdispatcherframedoevents":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Threading/Dispatcher/DisableProcessing/window1.xaml.vb" id="Snippetdispatcherdispatcherframedoevents":::
@@ -2687,7 +2695,8 @@ Only the thread the <xref:System.Windows.Threading.Dispatcher> is created on may
  The difference between <xref:System.Windows.Threading.Dispatcher.CheckAccess*> and <xref:System.Windows.Threading.Dispatcher.VerifyAccess*> is <xref:System.Windows.Threading.Dispatcher.CheckAccess*> returns a Boolean if the calling thread does not have access to the <xref:System.Windows.Threading.Dispatcher> and <xref:System.Windows.Threading.Dispatcher.VerifyAccess*> throws an exception.
 
 ## Examples
- The following example uses <xref:System.Windows.Threading.Dispatcher.VerifyAccess*> to determine whether a thread has access to the thread that a <xref:System.Windows.Controls.Button> was created on.  The method takes an object as an argument, which is cast to a <xref:System.Windows.Controls.Button>.  The <xref:System.Windows.Threading.Dispatcher.VerifyAccess*> method on the <xref:System.Windows.Threading.Dispatcher> of the <xref:System.Windows.Controls.Button> is called to verify access to the thread.
+
+The following example uses <xref:System.Windows.Threading.Dispatcher.VerifyAccess*> to determine whether a thread has access to the thread that a <xref:System.Windows.Controls.Button> was created on.  The method takes an object as an argument, which is cast to a <xref:System.Windows.Controls.Button>.  The <xref:System.Windows.Threading.Dispatcher.VerifyAccess*> method on the <xref:System.Windows.Threading.Dispatcher> of the <xref:System.Windows.Controls.Button> is called to verify access to the thread.
 
  If the calling thread has access to the <xref:System.Windows.Threading.Dispatcher>, the <xref:System.Windows.Controls.Button> is updated by just accessing the members of the <xref:System.Windows.Controls.Button>.
 

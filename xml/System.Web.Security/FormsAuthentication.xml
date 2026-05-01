@@ -41,7 +41,8 @@
  The <xref:System.Web.Security.FormsAuthentication> class provides access to methods and properties that you can use in an application that authenticates users. The <xref:System.Web.Security.FormsAuthentication.RedirectToLoginPage*> method redirects a browser to the configured <xref:System.Web.Security.FormsAuthentication.LoginUrl*> for users to log into an application. The <xref:System.Web.Security.FormsAuthentication.RedirectFromLoginPage*> method redirects an authenticated user back to the original protected URL that was requested or to the <xref:System.Web.Security.FormsAuthentication.DefaultUrl*>. There are also methods that enable you to manage forms-authentication tickets, if needed.
 
 ## Examples
- The following code example shows the Web.config file for an ASP.NET application that uses the ASP.NET membership provider for forms authentication and requires all users to be authenticated.
+
+The following code example shows the Web.config file for an ASP.NET application that uses the ASP.NET membership provider for forms authentication and requires all users to be authenticated.
 
 ```xml
 <configuration>
@@ -179,7 +180,8 @@ This method is obsolete. The recommended alternative is to use the Membership AP
  The <xref:System.Web.Security.FormsAuthentication.CookieDomain> property value is set in the configuration file for an ASP.NET application by using the `domain` attribute of the [forms](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/1d3t3c61(v%3dvs.100)) configuration element. The <xref:System.Web.Security.FormsAuthentication.CookieDomain> property value determines the <xref:System.Web.HttpCookie.Domain*> that the cookie will be used for.
 
 ## Examples
- The following code example sets the `domain` attribute in the Web.config file.
+
+The following code example sets the `domain` attribute in the Web.config file.
 
 ```xml
 <authentication mode="Forms">
@@ -223,7 +225,8 @@ This method is obsolete. The recommended alternative is to use the Membership AP
 > When the <xref:System.Web.Security.FormsAuthenticationTicket> value is stored in the URI, the length of the generated URI may be longer than the maximum length allowed. This is most likely to occur when the <xref:System.Web.Security.FormsAuthentication.FormsCookiePath> property is set to the application name and the application name is long (40 or more characters), when user names in the application are long, or when long <xref:System.Web.Security.FormsAuthenticationTicket.UserData*> strings are stored in the <xref:System.Web.Security.FormsAuthenticationTicket> value. If the generated URI is too long, the Web server will return a `400 - Bad Request` error.
 
 ## Examples
- The following code example sets the `cookieless` attribute to `AutoDetect` in the Web.config file.
+
+The following code example sets the `cookieless` attribute to `AutoDetect` in the Web.config file.
 
 ```xml
 <authentication mode="Forms">
@@ -293,7 +296,8 @@ This method is obsolete. The recommended alternative is to use the Membership AP
 - If the <xref:System.Web.Security.FormsAuthentication.CookieMode> property is set to <xref:System.Web.HttpCookieMode.UseDeviceProfile>, the <xref:System.Web.Security.FormsAuthentication.CookiesSupported> property will return `true` if the <xref:System.Web.HttpRequest.Browser*> for the current <xref:System.Web.HttpContext.Request*> supports both cookies and redirecting with cookies; otherwise, the <xref:System.Web.Security.FormsAuthentication.CookiesSupported> property will return `false`.
 
 ## Examples
- The following code example sets the `cookieless` attribute to <xref:System.Web.HttpCookieMode.UseUri> in the Web.config file. This configuration will result in the <xref:System.Web.Security.FormsAuthentication.CookiesSupported> property returning `false`.
+
+The following code example sets the `cookieless` attribute to <xref:System.Web.HttpCookieMode.UseUri> in the Web.config file. This configuration will result in the <xref:System.Web.Security.FormsAuthentication.CookiesSupported> property returning `false`.
 
 ```xml
 <authentication mode="Forms">
@@ -375,7 +379,8 @@ This method is obsolete. The recommended alternative is to use the Membership AP
  The <xref:System.Web.Security.FormsAuthentication.DefaultUrl> property value is set in the configuration file for an ASP.NET application by using the `defaultUrl` attribute of the [forms](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/1d3t3c61(v%3dvs.100)) configuration element. The <xref:System.Web.Security.FormsAuthentication.DefaultUrl> property is used by the <xref:System.Web.Security.FormsAuthentication.RedirectFromLoginPage*> method if no return URL is included in the request. Similarly, the <xref:System.Web.Security.FormsAuthentication.GetRedirectUrl*> method will return the <xref:System.Web.Security.FormsAuthentication.DefaultUrl*> if no return URL is included in the request.
 
 ## Examples
- The following code example sets the `defaultUrl` attribute in the Web.config file.
+
+The following code example sets the `defaultUrl` attribute in the Web.config file.
 
 ```xml
 <authentication mode="Forms">
@@ -424,7 +429,8 @@ This method is obsolete. The recommended alternative is to use the Membership AP
 > When cross-application redirects are allowed, your site is vulnerable to an exploit that directs users to a malicious Web site but uses the login page for your site. Always verify that the redirect URL that is returned by the <xref:System.Web.Security.FormsAuthentication.GetRedirectUrl*> method is a URL that you expect so that you can make sure that you allow redirects only to approved Web sites. You must also verify that the redirect URL uses the appropriate protocol (HTTP or HTTPS). To perform these verifications, you can add a postback event handler to your login page, or you can add a handler for the <xref:System.Web.UI.WebControls.Login.LoggedIn> event of the <xref:System.Web.UI.WebControls.Login> control.
 
 ## Examples
- The following code example sets the `enableCrossAppRedirects` attribute to `true` in the Web.config file for an ASP.NET application.
+
+The following code example sets the `enableCrossAppRedirects` attribute to `true` in the Web.config file for an ASP.NET application.
 
 ```xml
 <authentication mode="Forms">
@@ -506,7 +512,8 @@ This method is obsolete. The recommended alternative is to use the Membership AP
           <format type="text/markdown"><![CDATA[
 
 ## Examples
- The following code example stores the result of the <xref:System.Web.Security.FormsAuthentication.Encrypt*> method in a cookie by using the <xref:System.Web.Security.FormsAuthentication.FormsCookieName> property and redirects the user to the URL returned from the <xref:System.Web.Security.FormsAuthentication.GetRedirectUrl*> method.
+
+The following code example stores the result of the <xref:System.Web.Security.FormsAuthentication.Encrypt*> method in a cookie by using the <xref:System.Web.Security.FormsAuthentication.FormsCookieName> property and redirects the user to the URL returned from the <xref:System.Web.Security.FormsAuthentication.GetRedirectUrl*> method.
 
 > [!IMPORTANT]
 > This example contains a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
@@ -548,7 +555,8 @@ This method is obsolete. The recommended alternative is to use the Membership AP
  The <xref:System.Web.Security.FormsAuthentication.FormsCookieName> property value is set in the configuration file for an ASP.NET application by using the `name` attribute of the [forms](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/1d3t3c61(v%3dvs.100)) configuration element. The <xref:System.Web.Security.FormsAuthentication.FormsCookieName*> is used to reference the cookie that stores the <xref:System.Web.Security.FormsAuthenticationTicket> information.
 
 ## Examples
- The following code example sets the <xref:System.Web.Security.FormsAuthentication.FormsCookieName> property value by using the `name` attribute in the Web.config file.
+
+The following code example sets the <xref:System.Web.Security.FormsAuthentication.FormsCookieName> property value by using the `name` attribute in the Web.config file.
 
 ```xml
 <authentication mode="Forms">
@@ -590,7 +598,8 @@ This method is obsolete. The recommended alternative is to use the Membership AP
  The <xref:System.Web.Security.FormsAuthentication.FormsCookiePath> property value is set in the configuration file for an ASP.NET application using the `path` attribute of the [forms](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/1d3t3c61(v%3dvs.100)) configuration element. The <xref:System.Web.Security.FormsAuthentication.FormsCookiePath*> specifies the <xref:System.Web.HttpCookie.Path*> for the cookie that stores the <xref:System.Web.Security.FormsAuthenticationTicket> information.
 
 ## Examples
- The following code example sets the <xref:System.Web.Security.FormsAuthentication.FormsCookiePath> property value by using the `path` attribute in the Web.config file.
+
+The following code example sets the <xref:System.Web.Security.FormsAuthentication.FormsCookiePath> property value by using the `path` attribute in the Web.config file.
 
 ```xml
 <authentication mode="Forms">
@@ -736,7 +745,8 @@ This method does not create a cookie.
 > Setting the <xref:System.Web.Security.FormsAuthentication.EnableCrossAppRedirects> property to `true` to allow cross-application redirects is a potential security threat. For more information, see the <xref:System.Web.Security.FormsAuthentication.EnableCrossAppRedirects> property.
 
 ## Examples
- The following code example redirects authenticated users to the URL returned from the <xref:System.Web.Security.FormsAuthentication.GetRedirectUrl*> method.
+
+The following code example redirects authenticated users to the URL returned from the <xref:System.Web.Security.FormsAuthentication.GetRedirectUrl*> method.
 
 > [!IMPORTANT]
 > This example contains a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
@@ -879,7 +889,8 @@ This method is obsolete. Alternatively, you can use ASP.NET membership to store 
  The <xref:System.Web.Security.FormsAuthentication.LoginUrl> property value is set in the configuration file for an ASP.NET application by using the `loginUrl` attribute of the [forms](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/1d3t3c61(v%3dvs.100)) configuration element. The <xref:System.Web.Security.FormsAuthentication.LoginUrl*> is used by the <xref:System.Web.Security.FormsAuthentication.RedirectToLoginPage*> method.
 
 ## Examples
- The following code example sets the `loginUrl` attribute in the Web.config file.
+
+The following code example sets the `loginUrl` attribute in the Web.config file.
 
 ```xml
 <authentication mode="Forms">
@@ -947,7 +958,8 @@ This method is obsolete. Alternatively, you can use ASP.NET membership to store 
  If <xref:System.Web.Security.FormsAuthentication.CookiesSupported*> is `false` and the redirect path is to a URL in the current application, the ticket is issued as part of the redirect URL. If <xref:System.Web.Security.FormsAuthentication.CookiesSupported*> is `false`, <xref:System.Web.Security.FormsAuthentication.EnableCrossAppRedirects*> is `true`, and the redirect URL does not refer to a page within the current application, the <xref:System.Web.Security.FormsAuthentication.RedirectFromLoginPage*> method issues an authentication ticket and places it in the <xref:System.Web.HttpRequest.QueryString> property.
 
 ## Examples
- The following code example redirects validated users to either the originally requested URL or the <xref:System.Web.Security.FormsAuthentication.DefaultUrl*>. The code example uses ASP.NET membership to validate users. For more information about ASP.NET membership, see [Managing Users by Using Membership](https://learn.microsoft.com/previous-versions/aspnet/tw292whz(v=vs.100)).
+
+The following code example redirects validated users to either the originally requested URL or the <xref:System.Web.Security.FormsAuthentication.DefaultUrl*>. The code example uses ASP.NET membership to validate users. For more information about ASP.NET membership, see [Managing Users by Using Membership](https://learn.microsoft.com/previous-versions/aspnet/tw292whz(v=vs.100)).
 
 > [!IMPORTANT]
 > This example contains a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
@@ -1030,7 +1042,8 @@ This method is obsolete. Alternatively, you can use ASP.NET membership to store 
  Unlike the <xref:System.Web.HttpResponse.Redirect*?displayProperty=nameWithType> method, this method does not end the request by calling <xref:System.Web.HttpResponse.End*?displayProperty=nameWithType>. This means that code that follows the <xref:System.Web.Security.FormsAuthentication.RedirectToLoginPage*> method call will run.
 
 ## Examples
- The following code example clears the forms-authentication cookie using the <xref:System.Web.Security.FormsAuthentication.SignOut*> method and redirects the user to the login page using the <xref:System.Web.Security.FormsAuthentication.RedirectToLoginPage*> method.
+
+The following code example clears the forms-authentication cookie using the <xref:System.Web.Security.FormsAuthentication.SignOut*> method and redirects the user to the login page using the <xref:System.Web.Security.FormsAuthentication.RedirectToLoginPage*> method.
 
  :::code language="aspx-csharp" source="~/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.FormsAuthentication/CS/signoutcs.aspx" id="Snippet2":::
  :::code language="aspx-vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.FormsAuthentication/VB/signoutvb.aspx" id="Snippet2":::
@@ -1074,7 +1087,8 @@ This method is obsolete. Alternatively, you can use ASP.NET membership to store 
  The <xref:System.Web.Security.FormsAuthentication.RedirectToLoginPage*> method does not clear the forms-authentication cookie. You can use the <xref:System.Web.Security.FormsAuthentication.RedirectToLoginPage*> method in conjunction with the <xref:System.Web.Security.FormsAuthentication.SignOut*> method to log one user out and allow a different user to log in.
 
 ## Examples
- The following code example clears the forms-authentication cookie using the <xref:System.Web.Security.FormsAuthentication.SignOut*> method and redirects the user to the login page using the <xref:System.Web.Security.FormsAuthentication.RedirectToLoginPage*> method.
+
+The following code example clears the forms-authentication cookie using the <xref:System.Web.Security.FormsAuthentication.SignOut*> method and redirects the user to the login page using the <xref:System.Web.Security.FormsAuthentication.RedirectToLoginPage*> method.
 
  :::code language="aspx-csharp" source="~/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.FormsAuthentication/CS/signoutcs.aspx" id="Snippet2":::
  :::code language="aspx-vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.FormsAuthentication/VB/signoutvb.aspx" id="Snippet2":::
@@ -1115,7 +1129,8 @@ This method is obsolete. Alternatively, you can use ASP.NET membership to store 
  The <xref:System.Web.Security.FormsAuthentication.RedirectToLoginPage*> method does not clear the forms-authentication cookie. You can use the <xref:System.Web.Security.FormsAuthentication.RedirectToLoginPage*> method in conjunction with the <xref:System.Web.Security.FormsAuthentication.SignOut*> method to log one user out and allow a different user to log in.
 
 ## Examples
- The following code example clears the forms-authentication cookie using the <xref:System.Web.Security.FormsAuthentication.SignOut*> method and redirects the user to the login page using the <xref:System.Web.Security.FormsAuthentication.RedirectToLoginPage*> method.
+
+The following code example clears the forms-authentication cookie using the <xref:System.Web.Security.FormsAuthentication.SignOut*> method and redirects the user to the login page using the <xref:System.Web.Security.FormsAuthentication.RedirectToLoginPage*> method.
 
  :::code language="aspx-csharp" source="~/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.FormsAuthentication/CS/signout2cs.aspx" id="Snippet3":::
  :::code language="aspx-vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.FormsAuthentication/VB/signout2vb.aspx" id="Snippet3":::
@@ -1192,7 +1207,8 @@ This method is obsolete. Alternatively, you can use ASP.NET membership to store 
  It is recommended that if you configure `requireSSL` as `false`, you also configure `slidingExpiration` as `false`, to reduce the amount of time for which a ticket is valid.
 
 ## Examples
- The following code example sets the `requireSSL` attribute in the Web.config file.
+
+The following code example sets the `requireSSL` attribute in the Web.config file.
 
 ```xml
 <authentication mode="Forms">
@@ -1349,7 +1365,8 @@ This method is obsolete. Alternatively, you can use ASP.NET membership to store 
 - Use persistent storage on the server to record when a user logs out of the Web site, and then use an application event such as <xref:System.Web.HttpApplication.PostAuthenticateRequest> event to determine whether the current user was authenticated with forms authentication. If the user was authenticated with forms authentication, and if the information in persistent storage indicates the user is logged out, immediately clear the authentication cookie and redirect the browser back to the login page. After a successful login, update storage to reflect that the user is logged in. When you use this method, your application must track the logged-in status of the user, and must force idle users to log out.
 
 ## Examples
- The following code example clears the forms-authentication cookie using the <xref:System.Web.Security.FormsAuthentication.SignOut*> method and redirects the user to the login page using the <xref:System.Web.Security.FormsAuthentication.RedirectToLoginPage*> method.
+
+The following code example clears the forms-authentication cookie using the <xref:System.Web.Security.FormsAuthentication.SignOut*> method and redirects the user to the login page using the <xref:System.Web.Security.FormsAuthentication.RedirectToLoginPage*> method.
 
  :::code language="aspx-csharp" source="~/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.FormsAuthentication/CS/signoutcs.aspx" id="Snippet2":::
  :::code language="aspx-vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.FormsAuthentication/VB/signoutvb.aspx" id="Snippet2":::
@@ -1393,7 +1410,8 @@ This method is obsolete. Alternatively, you can use ASP.NET membership to store 
  We recommend that if you configure `requireSSL` as `false`, you also configure `slidingExpiration` as `false`, to reduce the amount of time for which a ticket is valid.
 
 ## Examples
- The following code example sets the `slidingExpiration` attribute to `false` in the Web.config file for an ASP.NET application.
+
+The following code example sets the `slidingExpiration` attribute to `false` in the Web.config file for an ASP.NET application.
 
 ```xml
 <authentication mode="Forms">

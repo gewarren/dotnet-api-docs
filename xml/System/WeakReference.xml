@@ -82,7 +82,8 @@
 A weak reference allows the garbage collector to collect an object while still allowing an application to access the object. If you need the object, you can still obtain a strong reference to it and prevent it from being collected. For more information about how to use short and long weak references, see [Weak References](/dotnet/standard/garbage-collection/weak-references).
 
 ## Examples
- The following example demonstrates how you can use weak references to maintain a cache of objects as a resource for an application. The cache is constructed using an <xref:System.Collections.Generic.IDictionary`2> of <xref:System.WeakReference> objects keyed by an index value. The <xref:System.WeakReference.Target> property for the <xref:System.WeakReference> objects is an object in a byte array that represents data.
+
+The following example demonstrates how you can use weak references to maintain a cache of objects as a resource for an application. The cache is constructed using an <xref:System.Collections.Generic.IDictionary`2> of <xref:System.WeakReference> objects keyed by an index value. The <xref:System.WeakReference.Target> property for the <xref:System.WeakReference> objects is an object in a byte array that represents data.
 
  The example randomly accesses objects in the cache. If an object is reclaimed for garbage collection, a new data object is regenerated; otherwise, the object is available to access because of the weak reference.
 
@@ -221,7 +222,8 @@ This constructor creates a short weak reference to `target`.
 If `trackResurrection` is `false`, a short weak reference is created. If `trackResurrection` is `true`, a long weak reference is created.
 
 ## Examples
- The following example creates a cache of data objects with short weak references. This example is part of a larger example provided for the <xref:System.WeakReference> class.
+
+The following example creates a cache of data objects with short weak references. This example is part of a larger example provided for the <xref:System.WeakReference> class.
 
  :::code language="csharp" source="~/snippets/csharp/System/WeakReference/Overview/program.cs" id="Snippet2":::
  :::code language="fsharp" source="~/snippets/fsharp/System/WeakReference/Overview/program.fs" id="Snippet2":::
@@ -562,7 +564,8 @@ Because an object could potentially be reclaimed for garbage collection immediat
 After setting this property to the target object, make sure that there are no other strong references to the object; otherwise, it will not be collected.
 
 ## Examples
- The following example tries to obtain an object from a cache of objects with weak references. If the object was reclaimed for garbage collection, a new object is generated. This example is part of a larger example provided for the <xref:System.WeakReference> class.
+
+The following example tries to obtain an object from a cache of objects with weak references. If the object was reclaimed for garbage collection, a new object is generated. This example is part of a larger example provided for the <xref:System.WeakReference> class.
 
  :::code language="csharp" source="~/snippets/csharp/System/WeakReference/Overview/program.cs" id="Snippet3":::
  :::code language="fsharp" source="~/snippets/fsharp/System/WeakReference/Overview/program.fs" id="Snippet3":::

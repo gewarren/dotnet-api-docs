@@ -293,7 +293,8 @@ To pass information to the callback method, assign an array of strings to the <x
  The callback method is executed in the context of the newly created application domain.
 
 ## Examples
- The following example creates a child application domain named `ChildDomain`, using an <xref:System.AppDomainSetup> object and evidence from the default application domain. The <xref:System.AppDomainSetup.AppDomainInitializer> property is set to the callback method `AppDomainInit`, which is invoked when the child domain is initialized. The arguments for the callback method are placed in an array of strings, which is assigned to the <xref:System.AppDomainSetup.AppDomainInitializerArguments> property. When the child domain is created, the callback method simply prints the strings.
+
+The following example creates a child application domain named `ChildDomain`, using an <xref:System.AppDomainSetup> object and evidence from the default application domain. The <xref:System.AppDomainSetup.AppDomainInitializer> property is set to the callback method `AppDomainInit`, which is invoked when the child domain is initialized. The arguments for the callback method are placed in an array of strings, which is assigned to the <xref:System.AppDomainSetup.AppDomainInitializerArguments> property. When the child domain is created, the callback method simply prints the strings.
 
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_CLR/AppDomainInitializer/cpp/source.cpp" id="Snippet1":::
  :::code language="csharp" source="~/snippets/csharp/System/AppDomainSetup/AppDomainInitializer/source.cs" id="Snippet1":::
@@ -341,7 +342,8 @@ Use the <xref:System.AppDomainSetup.AppDomainInitializer> property to specify a 
  The callback method is executed in the context of the newly created application domain.
 
 ## Examples
- The following code example creates a child application domain named `ChildDomain`, using an <xref:System.AppDomainSetup> object and evidence from the default application domain. The <xref:System.AppDomainSetup.AppDomainInitializer> property is set to the callback method `AppDomainInit`, which is invoked when the child domain is initialized. The arguments for the callback method are placed in an array of strings, which is assigned to the <xref:System.AppDomainSetup.AppDomainInitializerArguments> property. When the child domain is created, the callback method simply prints the strings.
+
+The following code example creates a child application domain named `ChildDomain`, using an <xref:System.AppDomainSetup> object and evidence from the default application domain. The <xref:System.AppDomainSetup.AppDomainInitializer> property is set to the callback method `AppDomainInit`, which is invoked when the child domain is initialized. The arguments for the callback method are placed in an array of strings, which is assigned to the <xref:System.AppDomainSetup.AppDomainInitializerArguments> property. When the child domain is created, the callback method simply prints the strings.
 
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_CLR/AppDomainInitializer/cpp/source.cpp" id="Snippet1":::
  :::code language="csharp" source="~/snippets/csharp/System/AppDomainSetup/AppDomainInitializer/source.cs" id="Snippet1":::
@@ -503,7 +505,8 @@ The application base directory is where the assembly manager begins probing for 
  The <xref:System.AppDomainSetup.ApplicationBase> property can influence which permissions are granted to an application domain. For example, an application domain originating from the local computer normally receives full trust based on its location of origin. However, if the <xref:System.AppDomainSetup.ApplicationBase> property of that <xref:System.AppDomain> is set to the full name of an intranet directory, the <xref:System.AppDomainSetup.ApplicationBase*> setting restricts the permissions granted to the application domain to a LocalIntranet grant even though the application domain actually originates from the local computer.
 
 ## Examples
- The following example demonstrates how to use the <xref:System.AppDomainSetup.ApplicationBase> property to set the location where the assembly loader begins probing for assemblies to load into a new application domain.
+
+The following example demonstrates how to use the <xref:System.AppDomainSetup.ApplicationBase> property to set the location where the assembly loader begins probing for assemblies to load into a new application domain.
 
 > [!NOTE]
 > You must ensure that the folder you specify exists.
@@ -550,7 +553,8 @@ The application base directory is where the assembly manager begins probing for 
           <format type="text/markdown"><![CDATA[
 
 ## Examples
- The following example shows how to set the <xref:System.AppDomainSetup.ApplicationName> property when you create a new application domain.
+
+The following example shows how to set the <xref:System.AppDomainSetup.ApplicationName> property when you create a new application domain.
 
  The example creates a new application domain, and then calls the <xref:System.AppDomain.CreateInstanceAndUnwrap*?displayProperty=nameWithType> method to load the example assembly into the new application domain and create an instance of the `Worker` class. The `Worker` class inherits <xref:System.MarshalByRefObject>, so the example can use the proxy returned by <xref:System.AppDomain.CreateInstanceAndUnwrap*> to call the `TestLoad` method.
 
@@ -929,7 +933,8 @@ Use this property to set the base directory where the dynamic directory for the 
  The dynamic directory is a subdirectory of <xref:System.AppDomainSetup.DynamicBase*>. Its simple name is the value returned by the <xref:System.AppDomainSetup.ApplicationName> property, so its format is *original path*\\*hash code*\\*application name*.
 
 ## Examples
- The following example demonstrates how to use the <xref:System.AppDomainSetup.DynamicBase> property to set the path an application domain probes when loading dynamic assemblies.
+
+The following example demonstrates how to use the <xref:System.AppDomainSetup.DynamicBase> property to set the path an application domain probes when loading dynamic assemblies.
 
  The example creates an <xref:System.AppDomainSetup> object and sets its <xref:System.AppDomainSetup.ApplicationName> property to "Example" and its <xref:System.AppDomainSetup.DynamicBase> property to "C:\DynamicAssemblyDir". The example then displays the <xref:System.AppDomainSetup.DynamicBase> property, to show that the hash code of the application name has been appended as a subdirectory of the path that was originally assigned.
 
@@ -1066,7 +1071,8 @@ The <xref:System.AppDomainSetup.SetConfigurationBytes*> method provides a way to
           <format type="text/markdown"><![CDATA[
 
 ## Examples
- The following example creates a dynamic assembly and saves it to disk, and then uses the <xref:System.AppDomainSetup.LoaderOptimization> property to set the optimization policy used to load the assembly into an application domain.
+
+The following example creates a dynamic assembly and saves it to disk, and then uses the <xref:System.AppDomainSetup.LoaderOptimization> property to set the optimization policy used to load the assembly into an application domain.
 
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_CLR/ADDyno/CPP/addyno.cpp" id="Snippet1":::
  :::code language="csharp" source="~/snippets/csharp/System/AppDomain/CreateInstanceAndUnwrap/addyno.cs" id="Snippet1":::

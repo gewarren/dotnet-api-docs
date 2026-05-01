@@ -24,7 +24,8 @@
 An instance of this class is made available to managed stored procedures through the <xref:Microsoft.SqlServer.Server.SqlContext.Pipe> property of the <xref:Microsoft.SqlServer.Server.SqlContext> class.
 
 ## Examples
- The following example uses <xref:System.Data.SqlClient.SqlConnection> and <xref:System.Data.SqlClient.SqlCommand> to select rows from a data source in a stored procedure. The example then uses a <xref:Microsoft.SqlServer.Server.SqlPipe> to execute the command and send the results back to the client.
+
+The following example uses <xref:System.Data.SqlClient.SqlConnection> and <xref:System.Data.SqlClient.SqlCommand> to select rows from a data source in a stored procedure. The example then uses a <xref:Microsoft.SqlServer.Server.SqlPipe> to execute the command and send the results back to the client.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlPipe/CS/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/Microsoft.SqlServer.Server/SqlPipe/Overview/source.vb" id="Snippet1":::
@@ -69,7 +70,8 @@ In addition to any actual results, other messages and errors are also sent direc
  If there are errors in the <xref:System.Data.SqlClient.SqlCommand> object that was submitted, exceptions are sent to the pipe, but a copy is also sent to calling managed code. If the calling code doesn't catch the exception, it will propagate up the stack to the Transact-SQL code and appear in the output twice. If the calling code does catch the exception, the pipe consumer will still see the error, but there will not be a duplicate error.
 
 ## Examples
- The following example uses <xref:System.Data.SqlClient.SqlConnection> and <xref:System.Data.SqlClient.SqlCommand> to select rows from a data source in a stored procedure. The example then uses a <xref:Microsoft.SqlServer.Server.SqlPipe> to execute the command and send the results back to the client.
+
+The following example uses <xref:System.Data.SqlClient.SqlConnection> and <xref:System.Data.SqlClient.SqlCommand> to select rows from a data source in a stored procedure. The example then uses a <xref:Microsoft.SqlServer.Server.SqlPipe> to execute the command and send the results back to the client.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlPipe.ExecuteAndSend/CS/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/Microsoft.SqlServer.Server/SqlPipe/ExecuteAndSend/source.vb" id="Snippet1":::
@@ -211,7 +213,8 @@ If the <xref:System.Data.SqlClient.SqlDataReader> object passed in as a paramete
 The message string is sent as an informational message to the client. Client applications can listen to messages through different mechanisms, depending on the data access application programming interface (API) that they use. For example, if the client is using ADO.NET, the messages transmit through the <xref:System.Data.SqlClient.SqlConnection.InfoMessage> event.
 
 ## Examples
- The following example uses the <xref:Microsoft.SqlServer.Server.SqlPipe.Send*> method to send a message string directly to the client.
+
+The following example uses the <xref:Microsoft.SqlServer.Server.SqlPipe.Send*> method to send a message string directly to the client.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlPipe.Send/CS/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/Microsoft.SqlServer.Server/SqlPipe/Send/source.vb" id="Snippet1":::
@@ -249,7 +252,8 @@ The message string is sent as an informational message to the client. Client app
 Managed stored procedures can send result sets to clients that are not implementing a <xref:System.Data.SqlClient.SqlDataReader>. This method, along with <xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsStart*> and <xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsRow*>, allow stored procedures to send custom result sets to the client.
 
 ## Examples
- The following example creates a new <xref:Microsoft.SqlServer.Server.SqlDataRecord> and its <xref:Microsoft.SqlServer.Server.SqlMetaData>. The example then marks the beginning of a result set using the <xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsStart*> method, sends records with example data back to the client using the <xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsRow*> method, and marks the end of the result set with the <xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsEnd*> method.
+
+The following example creates a new <xref:Microsoft.SqlServer.Server.SqlDataRecord> and its <xref:Microsoft.SqlServer.Server.SqlMetaData>. The example then marks the beginning of a result set using the <xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsStart*> method, sends records with example data back to the client using the <xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsRow*> method, and marks the end of the result set with the <xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsEnd*> method.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlPipe.SendResultsEnd/CS/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/Microsoft.SqlServer.Server/SqlContext/Overview/source.vb" id="Snippet1":::
@@ -293,7 +297,8 @@ Managed stored procedures can send result sets to clients that are not implement
  The <xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsRow*> method sends a single row of data back to the client. Rows can subsequently be returned to the caller by calling <xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsRow*>, one time for each row being sent. After all the rows have been sent, a call to the <xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsEnd*> method is required to mark the end of the result set.
 
 ## Examples
- The following example creates a new <xref:Microsoft.SqlServer.Server.SqlDataRecord> and its <xref:Microsoft.SqlServer.Server.SqlMetaData>. The example then marks the beginning of a result set using the <xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsStart*> method, sends records with example data back to the client using the <xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsRow*> method, and marks the end of the result set with the <xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsEnd*> method.
+
+The following example creates a new <xref:Microsoft.SqlServer.Server.SqlDataRecord> and its <xref:Microsoft.SqlServer.Server.SqlMetaData>. The example then marks the beginning of a result set using the <xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsStart*> method, sends records with example data back to the client using the <xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsRow*> method, and marks the end of the result set with the <xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsEnd*> method.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlPipe.SendResultsRow/CS/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/Microsoft.SqlServer.Server/SqlPipe/SendResultsEnd/source.vb" id="Snippet1":::
@@ -342,7 +347,8 @@ Managed stored procedures can send result sets to clients that are not implement
  After control returns to Transact-SQL from CLR execution, do not attempt to use a static or local variable initialized to CLR memory. For example, do not store an instance of an in process class, for example `SQLDataRecord`, which will be used after control returns from CLR. One exception is the `SQLMetaData` in process class.
 
 ## Examples
- The following example creates a new <xref:Microsoft.SqlServer.Server.SqlDataRecord> and its <xref:Microsoft.SqlServer.Server.SqlMetaData>. The example then marks the beginning of a result set using the <xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsStart*> method, sends records with example data back to the client using the <xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsRow*> method, and marks the end of the result set with the <xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsEnd*> method.
+
+The following example creates a new <xref:Microsoft.SqlServer.Server.SqlDataRecord> and its <xref:Microsoft.SqlServer.Server.SqlMetaData>. The example then marks the beginning of a result set using the <xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsStart*> method, sends records with example data back to the client using the <xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsRow*> method, and marks the end of the result set with the <xref:Microsoft.SqlServer.Server.SqlPipe.SendResultsEnd*> method.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlPipe.SendResultsStart/CS/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/Microsoft.SqlServer.Server/SqlPipe/SendResultsStart/source.vb" id="Snippet1":::

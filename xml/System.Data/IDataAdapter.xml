@@ -57,7 +57,8 @@ The <xref:System.Data.IDataAdapter> interface allows an inheriting class to impl
  Classes that inherit <xref:System.Data.IDataAdapter> must implement the inherited members, and they typically define additional members to add provider-specific functionality. For example, the <xref:System.Data.IDataAdapter> interface defines a <xref:System.Data.IDataAdapter.Fill*> method that takes a <xref:System.Data.DataSet> as a parameter. In turn, the <xref:System.Data.OleDb.OleDbDataAdapter> class inherits the <xref:System.Data.Common.DbDataAdapter.Fill*> method and also defines two additional overloads of the <xref:System.Data.OleDb.OleDbDataAdapter.Fill*> method that take an ADO Recordset object as a parameter.
 
 ## Examples
- The following example uses the derived classes, <xref:System.Data.SqlClient.SqlCommand>, <xref:System.Data.SqlClient.SqlDataAdapter>, and <xref:System.Data.SqlClient.SqlConnection>, to select records from a database. The filled <xref:System.Data.DataSet> is then returned. To do this, the method is passed an initialized <xref:System.Data.DataSet>, a connection string, and a query string that is a Transact-SQL SELECT statement.
+
+The following example uses the derived classes, <xref:System.Data.SqlClient.SqlCommand>, <xref:System.Data.SqlClient.SqlDataAdapter>, and <xref:System.Data.SqlClient.SqlConnection>, to select records from a database. The filled <xref:System.Data.DataSet> is then returned. To do this, the method is passed an initialized <xref:System.Data.DataSet>, a connection string, and a query string that is a Transact-SQL SELECT statement.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlDataAdapter Example/CS/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Data/IDataAdapter/Overview/source.vb" id="Snippet1":::
@@ -567,7 +568,8 @@ When an application calls the <xref:System.Data.IDataAdapter.Update*> method, th
 > If an error occurs while updating a row, an exception is thrown and execution of the update is discontinued. To continue the update operation without generating exceptions when an error is encountered, set the <xref:System.Data.Common.DataAdapter.ContinueUpdateOnError> property to `true` before calling <xref:System.Data.Common.DbDataAdapter.Update*>. You may also respond to errors on a per-row basis within the `RowUpdated` event of a DataAdapter. To continue the update operation without generating an exception within the `RowUpdated` event, set the <xref:System.Data.Common.RowUpdatedEventArgs.Status> property of the <xref:System.Data.Common.RowUpdatedEventArgs> to <xref:System.Data.UpdateStatus.Continue>.
 
 ## Examples
- The following example uses the derived class, <xref:System.Data.OleDb.OleDbDataAdapter>, to <xref:System.Data.Common.DataAdapter.Update*> the data source. This example assumes that you have created an <xref:System.Data.OleDb.OleDbDataAdapter> and a <xref:System.Data.DataSet>.
+
+The following example uses the derived class, <xref:System.Data.OleDb.OleDbDataAdapter>, to <xref:System.Data.Common.DataAdapter.Update*> the data source. This example assumes that you have created an <xref:System.Data.OleDb.OleDbDataAdapter> and a <xref:System.Data.DataSet>.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataAdapter.IDataAdapter.Update Example/CS/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Data/IDataAdapter/Update/source.vb" id="Snippet1":::

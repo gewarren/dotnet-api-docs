@@ -321,7 +321,8 @@ During a call to the `Update` method of a `DataAdapter`, the database can send d
 > Setting the `AcceptChangesDuringUpdate` property to `false` applies to all data modifications, not only inserts. If you want to edit or delete rows in the same update, and if you want to suppress the call to `AcceptChanges` only for inserts, then instead of setting `AcceptChangesDuringUpdate` to `false`, use an event handler for the `RowUpdated` event of the `DataAdapter`. In the event handler, you can check the <xref:System.Data.Common.RowUpdatedEventArgs.StatementType*> to determine if the data modification is an insert, and if `true`, set the <xref:System.Data.Common.RowUpdatedEventArgs.Status> property of the <xref:System.Data.Common.RowUpdatedEventArgs> to <xref:System.Data.UpdateStatus.SkipCurrentRow>. For more information and an example, see [Retrieving Identity or Autonumber Values](/dotnet/framework/data/adonet/retrieving-identity-or-autonumber-values).
 
 ## Examples
- This example demonstrates extracting changed rows from a `DataTable` and using a <xref:System.Data.SqlClient.SqlDataAdapter> to update the data source and retrieve a new identity column value. By setting the `AcceptChangesDuringUpdate` property of the <xref:System.Data.SqlClient.SqlDataAdapter> to `false` to preserve the original auto increment value, the new data can then be merged into the original <xref:System.Data.DataTable>, even if the new identity value does not match the original auto increment value in the `DataTable`.
+
+This example demonstrates extracting changed rows from a `DataTable` and using a <xref:System.Data.SqlClient.SqlDataAdapter> to update the data source and retrieve a new identity column value. By setting the `AcceptChangesDuringUpdate` property of the <xref:System.Data.SqlClient.SqlDataAdapter> to `false` to preserve the original auto increment value, the new data can then be merged into the original <xref:System.Data.DataTable>, even if the new identity value does not match the original auto increment value in the `DataTable`.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlClient.AcceptChangesDuringUpdate/CS/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Data.Common/DataAdapter/AcceptChangesDuringUpdate/source.vb" id="Snippet1":::
@@ -1356,7 +1357,8 @@ If a unique clustered index is defined on a column or columns in a SQL Server ta
 The <xref:System.Data.Common.DataAdapter.TableMappings> property provides the primary mapping between the returned records and the <xref:System.Data.DataSet>.
 
 ## Examples
- The following example creates a derived class, <xref:System.Data.OleDb.OleDbDataAdapter> and sets some of its properties.
+
+The following example creates a derived class, <xref:System.Data.OleDb.OleDbDataAdapter> and sets some of its properties.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataAdapter.MissingMappingAction Example/CS/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Data.Common/DataAdapter/MissingMappingAction/source.vb" id="Snippet1":::
@@ -1424,7 +1426,8 @@ The <xref:System.Data.Common.DataAdapter.TableMappings> property provides the pr
           <format type="text/markdown"><![CDATA[
 
 ## Examples
- The following example creates a derived class, <xref:System.Data.OleDb.OleDbDataAdapter> and sets some of its properties.
+
+The following example creates a derived class, <xref:System.Data.OleDb.OleDbDataAdapter> and sets some of its properties.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataAdapter.MissingMappingAction Example/CS/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Data.Common/DataAdapter/MissingMappingAction/source.vb" id="Snippet1":::
@@ -1843,7 +1846,8 @@ This member is an explicit interface member implementation. It can be used only 
 When reconciling changes, the <xref:System.Data.Common.DataAdapter> uses the <xref:System.Data.Common.DataTableMappingCollection> collection to associate the column names used by the data source with the column names used by the <xref:System.Data.DataSet>.
 
 ## Examples
- The following example uses a derived class, <xref:System.Data.OleDb.OleDbDataAdapter>, to add <xref:System.Data.Common.DataTableMapping> objects to its <xref:System.Data.Common.DataAdapter.TableMappings*> collection and display a list of those mapped source tables. This example assumes that an <xref:System.Data.OleDb.OleDbDataAdapter> has already been created.
+
+The following example uses a derived class, <xref:System.Data.OleDb.OleDbDataAdapter>, to add <xref:System.Data.Common.DataTableMapping> objects to its <xref:System.Data.Common.DataAdapter.TableMappings*> collection and display a list of those mapped source tables. This example assumes that an <xref:System.Data.OleDb.OleDbDataAdapter> has already been created.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataAdapter.TableMappings Example/CS/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Data.Common/DataAdapter/TableMappings/source.vb" id="Snippet1":::
@@ -1962,7 +1966,8 @@ The update is performed on a by-row basis. For every inserted, modified, and del
 > For every column that you propagate to the data source on <xref:System.Data.Common.DataAdapter.Update*>, a parameter should be added to the `InsertCommand`, `UpdateCommand`, or `DeleteCommand`. The `SourceColumn` property of the parameter should be set to the name of the column. This setting indicates that the value of the parameter is not set manually, but is taken from the particular column in the currently processed row.
 
 ## Examples
- The following example uses the derived class, <xref:System.Data.OleDb.OleDbDataAdapter>, to <xref:System.Data.Common.DataAdapter.Update*> the data source.
+
+The following example uses the derived class, <xref:System.Data.OleDb.OleDbDataAdapter>, to <xref:System.Data.Common.DataAdapter.Update*> the data source.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataAdapter.IDataAdapter.Update Example/CS/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Data/IDataAdapter/Update/source.vb" id="Snippet1":::

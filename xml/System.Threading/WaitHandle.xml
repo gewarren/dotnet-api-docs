@@ -106,7 +106,8 @@
  <xref:System.Threading.WaitHandle> implements the <xref:System.IDisposable.Dispose*> pattern. See [Implementing a Dispose method](/dotnet/standard/garbage-collection/implementing-dispose). When you derive from <xref:System.Threading.WaitHandle>, use the <xref:System.Threading.WaitHandle.SafeWaitHandle> property to store your native operating system handle. You do not need to override the protected <xref:System.Threading.WaitHandle.Dispose*> method unless you use additional unmanaged resources.
 
 ## Examples
- The following code example shows how two threads can do background tasks while the Main thread waits for the tasks to complete using the static <xref:System.Threading.WaitHandle.WaitAny*> and <xref:System.Threading.WaitHandle.WaitAll*> methods of the <xref:System.Threading.WaitHandle> class.
+
+The following code example shows how two threads can do background tasks while the Main thread waits for the tasks to complete using the static <xref:System.Threading.WaitHandle.WaitAny*> and <xref:System.Threading.WaitHandle.WaitAll*> methods of the <xref:System.Threading.WaitHandle> class.
 
  :::code language="csharp" source="~/snippets/csharp/System.Threading/WaitHandle/Overview/WaitHandle.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Threading/WaitHandle/Overview/WaitHandle.vb" id="Snippet1":::
@@ -658,7 +659,8 @@ Application code does not call this method; it is automatically invoked during g
  This operation is not guaranteed to be atomic. After the current thread signals `toSignal` but before it waits on `toWaitOn`, a thread that is running on another processor might signal `toWaitOn` or wait on it.
 
 ## Examples
- The following code example uses the <xref:System.Threading.WaitHandle.SignalAndWait(System.Threading.WaitHandle,System.Threading.WaitHandle)> method overload to allow the main thread to signal a blocked thread and then wait until the thread finishes a task.
+
+The following code example uses the <xref:System.Threading.WaitHandle.SignalAndWait(System.Threading.WaitHandle,System.Threading.WaitHandle)> method overload to allow the main thread to signal a blocked thread and then wait until the thread finishes a task.
 
  The example starts five threads, allows them to block on an <xref:System.Threading.EventWaitHandle> created with the <xref:System.Threading.EventResetMode.AutoReset?displayProperty=nameWithType> flag, and then releases one thread each time the user presses the ENTER key. The example then queues another five threads and releases them all using an <xref:System.Threading.EventWaitHandle> created with the <xref:System.Threading.EventResetMode.ManualReset?displayProperty=nameWithType> flag.
 
@@ -963,7 +965,8 @@ Calling `Dispose` allows the resources used by the <xref:System.Threading.WaitHa
  Calling this method overload is equivalent to calling the <xref:System.Threading.WaitHandle.WaitAll(System.Threading.WaitHandle[],System.Int32,System.Boolean)> method overload and specifying -1 (or <xref:System.Threading.Timeout.Infinite?displayProperty=nameWithType>) for `millisecondsTimeout` and `true` for `exitContext`.
 
 ## Examples
- The following code example shows how to use the thread pool to asynchronously create and write to a group of files. Each write operation is queued as a work item and signals when it is finished. The main thread waits for all the items to signal and then exits.
+
+The following code example shows how to use the thread pool to asynchronously create and write to a group of files. Each write operation is queued as a work item and signals when it is finished. The main thread waits for all the items to signal and then exits.
 
  :::code language="csharp" source="~/snippets/csharp/System.Threading/WaitHandle/WaitAll/source1.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Threading/WaitHandle/WaitAll/source1.vb" id="Snippet1":::
@@ -1255,7 +1258,8 @@ The <xref:System.Threading.WaitHandle.WaitAll*> method returns when the wait ter
 [!INCLUDE [Exit the context](~/includes/remarks/System.Threading/WaitHandle/exit-context.md)]
 
 ## Examples
- The following code example shows how to use the thread pool to asynchronously create and write to a group of files. Each write operation is queued as a work item and signals when it is finished. The main thread waits for all the items to signal and then exits.
+
+The following code example shows how to use the thread pool to asynchronously create and write to a group of files. Each write operation is queued as a work item and signals when it is finished. The main thread waits for all the items to signal and then exits.
 
  :::code language="csharp" source="~/snippets/csharp/System.Threading/WaitHandle/WaitAll/source2.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Threading/WaitHandle/WaitAll/source2.vb" id="Snippet1":::
@@ -1353,7 +1357,8 @@ The maximum value for `timeout` is <xref:System.Int32.MaxValue?displayProperty=n
 [!INCLUDE [Exit the context](~/includes/remarks/System.Threading/WaitHandle/exit-context.md)]
 
 ## Examples
- The following code example shows how to use the thread pool to asynchronously create and write to a group of files. Each write operation is queued as a work item and signals when it is finished. The main thread waits for all the items to signal and then exits.
+
+The following code example shows how to use the thread pool to asynchronously create and write to a group of files. Each write operation is queued as a work item and signals when it is finished. The main thread waits for all the items to signal and then exits.
 
  :::code language="csharp" source="~/snippets/csharp/System.Threading/WaitHandle/WaitAll/source3.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Threading/WaitHandle/WaitAll/source3.vb" id="Snippet1":::
@@ -1471,7 +1476,8 @@ The maximum value for `timeout` is <xref:System.Int32.MaxValue?displayProperty=n
  Calling this method overload is equivalent to calling the <xref:System.Threading.WaitHandle.WaitAny(System.Threading.WaitHandle[],System.Int32,System.Boolean)> method overload and specifying -1 (or <xref:System.Threading.Timeout.Infinite?displayProperty=nameWithType>) for `millisecondsTimeout` and `true` for `exitContext`.
 
 ## Examples
- The following code example demonstrates calling the <xref:System.Threading.WaitHandle.WaitAny*> method.
+
+The following code example demonstrates calling the <xref:System.Threading.WaitHandle.WaitAny*> method.
 
  :::code language="csharp" source="~/snippets/csharp/System.Threading/WaitHandle/Overview/WaitHandle.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Threading/WaitHandle/Overview/WaitHandle.vb" id="Snippet1":::
@@ -1740,7 +1746,8 @@ The maximum number of the wait handles is 64, and 63 if the current thread is in
 [!INCLUDE [Exit the context](~/includes/remarks/System.Threading/WaitHandle/exit-context.md)]
 
 ## Examples
- The following code example demonstrates how to use the thread pool to simultaneously search for a file on multiple disks. For space considerations, only the root directory of each disk is searched.
+
+The following code example demonstrates how to use the thread pool to simultaneously search for a file on multiple disks. For space considerations, only the root directory of each disk is searched.
 
  :::code language="csharp" source="~/snippets/csharp/System.Threading/WaitHandle/WaitAny/source2.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Threading/WaitHandle/WaitAny/source2.vb" id="Snippet1":::
@@ -1835,7 +1842,8 @@ The maximum value for `timeout` is <xref:System.Int32.MaxValue?displayProperty=n
 [!INCLUDE [Exit the context](~/includes/remarks/System.Threading/WaitHandle/exit-context.md)]
 
 ## Examples
- The following code example demonstrates how to use the thread pool to simultaneously search for a file on multiple disks. For space considerations, only the root directory of each disk is searched.
+
+The following code example demonstrates how to use the thread pool to simultaneously search for a file on multiple disks. For space considerations, only the root directory of each disk is searched.
 
  :::code language="csharp" source="~/snippets/csharp/System.Threading/WaitHandle/WaitAny/source3.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Threading/WaitHandle/WaitAny/source3.vb" id="Snippet1":::
@@ -1933,7 +1941,8 @@ The maximum value for `timeout` is <xref:System.Int32.MaxValue?displayProperty=n
  Override this method to customize the behavior of derived classes.
 
 ## Examples
- The following code example shows how to use a wait handle to keep a process from terminating while it waits for a background thread to finish executing.
+
+The following code example shows how to use a wait handle to keep a process from terminating while it waits for a background thread to finish executing.
 
  :::code language="csharp" source="~/snippets/csharp/System.Threading/WaitHandle/WaitOne/source1.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Threading/WaitHandle/WaitOne/source1.vb" id="Snippet1":::
@@ -2005,7 +2014,8 @@ The maximum value for `timeout` is <xref:System.Int32.MaxValue?displayProperty=n
  Calling this method overload is the same as calling the <xref:System.Threading.WaitHandle.WaitOne(System.Int32,System.Boolean)> overload and specifying `false` for `exitContext`.
 
 ## Examples
- The following code example shows how to use a wait handle to keep a process from terminating while it waits for a background thread to finish executing.
+
+The following code example shows how to use a wait handle to keep a process from terminating while it waits for a background thread to finish executing.
 
  :::code language="csharp" source="~/snippets/csharp/System.Threading/WaitHandle/WaitOne/source2.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Threading/WaitHandle/WaitOne/source2.vb" id="Snippet1":::
@@ -2156,7 +2166,8 @@ Override this method to customize the behavior of derived classes.
 [!INCLUDE [Exit the context](~/includes/remarks/System.Threading/WaitHandle/exit-context.md)]
 
 ## Examples
- The following example shows how the <xref:System.Threading.WaitHandle.WaitOne(System.Int32,System.Boolean)> method overload behaves when it is called within a synchronization domain. First, a thread waits with `exitContext` set to `false` and blocks until the wait timeout expires. A second thread executes after the first thread terminates and waits with `exitContext` set to `true`. The call to signal the wait handle for this second thread is not blocked, and the thread completes before the wait timeout.
+
+The following example shows how the <xref:System.Threading.WaitHandle.WaitOne(System.Int32,System.Boolean)> method overload behaves when it is called within a synchronization domain. First, a thread waits with `exitContext` set to `false` and blocks until the wait timeout expires. A second thread executes after the first thread terminates and waits with `exitContext` set to `true`. The call to signal the wait handle for this second thread is not blocked, and the thread completes before the wait timeout.
 
  :::code language="csharp" source="~/snippets/csharp/System.Threading/WaitHandle/WaitOne/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Threading/WaitHandle/WaitOne/source.vb" id="Snippet1":::
@@ -2235,7 +2246,8 @@ The maximum value for `timeout` is <xref:System.Int32.MaxValue?displayProperty=n
 [!INCLUDE [Exit the context](~/includes/remarks/System.Threading/WaitHandle/exit-context.md)]
 
 ## Examples
- The following code example shows how to use a wait handle to keep a process from terminating while it waits for a background thread to finish executing.
+
+The following code example shows how to use a wait handle to keep a process from terminating while it waits for a background thread to finish executing.
 
  :::code language="csharp" source="~/snippets/csharp/System.Threading/WaitHandle/WaitOne/source3.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Threading/WaitHandle/WaitOne/source3.vb" id="Snippet1":::
@@ -2303,7 +2315,8 @@ The maximum value for `timeout` is <xref:System.Int32.MaxValue?displayProperty=n
  This field is one of the possible return values of `WaitAny`.
 
 ## Examples
- The following code example demonstrates how to use the thread pool to simultaneously search for a file on multiple disks. For space considerations, only the root directory of each disk is searched.
+
+The following code example demonstrates how to use the thread pool to simultaneously search for a file on multiple disks. For space considerations, only the root directory of each disk is searched.
 
  :::code language="csharp" source="~/snippets/csharp/System.Threading/WaitHandle/WaitAny/source2.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Threading/WaitHandle/WaitAny/source2.vb" id="Snippet1":::

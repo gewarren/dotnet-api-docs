@@ -106,7 +106,8 @@
 > You can use the <xref:System.Threading.ThreadPool.SetMinThreads*> method to increase the minimum number of threads. However, unnecessarily increasing these values can cause performance problems. If too many tasks start at the same time, all of them might appear to be slow. In most cases the thread pool will perform better with its own algorithm for allocating threads.
 
 ## Examples
- In the following example, the main application thread  queues a method named `ThreadProc` to execute on a thread pool thread, sleeps for one second, and then exits. The `ThreadProc` method simply displays a message.
+
+In the following example, the main application thread  queues a method named `ThreadProc` to execute on a thread pool thread, sleeps for one second, and then exits. The `ThreadProc` method simply displays a message.
 
  :::code language="csharp" source="~/snippets/csharp/System.Threading/ThreadPool/Overview/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Threading/ThreadPool/Overview/source.vb" id="Snippet1":::
@@ -372,7 +373,8 @@ If a thread pool implementation may have different types of work items, the coun
  If there are no available threads, additional thread pool requests remain queued until thread pool threads become available.
 
 ## Examples
- The following example displays the number of worker threads and I/O threads available when a simple app is started.
+
+The following example displays the number of worker threads and I/O threads available when a simple app is started.
 
  :::code language="csharp" source="~/snippets/csharp/System.Threading/ThreadPool/GetAvailableThreads/Example2.cs" id="Snippet2":::
  :::code language="vb" source="~/snippets/visualbasic/System.Threading/ThreadPool/GetAvailableThreads/Example2.vb" id="Snippet2":::
@@ -448,7 +450,8 @@ If a thread pool implementation may have different types of work items, the coun
  You can queue as many thread pool requests as system memory allows. If there are more requests than thread pool threads, the additional requests remain queued until thread pool threads become available.
 
 ## Examples
- The following code example shows how to retrieve a count of the maximum and available number of threads in the thread pool. A work item is queued that uses `FileStream` to asynchronously write to two files. The callback methods are timed to overlap. A worker thread handles the work item and, depending on the speed and number of processors on the computer, one or two completion port threads handle the write operations.
+
+The following code example shows how to retrieve a count of the maximum and available number of threads in the thread pool. A work item is queued that uses `FileStream` to asynchronously write to two files. The callback methods are timed to overlap. A worker thread handles the work item and, depending on the speed and number of processors on the computer, one or two completion port threads handle the write operations.
 
  :::code language="csharp" source="~/snippets/csharp/System.Threading/ThreadPool/GetAvailableThreads/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Threading/ThreadPool/GetAvailableThreads/source.vb" id="Snippet1":::
@@ -521,7 +524,8 @@ If a thread pool implementation may have different types of work items, the coun
 > When demand is low, the actual number of thread pool threads can fall below the minimum values.
 
 ## Examples
- The following example sets the minimum number of worker threads to four, and preserves the original value for the minimum number of asynchronous I/O completion threads.
+
+The following example sets the minimum number of worker threads to four, and preserves the original value for the minimum number of asynchronous I/O completion threads.
 
  :::code language="csharp" source="~/snippets/csharp/System.Threading/ThreadPool/GetMinThreads/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Threading/ThreadPool/GetMinThreads/source.vb" id="Snippet1":::
@@ -727,7 +731,8 @@ The following example uses the <xref:System.Threading.ThreadPool.QueueUserWorkIt
 > Visual Basic users can omit the <xref:System.Threading.WaitCallback> constructor, and simply use the `AddressOf` operator when passing the callback method to <xref:System.Threading.ThreadPool.QueueUserWorkItem*>. Visual Basic automatically calls the correct delegate constructor.
 
 ## Examples
- The following example uses the .NET thread pool to calculate the `Fibonacci` result for five numbers between 20 and 40. Each `Fibonacci` result is represented by the `Fibonacci` class, which provides a method named `ThreadPoolCallback` that performs the calculation. An object that represents each `Fibonacci` value is created, and the `ThreadPoolCallback` method is passed to <xref:System.Threading.ThreadPool.QueueUserWorkItem*>, which assigns an available thread in the pool to execute the method.
+
+The following example uses the .NET thread pool to calculate the `Fibonacci` result for five numbers between 20 and 40. Each `Fibonacci` result is represented by the `Fibonacci` class, which provides a method named `ThreadPoolCallback` that performs the calculation. An object that represents each `Fibonacci` value is created, and the `ThreadPoolCallback` method is passed to <xref:System.Threading.ThreadPool.QueueUserWorkItem*>, which assigns an available thread in the pool to execute the method.
 
  Because each `Fibonacci` object is given a semi-random value to compute, and because each thread will be competing for processor time, you cannot know in advance how long it will take for all five results to be calculated. That is why each `Fibonacci` object is passed an instance of the <xref:System.Threading.ManualResetEvent> class during construction. Each object signals the provided event object when its calculation is complete, which allows the primary thread to block execution with <xref:System.Threading.WaitHandle.WaitAll*> until all five `Fibonacci` objects have calculated a result. The `Main` method then displays each `Fibonacci` result.
 
@@ -1203,7 +1208,8 @@ The following example uses the <xref:System.Threading.ThreadPool.QueueUserWorkIt
  Before returning, the function modifies the state of some types of synchronization objects. Modification occurs only for the object whose signaled state caused the wait condition to be satisfied. For example, the count of a semaphore is decreased by one.
 
 ## Examples
- The following example shows how to use the <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject*> method to execute a specified callback method when a specified wait handle is signaled. In this example, the callback method is `WaitProc`, and the wait handle is an <xref:System.Threading.AutoResetEvent>.
+
+The following example shows how to use the <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject*> method to execute a specified callback method when a specified wait handle is signaled. In this example, the callback method is `WaitProc`, and the wait handle is an <xref:System.Threading.AutoResetEvent>.
 
  The example defines a `TaskInfo` class to hold the information that is passed to the callback when it executes. The example creates a `TaskInfo` object and assigns it some string data. The <xref:System.Threading.RegisteredWaitHandle> that is returned by the <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject*> method is assigned to the `Handle` field of the `TaskInfo` object so that the callback method has access to the <xref:System.Threading.RegisteredWaitHandle>.
 
@@ -1372,7 +1378,8 @@ The following example uses the <xref:System.Threading.ThreadPool.QueueUserWorkIt
 > Using the <xref:System.Threading.ThreadPool.SetMinThreads*> method to increase the minimum number of threads can cause performance problems as described in the preceding text. In most cases, the thread pool will perform better with its own algorithm for allocating threads. Reducing the minimum to less than the number of processors can also hurt performance.
 
 ## Examples
- The following example sets the minimum number of worker threads to four, and preserves the original value for the minimum number of asynchronous I/O completion threads.
+
+The following example sets the minimum number of worker threads to four, and preserves the original value for the minimum number of asynchronous I/O completion threads.
 
  :::code language="csharp" source="~/snippets/csharp/System.Threading/ThreadPool/GetMinThreads/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Threading/ThreadPool/GetMinThreads/source.vb" id="Snippet1":::

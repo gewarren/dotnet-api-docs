@@ -68,7 +68,8 @@
  The <xref:System.Runtime.Serialization.ObjectManager> follows a set of rules that dictate the fixup order. All objects that implement <xref:System.Runtime.Serialization.ISerializable> or have a <xref:System.Runtime.Serialization.ISerializationSurrogate> can expect to have all the objects that they transmitted through <xref:System.Runtime.Serialization.SerializationInfo> available when the object tree is deserialized. However, a parent object cannot presume that all its child objects will be fully completed when it is fully deserialized. All child objects will be present but not all the grandchild objects will necessarily be present. If an object needs to take certain actions that depend on executing code on its child objects, it can delay these actions, implement the <xref:System.Runtime.Serialization.IDeserializationCallback> interface, and execute the code only when it is called back on this interface.
 
 ## Examples
- The following code example shows how to use the <xref:System.Runtime.Serialization.ObjectManager> class to walk through an object graph, traversing to each object only once.
+
+The following code example shows how to use the <xref:System.Runtime.Serialization.ObjectManager> class to walk through an object graph, traversing to each object only once.
 
  :::code language="csharp" source="~/snippets/csharp/System.Runtime.Serialization/ObjectManager/ObjectManager.cs" id="Snippet1":::
 

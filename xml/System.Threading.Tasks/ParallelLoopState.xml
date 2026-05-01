@@ -71,7 +71,8 @@
 - Exit from a long-running iteration whose index is greater than the index of an iteration in which Break was called by retrieving the value of the <xref:System.Threading.Tasks.ParallelLoopState.LowestBreakIteration> property.
 
 ## Examples
- The following example executes up to 100 iterations of a loop in parallel. Each iteration pauses for a random interval from 1 to 1,000 milliseconds. A randomly generated value determines on which iteration of the loop the <xref:System.Threading.Tasks.ParallelLoopState.Break*> method is called. As the output from the example shows, no iterations whose index is greater than the <xref:System.Threading.Tasks.ParallelLoopState.LowestBreakIteration> property value start after the call to the <xref:System.Threading.Tasks.ParallelLoopState.Break*> method.
+
+The following example executes up to 100 iterations of a loop in parallel. Each iteration pauses for a random interval from 1 to 1,000 milliseconds. A randomly generated value determines on which iteration of the loop the <xref:System.Threading.Tasks.ParallelLoopState.Break*> method is called. As the output from the example shows, no iterations whose index is greater than the <xref:System.Threading.Tasks.ParallelLoopState.LowestBreakIteration> property value start after the call to the <xref:System.Threading.Tasks.ParallelLoopState.Break*> method.
 
  :::code language="csharp" source="~/snippets/csharp/System.Threading.Tasks/Parallel/For/break1.cs" id="Snippet2":::
  :::code language="vb" source="~/snippets/visualbasic/System.Threading.Tasks/Parallel/For/break1.vb" id="Snippet2":::
@@ -138,7 +139,8 @@
  <xref:System.Threading.Tasks.ParallelLoopState.Break*> is typically employed in search-based algorithms where an ordering is present in the data source.
 
 ## Examples
- The following example executes up to 100 iterations of a loop in parallel. Each iteration pauses for a random interval from 1 to 1,000 milliseconds. A randomly generated value determines on which iteration of the loop the <xref:System.Threading.Tasks.ParallelLoopState.Break*> method is called. As the output from the example shows, no iterations whose index is greater than the <xref:System.Threading.Tasks.ParallelLoopState.LowestBreakIteration> property value start after the call to the <xref:System.Threading.Tasks.ParallelLoopState.Break*> method.
+
+The following example executes up to 100 iterations of a loop in parallel. Each iteration pauses for a random interval from 1 to 1,000 milliseconds. A randomly generated value determines on which iteration of the loop the <xref:System.Threading.Tasks.ParallelLoopState.Break*> method is called. As the output from the example shows, no iterations whose index is greater than the <xref:System.Threading.Tasks.ParallelLoopState.LowestBreakIteration> property value start after the call to the <xref:System.Threading.Tasks.ParallelLoopState.Break*> method.
 
  :::code language="csharp" source="~/snippets/csharp/System.Threading.Tasks/Parallel/For/break1.cs" id="Snippet2":::
  :::code language="vb" source="~/snippets/visualbasic/System.Threading.Tasks/Parallel/For/break1.vb" id="Snippet2":::
@@ -240,7 +242,8 @@
  For long-running iterations of the loop, you can retrieve the value of the <xref:System.Threading.Tasks.ParallelLoopState.IsStopped> property to determine whether any iterations of the loop that began execution before the call to the <xref:System.Threading.Tasks.ParallelLoopState.Stop*> method are still executing. You can then use the value of the <xref:System.Threading.Tasks.ParallelLoopState.IsStopped> property to determine whether they should return immediately or execute normally.
 
 ## Examples
- The following example executes up to 10,000 iterations of a loop in parallel. Each iteration pauses for a random interval from 1 to 1,000 milliseconds. A randomly generated value determines on which iteration of the loop the <xref:System.Threading.Tasks.ParallelLoopState.Stop*> method is called. Because iterations of the loop are still likely to be executing when the <xref:System.Threading.Tasks.ParallelLoopState.Stop*> method is called, the lambda expression calls the <xref:System.Threading.Tasks.ParallelLoopState.IsStopped*> method to check whether another iteration has called the <xref:System.Threading.Tasks.ParallelLoopState.Stop*> method. If it returns `true`, the iteration returns immediately.
+
+The following example executes up to 10,000 iterations of a loop in parallel. Each iteration pauses for a random interval from 1 to 1,000 milliseconds. A randomly generated value determines on which iteration of the loop the <xref:System.Threading.Tasks.ParallelLoopState.Stop*> method is called. Because iterations of the loop are still likely to be executing when the <xref:System.Threading.Tasks.ParallelLoopState.Stop*> method is called, the lambda expression calls the <xref:System.Threading.Tasks.ParallelLoopState.IsStopped*> method to check whether another iteration has called the <xref:System.Threading.Tasks.ParallelLoopState.Stop*> method. If it returns `true`, the iteration returns immediately.
 
  :::code language="csharp" source="~/snippets/csharp/System.Threading.Tasks/Parallel/For/stop1.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Threading.Tasks/Parallel/For/stop1.vb" id="Snippet1":::
@@ -302,7 +305,8 @@
  The example provides an illustration.
 
 ## Examples
- The following example executes up to 100 iterations of a loop in parallel. Each iteration pauses for a random interval from 1 to 1,000 milliseconds. A randomly generated value determines on which iteration of the loop the <xref:System.Threading.Tasks.ParallelLoopState.Break*> method is called. This prevents iterations whose index is greater than the <xref:System.Threading.Tasks.ParallelLoopState.LowestBreakIteration> property value from starting after the call to the <xref:System.Threading.Tasks.ParallelLoopState.Break*> method, but it does not affect any iterations that have already begun executing. To prevent these from completing, each iteration calls the <xref:System.Threading.Tasks.ParallelLoopState.ShouldExitCurrentIteration*> method to check whether another iteration has called the <xref:System.Threading.Tasks.ParallelLoopState.Break*> method. If so, the iteration checks the value of the <xref:System.Threading.Tasks.ParallelLoopState.LowestBreakIteration> property and, if it is greater than the current iteration's index value, returns immediately.
+
+The following example executes up to 100 iterations of a loop in parallel. Each iteration pauses for a random interval from 1 to 1,000 milliseconds. A randomly generated value determines on which iteration of the loop the <xref:System.Threading.Tasks.ParallelLoopState.Break*> method is called. This prevents iterations whose index is greater than the <xref:System.Threading.Tasks.ParallelLoopState.LowestBreakIteration> property value from starting after the call to the <xref:System.Threading.Tasks.ParallelLoopState.Break*> method, but it does not affect any iterations that have already begun executing. To prevent these from completing, each iteration calls the <xref:System.Threading.Tasks.ParallelLoopState.ShouldExitCurrentIteration*> method to check whether another iteration has called the <xref:System.Threading.Tasks.ParallelLoopState.Break*> method. If so, the iteration checks the value of the <xref:System.Threading.Tasks.ParallelLoopState.LowestBreakIteration> property and, if it is greater than the current iteration's index value, returns immediately.
 
  :::code language="csharp" source="~/snippets/csharp/System.Threading.Tasks/Parallel/For/break1.cs" id="Snippet2":::
  :::code language="vb" source="~/snippets/visualbasic/System.Threading.Tasks/Parallel/For/break1.vb" id="Snippet2":::
@@ -371,7 +375,8 @@
  It may also be the case that a long-running iteration has already begun execution. In such cases, iterations may explicitly check the <xref:System.Threading.Tasks.ParallelLoopState.ShouldExitCurrentIteration> property and cease execution if the property returns `true`.
 
 ## Examples
- The following example executes up to 100 iterations of a loop in parallel. Each iteration pauses for a random interval from 1 to 1,000 milliseconds. A randomly generated value determines on which iteration of the loop the <xref:System.Threading.Tasks.ParallelLoopState.Break*> method is called. This prevents iterations whose index is greater than the <xref:System.Threading.Tasks.ParallelLoopState.LowestBreakIteration> property value from starting after the call to the <xref:System.Threading.Tasks.ParallelLoopState.Break*> method, but it does not affect any iterations that have already begun executing. To prevent these from completing, each iteration calls the <xref:System.Threading.Tasks.ParallelLoopState.ShouldExitCurrentIteration*> method to check whether another iteration has called the <xref:System.Threading.Tasks.ParallelLoopState.Break*> method. If so, the iteration checks the value of the <xref:System.Threading.Tasks.ParallelLoopState.LowestBreakIteration> property and, if it is greater than the current iteration's index value, returns immediately.
+
+The following example executes up to 100 iterations of a loop in parallel. Each iteration pauses for a random interval from 1 to 1,000 milliseconds. A randomly generated value determines on which iteration of the loop the <xref:System.Threading.Tasks.ParallelLoopState.Break*> method is called. This prevents iterations whose index is greater than the <xref:System.Threading.Tasks.ParallelLoopState.LowestBreakIteration> property value from starting after the call to the <xref:System.Threading.Tasks.ParallelLoopState.Break*> method, but it does not affect any iterations that have already begun executing. To prevent these from completing, each iteration calls the <xref:System.Threading.Tasks.ParallelLoopState.ShouldExitCurrentIteration*> method to check whether another iteration has called the <xref:System.Threading.Tasks.ParallelLoopState.Break*> method. If so, the iteration checks the value of the <xref:System.Threading.Tasks.ParallelLoopState.LowestBreakIteration> property and, if it is greater than the current iteration's index value, returns immediately.
 
  :::code language="csharp" source="~/snippets/csharp/System.Threading.Tasks/Parallel/For/break1.cs" id="Snippet2":::
  :::code language="vb" source="~/snippets/visualbasic/System.Threading.Tasks/Parallel/For/break1.vb" id="Snippet2":::
@@ -432,7 +437,8 @@
  <xref:System.Threading.Tasks.ParallelLoopState.Stop*> is typically employed in search-based algorithms, where once a result is found, no other iterations need be executed.
 
 ## Examples
- The following example executes up to 10,000 iterations of a loop in parallel. Each iteration pauses for a random interval from 1 to 1,000 milliseconds. A randomly generated value determines on which iteration of the loop the <xref:System.Threading.Tasks.ParallelLoopState.Stop*> method is called. As the output from the example shows, no iterations execute after the call to the <xref:System.Threading.Tasks.ParallelLoopState.Stop*> method.
+
+The following example executes up to 10,000 iterations of a loop in parallel. Each iteration pauses for a random interval from 1 to 1,000 milliseconds. A randomly generated value determines on which iteration of the loop the <xref:System.Threading.Tasks.ParallelLoopState.Stop*> method is called. As the output from the example shows, no iterations execute after the call to the <xref:System.Threading.Tasks.ParallelLoopState.Stop*> method.
 
  :::code language="csharp" source="~/snippets/csharp/System.Threading.Tasks/Parallel/For/stop1.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Threading.Tasks/Parallel/For/stop1.vb" id="Snippet1":::

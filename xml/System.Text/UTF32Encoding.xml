@@ -103,7 +103,8 @@
  For an encoder or decoder that is able to save state information when encoding or decoding data that spans multiple blocks (such as string of 1 million characters that is encoded in 100,000-character segments), use the <xref:System.Text.UTF32Encoding.GetEncoder*> and <xref:System.Text.UTF32Encoding.GetDecoder*> properties, respectively.
 
 ## Examples
- The following example demonstrates the behavior of <xref:System.Text.UTF32Encoding> objects with and without error detection enabled. It creates a byte array whose last four bytes represent an invalid surrogate pair; the high surrogate U+D8FF is followed by an U+01FF, which is outside the range of low surrogates (0xDC00 through 0xDFFF). Without error detection, the UTF32 decoder uses replacement fallback to replace the invalid surrogate pair with REPLACEMENT CHARACTER (U+FFFD).
+
+The following example demonstrates the behavior of <xref:System.Text.UTF32Encoding> objects with and without error detection enabled. It creates a byte array whose last four bytes represent an invalid surrogate pair; the high surrogate U+D8FF is followed by an U+01FF, which is outside the range of low surrogates (0xDC00 through 0xDFFF). Without error detection, the UTF32 decoder uses replacement fallback to replace the invalid surrogate pair with REPLACEMENT CHARACTER (U+FFFD).
 
  :::code language="csharp" source="~/snippets/csharp/System.Text/UTF32Encoding/Overview/errordetection.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Text/UTF32Encoding/Overview/ErrorDetection.vb" id="Snippet1":::
@@ -186,7 +187,8 @@
 > For security reasons, you should enable error detection by calling the <xref:System.Text.UTF32Encoding.%23ctor(System.Boolean,System.Boolean,System.Boolean)> constructor and setting its `throwOnInvalidCharacters` argument to `true`.
 
 ## Examples
- The following example retrieves and displays the byte order mark for different <xref:System.Text.UTF32Encoding> instances.
+
+The following example retrieves and displays the byte order mark for different <xref:System.Text.UTF32Encoding> instances.
 
  :::code language="csharp" source="~/snippets/csharp/System.Text/UTF32Encoding/.ctor/getpreamble.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Text/UTF32Encoding/.ctor/GetPreamble.vb" id="Snippet1":::
@@ -248,7 +250,8 @@
 > For security reasons, you should enable error detection by calling the <xref:System.Text.UTF32Encoding.%23ctor(System.Boolean,System.Boolean,System.Boolean)> constructor and setting its `throwOnInvalidCharacters` argument to `true`.
 
 ## Examples
- The following example retrieves and displays the byte order mark for different <xref:System.Text.UTF32Encoding> instances.
+
+The following example retrieves and displays the byte order mark for different <xref:System.Text.UTF32Encoding> instances.
 
  :::code language="csharp" source="~/snippets/csharp/System.Text/UTF32Encoding/.ctor/getpreamble.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Text/UTF32Encoding/.ctor/GetPreamble.vb" id="Snippet1":::
@@ -314,7 +317,8 @@
 > For security reasons, you should enable error detection by calling the <xref:System.Text.UTF32Encoding.%23ctor(System.Boolean,System.Boolean,System.Boolean)> constructor and setting its `throwOnInvalidCharacters` argument to `true`.
 
 ## Examples
- The following example demonstrates the behavior of <xref:System.Text.UTF32Encoding>, both with error detection enabled and without.
+
+The following example demonstrates the behavior of <xref:System.Text.UTF32Encoding>, both with error detection enabled and without.
 
  :::code language="csharp" source="~/snippets/csharp/System.Text/UTF32Encoding/Overview/errordetection.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Text/UTF32Encoding/Overview/ErrorDetection.vb" id="Snippet1":::
@@ -391,7 +395,8 @@
 - Both objects use the same decoder fallback.
 
 ## Examples
- The following example creates <xref:System.Text.UTF32Encoding> objects using different parameter values and then checks them for equality.
+
+The following example creates <xref:System.Text.UTF32Encoding> objects using different parameter values and then checks them for equality.
 
  :::code language="csharp" source="~/snippets/csharp/System.Text/UTF32Encoding/Equals/equals.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Text/UTF32Encoding/Equals/equals.vb" id="Snippet1":::
@@ -472,7 +477,8 @@
  To ensure that the encoded bytes are decoded properly when they are saved as a file or as a stream, you can prefix a stream of encoded bytes with a preamble. Inserting the preamble at the beginning of a byte stream (such as at the beginning of a series of bytes to be written to a file) is the developer's responsibility, and the number of bytes in the preamble is not reflected in the value returned by the <xref:System.Text.UTF32Encoding.GetByteCount*> method.
 
 ## Examples
- The following example calls the <xref:System.Text.UnicodeEncoding.GetMaxByteCount*> and <xref:System.Text.UnicodeEncoding.GetByteCount(System.String)> methods to calculate the maximum and actual number of bytes required to encode a string. It also displays the actual number of bytes required to store a byte stream with a byte order mark.
+
+The following example calls the <xref:System.Text.UnicodeEncoding.GetMaxByteCount*> and <xref:System.Text.UnicodeEncoding.GetByteCount(System.String)> methods to calculate the maximum and actual number of bytes required to encode a string. It also displays the actual number of bytes required to store a byte stream with a byte order mark.
 
  :::code language="csharp" source="~/snippets/csharp/System.Text/UTF32Encoding/GetByteCount/getbytecount1.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Text/UTF32Encoding/GetByteCount/getbytecount1.vb" id="Snippet1":::
@@ -646,7 +652,8 @@
  To ensure that the encoded bytes are decoded properly when they are saved as a file or a stream, you can prefix a stream of encoded bytes with a preamble. Inserting a preamble at the beginning of a byte stream (such as at the beginning of a series of bytes to be written to a file) is the developer's responsibility, and the number of bytes in the preamble Is not reflected in the value returned by the <xref:System.Text.UTF32Encoding.GetByteCount*> method.
 
 ## Examples
- The following example populates an array with a Latin uppercase and lowercase characters and calls the <xref:System.Text.UnicodeEncoding.GetByteCount(System.Char[],System.Int32,System.Int32)> method to determine the number of bytes needed to encode the Latin lowercase characters. It then displays this information along with the total number of bytes needed if a byte order mark is added. It compares this number with the value returned by the <xref:System.Text.UnicodeEncoding.GetMaxByteCount*> method, which indicates maximum number of bytes needed to encode the Latin lowercase characters. The following example populates an array with a combination of Greek and Cyrillic characters and calls the <xref:System.Text.UnicodeEncoding.GetByteCount(System.Char[],System.Int32,System.Int32)> method to determine the number of bytes needed to encode the Cyrillic characters. It then displays this information along with the total number of bytes needed if a byte order mark is added. It compares this number with the value returned by the <xref:System.Text.UnicodeEncoding.GetMaxByteCount*> method, which indicates maximum number of bytes needed to encode the Cyrillic characters.
+
+The following example populates an array with a Latin uppercase and lowercase characters and calls the <xref:System.Text.UnicodeEncoding.GetByteCount(System.Char[],System.Int32,System.Int32)> method to determine the number of bytes needed to encode the Latin lowercase characters. It then displays this information along with the total number of bytes needed if a byte order mark is added. It compares this number with the value returned by the <xref:System.Text.UnicodeEncoding.GetMaxByteCount*> method, which indicates maximum number of bytes needed to encode the Latin lowercase characters. The following example populates an array with a combination of Greek and Cyrillic characters and calls the <xref:System.Text.UnicodeEncoding.GetByteCount(System.Char[],System.Int32,System.Int32)> method to determine the number of bytes needed to encode the Cyrillic characters. It then displays this information along with the total number of bytes needed if a byte order mark is added. It compares this number with the value returned by the <xref:System.Text.UnicodeEncoding.GetMaxByteCount*> method, which indicates maximum number of bytes needed to encode the Cyrillic characters.
 
  :::code language="csharp" source="~/snippets/csharp/System.Text/UTF32Encoding/GetByteCount/getbytecount2.cs" id="Snippet2":::
  :::code language="vb" source="~/snippets/visualbasic/System.Text/UTF32Encoding/GetByteCount/getbytecount2.vb" id="Snippet2":::
@@ -857,7 +864,8 @@
 > To ensure that the encoded bytes are decoded properly when they are saved as a file or as a stream, you can prefix a stream of encoded bytes with a preamble. Inserting a preamble at the beginning of a byte stream (such as at the beginning of a series of bytes to be written to a file) is the developer's responsibility. The <xref:System.Text.UTF32Encoding.GetBytes*> method does not prepend a preamble to the beginning of a sequence of encoded bytes.
 
 ## Examples
- The following example determines the number of bytes required to encode three characters from a character array, then encodes the characters and displays the resulting bytes.
+
+The following example determines the number of bytes required to encode three characters from a character array, then encodes the characters and displays the resulting bytes.
 
  :::code language="csharp" source="~/snippets/csharp/System.Text/UTF32Encoding/GetBytes/getbytes_chararr.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Text/UTF32Encoding/GetBytes/GetBytes_CharArr.vb" id="Snippet1":::
@@ -966,7 +974,8 @@
 > To ensure that the encoded bytes are decoded properly when they are saved as a file or as a stream, you can prefix a stream of encoded bytes with a preamble. Inserting a preamble at the beginning of a byte stream (such as at the beginning of a series of bytes to be written to a file) is the developer's responsibility. The <xref:System.Text.UTF32Encoding.GetBytes*> method does not prepend a preamble to the beginning of a sequence of encoded bytes.
 
 ## Examples
- The following example determines the number of bytes required to encode a string, then encodes the string and displays the resulting bytes.
+
+The following example determines the number of bytes required to encode a string, then encodes the string and displays the resulting bytes.
 
  :::code language="csharp" source="~/snippets/csharp/System.Text/UTF32Encoding/GetBytes/getbytes_string.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Text/UTF32Encoding/GetBytes/GetBytes_String.vb" id="Snippet1":::
@@ -1163,7 +1172,8 @@
  With error detection, an invalid sequence causes this method to throw a <xref:System.ArgumentException>. Without error detection, invalid sequences are ignored, and no exception is thrown.
 
 ## Examples
- The following example encodes a string into an array of bytes, and then decodes the bytes into an array of characters.
+
+The following example encodes a string into an array of bytes, and then decodes the bytes into an array of characters.
 
  :::code language="csharp" source="~/snippets/csharp/System.Text/UTF32Encoding/GetCharCount/getchars.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Text/UTF32Encoding/GetCharCount/GetChars.vb" id="Snippet1":::
@@ -1373,7 +1383,8 @@
  Data to be converted, such as data read from a stream, might be available only in sequential blocks. In this case, or if the amount of data is so large that it needs to be divided into smaller blocks, the application uses the <xref:System.Text.Decoder> or the <xref:System.Text.Encoder> provided by the <xref:System.Text.UTF32Encoding.GetDecoder*> method or the <xref:System.Text.UTF32Encoding.GetEncoder*> method, respectively.
 
 ## Examples
- The following example encodes a string into an array of bytes, and then decodes the bytes into an array of characters.
+
+The following example encodes a string into an array of bytes, and then decodes the bytes into an array of characters.
 
  :::code language="csharp" source="~/snippets/csharp/System.Text/UTF32Encoding/GetCharCount/getchars.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Text/UTF32Encoding/GetCharCount/GetChars.vb" id="Snippet1":::
@@ -1461,7 +1472,8 @@
  If error detection is enabled, that is, the `throwOnInvalidCharacters` parameter of the constructor was set to `true`, error detection is also enabled in the <xref:System.Text.Decoder> returned by this method. If error detection is enabled and an invalid sequence is encountered, the state of the decoder is undefined and processing must stop.
 
 ## Examples
- The following example uses an encoder and a decoder to encode a string into an array of bytes, and then decode the bytes into an array of characters.
+
+The following example uses an encoder and a decoder to encode a string into an array of bytes, and then decode the bytes into an array of characters.
 
  :::code language="csharp" source="~/snippets/csharp/System.Text/UTF32Encoding/GetDecoder/encdec.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Text/UTF32Encoding/GetDecoder/EncDec.vb" id="Snippet1":::
@@ -1525,7 +1537,8 @@
  If error detection is enabled, that is, the `throwOnInvalidCharacters` parameter of the constructor was set to `true`, error detection is also enabled in the <xref:System.Text.Encoder> returned by this method. If error detection is enabled and an invalid sequence is encountered, the state of the encoder is undefined and processing must stop.
 
 ## Examples
- The following example uses an encoder and a decoder to encode a string into an array of bytes, and then decode the bytes into an array of characters.
+
+The following example uses an encoder and a decoder to encode a string into an array of bytes, and then decode the bytes into an array of characters.
 
  :::code language="csharp" source="~/snippets/csharp/System.Text/UTF32Encoding/GetDecoder/encdec.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Text/UTF32Encoding/GetDecoder/EncDec.vb" id="Snippet1":::
@@ -1642,7 +1655,8 @@
 >  `GetMaxByteCount(N)` is not necessarily the same value as `N* GetMaxByteCount(1)`.
 
 ## Examples
- The following example determines the number of bytes required to encode a string, then encodes the string and displays the resulting bytes.
+
+The following example determines the number of bytes required to encode a string, then encodes the string and displays the resulting bytes.
 
  :::code language="csharp" source="~/snippets/csharp/System.Text/UTF32Encoding/GetBytes/getbytes_string.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Text/UTF32Encoding/GetBytes/GetBytes_String.vb" id="Snippet1":::
@@ -1724,7 +1738,8 @@
 >  `GetMaxCharCount(N)` is not necessarily the same value as `N* GetMaxCharCount(1)`.
 
 ## Examples
- The following example encodes a string into an array of bytes, and then decodes the bytes into an array of characters.
+
+The following example encodes a string into an array of bytes, and then decodes the bytes into an array of characters.
 
  :::code language="csharp" source="~/snippets/csharp/System.Text/UTF32Encoding/GetCharCount/getchars.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Text/UTF32Encoding/GetCharCount/GetChars.vb" id="Snippet1":::
@@ -1818,7 +1833,8 @@
 > To ensure that the encoded bytes are decoded properly, you should prefix encoded bytes with a preamble. Note that the <xref:System.Text.UTF32Encoding.GetBytes*> method does not prepend a BOM to a sequence of encoded bytes; supplying a BOM at the beginning of an appropriate byte stream is the developer's responsibility.
 
 ## Examples
- The following code example retrieves and displays the byte order mark for different <xref:System.Text.UTF32Encoding> instances.
+
+The following code example retrieves and displays the byte order mark for different <xref:System.Text.UTF32Encoding> instances.
 
  :::code language="csharp" source="~/snippets/csharp/System.Text/UTF32Encoding/.ctor/getpreamble.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Text/UTF32Encoding/.ctor/GetPreamble.vb" id="Snippet1":::
@@ -1898,7 +1914,8 @@
  Data to be converted, such as data read from a stream, might be available only in sequential blocks. In this case, or if the amount of data is so large that it needs to be divided into smaller blocks, the application should use the <xref:System.Text.Decoder> or the <xref:System.Text.Encoder> provided by the <xref:System.Text.UTF32Encoding.GetDecoder*> method or the <xref:System.Text.UTF32Encoding.GetEncoder*> method, respectively.
 
 ## Examples
- The following example encodes a string into two arrays of bytes, one in little-endian order and the other in big-endian order. It then decodes the bytes back into a string.
+
+The following example encodes a string into two arrays of bytes, one in little-endian order and the other in big-endian order. It then decodes the bytes back into a string.
 
  :::code language="csharp" source="~/snippets/csharp/System.Text/UTF32Encoding/GetString/getstring.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Text/UTF32Encoding/GetString/GetString.vb" id="Snippet1":::

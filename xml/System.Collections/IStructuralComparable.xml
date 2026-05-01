@@ -63,7 +63,8 @@ The <xref:System.Collections.IStructuralComparable> interface enables you to imp
  The generic tuple classes (<xref:System.Tuple`1>, <xref:System.Tuple`2>, <xref:System.Tuple`3>, and so on) and the <xref:System.Array> class provide explicit implementations of the <xref:System.Collections.IStructuralComparable> interface. By casting (in C#) or converting (in Visual Basic) the current instance of an array or tuple to an <xref:System.Collections.IStructuralComparable> interface value and providing your <xref:System.Collections.IComparer> implementation as an argument to the <xref:System.Collections.IStructuralComparable.CompareTo*> method, you can define a custom sort order for the array or collection. However, you do not call the <xref:System.Collections.IStructuralComparable.CompareTo*> method directly in most cases. Instead, the <xref:System.Collections.IStructuralComparable.CompareTo*> method is called by sorting methods such as <xref:System.Array.Sort(System.Array,System.Collections.IComparer)>. In this case, you define your <xref:System.Collections.IComparer> implementation and pass it as an argument to a sorting method or collection object's class constructor. The <xref:System.Collections.IStructuralComparable.CompareTo*> method with your custom comparer is then called automatically whenever the collection is sorted.
 
 ## Examples
- The following example creates an array of <xref:System.Tuple`6> objects that contains population data for three U.S. cities from 1960 to 2000. The sextuple's first component is the city name. The remaining five components represent the population at ten-year intervals from 1960 to 2000.
+
+The following example creates an array of <xref:System.Tuple`6> objects that contains population data for three U.S. cities from 1960 to 2000. The sextuple's first component is the city name. The remaining five components represent the population at ten-year intervals from 1960 to 2000.
 
  The `PopulationComparer` class provides an <xref:System.Collections.IComparer> implementation that allows the array of sextuples to be sorted by any one of its components. Two values are provided to the `PopulationComparer` class in its constructor: the position of the component that defines the sort order, and a Boolean value that indicates whether the tuple objects should be sorted in ascending or descending order.
 
@@ -166,7 +167,8 @@ The <xref:System.Collections.IStructuralComparable.CompareTo*> method supports c
 - The <xref:System.Collections.IComparer.Compare*?displayProperty=nameWithType> method is called for the last element or component in the collection object.
 
 ## Examples
- The following example creates an array of <xref:System.Tuple`6> objects that contains population data for three U.S. cities from 1960 to 2000. The sextuple's first component is the city name. The remaining five components represent the population at ten-year intervals from 1960 to 2000.
+
+The following example creates an array of <xref:System.Tuple`6> objects that contains population data for three U.S. cities from 1960 to 2000. The sextuple's first component is the city name. The remaining five components represent the population at ten-year intervals from 1960 to 2000.
 
  The `PopulationComparer` class provides an <xref:System.Collections.IComparer> implementation that allows the array of sextuples to be sorted by any one of its components. Two values are provided to the `PopulationComparer` class in its constructor: the position of the component that defines the sort order, and a <xref:System.Boolean> value that indicates whether the tuple objects should be sorted in ascending or descending order.
 

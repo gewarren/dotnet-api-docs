@@ -29,7 +29,8 @@
  Several properties of the <xref:System.Web.UI.WebControls.WebParts.WebPartChrome> class are also useful. The <xref:System.Web.UI.WebControls.WebParts.WebPartChrome.Zone*> and <xref:System.Web.UI.WebControls.WebParts.WebPartChrome.WebPartManager*> properties provide references to the zone associated with the <xref:System.Web.UI.WebControls.WebParts.WebPartChrome> object and the current <xref:System.Web.UI.WebControls.WebParts.WebPartManager> instance, respectively.
 
 ## Examples
- The following code example demonstrates how to use the <xref:System.Web.UI.WebControls.WebParts.WebPartChrome> class to override the default rendering of <xref:System.Web.UI.WebControls.WebParts.WebPart> controls in a <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase> zone.
+
+The following code example demonstrates how to use the <xref:System.Web.UI.WebControls.WebParts.WebPartChrome> class to override the default rendering of <xref:System.Web.UI.WebControls.WebParts.WebPart> controls in a <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase> zone.
 
  The code example has four parts:
 
@@ -96,7 +97,8 @@
  The <xref:System.Web.UI.WebControls.WebParts.WebPartChrome.%23ctor*> initializes a new instance of the <xref:System.Web.UI.WebControls.WebParts.WebPartChrome> class. It is used primarily by a <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase> zone in its <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase.CreateWebPartChrome*> method to create an instance of the <xref:System.Web.UI.WebControls.WebParts.WebPartChrome> object that handles the chrome rendering and any custom rendering for <xref:System.Web.UI.WebControls.WebParts.WebPart> controls in the zone.
 
 ## Examples
- The following code example demonstrates two things. First, it creates a new instance of the custom class `MyWebPartChrome` by overriding the <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase.CreateWebPartChrome*> method in a derived <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase> zone called `MyZone`. Second, in the constructor of the `MyWebPartChrome` class, it assigns the objects in the parameters of the constructor to private fields that can be used within the class. This example thus gives you a way to access the associated zone and <xref:System.Web.UI.WebControls.WebParts.WebPartManager> object even in the constructor, before the <xref:System.Web.UI.WebControls.WebParts.WebPartChrome.Zone*> and <xref:System.Web.UI.WebControls.WebParts.WebPartChrome.WebPartManager*> properties are accessible. Finally, note that for the constructor to work, the base constructor must also be invoked as part of the method declaration.
+
+The following code example demonstrates two things. First, it creates a new instance of the custom class `MyWebPartChrome` by overriding the <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase.CreateWebPartChrome*> method in a derived <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase> zone called `MyZone`. Second, in the constructor of the `MyWebPartChrome` class, it assigns the objects in the parameters of the constructor to private fields that can be used within the class. This example thus gives you a way to access the associated zone and <xref:System.Web.UI.WebControls.WebParts.WebPartManager> object even in the constructor, before the <xref:System.Web.UI.WebControls.WebParts.WebPartChrome.Zone*> and <xref:System.Web.UI.WebControls.WebParts.WebPartChrome.WebPartManager*> properties are accessible. Finally, note that for the constructor to work, the base constructor must also be invoked as part of the method declaration.
 
  The following code contains the two custom classes. For the full code required to run the example, including the Web page to host these controls, see the Example section of the <xref:System.Web.UI.WebControls.WebParts.WebPartChrome> class overview topic.
 
@@ -144,7 +146,8 @@
  A special situation occurs when a <xref:System.Web.UI.WebControls.WebParts.WebPart> control is selected. If the page is in a page display mode where controls can be selected, and the current control is actually selected, the default <xref:System.Web.UI.WebControls.WebParts.WebPartChrome.CreateWebPartChromeStyle*> method also merges the style information of the control with the style information from the <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase.SelectedPartChromeStyle> property.
 
 ## Examples
- This code example demonstrates use of the <xref:System.Web.UI.WebControls.WebParts.WebPartChrome.CreateWebPartChromeStyle*> method. For the full code required to run the example, see the Example section of the <xref:System.Web.UI.WebControls.WebParts.WebPartChrome> class overview topic.
+
+This code example demonstrates use of the <xref:System.Web.UI.WebControls.WebParts.WebPartChrome.CreateWebPartChromeStyle*> method. For the full code required to run the example, see the Example section of the <xref:System.Web.UI.WebControls.WebParts.WebPartChrome> class overview topic.
 
  The following section from the code example demonstrates how to override the <xref:System.Web.UI.WebControls.WebParts.WebPartChrome.CreateWebPartChromeStyle*> method. Notice that it first retrieves the style information created by the base method, and then modifies the style information by changing the font used for the <xref:System.Web.UI.WebControls.WebParts.WebPart> control being rendered.
 
@@ -352,7 +355,8 @@
  However, the <xref:System.Web.UI.WebControls.WebParts.WebPartChrome.GetWebPartVerbs*> method is not meant for cases where you want to check some criteria to decide whether to render a verb. Instead, this method is useful when you know in advance that you always want to exclude a certain verb. For example, if you develop a custom <xref:System.Web.UI.WebControls.WebParts.WebPartChrome> class, you might decide that you always want to exclude the close verb on <xref:System.Web.UI.WebControls.WebParts.WebPart> controls, so that users can never close the controls. Rather than setting the <xref:System.Web.UI.WebControls.WebParts.WebPart.AllowClose> property to `false` on all the controls, you can simply override the <xref:System.Web.UI.WebControls.WebParts.WebPartChrome.GetWebPartVerbs*> method and exclude close verbs from being rendered on any <xref:System.Web.UI.WebControls.WebParts.WebPart> control rendered with your custom <xref:System.Web.UI.WebControls.WebParts.WebPartChrome> object.
 
 ## Examples
- The following code example demonstrates use of the <xref:System.Web.UI.WebControls.WebParts.WebPartChrome.GetWebPartVerbs*> method. For the full code required to run the example, see the Example section of the <xref:System.Web.UI.WebControls.WebParts.WebPartChrome> class overview topic.
+
+The following code example demonstrates use of the <xref:System.Web.UI.WebControls.WebParts.WebPartChrome.GetWebPartVerbs*> method. For the full code required to run the example, see the Example section of the <xref:System.Web.UI.WebControls.WebParts.WebPartChrome> class overview topic.
 
  The following section from the code example demonstrates how to override the <xref:System.Web.UI.WebControls.WebParts.WebPartChrome.GetWebPartVerbs*> method. The overridden method uses the base method to retrieve all verbs from the `webPart` control, then iterates through the verb collection, adding all verbs except the close verb to an <xref:System.Collections.ArrayList> object. This reduced set of verbs is then assigned to a new <xref:System.Web.UI.WebControls.WebParts.WebPartVerbCollection>, which is returned to the caller.
 
@@ -422,7 +426,8 @@
  The <xref:System.Web.UI.WebControls.WebParts.WebPartChrome.RenderPartContents*> method enables you to override the rendering of the body area of `webPart`, while leaving rendering of the header and footer to the default rendering.
 
 ## Examples
- The following code example demonstrates use of the <xref:System.Web.UI.WebControls.WebParts.WebPartChrome.RenderPartContents*> method. For the full code required to run the example, see the Example section of the <xref:System.Web.UI.WebControls.WebParts.WebPartChrome> class overview topic.
+
+The following code example demonstrates use of the <xref:System.Web.UI.WebControls.WebParts.WebPartChrome.RenderPartContents*> method. For the full code required to run the example, see the Example section of the <xref:System.Web.UI.WebControls.WebParts.WebPartChrome> class overview topic.
 
  The following section from the code example demonstrates how to override the <xref:System.Web.UI.WebControls.WebParts.WebPartChrome.RenderPartContents*> method. The overridden method does two things to customize the rendering for the body of the <xref:System.Web.UI.WebControls.WebParts.WebPart> control. First, it checks to determine whether the control is currently selected, and if so, writes out a string and does not render the contents. Second, if the control is not selected, and if the control's zone is of type `MyZone`, the method renders the control. This latter check could be used if you wanted to ensure that a custom <xref:System.Web.UI.WebControls.WebParts.WebPartChrome> class can be used only to render <xref:System.Web.UI.WebControls.WebParts.WebPart> controls in a specific type of <xref:System.Web.UI.WebControls.WebParts.WebPartZone> zone that is designed to contain the <xref:System.Web.UI.WebControls.WebParts.WebPartChrome> object.
 
@@ -508,7 +513,8 @@
  The <xref:System.Web.UI.WebControls.WebParts.WebPartChrome.WebPartManager> property provides a reference to the current <xref:System.Web.UI.WebControls.WebParts.WebPartManager> instance on the page.
 
 ## Examples
- This code example demonstrates use of the <xref:System.Web.UI.WebControls.WebParts.WebPartChrome.WebPartManager> property. For the full code required to run the example, see the Example section of the <xref:System.Web.UI.WebControls.WebParts.WebPartChrome> class overview topic.
+
+This code example demonstrates use of the <xref:System.Web.UI.WebControls.WebParts.WebPartChrome.WebPartManager> property. For the full code required to run the example, see the Example section of the <xref:System.Web.UI.WebControls.WebParts.WebPartChrome> class overview topic.
 
  The following code example uses the <xref:System.Web.UI.WebControls.WebParts.WebPartChrome.WebPartManager> property to determine whether the current <xref:System.Web.UI.WebControls.WebParts.WebPart> control being rendered is the selected control, which in this example means that the page is in edit view, and the control is currently being edited. If these conditions are true, the body of the control is not rendered, and a string is written in its place.
 
@@ -555,7 +561,8 @@
  The <xref:System.Web.UI.WebControls.WebParts.WebPartChrome.Zone> property provides a reference to the <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase> zone that contains the controls for which the <xref:System.Web.UI.WebControls.WebParts.WebPartChrome> object provides rendering.
 
 ## Examples
- This code example demonstrates use of the <xref:System.Web.UI.WebControls.WebParts.WebPartChrome.Zone> property. For the full code required to run the example, see the Example section of the <xref:System.Web.UI.WebControls.WebParts.WebPartChrome> class overview topic.
+
+This code example demonstrates use of the <xref:System.Web.UI.WebControls.WebParts.WebPartChrome.Zone> property. For the full code required to run the example, see the Example section of the <xref:System.Web.UI.WebControls.WebParts.WebPartChrome> class overview topic.
 
  The following code example uses the <xref:System.Web.UI.WebControls.WebParts.WebPartChrome.Zone> property to determine whether the zone currently associated with the <xref:System.Web.UI.WebControls.WebParts.WebPartChrome> object is a zone of type `MyZone`. If so, the control's contents are rendered. This code would prevent the custom <xref:System.Web.UI.WebControls.WebParts.WebPartChrome> object from working with any other zone besides the one designed to create an instance of it.
 

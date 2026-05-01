@@ -43,7 +43,8 @@
  Alternatives to session state include application state (see the <xref:System.Web.HttpApplication.Application> property) and the ASP.NET cache (see the <xref:System.Web.Caching> namespace), which store variables that can be accessed by all users of an ASP.NET application; the ASP.NET profile (see the <xref:System.Web.Profile> namespace), which persists user values in a data store without expiring them using a time-out; ASP.NET <xref:System.Web.UI.WebControls?displayProperty=nameWithType>, which persist control values in the <xref:System.Web.UI.Control.ViewState*>; <xref:System.Web.HttpResponse.Cookies*>; the <xref:System.Web.HttpRequest.QueryString> property; and fields on an HTML form that are available from an HTTP `POST` using the <xref:System.Web.HttpRequest.Form*> collection. For more details on the differences between session state and other state-management alternatives, see [ASP.NET State Management Recommendations](https://learn.microsoft.com/previous-versions/aspnet/z1hkazw7(v=vs.100)).
 
 ## Examples
- The following code example sets and retrieves values from session state.
+
+The following code example sets and retrieves values from session state.
 
 > [!IMPORTANT]
 > This example has a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
@@ -126,7 +127,8 @@
  If the `name` parameter refers to an existing session state item, the existing item is overwritten with the specified `value`.
 
 ## Examples
- The following example shows how to store values in session state by using the <xref:System.Web.SessionState.HttpSessionState.Add*> method. It also shows how to remove values in session state by using the <xref:System.Web.SessionState.HttpSessionState.Remove*> method. A <xref:System.Web.UI.WebControls.Repeater> control is used to display the contents session state on the Web page. The <xref:System.Web.SessionState.HttpSessionState.GetEnumerator*> method is used to iterate through the session-state collection and populate the <xref:System.Web.UI.WebControls.Repeater> control.
+
+The following example shows how to store values in session state by using the <xref:System.Web.SessionState.HttpSessionState.Add*> method. It also shows how to remove values in session state by using the <xref:System.Web.SessionState.HttpSessionState.Remove*> method. A <xref:System.Web.UI.WebControls.Repeater> control is used to display the contents session state on the Web page. The <xref:System.Web.SessionState.HttpSessionState.GetEnumerator*> method is used to iterate through the session-state collection and populate the <xref:System.Web.UI.WebControls.Repeater> control.
 
 > [!IMPORTANT]
 > This example has a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
@@ -224,7 +226,8 @@
  The <xref:System.Web.SessionState.HttpSessionState.Contents> property is provided for compatibility with earlier versions of ASP.
 
 ## Examples
- The following code example lists the item names and values in the <xref:System.Web.SessionState.HttpSessionState.Contents> property.
+
+The following code example lists the item names and values in the <xref:System.Web.SessionState.HttpSessionState.Contents> property.
 
  [!code-csharp[HttpSessionState#9](~/snippets/csharp/VS_Snippets_WebNet/HttpSessionState/CS/snippetscs.aspx#9)]
  [!code-vb[HttpSessionState#9](~/snippets/visualbasic/VS_Snippets_WebNet/HttpSessionState/VB/snippetsvb.aspx#9)]
@@ -260,7 +263,8 @@
  When <xref:System.Web.SessionState.HttpSessionState.IsCookieless*> is `true`, the <xref:System.Web.SessionState.HttpSessionState.CookieMode> property returns <xref:System.Web.HttpCookieMode.UseUri>; otherwise the <xref:System.Web.SessionState.HttpSessionState.CookieMode> property returns <xref:System.Web.HttpCookieMode.UseCookies>.
 
 ## Examples
- The following code example sets the `cookieless` session attribute to `true` in the Web.config file. For this sample application configuration, the <xref:System.Web.SessionState.HttpSessionState.CookieMode> property would return <xref:System.Web.HttpCookieMode.UseUri>.
+
+The following code example sets the `cookieless` session attribute to `true` in the Web.config file. For this sample application configuration, the <xref:System.Web.SessionState.HttpSessionState.CookieMode> property would return <xref:System.Web.HttpCookieMode.UseUri>.
 
 ```xml
 <configuration>
@@ -365,7 +369,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Examples
- The following example shows how to store values in session state by using the <xref:System.Web.SessionState.HttpSessionState.Add*> method. It also shows how to remove values in session state by using the <xref:System.Web.SessionState.HttpSessionState.Remove*> method. A <xref:System.Web.UI.WebControls.Repeater> control is used to display the contents of session state on the Web page. The <xref:System.Web.SessionState.HttpSessionState.GetEnumerator*> method is used to iterate through the session-state collection and populate the <xref:System.Web.UI.WebControls.Repeater> control.
+
+The following example shows how to store values in session state by using the <xref:System.Web.SessionState.HttpSessionState.Add*> method. It also shows how to remove values in session state by using the <xref:System.Web.SessionState.HttpSessionState.Remove*> method. A <xref:System.Web.UI.WebControls.Repeater> control is used to display the contents of session state on the Web page. The <xref:System.Web.SessionState.HttpSessionState.GetEnumerator*> method is used to iterate through the session-state collection and populate the <xref:System.Web.UI.WebControls.Repeater> control.
 
  [!code-aspx-csharp[HttpSessionState#13](~/snippets/csharp/VS_Snippets_WebNet/HttpSessionState/CS/HttpSessionStateAddCS.aspx#13)]
  [!code-aspx-vb[HttpSessionState#13](~/snippets/visualbasic/VS_Snippets_WebNet/HttpSessionState/VB/HttpSessionStateAddVB.aspx#13)]
@@ -421,7 +426,8 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
 > While setting the `regenerateExpiredSessionId` attribute to `true` reduces the possibility of unwanted sharing of session data, it does not protect against an unwanted source gaining access to the session of another user by obtaining the <xref:System.Web.SessionState.HttpSessionState.SessionID*> value and including it in requests to the server. If you are storing private or sensitive information in session state, it is recommended that you use SSL to encrypt any communication between the browser and server that includes the <xref:System.Web.SessionState.HttpSessionState.SessionID*>.
 
 ## Examples
- The following code example sets the `cookieless` session attribute to true in the Web.config file.
+
+The following code example sets the `cookieless` session attribute to true in the Web.config file.
 
 ```xml
 <configuration>
@@ -668,7 +674,8 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
  For information about how to configure your server for <xref:System.Web.SessionState.SessionStateMode.StateServer> or <xref:System.Web.SessionState.SessionStateMode.SQLServer> session-state storage, see [ASP.NET Session State Overview](https://learn.microsoft.com/previous-versions/aspnet/ms178581(v=vs.100)).
 
 ## Examples
- The following code example sets the `mode` session attribute to <xref:System.Web.SessionState.SessionStateMode.SQLServer> in the Web.config file. For SQL Server session mode, the `sqlConnectionString` attribute is also required.
+
+The following code example sets the `mode` session attribute to <xref:System.Web.SessionState.SessionStateMode.SQLServer> in the Web.config file. For SQL Server session mode, the `sqlConnectionString` attribute is also required.
 
 ```xml
 <configuration>
@@ -717,7 +724,8 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
  If the session-state collection does not contain an element with the specified `name`, the collection remains unchanged. No exception is thrown.
 
 ## Examples
- The following example shows how to store values in session state by using the <xref:System.Web.SessionState.HttpSessionState.Add*> method. It also shows how to remove values in session state by using the <xref:System.Web.SessionState.HttpSessionState.Remove*> method. A <xref:System.Web.UI.WebControls.Repeater> control is used to display the contents of session state on the Web page. The <xref:System.Web.SessionState.HttpSessionState.GetEnumerator*> method is used to iterate through the session-state collection and populate the <xref:System.Web.UI.WebControls.Repeater> control.
+
+The following example shows how to store values in session state by using the <xref:System.Web.SessionState.HttpSessionState.Add*> method. It also shows how to remove values in session state by using the <xref:System.Web.SessionState.HttpSessionState.Remove*> method. A <xref:System.Web.UI.WebControls.Repeater> control is used to display the contents of session state on the Web page. The <xref:System.Web.SessionState.HttpSessionState.GetEnumerator*> method is used to iterate through the session-state collection and populate the <xref:System.Web.UI.WebControls.Repeater> control.
 
  [!code-aspx-csharp[HttpSessionState#13](~/snippets/csharp/VS_Snippets_WebNet/HttpSessionState/CS/HttpSessionStateAddCS.aspx#13)]
  [!code-aspx-vb[HttpSessionState#13](~/snippets/visualbasic/VS_Snippets_WebNet/HttpSessionState/VB/HttpSessionStateAddVB.aspx#13)]
@@ -832,7 +840,8 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
  If your application uses cookieless session state, the session ID is generated on the first page view and is maintained for the entire session.
 
 ## Examples
- The following code example shows a Web.config file that configures session state to use cookieless session identifiers. For more information, see the <xref:System.Web.SessionState.HttpSessionState.IsCookieless> property.
+
+The following code example shows a Web.config file that configures session state to use cookieless session identifiers. For more information, see the <xref:System.Web.SessionState.HttpSessionState.IsCookieless> property.
 
 ```xml
 <configuration>
@@ -879,7 +888,8 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
  The <xref:System.Web.SessionState.HttpSessionState.StaticObjects> property is provided for compatibility with earlier versions of ASP.
 
 ## Examples
- The following code example lists the `id` and object type of the objects in the <xref:System.Web.SessionState.HttpSessionState.StaticObjects*> collection.
+
+The following code example lists the `id` and object type of the objects in the <xref:System.Web.SessionState.HttpSessionState.StaticObjects*> collection.
 
  [!code-csharp[HttpSessionState#10](~/snippets/csharp/VS_Snippets_WebNet/HttpSessionState/CS/snippetscs.aspx#10)]
  [!code-vb[HttpSessionState#10](~/snippets/visualbasic/VS_Snippets_WebNet/HttpSessionState/VB/snippetsvb.aspx#10)]
@@ -945,7 +955,8 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
  The <xref:System.Web.SessionState.HttpSessionState.Timeout> property cannot be set to a value greater than 525,600 minutes (1 year). The default value is 20 minutes.
 
 ## Examples
- The following code example sets the `timeout` session attribute to 30 minutes in the Web.config file.
+
+The following code example sets the `timeout` session attribute to 30 minutes in the Web.config file.
 
 ```xml
 <configuration>

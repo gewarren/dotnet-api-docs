@@ -40,7 +40,8 @@
  For more information about `BeginInvoke` and asynchronous calls using delegates, see [Asynchronous Programming Using Delegates](/dotnet/standard/asynchronous-programming-patterns/asynchronous-programming-using-delegates).
 
 ## Examples
- The following example demonstrates how to use the <xref:System.Runtime.Remoting.Messaging.AsyncResult.AsyncWaitHandle> property to get a <xref:System.Threading.WaitHandle>, and how to wait for an asynchronous call on a delegate. The <xref:System.Threading.WaitHandle> is signaled when the asynchronous call completes, and you can wait for it by calling the <xref:System.Threading.WaitHandle.WaitOne*> method.
+
+The following example demonstrates how to use the <xref:System.Runtime.Remoting.Messaging.AsyncResult.AsyncWaitHandle> property to get a <xref:System.Threading.WaitHandle>, and how to wait for an asynchronous call on a delegate. The <xref:System.Threading.WaitHandle> is signaled when the asynchronous call completes, and you can wait for it by calling the <xref:System.Threading.WaitHandle.WaitOne*> method.
 
  The example consists of two classes, the class that contains the method that's called asynchronously, and the class that contains the `Main` method that makes the call.
 
@@ -87,7 +88,8 @@
  For example, if the delegate that was used to make the asynchronous call is of type `MyDelegate`, the delegate that is returned by this property must be cast to `MyDelegate`. The callback method can then call the delegate's `EndInvoke` method with the correct signature, in order to obtain the results of the asynchronous method call.
 
 ## Examples
- The following code example demonstrates how to use the <xref:System.Runtime.Remoting.Messaging.AsyncResult.AsyncDelegate> property to get the delegate that was used to make the asynchronous call, in order to call `EndInvoke`. The example casts the <xref:System.IAsyncResult>, which is the only parameter of the callback method, to an <xref:System.Runtime.Remoting.Messaging.AsyncResult> object.
+
+The following code example demonstrates how to use the <xref:System.Runtime.Remoting.Messaging.AsyncResult.AsyncDelegate> property to get the delegate that was used to make the asynchronous call, in order to call `EndInvoke`. The example casts the <xref:System.IAsyncResult>, which is the only parameter of the callback method, to an <xref:System.Runtime.Remoting.Messaging.AsyncResult> object.
 
  The example consists of two classes, the class that contains the method that's called asynchronously, and the class that contains the `Main` method that makes the call.
 
@@ -179,7 +181,8 @@
  For more information about the `BeginInvoke` method, see [Asynchronous Programming Using Delegates](/dotnet/standard/asynchronous-programming-patterns/asynchronous-programming-using-delegates).
 
 ## Examples
- The following code example demonstrates how the <xref:System.Runtime.Remoting.Messaging.AsyncResult.AsyncState> property is used to pass information to a callback method. The last parameter of the `BeginInvoke` method call is a format string, which the callback method uses to format an output message.
+
+The following code example demonstrates how the <xref:System.Runtime.Remoting.Messaging.AsyncResult.AsyncState> property is used to pass information to a callback method. The last parameter of the `BeginInvoke` method call is a format string, which the callback method uses to format an output message.
 
  The example consists of two classes, the class that contains the method that's called asynchronously, and the class that contains the `Main` method that makes the call.
 
@@ -231,7 +234,8 @@
 > The <xref:System.Threading.WaitHandle> contained in the <xref:System.Runtime.Remoting.Messaging.AsyncResult.AsyncWaitHandle> property can be used to block the current thread until the asynchronous call is complete. However the <xref:System.Threading.WaitHandle> will ignore the <xref:System.AsyncCallback>, if one was specified during the `BeginInvoke` call. Therefore, a situation can occur where the application shuts down before the <xref:System.AsyncCallback> has finished executing, even if a <xref:System.Threading.WaitHandle> is used to block until the asynchronous call completion. For an example of such a situation, see the example for the <xref:System.Runtime.Remoting.Messaging.AsyncResult> class, and remove the <xref:System.Threading.Thread.Sleep*?displayProperty=nameWithType> statement.
 
 ## Examples
- The following example demonstrates how to use the <xref:System.Runtime.Remoting.Messaging.AsyncResult.AsyncWaitHandle> property to get a <xref:System.Threading.WaitHandle>, and how to wait for an asynchronous call on a delegate. The <xref:System.Threading.WaitHandle> is signaled when the asynchronous call completes, and you can wait for it by calling the <xref:System.Threading.WaitHandle.WaitOne*> method.
+
+The following example demonstrates how to use the <xref:System.Runtime.Remoting.Messaging.AsyncResult.AsyncWaitHandle> property to get a <xref:System.Threading.WaitHandle>, and how to wait for an asynchronous call on a delegate. The <xref:System.Threading.WaitHandle> is signaled when the asynchronous call completes, and you can wait for it by calling the <xref:System.Threading.WaitHandle.WaitOne*> method.
 
  The example consists of two classes, the class that contains the method that's called asynchronously, and the class that contains the `Main` method that makes the call.
 
@@ -373,7 +377,8 @@
  The server must not use any client supplied resources outside of the agreed upon sharing semantics after it sets the <xref:System.Runtime.Remoting.Messaging.AsyncResult.IsCompleted> property to `true`. Thus, it is safe for the client to destroy the resources after the <xref:System.Runtime.Remoting.Messaging.AsyncResult.IsCompleted> property returns `true`.
 
 ## Examples
- The following example shows how to use the <xref:System.IAsyncResult.IsCompleted> property of the <xref:System.Runtime.Remoting.Messaging.AsyncResult> returned by `BeginInvoke` to discover when an asynchronous call completes. You might do this when making the asynchronous call from a thread that services the user interface. Polling for completion allows the calling thread to continue executing while the asynchronous call executes on a <xref:System.Threading.ThreadPool> thread.
+
+The following example shows how to use the <xref:System.IAsyncResult.IsCompleted> property of the <xref:System.Runtime.Remoting.Messaging.AsyncResult> returned by `BeginInvoke` to discover when an asynchronous call completes. You might do this when making the asynchronous call from a thread that services the user interface. Polling for completion allows the calling thread to continue executing while the asynchronous call executes on a <xref:System.Threading.ThreadPool> thread.
 
  The example consists of two classes, the class that contains the method that's called asynchronously, and the class that contains the `Main` method that makes the call.
 

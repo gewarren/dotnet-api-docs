@@ -97,7 +97,8 @@ In .NET Framework apps, you can set the <xref:System.Diagnostics.Trace.AutoFlush
  <xref:System.Diagnostics.ConditionalAttribute> is not supported by the C++ compiler. To provide equivalent functionality, you must enclose calls to the methods of <xref:System.Diagnostics.Trace> in an `#if defined(TRACE) ... #endif` block, and add the `/DTRACE` option to the compiler command line or add `#define TRACE` to the file.
 
 ## Examples
- The following example uses <xref:System.Diagnostics.Trace> to indicate the beginning and the end of a program's execution. The example also uses the <xref:System.Diagnostics.Trace.Indent*?displayProperty=nameWithType> and <xref:System.Diagnostics.Trace.Unindent*?displayProperty=nameWithType> methods to distinguish the tracing output. For a more complete example of the use of <xref:System.Diagnostics.Trace>, see [How to: Add Trace Statements to Application Code](/dotnet/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code).
+
+The following example uses <xref:System.Diagnostics.Trace> to indicate the beginning and the end of a program's execution. The example also uses the <xref:System.Diagnostics.Trace.Indent*?displayProperty=nameWithType> and <xref:System.Diagnostics.Trace.Unindent*?displayProperty=nameWithType> methods to distinguish the tracing output. For a more complete example of the use of <xref:System.Diagnostics.Trace>, see [How to: Add Trace Statements to Application Code](/dotnet/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code).
 
  :::code language="csharp" source="~/snippets/csharp/System.Diagnostics/Trace/Overview/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Diagnostics/Trace/Overview/source.vb" id="Snippet1":::
@@ -214,7 +215,8 @@ For .NET Framework apps, you can change the behavior of the <xref:System.Diagnos
 ```
 
 ## Examples
- The following example creates an index for an array. Then some action is performed that sets the value of the index. Next the code calls <xref:System.Diagnostics.Trace.Assert*> to verify the index value is valid. If it is not valid, the <xref:System.Diagnostics.Trace.Assert*> outputs the call stack.
+
+The following example creates an index for an array. Then some action is performed that sets the value of the index. Next the code calls <xref:System.Diagnostics.Trace.Assert*> to verify the index value is valid. If it is not valid, the <xref:System.Diagnostics.Trace.Assert*> outputs the call stack.
 
  :::code language="csharp" source="~/snippets/csharp/System.Diagnostics/Trace/Assert/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Diagnostics/Trace/Assert/source.vb" id="Snippet1":::
@@ -326,7 +328,8 @@ For .NET Framework apps, you can change the behavior of the <xref:System.Diagnos
 ```
 
 ## Examples
- The following example checks to see that the `type` parameter is valid. If the `type` passed in is `null`, the <xref:System.Diagnostics.Trace.Assert*> outputs a message.
+
+The following example checks to see that the `type` parameter is valid. If the `type` passed in is `null`, the <xref:System.Diagnostics.Trace.Assert*> outputs a message.
 
  :::code language="csharp" source="~/snippets/csharp/System.Diagnostics/Trace/Assert/source1.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Diagnostics/Trace/Assert/source1.vb" id="Snippet1":::
@@ -431,7 +434,8 @@ For .NET Framework apps, you can change the behavior of the <xref:System.Diagnos
 ```
 
 ## Examples
- The following example checks to see that the `type` parameter is valid. If the `type` passed in is `null`, the <xref:System.Diagnostics.Trace.Assert*> outputs a message.
+
+The following example checks to see that the `type` parameter is valid. If the `type` passed in is `null`, the <xref:System.Diagnostics.Trace.Assert*> outputs a message.
 
  :::code language="csharp" source="~/snippets/csharp/System.Diagnostics/Trace/Assert/source2.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Diagnostics/Trace/Assert/source2.vb" id="Snippet1":::
@@ -572,7 +576,8 @@ For .NET Framework apps, you can change the behavior of the <xref:System.Diagnos
  Flushing the stream will not flush its underlying encoder unless you explicitly call <xref:System.Diagnostics.Trace.Flush*> or <xref:System.Diagnostics.Trace.Close*>. Setting <xref:System.Diagnostics.Trace.AutoFlush*> to `true` means that data will be flushed from the buffer to the stream, but the encoder state will not be flushed. This allows the encoder to keep its state (partial characters) so that it can encode the next block of characters correctly. This scenario affects UTF8 and UTF7 where certain characters can only be encoded after the encoder receives the adjacent character or characters.
 
 ## Examples
- The following example creates a <xref:System.Diagnostics.TextWriterTraceListener> named `myTextListener`. `myTextListener` uses a <xref:System.IO.StreamWriter> called `myOutputWriter` to write to a file named `TestFile.txt`. The example creates the file, stream and text writer, writes one line of text to the file, and then flushes and closes the output.
+
+The following example creates a <xref:System.Diagnostics.TextWriterTraceListener> named `myTextListener`. `myTextListener` uses a <xref:System.IO.StreamWriter> called `myOutputWriter` to write to a file named `TestFile.txt`. The example creates the file, stream and text writer, writes one line of text to the file, and then flushes and closes the output.
 
  :::code language="csharp" source="~/snippets/csharp/System.Diagnostics/Trace/Close/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Diagnostics/Trace/Close/source.vb" id="Snippet1":::
@@ -723,7 +728,8 @@ For .NET Framework apps, you can change the behavior of the <xref:System.Diagnos
  You can customize this behavior by adding a <xref:System.Diagnostics.TraceListener> to, or by removing one from, the <xref:System.Diagnostics.Trace.Listeners*> collection.
 
 ## Examples
- The following example uses the <xref:System.Diagnostics.Trace.Fail*> method to print a message during exception handling.
+
+The following example uses the <xref:System.Diagnostics.Trace.Fail*> method to print a message during exception handling.
 
  :::code language="csharp" source="~/snippets/csharp/System.Diagnostics/Trace/Fail/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Diagnostics/Trace/Fail/source.vb" id="Snippet1":::
@@ -812,7 +818,8 @@ For .NET Framework apps, you can change the behavior of the <xref:System.Diagnos
  You can customize this behavior by adding a <xref:System.Diagnostics.TraceListener> to, or by removing one from, the <xref:System.Diagnostics.Trace.Listeners*> collection.
 
 ## Examples
- The following example uses the <xref:System.Diagnostics.Trace.Fail*> method to print a message during exception handling.
+
+The following example uses the <xref:System.Diagnostics.Trace.Fail*> method to print a message during exception handling.
 
  :::code language="csharp" source="~/snippets/csharp/System.Diagnostics/Trace/Fail/source1.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Diagnostics/Trace/Fail/source1.vb" id="Snippet1":::
@@ -886,7 +893,8 @@ For .NET Framework apps, you can change the behavior of the <xref:System.Diagnos
  Flushing the stream will not flush its underlying encoder unless you explicitly call <xref:System.Diagnostics.Trace.Flush*> or <xref:System.Diagnostics.Trace.Close*>. Setting <xref:System.Diagnostics.Trace.AutoFlush*> to `true` means that data will be flushed from the buffer to the stream, but the encoder state will not be flushed. This allows the encoder to keep its state (partial characters) so that it can encode the next block of characters correctly. This scenario affects UTF8 and UTF7 where certain characters can only be encoded after the encoder receives the adjacent character or characters.
 
 ## Examples
- The following example creates a <xref:System.Diagnostics.TextWriterTraceListener> named `myTextListener`. `myTextListener` uses a <xref:System.IO.StreamWriter> called `myOutputWriter` to write to a file named `TestFile.txt`. The example creates the file, stream and text writer, writes one line of text to the file, and then flushes and closes the output.
+
+The following example creates a <xref:System.Diagnostics.TextWriterTraceListener> named `myTextListener`. `myTextListener` uses a <xref:System.IO.StreamWriter> called `myOutputWriter` to write to a file named `TestFile.txt`. The example creates the file, stream and text writer, writes one line of text to the file, and then flushes and closes the output.
 
  :::code language="csharp" source="~/snippets/csharp/System.Diagnostics/Trace/Close/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Diagnostics/Trace/Close/source.vb" id="Snippet1":::
@@ -952,7 +960,8 @@ For .NET Framework apps, you can change the behavior of the <xref:System.Diagnos
           <format type="text/markdown"><![CDATA[
 
 ## Examples
- The following example increments and decrements the indent level and emits tracing messages.
+
+The following example increments and decrements the indent level and emits tracing messages.
 
  :::code language="csharp" source="~/snippets/csharp/System.Diagnostics/Trace/Indent/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Diagnostics/Trace/Indent/source.vb" id="Snippet1":::
@@ -1020,7 +1029,8 @@ End of list of errors
  The <xref:System.Diagnostics.Trace.IndentLevel> property represents the number of times the indent of size <xref:System.Diagnostics.Trace.IndentSize*> is applied. This property is stored on per-thread/per-request basis.
 
 ## Examples
- The following example increments and decrements the indent level and emits tracing messages.
+
+The following example increments and decrements the indent level and emits tracing messages.
 
  :::code language="csharp" source="~/snippets/csharp/System.Diagnostics/Trace/Indent/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Diagnostics/Trace/Indent/source.vb" id="Snippet1":::
@@ -1174,7 +1184,8 @@ End of list of errors
 > The <xref:System.Diagnostics.Trace.Listeners*> collection is shared by both the <xref:System.Diagnostics.Debug> and the <xref:System.Diagnostics.Trace> classes; adding a trace listener to either class adds the listener to both.
 
 ## Examples
- The following example creates a <xref:System.Diagnostics.ConsoleTraceListener> that outputs to the console screen. The code then adds the new listener to the <xref:System.Diagnostics.Trace.Listeners*>.
+
+The following example creates a <xref:System.Diagnostics.ConsoleTraceListener> that outputs to the console screen. The code then adds the new listener to the <xref:System.Diagnostics.Trace.Listeners*>.
 
  :::code language="csharp" source="~/snippets/csharp/System.Diagnostics/Trace/Listeners/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Diagnostics/Trace/Listeners/source.vb" id="Snippet1":::
@@ -1802,7 +1813,8 @@ End of list of errors
           <format type="text/markdown"><![CDATA[
 
 ## Examples
- The following example increments and decrements the indent level and emits tracing messages.
+
+The following example increments and decrements the indent level and emits tracing messages.
 
  :::code language="csharp" source="~/snippets/csharp/System.Diagnostics/Trace/Indent/source.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/System.Diagnostics/Trace/Indent/source.vb" id="Snippet1":::
@@ -1959,7 +1971,8 @@ End of list of errors
  By default, in code associated with an ASP.NET Web page, the statement `Trace.Write("...")` is a call to the <xref:System.Web.TraceContext.Write*> method of the <xref:System.Web.UI.Page.Trace?displayProperty=nameWithType> property. To use the <xref:System.Diagnostics.Trace?displayProperty=nameWithType> class in Web pages, you must include the namespace, for example, `System.Diagnostics.Trace.Write("...")`.
 
 ## Examples
- The following example creates a <xref:System.Diagnostics.TraceSwitch> named `generalSwitch`. This switch is set outside the code sample.
+
+The following example creates a <xref:System.Diagnostics.TraceSwitch> named `generalSwitch`. This switch is set outside the code sample.
 
  If the switch is set to the <xref:System.Diagnostics.TraceLevel> `Error` or higher, the example outputs the first name of the `value` parameter to the <xref:System.Diagnostics.Trace.Listeners*>. For information on adding a listener to the <xref:System.Diagnostics.Trace.Listeners*> collection, see the <xref:System.Diagnostics.TraceListenerCollection> class.
 
@@ -2043,7 +2056,8 @@ End of list of errors
  By default, in code associated with an ASP.NET Web page, the statement `Trace.Write("...")` is a call to the <xref:System.Web.TraceContext.Write*> method of the <xref:System.Web.UI.Page.Trace?displayProperty=nameWithType> property. To use the <xref:System.Diagnostics.Trace?displayProperty=nameWithType> class in Web pages, you must include the namespace, for example, `System.Diagnostics.Trace.Write("...")`.
 
 ## Examples
- The following example creates a <xref:System.Diagnostics.TraceSwitch> named `generalSwitch`. This switch is set outside the code sample.
+
+The following example creates a <xref:System.Diagnostics.TraceSwitch> named `generalSwitch`. This switch is set outside the code sample.
 
  If the switch is set to the <xref:System.Diagnostics.TraceLevel> `Error` or higher, the example outputs the first error message to the <xref:System.Diagnostics.Trace.Listeners*>. For information on adding a listener to the <xref:System.Diagnostics.Trace.Listeners*> collection, see the <xref:System.Diagnostics.TraceListenerCollection> class.
 
@@ -2131,7 +2145,8 @@ End of list of errors
  By default, in code associated with an ASP.NET Web page, the statement `Trace.Write("...")` is a call to the <xref:System.Web.TraceContext.Write*> method of the <xref:System.Web.UI.Page.Trace?displayProperty=nameWithType> property. To use the <xref:System.Diagnostics.Trace?displayProperty=nameWithType> class in Web pages, you must include the namespace, for example, `System.Diagnostics.Trace.Write("...")`.
 
 ## Examples
- The following example creates a <xref:System.Diagnostics.TraceSwitch> named `generalSwitch`. This switch is set outside the code sample.
+
+The following example creates a <xref:System.Diagnostics.TraceSwitch> named `generalSwitch`. This switch is set outside the code sample.
 
  If the switch is set to the <xref:System.Diagnostics.TraceLevel> `Verbose`, the example outputs the name of the `myObject` and the `category` to the <xref:System.Diagnostics.Trace.Listeners*>. For information on adding a listener to the <xref:System.Diagnostics.Trace.Listeners*> collection, see the <xref:System.Diagnostics.TraceListenerCollection> class.
 
@@ -2219,7 +2234,8 @@ End of list of errors
  By default, in code associated with an ASP.NET Web page, the statement `Trace.Write("...")` is a call to the <xref:System.Web.TraceContext.Write*> method of the <xref:System.Web.UI.Page.Trace?displayProperty=nameWithType> property. To use the <xref:System.Diagnostics.Trace?displayProperty=nameWithType> class in Web pages, you must include the namespace, for example, `System.Diagnostics.Trace.Write("...")`.
 
 ## Examples
- The following example creates a <xref:System.Diagnostics.TraceSwitch> named `generalSwitch`. This switch is set outside the code sample.
+
+The following example creates a <xref:System.Diagnostics.TraceSwitch> named `generalSwitch`. This switch is set outside the code sample.
 
  If the switch is set to the <xref:System.Diagnostics.TraceLevel> `Verbose`, the example outputs the first error message to the <xref:System.Diagnostics.Trace.Listeners*>. For information on adding a listener to the <xref:System.Diagnostics.Trace.Listeners*> collection, see the <xref:System.Diagnostics.TraceListenerCollection> class.
 
@@ -2311,7 +2327,8 @@ End of list of errors
  This method calls the <xref:System.Diagnostics.TraceListener.Write*> method of the trace listener.
 
 ## Examples
- The following example creates a <xref:System.Diagnostics.TraceSwitch> named `generalSwitch`. This switch is set outside the code sample.
+
+The following example creates a <xref:System.Diagnostics.TraceSwitch> named `generalSwitch`. This switch is set outside the code sample.
 
  If the switch is set to the <xref:System.Diagnostics.TraceLevel> `Error` or higher, the example outputs the first name of the value parameter to the <xref:System.Diagnostics.Trace.Listeners*>. For information on adding a listener to the <xref:System.Diagnostics.Trace.Listeners*> collection, see the <xref:System.Diagnostics.TraceListenerCollection> class.
 
@@ -2409,7 +2426,8 @@ Trace.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");
  This method calls the <xref:System.Diagnostics.TraceListener.Write*> method of the trace listener.
 
 ## Examples
- The following example creates a <xref:System.Diagnostics.TraceSwitch> named `generalSwitch`. This switch is set outside the code sample.
+
+The following example creates a <xref:System.Diagnostics.TraceSwitch> named `generalSwitch`. This switch is set outside the code sample.
 
  If the switch is set to the <xref:System.Diagnostics.TraceLevel> `Error` or higher, the example outputs the first error message to the <xref:System.Diagnostics.Trace.Listeners*>. For information on adding a listener to the <xref:System.Diagnostics.Trace.Listeners*> collection, see the <xref:System.Diagnostics.TraceListenerCollection> class.
 
@@ -2511,7 +2529,8 @@ Trace.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");
  This method calls the <xref:System.Diagnostics.TraceListener.Write*> method of the trace listener.
 
 ## Examples
- The following example creates a <xref:System.Diagnostics.TraceSwitch> named `generalSwitch`. This switch is set outside the code sample.
+
+The following example creates a <xref:System.Diagnostics.TraceSwitch> named `generalSwitch`. This switch is set outside the code sample.
 
  If the switch is set to the <xref:System.Diagnostics.TraceLevel> `Verbose`, the example outputs the name of the `myObject` and the `category` to the <xref:System.Diagnostics.Trace.Listeners*>. For information on adding a listener to the <xref:System.Diagnostics.Trace.Listeners*> collection, see the <xref:System.Diagnostics.TraceListenerCollection> class.
 
@@ -2613,7 +2632,8 @@ Trace.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");
  This method calls the <xref:System.Diagnostics.TraceListener.Write*> method of the trace listener.
 
 ## Examples
- The following example creates a <xref:System.Diagnostics.TraceSwitch> named `generalSwitch`. This switch is set outside the code sample.
+
+The following example creates a <xref:System.Diagnostics.TraceSwitch> named `generalSwitch`. This switch is set outside the code sample.
 
  If the switch is set to the <xref:System.Diagnostics.TraceLevel> `Verbose`, the example outputs the first error message to the <xref:System.Diagnostics.Trace.Listeners*>. For information on adding a listener to the <xref:System.Diagnostics.Trace.Listeners*> collection, see the <xref:System.Diagnostics.TraceListenerCollection> class.
 
@@ -2718,7 +2738,8 @@ Trace.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");
  This method calls the <xref:System.Diagnostics.TraceListener.WriteLine*> method of the trace listener.
 
 ## Examples
- The following example creates a <xref:System.Diagnostics.TraceSwitch> named `generalSwitch`. This switch is set outside the code sample.
+
+The following example creates a <xref:System.Diagnostics.TraceSwitch> named `generalSwitch`. This switch is set outside the code sample.
 
  If the switch is set to the <xref:System.Diagnostics.TraceLevel> `Error` or higher, the example outputs the first error message to the <xref:System.Diagnostics.Trace.Listeners*>. For information on adding a listener to the <xref:System.Diagnostics.Trace.Listeners*> collection, see the <xref:System.Diagnostics.TraceListenerCollection> class.
 
@@ -2797,7 +2818,8 @@ Trace.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");
  This method calls the <xref:System.Diagnostics.TraceListener.WriteLine*> method of the trace listener.
 
 ## Examples
- The following example creates a <xref:System.Diagnostics.TraceSwitch> named `generalSwitch`. This switch is set outside the code sample.
+
+The following example creates a <xref:System.Diagnostics.TraceSwitch> named `generalSwitch`. This switch is set outside the code sample.
 
  If the switch is set to the <xref:System.Diagnostics.TraceLevel> `Error` or higher, the example outputs the first error message to the <xref:System.Diagnostics.Trace.Listeners*>. For information on adding a listener to the <xref:System.Diagnostics.Trace.Listeners*> collection, see the <xref:System.Diagnostics.TraceListenerCollection> class.
 
@@ -2880,7 +2902,8 @@ Trace.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");
  This method calls the <xref:System.Diagnostics.TraceListener.WriteLine*> method of the trace listener.
 
 ## Examples
- The following example creates a <xref:System.Diagnostics.TraceSwitch> named `generalSwitch`. This switch is set outside the code sample.
+
+The following example creates a <xref:System.Diagnostics.TraceSwitch> named `generalSwitch`. This switch is set outside the code sample.
 
  If the switch is set to the <xref:System.Diagnostics.TraceLevel> `Error` or higher, the example outputs the first error message to the <xref:System.Diagnostics.Trace.Listeners*>. For information on adding a listener to the <xref:System.Diagnostics.Trace.Listeners*> collection, see the <xref:System.Diagnostics.TraceListenerCollection> class.
 
@@ -2963,7 +2986,8 @@ Trace.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");
  This method calls the <xref:System.Diagnostics.TraceListener.WriteLine*> method of the trace listener.
 
 ## Examples
- The following example creates a <xref:System.Diagnostics.TraceSwitch> named `generalSwitch`. This switch is set outside the code sample.
+
+The following example creates a <xref:System.Diagnostics.TraceSwitch> named `generalSwitch`. This switch is set outside the code sample.
 
  If the switch is set to the <xref:System.Diagnostics.TraceLevel> `Error` or higher, the example outputs the first error message to the <xref:System.Diagnostics.Trace.Listeners*>. For information on adding a listener to the <xref:System.Diagnostics.Trace.Listeners*> collection, see the <xref:System.Diagnostics.TraceListenerCollection> class.
 
@@ -3055,7 +3079,8 @@ Trace.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");
  This method calls the <xref:System.Diagnostics.TraceListener.WriteLine*> method of the trace listener.
 
 ## Examples
- The following example creates a <xref:System.Diagnostics.TraceSwitch> named `generalSwitch`. This switch is set outside the code sample.
+
+The following example creates a <xref:System.Diagnostics.TraceSwitch> named `generalSwitch`. This switch is set outside the code sample.
 
  If the switch is set to the <xref:System.Diagnostics.TraceLevel> `Error` or higher, the example outputs the first error message to the <xref:System.Diagnostics.Trace.Listeners*>. For information on adding a listener to the <xref:System.Diagnostics.Trace.Listeners*> collection, see the <xref:System.Diagnostics.TraceListenerCollection> class.
 
@@ -3153,7 +3178,8 @@ Trace.WriteLineIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range")
  This method calls the <xref:System.Diagnostics.TraceListener.WriteLine*> method of the trace listener.
 
 ## Examples
- The following example creates a <xref:System.Diagnostics.TraceSwitch> named `generalSwitch`. This switch is set outside the code sample.
+
+The following example creates a <xref:System.Diagnostics.TraceSwitch> named `generalSwitch`. This switch is set outside the code sample.
 
  If the switch is set to the <xref:System.Diagnostics.TraceLevel> `Error` or higher, the example outputs the first error message to the <xref:System.Diagnostics.Trace.Listeners*>. For information on adding a listener to the <xref:System.Diagnostics.Trace.Listeners*> collection, see the <xref:System.Diagnostics.TraceListenerCollection> class.
 
@@ -3255,7 +3281,8 @@ Trace.WriteLineIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range")
  This method calls the <xref:System.Diagnostics.TraceListener.WriteLine*> method of the trace listener.
 
 ## Examples
- The following example creates a <xref:System.Diagnostics.TraceSwitch> named `generalSwitch`. This switch is set outside the code sample.
+
+The following example creates a <xref:System.Diagnostics.TraceSwitch> named `generalSwitch`. This switch is set outside the code sample.
 
  If the switch is set to the <xref:System.Diagnostics.TraceLevel> `Error` or higher, the example outputs the first error message to the <xref:System.Diagnostics.Trace.Listeners*>. For information on adding a listener to the <xref:System.Diagnostics.Trace.Listeners*> collection, see the <xref:System.Diagnostics.TraceListenerCollection> class.
 
@@ -3357,7 +3384,8 @@ Trace.WriteLineIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range")
  This method calls the <xref:System.Diagnostics.TraceListener.WriteLine*> method of the trace listener.
 
 ## Examples
- The following example creates a <xref:System.Diagnostics.TraceSwitch> named `generalSwitch`. This switch is set outside the code sample.
+
+The following example creates a <xref:System.Diagnostics.TraceSwitch> named `generalSwitch`. This switch is set outside the code sample.
 
  If the switch is set to the <xref:System.Diagnostics.TraceLevel> `Error` or higher, the example outputs the first error message to the <xref:System.Diagnostics.Trace.Listeners*>. For information on adding a listener to the <xref:System.Diagnostics.Trace.Listeners*> collection, see the <xref:System.Diagnostics.TraceListenerCollection> class.
 

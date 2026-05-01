@@ -24,7 +24,8 @@
  If you only want to supply custom session-identifier values to be used by ASP.NET session state, you can create a class that inherits the <xref:System.Web.SessionState.SessionIDManager> class and override only the <xref:System.Web.SessionState.SessionIDManager.CreateSessionID*> and <xref:System.Web.SessionState.SessionIDManager.Validate*> methods with your own custom implementation. This enables you to supply your own session-identifier values, while relying on the base <xref:System.Web.SessionState.SessionIDManager> class to store values to the HTTP response and retrieve values from the HTTP request. For an example of overriding the <xref:System.Web.SessionState.SessionIDManager> class and implementing these methods, see the example provided for the <xref:System.Web.SessionState.SessionIDManager.CreateSessionID*> method of the <xref:System.Web.SessionState.SessionIDManager> class.
 
 ## Examples
- The following code example shows a class that implements a cookie-based session-ID manager.
+
+The following code example shows a class that implements a cookie-based session-ID manager.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_WebNet/System.Web.SessionState.ISessionIDModule/CS/isessionidmodulesnippets.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SessionState.ISessionIDModule/VB/isessionidmodulesnippets.vb" id="Snippet1":::
@@ -64,7 +65,8 @@
  The <xref:System.Web.SessionState.ISessionIDManager.CreateSessionID*> method is used to generate a unique session identifier that the <xref:System.Web.SessionState.SessionStateModule> object will use to identify a new session. The value returned by <xref:System.Web.SessionState.ISessionIDManager.CreateSessionID*> must be unique and must contain valid characters that can be stored in an HTTP response and request. If it is possible that the value returned by your <xref:System.Web.SessionState.ISessionIDManager.CreateSessionID*> implementation contains characters that are not valid in an HTTP response or request, you should use the <xref:System.Web.HttpUtility.UrlEncode*> method to encode the session-identifier value in your <xref:System.Web.SessionState.ISessionIDManager.SaveSessionID*> method implementation and the <xref:System.Web.HttpUtility.UrlDecode*> method to decode the session-identifier value in your <xref:System.Web.SessionState.ISessionIDManager.GetSessionID*> method implementation.
 
 ## Examples
- The following code example implements the <xref:System.Web.SessionState.ISessionIDManager.CreateSessionID*> method. The method creates a new <xref:System.Guid> to be used as a session identifier.
+
+The following code example implements the <xref:System.Web.SessionState.ISessionIDManager.CreateSessionID*> method. The method creates a new <xref:System.Guid> to be used as a session identifier.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_WebNet/System.Web.SessionState.ISessionIDModule/CS/isessionidmodulesnippets.cs" id="Snippet3":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SessionState.ISessionIDModule/VB/isessionidmodulesnippets.vb" id="Snippet3":::
@@ -106,7 +108,8 @@
  If it is possible that the value returned by your <xref:System.Web.SessionState.ISessionIDManager.CreateSessionID*> implementation contains characters that are not valid in an HTTP response or request, you should use the <xref:System.Web.HttpUtility.UrlEncode*> method to encode the session-identifier value in your <xref:System.Web.SessionState.ISessionIDManager.SaveSessionID*> method implementation and the <xref:System.Web.HttpUtility.UrlDecode*> method to decode the session-identifier value in your <xref:System.Web.SessionState.ISessionIDManager.GetSessionID*> method implementation.
 
 ## Examples
- The following code example shows a partially implemented <xref:System.Web.SessionState.ISessionIDManager.GetSessionID*> method. If your custom session-ID manager supports cookieless session identifiers, you will need to implement a solution for sending and retrieving session identifiers in the URL, such as an ISAPI filter.
+
+The following code example shows a partially implemented <xref:System.Web.SessionState.ISessionIDManager.GetSessionID*> method. If your custom session-ID manager supports cookieless session identifiers, you will need to implement a solution for sending and retrieving session identifiers in the URL, such as an ISAPI filter.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_WebNet/System.Web.SessionState.ISessionIDModule/CS/isessionidmodulesnippets.cs" id="Snippet2":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SessionState.ISessionIDModule/VB/isessionidmodulesnippets.vb" id="Snippet2":::
@@ -222,7 +225,8 @@
  The <xref:System.Web.SessionState.SessionStateModule> calls the <xref:System.Web.SessionState.SessionIDManager.RemoveSessionID*> method during the <xref:System.Web.HttpApplication.ReleaseRequestState?displayProperty=nameWithType> event to remove the session identifier from the <xref:System.Web.HttpResponse.Cookies*?displayProperty=nameWithType> collection if a new session was created but was not used.
 
 ## Examples
- The following code example implements the <xref:System.Web.SessionState.ISessionIDManager.RemoveSessionID*> method.
+
+The following code example implements the <xref:System.Web.SessionState.ISessionIDManager.RemoveSessionID*> method.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_WebNet/System.Web.SessionState.ISessionIDModule/CS/isessionidmodulesnippets.cs" id="Snippet4":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SessionState.ISessionIDModule/VB/isessionidmodulesnippets.vb" id="Snippet4":::
@@ -269,7 +273,8 @@
  If it is possible that the value returned from your <xref:System.Web.SessionState.ISessionIDManager.CreateSessionID*> implementation contains characters that are not valid in an HTTP response or request, you should use the <xref:System.Web.HttpUtility.UrlEncode*> method to encode the session-identifier value in your <xref:System.Web.SessionState.ISessionIDManager.SaveSessionID*> method implementation and the <xref:System.Web.HttpUtility.UrlDecode*> method to decode the session-identifier value in your <xref:System.Web.SessionState.ISessionIDManager.GetSessionID*> method implementation.
 
 ## Examples
- The following code example shows a partially implemented <xref:System.Web.SessionState.ISessionIDManager.SaveSessionID*> method. If your custom session-ID manager supports cookieless session identifiers, you will need to implement a solution for sending and retrieving session identifiers in the URL, such as an ISAPI filter.
+
+The following code example shows a partially implemented <xref:System.Web.SessionState.ISessionIDManager.SaveSessionID*> method. If your custom session-ID manager supports cookieless session identifiers, you will need to implement a solution for sending and retrieving session identifiers in the URL, such as an ISAPI filter.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_WebNet/System.Web.SessionState.ISessionIDModule/CS/isessionidmodulesnippets.cs" id="Snippet5":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SessionState.ISessionIDModule/VB/isessionidmodulesnippets.vb" id="Snippet5":::
@@ -312,7 +317,8 @@
  Your <xref:System.Web.SessionState.ISessionIDManager> implementation should call the <xref:System.Web.SessionState.ISessionIDManager.Validate*> method from the <xref:System.Web.SessionState.ISessionIDManager.GetSessionID*> method when retrieving a session identifier from an HTTP request to ensure that the supplied session identifier is properly formatted.
 
 ## Examples
- The following code example implements the <xref:System.Web.SessionState.ISessionIDManager.Validate*> method and ensures the session-identifier value is a valid <xref:System.Guid>.
+
+The following code example implements the <xref:System.Web.SessionState.ISessionIDManager.Validate*> method and ensures the session-identifier value is a valid <xref:System.Guid>.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_WebNet/System.Web.SessionState.ISessionIDModule/CS/isessionidmodulesnippets.cs" id="Snippet6":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SessionState.ISessionIDModule/VB/isessionidmodulesnippets.vb" id="Snippet6":::

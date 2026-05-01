@@ -33,7 +33,8 @@ The issuer name registry is used to associate a mnemonic name to the cryptograph
  To create a custom issuer name registry, you must override the <xref:System.IdentityModel.Tokens.IssuerNameRegistry.GetIssuerName(System.IdentityModel.Tokens.SecurityToken)?displayProperty=nameWithType> method. This method returns the issuer name for the specified security token. You can optionally override the <xref:System.IdentityModel.Tokens.IssuerNameRegistry.GetIssuerName(System.IdentityModel.Tokens.SecurityToken,System.String)?displayProperty=nameWithType> method to provide a hinting mechanism when retrieving issuer names and the <xref:System.IdentityModel.Tokens.IssuerNameRegistry.GetWindowsIssuerName*> method if you want to provide an issuer name for Windows tokens that is different from <xref:System.Security.Claims.ClaimsIdentity.DefaultIssuer>. Override the <xref:System.IdentityModel.Tokens.IssuerNameRegistry.LoadCustomConfiguration*> method to enable your issuer name registry to be initialized from a configuration file.
 
 ## Examples
- The following code shows an implementation of the <xref:System.IdentityModel.Tokens.IssuerNameRegistry> class that only accepts issuers that use certificates with subject "CN=localhost".
+
+The following code shows an implementation of the <xref:System.IdentityModel.Tokens.IssuerNameRegistry> class that only accepts issuers that use certificates with subject "CN=localhost".
 
 > [!WARNING]
 > The following code is for illustrative purposes only. Validating certificates based on subject name is not a good practice. This code should not be used as is in production.
@@ -124,7 +125,8 @@ Implementations should return a non-null and non-empty string to identify a reco
  Called from the processing pipeline by the security token handler that is processing the token. The method should return a unique name for the issuer within the context of the RP application.
 
 ## Examples
- The following code shows the <xref:System.IdentityModel.Tokens.IssuerNameRegistry.GetIssuerName*> method for an issuer name registry. The full sample is in the <xref:System.IdentityModel.Tokens.IssuerNameRegistry> class overview topic.
+
+The following code shows the <xref:System.IdentityModel.Tokens.IssuerNameRegistry.GetIssuerName*> method for an issuer name registry. The full sample is in the <xref:System.IdentityModel.Tokens.IssuerNameRegistry> class overview topic.
 
 > [!WARNING]
 > The following code is for illustrative purposes only. Validating certificates based on subject name is not a good practice. This code should not be used as is in production.

@@ -81,7 +81,8 @@ The <xref:System.Threading.EventWaitHandle> class allows threads to communicate 
 > By default, a named event is not restricted to the user that created it. Other users might be able to open and use the event, including interfering with the event by setting or resetting it inappropriately. To restrict access to specific users, you can use a constructor overload or <xref:System.Threading.EventWaitHandleAcl> and pass in an <xref:System.Security.AccessControl.EventWaitHandleSecurity> when creating the named event. Avoid using named events without access restrictions on systems that might have untrusted users running code.
 
 ## Examples
- The following code example uses the <xref:System.Threading.WaitHandle.SignalAndWait(System.Threading.WaitHandle,System.Threading.WaitHandle)> method overload to allow the main thread to signal a blocked thread and then wait until the thread finishes a task.
+
+The following code example uses the <xref:System.Threading.WaitHandle.SignalAndWait(System.Threading.WaitHandle,System.Threading.WaitHandle)> method overload to allow the main thread to signal a blocked thread and then wait until the thread finishes a task.
 
  The example starts five threads and allows them to block on an <xref:System.Threading.EventWaitHandle> created with the <xref:System.Threading.EventResetMode.AutoReset?displayProperty=nameWithType> flag, then releases one thread each time the user presses the <kbd>Enter</kbd> key. The example then queues another five threads and releases them all using an <xref:System.Threading.EventWaitHandle> created with the <xref:System.Threading.EventResetMode.ManualReset?displayProperty=nameWithType> flag.
 
@@ -165,7 +166,8 @@ The <xref:System.Threading.EventWaitHandle> class allows threads to communicate 
  If the initial state of the event is nonsignaled, threads that wait on the event will block. If the initial state is signaled, and the <xref:System.Threading.EventResetMode.ManualReset> flag is specified for `mode`, threads that wait on the event will not block. If the initial state is signaled and `mode` is <xref:System.Threading.EventResetMode.AutoReset>, the first thread that waits on the event will be released immediately, after which the event will reset, and subsequent threads will block.
 
 ## Examples
- The following code example uses the <xref:System.Threading.WaitHandle.SignalAndWait(System.Threading.WaitHandle,System.Threading.WaitHandle)> method overload to allow the main thread to signal a blocked thread and then wait until the thread finishes a task.
+
+The following code example uses the <xref:System.Threading.WaitHandle.SignalAndWait(System.Threading.WaitHandle,System.Threading.WaitHandle)> method overload to allow the main thread to signal a blocked thread and then wait until the thread finishes a task.
 
  The example starts five threads and allows them to block on an <xref:System.Threading.EventWaitHandle> created with the <xref:System.Threading.EventResetMode.AutoReset?displayProperty=nameWithType> flag, then releases one thread each time the user presses the <kbd>Enter</kbd> key. The example then queues another five threads and releases them all using an <xref:System.Threading.EventWaitHandle> created with the <xref:System.Threading.EventResetMode.ManualReset?displayProperty=nameWithType> flag.
 
@@ -493,7 +495,8 @@ An object with the specified <paramref name="name" /> exists, but the specified 
 > By default, a named event is not restricted to the user that created it. Other users might be able to open and use the event, including interfering with the event by setting or resetting it inappropriately. To restrict access to specific users, you can pass in an <xref:System.Security.AccessControl.EventWaitHandleSecurity> when creating the named event. Avoid using named events without access restrictions on systems that might have untrusted users running code.
 
 ## Examples
- The following code example demonstrates the cross-process behavior of a named system event with access control security. The example uses the <xref:System.Threading.EventWaitHandle.OpenExisting(System.String)> method overload to test for the existence of a named event.
+
+The following code example demonstrates the cross-process behavior of a named system event with access control security. The example uses the <xref:System.Threading.EventWaitHandle.OpenExisting(System.String)> method overload to test for the existence of a named event.
 
  If the event does not exist, it is created with initial ownership and access control security that denies the current user the right to use the event, but grants the right to read and change permissions on the event.
 
@@ -635,7 +638,8 @@ An object with the specified <paramref name="name" /> exists, but the specified 
  The user must have <xref:System.Security.AccessControl.EventWaitHandleRights.ReadPermissions?displayProperty=nameWithType> rights to call this method, and the event must have been opened with the <xref:System.Security.AccessControl.EventWaitHandleRights.ReadPermissions?displayProperty=nameWithType> flag.
 
 ## Examples
- The following code example demonstrates the cross-process behavior of a named system event with access control security. The example uses the <xref:System.Threading.EventWaitHandle.OpenExisting(System.String)> method overload to test for the existence of a named event.
+
+The following code example demonstrates the cross-process behavior of a named system event with access control security. The example uses the <xref:System.Threading.EventWaitHandle.OpenExisting(System.String)> method overload to test for the existence of a named event.
 
  If the event does not exist, it is created with initial ownership and access control security that denies the current user the right to use the event, but grants the right to read and change permissions on the event.
 
@@ -814,7 +818,8 @@ The `name` can be prefixed with `Global\` or `Local\` to specify a namespace. Wh
  Multiple calls to this method that use the same value for `name` do not necessarily return the same <xref:System.Threading.EventWaitHandle> object, even though the objects that are returned represent the same named system event.
 
 ## Examples
- The following code example demonstrates the cross-process behavior of a named system event with access control security. The example uses the <xref:System.Threading.EventWaitHandle.OpenExisting(System.String)> method overload to test for the existence of a named event.
+
+The following code example demonstrates the cross-process behavior of a named system event with access control security. The example uses the <xref:System.Threading.EventWaitHandle.OpenExisting(System.String)> method overload to test for the existence of a named event.
 
  If the event does not exist, it is created with initial ownership and access control security that denies the current user the right to use the event, but grants the right to read and change permissions on the event.
 
@@ -1030,7 +1035,8 @@ There was some other error. The `HResult` property might provide more informatio
  For an <xref:System.Threading.EventWaitHandle> with <xref:System.Threading.EventResetMode.ManualReset?displayProperty=nameWithType> (including <xref:System.Threading.ManualResetEvent>), calling the <xref:System.Threading.EventWaitHandle.Set*> method leaves the wait handle in a signaled state until its <xref:System.Threading.EventWaitHandle.Reset*> method is called.
 
 ## Examples
- The following code example uses the <xref:System.Threading.WaitHandle.SignalAndWait(System.Threading.WaitHandle,System.Threading.WaitHandle)> method overload to allow the main thread to signal a blocked thread and then wait until the thread finishes a task.
+
+The following code example uses the <xref:System.Threading.WaitHandle.SignalAndWait(System.Threading.WaitHandle,System.Threading.WaitHandle)> method overload to allow the main thread to signal a blocked thread and then wait until the thread finishes a task.
 
  The example starts five threads and allows them to block on an <xref:System.Threading.EventWaitHandle> created with the <xref:System.Threading.EventResetMode.AutoReset?displayProperty=nameWithType> flag, then releases one thread each time the user presses the <kbd>Enter</kbd> key. The example then queues another five threads and releases them all using an <xref:System.Threading.EventWaitHandle> created with the <xref:System.Threading.EventResetMode.ManualReset?displayProperty=nameWithType> flag.
 
@@ -1084,7 +1090,8 @@ There was some other error. The `HResult` property might provide more informatio
  The user must have <xref:System.Security.AccessControl.EventWaitHandleRights.ChangePermissions?displayProperty=nameWithType> rights to call this method, and the event must have been opened with the <xref:System.Security.AccessControl.EventWaitHandleRights.ChangePermissions?displayProperty=nameWithType> flag.
 
 ## Examples
- The following code example demonstrates the cross-process behavior of a named system event with access control security. The example uses the <xref:System.Threading.EventWaitHandle.OpenExisting(System.String)> method overload to test for the existence of a named event.
+
+The following code example demonstrates the cross-process behavior of a named system event with access control security. The example uses the <xref:System.Threading.EventWaitHandle.OpenExisting(System.String)> method overload to test for the existence of a named event.
 
  If the event does not exist, it is created with initial ownership and access control security that denies the current user the right to use the event, but grants the right to read and change permissions on the event.
 

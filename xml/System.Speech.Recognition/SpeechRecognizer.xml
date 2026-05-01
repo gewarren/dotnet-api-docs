@@ -62,7 +62,8 @@
 > Always call <xref:System.Speech.Recognition.SpeechRecognizer.Dispose*> before you release your last reference to the speech recognizer. Otherwise, the resources it is using will not be freed until the garbage collector calls the recognizer object's `Finalize` method.
 
 ## Examples
- The following example is part of a console application that loads a speech recognition grammar and demonstrates asynchronous emulated input, the associated recognition results, and the associated events raised by the speech recognizer.  If Windows Speech Recognition is not running, then starting this application will also start Windows Speech Recognition. If Windows Speech Recognition is in the **Sleeping** state, then <xref:System.Speech.Recognition.SpeechRecognizer.EmulateRecognizeAsync*> always returns null.
+
+The following example is part of a console application that loads a speech recognition grammar and demonstrates asynchronous emulated input, the associated recognition results, and the associated events raised by the speech recognizer.  If Windows Speech Recognition is not running, then starting this application will also start Windows Speech Recognition. If Windows Speech Recognition is in the **Sleeping** state, then <xref:System.Speech.Recognition.SpeechRecognizer.EmulateRecognizeAsync*> always returns null.
 
 ```csharp
 using System;
@@ -191,7 +192,8 @@ namespace SharedRecognizer
  Each <xref:System.Speech.Recognition.SpeechRecognizer> object maintains a separate set of speech recognition grammars.
 
 ## Examples
- The following example is part of a console application that loads a speech recognition grammar and demonstrates asynchronous emulated input, the associated recognition results, and the associated events raised by the speech recognizer. If Windows Speech Recognition is not running, then starting this application will also start Windows Speech Recognition. If Windows Speech Recognition is in the **Sleeping** state, then <xref:System.Speech.Recognition.SpeechRecognizer.EmulateRecognizeAsync*> always returns null.
+
+The following example is part of a console application that loads a speech recognition grammar and demonstrates asynchronous emulated input, the associated recognition results, and the associated events raised by the speech recognizer. If Windows Speech Recognition is not running, then starting this application will also start Windows Speech Recognition. If Windows Speech Recognition is in the **Sleeping** state, then <xref:System.Speech.Recognition.SpeechRecognizer.EmulateRecognizeAsync*> always returns null.
 
 ```csharp
 using System;
@@ -387,7 +389,8 @@ namespace SharedRecognizer
  When you create a delegate for an `AudioLevelUpdated` event, you identify the method that will handle the event. To associate the event with your event handler, add an instance of the delegate to the event. The event handler is called whenever the event occurs, unless you remove the delegate. For more information about event-handler delegates, see [Events and Delegates](https://go.microsoft.com/fwlink/?LinkId=162418).
 
 ## Examples
- The following example adds a handler for the `AudioLevelUpdated` event to a <xref:System.Speech.Recognition.SpeechRecognizer> object. The handler outputs the new audio level to the console.
+
+The following example adds a handler for the `AudioLevelUpdated` event to a <xref:System.Speech.Recognition.SpeechRecognizer> object. The handler outputs the new audio level to the console.
 
 ```csharp
 private SpeechRecognizer recognizer;
@@ -447,7 +450,8 @@ void recognizer_AudioLevelUpdated(object sender, AudioLevelUpdatedEventArgs e)
  The `AudioPosition` property references the input device's position in its generated audio stream. By contrast, the <xref:System.Speech.Recognition.SpeechRecognizer.RecognizerAudioPosition> property references the recognizer's position in processing audio input. These positions can be different.  For example, if the recognizer has received input for which it has not yet generated a recognition result then the value of the <xref:System.Speech.Recognition.SpeechRecognizer.RecognizerAudioPosition> property is less than the value of the <xref:System.Speech.Recognition.SpeechRecognizer.AudioPosition> property.
 
 ## Examples
- In the following example, the shared speech recognizer uses a dictation grammar to match speech input. A handler for the <xref:System.Speech.Recognition.SpeechRecognizer.SpeechDetected> event writes to the console the <xref:System.Speech.Recognition.SpeechRecognizer.AudioPosition*>, <xref:System.Speech.Recognition.SpeechRecognizer.RecognizerAudioPosition*>, and  <xref:System.Speech.Recognition.SpeechRecognizer.AudioLevel*> when the speech recognizer detects speech at its input.
+
+In the following example, the shared speech recognizer uses a dictation grammar to match speech input. A handler for the <xref:System.Speech.Recognition.SpeechRecognizer.SpeechDetected> event writes to the console the <xref:System.Speech.Recognition.SpeechRecognizer.AudioPosition*>, <xref:System.Speech.Recognition.SpeechRecognizer.RecognizerAudioPosition*>, and  <xref:System.Speech.Recognition.SpeechRecognizer.AudioLevel*> when the speech recognizer detects speech at its input.
 
 ```
 using System;
@@ -562,7 +566,8 @@ namespace SampleRecognition
  When you create a delegate for an `AudioSignalProblemOccurred` event, you identify the method that will handle the event. To associate the event with your event handler, add an instance of the delegate to the event. The event handler is called whenever the event occurs, unless you remove the delegate. For more information about event-handler delegates, see [Events and Delegates](https://go.microsoft.com/fwlink/?LinkId=162418).
 
 ## Examples
- The following example defines an event handler that gathers information about an `AudioSignalProblemOccurred` event.
+
+The following example defines an event handler that gathers information about an `AudioSignalProblemOccurred` event.
 
 ```
 private SpeechRecognizer recognizer;
@@ -661,7 +666,8 @@ void recognizer_AudioSignalProblemOccurred(object sender, AudioSignalProblemOccu
  When you create a delegate for an `AudioStateChanged` event, you identify the method that will handle the event. To associate the event with your event handler, add an instance of the delegate to the event. The event handler is called whenever the event occurs, unless you remove the delegate. For more information about event-handler delegates, see [Events and Delegates](https://go.microsoft.com/fwlink/?LinkId=162418).
 
 ## Examples
- The following example uses a handler for the `AudioStateChanged` event to write the recognizer's new <xref:System.Speech.Recognition.SpeechRecognizer.AudioState*> to the console each time it changes using a member of the <xref:System.Speech.Recognition.AudioState> enumeration.
+
+The following example uses a handler for the `AudioStateChanged` event to write the recognizer's new <xref:System.Speech.Recognition.SpeechRecognizer.AudioState*> to the console each time it changes using a member of the <xref:System.Speech.Recognition.AudioState> enumeration.
 
 ```
 using System;
@@ -870,7 +876,8 @@ namespace SampleRecognition
  The recognizers that ship with Vista and Windows 7 ignore case and character width when applying grammar rules to the input phrase. For more information about this type of comparison, see the <xref:System.Globalization.CompareOptions> enumeration values <xref:System.Globalization.CompareOptions.OrdinalIgnoreCase> and <xref:System.Globalization.CompareOptions.IgnoreWidth>. The recognizers also ignore new lines and extra white space and treat punctuation as literal input.
 
 ## Examples
- The following example loads a sample grammar to the shared recognizer and emulates input to the recognizer. If Windows Speech Recognition is not running, then starting this application will also start Windows Speech Recognition. If Windows Speech Recognition is in the **Sleeping** state, then <xref:System.Speech.Recognition.SpeechRecognizer.EmulateRecognize*> always returns null.
+
+The following example loads a sample grammar to the shared recognizer and emulates input to the recognizer. If Windows Speech Recognition is not running, then starting this application will also start Windows Speech Recognition. If Windows Speech Recognition is in the **Sleeping** state, then <xref:System.Speech.Recognition.SpeechRecognizer.EmulateRecognize*> always returns null.
 
 ```csharp
 
@@ -1099,7 +1106,8 @@ namespace SharedRecognizer
  This method stores in the task it returns all non-usage exceptions that the method's synchronous counterpart can throw. If an exception is stored into the returned task, that exception will be thrown when the task is awaited. Usage exceptions, such as <xref:System.ArgumentException>, are still thrown synchronously. For the stored exceptions, see the exceptions thrown by <xref:System.Speech.Recognition.SpeechRecognizer.EmulateRecognize(System.String)>.
 
 ## Examples
- The following example is part of a console application that loads a speech recognition grammar and demonstrates asynchronous emulated input, the associated recognition results, and the associated events raised by the speech recognizer. If Windows Speech Recognition is not running, then starting this application will also start Windows Speech Recognition. If Windows Speech Recognition is in the **Sleeping** state, then <xref:System.Speech.Recognition.SpeechRecognizer.EmulateRecognizeAsync*> always returns null.
+
+The following example is part of a console application that loads a speech recognition grammar and demonstrates asynchronous emulated input, the associated recognition results, and the associated events raised by the speech recognizer. If Windows Speech Recognition is not running, then starting this application will also start Windows Speech Recognition. If Windows Speech Recognition is in the **Sleeping** state, then <xref:System.Speech.Recognition.SpeechRecognizer.EmulateRecognizeAsync*> always returns null.
 
 ```csharp
 using System;
@@ -1327,7 +1335,8 @@ namespace SharedRecognizer
  When you create a delegate for an `EmulateRecognizeCompleted` event, you identify the method that will handle the event. To associate the event with your event handler, add an instance of the delegate to the event. The event handler is called whenever the event occurs, unless you remove the delegate. For more information about event-handler delegates, see [Events and Delegates](https://go.microsoft.com/fwlink/?LinkId=162418).
 
 ## Examples
- The following example is part of a console application that loads a speech recognition grammar and demonstrates asynchronous emulated input, the associated recognition results, and the associated events raised by the speech recognizer. If Windows Speech Recognition is not running, then starting this application will also start Windows Speech Recognition. If Windows Speech Recognition is in the **Sleeping** mode, then <xref:System.Speech.Recognition.SpeechRecognizer.EmulateRecognizeAsync*> always returns null.
+
+The following example is part of a console application that loads a speech recognition grammar and demonstrates asynchronous emulated input, the associated recognition results, and the associated events raised by the speech recognizer. If Windows Speech Recognition is not running, then starting this application will also start Windows Speech Recognition. If Windows Speech Recognition is in the **Sleeping** mode, then <xref:System.Speech.Recognition.SpeechRecognizer.EmulateRecognizeAsync*> always returns null.
 
 ```csharp
 using System;
@@ -1493,7 +1502,8 @@ namespace SharedRecognizer
  This property does not return any speech recognition grammars loaded by another application.
 
 ## Examples
- The following example outputs information to the console for each speech recognition grammar loaded into the shared speech recognizer.
+
+The following example outputs information to the console for each speech recognition grammar loaded into the shared speech recognizer.
 
 ```csharp
 
@@ -1584,7 +1594,8 @@ namespace SharedRecognizer
  To load a speech recognition grammar asynchronously, use the <xref:System.Speech.Recognition.SpeechRecognizer.LoadGrammarAsync*> method.
 
 ## Examples
- The following example is part of a console application that loads a speech recognition grammar and demonstrates asynchronous emulated input, the associated recognition results, and the associated events raised by the speech recognizer. If Windows Speech Recognition is not running, then starting this application will also start Windows Speech Recognition. If Windows Speech Recognition is in the **Sleeping** state, then <xref:System.Speech.Recognition.SpeechRecognizer.EmulateRecognizeAsync*> always returns null.
+
+The following example is part of a console application that loads a speech recognition grammar and demonstrates asynchronous emulated input, the associated recognition results, and the associated events raised by the speech recognizer. If Windows Speech Recognition is not running, then starting this application will also start Windows Speech Recognition. If Windows Speech Recognition is in the **Sleeping** state, then <xref:System.Speech.Recognition.SpeechRecognizer.EmulateRecognizeAsync*> always returns null.
 
 ```csharp
 using System;
@@ -1765,7 +1776,8 @@ namespace SharedRecognizer
  When you create a delegate for a `LoadGrammarCompleted` event, you identify the method that will handle the event. To associate the event with your event handler, add an instance of the delegate to the event. The event handler is called whenever the event occurs, unless you remove the delegate. For more information about event-handler delegates, see [Events and Delegates](https://go.microsoft.com/fwlink/?LinkId=162418).
 
 ## Examples
- The following example creates a shared speech recognizer, and then creates two types of grammars for recognizing specific words and for accepting free dictation. The example asynchronously loads all the created grammars to the recognizer. Handlers for the recognizer's <xref:System.Speech.Recognition.SpeechRecognizer.LoadGrammarCompleted> and <xref:System.Speech.Recognition.SpeechRecognizer.SpeechRecognized> events write to the console the name of the grammar that was used to perform the recognition and the text of the recognition result, respectively.
+
+The following example creates a shared speech recognizer, and then creates two types of grammars for recognizing specific words and for accepting free dictation. The example asynchronously loads all the created grammars to the recognizer. Handlers for the recognizer's <xref:System.Speech.Recognition.SpeechRecognizer.LoadGrammarCompleted> and <xref:System.Speech.Recognition.SpeechRecognizer.SpeechRecognized> events write to the console the name of the grammar that was used to perform the recognition and the text of the recognition result, respectively.
 
 ```
 using System;
@@ -2006,7 +2018,8 @@ namespace SampleRecognition
  This property returns information about the speech recognizer in use by Windows Speech Recognition.
 
 ## Examples
- The following example sends information about the shared recognizer to the console.
+
+The following example sends information about the shared recognizer to the console.
 
 ```csharp
 
@@ -2078,7 +2091,8 @@ namespace SharedRecognizer
  When you create a delegate for a <xref:System.Speech.Recognition.SpeechRecognizer.RecognizerUpdateReached> event, you identify the method that will handle the event. To associate the event with your event handler, add an instance of the delegate to the event. The event handler is called whenever the event occurs, unless you remove the delegate. For more information about event-handler delegates, see [Events and Delegates](https://go.microsoft.com/fwlink/?LinkId=162418).
 
 ## Examples
- The following example shows a console application that loads and unloads <xref:System.Speech.Recognition.Grammar> objects. The application uses the <xref:System.Speech.Recognition.SpeechRecognizer.RequestRecognizerUpdate*> method to request the speech recognition engine to pause so it can receive an update. The application then loads or unloads a <xref:System.Speech.Recognition.Grammar> object.
+
+The following example shows a console application that loads and unloads <xref:System.Speech.Recognition.Grammar> objects. The application uses the <xref:System.Speech.Recognition.SpeechRecognizer.RequestRecognizerUpdate*> method to request the speech recognition engine to pause so it can receive an update. The application then loads or unloads a <xref:System.Speech.Recognition.Grammar> object.
 
  At each update, a handler for <xref:System.Speech.Recognition.SpeechRecognizer.RecognizerUpdateReached> event writes the name and status of the currently loaded <xref:System.Speech.Recognition.Grammar> objects to the console. As grammars are loaded and unloaded, the application first recognizes the names of farm animals, then the names of farm animals and the names of fruits, then only the names of fruits.
 
@@ -2218,7 +2232,8 @@ namespace SampleRecognition
  To change whether the shared recognizer pauses recognition operations while an application is handling a <xref:System.Speech.Recognition.SpeechRecognizer.SpeechRecognized> event, use the <xref:System.Speech.Recognition.SpeechRecognizer.PauseRecognizerOnRecognition> property.
 
 ## Examples
- The following example shows a console application that loads and unloads <xref:System.Speech.Recognition.Grammar> objects. The application uses the <xref:System.Speech.Recognition.SpeechRecognizer.RequestRecognizerUpdate*> method to request the speech recognition engine to pause so it can receive an update. The application then loads or unloads a <xref:System.Speech.Recognition.Grammar> object.
+
+The following example shows a console application that loads and unloads <xref:System.Speech.Recognition.Grammar> objects. The application uses the <xref:System.Speech.Recognition.SpeechRecognizer.RequestRecognizerUpdate*> method to request the speech recognition engine to pause so it can receive an update. The application then loads or unloads a <xref:System.Speech.Recognition.Grammar> object.
 
  At each update, a handler for <xref:System.Speech.Recognition.SpeechRecognizer.RecognizerUpdateReached> event writes the name and status of the currently loaded <xref:System.Speech.Recognition.Grammar> objects to the console. As grammars are loaded and unloaded, the application first recognizes the names of farm animals, then the names of farm animals and the names of fruits, then only the names of fruits.
 
@@ -2472,7 +2487,8 @@ namespace SampleRecognition
  When you create a delegate for a <xref:System.Speech.Recognition.SpeechRecognizer.SpeechDetected> event, you identify the method that will handle the event. To associate the event with your event handler, add an instance of the delegate to the event. The event handler is called whenever the event occurs, unless you remove the delegate. For more information about event-handler delegates, see [Events and Delegates](https://go.microsoft.com/fwlink/?LinkId=162418).
 
 ## Examples
- The following example is part of a console application for choosing origin and destination cities for a flight. The application recognizes phrases such as "I want to fly from Miami to Chicago."  The example uses the <xref:System.Speech.Recognition.SpeechRecognizer.SpeechDetected> event to report the <xref:System.Speech.Recognition.SpeechRecognizer.AudioPosition*> each time speech is detected.
+
+The following example is part of a console application for choosing origin and destination cities for a flight. The application recognizes phrases such as "I want to fly from Miami to Chicago."  The example uses the <xref:System.Speech.Recognition.SpeechRecognizer.SpeechDetected> event to report the <xref:System.Speech.Recognition.SpeechRecognizer.AudioPosition*> each time speech is detected.
 
 ```
 using System;
@@ -2582,7 +2598,8 @@ namespace SampleRecognition
  When you create a delegate for a <xref:System.Speech.Recognition.SpeechRecognizer.SpeechHypothesized> event, you identify the method that will handle the event. To associate the event with your event handler, add an instance of the delegate to the event. The event handler is called whenever the event occurs, unless you remove the delegate. For more information about event-handler delegates, see [Events and Delegates](https://go.microsoft.com/fwlink/?LinkId=162418).
 
 ## Examples
- The following example recognizes phrases such as "Display the list of artists in the jazz category". The example uses the <xref:System.Speech.Recognition.SpeechRecognizer.SpeechHypothesized> event to display incomplete phrase fragments in the console as they are recognized.
+
+The following example recognizes phrases such as "Display the list of artists in the jazz category". The example uses the <xref:System.Speech.Recognition.SpeechRecognizer.SpeechHypothesized> event to display incomplete phrase fragments in the console as they are recognized.
 
 ```
 using System;
@@ -2701,7 +2718,8 @@ namespace SampleRecognition
  When you create a delegate for a <xref:System.Speech.Recognition.SpeechRecognizer.SpeechRecognitionRejected> event, you identify the method that will handle the event. To associate the event with your event handler, add an instance of the delegate to the event. The event handler is called whenever the event occurs, unless you remove the delegate. For more information about event-handler delegates, see [Events and Delegates](https://go.microsoft.com/fwlink/?LinkId=162418).
 
 ## Examples
- The following example recognizes phrases such as "Display the list of artists in the jazz category" or "Display albums gospel". The example uses a handler for the <xref:System.Speech.Recognition.SpeechRecognizer.SpeechRecognitionRejected> event to display a notification in the console when the speech input cannot be matched to the contents of the grammar with sufficient confidence to produce a successful recognition.
+
+The following example recognizes phrases such as "Display the list of artists in the jazz category" or "Display albums gospel". The example uses a handler for the <xref:System.Speech.Recognition.SpeechRecognizer.SpeechRecognitionRejected> event to display a notification in the console when the speech input cannot be matched to the contents of the grammar with sufficient confidence to produce a successful recognition.
 
 ```csharp
 using System;
@@ -2823,7 +2841,8 @@ namespace SampleRecognition
  When you create a delegate for a <xref:System.Speech.Recognition.SpeechRecognizer.SpeechRecognized> event, you identify the method that will handle the event. To associate the event with your event handler, add an instance of the delegate to the event. The event handler is called whenever the event occurs, unless you remove the delegate. For more information about event-handler delegates, see [Events and Delegates](https://go.microsoft.com/fwlink/?LinkId=162418).
 
 ## Examples
- The following example is part of a console application that loads a speech recognition grammar and demonstrates speech input to the shared recognizer, the associated recognition results, and the associated events raised by the speech recognizer. If Windows Speech Recognition is not running, then starting this application will also start Windows Speech Recognition.
+
+The following example is part of a console application that loads a speech recognition grammar and demonstrates speech input to the shared recognizer, the associated recognition results, and the associated events raised by the speech recognizer. If Windows Speech Recognition is not running, then starting this application will also start Windows Speech Recognition.
 
  Spoken input such as "I want to fly from Chicago to Miami" will trigger a <xref:System.Speech.Recognition.SpeechRecognizer.SpeechRecognized> event. Speaking the phrase "Fly me from Houston to Chicago " will not trigger a <xref:System.Speech.Recognition.SpeechRecognizer.SpeechRecognized> event.
 
@@ -2983,7 +3002,8 @@ namespace SampleRecognition
  When you create a delegate for a <xref:System.Speech.Recognition.SpeechRecognizer.StateChanged> event, you identify the method that will handle the event. To associate the event with your event handler, add an instance of the delegate to the event. The event handler is called whenever the event occurs, unless you remove the delegate. For more information about event-handler delegates, see [Events and Delegates](https://go.microsoft.com/fwlink/?LinkId=162418).
 
 ## Examples
- The following example creates a shared speech recognizer, and then creates two types of grammars for recognizing specific words and for accepting free dictation. The example asynchronously loads all the created grammars to the recognizer.  A handler for the <xref:System.Speech.Recognition.SpeechRecognizer.StateChanged> event uses the <xref:System.Speech.Recognition.SpeechRecognizer.EmulateRecognizeAsync*> method to put Windows Recognition in "listening" mode.
+
+The following example creates a shared speech recognizer, and then creates two types of grammars for recognizing specific words and for accepting free dictation. The example asynchronously loads all the created grammars to the recognizer.  A handler for the <xref:System.Speech.Recognition.SpeechRecognizer.StateChanged> event uses the <xref:System.Speech.Recognition.SpeechRecognizer.EmulateRecognizeAsync*> method to put Windows Recognition in "listening" mode.
 
 ```csharp
 using System;

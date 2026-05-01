@@ -56,7 +56,8 @@
  This class provides the exception handler for the <xref:System.AppDomain.FirstChanceException?displayProperty=nameWithType> event with access to the exception.
 
 ## Examples
- The following example creates a series of application domains named `Child_0` through `Child_3`, with a `Worker` object in each application domain. Each `Worker` object has a reference to the `Worker` object in the next application domain, except for the `Worker` in the last application domain. The <xref:System.AppDomain.FirstChanceException> event is handled in all application domains except `Child_1`.
+
+The following example creates a series of application domains named `Child_0` through `Child_3`, with a `Worker` object in each application domain. Each `Worker` object has a reference to the `Worker` object in the next application domain, except for the `Worker` in the last application domain. The <xref:System.AppDomain.FirstChanceException> event is handled in all application domains except `Child_1`.
 
  When the application domains have been created, the default application domain calls the `TestException` method for the first child application domain. Each `Worker` object calls the `TestException` method for the next, until the last `Worker` throws an exception that is either handled or unhandled. Thus, the current thread passes through all the application domains, and `TestException` is added to the stack in each application domain.
 

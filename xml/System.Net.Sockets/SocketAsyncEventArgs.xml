@@ -87,7 +87,8 @@
  The lifetime of the new asynchronous socket operation context object is determined by references by the application code and asynchronous I/O references. It is not necessary for the application to retain a reference to an asynchronous socket operation context object after it is submitted as a parameter to one of the asynchronous socket operation methods. It will remain referenced until the completion callback returns. However it is advantageous for the application to retain the reference to the context so that it can be reused for a future asynchronous socket operation.
 
 ## Examples
- The following code example implements the connection logic for the socket server that uses the <xref:System.Net.Sockets.SocketAsyncEventArgs> class. After accepting a connection, all data read from the client is sent back to the client. The read and echo back to the client pattern is continued until the client disconnects. The BufferManager class that is used by this example is displayed in the code example for the <xref:System.Net.Sockets.SocketAsyncEventArgs.SetBuffer(System.Byte[],System.Int32,System.Int32)> method. The SocketAsyncEventArgsPool class that is used in this example is displayed in the code example for the <xref:System.Net.Sockets.SocketAsyncEventArgs.%23ctor*> constructor.
+
+The following code example implements the connection logic for the socket server that uses the <xref:System.Net.Sockets.SocketAsyncEventArgs> class. After accepting a connection, all data read from the client is sent back to the client. The read and echo back to the client pattern is continued until the client disconnects. The BufferManager class that is used by this example is displayed in the code example for the <xref:System.Net.Sockets.SocketAsyncEventArgs.SetBuffer(System.Byte[],System.Int32,System.Int32)> method. The SocketAsyncEventArgsPool class that is used in this example is displayed in the code example for the <xref:System.Net.Sockets.SocketAsyncEventArgs.%23ctor*> constructor.
 
  :::code language="csharp" source="~/snippets/csharp/System.Net.Sockets/SocketAsyncEventArgs/Overview/AsyncSocketServer.cs" id="Snippet3":::
 
@@ -167,7 +168,8 @@
  The caller must set the appropriate properties prior to passing the object to the appropriate asynchronous socket (xxxAsync) method.
 
 ## Examples
- The following code example represents a collection of reusable <xref:System.Net.Sockets.SocketAsyncEventArgs> objects.
+
+The following code example represents a collection of reusable <xref:System.Net.Sockets.SocketAsyncEventArgs> objects.
 
  :::code language="csharp" source="~/snippets/csharp/System.Net.Sockets/SocketAsyncEventArgs/Overview/AsyncSocketServer.cs" id="Snippet2":::
 
@@ -1751,7 +1753,8 @@ This method sets the <xref:System.Net.Sockets.SocketAsyncEventArgs.MemoryBuffer>
  This method sets the <xref:System.Net.Sockets.SocketAsyncEventArgs.Buffer> property to the `buffer` parameter, the <xref:System.Net.Sockets.SocketAsyncEventArgs.Count> property to the `count` parameter, and the <xref:System.Net.Sockets.SocketAsyncEventArgs.Offset> property to the `offset` parameter.
 
 ## Examples
- The following code example creates a single large buffer which can be divided up and assigned to <xref:System.Net.Sockets.SocketAsyncEventArgs> objects for use with each socket I/O operation. This enables buffers to be easily reused and guards against fragmenting heap memory.
+
+The following code example creates a single large buffer which can be divided up and assigned to <xref:System.Net.Sockets.SocketAsyncEventArgs> objects for use with each socket I/O operation. This enables buffers to be easily reused and guards against fragmenting heap memory.
 
  :::code language="csharp" source="~/snippets/csharp/System.Net.Sockets/SocketAsyncEventArgs/Overview/AsyncSocketServer.cs" id="Snippet1":::
 

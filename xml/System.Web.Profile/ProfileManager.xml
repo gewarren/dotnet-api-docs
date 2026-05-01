@@ -59,7 +59,8 @@
 ```
 
 ## Examples
- The following code example shows an ASP.NET page that uses the <xref:System.Web.Profile.ProfileManager> class to manage inactive profiles.
+
+The following code example shows an ASP.NET page that uses the <xref:System.Web.Profile.ProfileManager> class to manage inactive profiles.
 
 > [!IMPORTANT]
 > This example contains a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
@@ -136,7 +137,8 @@
 > Because a single default profile provider instance is used for all of the requests served by an <xref:System.Web.HttpApplication> object, you can have multiple requests executing concurrently and attempting to set the <xref:System.Web.Profile.ProfileManager.ApplicationName> property value. The <xref:System.Web.Profile.ProfileManager.ApplicationName> property is not thread safe for multiple writes, and changing the <xref:System.Web.Profile.ProfileManager.ApplicationName> property value can result in unexpected behavior for multiple users of an application. It is recommended that you avoid writing code that allows users to set the <xref:System.Web.Profile.ProfileManager.ApplicationName> property unless you require it. An example of an application where setting the <xref:System.Web.Profile.ProfileManager.ApplicationName> property may be required is an administrative application that manages profile data for multiple applications. Such an application should be a single-user application and not a Web application.
 
 ## Examples
- The following configuration file excerpt shows the [profile](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/ms164644(v%3dvs.100)) element in the [system.web](/dotnet/framework/configure-apps/file-schema/web/system-web-element-web-settings) section of the Web.config file for an ASP.NET application. It sets the application's default profile provider to a <xref:System.Web.Profile.SqlProfileProvider> instance and sets the <xref:System.Web.Profile.ProfileManager.ApplicationName*> to `MyApplication`.
+
+The following configuration file excerpt shows the [profile](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/ms164644(v%3dvs.100)) element in the [system.web](/dotnet/framework/configure-apps/file-schema/web/system-web-element-web-settings) section of the Web.config file for an ASP.NET application. It sets the application's default profile provider to a <xref:System.Web.Profile.SqlProfileProvider> instance and sets the <xref:System.Web.Profile.ProfileManager.ApplicationName*> to `MyApplication`.
 
 ```xml
 <profile enabled="true" defaultProvider="SqlProvider">
@@ -183,7 +185,8 @@
  The <xref:System.Web.Profile.ProfileManager.AutomaticSaveEnabled> property is set using the `automaticSaveEnabled` attribute of the [profile](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/ms164644(v%3dvs.100)) element in the Web.config file for an ASP.NET application.
 
 ## Examples
- The following configuration file excerpt shows the [profile](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/ms164644(v%3dvs.100)) element in the [system.web](/dotnet/framework/configure-apps/file-schema/web/system-web-element-web-settings) section of the Web.config file for an ASP.NET application. It specifies the application's default profile provider to a <xref:System.Web.Profile.SqlProfileProvider> instance and sets the `automaticSaveEnabled` attribute to `true`.
+
+The following configuration file excerpt shows the [profile](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/ms164644(v%3dvs.100)) element in the [system.web](/dotnet/framework/configure-apps/file-schema/web/system-web-element-web-settings) section of the Web.config file for an ASP.NET application. It specifies the application's default profile provider to a <xref:System.Web.Profile.SqlProfileProvider> instance and sets the `automaticSaveEnabled` attribute to `true`.
 
 ```xml
 <profile enabled="true"
@@ -238,7 +241,8 @@
  The <xref:System.Web.Profile.ProfileManager.DeleteInactiveProfiles*> method calls the <xref:System.Web.Profile.ProfileProvider.DeleteInactiveProfiles*> method of the default profile provider. The default profile provider is specified using the `defaultProvider` attribute of the [profile](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/ms164644(v%3dvs.100)) configuration element. If the user profile contains properties that are managed by a profile provider other than the default provider, the profile information in the other data source is not deleted. To delete inactive profiles that are managed by a profile provider other than the default provider, obtain a reference to the profile provider using the <xref:System.Web.Profile.ProfileManager.Providers> property and call the <xref:System.Web.Profile.ProfileProvider.DeleteInactiveProfiles*> method of the provider directly.
 
 ## Examples
- The following code example shows an ASP.NET page that manages inactive profiles. A button is provided to delete all profiles that have been unused for the specified number of days and are therefore considered inactive.
+
+The following code example shows an ASP.NET page that manages inactive profiles. A button is provided to delete all profiles that have been unused for the specified number of days and are therefore considered inactive.
 
 > [!IMPORTANT]
 > This example contains a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
@@ -284,7 +288,8 @@
  The <xref:System.Web.Profile.ProfileManager.DeleteProfile*> method calls the <xref:System.Web.Profile.ProfileProvider.DeleteProfiles*> method of the default profile provider to perform the delete operation. The default profile provider is specified using the `defaultProvider` attribute of the [profile](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/ms164644(v%3dvs.100)) configuration element. If the user profile contains properties that are managed by a profile provider other than the default provider, they are not deleted. To delete profile properties that are managed by a profile provider other than the default provider, obtain a reference to the profile provider using the <xref:System.Web.Profile.ProfileManager.Providers> property and call the <xref:System.Web.Profile.ProfileProvider.DeleteProfiles*> method of the provider directly.
 
 ## Examples
- The following code example shows an ASP.NET page that manages inactive profiles. The <xref:System.Web.Profile.ProfileManager.DeleteProfile*> method is called when a single profile is selected to be deleted. Whether a profile is considered inactive is based on the date specified for the `userInactiveSinceDate` parameter value passed to the <xref:System.Web.Profile.ProfileManager.GetAllInactiveProfiles*> method.
+
+The following code example shows an ASP.NET page that manages inactive profiles. The <xref:System.Web.Profile.ProfileManager.DeleteProfile*> method is called when a single profile is selected to be deleted. Whether a profile is considered inactive is based on the date specified for the `userInactiveSinceDate` parameter value passed to the <xref:System.Web.Profile.ProfileManager.GetAllInactiveProfiles*> method.
 
 > [!IMPORTANT]
 > This example contains a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
@@ -345,7 +350,8 @@
  The <xref:System.Web.Profile.ProfileManager.DeleteProfiles*> method calls the <xref:System.Web.Profile.ProfileProvider.DeleteProfiles*> method of the default profile provider. The default profile provider is specified using the `defaultProvider` attribute of the [profile](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/ms164644(v%3dvs.100)) configuration element. If the user profile contains properties that are managed by a profile provider other than the default provider, they are not deleted. To delete profile properties that are managed by a profile provider other than the default provider, obtain a reference to the profile provider using the <xref:System.Web.Profile.ProfileManager.Providers> property and call the <xref:System.Web.Profile.ProfileProvider.DeleteProfiles*> method of the provider directly.
 
 ## Examples
- The following code example shows an ASP.NET page that manages inactive profiles. A <xref:System.Web.UI.WebControls.GridView> control displays the inactive profiles returned. Each row of the <xref:System.Web.UI.WebControls.GridView> control includes a button that deletes the profile for that row from the data source with a call to the <xref:System.Web.Profile.ProfileManager.DeleteProfiles*> method.
+
+The following code example shows an ASP.NET page that manages inactive profiles. A <xref:System.Web.UI.WebControls.GridView> control displays the inactive profiles returned. Each row of the <xref:System.Web.UI.WebControls.GridView> control includes a button that deletes the profile for that row from the data source with a call to the <xref:System.Web.Profile.ProfileManager.DeleteProfiles*> method.
 
 > [!IMPORTANT]
 > This example contains a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
@@ -407,7 +413,8 @@
  The <xref:System.Web.Profile.ProfileManager.DeleteProfiles*> method calls the <xref:System.Web.Profile.ProfileProvider.DeleteProfiles*?displayProperty=nameWithType> method of the default profile provider. The default profile provider is specified using the `defaultProvider` attribute of the [profile](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/ms164644(v%3dvs.100)) configuration element. If the user profile contains properties that are managed by a profile provider other than the default provider, they are not deleted. To delete profile properties that are managed by a profile provider other than the default provider, obtain a reference to the profile provider using the <xref:System.Web.Profile.ProfileManager.Providers> property and call the <xref:System.Web.Profile.ProfileProvider.DeleteProfiles*> method of the provider directly.
 
 ## Examples
- The following code example allows a user to search for profiles using the <xref:System.Web.Profile.ProfileManager.FindProfilesByUserName*> and <xref:System.Web.Profile.ProfileManager.FindInactiveProfilesByUserName*> methods. The user can then delete the returned profiles with a call to the <xref:System.Web.Profile.ProfileManager.DeleteProfiles*> method.
+
+The following code example allows a user to search for profiles using the <xref:System.Web.Profile.ProfileManager.FindProfilesByUserName*> and <xref:System.Web.Profile.ProfileManager.FindInactiveProfilesByUserName*> methods. The user can then delete the returned profiles with a call to the <xref:System.Web.Profile.ProfileManager.DeleteProfiles*> method.
 
 > [!IMPORTANT]
 > This example contains a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
@@ -459,7 +466,8 @@
  The user profile is enabled for an application using the `enabled` attribute of the [profile](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/ms164644(v%3dvs.100)) configuration element.
 
 ## Examples
- The following code example shows the [profile](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/ms164644(v%3dvs.100)) element in the [system.web](/dotnet/framework/configure-apps/file-schema/web/system-web-element-web-settings) section of the Web.config file for an ASP.NET application where the user profile has been enabled.
+
+The following code example shows the [profile](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/ms164644(v%3dvs.100)) element in the [system.web](/dotnet/framework/configure-apps/file-schema/web/system-web-element-web-settings) section of the Web.config file for an ASP.NET application where the user profile has been enabled.
 
 ```xml
 <profile enabled="true" defaultProvider="SqlProvider">
@@ -528,7 +536,8 @@
  The <xref:System.Web.Profile.ProfileManager.FindInactiveProfilesByUserName*> method calls the <xref:System.Web.Profile.ProfileProvider.FindInactiveProfilesByUserName*?displayProperty=nameWithType> method of the default profile provider. The default profile provider is specified using the `defaultProvider` attribute of the [profile](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/ms164644(v%3dvs.100)) configuration element. If the user profile contains properties that are managed by a profile provider other than the default provider, the data source for the other profile provider is not searched. To find inactive profiles that are managed by a profile provider other than the default provider, obtain a reference to the profile provider using the <xref:System.Web.Profile.ProfileManager.Providers> property and call the <xref:System.Web.Profile.ProfileProvider.FindInactiveProfilesByUserName*> method of the provider directly.
 
 ## Examples
- The following code example allows a user to supply a `usernameToMatch` value and a <xref:System.Web.Profile.ProfileAuthenticationOption> enumeration value and retrieves profile information for any matching profiles. The sample allows the user to specify whether to return only inactive profiles. If the user specifies only inactive profiles, the <xref:System.Web.Profile.ProfileManager.FindInactiveProfilesByUserName*> method is called; otherwise, the <xref:System.Web.Profile.ProfileManager.FindProfilesByUserName*> method is called.
+
+The following code example allows a user to supply a `usernameToMatch` value and a <xref:System.Web.Profile.ProfileAuthenticationOption> enumeration value and retrieves profile information for any matching profiles. The sample allows the user to specify whether to return only inactive profiles. If the user specifies only inactive profiles, the <xref:System.Web.Profile.ProfileManager.FindInactiveProfilesByUserName*> method is called; otherwise, the <xref:System.Web.Profile.ProfileManager.FindProfilesByUserName*> method is called.
 
 > [!IMPORTANT]
 > This example contains a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
@@ -591,7 +600,8 @@
  The <xref:System.Web.Profile.ProfileManager.FindInactiveProfilesByUserName*> method calls the <xref:System.Web.Profile.ProfileProvider.FindInactiveProfilesByUserName*> method of the default profile provider. The default profile provider is specified using the `defaultProvider` attribute of the [profile](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/ms164644(v%3dvs.100)) configuration element. If the user profile contains properties that are managed by a profile provider other than the default provider, the data source for the other profile provider is not searched. To find inactive profiles that are managed by a profile provider other than the default provider, obtain a reference to the profile provider using the <xref:System.Web.Profile.ProfileManager.Providers> property and call the <xref:System.Web.Profile.ProfileProvider.FindInactiveProfilesByUserName*> method of the provider directly.
 
 ## Examples
- The following code example allows a user to supply a `usernameToMatch` value and a <xref:System.Web.Profile.ProfileAuthenticationOption> value and retrieves profile information for any matching profiles. The example allows the user to specify whether to return inactive profiles exclusively. If the user specifies only inactive profiles, the <xref:System.Web.Profile.ProfileManager.FindInactiveProfilesByUserName*> method is called; otherwise, the <xref:System.Web.Profile.ProfileManager.FindProfilesByUserName*> method is called.
+
+The following code example allows a user to supply a `usernameToMatch` value and a <xref:System.Web.Profile.ProfileAuthenticationOption> value and retrieves profile information for any matching profiles. The example allows the user to specify whether to return inactive profiles exclusively. If the user specifies only inactive profiles, the <xref:System.Web.Profile.ProfileManager.FindInactiveProfilesByUserName*> method is called; otherwise, the <xref:System.Web.Profile.ProfileManager.FindProfilesByUserName*> method is called.
 
 > [!IMPORTANT]
 > This example contains a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
@@ -668,7 +678,8 @@
  The <xref:System.Web.Profile.ProfileManager.FindProfilesByUserName*> method calls the <xref:System.Web.Profile.ProfileProvider.FindProfilesByUserName*> method of the default profile provider. The default profile provider is specified using the `defaultProvider` attribute of the [profile](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/ms164644(v%3dvs.100)) configuration element. If the user profile contains properties that are managed by a profile provider other than the default provider, the data source for the other profile provider is not searched. To find profiles that are managed by a profile provider other than the default provider, obtain a reference to the profile provider using the <xref:System.Web.Profile.ProfileManager.Providers> property and call the <xref:System.Web.Profile.ProfileProvider.FindProfilesByUserName*> method of the provider directly.
 
 ## Examples
- The following code example allows a user to supply a `usernameToMatch` value and a <xref:System.Web.Profile.ProfileAuthenticationOption> enumeration value and retrieves profile information for any matching profiles. The example allows the user to specify whether to return inactive profiles exclusively. If the user specifies only inactive profiles, the <xref:System.Web.Profile.ProfileManager.FindInactiveProfilesByUserName*> method is called; otherwise, the <xref:System.Web.Profile.ProfileManager.FindProfilesByUserName*> method is called.
+
+The following code example allows a user to supply a `usernameToMatch` value and a <xref:System.Web.Profile.ProfileAuthenticationOption> enumeration value and retrieves profile information for any matching profiles. The example allows the user to specify whether to return inactive profiles exclusively. If the user specifies only inactive profiles, the <xref:System.Web.Profile.ProfileManager.FindInactiveProfilesByUserName*> method is called; otherwise, the <xref:System.Web.Profile.ProfileManager.FindProfilesByUserName*> method is called.
 
 > [!IMPORTANT]
 > This example contains a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
@@ -729,7 +740,8 @@
  The <xref:System.Web.Profile.ProfileManager.FindInactiveProfilesByUserName*> method calls the <xref:System.Web.Profile.ProfileProvider.FindInactiveProfilesByUserName*> method of the default profile provider. The default profile provider is specified using the `defaultProvider` attribute of the [profile](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/ms164644(v%3dvs.100)) configuration element. If the user profile contains properties that are managed by a profile provider other than the default provider, the data source for the other profile provider is not searched. To find profiles that are managed by a profile provider other than the default provider, obtain a reference to the profile provider using the <xref:System.Web.Profile.ProfileManager.Providers> property and call the <xref:System.Web.Profile.ProfileProvider.FindInactiveProfilesByUserName*> method of the provider directly.
 
 ## Examples
- The following code example allows a user to supply a `usernameToMatch` value and a <xref:System.Web.Profile.ProfileAuthenticationOption> and retrieves profile information for any matching profiles. The example allows the user to specify whether to return inactive profiles exclusively. If the user specifies only inactive profiles, the <xref:System.Web.Profile.ProfileManager.FindInactiveProfilesByUserName*> method is called; otherwise, the <xref:System.Web.Profile.ProfileManager.FindProfilesByUserName*> method is called.
+
+The following code example allows a user to supply a `usernameToMatch` value and a <xref:System.Web.Profile.ProfileAuthenticationOption> and retrieves profile information for any matching profiles. The example allows the user to specify whether to return inactive profiles exclusively. If the user specifies only inactive profiles, the <xref:System.Web.Profile.ProfileManager.FindInactiveProfilesByUserName*> method is called; otherwise, the <xref:System.Web.Profile.ProfileManager.FindProfilesByUserName*> method is called.
 
 > [!IMPORTANT]
 > This example contains a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
@@ -804,7 +816,8 @@
  The <xref:System.Web.Profile.ProfileManager.GetAllInactiveProfiles*> method calls the <xref:System.Web.Profile.ProfileProvider.GetAllInactiveProfiles*> method of the default profile provider. The default profile provider is specified using the `defaultProvider` attribute of the [profile](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/ms164644(v%3dvs.100)) configuration element. If the user profile contains properties that are managed by a profile provider other than the default provider, the data source for the other profile provider is not searched. To find unused profiles that are managed by a profile provider other than the default provider, obtain a reference to the profile provider using the <xref:System.Web.Profile.ProfileManager.Providers> property and call the <xref:System.Web.Profile.ProfileProvider.GetAllInactiveProfiles*> method of the provider directly.
 
 ## Examples
- The following code example shows an ASP.NET page that manages inactive profiles. A button is provided to delete all inactive profiles. Whether a profile is considered inactive is based on the date specified for the `userInactiveSinceDate` parameter.
+
+The following code example shows an ASP.NET page that manages inactive profiles. A button is provided to delete all inactive profiles. Whether a profile is considered inactive is based on the date specified for the `userInactiveSinceDate` parameter.
 
 > [!IMPORTANT]
 > This example contains a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
@@ -859,7 +872,8 @@
  The <xref:System.Web.Profile.ProfileManager.GetAllInactiveProfiles*> method calls the <xref:System.Web.Profile.ProfileProvider.GetAllInactiveProfiles*> method of the default profile provider. The default profile provider is specified using the `defaultProvider` attribute of the [profile](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/ms164644(v%3dvs.100)) configuration element. If the user profile contains properties that are managed by a profile provider other than the default provider, the data source for the other profile provider is not searched. To find profiles that are managed by a profile provider other than the default provider, obtain a reference to the profile provider using the <xref:System.Web.Profile.ProfileManager.Providers> property and call the <xref:System.Web.Profile.ProfileProvider.GetAllInactiveProfiles*> method of the provider directly.
 
 ## Examples
- The following code example shows an ASP.NET Web page that manages inactive profiles. A button is provided to delete all inactive profiles. Whether a profile is considered inactive is based on the date specified for the `userInactiveSinceDate` parameter.
+
+The following code example shows an ASP.NET Web page that manages inactive profiles. A button is provided to delete all inactive profiles. Whether a profile is considered inactive is based on the date specified for the `userInactiveSinceDate` parameter.
 
 > [!IMPORTANT]
 > This example contains a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
@@ -916,7 +930,8 @@
  The <xref:System.Web.Profile.ProfileManager.GetAllProfiles*> method calls the <xref:System.Web.Profile.ProfileProvider.GetAllProfiles*> method of the default profile provider. The default profile provider is specified using the `defaultProvider` attribute of the [profile](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/ms164644(v%3dvs.100)) configuration element. If the user profile contains properties that are managed by a profile provider other than the default provider, the data source for the other profile provider is not searched. To find profiles that are managed by a profile provider other than the default provider, obtain a reference to the profile provider using the <xref:System.Web.Profile.ProfileManager.Providers> property and call the <xref:System.Web.Profile.ProfileProvider.GetAllProfiles*> method of the provider directly.
 
 ## Examples
- The following code example displays profile information for all of the profiles for the configured `applicationName`.
+
+The following code example displays profile information for all of the profiles for the configured `applicationName`.
 
  :::code language="aspx-csharp" source="~/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/CS/ShowProfiles2cs.aspx" id="Snippet6":::
  :::code language="aspx-vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/VB/ShowProfiles2vb.aspx" id="Snippet6":::
@@ -966,7 +981,8 @@
  The <xref:System.Web.Profile.ProfileManager.GetAllProfiles*> method calls the <xref:System.Web.Profile.ProfileProvider.GetAllProfiles*> method of the default profile provider. The default profile provider is specified using the `defaultProvider` attribute of the [profile](https://learn.microsoft.com/previous-versions/dotnet/netframework-4.0/ms164644(v%3dvs.100)) configuration element. If the user profile contains properties that are managed by a profile provider other than the default provider, the data source for the other profile provider is not searched. To find profiles that are managed by a profile provider other than the default provider, obtain a reference to the profile provider using the <xref:System.Web.Profile.ProfileManager.Providers> property and call the <xref:System.Web.Profile.ProfileProvider.GetAllProfiles*> method of the provider directly.
 
 ## Examples
- The following code example displays profile information for all of the profiles for the configured `applicationName` in pages of data.
+
+The following code example displays profile information for all of the profiles for the configured `applicationName` in pages of data.
 
  :::code language="aspx-csharp" source="~/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/CS/ShowProfilescs.aspx" id="Snippet3":::
  :::code language="aspx-vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/VB/ShowProfilesvb.aspx" id="Snippet3":::
@@ -1008,7 +1024,8 @@
  The <xref:System.Web.Profile.ProfileManager.GetNumberOfInactiveProfiles*> method is used to retrieve a count of all of the unused user profiles from the data source for the application specified by the `applicationName` attribute in the configuration file. Use the `authenticationOption` parameter to specify whether you want only anonymous profiles, only authenticated profiles, or all profiles to be searched. Of the searched profiles, all profiles are counted that have a <xref:System.Web.Profile.ProfileInfo.LastActivityDate*> that occurs on or before the specified `userInactiveSinceDate` parameter value.
 
 ## Examples
- The following code example allows a user to view and delete information for active and inactive profiles based on search criteria. A count of inactive profiles is displayed using the results of the <xref:System.Web.Profile.ProfileManager.GetNumberOfInactiveProfiles*> method.
+
+The following code example allows a user to view and delete information for active and inactive profiles based on search criteria. A count of inactive profiles is displayed using the results of the <xref:System.Web.Profile.ProfileManager.GetNumberOfInactiveProfiles*> method.
 
 > [!IMPORTANT]
 > This example contains a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](https://learn.microsoft.com/previous-versions/aspnet/w1sw53ds(v=vs.100)).
@@ -1051,7 +1068,8 @@
  The <xref:System.Web.Profile.ProfileManager.GetNumberOfProfiles*> method is used to retrieve a count of all of the user profiles from the data source for the application specified by the `applicationName` attribute in the configuration file. Use the `authenticationOption` parameter to specify whether you want only anonymous profiles, only authenticated profiles, or all profiles to be searched.
 
 ## Examples
- The following code example displays profile information for all of the profiles for the configured `applicationName` and also returns the number of profiles.
+
+The following code example displays profile information for all of the profiles for the configured `applicationName` and also returns the number of profiles.
 
  :::code language="aspx-csharp" source="~/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/CS/ShowProfiles2cs.aspx" id="Snippet6":::
  :::code language="aspx-vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/VB/ShowProfiles2vb.aspx" id="Snippet6":::
@@ -1087,7 +1105,8 @@
  The <xref:System.Web.Profile.ProfileManager.Provider> property enables you to reference the default profile provider for an application directly. This is commonly used to access custom members of the profile provider that are not part of the <xref:System.Web.Profile.ProfileProvider> abstract base class.
 
 ## Examples
- The following code example lists properties of the default profile provider.
+
+The following code example lists properties of the default profile provider.
 
  :::code language="aspx-csharp" source="~/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/CS/Providercs.aspx" id="Snippet2":::
  :::code language="aspx-vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/VB/Providervb.aspx" id="Snippet2":::
@@ -1148,7 +1167,8 @@
  You can obtain a strongly typed reference to a provider from the <xref:System.Web.Profile.ProfileManager.Providers*> collection by indexing the profile provider by name and casting it as the desired type.
 
 ## Examples
- The following code example lists the providers enabled for an application and their respective types.
+
+The following code example lists the providers enabled for an application and their respective types.
 
  :::code language="aspx-csharp" source="~/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/CS/Providerscs.aspx" id="Snippet9":::
  :::code language="aspx-vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/VB/Providersvb.aspx" id="Snippet9":::

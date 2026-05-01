@@ -47,7 +47,8 @@
  The <xref:System.Web.StaticSiteMapProvider.AddNode*>, <xref:System.Web.StaticSiteMapProvider.Clear*> and <xref:System.Web.StaticSiteMapProvider.RemoveNode*> methods manipulate the internal collections that are used to track site map nodes in a thread-safe manner.
 
 ## Examples
- The following code example demonstrates how you to extend the <xref:System.Web.StaticSiteMapProvider> class to use Microsoft Access as a site map provider. The `AccessSiteMapProvider` class is a site map provider that supports only a simple, one-level-deep hierarchy. The table that the site map data is stored in has the following structure:
+
+The following code example demonstrates how you to extend the <xref:System.Web.StaticSiteMapProvider> class to use Microsoft Access as a site map provider. The `AccessSiteMapProvider` class is a site map provider that supports only a simple, one-level-deep hierarchy. The table that the site map data is stored in has the following structure:
 
 ```
 NODEID URL            NAME       PARENTNODEID
@@ -198,7 +199,8 @@ NODEID URL            NAME       PARENTNODEID
  The <xref:System.Web.StaticSiteMapProvider.BuildSiteMap*> method is the one abstract member of the <xref:System.Web.StaticSiteMapProvider> class. The <xref:System.Web.StaticSiteMapProvider.BuildSiteMap*> method is called to load and build the site map node from persistent storage. When you implement the <xref:System.Web.StaticSiteMapProvider.BuildSiteMap*> method, ensure that it is thread-safe, because multiple concurrent page requests can result indirectly in multiple calls to load site map information.
 
 ## Examples
- The following code example demonstrates how to implement the <xref:System.Web.StaticSiteMapProvider.BuildSiteMap*> method to retrieve data from a Microsoft Access database and build <xref:System.Web.SiteMapNode> objects that are added to the <xref:System.Web.SiteMapNode.ChildNodes*> collection of the root site map node. Finally, the <xref:System.Web.SiteMapProvider.RootNode> property  is returned to the caller.
+
+The following code example demonstrates how to implement the <xref:System.Web.StaticSiteMapProvider.BuildSiteMap*> method to retrieve data from a Microsoft Access database and build <xref:System.Web.SiteMapNode> objects that are added to the <xref:System.Web.SiteMapNode.ChildNodes*> collection of the root site map node. Finally, the <xref:System.Web.SiteMapProvider.RootNode> property  is returned to the caller.
 
  This code example is part of a larger example provided for the <xref:System.Web.StaticSiteMapProvider> class.
 
@@ -246,7 +248,8 @@ NODEID URL            NAME       PARENTNODEID
  The <xref:System.Web.StaticSiteMapProvider.Clear*> method does not reset state that is initialized during the <xref:System.Configuration.Provider.ProviderBase.Initialize*> method - it resets only state that is initialized during the <xref:System.Web.StaticSiteMapProvider.BuildSiteMap*> method.
 
 ## Examples
- The following code example demonstrates how to override the <xref:System.Web.StaticSiteMapProvider.Clear*> method to perform additional cleanup of state that is maintained by the class.
+
+The following code example demonstrates how to override the <xref:System.Web.StaticSiteMapProvider.Clear*> method to perform additional cleanup of state that is maintained by the class.
 
  This code example is part of a larger example provided for the <xref:System.Web.StaticSiteMapProvider> class.
 

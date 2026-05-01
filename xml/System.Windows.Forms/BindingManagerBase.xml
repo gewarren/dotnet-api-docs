@@ -45,7 +45,8 @@
  Solutions programmers are encouraged to bind controls directly to a <xref:System.Windows.Forms.BindingSource> component, which acts as both a data source and data connector to the actual target data source. <xref:System.Windows.Forms.BindingSource> greatly simplifies both simple and complex data binding, including managing currency between the control and its target.
 
 ## Examples
- The following code example uses the <xref:System.Windows.Forms.BindingContext> to return a <xref:System.Windows.Forms.BindingManagerBase> for a specific data source. (The example assumes you have declared `myBindingManagerBase` in the Declarations section of the module.) The example then adds event delegates to the <xref:System.Windows.Forms.BindingManagerBase.CurrentChanged> and <xref:System.Windows.Forms.BindingManagerBase.PositionChanged> events. Lastly, the example contains four methods (`MoveNext`, `MovePrevious`, `MoveFirst`, and `MoveLast`) that increment or decrement the <xref:System.Windows.Forms.BindingManagerBase.Position> property, and set the <xref:System.Windows.Forms.BindingManagerBase.Position*> to the first or last row in the list. The last row in the list is determined by using the <xref:System.Windows.Forms.BindingManagerBase.Count> property.
+
+The following code example uses the <xref:System.Windows.Forms.BindingContext> to return a <xref:System.Windows.Forms.BindingManagerBase> for a specific data source. (The example assumes you have declared `myBindingManagerBase` in the Declarations section of the module.) The example then adds event delegates to the <xref:System.Windows.Forms.BindingManagerBase.CurrentChanged> and <xref:System.Windows.Forms.BindingManagerBase.PositionChanged> events. Lastly, the example contains four methods (`MoveNext`, `MovePrevious`, `MoveFirst`, and `MoveLast`) that increment or decrement the <xref:System.Windows.Forms.BindingManagerBase.Position> property, and set the <xref:System.Windows.Forms.BindingManagerBase.Position*> to the first or last row in the list. The last row in the list is determined by using the <xref:System.Windows.Forms.BindingManagerBase.Count> property.
 
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Winforms/Classic BindingManagerBase Example/CPP/source.cpp" id="Snippet1":::
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Forms/BindingManagerBase/Overview/source.cs" id="Snippet1":::
@@ -190,7 +191,8 @@
  Note that this event is raised regardless of the completion status of the binding operation, although this status can be determined by examining the <xref:System.Windows.Forms.BindingCompleteEventArgs.BindingCompleteState> property of the <xref:System.Windows.Forms.BindingCompleteEventArgs> parameter associated with the event. <xref:System.Windows.Forms.BindingCompleteEventArgs> may also contain error and exception information. For example, a binding operation that attempts to push a null value from a data source into a <xref:System.Windows.Forms.DateTimePicker> control will generate an exception, since a <xref:System.DateTime> cannot be `null`. In this case, although the binding operation does not successfully complete, the <xref:System.Windows.Forms.BindingManagerBase.BindingComplete> event will be raised, and the event will contain information on the failed binding attempt.
 
 ## Examples
- The following code example demonstrates how to handle the <xref:System.Windows.Forms.BindingManagerBase.BindingComplete> event and ensure multiple controls bound to the same data source remain synchronized when one of the control values is changed. To run this example, paste the code into a Windows Form and call the `InitializeControlsAndData` method from the form's constructor or <xref:System.Windows.Forms.Form.Load> event-handling method.
+
+The following code example demonstrates how to handle the <xref:System.Windows.Forms.BindingManagerBase.BindingComplete> event and ensure multiple controls bound to the same data source remain synchronized when one of the control values is changed. To run this example, paste the code into a Windows Form and call the `InitializeControlsAndData` method from the form's constructor or <xref:System.Windows.Forms.Form.Load> event-handling method.
 
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Forms/BindingCompleteEventArgs/Binding/Form1.cs" id="Snippet11":::
  :::code language="vb" source="~/snippets/visualbasic/System.Windows.Forms/BindingCompleteEventArgs/Binding/Form1.vb" id="Snippet11":::
@@ -236,7 +238,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Examples
- The following code example gets the <xref:System.Windows.Forms.BindingManagerBase> for a specific data source. The example then uses the <xref:System.Windows.Forms.BindingManagerBase.Bindings> property to print information about each control bound to the same data source.
+
+The following code example gets the <xref:System.Windows.Forms.BindingManagerBase> for a specific data source. The example then uses the <xref:System.Windows.Forms.BindingManagerBase.Bindings> property to print information about each control bound to the same data source.
 
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Winforms/Classic BindingManagerBase.Bindings Example/CPP/source.cpp" id="Snippet1":::
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Forms/BindingManagerBase/Bindings/source.cs" id="Snippet1":::
@@ -288,7 +291,8 @@
  Calling the <xref:System.Windows.Forms.BindingManagerBase.CancelCurrentEdit*> method causes the <xref:System.Windows.Forms.Binding.Format> event to occur.
 
 ## Examples
- The following code example demonstrates both the <xref:System.Windows.Forms.BindingManagerBase.CancelCurrentEdit*> and the <xref:System.Windows.Forms.BindingManagerBase.EndCurrentEdit*> methods. When you call the <xref:System.Windows.Forms.BindingManagerBase.CancelCurrentEdit*> methods, changes made to the data are discarded. When you call the <xref:System.Windows.Forms.BindingManagerBase.EndCurrentEdit*> method, the changes are kept.
+
+The following code example demonstrates both the <xref:System.Windows.Forms.BindingManagerBase.CancelCurrentEdit*> and the <xref:System.Windows.Forms.BindingManagerBase.EndCurrentEdit*> methods. When you call the <xref:System.Windows.Forms.BindingManagerBase.CancelCurrentEdit*> methods, changes made to the data are discarded. When you call the <xref:System.Windows.Forms.BindingManagerBase.EndCurrentEdit*> method, the changes are kept.
 
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Winforms/BindingManagerBase.CancelCurrentEdit Example/CPP/canceledit.cpp" id="Snippet1":::
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Forms/BindingManagerBase/CancelCurrentEdit/canceledit.cs" id="Snippet1":::
@@ -336,7 +340,8 @@
  Use the <xref:System.Windows.Forms.BindingManagerBase.Count> property to determine the last item in the list of rows maintained by the <xref:System.Windows.Forms.BindingManagerBase>. To go to the last item, set the <xref:System.Windows.Forms.BindingManagerBase.Position> property to the <xref:System.Windows.Forms.BindingManagerBase.Count> property value minus 1.
 
 ## Examples
- The following code example shows four methods that set the <xref:System.Windows.Forms.BindingManagerBase.Position> property. The `MoveNext` method increments the property by 1. The `MovePrevious` method decrements the property by 1. The `MoveFirst` method sets the property to 0. The `MoveLast` method sets the property to the value of the <xref:System.Windows.Forms.BindingManagerBase.Count> property minus 1.
+
+The following code example shows four methods that set the <xref:System.Windows.Forms.BindingManagerBase.Position> property. The `MoveNext` method increments the property by 1. The `MovePrevious` method decrements the property by 1. The `MoveFirst` method sets the property to 0. The `MoveLast` method sets the property to the value of the <xref:System.Windows.Forms.BindingManagerBase.Count> property minus 1.
 
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Winforms/Classic BindingManagerBase.Count Example/CPP/source.cpp" id="Snippet1":::
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Forms/BindingManagerBase/Count/source.cs" id="Snippet1":::
@@ -391,7 +396,8 @@
 > When the <xref:System.Windows.Forms.Binding.DataSource*> is a <xref:System.Data.DataSet>, <xref:System.Data.DataViewManager>, or <xref:System.Data.DataTable>, you are actually binding to a <xref:System.Data.DataView>. Consequently, each <xref:System.Windows.Forms.BindingManagerBase.Current*> object is a <xref:System.Data.DataRowView> object.
 
 ## Examples
- The following code example prints the value of the <xref:System.Windows.Forms.BindingManagerBase.Current*> object in a <xref:System.Windows.Forms.BindingManagerBase> in the <xref:System.Windows.Forms.BindingManagerBase.CurrentChanged> event. The example assumes the data source is a <xref:System.Data.DataTable> containing a <xref:System.Data.DataColumn> named `CustName`.
+
+The following code example prints the value of the <xref:System.Windows.Forms.BindingManagerBase.Current*> object in a <xref:System.Windows.Forms.BindingManagerBase> in the <xref:System.Windows.Forms.BindingManagerBase.CurrentChanged> event. The example assumes the data source is a <xref:System.Data.DataTable> containing a <xref:System.Data.DataColumn> named `CustName`.
 
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Winforms/Classic BindingManagerBase.Current Example/CPP/source.cpp" id="Snippet1":::
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Forms/BindingManagerBase/Current/source.cs" id="Snippet1":::
@@ -438,7 +444,8 @@
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
 
 ## Examples
- The following code example prints the value of the <xref:System.Windows.Forms.BindingManagerBase.Current*> object in a <xref:System.Windows.Forms.BindingManagerBase> in the <xref:System.Windows.Forms.BindingManagerBase.CurrentChanged> event. The example assumes the data source is a <xref:System.Data.DataTable> containing a <xref:System.Data.DataColumn> named `CustName`.
+
+The following code example prints the value of the <xref:System.Windows.Forms.BindingManagerBase.Current*> object in a <xref:System.Windows.Forms.BindingManagerBase> in the <xref:System.Windows.Forms.BindingManagerBase.CurrentChanged> event. The example assumes the data source is a <xref:System.Data.DataTable> containing a <xref:System.Data.DataColumn> named `CustName`.
 
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Winforms/Classic BindingManagerBase.Current Example/CPP/source.cpp" id="Snippet1":::
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Forms/BindingManagerBase/Current/source.cs" id="Snippet1":::
@@ -484,7 +491,8 @@
  The <xref:System.Windows.Forms.BindingManagerBase.CurrentItemChanged> event occurs whenever there is a change in the state in the currently bound item. This can occur if one of the properties of this item is changed or if the item itself is replaced or moved.
 
 ## Examples
- The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.BindingManagerBase.CurrentItemChanged> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
+
+The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.BindingManagerBase.CurrentItemChanged> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
 
  To run the example code, paste it into a project that contains an instance of a type that inherits from <xref:System.Windows.Forms.BindingManagerBase>, such as a <xref:System.Windows.Forms.PropertyManager> or <xref:System.Windows.Forms.CurrencyManager>. Then name the instance `BindingManagerBase1` and ensure that the event handler is associated with the <xref:System.Windows.Forms.BindingManagerBase.CurrentItemChanged> event.
 
@@ -532,7 +540,8 @@
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
 
 ## Examples
- The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.BindingManagerBase.DataError> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
+
+The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.BindingManagerBase.DataError> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show*?displayProperty=nameWithType> with <xref:System.Console.WriteLine*?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.
 
  To run the example code, paste it into a project that contains an instance of a type that inherits from <xref:System.Windows.Forms.BindingManagerBase>, such as a <xref:System.Windows.Forms.PropertyManager> or <xref:System.Windows.Forms.CurrencyManager>. Then name the instance `BindingManagerBase1` and ensure that the event handler is associated with the <xref:System.Windows.Forms.BindingManagerBase.DataError> event.
 
@@ -577,7 +586,8 @@
  This method is supported only if the data source implements the <xref:System.ComponentModel.IEditableObject> interface. In that case, changes will be saved. If the object does not implement the <xref:System.ComponentModel.IEditableObject> interface, changes made to the data will not be saved.
 
 ## Examples
- The following code example demonstrates both the <xref:System.Windows.Forms.BindingManagerBase.CancelCurrentEdit*> and the <xref:System.Windows.Forms.BindingManagerBase.EndCurrentEdit*> methods. When you call the <xref:System.Windows.Forms.BindingManagerBase.CancelCurrentEdit*> methods, changes made to the data are discarded. When you call the <xref:System.Windows.Forms.BindingManagerBase.EndCurrentEdit*> method, the changes are kept.
+
+The following code example demonstrates both the <xref:System.Windows.Forms.BindingManagerBase.CancelCurrentEdit*> and the <xref:System.Windows.Forms.BindingManagerBase.EndCurrentEdit*> methods. When you call the <xref:System.Windows.Forms.BindingManagerBase.CancelCurrentEdit*> methods, changes made to the data are discarded. When you call the <xref:System.Windows.Forms.BindingManagerBase.EndCurrentEdit*> method, the changes are kept.
 
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Winforms/BindingManagerBase.CancelCurrentEdit Example/CPP/canceledit.cpp" id="Snippet1":::
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Forms/BindingManagerBase/CancelCurrentEdit/canceledit.cs" id="Snippet1":::
@@ -639,7 +649,8 @@
           <format type="text/markdown"><![CDATA[
 
 ## Examples
- The following code example uses the <xref:System.Windows.Forms.BindingManagerBase.GetItemProperties*> method to return a <xref:System.ComponentModel.PropertyDescriptorCollection>. The example prints the <xref:System.ComponentModel.MemberDescriptor.Name*> and value of the current <xref:System.Data.DataColumn> using the <xref:System.ComponentModel.PropertyDescriptor.GetValue*> method of the <xref:System.ComponentModel.PropertyDescriptor>.
+
+The following code example uses the <xref:System.Windows.Forms.BindingManagerBase.GetItemProperties*> method to return a <xref:System.ComponentModel.PropertyDescriptorCollection>. The example prints the <xref:System.ComponentModel.MemberDescriptor.Name*> and value of the current <xref:System.Data.DataColumn> using the <xref:System.ComponentModel.PropertyDescriptor.GetValue*> method of the <xref:System.ComponentModel.PropertyDescriptor>.
 
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Winforms/Classic BindingManagerBase.GetItemProperties Example/CPP/source.cpp" id="Snippet1":::
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Forms/BindingManagerBase/GetItemProperties/source.cs" id="Snippet1":::
@@ -747,7 +758,8 @@
  This overload is used by developers to create data-bound controls.
 
 ## Examples
- The following code example uses the <xref:System.Windows.Forms.BindingManagerBase.GetItemProperties*> method to return a <xref:System.ComponentModel.PropertyDescriptorCollection> for a <xref:System.Windows.Forms.BindingManagerBase>. The example then prints out the <xref:System.ComponentModel.MemberDescriptor.Name*> and <xref:System.ComponentModel.PropertyDescriptor.PropertyType*> of each <xref:System.ComponentModel.PropertyDescriptor> in the collection.
+
+The following code example uses the <xref:System.Windows.Forms.BindingManagerBase.GetItemProperties*> method to return a <xref:System.ComponentModel.PropertyDescriptorCollection> for a <xref:System.Windows.Forms.BindingManagerBase>. The example then prints out the <xref:System.ComponentModel.MemberDescriptor.Name*> and <xref:System.ComponentModel.PropertyDescriptor.PropertyType*> of each <xref:System.ComponentModel.PropertyDescriptor> in the collection.
 
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Winforms/Classic BindingManagerBase.GetItemProperties2 Example/CPP/source.cpp" id="Snippet1":::
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Forms/BindingManagerBase/GetItemProperties/source1.cs" id="Snippet1":::
@@ -1124,7 +1136,8 @@
  The <xref:System.Windows.Forms.BindingManagerBase.PositionChanged> event occurs when the <xref:System.Windows.Forms.BindingManagerBase.Position> property value changes.
 
 ## Examples
- The following code example shows four methods that set the <xref:System.Windows.Forms.BindingManagerBase.Position> property. The `MoveNext` method increments the property by 1. The `MovePrevious` method decrements the property by 1. The `MoveFirst` method sets the property to 0, and the `MoveLast` method sets the property to the value of the <xref:System.Windows.Forms.BindingManagerBase.Count> property minus 1.
+
+The following code example shows four methods that set the <xref:System.Windows.Forms.BindingManagerBase.Position> property. The `MoveNext` method increments the property by 1. The `MovePrevious` method decrements the property by 1. The `MoveFirst` method sets the property to 0, and the `MoveLast` method sets the property to the value of the <xref:System.Windows.Forms.BindingManagerBase.Count> property minus 1.
 
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Winforms/Classic BindingManagerBase.Count Example/CPP/source.cpp" id="Snippet1":::
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Forms/BindingManagerBase/Count/source.cs" id="Snippet1":::
@@ -1170,7 +1183,8 @@
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
 
 ## Examples
- The following code example creates a <xref:System.Windows.Forms.Binding>, and then adds it to a collection of <xref:System.Windows.Forms.Binding> objects for a <xref:System.Windows.Forms.TextBox> control. The example then gets the <xref:System.Windows.Forms.BindingManagerBase> for the data source and adds a delegate to the <xref:System.Windows.Forms.BindingManagerBase.PositionChanged> event.
+
+The following code example creates a <xref:System.Windows.Forms.Binding>, and then adds it to a collection of <xref:System.Windows.Forms.Binding> objects for a <xref:System.Windows.Forms.TextBox> control. The example then gets the <xref:System.Windows.Forms.BindingManagerBase> for the data source and adds a delegate to the <xref:System.Windows.Forms.BindingManagerBase.PositionChanged> event.
 
  :::code language="cpp" source="~/snippets/cpp/VS_Snippets_Winforms/Classic BindingManagerBase.PositionChanged Example/CPP/source.cpp" id="Snippet1":::
  :::code language="csharp" source="~/snippets/csharp/System.Windows.Forms/BindingManagerBase/PositionChanged/source.cs" id="Snippet1":::

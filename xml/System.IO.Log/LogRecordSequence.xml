@@ -31,7 +31,8 @@
 The <xref:System.IO.Log.LogRecordSequence> class provides an implementation of the record sequence interface on top of a Common Log File System (CLFS) log. In addition to the standard record-oriented features, it provides a policy model for avoiding log-full conditions, and multiplexing of clients on the same physical file. It works with the <xref:System.IO.Log.LogStore> class, which provides an interface for directly manipulating and managing a CLFS log file. The relationship between the <xref:System.IO.Log.LogStore> class and the <xref:System.IO.Log.LogRecordSequence> class is similar to the relationship between a disk file and a <xref:System.IO.FileStream> object. The disk file provides the concrete storage, and has attributes such as length and last access time; while the <xref:System.IO.FileStream> object provides a view on the file that can be used to read from it and write to it. Similarly, the <xref:System.IO.Log.LogStore> class has attributes like a policy and a collection of disk extents; and the <xref:System.IO.Log.LogRecordSequence> class provides a record-oriented mechanism for reading and writing data.
 
 ## Examples
- This example shows how to use the <xref:System.IO.Log.LogRecordSequence> class:
+
+This example shows how to use the <xref:System.IO.Log.LogRecordSequence> class:
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_CFX/s_uelogrecordsequence/cs/mylogrecordsequence.cs" id="Snippet0":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_CFX/s_uelogrecordsequence/vb/mylogrecordsequence.vb" id="Snippet0":::
@@ -264,7 +265,8 @@ This constructor initializes a new <xref:System.IO.Log.LogRecordSequence> on a n
 This constructor initializes a new <xref:System.IO.Log.LogRecordSequence> on a new <xref:System.IO.Log.LogStore> object that it opens with the specified path, mode, and access. The store is opened sharing the specified access.
 
 ## Examples
- This example shows how to use this <xref:System.IO.Log.LogRecordSequence> constructor:
+
+This example shows how to use this <xref:System.IO.Log.LogRecordSequence> constructor:
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_CFX/s_uelogrecordsequence/cs/mylogrecordsequence.cs" id="Snippet1":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_CFX/s_uelogrecordsequence/vb/mylogrecordsequence.vb" id="Snippet1":::
@@ -464,7 +466,8 @@ This method is often used with the <xref:System.IO.Log.LogRecordSequence.TailPin
  Note that calling this method is the same as setting a new base sequence number using the <xref:System.IO.Log.LogRecordSequence.WriteRestartArea*> method, except that no restart record is written to the log.
 
 ## Examples
- This example shows how to use the <xref:System.IO.Log.LogRecordSequence.AdvanceBaseSequenceNumber*> method with the <xref:System.IO.Log.LogRecordSequence.TailPinned> event to free up space in a log sequence.
+
+This example shows how to use the <xref:System.IO.Log.LogRecordSequence.AdvanceBaseSequenceNumber*> method with the <xref:System.IO.Log.LogRecordSequence.TailPinned> event to free up space in a log sequence.
 
 ```
 recordSequence.RetryAppend = true;
@@ -518,7 +521,8 @@ void HandleTailPinned(object sender, TailPinnedEventArgs tailPinnedEventArgs)
           <format type="text/markdown"><![CDATA[
 
 ## Examples
- This example shows how to use the <xref:System.IO.Log.LogRecordSequence.Append*> member
+
+This example shows how to use the <xref:System.IO.Log.LogRecordSequence.Append*> member
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_CFX/s_uelogrecordsequence/cs/mylogrecordsequence.cs" id="Snippet5":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_CFX/s_uelogrecordsequence/vb/mylogrecordsequence.vb" id="Snippet5":::
@@ -569,7 +573,8 @@ Data contained in the `data` parameter will be concatenated into a single byte a
  Normally, this method completes before the record has been written. To ensure that a record has been written, either specify the <xref:System.IO.Log.RecordAppendOptions.ForceFlush> flag using the `recordAppendOptions` parameter, or call the <xref:System.IO.Log.LogRecordSequence.Flush*> method.
 
 ## Examples
- The following example demonstrates how to use this method to append a log record to the sequence.
+
+The following example demonstrates how to use this method to append a log record to the sequence.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_CFX/s_uelogrecordsequence/cs/mymultiplexlog.cs" id="Snippet13":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_CFX/s_uelogrecordsequence/vb/mymultiplexlog.vb" id="Snippet13":::
@@ -847,7 +852,8 @@ Valid sequence numbers are greater than or equal to <xref:System.IO.Log.LogRecor
  The value of this property can be changed by calling the <xref:System.IO.Log.LogRecordSequence.WriteRestartArea*> method or <xref:System.IO.Log.LogRecordSequence.AdvanceBaseSequenceNumber*> method.
 
 ## Examples
- This example shows how to use the <xref:System.IO.Log.LogRecordSequence.BaseSequenceNumber*> member in a loop.
+
+This example shows how to use the <xref:System.IO.Log.LogRecordSequence.BaseSequenceNumber*> member in a loop.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_CFX/s_uelogrecordsequence/cs/mymultiplexlog.cs" id="Snippet10":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_CFX/s_uelogrecordsequence/vb/mymultiplexlog.vb" id="Snippet10":::
@@ -1583,7 +1589,8 @@ You should pass the <xref:System.IAsyncResult> returned by this method to the <x
           <format type="text/markdown"><![CDATA[
 
 ## Examples
- Reservations can be performed in two ways as shown in the following examples. You can adopt the practices in the samples for robust processing. Notice that this task can only be performed when using the CLFS-based <xref:System.IO.Log.LogRecordSequence> class.
+
+Reservations can be performed in two ways as shown in the following examples. You can adopt the practices in the samples for robust processing. Notice that this task can only be performed when using the CLFS-based <xref:System.IO.Log.LogRecordSequence> class.
 
 ```
 //Using the ReserveAndAppend Method
@@ -1648,7 +1655,8 @@ recordSequence.Append(undoRecordData, userSqn, previousSqn, RecordAppendOptions.
           <format type="text/markdown"><![CDATA[
 
 ## Examples
- This example shows how to use <xref:System.IO.Log.LogRecordSequence.Dispose*> to release resources:
+
+This example shows how to use <xref:System.IO.Log.LogRecordSequence.Dispose*> to release resources:
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_CFX/s_uelogrecordsequence/cs/mymultiplexlog.cs" id="Snippet11":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_CFX/s_uelogrecordsequence/vb/mymultiplexlog.vb" id="Snippet11":::
@@ -2021,7 +2029,8 @@ This property contains a sequence number that is guaranteed to be larger than th
           <format type="text/markdown"><![CDATA[
 
 ## Examples
- This example shows how to use the <xref:System.IO.Log.LogRecordSequence.LogStore*> member to add extents.
+
+This example shows how to use the <xref:System.IO.Log.LogRecordSequence.LogStore*> member to add extents.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_CFX/s_uelogrecordsequence/cs/mymultiplexlog.cs" id="Snippet11":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_CFX/s_uelogrecordsequence/vb/mymultiplexlog.vb" id="Snippet11":::
@@ -2091,7 +2100,8 @@ This property contains a sequence number that is guaranteed to be larger than th
 This method returns an enumerable collection of records in the sequence. The order of the enumerated records depends on the value of the `logRecordEnum` parameter.
 
 ## Examples
- This example shows how to use <xref:System.IO.Log.LogRecordSequence.ReadLogRecords*> in a loop.
+
+This example shows how to use <xref:System.IO.Log.LogRecordSequence.ReadLogRecords*> in a loop.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_CFX/s_uelogrecordsequence/cs/mymultiplexlog.cs" id="Snippet10":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_CFX/s_uelogrecordsequence/vb/mymultiplexlog.vb" id="Snippet10":::
@@ -2266,7 +2276,8 @@ Data contained in the `data` parameter will be concatenated into a single byte a
  Normally, this method may complete before the record has been written. To ensure that a record has been written, either specify the <xref:System.IO.Log.RecordAppendOptions.ForceFlush> flag using the `recordAppendOptions` parameter, or call the <xref:System.IO.Log.LogRecordSequence.Flush*> method.
 
 ## Examples
- The following example shows how to use this method to make reservations. Notice that this task can only be performed when using the CLFS-based <xref:System.IO.Log.LogRecordSequence> class.
+
+The following example shows how to use this method to make reservations. Notice that this task can only be performed when using the CLFS-based <xref:System.IO.Log.LogRecordSequence> class.
 
 ```
 ReservationCollection reservations = recordSequence.CreateReservationCollection();
@@ -2474,7 +2485,8 @@ A restart area is used to temporarily store information containing a client's la
 If the value of this property is `true`, and an <xref:System.IO.Log.LogRecordSequence.Append*> call fails because there is not enough space in the sequence, the record sequence will try to free space and retry the append.
 
 ## Examples
- This example shows how to use the <xref:System.IO.Log.LogRecordSequence.RetryAppend> property.
+
+This example shows how to use the <xref:System.IO.Log.LogRecordSequence.RetryAppend> property.
 
  :::code language="csharp" source="~/snippets/csharp/VS_Snippets_CFX/s_uelogrecordsequence/cs/mylogrecordsequence.cs" id="Snippet3":::
  :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_CFX/s_uelogrecordsequence/vb/mylogrecordsequence.vb" id="Snippet3":::
@@ -2573,7 +2585,8 @@ You can fire this event when the record sequence has run out of space. When this
  You can also call the <xref:System.IO.Log.FileRecordSequence.WriteRestartArea*> method outside of the <xref:System.IO.Log.LogRecordSequence.TailPinned> event to free space. A restart area is similar to a checkpoint in other log processing systems. Calling this method indicates that the application considers all prior records before the restart area as fully completed, and usable for future record appends. Similar to any other records, the record written by this method requires actual free space in the log to function.
 
 ## Examples
- This example shows how to use the <xref:System.IO.Log.LogRecordSequence.TailPinned> event.
+
+This example shows how to use the <xref:System.IO.Log.LogRecordSequence.TailPinned> event.
 
 ```
 recordSequence.RetryAppend = true;

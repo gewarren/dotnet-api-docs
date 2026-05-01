@@ -25,7 +25,8 @@
  You cannot use the <xref:System.Web.Security.WindowsTokenRoleProvider> class to create or delete roles or modify the membership of a role that is based on Windows group membership. This functionality is managed by the Windows operating system. The <xref:System.Web.Security.WindowsTokenRoleProvider> class supports only the <xref:System.Web.Security.WindowsTokenRoleProvider.IsUserInRole*> and <xref:System.Web.Security.WindowsTokenRoleProvider.GetRolesForUser*> methods of the <xref:System.Web.Security.RoleProvider> abstract class.
 
 ## Examples
- The following example shows the Web.config file for an ASP.NET application. It specifies that the application uses both Windows authentication and the <xref:System.Web.Security.WindowsTokenRoleProvider> class to retrieve role information for Windows users. The `authorization` element specifies that only users in the BUILTIN\Administrators group are allowed access to the application.
+
+The following example shows the Web.config file for an ASP.NET application. It specifies that the application uses both Windows authentication and the <xref:System.Web.Security.WindowsTokenRoleProvider> class to retrieve role information for Windows users. The `authorization` element specifies that only users in the BUILTIN\Administrators group are allowed access to the application.
 
 ```xml
 <configuration>
@@ -156,7 +157,8 @@
  Unlike other role providers such as the <xref:System.Web.Security.SqlRoleProvider>, the <xref:System.Web.Security.WindowsTokenRoleProvider> class does not associate role information with an application. Instead, the role information is taken from the Windows groups on the local computer. Multiple applications on the same server that use the <xref:System.Web.Security.WindowsTokenRoleProvider> class always share the same role information. Although the `applicationName` can be configured in the Web.config file for the application, the <xref:System.Web.Security.WindowsTokenRoleProvider.ApplicationName> property is not used to retrieve role information.
 
 ## Examples
- The following example shows the `roleManager` element in the `system.web` section of the Web.config file for an ASP.NET application. It specifies the application's <xref:System.Web.Security.WindowsTokenRoleProvider> instance and sets the <xref:System.Web.Security.WindowsTokenRoleProvider.ApplicationName> property to `MyApplication`.
+
+The following example shows the `roleManager` element in the `system.web` section of the Web.config file for an ASP.NET application. It specifies the application's <xref:System.Web.Security.WindowsTokenRoleProvider> instance and sets the <xref:System.Web.Security.WindowsTokenRoleProvider.ApplicationName> property to `MyApplication`.
 
 ```xml
 <roleManager defaultProvider="WindowsProvider"
@@ -328,7 +330,8 @@
  For more information an ASP.NET and Windows authentication, see [ASP.NET Authentication](https://learn.microsoft.com/previous-versions/aspnet/eeyk640h(v=vs.100)).
 
 ## Examples
- The following code example uses the <xref:System.Web.Security.WindowsTokenRoleProvider.GetRolesForUser*> method to retrieve a list of roles for a specified user and binds the list of roles to a <xref:System.Web.UI.WebControls.GridView> control. For an example of a Web.config file that enables role management, see <xref:System.Web.Security.WindowsTokenRoleProvider>.
+
+The following code example uses the <xref:System.Web.Security.WindowsTokenRoleProvider.GetRolesForUser*> method to retrieve a list of roles for a specified user and binds the list of roles to a <xref:System.Web.UI.WebControls.GridView> control. For an example of a Web.config file that enables role management, see <xref:System.Web.Security.WindowsTokenRoleProvider>.
 
  :::code language="aspx-csharp" source="~/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.WindowsTokenRoleProvider/CS/viewrolescs.aspx" id="Snippet1":::
  :::code language="aspx-vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.WindowsTokenRoleProvider/VB/viewrolesvb.aspx" id="Snippet1":::
@@ -467,7 +470,8 @@
  <xref:System.Web.Security.WindowsTokenRoleProvider.IsUserInRole*> method can only be called for the currently logged-on user identified by the LOGON_USER server variable. The current logged on user must be a Windows authenticated user. For more information on ASP.NET and Windows authentication, see [ASP.NET Authentication](https://learn.microsoft.com/previous-versions/aspnet/eeyk640h(v=vs.100)).
 
 ## Examples
- The following code example programmatically checks whether the currently logged-on user is in the Administrators role before allowing the user to view roles information for the application. For an example of a Web.config file that enables role management, see <xref:System.Web.Security.WindowsTokenRoleProvider>.
+
+The following code example programmatically checks whether the currently logged-on user is in the Administrators role before allowing the user to view roles information for the application. For an example of a Web.config file that enables role management, see <xref:System.Web.Security.WindowsTokenRoleProvider>.
 
  :::code language="aspx-csharp" source="~/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.WindowsTokenRoleProvider/CS/ViewRoles2cs.aspx" id="Snippet2":::
  :::code language="aspx-vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.WindowsTokenRoleProvider/VB/ViewRoles2vb.aspx" id="Snippet2":::
@@ -517,7 +521,8 @@
  The <xref:System.Web.Security.WindowsTokenRoleProvider.IsUserInRole*> method is called by the <xref:System.Web.Security.Roles> class and the <xref:System.Security.Principal.IPrincipal.IsInRole*> method of the <xref:System.Web.UI.Page.User> property to determine whether a user is in a Windows group. You can call the <xref:System.Web.Security.WindowsTokenRoleProvider.IsUserInRole*> method only for the currently logged-on user, as identified by the LOGON_USER server variable. The current logged-on user must be a Windows authenticated user. For more information on ASP.NET and Windows authentication, see [ASP.NET Authentication](https://learn.microsoft.com/previous-versions/aspnet/eeyk640h(v=vs.100)).
 
 ## Examples
- The following code example programmatically checks whether the currently logged-on user is in the Administrators role before allowing the user to view roles information for the application. For an example of a Web.config file that enables role management, see <xref:System.Web.Security.WindowsTokenRoleProvider>.
+
+The following code example programmatically checks whether the currently logged-on user is in the Administrators role before allowing the user to view roles information for the application. For an example of a Web.config file that enables role management, see <xref:System.Web.Security.WindowsTokenRoleProvider>.
 
  :::code language="aspx-csharp" source="~/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.WindowsTokenRoleProvider/CS/viewrolescs.aspx" id="Snippet1":::
  :::code language="aspx-vb" source="~/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.WindowsTokenRoleProvider/VB/viewrolesvb.aspx" id="Snippet1":::
