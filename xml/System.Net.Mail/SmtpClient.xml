@@ -353,7 +353,7 @@ The following code example demonstrates sending an email message asynchronously.
         <ReturnType>System.Security.Cryptography.X509Certificates.X509CertificateCollection</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Specify which certificates should be used to establish the Secure Sockets Layer (SSL) connection.</summary>
+        <summary>Gets the certificates that should be used to establish the Secure Sockets Layer (SSL) connection.</summary>
         <value>An <see cref="T:System.Security.Cryptography.X509Certificates.X509CertificateCollection" />, holding one or more client certificates. The default value is derived from the mail configuration attributes in a configuration file.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
@@ -362,9 +362,7 @@ The following code example demonstrates sending an email message asynchronously.
  Client certificates are, by default, optional; however, the server configuration might require that the client present a valid certificate as part of the initial connection negotiation.
 
 > [!NOTE]
->  The Framework caches SSL sessions as they are created and attempts to reuse a cached session for a new request, if possible. When attempting to reuse an SSL session, the Framework uses the first element of <xref:System.Net.Mail.SmtpClient.ClientCertificates*> (if there is one), or tries to reuse an anonymous sessions if <xref:System.Net.Mail.SmtpClient.ClientCertificates*> is empty.
-
-
+> .NET caches SSL sessions as they are created and attempts to reuse a cached session for a new request, if possible. When attempting to reuse an SSL session, .NET uses the first element of <xref:System.Net.Mail.SmtpClient.ClientCertificates*> (if there is one), or tries to reuse an anonymous sessions if <xref:System.Net.Mail.SmtpClient.ClientCertificates*> is empty.
 
 ## Examples
  The following code example establishes an SSL connection with the SMTP server and uses the connection to send an email.

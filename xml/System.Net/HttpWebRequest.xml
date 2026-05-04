@@ -116,7 +116,7 @@
  The local computer or application config file may specify that a default proxy be used. If the <xref:System.Net.HttpWebRequest.Proxy> property is specified, then the proxy settings from the <xref:System.Net.HttpWebRequest.Proxy> property override the local computer or application config file and the <xref:System.Net.HttpWebRequest> instance will use the proxy settings specified. If no proxy is specified in a config file and the <xref:System.Net.HttpWebRequest.Proxy> property is unspecified, the <xref:System.Net.HttpWebRequest> class uses the proxy settings inherited from Internet options on the local computer. If there are no proxy settings in Internet options, the request is sent directly to the server.
 
 > [!NOTE]
-> .NET caches SSL sessions as they are created and attempts to reuse a cached session for a new request, if possible. When attempting to reuse an SSL session, the Framework uses the first element of <xref:System.Net.HttpWebRequest.ClientCertificates*> (if there is one), or tries to reuse an anonymous sessions if <xref:System.Net.HttpWebRequest.ClientCertificates*> is empty.
+> .NET caches SSL sessions as they are created and attempts to reuse a cached session for a new request, if possible. When attempting to reuse an SSL session, .NET uses the first element of <xref:System.Net.HttpWebRequest.ClientCertificates*> (if there is one), or tries to reuse an anonymous sessions if <xref:System.Net.HttpWebRequest.ClientCertificates*> is empty.
 
 > [!NOTE]
 > For security reasons, cookies are disabled by default. If you want to use cookies, use the <xref:System.Net.HttpWebRequest.CookieContainer> property to enable cookies.
@@ -1770,7 +1770,7 @@ Both <xref:System.Net.HttpWebRequest> constructors are obsolete and should not b
  An application can add a certificate to a collection, but might not have access rights to it. To use a certificate contained in the collection, the application must have the same access rights as the entity that issued the certificate.
 
 > [!NOTE]
-> The Framework caches SSL sessions as they are created and attempts to reuse a cached session for a new request, if possible. When attempting to reuse an SSL session, the Framework uses the first element of <xref:System.Net.HttpWebRequest.ClientCertificates*> (if there is one), or tries to reuse an anonymous sessions if <xref:System.Net.HttpWebRequest.ClientCertificates*> is empty.
+> .NET caches SSL sessions as they're created and attempts to reuse a cached session for a new request, if possible. When attempting to reuse an SSL session, .NET uses the first element of <xref:System.Net.HttpWebRequest.ClientCertificates*> (if there is one), or tries to reuse an anonymous sessions if <xref:System.Net.HttpWebRequest.ClientCertificates*> is empty.
 
 > [!NOTE]
 > For performance reasons, you shouldn't add a client certificate to a <xref:System.Net.HttpWebRequest> unless you know the server will ask for it.
