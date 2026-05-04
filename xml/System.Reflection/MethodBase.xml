@@ -545,18 +545,13 @@
  The elements of the returned array are in the order in which they appear in the list of type parameters for the generic method.
 
 - If the current method is a closed constructed method (that is, the <xref:System.Reflection.MethodBase.ContainsGenericParameters> property returns `false`), the array returned by the <xref:System.Reflection.MethodBase.GetGenericArguments*> method contains the types that have been assigned to the generic type parameters of the generic method definition.
-
 - If the current method is a generic method definition, the array contains the type parameters.
-
 - If the current method is an open constructed method (that is, the <xref:System.Reflection.MethodBase.ContainsGenericParameters> property returns `true`) in which specific types have been assigned to some type parameters and type parameters of enclosing generic types have been assigned to other type parameters, the array contains both types and type parameters. Use the <xref:System.Type.IsGenericParameter> property to tell them apart. For a demonstration of this scenario, see the code example provided for the <xref:System.Reflection.MethodBase.ContainsGenericParameters> property.
-
- Generic constructors are not supported in the .NET Framework version 2.0. This property throws <xref:System.NotSupportedException> if not overridden in a derived class, so an exception is thrown if the current instance is of type <xref:System.Reflection.ConstructorInfo>.
 
  For a list of the invariant conditions for terms specific to generic methods, see the <xref:System.Reflection.MethodBase.IsGenericMethod> property. For a list of the invariant conditions for other terms used in generic reflection, see the <xref:System.Type.IsGenericType?displayProperty=nameWithType> property.
 
  ]]></format>
         </remarks>
-        <exception cref="T:System.NotSupportedException">The current object is a <see cref="T:System.Reflection.ConstructorInfo" />. Generic constructors are not supported in the .NET Framework version 2.0. This exception is the default behavior if this method is not overridden in a derived class.</exception>
         <altmember cref="P:System.Reflection.MethodBase.IsGenericMethodDefinition" />
         <altmember cref="M:System.Reflection.MethodInfo.GetGenericArguments" />
         <altmember cref="P:System.Reflection.MethodBase.IsGenericMethod" />
@@ -1097,11 +1092,9 @@
 >  If this method overload is used to invoke an instance constructor, the object supplied for `obj` is reinitialized; that is, all instance initializers are executed. The return value is `null`. If a class constructor is invoked, the class is reinitialized; that is, all class initializers are executed. The return value is `null`.
 
 > [!NOTE]
-> This method can be used to access non-public members if the caller has been granted <xref:System.Security.Permissions.ReflectionPermission> with the <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> flag and if the grant set of the non-public members is restricted to the caller's grant set, or a subset thereof. (See [Security Considerations for Reflection](/dotnet/framework/reflection-and-codedom/security-considerations-for-reflection).) To use this functionality, your application should target .NET Framework 3.5 or later.
+> This method can be used to access non-public members if the caller has been granted <xref:System.Security.Permissions.ReflectionPermission> with the <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> flag and if the grant set of the non-public members is restricted to the caller's grant set, or a subset thereof. (See [Security Considerations for Reflection](/dotnet/framework/reflection-and-codedom/security-considerations-for-reflection).)
 
  If a parameter of the reflected method is a value type, and the corresponding argument in `parameters` is `null`, the runtime passes a zero-initialized instance of the value type.
-
-
 
 ## Examples
  The following code example demonstrates dynamic method lookup using reflection. Note that you cannot use the <xref:System.Reflection.MethodInfo> object from the base class to invoke the overridden method in the derived class, because late binding cannot resolve overrides.
@@ -1223,9 +1216,7 @@ This method dynamically invokes the method reflected by this instance on `obj`, 
  If the invoked method throws an exception, the <xref:System.Exception.GetBaseException*?displayProperty=nameWithType> method returns the originating exception.
 
 > [!NOTE]
-> This method can be used to access non-public members if the caller has been granted <xref:System.Security.Permissions.ReflectionPermission> with the <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> flag and if the grant set of the non-public members is restricted to the caller's grant set, or a subset thereof. (See [Security Considerations for Reflection](/dotnet/framework/reflection-and-codedom/security-considerations-for-reflection).) To use this functionality, your application should target .NET Framework 3.5 or later.
-
-
+> This method can be used to access non-public members if the caller has been granted <xref:System.Security.Permissions.ReflectionPermission> with the <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> flag and if the grant set of the non-public members is restricted to the caller's grant set, or a subset thereof. (See [Security Considerations for Reflection](/dotnet/framework/reflection-and-codedom/security-considerations-for-reflection).)
 
 ## Examples
  The following example demonstrates all members of the <xref:System.Reflection.Binder?displayProperty=nameWithType> class using an overload of <xref:System.Type.InvokeMember*?displayProperty=nameWithType>. The private method `CanConvertFrom` finds compatible types for a given type. For another example of invoking members in a custom binding scenario, see [Dynamically Loading and Using Types](/dotnet/framework/reflection-and-codedom/dynamically-loading-and-using-types).
@@ -1844,7 +1835,7 @@ If `IsVirtual` is `false` or `IsFinal` is `true`, then the method cannot be over
  Use the <xref:System.Reflection.MethodBase.IsGenericMethod> property to determine whether the current <xref:System.Reflection.MethodBase> object represents a generic method. Use the <xref:System.Reflection.MethodBase.ContainsGenericParameters> property to determine whether the current <xref:System.Reflection.MethodBase> object represents an open constructed method or a closed constructed method.
 
 > [!NOTE]
->  Generics are not supported by default; this property returns `false` if not overridden in a derived class. Generic constructors are not supported in the .NET Framework version 2.0, so this property returns `false` if the current instance is of type <xref:System.Reflection.ConstructorInfo>.
+> Generics are not supported by default; this property returns `false` if not overridden in a derived class.
 
 The following table summarizes the invariant conditions for terms specific to generic methods. For other terms used in generic reflection, such as *generic type parameter* and *generic type*, see the <xref:System.Type.IsGenericType?displayProperty=nameWithType> property.
 
@@ -1918,14 +1909,12 @@ The following table summarizes the invariant conditions for terms specific to ge
 
 - For each <xref:System.Type> object in the array returned by the <xref:System.Reflection.MethodBase.GetGenericArguments*> method:
 
-    -   The <xref:System.Type.IsGenericParameter?displayProperty=nameWithType> property is `true`.
-
-    -   The <xref:System.Type.DeclaringMethod?displayProperty=nameWithType> property returns the current instance.
-
-    -   The <xref:System.Type.GenericParameterPosition?displayProperty=nameWithType> property is the same as the position of the <xref:System.Type> object in the array.
+  - The <xref:System.Type.IsGenericParameter?displayProperty=nameWithType> property is `true`.
+  - The <xref:System.Type.DeclaringMethod?displayProperty=nameWithType> property returns the current instance.
+  - The <xref:System.Type.GenericParameterPosition?displayProperty=nameWithType> property is the same as the position of the <xref:System.Type> object in the array.
 
 > [!NOTE]
->  Generics are not supported by default; this property returns `false` if not overridden in a derived class. Generic constructors are not supported in the .NET Framework version 2.0, so this property returns `false` if the current instance is of type <xref:System.Reflection.ConstructorInfo>.
+> Generics are not supported by default; this property returns `false` if not overridden in a derived class.
 
  For a list of the invariant conditions for terms specific to generic methods, see the <xref:System.Reflection.MethodBase.IsGenericMethod> property. For a list of the invariant conditions for other terms used in generic reflection, see the <xref:System.Type.IsGenericType?displayProperty=nameWithType> property.
 
@@ -2198,7 +2187,6 @@ The following table summarizes the invariant conditions for terms specific to ge
         <altmember cref="P:System.Reflection.MethodBase.IsSecuritySafeCritical" />
         <altmember cref="P:System.Reflection.MethodBase.IsSecurityTransparent" />
         <related type="Article" href="/dotnet/framework/reflection-and-codedom/security-considerations-for-reflection">Security Considerations for Reflection</related>
-        <related type="Article" href="/dotnet/framework/security/security-changes">Security Changes in the .NET Framework Version 4.0</related>
       </Docs>
     </Member>
     <Member MemberName="IsSecuritySafeCritical">
@@ -2266,7 +2254,6 @@ The following table summarizes the invariant conditions for terms specific to ge
         <altmember cref="P:System.Reflection.MethodBase.IsSecurityCritical" />
         <altmember cref="P:System.Reflection.MethodBase.IsSecurityTransparent" />
         <related type="Article" href="/dotnet/framework/reflection-and-codedom/security-considerations-for-reflection">Security Considerations for Reflection</related>
-        <related type="Article" href="/dotnet/framework/security/security-changes">Security Changes in the .NET Framework Version 4.0</related>
       </Docs>
     </Member>
     <Member MemberName="IsSecurityTransparent">
@@ -2328,7 +2315,6 @@ The following table summarizes the invariant conditions for terms specific to ge
         <altmember cref="P:System.Reflection.MethodBase.IsSecurityCritical" />
         <altmember cref="P:System.Reflection.MethodBase.IsSecuritySafeCritical" />
         <related type="Article" href="/dotnet/framework/reflection-and-codedom/security-considerations-for-reflection">Security Considerations for Reflection</related>
-        <related type="Article" href="/dotnet/framework/security/security-changes">Security Changes in the .NET Framework Version 4.0</related>
       </Docs>
     </Member>
     <Member MemberName="IsSpecialName">
