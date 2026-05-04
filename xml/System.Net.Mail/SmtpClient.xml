@@ -71,12 +71,6 @@ The `SmtpClient` class is used to send email to an SMTP server for delivery. The
 > [!IMPORTANT]
 > We don't recommend that you use the `SmtpClient` class for new development because `SmtpClient` doesn't support many modern protocols. Use [MailKit](https://github.com/jstedfast/MailKit) or other libraries instead. For more information, see [SmtpClient shouldn't be used](https://github.com/dotnet/platform-compat/blob/master/docs/DE0005.md).
 
-The `SmtpClient` class is:
-
-- Included in .NET Standard 2.0 and later versions and therefore must be part of any .NET implementation that supports those versions.
-- Present and can be used in .NET Framework 4 through .NET Framework 4.8.
-- Usable in .NET (Core), but its use isn't recommended.
-
 The classes shown in the following table are used to construct email messages that can be sent using <xref:System.Net.Mail.SmtpClient>.
 
 | Class                              | Description                                                |
@@ -95,7 +89,7 @@ The classes shown in the following table are used to construct email messages th
 
 To include an attachment with an email message, first create the attachment by using the <xref:System.Net.Mail.Attachment> class, and then add it to the message by using the <xref:System.Net.Mail.MailMessage.Attachments?displayProperty=nameWithType> property. Depending on the email reader used by the recipients and the file type of the attachment, some recipients might not be able to read the attachment. For clients that cannot display the attachment in its original form, you can specify alternate views by using the <xref:System.Net.Mail.MailMessage.AlternateViews?displayProperty=nameWithType> property.
 
- In .NET Framework, you can use the application or machine configuration files to specify default host, port, and credentials values for all <xref:System.Net.Mail.SmtpClient> objects. For more information, see [&lt;mailSettings&gt; Element (Network Settings)](/dotnet/framework/configure-apps/file-schema/network/mailsettings-element-network-settings). .NET Core does not support setting defaults. As a workaround, you must set the relevant properties on <xref:System.Net.Mail.SmtpClient> directly.
+To specify host, port, and credentials values for all <xref:System.Net.Mail.SmtpClient> objects, set the relevant properties on <xref:System.Net.Mail.SmtpClient> directly.
 
  To send the email message and block while waiting for the email to be transmitted to the SMTP server, use one of the synchronous <xref:System.Net.Mail.SmtpClient.Send*> methods. To allow your program's main thread to continue executing while the email is transmitted, use one of the asynchronous <xref:System.Net.Mail.SmtpClient.SendAsync*> methods. The <xref:System.Net.Mail.SmtpClient.SendCompleted> event is raised when a <xref:System.Net.Mail.SmtpClient.SendAsync*> operation completes. To receive this event, you must add a <xref:System.Net.Mail.SendCompletedEventHandler> delegate to <xref:System.Net.Mail.SmtpClient.SendCompleted>. The <xref:System.Net.Mail.SendCompletedEventHandler> delegate must reference a callback method that handles notification of <xref:System.Net.Mail.SmtpClient.SendCompleted> events. To cancel an asynchronous email transmission, use the <xref:System.Net.Mail.SmtpClient.SendAsyncCancel*> method.
 
@@ -122,10 +116,6 @@ The following code example demonstrates sending an email message asynchronously.
  ]]></format>
     </remarks>
     <altmember cref="N:System.Net.Mime" />
-    <related type="Article" href="/dotnet/framework/network-programming/">Network Programming in the .NET Framework</related>
-    <related type="Article" href="/dotnet/framework/network-programming/network-programming-samples">Network Programming Samples</related>
-    <related type="Article" href="/dotnet/framework/network-programming/network-tracing">Network Tracing in the .NET Framework</related>
-    <related type="Article" href="/dotnet/framework/network-programming/security-in-network-programming">Security in Network Programming</related>
   </Docs>
   <Members>
     <MemberGroup MemberName=".ctor">

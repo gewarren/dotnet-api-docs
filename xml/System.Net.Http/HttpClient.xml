@@ -596,11 +596,7 @@ This property has no effect on any of the <xref:System.Net.Http.HttpClient.Send*
  This operation doesn't block. The returned <xref:System.Threading.Tasks.Task`1> object will complete after the whole response (including content) is read.
 
 > [!NOTE]
-> In case of timeout, different exceptions are thrown on different .NET implementations:
->
-> - <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown on .NET 5 and later versions.
-> - <xref:System.OperationCanceledException> without any inner exception is thrown on all applicable .NET Core versions.
-> - <xref:System.Net.Http.HttpRequestException> is thrown on all applicable .NET Framework versions.
+> In case of timeout, <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown.
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The request message was already sent by the <see cref="T:System.Net.Http.HttpClient" /> instance.
@@ -612,12 +608,8 @@ The <paramref name="requestUri" /> is not an absolute URI.
 -or-
 
 <see cref="P:System.Net.Http.HttpClient.BaseAddress" /> is not set.</exception>
-        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" />.
-
--or-
-
-.NET Framework only: The request timed out.</exception>
-        <exception cref="T:System.OperationCanceledException">.NET Core and .NET 5 and later only: The request failed due to timeout.</exception>
+        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" />.</exception>
+        <exception cref="T:System.OperationCanceledException">The request failed due to timeout.</exception>
       </Docs>
     </Member>
     <Member MemberName="DeleteAsync">
@@ -674,11 +666,7 @@ The <paramref name="requestUri" /> is not an absolute URI.
  This operation doesn't block. The returned <xref:System.Threading.Tasks.Task`1> object will complete after the whole response (including content) is read.
 
 > [!NOTE]
-> In case of timeout, different exceptions are thrown on different .NET implementations:
->
-> - <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown on .NET 5 and later versions.
-> - <xref:System.OperationCanceledException> without any inner exception is thrown on all applicable .NET Core versions.
-> - <xref:System.Net.Http.HttpRequestException> is thrown on all applicable .NET Framework versions.
+> In case of timeout, <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown.
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The request message was already sent by the <see cref="T:System.Net.Http.HttpClient" /> instance.
@@ -690,11 +678,7 @@ The <paramref name="requestUri" /> is not an absolute URI.
 -or-
 
 <see cref="P:System.Net.Http.HttpClient.BaseAddress" /> is not set.</exception>
-        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" />
-
--or-
-
-.NET Framework only: the request timed out.</exception>
+        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" /></exception>
         <exception cref="T:System.OperationCanceledException">.NET Core and .NET 5 and later only: The request failed due to timeout.</exception>
       </Docs>
     </Member>
@@ -758,11 +742,7 @@ The <paramref name="requestUri" /> is not an absolute URI.
  This operation doesn't block. The returned <xref:System.Threading.Tasks.Task`1> object will complete after the whole response (including content) is read.
 
 > [!NOTE]
-> In case of timeout, different exceptions are thrown on different .NET implementations.
->
-> - <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown on .NET 5 and later versions.
-> - <xref:System.OperationCanceledException> without any inner exception is thrown on all applicable .NET Core versions.
-> - <xref:System.Net.Http.HttpRequestException> is thrown on all applicable .NET Framework versions.
+> In case of timeout, <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown.
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The request message was already sent by the <see cref="T:System.Net.Http.HttpClient" /> instance.
@@ -774,11 +754,7 @@ The <paramref name="requestUri" /> is not an absolute URI.
 -or-
 
 <see cref="P:System.Net.Http.HttpClient.BaseAddress" /> is not set.</exception>
-        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" />
-
--or-
-
-.NET Framework only: the request timed out.</exception>
+        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" /></exception>
         <exception cref="T:System.OperationCanceledException">The cancellation token was canceled. This exception is stored into the returned task.
 
 -or-
@@ -842,11 +818,7 @@ The <paramref name="requestUri" /> is not an absolute URI.
  This operation doesn't block. The returned <xref:System.Threading.Tasks.Task`1> object will complete after the whole response (including content) is read.
 
 > [!NOTE]
-> In case of timeout, different exceptions are thrown on different .NET implementations.
-
-> - <xref:System.Net.Http.HttpRequestException> is thrown on all applicable .NET Framework versions.
-> - <xref:System.OperationCanceledException> without any inner exception is thrown on all applicable .NET Core versions.
-> - <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown on .NET 5 and later versions.
+> In case of timeout, <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown.
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The request message was already sent by the <see cref="T:System.Net.Http.HttpClient" /> instance.
@@ -858,11 +830,7 @@ The <paramref name="requestUri" /> is not an absolute URI.
 -or-
 
 <see cref="P:System.Net.Http.HttpClient.BaseAddress" /> is not set.</exception>
-        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" />
-
--or-
-
-.NET Framework only: the request timed out.</exception>
+        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" /></exception>
         <exception cref="T:System.OperationCanceledException">The cancellation token was canceled. This exception is stored into the returned task.
 
 -or-
@@ -1000,18 +968,11 @@ The <paramref name="requestUri" /> is not an absolute URI.
  This operation doesn't block. The returned <xref:System.Threading.Tasks.Task`1> object will complete after the whole response (including content) is read. The behavior is the same as if <xref:System.Net.Http.HttpCompletionOption.ResponseContentRead> has been explicitly specified.
 
 > [!NOTE]
-> In case of timeout, different exceptions are thrown on different .NET implementations.
-> - <xref:System.Net.Http.HttpRequestException> is thrown on all applicable .NET Framework versions.
-> - <xref:System.OperationCanceledException> without any inner exception is thrown on all applicable .NET Core versions.
-> - <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown on .NET 5 and later versions.
+> In case of timeout, <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown.
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The <paramref name="requestUri" /> is not an absolute URI and <see cref="P:System.Net.Http.HttpClient.BaseAddress" /> isn't set.</exception>
-        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" />
-
--or-
-
-.NET Framework only: the request timed out.</exception>
+        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" /></exception>
         <exception cref="T:System.OperationCanceledException">.NET Core and .NET 5 and later only: The request failed due to timeout.</exception>
         <exception cref="T:System.UriFormatException">The provided request URI is not valid relative or absolute URI.</exception>
       </Docs>
@@ -1070,18 +1031,11 @@ The <paramref name="requestUri" /> is not an absolute URI.
  This operation doesn't block. The returned <xref:System.Threading.Tasks.Task`1> object will complete after the whole response (including content) is read. The behavior is the same as if <xref:System.Net.Http.HttpCompletionOption.ResponseContentRead> has been explicitly specified.
 
 > [!NOTE]
-> In case of timeout, different exceptions are thrown on different .NET implementations.
-> - <xref:System.Net.Http.HttpRequestException> is thrown on all applicable .NET Framework versions.
-> - <xref:System.OperationCanceledException> without any inner exception is thrown on all applicable .NET Core versions.
-> - <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown on .NET 5 and later versions.
+> In case of timeout, <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown.
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The <paramref name="requestUri" /> is not an absolute URI and <see cref="P:System.Net.Http.HttpClient.BaseAddress" /> isn't set.</exception>
-        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" />
-
--or-
-
-.NET Framework only: the request timed out.</exception>
+        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" /></exception>
         <exception cref="T:System.OperationCanceledException">.NET Core and .NET 5 and later only: The request failed due to timeout.</exception>
       </Docs>
     </Member>
@@ -1145,10 +1099,7 @@ The <paramref name="requestUri" /> is not an absolute URI.
  This operation doesn't block. The returned <xref:System.Threading.Tasks.Task`1> object will complete based on the `completionOption` parameter after the part or all of the response (including content) is read.
 
 > [!NOTE]
-> In case of timeout, different exceptions are thrown on different .NET implementations.
-> - <xref:System.Net.Http.HttpRequestException> is thrown on all applicable .NET Framework versions.
-> - <xref:System.OperationCanceledException> without any inner exception is thrown on all applicable .NET Core versions.
-> - <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown on .NET 5 and later versions.
+> In case of timeout, <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown.
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The <paramref name="requestUri" /> is not an absolute URI and <see cref="P:System.Net.Http.HttpClient.BaseAddress" /> isn't set.</exception>
@@ -1217,18 +1168,11 @@ The <paramref name="requestUri" /> is not an absolute URI.
  This operation doesn't block. The returned <xref:System.Threading.Tasks.Task`1> object will complete after the whole response (including content) is read. The behavior is the same as if <xref:System.Net.Http.HttpCompletionOption.ResponseContentRead> has been explicitly specified.
 
 > [!NOTE]
-> In case of timeout, different exceptions are thrown on different .NET implementations.
-> - <xref:System.Net.Http.HttpRequestException> is thrown on all applicable .NET Framework versions.
-> - <xref:System.OperationCanceledException> without any inner exception is thrown on all applicable .NET Core versions.
-> - <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown on .NET 5 and later versions.
+> In case of timeout, <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown.
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The <paramref name="requestUri" /> is not an absolute URI and <see cref="P:System.Net.Http.HttpClient.BaseAddress" /> isn't set.</exception>
-        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" />
-
--or-
-
-.NET Framework only: the request timed out.</exception>
+        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" /></exception>
         <exception cref="T:System.UriFormatException">The provided request URI is not valid relative or absolute URI.</exception>
         <exception cref="T:System.OperationCanceledException">The cancellation token was canceled. This exception is stored into the returned task.
 
@@ -1293,18 +1237,11 @@ The <paramref name="requestUri" /> is not an absolute URI.
  This operation doesn't block. The returned <xref:System.Threading.Tasks.Task`1> object will complete based on the `completionOption` parameter after the part or all of the response (including content) is read.
 
 > [!NOTE]
-> In case of timeout, different exceptions are thrown on different .NET implementations.
-> - <xref:System.Net.Http.HttpRequestException> is thrown on all applicable .NET Framework versions.
-> - <xref:System.OperationCanceledException> without any inner exception is thrown on all applicable .NET Core versions.
-> - <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown on .NET 5 and later versions.
+> In case of timeout, <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown.
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The <paramref name="requestUri" /> is not an absolute URI and <see cref="P:System.Net.Http.HttpClient.BaseAddress" /> isn't set.</exception>
-        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" />
-
--or-
-
-.NET Framework only: the request timed out.</exception>
+        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" /></exception>
         <exception cref="T:System.OperationCanceledException">.NET Core and .NET 5 and later only: The request failed due to timeout.</exception>
       </Docs>
     </Member>
@@ -1364,18 +1301,11 @@ The <paramref name="requestUri" /> is not an absolute URI.
  This operation doesn't block. The returned <xref:System.Threading.Tasks.Task`1> object will complete after the whole response (including content) is read. The behavior is the same as if <xref:System.Net.Http.HttpCompletionOption.ResponseContentRead> has been explicitly specified.
 
 > [!NOTE]
-> In case of timeout, different exceptions are thrown on different .NET implementations.
-> - <xref:System.Net.Http.HttpRequestException> is thrown on all applicable .NET Framework versions.
-> - <xref:System.OperationCanceledException> without any inner exception is thrown on all applicable .NET Core versions.
-> - <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown on .NET 5 and later versions.
+> In case of timeout, <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown.
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The <paramref name="requestUri" /> is not an absolute URI and <see cref="P:System.Net.Http.HttpClient.BaseAddress" /> isn't set.</exception>
-        <exception cref="T:System.Net.Http.HttpRequestException">TThe request failed due to an issue getting an HTTP response such as network connectivity, DNS failure or server certificate validation. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" />
-
--or-
-
-.NET Framework only: the request timed out.</exception>
+        <exception cref="T:System.Net.Http.HttpRequestException">TThe request failed due to an issue getting an HTTP response such as network connectivity, DNS failure or server certificate validation. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" /></exception>
         <exception cref="T:System.OperationCanceledException">The cancellation token was canceled. This exception is stored into the returned task.
 
 -or-
@@ -1445,18 +1375,11 @@ The <paramref name="requestUri" /> is not an absolute URI.
  This operation doesn't block. The returned <xref:System.Threading.Tasks.Task`1> object will complete based on the `completionOption` parameter after the part or all of the response (including content) is read.
 
 > [!NOTE]
-> In case of timeout, different exceptions are thrown on different .NET implementations.
-> - <xref:System.Net.Http.HttpRequestException> is thrown on all applicable .NET Framework versions.
-> - <xref:System.OperationCanceledException> without any inner exception is thrown on all applicable .NET Core versions.
-> - <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown on .NET 5 and later versions.
+> In case of timeout, <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown.
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The <paramref name="requestUri" /> is not an absolute URI and <see cref="P:System.Net.Http.HttpClient.BaseAddress" /> isn't set.</exception>
-        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" />
-
--or-
-
-.NET Framework only: the request timed out.</exception>
+        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" /></exception>
         <exception cref="T:System.UriFormatException">The provided request URI is not valid relative or absolute URI.</exception>
         <exception cref="T:System.OperationCanceledException">The cancellation token was canceled. This exception is stored into the returned task.
 
@@ -1523,18 +1446,11 @@ The <paramref name="requestUri" /> is not an absolute URI.
  This operation doesn't block. The returned <xref:System.Threading.Tasks.Task`1> object will complete based on the `completionOption` parameter after the part or all of the response (including content) is read.
 
 > [!NOTE]
-> In case of timeout, different exceptions are thrown on different .NET implementations.
-> - <xref:System.Net.Http.HttpRequestException> is thrown on all applicable .NET Framework versions.
-> - <xref:System.OperationCanceledException> without any inner exception is thrown on all applicable .NET Core versions.
-> - <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown on .NET 5 and later versions.
+> In case of timeout, <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown.
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The <paramref name="requestUri" /> is not an absolute URI and <see cref="P:System.Net.Http.HttpClient.BaseAddress" /> isn't set.</exception>
-        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" />
-
--or-
-
-.NET Framework only: the request timed out.</exception>
+        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" /></exception>
         <exception cref="T:System.OperationCanceledException">The cancellation token was canceled. This exception is stored into the returned task.
 
 -or-
@@ -1621,10 +1537,7 @@ The <paramref name="requestUri" /> is not an absolute URI.
 In some scenarios, you might need more control over which status codes are considered to be successful; for example, an API might be expected to always return `200 OK`. In such cases, we recommend to manually check if <xref:System.Net.Http.HttpResponseMessage.StatusCode> matches the expected value.
 
 > [!NOTE]
-> In case of timeout, different exceptions are thrown on different .NET implementations.
-> - <xref:System.Net.Http.HttpRequestException> is thrown on all applicable .NET Framework versions.
-> - <xref:System.OperationCanceledException> without any inner exception is thrown on all applicable .NET Core versions.
-> - <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown on .NET 5 and later versions.
+> In case of timeout, <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown.
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The <paramref name="requestUri" /> is not an absolute URI and <see cref="P:System.Net.Http.HttpClient.BaseAddress" /> isn't set.</exception>
@@ -1632,11 +1545,7 @@ In some scenarios, you might need more control over which status codes are consi
 
 -or-
 
-The response status code was outside of the range of 200-299 (which indicate success according to the standard).
-
--or-
-
-.NET Framework only: The request timed out.</exception>
+The response status code was outside of the range of 200-299 (which indicate success according to the standard).</exception>
         <exception cref="T:System.OperationCanceledException">.NET Core and .NET 5 and later only: The request failed due to timeout.</exception>
         <exception cref="T:System.UriFormatException">The provided request URI is not valid relative or absolute URI.</exception>
       </Docs>
@@ -1697,10 +1606,7 @@ The response status code was outside of the range of 200-299 (which indicate suc
 In some scenarios, you might need more control over which status codes are considered to be successful; for example, an API might be expected to always return `200 OK`. In such cases, we recommend to manually check if <xref:System.Net.Http.HttpResponseMessage.StatusCode> matches the expected value.
 
 > [!NOTE]
-> In case of a timeout:
-> - .NET Framework throws a <xref:System.Net.Http.HttpRequestException>.
-> - .NET Core throws a <xref:System.OperationCanceledException> without any inner exception.
-> - .NET 5 and later versions throw a <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException>.
+> In case of a timeout, <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown.
 
           ]]></format>
         </remarks>
@@ -1709,11 +1615,7 @@ In some scenarios, you might need more control over which status codes are consi
 
 -or-
 
-The response status code was outside of the range of 200-299 (which indicate success according to the standard).
-
--or-
-
-.NET Framework only: The request timed out.</exception>
+The response status code was outside of the range of 200-299 (which indicate success according to the standard).</exception>
         <exception cref="T:System.OperationCanceledException">.NET Core and .NET 5 and later only: The request failed due to timeout.</exception>
       </Docs>
     </Member>
@@ -1770,10 +1672,7 @@ The response status code was outside of the range of 200-299 (which indicate suc
 In some scenarios, you might need more control over which status codes are considered to be successful; for example, an API might be expected to always return `200 OK`. In such cases, we recommend to manually check if <xref:System.Net.Http.HttpResponseMessage.StatusCode> matches the expected value.
 
 > [!NOTE]
-> In case of a timeout:
-> - .NET Framework throws a <xref:System.Net.Http.HttpRequestException>.
-> - .NET Core throws a <xref:System.OperationCanceledException> without any inner exception.
-> - .NET 5 and later versions throw a <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException>.
+> In case of a timeout, <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown.
 
           ]]></format>
         </remarks>
@@ -1839,10 +1738,7 @@ The response status code was outside of the range of 200-299 (which indicate suc
 In some scenarios, you might need more control over which status codes are considered to be successful; for example, an API might be expected to always return `200 OK`. In such cases, we recommend to manually check if <xref:System.Net.Http.HttpResponseMessage.StatusCode> matches the expected value.
 
 > [!NOTE]
-> In case of a timeout:
-> - .NET Framework throws a <xref:System.Net.Http.HttpRequestException>.
-> - .NET Core throws a <xref:System.OperationCanceledException> without any inner exception.
-> - .NET 5 and later versions throw a <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException>.
+> In case of a timeout, <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown.
 
           ]]></format>
         </remarks>
@@ -1938,10 +1834,7 @@ The response status code was outside of the range of 200-299 (which indicate suc
 In some scenarios, you might need more control over which status codes are considered to be successful; for example, an API might be expected to always return `200 OK`. In such cases, we recommend to manually check if <xref:System.Net.Http.HttpResponseMessage.StatusCode> matches the expected value.
 
 > [!NOTE]
-> In case of a timeout:
-> - .NET Framework throws a <xref:System.Net.Http.HttpRequestException>.
-> - .NET Core throws a <xref:System.OperationCanceledException> without any inner exception.
-> - .NET 5 and later versions throw a <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException>.
+> In case of a timeout, <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown.
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The <paramref name="requestUri" /> is not an absolute URI and <see cref="P:System.Net.Http.HttpClient.BaseAddress" /> isn't set.</exception>
@@ -1949,11 +1842,7 @@ In some scenarios, you might need more control over which status codes are consi
 
 -or-
 
-The response status code was outside of the range of 200-299 (which indicate success according to the standard).
-
--or-
-
-.NET Framework only: The request timed out.</exception>
+The response status code was outside of the range of 200-299 (which indicate success according to the standard).</exception>
         <exception cref="T:System.OperationCanceledException">.NET Core and .NET 5 and later only: The request failed due to timeout.</exception>
         <exception cref="T:System.UriFormatException">The provided request URI is not valid relative or absolute URI.</exception>
       </Docs>
@@ -2014,10 +1903,7 @@ The response status code was outside of the range of 200-299 (which indicate suc
 In some scenarios, you might need more control over which status codes are considered to be successful; for example, an API might be expected to always return `200 OK`. In such cases, we recommend to manually check if <xref:System.Net.Http.HttpResponseMessage.StatusCode> matches the expected value.
 
 > [!NOTE]
-> In case of a timeout:
-> - .NET Framework throws a <xref:System.Net.Http.HttpRequestException>.
-> - .NET Core throws a <xref:System.OperationCanceledException> without any inner exception.
-> - .NET 5 and later versions throw a <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException>.
+> In case of a timeout, <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown.
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The <paramref name="requestUri" /> is not an absolute URI and <see cref="P:System.Net.Http.HttpClient.BaseAddress" /> isn't set.</exception>
@@ -2025,11 +1911,7 @@ In some scenarios, you might need more control over which status codes are consi
 
 -or-
 
-The response status code was outside of the range of 200-299 (which indicate success according to the standard).
-
--or-
-
-.NET Framework only: The request timed out.</exception>
+The response status code was outside of the range of 200-299 (which indicate success according to the standard).</exception>
         <exception cref="T:System.OperationCanceledException">.NET Core and .NET 5 and later only: The request failed due to timeout.</exception>
       </Docs>
     </Member>
@@ -2086,10 +1968,7 @@ The response status code was outside of the range of 200-299 (which indicate suc
 In some scenarios, you might need more control over which status codes are considered to be successful; for example, an API might be expected to always return `200 OK`. In such cases, we recommend to manually check if <xref:System.Net.Http.HttpResponseMessage.StatusCode> matches the expected value.
 
 > [!NOTE]
-> In case of a timeout:
-> - .NET Framework throws a <xref:System.Net.Http.HttpRequestException>.
-> - .NET Core throws an <xref:System.OperationCanceledException> without any inner exception.
-> - .NET 5 and later versions throw an <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException>.
+> In case of a timeout: an <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown.
  ]]></format>
         </remarks>
         <exception cref="T:System.OperationCanceledException">The cancellation token was canceled. This exception is stored into the returned task.
@@ -2155,10 +2034,7 @@ The response status code was outside of the range of 200-299 (which indicate suc
 In some scenarios, you might need more control over which status codes are considered to be successful; for example, an API might be expected to always return `200 OK`. In such cases, we recommend to manually check if <xref:System.Net.Http.HttpResponseMessage.StatusCode> matches the expected value.
 
 > [!NOTE]
-> In case of a timeout:
-> - .NET Framework throws a <xref:System.Net.Http.HttpRequestException>.
-> - .NET Core throws a <xref:System.OperationCanceledException> without any inner exception.
-> - .NET 5 and later versions throw a <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException>.
+> In case of a timeout, an <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown.
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="requestUri" /> is <see langword="null" />.</exception>
@@ -2253,10 +2129,7 @@ The response status code was outside of the range of 200-299 (which indicate suc
 In some scenarios, you might need more control over which status codes are considered to be successful; for example, an API might be expected to always return `200 OK`. In such cases, we recommend to manually check if <xref:System.Net.Http.HttpResponseMessage.StatusCode> matches the expected value.
 
 > [!NOTE]
-> In case of a timeout:
-> - .NET Framework throws a <xref:System.Net.Http.HttpRequestException>.
-> - .NET Core throws a <xref:System.OperationCanceledException> without any inner exception.
-> - .NET 5 and later versions throw a <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException>.
+> In case of a timeout, an <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown.
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The <paramref name="requestUri" /> is not an absolute URI and <see cref="P:System.Net.Http.HttpClient.BaseAddress" /> isn't set.</exception>
@@ -2264,11 +2137,7 @@ In some scenarios, you might need more control over which status codes are consi
 
 -or-
 
-The response status code was outside of the range of 200-299 (which indicate success according to the standard).
-
--or-
-
-.NET Framework only: The request timed out.</exception>
+The response status code was outside of the range of 200-299 (which indicate success according to the standard).</exception>
         <exception cref="T:System.OperationCanceledException">.NET Core and .NET 5 and later only: The request failed due to timeout.</exception>
         <exception cref="T:System.UriFormatException">The provided request URI is not valid relative or absolute URI.</exception>
       </Docs>
@@ -2329,10 +2198,7 @@ The response status code was outside of the range of 200-299 (which indicate suc
 In some scenarios, you might need more control over which status codes are considered to be successful; for example, an API might be expected to always return `200 OK`. In such cases, we recommend to manually check if <xref:System.Net.Http.HttpResponseMessage.StatusCode> matches the expected value.
 
 > [!NOTE]
-> In case of a timeout:
-> - .NET Framework throws a <xref:System.Net.Http.HttpRequestException>.
-> - .NET Core throws a <xref:System.OperationCanceledException> without any inner exception.
-> - .NET 5 and later versions throw a <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException>.
+> In case of a timeout, an <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown.
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The <paramref name="requestUri" /> is not an absolute URI and <see cref="P:System.Net.Http.HttpClient.BaseAddress" /> isn't set.</exception>
@@ -2340,11 +2206,7 @@ In some scenarios, you might need more control over which status codes are consi
 
 -or-
 
-The response status code was outside of the range of 200-299 (which indicate success according to the standard).
-
--or-
-
-.NET Framework only: The request timed out.</exception>
+The response status code was outside of the range of 200-299 (which indicate success according to the standard).</exception>
         <exception cref="T:System.OperationCanceledException">.NET Core and .NET 5 and later only: The request failed due to timeout.</exception>
       </Docs>
     </Member>
@@ -2401,10 +2263,7 @@ The response status code was outside of the range of 200-299 (which indicate suc
 In some scenarios, you might need more control over which status codes are considered to be successful; for example, an API might be expected to always return `200 OK`. In such cases, we recommend to manually check if <xref:System.Net.Http.HttpResponseMessage.StatusCode> matches the expected value.
 
 > [!NOTE]
-> In case of a timeout:
-> - .NET Framework throws a <xref:System.Net.Http.HttpRequestException>.
-> - .NET Core throws a <xref:System.OperationCanceledException> without any inner exception.
-> - .NET 5 and later versions throw a <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException>.
+> In case of a timeout, an <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown.
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="requestUri" /> is <see langword="null" />.</exception>
@@ -2470,10 +2329,7 @@ The response status code was outside of the range of 200-299 (which indicate suc
 In some scenarios, you might need more control over which status codes are considered to be successful; for example, an API might be expected to always return `200 OK`. In such cases, we recommend to manually check if <xref:System.Net.Http.HttpResponseMessage.StatusCode> matches the expected value.
 
 > [!NOTE]
-> In case of a timeout:
-> - .NET Framework throws a <xref:System.Net.Http.HttpRequestException>.
-> - .NET Core throws a <xref:System.OperationCanceledException> without any inner exception.
-> - .NET 5 and later versions throw a <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException>.
+> In case of a timeout, an <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown.
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="requestUri" /> is <see langword="null" />.</exception>
@@ -2864,18 +2720,11 @@ The size specified is greater than the maximum allowed buffer size.</exception>
  This operation doesn't block. The returned <xref:System.Threading.Tasks.Task`1> object will complete after the whole response (including content) is read.
 
 > [!NOTE]
-> In case of timeout, different exceptions are thrown on different .NET implementations.
-> - <xref:System.Net.Http.HttpRequestException> is thrown on all applicable .NET Framework versions.
-> - <xref:System.OperationCanceledException> without any inner exception is thrown on all applicable .NET Core versions.
-> - <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown on .NET 5 and later versions.
+> In case of timeout, an <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown.
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The <paramref name="requestUri" /> is not an absolute URI and <see cref="P:System.Net.Http.HttpClient.BaseAddress" /> isn't set.</exception>
-        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" />
-
--or-
-
-.NET Framework only: The request timed out.</exception>
+        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" /></exception>
         <exception cref="T:System.OperationCanceledException">.NET Core and .NET 5 and later only: The request failed due to timeout.</exception>
         <exception cref="T:System.UriFormatException">The provided request URI is not valid relative or absolute URI.</exception>
       </Docs>
@@ -2930,18 +2779,11 @@ The size specified is greater than the maximum allowed buffer size.</exception>
  This operation doesn't block. The returned <xref:System.Threading.Tasks.Task`1> object will complete after the whole response (including content) is read.
 
 > [!NOTE]
-> In case of timeout, different exceptions are thrown on different .NET implementations.
-> - <xref:System.Net.Http.HttpRequestException> is thrown on all applicable .NET Framework versions.
-> - <xref:System.OperationCanceledException> without any inner exception is thrown on all applicable .NET Core versions.
-> - <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown on .NET 5 and later versions.
+> In case of timeout, an <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown.
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The <paramref name="requestUri" /> is not an absolute URI and <see cref="P:System.Net.Http.HttpClient.BaseAddress" /> isn't set.</exception>
-        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" />
-
--or-
-
-.NET Framework only: The request timed out.</exception>
+        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" /></exception>
         <exception cref="T:System.OperationCanceledException">.NET Core and .NET 5 and later only: The request failed due to timeout.</exception>
       </Docs>
     </Member>
@@ -3004,18 +2846,11 @@ The size specified is greater than the maximum allowed buffer size.</exception>
  This operation doesn't block. The returned <xref:System.Threading.Tasks.Task`1> object will complete after the whole response (including content) is read.
 
 > [!NOTE]
-> In case of timeout, different exceptions are thrown on different .NET implementations.
-> - <xref:System.Net.Http.HttpRequestException> is thrown on all applicable .NET Framework versions.
-> - <xref:System.OperationCanceledException> without any inner exception is thrown on all applicable .NET Core versions.
-> - <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown on .NET 5 and later versions.
+> In case of timeout, an <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown.
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The <paramref name="requestUri" /> is not an absolute URI and <see cref="P:System.Net.Http.HttpClient.BaseAddress" /> isn't set.</exception>
-        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" />
-
--or-
-
-.NET Framework only: The request timed out.</exception>
+        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" /></exception>
         <exception cref="T:System.UriFormatException">The provided request URI is not valid relative or absolute URI.</exception>
         <exception cref="T:System.OperationCanceledException">The cancellation token was canceled. This exception is stored into the returned task.
 
@@ -3076,18 +2911,11 @@ The size specified is greater than the maximum allowed buffer size.</exception>
  This operation doesn't block. The returned <xref:System.Threading.Tasks.Task`1> object will complete after the whole response (including content) is read.
 
 > [!NOTE]
-> In case of timeout, different exceptions are thrown on different .NET implementations.
-> - <xref:System.Net.Http.HttpRequestException> is thrown on all applicable .NET Framework versions.
-> - <xref:System.OperationCanceledException> without any inner exception is thrown on all applicable .NET Core versions.
-> - <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown on .NET 5 and later versions.
+> In case of timeout, an <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown.
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The <paramref name="requestUri" /> is not an absolute URI and <see cref="P:System.Net.Http.HttpClient.BaseAddress" /> isn't set.</exception>
-        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" />
-
--or-
-
-.NET Framework only: The request timed out.</exception>
+        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" /></exception>
         <exception cref="T:System.OperationCanceledException">The cancellation token was canceled. This exception is stored into the returned task.
 
 -or-
@@ -3171,18 +2999,11 @@ The size specified is greater than the maximum allowed buffer size.</exception>
  This operation doesn't block. The returned <xref:System.Threading.Tasks.Task`1> object will complete after the whole response (including content) is read.
 
 > [!NOTE]
-> In case of timeout, different exceptions are thrown on different .NET implementations.
-> - <xref:System.Net.Http.HttpRequestException> is thrown on all applicable .NET Framework versions.
-> - <xref:System.OperationCanceledException> without any inner exception is thrown on all applicable .NET Core versions.
-> - <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown on .NET 5 and later versions.
+> In case of timeout, an <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown.
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The <paramref name="requestUri" /> is not an absolute URI and <see cref="P:System.Net.Http.HttpClient.BaseAddress" /> isn't set.</exception>
-        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" />
-
--or-
-
-.NET Framework only: The request timed out.</exception>
+        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" /></exception>
         <exception cref="T:System.OperationCanceledException">.NET Core and .NET 5 and later only: The request failed due to timeout.</exception>
         <exception cref="T:System.UriFormatException">The provided request URI is not valid relative or absolute URI.</exception>
       </Docs>
@@ -3237,18 +3058,11 @@ The size specified is greater than the maximum allowed buffer size.</exception>
  This operation doesn't block. The returned <xref:System.Threading.Tasks.Task`1> object will complete after the whole response (including content) is read.
 
 > [!NOTE]
-> In case of timeout, different exceptions are thrown on different .NET implementations.
-> - <xref:System.Net.Http.HttpRequestException> is thrown on all applicable .NET Framework versions.
-> - <xref:System.OperationCanceledException> without any inner exception is thrown on all applicable .NET Core versions.
-> - <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown on .NET 5 and later versions.
+> In case of timeout, an <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown.
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The <paramref name="requestUri" /> is not an absolute URI and <see cref="P:System.Net.Http.HttpClient.BaseAddress" /> isn't set.</exception>
-        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" />
-
--or-
-
-.NET Framework only: The request timed out.</exception>
+        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" /></exception>
         <exception cref="T:System.OperationCanceledException">.NET Core and .NET 5 and later only: The request failed due to timeout.</exception>
       </Docs>
     </Member>
@@ -3311,18 +3125,11 @@ The size specified is greater than the maximum allowed buffer size.</exception>
  This operation doesn't block. The returned <xref:System.Threading.Tasks.Task`1> object will complete after the whole response (including content) is read.
 
 > [!NOTE]
-> In case of timeout, different exceptions are thrown on different .NET implementations.
-> - <xref:System.Net.Http.HttpRequestException> is thrown on all applicable .NET Framework versions.
-> - <xref:System.OperationCanceledException> without any inner exception is thrown on all applicable .NET Core versions.
-> - <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown on .NET 5 and later versions.
+> In case of timeout, an <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown.
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The <paramref name="requestUri" /> is not an absolute URI and <see cref="P:System.Net.Http.HttpClient.BaseAddress" /> isn't set.</exception>
-        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" />
-
--or-
-
-.NET Framework only: The request timed out.</exception>
+        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" /></exception>
         <exception cref="T:System.UriFormatException">The provided request URI is not valid relative or absolute URI.</exception>
         <exception cref="T:System.OperationCanceledException">The cancellation token was canceled. This exception is stored into the returned task.
 
@@ -3383,18 +3190,11 @@ The size specified is greater than the maximum allowed buffer size.</exception>
  This operation doesn't block. The returned <xref:System.Threading.Tasks.Task`1> object will complete after the whole response (including content) is read.
 
 > [!NOTE]
-> In case of timeout, different exceptions are thrown on different .NET implementations.
-> - <xref:System.Net.Http.HttpRequestException> is thrown on all applicable .NET Framework versions.
-> - <xref:System.OperationCanceledException> without any inner exception is thrown on all applicable .NET Core versions.
-> - <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown on .NET 5 and later versions.
+> In case of timeout, an <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown.
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The <paramref name="requestUri" /> is not an absolute URI and <see cref="P:System.Net.Http.HttpClient.BaseAddress" /> isn't set.</exception>
-        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" />
-
--or-
-
-.NET Framework only: The request timed out.</exception>
+        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" /></exception>
         <exception cref="T:System.OperationCanceledException">The cancellation token was canceled. This exception is stored into the returned task.
 
 -or-
@@ -3745,10 +3545,7 @@ The custom <see cref="T:System.Net.Http.HttpMessageHandler" /> does not override
  This operation doesn't block. The returned <xref:System.Threading.Tasks.Task`1> object will complete once the entire response including content is read. The behavior is the same as if <xref:System.Net.Http.HttpCompletionOption.ResponseContentRead> has been explicitly specified.
 
 > [!NOTE]
-> In case of timeout, different exceptions are thrown on different .NET implementations.
-> - <xref:System.Net.Http.HttpRequestException> is thrown on all applicable .NET Framework versions.
-> - <xref:System.OperationCanceledException> without any inner exception is thrown on all applicable .NET Core versions.
-> - <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown on .NET 5 and later versions.
+> In case of timeout, an <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown.
 
 This method stores in the task it returns all non-usage exceptions that the method's synchronous counterpart can throw. If an exception is stored into the returned task, that exception will be thrown when the task is awaited. Usage exceptions, such as <xref:System.ArgumentException>, are still thrown synchronously. For the stored exceptions, see the exceptions thrown by <xref:System.Net.Http.HttpClient.Send(System.Net.Http.HttpRequestMessage)>.
 
@@ -3756,11 +3553,7 @@ This method stores in the task it returns all non-usage exceptions that the meth
         </remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="request" /> is <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">The request message was already sent by the <see cref="T:System.Net.Http.HttpClient" /> instance.</exception>
-        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" />
-
--or-
-
-.NET Framework only: The request timed out.</exception>
+        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" /></exception>
         <exception cref="T:System.OperationCanceledException">.NET Core and .NET 5 and later only: The request failed due to timeout.</exception>
       </Docs>
     </Member>
@@ -3812,10 +3605,7 @@ This method stores in the task it returns all non-usage exceptions that the meth
  This operation doesn't block. Depending on the value of the `completionOption` parameter, the returned <xref:System.Threading.Tasks.Task`1> object will complete as soon as a response is available or the entire response including content is read.
 
 > [!NOTE]
-> In case of timeout, different exceptions are thrown on different .NET implementations.
-> - <xref:System.Net.Http.HttpRequestException> is thrown on all applicable .NET Framework versions.
-> - <xref:System.OperationCanceledException> without any inner exception is thrown on all applicable .NET Core versions.
-> - <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown on .NET 5 and later versions.
+> In case of timeout, an <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown.
 
 This method stores in the task it returns all non-usage exceptions that the method's synchronous counterpart can throw. If an exception is stored into the returned task, that exception will be thrown when the task is awaited. Usage exceptions, such as <xref:System.ArgumentException>, are still thrown synchronously. For the stored exceptions, see the exceptions thrown by <xref:System.Net.Http.HttpClient.Send(System.Net.Http.HttpRequestMessage,System.Net.Http.HttpCompletionOption)>.
 
@@ -3823,11 +3613,7 @@ This method stores in the task it returns all non-usage exceptions that the meth
         </remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="request" /> is <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">The request message was already sent by the <see cref="T:System.Net.Http.HttpClient" /> instance.</exception>
-        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" />
-
--or-
-
-.NET Framework only: The request timed out.</exception>
+        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" /></exception>
         <exception cref="T:System.OperationCanceledException">.NET Core and .NET 5 and later only: The request failed due to timeout.</exception>
       </Docs>
     </Member>
@@ -3879,10 +3665,7 @@ This method stores in the task it returns all non-usage exceptions that the meth
  This operation doesn't block. The returned <xref:System.Threading.Tasks.Task`1> object will complete once the entire response including content is read. The behavior is the same as if <xref:System.Net.Http.HttpCompletionOption.ResponseContentRead> has been explicitly specified.
 
 > [!NOTE]
-> In case of timeout, different exceptions are thrown on different .NET implementations.
-> - <xref:System.Net.Http.HttpRequestException> is thrown on all applicable .NET Framework versions.
-> - <xref:System.OperationCanceledException> without any inner exception is thrown on all applicable .NET Core versions.
-> - <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown on .NET 5 and later versions.
+> In case of timeout, an <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown.
 
 This method stores in the task it returns all non-usage exceptions that the method's synchronous counterpart can throw. If an exception is stored into the returned task, that exception will be thrown when the task is awaited. Usage exceptions, such as <xref:System.ArgumentException>, are still thrown synchronously. For the stored exceptions, see the exceptions thrown by <xref:System.Net.Http.HttpClient.Send(System.Net.Http.HttpRequestMessage)>.
 
@@ -3890,11 +3673,7 @@ This method stores in the task it returns all non-usage exceptions that the meth
         </remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="request" /> is <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">The request message was already sent by the <see cref="T:System.Net.Http.HttpClient" /> instance.</exception>
-        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" />
-
--or-
-
-.NET Framework only: The request timed out.</exception>
+        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" /></exception>
         <exception cref="T:System.OperationCanceledException">The cancellation token was canceled. This exception is stored into the returned task.
 
 -or-
@@ -3952,10 +3731,7 @@ This method stores in the task it returns all non-usage exceptions that the meth
  This operation doesn't block. Depending on the value of the `completionOption` parameter, the returned <xref:System.Threading.Tasks.Task`1> object will complete as soon as a response is available or the entire response including content is read.
 
 > [!NOTE]
-> In case of timeout, different exceptions are thrown on different .NET implementations.
-> - <xref:System.Net.Http.HttpRequestException> is thrown on all applicable .NET Framework versions.
-> - <xref:System.OperationCanceledException> without any inner exception is thrown on all applicable .NET Core versions.
-> - <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown on .NET 5 and later versions.
+> In case of timeout, an <xref:System.OperationCanceledException> that nests a <xref:System.TimeoutException> is thrown.
 
 This method stores in the task it returns all non-usage exceptions that the method's synchronous counterpart can throw. If an exception is stored into the returned task, that exception will be thrown when the task is awaited. Usage exceptions, such as <xref:System.ArgumentException>, are still thrown synchronously. For the stored exceptions, see the exceptions thrown by <xref:System.Net.Http.HttpClient.Send(System.Net.Http.HttpRequestMessage,System.Net.Http.HttpCompletionOption)>.
 
@@ -3963,11 +3739,7 @@ This method stores in the task it returns all non-usage exceptions that the meth
         </remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="request" /> is <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">The request message was already sent by the <see cref="T:System.Net.Http.HttpClient" /> instance.</exception>
-        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" />
-
--or-
-
-.NET Framework only: the request timed out.</exception>
+        <exception cref="T:System.Net.Http.HttpRequestException">The request failed due to an issue getting a valid HTTP response, such as network connectivity failure, DNS failure, server certificate validation error, or invalid server response. On .NET 8 and later versions, the reason is indicated by <see cref="P:System.Net.Http.HttpRequestException.HttpRequestError" /></exception>
         <exception cref="T:System.OperationCanceledException">The cancellation token was canceled. This exception is stored into the returned task.
 
 -or-
