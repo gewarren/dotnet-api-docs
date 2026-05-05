@@ -578,9 +578,8 @@ The following code example shows how to define and use a dynamic assembly. The e
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
-.NET Core and .NET 5+ only: [Multi-module assemblies are not supported](/dotnet/core/porting/net-framework-tech-unavailable#loading-multi-module-assemblies). Only one dynamic module may be defined in an assembly.
 
-.NET Framework only: It is an error to define multiple dynamic modules with the same name in an assembly.
+[Multi-module assemblies are not supported](/dotnet/core/porting/net-framework-tech-unavailable#loading-multi-module-assemblies). Only one dynamic module can be defined in an assembly.
 
  The defined dynamic module is transient. The dynamic module is not saved, even if the parent dynamic assembly was created with <xref:System.Reflection.Emit.AssemblyBuilderAccess.RunAndSave>.
 
@@ -605,12 +604,7 @@ The following code example shows how to define and use a dynamic assembly. The e
 
  -or-
 
- The length of <paramref name="name" /> is greater than the system-defined maximum length.
-
- -or-
-
- .NET Framework only: A module with the same <paramref name="name" /> has already been defined in this assembly.
- </exception>
+ The length of <paramref name="name" /> is greater than the system-defined maximum length.</exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="name" /> is <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">.NET Core and .NET 5+ only: A dynamic module has already been defined in this assembly.</exception>
@@ -3104,8 +3098,6 @@ The following code example shows how to define and use a dynamic assembly. The e
  For each <xref:System.Resources.ResourceWriter> obtained using <xref:System.Reflection.Emit.AssemblyBuilder.DefineResource*>, this method writes the .resources file and calls <xref:System.Resources.ResourceWriter.Close*> to close the stream.
 
  The `assemblyFileName` needs to be a simple file name without a drive or directory component. To create an assembly in a specific directory, use one of the <xref:System.AppDomain.DefineDynamicAssembly*> methods that takes a target directory argument.
-
- In .NET Framework 2.0, this overload of the <xref:System.Reflection.Emit.AssemblyBuilder.Save*> method is equivalent to calling the <xref:System.Reflection.Emit.AssemblyBuilder.Save(System.String,System.Reflection.PortableExecutableKinds,System.Reflection.ImageFileMachine)> method overload with <xref:System.Reflection.PortableExecutableKinds.ILOnly> for the `portableExecutableKind` parameter and <xref:System.Reflection.ImageFileMachine.I386> for the `imageFileMachine` parameter.
 
 ## Examples
  The following code sample creates a dynamic assembly and then persists it to a local disk using `Save`.

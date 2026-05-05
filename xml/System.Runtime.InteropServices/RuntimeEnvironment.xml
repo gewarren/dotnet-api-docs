@@ -285,14 +285,14 @@
 
 The following table shows the supported combinations for `clsid` and `riid`.
 
-|`clsid`|`riid`|
-|-------------|------------|
-|CLSID_CorMetaDataDispenser|IID_IMetaDataDispenser, IID_IMetaDataDispenserEx|
-|CLSID_CorMetaDataDispenserRuntime|IID_IMetaDataDispenser, IID_IMetaDataDispenserEx|
-|CLSID_CorRuntimeHost|IID_CorRuntimeHost|
-|CLSID_CLRRuntimeHost|IID_CLRRuntimeHost (not valid for the common language runtime that is provided by the .NET Framework 4), IID_CLRRuntimeHost3|
-|CLSID_TypeNameFactory|IID_TypeNameFactory|
-|CLSID_CLRStrongName|IID_CLRStrongName|
+| `clsid`                           | `riid`                                           |
+|-----------------------------------|--------------------------------------------------|
+| CLSID_CorMetaDataDispenser        | IID_IMetaDataDispenser, IID_IMetaDataDispenserEx |
+| CLSID_CorMetaDataDispenserRuntime | IID_IMetaDataDispenser, IID_IMetaDataDispenserEx |
+| CLSID_CorRuntimeHost              | IID_CorRuntimeHost                               |
+| CLSID_CLRRuntimeHost              | IID_CLRRuntimeHost, IID_CLRRuntimeHost3          |
+| CLSID_TypeNameFactory             | IID_TypeNameFactory                              |
+| CLSID_CLRStrongName               | IID_CLRStrongName                                |
 
  <xref:System.Runtime.InteropServices.RuntimeEnvironment.GetRuntimeInterfaceAsIntPtr*> is similar to the <xref:System.Runtime.InteropServices.RuntimeEnvironment.GetRuntimeInterfaceAsObject*> method.
 
@@ -419,11 +419,7 @@ The following table shows the supported combinations for `clsid` and `riid`.
       <Docs>
         <summary>Gets the version number of the common language runtime that's running the current process.</summary>
         <returns>A string containing the version number of the common language runtime.</returns>
-        <remarks>On .NET 8 and later versions, this method returns <c>v</c> concatenated with <see cref="P:System.Environment.Version" />, which is the version of the CLR. For example: <c>v8.0.0</c>.
-
-        On .NET Framework, this method returns <see cref="P:System.Reflection.Assembly.ImageRuntimeVersion" />, for example, <c>v4.0.30319</c>.
-
-        </remarks>
+        <remarks>This method returns <c>v</c> concatenated with <see cref="P:System.Environment.Version" />, which is the version of the CLR. For example: <c>v8.0.0</c>.</remarks>
       </Docs>
     </Member>
     <Member MemberName="SystemConfigurationFile">

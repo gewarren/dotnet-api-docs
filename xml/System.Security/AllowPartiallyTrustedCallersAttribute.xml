@@ -65,31 +65,7 @@
 
 ## Remarks
 > [!IMPORTANT]
-> Partially trusted code is no longer supported. This attribute has no effect in .NET Core.
-
-> [!NOTE]
->  The .NET Framework 4 introduces new security rules that affect the behavior of the <xref:System.Security.AllowPartiallyTrustedCallersAttribute> attribute (see [Security-Transparent Code, Level 2](/dotnet/framework/misc/security-transparent-code-level-2)). In the .NET Framework 4, all code defaults to security-transparent, that is, partially trusted. However, you can annotate individual types and members to assign them other transparency attributes. For this and other security changes, see [Security Changes](/dotnet/framework/security/security-changes).
-
- .NET Framework version 2.0 () assemblies must be strong-named to effectively use the <xref:System.Security.AllowPartiallyTrustedCallersAttribute> (APTCA) attribute. .NET Framework 4 () assemblies do not have to be strong-named for the APTCA attribute to be effective, and they can contain transparent, security-critical and security-safe-critical code. For more information about applying attributes at the assembly level, see [Applying Attributes](/dotnet/standard/attributes/applying-attributes).
-
- By default, if a strong-named,  assembly does not explicitly apply this attribute at the assembly level, it can be called only by other assemblies that are granted full trust. This restriction is enforced by placing a <xref:System.Security.Permissions.SecurityAction.LinkDemand> for `FullTrust` on every public or protected method on every publicly accessible class in the assembly. Assemblies that are intended to be called by partially trusted code can declare their intent through the use of <xref:System.Security.AllowPartiallyTrustedCallersAttribute>. An example of the declaration in C# is `[assembly:AllowPartiallyTrustedCallers]`; an example in Visual Basic is `<assembly:AllowPartiallyTrustedCallers>`.
-
-> [!CAUTION]
->  The presence of this assembly-level attribute prevents the default behavior of placing `FullTrust` <xref:System.Security.Permissions.SecurityAction.LinkDemand> security checks, and makes the assembly callable from any other (partially or fully trusted) assembly.
-
- When the APTCA attribute is present, all other security checks function as intended, including any class-level or method-level declarative security attributes that are present. This attribute blocks only the implicit, fully trusted caller demand.
-
- This is not a declarative security attribute, but a regular attribute (it derives from <xref:System.Attribute?displayProperty=nameWithType>, not from <xref:System.Security.Permissions.SecurityAttribute?displayProperty=nameWithType>).
-
- For more information, see [Using Libraries from Partially Trusted Code](/dotnet/framework/misc/using-libraries-from-partially-trusted-code).
-
-
-
-## Examples
- The following example shows how to use the <xref:System.Security.AllowPartiallyTrustedCallersAttribute> class.
-
- :::code language="csharp" source="~/snippets/csharp/System.Security/AllowPartiallyTrustedCallersAttribute/Overview/AllowPartiallyTrustedCallersAttribute.cs" id="Snippet1":::
- :::code language="vb" source="~/snippets/visualbasic/System.Security/AllowPartiallyTrustedCallersAttribute/Overview/allowpartiallytrustedcallersattribute.vb" id="Snippet1":::
+> Partially trusted code is no longer supported. This attribute has no effect in modern .NET.
 
  ]]></format>
     </remarks>

@@ -355,22 +355,7 @@
       <Parameters />
       <Docs>
         <summary>Prevents callers higher in the call stack from using the code that calls this method to access the resource specified by the current instance.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[
-
-## Remarks
-
-> [!IMPORTANT]
->  The <xref:System.Security.CodeAccessPermission.Deny*> method should be used only to protect resources from accidental access by fully trusted code. It should not be used to protect resources from intentional misuse by untrusted code. For example, if method `A` issues a <xref:System.Security.CodeAccessPermission.Deny*> for a permission and then calls method `B`, method `B` can overtly override the <xref:System.Security.CodeAccessPermission.Deny*> by issuing an <xref:System.Security.CodeAccessPermission.Assert*>. The called method is always higher in the stack. Therefore, if method `B` tries to access a protected resource, the security system begins checking for permissions with it because method `B` is the immediate caller, and then walks down the stack to confirm that there is no <xref:System.Security.CodeAccessPermission.Deny*> or <xref:System.Security.CodeAccessPermission.PermitOnly*> lower in the stack. Method `B`, which is trying to access the resource, can stop the stack walk immediately by using the <xref:System.Security.CodeAccessPermission.Assert*> method. In that case, the <xref:System.Security.CodeAccessPermission.Deny*> placed on the stack by method `A` (the calling method) is never discovered.
-
- This method prevents callers higher in the call stack from accessing the protected resource through the code that calls this method, even if those callers have been granted permission to access it. The call stack is typically represented as growing down, so that methods higher in the call stack call methods lower in the call stack.
-
- <xref:System.Security.CodeAccessPermission.Deny*> can limit the liability of the programmer or help prevent accidental security issues because it helps prevent the method that calls <xref:System.Security.CodeAccessPermission.Deny*> from being used to access the resource protected by the denied permission. If a method calls <xref:System.Security.CodeAccessPermission.Deny*> on a permission, and if a <xref:System.Security.CodeAccessPermission.Demand*> for that permission is invoked by a caller lower in the call stack, that security check will fail when it reaches the <xref:System.Security.CodeAccessPermission.Deny*>.
-
- The call to <xref:System.Security.CodeAccessPermission.Deny*> is effective until the calling code returns to its caller. Only one <xref:System.Security.CodeAccessPermission.Deny*> can be active on a frame. An attempt to call <xref:System.Security.CodeAccessPermission.Deny*> when an active <xref:System.Security.CodeAccessPermission.Deny*> exists on the frame results in a <xref:System.Security.SecurityException>. Call <xref:System.Security.CodeAccessPermission.RevertDeny*> or <xref:System.Security.CodeAccessPermission.RevertAll*> to remove an active <xref:System.Security.CodeAccessPermission.Deny*>. <xref:System.Security.CodeAccessPermission.Deny*> is ignored for a permission not granted because a demand for that permission will not succeed.
-
- ]]></format>
-        </remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.Security.SecurityException">There is already an active <see cref="M:System.Security.CodeAccessPermission.Deny" /> for the current frame.</exception>
         <block subset="none" type="overrides">
           <para>You cannot override this method.</para>
@@ -868,14 +853,7 @@
       <Parameters />
       <Docs>
         <summary>Causes any previous <see cref="M:System.Security.CodeAccessPermission.Deny" /> for the current frame to be removed and no longer in effect.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[
-
-## Remarks
- If there is no <xref:System.Security.CodeAccessPermission.Deny*> for the current frame, an <xref:System.ExecutionEngineException> is thrown.
-
- ]]></format>
-        </remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.InvalidOperationException">There is no previous <see cref="M:System.Security.CodeAccessPermission.Deny" /> for the current frame.</exception>
       </Docs>
     </Member>

@@ -60,30 +60,6 @@
 
 [!INCLUDE[cas-deprecated](~/includes/cas-deprecated.md)]
 
- This permission distinguishes between the following four types of file IO access provided by <xref:System.Security.Permissions.FileIOPermissionAccess>:
-
--   `Read`: Read access to the contents of the file or access to information about the file, such as its length or last modification time.
-
--   `Write`: Write access to the contents of the file or access to change information about the file, such as its name. Also allows for deletion and overwriting.
-
--   `Append`: Ability to write to the end of a file only. No ability to read.
-
--   `PathDiscovery`: Access to the information in the path itself. This helps protect sensitive information in the path, such as user names, as well as information about the directory structure that is revealed in the path. This value does not grant access to files or folders represented by the path.
-
-> [!NOTE]
->  Giving <xref:System.Security.Permissions.FileIOPermissionAccess.Write> access to an assembly is similar to granting it full trust. If an application should not write to the file system, it should not have <xref:System.Security.Permissions.FileIOPermissionAccess.Write> access.
-
- All these permissions are independent, meaning that rights to one do not imply rights to another. For example, `Write` permission does not imply permission to `Read` or `Append`. If more than one permission is desired, they can be combined using a bitwise OR as shown in the code example that follows. File permission is defined in terms of canonical absolute paths; calls should always be made with canonical file paths.
-
- <xref:System.Security.Permissions.FileIOPermission> describes protected operations on files and folders. The <xref:System.IO.File> class helps provide secure access to files and folders. The security access check is performed when the handle to the file is created. By doing the check at creation time, the performance impact of the security check is minimized. Opening a file happens once, while reading and writing can happen multiple times. Once the file is opened, no further checks are done. If the object is passed to an untrusted caller, it can be misused. For example, file handles should not be stored in public global statics where code with less permission can access them.
-
- <xref:System.Security.Permissions.FileIOPermissionAccess> specifies actions that can be performed on the file or folder. In addition, these actions can be combined using a bitwise OR to form complex instances.
-
- Access to a folder implies access to all the files it contains, as well as access to all the files and folders in its subfolders. For example, `Read` access to C:\folder1\ implies `Read` access to C:\folder1\file1.txt, C:\folder1\folder2\\, C:\folder1\folder2\file2.txt, and so on.
-
-> [!NOTE]
->  In versions of the .NET Framework before the .NET Framework 4, you could use the <xref:System.Security.CodeAccessPermission.Deny*?displayProperty=nameWithType> method to prevent inadvertent access to system resources by trusted code. <xref:System.Security.CodeAccessPermission.Deny*> is now obsolete, and access to resources is now determined solely by the granted permission set for an assembly. To limit access to files, you must run partially trusted code in a sandbox and assign it permissions only to resources that the code is allowed to access. For information about running an application in a sandbox, see [How to: Run Partially Trusted Code in a Sandbox](/dotnet/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox).
-
  ]]></format>
     </remarks>
     <altmember cref="T:System.Security.Permissions.FileIOPermissionAccess" />
