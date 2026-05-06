@@ -391,19 +391,7 @@
       <Parameters />
       <Docs>
         <summary>Releases the resources held by the current instance.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[
-
-## Remarks
-
-> [!NOTE]
-> This member has been removed from the .NET Framework version 2.0 and subsequent versions. This topic applies only to the versions listed in "Version Information" later in this topic.
-
-
-Application code does not call this method; it is automatically invoked during garbage collection, unless finalization by the garbage collector has been disabled. For more information, see <xref:System.GC.SuppressFinalize*?displayProperty=nameWithType> and <xref:System.Object.Finalize>. This method overrides <xref:System.Object.Finalize>.
-
-]]></format>
-        </remarks>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="Handle">
@@ -469,7 +457,7 @@ Application code does not call this method; it is automatically invoked during g
 ## Remarks
  Assigning a new value to the <xref:System.Threading.WaitHandle.Handle> property does not close the previous handle. This can result in a leaked handle.
 
- Do not use this property in the .NET Framework version 2.0 or later; use the <xref:System.Threading.WaitHandle.SafeWaitHandle> property instead. Setting this property to a valid handle also sets the <xref:System.Threading.WaitHandle.SafeWaitHandle> property, but setting it to <xref:System.Threading.WaitHandle.InvalidHandle> can result in a leaked handle.
+Use the <xref:System.Threading.WaitHandle.SafeWaitHandle> property instead. Setting this property to a valid handle also sets the <xref:System.Threading.WaitHandle.SafeWaitHandle> property, but setting it to <xref:System.Threading.WaitHandle.InvalidHandle> can result in a leaked handle.
 
  ]]></format>
         </remarks>
@@ -955,7 +943,7 @@ Calling `Dispose` allows the resources used by the <xref:System.Threading.WaitHa
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- <xref:System.Threading.AbandonedMutexException> is new in the .NET Framework version 2.0. In previous versions, the <xref:System.Threading.WaitHandle.WaitAll*> method returns `true` when a mutex is abandoned. An abandoned mutex often indicates a serious coding error. In the case of a system-wide mutex, it might indicate that an application has been terminated abruptly (for example, by using Windows Task Manager). The exception contains information useful for debugging.
+ <xref:System.Threading.AbandonedMutexException> is thrown when a mutex is abandoned. An abandoned mutex often indicates a serious coding error. In the case of a system-wide mutex, it might indicate that an application has been terminated abruptly (for example, by using Windows Task Manager). The exception contains information useful for debugging.
 
  The <xref:System.Threading.WaitHandle.WaitAll*> method returns when all the handles are signaled. If more than 64 handles are passed, a <xref:System.NotSupportedException> is thrown. If the array contains duplicates, the call fails with a <xref:System.DuplicateWaitObjectException>.
 
@@ -963,8 +951,6 @@ Calling `Dispose` allows the resources used by the <xref:System.Threading.WaitHa
 >  The <xref:System.Threading.WaitHandle.WaitAll*> method is not supported on threads in <xref:System.Threading.ApartmentState.STA> state.
 
  Calling this method overload is equivalent to calling the <xref:System.Threading.WaitHandle.WaitAll(System.Threading.WaitHandle[],System.Int32,System.Boolean)> method overload and specifying -1 (or <xref:System.Threading.Timeout.Infinite?displayProperty=nameWithType>) for `millisecondsTimeout` and `true` for `exitContext`.
-
-
 
 ## Examples
  The following code example shows how to use the thread pool to asynchronously create and write to a group of files. Each write operation is queued as a work item and signals when it is finished. The main thread waits for all the items to signal and then exits.
@@ -974,21 +960,21 @@ Calling `Dispose` allows the resources used by the <xref:System.Threading.WaitHa
 
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentNullException">The <paramref name="waitHandles" /> parameter is <see langword="null" />. -or-
+        <exception cref="T:System.ArgumentNullException">The <paramref name="waitHandles" /> parameter is <see langword="null" />.
+
+-or-
 
  One or more of the objects in the <paramref name="waitHandles" /> array are <see langword="null" />.
 
  -or-
 
- <paramref name="waitHandles" /> is an array with no elements and the .NET Framework version is 2.0 or later.</exception>
+ <paramref name="waitHandles" /> is an array with no elements.</exception>
         <exception cref="T:System.DuplicateWaitObjectException">The <paramref name="waitHandles" /> array contains elements that are duplicates.</exception>
         <exception cref="T:System.NotSupportedException">The number of objects in <paramref name="waitHandles" /> is greater than the system permits.
 
  -or-
 
  The current thread is in <see cref="F:System.Threading.ApartmentState.STA" /> state, and <paramref name="waitHandles" /> contains more than one element.</exception>
-        <exception cref="T:System.ApplicationException">
-          <paramref name="waitHandles" /> is an array with no elements and the .NET Framework version is 1.0 or 1.1.</exception>
         <exception cref="T:System.Threading.AbandonedMutexException">The wait terminated because a thread exited without releasing a mutex.</exception>
         <exception cref="T:System.InvalidOperationException">The <paramref name="waitHandles" /> array contains a transparent proxy for a <see cref="T:System.Threading.WaitHandle" /> in another application domain.</exception>
       </Docs>
@@ -1268,15 +1254,13 @@ The <xref:System.Threading.WaitHandle.WaitAll*> method returns when the wait ter
 
  -or-
 
- <paramref name="waitHandles" /> is an array with no elements and the .NET Framework version is 2.0 or later.</exception>
+ <paramref name="waitHandles" /> is an array with no elements.</exception>
         <exception cref="T:System.DuplicateWaitObjectException">The <paramref name="waitHandles" /> array contains elements that are duplicates.</exception>
         <exception cref="T:System.NotSupportedException">The number of objects in <paramref name="waitHandles" /> is greater than the system permits.
 
  -or-
 
  The current thread is in <see cref="F:System.Threading.ApartmentState.STA" /> state, and <paramref name="waitHandles" /> contains more than one element.</exception>
-        <exception cref="T:System.ApplicationException">
-          <paramref name="waitHandles" /> is an array with no elements and the .NET Framework version is 1.0 or 1.1.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">
           <paramref name="millisecondsTimeout" /> is a negative number other than -1, which represents an infinite time-out.</exception>
         <exception cref="T:System.Threading.AbandonedMutexException">The wait completed because a thread exited without releasing a mutex.</exception>
@@ -1366,15 +1350,13 @@ The maximum value for `timeout` is <xref:System.Int32.MaxValue?displayProperty=n
 
  -or-
 
- <paramref name="waitHandles" /> is an array with no elements and the .NET Framework version is 2.0 or later.</exception>
+ <paramref name="waitHandles" /> is an array with no elements.</exception>
         <exception cref="T:System.DuplicateWaitObjectException">The <paramref name="waitHandles" /> array contains elements that are duplicates.</exception>
         <exception cref="T:System.NotSupportedException">The number of objects in <paramref name="waitHandles" /> is greater than the system permits.
 
  -or-
 
  The <see cref="T:System.STAThreadAttribute" /> attribute is applied to the thread procedure for the current thread, and <paramref name="waitHandles" /> contains more than one element.</exception>
-        <exception cref="T:System.ApplicationException">
-          <paramref name="waitHandles" /> is an array with no elements and the .NET Framework version is 1.0 or 1.1.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">
           <paramref name="timeout" /> is a negative number other than -1 milliseconds, which represents an infinite time-out.
 
@@ -1455,20 +1437,15 @@ The maximum value for `timeout` is <xref:System.Int32.MaxValue?displayProperty=n
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- <xref:System.Threading.AbandonedMutexException> is new in the .NET Framework version 2.0. In previous versions, the <xref:System.Threading.WaitHandle.WaitAny*> method returns `true` if the wait completes because a mutex is abandoned. An abandoned mutex often indicates a serious coding error. In the case of a system-wide mutex, it might indicate that an application has been terminated abruptly (for example, by using Windows Task Manager). The exception contains information useful for debugging.
+ <xref:System.Threading.AbandonedMutexException> is thrown when a mutex is abandoned. An abandoned mutex often indicates a serious coding error. In the case of a system-wide mutex, it might indicate that an application has been terminated abruptly (for example, by using Windows Task Manager). The exception contains information useful for debugging.
 
  The <xref:System.Threading.WaitHandle.WaitAny*> method throws an <xref:System.Threading.AbandonedMutexException> only when the wait completes because of an abandoned mutex. If `waitHandles` contains a released mutex with a lower index number than the abandoned mutex, the <xref:System.Threading.WaitHandle.WaitAny*> method completes normally and the exception is not thrown.
-
-> [!NOTE]
->  In versions of the .NET Framework earlier than version 2.0, if a thread exits or aborts without explicitly releasing a <xref:System.Threading.Mutex>, and that `Mutex` is at index 0 (zero) in a `WaitAny` array on another thread, the index returned by `WaitAny` is 128 instead of 0.
 
  This method returns when any handle is signaled. If more than one object becomes signaled during the call, the return value is the array index of the signaled object with the smallest index value of all the signaled objects.
 
  The maximum number of the wait handles is 64, and 63 if the current thread is in <xref:System.Threading.ApartmentState.STA> state.
 
  Calling this method overload is equivalent to calling the <xref:System.Threading.WaitHandle.WaitAny(System.Threading.WaitHandle[],System.Int32,System.Boolean)> method overload and specifying -1 (or <xref:System.Threading.Timeout.Infinite?displayProperty=nameWithType>) for `millisecondsTimeout` and `true` for `exitContext`.
-
-
 
 ## Examples
  The following code example demonstrates calling the <xref:System.Threading.WaitHandle.WaitAny*> method.
@@ -1484,11 +1461,9 @@ The maximum value for `timeout` is <xref:System.Int32.MaxValue?displayProperty=n
 
  One or more of the objects in the <paramref name="waitHandles" /> array is <see langword="null" />.</exception>
         <exception cref="T:System.NotSupportedException">The number of objects in <paramref name="waitHandles" /> is greater than the system permits.</exception>
-        <exception cref="T:System.ApplicationException">
-          <paramref name="waitHandles" /> is an array with no elements, and the .NET Framework version is 1.0 or 1.1.</exception>
         <exception cref="T:System.Threading.AbandonedMutexException">The wait completed because a thread exited without releasing a mutex.</exception>
         <exception cref="T:System.ArgumentException">
-          <paramref name="waitHandles" /> is an array with no elements, and the .NET Framework version is 2.0 or later.</exception>
+          <paramref name="waitHandles" /> is an array with no elements.</exception>
         <exception cref="T:System.InvalidOperationException">The <paramref name="waitHandles" /> array contains a transparent proxy for a <see cref="T:System.Threading.WaitHandle" /> in another application domain.</exception>
       </Docs>
     </Member>
@@ -1753,13 +1728,11 @@ The maximum number of the wait handles is 64, and 63 if the current thread is in
 
  One or more of the objects in the <paramref name="waitHandles" /> array is <see langword="null" />.</exception>
         <exception cref="T:System.NotSupportedException">The number of objects in <paramref name="waitHandles" /> is greater than the system permits.</exception>
-        <exception cref="T:System.ApplicationException">
-          <paramref name="waitHandles" /> is an array with no elements, and the .NET Framework version is 1.0 or 1.1.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">
           <paramref name="millisecondsTimeout" /> is a negative number other than -1, which represents an infinite time-out.</exception>
         <exception cref="T:System.Threading.AbandonedMutexException">The wait completed because a thread exited without releasing a mutex.</exception>
         <exception cref="T:System.ArgumentException">
-          <paramref name="waitHandles" /> is an array with no elements, and the .NET Framework version is 2.0 or later.</exception>
+          <paramref name="waitHandles" /> is an array with no elements.</exception>
         <exception cref="T:System.InvalidOperationException">The <paramref name="waitHandles" /> array contains a transparent proxy for a <see cref="T:System.Threading.WaitHandle" /> in another application domain.</exception>
       </Docs>
     </Member>
@@ -1848,8 +1821,6 @@ The maximum value for `timeout` is <xref:System.Int32.MaxValue?displayProperty=n
 
  One or more of the objects in the <paramref name="waitHandles" /> array is <see langword="null" />.</exception>
         <exception cref="T:System.NotSupportedException">The number of objects in <paramref name="waitHandles" /> is greater than the system permits.</exception>
-        <exception cref="T:System.ApplicationException">
-          <paramref name="waitHandles" /> is an array with no elements, and the .NET Framework version is 1.0 or 1.1.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">
           <paramref name="timeout" /> is a negative number other than -1 milliseconds, which represents an infinite time-out.
 
@@ -1858,7 +1829,7 @@ The maximum value for `timeout` is <xref:System.Int32.MaxValue?displayProperty=n
  <paramref name="timeout" /> is greater than <see cref="F:System.Int32.MaxValue">Int32.MaxValue</see>.</exception>
         <exception cref="T:System.Threading.AbandonedMutexException">The wait completed because a thread exited without releasing a mutex.</exception>
         <exception cref="T:System.ArgumentException">
-          <paramref name="waitHandles" /> is an array with no elements, and the .NET Framework version is 2.0 or later.</exception>
+          <paramref name="waitHandles" /> is an array with no elements.</exception>
         <exception cref="T:System.InvalidOperationException">The <paramref name="waitHandles" /> array contains a transparent proxy for a <see cref="T:System.Threading.WaitHandle" /> in another application domain.</exception>
       </Docs>
     </Member>
@@ -1924,15 +1895,13 @@ The maximum value for `timeout` is <xref:System.Int32.MaxValue?displayProperty=n
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- <xref:System.Threading.AbandonedMutexException> is new in the .NET Framework version 2.0. In previous versions, the <xref:System.Threading.WaitHandle.WaitOne*> method returns `true` when a mutex is abandoned. An abandoned mutex often indicates a serious coding error. In the case of a system-wide mutex, it might indicate that an application has been terminated abruptly (for example, by using Windows Task Manager). The exception contains information useful for debugging.
+ <xref:System.Threading.AbandonedMutexException> is thrown when a mutex is abandoned. An abandoned mutex often indicates a serious coding error. In the case of a system-wide mutex, it might indicate that an application has been terminated abruptly (for example, by using Windows Task Manager). The exception contains information useful for debugging.
 
  The caller of this method blocks indefinitely until the current instance receives a signal. Use this method to block until a <xref:System.Threading.WaitHandle> receives a signal from another thread, such as is generated when an asynchronous operation completes. For more information, see the <xref:System.IAsyncResult> interface.
 
  Calling this method overload is equivalent to calling the <xref:System.Threading.WaitHandle.WaitOne(System.Int32,System.Boolean)> method overload and specifying -1 or <xref:System.Threading.Timeout.Infinite?displayProperty=nameWithType> for the first parameter and `false` for the second parameter.
 
  Override this method to customize the behavior of derived classes.
-
-
 
 ## Examples
  The following code example shows how to use a wait handle to keep a process from terminating while it waits for a background thread to finish executing.
