@@ -676,12 +676,7 @@ TopNamespace.Sub\+Namespace.ContainingClass+NestedClass, MyAssembly, Version=1.3
 
  The <xref:System.Reflection.MethodBase> that is returned by the <xref:System.Type.DeclaringMethod> property is either a <xref:System.Reflection.MethodInfo> in the case of a generic method, or a <xref:System.Reflection.ConstructorInfo> in the case of a generic constructor.
 
-> [!NOTE]
-> In the .NET Framework version 2.0, generic constructors are not supported.
-
  For a list of the invariant conditions for terms used in generic reflection, see the <xref:System.Type.IsGenericType> property remarks.
-
-
 
 ## Examples
  The following code example defines a class that has a generic method, assigns a type argument to the method, and invokes the resulting constructed generic method. It also displays information about the generic method definition and the constructed method. When displaying information about the type parameters of the generic method definition, in the `DisplayGenericMethodInfo` method, the example code shows the value of the <xref:System.Type.DeclaringMethod> property for the method's generic type parameter.
@@ -2437,11 +2432,11 @@ The `filter` argument can be a custom delegate of type <xref:System.Reflection.M
 |Nested Type|No|No|
 |Property|Not applicable|The common type system rule is that the inheritance is the same as that of the methods that implement the property. Reflection treats properties as hide-by-name-and-signature. See note 2 below.|
 
-1.  Hide-by-name-and-signature considers all of the parts of the signature, including custom modifiers, return types, parameter types, sentinels, and unmanaged calling conventions. This is a binary comparison.
+1. Hide-by-name-and-signature considers all of the parts of the signature, including custom modifiers, return types, parameter types, sentinels, and unmanaged calling conventions. This is a binary comparison.
 
-2.  For reflection, properties and events are hide-by-name-and-signature. If you have a property with both a get and a set accessor in the base class, but the derived class has only a get accessor, the derived class property hides the base class property, and you will not be able to access the setter on the base class.
+2. For reflection, properties and events are hide-by-name-and-signature. If you have a property with both a get and a set accessor in the base class, but the derived class has only a get accessor, the derived class property hides the base class property, and you will not be able to access the setter on the base class.
 
-3.  Custom attributes are not part of the common type system.
+3. Custom attributes are not part of the common type system.
 
 > [!NOTE]
 > You cannot omit parameters when looking up constructors and methods. You can only omit parameters when invoking.
@@ -2730,11 +2725,11 @@ False
 |Nested Type|No|No|
 |Property|Not applicable|The common type system rule is that the inheritance is the same as that of the methods that implement the property. Reflection treats properties as hide-by-name-and-signature. See note 2 below.|
 
-1.  Hide-by-name-and-signature considers all of the parts of the signature, including custom modifiers, return types, parameter types, sentinels, and unmanaged calling conventions. This is a binary comparison.
+1. Hide-by-name-and-signature considers all of the parts of the signature, including custom modifiers, return types, parameter types, sentinels, and unmanaged calling conventions. This is a binary comparison.
 
-2.  For reflection, properties and events are hide-by-name-and-signature. If you have a property with both a get and a set accessor in the base class, but the derived class has only a get accessor, the derived class property hides the base class property, and you will not be able to access the setter on the base class.
+2. For reflection, properties and events are hide-by-name-and-signature. If you have a property with both a get and a set accessor in the base class, but the derived class has only a get accessor, the derived class property hides the base class property, and you will not be able to access the setter on the base class.
 
-3.  Custom attributes are not part of the common type system.
+3. Custom attributes are not part of the common type system.
 
  This method overload calls the <xref:System.Type.GetConstructors(System.Reflection.BindingFlags)> method overload, with <xref:System.Reflection.BindingFlags.Public?displayProperty=nameWithType> &#124; <xref:System.Reflection.BindingFlags.Instance?displayProperty=nameWithType> (<xref:System.Reflection.BindingFlags.Public?displayProperty=nameWithType>` Or `<xref:System.Reflection.BindingFlags.Instance?displayProperty=nameWithType> in Visual Basic). It will not find class initializers (static constructor). To find class initializers, use an overload that takes <xref:System.Reflection.BindingFlags>, and specify <xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType> &#124; <xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType> (<xref:System.Reflection.BindingFlags.Static?displayProperty=nameWithType>` Or `<xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType> in Visual Basic). You can also get the class initializer using the <xref:System.Type.TypeInitializer> property.
 
@@ -2915,11 +2910,11 @@ If the current <xref:System.Type> represents a generic type parameter, the <xref
 |Nested Type|No|No|
 |Property|Not applicable|The common type system rule is that the inheritance is the same as that of the methods that implement the property. Reflection treats properties as hide-by-name-and-signature. See note 2 below.|
 
-1.  Hide-by-name-and-signature considers all of the parts of the signature, including custom modifiers, return types, parameter types, sentinels, and unmanaged calling conventions. This is a binary comparison.
+1. Hide-by-name-and-signature considers all of the parts of the signature, including custom modifiers, return types, parameter types, sentinels, and unmanaged calling conventions. This is a binary comparison.
 
-2.  For reflection, properties and events are hide-by-name-and-signature. If you have a property with both a get and a set accessor in the base class, but the derived class has only a get accessor, the derived class property hides the base class property, and you will not be able to access the setter on the base class.
+2. For reflection, properties and events are hide-by-name-and-signature. If you have a property with both a get and a set accessor in the base class, but the derived class has only a get accessor, the derived class property hides the base class property, and you will not be able to access the setter on the base class.
 
-3.  Custom attributes are not part of the common type system.
+3. Custom attributes are not part of the common type system.
 
  If the current <xref:System.Type> represents a constructed generic type, this method returns the <xref:System.Reflection.MemberInfo> objects with the type parameters replaced by the appropriate type arguments. For example, if class `C<T>` has a property `P` that returns `T`, calling <xref:System.Type.GetDefaultMembers*> on `C<int>` returns `int P` in C# (`Property P As Integer` in Visual Basic).
 
@@ -3350,11 +3345,11 @@ If the current <xref:System.Type> represents a generic type parameter, the <xref
 |Nested Type|No|No|
 |Property|Not applicable|The common type system rule is that the inheritance is the same as that of the methods that implement the property. Reflection treats properties as hide-by-name-and-signature. See note 2 below.|
 
-1.  Hide-by-name-and-signature considers all of the parts of the signature, including custom modifiers, return types, parameter types, sentinels, and unmanaged calling conventions. This is a binary comparison.
+1. Hide-by-name-and-signature considers all of the parts of the signature, including custom modifiers, return types, parameter types, sentinels, and unmanaged calling conventions. This is a binary comparison.
 
-2.  For reflection, properties and events are hide-by-name-and-signature. If you have a property with both a get and a set accessor in the base class, but the derived class has only a get accessor, the derived class property hides the base class property, and you will not be able to access the setter on the base class.
+2. For reflection, properties and events are hide-by-name-and-signature. If you have a property with both a get and a set accessor in the base class, but the derived class has only a get accessor, the derived class property hides the base class property, and you will not be able to access the setter on the base class.
 
-3.  Custom attributes are not part of the common type system.
+3. Custom attributes are not part of the common type system.
 
  If the current <xref:System.Type> represents a constructed generic type, this method returns the <xref:System.Reflection.EventInfo> with the type parameters replaced by the appropriate type arguments.
 
@@ -3576,11 +3571,11 @@ If the current <xref:System.Type> represents a generic type parameter, the <xref
 |Nested Type|No|No|
 |Property|Not applicable|The common type system rule is that the inheritance is the same as that of the methods that implement the property. Reflection treats properties as hide-by-name-and-signature. See note 2 below.|
 
-1.  Hide-by-name-and-signature considers all of the parts of the signature, including custom modifiers, return types, parameter types, sentinels, and unmanaged calling conventions. This is a binary comparison.
+1. Hide-by-name-and-signature considers all of the parts of the signature, including custom modifiers, return types, parameter types, sentinels, and unmanaged calling conventions. This is a binary comparison.
 
-2.  For reflection, properties and events are hide-by-name-and-signature. If you have a property with both a get and a set accessor in the base class, but the derived class has only a get accessor, the derived class property hides the base class property, and you will not be able to access the setter on the base class.
+2. For reflection, properties and events are hide-by-name-and-signature. If you have a property with both a get and a set accessor in the base class, but the derived class has only a get accessor, the derived class property hides the base class property, and you will not be able to access the setter on the base class.
 
-3.  Custom attributes are not part of the common type system.
+3. Custom attributes are not part of the common type system.
 
  If the current <xref:System.Type> represents a constructed generic type, this method returns the <xref:System.Reflection.EventInfo> objects with the type parameters replaced by the appropriate type arguments.
 
@@ -3893,11 +3888,11 @@ If the current <xref:System.Type> represents a generic type parameter, the <xref
 |Nested Type|No|No|
 |Property|Not applicable|The common type system rule is that the inheritance is the same as that of the methods that implement the property. Reflection treats properties as hide-by-name-and-signature. See note 2 below.|
 
-1.  Hide-by-name-and-signature considers all of the parts of the signature, including custom modifiers, return types, parameter types, sentinels, and unmanaged calling conventions. This is a binary comparison.
+1. Hide-by-name-and-signature considers all of the parts of the signature, including custom modifiers, return types, parameter types, sentinels, and unmanaged calling conventions. This is a binary comparison.
 
-2.  For reflection, properties and events are hide-by-name-and-signature. If you have a property with both a get and a set accessor in the base class, but the derived class has only a get accessor, the derived class property hides the base class property, and you will not be able to access the setter on the base class.
+2. For reflection, properties and events are hide-by-name-and-signature. If you have a property with both a get and a set accessor in the base class, but the derived class has only a get accessor, the derived class property hides the base class property, and you will not be able to access the setter on the base class.
 
-3.  Custom attributes are not part of the common type system.
+3. Custom attributes are not part of the common type system.
 
  The following <xref:System.Reflection.BindingFlags> filter flags can be used to define which fields to include in the search:
 
@@ -4024,11 +4019,11 @@ If the current <xref:System.Type> represents a generic type parameter, the <xref
 |Nested Type|No|No|
 |Property|Not applicable|The common type system rule is that the inheritance is the same as that of the methods that implement the property. Reflection treats properties as hide-by-name-and-signature. See note 2 below.|
 
-1.  Hide-by-name-and-signature considers all of the parts of the signature, including custom modifiers, return types, parameter types, sentinels, and unmanaged calling conventions. This is a binary comparison.
+1. Hide-by-name-and-signature considers all of the parts of the signature, including custom modifiers, return types, parameter types, sentinels, and unmanaged calling conventions. This is a binary comparison.
 
-2.  For reflection, properties and events are hide-by-name-and-signature. If you have a property with both a get and a set accessor in the base class, but the derived class has only a get accessor, the derived class property hides the base class property, and you will not be able to access the setter on the base class.
+2. For reflection, properties and events are hide-by-name-and-signature. If you have a property with both a get and a set accessor in the base class, but the derived class has only a get accessor, the derived class property hides the base class property, and you will not be able to access the setter on the base class.
 
-3.  Custom attributes are not part of the common type system.
+3. Custom attributes are not part of the common type system.
 
  If the current <xref:System.Type> represents a constructed generic type, this method returns the <xref:System.Reflection.FieldInfo> objects with the type parameters replaced by the appropriate type arguments.
 
@@ -4479,7 +4474,7 @@ In .NET 6 and earlier versions, the <xref:System.Type.GetFields*> method does no
 
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">The current type is not a generic type.  That is, <see cref="P:System.Type.IsGenericType" /> returns <see langword="false" />.</exception>
+        <exception cref="T:System.InvalidOperationException">The current type is not a generic type. That is, <see cref="P:System.Type.IsGenericType" /> returns <see langword="false" />.</exception>
         <exception cref="T:System.NotSupportedException">The invoked method is not supported in the base class. Derived classes must provide an implementation.</exception>
         <altmember cref="M:System.Type.MakeGenericType(System.Type[])" />
         <altmember cref="P:System.Type.ContainsGenericParameters" />
@@ -5043,11 +5038,11 @@ The current instance or <paramref name="interfaceType" /> argument is an open ge
 |Nested Type|No|No|
 |Property|Not applicable|The common type system rule is that the inheritance is the same as that of the methods that implement the property. Reflection treats properties as hide-by-name-and-signature. See note 2 below.|
 
-1.  Hide-by-name-and-signature considers all of the parts of the signature, including custom modifiers, return types, parameter types, sentinels, and unmanaged calling conventions. This is a binary comparison.
+1. Hide-by-name-and-signature considers all of the parts of the signature, including custom modifiers, return types, parameter types, sentinels, and unmanaged calling conventions. This is a binary comparison.
 
-2.  For reflection, properties and events are hide-by-name-and-signature. If you have a property with both a get and a set accessor in the base class, but the derived class has only a get accessor, the derived class property hides the base class property, and you will not be able to access the setter on the base class.
+2. For reflection, properties and events are hide-by-name-and-signature. If you have a property with both a get and a set accessor in the base class, but the derived class has only a get accessor, the derived class property hides the base class property, and you will not be able to access the setter on the base class.
 
-3.  Custom attributes are not part of the common type system.
+3. Custom attributes are not part of the common type system.
 
  If the current <xref:System.Type> represents a constructed generic type, this method returns the <xref:System.Reflection.MemberInfo> with the type parameters replaced by the appropriate type arguments.
 
@@ -5413,11 +5408,11 @@ Members include properties, methods, constructors, fields, events, and nested ty
 |Nested Type|No|No|
 |Property|Not applicable|The common type system rule is that the inheritance is the same as that of the methods that implement the property. Reflection treats properties as hide-by-name-and-signature. See note 2 below.|
 
-1.  Hide-by-name-and-signature considers all of the parts of the signature, including custom modifiers, return types, parameter types, sentinels, and unmanaged calling conventions. This is a binary comparison.
+1. Hide-by-name-and-signature considers all of the parts of the signature, including custom modifiers, return types, parameter types, sentinels, and unmanaged calling conventions. This is a binary comparison.
 
-2.  For reflection, properties and events are hide-by-name-and-signature. If you have a property with both a get and a set accessor in the base class, but the derived class has only a get accessor, the derived class property hides the base class property, and you will not be able to access the setter on the base class.
+2. For reflection, properties and events are hide-by-name-and-signature. If you have a property with both a get and a set accessor in the base class, but the derived class has only a get accessor, the derived class property hides the base class property, and you will not be able to access the setter on the base class.
 
-3.  Custom attributes are not part of the common type system.
+3. Custom attributes are not part of the common type system.
 
  If the current <xref:System.Type> represents a constructed generic type, this method returns the <xref:System.Reflection.MemberInfo> objects with the type parameters replaced by the appropriate type arguments.
 
@@ -5683,7 +5678,7 @@ This method can be used to find a constructed generic member given a member from
 ## Remarks
  The search for `name` is case-sensitive. The search includes public static and public instance methods.
 
- If a method is overloaded and has more than one public method, the <xref:System.Type.GetMethod(System.String)> method throws an <xref:System.Reflection.AmbiguousMatchException> exception. In the following example, an exception is thrown because there is more than one public overload of the <xref:System.Int32.ToString*?displayProperty=nameWithType> method.  On the other hand, because the `Person.ToString` method overrides  <xref:System.Object.ToString*?displayProperty=nameWithType> and therefore is not overloaded, the <xref:System.Type.GetMethod(System.String)> method is able to retrieve the <xref:System.Reflection.MethodInfo> object.
+ If a method is overloaded and has more than one public method, the <xref:System.Type.GetMethod(System.String)> method throws an <xref:System.Reflection.AmbiguousMatchException> exception. In the following example, an exception is thrown because there is more than one public overload of the <xref:System.Int32.ToString*?displayProperty=nameWithType> method. On the other hand, because the `Person.ToString` method overrides  <xref:System.Object.ToString*?displayProperty=nameWithType> and therefore is not overloaded, the <xref:System.Type.GetMethod(System.String)> method is able to retrieve the <xref:System.Reflection.MethodInfo> object.
 
  :::code language="csharp" source="~/snippets/csharp/System/Type/GetMethod/GetMethodWithOverloads2.cs" id="Snippet3":::
  :::code language="fsharp" source="~/snippets/fsharp/System/Type/GetMethod/GetMethodWithOverloads2.fs" id="Snippet3":::
@@ -6745,11 +6740,11 @@ One of the elements in the <paramref name="types" /> array is <see langword="nul
 |Nested Type|No|No|
 |Property|Not applicable|The common type system rule is that the inheritance is the same as that of the methods that implement the property. Reflection treats properties as hide-by-name-and-signature. See note 2 below.|
 
-1.  Hide-by-name-and-signature considers all of the parts of the signature, including custom modifiers, return types, parameter types, sentinels, and unmanaged calling conventions. This is a binary comparison.
+1. Hide-by-name-and-signature considers all of the parts of the signature, including custom modifiers, return types, parameter types, sentinels, and unmanaged calling conventions. This is a binary comparison.
 
-2.  For reflection, properties and events are hide-by-name-and-signature. If you have a property with both a get and a set accessor in the base class, but the derived class has only a get accessor, the derived class property hides the base class property, and you will not be able to access the setter on the base class.
+2. For reflection, properties and events are hide-by-name-and-signature. If you have a property with both a get and a set accessor in the base class, but the derived class has only a get accessor, the derived class property hides the base class property, and you will not be able to access the setter on the base class.
 
-3.  Custom attributes are not part of the common type system.
+3. Custom attributes are not part of the common type system.
 
  The following <xref:System.Reflection.BindingFlags> filter flags can be used to define which methods to include in the search:
 
@@ -7238,11 +7233,11 @@ In .NET 6 and earlier versions, the <xref:System.Type.GetMethods*> method does n
 |Nested Type|No|No|
 |Property|Not applicable|The common type system rule is that the inheritance is the same as that of the methods that implement the property. Reflection treats properties as hide-by-name-and-signature. See note 2 below.|
 
-1.  Hide-by-name-and-signature considers all of the parts of the signature, including custom modifiers, return types, parameter types, sentinels, and unmanaged calling conventions. This is a binary comparison.
+1. Hide-by-name-and-signature considers all of the parts of the signature, including custom modifiers, return types, parameter types, sentinels, and unmanaged calling conventions. This is a binary comparison.
 
-2.  For reflection, properties and events are hide-by-name-and-signature. If you have a property with both a get and a set accessor in the base class, but the derived class has only a get accessor, the derived class property hides the base class property, and you will not be able to access the setter on the base class.
+2. For reflection, properties and events are hide-by-name-and-signature. If you have a property with both a get and a set accessor in the base class, but the derived class has only a get accessor, the derived class property hides the base class property, and you will not be able to access the setter on the base class.
 
-3.  Custom attributes are not part of the common type system.
+3. Custom attributes are not part of the common type system.
 
 > [!NOTE]
 > You cannot omit parameters when looking up constructors and methods. You can only omit parameters when invoking.
@@ -7456,11 +7451,11 @@ If the current <xref:System.Type> represents a type parameter in the definition 
 |Nested Type|No|No|
 |Property|Not applicable|The common type system rule is that the inheritance is the same as that of the methods that implement the property. Reflection treats properties as hide-by-name-and-signature. See note 2 below.|
 
-1.  Hide-by-name-and-signature considers all of the parts of the signature, including custom modifiers, return types, parameter types, sentinels, and unmanaged calling conventions. This is a binary comparison.
+1. Hide-by-name-and-signature considers all of the parts of the signature, including custom modifiers, return types, parameter types, sentinels, and unmanaged calling conventions. This is a binary comparison.
 
-2.  For reflection, properties and events are hide-by-name-and-signature. If you have a property with both a get and a set accessor in the base class, but the derived class has only a get accessor, the derived class property hides the base class property, and you will not be able to access the setter on the base class.
+2. For reflection, properties and events are hide-by-name-and-signature. If you have a property with both a get and a set accessor in the base class, but the derived class has only a get accessor, the derived class property hides the base class property, and you will not be able to access the setter on the base class.
 
-3.  Custom attributes are not part of the common type system.
+3. Custom attributes are not part of the common type system.
 
  If the current <xref:System.Type> represents a type parameter in the definition of a generic type or generic method, this method searches the nested types of the class constraint.
 
@@ -7667,11 +7662,11 @@ If the current <xref:System.Type> represents a type parameter in the definition 
 |Nested Type|No|No|
 |Property|Not applicable|The common type system rule is that the inheritance is the same as that of the methods that implement the property. Reflection treats properties as hide-by-name-and-signature. See note 2 below.|
 
-1.  Hide-by-name-and-signature considers all of the parts of the signature, including custom modifiers, return types, parameter types, sentinels, and unmanaged calling conventions. This is a binary comparison.
+1. Hide-by-name-and-signature considers all of the parts of the signature, including custom modifiers, return types, parameter types, sentinels, and unmanaged calling conventions. This is a binary comparison.
 
-2.  For reflection, properties and events are hide-by-name-and-signature. If you have a property with both a get and a set accessor in the base class, but the derived class has only a get accessor, the derived class property hides the base class property, and you will not be able to access the setter on the base class.
+2. For reflection, properties and events are hide-by-name-and-signature. If you have a property with both a get and a set accessor in the base class, but the derived class has only a get accessor, the derived class property hides the base class property, and you will not be able to access the setter on the base class.
 
-3.  Custom attributes are not part of the common type system.
+3. Custom attributes are not part of the common type system.
 
  If the current <xref:System.Type> represents a type parameter in the definition of a generic type or generic method, this method searches the nested types of the class constraint.
 
@@ -7932,11 +7927,11 @@ If the current <xref:System.Type> represents a type parameter in the definition 
 |Nested Type|No|No|
 |Property|Not applicable|The common type system rule is that the inheritance is the same as that of the methods that implement the property. Reflection treats properties as hide-by-name-and-signature. See note 2 below.|
 
-1.  Hide-by-name-and-signature considers all of the parts of the signature, including custom modifiers, return types, parameter types, sentinels, and unmanaged calling conventions. This is a binary comparison.
+1. Hide-by-name-and-signature considers all of the parts of the signature, including custom modifiers, return types, parameter types, sentinels, and unmanaged calling conventions. This is a binary comparison.
 
-2.  For reflection, properties and events are hide-by-name-and-signature. If you have a property with both a get and a set accessor in the base class, but the derived class has only a get accessor, the derived class property hides the base class property, and you will not be able to access the setter on the base class.
+2. For reflection, properties and events are hide-by-name-and-signature. If you have a property with both a get and a set accessor in the base class, but the derived class has only a get accessor, the derived class property hides the base class property, and you will not be able to access the setter on the base class.
 
-3.  Custom attributes are not part of the common type system.
+3. Custom attributes are not part of the common type system.
 
  If the current <xref:System.Type> represents a constructed generic type, this method returns the <xref:System.Reflection.PropertyInfo> objects with the type parameters replaced by the appropriate type arguments.
 
@@ -9134,18 +9129,14 @@ You can use the <xref:System.Type.GetType*> method to obtain a <xref:System.Type
 > [!NOTE]
 > If `typeName` cannot be found, the call to the <xref:System.Type.GetType(System.String)> method returns `null`. It does not throw an exception. To control whether an exception is thrown, call an overload of the <xref:System.Type.GetType*> method that has a `throwOnError` parameter.
 
- .NET Framework only: <xref:System.Type.GetType*> only works on assemblies loaded from disk. If you call <xref:System.Type.GetType*> to look up a type defined in a dynamic assembly defined using the <xref:System.Reflection.Emit> services, you might get inconsistent behavior. The behavior depends on whether the dynamic assembly is persistent, that is, created using the `RunAndSave` or `Save` access modes of the <xref:System.Reflection.Emit.AssemblyBuilderAccess?displayProperty=nameWithType> enumeration. If the dynamic assembly is persistent and has been written to disk before `GetType` is called, the loader finds the saved assembly on disk, loads that assembly, and retrieves the type from that assembly. If the assembly has not been saved to disk when `GetType` is called, the method returns `null`. `GetType` does not understand transient dynamic assemblies; therefore, calling `GetType` to retrieve a type in a transient dynamic assembly returns `null`.
-
- In .NET Framework, to use `GetType` on a dynamic module, subscribe to the <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> event and call `GetType` before saving. Otherwise, you will get two copies of the assembly in memory.
-
- On .NET Core 3.0 and later versions, assembly loads triggered by this API are affected by the current value of <xref:System.Runtime.Loader.AssemblyLoadContext.CurrentContextualReflectionContext*?displayProperty=nameWithType>.
+Assembly loads triggered by this API are affected by the current value of <xref:System.Runtime.Loader.AssemblyLoadContext.CurrentContextualReflectionContext*?displayProperty=nameWithType>.
 
  The following table shows what members of a base class are returned by the `Get` methods when reflecting on a type.
 
-|Member Type|Static|Non-Static|
-|-----------------|------------|-----------------|
-|Constructor|No|No|
-|Field|No|Yes. A field is always hide-by-name-and-signature.|
+| Member Type | Static | Non-Static                                         |
+|-------------|--------|----------------------------------------------------|
+| Constructor | No     | No                                                 |
+| Field       | No     | Yes. A field is always hide-by-name-and-signature. |
 |Event|Not applicable|The common type system rule is that the inheritance is the same as that of the methods that implement the property. Reflection treats properties as hide-by-name-and-signature. See note 2 below.|
 |Method|No|Yes. A method (both virtual and non-virtual) can be hide-by-name or hide-by-name-and-signature.|
 |Nested Type|No|No|
@@ -9168,14 +9159,14 @@ You can use the <xref:System.Type.GetType*> method to obtain a <xref:System.Type
 > [!NOTE]
 > Processor architecture is part of assembly identity, and can be specified as part of assembly name strings. For example, "ProcessorArchitecture=msil". However, it's not included in the string returned by the <xref:System.Type.AssemblyQualifiedName> property, for compatibility reasons. You can also load types by creating an <xref:System.Reflection.AssemblyName> object and passing it to an appropriate overload of the <xref:System.Reflection.Assembly.Load*> method. You can then use the <xref:System.Reflection.Assembly.GetType*?displayProperty=nameWithType> method to load types from the assembly. See also <xref:System.Reflection.AssemblyName.ProcessorArchitecture*?displayProperty=nameWithType>.
 
-|Delimiter|Meaning|
-|---------------|-------------|
-|Backslash (\\)|Escape character.|
-|Backtick (`)|Precedes one or more digits representing the number of type parameters, located at the end of the name of a generic type.|
-|Brackets ([])|Enclose a generic type argument list, for a constructed generic type; within a type argument list, enclose an assembly-qualified type.|
-|Comma (,)|Precedes the Assembly name.|
-|Period (.)|Denotes namespace identifiers.|
-|Plus sign (+)|Precedes a nested class.|
+| Delimiter      | Meaning                        |
+|----------------|--------------------------------|
+| Backslash (\\) | Escape character.             |
+| Backtick (`)   | Precedes one or more digits representing the number of type parameters, located at the end of the name of a generic type. |
+| Brackets ([])  | Enclose a generic type argument list, for a constructed generic type; within a type argument list, enclose an assembly-qualified type. |
+| Comma (,)      | Precedes the Assembly name.   |
+| Period (.)     | Denotes namespace identifiers. |
+| Plus sign (+)  | Precedes a nested class.      |
 
  For example, the fully qualified name for a class might look like this:
 
@@ -9221,11 +9212,11 @@ Type.GetType("System.Collections.Generic.Dictionary`2[System.String,[MyType,MyAs
 
  The following table shows the syntax you use with `GetType` for various types.
 
-|To Get|Use|
-|------------|---------|
-|A nullable <xref:System.Int32>|``Type.GetType("System.Nullable`1[System.Int32]")``|
-|An unmanaged pointer to `MyType`|`Type.GetType("MyType*")`|
-|An unmanaged pointer to a pointer to `MyType`|`Type.GetType("MyType**")`|
+| To Get                                        | Use                                                 |
+|-----------------------------------------------|-----------------------------------------------------|
+| A nullable <xref:System.Int32>                | ``Type.GetType("System.Nullable`1[System.Int32]")`` |
+| An unmanaged pointer to `MyType`              | `Type.GetType("MyType*")`                           |
+| An unmanaged pointer to a pointer to `MyType` | `Type.GetType("MyType**")`                          |
 |A managed pointer or reference to `MyType`|`Type.GetType("MyType&")`. Note that unlike pointers, references are limited to one level.|
 |A parent class and a nested class|`Type.GetType("MyParentClass+MyNestedClass")`|
 |A one-dimensional array with a lower bound of 0|`Type.GetType("MyType[]")`|
@@ -9342,30 +9333,26 @@ Type.GetType("System.Collections.Generic.Dictionary`2[System.String,[MyType,MyAs
 ## Remarks
  You can use the <xref:System.Type.GetType*> method to obtain a <xref:System.Type> object for a type in another assembly if you know its assembly-qualified name, which can be obtained from <xref:System.Type.AssemblyQualifiedName>. <xref:System.Type.GetType*> causes loading of the assembly specified in `typeName`. You can also load an assembly using the <xref:System.Reflection.Assembly.Load*?displayProperty=nameWithType> method, and then use the <xref:System.Reflection.Assembly.GetType*?displayProperty=nameWithType> or <xref:System.Reflection.Assembly.GetTypes*?displayProperty=nameWithType> method to get <xref:System.Type> objects. If a type is in an assembly known to your program at compile time, it's more efficient to use `typeof` in C# or the `GetType` operator in Visual Basic.
 
- .NET Framework only: <xref:System.Type.GetType*> only works on assemblies loaded from disk. If you call <xref:System.Type.GetType*> to look up a type defined in a dynamic assembly defined using the <xref:System.Reflection.Emit> services, you might get inconsistent behavior. The behavior depends on whether the dynamic assembly is persistent, that is, created using the `RunAndSave` or `Save` access modes of the <xref:System.Reflection.Emit.AssemblyBuilderAccess?displayProperty=nameWithType> enumeration. If the dynamic assembly is persistent and has been written to disk before `GetType` is called, the loader finds the saved assembly on disk, loads that assembly, and retrieves the type from that assembly. If the assembly has not been saved to disk when `GetType` is called, the method returns `null`. `GetType` does not understand transient dynamic assemblies; therefore, calling `GetType` to retrieve a type in a transient dynamic assembly returns `null`.
-
- In .NET Framework, to use `GetType` on a dynamic module, subscribe to the <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> event and call `GetType` before saving. Otherwise, you will get two copies of the assembly in memory.
-
- On .NET Core 3.0 and later versions, assembly loads triggered by this API are affected by the current value of <xref:System.Runtime.Loader.AssemblyLoadContext.CurrentContextualReflectionContext*?displayProperty=nameWithType>.
+Assembly loads triggered by this API are affected by the current value of <xref:System.Runtime.Loader.AssemblyLoadContext.CurrentContextualReflectionContext*?displayProperty=nameWithType>.
 
  The `throwOnError` parameter specifies what happens when the type is not found, and also suppresses certain other exception conditions, as described in the Exceptions section. Some exceptions are thrown regardless of the value of `throwOnError`. For example, if the type is found but cannot be loaded, a <xref:System.TypeLoadException> is thrown even if `throwOnError` is `false`.
 
  The following table shows what members of a base class are returned by the `Get` methods when reflecting on a type.
 
-|Member Type|Static|Non-Static|
-|-----------------|------------|-----------------|
-|Constructor|No|No|
-|Field|No|Yes. A field is always hide-by-name-and-signature.|
+| Member Type | Static | Non-Static                                         |
+|-------------|--------|----------------------------------------------------|
+| Constructor | No     | No                                                 |
+| Field       | No     | Yes. A field is always hide-by-name-and-signature. |
 |Event|Not applicable|The common type system rule is that the inheritance is the same as that of the methods that implement the property. Reflection treats properties as hide-by-name-and-signature. See note 2 below.|
 |Method|No|Yes. A method (both virtual and non-virtual) can be hide-by-name or hide-by-name-and-signature.|
 |Nested Type|No|No|
 |Property|Not applicable|The common type system rule is that the inheritance is the same as that of the methods that implement the property. Reflection treats properties as hide-by-name-and-signature. See note 2 below.|
 
-1.  Hide-by-name-and-signature considers all of the parts of the signature, including custom modifiers, return types, parameter types, sentinels, and unmanaged calling conventions. This is a binary comparison.
+1. Hide-by-name-and-signature considers all of the parts of the signature, including custom modifiers, return types, parameter types, sentinels, and unmanaged calling conventions. This is a binary comparison.
 
-2.  For reflection, properties and events are hide-by-name-and-signature. If you have a property with both a get and a set accessor in the base class, but the derived class has only a get accessor, the derived class property hides the base class property, and you will not be able to access the setter on the base class.
+2. For reflection, properties and events are hide-by-name-and-signature. If you have a property with both a get and a set accessor in the base class, but the derived class has only a get accessor, the derived class property hides the base class property, and you will not be able to access the setter on the base class.
 
-3.  Custom attributes are not part of the common type system.
+3. Custom attributes are not part of the common type system.
 
  Arrays or COM types are not searched for unless they have already been loaded into the table of available classes.
 
@@ -9577,30 +9564,26 @@ Type.GetType("System.Collections.Generic.Dictionary`2[System.String,[MyType,MyAs
 ## Remarks
  You can use the <xref:System.Type.GetType*> method to obtain a <xref:System.Type> object for a type in another assembly if you know its assembly-qualified name, which can be obtained from <xref:System.Type.AssemblyQualifiedName>. <xref:System.Type.GetType*> causes loading of the assembly specified in `typeName`. You can also load an assembly using the <xref:System.Reflection.Assembly.Load*?displayProperty=nameWithType> method, and then use the <xref:System.Reflection.Assembly.GetType*?displayProperty=nameWithType> or <xref:System.Reflection.Assembly.GetTypes*?displayProperty=nameWithType> method to get <xref:System.Type> objects. If a type is in an assembly known to your program at compile time, it's more efficient to use `typeof` in C# or the `GetType` operator in Visual Basic.
 
- .NET Framework only: <xref:System.Type.GetType*> only works on assemblies loaded from disk. If you call <xref:System.Type.GetType*> to look up a type defined in a dynamic assembly defined using the <xref:System.Reflection.Emit> services, you might get inconsistent behavior. The behavior depends on whether the dynamic assembly is persistent, that is, created using the `RunAndSave` or `Save` access modes of the <xref:System.Reflection.Emit.AssemblyBuilderAccess?displayProperty=nameWithType> enumeration. If the dynamic assembly is persistent and has been written to disk before `GetType` is called, the loader finds the saved assembly on disk, loads that assembly, and retrieves the type from that assembly. If the assembly has not been saved to disk when `GetType` is called, the method returns `null`. `GetType` does not understand transient dynamic assemblies; therefore, calling `GetType` to retrieve a type in a transient dynamic assembly returns `null`.
-
- In .NET Framework, to use `GetType` on a dynamic module, subscribe to the <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> event and call `GetType` before saving. Otherwise, you will get two copies of the assembly in memory.
-
- On .NET Core 3.0 and later versions, assembly loads triggered by this API are affected by the current value of <xref:System.Runtime.Loader.AssemblyLoadContext.CurrentContextualReflectionContext*?displayProperty=nameWithType>.
+Assembly loads triggered by this API are affected by the current value of <xref:System.Runtime.Loader.AssemblyLoadContext.CurrentContextualReflectionContext*?displayProperty=nameWithType>.
 
  The `throwOnError` parameter specifies what happens when the type is not found, and also suppresses certain other exception conditions, as described in the Exceptions section. Some exceptions are thrown regardless of the value of `throwOnError`. For example, if the type is found but cannot be loaded, a <xref:System.TypeLoadException> is thrown even if `throwOnError` is `false`.
 
  The following table shows what members of a base class are returned by the `Get` methods when reflecting on a type.
 
-|Member Type|Static|Non-Static|
-|-----------------|------------|-----------------|
-|Constructor|No|No|
-|Field|No|Yes. A field is always hide-by-name-and-signature.|
-|Event|Not applicable|The common type system rule is that the inheritance is the same as that of the methods that implement the property. Reflection treats properties as hide-by-name-and-signature. See note 2 below.|
-|Method|No|Yes. A method (both virtual and non-virtual) can be hide-by-name or hide-by-name-and-signature.|
-|Nested Type|No|No|
-|Property|Not applicable|The common type system rule is that the inheritance is the same as that of the methods that implement the property. Reflection treats properties as hide-by-name-and-signature. See note 2 below.|
+| Member Type | Static | Non-Static                                         |
+|-------------|--------|----------------------------------------------------|
+| Constructor | No     | No                                                 |
+| Field       | No     | Yes. A field is always hide-by-name-and-signature. |
+| Event       | Not applicable | The common type system rule is that the inheritance is the same as that of the methods that implement the property. Reflection treats properties as hide-by-name-and-signature. See note 2 below. |
+| Method      | No     | Yes. A method (both virtual and non-virtual) can be hide-by-name or hide-by-name-and-signature. |
+| Nested Type | No     | No                                                 |
+| Property    | Not applicable | The common type system rule is that the inheritance is the same as that of the methods that implement the property. Reflection treats properties as hide-by-name-and-signature. See note 2 below. |
 
-1.  Hide-by-name-and-signature considers all of the parts of the signature, including custom modifiers, return types, parameter types, sentinels, and unmanaged calling conventions. This is a binary comparison.
+1. Hide-by-name-and-signature considers all of the parts of the signature, including custom modifiers, return types, parameter types, sentinels, and unmanaged calling conventions. This is a binary comparison.
 
-2.  For reflection, properties and events are hide-by-name-and-signature. If you have a property with both a get and a set accessor in the base class, but the derived class has only a get accessor, the derived class property hides the base class property, and you will not be able to access the setter on the base class.
+2. For reflection, properties and events are hide-by-name-and-signature. If you have a property with both a get and a set accessor in the base class, but the derived class has only a get accessor, the derived class property hides the base class property, and you will not be able to access the setter on the base class.
 
-3.  Custom attributes are not part of the common type system.
+3. Custom attributes are not part of the common type system.
 
  Arrays or COM types are not searched for unless they have already been loaded into the table of available classes.
 
@@ -9613,14 +9596,14 @@ Type.GetType("System.Collections.Generic.Dictionary`2[System.String,[MyType,MyAs
 > [!NOTE]
 > Processor architecture is part of assembly identity, and can be specified as part of assembly name strings. For example, "ProcessorArchitecture=msil". However, it's not included in the string returned by the <xref:System.Type.AssemblyQualifiedName> property, for compatibility reasons. You can also load types by creating an <xref:System.Reflection.AssemblyName> object and passing it to an appropriate overload of the <xref:System.Reflection.Assembly.Load*> method. You can then use the <xref:System.Reflection.Assembly.GetType*?displayProperty=nameWithType> method to load types from the assembly. See also <xref:System.Reflection.AssemblyName.ProcessorArchitecture*?displayProperty=nameWithType>.
 
-|Delimiter|Meaning|
-|---------------|-------------|
-|Backslash (\\)|Escape character.|
-|Backtick (`)|Precedes one or more digits representing the number of type parameters, located at the end of the name of a generic type.|
-|Brackets ([])|Enclose a generic type argument list, for a constructed generic type; within a type argument list, enclose an assembly-qualified type.|
-|Comma (,)|Precedes the Assembly name.|
-|Period (.)|Denotes namespace identifiers.|
-|Plus sign (+)|Precedes a nested class.|
+| Delimiter      | Meaning           |
+|----------------|-------------------|
+| Backslash (\\) | Escape character. |
+| Backtick (`)   | Precedes one or more digits representing the number of type parameters, located at the end of the name of a generic type. |
+| Brackets ([])  | Enclose a generic type argument list, for a constructed generic type; within a type argument list, enclose an assembly-qualified type. |
+| Comma (,)      | Precedes the Assembly name. |
+| Period (.)     | Denotes namespace identifiers. |
+| Plus sign (+)  | Precedes a nested class. |
 
  For example, the fully qualified name for a class might look like this:
 
@@ -9666,11 +9649,11 @@ Type.GetType("System.Collections.Generic.Dictionary`2[System.String,[MyType,MyAs
 
  The following table shows the syntax you use with `GetType` for various types.
 
-|To Get|Use|
-|------------|---------|
-|A nullable <xref:System.Int32>|``Type.GetType("System.Nullable`1[System.Int32]")``|
-|An unmanaged pointer to `MyType`|`Type.GetType("MyType*")`|
-|An unmanaged pointer to a pointer to `MyType`|`Type.GetType("MyType**")`|
+| To Get                                        | Use                                                 |
+|-----------------------------------------------|-----------------------------------------------------|
+| A nullable <xref:System.Int32>                | ``Type.GetType("System.Nullable`1[System.Int32]")`` |
+| An unmanaged pointer to `MyType`              | `Type.GetType("MyType*")`                           |
+| An unmanaged pointer to a pointer to `MyType` | `Type.GetType("MyType**")`                          |
 |A managed pointer or reference to `MyType`|`Type.GetType("MyType&")`. Note that unlike pointers, references are limited to one level.|
 |A parent class and a nested class|`Type.GetType("MyParentClass+MyNestedClass")`|
 |A one-dimensional array with a lower bound of 0|`Type.GetType("MyArray[]")`|
@@ -10387,22 +10370,19 @@ Calling this method overload is the same as calling the <xref:System.Type.GetTyp
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Type.GetTypeFromCLSID*> method supports late-bound access to unmanaged COM objects from .NET Framework apps when you know the COM object's class identifier (CLSID).  The class identifier for COM classes is defined in the HKEY_CLASSES_ROOT\CLSID key of the registry. You can retrieve the value of the <xref:System.Type.IsCOMObject> property to determine whether the type returned by this method is a COM object.
+ The <xref:System.Type.GetTypeFromCLSID*> method supports late-bound access to unmanaged COM objects from .NET apps when you know the COM object's class identifier (CLSID). The class identifier for COM classes is defined in the HKEY_CLASSES_ROOT\CLSID key of the registry. You can retrieve the value of the <xref:System.Type.IsCOMObject> property to determine whether the type returned by this method is a COM object.
 
 > [!TIP]
 > You can call the <xref:System.Type.GetTypeFromProgID*> method for late-bound access to COM objects whose programmatic identifier (ProgID) you know.
 
  Instantiating an unmanaged COM object from its CLSID is a two-step process:
 
-1.  Get a <xref:System.Type> object that represents the`__ComObject` that corresponds to the CLSID by calling the <xref:System.Type.GetTypeFromCLSID*> method.
-
-2.  Call the <xref:System.Activator.CreateInstance(System.Type)?displayProperty=nameWithType> method to instantiate the COM object.
+1. Get a <xref:System.Type> object that represents the`__ComObject` that corresponds to the CLSID by calling the <xref:System.Type.GetTypeFromCLSID*> method.
+2. Call the <xref:System.Activator.CreateInstance(System.Type)?displayProperty=nameWithType> method to instantiate the COM object.
 
  See the example for an illustration.
 
  The <xref:System.Type.GetTypeFromCLSID(System.Guid)> overload ignores any exception that may occur when instantiating a <xref:System.Type> object based on the `clsid` argument. Note that no exception is thrown if `clsid` is not found in the registry.
-
-
 
 ## Examples
  The following example uses the CLSID of the Microsoft Word [Application object](/office/vba/api/word.application) to retrieve a COM type that represents the Microsoft Word application. It then instantiates the type by calling the <xref:System.Activator.CreateInstance*?displayProperty=nameWithType> method, and closes it by calling the [Application.Quit](/office/vba/api/word.application.quit(method)) method.
@@ -10414,7 +10394,7 @@ Calling this method overload is the same as calling the <xref:System.Type.GetTyp
  ]]></format>
         </remarks>
         <block subset="none" type="usage">
-          <para>This method is intended for use when working with COM objects, not with .NET Framework objects. All managed objects, including those that are visible to COM (that is, their <see cref="T:System.Runtime.InteropServices.ComVisibleAttribute" /> attribute is <see langword="true" />) have a GUID that is returned by the <see cref="P:System.Type.GUID" /> property. Although the method returns a <see cref="T:System.Type" /> object that corresponds to the GUID for .NET Framework objects, you can't use that <see cref="T:System.Type" /> object to create a type instance by calling the  <see cref="M:System.Activator.CreateInstance(System.Type)" /> method, as the following example shows.
+          <para>This method is intended for use when working with COM objects, not with .NET objects. All managed objects, including those that are visible to COM (that is, their <see cref="T:System.Runtime.InteropServices.ComVisibleAttribute" /> attribute is <see langword="true" />) have a GUID that is returned by the <see cref="P:System.Type.GUID" /> property. Although the method returns a <see cref="T:System.Type" /> object that corresponds to the GUID for .NET objects, you can't use that <see cref="T:System.Type" /> object to create a type instance by calling the  <see cref="M:System.Activator.CreateInstance(System.Type)" /> method, as the following example shows.
 
  :::code language="csharp" source="~/snippets/csharp/System/Type/GetTypeFromCLSID/gettypefromclsid11.cs" id="Snippet11":::
  :::code language="fsharp" source="~/snippets/fsharp/System/Type/GetTypeFromCLSID/gettypefromclsid11.fs" id="Snippet11":::
@@ -10490,22 +10470,19 @@ Calling this method overload is the same as calling the <xref:System.Type.GetTyp
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Type.GetTypeFromCLSID*> method supports late-bound access to unmanaged COM objects from .NET Framework apps when you know the COM object's class identifier (CLSID).  The class identifier for COM classes is defined in the HKEY_CLASSES_ROOT\CLSID key of the registry. You can retrieve the value of the <xref:System.Type.IsCOMObject> property to determine whether the type returned by this method is a COM object.
+ The <xref:System.Type.GetTypeFromCLSID*> method supports late-bound access to unmanaged COM objects from .NET apps when you know the COM object's class identifier (CLSID). The class identifier for COM classes is defined in the HKEY_CLASSES_ROOT\CLSID key of the registry. You can retrieve the value of the <xref:System.Type.IsCOMObject> property to determine whether the type returned by this method is a COM object.
 
 > [!TIP]
 > You can call the <xref:System.Type.GetTypeFromProgID*> method for late-bound access to COM objects whose programmatic identifier (ProgID) you know.
 
  Instantiating an unmanaged COM object from its CLSID is a two-step process:
 
-1.  Get a <xref:System.Type> object that represents the `__ComObject` that corresponds to the CLSID by calling the <xref:System.Type.GetTypeFromCLSID*> method.
-
-2.  Call the <xref:System.Activator.CreateInstance(System.Type)?displayProperty=nameWithType> method to instantiate the COM object.
+1. Get a <xref:System.Type> object that represents the `__ComObject` that corresponds to the CLSID by calling the <xref:System.Type.GetTypeFromCLSID*> method.
+2. Call the <xref:System.Activator.CreateInstance(System.Type)?displayProperty=nameWithType> method to instantiate the COM object.
 
  See the example for an illustration.
 
  Exceptions such as <xref:System.OutOfMemoryException> will be thrown when specifying `true` for `throwOnError`, but it will not fail for unregistered CLSIDs.
-
-
 
 ## Examples
  The following example uses the CLSID of the Microsoft Word [Application object](/office/vba/api/word.application) to retrieve a COM type that represents the Microsoft Word application. It then instantiates the type by calling the <xref:System.Activator.CreateInstance*?displayProperty=nameWithType> method, and closes it by calling the [Application.Quit](/office/vba/api/word.application.quit(method)) method. An exception is thrown if an error occurs while loading the type.
@@ -10517,7 +10494,7 @@ Calling this method overload is the same as calling the <xref:System.Type.GetTyp
  ]]></format>
         </remarks>
         <block subset="none" type="usage">
-          <para>This method is intended for use when working with COM objects, not with .NET Framework objects. All managed objects, including those that are visible to COM (that is, their <see cref="T:System.Runtime.InteropServices.ComVisibleAttribute" /> attribute is <see langword="true" />) have a GUID that is returned by the <see cref="P:System.Type.GUID" /> property. Although the method returns a <see cref="T:System.Type" /> object that corresponds to the GUID for .NET Framework objects, you can't use that <see cref="T:System.Type" /> object to create a type instance by calling the  <see cref="M:System.Activator.CreateInstance(System.Type)" /> method, as the following example shows.
+          <para>This method is intended for use when working with COM objects, not with .NET objects. All managed objects, including those that are visible to COM (that is, their <see cref="T:System.Runtime.InteropServices.ComVisibleAttribute" /> attribute is <see langword="true" />) have a GUID that is returned by the <see cref="P:System.Type.GUID" /> property. Although the method returns a <see cref="T:System.Type" /> object that corresponds to the GUID for .NET objects, you can't use that <see cref="T:System.Type" /> object to create a type instance by calling the  <see cref="M:System.Activator.CreateInstance(System.Type)" /> method, as the following example shows.
 
  :::code language="csharp" source="~/snippets/csharp/System/Type/GetTypeFromCLSID/gettypefromclsid11.cs" id="Snippet11":::
  :::code language="fsharp" source="~/snippets/fsharp/System/Type/GetTypeFromCLSID/gettypefromclsid11.fs" id="Snippet11":::
@@ -10588,18 +10565,15 @@ Calling this method overload is the same as calling the <xref:System.Type.GetTyp
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Type.GetTypeFromCLSID*> method supports late-bound access to unmanaged COM objects from .NET Framework apps when you know the COM object's class identifier (CLSID).  The class identifier for COM classes is defined in the HKEY_CLASSES_ROOT\CLSID key of the registry. You can retrieve the value of the <xref:System.Type.IsCOMObject> property to determine whether the type returned by this method is a COM object.
+ The <xref:System.Type.GetTypeFromCLSID*> method supports late-bound access to unmanaged COM objects from .NET apps when you know the COM object's class identifier (CLSID). The class identifier for COM classes is defined in the HKEY_CLASSES_ROOT\CLSID key of the registry. You can retrieve the value of the <xref:System.Type.IsCOMObject> property to determine whether the type returned by this method is a COM object.
 
 > [!TIP]
 > You can call the <xref:System.Type.GetTypeFromProgID*> method for late-bound access to COM objects whose programmatic identifier (ProgID) you know.
 
  Instantiating an unmanaged COM object from its CLSID is a two-step process:
 
-1.  Get a <xref:System.Type> object that represents the `__ComObject` that corresponds to the CLSID by calling the <xref:System.Type.GetTypeFromCLSID*> method.
-
-2.  Call the <xref:System.Activator.CreateInstance(System.Type)?displayProperty=nameWithType> method to instantiate the COM object.
-
-
+1. Get a <xref:System.Type> object that represents the `__ComObject` that corresponds to the CLSID by calling the <xref:System.Type.GetTypeFromCLSID*> method.
+2. Call the <xref:System.Activator.CreateInstance(System.Type)?displayProperty=nameWithType> method to instantiate the COM object.
 
 ## Examples
  The following example uses the CLSID of the Microsoft Word [Application object](/office/vba/api/word.application) to retrieve a COM type that represents the Microsoft Word application from a server named computer17.central.contoso.com. It then instantiates the type by calling the <xref:System.Activator.CreateInstance*?displayProperty=nameWithType> method, and closes it by calling the [Application.Quit](/office/vba/api/word.application.quit(method)) method.
@@ -10611,7 +10585,7 @@ Calling this method overload is the same as calling the <xref:System.Type.GetTyp
  ]]></format>
         </remarks>
         <block subset="none" type="usage">
-          <para>This method is intended for use when working with COM objects, not with .NET Framework objects. All managed objects, including those that are visible to COM (that is, their <see cref="T:System.Runtime.InteropServices.ComVisibleAttribute" /> attribute is <see langword="true" />) have a GUID that is returned by the <see cref="P:System.Type.GUID" /> property. Although the method returns a <see cref="T:System.Type" /> object that corresponds to the GUID for .NET Framework objects, you can't use that <see cref="T:System.Type" /> object to create a type instance by calling the  <see cref="M:System.Activator.CreateInstance(System.Type)" /> method, as the following example shows.
+          <para>This method is intended for use when working with COM objects, not with .NET objects. All managed objects, including those that are visible to COM (that is, their <see cref="T:System.Runtime.InteropServices.ComVisibleAttribute" /> attribute is <see langword="true" />) have a GUID that is returned by the <see cref="P:System.Type.GUID" /> property. Although the method returns a <see cref="T:System.Type" /> object that corresponds to the GUID for .NET objects, you can't use that <see cref="T:System.Type" /> object to create a type instance by calling the  <see cref="M:System.Activator.CreateInstance(System.Type)" /> method, as the following example shows.
 
  :::code language="csharp" source="~/snippets/csharp/System/Type/GetTypeFromCLSID/gettypefromclsid11.cs" id="Snippet11":::
  :::code language="fsharp" source="~/snippets/fsharp/System/Type/GetTypeFromCLSID/gettypefromclsid11.fs" id="Snippet11":::
@@ -10689,20 +10663,17 @@ Calling this method overload is the same as calling the <xref:System.Type.GetTyp
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Type.GetTypeFromCLSID*> method supports late-bound access to unmanaged COM objects from .NET Framework apps when you know the COM object's class identifier (CLSID).  The class identifier for COM classes is defined in the HKEY_CLASSES_ROOT\CLSID key of the registry. You can retrieve the value of the <xref:System.Type.IsCOMObject> property to determine whether the type returned by this method is a COM object.
+ The <xref:System.Type.GetTypeFromCLSID*> method supports late-bound access to unmanaged COM objects from .NET apps when you know the COM object's class identifier (CLSID). The class identifier for COM classes is defined in the HKEY_CLASSES_ROOT\CLSID key of the registry. You can retrieve the value of the <xref:System.Type.IsCOMObject> property to determine whether the type returned by this method is a COM object.
 
 > [!TIP]
 > You can call the <xref:System.Type.GetTypeFromProgID*> method for late-bound access to COM objects whose programmatic identifier (ProgID) you know.
 
  Instantiating an unmanaged COM object from its CLSID is a two-step process:
 
-1.  Get a <xref:System.Type> object that represents the `__ComObject` that corresponds to the CLSID by calling the <xref:System.Type.GetTypeFromCLSID*> method.
-
-2.  Call the <xref:System.Activator.CreateInstance(System.Type)?displayProperty=nameWithType> method to instantiate the COM object.
+1. Get a <xref:System.Type> object that represents the `__ComObject` that corresponds to the CLSID by calling the <xref:System.Type.GetTypeFromCLSID*> method.
+2. Call the <xref:System.Activator.CreateInstance(System.Type)?displayProperty=nameWithType> method to instantiate the COM object.
 
  Exceptions such as <xref:System.OutOfMemoryException> will be thrown when specifying `true` for `throwOnError`, but it will not fail for unregistered CLSIDs.
-
-
 
 ## Examples
  The following example uses the CLSID of the Microsoft Word [Application object](/office/vba/api/word.application) to retrieve a COM type that represents the Microsoft Word application from a server named computer17.central.contoso.com. It then instantiates the type by calling the <xref:System.Activator.CreateInstance*?displayProperty=nameWithType> method, and closes it by calling the [Application.Quit](/office/vba/api/word.application.quit(method)) method. An exception is thrown if an error occurs while loading the type.
@@ -10714,7 +10685,7 @@ Calling this method overload is the same as calling the <xref:System.Type.GetTyp
  ]]></format>
         </remarks>
         <block subset="none" type="usage">
-          <para>This method is intended for use when working with COM objects, not with .NET Framework objects. All managed objects, including those that are visible to COM (that is, their <see cref="T:System.Runtime.InteropServices.ComVisibleAttribute" /> attribute is <see langword="true" />) have a GUID that is returned by the <see cref="P:System.Type.GUID" /> property. Although the <see cref="M:System.Type.GetTypeFromCLSID(System.Guid,System.String,System.Boolean)" /> method returns a <see cref="T:System.Type" /> object that corresponds to the GUID for a particular managed object, you can't use that <see cref="T:System.Type" /> object to create a type instance by calling the  <see cref="M:System.Activator.CreateInstance(System.Type)" /> method, as the following example shows.
+          <para>This method is intended for use when working with COM objects, not with .NET objects. All managed objects, including those that are visible to COM (that is, their <see cref="T:System.Runtime.InteropServices.ComVisibleAttribute" /> attribute is <see langword="true" />) have a GUID that is returned by the <see cref="P:System.Type.GUID" /> property. Although the <see cref="M:System.Type.GetTypeFromCLSID(System.Guid,System.String,System.Boolean)" /> method returns a <see cref="T:System.Type" /> object that corresponds to the GUID for a particular managed object, you can't use that <see cref="T:System.Type" /> object to create a type instance by calling the  <see cref="M:System.Activator.CreateInstance(System.Type)" /> method, as the following example shows.
 
  :::code language="csharp" source="~/snippets/csharp/System/Type/GetTypeFromCLSID/gettypefromclsid11.cs" id="Snippet11":::
  :::code language="fsharp" source="~/snippets/fsharp/System/Type/GetTypeFromCLSID/gettypefromclsid11.fs" id="Snippet11":::
@@ -10875,7 +10846,7 @@ Calling this method overload is the same as calling the <xref:System.Type.GetTyp
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is provided for COM support. ProgIDs are not used in the Microsoft .NET Framework because they have been superseded by the concept of namespace.
+ This method is provided for COM support. ProgIDs are not used in .NET because they have been superseded by the concept of namespace.
 
  ]]></format>
         </remarks>
@@ -10955,9 +10926,7 @@ Calling this method overload is the same as calling the <xref:System.Type.GetTyp
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is provided for COM support. Program IDs are not used in Microsoft .NET Framework because they have been superseded by the concept of namespace.
-
-
+ This method is provided for COM support. Program IDs are not used in .NET because they have been superseded by the concept of namespace.
 
 ## Examples
  The following example retrieves a type by passing a ProgID, specifying whether to throw an exception if the ProgID is invalid. The example then displays the ClassID related to the ProgID, along with any applicable exception message.
@@ -11041,9 +11010,7 @@ Calling this method overload is the same as calling the <xref:System.Type.GetTyp
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is provided for COM support. Program IDs are not used in Microsoft .NET Framework because they have been superseded by the concept of namespace.
-
-
+ This method is provided for COM support. Program IDs are not used in .NET because they have been superseded by the concept of namespace.
 
 ## Examples
  The following example retrieves a type by passing a ProgID and server name. The example then displays the ClassID related to the ProgID, or throws an exception if the ProgID or the server name is invalid.
@@ -11133,9 +11100,7 @@ Calling this method overload is the same as calling the <xref:System.Type.GetTyp
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method is provided for COM support. Program IDs are not used in Microsoft .NET Framework because they have been superseded by the concept of namespace.
-
-
+ This method is provided for COM support. Program IDs are not used in .NET because they have been superseded by the concept of namespace.
 
 ## Examples
  The following example retrieves a type by passing a ProgID and server name. The example then displays the ClassID related to the ProgID, specifying whether to throw an exception if the ProgID or the server name is invalid.
@@ -11589,11 +11554,6 @@ Calling this method overload is the same as calling the <xref:System.Type.GetTyp
 
  When you invoke an `IDispatch` member, you can specify the DispID instead of the member name, using the string format "[DispID=##]". For example, if the DispID of MyComMethod is 3, you can specify the string "[DispID=3]" instead of "MyComMethod". Invoking a member by DispID is faster than looking up the member by name. In complex aggregation scenarios, the DispID is sometimes the only way to invoke the desired member.
 
-> [!NOTE]
-> This method can be used to access non-public members if the caller has been granted <xref:System.Security.Permissions.ReflectionPermission> with the <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> flag and if the grant set of the non-public members is restricted to the caller's grant set, or a subset thereof. (See [Security Considerations for Reflection](/dotnet/framework/reflection-and-codedom/security-considerations-for-reflection).)
->
-> To use this functionality, your application should target .NET Framework 3.5 or later.
-
 ## Examples
  The following example uses `InvokeMember` to access members of a type.
 
@@ -11823,11 +11783,6 @@ Calling this method overload is the same as calling the <xref:System.Type.GetTyp
  This will change string "z" in the array that F holds to string "b".
 
  When you invoke an `IDispatch` member you can specify the DispID instead of the member name, using the string format "[DispID=##]". For example, if the DispID of MyComMethod is 3, you can specify the string "[DispID=3]" instead of "MyComMethod". Invoking a member by DispID is faster than looking up the member by name. In complex aggregation scenarios, the DispID is sometimes the only way to invoke the desired member.
-
-> [!NOTE]
-> This method can be used to access non-public members if the caller has been granted <xref:System.Security.Permissions.ReflectionPermission> with the <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> flag and if the grant set of the non-public members is restricted to the caller's grant set, or a subset thereof. (See [Security Considerations for Reflection](/dotnet/framework/reflection-and-codedom/security-considerations-for-reflection).)
->
-> To use this functionality, your application should target the .NET Framework 3.5 or later.
 
  ]]></format>
         </remarks>
@@ -12067,11 +12022,6 @@ Calling this method overload is the same as calling the <xref:System.Type.GetTyp
  `typeof(C).InvokeMember("F", BindingFlags.SetField, null, c, new Object[] {1, "b"}, null, null, null);`
 
  This will change string "z" in the array that F holds to string "b".
-
-> [!NOTE]
-> This method can be used to access non-public members if the caller has been granted <xref:System.Security.Permissions.ReflectionPermission> with the <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> flag and if the grant set of the non-public members is restricted to the caller's grant set, or a subset thereof. (See [Security Considerations for Reflection](/dotnet/framework/reflection-and-codedom/security-considerations-for-reflection).)
->
-> To use this functionality, your application should target the .NET Framework 3.5 or later.
 
  ]]></format>
         </remarks>
@@ -13037,7 +12987,7 @@ Byref-like structures are declared using `ref struct` keyword in C#. An instance
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method returns `false` for COM interfaces because they are not objects. COM interfaces can be implemented by Microsoft .NET Framework objects.
+ This method returns `false` for COM interfaces because they are not objects. COM interfaces can be implemented by .NET objects.
 
  You can also load a COM class and get a `Type` object for that COM class by using the [Tlbimp.exe (Type Library Importer)](/dotnet/framework/tools/tlbimp-exe-type-library-importer) tool.
 
@@ -13095,7 +13045,7 @@ Byref-like structures are declared using `ref struct` keyword in C#. An instance
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- This method returns `false` for COM interfaces because they are not objects. COM interfaces can be implemented by Microsoft .NET Framework objects.
+ This method returns `false` for COM interfaces because they are not objects. COM interfaces can be implemented by .NET objects.
 
  ]]></format>
         </remarks>
@@ -13469,7 +13419,8 @@ Byref-like structures are declared using `ref struct` keyword in C#. An instance
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Beginning with the .NET Framework 4, the common language runtime supports the embedding of type information for COM types directly into managed assemblies, instead of requiring the managed assemblies to obtain type information for COM types from interop assemblies. Because the embedded type information includes only the types and members that are actually used by a managed assembly, two managed assemblies might have very different views of the same COM type. Each managed assembly has a different <xref:System.Type> object to represent its view of the COM type. The common language runtime supports type equivalence between these different views for interfaces, structures, enumerations, and delegates.
+
+The common language runtime supports the embedding of type information for COM types directly into managed assemblies, instead of requiring the managed assemblies to obtain type information for COM types from interop assemblies. Because the embedded type information includes only the types and members that are actually used by a managed assembly, two managed assemblies might have very different views of the same COM type. Each managed assembly has a different <xref:System.Type> object to represent its view of the COM type. The common language runtime supports type equivalence between these different views for interfaces, structures, enumerations, and delegates.
 
  Type equivalence means that a COM object that is passed from one managed assembly to another can be cast to the appropriate managed type in the receiving assembly. The <xref:System.Type.IsEquivalentTo*> method enables an assembly to determine that a COM object obtained from another assembly has the same COM identity as one of the first assembly's own embedded interop types, and thus can be cast to that type.
 
@@ -15329,7 +15280,6 @@ Byref-like structures are declared using `ref struct` keyword in C#. An instance
         <altmember cref="P:System.Type.IsSecuritySafeCritical" />
         <altmember cref="P:System.Type.IsSecurityTransparent" />
         <related type="Article" href="/dotnet/framework/reflection-and-codedom/security-considerations-for-reflection">Security Considerations for Reflection</related>
-        <related type="Article" href="/dotnet/framework/security/security-changes">Security Changes in the .NET Framework</related>
       </Docs>
     </Member>
     <Member MemberName="IsSecuritySafeCritical">
@@ -15394,7 +15344,6 @@ Byref-like structures are declared using `ref struct` keyword in C#. An instance
         <altmember cref="P:System.Type.IsSecurityCritical" />
         <altmember cref="P:System.Type.IsSecurityTransparent" />
         <related type="Article" href="/dotnet/framework/reflection-and-codedom/security-considerations-for-reflection">Security Considerations for Reflection</related>
-        <related type="Article" href="/dotnet/framework/security/security-changes">Security Changes in the .NET Framework</related>
       </Docs>
     </Member>
     <Member MemberName="IsSecurityTransparent">
@@ -15453,7 +15402,6 @@ Byref-like structures are declared using `ref struct` keyword in C#. An instance
         <altmember cref="P:System.Type.IsSecurityCritical" />
         <altmember cref="P:System.Type.IsSecuritySafeCritical" />
         <related type="Article" href="/dotnet/framework/reflection-and-codedom/security-considerations-for-reflection">Security Considerations for Reflection</related>
-        <related type="Article" href="/dotnet/framework/security/security-changes">Security Changes in the .NET Framework</related>
       </Docs>
     </Member>
     <Member MemberName="IsSerializable">

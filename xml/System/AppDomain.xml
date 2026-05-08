@@ -543,19 +543,17 @@ Application domains, which are represented by <xref:System.AppDomain> objects, h
 
  For guidance on the use of this event, see [Resolving Assembly Loads](/dotnet/standard/assembly/resolve-loads).
 
- Beginning with the .NET Framework 4, the <xref:System.ResolveEventArgs.RequestingAssembly?displayProperty=nameWithType> property returns the assembly that requested the assembly load that could not be resolved. For example, the loader might be unable to load a dependency of the requesting assembly because the requesting assembly and its dependency are not in the probing path. Knowing the identity of the requesting assembly might be useful in locating the dependency or in identifying the correct version, if more than one version of the dependency is available. For more information, see <xref:System.ResolveEventArgs.RequestingAssembly*?displayProperty=nameWithType>.
+The <xref:System.ResolveEventArgs.RequestingAssembly?displayProperty=nameWithType> property returns the assembly that requested the assembly load that could not be resolved. For example, the loader might be unable to load a dependency of the requesting assembly because the requesting assembly and its dependency are not in the probing path. Knowing the identity of the requesting assembly might be useful in locating the dependency or in identifying the correct version, if more than one version of the dependency is available. For more information, see <xref:System.ResolveEventArgs.RequestingAssembly*?displayProperty=nameWithType>.
 
 > [!IMPORTANT]
->  Beginning with the .NET Framework 4, the <xref:System.ResolveEventHandler> event is raised for all assemblies, including resource assemblies. In earlier versions, the event was not raised for resource assemblies. If the operating system is localized, the handler might be called multiple times: once for each culture in the fallback chain.
+> The <xref:System.ResolveEventHandler> event is raised for all assemblies, including resource assemblies. If the operating system is localized, the handler might be called multiple times: once for each culture in the fallback chain.
 
  For this event, the <xref:System.ResolveEventArgs.Name?displayProperty=nameWithType> property returns the assembly name before policy is applied.
 
 > [!IMPORTANT]
->  If more than one event handler is registered for this event, the event handlers are called in order until an event handler returns a value that isn't `null`. Subsequent event handlers are ignored.
+> If more than one event handler is registered for this event, the event handlers are called in order until an event handler returns a value that isn't `null`. Subsequent event handlers are ignored.
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
-
-
 
 ## Examples
  The following sample demonstrates the <xref:System.AppDomain.AssemblyResolve> event.
