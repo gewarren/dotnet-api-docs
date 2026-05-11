@@ -134,32 +134,6 @@ This class provides methods that can be used to retrieve instances of the C# <xr
         <remarks>
           <format type="text/markdown"><![CDATA[
 
-## Remarks
-
-In .NET Framework apps, you can obtain the value for `providerOptions` from the [\<providerOption>](/dotnet/framework/configure-apps/file-schema/compiler/provideroption-element) element in the configuration file. You can identify the version of the <xref:Microsoft.CSharp.CSharpCodeProvider> you want to use by specifying the `<providerOption>` element, supplying "CompilerVersion" as the option name, and supplying the version number (for example, "v3.5") as the option value.  You must precede the version number with a lower case "v". The following configuration file example demonstrates how to specify that version 3.5 of the C# code provider should be used.
-
-```xml
-<configuration>
-  <system.codedom>
-    <compilers>
-      <!-- zero or more compiler elements -->
-      <compiler
-        language="c#;cs;csharp"
-        extension=".cs"
-        type="Microsoft.CSharp.CSharpCodeProvider, System,
-          Version=2.0.3600.0, Culture=neutral,
-          PublicKeyToken=b77a5c561934e089"
-        compilerOptions="/optimize"
-        warningLevel="1" >
-          <providerOption
-            name="CompilerVersion"
-            value="v3.5" />
-      </compiler>
-    </compilers>
-  </system.codedom>
-</configuration>
-```
-
 ## Examples
 
  The following example shows how to specify the compiler version when you create a new instance of the <xref:Microsoft.CSharp.CSharpCodeProvider> class.

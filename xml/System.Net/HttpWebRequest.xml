@@ -4368,28 +4368,6 @@ The GetHashCode method returns a hash code of the web request. This value can be
 
 [!INCLUDE [obsolete-notice](~/includes/web-request-obsolete.md)]
 
- The <xref:System.Net.HttpWebRequest.Proxy> property identifies the <xref:System.Net.WebProxy> object to use to process requests to Internet resources. To specify that no proxy should be used, set the <xref:System.Net.HttpWebRequest.Proxy> property to the proxy instance returned by the <xref:System.Net.GlobalProxySelection.GetEmptyWebProxy*?displayProperty=nameWithType> method.
-
- The local computer or application config file may specify that a default proxy be used. If the <xref:System.Net.HttpWebRequest.Proxy> property is specified, then the proxy settings from the <xref:System.Net.HttpWebRequest.Proxy> property override the local computer or application config file and the <xref:System.Net.HttpWebRequest> instance will use the proxy settings specified. If no proxy is specified in a config file and the <xref:System.Net.HttpWebRequest.Proxy> property is unspecified, the <xref:System.Net.HttpWebRequest> class uses the proxy settings inherited from Internet options on the local computer. If there are no proxy settings in Internet options, the request is sent directly to the server.
-
- The <xref:System.Net.HttpWebRequest> class supports local proxy bypass. The class considers a destination to be local if any of the following conditions are met:
-
-- The destination contains a flat name (no dots in the URL).
-
-- The destination contains a loopback address (<xref:System.Net.IPAddress.Loopback> or <xref:System.Net.IPAddress.IPv6Loopback>) or the destination contains an <xref:System.Net.IPAddress> assigned to the local computer.
-
-- The domain suffix of the destination matches the local computer's domain suffix (<xref:System.Net.NetworkInformation.IPGlobalProperties.DomainName*>).
-
- Changing the <xref:System.Net.HttpWebRequest.Proxy> property after the request has been started by calling the <xref:System.Net.HttpWebRequest.GetRequestStream*>, <xref:System.Net.HttpWebRequest.BeginGetRequestStream*>, <xref:System.Net.HttpWebRequest.GetResponse*>, or <xref:System.Net.HttpWebRequest.BeginGetResponse*> method throws an <xref:System.InvalidOperationException>. For information on the proxy element see [\&lt;defaultProxy\&gt; Element (Network Settings)](/dotnet/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings).
-
-
-
-## Examples
- The following code example uses the <xref:System.Net.HttpWebRequest.Proxy*> method to get the proxy information for the request.
-
- :::code language="csharp" source="~/snippets/csharp/System.Net/HttpWebRequest/Proxy/httpwebrequest_proxy.cs" id="Snippet1":::
- :::code language="vb" source="~/snippets/visualbasic/System.Net/HttpWebRequest/Proxy/httpwebrequest_proxy.vb" id="Snippet1":::
-
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">

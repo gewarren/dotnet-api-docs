@@ -52,14 +52,7 @@
 
  A <xref:System.CodeDom.Compiler.CodeDomProvider> implementation typically provides code generation and/or code compilation interfaces for generating code and managing compilation for a single programming language. Several languages are supported by <xref:System.CodeDom.Compiler.CodeDomProvider> implementations that ship with the Windows SDK. These languages include C#, Visual Basic, C++, and JScript. Developers or compiler vendors can implement the <xref:System.CodeDom.Compiler.ICodeGenerator> and <xref:System.CodeDom.Compiler.ICodeCompiler> interfaces and provide a <xref:System.CodeDom.Compiler.CodeDomProvider> that extends CodeDOM support to other programming languages.
 
- The [&lt;system.codedom&gt; Element](/dotnet/framework/configure-apps/file-schema/compiler/system-codedom-element) in the machine configuration file (Machine.config) provides a mechanism for developers and compiler vendors to add configuration settings for additional <xref:System.CodeDom.Compiler.CodeDomProvider> implementations.
-
  The <xref:System.CodeDom.Compiler.CodeDomProvider> class provides static methods to discover and enumerate the <xref:System.CodeDom.Compiler.CodeDomProvider> implementations on a computer. The <xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo*> method returns the settings for all <xref:System.CodeDom.Compiler.CodeDomProvider> implementations on a computer. The <xref:System.CodeDom.Compiler.CodeDomProvider.GetCompilerInfo*> method returns the settings for a specific <xref:System.CodeDom.Compiler.CodeDomProvider> implementation, based on the programming language name. The <xref:System.CodeDom.Compiler.CodeDomProvider.CreateProvider*> method returns an instance of a <xref:System.CodeDom.Compiler.CodeDomProvider> implementation for a specific language.
-
- For more details on language provider settings in the configuration file, see [Compiler and Language Provider Settings Schema](/dotnet/framework/configure-apps/file-schema/compiler/).
-
-> [!NOTE]
->  This class makes a link demand and an inheritance demand at the class level. A <xref:System.Security.SecurityException> is thrown if either the immediate caller or the derived class does not have full trust permission.
 
 ## Examples
  The following example program can generate and compile source code based on a CodeDOM model of a program that prints "Hello World" using the <xref:System.Console> class. A Windows Forms user interface is provided. The user can select the target programming language from several selections: C#, Visual Basic, and JScript.
@@ -698,13 +691,11 @@
 
  The <xref:System.CodeDom.Compiler.CodeDomProvider.IsDefinedLanguage*> method checks whether at least one provider implementation supports a specific language. You can validate a language name using <xref:System.CodeDom.Compiler.CodeDomProvider.IsDefinedLanguage*> before passing it to <xref:System.CodeDom.Compiler.CodeDomProvider.CreateProvider*>. If you pass an unsupported language name to <xref:System.CodeDom.Compiler.CodeDomProvider.CreateProvider*> a <xref:System.Configuration.ConfigurationException?displayProperty=nameWithType> is thrown.
 
- The <xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo*> method can be used to determine all <xref:System.CodeDom.Compiler.CodeDomProvider> implementations on a computer, including additional implementations provided by developers and compiler vendors that are identified in the [&lt;system.codedom&gt; Element](/dotnet/framework/configure-apps/file-schema/compiler/system-codedom-element) in the machine configuration file (Machine.config).
+ The <xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo*> method can be used to determine all <xref:System.CodeDom.Compiler.CodeDomProvider> implementations on a computer.
 
  The <xref:System.CodeDom.Compiler.CodeDomProvider.CreateProvider*> method returns an instance of a <xref:System.CodeDom.Compiler.CodeDomProvider> implementation for a specific language.
 
  Language names are case-insensitive.
-
-
 
 ## Examples
  The following code example determines the <xref:System.CodeDom.Compiler.CodeDomProvider> implementation for an input language and displays the configured settings for the language provider. This code example is part of a larger example provided for the <xref:System.CodeDom.Compiler.CompilerInfo> class.
@@ -1348,15 +1339,12 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The [&lt;system.codedom&gt; Element](/dotnet/framework/configure-apps/file-schema/compiler/system-codedom-element) in the machine configuration file contains the language provider and compiler configuration settings for each <xref:System.CodeDom.Compiler.CodeDomProvider> implementation on the computer. For information about machine configuration files, see the Machine Configuration Files section in [Configuring Apps](/dotnet/framework/configure-apps/). The <xref:System.CodeDom.Compiler.CodeDomProvider.GetCompilerInfo*> method searches each provider configuration element for the specified language name. The returned <xref:System.CodeDom.Compiler.CompilerInfo> instance contains the configured language provider and compiler settings.
 
  The <xref:System.CodeDom.Compiler.CodeDomProvider.IsDefinedLanguage*> method checks whether at least one provider implementation supports a specific language. You can validate a language name using <xref:System.CodeDom.Compiler.CodeDomProvider.IsDefinedLanguage*> before passing it to <xref:System.CodeDom.Compiler.CodeDomProvider.GetCompilerInfo*>. This prevents throwing a <xref:System.Configuration.ConfigurationException?displayProperty=nameWithType> when you access the <xref:System.CodeDom.Compiler.CompilerInfo> instance for an unsupported language name.
 
  If more than one provider implementation is configured for the input language name, <xref:System.CodeDom.Compiler.CodeDomProvider.GetCompilerInfo*> returns the settings from the last matching provider configuration element.
 
  Language names are case-insensitive.
-
-
 
 ## Examples
  The following code example determines the <xref:System.CodeDom.Compiler.CodeDomProvider> implementation for an input language and displays the configured settings for the language provider. This code example is part of a larger example provided for the <xref:System.CodeDom.Compiler.CompilerInfo> class.
@@ -1461,28 +1449,7 @@
         <param name="extension">A file name extension.</param>
         <summary>Returns a language name associated with the specified file name extension, as configured in the <see cref="T:System.CodeDom.Compiler.CodeDomProvider" /> compiler configuration section.</summary>
         <returns>A language name associated with the file name extension, as configured in the <see cref="T:System.CodeDom.Compiler.CodeDomProvider" /> compiler configuration settings.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[
-
-## Remarks
- The [&lt;system.codedom&gt; Element](/dotnet/framework/configure-apps/file-schema/compiler/system-codedom-element) in the machine configuration file (Machine.config) contains the language provider and compiler configuration settings for each <xref:System.CodeDom.Compiler.CodeDomProvider> implementation on the computer. The <xref:System.CodeDom.Compiler.CodeDomProvider.GetLanguageFromExtension*> method searches each provider configuration element for the specified file name extension.
-
- The <xref:System.CodeDom.Compiler.CodeDomProvider.IsDefinedExtension*> method checks whether at least one provider implementation supports a specific file name extension. You can validate a file name extension using <xref:System.CodeDom.Compiler.CodeDomProvider.IsDefinedExtension*> before passing it to <xref:System.CodeDom.Compiler.CodeDomProvider.GetLanguageFromExtension*>. This prevents <xref:System.CodeDom.Compiler.CodeDomProvider.GetLanguageFromExtension*> from throwing a <xref:System.Configuration.ConfigurationException?displayProperty=nameWithType> for an unsupported file name extension.
-
- If a provider implementation supports the input file name extension, and there are multiple supported languages configured for that provider, then <xref:System.CodeDom.Compiler.CodeDomProvider.GetLanguageFromExtension*> returns the first language name for that provider. If more than one provider implementation is configured for the input file name extension, <xref:System.CodeDom.Compiler.CodeDomProvider.GetLanguageFromExtension*> returns the language name from the last matching provider configuration element.
-
- Language names and file name extensions are case-insensitive.
-
-
-
-## Examples
- The following code example determines the <xref:System.CodeDom.Compiler.CodeDomProvider> implementation for an input file name extension and displays the configured settings for the language provider. This code example is part of a larger example provided for the <xref:System.CodeDom.Compiler.CompilerInfo> class.
-
- :::code language="csharp" source="~/snippets/csharp/System.CodeDom.Compiler/CodeDomProvider/CreateProvider/source.cs" id="Snippet5":::
- :::code language="vb" source="~/snippets/visualbasic/System.CodeDom.Compiler/CodeDomProvider/CreateProvider/source.vb" id="Snippet5":::
-
- ]]></format>
-        </remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.Configuration.ConfigurationException">The <paramref name="extension" /> does not have a configured language provider on this computer.</exception>
         <exception cref="T:System.Configuration.ConfigurationErrorsException">The <paramref name="extension" /> is <see langword="null" />.</exception>
         <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
@@ -1583,24 +1550,7 @@
         <summary>Tests whether a file name extension has an associated <see cref="T:System.CodeDom.Compiler.CodeDomProvider" /> implementation configured on the computer.</summary>
         <returns>
           <see langword="true" /> if a <see cref="T:System.CodeDom.Compiler.CodeDomProvider" /> implementation is configured for the specified file name extension; otherwise, <see langword="false" />.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[
-
-## Remarks
- The [&lt;system.codedom&gt; Element](/dotnet/framework/configure-apps/file-schema/compiler/system-codedom-element) in the machine configuration file (Machine.config) contains the language provider and compiler configuration settings for each <xref:System.CodeDom.Compiler.CodeDomProvider> implementation on the computer. The <xref:System.CodeDom.Compiler.CodeDomProvider.IsDefinedExtension*> method searches the provider configuration elements for the specified file name extension.
-
- File name extensions are case-insensitive.
-
-
-
-## Examples
- The following code example determines the <xref:System.CodeDom.Compiler.CodeDomProvider> implementation for an input file name extension and displays the configured settings for the language provider. This code example is part of a larger example provided for the <xref:System.CodeDom.Compiler.CompilerInfo> class.
-
- :::code language="csharp" source="~/snippets/csharp/System.CodeDom.Compiler/CodeDomProvider/CreateProvider/source.cs" id="Snippet5":::
- :::code language="vb" source="~/snippets/visualbasic/System.CodeDom.Compiler/CodeDomProvider/CreateProvider/source.vb" id="Snippet5":::
-
- ]]></format>
-        </remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="extension" /> is <see langword="null" />.</exception>
         <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
         <altmember cref="M:System.CodeDom.Compiler.CodeDomProvider.GetLanguageFromExtension(System.String)" />
@@ -1649,24 +1599,7 @@
         <summary>Tests whether a language has a <see cref="T:System.CodeDom.Compiler.CodeDomProvider" /> implementation configured on the computer.</summary>
         <returns>
           <see langword="true" /> if a <see cref="T:System.CodeDom.Compiler.CodeDomProvider" /> implementation is configured for the specified language; otherwise, <see langword="false" />.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[
-
-## Remarks
- The [&lt;system.codedom&gt; Element](/dotnet/framework/configure-apps/file-schema/compiler/system-codedom-element) in the machine configuration file (Machine.config) contains the language provider and compiler configuration settings for each <xref:System.CodeDom.Compiler.CodeDomProvider> implementation on the computer. The <xref:System.CodeDom.Compiler.CodeDomProvider.IsDefinedLanguage*> method searches the provider configuration elements for the specified language name.
-
- Language names are case-insensitive.
-
-
-
-## Examples
- The following code example determines the <xref:System.CodeDom.Compiler.CodeDomProvider> implementation for an input language and displays the configured settings for the language provider. This code example is part of a larger example provided for the <xref:System.CodeDom.Compiler.CompilerInfo> class.
-
- :::code language="csharp" source="~/snippets/csharp/System.CodeDom.Compiler/CodeDomProvider/CreateProvider/source.cs" id="Snippet6":::
- :::code language="vb" source="~/snippets/visualbasic/System.CodeDom.Compiler/CodeDomProvider/CreateProvider/source.vb" id="Snippet6":::
-
- ]]></format>
-        </remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="language" /> is <see langword="null" />.</exception>
         <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
         <altmember cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateProvider(System.String)" />
