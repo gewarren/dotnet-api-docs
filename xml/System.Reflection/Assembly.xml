@@ -4121,15 +4121,7 @@ The assembly is loaded into a new AssemblyLoadContext created for this purpose. 
       </AssemblyInfo>
       <Docs>
         <summary>Loads an assembly.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[
-
-## Remarks
-
-**.NET Framework only:** See [`<loadFromRemoteSources>`](/dotnet/framework/configure-apps/file-schema/runtime/loadfromremotesources-element) for loading assemblies from remote locations.
-
-       ]]></format>
-        </remarks>
+        <remarks>To be added.</remarks>
       </Docs>
     </MemberGroup>
     <Member MemberName="LoadFrom">
@@ -4304,8 +4296,6 @@ The assembly is loaded into the default AssemblyLoadContext. For more informatio
 
 - The load-from context contains assemblies for which the user provided a path that is not included in probing. <xref:System.Reflection.Assembly.LoadFrom*>, <xref:System.AppDomain.CreateInstanceFrom*>, and <xref:System.AppDomain.ExecuteAssembly*> are examples of methods that load by path.
 
-    See [`<loadFromRemoteSources>`](/dotnet/framework/configure-apps/file-schema/runtime/loadfromremotesources-element) for loading assemblies from remote locations.
-
 - The reflection-only context contains assemblies loaded with the <xref:System.Reflection.Assembly.ReflectionOnlyLoad*> and <xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom*> methods; code in these contexts cannot be executed.
 
 - If the user generated or found the assembly, it is not in any context. This applies to assemblies loaded using overloads of the <xref:System.Reflection.Assembly.Load*> method that specify a byte array containing an assembly, and to transient dynamic assemblies created with reflection emit and not saved to disk.
@@ -4328,16 +4318,12 @@ The assembly is loaded into the default AssemblyLoadContext. For more informatio
 
  ]]></format>
         </remarks>
-        <exception cref="T:System.NotSupportedException">.NET Core and .NET 5+ only: In all cases.</exception>
+        <exception cref="T:System.NotSupportedException">In all cases.</exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="assemblyFile" /> is <see langword="null" />.</exception>
         <exception cref="T:System.IO.FileNotFoundException">
           <paramref name="assemblyFile" /> is not found, or the module you are trying to load does not specify a file name extension.</exception>
-        <exception cref="T:System.IO.FileLoadException">A file that was found could not be loaded.
-
--or-
-
-<paramref name="assemblyFile" /> specifies a location that is disabled based on <see href="https://learn.microsoft.com/dotnet/framework/configure-apps/file-schema/runtime/loadfromremotesources-element">&lt;loadFromRemoteSources&gt;</see>.</exception>
+        <exception cref="T:System.IO.FileLoadException">A file that was found could not be loaded.</exception>
         <exception cref="T:System.BadImageFormatException">
           <paramref name="assemblyFile" /> is not a valid assembly for the currently loaded runtime; for example, a 32-bit assembly in a 64-bit process.
         </exception>
