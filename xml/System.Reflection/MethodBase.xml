@@ -503,11 +503,13 @@
 - If the current method is a closed constructed method (that is, the <xref:System.Reflection.MethodBase.ContainsGenericParameters> property returns `false`), the array returned by the <xref:System.Reflection.MethodBase.GetGenericArguments*> method contains the types that have been assigned to the generic type parameters of the generic method definition.
 - If the current method is a generic method definition, the array contains the type parameters.
 - If the current method is an open constructed method (that is, the <xref:System.Reflection.MethodBase.ContainsGenericParameters> property returns `true`) in which specific types have been assigned to some type parameters and type parameters of enclosing generic types have been assigned to other type parameters, the array contains both types and type parameters. Use the <xref:System.Type.IsGenericParameter> property to tell them apart. For a demonstration of this scenario, see the code example provided for the <xref:System.Reflection.MethodBase.ContainsGenericParameters> property.
+- If the current method is a constructor, the returned array is an empty array in .NET 11 and later. In .NET 10 and earlier versions, the <xref:System.Reflection.MethodBase.GetGenericArguments*> method throws <xref:System.NotSupportedException>.
 
  For a list of the invariant conditions for terms specific to generic methods, see the <xref:System.Reflection.MethodBase.IsGenericMethod> property. For a list of the invariant conditions for other terms used in generic reflection, see the <xref:System.Type.IsGenericType?displayProperty=nameWithType> property.
 
  ]]></format>
         </remarks>
+        <exception cref="T:System.NotSupportedException">This method is not overridden in a derived class.</exception>
         <altmember cref="P:System.Reflection.MethodBase.IsGenericMethodDefinition" />
         <altmember cref="M:System.Reflection.MethodInfo.GetGenericArguments" />
         <altmember cref="P:System.Reflection.MethodBase.IsGenericMethod" />
