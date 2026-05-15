@@ -69,45 +69,10 @@
     <remarks>
       <format type="text/markdown"><![CDATA[
 
-## Remarks
-
-Application domains, which are represented by <xref:System.AppDomain> objects, help provide isolation, unloading, and security boundaries for executing managed code.
-
-- Use application domains to isolate tasks that might bring down a process. If the state of the <xref:System.AppDomain> that's executing a task becomes unstable, the <xref:System.AppDomain> can be unloaded without affecting the process. This is important when a process must run for long periods without restarting. You can also use application domains to isolate tasks that should not share data.
-- If an assembly is loaded into the default application domain, it cannot be unloaded from memory while the process is running. However, if you open a second application domain to load and execute the assembly, the assembly is unloaded when that application domain is unloaded. Use this technique to minimize the working set of long-running processes that occasionally use large DLLs.
-
- > [!NOTE]
- > On .NET Core and .NET 5+, the <xref:System.AppDomain> implementation is limited by design and does not provide isolation, unloading, or security boundaries. These versions have exactly one <xref:System.AppDomain>. Isolation and unloading are provided through <xref:System.Runtime.Loader.AssemblyLoadContext>. Security boundaries should be provided by process boundaries and appropriate remoting techniques.
-
- Multiple application domains can run in a single process; however, there is not a one-to-one correlation between application domains and threads. Several threads can belong to a single application domain, and while a given thread is not confined to a single application domain, at any given time, a thread executes in a single application domain.
-
- Application domains are created using the <xref:System.AppDomain.CreateDomain*> method. <xref:System.AppDomain> instances are used to load and execute assemblies (<xref:System.Reflection.Assembly>). When an <xref:System.AppDomain> is no longer in use, it can be unloaded.
-
- The <xref:System.AppDomain> class implements a set of events that enable applications to respond when an assembly is loaded, when an application domain will be unloaded, or when an unhandled exception is thrown.
-
- For more information on using application domains, see [Application Domains](/dotnet/framework/app-domains/application-domains).
-
- This class implements the <xref:System.MarshalByRefObject>, <xref:System._AppDomain>, and <xref:System.Security.IEvidenceFactory> interfaces.
-
- You should never create a remotable wrapper for an <xref:System.AppDomain> object. Doing so could publish a remote reference to that <xref:System.AppDomain>, exposing methods such as <xref:System.AppDomain.CreateInstance*> to remote access and effectively destroying code access security for that <xref:System.AppDomain>. Malicious clients connecting to the remoted <xref:System.AppDomain> could obtain access to any resource the <xref:System.AppDomain> itself has access to. Do not create remotable wrappers for any type that extends <xref:System.MarshalByRefObject> and that implements methods that could be used by malicious clients to bypass the security system.
-
-> [!CAUTION]
-> The default value for the <xref:System.AppDomainSetup.DisallowCodeDownload?displayProperty=nameWithType> property is `false`. This setting is unsafe for services. To prevent services from downloading partially trusted code, set this property to `true`.
-
-## Examples
- This example shows how to create a new <xref:System.AppDomain>, instantiate a type in that new <xref:System.AppDomain>, and communicate with that type's object. In addition, this example shows how to unload the <xref:System.AppDomain> causing the object to be garbage collected.
-
- :::code language="cpp" source="~/snippets/cpp/VS_Snippets_CLR/AppDomainX/cpp/AppDomainX.cpp" id="Snippet1":::
- :::code language="csharp" source="~/snippets/csharp/System/AppDomain/Overview/AppDomainX.cs" id="Snippet1":::
- :::code language="fsharp" source="~/snippets/fsharp/System/AppDomain/Overview/AppDomainX.fs" id="Snippet1":::
- :::code language="vb" source="~/snippets/visualbasic/System/AppDomain/Overview/AppDomainX.vb" id="Snippet1":::
+In modern .NET versions, the <xref:System.AppDomain> implementation is limited by design and does not provide isolation, unloading, or security boundaries. These versions have exactly one <xref:System.AppDomain>. Isolation and unloading are provided through <xref:System.Runtime.Loader.AssemblyLoadContext>. Security boundaries should be provided by process boundaries and appropriate remoting techniques.
 
  ]]></format>
     </remarks>
-    <related type="Article" href="/dotnet/framework/app-domains/how-to-configure-an-application-domain">How To: Configure an Application Domain</related>
-    <related type="Article" href="/dotnet/framework/app-domains/how-to-create-an-application-domain">How To: Create an Application Domain</related>
-    <related type="Article" href="/dotnet/framework/app-domains/how-to-load-assemblies-into-an-application-domain">How to: Load Assemblies into an Application Domain</related>
-    <related type="Article" href="/dotnet/framework/app-domains/how-to-unload-an-application-domain">How to: Unload an Application Domain</related>
   </Docs>
   <Members>
     <Member MemberName="AppendPrivatePath">
@@ -170,16 +135,7 @@ Application domains, which are represented by <xref:System.AppDomain> objects, h
       <Docs>
         <param name="path">The name of the directory to be appended to the private path.</param>
         <summary>Appends the specified directory name to the private path list.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[
-
-## Remarks
- The use of this property is not recommended, because it might change the probing path for assemblies after they have already been loaded. Use the <xref:System.AppDomainSetup.PrivateBinPath?displayProperty=nameWithType> property instead.
-
- The private path, or relative search path, is the path relative to the base directory where the assembly resolver probes for private assemblies.
-
- ]]></format>
-        </remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.AppDomainUnloadedException">The operation is attempted on an unloaded application domain.</exception>
       </Docs>
     </Member>
@@ -228,14 +184,7 @@ Application domains, which are represented by <xref:System.AppDomain> objects, h
         <param name="assemblyName">The assembly display name, in the form provided by the <see cref="P:System.Reflection.Assembly.FullName" /> property.</param>
         <summary>Returns the assembly display name after policy has been applied.</summary>
         <returns>A string containing the assembly display name after policy has been applied.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[
-
-## Remarks
- The <xref:System.AppDomain.ApplyPolicy*> method takes an assembly display name and returns the post-policy display name. This is useful if you need to load an assembly using policy, because the reflection-only context does not apply policy.
-
- ]]></format>
-        </remarks>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="AssemblyLoad">
@@ -3347,31 +3296,9 @@ The friendly name of the default application domain is the file name of the proc
       <Docs>
         <summary>Gets a value that indicates whether assemblies that are loaded into the current application domain execute with full trust.</summary>
         <value>
-          .NET Framework only: <see langword="true" /> if assemblies that are loaded into the current application domain execute with full trust; otherwise, <see langword="false" />.
-
-          .NET Core and .NET 5+: <see langword="true" /> in all cases.
+          <see langword="true" /> in all cases.
         </value>
-        <remarks>
-          <format type="text/markdown"><![CDATA[
-
-## Remarks
- **.NET Framework only:** This method always returns `true` for the default application domain of an application that runs on the desktop. It returns `false` for a sandboxed application domain that was created by using the <xref:System.AppDomain.CreateDomain(System.String,System.Security.Policy.Evidence,System.AppDomainSetup,System.Security.PermissionSet,System.Security.Policy.StrongName%5B%5D)?displayProperty=nameWithType> method overload, unless the permissions that are granted to the application domain are equivalent to full trust.
-
-
-
-## Examples
- The following example demonstrates the <xref:System.AppDomain.IsFullyTrusted> property and the <xref:System.Reflection.Assembly.IsFullyTrusted?displayProperty=nameWithType> property with fully trusted and partially trusted application domains. The fully trusted application domain is the default application domain for the application. The partially trusted application domain is created by using the <xref:System.AppDomain.CreateDomain(System.String,System.Security.Policy.Evidence,System.AppDomainSetup,System.Security.PermissionSet,System.Security.Policy.StrongName%5B%5D)?displayProperty=nameWithType> method overload.
-
- The example uses a `Worker` class that derives from <xref:System.MarshalByRefObject>, so it can be marshaled across application domain boundaries. The example creates a `Worker` object in the default application domain. It then calls the `TestIsFullyTrusted` method to display the property value for the application domain and for two assemblies that are loaded into the application domain: mscorlib, which is part of the .NET Framework, and the example assembly. The application domain is fully trusted, so both assemblies are fully trusted.
-
- The example creates another `Worker` object in a sandboxed application domain and again calls the `TestIsFullyTrusted` method. Mscorlib is always trusted, even in a partially trusted application domain, but the example assembly is partially trusted.
-
- :::code language="csharp" source="~/snippets/csharp/System/AppDomain/IsFullyTrusted/example.cs" id="Snippet1":::
- :::code language="fsharp" source="~/snippets/fsharp/System/AppDomain/IsFullyTrusted/example.fs" id="Snippet1":::
- :::code language="vb" source="~/snippets/visualbasic/System/AppDomain/IsFullyTrusted/example.vb" id="Snippet1":::
-
- ]]></format>
-        </remarks>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="IsHomogenous">
@@ -3414,20 +3341,8 @@ The friendly name of the default application domain is the file name of the proc
       <Docs>
         <summary>Gets a value that indicates whether the current application domain has a set of permissions that is granted to all assemblies that are loaded into the application domain.</summary>
         <value>
-          <see langword="true" /> if the current application domain has a homogenous set of permissions; otherwise, <see langword="false" />.</value>
-        <remarks>
-          <format type="text/markdown"><![CDATA[
-
-## Remarks
- This property returns `true` for sandboxed application domains that were created by using the <xref:System.AppDomain.CreateDomain(System.String,System.Security.Policy.Evidence,System.AppDomainSetup,System.Security.PermissionSet,System.Security.Policy.StrongName%5B%5D)?displayProperty=nameWithType> method overload. Sandboxed application domains have a homogenous set of permissions; that is, the same set of permissions is granted to all partially trusted assemblies that are loaded into the application domain. A sandboxed application domain optionally has a list of strong-named assemblies that are exempt from this permission set, and instead run with full trust.
-
- Fully trusted code can use the <xref:System.AppDomain.PermissionSet> property to determine the homogenous grant set of a sandboxed application domain.
-
- This property also returns `true` for the default application domain of a desktop application, because that application domain grants full trust to all assemblies.
-
- ]]></format>
-        </remarks>
-        <altmember cref="P:System.AppDomain.PermissionSet" />
+          <see langword="true" /> in call cases.</value>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <MemberGroup MemberName="Load">
@@ -4070,11 +3985,8 @@ The friendly name of the default application domain is the file name of the proc
 
 [!INCLUDE[cas-deprecated](~/includes/cas-deprecated.md)]
 
- Sandboxed application domains that were created by using the <xref:System.AppDomain.CreateDomain(System.String,System.Security.Policy.Evidence,System.AppDomainSetup,System.Security.PermissionSet,System.Security.Policy.StrongName%5B%5D)?displayProperty=nameWithType> method overload have a homogenous set of permissions; that is, the same set of permissions is granted to all partially trusted assemblies that are loaded into the application domain. A sandboxed application domain optionally has a list of strong-named assemblies that are exempt from this permission set, and instead run with full trust.
-
  ]]></format>
         </remarks>
-        <altmember cref="P:System.AppDomain.IsHomogenous" />
       </Docs>
     </Member>
     <Member MemberName="ProcessExit">

@@ -1223,53 +1223,9 @@ The following example shows how to get the <xref:System.Configuration.SectionInf
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When <xref:System.Configuration.SectionInformation.RequirePermission*> is set to `true`, the `GetSection` methods are restricted by the trust level setting of the application. This means that methods or properties that allow access to configuration section handlers are restricted by the trust level set for the Web application.
 
 > [!NOTE]
->  Because high and full trust are the only levels that allow access to files outside the current application domain, an application can use configuration section handlers only at these trust levels.
-
- When <xref:System.Configuration.SectionInformation.RequirePermission*> is set to `false`, the access to the configuration data is not restricted by the application's trust level settings.
-
-> [!NOTE]
->  The appropriate file ACL (Access Control List) permissions are still required, regardless of the <xref:System.Configuration.SectionInformation.RequirePermission*> setting. ACL permissions determine who can access the configuration file.
-
-
-
-## Examples
- The following example shows two possible trust levels for a Web application when the <xref:System.Configuration.SectionInformation.RequirePermission> property of the `appSettings` section is `true`.
-
-```xml
-<system.web>
-   // With the following trust value
-   // the code below works.
-  <trust level="Full" />
-</system.web>
-
-<system.web>
-  // With the following trust value
-  // the code below does not work.
-  <trust level="Medium" />
-</system.web>
-```
-
- The following example shows code that runs without errors when the trust level is set to full. Otherwise, the code results in an error.
-
-```csharp
-AppSettingsSection apSection =
-  ConfigurationManager.GetSection("appSettings") as AppSettingsSection;
-
-NameValueCollection apSectionCollection =
-  ConfigurationManager.AppSettings;
-```
-
-```vb
-Dim apSection As AppSettingsSection = _
-  TryCast(ConfigurationManager.GetSection("appSettings"),
-    AppSettingsSection)
-
-  Dim apSectionCollection As NameValueCollection = _
-    ConfigurationManager.AppSettings
-```
+> The appropriate file ACL (Access Control List) permissions are still required, regardless of the <xref:System.Configuration.SectionInformation.RequirePermission*> setting. ACL permissions determine who can access the configuration file.
 
  ]]></format>
         </remarks>
