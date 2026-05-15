@@ -1420,9 +1420,6 @@ If a thread pool implementation may have different types of threads, the count i
 ## Remarks
  For information about using native Win32 overlapped I/O, see the <xref:System.Threading.Overlapped> class, the <xref:System.Threading.NativeOverlapped> structure, and the `OVERLAPPED` structure in the Win32 Platform SDK.
 
-> [!CAUTION]
->  Using the <xref:System.Threading.ThreadPool.UnsafeQueueNativeOverlapped*> method could inadvertently open up a security hole. Code access security bases its permission checks on the permissions of all the callers on the stack. When work is queued on a thread pool thread using <xref:System.Threading.ThreadPool.UnsafeQueueNativeOverlapped*>, the stack of the thread pool thread does not have the context of the actual callers. Malicious code might be able exploit this to avoid permission checks.
-
  ]]></format>
         </remarks>
       </Docs>
@@ -1538,9 +1535,6 @@ The thread pool will invoke the work item's <xref:System.Threading.IThreadPoolWo
 
 ## Remarks
  Unlike the <xref:System.Threading.ThreadPool.QueueUserWorkItem*> method, <xref:System.Threading.ThreadPool.UnsafeQueueUserWorkItem*> does not propagate the calling stack to the worker thread. This allows code to lose the calling stack and thereby to elevate its security privileges.
-
-> [!CAUTION]
->  Using <xref:System.Threading.ThreadPool.UnsafeQueueUserWorkItem*> could inadvertently open up a security hole. Code access security bases its permission checks on the permissions of all the callers on the stack. When work is queued on a thread pool thread using <xref:System.Threading.ThreadPool.UnsafeQueueUserWorkItem*>, the stack of the thread pool thread will not have the context of the actual callers. Malicious code might be able exploit this to avoid permission checks.
 
  ]]></format>
         </remarks>
@@ -1690,9 +1684,6 @@ The thread pool will invoke the work item's <xref:System.Threading.IThreadPoolWo
 ## Remarks
  Unlike the <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject*> method, <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*> does not propagate the calling stack to the worker thread. This allows code to lose the calling stack and thereby to elevate its security privileges.
 
-> [!CAUTION]
->  Using <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*> could inadvertently open up a security hole. Code access security bases its permission checks on the permissions of all the callers on the stack. When work is queued on a thread pool thread using <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*>, the stack of the thread pool thread will not have the context of the actual callers. Malicious code might be able exploit this to avoid permission checks.
-
  Using a <xref:System.Threading.Mutex> for `waitObject` does not provide mutual exclusion for the callbacks because the underlying Windows API uses the default `WT_EXECUTEDEFAULT` flag, so each callback is dispatched on a separate thread pool thread.
 
  When you are finished using the <xref:System.Threading.RegisteredWaitHandle> that is returned by this method, call its <xref:System.Threading.RegisteredWaitHandle.Unregister*?displayProperty=nameWithType> method to release references to the wait handle. We recommend that you always call the <xref:System.Threading.RegisteredWaitHandle.Unregister*?displayProperty=nameWithType> method, even if you specify `true` for `executeOnlyOnce`. Garbage collection works more efficiently if you call the <xref:System.Threading.RegisteredWaitHandle.Unregister*?displayProperty=nameWithType> method instead of depending on the registered wait handle's finalizer.
@@ -1776,9 +1767,6 @@ The thread pool will invoke the work item's <xref:System.Threading.IThreadPoolWo
 ## Remarks
  Unlike the <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject*> method, <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*> does not propagate the calling stack to the worker thread. This allows code to lose the calling stack and thereby to elevate its security privileges.
 
-> [!CAUTION]
->  Using <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*> could inadvertently open up a security hole. Code access security bases its permission checks on the permissions of all the callers on the stack. When work is queued on a thread pool thread using <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*>, the stack of the thread pool thread will not have the context of the actual callers. Malicious code might be able exploit this to avoid permission checks.
-
  Using a <xref:System.Threading.Mutex> for `waitObject` does not provide mutual exclusion for the callbacks because the underlying Windows API uses the default `WT_EXECUTEDEFAULT` flag, so each callback is dispatched on a separate thread pool thread.
 
  When you are finished using the <xref:System.Threading.RegisteredWaitHandle> that is returned by this method, call its <xref:System.Threading.RegisteredWaitHandle.Unregister*?displayProperty=nameWithType> method to release references to the wait handle. We recommend that you always call the <xref:System.Threading.RegisteredWaitHandle.Unregister*?displayProperty=nameWithType> method, even if you specify `true` for `executeOnlyOnce`. Garbage collection works more efficiently if you call the <xref:System.Threading.RegisteredWaitHandle.Unregister*?displayProperty=nameWithType> method instead of depending on the registered wait handle's finalizer.
@@ -1861,9 +1849,6 @@ The thread pool will invoke the work item's <xref:System.Threading.IThreadPoolWo
 
 ## Remarks
  Unlike the <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject*> method, <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*> does not propagate the calling stack to the worker thread. This allows code to lose the calling stack and thereby to elevate its security privileges.
-
-> [!CAUTION]
->  Using <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*> could inadvertently open up a security hole. Code access security bases its permission checks on the permissions of all the callers on the stack. When work is queued on a thread pool thread using <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*>, the stack of the thread pool thread will not have the context of the actual callers. Malicious code might be able exploit this to avoid permission checks.
 
  Using a <xref:System.Threading.Mutex> for `waitObject` does not provide mutual exclusion for the callbacks because the underlying Windows API uses the default `WT_EXECUTEDEFAULT` flag, so each callback is dispatched on a separate thread pool thread.
 
@@ -1952,9 +1937,6 @@ The thread pool will invoke the work item's <xref:System.Threading.IThreadPoolWo
 
 ## Remarks
  Unlike the <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject*> method, <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*> does not propagate the calling stack to the worker thread. This allows code to lose the calling stack and thereby to elevate its security privileges.
-
-> [!CAUTION]
->  Using <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*> could inadvertently open up a security hole. Code access security bases its permission checks on the permissions of all the callers on the stack. When work is queued on a thread pool thread using <xref:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject*>, the stack of the thread pool thread will not have the context of the actual callers. Malicious code might be able exploit this to avoid permission checks.
 
  Using a <xref:System.Threading.Mutex> for `waitObject` does not provide mutual exclusion for the callbacks because the underlying Windows API uses the default `WT_EXECUTEDEFAULT` flag, so each callback is dispatched on a separate thread pool thread.
 
