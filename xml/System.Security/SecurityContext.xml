@@ -87,15 +87,8 @@
       <Docs>
         <summary>Captures the security context for the current thread.</summary>
         <returns>The security context for the current thread.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[
-
-## Remarks
- The captured security context can be applied to another thread. The <xref:System.Security.SecurityContext> consists of the <xref:System.Threading.CompressedStack> and the <xref:System.Security.Principal.WindowsIdentity> for the executing thread.
-
- ]]></format>
-        </remarks>
-        <exception cref="T:System.PlatformNotSupportedException">.NET 5+ (including .NET Core): In all cases.</exception>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.PlatformNotSupportedException">In all cases.</exception>
       </Docs>
     </Member>
     <Member MemberName="CreateCopy">
@@ -131,16 +124,8 @@
       <Docs>
         <summary>Creates a copy of the current security context.</summary>
         <returns>The security context for the current thread.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[
-
-## Remarks
- The current context must have been acquired through a capture or a copy operation. This method is useful for applying a captured <xref:System.Security.SecurityContext> to multiple threads.
-
- ]]></format>
-        </remarks>
-        <exception cref="T:System.InvalidOperationException">The current security context has been previously used, was marshaled across application domains, or was not acquired through the <see cref="M:System.Security.SecurityContext.Capture" /> method.</exception>
-        <exception cref="T:System.PlatformNotSupportedException">.NET 5+ (including .NET Core): In all cases.</exception>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.PlatformNotSupportedException">In all cases.</exception>
       </Docs>
     </Member>
     <Member MemberName="Dispose">
@@ -177,20 +162,8 @@
       <Parameters />
       <Docs>
         <summary>Releases all resources used by the current instance of the <see cref="T:System.Security.SecurityContext" /> class.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[
-
-## Remarks
- Call `Dispose` when you are finished using the <xref:System.Security.SecurityContext>. The `Dispose` method leaves the <xref:System.Security.SecurityContext> in an unusable state. After calling `Dispose`, you must release all references to the <xref:System.Security.SecurityContext> so the garbage collector can reclaim the memory that the <xref:System.Security.SecurityContext> was occupying.
-
- For more information, see [Cleaning Up Unmanaged Resources](/dotnet/standard/garbage-collection/unmanaged) and [Implementing a Dispose Method](/dotnet/standard/garbage-collection/implementing-dispose).
-
-> [!NOTE]
->  Always call `Dispose` before you release your last reference to the <xref:System.Security.SecurityContext>. Otherwise, the resources it is using will not be freed until the garbage collector calls the <xref:System.Security.SecurityContext> object's `Finalize` method.
-
- ]]></format>
-        </remarks>
-        <exception cref="T:System.PlatformNotSupportedException">.NET 5+ (including .NET Core): In all cases.</exception>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.PlatformNotSupportedException">In all cases.</exception>
       </Docs>
     </Member>
     <Member MemberName="IsFlowSuppressed">
@@ -227,15 +200,8 @@
         <summary>Determines whether the flow of the security context has been suppressed.</summary>
         <returns>
           <see langword="true" /> if the flow has been suppressed; otherwise, <see langword="false" />.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[
-
-## Remarks
- The <xref:System.Security.SecurityContext.IsFlowSuppressed*> method is used by infrastructure components to determine whether to transfer the <xref:System.Security.SecurityContext> information during asynchronous operations.
-
- ]]></format>
-        </remarks>
-        <exception cref="T:System.PlatformNotSupportedException">.NET 5+ (including .NET Core): In all cases.</exception>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.PlatformNotSupportedException">In all cases.</exception>
       </Docs>
     </Member>
     <Member MemberName="IsWindowsIdentityFlowSuppressed">
@@ -272,15 +238,8 @@
         <summary>Determines whether the flow of the Windows identity portion of the current security context has been suppressed.</summary>
         <returns>
           <see langword="true" /> if the flow has been suppressed; otherwise, <see langword="false" />.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[
-
-## Remarks
- The <xref:System.Security.SecurityContext.IsWindowsIdentityFlowSuppressed*> method is used by infrastructure components to determine whether to transfer the Windows identity information when the <xref:System.Security.SecurityContext> migrates during asynchronous operations.
-
- ]]></format>
-        </remarks>
-        <exception cref="T:System.PlatformNotSupportedException">.NET 5+ (including .NET Core): In all cases.</exception>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.PlatformNotSupportedException">In all cases.</exception>
       </Docs>
     </Member>
     <Member MemberName="RestoreFlow">
@@ -315,16 +274,8 @@
       <Parameters />
       <Docs>
         <summary>Restores the flow of the security context across asynchronous threads.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[
-
-## Remarks
- The <xref:System.Security.SecurityContext.RestoreFlow*> method is called by the <xref:System.Threading.AsyncFlowControl.Undo*?displayProperty=nameWithType> method to reverse the effect of a prior <xref:System.Security.SecurityContext.SuppressFlow*> method call.
-
- ]]></format>
-        </remarks>
-        <exception cref="T:System.InvalidOperationException">The security context is <see langword="null" /> or an empty string.</exception>
-        <exception cref="T:System.PlatformNotSupportedException">.NET 5+ (including .NET Core): In all cases.</exception>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.PlatformNotSupportedException">In all cases.</exception>
       </Docs>
     </Member>
     <Member MemberName="Run">
@@ -366,25 +317,8 @@
         <param name="callback">The delegate that represents the method to run in the specified security context.</param>
         <param name="state">The object to pass to the callback method.</param>
         <summary>Runs the specified method in the specified security context on the current thread.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[
-
-## Remarks
- The security context for the current thread is returned to its previous state when the method call is complete.
-
- ]]></format>
-        </remarks>
-        <exception cref="T:System.InvalidOperationException">
-          <paramref name="securityContext" /> is <see langword="null" />.
-
- -or-
-
- <paramref name="securityContext" /> was not acquired through a capture operation.
-
- -or-
-
- <paramref name="securityContext" /> has already been used as the argument to a <see cref="M:System.Security.SecurityContext.Run(System.Security.SecurityContext,System.Threading.ContextCallback,System.Object)" /> method call.</exception>
-        <exception cref="T:System.PlatformNotSupportedException">.NET 5+ (including .NET Core): In all cases.</exception>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.PlatformNotSupportedException">In all cases.</exception>
       </Docs>
     </Member>
     <Member MemberName="SuppressFlow">
@@ -420,21 +354,8 @@
       <Docs>
         <summary>Suppresses the flow of the security context across asynchronous threads.</summary>
         <returns>An <see cref="T:System.Threading.AsyncFlowControl" /> structure for restoring the flow.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[
-
-## Remarks
- Use this method to suppress the flow of <xref:System.Security.SecurityContext> information on the current thread for asynchronous operations.
-
- The common language runtime (CLR) is only aware of the impersonation operations performed using managed code. The CLR has no knowledge of impersonation performed outside of managed code, such as platform invokes to unmanaged code that does the impersonation, or through calls to Win32 functions. To flow identity across asynchronous points you must use the managed <xref:System.Security.Principal.WindowsIdentity> and <xref:System.Security.Principal.WindowsImpersonationContext> methods.
-
- Use the <xref:System.Threading.AsyncFlowControl.Undo*> method on the returned <xref:System.Threading.AsyncFlowControl> structure to return the <xref:System.Security.SecurityContext> object to its previous state.
-
- This method is protected with a <xref:System.Security.Permissions.SecurityAction.LinkDemand?displayProperty=nameWithType> for <xref:System.Security.Permissions.SecurityPermissionFlag.Infrastructure?displayProperty=nameWithType> permission. A fully trusted component can call this method to suppress the flow of the <xref:System.Security.SecurityContext> information during asynchronous calls. When the flow is suppressed, the <xref:System.Security.SecurityContext.Capture*> method returns `null`.
-
- ]]></format>
-        </remarks>
-        <exception cref="T:System.PlatformNotSupportedException">.NET 5+ (including .NET Core): In all cases.</exception>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.PlatformNotSupportedException">In all cases.</exception>
       </Docs>
     </Member>
     <Member MemberName="SuppressFlowWindowsIdentity">

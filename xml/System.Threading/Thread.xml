@@ -396,44 +396,8 @@
       <Parameters />
       <Docs>
         <summary>Raises a <see cref="T:System.Threading.ThreadAbortException" /> in the thread on which it is invoked, to begin the process of terminating the thread. Calling this method usually terminates the thread.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[
-
-## Remarks
-
-This method is obsolete. On .NET 5 and later versions, calling this method produces a compile-time warning. This method throws a <xref:System.PlatformNotSupportedException> at run time on .NET 5 and later and .NET Core.
-
- When this method is invoked on a thread, the system throws a <xref:System.Threading.ThreadAbortException> in the thread to abort it. `ThreadAbortException` is a special exception that can be caught by application code, but is re-thrown at the end of the `catch` block unless <xref:System.Threading.Thread.ResetAbort*> is called. `ResetAbort` cancels the request to abort, and prevents the `ThreadAbortException` from terminating the thread. Unexecuted `finally` blocks are executed before the thread is aborted.
-
-> [!NOTE]
-> When a thread calls `Abort` on itself, the effect is similar to throwing an exception; the <xref:System.Threading.ThreadAbortException> happens immediately, and the result is predictable. However, if one thread calls `Abort` on another thread, the abort interrupts whatever code is running. There is also a chance that a static constructor could be aborted. In rare cases, this might prevent instances of that class from being created in that application domain.
-
- The thread is not guaranteed to abort immediately, or at all. This situation can occur if a thread does an unbounded amount of computation in the `finally` blocks that are called as part of the abort procedure, thereby indefinitely delaying the abort. To wait until a thread has aborted, you can call the <xref:System.Threading.Thread.Join*> method on the thread after calling the <xref:System.Threading.Thread.Abort*> method, but there is no guarantee the wait will end.
-
-> [!NOTE]
-> The thread that calls <xref:System.Threading.Thread.Abort*> might block if the thread that is being aborted is in a protected region of code, such as a `catch` block, `finally` block, or constrained execution region. If the thread that calls <xref:System.Threading.Thread.Abort*> holds a lock that the aborted thread requires, a deadlock can occur.
-
- If `Abort` is called on a thread that has not been started, the thread will abort when <xref:System.Threading.Thread.Start*> is called. If `Abort` is called on a thread that is blocked or is sleeping, the thread is interrupted and then aborted.
-
- If `Abort` is called on a thread that has been suspended, a <xref:System.Threading.ThreadStateException> is thrown in the thread that called <xref:System.Threading.Thread.Abort*>, and <xref:System.Threading.ThreadState.AbortRequested> is added to the <xref:System.Threading.Thread.ThreadState> property of the thread being aborted. A <xref:System.Threading.ThreadAbortException> is not thrown in the suspended thread until <xref:System.Threading.Thread.Resume*> is called.
-
- If `Abort` is called on a managed thread while it is executing unmanaged code, a `ThreadAbortException` is not thrown until the thread returns to managed code.
-
- If two calls to `Abort` come at the same time, it is possible for one call to set the state information and the other call to execute the `Abort`. However, an application cannot detect this situation.
-
- After `Abort` is invoked on a thread, the state of the thread includes <xref:System.Threading.ThreadState.AbortRequested>. After the thread has terminated as a result of a successful call to `Abort`, the state of the thread is changed to <xref:System.Threading.ThreadState.Stopped>. With sufficient permissions, a thread that is the target of an `Abort` can cancel the abort using the `ResetAbort` method. For an example that demonstrates calling the `ResetAbort` method, see the `ThreadAbortException` class.
-
- ]]></format>
-        </remarks>
-        <exception cref="T:System.PlatformNotSupportedException">.NET Core and .NET 5+ only: In all cases.</exception>
-        <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
-        <exception cref="T:System.Threading.ThreadStateException">The thread that is being aborted is currently suspended.</exception>
-        <altmember cref="T:System.Threading.ThreadAbortException" />
-        <altmember cref="F:System.Threading.ThreadState.Aborted" />
-        <altmember cref="F:System.Threading.ThreadState.AbortRequested" />
-        <related type="Article" href="/dotnet/standard/threading/threads-and-threading">Threads and Threading</related>
-        <related type="Article" href="/dotnet/standard/threading/using-threads-and-threading">Using threads and threading</related>
-        <related type="Article" href="/dotnet/standard/threading/destroying-threads">Destroying threads</related>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.PlatformNotSupportedException">In all cases.</exception>
       </Docs>
     </Member>
     <Member MemberName="Abort">
@@ -485,51 +449,8 @@ This method is obsolete. On .NET 5 and later versions, calling this method produ
       <Docs>
         <param name="stateInfo">An object that contains application-specific information, such as state, which can be used by the thread being aborted.</param>
         <summary>Raises a <see cref="T:System.Threading.ThreadAbortException" /> in the thread on which it is invoked, to begin the process of terminating the thread while also providing exception information about the thread termination. Calling this method usually terminates the thread.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[
-
-## Remarks
-
-This method is obsolete. On .NET 5 and later versions, calling this method produces a compile-time warning. This method throws a <xref:System.PlatformNotSupportedException> at run time on .NET 5 and later and .NET Core.
-
- When this method is invoked on a thread, the system throws a <xref:System.Threading.ThreadAbortException> in the thread to abort it. `ThreadAbortException` is a special exception that can be caught by application code, but is re-thrown at the end of the `catch` block unless <xref:System.Threading.Thread.ResetAbort*> is called. `ResetAbort` cancels the request to abort, and prevents the `ThreadAbortException` from terminating the thread. Unexecuted `finally` blocks are executed before the thread is aborted.
-
-> [!NOTE]
-> When a thread calls `Abort` on itself, the effect is similar to throwing an exception; the <xref:System.Threading.ThreadAbortException> happens immediately, and the result is predictable. However, if one thread calls `Abort` on another thread, the abort interrupts whatever code is running. There is a chance that a static constructor could be aborted. In rare cases, this might prevent instances of that class from being created in that application domain.
-
- The thread is not guaranteed to abort immediately, or at all. This situation can occur if a thread does an unbounded amount of computation in the `finally` blocks that are called as part of the abort procedure, thereby indefinitely delaying the abort. To wait until a thread has aborted, you can call the <xref:System.Threading.Thread.Join*> method on the thread after calling the <xref:System.Threading.Thread.Abort*> method, but there is no guarantee that the wait will end.
-
-> [!NOTE]
-> The thread that calls <xref:System.Threading.Thread.Abort*> might block if the thread that is being aborted is in a protected region of code, such as a `catch` block, `finally` block, or constrained execution region. If the thread that calls <xref:System.Threading.Thread.Abort*> holds a lock that the aborted thread requires, a deadlock can occur.
-
- If `Abort` is called on a thread that has not been started, the thread will abort when <xref:System.Threading.Thread.Start*> is called. If `Abort` is called on a thread that is blocked or is sleeping, the thread is interrupted and then aborted.
-
- If `Abort` is called on a thread that has been suspended, a <xref:System.Threading.ThreadStateException> is thrown in the thread that called <xref:System.Threading.Thread.Abort*>, and <xref:System.Threading.ThreadState.AbortRequested> is added to the <xref:System.Threading.Thread.ThreadState> property of the thread being aborted. A <xref:System.Threading.ThreadAbortException> is not thrown in the suspended thread until <xref:System.Threading.Thread.Resume*> is called.
-
- If `Abort` is called on a managed thread while it is executing unmanaged code, a `ThreadAbortException` is not thrown until the thread returns to managed code.
-
- If two calls to `Abort` come at the same time, it is possible for one call to set the state information and the other call to execute the `Abort`. However, an application cannot detect this situation.
-
- After `Abort` is invoked on a thread, the state of the thread includes <xref:System.Threading.ThreadState.AbortRequested>. After the thread has terminated as a result of a successful call to `Abort`, the state of the thread is changed to <xref:System.Threading.ThreadState.Stopped>. With sufficient permissions, a thread that is the target of an `Abort` can cancel the abort using the `ResetAbort` method. For an example that demonstrates calling the `ResetAbort` method, see the `ThreadAbortException` class.
-
-## Examples
- The following code example shows how to pass information to a thread that is being aborted.
-
- :::code language="csharp" source="~/snippets/csharp/System.Threading/Thread/Abort/source.cs" id="Snippet1":::
- :::code language="fsharp" source="~/snippets/fsharp/System.Threading/Thread/Abort/source.fs" id="Snippet1":::
- :::code language="vb" source="~/snippets/visualbasic/System.Threading/Thread/Abort/source.vb" id="Snippet1":::
-
- ]]></format>
-        </remarks>
-        <exception cref="T:System.PlatformNotSupportedException">.NET Core and .NET 5+ only: In all cases.</exception>
-        <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
-        <exception cref="T:System.Threading.ThreadStateException">The thread that is being aborted is currently suspended.</exception>
-        <altmember cref="T:System.Threading.ThreadAbortException" />
-        <altmember cref="F:System.Threading.ThreadState.Aborted" />
-        <altmember cref="F:System.Threading.ThreadState.AbortRequested" />
-        <related type="Article" href="/dotnet/standard/threading/threads-and-threading">Threads and Threading</related>
-        <related type="Article" href="/dotnet/standard/threading/using-threads-and-threading">Using threads and threading</related>
-        <related type="Article" href="/dotnet/standard/threading/destroying-threads">Destroying threads</related>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.PlatformNotSupportedException">In all cases.</exception>
       </Docs>
     </Member>
     <Member MemberName="AllocateDataSlot">
@@ -2727,24 +2648,8 @@ The string assigned to the <xref:System.Threading.Thread.Name> property can incl
       <Parameters />
       <Docs>
         <summary>Cancels an <see cref="M:System.Threading.Thread.Abort(System.Object)" /> requested for the current thread.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[
-
-## Remarks
- This method can only be called by code with the proper permissions.
-
- When a call is made to `Abort` to terminate a thread, the system throws a <xref:System.Threading.ThreadAbortException>. `ThreadAbortException` is a special exception that can be caught by application code, but is rethrown at the end of the catch block unless `ResetAbort` is called. `ResetAbort` cancels the request to abort, and prevents the `ThreadAbortException` from terminating the thread.
-
- See <xref:System.Threading.ThreadAbortException> for an example that demonstrates calling the `ResetAbort` method.
-
- ]]></format>
-        </remarks>
-        <exception cref="T:System.PlatformNotSupportedException">.NET Core and .NET 5+ only: In all cases.</exception>
-        <exception cref="T:System.Threading.ThreadStateException">
-          <see langword="Abort" /> was not invoked on the current thread.</exception>
-        <exception cref="T:System.Security.SecurityException">The caller does not have the required security permission for the current thread.</exception>
-        <related type="Article" href="/dotnet/standard/threading/destroying-threads">Destroying threads</related>
-        <altmember cref="T:System.Threading.ThreadState" />
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.PlatformNotSupportedException">In all cases.</exception>
       </Docs>
     </Member>
     <Member MemberName="Resume">
@@ -2800,21 +2705,8 @@ The string assigned to the <xref:System.Threading.Thread.Name> property can incl
       <Parameters />
       <Docs>
         <summary>Resumes a thread that has been suspended.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[
-
-## Remarks
-
-> [!CAUTION]
-> Do not use the <xref:System.Threading.Thread.Suspend*> and <xref:System.Threading.Thread.Resume*> methods to synchronize the activities of threads. You have no way of knowing what code a thread is executing when you suspend it. If you suspend a thread while it holds locks during a security permission evaluation, other threads in the <xref:System.AppDomain> might be blocked. If you suspend a thread while it is executing a class constructor, other threads in the <xref:System.AppDomain> that attempt to use that class are blocked. Deadlocks can occur very easily.
-
- ]]></format>
-        </remarks>
-        <exception cref="T:System.PlatformNotSupportedException">.NET Core and .NET 5+ only: In all cases.</exception>
-        <exception cref="T:System.Threading.ThreadStateException">The thread has not been started, is dead, or is not in the suspended state.</exception>
-        <exception cref="T:System.Security.SecurityException">The caller does not have the appropriate <see cref="T:System.Security.Permissions.SecurityPermission" />.</exception>
-        <related type="Article" href="/dotnet/standard/threading/pausing-and-resuming-threads">Pausing and interrupting threads</related>
-        <altmember cref="T:System.Threading.ThreadState" />
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.PlatformNotSupportedException">In all cases.</exception>
       </Docs>
     </Member>
     <Member MemberName="SetApartmentState">
@@ -2886,7 +2778,7 @@ The string assigned to the <xref:System.Threading.Thread.Name> property can incl
 
  ]]></format>
         </remarks>
-        <exception cref="T:System.PlatformNotSupportedException">.NET Core and .NET 5+ only: In all cases on macOS and Linux.</exception>
+        <exception cref="T:System.PlatformNotSupportedException">On macOS and Linux: In all cases.</exception>
         <exception cref="T:System.ArgumentException">
           <paramref name="state" /> is not a valid apartment state.</exception>
         <exception cref="T:System.Threading.ThreadStateException">The thread has already been started.</exception>
@@ -3470,24 +3362,8 @@ The string assigned to the <xref:System.Threading.Thread.Name> property can incl
       <Parameters />
       <Docs>
         <summary>Either suspends the thread, or if the thread is already suspended, has no effect.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[
-
-## Remarks
- If the thread is already suspended, this method has no effect.
-
-> [!CAUTION]
-> Do not use the <xref:System.Threading.Thread.Suspend*> and <xref:System.Threading.Thread.Resume*> methods to synchronize the activities of threads. You have no way of knowing what code a thread is executing when you suspend it. If you suspend a thread while it holds locks during a security permission evaluation, other threads in the <xref:System.AppDomain> might be blocked. If you suspend a thread while it is executing a class constructor, other threads in the <xref:System.AppDomain> that attempt to use that class are blocked. Deadlocks can occur very easily.
-
-When you call the `Suspend` method on a thread, the system notes that a thread suspension has been requested and allows the thread to execute until it reaches a safe point before actually suspending the thread. A safe point for a thread is a point in its execution at which garbage collection can be performed. Once a safe point is reached, the runtime guarantees that the suspended thread will not make any further progress in managed code. A thread executing outside managed code is always safe for garbage collection, and its execution continues until it attempts to resume execution of managed code.
-
- ]]></format>
-        </remarks>
-        <exception cref="T:System.PlatformNotSupportedException">.NET Core and .NET 5+ only: In all cases.</exception>
-        <exception cref="T:System.Threading.ThreadStateException">The thread has not been started or is dead.</exception>
-        <exception cref="T:System.Security.SecurityException">The caller does not have the appropriate <see cref="T:System.Security.Permissions.SecurityPermission" />.</exception>
-        <related type="Article" href="/dotnet/standard/threading/pausing-and-resuming-threads">Pausing and interrupting threads</related>
-        <altmember cref="T:System.Threading.ThreadState" />
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.PlatformNotSupportedException">In all cases.</exception>
       </Docs>
     </Member>
     <Member MemberName="ThreadState">
@@ -3615,7 +3491,7 @@ When you call the `Suspend` method on a thread, the system notes that a thread s
 
  ]]></format>
         </remarks>
-        <exception cref="T:System.PlatformNotSupportedException">.NET Core and .NET 5+ only: In all cases on macOS and Linux.</exception>
+        <exception cref="T:System.PlatformNotSupportedException">On macOS and Linux: In all cases.</exception>
         <exception cref="T:System.ArgumentException">
           <paramref name="state" /> is not a valid apartment state.</exception>
         <exception cref="T:System.Threading.ThreadStateException">The thread was started and has terminated, or the call is not being made from the thread's context while the thread is running.</exception>
