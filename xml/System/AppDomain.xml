@@ -2761,7 +2761,7 @@ The <xref:System.ResolveEventArgs.RequestingAssembly?displayProperty=nameWithTyp
 
 ## Remarks
 
-The friendly name of the default application domain is the file name of the process executable. For example, if the executable used to start the process is `"c:\MyAppDirectory\MyAssembly.exe"`, the friendly name of the default application domain is `"MyAssembly.exe"`. (In .NET Core and .NET 5+, the friendly name doesn't include the file extension.)
+The friendly name of the default application domain is the file name of the process executable. For example, if the executable used to start the process is `"c:\MyAppDirectory\MyAssembly.exe"`, the friendly name of the default application domain is `"MyAssembly"`. The friendly name doesn't include the file extension.
 
 ## Examples
  The following code example uses the <xref:System.AppDomain.FriendlyName> property to get the friendly name of the current application domain. For the default application domain, the friendly name is the name of the application's executable file. The code example also displays additional information about the application domain.
@@ -4043,14 +4043,7 @@ The friendly name of the default application domain is the file name of the proc
 ## Remarks
  The <xref:System.EventHandler> for this event can perform termination activities, such as closing files, releasing storage and so on, before the process ends.
 
- Beginning with the .NET Framework version 2.0, this event is raised in each application domain that registers an event handler.
-
-> [!NOTE]
->  In .NET Framework, the total execution time of all <xref:System.AppDomain.ProcessExit> event handlers is limited, just as the total execution time of all finalizers is limited at process shutdown. The default is two seconds. An unmanaged host can change this execution time by calling the [ICLRPolicyManager::SetTimeout](/dotnet/framework/unmanaged-api/hosting/iclrpolicymanager-settimeout-method) method with the [OPR_ProcessExit](/dotnet/framework/unmanaged-api/hosting/eclroperation-enumeration) enumeration value. This time limit does not exist in .NET Core and .NET 5+.
-
- In the .NET Framework versions 1.0 and 1.1, this event is raised only in the default application domain, and only if an event handler is registered in the default application domain.
-
- To register an event handler for this event, you must have the required permissions, or a <xref:System.Security.SecurityException> is thrown.
+This event is raised in each application domain that registers an event handler.
 
  For more information about handling events, see [Handling and Raising Events](/dotnet/standard/events/).
 
@@ -5188,36 +5181,10 @@ The following example demonstrates the <xref:System.AppDomain.UnhandledException
       <Docs>
         <param name="domain">An application domain to unload.</param>
         <summary>Unloads the specified application domain.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[
-
-## Remarks
-
-There's a thread dedicated to unloading application domains. This improves reliability, especially when .NET Framework is hosted. When a thread calls <xref:System.AppDomain.Unload*>, the target domain is marked for unloading. The dedicated thread attempts to unload the domain, and all threads in the domain are aborted. If a thread does not abort, for example because it is executing unmanaged code, or because it is executing a `finally` block, then after a period of time, a <xref:System.CannotUnloadAppDomainException> is thrown in the thread that originally called <xref:System.AppDomain.Unload*>. If the thread that could not be aborted eventually ends, the target domain is not unloaded. Thus, `domain` is not guaranteed to unload, because it might not be possible to terminate executing threads.
-
-> [!NOTE]
->  In some cases, calling <xref:System.AppDomain.Unload*> causes an immediate <xref:System.CannotUnloadAppDomainException>, for example if it is called in a finalizer.
-
-The threads in `domain` are terminated using the <xref:System.Threading.Thread.Abort*> method, which throws a <xref:System.Threading.ThreadAbortException> in the thread. Although the thread should terminate promptly, it can continue executing for an unpredictable amount of time in a `finally` clause.
-
-## Examples
- The following code example shows how to unload an application domain.
-
- :::code language="cpp" source="~/snippets/cpp/VS_Snippets_CLR/ADUnload/CPP/adunload.cpp" id="Snippet1":::
- :::code language="csharp" source="~/snippets/csharp/System/AppDomain/Unload/adunload.cs" id="Snippet1":::
- :::code language="fsharp" source="~/snippets/fsharp/System/AppDomain/Unload/adunload.fs" id="Snippet1":::
- :::code language="vb" source="~/snippets/visualbasic/System/AppDomain/Unload/adunload.vb" id="Snippet1":::
-
- ]]></format>
-        </remarks>
+        <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="domain" /> is <see langword="null" />.</exception>
-        <exception cref="T:System.CannotUnloadAppDomainException">
-.NET Core and .NET 5+ only: In all cases.
-
--or-
-
-<paramref name="domain" /> could not be unloaded.</exception>
+        <exception cref="T:System.CannotUnloadAppDomainException">In all cases.</exception>
         <exception cref="T:System.Exception">An error occurred during the unload process.</exception>
         <related type="Article" href="/dotnet/core/porting/net-framework-tech-unavailable#application-domains">Unavailable technologies on .NET Core/5+: Application domains</related>
       </Docs>

@@ -218,18 +218,9 @@ The code example uses the <xref:System.Reflection.MethodInfo> to invoke the <xre
 
  Similarly, if the current <xref:System.Type> object represents an unassigned generic parameter `T`, this property returns the assembly that contains the generic type that defines `T`.
 
- If the <xref:System.Type.Assembly?displayProperty=nameWithType> property is not available on a particular .NET implementation, such as .NET Core or the Universal Windows Platform, use the <xref:System.Reflection.TypeInfo.Assembly?displayProperty=nameWithType> property instead.
+ If the <xref:System.Type.Assembly?displayProperty=nameWithType> property is not available, use the <xref:System.Reflection.TypeInfo.Assembly?displayProperty=nameWithType> property instead.
 
  This property is read-only.
-
-
-
-## Examples
- The following example displays the assembly name associated with the class and the fully qualified name of the type.
-
- :::code language="csharp" source="~/snippets/csharp/System/Type/Assembly/type_assembly.cs" id="Snippet1":::
- :::code language="fsharp" source="~/snippets/fsharp/System/Type/Assembly/type_assembly.fs" id="Snippet1":::
- :::code language="vb" source="~/snippets/visualbasic/System/Type/Assembly/type_assembly.vb" id="Snippet1":::
 
  ]]></format>
         </remarks>
@@ -9677,7 +9668,8 @@ Calling this method overload is the same as calling the <xref:System.Type.GetTyp
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- On .NET Core 3.0 and later versions, if `assemblyResolver` is null, then assembly loads triggered by this API are affected by the current value of <xref:System.Runtime.Loader.AssemblyLoadContext.CurrentContextualReflectionContext*?displayProperty=nameWithType>.
+
+If `assemblyResolver` is null, then assembly loads triggered by this API are affected by the current value of <xref:System.Runtime.Loader.AssemblyLoadContext.CurrentContextualReflectionContext*?displayProperty=nameWithType>.
 
  For more information about this API, see [Supplemental API remarks for Type.GetType](/dotnet/fundamentals/runtime-libraries/system-type-gettype).
  ]]></format>

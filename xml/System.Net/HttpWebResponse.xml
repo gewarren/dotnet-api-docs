@@ -332,7 +332,7 @@ The contents of the response from the Internet resource are returned as a <xref:
 ## Remarks
  The <xref:System.Net.HttpWebResponse.Close*> method closes the response stream and releases the connection to the resource for reuse by other requests.
 
- You should not access any properties of the <xref:System.Net.HttpWebResponse> object after the call to the `Close` method. On .NET Core, an <xref:System.ObjectDisposedException> is thrown.
+ You should not access any properties of the <xref:System.Net.HttpWebResponse> object after the call to the `Close` method. If you do, an <xref:System.ObjectDisposedException> is thrown.
 
  You must call either the <xref:System.IO.Stream.Close*?displayProperty=nameWithType> or the <xref:System.Net.HttpWebResponse.Close*?displayProperty=nameWithType> method to close the stream and release the connection for reuse. It is not necessary to call both <xref:System.IO.Stream.Close*?displayProperty=nameWithType> and <xref:System.Net.HttpWebResponse.Close*?displayProperty=nameWithType>, but doing so does not cause an error. Failure to close the stream can cause your application to run out of connections.
 
@@ -347,7 +347,7 @@ The contents of the response from the Internet resource are returned as a <xref:
 
  ]]></format>
         </remarks>
-        <exception cref="T:System.ObjectDisposedException">**.NET Core only:** This <see cref="T:System.Net.HttpWebResponse" /> object has been disposed.</exception>
+        <exception cref="T:System.ObjectDisposedException">This <see cref="T:System.Net.HttpWebResponse" /> object has been disposed.</exception>
       </Docs>
     </Member>
     <Member MemberName="ContentEncoding">

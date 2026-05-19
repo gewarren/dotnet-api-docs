@@ -2011,20 +2011,13 @@ An I/O error occurred.</exception>
  > [!IMPORTANT]
  > This API is only supported on Windows platforms that are able to use the NTFS Encrypting File System (EFS). Any attempt to use this on non-Windows systems, Windows Home Edition systems, or non-NTFS drives results in a <xref:System.PlatformNotSupportedException> or <xref:System.NotSupportedException>, depending on the situation.
  >
- > Use of this API in .NET Core is not recommended; it is included to enable portability for applications that move to .NET Core but still explicitly target Windows.
+ > Use of this API is not recommended; it is included to enable portability for applications that migrate from .NET Framework but still explicitly target Windows.
 
  The <xref:System.IO.File.Decrypt*> method requires exclusive access to the file being decrypted, and will raise an exception if another process is using the file.
 
  Both the <xref:System.IO.File.Encrypt*> method and the <xref:System.IO.File.Decrypt*> method use the cryptographic service provider (CSP) installed on the computer and the file encryption keys of the process calling the method.
 
  The current file system must be formatted as NTFS and the current operating system must be Windows NT or later.
-
-## Examples
- The following code example uses the <xref:System.IO.File.Encrypt*> method and the <xref:System.IO.File.Decrypt*> method to encrypt and then decrypt a file. The file must exist for the example to work.
-
- :::code language="csharp" source="~/snippets/csharp/System.IO/File/Decrypt/sample.cs" id="Snippet1":::
- :::code language="fsharp" source="~/snippets/fsharp/System.IO/File/Decrypt/sample.fs" id="Snippet1":::
- :::code language="vb" source="~/snippets/visualbasic/System.IO/File/Decrypt/sample.vb" id="Snippet1":::
 
  ]]></format>
         </remarks>
@@ -2209,7 +2202,7 @@ An I/O error occurred.</exception>
  > [!IMPORTANT]
  > This API is only supported on Windows platforms that are able to use the NTFS Encrypting File System (EFS). Any attempt to use this on non-Windows systems, Windows Home Edition systems, or non-NTFS drives results in a <xref:System.PlatformNotSupportedException> or <xref:System.NotSupportedException>, depending on the situation.
  >
- > Use of this API in .NET Core is not recommended; it is included to enable portability for applications that move to .NET Core but still explicitly target Windows.
+ > Use of this API in is not recommended; it is included to enable portability for applications that move from .NET Framework but still explicitly target Windows.
 
  The <xref:System.IO.File.Encrypt*> method requires exclusive access to the file being encrypted, and will fail if another process is using the file.
 
@@ -2218,13 +2211,6 @@ An I/O error occurred.</exception>
  This method is not available on all versions of Windows. For example, it is not available on Home editions.
 
  The current file system must be formatted as NTFS.
-
-## Examples
- The following code example uses the <xref:System.IO.File.Encrypt*> method and the <xref:System.IO.File.Decrypt*> method to encrypt and then decrypt a file. The file must exist for the example to work.
-
- :::code language="csharp" source="~/snippets/csharp/System.IO/File/Decrypt/sample.cs" id="Snippet1":::
- :::code language="fsharp" source="~/snippets/fsharp/System.IO/File/Decrypt/sample.fs" id="Snippet1":::
- :::code language="vb" source="~/snippets/visualbasic/System.IO/File/Decrypt/sample.vb" id="Snippet1":::
 
  ]]></format>
         </remarks>
@@ -3340,7 +3326,7 @@ This method works across disk volumes, and it does not throw an exception if the
 
 Note that if you attempt to replace a file by moving a file of the same name into that directory, an <xref:System.IO.IOException> is thrown. To avoid this problem:
 
-- In .NET Core 3.0 and later versions, you can call <xref:System.IO.File.Move(System.String,System.String,System.Boolean)> setting the parameter `overwrite` to `true`, which replaces the file if it exists.
+- You can call <xref:System.IO.File.Move(System.String,System.String,System.Boolean)> and set the `overwrite` parameter to `true`, which replaces the file if it exists.
 
 - In all .NET versions, you can call <xref:System.IO.File.Copy(System.String,System.String,System.Boolean)> to copy with overwrite, then call `Delete` to remove the excess source file. This strategy isn't atomic, because a system or program crash during the `Copy` may leave a partially-written destination file, but it will ensure a (possibly incomplete) file always exists at the destination.
 
