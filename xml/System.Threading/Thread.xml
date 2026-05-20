@@ -719,12 +719,12 @@ You can specify the COM threading model for a C++ application using the [/CLRTHR
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Notifies a host that execution is about to enter a region of code in which the effects of a thread abort or unhandled exception might jeopardize other tasks in the application domain.</summary>
+        <summary>Notifies a host that execution is about to enter a region of code in which the effects of a thread abort or unhandled exception might jeopardize other tasks.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Hosts of the common language runtime (CLR), such as Microsoft SQL Server 2005, can establish different policies for failures in critical and non-critical regions of code. A critical region is one in which the effects of a thread abort or an unhandled exception might not be limited to the current task. By contrast, an abort or failure in a non-critical region of code affects only the task in which the error occurs.
+ Hosts of the common language runtime (CLR), such as SQL Server, can establish different policies for failures in critical and non-critical regions of code. A critical region is one in which the effects of a thread abort or an unhandled exception might not be limited to the current task. By contrast, an abort or failure in a non-critical region of code affects only the task in which the error occurs.
 
  For example, consider a task that attempts to allocate memory while holding a lock. If the memory allocation fails, aborting the current task is not sufficient to ensure stability of the <xref:System.AppDomain>, because there can be other tasks in the domain waiting for the same lock. If the current task is terminated, other tasks could be deadlocked.
 
@@ -848,7 +848,7 @@ You can specify the COM threading model for a C++ application using the [/CLRTHR
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The <xref:System.Globalization.CultureInfo> object that is returned by this property, together with its associated objects, determine the default format for dates, times, numbers, currency values, the sorting order of text, casing conventions, and string comparisons. See the <xref:System.Globalization.CultureInfo> class to learn about culture names and identifiers, the differences between invariant, neutral, and specific cultures, and the way culture information affects threads and application domains. See the <xref:System.Globalization.CultureInfo.CurrentCulture?displayProperty=nameWithType> property to learn how a thread's default culture is determined, and how users set culture information for their computers.
+ The <xref:System.Globalization.CultureInfo> object that is returned by this property, together with its associated objects, determine the default format for dates, times, numbers, currency values, the sorting order of text, casing conventions, and string comparisons. See the <xref:System.Globalization.CultureInfo> class to learn about culture names and identifiers, the differences between invariant, neutral, and specific cultures, and the way culture information affects threads. See the <xref:System.Globalization.CultureInfo.CurrentCulture?displayProperty=nameWithType> property to learn how a thread's default culture is determined, and how users set culture information for their computers.
 
 > [!IMPORTANT]
 > The <xref:System.Threading.Thread.CurrentCulture> property doesn't work reliably when used with any thread other than the current thread. An <xref:System.InvalidOperationException> is thrown if a thread attempts to read or write the <xref:System.Threading.Thread.CurrentCulture> property on a different thread. We recommend that you use the <xref:System.Globalization.CultureInfo.CurrentCulture?displayProperty=nameWithType> property to retrieve and set the current culture.
@@ -1030,7 +1030,7 @@ You can set the <xref:System.Threading.Thread.CurrentCulture> property to a neut
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- The UI culture specifies the resources an application needs to support user input and output, and by default is the same as the operating system culture. See the <xref:System.Globalization.CultureInfo> class to learn about culture names and identifiers, the differences between invariant, neutral, and specific cultures, and the way culture information affects threads and application domains. See the <xref:System.Globalization.CultureInfo.CurrentUICulture?displayProperty=nameWithType> property to learn how a thread's default UI culture is determined.
+ The UI culture specifies the resources an application needs to support user input and output, and by default is the same as the operating system culture. See the <xref:System.Globalization.CultureInfo> class to learn about culture names and identifiers, the differences between invariant, neutral, and specific cultures, and the way culture information affects threads. See the <xref:System.Globalization.CultureInfo.CurrentUICulture?displayProperty=nameWithType> property to learn how a thread's default UI culture is determined.
 
 > [!IMPORTANT]
 > The <xref:System.Threading.Thread.CurrentUICulture> property doesn't work reliably when used with any thread other than the current thread. An <xref:System.InvalidOperationException> is thrown if a thread attempts to read or write the <xref:System.Threading.Thread.CurrentUICulture> property on a different thread.
@@ -1714,18 +1714,7 @@ The value is not guaranteed to be a zero-based processor number.
       <Docs>
         <summary>Returns the current domain in which the current thread is running.</summary>
         <returns>An <see cref="T:System.AppDomain" /> representing the current application domain of the running thread.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[
-
-## Examples
- The following code example shows how to retrieve the name and ID of the `AppDomain` in which the thread is running.
-
- :::code language="csharp" source="~/snippets/csharp/System.Threading/Thread/GetDomain/source.cs" id="Snippet1":::
- :::code language="fsharp" source="~/snippets/fsharp/System.Threading/Thread/GetDomain/source.fs" id="Snippet1":::
- :::code language="vb" source="~/snippets/visualbasic/System.Threading/Thread/GetDomain/source.vb" id="Snippet1":::
-
- ]]></format>
-        </remarks>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="GetDomainID">
@@ -1768,18 +1757,7 @@ The value is not guaranteed to be a zero-based processor number.
       <Docs>
         <summary>Returns a unique application domain identifier.</summary>
         <returns>A 32-bit signed integer uniquely identifying the application domain.</returns>
-        <remarks>
-          <format type="text/markdown"><![CDATA[
-
-## Examples
- The following code example shows how to retrieve the name and ID of the `AppDomain` in which the thread is running.
-
- :::code language="csharp" source="~/snippets/csharp/System.Threading/Thread/GetDomain/source.cs" id="Snippet1":::
- :::code language="fsharp" source="~/snippets/fsharp/System.Threading/Thread/GetDomain/source.fs" id="Snippet1":::
- :::code language="vb" source="~/snippets/visualbasic/System.Threading/Thread/GetDomain/source.vb" id="Snippet1":::
-
- ]]></format>
-        </remarks>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="GetHashCode">

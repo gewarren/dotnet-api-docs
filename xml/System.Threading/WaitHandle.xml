@@ -74,33 +74,25 @@
  The <xref:System.Threading.WaitHandle> class itself is abstract. Classes derived from <xref:System.Threading.WaitHandle> define a signaling mechanism to indicate taking or releasing access to a shared resource, but they use the inherited <xref:System.Threading.WaitHandle> methods to block while waiting for access to shared resources. The classes derived from <xref:System.Threading.WaitHandle> include:
 
 - The <xref:System.Threading.Mutex> class. See [Mutexes](/dotnet/standard/threading/mutexes).
-
 - The <xref:System.Threading.EventWaitHandle> class and its derived classes, <xref:System.Threading.AutoResetEvent> and <xref:System.Threading.ManualResetEvent>.
-
 - The <xref:System.Threading.Semaphore> class. See [Semaphore and SemaphoreSlim](/dotnet/standard/threading/semaphore-and-semaphoreslim).
 
  Threads can block on an individual wait handle by calling the instance method <xref:System.Threading.WaitHandle.WaitOne*>, which is inherited by classes derived from <xref:System.Threading.WaitHandle>.
 
  The derived classes of <xref:System.Threading.WaitHandle> differ in their thread affinity. Event wait handles (<xref:System.Threading.EventWaitHandle>, <xref:System.Threading.AutoResetEvent>, and <xref:System.Threading.ManualResetEvent>) and semaphores do not have thread affinity; any thread can signal an event wait handle or semaphore. Mutexes, on the other hand, do have thread affinity; the thread that owns a mutex must release it, and an exception is thrown if a thread calls the <xref:System.Threading.Mutex.ReleaseMutex*> method on a mutex that it does not own.
 
- Because the <xref:System.Threading.WaitHandle> class derives from <xref:System.MarshalByRefObject>, these classes can be used to synchronize the activities of threads across application domain boundaries.
-
  In addition to its derived classes, the <xref:System.Threading.WaitHandle> class has a number of static methods that block a thread until one or more synchronization objects receive a signal. These include:
 
--   <xref:System.Threading.WaitHandle.SignalAndWait*>, which allows a thread to signal one wait handle and immediately wait on another.
-
--   <xref:System.Threading.WaitHandle.WaitAll*>, which allows a thread to wait until all the wait handles in an array receive a signal.
-
--   <xref:System.Threading.WaitHandle.WaitAny*>, which allows a thread to wait until any one of a specified set of wait handles has been signaled.
+- <xref:System.Threading.WaitHandle.SignalAndWait*>, which allows a thread to signal one wait handle and immediately wait on another.
+- <xref:System.Threading.WaitHandle.WaitAll*>, which allows a thread to wait until all the wait handles in an array receive a signal.
+- <xref:System.Threading.WaitHandle.WaitAny*>, which allows a thread to wait until any one of a specified set of wait handles has been signaled.
 
  The overloads of these methods provide timeout intervals for abandoning the wait, and the opportunity to exit a synchronization context before entering the wait, allowing other threads to use the synchronization context.
 
 > [!IMPORTANT]
->  This type implements the <xref:System.IDisposable> interface. When you have finished using the type or a type derived from it, you should dispose of it either directly or indirectly. To dispose of the type directly, call its <xref:System.Threading.WaitHandle.Close*> method in a `try`/`catch` block. To dispose of it indirectly, use a language construct such as `using` in C#.
-
- <xref:System.Threading.WaitHandle> implements the <xref:System.IDisposable.Dispose*> pattern. See [Implementing a Dispose method](/dotnet/standard/garbage-collection/implementing-dispose). When you derive from <xref:System.Threading.WaitHandle>, use the <xref:System.Threading.WaitHandle.SafeWaitHandle> property to store your native operating system handle. You do not need to override the protected <xref:System.Threading.WaitHandle.Dispose*> method unless you use additional unmanaged resources.
-
-
+> This type implements the <xref:System.IDisposable> interface. When you have finished using the type or a type derived from it, you should dispose of it either directly or indirectly. To dispose of the type directly, call its <xref:System.Threading.WaitHandle.Close*> method in a `try`/`catch` block. To dispose of it indirectly, use a language construct such as `using` in C#.
+>
+> When you derive from <xref:System.Threading.WaitHandle>, use the <xref:System.Threading.WaitHandle.SafeWaitHandle> property to store your native operating system handle. You do not need to override the protected <xref:System.Threading.WaitHandle.Dispose*> method unless you use additional unmanaged resources.
 
 ## Examples
  The following code example shows how two threads can do background tasks while the Main thread waits for the tasks to complete using the static <xref:System.Threading.WaitHandle.WaitAny*> and <xref:System.Threading.WaitHandle.WaitAll*> methods of the <xref:System.Threading.WaitHandle> class.

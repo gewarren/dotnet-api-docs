@@ -32,14 +32,13 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>Allows the control and customization of security behavior for application domains.</summary>
+    <summary>Allows the control and customization of security behavior for hosts.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[
 
 ## Remarks
- When you create a new <xref:System.AppDomain>, the common language runtime queries the <xref:System.AppDomainManager> for the presence of a <xref:System.Security.HostSecurityManager>, which participates in making security decisions for the <xref:System.AppDomain>.  Host providers should implement a host security manager that inherits from the <xref:System.Security.HostSecurityManager> class.
 
-
+Host providers should implement a host security manager that inherits from the <xref:System.Security.HostSecurityManager> class.
 
 ## Examples
  The following example shows a very simple implementation of a <xref:System.Security.HostSecurityManager>.
@@ -134,9 +133,7 @@
 ## Remarks
  This method can be overridden by a derived class. The base implementation calls the application security manager to determine if the application should be executed.
 
- The base implementation does not use the activator evidence. However, an overridden implementation could use the activator evidence to determine the security evidence for the application domain attempting to activate the application.
-
-
+ The base implementation does not use the activator evidence. However, an overridden implementation could use the activator evidence to determine the security evidence.
 
 ## Examples
  The following example shows how to override the <xref:System.Security.HostSecurityManager.DetermineApplicationTrust*> method for a custom host security manager. This example is part of a larger example provided for the <xref:System.Security.HostSecurityManager> class.

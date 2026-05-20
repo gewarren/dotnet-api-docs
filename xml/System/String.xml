@@ -6424,16 +6424,16 @@ The behavior of <xref:System.String.GetHashCode*> is dependent on its implementa
 > [!IMPORTANT]
 > If two string objects are equal, the <xref:System.String.GetHashCode*> method returns identical values. However, there is not a unique hash code value for each unique string value. Different strings can return the same hash code.
 >
-> The hash code itself is not guaranteed to be stable. Hash codes for identical strings can differ across .NET implementations, across .NET versions, and across .NET platforms (such as 32-bit and 64-bit) for a single version of .NET. In some cases, they can even differ by application domain. This implies that two subsequent runs of the same program may return different hash codes.
+> The hash code itself is not guaranteed to be stable. Hash codes for identical strings can differ across .NET implementations, across .NET versions, and across .NET platforms (such as 32-bit and 64-bit) for a single version of .NET. This implies that two subsequent runs of the same program may return different hash codes.
 >
-> As a result, hash codes should never be used outside of the application domain in which they were created, they should never be used as key fields in a collection, and they should never be persisted.
+> As a result, hash codes should never be used as key fields in a collection, and they should never be persisted.
 >
 > Finally, don't use the hash code instead of a value returned by a cryptographic hashing function if you need a cryptographically strong hash. For cryptographic hashes, use a class derived from the <xref:System.Security.Cryptography.HashAlgorithm?displayProperty=nameWithType> or <xref:System.Security.Cryptography.KeyedHashAlgorithm?displayProperty=nameWithType> class.
 >
 > For more information about hash codes, see <xref:System.Object.GetHashCode*?displayProperty=nameWithType>.
 
 > [!IMPORTANT]
-> Hash codes are used to insert and retrieve keyed objects from hash tables efficiently. However, hash codes don't uniquely identify strings. Identical strings have equal hash codes, but the common language runtime can also assign the same hash code to different strings. In addition, hash codes can vary by version of .NET, by platform within a single version, and by application domain. Because of this, you should not serialize or persist hash code values, nor should you use them as keys in a hash table or dictionary.
+> Hash codes are used to insert and retrieve keyed objects from hash tables efficiently. However, hash codes don't uniquely identify strings. Identical strings have equal hash codes, but the common language runtime can also assign the same hash code to different strings. In addition, hash codes can vary by version of .NET, and by platform within a single version. Because of this, you should not serialize or persist hash code values, and you shouldn't use them as keys in a hash table or dictionary.
 
 For additional information about the use of hash codes and the `GetHashCode` method, see <xref:System.Object.GetHashCode*?displayProperty=nameWithType>.
 

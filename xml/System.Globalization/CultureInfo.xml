@@ -1117,8 +1117,8 @@ You might choose to override some of the values associated with the current cult
         <ReturnType>System.Globalization.CultureInfo</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Gets or sets the default culture for threads in the current application domain.</summary>
-        <value>The default culture for threads in the current application domain, or <see langword="null" /> if the current system culture is the default thread culture in the application domain.</value>
+        <summary>Gets or sets the default culture for threads.</summary>
+        <value>The default culture for threads, or <see langword="null" /> if the current system culture is the default thread culture.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
@@ -1127,11 +1127,11 @@ You might choose to override some of the values associated with the current cult
 The <xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture> property enables an application to define the default culture of all threads.
 
 > [!IMPORTANT]
-> If you have not explicitly set the culture of any existing threads executing in an application domain, setting the <xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture> property also changes the culture of these threads. However, if these threads execute in another application domain, their culture is defined by the <xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture> property in that application domain or, if no default value is defined, by the default system culture. Because of this, we recommend that you always explicitly set the culture of your main application thread, and not rely on the <xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture> property to define the culture of the main application thread.
+> If you have not explicitly set the culture of any existing threads, setting the <xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture> property also changes the culture of these threads. You should always explicitly set the culture of your main application thread, and not rely on the <xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture> property to define the culture of the main application thread.
 
- Unless it is set explicitly, the value of the <xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture> property is `null`, and the culture of threads in an application domain that have not been assigned an explicit culture is defined by the default Windows system culture.
+ Unless it is set explicitly, the value of the <xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture> property is `null`, and the culture of threads that have not been assigned an explicit culture is defined by the default Windows system culture.
 
- For more information about cultures, threads, and application domains, see the "Culture and threads" and "Culture and application domains" sections in the <xref:System.Globalization.CultureInfo> reference page.
+ For more information about cultures and threads, see the "Culture and threads" section in the <xref:System.Globalization.CultureInfo> reference page.
 
 ## Examples
  The following example illustrates the default behavior of .NET in defining the current culture of a new thread. At startup, the example sets the current culture and the current UI culture to French (France) on all systems except those on which the default system culture is already French (France). If the default system culture is already French (France), the code sets the current culture and the current UI culture to English (United States). It then calls the `DisplayRandomNumbers` routine, which generates three random numbers and displays them as currency values. Next, it creates a new thread, which also executes the `DisplayRandomNumbers` routine.
@@ -1201,8 +1201,8 @@ The <xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture> property
         <ReturnType>System.Globalization.CultureInfo</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Gets or sets the default UI culture for threads in the current application domain.</summary>
-        <value>The default UI culture for threads in the current application domain, or <see langword="null" /> if the current system UI culture is the default thread UI culture in the application domain.</value>
+        <summary>Gets or sets the default UI culture for threads.</summary>
+        <value>The default UI culture for threads, or <see langword="null" /> if the current system UI culture is the default thread UI culture.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[
 
@@ -1211,11 +1211,11 @@ The <xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture> property
 The <xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture> property lets you define the default UI culture of all threads.
 
 > [!IMPORTANT]
-> If you have not explicitly set the UI culture of any existing threads executing in an application domain, setting the <xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture> property also changes the culture of these threads. However, if these threads execute in another application domain, their culture is defined by the <xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture> property in that application domain or, if no default value is defined, by the default system culture. Because of this, we recommend that you always explicitly set the culture of your main application thread and do not rely on the <xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture> property to define the culture of the main application thread.
+> If you have not explicitly set the UI culture of any existing threads, setting the <xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture> property also changes the culture of these threads. You should always explicitly set the culture of your main application thread, and not rely on the <xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture> property to define the culture of the main application thread.
 
- Unless it is set explicitly, the value of the <xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture> property is `null`, and the current culture of all threads in an application domain that have not been assigned an explicit culture is defined by the default Windows system culture.
+ Unless it is set explicitly, the value of the <xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture> property is `null`, and the current culture of all threads that have not been assigned an explicit culture is defined by the default Windows system culture.
 
- For more information about cultures, threads, and application domains, see the "Culture and threads" and "Culture and application domains" sections of <xref:System.Globalization.CultureInfo>.
+ For more information about cultures and threads, see the "Culture and threads" section of <xref:System.Globalization.CultureInfo>.
 
 ## Examples
  The following example illustrates the default behavior of .NET in defining the current culture of a new thread. It uses English and Russian language resources. The following text file named GreetingStrings.txt contains the English language resources:

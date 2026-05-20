@@ -68,7 +68,7 @@
 
 - The time-out interval specified in the call to a <xref:System.Threading.WaitHandle.WaitOne*> method that has a `millisecondsTimeout` or `timeout` parameter has elapsed. When this happens, the <xref:System.Threading.WaitHandle.WaitOne*> method returns `false`, and the calling thread makes no further attempt to acquire ownership of the mutex. In this case, you should structure your code so that access to the resource that is protected by the mutex is denied to the calling thread. Because the thread never acquired ownership of the mutex, it must not call the <xref:System.Threading.Mutex.ReleaseMutex*> method. The second example in the Examples section illustrates this pattern.
 
- The <xref:System.Threading.Mutex> class enforces thread identity, so a mutex can be released only by the thread that acquired it. By contrast, the <xref:System.Threading.Semaphore> class does not enforce thread identity. A mutex can also be passed across application domain boundaries.
+ The <xref:System.Threading.Mutex> class enforces thread identity, so a mutex can be released only by the thread that acquired it. By contrast, the <xref:System.Threading.Semaphore> class does not enforce thread identity.
 
  The thread that owns a mutex can request the same mutex in repeated calls to <xref:System.Threading.WaitHandle.WaitOne*> without blocking its execution. However, the thread must call the <xref:System.Threading.Mutex.ReleaseMutex*> method the same number of times to release ownership of the mutex.
 

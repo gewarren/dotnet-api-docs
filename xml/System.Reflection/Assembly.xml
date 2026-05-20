@@ -85,33 +85,24 @@
 ## Remarks
  Use the <xref:System.Reflection.Assembly> class to load assemblies, to explore the metadata and constituent parts of assemblies, to discover the types contained in assemblies, and to create instances of those types.
 
- To get an array of <xref:System.Reflection.Assembly> objects representing the assemblies currently loaded into an application domain (for example, the default application domain of a simple project), use the <xref:System.AppDomain.GetAssemblies*?displayProperty=nameWithType> method.
+ To get an array of <xref:System.Reflection.Assembly> objects representing the assemblies that are currently loaded, use the <xref:System.AppDomain.GetAssemblies*?displayProperty=nameWithType> method.
 
- To load assemblies dynamically, the <xref:System.Reflection.Assembly> class provides the following static methods (`Shared` methods in Visual Basic). Assemblies are loaded into the application domain where the load operation occurs.
+ To load assemblies dynamically, the <xref:System.Reflection.Assembly> class provides the following static methods.
 
 - The recommended way to load assemblies is to use the <xref:System.AppDomain.Load*> method, which identifies the assembly to be loaded by its display name (for example, "System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"). The search for the assembly follows the rules described in [How the Runtime Locates Assemblies](/dotnet/framework/deployment/how-the-runtime-locates-assemblies).
-
 - The <xref:System.Reflection.Assembly.ReflectionOnlyLoad*> and <xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom*> methods enable you to load an assembly for reflection, but not for execution. For example, an assembly that targets a 64-bit platform can be examined by code that is running on a 32-bit platform.
-
 - The <xref:System.Reflection.Assembly.LoadFile*> and <xref:System.Reflection.Assembly.LoadFrom*> methods are provided for rare scenarios in which an assembly must be identified by path.
 
- To get an <xref:System.Reflection.Assembly> object for the currently executing assembly, use the <xref:System.Reflection.Assembly.GetExecutingAssembly*> method.
+To get an <xref:System.Reflection.Assembly> object for the currently executing assembly, use the <xref:System.Reflection.Assembly.GetExecutingAssembly*> method.
 
- Many members of the <xref:System.Reflection.Assembly> class provide information about an assembly. For example:
+Many members of the <xref:System.Reflection.Assembly> class provide information about an assembly. For example:
 
 - The <xref:System.Reflection.Assembly.GetName*> method returns an <xref:System.Reflection.AssemblyName> object that provides access to the parts of the assembly display name.
-
 - The <xref:System.Reflection.Assembly.GetCustomAttributes*> method lists the attributes applied to the assembly.
-
 - The <xref:System.Reflection.Assembly.GetFiles*> method provides access to the files in the assembly manifest.
-
 - The <xref:System.Reflection.Assembly.GetManifestResourceNames*> method provides the names of the resources in the assembly manifest.
 
  The <xref:System.Reflection.Assembly.GetTypes*> method lists all the types in the assembly. The <xref:System.Reflection.Assembly.GetExportedTypes*> method lists the types that are visible to callers outside the assembly. The <xref:System.Reflection.Assembly.GetType*> method can be used to search for a particular type in the assembly. The <xref:System.Reflection.Assembly.CreateInstance*> method can be used to search for and create instances of types in the assembly.
-
- For more information on assemblies, see the "Application Domains and Assemblies" section in the [Application Domains](/dotnet/framework/app-domains/application-domains) topic.
-
-
 
 ## Examples
  The following code example shows how to obtain the currently executing assembly, create an instance of a type contained in that assembly, and invoke one of the type's methods with late binding. For this purpose, the code example defines a class named `Example`, with a method named `SampleMethod`. The constructor of the class accepts an integer, which is used to compute the return value of the method.
@@ -126,7 +117,6 @@
     <threadsafe>This type is thread safe.</threadsafe>
     <altmember cref="T:System.AppDomain" />
     <altmember cref="T:System.Reflection.AssemblyName" />
-    <related type="Article" href="/dotnet/framework/app-domains/application-domains">Application Domains</related>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
@@ -3660,7 +3650,7 @@ By default, <xref:System.Reflection.Assembly.ImageRuntimeVersion*> is set to the
 ## Remarks
  Dynamic assemblies are represented by the derived class <xref:System.Reflection.Emit.AssemblyBuilder>.
 
- When a dynamic assembly is saved to disk, the saved assembly is not dynamic. If the saved assembly is loaded into another application domain or process, the <xref:System.Reflection.Assembly.IsDynamic> property returns `false`.
+ When a dynamic assembly is saved to disk, the saved assembly is not dynamic. If the saved assembly is loaded into another process, the <xref:System.Reflection.Assembly.IsDynamic> property returns `false`.
 
  ]]></format>
         </remarks>
@@ -4958,7 +4948,7 @@ For bundled assemblies, the value returned is an empty string.
       </Parameters>
       <Docs>
         <param name="rawAssembly">A byte array that is a COFF-based image containing an emitted assembly.</param>
-        <summary>Loads the assembly from a common object file format (COFF)-based image containing an emitted assembly. The assembly is loaded into the reflection-only context of the caller's application domain.</summary>
+        <summary>Loads the assembly from a common object file format (COFF)-based image containing an emitted assembly. The assembly is loaded into the reflection-only context of the application domain.</summary>
         <returns>The loaded assembly.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.PlatformNotSupportedException">In all cases.</exception>

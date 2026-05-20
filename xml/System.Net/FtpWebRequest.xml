@@ -454,13 +454,11 @@
           <format type="text/markdown"><![CDATA[
 
 ## Remarks
- Connection groups associate a set of requests with a particular connection or set of connections. The connections in a connection group can be reused only by requests originating in the same application domain, when the credentials on the request are the same and the request specifies the connection group name. When a request does not specify a connection group name, any existing connection to the requested server that is not associated with a connection group can be used. When the credentials are not the same, the existing connection is closed and the new request must be reauthenticated.
+ Connection groups associate a set of requests with a particular connection or set of connections. The connections in a connection group can be reused only by requests that have the same credentials and that specify the connection group name. When a request does not specify a connection group name, any existing connection to the requested server that is not associated with a connection group can be used. When the credentials are not the same, the existing connection is closed and the new request must be reauthenticated.
 
  Using connection groups can improve performance because this allows all of the requests for a user to reuse the connection authenticated with the user's credentials.
 
  Changing the <xref:System.Net.FtpWebRequest.ConnectionGroupName> property after calling the <xref:System.Net.FtpWebRequest.GetRequestStream*>, <xref:System.Net.FtpWebRequest.BeginGetRequestStream*>, <xref:System.Net.FtpWebRequest.GetResponse*>, or <xref:System.Net.FtpWebRequest.BeginGetResponse*> method causes an <xref:System.InvalidOperationException> exception.
-
-
 
 ## Examples
  The following code example retrieves the value of this property.
