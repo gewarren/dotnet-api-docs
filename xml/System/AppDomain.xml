@@ -2680,13 +2680,11 @@ The <xref:System.ResolveEventArgs.RequestingAssembly?displayProperty=nameWithTyp
 
  The event can be handled per application domain. If a thread passes through multiple application domains while executing a call, the event is raised in each application domain that has registered an event handler, before the CLR begins searching for a matching exception handler in that application domain. After the event has been handled, a search is made for a matching exception handler in that application domain. If none is found, the event is raised in the next application domain.
 
- You must handle all exceptions that occur in the event handler for the <xref:System.AppDomain.FirstChanceException> event. Otherwise, <xref:System.AppDomain.FirstChanceException> is raised recursively. This could result in a stack overflow and termination of the application. We recommend that you implement event handlers for this event as constrained execution regions (CERs), to keep infrastructure-related exceptions such as out-of-memory or stack overflow from affecting the virtual machine while the exception notification is being processed.
+ You must handle all exceptions that occur in the event handler for the <xref:System.AppDomain.FirstChanceException> event. Otherwise, <xref:System.AppDomain.FirstChanceException> is raised recursively. This could result in a stack overflow and termination of the application.
 
  This event is not raised for exceptions that indicate corruption of process state, such as access violations, unless the event handler is security-critical and has the <xref:System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptionsAttribute> attribute.
 
  The common language runtime suspends thread aborts while this notification event is being handled.
-
-
 
 ## Examples
  The following example creates a series of application domains named `AD0` through `AD3`, with a `Worker` object in each application domain. Each `Worker` object has a reference to the `Worker` object in the next application domain, except for the `Worker` in the last application domain. The <xref:System.AppDomain.FirstChanceException> event is handled in all application domains except `AD1`.
